@@ -1,0 +1,10 @@
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+minimumReleaseAgeExclude:
+  - '@remotion/licensing@4.0.490'
+  - '@remotion/media@4.0.490'
+  - '@remotion/web-renderer@4.0.490'
+  - remotion@4.0.490

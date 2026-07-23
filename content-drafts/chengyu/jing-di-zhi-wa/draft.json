@@ -1,0 +1,59 @@
+{
+  "id": "jing-di-zhi-wa",
+  "title": "井底之蛙",
+  "subtitle": "井口之外的大世界",
+  "origin": "《庄子·秋水》",
+  "moral": {
+    "zh": "世界比眼前所见更广。保持好奇、谦虚倾听，才能不断增长见识。",
+    "en": "The world is wider than what we can see. Curiosity and humble listening help us keep learning."
+  },
+  "idiomMeaning": {
+    "zh": "比喻见识有限，却以为自己知道全部的人。",
+    "en": "Literally “a frog at the bottom of a well”; it describes someone with a narrow view who mistakes limited experience for the whole world."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-20",
+  "order": 6,
+  "pages": [
+    {
+      "zh": "从前，一口浅井里住着一只小青蛙。一天，一只从东海来的大鳖停在井边。",
+      "en": "Long ago, a little frog lived in a shallow well. One day, a great softshell turtle from the Eastern Sea stopped beside it.",
+      "prompt": "Ancient Chinese countryside in warm spring morning light, centered on an old shallow round stone well beside a bamboo grove and a winding footpath, with a faint pale-blue Eastern Sea horizon visible beyond low green hills; establish every recurring character and visual anchor clearly in one square cutaway-like but single-scene composition: inside the well, a tiny cheerful jade-green frog with a creamy belly, large amber eyes, three darker green freckles on each cheek, rounded child-friendly proportions, and no clothing or accessories stands on a smooth pebble ledge beside a broad green lotus leaf and a small clear pool; at the low well rim, a much larger gentle blue-gray East Sea softshell turtle with warm brown eyes, a friendly rounded snout, and a low smooth olive-sand shell rests calmly, also with no clothing or accessories; show the mossy stone blocks, curling fern, lotus leaf, pebble ledge, and distant sea as fixed scene anchors; both characters fully visible and clearly different in scale; premium polished warm 3D clay-like animated-film children's picture-book illustration, tactile handmade textures, cinematic soft light, square 1:1 composition; no image text, letters, numbers, speech bubbles, logos, watermark, modern objects, buckets, ropes, deep dangerous drop, trapped animals, fear, injury, split panels, or scary imagery."
+    },
+    {
+      "zh": "青蛙得意地说：“我在井里多快活！想跳就跳，累了就在石缝边休息。”",
+      "en": "The frog said proudly, “Life in my well is wonderful! I can hop whenever I like and rest beside the stones.”",
+      "prompt": "Use page 1 as the only visual reference and keep the jade-green frog, blue-gray softshell turtle, proportions, markings, lack of clothing, shallow stone well, lotus leaf, pebble ledge, fern, bamboo grove, distant sea, palette, and 3D clay-like animated-film style exactly consistent. Inside the same shallow well, show the little frog making one playful hop from the smooth pebble ledge toward the broad lotus leaf, then landing safely, with a proud delighted expression directed up toward the turtle at the rim; the gentle turtle listens without judging; one continuous lively scene, not a montage; premium polished warm 3D clay-like children's picture-book illustration, square 1:1 composition; no speech bubbles, image text, logos, watermark, modern objects, buckets, ropes, dangerous height, injury, split panels, or scary imagery."
+    },
+    {
+      "zh": "青蛙请大鳖下来看看。大鳖试着迈步，可井口太窄，只好停在外面。",
+      "en": "The frog invited the turtle down. The turtle tried to step in, but the opening was too narrow, so it stayed outside.",
+      "prompt": "Use page 1 as the only visual reference and keep every recurring design exactly consistent. Show the same gentle softshell turtle carefully testing the narrow stone well opening with one front foot while its broad low shell remains safely supported outside on the ground; the turtle is never stuck, squeezed, falling, or distressed and simply pauses when it sees the opening is too small; below, the same little frog looks up with an eager welcoming gesture from the pebble ledge; warm child-safe humor and clear scale contrast, premium polished warm 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no image text, speech bubbles, logos, watermark, modern objects, buckets, ropes, dangerous drop, entrapment, injury, split panels, or scary imagery."
+    },
+    {
+      "zh": "青蛙挺起胸膛：“你看，这口井全归我，难道还有比这里更好的地方吗？”",
+      "en": "Puffing out its chest, the frog said, “This whole well is mine. Could any place be better?”",
+      "prompt": "Use page 1 as the only visual reference and keep every recurring design exactly consistent. In the same shallow well, the tiny jade-green frog stands proudly on the broad lotus leaf with chest lifted and arms open, presenting the small pool, pebble ledge, and mossy walls as if they were an enormous kingdom; above at the rim, the much larger blue-gray softshell turtle watches kindly with a thoughtful expression, never mocking; compose the round well walls to make the frog's world feel cozy but visibly limited; premium polished warm 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no crown, throne, speech bubbles, image text, logos, watermark, modern objects, buckets, ropes, ridicule, injury, split panels, or scary imagery."
+    },
+    {
+      "zh": "大鳖温和地说：“东海宽得望不到边，深得量不到底，许多生命都住在那里。”",
+      "en": "The turtle said gently, “The Eastern Sea is too wide to see across and too deep to measure. Countless creatures live there.”",
+      "prompt": "Use page 1 as the only visual reference and keep every recurring design exactly consistent. Create a wide over-the-well-rim storytelling scene: the same gentle softshell turtle turns its head toward the faint pale-blue Eastern Sea beyond the low hills and gestures calmly with one front foot, while the same little frog sits on the pebble ledge below and listens for the first time; make the distant sea horizon feel vast through layered hills, open sky, tiny faraway seabirds, and luminous blue atmospheric depth, but keep the well, bamboo, fern, lotus leaf, and both characters in one continuous real scene; premium polished warm 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no fantasy projection, split panels, maps, image text, speech bubbles, logos, watermark, modern ships, buildings, buckets, ropes, fear, injury, or scary imagery."
+    },
+    {
+      "zh": "“大雨不会让它满出来，久旱也不会让它干下去。和大海相比，这口井只是小小一角。”",
+      "en": "“Heavy rains do not fill it to the brim, and long dry spells do not empty it. Beside the sea, this well is only a tiny corner.”",
+      "prompt": "Use page 1 as the only visual reference and keep every recurring design exactly consistent. From inside the same shallow well, frame the little frog in the foreground looking upward with widening amber eyes as the softshell turtle speaks calmly at the rim; beyond the turtle, reveal an expansive serene blue sea horizon beneath a broad sky with a few soft rain clouds far to one side and warm sunlight on the other, suggesting the sea's steadiness without showing a storm or drought disaster; the round stone opening and tiny pool create a clear visual contrast between the small familiar well and the wide world outside; premium polished warm 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no split panels, magical weather divide, image text, speech bubbles, logos, watermark, modern ships, buildings, buckets, ropes, flooding, cracked-earth disaster, fear, injury, or scary imagery."
+    },
+    {
+      "zh": "青蛙安静下来：“原来我见过的，只是世界很小的一角。我还有好多事情不知道呢！”",
+      "en": "The frog grew quiet. “What I have seen is only a tiny corner of the world. There is so much I do not know!”",
+      "prompt": "Use page 1 as the only visual reference and keep every recurring design exactly consistent. Show a tender realization inside the same well: the little jade-green frog sits quietly on the smooth pebble ledge beside the lotus leaf, one hand resting thoughtfully on its creamy chest, gazing up with humble wonder rather than shame; the gentle blue-gray softshell turtle leans slightly over the low rim with an encouraging warm-brown-eyed smile; a broad shaft of soft daylight reaches the small pool and connects the cozy well to the open sky; premium polished warm 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no tears, humiliation, pointing, speech bubbles, image text, logos, watermark, modern objects, buckets, ropes, dangerous drop, injury, split panels, or scary imagery."
+    },
+    {
+      "zh": "青蛙爬上井沿，请大鳖继续讲外面的故事。从此，它愿意学习，去认识更大的世界。",
+      "en": "The frog climbed to the rim and asked for more stories. From then on, it was eager to learn about the wider world.",
+      "prompt": "Use page 1 as the only visual reference and keep the frog, softshell turtle, proportions, markings, lack of clothing, shallow well, lotus leaf, pebble ledge, fern, bamboo grove, distant sea, palette, and 3D clay-like animated-film style exactly consistent. In a hopeful golden-morning ending, the same little jade-green frog now sits safely on the broad low stone rim beside the much larger gentle blue-gray softshell turtle; both face the open path, layered green hills, wide sky, and luminous distant Eastern Sea, while the turtle makes a friendly storytelling gesture and the frog listens with bright curiosity; keep the familiar well anchors visible behind them and show learning as a calm new beginning, not a magical transformation; premium polished warm 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no books with writing, maps, speech bubbles, image text, logos, watermark, modern objects, ships, vehicles, dangerous height, injury, split panels, or scary imagery."
+    }
+  ]
+}

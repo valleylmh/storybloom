@@ -1,0 +1,59 @@
+{
+  "id": "dui-niu-tan-qin",
+  "title": "对牛弹琴",
+  "subtitle": "黄牛听懂的那支曲子",
+  "origin": "汉·牟融《理惑论》",
+  "moral": {
+    "zh": "沟通不能只顾自己会什么，还要观察和倾听，用对方能理解的方式表达。",
+    "en": "Good communication means watching and listening, then choosing a way your audience can understand."
+  },
+  "idiomMeaning": {
+    "zh": "比喻对不理解的人讲高深的道理，也指说话不看对象、表达方式不合适。",
+    "en": "Literally, playing the qin to a cow; it describes giving an explanation the listener cannot understand or speaking without considering the audience."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-20",
+  "order": 10,
+  "pages": [
+    {
+      "zh": "汉代有位琴师叫公明仪。他抱着古琴，来到绿油油的田野。",
+      "en": "In the Han dynasty, a musician named Gongming Yi carried his qin into a green meadow.",
+      "prompt": "Ancient Han-dynasty countryside in gentle spring morning light, a lush green meadow beside a willow tree with low hills and a distant tiled farmhouse; establish all recurring characters, clothing, instrument, and setting anchors clearly: Gongming Yi is a slender 36-year-old musician with a warm oval clean-shaven face, calm dark eyes, black hair in a neat high scholar's bun secured by a plain wooden hairpin, wearing a deep-teal cross-collar long robe with cream inner collar, muted rust-red sash, charcoal trousers, and soft black cloth shoes; he carries a fixed dark reddish-brown lacquered seven-string qin with no writing, beside a low natural-wood qin stand; establish the recurring calm tawny-brown cow with a cream muzzle, small rounded horns, dark gentle eyes, and no harness or bell, grazing nearby; warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1, readable wide establishing composition; no text, musical notation, logos, watermark, modern objects, distorted instrument, frightening animals, harm, or split panels."
+    },
+    {
+      "zh": "一头黄牛正低头吃草。公明仪坐下，弹起一支高雅的曲子。",
+      "en": "A tawny cow grazed nearby. Gongming Yi sat down and began an elegant melody.",
+      "prompt": "Use page 1 as the sole visual reference for Gongming Yi's face, scholar's bun, wooden hairpin, deep-teal robe, cream collar, rust-red sash, trousers, shoes, the tawny cow, seven-string qin, low stand, meadow, willow, and style; the same musician sits gracefully on a simple woven mat and plucks the fixed qin resting on its low wooden stand, absorbed in an elegant melody, while the same cow keeps her head down and calmly grazes several steps away; balanced medium-wide pastoral composition, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no visible musical notes, text, symbols, logos, watermark, modern objects, distorted hands or instrument, frightening mood, harm, or split panels."
+    },
+    {
+      "zh": "琴声时而轻柔，时而响亮，黄牛却只顾嚼着青草。",
+      "en": "The music rose and softened, but the cow simply kept chewing the grass.",
+      "prompt": "Use page 1 as the sole visual reference for every recurring character, costume, cow, qin, prop, meadow, and style detail; the same Gongming Yi plays with expressive but gentle hand movements, leaning into the changing melody, while the same tawny cow remains peacefully focused on chewing green grass with relaxed ears; show the contrast clearly in one continuous medium-wide scene under the same willow, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no visible musical notes, text, symbols, logos, watermark, modern objects, distorted anatomy or instrument, anger, frightening mood, harm, or split panels."
+    },
+    {
+      "zh": "公明仪有点疑惑：“我的曲子这么好，它怎么不听呢？”",
+      "en": "Gongming Yi wondered, “My melody is beautiful. Why is the cow not listening?”",
+      "prompt": "Use page 1 as the sole visual reference for every recurring character, costume, cow, qin, prop, meadow, and style detail; the same musician pauses with both hands resting safely above the seven-string qin and looks toward the grazing cow with a puzzled, thoughtful expression, never angry or offended; the same cow continues eating calmly in the background, intimate eye-level medium composition with the willow and meadow still recognizable, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no speech or thought bubbles, visible musical notes, text, symbols, logos, watermark, modern objects, distorted anatomy or instrument, frightening mood, harm, or split panels."
+    },
+    {
+      "zh": "他停下来观察，发现黄牛会留心虫鸣和远处的小牛叫声。",
+      "en": "He stopped and watched. The cow noticed buzzing insects and the distant call of a calf.",
+      "prompt": "Use page 1 as the sole visual reference for every recurring character, costume, cow, qin, prop, meadow, and style detail; the same Gongming Yi sits quietly beside the qin and observes with curiosity as the same tawny cow lifts one ear toward two tiny harmless insects hovering over wildflowers and toward a small calf calling from a very distant neighboring field; show the musician noticing the cow's response, clear visual line of attention, gentle pastoral medium-wide scene, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no visible sound symbols, musical notes, text, logos, watermark, modern objects, swarming insects, distorted anatomy, frightening animals, harm, or split panels."
+    },
+    {
+      "zh": "于是，他弹出像微风、虫鸣和牛叫一样亲切的旋律。",
+      "en": "So he shaped a friendly new melody from the breeze, tiny buzzing sounds, and a calf's gentle call.",
+      "prompt": "Use page 1 as the sole visual reference for every recurring character, costume, cow, qin, prop, meadow, and style detail; the same Gongming Yi smiles with fresh understanding and plays a simpler, friendly rhythm on the fixed seven-string qin, inspired by the familiar field sounds he has just observed; the same tawny cow begins to turn her head toward him, one ear raised with interest, while a light breeze moves the willow leaves; warm flowing medium-wide composition, refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no calf or insects in this scene, visible musical notes or sound waves, text, symbols, logos, watermark, modern objects, distorted hands or instrument, frightening mood, harm, or split panels."
+    },
+    {
+      "zh": "黄牛抬头竖起耳朵。公明仪明白了：不看听众，就会变成对牛弹琴。",
+      "en": "The cow raised her head and listened. Gongming Yi understood: ignore your audience, and even beautiful music may miss them.",
+      "prompt": "Use page 1 as the sole visual reference for every recurring character, costume, cow, qin, prop, meadow, and style detail; turning point in the same meadow: the tawny cow has raised her head fully, ears forward and dark gentle eyes focused on the same Gongming Yi, who continues playing the fixed qin with a warm expression of realization; their attention now clearly connects across the frame, the willow leaves moving softly above them, hopeful eye-level medium-wide composition, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no visible musical notes, text, symbols, logos, watermark, modern objects, exaggerated animal behavior, distorted anatomy or instrument, frightening mood, harm, or split panels."
+    },
+    {
+      "zh": "从此，他先了解听众，再选择合适的曲子，沟通也变得更快乐。",
+      "en": "From then on, he observed and listened first, then chose a tune his audience could understand.",
+      "prompt": "Use page 1 as the sole visual reference for every recurring character, costume, cow, qin, prop, meadow, and style detail; hopeful golden-afternoon ending under the same willow: the same Gongming Yi first watches the relaxed tawny cow, then plays the fixed seven-string qin on its low wooden stand with a gentle attentive smile; the cow stands nearby with ears comfortably forward and tail softly curved, sharing a calm connected moment, wide pastoral composition with meadow, hills, and distant farmhouse, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no visible musical notes, text, symbols, logos, watermark, modern objects, humanlike cow pose, distorted anatomy or instrument, frightening mood, harm, or split panels."
+    }
+  ]
+}

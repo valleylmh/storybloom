@@ -1,0 +1,59 @@
+{
+  "id": "yu-gong-yi-shan",
+  "title": "愚公移山",
+  "subtitle": "每天搬一点的老人",
+  "origin": "《列子·汤问》",
+  "moral": {
+    "zh": "再大的困难，也可以从眼前的一小步开始。只要方向正确、大家齐心并坚持下去，就能慢慢带来改变。",
+    "en": "Even the biggest challenge can begin with one small step. With a good plan, teamwork, and persistence, change can grow little by little."
+  },
+  "idiomMeaning": {
+    "zh": "比喻不怕困难、坚持不懈，努力克服看似不可能的阻碍。",
+    "en": "Literally “Yu Gong moves the mountains”; it describes facing a great difficulty with steady, determined effort."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-20",
+  "order": 7,
+  "pages": [
+    {
+      "zh": "从前，太行、王屋两座大山挡在愚公家门前。老人每次出门，都要绕很远的路。",
+      "en": "Long ago, the great Taihang and Wangwu Mountains blocked the road outside Yu Gong’s home. Every trip meant a long detour.",
+      "prompt": "Ancient northern Chinese foothill village in soft golden morning light; two immense but peaceful rounded green-brown mountains, Taihang and Wangwu, stand side by side and block the narrow road beyond a simple rammed-earth family home; establish every recurring character together in full view: Yu Gong, a sturdy nearly ninety-year-old man with a square kind face, white brows, short fan-shaped white beard, silver hair in a high topknot, burnt-orange cross-collar robe, deep-teal sash, charcoal trousers, and straw sandals; his elderly wife with a gentle oval face, gray hair in a low bun, muted-plum cross-collar robe and beige sash; their adult son with a broad clean-shaven face, dark topknot, moss-green short robe, ochre sash, and brown trousers; and their nine-year-old round-faced grandson with one small topknot, sky-blue short robe, mustard sash, dark trousers, and cloth shoes; fixed core props—a wooden hoe, two small wicker carrying baskets, a wooden shoulder pole, and a clay water jar—rest safely beside the house; the family looks at the long blocked route thoughtfully, not sadly; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, written characters, logos, watermark, modern objects, machinery, dynamite, steep cliff danger, falling rocks, injury, frightening scale, or split panels."
+    },
+    {
+      "zh": "愚公对家人说：“我们每天搬一点，把山前的路慢慢打开吧！”家人都愿意一起帮忙。",
+      "en": "“Let us move a little each day and slowly open a road,” Yu Gong told his family. Everyone agreed to help.",
+      "prompt": "Use page 1 as the sole character, clothing, prop, home, mountain, palette, and 3D clay-like style reference; in the same ancient courtyard, Yu Gong calmly gestures from the blocked road toward the two mountains while sharing his plan; his wife, adult son, and grandson listen, exchange thoughtful looks, and then agree with warm determined smiles; keep the wooden hoe, two small wicker baskets, shoulder pole, and clay water jar resting safely on the ground; show cooperative family discussion rather than reckless action; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, speech bubbles, written characters, logos, watermark, modern objects, machinery, dynamite, danger, argument, injury, or split panels."
+    },
+    {
+      "zh": "第二天，全家来到山脚。大人松土搬石，孩子只提轻轻的小篮子，大家做得又稳又慢。",
+      "en": "The next day, the family began at the foot of the mountain. The adults loosened soil and moved stones while the child carried only a light little basket.",
+      "prompt": "Use page 1 as the sole visual reference and keep all four family members exactly consistent; at the broad gentle foot of the same rounded mountain, Yu Gong and his adult son carefully loosen soft earth with the fixed wooden hoe and place only small smooth stones into a wicker basket, his wife offers water from the clay jar and steadies the shoulder pole, and the nine-year-old grandson carries a nearly empty child-sized wicker basket with both hands on level ground; everyone works slowly, safely, and cooperatively with relaxed postures; wide stable terrain with no cliff edge, deep pit, heavy load, or falling debris; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, logos, watermark, modern objects, machinery, dynamite, dangerous tool use, injury, fear, or split panels."
+    },
+    {
+      "zh": "一天又一天，他们一筐一筐地运走泥土和小石头，山脚渐渐露出一条窄窄的小路。",
+      "en": "Day after day, they carried away basket after basket of earth and small stones. A narrow path slowly appeared at the mountain’s foot.",
+      "prompt": "Use page 1 as the sole visual reference and preserve the exact recurring family, outfits, tools, house, and twin mountains; show one continuous late-afternoon scene at the same gentle mountain foot, where Yu Gong passes a small wicker basket to his adult son, his wife neatly sets down a light basket, and the grandson smooths the newly cleared edge with his hands beside the clay water jar; an orderly narrow footpath has begun to open through the low soil at the base, while the mountains remain naturally huge and unchanged; warm light and repeated tidy basket marks suggest many days of patient effort without a montage; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, logos, watermark, modern objects, machinery, dynamite, steep excavation, heavy child labor, dangerous tools, falling rocks, injury, or split panels."
+    },
+    {
+      "zh": "邻村的智叟见了，摇头问：“山这么大，你一辈子怎么搬得完呢？”",
+      "en": "A doubtful old neighbor saw them and asked, “The mountains are so large. How could you finish in one lifetime?”",
+      "prompt": "Use page 1 as the sole visual reference for Yu Gong, his family, tools, terrain, mountains, palette, and style; during a safe rest beside the partly opened footpath, introduce one non-recurring elderly neighbor: a lean man with a narrow thoughtful face, gray hair under a simple dark cloth cap, pale-gray robe, brown sash, and wooden walking staff; he gently shakes his head and questions the plan without mocking, while Yu Gong listens calmly and the wife, adult son, and grandson sit together with water and light baskets nearby; the two vast rounded mountains remain visible behind them; respectful conversation with no hostility; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, speech bubbles, logos, watermark, modern objects, machinery, dynamite, bullying, angry pointing, danger, injury, or split panels."
+    },
+    {
+      "zh": "愚公笑着说：“我老了，还有儿孙；山却不会再长高。只要不停，总会前进。”",
+      "en": "Yu Gong smiled. “After me, my children and grandchildren can continue, but the mountains will not grow. If we keep going, we will make progress.”",
+      "prompt": "Use page 1 as the sole visual reference and keep Yu Gong, his wife, adult son, grandson, clothing, props, home region, and twin mountains exactly consistent; Yu Gong stands on level ground beside the narrow new path, smiling kindly as he gives his answer toward someone just outside the frame, one open hand indicating three generations of his family and the other indicating the mountains; his wife, son, and grandson stand close behind him with calm confidence; emphasize patient resolve and family continuity, not defiance; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, additional visible characters, speech bubbles, logos, watermark, modern objects, machinery, dynamite, threatening gestures, danger, injury, or split panels."
+    },
+    {
+      "zh": "他们坚定的心感动了天帝。天帝派来两位大力神，稳稳地把两座山移到了远方。",
+      "en": "Their steadfast hearts moved the Heavenly Ruler, who sent two mighty helpers to carry the mountains safely far away.",
+      "prompt": "Use page 1 as the sole reference for the recurring family, their exact clothing, the house, landscape, mountains, palette, and 3D clay-like style; create a gentle mythic dawn scene in which two benevolent celestial helpers with friendly faces, simple warm-gold ancient robes, soft cloud ribbons, and calm powerful poses each lift one whole rounded mountain securely and carry it toward the distant horizon; no broken rock, dust storm, or falling debris; Yu Gong, his wife, adult son, and grandson watch together from a clearly safe distance beside their home, amazed and grateful rather than frightened; soft luminous clouds suggest the unseen Heavenly Ruler’s approval without showing a giant ruler figure; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, logos, watermark, modern objects, machinery, dynamite, destruction, scary giants, peril, injury, or split panels."
+    },
+    {
+      "zh": "从此，家门前有了平坦的路。人们用“愚公移山”赞美不怕困难、坚持到底的精神。",
+      "en": "At last, a clear road stretched beyond their home. “Yu Gong moves the mountains” came to honor courage and persistence in the face of difficulty.",
+      "prompt": "Use page 1 as the sole visual reference and keep the recurring family, outfits, rammed-earth home, tools, palette, and warm 3D clay-like style exactly consistent; hopeful sunrise ending with a broad safe road now crossing an open green valley where the mountains once blocked the way; Yu Gong walks at the center with his wife, adult son, and grandson, all carrying only light empty baskets and smiling with quiet pride; place the wooden hoe, shoulder pole, and clay water jar neatly beside the home in the background, and show distant villages connected by the road; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, written characters, logos, watermark, modern objects, vehicles, machinery, dynamite, triumphal weapons, danger, injury, or split panels."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "yan-er-dao-ling",
+  "title": "掩耳盗铃",
+  "subtitle": "藏不住的钟声",
+  "origin": "《吕氏春秋·自知》",
+  "moral": {
+    "zh": "捂住自己的耳朵，改变不了真实发生的事。做错了要诚实面对，及时改正。",
+    "en": "Hiding the truth from yourself does not change it. Face mistakes honestly and make them right."
+  },
+  "idiomMeaning": {
+    "zh": "比喻自己欺骗自己，以为看不见、听不见，事情就不存在。古文写的是盗钟，后来演化为“掩耳盗铃”。",
+    "en": "Literally, covering one’s ears while stealing a bell; it means fooling yourself into believing a problem is gone simply because you ignore it. The classical source tells of a large bronze bell."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-20",
+  "order": 9,
+  "pages": [
+    {
+      "zh": "从前，有个人路过一座古宅，看见院里挂着一口漂亮的大钟。",
+      "en": "Long ago, a man passed an old courtyard and spotted a beautiful bronze bell inside.",
+      "prompt": "Ancient Chinese village courtyard in warm early-morning light, packed-earth ground, gray tiled roof, pale plaster walls, and an open wooden gate; establish all recurring characters and anchors clearly: an impulsive 30-year-old man of average build with a round expressive clean-shaven face, one high topknot tied with a brown cloth ribbon, faded indigo cross-collar short tunic, muted ochre sash, warm-brown trousers, and dark cloth shoes pauses outside the gate and stares greedily at a large ancient bronze zhong bell with soft blue-green patina, no inscriptions, hanging from a sturdy dark-wood A-frame; the bell's smooth wooden mallet rests beside the frame; also establish the slim 62-year-old courtyard keeper with a kind lined face, short gray moustache, gray hair in a low bun, moss-green long robe, beige sash, cloth shoes, and a straw broom, walking away in the far background; readable wide establishing composition, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no text, symbols, logos, watermark, modern objects, sharp weapons, damage, frightening mood, or split panels."
+    },
+    {
+      "zh": "他想偷偷搬走大钟，可钟又大又重，怎么也抬不动。",
+      "en": "He tried to sneak the bell away, but it was far too big and heavy to lift.",
+      "prompt": "Use page 1 as the sole visual reference for the man's face, topknot, faded indigo tunic, ochre sash, trousers, shoes, the ancient courtyard, bronze bell, wooden frame, mallet, and style; the same man wraps both arms around the lower edge of the large hanging bell and strains gently to lift it, but the bell remains securely suspended and completely undamaged; his expression is puzzled and tired rather than aggressive, medium-wide composition showing the bell's great size; the keeper is away from the courtyard in this scene; warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no text, symbols, logos, watermark, modern objects, injury, broken wood, scary imagery, or split panels."
+    },
+    {
+      "zh": "他想：“用木槌把钟敲开，不就能一块块带走了吗？”",
+      "en": "Then he thought, “If I break it into pieces, I can carry it away bit by bit.”",
+      "prompt": "Use page 1 as the sole visual reference for all character, costume, prop, courtyard, and style details; the same man stands beside the intact bronze bell and lifts the same smooth wooden mallet with a foolishly confident idea, preparing to tap the bell but not yet making contact; show the heavy bell filling much of the frame and the open village lane beyond the gate, clear anticipation without danger, medium full-body composition, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no written thought bubble, text, symbols, logos, watermark, modern objects, sharp tools, cracks, fragments, injury, frightening mood, or split panels."
+    },
+    {
+      "zh": "木槌刚碰到大钟，响亮的钟声就一下传遍了村子。",
+      "en": "The instant the mallet touched the bell, a great ringing sound rolled across the village.",
+      "prompt": "Use page 1 as the sole visual reference for all character, costume, prop, courtyard, and style details; at the moment the same wooden mallet gently touches the same intact bronze bell, the same man startles at the unexpectedly loud ring, shoulders raised and eyes wide; use subtle outward air ripples and several distant birds lifting from a tiled roof to suggest sound without musical notes or written effects; wide courtyard composition with the village visible through the gate, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no text, sound-effect lettering, symbols, logos, watermark, modern objects, cracks, fragments, injury, frightening mood, or split panels."
+    },
+    {
+      "zh": "他赶紧捂住自己的耳朵，又敲了一下，心想：“这回没人听见了！”",
+      "en": "He covered his own ears and tapped again, thinking, “Now no one can hear it!”",
+      "prompt": "Use page 1 as the sole visual reference for all character, costume, bell, mallet, courtyard, and style details; the same man presses one hand tightly over both ears in a comically awkward pose while using the other hand to give the intact bronze bell one light tap with the wooden mallet; he wears a pleased, mistaken smile because the sound feels quieter to him, while distant villagers outside the gate visibly turn toward the ringing; dynamic but gentle medium-wide scene, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no speech or thought bubbles, text, symbols, logos, watermark, modern objects, cracks, fragments, injury, frightening mood, or split panels."
+    },
+    {
+      "zh": "可是，村民们听得清清楚楚，纷纷循着钟声来到院门口。",
+      "en": "But the villagers heard every ring and followed the sound straight to the courtyard gate.",
+      "prompt": "Use page 1 as the sole visual reference for all character, costume, bell, courtyard, and style details; the same man, still beside the intact bronze bell with the wooden mallet lowered, looks surprised as the same elderly keeper in his moss-green robe returns to the open gate with two calm village neighbors behind him; everyone has heard the bell, but their expressions are curious and firm rather than angry; the keeper still carries the straw broom established on page 1; balanced wide composition connecting bell, man, and gate, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no text, symbols, logos, watermark, modern objects, guards, weapons, chasing, humiliation, injury, frightening mood, or split panels."
+    },
+    {
+      "zh": "老人说：“你听不见，别人却听得见。这就是掩耳盗铃呀！”",
+      "en": "The keeper said, “You may block your own ears, but everyone else can still hear. That is covering your ears while stealing a bell!”",
+      "prompt": "Use page 1 as the sole visual reference for all character, costume, bell, courtyard, and style details; the same elderly keeper in the moss-green robe gently gestures from the man's covered ears toward the large intact bronze bell, explaining the mistake with a kind but serious expression; the same man has lowered the mallet and listens with embarrassed realization; respectful eye-level two-character composition focused on learning, warm refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no other people, speech bubbles, text, symbols, logos, watermark, modern objects, punishment, pointing in anger, humiliation, injury, frightening mood, or split panels."
+    },
+    {
+      "zh": "他红着脸道了歉，把钟留在原处。从此，他不再用假装来逃避真相。",
+      "en": "He apologized and left the bell where it belonged. From then on, he stopped pretending that problems disappeared when ignored.",
+      "prompt": "Use page 1 as the sole visual reference for all character, costume, bell, mallet, courtyard, and style details; hopeful golden-evening ending in the same courtyard: the same man bows with an honest apologetic expression after returning the smooth wooden mallet neatly beside the completely intact bronze bell, while the same elderly keeper accepts the apology with a gentle nod and rests both hands on his straw broom; the bell remains safely hanging where it belongs, open gate and quiet village beyond, warm forgiving atmosphere, refined animated-film-quality 3D clay-like children's picture-book illustration, square 1:1; no text, symbols, logos, watermark, modern objects, punishment, chains, guards, humiliation, damage, frightening mood, or split panels."
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "ke-zhou-qiu-jian",
+  "title": "刻舟求剑",
+  "subtitle": "跟着船走的记号",
+  "origin": "《吕氏春秋·察今》",
+  "moral": {
+    "zh": "情况会不断变化。解决问题前要重新观察，并根据眼前的情况调整办法，不能只守着过去的记号。",
+    "en": "Circumstances keep changing. Look again and adjust your method to the situation instead of clinging to an old marker."
+  },
+  "idiomMeaning": {
+    "zh": "比喻拘泥于旧办法，不懂得随着情况的变化而改变。",
+    "en": "Literally “carving the boat to look for a sword”; it describes rigidly following an old method after the situation has changed."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-20",
+  "order": 8,
+  "pages": [
+    {
+      "zh": "从前，楚国有个人乘木船过江。他腰间挂着一把装在剑鞘里的剑。",
+      "en": "Long ago, a traveler from Chu crossed a river in a wooden boat. A sword rested safely inside the scabbard at his waist.",
+      "prompt": "Calm broad river in ancient Chu under warm clear morning light, bordered by soft green willow banks; establish both recurring characters together in full view aboard one fixed ochre-brown wooden riverboat with a gently curved bow: a thirty-year-old traveler with a round earnest face, high dark topknot, mustard-yellow cross-collar robe, burgundy sash, dark-teal trousers, and black cloth shoes, wearing a fully closed jade-green sword scabbard with a small round brass pommel securely tied at his left waist, with no blade visible; and a kind lean fifty-five-year-old boatman with a weathered face, short gray moustache, indigo headcloth, clay-brown short robe, dark trousers, and straw sandals, steering with a long wooden pole; establish the fixed boat props—a coiled dark-red rope, a low woven seat, and a small wooden-handled carving tool stored safely in a lidded tray; on the upstream bank, clearly establish a pale oval boulder beside a cluster of three tall reeds as the fixed location landmark; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, written characters, logos, watermark, modern objects, motor, metal railing, exposed blade, weapon use, rough water, danger, injury, drowning, or split panels."
+    },
+    {
+      "zh": "船经过一阵小波浪时轻轻一晃，剑连着剑鞘滑进了水里。",
+      "en": "The boat rocked gently over a small wave, and the sword—still inside its scabbard—slipped into the water.",
+      "prompt": "Use page 1 as the sole character, clothing, boat, prop, river, landmark, palette, and 3D clay-like style reference; the same boat crosses one small rounded wave and tilts only slightly as the closed jade-green sword scabbard with round brass pommel slips from the traveler’s loose sash over the low side, making a modest splash; the traveler reaches out in harmless surprise but remains seated securely, while the same boatman keeps the ochre-brown boat steady with the long wooden pole; the pale oval boulder and three reeds remain near the exact drop location on the bank; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, visible blade, weapon use, logos, watermark, modern objects, storm, capsizing, panic, falling person, danger, injury, drowning, or split panels."
+    },
+    {
+      "zh": "他没有请船夫停船，只在船舷刻了一个小记号：“剑是从这里掉下去的。”",
+      "en": "He did not ask the boatman to stop. Instead, he carved a small mark on the rail. “My sword fell from here.”",
+      "prompt": "Use page 1 as the sole visual reference and preserve the exact traveler, boatman, clothes, ochre-brown boat, long pole, red rope coil, woven seat, riverbanks, and warm 3D clay-like style; the traveler sits securely and uses the small wooden-handled carving tool close against the boat’s inner rail to scratch one simple V-shaped notch, with the tiny tool tip directed only into the wood and no blade-like object visible; he points proudly to the notch while the boatman glances back with a gently puzzled expression and continues steering; the boat has already begun moving away from the pale boulder and three reeds; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, written words, speech bubbles, logos, watermark, modern objects, exposed sword, weapon use, unsafe carving, rough water, danger, injury, or split panels."
+    },
+    {
+      "zh": "木船继续向前，船上的记号也跟着走；剑却留在原来落水的地方。",
+      "en": "The boat kept moving, carrying the mark with it, while the sword stayed where it had fallen.",
+      "prompt": "Use page 1 as the sole visual reference and keep both recurring characters, their outfits, the fixed boat and all props consistent; create one coherent wide side-view cutaway of the calm river, never a split panel: above the water, the ochre-brown boat moves gently downstream with the traveler studying the small V-shaped notch and the boatman steering; below the clear blue-green water far behind the boat, the closed jade-green scabbard rests peacefully on the sandy riverbed beside the exact pale oval boulder and three-reed landmark on the upstream bank; use subtle ripples and the long stretch of water to make the changed position unmistakable; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, arrows, diagrams, logos, watermark, modern objects, visible blade, fish danger, deep dark water, frightening underwater imagery, injury, or split panels."
+    },
+    {
+      "zh": "船靠岸后，他指着记号说：“剑就在这下面，我现在下去找。”",
+      "en": "When the boat reached shore, he pointed to the mark. “My sword is right below this spot. I will look for it now.”",
+      "prompt": "Use page 1 as the sole visual reference and preserve the exact traveler, boatman, clothing, boat, rope, pole, woven seat, and style; at a calm downstream landing with a flat sandy shore, the fixed ochre-brown boat is securely tied with its dark-red rope; the traveler kneels safely inside the boat and points confidently at the small V-shaped notch on the inner rail and then toward the shallow water below it, while the boatman stands on shore with a puzzled, cautioning expression; the original pale boulder and three reeds are barely visible far upstream; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, speech bubbles, written words, logos, watermark, modern objects, exposed blade, weapon use, rough water, unsafe leaning, danger, injury, drowning, or split panels."
+    },
+    {
+      "zh": "他从记号旁下水寻找，可找来找去，怎么也找不到那把剑。",
+      "en": "He searched the water beside the mark, but no matter how carefully he looked, the sword was nowhere to be found.",
+      "prompt": "Use page 1 as the sole visual reference and keep the traveler, boatman, outfits, fixed ochre-brown boat, red rope, and long pole exactly consistent; at the same flat downstream landing, the traveler stands only knee-deep in calm clear shallows beside the tied boat and searches gently along the sandy bottom with the long wooden pole, looking confused but never frightened; the boatman remains on stable shore, holding the boat rope and offering a steady helping hand; the small V-shaped notch is visible on the boat rail above the traveler, but no sword appears anywhere in this downstream water; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, swimming, diving, submerged head, dark deep water, exposed blade, weapon use, logos, watermark, modern objects, danger, injury, drowning, or split panels."
+    },
+    {
+      "zh": "船夫提醒他：“船已经走远了，剑却没有跟着船走，怎么会在记号下面呢？”",
+      "en": "The boatman reminded him, “The boat moved on, but the sword did not. How could it still be below the mark?”",
+      "prompt": "Use page 1 as the sole visual reference and preserve both recurring characters, exact outfits, boat, props, river, landmark, palette, and 3D clay-like style; both men are now safely on the flat shore beside the tied boat; the kind gray-moustached boatman calmly points first to the V-shaped notch on the boat rail and then far upstream toward the pale oval boulder and three tall reeds, using clear open-handed teaching gestures; the traveler follows the gesture and begins to understand, his confused expression softening into thoughtful realization; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, speech bubbles, arrows, diagrams, logos, watermark, modern objects, exposed blade, weapon use, ridicule, argument, rough water, danger, injury, or split panels."
+    },
+    {
+      "zh": "他终于明白：船会移动，情况会变化，找办法时不能只守着过去的记号。",
+      "en": "At last he understood: the boat had moved and the situation had changed. A good solution could not depend on an old mark alone.",
+      "prompt": "Use page 1 as the sole visual reference and keep the traveler, boatman, clothing, fixed boat, red rope coil, long pole, riverbanks, pale boulder, three reeds, palette, and warm 3D clay-like style exactly consistent; hopeful late-afternoon ending from a high three-quarter view: the tied boat and its small V-shaped notch rest at the downstream shore in the foreground, while the traveler thoughtfully studies the river and gestures toward the fixed pale boulder and three reeds far upstream, now clearly understanding the difference between the moving boat and the unmoving drop location; the boatman stands beside him with a supportive smile, ready to help him reconsider the search; keep the closed jade-green scabbard only as a small safe shape resting on the sandy riverbed near the upstream landmark, with no visible blade; premium polished warm animated-film-quality 3D clay-like children’s picture-book illustration, square 1:1 composition; no text, arrows, diagrams, logos, watermark, modern objects, weapon use, magical recovery, ridicule, danger, injury, drowning, or split panels."
+    }
+  ]
+}
