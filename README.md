@@ -2,6 +2,65 @@
 
 > 输入一句话，免费生成完整 8 页中英双语绘本，并可订阅每日绘本灵感。
 
+<p align="center">
+  <a href="https://storybloom.valleylmh.vip"><strong>在线体验</strong></a>
+  ·
+  <a href="https://storybloom.valleylmh.vip/library"><strong>浏览绘本馆</strong></a>
+  ·
+  <a href="docs/assets/readme/story-video-demo.mp4"><strong>观看视频示例</strong></a>
+</p>
+
+## 效果展示
+
+### 完整 8 页中英双语绘本
+
+StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双语正文和故事寓意。点击下面的图片可以进入正式阅读页。
+
+<p align="center">
+  <a href="https://storybloom.valleylmh.vip/library/xiyouji/shi-hou-chu-shi">
+    <img src="docs/assets/readme/storybook-xiyouji.jpg" alt="《石猴出世》8 页中英双语绘本" width="100%" />
+  </a>
+  <br />
+  <strong>《石猴出世》· 西游记儿童绘本</strong>
+</p>
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <a href="https://storybloom.valleylmh.vip/library/haoqi/tian-kong-wei-shen-me-shi-lan-se">
+        <img src="docs/assets/readme/storybook-science.jpg" alt="《天空为什么是蓝色的？》儿童科普绘本" />
+      </a>
+      <br />
+      <strong>《天空为什么是蓝色的？》· 儿童科普</strong>
+    </td>
+    <td width="50%" align="center">
+      <a href="https://storybloom.valleylmh.vip/library/chengyu/shou-zhu-dai-tu">
+        <img src="docs/assets/readme/storybook-idiom.jpg" alt="《守株待兔》成语绘本" />
+      </a>
+      <br />
+      <strong>《守株待兔》· 成语故事</strong>
+    </td>
+  </tr>
+</table>
+
+### 绘本视频
+
+在支持 WebCodecs 的浏览器中，StoryBloom 可以将 8 页插图、字幕和可选旁白在本地合成为 720 × 1280 竖屏视频，支持中文、English、双语和无旁白四种模式。
+
+下面的 GIF 是使用仓库公开 AI 插图制作的 README 轻量动效预览；产品内生成的视频还会包含逐页字幕和可选旁白。点击预览可打开完整 MP4。
+
+<p align="center">
+  <a href="docs/assets/readme/story-video-demo.mp4">
+    <img src="docs/assets/readme/story-video-preview.gif" alt="StoryBloom 绘本视频动态预览" width="320" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/assets/readme/story-video-demo.mp4">观看完整 MP4</a>
+  ·
+  <a href="https://storybloom.valleylmh.vip/library/xiyouji/shi-hou-chu-shi">在线生成绘本视频</a>
+</p>
+
 ## 开源说明
 
 StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生成样例，不应提交真实儿童照片、客户绘本、私聊二维码或生产密钥。部署者需要使用自己的域名、API 端点、Supabase、Resend 和图片服务凭据。
