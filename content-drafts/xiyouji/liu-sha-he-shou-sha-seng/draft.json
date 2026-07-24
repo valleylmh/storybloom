@@ -1,0 +1,56 @@
+{
+  "id": "liu-sha-he-shou-sha-seng",
+  "title": "流沙河收沙僧",
+  "subtitle": "最稳当的三师弟",
+  "origin": "《西游记》第二十二回（低龄改编）",
+  "moral": {
+    "zh": "真正可靠的伙伴，不只力气大，更愿意倾听、合作，把每一步都做稳。",
+    "en": "A dependable friend listens, works with the team, and helps everyone move forward safely."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-23",
+  "order": 9,
+  "episodeNumber": 9,
+  "pages": [
+    {
+      "zh": "师徒来到流沙河。黄沙随浪翻滚，宽宽的河面挡住了去路。",
+      "en": "The travelers reached the Flowing Sands River, where sandy waves rolled across a wide, uncrossable channel.",
+      "prompt": "Establish the full traveling group on a broad sandy riverbank. Character lock — Sun Wukong is a small lively monkey with warm golden-brown fur, a bare tan face and chest, big bright amber eyes, round ears, a short pointed hair tuft, and a long expressive tail; he wears the same golden-yellow sleeveless tunic, vermilion sash, and dark red trousers, plus one simple narrow smooth golden headband centered above his eyebrows, with no jewels, spikes, dangling pieces, helmet, crown, armor, cape, or shoes; he carries the same slender red-and-gold staff upright like a walking stick, never swung or pointed at anyone; cheerful, quick-witted, never menacing, with child-friendly rounded animated-film proportions. Character lock — Tang Monk is a gentle young monk with a smooth round face and warm brown eyes, wearing a russet-and-gold kasaya robe over cream under-robes and a five-buddha crown; calm, kind, softly smiling, with child-friendly rounded animated-film proportions. Character lock — Zhu Bajie is a sturdy round-bodied pig-faced traveler with a soft rose-tan snout, rosy cheeks, large floppy ears, big warm brown eyes, and short black hair tied in a tiny topknot; he wears a dark teal cross-collar tunic with a cream inner collar, mustard-yellow sash, loose charcoal trousers, and black cloth shoes; he carries a rounded wooden-handled nine-tooth rake like a farm tool, never raised or pointed at anyone; food-loving, playful, warmhearted, never scary, with child-friendly rounded proportions. Character lock — White Dragon Horse is a graceful compact white horse with a luminous pearl-white coat, pale sky-blue mane and tail, a small sky-blue diamond mark centered on his forehead, and large gentle teal eyes; he wears a simple russet saddle blanket and a teal-and-gold bridle with no armor, and has friendly child-safe proportions. They look across a wide river whose amber sand swirls visibly beneath blue-gray waves, puzzled but calm; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, tactile handmade textures, mythical ancient China, square 1:1 composition; no text, logos, watermark, modern objects, threatening poses, injury, fear, skulls, or split panels."
+    },
+    {
+      "zh": "水面哗啦一响，红胡子的守河人探出头：“这里水急，你们为什么来？”",
+      "en": "With a splash, a red-bearded river guardian appeared. “The current is swift. Why have you come?”",
+      "prompt": "Introduce Sha Wujing alone as a clear visual anchor at the shallow edge of the Flowing Sands River. Character lock — Sha Wujing is a tall sturdy but gentle river guardian with warm bronze skin, a round friendly face, a thick dark-red beard, a shaved head, calm dark eyes, a slate-blue monk robe, a sand-colored sash, and a necklace of large smooth dark wooden beads; he carries a broad round-edged crescent spade upright like a ceremonial walking staff, never raised or pointed at anyone; steady, patient, dependable, never frightening, with child-friendly rounded proportions. Water and amber sand curl around him in a soft spiral while he asks a cautious question, curious rather than angry; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, tactile handmade textures, mythical ancient China, square 1:1 composition; no text, speech bubbles, logos, watermark, sharp weapon edges, attack pose, injury, fear, skulls, or scary imagery."
+    },
+    {
+      "zh": "八戒急着大声解释，守河人也越说越响，浪花跟着溅得到处都是。",
+      "en": "Bajie hurried to explain, the guardian answered just as loudly, and splashes flew everywhere as both talked at once.",
+      "prompt": "Use the established traveling group and Sha Wujing anchors exactly: on the sandy bank Zhu Bajie gestures eagerly with both open hands while his rounded rake rests safely against a rock; Sha Wujing answers from ankle-deep water with his crescent spade planted upright beside him; both look animated but friendly, and harmless splashes mirror their overlapping voices. Tang Monk waits calmly with the white horse, while Sun Wukong watches thoughtfully with his red-and-gold staff resting upright; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, expressive rounded characters, square 1:1; no speech bubbles, text, logos, watermark, weapons pointed at anyone, anger, injury, fear, or split panels."
+    },
+    {
+      "zh": "悟空摆摆手：“先听完再说。我们不比力气，比谁能让大家安全过河！”",
+      "en": "Wukong raised a hand. “Let us listen first. Instead of testing strength, let us find the safest way across!”",
+      "prompt": "Use all established character anchors exactly: Sun Wukong stands between the travelers and Sha Wujing with one open palm raised in a friendly pause gesture, his slender red-and-gold staff planted vertically beside him; Tang Monk nods approvingly, Bajie lowers his hands and listens, Sha Wujing leans forward with growing interest, and the white horse waits calmly. Frame the wide sandy river behind them as the shared problem, emphasizing listening and cooperation rather than confrontation; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, tactile textures, square 1:1; no text, logos, watermark, attack pose, injury, fear, or split panels."
+    },
+    {
+      "zh": "守河人把月牙铲稳稳插在岸边固定绳索，悟空飞到对岸，八戒搬来木板。",
+      "en": "The guardian anchored a rope with his crescent spade, Wukong carried it across on a cloud, and Bajie brought sturdy planks.",
+      "prompt": "Use all established character anchors exactly in one continuous teamwork scene: Sha Wujing plants the broad round-edged crescent spade deep into firm sand as a safe rope anchor; Sun Wukong rides a small golden cloud above the river carrying the other end of the rope, his red-and-gold staff secured upright behind him; Zhu Bajie carries two light wooden planks on his shoulder with a cheerful effort, while Tang Monk steadies the waiting white horse. Show clear safe construction steps and balanced cooperation; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, square 1:1; no text, logos, watermark, dangerous tools, falling, injury, fear, or split panels."
+    },
+    {
+      "zh": "大家合力搭好木筏，把行李和白马一趟趟稳稳送过了河。",
+      "en": "Together they finished a sturdy raft and carried the luggage and white horse safely across, one careful trip at a time.",
+      "prompt": "Use all established character anchors exactly: a sturdy low wooden raft follows the guide rope across calm shallows; Sha Wujing stands balanced at the front using the crescent spade as a gentle pole, Bajie steadies stacked travel bundles, Tang Monk holds the white horse's reins reassuringly, and Sun Wukong guides the rope from a small golden cloud overhead. Everyone is calm and coordinated, with the opposite bank glowing ahead; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, tactile water and wood, square 1:1; no text, logos, watermark, rough current, falling, injury, fear, or split panels."
+    },
+    {
+      "zh": "守河人笑了：“你们肯听、肯帮忙，我也想同行。”唐僧请大家叫他沙僧。",
+      "en": "The guardian smiled. “You listen and help one another. I would like to join you.” Tang Monk welcomed him as Sha Seng.",
+      "prompt": "Use all established character anchors exactly on the far riverbank: Sha Wujing kneels respectfully with both hands joined, his crescent spade laid safely on the sand; Tang Monk welcomes him with a gentle open-hand blessing, Sun Wukong smiles beside his upright red-and-gold staff, Bajie offers a friendly hand, and the white horse stands behind them. The completed raft and guide rope remain visible as evidence of their teamwork; premium polished 3D clay-like animated-film children's picture-book illustration, warm golden light, square 1:1; no text, logos, watermark, weapons raised, injury, fear, or split panels."
+    },
+    {
+      "zh": "从此，悟空在前探路，八戒逗大家笑，沙僧稳稳挑着行李，一起向西走。",
+      "en": "From then on, Wukong scouted ahead, Bajie kept everyone smiling, and Sha Seng carried the luggage steadily as they journeyed west.",
+      "prompt": "Use the final established ensemble anchors exactly in a hopeful wide ending: Sun Wukong walks at the front with his red-and-gold staff upright and the same simple narrow smooth golden headband centered above his eyebrows; Tang Monk rides White Dragon Horse with his pale sky-blue mane and tail, forehead blue diamond, gentle teal eyes, russet saddle blanket, and teal-and-gold bridle all visible; Zhu Bajie walks alongside in his dark teal tunic, cream inner collar, mustard-yellow sash, charcoal trousers, and black cloth shoes, carrying his rounded wooden-handled nine-tooth rake over one shoulder like a farm tool; Sha Wujing follows steadily in his slate-blue monk robe and sand-colored sash, carrying two balanced travel bundles on a simple shoulder pole while his broad round-edged crescent spade is secured at his side. They leave the Flowing Sands River behind and follow a warm mountain road west beneath a glowing sky; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, square 1:1; no text, logos, watermark, threatening weapons, injury, fear, or split panels."
+    }
+  ]
+}

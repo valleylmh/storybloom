@@ -289,8 +289,20 @@ async function prepareAudioAssets({
   return prepared;
 }
 
-async function getEncodingPlan(muted: boolean) {
+type EncodingPlan = {
+  container: "mp4" | "webm";
+  videoCodec: "h264" | "vp8";
+  audioCodec: "aac" | "opus" | null;
+  extension: "mp4" | "webm";
+  mimeType: "video/mp4" | "video/webm";
+};
+
+type HardwareAcceleration = "no-preference" | "prefer-hardware" | "prefer-software";
+
+async function getEncodingPlans(muted: boolean): Promise<EncodingPlan[]> {
   const { canRenderMediaOnWeb } = await import("@remotion/web-renderer");
+  const plans: EncodingPlan[] = [];
+
   const mp4 = await canRenderMediaOnWeb({
     container: "mp4",
     videoCodec: "h264",
@@ -302,13 +314,13 @@ async function getEncodingPlan(muted: boolean) {
     audioBitrate: "high",
   });
   if (mp4.canRender) {
-    return {
-      container: "mp4" as const,
-      videoCodec: "h264" as const,
-      audioCodec: muted ? null : ("aac" as const),
-      extension: "mp4" as const,
-      mimeType: "video/mp4" as const,
-    };
+    plans.push({
+      container: "mp4",
+      videoCodec: "h264",
+      audioCodec: muted ? null : "aac",
+      extension: "mp4",
+      mimeType: "video/mp4",
+    });
   }
 
   const webm = await canRenderMediaOnWeb({
@@ -322,21 +334,96 @@ async function getEncodingPlan(muted: boolean) {
     audioBitrate: "high",
   });
   if (webm.canRender) {
-    return {
-      container: "webm" as const,
-      videoCodec: "vp8" as const,
-      audioCodec: muted ? null : ("opus" as const),
-      extension: "webm" as const,
-      mimeType: "video/webm" as const,
-    };
+    plans.push({
+      container: "webm",
+      videoCodec: "vp8",
+      audioCodec: muted ? null : "opus",
+      extension: "webm",
+      mimeType: "video/webm",
+    });
   }
 
-  const issues = [...mp4.issues, ...webm.issues]
-    .filter((issue) => issue.severity === "error")
-    .map((issue) => issue.message);
-  throw new Error(
-    issues[0] || "当前浏览器不支持本地视频导出，请使用最新版 Chrome。",
+  if (plans.length === 0) {
+    const issues = [...mp4.issues, ...webm.issues]
+      .filter((issue) => issue.severity === "error")
+      .map((issue) => issue.message);
+    throw new Error(
+      issues[0] || "当前浏览器不支持本地视频导出，请使用最新版 Chrome。",
+    );
+  }
+
+  return plans;
+}
+
+function isEncoderSupportError(error: unknown): boolean {
+  if (!(error instanceof Error)) {
+    return false;
+  }
+  if (error instanceof DOMException && error.name === "AbortError") {
+    return false;
+  }
+  const message = error.message.toLowerCase();
+  return (
+    message.includes("not supported") ||
+    message.includes("encoder") ||
+    message.includes("codec") ||
+    message.includes("configuration")
   );
+}
+
+async function runRenderMediaOnWeb({
+  plan,
+  hardwareAcceleration,
+  props,
+  totalFrames,
+  muted,
+  licenseKey,
+  signal,
+  onProgress,
+}: {
+  plan: EncodingPlan;
+  hardwareAcceleration: HardwareAcceleration;
+  props: StoryVideoCompositionProps;
+  totalFrames: number;
+  muted: boolean;
+  licenseKey: string | undefined;
+  signal: AbortSignal;
+  onProgress?: (progress: StoryVideoProgress) => void;
+}): Promise<Blob> {
+  const { renderMediaOnWeb } = await import("@remotion/web-renderer");
+  const rendered = await renderMediaOnWeb({
+    composition: {
+      id: `storybloom-${Date.now()}`,
+      component: StoryVideoComposition,
+      durationInFrames: totalFrames,
+      fps: STORY_VIDEO_FPS,
+      width: STORY_VIDEO_WIDTH,
+      height: STORY_VIDEO_HEIGHT,
+      defaultProps: props,
+    },
+    inputProps: props,
+    container: plan.container,
+    videoCodec: plan.videoCodec,
+    audioCodec: plan.audioCodec,
+    muted,
+    videoBitrate: "high",
+    audioBitrate: "high",
+    hardwareAcceleration,
+    pageResponsiveness: "high",
+    outputTarget: null,
+    signal,
+    logLevel: "warn",
+    allowHtmlInCanvas: false,
+    isProduction: process.env.NODE_ENV === "production",
+    ...(licenseKey ? { licenseKey } : {}),
+    onProgress: ({ progress }) => {
+      onProgress?.({
+        progress: 0.5 + progress * 0.5,
+        message: "正在编码视频画面",
+      });
+    },
+  });
+  return rendered.getBlob();
 }
 
 export async function renderStoryVideo({
@@ -356,7 +443,7 @@ export async function renderStoryVideo({
 }): Promise<StoryVideoRenderResult> {
   throwIfAborted(signal);
   onProgress?.({ progress: 0.02, message: "正在检查浏览器视频能力" });
-  const encodingPlan = await getEncodingPlan(narrationMode === "none");
+  const encodingPlans = await getEncodingPlans(narrationMode === "none");
   throwIfAborted(signal);
 
   const timeline = createStoryVideoTimeline({
@@ -427,51 +514,63 @@ export async function renderStoryVideo({
       narrationMode,
       scenes: renderScenes,
     };
-    const { renderMediaOnWeb } = await import("@remotion/web-renderer");
     const licenseKey = process.env.NEXT_PUBLIC_REMOTION_LICENSE_KEY?.trim();
+    const muted = narrationMode === "none";
     onProgress?.({ progress: 0.5, message: "正在渲染竖屏视频" });
-    const rendered = await renderMediaOnWeb({
-      composition: {
-        id: `storybloom-${Date.now()}`,
-        component: StoryVideoComposition,
-        durationInFrames: totalFrames,
-        fps: STORY_VIDEO_FPS,
-        width: STORY_VIDEO_WIDTH,
-        height: STORY_VIDEO_HEIGHT,
-        defaultProps: props,
-      },
-      inputProps: props,
-      container: encodingPlan.container,
-      videoCodec: encodingPlan.videoCodec,
-      audioCodec: encodingPlan.audioCodec,
-      muted: narrationMode === "none",
-      videoBitrate: "high",
-      audioBitrate: "high",
-      hardwareAcceleration: "prefer-hardware",
-      pageResponsiveness: "high",
-      outputTarget: null,
-      signal,
-      logLevel: "warn",
-      allowHtmlInCanvas: false,
-      isProduction: process.env.NODE_ENV === "production",
-      ...(licenseKey ? { licenseKey } : {}),
-      onProgress: ({ progress }) => {
-        onProgress?.({
-          progress: 0.5 + progress * 0.5,
-          message: "正在编码视频画面",
-        });
-      },
-    });
-    throwIfAborted(signal);
-    const blob = await rendered.getBlob();
-    onProgress?.({ progress: 1, message: "视频已生成" });
 
-    return {
-      blob,
-      extension: encodingPlan.extension,
-      mimeType: encodingPlan.mimeType,
-      audioAssets,
-    };
+    // Some browsers (e.g. Windows Edge) reject the hardware H.264 encoder even
+    // though canRenderMediaOnWeb reports the codec as supported, so fall back
+    // from hardware to software encoding, then to VP8/WebM as a last resort.
+    const attempts: Array<{
+      plan: EncodingPlan;
+      hardwareAcceleration: HardwareAcceleration;
+    }> = [];
+    for (const plan of encodingPlans) {
+      attempts.push({ plan, hardwareAcceleration: "prefer-hardware" });
+      attempts.push({ plan, hardwareAcceleration: "prefer-software" });
+    }
+
+    let lastError: unknown = null;
+    for (const [index, attempt] of attempts.entries()) {
+      throwIfAborted(signal);
+      try {
+        const blob = await runRenderMediaOnWeb({
+          plan: attempt.plan,
+          hardwareAcceleration: attempt.hardwareAcceleration,
+          props,
+          totalFrames,
+          muted,
+          licenseKey,
+          signal,
+          onProgress,
+        });
+        throwIfAborted(signal);
+        onProgress?.({ progress: 1, message: "视频已生成" });
+        return {
+          blob,
+          extension: attempt.plan.extension,
+          mimeType: attempt.plan.mimeType,
+          audioAssets,
+        };
+      } catch (attemptError) {
+        if (
+          attemptError instanceof DOMException &&
+          attemptError.name === "AbortError"
+        ) {
+          throw attemptError;
+        }
+        lastError = attemptError;
+        const isLastAttempt = index === attempts.length - 1;
+        if (isLastAttempt || !isEncoderSupportError(attemptError)) {
+          throw attemptError;
+        }
+        onProgress?.({ progress: 0.5, message: "正在切换视频编码方式" });
+      }
+    }
+
+    throw lastError instanceof Error
+      ? lastError
+      : new Error("视频生成失败，请稍后重试。");
   } finally {
     temporaryUrls.forEach((url) => URL.revokeObjectURL(url));
   }

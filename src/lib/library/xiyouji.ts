@@ -1,8 +1,16 @@
 import type { StoryPage } from "@/types";
 import type { LibraryBook, LibrarySeries } from "@/types/library";
+import baiLongMaDraft from "../../../content-drafts/xiyouji/bai-long-ma/draft.json";
+import daNaoTianGongDraft from "../../../content-drafts/xiyouji/da-nao-tian-gong/draft.json";
+import gaoLaoZhuangYuBaJieDraft from "../../../content-drafts/xiyouji/gao-lao-zhuang-yu-ba-jie/draft.json";
+import liuShaHeShouShaSengDraft from "../../../content-drafts/xiyouji/liu-sha-he-shou-sha-seng/draft.json";
+import longGongJieBaoDraft from "../../../content-drafts/xiyouji/long-gong-jie-bao/draft.json";
+import sanDaBaiGuJingDraft from "../../../content-drafts/xiyouji/san-da-bai-gu-jing/draft.json";
+import shiTuXiangYuDraft from "../../../content-drafts/xiyouji/shi-tu-xiang-yu/draft.json";
+import wuXingShanXiaDraft from "../../../content-drafts/xiyouji/wu-xing-shan-xia/draft.json";
 
-// 任务 B：前 2 回已完成文字审核、角色一致性检查和插图验收；后续回目继续复用
-// docs/library-prompts/xiyouji/characters.md 的系列级角色锚点与低龄改编原则。
+// 任务 B：10 回均已完成文字审核、角色一致性检查和插图验收；全系列复用
+// docs/library-prompts/xiyouji/characters.md 的角色锚点与低龄改编原则。
 
 const XIYOUJI_STYLE_LOCK =
   "premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, tactile handmade textures, expressive rounded characters, mythical ancient China setting, square 1:1 composition; no image text, letters, speech bubbles, logos, watermark, modern objects, weapons pointed at anyone, injury, blood, fear, or scary imagery.";
@@ -15,6 +23,30 @@ const MONKEY_KING_LOCK =
 
 const MASTER_PUTI_LOCK =
   "Character lock — Master Puti is a serene elderly sage with a long flowing white beard and eyebrows, hair in a high topknot, layered cream-and-sage Taoist robes with wide sleeves, and a wooden staff; kind, wise, and gently smiling.";
+
+interface XiyoujiBookDraft {
+  id: string;
+  title: string;
+  subtitle: string;
+  origin: string;
+  moral: { zh: string; en: string };
+  ageLabel: string;
+  publishedAt: string;
+  order: number;
+  episodeNumber: number;
+  pages: Array<{ zh: string; en: string; prompt: string }>;
+}
+
+const EXPANDED_XIYOUJI_DRAFTS: XiyoujiBookDraft[] = [
+  longGongJieBaoDraft,
+  daNaoTianGongDraft,
+  wuXingShanXiaDraft,
+  shiTuXiangYuDraft,
+  baiLongMaDraft,
+  gaoLaoZhuangYuBaJieDraft,
+  liuShaHeShouShaSengDraft,
+  sanDaBaiGuJingDraft,
+];
 
 const SHI_HOU_CHU_SHI_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
   {
@@ -118,6 +150,27 @@ function toStoryPages(
   }));
 }
 
+function draftToLibraryBook(
+  draft: XiyoujiBookDraft,
+  imageStatus: NonNullable<StoryPage["imageStatus"]>,
+  comingSoon: boolean,
+): LibraryBook {
+  return {
+    id: draft.id,
+    seriesId: "xiyouji",
+    title: draft.title,
+    subtitle: draft.subtitle,
+    origin: draft.origin,
+    moral: draft.moral,
+    pages: toStoryPages(draft.id, draft.pages, imageStatus),
+    ageLabel: draft.ageLabel,
+    publishedAt: draft.publishedAt,
+    order: draft.order,
+    episodeNumber: draft.episodeNumber,
+    comingSoon,
+  };
+}
+
 export const XIYOUJI_BOOKS: LibraryBook[] = [
   {
     id: "shi-hou-chu-shi",
@@ -151,6 +204,9 @@ export const XIYOUJI_BOOKS: LibraryBook[] = [
     order: 2,
     episodeNumber: 2,
   },
+  ...EXPANDED_XIYOUJI_DRAFTS.map((draft) =>
+    draftToLibraryBook(draft, "complete", false),
+  ),
 ];
 
 export const XIYOUJI_SERIES: LibrarySeries = {

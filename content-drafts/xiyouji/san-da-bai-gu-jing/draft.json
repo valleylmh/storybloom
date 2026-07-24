@@ -1,0 +1,56 @@
+{
+  "id": "san-da-bai-gu-jing",
+  "title": "三打白骨精",
+  "subtitle": "悟空三次识破变化",
+  "origin": "《西游记》第二十七回（低龄温和改编）",
+  "moral": {
+    "zh": "善良也需要观察和求证；遇到疑点时，先停下来，和可信赖的伙伴一起找证据。",
+    "en": "Kindness works best with careful observation: when something feels wrong, pause and check the clues with people you trust."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-23",
+  "order": 10,
+  "episodeNumber": 10,
+  "pages": [
+    {
+      "zh": "师徒走进白虎岭。山路安静，唐僧有些饿，悟空便去附近寻找果子。",
+      "en": "The travelers entered White Tiger Ridge. When Tang Monk grew hungry, Wukong went to look for fruit nearby.",
+      "prompt": "Establish the complete traveling ensemble on a quiet mountain forest path. Character lock — Sun Wukong is a small lively monkey with warm golden-brown fur, a bare tan face and chest, big bright amber eyes, round ears, a short pointed hair tuft, and a long expressive tail; he wears the same golden-yellow sleeveless tunic, vermilion sash, and dark red trousers, plus one simple narrow smooth golden headband centered above his eyebrows, with no jewels, spikes, dangling pieces, helmet, crown, armor, cape, or shoes; he carries the same slender red-and-gold staff upright like a walking stick, never swung or pointed at anyone; cheerful, quick-witted, never menacing, with child-friendly rounded animated-film proportions. Character lock — Tang Monk is a gentle young monk with a smooth round face and warm brown eyes, wearing a russet-and-gold kasaya robe over cream under-robes and a five-buddha crown; calm, kind, softly smiling, with child-friendly rounded animated-film proportions. Character lock — Zhu Bajie is a sturdy round-bodied pig-faced traveler with a soft rose-tan snout, rosy cheeks, large floppy ears, big warm brown eyes, and short black hair tied in a tiny topknot; he wears a dark teal cross-collar tunic with a cream inner collar, mustard-yellow sash, loose charcoal trousers, and black cloth shoes; he carries a rounded wooden-handled nine-tooth rake like a farm tool, never raised or pointed at anyone; food-loving, playful, warmhearted, never scary, with child-friendly rounded proportions. Character lock — Sha Wujing is a tall sturdy but gentle river guardian with warm bronze skin, a round friendly face, a thick dark-red beard, a shaved head, calm dark eyes, a slate-blue monk robe, a sand-colored sash, and a necklace of large smooth dark wooden beads; he carries a broad round-edged crescent spade upright like a ceremonial walking staff, never raised or pointed at anyone; steady, patient, dependable, never frightening, with child-friendly rounded proportions. Character lock — White Dragon Horse is a graceful compact white horse with a luminous pearl-white coat, pale sky-blue mane and tail, a small sky-blue diamond mark centered on his forehead, and large gentle teal eyes; he wears a simple russet saddle blanket and a teal-and-gold bridle with no armor, and has friendly child-safe proportions. Wukong points toward a nearby fruit grove before departing, while the others rest calmly under pines; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, square 1:1; no text, logos, watermark, frightening shadows, injury, skulls, bones, or split panels."
+    },
+    {
+      "zh": "山里的白骨精想骗走行李，便变成送果子的姑娘，提着篮子走来。",
+      "en": "A mountain spirit wanted to steal the luggage, so she disguised herself as a fruit seller and approached with a basket.",
+      "prompt": "Introduce the White Bone Spirit in a child-safe dual-identity visual anchor without horror: her true magical form is an elegant floating lavender cloud spirit with pearl-pale skin, silver-white hair in a high bun, expressive violet eyes, flowing lavender-and-moon-gray robes, a small crescent-shaped silver pendant, and ribbon-like mist, mischievous but never frightening, with no visible bones or skulls. Show her gently transforming into a smiling young mountain fruit seller wearing simple rose-and-cream ancient clothing while the same crescent pendant remains visible; she carries a woven basket of bright peaches on a forest path. Use a subtle translucent lavender silhouette behind the disguise to explain the magic, not a split panel; premium polished 3D clay-like animated-film children's picture-book illustration, warm light, square 1:1; no text, logos, watermark, horror, sharp teeth, skeletons, injury, or threatening pose."
+    },
+    {
+      "zh": "悟空带着果子回来，看见姑娘身后飘着淡紫色云影，便轻敲地面提醒大家。",
+      "en": "Wukong returned with fruit and noticed a faint lavender cloud-shadow behind the seller, so he tapped the ground to warn everyone.",
+      "prompt": "Use the established Wukong, Tang Monk, Bajie, Sha Wujing, white horse, and disguised spirit anchors exactly: Wukong lands with a small basket of wild fruit, his amber eyes focused on the faint lavender ribbon-mist and crescent pendant behind the smiling fruit seller; he taps the ground once with the tip of his red-and-gold staff, creating a harmless golden ripple that reveals the disguise as paper-thin magical mist. Tang Monk and the disciples look surprised but safe, while the spirit begins floating backward to escape; premium polished 3D clay-like animated-film children's picture-book illustration, warm cinematic light, square 1:1; no striking a person, text, logos, watermark, injury, fear, skeletons, bones, or split panels."
+    },
+    {
+      "zh": "白骨精又变成寻找女儿的老奶奶。悟空发现，她仍戴着同一枚月牙坠。",
+      "en": "The spirit returned as a grandmother searching for her daughter, but Wukong noticed the same crescent pendant.",
+      "prompt": "Use all established character anchors exactly: the spirit now appears as a gentle elderly mountain grandmother in muted plum-and-gray robes with a walking basket, but the identical crescent-shaped silver pendant and a faint lavender mist curl remain visible as deliberate magical clues. Sun Wukong stands calmly between her and the resting group, pointing to the pendant with an open hand while his red-and-gold staff stays planted upright; Tang Monk listens thoughtfully, Bajie scratches his head, and Sha Wujing watches the clue. Keep the grandmother disguise friendly and ordinary, with the magic clue—not age—showing the deception; premium polished 3D clay-like animated-film children's picture-book illustration, warm forest light, square 1:1; no text, logos, watermark, attack, injury, horror, skulls, bones, or split panels."
+    },
+    {
+      "zh": "她把村子指向悬崖。悟空第二次轻敲地面，淡紫云影一晃，又逃走了。",
+      "en": "She pointed toward a cliff instead of the village. Wukong tapped the ground a second time, and the lavender shadow slipped away again.",
+      "prompt": "Use all established character anchors exactly: the grandmother disguise nervously points toward an obvious empty cliffside instead of the distant safe village roofs; Sun Wukong notices the contradiction and taps the ground a second time with the tip of his red-and-gold staff, creating a harmless low golden ripple. Her crescent pendant glints and lavender mist unravels around her feet as she escapes upward like a soft ribbon-cloud, never being struck. Tang Monk, Bajie, and Sha Wujing follow the conflicting directions with their eyes and start to understand; the white horse stands calmly nearby. Premium polished 3D clay-like animated-film children's picture-book illustration, warm daylight, square 1:1; no text, arrows, logos, watermark, attack, injury, fear, skeletons, bones, or split panels."
+    },
+    {
+      "zh": "第三次，她变成白胡子老爷爷。八戒和沙僧也认出了月牙坠和紫色云影。",
+      "en": "A third time she returned as a white-bearded grandfather, but Bajie and Sha Seng recognized the pendant and lavender mist too.",
+      "prompt": "Use all established character anchors exactly: the spirit appears as a kindly white-bearded mountain grandfather in moss-green and brown robes, yet the same crescent-shaped silver pendant hangs at his collar and the same lavender ribbon-mist curls behind him. Zhu Bajie points gently at the pendant with a surprised expression, Sha Wujing indicates the mist with an open palm, Sun Wukong nods, and Tang Monk studies the matching clues. The scene is a cooperative observation puzzle, not an accusation of an ordinary elder; premium polished 3D clay-like animated-film children's picture-book illustration, warm forest light, square 1:1; no text, logos, watermark, attack, injury, horror, skulls, bones, or split panels."
+    },
+    {
+      "zh": "悟空第三次轻敲地面，金光围成圆圈。白骨精现出云灵模样，只好承认了恶作剧。",
+      "en": "Wukong tapped the ground a third time, forming a golden circle. The spirit revealed her cloud form and admitted the trick.",
+      "prompt": "Use all established character anchors exactly: Sun Wukong taps the forest floor with his red-and-gold staff, producing a low harmless ring of warm golden light around the White Bone Spirit's elegant true cloud form—pearl-pale skin, silver-white high bun, violet eyes, flowing lavender-and-moon-gray robes, crescent pendant, and ribbon-mist. She floats safely inside the light with an embarrassed, apologetic expression and open empty hands; Tang Monk, Bajie, Sha Wujing, and the white horse stand together outside the circle, calm and relieved. The golden ring is a boundary of light, not a weapon or cage; premium polished 3D clay-like animated-film children's picture-book illustration, square 1:1; no text, logos, watermark, injury, pain, horror, skulls, bones, or split panels."
+    },
+    {
+      "zh": "白骨精答应不再骗人，化成云朵飞走。唐僧说：“善良，也要带着观察。”",
+      "en": "The spirit promised to stop tricking travelers and drifted away as a cloud. Tang Monk said, “Kindness also needs careful eyes.”",
+      "prompt": "Use all established ensemble anchors exactly in a warm ending: the White Bone Spirit has transformed into a small peaceful lavender cloud that waves farewell above the trees, with the crescent pendant briefly sparkling before vanishing; Tang Monk speaks gently to the group with one hand over his heart, Sun Wukong lowers his staff and smiles, Bajie and Sha Wujing nod, and the graceful white horse waits beside the luggage. They resume their westward path together through golden forest light, showing restored trust and shared judgment; premium polished 3D clay-like animated-film children's picture-book illustration, square 1:1; no visible words, speech bubbles, logos, watermark, weapons raised, injury, fear, skulls, bones, or split panels."
+    }
+  ]
+}

@@ -26,6 +26,18 @@ const CHENGYU_BOOK_IDS = [
   "yan-er-dao-ling",
   "dui-niu-tan-qin",
 ];
+const XIYOUJI_BOOK_IDS = [
+  "shi-hou-chu-shi",
+  "bai-shi-xue-yi",
+  "long-gong-jie-bao",
+  "da-nao-tian-gong",
+  "wu-xing-shan-xia",
+  "shi-tu-xiang-yu",
+  "bai-long-ma",
+  "gao-lao-zhuang-yu-ba-jie",
+  "liu-sha-he-shou-sha-seng",
+  "san-da-bai-gu-jing",
+];
 const MAX_LIBRARY_IMAGE_SIZE_BYTES = 300 * 1024;
 
 describe("library access functions", () => {
@@ -186,44 +198,84 @@ describe("library access functions", () => {
 });
 
 describe("xiyouji and haoqi published series (tasks B/C)", () => {
-  it("registers both series with two published books and complete images", () => {
-    for (const seriesId of ["xiyouji", "haoqi"]) {
-      const series = getSeries(seriesId);
-      expect(series, seriesId).not.toBeNull();
-      expect(series?.bookCount).toBe(2);
-      expect(getPublishedBookCount(seriesId)).toBe(2);
-      expect(getSeriesBooks(seriesId).length).toBeGreaterThan(0);
-      for (const book of getSeriesBooks(seriesId)) {
-        expect(book.comingSoon, `${seriesId}/${book.id}`).not.toBe(true);
-        expect(book.pages).toHaveLength(8);
-        for (const page of book.pages) {
-          expect(page.zhText).toBeTruthy();
-          expect(page.enText).toBeTruthy();
-          expect(page.illustrationPrompt).toBeTruthy();
-          expect(page.imageUrl).toMatch(new RegExp(`/library/${seriesId}/`));
-          expect(page.imageStatus).toBe("complete");
+  it("publishes all ten xiyouji books with complete optimized images", () => {
+    const books = getSeriesBooks("xiyouji");
+    expect(books).toHaveLength(XIYOUJI_BOOK_IDS.length);
+    expect(getSeries("xiyouji")?.bookCount).toBe(XIYOUJI_BOOK_IDS.length);
+    expect(getPublishedBookCount("xiyouji")).toBe(XIYOUJI_BOOK_IDS.length);
+    expect(getPublishedBooks("xiyouji").map((book) => book.id)).toEqual(
+      XIYOUJI_BOOK_IDS,
+    );
+
+    let verifiedImageCount = 0;
+
+    for (const [index, book] of books.entries()) {
+      expect(book.id).toBe(XIYOUJI_BOOK_IDS[index]);
+      expect(book.episodeNumber).toBe(index + 1);
+      expect(book.comingSoon).not.toBe(true);
+      expect(book.pages).toHaveLength(8);
+      expect(book.pages.every((page) => page.imageStatus === "complete")).toBe(
+        true,
+      );
+
+      for (const page of book.pages) {
+        const imageUrl = page.imageUrl;
+
+        expect(page.zhText).toBeTruthy();
+        expect(page.enText).toBeTruthy();
+        expect(page.illustrationPrompt).toBeTruthy();
+        expect(imageUrl).toBe(
+          `/library/xiyouji/${book.id}/${page.page}.webp`,
+        );
+        if (!imageUrl) {
+          continue;
         }
+
+        const imagePath = join(process.cwd(), "public", imageUrl);
+        const imageExists = existsSync(imagePath);
+
+        expect(imageExists, `${imagePath} should exist`).toBe(true);
+        if (!imageExists) {
+          continue;
+        }
+
+        const imageStats = statSync(imagePath);
+        expect(imageStats.isFile(), `${imagePath} should be a file`).toBe(true);
+        expect(imageStats.size, `${imagePath} should not be empty`).toBeGreaterThan(
+          0,
+        );
+        expect(
+          imageStats.size,
+          `${imagePath} should not exceed 300KB`,
+        ).toBeLessThanOrEqual(MAX_LIBRARY_IMAGE_SIZE_BYTES);
+        verifiedImageCount += 1;
       }
     }
+
+    expect(verifiedImageCount).toBe(XIYOUJI_BOOK_IDS.length * 8);
   });
 
-  it("numbers xiyouji episodes and sets haoqi questions", () => {
-    for (const [index, book] of getSeriesBooks("xiyouji").entries()) {
-      expect(book.episodeNumber).toBe(index + 1);
-    }
-    for (const book of getSeriesBooks("haoqi")) {
+  it("keeps both haoqi books published with complete images", () => {
+    const books = getSeriesBooks("haoqi");
+    expect(books).toHaveLength(2);
+    expect(getSeries("haoqi")?.bookCount).toBe(2);
+    expect(getPublishedBookCount("haoqi")).toBe(2);
+    for (const book of books) {
+      expect(book.comingSoon).not.toBe(true);
       expect(book.question).toMatch(/？$/);
+      expect(book.pages).toHaveLength(8);
+      expect(book.pages.every((page) => page.imageStatus === "complete")).toBe(true);
     }
   });
 
-  it("includes the four published book routes in the sitemap", () => {
+  it("includes every published xiyouji and haoqi route in the sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
-    expect(
-      urls.some((url) => url.endsWith("/library/xiyouji/shi-hou-chu-shi")),
-    ).toBe(true);
-    expect(
-      urls.some((url) => url.endsWith("/library/xiyouji/bai-shi-xue-yi")),
-    ).toBe(true);
+    const xiyoujiUrls = urls.filter((url) => url.includes("/library/xiyouji/"));
+    const xiyoujiUrlPrefix = xiyoujiUrls[0]?.replace(/\/[^/]+$/, "/") ?? "";
+
+    expect(xiyoujiUrls).toEqual(
+      XIYOUJI_BOOK_IDS.map((bookId) => `${xiyoujiUrlPrefix}${bookId}`),
+    );
     expect(
       urls.some((url) => url.endsWith("/library/haoqi/tian-kong-wei-shen-me-shi-lan-se")),
     ).toBe(true);

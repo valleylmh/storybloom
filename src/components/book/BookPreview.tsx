@@ -1639,7 +1639,7 @@ export default function BookPreview({
           {isSamplePreview
             ? "精选绘本 · 等待时先读一本"
             : isCustomPreview
-              ? "真实定制案例 · 12 页成品"
+              ? `${result.freeChanceLabel} · ${result.totalPages} 页成品`
             : hasDemoImages
               ? "本地演示图 · 仅用于流程验收"
               : result.freeChanceLabel}
@@ -1649,7 +1649,7 @@ export default function BookPreview({
           {isSamplePreview
             ? "这是一本文字和插图都已准备好的精选绘本，可以在等待专属绘本时先读。"
             : isCustomPreview
-              ? "这是一套已完成的定制绘本案例，可以查看成品节奏、画面一致性，也可以生成分享长图。"
+              ? "这是一套已完成的绘本案例，可以查看成品节奏、画面一致性，也可以生成分享长图。"
             : `这次已经生成完整 ${result.totalPages} 页内容。${
                 allImagesReady
                   ? " 可以直接朗读、预览，或生成一张适合分享的 PNG 长图。"
