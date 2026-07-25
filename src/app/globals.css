@@ -625,9 +625,15 @@ body {
   text-align: left;
 }
 
+.minimal-library-card {
+  width: min(790px, 100%);
+  margin: 32px auto 0;
+  box-shadow: 0 10px 30px rgba(88, 58, 36, 0.05);
+}
+
 .minimal-history-panel {
-  width: min(820px, 100%);
-  margin: 0 auto 70px;
+  width: min(790px, 100%);
+  margin: 48px auto 70px;
   border: 0;
   background: transparent;
   box-shadow: none;

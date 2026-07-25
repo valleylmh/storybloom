@@ -789,7 +789,7 @@ export default function Home() {
     FREE_GENERATION_DAILY_LIMIT - localFreeUsage
   );
   const libraryEntryCard = (
-    <Link href="/library" className="library-entry-card">
+    <Link href="/library" className={`library-entry-card ${entryMode === "minimal" ? "minimal-library-card" : ""}`}>
       <span className="library-entry-copy">
         <h3>
           {locale === "zh"
