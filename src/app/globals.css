@@ -5273,6 +5273,119 @@ img {
   margin-bottom: 0;
 }
 
+/* 绘本馆首页：让分类标题和封面成为主视觉，收起解释性内容。 */
+.library-index-page {
+  width: min(1180px, calc(100% - 48px));
+  padding: 20px 0 72px;
+}
+
+.library-index-page .library-topbar {
+  margin-bottom: 36px;
+}
+
+.library-index-page .library-hero {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.library-index-page .library-hero h1 {
+  margin-bottom: 12px;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+}
+
+.library-index-page .library-lead {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.library-index-page .library-catalog {
+  gap: 48px;
+}
+
+.library-index-page .library-series-section-header {
+  align-items: baseline;
+  margin-bottom: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.library-index-page .library-series-section-header h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 2.8vw, 2.15rem);
+  letter-spacing: -0.035em;
+}
+
+.library-index-page .library-series-count {
+  padding-top: 0;
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.library-index-page .library-book-grid {
+  grid-template-columns: repeat(auto-fill, minmax(172px, 1fr));
+  gap: 26px 18px;
+}
+
+.library-index-page .library-book-card {
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.library-index-page a.library-book-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.library-index-page .library-book-cover {
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  box-shadow: 0 12px 24px rgba(111, 74, 46, 0.12);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.library-index-page a.library-book-card:hover .library-book-cover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 32px rgba(111, 74, 46, 0.18);
+}
+
+.library-index-page .library-book-card h3 {
+  margin: 10px 2px 0;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.library-index-page .library-book-subtitle,
+.library-index-page .library-book-meaning {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.library-index-page .library-book-subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.78rem;
+}
+
+.library-index-page .library-book-meaning {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.76rem;
+}
+
+.library-index-page .library-book-open {
+  display: none;
+}
+
 .library-series-card {
   display: flex;
   flex-direction: column;
@@ -5651,6 +5764,32 @@ a.library-book-card:hover {
 @media (max-width: 580px) {
   .library-page {
     width: calc(100% - 28px);
+  }
+
+  .library-index-page {
+    width: calc(100% - 28px);
+    padding-top: 16px;
+  }
+
+  .library-index-page .library-topbar {
+    margin-bottom: 28px;
+  }
+
+  .library-index-page .library-hero {
+    margin-bottom: 36px;
+  }
+
+  .library-index-page .library-hero h1 {
+    font-size: clamp(2.4rem, 13vw, 3.7rem);
+  }
+
+  .library-index-page .library-series-section-header {
+    margin-bottom: 16px;
+  }
+
+  .library-index-page .library-book-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 12px;
   }
 
   .library-pages {

@@ -40,7 +40,7 @@ export default function LibraryPage() {
   const upcoming = getUpcomingSeries();
 
   return (
-    <main className="library-page">
+    <main className="library-page library-index-page">
       <nav className="library-topbar" aria-label="页面导航">
         <Link href="/" className="library-back">
           ← 返回首页
@@ -50,11 +50,7 @@ export default function LibraryPage() {
       <header className="library-hero">
         <p className="library-kicker">STORYBLOOM 绘本馆</p>
         <h1>经典故事，讲给孩子听</h1>
-        <p className="library-lead">
-          {HAS_PUBLISHED_BOOKS
-            ? "成语故事、经典名著、科学问答——每本都是 8 页中英双语绘本，用孩子听得懂的语言温柔改编，免费在线阅读。"
-            : "成语故事、经典名著、科学问答——首批 8 页中英双语绘本正在认真打磨，先来看看即将上线的系列。"}
-        </p>
+        <p className="library-lead">中英双语绘本，打开就读。</p>
       </header>
 
       <section className="library-catalog" aria-label="按分类浏览绘本">
@@ -70,19 +66,8 @@ export default function LibraryPage() {
             >
               <header
                 className="library-series-section-header"
-                style={{ borderTopColor: item.accent }}
               >
-                <div>
-                  <span
-                    className="library-series-badge"
-                    style={{ backgroundColor: item.accent }}
-                  >
-                    {item.ageRange}
-                  </span>
-                  <h2 id={`library-series-${item.id}`}>{item.title}</h2>
-                  <p className="library-series-subtitle">{item.subtitle}</p>
-                  <p className="library-series-description">{item.description}</p>
-                </div>
+                <h2 id={`library-series-${item.id}`}>{item.title}</h2>
                 <span className="library-series-count">
                   {publishedCount > 0 ? `${publishedCount} 本可读` : "即将上新"}
                 </span>
@@ -108,19 +93,8 @@ export default function LibraryPage() {
           >
             <header
               className="library-series-section-header"
-              style={{ borderTopColor: item.accent }}
             >
-              <div>
-                <span
-                  className="library-series-badge"
-                  style={{ backgroundColor: item.accent }}
-                >
-                  筹备中
-                </span>
-                <h2 id={`library-series-${item.id}`}>{item.title}</h2>
-                <p className="library-series-subtitle">{item.subtitle}</p>
-                <p className="library-series-description">{item.description}</p>
-              </div>
+              <h2 id={`library-series-${item.id}`}>{item.title}</h2>
               <span className="library-series-count">敬请期待</span>
             </header>
           </section>
