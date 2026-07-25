@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import LibraryBookReader from "@/components/library/LibraryBookReader";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
 import {
   getAdjacentBooks,
@@ -157,38 +158,47 @@ export default async function LibraryBookPage({
         </section>
       ) : null}
 
-      <section className="pages-grid library-pages" aria-label="绘本正文">
-        {book.pages.map((page) => (
-          <article
-            key={page.page}
-            className="page-card"
-            aria-label={`第 ${page.page} 页`}
-          >
-            <div className="page-image-frame">
-              {page.imageUrl && page.imageStatus === "complete" ? (
-                <img
-                  src={page.imageUrl}
-                  alt={`${book.title} 第 ${page.page} 页插图`}
-                  className="page-image"
-                  loading={page.page > 2 ? "lazy" : undefined}
-                />
-              ) : (
-                <div
-                  className="library-page-fallback"
-                  style={{ backgroundColor: `${series.accent}18`, color: series.accent }}
-                  aria-hidden="true"
-                >
-                  <span>{page.page}</span>
-                </div>
-              )}
-            </div>
-            <div className="page-copy">
-              <p className="page-zh">{page.zhText}</p>
-              <p className="page-en">{page.enText}</p>
-            </div>
-          </article>
-        ))}
-      </section>
+      <LibraryBookReader
+        title={book.title}
+        pages={book.pages}
+        accent={series.accent}
+      />
+
+      {/* 无 JS / 搜索引擎兜底：完整正文仍以平铺形式输出 */}
+      <noscript>
+        <section className="pages-grid library-pages" aria-label="绘本正文">
+          {book.pages.map((page) => (
+            <article
+              key={page.page}
+              className="page-card"
+              aria-label={`第 ${page.page} 页`}
+            >
+              <div className="page-image-frame">
+                {page.imageUrl && page.imageStatus === "complete" ? (
+                  <img
+                    src={page.imageUrl}
+                    alt={`${book.title} 第 ${page.page} 页插图`}
+                    className="page-image"
+                    loading={page.page > 2 ? "lazy" : undefined}
+                  />
+                ) : (
+                  <div
+                    className="library-page-fallback"
+                    style={{ backgroundColor: `${series.accent}18`, color: series.accent }}
+                    aria-hidden="true"
+                  >
+                    <span>{page.page}</span>
+                  </div>
+                )}
+              </div>
+              <div className="page-copy">
+                <p className="page-zh">{page.zhText}</p>
+                <p className="page-en">{page.enText}</p>
+              </div>
+            </article>
+          ))}
+        </section>
+      </noscript>
 
       {book.moral ? (
         <section className="library-moral" aria-label="寓意">
@@ -199,7 +209,6 @@ export default async function LibraryBookPage({
 
       <LibraryBookTools
         title={book.title}
-        description={book.moral?.zh || book.subtitle}
         pages={book.pages}
         shareUrl={toAbsoluteAppUrl(`/library/${series.id}/${book.id}`)}
       />

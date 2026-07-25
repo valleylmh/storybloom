@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import LibraryBookCard from "@/components/library/LibraryBookCard";
 import { getAllSeries, getSeries, getSeriesBooks } from "@/lib/library";
 
 type Params = { seriesId: string };
@@ -64,60 +65,9 @@ export default async function LibrarySeriesPage({
       </header>
 
       <section className="library-book-grid" aria-label={`${series.title}书目`}>
-        {books.map((book) => {
-          const coverPage = book.pages[0];
-          // 草稿书的 imageUrl 先于图片文件存在；只有已完成的图才能当封面
-          const cover =
-            coverPage?.imageStatus === "complete" ? coverPage.imageUrl : null;
-          const card = (
-            <>
-              <div
-                className="library-book-cover"
-                style={{ backgroundColor: `${series.accent}22` }}
-              >
-                {cover ? (
-                  <img src={cover} alt={`${book.title}封面`} loading="lazy" />
-                ) : (
-                  <span
-                    className="library-book-cover-fallback"
-                    style={{ color: series.accent }}
-                  >
-                    {book.title.slice(0, 4)}
-                  </span>
-                )}
-                {book.comingSoon ? (
-                  <span className="library-book-soon">即将上线</span>
-                ) : null}
-              </div>
-              <h2>
-                {book.episodeNumber ? `第 ${book.episodeNumber} 回 · ` : ""}
-                {book.title}
-              </h2>
-              <p className="library-book-subtitle">{book.subtitle}</p>
-              {book.idiomMeaning ? (
-                <p className="library-book-meaning">{book.idiomMeaning.zh}</p>
-              ) : null}
-            </>
-          );
-
-          return book.comingSoon ? (
-            <div
-              key={book.id}
-              className="library-book-card library-book-card-soon"
-              aria-disabled="true"
-            >
-              {card}
-            </div>
-          ) : (
-            <Link
-              key={book.id}
-              href={`/library/${series.id}/${book.id}`}
-              className="library-book-card"
-            >
-              {card}
-            </Link>
-          );
-        })}
+        {books.map((book) => (
+          <LibraryBookCard key={book.id} series={series} book={book} />
+        ))}
         {books.length === 0 ? (
           <p className="library-empty">本系列正在筹备中，敬请期待。</p>
         ) : null}

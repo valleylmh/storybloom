@@ -1,10 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { createPortal } from "react-dom";
 import {
-  Check,
-  CopySimple,
   DownloadSimple,
   ImagesSquare,
   ShareNetwork,
@@ -12,12 +9,25 @@ import {
 } from "@phosphor-icons/react";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import ShareLinkPanel from "@/components/book/ShareLinkPanel";
+import SocialShareDialog, {
+  type SocialSharePreviewPage,
+} from "@/components/book/SocialShareDialog";
 import StoryVideoPanel from "@/components/video/StoryVideoPanel";
 import {
   getBrowserNarrationSegments,
   pickBrowserVoice,
 } from "@/lib/browser-narration";
 import { createZipBlob } from "@/lib/client-zip";
+import {
+  createBilingualStoryText,
+  createImage,
+  createSocialShareFiles,
+  downloadBlob,
+  drawWrappedText,
+  roundedRect,
+  sanitizeFileName,
+  wrapText,
+} from "@/lib/social-share";
 import type {
   GenerateResponse,
   SampleImageAssets,
@@ -146,175 +156,6 @@ function getTimedOutImageError(useFreeFallback: boolean) {
     : "插图生成超过 3 分钟，已切换免费生图模型重试。";
 }
 
-type CanvasImage = HTMLImageElement & {
-  cleanupObjectUrl?: () => void;
-};
-
-type SocialSharePreviewPage = {
-  page: number;
-  imageUrl: string;
-};
-
-async function createImage(src: string) {
-  let imageSrc = src;
-  let objectUrl: string | null = null;
-
-  if (!src.startsWith("data:")) {
-    const response = await fetch(src, { mode: "cors" });
-    if (!response.ok) {
-      throw new Error(`图片加载失败，无法生成分享图：HTTP ${response.status}`);
-    }
-
-    objectUrl = URL.createObjectURL(await response.blob());
-    imageSrc = objectUrl;
-  }
-
-  return new Promise<CanvasImage>((resolve, reject) => {
-    const image = new Image();
-    const timeout = window.setTimeout(() => {
-      if (objectUrl) {
-        URL.revokeObjectURL(objectUrl);
-      }
-      reject(new Error("图片加载超时，无法生成分享图。"));
-    }, 45_000);
-
-    image.onload = () => {
-      window.clearTimeout(timeout);
-      if (objectUrl) {
-        (image as CanvasImage).cleanupObjectUrl = () =>
-          URL.revokeObjectURL(objectUrl);
-      }
-      resolve(image);
-    };
-    image.onerror = () => {
-      window.clearTimeout(timeout);
-      if (objectUrl) {
-        URL.revokeObjectURL(objectUrl);
-      }
-      reject(new Error("图片加载失败，无法生成分享图。"));
-    };
-    image.src = imageSrc;
-  });
-}
-
-function roundedRect(
-  ctx: CanvasRenderingContext2D,
-  x: number,
-  y: number,
-  width: number,
-  height: number,
-  radius: number,
-) {
-  ctx.beginPath();
-  ctx.moveTo(x + radius, y);
-  ctx.arcTo(x + width, y, x + width, y + height, radius);
-  ctx.arcTo(x + width, y + height, x, y + height, radius);
-  ctx.arcTo(x, y + height, x, y, radius);
-  ctx.arcTo(x, y, x + width, y, radius);
-  ctx.closePath();
-}
-
-function wrapText(
-  ctx: CanvasRenderingContext2D,
-  text: string,
-  maxWidth: number,
-) {
-  const lines: string[] = [];
-  let current = "";
-
-  for (const character of Array.from(text)) {
-    const next = current + character;
-    if (ctx.measureText(next).width > maxWidth && current) {
-      lines.push(current.trimEnd());
-      current = character.trimStart();
-    } else {
-      current = next;
-    }
-  }
-
-  if (current.trim()) {
-    lines.push(current.trim());
-  }
-
-  return lines;
-}
-
-function wrapWords(
-  ctx: CanvasRenderingContext2D,
-  text: string,
-  maxWidth: number,
-) {
-  const lines: string[] = [];
-  let current = "";
-
-  for (const word of text.trim().split(/\s+/).filter(Boolean)) {
-    const next = current ? `${current} ${word}` : word;
-    if (ctx.measureText(next).width > maxWidth && current) {
-      lines.push(current);
-      current = word;
-    } else {
-      current = next;
-    }
-  }
-
-  if (current) {
-    lines.push(current);
-  }
-
-  return lines;
-}
-
-function drawWrappedText(
-  ctx: CanvasRenderingContext2D,
-  lines: string[],
-  x: number,
-  y: number,
-  lineHeight: number,
-  maxLines?: number,
-) {
-  const visibleLines =
-    typeof maxLines === "number" ? lines.slice(0, maxLines) : lines;
-  visibleLines.forEach((line, index) => {
-    const suffix =
-      maxLines && index === maxLines - 1 && lines.length > maxLines
-        ? "..."
-        : "";
-    ctx.fillText(`${line}${suffix}`, x, y + index * lineHeight);
-  });
-
-  return y + visibleLines.length * lineHeight;
-}
-
-function canvasToPngBlob(canvas: HTMLCanvasElement) {
-  return new Promise<Blob>((resolve, reject) => {
-    canvas.toBlob((blob) => {
-      if (blob) {
-        resolve(blob);
-      } else {
-        reject(new Error("社交分享图片生成失败。"));
-      }
-    }, "image/png");
-  });
-}
-
-function drawImageCover(
-  ctx: CanvasRenderingContext2D,
-  image: CanvasImage,
-  width: number,
-  height: number,
-) {
-  const scale = Math.max(width / image.naturalWidth, height / image.naturalHeight);
-  const drawWidth = image.naturalWidth * scale;
-  const drawHeight = image.naturalHeight * scale;
-  ctx.drawImage(
-    image,
-    (width - drawWidth) / 2,
-    (height - drawHeight) / 2,
-    drawWidth,
-    drawHeight,
-  );
-}
-
 function getSingleLineText(
   ctx: CanvasRenderingContext2D,
   text: string,
@@ -338,78 +179,6 @@ function getSingleLineText(
   }
 
   return `${characters.slice(0, low).join("")}…`;
-}
-
-function sanitizeFileName(value: string) {
-  return value.replace(/[\\/:*?"<>|]/g, "-").replace(/\s+/g, "-").slice(0, 48);
-}
-
-function createBilingualStoryText(title: string, pages: StoryPage[]) {
-  return [
-    title,
-    "",
-    ...pages.map(
-      (page) =>
-        `Page ${page.page}\n中文：${page.zhText || ""}\nEnglish: ${page.enText || ""}`,
-    ),
-  ].join("\n\n");
-}
-
-function copyTextWithSelection(text: string) {
-  const activeElement =
-    document.activeElement instanceof HTMLElement
-      ? document.activeElement
-      : null;
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "");
-  textarea.style.position = "fixed";
-  textarea.style.inset = "0 auto auto -9999px";
-  document.body.appendChild(textarea);
-  try {
-    textarea.focus();
-    textarea.select();
-    textarea.setSelectionRange(0, textarea.value.length);
-    return document.execCommand("copy");
-  } finally {
-    textarea.remove();
-    if (activeElement?.isConnected) {
-      activeElement.focus();
-    }
-  }
-}
-
-async function copyTextToClipboard(text: string) {
-  try {
-    if (navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(text);
-      return;
-    }
-  } catch {
-    // Embedded browsers may deny clipboard permission; use selection fallback.
-  }
-
-  try {
-    if (copyTextWithSelection(text)) {
-      return;
-    }
-  } catch {
-    // Use the same actionable message for unsupported legacy copy paths.
-  }
-
-  throw new Error("当前浏览器无法自动复制，请手动选择文本复制。");
-}
-
-function downloadBlob(blob: Blob, fileName: string) {
-  const objectUrl = URL.createObjectURL(blob);
-  const link = document.createElement("a");
-  link.href = objectUrl;
-  link.download = fileName;
-  link.rel = "noopener";
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  window.setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
 }
 
 export default function BookPreview({
@@ -449,10 +218,6 @@ export default function BookPreview({
   const [socialSharePreviewPages, setSocialSharePreviewPages] = useState<
     SocialSharePreviewPage[]
   >([]);
-  const [socialShareTextCopied, setSocialShareTextCopied] = useState(false);
-  const [socialShareCopyError, setSocialShareCopyError] = useState<
-    string | null
-  >(null);
   const [retryingPages, setRetryingPages] = useState<number[]>([]);
   const [activeImageActionsPage, setActiveImageActionsPage] = useState<
     number | null
@@ -476,9 +241,6 @@ export default function BookPreview({
   const socialShareFilesRef = useRef<File[] | null>(null);
   const socialSharePreviewUrlsRef = useRef<string[]>([]);
   const socialShareSourceKeyRef = useRef("");
-  const socialShareDialogRef = useRef<HTMLDivElement>(null);
-  const socialShareCloseButtonRef = useRef<HTMLButtonElement>(null);
-  const socialShareReturnFocusRef = useRef<HTMLElement | null>(null);
   const isSamplePreview = variant === "sample";
   const isCustomPreview = variant === "custom";
   const canRegenerateImages = !isSamplePreview && !isCustomPreview;
@@ -508,8 +270,6 @@ export default function BookPreview({
     socialShareFilesRef.current = null;
     socialShareSourceKeyRef.current = "";
     setSocialSharePreviewPages([]);
-    setSocialShareTextCopied(false);
-    setSocialShareCopyError(null);
     setSocialShareDialogOpen(false);
   }
 
@@ -835,67 +595,6 @@ export default function BookPreview({
     };
   }, [shareDialogOpen]);
 
-  useEffect(() => {
-    if (!socialShareDialogOpen) {
-      return;
-    }
-
-    socialShareReturnFocusRef.current =
-      document.activeElement instanceof HTMLElement
-        ? document.activeElement
-        : null;
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    const focusFrame = window.requestAnimationFrame(() => {
-      socialShareCloseButtonRef.current?.focus();
-    });
-
-    function handleSocialShareDialogKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        event.preventDefault();
-        setSocialShareDialogOpen(false);
-        return;
-      }
-
-      if (event.key !== "Tab" || !socialShareDialogRef.current) {
-        return;
-      }
-
-      const focusableElements = Array.from(
-        socialShareDialogRef.current.querySelectorAll<HTMLElement>(
-          'button:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
-        ),
-      );
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-      if (!firstElement || !lastElement) {
-        return;
-      }
-
-      if (event.shiftKey && document.activeElement === firstElement) {
-        event.preventDefault();
-        lastElement.focus();
-      } else if (!event.shiftKey && document.activeElement === lastElement) {
-        event.preventDefault();
-        firstElement.focus();
-      } else if (!socialShareDialogRef.current.contains(document.activeElement)) {
-        event.preventDefault();
-        firstElement.focus();
-      }
-    }
-
-    window.addEventListener("keydown", handleSocialShareDialogKeyDown);
-    return () => {
-      window.cancelAnimationFrame(focusFrame);
-      window.removeEventListener("keydown", handleSocialShareDialogKeyDown);
-      document.body.style.overflow = previousOverflow;
-      if (socialShareReturnFocusRef.current?.isConnected) {
-        socialShareReturnFocusRef.current.focus();
-      }
-      socialShareReturnFocusRef.current = null;
-    };
-  }, [socialShareDialogOpen]);
-
   function handleDownloadShareImage() {
     if (!shareImageUrl) {
       return;
@@ -910,112 +609,6 @@ export default function BookPreview({
     link.remove();
   }
 
-  async function createSocialShareFiles() {
-    if (!allImagesReady) {
-      throw new Error("还有页面缺少插图，暂时无法生成社交分享包。");
-    }
-
-    const loadedImages = await Promise.all(
-      pages.map((page) => (page.imageUrl ? createImage(page.imageUrl) : null)),
-    );
-
-    try {
-      const files: File[] = [];
-      const width = 1080;
-      const height = 1440;
-      const textX = 72;
-      const textMaxWidth = width - textX * 2;
-
-      for (const [index, page] of pages.entries()) {
-        const image = loadedImages[index];
-        if (!image) {
-          continue;
-        }
-
-        const canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) {
-          throw new Error("当前浏览器不支持 Canvas。");
-        }
-
-        drawImageCover(ctx, image, width, height);
-        ctx.font = "700 40px Microsoft YaHei, sans-serif";
-        const zhLines = page.zhText
-          ? wrapText(ctx, page.zhText, textMaxWidth)
-          : [];
-        ctx.font = "400 28px Arial, sans-serif";
-        const enLines = page.enText
-          ? wrapWords(ctx, page.enText, textMaxWidth)
-          : [];
-        const visibleZhLines = Math.min(3, zhLines.length);
-        const visibleEnLines = Math.min(3, enLines.length);
-        const languageGap = visibleZhLines > 0 && visibleEnLines > 0 ? 12 : 0;
-        const textBlockHeight =
-          visibleZhLines * 54 + languageGap + visibleEnLines * 40;
-        const textTop = height - 62 - textBlockHeight;
-
-        const overlay = ctx.createLinearGradient(
-          0,
-          Math.max(700, textTop - 190),
-          0,
-          height,
-        );
-        overlay.addColorStop(0, "rgba(25, 18, 14, 0)");
-        overlay.addColorStop(0.52, "rgba(25, 18, 14, 0.28)");
-        overlay.addColorStop(1, "rgba(25, 18, 14, 0.88)");
-        ctx.fillStyle = overlay;
-        ctx.fillRect(0, 0, width, height);
-
-        ctx.fillStyle = "rgba(255, 252, 247, 0.9)";
-        ctx.font = "700 25px Arial, Microsoft YaHei, sans-serif";
-        ctx.fillText(`STORYBLOOM  ·  ${String(page.page).padStart(2, "0")}`, textX, 76);
-
-        ctx.textBaseline = "top";
-        let textY = textTop;
-        ctx.fillStyle = "#fffaf4";
-        ctx.font = "700 40px Microsoft YaHei, sans-serif";
-        if (visibleZhLines > 0) {
-          textY = drawWrappedText(ctx, zhLines, textX, textY, 54, 3);
-        }
-        if (visibleEnLines > 0) {
-          textY += languageGap;
-          ctx.fillStyle = "rgba(255, 250, 244, 0.82)";
-          ctx.font = "400 28px Arial, sans-serif";
-          drawWrappedText(ctx, enLines, textX, textY, 40, 3);
-        }
-        ctx.textBaseline = "alphabetic";
-
-        const pngBlob = await canvasToPngBlob(canvas);
-        files.push(
-          new File(
-            [pngBlob],
-            `images/page-${String(page.page).padStart(2, "0")}.png`,
-            { type: "image/png" },
-          ),
-        );
-      }
-
-      const readme = [
-        "StoryBloom 社交分享包",
-        "",
-        "images/：适合微信、小红书发布的逐页图片，图片底部已叠加中英文文字。",
-        "story-bilingual.txt：按 Page 1 到 Page 8 排列的中英文故事全文。",
-      ].join("\n");
-
-      files.push(
-        new File([socialShareBilingualText], "story-bilingual.txt", {
-          type: "text/plain;charset=utf-8",
-        }),
-        new File([readme], "README.txt", { type: "text/plain;charset=utf-8" }),
-      );
-      return files;
-    } finally {
-      loadedImages.forEach((image) => image?.cleanupObjectUrl?.());
-    }
-  }
-
   async function getOrCreateSocialShareFiles() {
     const sourceKey = getSocialShareSourceKey();
     if (
@@ -1025,8 +618,16 @@ export default function BookPreview({
       return socialShareFilesRef.current;
     }
 
+    if (!allImagesReady) {
+      throw new Error("还有页面缺少插图，暂时无法生成社交分享包。");
+    }
+
     const storyId = result.storyId;
-    const files = await createSocialShareFiles();
+    const files = await createSocialShareFiles(
+      result.coverTitle,
+      pages,
+      socialShareBilingualText,
+    );
     if (activeStoryIdRef.current !== storyId) {
       throw new Error("绘本已切换，请重新打开分享预览。");
     }
@@ -1055,8 +656,6 @@ export default function BookPreview({
   async function handleOpenSocialSharePreview() {
     setSocialShareStatus("rendering");
     setShareError(null);
-    setSocialShareTextCopied(false);
-    setSocialShareCopyError(null);
     try {
       await getOrCreateSocialShareFiles();
       setSocialShareDialogOpen(true);
@@ -1066,21 +665,6 @@ export default function BookPreview({
       );
     } finally {
       setSocialShareStatus("idle");
-    }
-  }
-
-  async function handleCopySocialShareText() {
-    try {
-      await copyTextToClipboard(socialShareBilingualText);
-      setSocialShareTextCopied(true);
-      setSocialShareCopyError(null);
-      setShareError(null);
-    } catch (error) {
-      const message =
-        error instanceof Error ? error.message : "复制失败，请手动复制。";
-      setSocialShareTextCopied(false);
-      setSocialShareCopyError(message);
-      setShareError(message);
     }
   }
 
@@ -1746,123 +1330,14 @@ export default function BookPreview({
         </div>
       ) : null}
 
-      {typeof document !== "undefined" &&
-      socialShareDialogOpen &&
-      socialSharePreviewPages.length > 0
-        ? createPortal(
-            <div
-              className="share-dialog-backdrop social-share-dialog-backdrop"
-              onClick={(event) => {
-                if (event.target === event.currentTarget) {
-                  setSocialShareDialogOpen(false);
-                }
-              }}
-            >
-              <div
-                ref={socialShareDialogRef}
-                className="share-dialog social-share-dialog"
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="social-share-dialog-title"
-              >
-                <div className="share-dialog-header">
-                  <div>
-                    <h3 id="social-share-dialog-title">8 页社交分享预览</h3>
-                  </div>
-                  <button
-                    ref={socialShareCloseButtonRef}
-                    type="button"
-                    className="share-dialog-close"
-                    aria-label="关闭社交分享预览"
-                    onClick={() => setSocialShareDialogOpen(false)}
-                  >
-                    ×
-                  </button>
-                </div>
-                <div className="share-dialog-body social-share-dialog-body">
-                  <div className="social-share-preview-grid">
-                    {socialSharePreviewPages.map((page) => (
-                      <article
-                        key={page.page}
-                        className="social-share-preview-card"
-                      >
-                        <img
-                          src={page.imageUrl}
-                          alt={`第 ${page.page} 页社交分享图片，图片内含中英文故事文字`}
-                        />
-                      </article>
-                    ))}
-                  </div>
-                  <section
-                    className="social-share-text-panel"
-                    aria-labelledby="social-share-text-title"
-                  >
-                    <div className="social-share-text-header">
-                      <div className="social-share-text-meta">
-                        <strong id="social-share-text-title">
-                          story-bilingual.txt
-                        </strong>
-                        <span>完整 8 页中英文文本</span>
-                      </div>
-                      <div className="social-share-copy-action">
-                        <span aria-live="polite">
-                          {socialShareTextCopied ? "已复制" : ""}
-                        </span>
-                        <button
-                          type="button"
-                          className="social-share-copy-btn"
-                          onClick={handleCopySocialShareText}
-                          aria-label={
-                            socialShareTextCopied
-                              ? "完整故事文本已复制"
-                              : "一键复制完整故事文本"
-                          }
-                          title={
-                            socialShareTextCopied
-                              ? "已复制"
-                              : "复制 TXT 文本"
-                          }
-                        >
-                          {socialShareTextCopied ? (
-                            <Check aria-hidden="true" />
-                          ) : (
-                            <CopySimple aria-hidden="true" />
-                          )}
-                        </button>
-                      </div>
-                    </div>
-                    {socialShareCopyError ? (
-                      <p className="social-share-copy-error" role="alert">
-                        {socialShareCopyError}
-                      </p>
-                    ) : null}
-                    <pre>{socialShareBilingualText}</pre>
-                  </section>
-                </div>
-                <div className="share-dialog-actions social-share-dialog-actions">
-                  <button
-                    type="button"
-                    className="secondary-btn"
-                    onClick={() => setSocialShareDialogOpen(false)}
-                  >
-                    关闭
-                  </button>
-                  <button
-                    type="button"
-                    className="cta-btn"
-                    disabled={socialShareStatus === "packing"}
-                    onClick={handleDownloadSocialPack}
-                  >
-                    {socialShareStatus === "packing"
-                      ? "正在打包…"
-                      : "一键下载 ZIP"}
-                  </button>
-                </div>
-              </div>
-            </div>,
-            document.body,
-          )
-        : null}
+      <SocialShareDialog
+        open={socialShareDialogOpen}
+        onClose={() => setSocialShareDialogOpen(false)}
+        previewPages={socialSharePreviewPages}
+        bilingualText={socialShareBilingualText}
+        packing={socialShareStatus === "packing"}
+        onDownloadZip={handleDownloadSocialPack}
+      />
 
       {isSamplePreview ? (
         <div className="sample-model-tabs" aria-label="切换生图模型效果">

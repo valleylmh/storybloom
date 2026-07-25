@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import LibraryBookCard from "@/components/library/LibraryBookCard";
 import {
   getAllSeries,
   getPublishedBookCount,
+  getSeriesBooks,
   getUpcomingSeries,
 } from "@/lib/library";
 
@@ -55,52 +57,73 @@ export default function LibraryPage() {
         </p>
       </header>
 
-      <section className="library-series-grid" aria-label="绘本系列">
+      <section className="library-catalog" aria-label="按分类浏览绘本">
         {series.map((item) => {
+          const books = getSeriesBooks(item.id);
           const publishedCount = getPublishedBookCount(item.id);
 
           return (
-            <Link
+            <section
               key={item.id}
-              href={`/library/${item.id}`}
-              className="library-series-card"
-              style={{ borderTopColor: item.accent }}
+              className="library-series-section"
+              aria-labelledby={`library-series-${item.id}`}
             >
-              <span
-                className="library-series-badge"
-                style={{ backgroundColor: item.accent }}
+              <header
+                className="library-series-section-header"
+                style={{ borderTopColor: item.accent }}
               >
-                {item.ageRange}
-              </span>
-              <h2>{item.title}</h2>
-              <p className="library-series-subtitle">{item.subtitle}</p>
-              <p className="library-series-description">{item.description}</p>
-              <span className="library-series-meta">
-                {publishedCount > 0
-                  ? `${publishedCount} 本可读 · 进入系列 →`
-                  : "即将上新 · 查看系列 →"}
-              </span>
-            </Link>
+                <div>
+                  <span
+                    className="library-series-badge"
+                    style={{ backgroundColor: item.accent }}
+                  >
+                    {item.ageRange}
+                  </span>
+                  <h2 id={`library-series-${item.id}`}>{item.title}</h2>
+                  <p className="library-series-subtitle">{item.subtitle}</p>
+                  <p className="library-series-description">{item.description}</p>
+                </div>
+                <span className="library-series-count">
+                  {publishedCount > 0 ? `${publishedCount} 本可读` : "即将上新"}
+                </span>
+              </header>
+
+              <div className="library-book-grid library-catalog-grid">
+                {books.map((book) => (
+                  <LibraryBookCard key={book.id} series={item} book={book} />
+                ))}
+                {books.length === 0 ? (
+                  <p className="library-empty">本分类正在筹备中，敬请期待。</p>
+                ) : null}
+              </div>
+            </section>
           );
         })}
+
         {upcoming.map((item) => (
-          <div
+          <section
             key={item.id}
-            className="library-series-card library-series-card-upcoming"
-            style={{ borderTopColor: item.accent }}
-            aria-disabled="true"
+            className="library-series-section library-series-section-upcoming"
+            aria-labelledby={`library-series-${item.id}`}
           >
-            <span
-              className="library-series-badge"
-              style={{ backgroundColor: item.accent }}
+            <header
+              className="library-series-section-header"
+              style={{ borderTopColor: item.accent }}
             >
-              筹备中
-            </span>
-            <h2>{item.title}</h2>
-            <p className="library-series-subtitle">{item.subtitle}</p>
-            <p className="library-series-description">{item.description}</p>
-            <span className="library-series-meta">敬请期待</span>
-          </div>
+              <div>
+                <span
+                  className="library-series-badge"
+                  style={{ backgroundColor: item.accent }}
+                >
+                  筹备中
+                </span>
+                <h2 id={`library-series-${item.id}`}>{item.title}</h2>
+                <p className="library-series-subtitle">{item.subtitle}</p>
+                <p className="library-series-description">{item.description}</p>
+              </div>
+              <span className="library-series-count">敬请期待</span>
+            </header>
+          </section>
         ))}
       </section>
 
