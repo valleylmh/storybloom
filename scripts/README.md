@@ -48,3 +48,26 @@ pnpm library:generate chengyu shou-zhu-dai-tu \
 6. **验证**：`npx tsc --noEmit` + `pnpm test`（`tests/library.test.ts` 会校验页数与双语完整性）。
 
 草稿目录 `content-drafts/` 建议提交进 git，便于追溯审核修改。
+
+## wechat-publish-library-picture.mjs — 公众号图片消息草稿
+
+读取绘本馆正式书目和 `public/library/<seriesId>/<bookId>/1-8.webp`，生成与网页“社交分享”弹窗一致的 1080×1440 逐页双语贴图，然后创建微信公众号 `newspic` 图片消息草稿。
+
+```bash
+# 查看可发布书目
+pnpm wechat:library-picture -- --list
+
+# 只生成本地预览，不访问微信接口
+pnpm wechat:library-picture -- chengyu dui-niu-tan-qin --dry-run
+
+# 上传 8 张永久图片素材并进入公众号草稿箱
+pnpm wechat:library-picture -- chengyu dui-niu-tan-qin \
+  --env-file ../../blog/.env
+```
+
+- 默认只创建草稿，不会直接发表。
+- `--publish` 会在草稿创建成功后继续调用发布接口，请先人工验证至少一本。
+- 每张图片底部叠加本页中英文；图片消息的文字内容同时列出全部页面的中英文。
+- WebP 会转换为高质量 JPEG，第一张图作为微信图片消息封面。
+- 永久素材 `media_id` 按图片内容哈希缓存在 `.wechat_picture_media.json`，避免重复上传；需要重新上传时使用 `--force-upload`。
+- 密钥只从 `WECHAT_APPID`、`WECHAT_APPSECRET` 或 `--env-file` 读取，不写入仓库。
