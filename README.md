@@ -1,6 +1,8 @@
 # StoryBloom — AI 儿童绘本生成器
 
-> 输入一句话，免费生成完整 8 页中英双语绘本，并可订阅每日绘本灵感。
+> 输入一句话，生成完整 8 页中英双语绘本，并可订阅每日绘本灵感。
+>
+> 长期愿景：AI 帮助家长陪伴孩子成长，持续创造属于孩子的故事世界。
 
 <p align="center">
   <a href="https://storybloom.valleylmh.vip"><strong>在线体验</strong></a>
@@ -8,7 +10,15 @@
   <a href="https://storybloom.valleylmh.vip/library"><strong>浏览绘本馆</strong></a>
   ·
   <a href="docs/assets/readme/story-video-demo.mp4"><strong>观看视频示例</strong></a>
+  ·
+  <a href="ROADMAP.md"><strong>查看路线图</strong></a>
 </p>
+
+## 产品愿景
+
+StoryBloom 正从“一句话生成一本绘本”，逐步走向一个由孩子、家长与 AI 共同创造的长期故事世界。现在，它把孩子的兴趣、家人和日常想象变成可阅读、可朗读、可分享的专属绘本；未来，每一本故事可以在家长的选择和确认下，延续熟悉的角色、地点和共同阅读的记忆。
+
+这里的“陪伴”不是让 AI 替代家长，也不是用模型给孩子打分。AI 是家长的创作助手；未来的成长档案只记录作品、阅读、兴趣和家长主动填写的事实，不对孩子作心理、情绪、性格或能力诊断。详细阶段与产品边界见 [ROADMAP.md](ROADMAP.md)。
 
 ## 效果展示
 
@@ -61,24 +71,33 @@ StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双
   <a href="https://storybloom.valleylmh.vip/library/xiyouji/shi-hou-chu-shi">在线生成绘本视频</a>
 </p>
 
+## 当前能力
+
+- 从一句话生成完整 8 页中英双语故事，并按年龄段控制句式、冲突和情绪节奏。
+- 使用角色描述、Character Bible、逐页出场角色和参考图约束跨页一致性。
+- 异步逐页生成插图，支持多 Provider 配置、限流、自动回退、失败页重试和本地演示兜底。
+- 支持网页阅读、中文／英文／双语系统朗读、PNG 长图、图片 ZIP 和公开阅读链接。
+- 在浏览器本地生成带字幕和可选旁白的竖屏绘本视频。
+- 提供家庭角色库、最近作品、公开绘本馆和每日绘本灵感。
+
+## 工程亮点
+
+- **故事结构不是自由续写**：生成器使用年龄规则、固定 8 页 story beat 和镜头规划，要求每页推进情节并对应具体可视动作。
+- **角色一致性贯穿文本与图片**：家庭角色先生成统一绘本形象；每页只传入实际出场人物的私有参考图，并锁定脸型、发型、年龄、服装主色和视觉风格。
+- **图片生成与文本生成解耦**：`/api/generate` 先返回故事和待生成页面；前端再逐页启动 `/api/illustration`，轮询页面结果，单页失败不会丢失整本书。
+- **按需使用音频成本**：普通网页朗读使用浏览器 `SpeechSynthesis`；只有需要真实音频文件的带旁白视频才调用 Edge TTS。
+- **隐私默认收敛**：上传照片先在浏览器重编码并移除 EXIF；家庭照片进入私有 Storage；公开分享只保留阅读所需字段并提供删除令牌。
+- **无 Key 也能本地体验**：文本、本地图像占位和浏览器朗读都有安全兜底，部署者可以按需接入自己的模型与基础设施。
+
 ## 开源说明
 
 StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生成样例，不应提交真实儿童照片、客户绘本、私聊二维码或生产密钥。部署者需要使用自己的域名、API 端点、Supabase、Resend 和图片服务凭据。
 
-本项目依赖 Remotion。Remotion 不是 MIT 许可，个人与符合条件的小团队通常可以免费使用，其他组织可能需要商业许可证。启用视频功能前，请阅读 [Remotion License](https://www.remotion.dev/docs/license) 并确认你的使用资格；不需要视频时可设置 `NEXT_PUBLIC_STORY_VIDEO_ENABLED=0`。
+线上演示站的免费额度是当前托管服务策略，不代表第三方模型、存储、邮件或带宽永久免费；自托管者需要自行承担所启用服务的费用。
 
-安全问题请按 [SECURITY.md](SECURITY.md) 私下报告，参与开发请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。从现有私有仓库发布到 GitHub 的清理、检查和新仓库流程见 [docs/open-source-release.md](docs/open-source-release.md)。
+本项目依赖 Remotion；其许可不包含在 StoryBloom 的 MIT 许可证中。启用视频功能前，请阅读 [Remotion License](https://www.remotion.dev/docs/license) 并确认当前用途符合条款；不需要视频时可设置 `NEXT_PUBLIC_STORY_VIDEO_ENABLED=0`。
 
-## 当前产品方向
-
-当前产品先以免费使用和邮件订阅增长为主：
-
-- 首页保持极简：一句话即可开始生成，不要求先完成复杂表单。
-- 生成完整故事和插图，而不是只给前两页预览。
-- 直接在网页中阅读和生成朗读音频：中文、英文、中英文三种模式。
-- 将当前绘本合成为一张 PNG 长图，方便分享给家人。
-- 将完成的绘本在浏览器中合成为竖屏 MP4 视频，不依赖额外渲染服务器。
-- 使用 Resend + Supabase 提供双重确认的邮件订阅，后续可发送每日绘本灵感。
+安全问题请按 [SECURITY.md](SECURITY.md) 私下报告，参与开发请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。公开仓库不应包含真实儿童照片、客户绘本、联系人二维码、生产密钥或本地生成缓存。
 
 ## 模型调用说明
 
@@ -93,11 +112,11 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 | 层级 | 技术 |
 |------|------|
 | 框架 | Next.js 15 App Router + TypeScript |
-| 故事生成 | 自带 OpenAI 兼容端点，未配置时本地 fallback |
-| 插图生成 | 阿里云百炼 DashScope，可本地 demo |
+| 故事生成 | 部署者配置的 OpenAI 兼容端点，未配置或失败时使用本地 fallback |
+| 插图生成 | AGNES、DashScope、Cloudflare、Pollinations、Hugging Face；参考图模式支持 AGNES / CPA |
 | 网页朗读 | 浏览器本机 SpeechSynthesis |
 | 视频旁白 MP3 | Edge TTS WebSocket（按需，无 API key） |
-| 分享图片 | Browser Canvas 合成长图 |
+| 导出与分享 | Browser Canvas 长图、图片 ZIP、Supabase 分享快照 |
 | 绘本视频 | Remotion Web Renderer + WebCodecs，浏览器本地输出 MP4 |
 | 邮件订阅 | Resend + Supabase，双重确认与一键退订 |
 | 限流 | Upstash Redis，可本地内存 fallback |
@@ -108,19 +127,36 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 storybloom/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx                  # 主页：表单、生成流程、预览入口
-│   │   ├── layout.tsx
-│   │   ├── globals.css
-│   │   └── api/generate/route.ts     # POST: 生成故事 + 插图
-│   ├── components/book/
-│   │   ├── StoryForm.tsx             # 输入表单
-│   │   └── BookPreview.tsx           # 完整预览、朗读、分享长图
+│   │   ├── page.tsx                         # 首页：极简/完整表单、最近作品、生成入口
+│   │   ├── family/page.tsx                  # 家庭角色库
+│   │   ├── library/                         # 静态绘本馆、系列页与阅读页
+│   │   ├── s/[shareId]/page.tsx             # 用户绘本公开阅读页
+│   │   └── api/
+│   │       ├── generate/route.ts            # 文本生成、配额与故事缓存
+│   │       ├── illustration/route.ts        # 逐页插图任务与轮询
+│   │       ├── audio/route.ts               # 视频旁白 MP3
+│   │       ├── share/route.ts               # 分享快照创建/删除
+│   │       └── character-recognition/route.ts
+│   ├── components/
+│   │   ├── book/                            # 表单、生成预览、朗读与分享
+│   │   ├── family/FamilyLibrary.tsx
+│   │   ├── library/                         # 馆藏阅读器与工具
+│   │   └── video/                           # 视频配置与 Remotion Composition
 │   ├── lib/
-│   │   ├── story-generator.ts        # 文本生成
-│   │   ├── image-generator.ts        # 插图生成
-│   │   └── storage.ts                # Redis / 本地缓存 + 限流
+│   │   ├── story-generator.ts               # 年龄规则、8 页结构与 Character Bible
+│   │   ├── image-generator.ts               # 多 Provider 插图与参考图生成
+│   │   ├── storage.ts                       # 故事缓存、临时参考图与生成配额
+│   │   ├── client-history.ts                # 浏览器最近作品
+│   │   ├── narration-audio-server.ts        # Edge TTS 与私有音频缓存
+│   │   ├── render-story-video.tsx           # 浏览器视频渲染与编码回退
+│   │   ├── share-store.ts                   # 分享图片与快照持久化
+│   │   └── library/                         # 馆藏系列与书籍数据
 │   └── types/index.ts
-├── output/storybook-preview/         # 静态 HTML/PNG 示例输出
+├── public/library/                           # 已审核馆藏插图
+├── public/sample-books/                      # 首页公开样例与静态音频
+├── supabase/migrations/                      # 家庭角色、分享、音频与订阅数据层
+├── tests/
+├── ROADMAP.md
 ├── .env.example
 └── package.json
 ```
@@ -135,7 +171,7 @@ pnpm dev
 
 访问 `http://localhost:3000`。
 
-本地不配置 API key 也能跑通基础流程：文本会走 mock，插图会走 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频会按需请求无需 API key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key；`DASHSCOPE_API_KEY` 只用于选择 DashScope 作为图片服务商时的插图生成。
+本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频会按需请求无需 API key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key；`DASHSCOPE_API_KEY` 只用于选择 DashScope 作为图片服务商时的插图生成。
 
 ## 绘本朗读音频
 
@@ -161,7 +197,7 @@ npm run audio:generate-featured
 npm run audio:generate-featured -- --force
 ```
 
-该命令会将 3 本精选绘本文字发送给 DashScope，并写入 `public/sample-books/audio`；执行前请确认这些正文允许发送给该服务。
+该命令会使用 Edge TTS 生成 3 本精选绘本的中文 MP3，并写入 `public/sample-books/audio`。可以先加 `--dry-run` 检查将要处理的书目，不写文件也不请求音频服务。
 
 ## 绘本分享链接
 用户生成的绘本可以生成公开阅读链接（`/s/<shareId>`）。首次启用前，在 Supabase 执行：
@@ -199,7 +235,7 @@ CRON_SECRET=...
 
 ### 每日绘本灵感
 
-Vercel 会根据 `vercel.json` 在每天 UTC 00:00（北京时间 08:00）请求
+部署在 Vercel 时，平台会根据 `vercel.json` 在每天 UTC 00:00（北京时间 08:00）请求
 `/api/cron/daily-inspiration`。系统通过部署者配置的 OpenAI 兼容端点
 调用文本模型，每天生成一份新的
 中英双语灵感；密钥、模型或服务不可用时会自动使用内置精选灵感。当天内容只生成一次并写入
@@ -236,7 +272,7 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" \
 
 ## 家庭角色库
 
-订阅用户可在 `/family` 建立可复用的家庭角色。参考照片保存在 Supabase 私有 Storage，AGNES 会先将照片转换为统一绘本形象；之后在首页极简模式选择角色，即可用一句话生成家庭专属绘本。照片不会发送给 Resend。
+已登录用户可在 `/family` 建立可复用的家庭角色。参考照片保存在 Supabase 私有 Storage，AGNES 会先将照片转换为统一绘本形象；之后在首页极简模式选择角色，即可用一句话生成家庭专属绘本。照片不会发送给 Resend。
 
 1. 在同一个 Supabase 项目继续执行 `supabase/migrations/202607120002_family_profiles.sql`。
 2. 从 Supabase Project Settings → API 获取公开的 anon key（新项目也可能显示为 publishable key），配置其中一个：
@@ -274,18 +310,25 @@ NEXT_PUBLIC_XIANYU_ORDER_URL=https://...
      ▼
 POST /api/generate
      │
-     ├─ 文本模型或 mock → 生成 8 页故事 JSON
-     ├─ 图片模型或 demo → 生成 8 张插图
-     ├─ Redis 或本地文件缓存完整故事
-     └─ 返回完整 8 页内容给前端
+     ├─ 校验参数、Turnstile 与每日免费额度
+     ├─ 文本模型或本地 fallback → 生成 8 页故事 JSON
+     ├─ 写入故事缓存，页面先返回 demo / pending 状态
+     └─ 返回 storyId、正文与待生成页面
           │
           ▼
-前端完整预览
-          ├─ 浏览器 SpeechSynthesis → 中文 / 英文 / 中英文网页朗读
-          ├─ POST /api/audio → 仅用于带旁白视频的 MP3
-     ├─ Canvas 合成 PNG 分享长图
-     ├─ Remotion Web Renderer → 720 × 1280 竖屏视频
-     └─ 定制礼物版入口 → 小红书 / 闲鱼下单咨询
+BookPreview 逐页启动插图（最多 4 个并发）
+          │
+          ├─ POST /api/illustration → 202 Accepted
+          │        └─ Next.js after() 后台调用图片 Provider
+          └─ GET /api/illustration → 轮询单页状态并更新最近作品
+                   │
+                   ▼
+             完整阅读与导出
+                   ├─ 浏览器 SpeechSynthesis → 网页朗读
+                   ├─ Canvas / ZIP → 分享长图与逐页图片
+                   ├─ POST /api/share → Supabase 公开阅读快照
+                   └─ POST /api/audio + Remotion Web Renderer
+                        → 带旁白或无旁白的竖屏视频
 ```
 
 ## 绘本视频
@@ -294,15 +337,17 @@ POST /api/generate
 
 - 默认输出 720 × 1280、24 FPS 的 H.264 MP4；浏览器不支持 MP4 编码时会尝试 WebM。
 - 中文、英文和双语模式会逐页调用现有 `/api/audio`，无旁白模式不会调用 TTS。
-- 推荐使用最新版 Chrome。最低支持范围取决于 WebCodecs：Chrome 94、Firefox 130、Safari 26。
+- 推荐使用最新版 Chrome。是否可输出 MP4 取决于浏览器、系统和实际可用编码器；渲染器会按 H.264 硬件、H.264 软件、VP8/WebM 的顺序回退。
 - 可用 `NEXT_PUBLIC_STORY_VIDEO_ENABLED=0` 随时关闭入口，不影响其他功能。
-- Remotion Web Renderer 会向 Remotion 发送许可计量事件，包括站点域名、IP、生产/开发环境和渲染结果，不包含绘本正文、插图或成片内容。正式上线前应在隐私说明中披露，并按团队规模配置 `NEXT_PUBLIC_REMOTION_LICENSE_KEY`。
-- 绘本馆书籍使用稳定的 canonical URL，可直接通过系统分享或复制阅读链接；用户临时生成绘本的长期公开链接仍属于路线图任务 D，需要独立持久化。
+- Remotion 有独立许可条款和使用要求；正式启用前请核对官方文档，并按适用范围配置 `NEXT_PUBLIC_REMOTION_LICENSE_KEY`。
+- 绘本馆书籍使用稳定 canonical URL；用户生成绘本可通过 `/api/share` 创建持久公开阅读链接，并使用本地保存的一次性 `deleteToken` 删除。
 
-当前 Remotion 依赖使用完全一致的固定版本。官方文档标注 Web Renderer 从 4.0.491 起稳定，但截至 2026-07-17 npm 最新版本仍为 4.0.490；公开生产启用前应升级到 4.0.491 或更高版本，并同时升级 `remotion` 与全部 `@remotion/*` 包。
+当前 Remotion 及全部 `@remotion/*` 依赖使用完全一致的固定版本。升级时应整组升级，并重新验证目标浏览器的实际编码能力。
 
-## 后续建议
+## 下一阶段
 
-- 图片质量优先：先稳定角色一致性、构图、文字 prompt，再考虑付费。
-- 音频质量升级：继续试听并调整默认旁白、语速与情感指令；精选静态音频更新时使用生成脚本显式重建。
-- 分享体验：可继续增加单页图片、封面图、朋友圈比例图等导出格式。
+- **近期**：自助 PDF / 家庭打印版、亲子共读小问题、结构化 Character Bible 和独立安全检查。
+- **中期**：阅读进度、收藏与家长可控的成长档案；只记录客观事实和家长确认的信息。
+- **长期**：让熟悉的角色、地点和故事线跨多本绘本延续，并支持安全、有限的共同创作选择。
+
+完整路线、验收边界和儿童隐私原则见 [ROADMAP.md](ROADMAP.md) 与 [docs/feature-roadmap-tasks.md](docs/feature-roadmap-tasks.md)。

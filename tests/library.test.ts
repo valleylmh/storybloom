@@ -38,6 +38,18 @@ const XIYOUJI_BOOK_IDS = [
   "liu-sha-he-shou-sha-seng",
   "san-da-bai-gu-jing",
 ];
+const HAOQI_BOOK_IDS = [
+  "tian-kong-wei-shen-me-shi-lan-se",
+  "yue-liang-wei-shen-me-gen-zhe-wo-zou",
+  "xing-xing-wei-shen-me-hui-zha-yan",
+  "wei-shen-me-hui-xia-yu",
+  "cai-hong-shi-zen-me-lai-de",
+  "feng-wei-shen-me-hui-chui",
+  "shu-ye-wei-shen-me-hui-bian-huang",
+  "wei-shen-me-yao-shui-jiao",
+  "du-zi-wei-shen-me-hui-gu-gu-jiao",
+  "hai-shui-wei-shen-me-shi-xian-de",
+];
 const MAX_LIBRARY_IMAGE_SIZE_BYTES = 300 * 1024;
 
 describe("library access functions", () => {
@@ -255,33 +267,72 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
     expect(verifiedImageCount).toBe(XIYOUJI_BOOK_IDS.length * 8);
   });
 
-  it("keeps both haoqi books published with complete images", () => {
+  it("publishes all ten haoqi books with scientifically reviewed optimized images", () => {
     const books = getSeriesBooks("haoqi");
-    expect(books).toHaveLength(2);
-    expect(getSeries("haoqi")?.bookCount).toBe(2);
-    expect(getPublishedBookCount("haoqi")).toBe(2);
-    for (const book of books) {
+    expect(books).toHaveLength(HAOQI_BOOK_IDS.length);
+    expect(getSeries("haoqi")?.bookCount).toBe(HAOQI_BOOK_IDS.length);
+    expect(getPublishedBookCount("haoqi")).toBe(HAOQI_BOOK_IDS.length);
+    expect(getPublishedBooks("haoqi").map((book) => book.id)).toEqual(
+      HAOQI_BOOK_IDS,
+    );
+
+    let verifiedImageCount = 0;
+
+    for (const [index, book] of books.entries()) {
+      expect(book.id).toBe(HAOQI_BOOK_IDS[index]);
       expect(book.comingSoon).not.toBe(true);
       expect(book.question).toMatch(/？$/);
       expect(book.pages).toHaveLength(8);
       expect(book.pages.every((page) => page.imageStatus === "complete")).toBe(true);
+
+      for (const page of book.pages) {
+        const imageUrl = page.imageUrl;
+
+        expect(page.zhText).toBeTruthy();
+        expect(page.enText).toBeTruthy();
+        expect(page.illustrationPrompt).toBeTruthy();
+        expect(imageUrl).toBe(`/library/haoqi/${book.id}/${page.page}.webp`);
+        if (!imageUrl) {
+          continue;
+        }
+
+        const imagePath = join(process.cwd(), "public", imageUrl);
+        const imageExists = existsSync(imagePath);
+
+        expect(imageExists, `${imagePath} should exist`).toBe(true);
+        if (!imageExists) {
+          continue;
+        }
+
+        const imageStats = statSync(imagePath);
+        expect(imageStats.isFile(), `${imagePath} should be a file`).toBe(true);
+        expect(imageStats.size, `${imagePath} should not be empty`).toBeGreaterThan(
+          0,
+        );
+        expect(
+          imageStats.size,
+          `${imagePath} should not exceed 300KB`,
+        ).toBeLessThanOrEqual(MAX_LIBRARY_IMAGE_SIZE_BYTES);
+        verifiedImageCount += 1;
+      }
     }
+
+    expect(verifiedImageCount).toBe(HAOQI_BOOK_IDS.length * 8);
   });
 
   it("includes every published xiyouji and haoqi route in the sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
     const xiyoujiUrls = urls.filter((url) => url.includes("/library/xiyouji/"));
     const xiyoujiUrlPrefix = xiyoujiUrls[0]?.replace(/\/[^/]+$/, "/") ?? "";
+    const haoqiUrls = urls.filter((url) => url.includes("/library/haoqi/"));
+    const haoqiUrlPrefix = haoqiUrls[0]?.replace(/\/[^/]+$/, "/") ?? "";
 
     expect(xiyoujiUrls).toEqual(
       XIYOUJI_BOOK_IDS.map((bookId) => `${xiyoujiUrlPrefix}${bookId}`),
     );
-    expect(
-      urls.some((url) => url.endsWith("/library/haoqi/tian-kong-wei-shen-me-shi-lan-se")),
-    ).toBe(true);
-    expect(
-      urls.some((url) => url.endsWith("/library/haoqi/yue-liang-wei-shen-me-gen-zhe-wo-zou")),
-    ).toBe(true);
+    expect(haoqiUrls).toEqual(
+      HAOQI_BOOK_IDS.map((bookId) => `${haoqiUrlPrefix}${bookId}`),
+    );
     expect(urls.some((url) => url.endsWith("/library/xiyouji"))).toBe(true);
     expect(urls.some((url) => url.endsWith("/library/haoqi"))).toBe(true);
   });

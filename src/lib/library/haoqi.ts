@@ -1,8 +1,39 @@
 import type { StoryPage } from "@/types";
 import type { LibraryBook, LibrarySeries } from "@/types/library";
+import caiHongDraft from "../../../content-drafts/haoqi/cai-hong-shi-zen-me-lai-de/draft.json";
+import duZiDraft from "../../../content-drafts/haoqi/du-zi-wei-shen-me-hui-gu-gu-jiao/draft.json";
+import fengDraft from "../../../content-drafts/haoqi/feng-wei-shen-me-hui-chui/draft.json";
+import haiShuiDraft from "../../../content-drafts/haoqi/hai-shui-wei-shen-me-shi-xian-de/draft.json";
+import shuYeDraft from "../../../content-drafts/haoqi/shu-ye-wei-shen-me-hui-bian-huang/draft.json";
+import weiShenMeShuiJiaoDraft from "../../../content-drafts/haoqi/wei-shen-me-yao-shui-jiao/draft.json";
+import xiaYuDraft from "../../../content-drafts/haoqi/wei-shen-me-hui-xia-yu/draft.json";
+import xingXingDraft from "../../../content-drafts/haoqi/xing-xing-wei-shen-me-hui-zha-yan/draft.json";
 
-// 任务 C：前 2 本已完成科学性审核和插图验收；后续内容继续遵守
+// 任务 C：10 本均遵守科学性审核与插图验收流程，并坚持
 // “简化但不错误”的原则（见 docs/feature-roadmap-tasks.md 任务 C）。
+
+interface HaoqiBookDraft {
+  id: string;
+  title: string;
+  subtitle: string;
+  question: string;
+  moral: { zh: string; en: string };
+  ageLabel: string;
+  publishedAt: string;
+  order: number;
+  pages: Array<{ zh: string; en: string; prompt: string }>;
+}
+
+const EXPANDED_HAOQI_DRAFTS: HaoqiBookDraft[] = [
+  xingXingDraft,
+  xiaYuDraft,
+  caiHongDraft,
+  fengDraft,
+  shuYeDraft,
+  weiShenMeShuiJiaoDraft,
+  duZiDraft,
+  haiShuiDraft,
+];
 
 const TIAN_KONG_LAN_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
   {
@@ -48,10 +79,10 @@ const TIAN_KONG_LAN_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
       "Back at the park bench, Duoduo spreads her arms happily as if hugging the sky, her mother laughing beside her; sky transitions beautifully from deep blue overhead to warm orange at the horizon; premium polished 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no text in image.",
   },
   {
-    zh: "回家路上，朵朵又想到了新问题：“那……彩虹又是怎么来的呢？”",
-    en: "On the way home, a new question bloomed: \"Then... where do rainbows come from?\"",
+    zh: "回家路上，月亮高高挂在前方。朵朵走了几步又回头：“月亮为什么一直跟着我走呢？”",
+    en: "On the way home, the moon hung high ahead. After a few steps, Duoduo looked back. \"Why does the moon keep following me?\"",
     prompt:
-      "Evening walk home under first stars: Duoduo looks back over her shoulder with a bright curious smile as a faint dreamy rainbow arcs in her imagination above the path; mother holds her hand; cozy ending inviting the next book; premium polished 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no text in image.",
+      "Evening walk home under first stars: Duoduo holds her mother's hand and looks curiously up at a bright full moon hanging high above the path, wondering why it seems to follow them; cozy ending inviting the next book; premium polished 3D clay-like animated-film children's picture-book illustration, square 1:1 composition; no text in image.",
   },
 ];
 
@@ -121,6 +152,26 @@ function toStoryPages(
   }));
 }
 
+function draftToLibraryBook(
+  draft: HaoqiBookDraft,
+  imageStatus: NonNullable<StoryPage["imageStatus"]>,
+  comingSoon: boolean,
+): LibraryBook {
+  return {
+    id: draft.id,
+    seriesId: "haoqi",
+    title: draft.title,
+    subtitle: draft.subtitle,
+    question: draft.question,
+    moral: draft.moral,
+    pages: toStoryPages(draft.id, draft.pages, imageStatus),
+    ageLabel: draft.ageLabel,
+    publishedAt: draft.publishedAt,
+    order: draft.order,
+    comingSoon,
+  };
+}
+
 export const HAOQI_BOOKS: LibraryBook[] = [
   {
     id: "tian-kong-wei-shen-me-shi-lan-se",
@@ -160,6 +211,9 @@ export const HAOQI_BOOKS: LibraryBook[] = [
     publishedAt: "2026-07-22",
     order: 2,
   },
+  ...EXPANDED_HAOQI_DRAFTS.map((draft) =>
+    draftToLibraryBook(draft, "complete", false),
+  ),
 ];
 
 export const HAOQI_SERIES: LibrarySeries = {

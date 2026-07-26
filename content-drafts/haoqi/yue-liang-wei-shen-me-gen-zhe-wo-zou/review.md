@@ -1,6 +1,6 @@
 # 《月亮为什么跟着我走》整本验收单
 
-- 状态：插图已生成并完成本地视觉检查；文字与科学内容仍按维护者审核流程处理，暂不发布
+- 状态：8 页文字、科学内容、插图与本地视觉检查已完成；已接入 `src/lib/library/haoqi.ts`，8 页 `imageStatus` 均为 `"complete"`，`comingSoon` 发布态为 `false`；全系列验证已完成
 - ID：`yue-liang-wei-shen-me-gen-zhe-wo-zou`
 - 系列：`haoqi`（好奇为什么）
 - 插图资源：`public/library/haoqi/yue-liang-wei-shen-me-gen-zhe-wo-zou/1.webp` 至 `8.webp`
@@ -40,8 +40,8 @@
 | 7 | 1200×1200 | 115,830 bytes |
 | 8 | 1200×1200 | 73,092 bytes |
 
-## 发布前待办
+## 当前集成与验证状态
 
-- [ ] 维护者审核中文/英文科学表述，尤其是“月亮很远”与两处视线示意。
-- [ ] 将正式数据的 8 页 `imageStatus` 补为 `"complete"`（本轮未改 TS）。
-- [ ] 确认文字与插图后移除 `comingSoon`，再做 `npx tsc --noEmit`、测试和页面验收。
+- [x] 中文、英文科学表述、“月亮很远”的尺度关系与两处视线示意均已完成审核。
+- [x] 已接入 `src/lib/library/haoqi.ts`；8 页 `imageStatus` 均为 `"complete"`，未标记 `comingSoon`，发布态按 `false` 处理。
+- [x] 全系列验证已完成：`npx tsc --noEmit`、绘本馆专项 10 项测试与全量回归均通过；本地系列页、书籍页、sitemap 和图片资源均返回 200。

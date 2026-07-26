@@ -1,5 +1,5 @@
 /**
- * Library book draft generator (task A2, docs/feature-roadmap-tasks.md).
+ * Library book draft generator (see scripts/README.md and the public roadmap).
  *
  * Usage:
  *   pnpm library:generate <seriesId> <bookId> "<brief>" [--order N] [--dry-run]

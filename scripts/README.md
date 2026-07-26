@@ -2,7 +2,7 @@
 
 ## generate-library-book.ts — 绘本馆书籍草稿生成
 
-为 `/library` 绘本馆（见 [docs/feature-roadmap-tasks.md](../docs/feature-roadmap-tasks.md) 任务 A2）生成单本书的**草稿 JSON**。
+为 `/library` 绘本馆生成单本书的**草稿 JSON**。公开内容生产边界见 [docs/feature-roadmap-tasks.md](../docs/feature-roadmap-tasks.md#b-绘本馆与内容生产)。
 
 ### 用法
 
@@ -42,9 +42,9 @@ pnpm library:generate chengyu shou-zhu-dai-tu \
 
 1. **生成草稿**：运行脚本，得到 `content-drafts/<seriesId>/<bookId>.json`。
 2. **人工审核文字**：直接编辑 JSON——中文节奏/字数（每页 ≤ 40 字）、英文自然度、教育性、结局温和化、`idiomMeaning`/`moral` 准确性。
-3. **生成插图**：8 页插图。由 Codex 执行时，必须调用内置生图工具，每页单独生成；先用第 1 页建立角色锚点，后续页面引用该图锁定人物与画风，不调用项目运行时的外部图片 API。每页最终 prompt = `imagePromptKit.globalStyle` + `imagePromptKit.characterConsistency` + 该页 `illustrationPrompt` + `imagePromptKit.negative`（流程同 [docs/sample-book-prompts/README.md](../docs/sample-book-prompts/README.md)）。人工挑选角色一致性最好的一组。
+3. **生成插图**：为 8 页分别生成插图。先用第 1 页建立角色、服装和材质锚点，后续页面复用同一参考图或等效的身份约束。每页最终 prompt = `imagePromptKit.globalStyle` + `imagePromptKit.characterConsistency` + 该页 `illustrationPrompt` + `imagePromptKit.negative`（流程同 [docs/sample-book-prompts/README.md](../docs/sample-book-prompts/README.md)）。无论使用哪种工具，都必须人工挑选并复核整本角色一致性。
 4. **放置图片**：webp、单张 ≤ 300KB，放 `public/library/<seriesId>/<bookId>/<page>.webp`（1-8）。
 5. **转正式数据**：把审核后的 `book` 对象搬进 `src/lib/library/<seriesId>.ts`：每页补 `imageUrl: "/library/<seriesId>/<bookId>/<n>.webp"` 与 `imageStatus: "complete"`；确认 `order`；移除 `comingSoon`。
-6. **验证**：`npx tsc --noEmit` + `npm test`（`tests/library.test.ts` 会校验页数与双语完整性）。
+6. **验证**：`npx tsc --noEmit` + `pnpm test`（`tests/library.test.ts` 会校验页数与双语完整性）。
 
 草稿目录 `content-drafts/` 建议提交进 git，便于追溯审核修改。

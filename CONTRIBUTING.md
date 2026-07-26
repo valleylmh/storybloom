@@ -2,6 +2,8 @@
 
 Thanks for helping improve StoryBloom.
 
+Before proposing a larger product feature, read [ROADMAP.md](ROADMAP.md). Planned growth features must remain parent-controlled, optional, visible, exportable, and deletable; do not add hidden child scoring or diagnostic labels.
+
 ## Local setup
 
 1. Install Node.js 20 or newer and pnpm.
