@@ -217,7 +217,6 @@ async function generatePageAudio({
     body: JSON.stringify({
       text,
       mode: narrationMode,
-      format: "mp3",
       sampleRate: 24000,
     }),
     signal,

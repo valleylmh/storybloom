@@ -17,6 +17,7 @@ let clockSkewSeconds = 0;
 export interface EdgeTtsSynthesisInput {
   text: string;
   voice: string;
+  maxAttempts?: number;
 }
 
 export interface EdgeTtsSynthesisResult {
@@ -391,12 +392,10 @@ function wait(milliseconds: number) {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
 
-async function synthesizeChunk(text: string, voice: string) {
-  const maxAttempts = readPositiveInteger(
-    "EDGE_TTS_MAX_ATTEMPTS",
-    DEFAULT_MAX_ATTEMPTS,
-    2,
-  );
+async function synthesizeChunk(text: string, voice: string, requestedAttempts?: number) {
+  const maxAttempts = requestedAttempts
+    ? Math.max(1, Math.min(requestedAttempts, 2))
+    : readPositiveInteger("EDGE_TTS_MAX_ATTEMPTS", DEFAULT_MAX_ATTEMPTS, 2);
   let lastError: unknown;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
@@ -426,7 +425,7 @@ export async function synthesizeEdgeTtsAudio(
   const audioChunks: Buffer[] = [];
   let requestId = "";
   for (const chunk of splitTextByByteLength(text)) {
-    const result = await synthesizeChunk(chunk, input.voice);
+    const result = await synthesizeChunk(chunk, input.voice, input.maxAttempts);
     audioChunks.push(result.bytes);
     requestId ||= result.requestId;
   }

@@ -5,23 +5,71 @@ import {
   EdgeTtsAudioError,
   synthesizeEdgeTtsAudio,
 } from "@/lib/edge-tts-server";
+import {
+  GeminiTtsAudioError,
+  synthesizeGeminiTtsAudio,
+} from "@/lib/gemini-tts-server";
 import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { getCachedStory } from "@/lib/storage";
 
 const STORY_AUDIO_BUCKET = "story-audio";
-const DEFAULT_TTS_MODEL = "edge-tts";
-const DEFAULT_TTS_VOICE_ZH = "zh-CN-XiaoxiaoNeural";
-const DEFAULT_TTS_VOICE_EN = "en-US-AnaNeural";
+const GEMINI_TTS_MODEL_PRIMARY = "gemini-2.5-flash-preview-tts";
+const GEMINI_TTS_MODEL_FALLBACK = "gemini-3.1-flash-tts-preview";
+const EDGE_TTS_MODEL = "edge-tts";
+const DEFAULT_EDGE_TTS_VOICE_ZH = "zh-CN-XiaoxiaoNeural";
+const DEFAULT_EDGE_TTS_VOICE_EN = "en-US-AnaNeural";
+const DEFAULT_GEMINI_TTS_VOICE_ZH = "Leda";
+const DEFAULT_GEMINI_TTS_VOICE_EN = "Aoede";
 const DEFAULT_SAMPLE_RATE = 24000;
 const DEFAULT_SIGNED_URL_TTL_SECONDS = 3_600;
 const MAX_NARRATION_TEXT_LENGTH = 5_000;
 
 export const NARRATION_MODES = ["zh", "en", "zh-en"] as const;
-export const NARRATION_FORMATS = ["mp3"] as const;
-export const ALLOWED_TTS_MODELS = [DEFAULT_TTS_MODEL] as const;
+export const NARRATION_FORMATS = ["mp3", "wav"] as const;
+export const ALLOWED_TTS_MODELS = [
+  GEMINI_TTS_MODEL_PRIMARY,
+  GEMINI_TTS_MODEL_FALLBACK,
+  EDGE_TTS_MODEL,
+] as const;
+export const GEMINI_TTS_VOICES = [
+  "Zephyr",
+  "Puck",
+  "Charon",
+  "Kore",
+  "Fenrir",
+  "Leda",
+  "Orus",
+  "Aoede",
+  "Callirrhoe",
+  "Autonoe",
+  "Enceladus",
+  "Iapetus",
+  "Umbriel",
+  "Algieba",
+  "Despina",
+  "Erinome",
+  "Algenib",
+  "Rasalgethi",
+  "Laomedeia",
+  "Achernar",
+  "Alnilam",
+  "Schedar",
+  "Gacrux",
+  "Pulcherrima",
+  "Achird",
+  "Zubenelgenubi",
+  "Vindemiatrix",
+  "Sadachbia",
+  "Sadaltager",
+  "Sulafat",
+] as const;
+export const EDGE_TTS_VOICES = [
+  DEFAULT_EDGE_TTS_VOICE_ZH,
+  DEFAULT_EDGE_TTS_VOICE_EN,
+] as const;
 export const ALLOWED_TTS_VOICES = [
-  DEFAULT_TTS_VOICE_ZH,
-  DEFAULT_TTS_VOICE_EN,
+  ...GEMINI_TTS_VOICES,
+  ...EDGE_TTS_VOICES,
 ] as const;
 
 export type NarrationMode = (typeof NARRATION_MODES)[number];
@@ -49,6 +97,7 @@ export interface ResolvedNarrationRequest {
   format: NarrationFormat;
   sampleRate: number;
   cacheKey: string;
+  providerFallback?: boolean;
 }
 
 export interface NarrationAudioResult {
@@ -58,7 +107,12 @@ export interface NarrationAudioResult {
   expiresAt?: number;
   signedUrlExpiresAt?: string;
   requestId?: string;
-  usage?: { characters?: number };
+  usage?: {
+    characters?: number;
+    inputTokens?: number;
+    outputTokens?: number;
+    totalTokens?: number;
+  };
   model: AllowedTtsModel;
   voice: AllowedTtsVoice;
   format: NarrationFormat;
@@ -93,7 +147,12 @@ interface GeneratedAudio {
   sourceUrl?: string;
   expiresAt?: number;
   requestId?: string;
-  usage?: { characters?: number };
+  usage?: {
+    characters?: number;
+    inputTokens?: number;
+    outputTokens?: number;
+    totalTokens?: number;
+  };
 }
 
 export class NarrationAudioError extends Error {
@@ -122,21 +181,46 @@ function readPositiveInteger(name: string, fallback: number, maximum: number) {
 
 function getConfiguredModel(requested?: AllowedTtsModel): AllowedTtsModel {
   if (requested) return requested;
-  return DEFAULT_TTS_MODEL;
+  const geminiDisabled = /^(?:0|false|off)$/i.test(
+    process.env.GEMINI_TTS_ENABLED?.trim() || "",
+  );
+  if (!process.env.GEMINI_API_KEY?.trim() || geminiDisabled) return EDGE_TTS_MODEL;
+
+  const configured = process.env.GEMINI_TTS_MODEL?.trim();
+  return isOneOf(configured, [
+    GEMINI_TTS_MODEL_PRIMARY,
+    GEMINI_TTS_MODEL_FALLBACK,
+  ] as const)
+    ? configured
+    : GEMINI_TTS_MODEL_PRIMARY;
 }
 
 function getConfiguredVoice(
   mode: NarrationMode,
+  model: AllowedTtsModel,
   requested?: AllowedTtsVoice,
 ): AllowedTtsVoice {
-  if (requested) return requested;
+  if (model !== EDGE_TTS_MODEL) {
+    if (requested && isOneOf(requested, GEMINI_TTS_VOICES)) return requested;
+    const fallback =
+      mode === "en" ? DEFAULT_GEMINI_TTS_VOICE_EN : DEFAULT_GEMINI_TTS_VOICE_ZH;
+    const configured = (mode === "en"
+      ? process.env.GEMINI_TTS_VOICE_EN?.trim()
+      : process.env.GEMINI_TTS_VOICE_ZH?.trim()) as AllowedTtsVoice | undefined;
+    return isOneOf(configured, GEMINI_TTS_VOICES) ? configured : fallback;
+  }
 
-  const fallback = mode === "en" ? DEFAULT_TTS_VOICE_EN : DEFAULT_TTS_VOICE_ZH;
+  if (requested && isOneOf(requested, EDGE_TTS_VOICES)) return requested;
+  const fallback =
+    mode === "en" ? DEFAULT_EDGE_TTS_VOICE_EN : DEFAULT_EDGE_TTS_VOICE_ZH;
   const configured = (mode === "en"
     ? process.env.EDGE_TTS_VOICE_EN?.trim()
     : process.env.EDGE_TTS_VOICE_ZH?.trim()) as AllowedTtsVoice | undefined;
+  return isOneOf(configured, EDGE_TTS_VOICES) ? configured : fallback;
+}
 
-  return isOneOf(configured, ALLOWED_TTS_VOICES) ? configured : fallback;
+function formatForModel(model: AllowedTtsModel): NarrationFormat {
+  return model === EDGE_TTS_MODEL ? "mp3" : "wav";
 }
 
 function getNarrationText(
@@ -213,8 +297,8 @@ export async function resolveNarrationRequest(
     textSource,
     mode,
     model,
-    voice: getConfiguredVoice(mode, input.voice),
-    format: "mp3",
+    voice: getConfiguredVoice(mode, model, input.voice),
+    format: formatForModel(model),
     sampleRate: DEFAULT_SAMPLE_RATE,
   } satisfies Omit<ResolvedNarrationRequest, "cacheKey">;
 
@@ -225,7 +309,7 @@ export async function resolveNarrationRequest(
 }
 
 function contentTypeForFormat(format: NarrationFormat) {
-  return format === "mp3" ? "audio/mpeg" : "application/octet-stream";
+  return format === "mp3" ? "audio/mpeg" : "audio/wav";
 }
 
 async function synthesizeNarration(
@@ -235,9 +319,19 @@ async function synthesizeNarration(
   onProgress?.({ stage: "generating", model: request.model, voice: request.voice });
 
   try {
+    if (request.model !== EDGE_TTS_MODEL) {
+      return await synthesizeGeminiTtsAudio({
+        text: request.text,
+        voice: request.voice,
+        mode: request.mode,
+        model: request.model,
+      });
+    }
+
     const result = await synthesizeEdgeTtsAudio({
       text: request.text,
       voice: request.voice,
+      maxAttempts: request.providerFallback ? 1 : undefined,
     });
     return {
       bytes: result.bytes,
@@ -246,6 +340,9 @@ async function synthesizeNarration(
       usage: result.usage,
     };
   } catch (error) {
+    if (error instanceof GeminiTtsAudioError) {
+      throw new NarrationAudioError(error.message, error.status, { cause: error });
+    }
     if (error instanceof EdgeTtsAudioError) {
       throw new NarrationAudioError(error.message, error.status, { cause: error });
     }
@@ -260,8 +357,8 @@ function hasSupabaseAdminConfig() {
   );
 }
 
-function storagePathForKey(cacheKey: string) {
-  return `v1/${cacheKey.slice(0, 2)}/${cacheKey}.mp3`;
+function storagePathForRequest(request: ResolvedNarrationRequest) {
+  return `v1/${request.cacheKey.slice(0, 2)}/${request.cacheKey}.${request.format}`;
 }
 
 async function createSignedAudioUrl(path: string) {
@@ -288,9 +385,9 @@ async function createSignedAudioUrl(path: string) {
 }
 
 async function findStoredAudio(request: ResolvedNarrationRequest) {
-  if (request.format !== "mp3" || !hasSupabaseAdminConfig()) return null;
+  if (!hasSupabaseAdminConfig()) return null;
 
-  const path = storagePathForKey(request.cacheKey);
+  const path = storagePathForRequest(request);
   const separator = path.lastIndexOf("/");
   const folder = path.slice(0, separator);
   const fileName = path.slice(separator + 1);
@@ -330,12 +427,12 @@ function isDuplicateStorageError(error: { message?: string; statusCode?: string 
 }
 
 async function storeAudio(request: ResolvedNarrationRequest, audio: GeneratedAudio) {
-  const path = storagePathForKey(request.cacheKey);
+  const path = storagePathForRequest(request);
   const { error } = await getSupabaseAdmin().storage.from(STORY_AUDIO_BUCKET).upload(
     path,
     audio.bytes,
     {
-      contentType: "audio/mpeg",
+      contentType: contentTypeForFormat(request.format),
       cacheControl: "31536000",
       upsert: false,
     },
@@ -370,11 +467,52 @@ function resultMetadata(request: ResolvedNarrationRequest) {
   };
 }
 
+function createEdgeFallbackRequest(
+  request: ResolvedNarrationRequest,
+): ResolvedNarrationRequest {
+  const baseRequest = {
+    storyId: request.storyId,
+    text: request.text,
+    textSource: request.textSource,
+    mode: request.mode,
+    model: EDGE_TTS_MODEL,
+    voice: getConfiguredVoice(request.mode, EDGE_TTS_MODEL),
+    format: "mp3",
+    sampleRate: DEFAULT_SAMPLE_RATE,
+    providerFallback: true,
+  } satisfies Omit<ResolvedNarrationRequest, "cacheKey">;
+
+  return {
+    ...baseRequest,
+    cacheKey: makeCacheKey(baseRequest),
+  };
+}
+
+function createGeminiFallbackRequest(
+  request: ResolvedNarrationRequest,
+): ResolvedNarrationRequest {
+  const baseRequest = {
+    storyId: request.storyId,
+    text: request.text,
+    textSource: request.textSource,
+    mode: request.mode,
+    model: GEMINI_TTS_MODEL_FALLBACK,
+    voice: getConfiguredVoice(request.mode, GEMINI_TTS_MODEL_FALLBACK),
+    format: "wav",
+    sampleRate: DEFAULT_SAMPLE_RATE,
+  } satisfies Omit<ResolvedNarrationRequest, "cacheKey">;
+
+  return {
+    ...baseRequest,
+    cacheKey: makeCacheKey(baseRequest),
+  };
+}
+
 async function prepareNarrationAudioUncached(
   request: ResolvedNarrationRequest,
   options: PrepareNarrationOptions,
 ): Promise<NarrationAudioResult> {
-  if (request.format === "mp3" && hasSupabaseAdminConfig()) {
+  if (hasSupabaseAdminConfig()) {
     options.onProgress?.({
       stage: "checking-cache",
       model: request.model,
@@ -392,9 +530,26 @@ async function prepareNarrationAudioUncached(
     }
   }
 
-  const generated = await synthesizeNarration(request, options.onProgress);
+  let generated: GeneratedAudio;
+  try {
+    generated = await synthesizeNarration(request, options.onProgress);
+  } catch (error) {
+    if (request.model === EDGE_TTS_MODEL) throw error;
 
-  if (request.format === "mp3" && hasSupabaseAdminConfig()) {
+    const nextRequest =
+      request.model === GEMINI_TTS_MODEL_PRIMARY
+        ? createGeminiFallbackRequest(request)
+        : createEdgeFallbackRequest(request);
+
+    console.warn("[audio] TTS provider failed; using fallback", {
+      model: request.model,
+      fallbackModel: nextRequest.model,
+      error: error instanceof Error ? error.message : String(error),
+    });
+    return prepareNarrationAudio(nextRequest, options);
+  }
+
+  if (hasSupabaseAdminConfig()) {
     options.onProgress?.({ stage: "storing", model: request.model, voice: request.voice });
     const stored = await storeAudio(request, generated);
     if (stored) {

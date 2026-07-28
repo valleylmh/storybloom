@@ -85,7 +85,7 @@ StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双
 - **故事结构不是自由续写**：生成器使用年龄规则、固定 8 页 story beat 和镜头规划，要求每页推进情节并对应具体可视动作。
 - **角色一致性贯穿文本与图片**：家庭角色先生成统一绘本形象；每页只传入实际出场人物的私有参考图，并锁定脸型、发型、年龄、服装主色和视觉风格。
 - **图片生成与文本生成解耦**：`/api/generate` 先返回故事和待生成页面；前端再逐页启动 `/api/illustration`，轮询页面结果，单页失败不会丢失整本书。
-- **按需使用音频成本**：普通网页朗读使用浏览器 `SpeechSynthesis`；只有需要真实音频文件的带旁白视频才调用 Edge TTS。
+- **按需使用音频成本**：普通网页朗读使用浏览器 `SpeechSynthesis`；只有需要真实音频文件的带旁白视频才按 2.5 → 3.1 的顺序调用 Gemini TTS，失败时回退 Edge TTS。
 - **隐私默认收敛**：上传照片先在浏览器重编码并移除 EXIF；家庭照片进入私有 Storage；公开分享只保留阅读所需字段并提供删除令牌。
 - **无 Key 也能本地体验**：文本、本地图像占位和浏览器朗读都有安全兜底，部署者可以按需接入自己的模型与基础设施。
 
@@ -105,7 +105,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 
 - 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
 - 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations 或 Hugging Face；用户上传人物照片后改按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 使用支持参考图的 AGNES 与 CPA Nano Banana 2（默认上游模型 `gemini-3.1-flash-image`），并按配置顺序自动回退。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
-- 音频：绘本网页朗读使用浏览器内置 `SpeechSynthesis`，不会调用付费 TTS，也不会在故事生成后自动准备音频。`src/app/api/audio/route.ts` 保留给需要真实 MP3 的带旁白视频，通过服务端 Edge TTS WebSocket 生成音频，不需要 DashScope TTS API key，结果优先写入 Supabase 私有 Storage。
+- 音频：绘本网页朗读使用浏览器内置 `SpeechSynthesis`，不会调用云端 TTS，也不会在故事生成后自动准备音频。`src/app/api/audio/route.ts` 保留给需要真实音频文件的带旁白视频；配置 `GEMINI_API_KEY` 时优先使用 Gemini 2.5 Flash TTS，再回退 Gemini 3.1 Flash TTS，仍失败或未配置时自动使用 Edge TTS，结果优先写入 Supabase 私有 Storage。
 
 ## 技术栈
 
@@ -115,7 +115,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 | 故事生成 | 部署者配置的 OpenAI 兼容端点，未配置或失败时使用本地 fallback |
 | 插图生成 | AGNES、DashScope、Cloudflare、Pollinations、Hugging Face；参考图模式支持 AGNES / CPA |
 | 网页朗读 | 浏览器本机 SpeechSynthesis |
-| 视频旁白 MP3 | Edge TTS WebSocket（按需，无 API key） |
+| 视频旁白音频 | Gemini 2.5 Flash TTS → Gemini 3.1 Flash TTS → Edge TTS |
 | 导出与分享 | Browser Canvas 长图、图片 ZIP、Supabase 分享快照 |
 | 绘本视频 | Remotion Web Renderer + WebCodecs，浏览器本地输出 MP4 |
 | 邮件订阅 | Resend + Supabase，双重确认与一键退订 |
@@ -147,7 +147,7 @@ storybloom/
 │   │   ├── image-generator.ts               # 多 Provider 插图与参考图生成
 │   │   ├── storage.ts                       # 故事缓存、临时参考图与生成配额
 │   │   ├── client-history.ts                # 浏览器最近作品
-│   │   ├── narration-audio-server.ts        # Edge TTS 与私有音频缓存
+│   │   ├── narration-audio-server.ts        # Gemini/Edge TTS 路由与私有音频缓存
 │   │   ├── render-story-video.tsx           # 浏览器视频渲染与编码回退
 │   │   ├── share-store.ts                   # 分享图片与快照持久化
 │   │   └── library/                         # 馆藏系列与书籍数据
@@ -171,15 +171,15 @@ pnpm dev
 
 访问 `http://localhost:3000`。
 
-本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频会按需请求无需 API key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key；`DASHSCOPE_API_KEY` 只用于选择 DashScope 作为图片服务商时的插图生成。
+本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频在没有 `GEMINI_API_KEY` 时会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key；`DASHSCOPE_API_KEY` 只用于选择 DashScope 作为图片服务商时的插图生成。
 
 ## 绘本朗读音频
 
 新生成的绘本不会自动请求云端 TTS。用户点击中文、英文或双语朗读时，前端按页面调用当前浏览器/操作系统提供的语音；音色取决于用户设备，不能导出为 MP3。精选绘本的中文朗读继续使用仓库中已生成的静态 MP3。
 
-带旁白视频需要可解码的真实音频文件，因此仍会逐页调用 `/api/audio` 生成 MP3；选择“无旁白”不会调用 TTS。接口只允许已配置的模型与音色，并按客户端 IP 限制请求频率。
+带旁白视频需要可解码的真实音频文件，因此仍会逐页调用 `/api/audio`；选择“无旁白”不会调用 TTS。接口只允许已配置的模型与音色，并按客户端 IP 限制请求频率。
 
-视频旁白固定使用 `edge-tts`，中文默认音色为 `zh-CN-XiaoxiaoNeural`，英文默认音色为 `en-US-AnaNeural`，输出为 24 kHz MP3。服务端使用当前 Chromium 握手参数、MUID Cookie 和 `Sec-MS-GEC`，遇到 403 时会按服务器时间修正时钟偏差后重试。可通过 `EDGE_TTS_TIMEOUT_MS` 和 `EDGE_TTS_MAX_ATTEMPTS` 调整超时与 1–2 次尝试次数；单次超时最多 28 秒，以留在 Vercel 60 秒函数时限内。该接口不会调用或回退到 Sambert、CosyVoice 等 DashScope 付费 TTS。
+配置 `GEMINI_API_KEY` 时，视频旁白默认先使用价格更低的 `gemini-2.5-flash-preview-tts`，失败后尝试 `gemini-3.1-flash-tts-preview`：中文默认音色 `Leda`，英文默认音色 `Aoede`，Google 返回的 24 kHz、16-bit 单声道 PCM 会在服务端封装为 WAV。可通过 `GEMINI_TTS_MODEL` 指定首选 Gemini 模型，通过 `GEMINI_TTS_ENABLED=0` 临时关闭，或用 `GEMINI_TTS_VOICE_ZH`、`GEMINI_TTS_VOICE_EN`、`GEMINI_TTS_TIMEOUT_MS` 和 `GEMINI_TTS_MAX_ATTEMPTS` 调整行为；默认每个 Gemini 模型尝试一次、15 秒超时。两个 Gemini 模型均失败时，系统自动回退到 `edge-tts`（中文 `zh-CN-XiaoxiaoNeural`、英文 `en-US-AnaNeural`、24 kHz MP3），回退请求只尝试一次，确保整条链路留在 Vercel 60 秒函数时限内；直接使用 Edge 时仍遵循 `EDGE_TTS_*` 环境变量。该接口不会调用 Sambert、CosyVoice 等 DashScope TTS。
 
 首次启用持久化音频缓存时，在 Supabase 执行：
 

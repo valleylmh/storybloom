@@ -235,6 +235,286 @@ him; ordinary and friendly, with the magical clues—not his age—revealing the
 |  | 老爷爷伪装 | 第 6 页 |
 |  | 云灵完整真身 | 第 7 页 |
 
+## 第 11–20 回新增角色锁定
+
+以下角色首次出现时必须先建立清楚的正面或三分之四侧面锚点。后续页面完整重复对应英文锁，
+不得只写 `same character`、角色名或简写。温和改编只改变冲突方式，不得让角色服色、脸型、
+发型、标志配件或体型在同一本内漂移。
+
+### 第 11 回《宝象国救公主》
+
+#### 百花羞公主
+
+Princess Baihuaxiu is a kind adult Chinese princess with a warm oval face, large dark-brown
+eyes, and long black hair arranged half-up with one small pearl-flower hairpin; she wears
+layered pale-rose-and-ivory court robes with a jade-green sash and one small white-crane
+embroidery at the collar; calm, resourceful, dignified, never helpless or frightened;
+child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 11 回第 2 页。
+- 只保留一枚珍珠花簪、浅玫瑰米白宫装、玉绿色腰带和白鹤纹；不得变成华丽王冠、婚礼服或战甲。
+
+#### 黄袍星君（黄袍怪的温和形态）
+
+The Yellow-Robed Star Spirit is a tall broad-shouldered celestial wanderer with warm
+tawny skin, a round expressive face, amber eyes, wavy dark-brown shoulder-length hair,
+and a short neat beard; he wears a flowing ochre-yellow robe patterned with small navy
+stars, a deep-blue sash, and one bronze star brooch; proud and lonely but never monstrous,
+with no horns, fangs, claws, weapon, armor, or frightening expression; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 11 回第 3 页。
+- “黄袍怪”只保留经典称呼；真实画面固定为黄袍星君，不画兽脸、獠牙、利爪、血色眼睛或绑缚公主。
+
+### 第 12 回《智斗金角银角》
+
+#### 金角大王
+
+Golden Horn is a jovial round-faced mountain magician with warm tan skin, bright amber
+eyes, black hair in a high topknot, and one short smooth golden horn centered above his
+forehead; he wears an amber-gold robe with cloud hems and a crimson sash and carries a
+closed purple-and-gold gourd upright like a decorative vase; competitive and theatrical
+but never frightening; no weapon, fangs, claws, armor, or threatening pose; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 12 回第 2 页。
+- 紫金葫芦保持紫色葫芦身、金色口沿，始终开口朝上或盖好，不表现窒息、吞人或身体被吸入。
+
+#### 银角大王
+
+Silver Horn is a lively slender-faced mountain magician with light tan skin, large teal
+eyes, black hair in a high topknot, and one short smooth silver horn centered above his
+forehead; he wears a blue-gray robe with silver cloud hems and a teal sash and carries a
+small ivory jar and a neatly coiled golden rope as puzzle props; clever and playful but
+never frightening; no blade, armor, fangs, claws, or threatening pose; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 12 回第 2 页，与金角同页建立兄弟锚点。
+- 羊脂玉净瓶只作为封闭小玉瓶；幌金绳只可整齐盘放、画安全结或做寻路线索，不捆绑身体。
+
+#### 太上老君
+
+Taishang Laojun is a gentle elderly Taoist sage with a high cloud-white topknot, long
+forked white beard and eyebrows, kind dark eyes, layered ivory-and-pale-lilac robes with
+subtle cloud patterns, and a round yin-yang hand fan; patient, amused, and never stern;
+child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 12 回第 8 页。
+- 与菩提祖师区分：太上老君为云白高髻、分叉白须、米白淡紫袍和圆形阴阳扇，不持木杖。
+
+### 第 13 回《乌鸡国辨真王》
+
+#### 乌鸡国真国王
+
+The true King of Wuji is a kind middle-aged Chinese ruler with warm brown skin, an oval
+face, calm dark eyes, and a neat black beard lightly streaked with silver; he wears layered
+emerald-and-gold royal robes with a white-crane chest badge and a tall simple jade court
+crown; thoughtful, humble, never weak or frightened; child-friendly rounded proportions.
+
+- 首次与固定锚点：第 13 回第 2 页安全的水晶井花园。
+- 水晶井是有台阶、花草、透光穹顶的隐藏花园，不是深井、水牢或溺水场景。
+
+#### 假国王 · 青狮云灵
+
+The false king's true form is a friendly turquoise lion cloud spirit with a rounded muzzle,
+large golden-brown eyes, a fluffy sea-green mane, small round ears, and ribbon-like teal
+cloud wisps; proud and embarrassed but never frightening, with no fangs, claws, weapon,
+or aggressive posture; in king disguise he copies the emerald-and-gold royal robes and
+jade crown but a faint teal cloud reflection remains visible in polished mirrors.
+
+- 国王伪装首次锚点：第 13 回第 3 页；青狮云灵真形锚点：第 13 回第 7 页。
+- 辨认真伪依靠王室记忆、白鹤徽记细节和镜中青绿色云影，不因脸型、肤色或残障判断。
+
+### 第 14 回《火云洞收红孩儿》
+
+#### 红孩儿
+
+Red Boy is a clever childlike flame sprite with warm russet skin, a round lively face,
+large amber eyes, and black hair tied into two small round buns with red cords; he wears
+a red-orange sleeveless tunic with soft golden flame-shaped hems, loose cream trousers,
+a turquoise sash, and simple brown cloth shoes; he shapes harmless ribbon-like orange
+flames with open hands, carries no weapon, and is mischievous rather than threatening;
+child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 14 回第 2 页。
+- 火焰只能形成发光丝带、灯笼、迷宫边界或暖炉，不接触人物、衣物、树木或房屋，不出现烧伤和浓烟。
+
+#### 观音菩萨
+
+Guanyin is a serene adult Chinese woman with a gentle oval face, warm dark-brown eyes,
+and black hair in a smooth high bun beneath a simple white hood; she wears flowing white
+and pale-aqua robes with subtle lotus embroidery and carries a slender green willow branch
+and a small white porcelain vase; compassionate, calm, softly smiling; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 14 回第 7 页；第 16 回再次出场时必须复用。
+- 柳枝和净瓶只用于洒出清凉水雾、照顾植物或引路，不表现惩罚、束缚或攻击法术。
+
+### 第 15 回《车迟国三场比试》
+
+#### 车迟国国王
+
+The King of Chechi is a friendly middle-aged Chinese ruler with a round face, warm brown
+eyes, and a short neatly trimmed black beard; he wears ochre-and-jade imperial robes with
+simple rain-cloud embroidery and a tall pale-jade court crown; curious, fair-minded, and
+never pompous; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 15 回第 1 页。
+
+#### 虎力、鹿力、羊力三位国师
+
+Tiger Strength is a broad friendly tiger-faced Taoist teacher with soft orange fur, rounded
+dark stripes, cream cheeks, warm brown eyes, and a jade-green robe with an orange sash;
+Deer Strength is a slim friendly deer-faced Taoist teacher with light brown fur, small
+branching antlers, dark eyes, and a plum-purple robe with a cream sash; Antelope Strength
+is a gentle gray-antelope-faced Taoist teacher with small smooth curved horns, large teal
+eyes, and a slate-blue robe with a mustard sash. All three wear simple dark topknots,
+carry only closed scrolls or gardening tools, and look competitive but never frightening;
+child-friendly rounded animated-film proportions.
+
+- 三人首次与固定锚点：第 15 回第 2 页同页建立。
+- 三场比试固定为引雨灌田、让枯枝开花、合作搬运粮袋；禁止断头、剖腹、油锅、利刃或身体伤害。
+
+### 第 16 回《通天河救童子》
+
+#### 陈家庄兄妹
+
+The village siblings are two brave Chinese children: Chen Guanbao is a seven-year-old boy
+with a round face, short black hair, a mustard quilted festival jacket, navy trousers, and
+red cloth shoes; Yichengjin is a six-year-old girl with two low buns, a coral quilted
+festival jacket, a teal skirt over cream trousers, and red cloth shoes. Each carries one
+round paper lotus lantern on a short safe handle; curious and hopeful, never crying or
+terrified; child-friendly rounded proportions.
+
+- 首次与固定锚点：第 16 回第 1 页。
+- 两名儿童始终留在安全岸边；师徒替他们完成水面送灯任务，不把孩子放上冰面、小船或祭台。
+
+#### 灵感大王 · 金鱼水灵
+
+The River Inspiration Spirit is a large friendly goldfish water spirit with a rounded
+coral-gold fish face, large teal eyes, soft fan-shaped fins beside his cheeks, and a flowing
+blue-green robe decorated with pearl bubbles; he wears one necklace of smooth white pearls
+and carries a glowing lotus lantern instead of a weapon; demanding and dramatic but never
+frightening, with no sharp teeth, claws, trident, armor, or attack pose; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 16 回第 2 页。
+- 水浪只形成柔软旋涡、泡泡墙和灯笼路线，不淹没、卷走或撞击人物。
+
+#### 通天河老鼋
+
+The Old River Turtle is a very large gentle jade-green turtle with a broad moss-patterned
+shell, warm golden-brown eyes, a rounded beak, and small water-lily leaves resting on his
+shell; calm, wise, and strong enough to carry the travelers safely, with natural animal
+features and no clothing, human teeth, weapon, or frightening scale.
+
+- 首次与固定锚点：第 16 回第 8 页。
+- 驮队过河时水面平稳、人物坐稳并有安全距离，不表现翻船、坠水或超载。
+
+### 第 17 回《女儿国辞别》
+
+#### 女儿国国王
+
+The Queen of the Women's Kingdom is a dignified adult Chinese ruler with a warm oval face,
+large dark-brown eyes, and long black hair arranged in a smooth coiled bun with one simple
+golden phoenix hairpin; she wears layered rose-red-and-gold court robes with cream sleeves
+and a jade-green sash; intelligent, hospitable, and respectful, never seductive, possessive,
+or distressed; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 17 回第 2 页。
+- 剧情只表现邀请唐僧留下教书、参观学堂和尊重辞别，不出现子母河、怀孕、逼婚、婚礼或暧昧身体语言。
+
+### 第 18 回《真假美猴王》
+
+#### 六耳猕猴
+
+The Six-Eared Macaque's true form is a small agile macaque with soft ash-brown fur, a tan
+face and chest, bright jade-green eyes, a short swept hair tuft, a long expressive tail,
+and three subtle rounded ear folds on each side; he wears a blue-gray sleeveless tunic,
+a violet sash, and charcoal trousers, with no headband, armor, cape, shoes, or weapon;
+clever and eager for praise but never menacing; child-friendly rounded animated-film
+proportions.
+
+- 悟空伪装首次锚点：第 18 回第 2 页；真形固定锚点：第 18 回第 7 页。
+- 伪装形态可复制悟空服色和细金头环，但必须保留很淡的青绿色耳边回声波纹和反向腰带结作读者线索。
+- 辨认真伪主要依靠共同记忆、合作选择和白龙马的信任；不以打斗、疼痛头环或外貌羞辱收尾。
+
+### 第 19 回《三借芭蕉扇》
+
+#### 铁扇公主
+
+Princess Iron Fan is a strong adult Chinese woman with a warm oval face, almond-shaped
+dark-brown eyes, and long black hair tied in a high flowing ponytail with a crimson ribbon;
+she wears layered crimson-and-ivory traveling robes with black-and-gold trim, jade-drop
+earrings, and dark cloth boots; she carries one large green plantain-leaf fan with a red
+tassel, held closed or waved toward empty sky, never at a person; protective, direct, and
+fair; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 19 回第 2 页。
+- 芭蕉扇固定为绿色大叶扇、红色流苏；风只推动云、热浪和空旷道路，不把人物吹飞或撞伤。
+
+#### 牛魔王
+
+The Bull Demon King is a broad sturdy ox-faced adult with warm charcoal-brown fur, a cream
+muzzle, two short smooth ivory horns, thick dark eyebrows, and kind dark-brown eyes; he
+wears a maroon cross-collar robe, a bronze-brown belt, loose black trousers, and dark cloth
+boots; protective and stubborn but never frightening, with no armor, weapon, nose ring,
+sharp horns, or aggressive pose; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 19 回第 5 页。
+- 与铁扇公主通过查看村民枯井和修水渠消除误会，不能演成抢扇、偷扇、骗婚或夫妻争斗。
+
+### 第 20 回《小雷音寺识假佛》
+
+#### 黄眉童子
+
+Yellow Brow is a round-faced golden-browed cloud apprentice with warm tan skin, very thick
+arched golden eyebrows, bright brown eyes, and black hair in a small topknot; he wears an
+oversized saffron-gold temple robe with a plum sash and carries a pair of closed round
+golden clappers as puzzle props; playful, boastful, and eager to impress but never
+frightening; no weapon, armor, fangs, claws, or threatening pose; child-friendly rounded
+animated-film proportions.
+
+- 假寺主人锚点：第 20 回第 2 页；恢复云童形态仍保持金眉、发髻、金袍和梅紫腰带。
+- 金铙固定为两片圆钝金色钟罩，只形成宽敞透光的安全谜题空间，不夹压、封口、烫伤或制造恐惧。
+
+#### 弥勒佛
+
+Maitreya is a cheerful elderly monk with a bald round head, warm tan skin, smiling dark eyes,
+and a soft round face; he wears an open ivory outer robe over an ochre inner garment, a
+strand of large smooth wooden prayer beads, and carries a simple gray cloth bag; wise,
+playful, and gentle, with no crown, weapon, jewelry, or intimidating glow; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 20 回第 6 页。
+- 瓜田游戏只让黄眉帮忙辨认成熟西瓜和归还金铙；不把人物变进瓜里，不击打、不捆绑、不惩罚。
+
+## 第 11–20 回视觉锚点速查
+
+| 回目 | 新增角色或形态 | 锚点页 |
+| --- | --- | --- |
+| 第 11 回《宝象国救公主》 | 百花羞公主 | 第 2 页 |
+|  | 黄袍星君 | 第 3 页 |
+| 第 12 回《智斗金角银角》 | 金角、银角 | 第 2 页 |
+|  | 太上老君 | 第 8 页 |
+| 第 13 回《乌鸡国辨真王》 | 真国王 | 第 2 页 |
+|  | 假国王伪装 | 第 3 页 |
+|  | 青狮云灵真形 | 第 7 页 |
+| 第 14 回《火云洞收红孩儿》 | 红孩儿 | 第 2 页 |
+|  | 观音菩萨 | 第 7 页 |
+| 第 15 回《车迟国三场比试》 | 车迟国国王 | 第 1 页 |
+|  | 虎力、鹿力、羊力国师 | 第 2 页 |
+| 第 16 回《通天河救童子》 | 陈家庄兄妹 | 第 1 页 |
+|  | 灵感大王金鱼水灵 | 第 2 页 |
+|  | 老鼋 | 第 8 页 |
+| 第 17 回《女儿国辞别》 | 女儿国国王 | 第 2 页 |
+| 第 18 回《真假美猴王》 | 六耳猕猴伪装 | 第 2 页 |
+|  | 六耳猕猴真形 | 第 7 页 |
+| 第 19 回《三借芭蕉扇》 | 铁扇公主 | 第 2 页 |
+|  | 牛魔王 | 第 5 页 |
+| 第 20 回《小雷音寺识假佛》 | 黄眉童子 | 第 2 页 |
+|  | 弥勒佛 | 第 6 页 |
+
 ## 低龄改编原则（写进每次生成的正文 prompt）
 
 - 打斗一律改为“比试 / 智斗 / 追逐游戏 / 合作解决问题”，无兵刃相向。
@@ -246,6 +526,16 @@ him; ordinary and friendly, with the magical clues—not his age—revealing the
 - 第 5 回五行山是悟空自愿接受的耐心挑战和安全石窝，不表现压伤、囚禁、锁链或惩罚。
 - 第 6 回头环是自愿接受的守护约定，不表现咒语控制、收紧、疼痛或恐惧。
 - 第 10 回辨认伪装只依据重复出现的月牙坠、淡紫云雾和方向矛盾，不因普通姑娘或老人外貌而怀疑对方。
+- 第 11 回公主始终安全、主动传递线索；黄袍怪固定为温和黄袍星君，不绑缚、不威吓，也不出现强迫婚恋叙事。
+- 第 12 回宝物只用于名字、声音、真假和路线谜题；不表现葫芦吞人、净瓶窒息、绳索捆人或刀剑对战。
+- 第 13 回真国王被藏在透光的水晶井花园并保持健康，不出现死亡、溺水、尸体、复活或井底恐怖画面。
+- 第 14 回火焰只作灯光、迷宫边界和暖炉；红孩儿最后自愿学习安全用火，不表现烧伤、穿刺、疼痛或强制收服。
+- 第 15 回三场斗法固定为引雨灌田、枯枝开花和合作搬粮，禁止断头、剖腹、油锅及任何身体伤害。
+- 第 16 回不得出现儿童献祭；孩子留在岸上，师徒替他们送灯；水灵、旋涡和老鼋均保持安全、温和与可亲近。
+- 第 17 回只讲热情款待、学堂交流、尊重拒绝和坚持使命，不出现子母河、怀孕、逼婚、婚礼或成人暧昧。
+- 第 18 回通过共同记忆、合作选择和伙伴信任辨认真伪，不以击打、头环疼痛、围攻或消灭六耳猕猴收尾。
+- 第 19 回三借扇依次是误会、误拿小扇、合作后借到真扇；不抢夺、不钻入身体、不变虫、不演夫妻争斗。
+- 第 20 回假寺和金铙是观察解谜场景；弥勒以瓜田合作让黄眉归还物品，不表现夹压、吞人、殴打或惩罚。
 - “三更传艺”改写为祖师以三下轻敲提示悟空等大家休息后到安静书房请教，
   不渲染儿童独自夜行、翻墙或偷偷离家。
 - 学艺必须体现长期积累：祖师耐心讲解，悟空反复练习，明确经过许多年才学有所成；

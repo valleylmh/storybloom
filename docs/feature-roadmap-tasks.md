@@ -30,7 +30,7 @@
 
 ### B. 绘本馆与内容生产
 
-- `/library` 提供成语故事、西游记和「好奇为什么」系列；三个系列均已各上线 10 本、每本 8 页。
+- `/library` 提供成语故事、西游记和「好奇为什么」系列；成语与科普各上线 10 本，西游记上线 20 回，每本 8 页。
 - 馆藏书使用静态数据、稳定 URL、sitemap、canonical、Open Graph 和结构化数据。
 - 馆藏内容采用“草稿生成 → 人工审核 → 插图审核 → 发布”的流程，脚本与操作说明见 [scripts/README.md](../scripts/README.md)。
 - 系列角色卡与逐页提示词资产保存在 `docs/library-prompts/` 和 `docs/sample-book-prompts/`。
