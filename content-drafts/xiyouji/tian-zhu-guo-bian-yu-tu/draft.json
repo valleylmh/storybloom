@@ -1,0 +1,56 @@
+{
+  "id": "tian-zhu-guo-bian-yu-tu",
+  "title": "天竺国辨玉兔",
+  "subtitle": "桂花香和月影里的真相",
+  "origin": "《西游记》第九十三至九十五回（低龄温和改编）",
+  "moral": {
+    "zh": "渴望被看见并不可耻，但不能因此冒充别人；诚实说出心愿，才能找到真正属于自己的舞台。",
+    "en": "Wanting to be seen is not shameful, but pretending to be someone else is not fair. Honest wishes can lead to a stage of your own."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 30,
+  "episodeNumber": 30,
+  "pages": [
+    {
+      "zh": "师徒来到天竺国，正赶上月桂花会。城里却有两位长得一模一样的公主，都说自己要主持开幕舞。",
+      "en": "The travelers reached Tianzhu Kingdom during the Moon Osmanthus Festival. But two identical princesses both claimed they should lead the opening dance.",
+      "prompt": "Use the established full traveling-team anchor. Show a bright ancient festival courtyard with osmanthus garlands and two visually identical adult princess figures standing at equal distance before a blank circular stage, while the team and palace attendants look curious rather than alarmed. Square premium 3D clay-like art; no readable banners, romance, accusation, fear, or threatening guards."
+    },
+    {
+      "zh": "真公主说，她每天练习的是脚步和呼吸；另一位公主却总望着月亮，还悄悄闻手里的桂花枝。",
+      "en": "The true princess spoke of practicing steps and breathing each day. The other kept glancing at the moon and quietly smelling an osmanthus branch.",
+      "prompt": "Create the fixed Tianzhu Princess anchor: a graceful adult Chinese princess with warm tan skin, an oval face, large dark-brown eyes, and long black hair in a low braided coil with one moon-white flower pin; she wears layered saffron-and-ivory dance robes with a turquoise sash and soft flat shoes; confident and kind. Show two matching princess forms, but only the imitator holds an osmanthus branch and glances toward the moon. Square premium 3D clay-like art; no text, jewelry overload, seduction, or threat."
+    },
+    {
+      "zh": "悟空没有急着指出谁真谁假。他请两人一起完成公主最熟悉的三段花会舞步。",
+      "en": "Wukong did not rush to accuse either one. He invited both to perform the three festival steps the princess knew best.",
+      "prompt": "Reuse Wukong and the two matching Tianzhu Princess forms. On a broad safe circular stage, Wukong holds up three blank colored rhythm stones while both dancers prepare at equal positions. Palace families watch calmly. Square premium 3D clay-like art; no text, humiliation contest, weapons, unsafe acrobatics, or crowd pressure."
+    },
+    {
+      "zh": "真公主的脚步稳稳跟着鼓点，另一位却把月宫里的旋转动作跳了出来，身后还出现圆圆的银色月影。",
+      "en": "The true princess followed the drumbeat steadily. The other slipped into a moon-palace turn, and a round silver moon shadow appeared behind her.",
+      "prompt": "Reuse the two matching princess forms. Show the true princess completing grounded gentle festival steps while the imitator performs one soft moonlike spin with a round silver light halo and a few osmanthus petals. Everyone remains supportive and observant. Square premium 3D clay-like art; no readable music, fall, exposure, mockery, or magical attack."
+    },
+    {
+      "zh": "白龙马闻到桂花香，八戒发现地上有小兔脚印，沙僧把月影和玉华州的线索一一对上。",
+      "en": "White Dragon Horse recognized the osmanthus scent, Bajie spotted small rabbit prints, and Sha Wujing matched the moon shadow with the clues from Yuhua Prefecture.",
+      "prompt": "Reuse White Dragon Horse, Bajie, Sha Wujing, and Wukong. Show them calmly examining an osmanthus branch, a short trail of small rounded rabbit prints, and reflected silver moon circles near the stage. The two princess forms wait safely in the background. Square premium 3D clay-like art; no text, tracking fear, weapons, accusation, or threatening crowd."
+    },
+    {
+      "zh": "另一位公主轻轻叹气，变回玉兔仙子。她说自己在月宫练舞很久，只是一直没有机会被大家看见。",
+      "en": "The other princess sighed and returned to her Jade Rabbit form. She had practiced in the moon palace for a long time but never had a chance to be seen.",
+      "prompt": "Create the fixed Jade Rabbit Dancer anchor beside the true princess: a friendly adult rabbit spirit with pearl-white fur, a warm oval face, large violet eyes, long rounded ears tipped pale lavender, silver-white hair in a small side bun, and layered moon-white-and-lavender dance robes with a soft gold sash; graceful and hopeful, with no claws, fangs, animal paws holding weapons, or frightening magic. A gentle silver glow reveals her true form. Square premium 3D clay-like art."
+    },
+    {
+      "zh": "真公主没有生气，而是说：“你不能冒充我，但可以用自己的名字表演。”两人一起重新编了一支日月双舞。",
+      "en": "The true princess said, “You may not pretend to be me, but you can perform under your own name.” Together they created a Sun-and-Moon duet.",
+      "prompt": "Reuse the fixed Tianzhu Princess and Jade Rabbit Dancer anchors. Show them collaborating at equal height on a warm circular stage: the princess practices a sunlike open-arm step while the rabbit dancer traces a gentle moon arc, with separate costume identities clearly visible. Square premium 3D clay-like art; no text, forced forgiveness, romance, dangerous leap, or magical combat."
+    },
+    {
+      "zh": "花会重新开幕，玉兔仙子第一次用自己的名字登台。师徒继续西行，月光和桂花香在身后轻轻相送。",
+      "en": "The festival reopened, and the Jade Rabbit Dancer took the stage under her own name. The travelers continued west as moonlight and osmanthus fragrance followed behind.",
+      "prompt": "Show the fixed Jade Rabbit Dancer and Tianzhu Princess completing a joyful sun-and-moon duet on a safe illuminated festival stage while the established traveling team waves farewell from the westward gate. Blank decorative lanterns and osmanthus petals fill the warm night. Square premium 3D clay-like art; no readable name signs, watermark, romance, weapons, fear, or modern objects."
+    }
+  ]
+}

@@ -515,6 +515,197 @@ rounded animated-film proportions.
 | 第 20 回《小雷音寺识假佛》 | 黄眉童子 | 第 2 页 |
 |  | 弥勒佛 | 第 6 页 |
 
+## 第 21–30 回新增角色锁定
+
+以下十回继续复用第 6 回起的五人取经团队锚点。新角色的锚点页优先使用
+`public/library/xiyouji/san-da-bai-gu-jing/1.webp` 作为团队风格与比例参考；同一本后续页再引用
+该角色首次定稿图，避免脸型、服色、体型和标志配件漂移。
+
+### 第 21 回《盘丝洞巧脱险》
+
+#### 织丝大姐
+
+The Silk-Weaver Sister is an adult Chinese craftswoman with a warm oval face, large
+dark-brown eyes, black hair braided into a crown with one silver-thread hairpin,
+plum-and-teal layered robes, an ivory craft apron, and a seven-color thread bracelet;
+clever, responsible, and never frightening, with no spider body, extra limbs, fangs,
+claws, web abdomen, or threatening pose; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 21 回第 2 页。
+- 盘丝姐妹全部是成年织艺师，只使用织机、彩线和圆钝木滑轮；银丝不缠身体、不封门、不表现蜘蛛恐怖。
+
+### 第 22 回《黄花观解彩茶》
+
+#### 金光道长
+
+Golden-Light Taoist is a middle-aged Chinese Taoist with warm tan skin, a round expressive
+face, amber eyes, black hair in a neat topknot, a mustard-and-brown robe patterned with
+large round sun motifs, and a teal sash; he carries a closed bamboo tea tray, never a
+weapon, and has no insect eyes, extra limbs, fangs, claws, or frightening features;
+child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 22 回第 2 页。
+- 七杯茶始终盖好并用于颜色、花瓣和镜光谜题；任何角色在谜题结束前都不饮用。
+
+#### 毗蓝婆婆
+
+Grandmother Pilanpo is a kind elderly Chinese herbalist with a warm round face, silver
+hair in a low bun, deep brown eyes, layered violet-and-cream robes, a woven chrysanthemum
+basket, and one small triangular glass prism; wise, cheerful, and never stern;
+child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 22 回第 6 页。
+- 三棱镜只分解柔和日光，不射向眼睛；角色不是凶猛神祇，不使用针、兵器或昆虫形态。
+
+### 第 23 回《狮驼岭闯三关》
+
+#### 青狮守关人
+
+The Green Lion Guardian is a broad friendly lion-faced adult with soft turquoise fur,
+a fluffy sea-green mane, cream muzzle, large golden-brown eyes, and a jade-green robe
+with a navy sash; no fangs, claws, armor, weapon, or aggressive pose; child-friendly
+rounded animated-film proportions.
+
+#### 白象守关人
+
+The White Elephant Guardian is a sturdy pearl-gray elephant-faced adult with large soft
+ears, kind teal eyes, a short rounded trunk, two tiny smooth ivory tusks, and a slate-blue
+robe with a cream sash; no armor, weapon, sharp tusks, or threatening posture;
+child-friendly rounded animated-film proportions.
+
+#### 金翅守关人
+
+The Golden-Winged Guardian is a tall friendly bird-faced adult with soft gold-brown
+feathers, a rounded amber beak, dark kind eyes, a blue-and-gold traveler robe, and broad
+decorative wings folded calmly behind him; no sharp talons, armor, weapon, attack pose,
+or frightening bird features; child-friendly rounded animated-film proportions.
+
+- 固定锚点：青狮第 2 页、白象第 4 页、金翅第 6 页。
+- 三关分别固定为五球入圈、六环穿带、三羽辨风；不出现吞人、象鼻卷人、利爪、围攻或追逐。
+
+### 第 24 回《比丘国护童心》
+
+#### 白鹿国师
+
+The White Deer Adviser is a gentle white-deer-faced adult with soft pearl fur, large
+brown eyes, small rounded antlers, a moss-green court robe, cream sash, and one silver
+bell pendant; earnest but mistaken, never frightening, with no weapon, sharp antlers,
+fangs, claws, or coercive posture; child-friendly rounded animated-film proportions.
+
+#### 比丘国国王
+
+The King of Bhikshu is a kind middle-aged Chinese ruler with warm brown skin, an oval
+face, calm dark eyes, a neat short black beard, layered burgundy-and-gold robes, and a
+simple pale-jade court crown; thoughtful, humble, and never pompous or threatening;
+child-friendly rounded animated-film proportions.
+
+- 固定锚点：白鹿国师第 2 页，国王第 5 页。
+- 孩子始终与父母或照护者在一起并保留自己的心愿灯；主题是同意权、倾听和共同创作，不出现献祭、带走儿童、取心或恐吓。
+
+### 第 25 回《无底洞找师父》
+
+#### 白鼠馆主
+
+The White Mouse Librarian is an adult friendly mouse spirit with pearl-gray fur, a warm
+oval face, large teal eyes, rounded pink ears, black hair in a low bun, an
+indigo-and-cream librarian robe, and a silver key-bell necklace; curious and lonely,
+never frightening, with no sharp teeth, claws, tail weapon, cage, or threatening pose;
+child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 25 回第 2 页。
+- 无底洞固定为明亮多层地下图书馆，有宽楼梯、护栏、马匹坡道和开放出口；邀请陪伴必须先征得同意。
+
+### 第 26 回《灭法国换心意》
+
+#### 灭法国国王
+
+The King of Miefa is a thoughtful middle-aged Chinese ruler with a warm round face, calm
+dark-brown eyes, a short neat black beard, black hair under one tall simple red cloth cap,
+and layered brick-red-and-cream court robes with a dark teal sash; worried but kind,
+never cruel, humiliating, or threatening; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 26 回第 3 页。
+- 高红帽是国王个人选择，不画成军帽或宗教羞辱道具；剧情讨论职业、习惯与安全需求，不剃发、不强迫换装。
+
+### 第 27 回《隐雾山辨真影》
+
+#### 花豹云灵
+
+The Leopard Cloud Spirit is a friendly adult cloud spirit with warm golden-tan skin, a
+rounded face, large moss-green eyes, short dark-brown wavy hair, small rounded leopard
+ears, a cream tunic, moss-green trousers, and one soft golden cape patterned with rounded
+brown rosettes; playful and shy, with no animal muzzle, fangs, claws, tail weapon, armor,
+or threatening pose; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 27 回第 2 页。
+- 假路牌只制造可观察的木纹、松香和苔痕矛盾；始终保留可绕行的开放安全道路，不诱导人物走向悬崖或陷阱。
+
+### 第 28 回《凤仙郡求甘雨》
+
+#### 凤仙郡守
+
+The Fengxian Prefect is a humble middle-aged Chinese official with warm brown skin, a
+long gentle face, thoughtful dark eyes, black hair in a low topknot beneath a simple
+dark-teal official cap, and layered ochre-and-slate robes with a cream belt; responsible,
+remorseful, and never cruel or despairing; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 28 回第 2 页。
+- 干旱画面只表现浅色田地、空水缸和节水需求，不画饥饿、死亡牲畜或灾难恐惧；求雨来自认错、修渠、分享与温和自然雨。
+
+### 第 29 回《玉华州收新徒》
+
+#### 玉华州三王子
+
+The three Yuhua princes are friendly young adult brothers with warm tan skin and dark
+eyes. The eldest has a square face, a high black topknot, a jade-green robe, and a cream
+sash. The second has a round face, a side-tied black bun, an amber robe, and a teal sash.
+The youngest has an oval face, a short black ponytail, a sky-blue robe, and a rust sash.
+They use only padded rounded practice tools held low and away from others; eager to learn,
+never aggressive; child-friendly rounded animated-film proportions.
+
+- 首次与固定三人锚点：第 29 回第 1 页。
+- 三件练习器具只用于风铃、落叶、软球和搭灯廊；强调停止距离、观察空间和合作，不演兵刃模仿或师徒对打。
+
+### 第 30 回《天竺国辨玉兔》
+
+#### 天竺国公主
+
+The Tianzhu Princess is a graceful adult Chinese princess with warm tan skin, an oval
+face, large dark-brown eyes, and long black hair in a low braided coil with one moon-white
+flower pin; she wears layered saffron-and-ivory dance robes with a turquoise sash and
+soft flat shoes; confident, kind, and never helpless; child-friendly rounded animated-film proportions.
+
+#### 玉兔舞者
+
+The Jade Rabbit Dancer is a friendly adult rabbit spirit with pearl-white fur, a warm oval
+face, large violet eyes, long rounded ears tipped pale lavender, silver-white hair in a
+small side bun, and layered moon-white-and-lavender dance robes with a soft gold sash;
+graceful and hopeful, with no claws, fangs, weapon, animal aggression, or frightening
+magic; child-friendly rounded animated-film proportions.
+
+- 公主固定锚点：第 30 回第 2 页；玉兔真形固定锚点：第 30 回第 6 页。
+- 玉兔模仿公主只为争取舞台关注；通过桂花、兔足月影和舞步记忆辨认，不羞辱外貌、不围攻、不惩罚，最终以真实身份合作演出。
+
+## 第 21–30 回视觉锚点速查
+
+| 回目 | 新增角色 | 锚点页 |
+| --- | --- | --- |
+| 第 21 回《盘丝洞巧脱险》 | 织丝大姐 | 第 2 页 |
+| 第 22 回《黄花观解彩茶》 | 金光道长 | 第 2 页 |
+|  | 毗蓝婆婆 | 第 6 页 |
+| 第 23 回《狮驼岭闯三关》 | 青狮守关人 | 第 2 页 |
+|  | 白象守关人 | 第 4 页 |
+|  | 金翅守关人 | 第 6 页 |
+| 第 24 回《比丘国护童心》 | 白鹿国师 | 第 2 页 |
+|  | 比丘国国王 | 第 5 页 |
+| 第 25 回《无底洞找师父》 | 白鼠馆主 | 第 2 页 |
+| 第 26 回《灭法国换心意》 | 灭法国国王 | 第 3 页 |
+| 第 27 回《隐雾山辨真影》 | 花豹云灵 | 第 2 页 |
+| 第 28 回《凤仙郡求甘雨》 | 凤仙郡守 | 第 2 页 |
+| 第 29 回《玉华州收新徒》 | 玉华州三王子 | 第 1 页 |
+| 第 30 回《天竺国辨玉兔》 | 天竺国公主 | 第 2 页 |
+|  | 玉兔舞者 | 第 6 页 |
+
 ## 低龄改编原则（写进每次生成的正文 prompt）
 
 - 打斗一律改为“比试 / 智斗 / 追逐游戏 / 合作解决问题”，无兵刃相向。
@@ -536,6 +727,16 @@ rounded animated-film proportions.
 - 第 18 回通过共同记忆、合作选择和伙伴信任辨认真伪，不以击打、头环疼痛、围攻或消灭六耳猕猴收尾。
 - 第 19 回三借扇依次是误会、误拿小扇、合作后借到真扇；不抢夺、不钻入身体、不变虫、不演夫妻争斗。
 - 第 20 回假寺和金铙是观察解谜场景；弥勒以瓜田合作让黄眉归还物品，不表现夹压、吞人、殴打或惩罚。
+- 第 21 回盘丝姐妹固定为成年织艺师；银丝只用于图案谜题和节庆装饰，不表现蜘蛛身体、织网捕人或缠绑。
+- 第 22 回彩茶固定为盖杯、花瓣与镜光谜题；不出现毒茶、强迫饮用、蜈蚣形态或针刺。
+- 第 23 回青狮、白象、金翅固定为友善守关人；三关均为合作游戏，不出现吞人、卷人、利爪或围攻。
+- 第 24 回孩子始终由家长陪伴并保留自己的心愿灯；不出现儿童献祭、取心、强行带走或恐吓。
+- 第 25 回无底洞固定为开放明亮的地下图书馆；不囚禁唐僧，不堵出口，主题明确包含邀请前征得同意。
+- 第 26 回只讨论帽子差异、功能和共同安全标记；不剃发、不强制换装、不羞辱宗教或职业身份。
+- 第 27 回假路牌是观察谜题且保留开放绕行路；不把人物引向悬崖、陷阱或捕食场景。
+- 第 28 回求雨通过承认浪费、修复水渠、节水和公平分享完成；不表现饥荒、死亡、天罚或灾难风暴。
+- 第 29 回三件工具固定用于风铃、落叶、软球和节庆搭建；不演兵刃模仿、师徒对打或受伤。
+- 第 30 回通过舞步记忆、桂花香和月影足迹辨认玉兔；不羞辱、不围攻、不强迫婚恋，最终以真实身份合作演出。
 - “三更传艺”改写为祖师以三下轻敲提示悟空等大家休息后到安静书房请教，
   不渲染儿童独自夜行、翻墙或偷偷离家。
 - 学艺必须体现长期积累：祖师耐心讲解，悟空反复练习，明确经过许多年才学有所成；

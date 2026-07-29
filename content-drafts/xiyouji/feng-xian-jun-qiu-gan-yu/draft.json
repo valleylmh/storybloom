@@ -1,0 +1,56 @@
+{
+  "id": "feng-xian-jun-qiu-gan-yu",
+  "title": "凤仙郡求甘雨",
+  "subtitle": "把最后一瓢水分给大家",
+  "origin": "《西游记》第八十七回（低龄温和改编）",
+  "moral": {
+    "zh": "承认错误、节约资源并公平分享，比只等待别人来解决更有力量。",
+    "en": "Owning mistakes, conserving resources, and sharing fairly are more powerful than waiting for someone else to solve everything."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 28,
+  "episodeNumber": 28,
+  "pages": [
+    {
+      "zh": "凤仙郡很久没有好好下雨了。大家把最后几缸水盖得严严实实，却为先浇哪块田争个不停。",
+      "en": "Fengxian Prefecture had gone a long time without steady rain. The last jars were carefully covered, but everyone argued over which field should be watered first.",
+      "prompt": "Use the established full traveling-team anchor. Show the travelers entering a dry but safe farming town where adult villagers stand beside several covered clay water jars and intact pale crops, discussing with open gestures. Children remain with caregivers. Square premium 3D clay-like art; no suffering, shouting faces, empty wells, dead plants, text, or fear."
+    },
+    {
+      "zh": "郡守叹气说，他以前修花园时用水太多，还把上游的小水渠堵住了。现在他很后悔，却不知道怎样补救。",
+      "en": "The prefect sighed. He had once used too much water for his garden and blocked a small upstream channel. Now he regretted it but did not know how to repair the harm.",
+      "prompt": "Create the fixed Fengxian Prefect anchor: a humble middle-aged Chinese official with warm brown skin, a long gentle face, thoughtful dark eyes, black hair in a low topknot beneath a simple dark-teal official cap, and layered ochre-and-slate robes with a cream belt; responsible and remorseful, never cruel. He shows Tang Seng a small blocked garden channel using a safe tabletop model. Square premium 3D clay-like art; no punishment, angry crowd, text, or despair."
+    },
+    {
+      "zh": "唐僧请大家先列出共同需要：孩子和老人要喝水，牲畜要有水，最容易救活的幼苗也要浇水。",
+      "en": "Tang Seng asked everyone to name shared needs: drinking water for children and elders, water for animals, and enough for the seedlings most likely to recover.",
+      "prompt": "Reuse Tang Seng, the Fengxian Prefect, and adult villagers. Show a calm community circle around three wordless clay symbols: a drinking cup, an animal trough, and a seedling pot. Families stay together and listen. Square premium 3D clay-like art; no readable list, illness, desperate faces, or unequal treatment."
+    },
+    {
+      "zh": "悟空和白龙马去看云，八戒清理旧水渠，沙僧带村民修好漏水的缸。郡守也卷起袖子一起干。",
+      "en": "Wukong and White Dragon Horse watched the clouds, Bajie cleared the old channel, and Sha Wujing helped repair leaking jars. The prefect rolled up his sleeves and joined in.",
+      "prompt": "Reuse Wukong, White Dragon Horse, Bajie, Sha Wujing, and the fixed prefect. Show one coordinated safe work scene: Wukong and the horse observe clouds from a low hill, Bajie uses his rounded rake to clear leaves from a shallow channel, Sha patches a jar, and the prefect carries smooth stones. Square premium 3D clay-like art; no dangerous heights, deep water, weapons, text, or exhaustion."
+    },
+    {
+      "zh": "大家把每家省下的一小瓢水倒进公共水桶，先照顾最需要的地方。原本互相埋怨的人开始互相提醒节水。",
+      "en": "Each family poured one saved ladle into a shared barrel for the most urgent needs. People who had blamed one another began helping each other save water.",
+      "prompt": "Show the established team, fixed prefect, and families contributing small ladles of water into one clean shared barrel in an orderly circle. Nearby, a cup station, animal trough, and seedling bed receive measured portions. Square premium 3D clay-like art; no text, forced giving, crowd crush, empty hands of children, or sadness."
+    },
+    {
+      "zh": "郡守公开承认自己的错误，拆掉只通往花园的水闸，并答应以后让大家一起商量用水。",
+      "en": "The prefect openly admitted his mistake, removed the gate that served only his garden, and promised that future water plans would be made together.",
+      "prompt": "Reuse the fixed Fengxian Prefect, Tang Seng, and villagers. Show the prefect safely lifting away a small rounded wooden garden sluice with help, opening a shallow channel toward several community plots. Everyone stands as partners at the same level. Square premium 3D clay-like art; no public shaming, broken property, text, anger, or danger."
+    },
+    {
+      "zh": "远处的小雨云看见清亮的水渠和整齐的水缸，慢慢飘来。细细的甘雨落下，大家先让雨水装满公共蓄水池。",
+      "en": "The little rain cloud saw the clean channels and repaired jars and drifted closer. Gentle rain began to fall, and everyone first filled the community reservoir.",
+      "prompt": "Show the full team, fixed prefect, and villagers smiling under a gentle silver-blue rain cloud. Soft rain fills a broad fenced community cistern and shallow channels; children in caregiver arms reach toward droplets. Square premium 3D clay-like art; no flood, lightning, storm fear, text, or magical punishment."
+    },
+    {
+      "zh": "离开凤仙郡时，三位年轻王子追上来，请师徒去玉华州看看：他们刚拿到新工具，却总是配合不好。",
+      "en": "As the travelers left Fengxian, three young princes hurried over. They asked for help in Yuhua Prefecture, where their new tools never seemed to work well together.",
+      "prompt": "Show the established travelers on a fresh green road meeting three friendly young adult princes in coordinated jade, amber, and blue practice robes. Each carries a harmless rounded training tool held down and away from others. A distant Yuhua city gate glows ahead. Square premium 3D clay-like art; no children with weapons, aggressive challenge, text, or danger."
+    }
+  ]
+}

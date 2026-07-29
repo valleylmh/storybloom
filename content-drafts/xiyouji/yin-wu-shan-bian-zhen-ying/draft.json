@@ -1,0 +1,56 @@
+{
+  "id": "yin-wu-shan-bian-zhen-ying",
+  "title": "隐雾山辨真影",
+  "subtitle": "花纹路牌里的观察游戏",
+  "origin": "《西游记》第八十五至八十六回（低龄温和改编）",
+  "moral": {
+    "zh": "看见矛盾时不要急着跟随最显眼的答案；多观察、互相验证，才能找到可靠的方向。",
+    "en": "When clues conflict, do not rush after the loudest answer. Observe and verify together to find a reliable direction."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 27,
+  "episodeNumber": 27,
+  "pages": [
+    {
+      "zh": "隐雾山的雾像薄纱一样飘着。两个一模一样的路牌，一个指左，一个指右，连豹纹都分毫不差。",
+      "en": "Mist drifted across Hidden Mist Mountain like thin silk. Two identical leopard-patterned signs pointed in opposite directions.",
+      "prompt": "Use the established full traveling-team anchor. Show the five travelers at a safe sunlit mountain fork under translucent pearly mist, comparing two blank wooden arrow signs with matching soft leopard-spot patterns pointing opposite ways. Square premium 3D clay-like picture-book art; no readable text, darkness, cliff edge, weapons, or fear."
+    },
+    {
+      "zh": "一位穿花斑披风的云灵从树后走来：“我是花豹云灵。答对我的花纹谜题，正确的路就会出现。”",
+      "en": "A cloud spirit in a spotted cape stepped from behind a tree. “I am the Leopard Cloud Spirit. Solve my pattern puzzle and the true path will appear.”",
+      "prompt": "Create the fixed Leopard Cloud Spirit anchor: a friendly adult cloud spirit with warm golden-tan skin, a rounded face, large moss-green eyes, short dark-brown wavy hair, small rounded leopard ears, a cream tunic, moss-green trousers, and one soft golden cape patterned with rounded brown rosettes; playful and shy, with no animal muzzle, fangs, claws, tail weapon, armor, or threat. He greets Wukong with open empty hands. Square premium 3D clay-like art."
+    },
+    {
+      "zh": "云灵摆出三排花纹石：第一排多一片叶子，第二排少一个圆点，第三排却好像完全相同。",
+      "en": "The spirit arranged three rows of pattern stones: one had an extra leaf, one missed a dot, and the third looked exactly the same.",
+      "prompt": "Reuse the Leopard Cloud Spirit, Wukong, Tang Seng, and Bajie anchors. Show three neat rows of large rounded pattern stones on a flat clearing: simple leaf shapes, dot shapes, and rosettes, with no numbers or letters. The group kneels at a respectful distance to compare them. Square premium 3D clay-like art; no traps, weapons, text, or frustration."
+    },
+    {
+      "zh": "悟空看形状，八戒数间隔，沙僧摸石头边缘，白龙马闻到其中一块带着新鲜松香。",
+      "en": "Wukong studied the shapes, Bajie counted the spaces, Sha Wujing felt the edges, and White Dragon Horse smelled fresh pine resin on one stone.",
+      "prompt": "Reuse Wukong, Bajie, Sha Wujing, and White Dragon Horse. Show each using a different safe observation method around the pattern stones: pointing at shapes, spacing with fingers, feeling a rounded edge, and sniffing a small pine-resin mark. Square premium 3D clay-like art; no licking, sharp stones, readable marks, weapons, or danger."
+    },
+    {
+      "zh": "唐僧发现，真路牌经过多年风吹，木纹方向和旧苔痕应该一致；刚做的假路牌只有表面花纹相像。",
+      "en": "Tang Seng realized that an old true sign should have wood grain and moss shaped by years of wind. The new copy matched only the painted spots.",
+      "prompt": "Reuse Tang Seng, Wukong, and the Leopard Cloud Spirit. Show a close visual comparison between two blank signboards: one has naturally aligned wood grain and soft old moss, the other has fresh pine resin and painted spots. Tang Seng indicates the evidence calmly as the spirit listens. Square premium 3D clay-like art; no text, accusation, shame, or fear."
+    },
+    {
+      "zh": "花豹云灵收起假路牌，承认自己总怕旅人匆匆走过，才想用谜题把大家留下来陪他玩。",
+      "en": "The Leopard Cloud Spirit put away the false sign. He admitted that he feared travelers would hurry past, so he used puzzles to make them stay and play.",
+      "prompt": "Reuse the fixed Leopard Cloud Spirit and full team anchors. The spirit folds the false sign flat beside the path and speaks honestly with slightly lowered ears; the team listens in a friendly semicircle with open body language. Square warm 3D clay-like art; no scolding, crying, capture, blocked path, weapons, or fear."
+    },
+    {
+      "zh": "大家陪他办了一场自愿参加的花纹寻路赛，还教他在路口放一篮“愿意来玩”的彩石。",
+      "en": "They held an optional pattern trail game and showed him how to leave a basket of colored stones for travelers who wished to play.",
+      "prompt": "Show the fixed Leopard Cloud Spirit and full team hosting a safe optional pattern trail game on a broad meadow path. One open basket holds blank colorful stones; a clearly open bypass path remains unobstructed for anyone who does not join. Square premium 3D clay-like art; no text, pressure, maze walls, traps, or dangerous running."
+    },
+    {
+      "zh": "走出隐雾山，前方凤仙郡的田地干得发白。村民守着空水缸，远处天空却飘着一朵小雨云。",
+      "en": "Beyond the mountain, the fields of Fengxian Prefecture looked pale and dry. Villagers stood beside empty water jars while one small rain cloud floated far away.",
+      "prompt": "Show the established travelers emerging from the bright misty mountain toward a dry but non-devastated farming town with pale fields, intact plants, empty clay water jars, and families standing together. One small silver-blue rain cloud waits in the distance. Square premium 3D clay-like art; no suffering, dead animals, cracked abyss, text, or ominous storm."
+    }
+  ]
+}

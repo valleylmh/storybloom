@@ -1,0 +1,56 @@
+{
+  "id": "huang-hua-guan-jie-cai-cha",
+  "title": "黄花观解彩茶",
+  "subtitle": "七杯花茶的颜色谜题",
+  "origin": "《西游记》第七十三至七十五回（低龄温和改编）",
+  "moral": {
+    "zh": "不能只凭颜色和外表下结论；认真比较、互相提醒，再请懂行的人帮助，才能找到可靠答案。",
+    "en": "Color and appearance alone do not prove what is true. Careful comparison, friendly reminders, and expert help lead to reliable answers."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 22,
+  "episodeNumber": 22,
+  "pages": [
+    {
+      "zh": "师徒来到黄花观。院里开满菊花，一张圆桌上摆着七杯颜色不同的花茶，主人请大家猜出哪一杯适合分享。",
+      "en": "The travelers arrived at Yellow Flower Temple, where chrysanthemums filled the courtyard. Seven colorful flower teas waited on a round table, and the host invited them to find which one was ready to share.",
+      "prompt": "Use the established full traveling-team anchor. Show a sunny chrysanthemum courtyard with exactly seven small covered teacups arranged on one round table, each releasing a different soft color of steam. The team observes without drinking. Premium polished 3D clay-like children's picture-book art, square 1:1; no text, poison, forced drinking, fear, or dark temple."
+    },
+    {
+      "zh": "主人金光道长穿着画满太阳圆纹的长袍。他说：“颜色最亮的，就是最好的一杯！”悟空却觉得规则没有这么简单。",
+      "en": "The host, Golden-Light Taoist, wore a robe covered in round sun patterns. “The brightest color must be best,” he declared, but Wukong suspected the rule was not so simple.",
+      "prompt": "Create the fixed Golden-Light Taoist anchor beside Wukong. He is a middle-aged Chinese Taoist with warm tan skin, a round expressive face, amber eyes, black hair in a neat topknot, a mustard-and-brown robe patterned with large round sun motifs, and a teal sash; he carries a closed bamboo tea tray, never a weapon, and has no insect eyes, extra limbs, fangs, or frightening features. Bright garden, seven covered cups visible, square premium 3D clay-like art."
+    },
+    {
+      "zh": "八戒先闻香味，发现最亮的红茶只有甜香，却没有菊花味。沙僧把七杯茶按香气轻重重新排好。",
+      "en": "Bajie smelled the teas and found that the brightest red one was sweet but had no chrysanthemum scent. Sha Wujing rearranged all seven cups from lightest to strongest aroma.",
+      "prompt": "Reuse Bajie, Sha Wujing, Wukong, and Golden-Light Taoist. Bajie smells from a safe distance while Sha arranges exactly seven closed cups along a curved wooden tray; small chrysanthemum petals beside some cups provide clues. No one drinks. Tools remain upright away from the table. Warm square 3D clay-like art; no text, spills, poison symbols, or fear."
+    },
+    {
+      "zh": "唐僧把每杯茶的热气照在白纸屏上。只有淡金色热气穿过菊花花瓣时，会变成柔和的七色光。",
+      "en": "Tang Seng cast each tea's steam onto a white paper screen. Only the pale-gold steam became a gentle rainbow when it passed through chrysanthemum petals.",
+      "prompt": "Reuse Tang Seng, Wukong, and Golden-Light Taoist. Tang Seng holds a plain white paper screen while pale-gold steam from one covered cup passes through suspended chrysanthemum petals and becomes a soft seven-color light fan; the other six cups remain closed. Scientific-looking observation but mythical setting, square premium 3D clay-like art; no text, hot burns, drinking, or danger."
+    },
+    {
+      "zh": "金光道长仍不服气，转动院里的太阳镜，让所有杯子都闪得一样亮。悟空说：“亮不亮，不是唯一证据。”",
+      "en": "Golden-Light Taoist turned the courtyard sun mirrors until every cup looked equally bright. Wukong replied, “Brightness is not the only clue.”",
+      "prompt": "Reuse Wukong and Golden-Light Taoist. Several rounded bronze mirrors safely reflect warm light across the seven covered cups, making them equally bright; Wukong points to the unchanged chrysanthemum petal clue with an open hand. No glare in eyes, no weapon use. Square warm cinematic 3D clay-like art; no text, intimidation, insect horror, or dangerous beams."
+    },
+    {
+      "zh": "一位背着花篮的毗蓝婆婆来到院中。她用小棱镜一照，证实淡金色那杯才是新鲜菊花茶，其余只是节庆彩雾。",
+      "en": "Grandmother Pilanpo arrived with a flower basket. Using a small prism, she confirmed that the pale-gold cup held fresh chrysanthemum tea, while the others were only festival-colored mist.",
+      "prompt": "Create the fixed Grandmother Pilanpo anchor with Tang Seng and Golden-Light Taoist. She is a kind elderly Chinese herbalist with a warm round face, silver hair in a low bun, deep brown eyes, layered violet-and-cream robes, a woven chrysanthemum basket, and one small triangular glass prism; wise and cheerful, never stern. She demonstrates the prism beside seven closed cups. Square premium 3D clay-like art; no text, poison, punishment, or intimidating glow."
+    },
+    {
+      "zh": "金光道长承认自己太爱炫耀颜色，忘了先检查茶叶。他重新泡了一壶温温的菊花茶，请大家安心品尝。",
+      "en": "Golden-Light Taoist admitted that he had cared too much about dazzling colors and forgotten to check the leaves. He brewed a fresh pot of warm chrysanthemum tea for everyone to enjoy safely.",
+      "prompt": "Reuse Golden-Light Taoist, Grandmother Pilanpo, and the established team. The Taoist pours warm pale-gold chrysanthemum tea from a small safe teapot into ordinary cups while Pilanpo checks the leaves; everyone sits calmly at an open garden table. No steam near faces and no magical colors in the drink. Square warm 3D clay-like art; no text or intoxication."
+    },
+    {
+      "zh": "离开黄花观时，山路上出现三种巨大的脚印：圆圆的狮爪印、宽宽的象足印，还有一片金色羽毛。",
+      "en": "As they left Yellow Flower Temple, three giant tracks appeared on the road: round lion pawprints, broad elephant footprints, and one golden feather.",
+      "prompt": "Show the established team walking away from the bright chrysanthemum temple and studying three friendly oversized trail clues on an empty road: rounded lion pawprints, broad elephant footprints, and one soft golden feather. Distant green ridge with three colorful gates. Square premium 3D clay-like art; no predators, claws, fear, or ominous shadows."
+    }
+  ]
+}

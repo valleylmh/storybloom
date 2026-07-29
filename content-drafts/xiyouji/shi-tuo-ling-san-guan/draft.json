@@ -1,0 +1,56 @@
+{
+  "id": "shi-tuo-ling-san-guan",
+  "title": "狮驼岭闯三关",
+  "subtitle": "三位守关人的合作考验",
+  "origin": "《西游记》第七十四至七十七回（低龄温和改编）",
+  "moral": {
+    "zh": "真正的强大不是让别人害怕，而是把不同长处组合起来解决问题；公平的规则，也要愿意听取意见。",
+    "en": "Real strength does not frighten others. It combines different talents to solve problems, and fair rules make room for feedback."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 23,
+  "episodeNumber": 23,
+  "pages": [
+    {
+      "zh": "师徒来到狮驼岭，山路被三座彩色大门挡住。每扇门旁都摆着一块合作任务板，却没有写任何字。",
+      "en": "The travelers reached Lion-Camel Ridge, where three colorful gates blocked the path. Beside each stood a wordless teamwork board.",
+      "prompt": "Use the established full team anchor. Show the travelers before three broad friendly mountain gates colored jade, pearl-blue, and gold; each has a blank wooden puzzle board with shapes but no text. Clear daylight and open safe path. Premium square 3D clay-like picture-book art; no cages, monsters, weapons, fear, or dark fortress."
+    },
+    {
+      "zh": "青狮守关人迎出来。他有蓬松的青绿色鬃毛，却笑得很温和：“第一关，要让五只石球同时停在圆圈里。”",
+      "en": "The Green Lion Guardian greeted them with a gentle smile. “For the first gate, place five stone balls inside the circles at the same time.”",
+      "prompt": "Create the fixed Green Lion Guardian anchor beside Wukong and Tang Seng. He is a broad friendly lion-faced adult with soft turquoise fur, a fluffy sea-green mane, cream muzzle, large golden-brown eyes, and a jade-green robe with a navy sash; no fangs, claws, armor, or weapon. Five smooth lightweight stone balls and five floor circles form a safe puzzle. Premium square 3D clay-like art; no threat or roaring."
+    },
+    {
+      "zh": "悟空发现石球会互相滚开。八戒用圆木挡边，沙僧量好距离，白龙马轻轻推最后一只，五球终于一起停稳。",
+      "en": "Wukong noticed the balls kept rolling apart. Bajie made soft wooden stops, Sha Wujing measured the spacing, and White Dragon Horse nudged the last ball until all five stayed put.",
+      "prompt": "Reuse the established Wukong, Bajie, Sha Wujing, White Dragon Horse, and Green Lion Guardian. Show exactly five smooth balls resting in five shallow circles, with Bajie placing rounded wood stops, Sha measuring with a rope, and the horse gently nudging one ball. Tools used safely. Square premium 3D clay-like art; no strain, falling, or weapon gestures."
+    },
+    {
+      "zh": "第二扇门前，白象守关人请大家把一条长布带穿过六个高低不同的圆环，不能让布带碰到地面。",
+      "en": "At the second gate, the White Elephant Guardian asked them to guide a long ribbon through six rings of different heights without letting it touch the ground.",
+      "prompt": "Create the fixed White Elephant Guardian anchor with the team. He is a sturdy pearl-gray elephant-faced adult with large soft ears, kind teal eyes, a short rounded trunk, two tiny smooth ivory tusks, and a slate-blue robe with cream sash; no armor or weapon. Six large padded rings and one long crimson ribbon form a safe coordination puzzle. Square warm 3D clay-like art; no trapping or fear."
+    },
+    {
+      "zh": "唐僧负责看全局，悟空递高处，八戒托中间，沙僧守低处，白龙马慢慢向前走。长布带像一条彩虹穿过六环。",
+      "en": "Tang Seng watched the whole pattern, Wukong handled the high rings, Bajie supported the middle, Sha Wujing guarded the low rings, and White Dragon Horse moved slowly forward. The ribbon flowed through all six like a rainbow.",
+      "prompt": "Reuse the full team and White Elephant Guardian. Show one crimson ribbon successfully threading exactly six padded rings at different heights; each traveler has a clear cooperative role and stable footing. The elephant guardian applauds. Premium square cinematic 3D clay-like art; no text, knots around bodies, dangerous heights, or extra rings."
+    },
+    {
+      "zh": "第三扇门上方，金翅守关人放下许多轻羽毛：“请找出三片能迎风向西飞的羽毛。”",
+      "en": "Above the third gate, the Golden-Winged Guardian released many soft feathers. “Find the three that can ride the wind west.”",
+      "prompt": "Create the fixed Golden-Winged Guardian anchor with Wukong. He is a tall friendly bird-faced adult with soft gold-brown feathers, a rounded amber beak, dark kind eyes, a blue-and-gold traveler robe, and broad decorative wings folded calmly behind him; no sharp talons, armor, or weapon. Many soft feathers float above three wind chimes. Square premium 3D clay-like art; no attack or frightening bird."
+    },
+    {
+      "zh": "悟空看云，唐僧看树叶，八戒听风铃，沙僧摆好方向石。三片金羽准确落在西边的篮子里。",
+      "en": "Wukong watched the clouds, Tang Seng read the leaves, Bajie listened to the chimes, and Sha Wujing placed direction stones. Three golden feathers landed in the western basket.",
+      "prompt": "Reuse the full team and Golden-Winged Guardian. Show exactly three golden feathers settling into one woven basket while the team compares clouds, leaves, gentle chimes, and four direction stones. The guardian keeps wings folded and smiles. Square warm 3D clay-like art; no readable compass letters, storms, claws, or danger."
+    },
+    {
+      "zh": "三位守关人一起打开山门，还送来一枚白鹿铃牌。远处的比丘国里，许多孩子正和家长守着自己的心愿灯。",
+      "en": "The three guardians opened the ridge gate together and gave the travelers a white-deer bell token. In distant Bhikshu Kingdom, children stood with their families beside wish lanterns.",
+      "prompt": "Show the established team saying farewell to the Green Lion, White Elephant, and Golden-Winged Guardians at three open gates. Tang Seng receives one white-deer bell token. Beyond the ridge, families and children stand safely together around wish lanterns. Square premium 3D clay-like art; no text, separation of children, cages, or ominous city."
+    }
+  ]
+}
