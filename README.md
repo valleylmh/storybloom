@@ -1,8 +1,8 @@
-# StoryBloom — AI 儿童绘本生成器
+# StoryBloom — 会说话的家庭故事书创作工具
 
-> 输入一句话，生成完整 8 页中英双语绘本，并可订阅每日绘本灵感。
+> **让每个家庭都有一本会说话的专属故事书。**
 >
-> 长期愿景：AI 帮助家长陪伴孩子成长，持续创造属于孩子的故事世界。
+> 输入名字、家庭片段或故事主题，生成完整 8 页中英双语绘本，并支持朗读、保存、分享与视频输出。
 
 <p align="center">
   <a href="https://storybloom.valleylmh.vip"><strong>在线体验</strong></a>
@@ -105,7 +105,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 
 - 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
 - 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations 或 Hugging Face；用户上传人物照片后改按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 使用支持参考图的 AGNES 与 CPA Nano Banana 2（默认上游模型 `gemini-3.1-flash-image`），并按配置顺序自动回退。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
-- 音频：绘本网页朗读使用浏览器内置 `SpeechSynthesis`，不会调用云端 TTS，也不会在故事生成后自动准备音频。`src/app/api/audio/route.ts` 保留给需要真实音频文件的带旁白视频；配置 `GEMINI_API_KEY` 时优先使用 Gemini 2.5 Flash TTS，再回退 Gemini 3.1 Flash TTS，仍失败或未配置时自动使用 Edge TTS，结果优先写入 Supabase 私有 Storage。
+- 音频：绘本网页朗读使用浏览器内置 `SpeechSynthesis`，不会调用云端 TTS，也不会在故事生成后自动准备音频。`src/app/api/audio/route.ts` 保留给需要真实音频文件的带旁白视频；配置 `DASHSCOPE_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，再依次回退 Gemini 2.5、Gemini 3.1 和 Edge TTS，结果优先写入 Supabase 私有 Storage。
 
 ## 技术栈
 
@@ -115,7 +115,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 | 故事生成 | 部署者配置的 OpenAI 兼容端点，未配置或失败时使用本地 fallback |
 | 插图生成 | AGNES、DashScope、Cloudflare、Pollinations、Hugging Face；参考图模式支持 AGNES / CPA |
 | 网页朗读 | 浏览器本机 SpeechSynthesis |
-| 视频旁白音频 | Gemini 2.5 Flash TTS → Gemini 3.1 Flash TTS → Edge TTS |
+| 视频旁白音频 | Token Plan 百炼 TTS → Gemini 2.5 → Gemini 3.1 → Edge TTS |
 | 导出与分享 | Browser Canvas 长图、图片 ZIP、Supabase 分享快照 |
 | 绘本视频 | Remotion Web Renderer + WebCodecs，浏览器本地输出 MP4 |
 | 邮件订阅 | Resend + Supabase，双重确认与一键退订 |
@@ -171,7 +171,7 @@ pnpm dev
 
 访问 `http://localhost:3000`。
 
-本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频在没有 `GEMINI_API_KEY` 时会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key；`DASHSCOPE_API_KEY` 只用于选择 DashScope 作为图片服务商时的插图生成。
+本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频在没有任何 TTS key 时会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key；`DASHSCOPE_API_KEY` 仍只用于选择 DashScope 作为图片服务商，语音使用独立的 `DASHSCOPE_TOKEN_KEY`。
 
 ## 绘本朗读音频
 
@@ -179,7 +179,9 @@ pnpm dev
 
 带旁白视频需要可解码的真实音频文件，因此仍会逐页调用 `/api/audio`；选择“无旁白”不会调用 TTS。接口只允许已配置的模型与音色，并按客户端 IP 限制请求频率。
 
-配置 `GEMINI_API_KEY` 时，视频旁白默认先使用价格更低的 `gemini-2.5-flash-preview-tts`，失败后尝试 `gemini-3.1-flash-tts-preview`：中文默认音色 `Leda`，英文默认音色 `Aoede`，Google 返回的 24 kHz、16-bit 单声道 PCM 会在服务端封装为 WAV。可通过 `GEMINI_TTS_MODEL` 指定首选 Gemini 模型，通过 `GEMINI_TTS_ENABLED=0` 临时关闭，或用 `GEMINI_TTS_VOICE_ZH`、`GEMINI_TTS_VOICE_EN`、`GEMINI_TTS_TIMEOUT_MS` 和 `GEMINI_TTS_MAX_ATTEMPTS` 调整行为；默认每个 Gemini 模型尝试一次、15 秒超时。两个 Gemini 模型均失败时，系统自动回退到 `edge-tts`（中文 `zh-CN-XiaoxiaoNeural`、英文 `en-US-AnaNeural`、24 kHz MP3），回退请求只尝试一次，确保整条链路留在 Vercel 60 秒函数时限内；直接使用 Edge 时仍遵循 `EDGE_TTS_*` 环境变量。该接口不会调用 Sambert、CosyVoice 等 DashScope TTS。
+配置 `DASHSCOPE_TOKEN_KEY` 时，视频旁白首先使用 Token Plan 的 `qwen-audio-3.0-tts-plus`：中文默认音色 `longanlingxin`，英文默认音色 `longanlufeng`，输出为 24 kHz MP3。未配置、空字符串或设置 `TOKEN_PLAN_TTS_ENABLED=0` 时会完全跳过；请求失败时也不会阻断视频，而是进入原有 Gemini/Edge 回退链。可通过 `TOKEN_PLAN_TTS_VOICE_ZH`、`TOKEN_PLAN_TTS_VOICE_EN` 和 `TOKEN_PLAN_TTS_TIMEOUT_MS` 调整行为。服务端只接受可信的北京 OSS 音频地址，下载并验证 MP3 后再写入私有缓存，不会向前端暴露临时签名 URL。
+
+配置 `GEMINI_API_KEY` 时，后续回退默认先使用价格更低的 `gemini-2.5-flash-preview-tts`，失败后尝试 `gemini-3.1-flash-tts-preview`：中文默认音色 `Leda`，英文默认音色 `Aoede`，Google 返回的 24 kHz、16-bit 单声道 PCM 会在服务端封装为 WAV。`GEMINI_API_KEY` 支持用英文逗号配置多个 key，例如 `key-1,key-2,key-3`；系统会去掉空格和重复项，并在每个 Gemini 模型内从左到右依次尝试全部 key。两个 Gemini 模型的全部 key 均失败时，系统自动回退到 `edge-tts`（中文 `zh-CN-XiaoxiaoNeural`、英文 `en-US-AnaNeural`、24 kHz MP3）。
 
 首次启用持久化音频缓存时，在 Supabase 执行：
 

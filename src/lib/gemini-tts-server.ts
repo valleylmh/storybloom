@@ -66,15 +66,19 @@ function readPositiveInteger(name: string, fallback: number, maximum: number) {
   return Math.min(parsed, maximum);
 }
 
-function getGeminiApiKey() {
-  const apiKey = process.env.GEMINI_API_KEY?.trim();
-  if (!apiKey) {
+export function parseGeminiApiKeys(value = process.env.GEMINI_API_KEY || "") {
+  return [...new Set(value.split(",").map((key) => key.trim()).filter(Boolean))];
+}
+
+function getGeminiApiKeys() {
+  const apiKeys = parseGeminiApiKeys();
+  if (apiKeys.length === 0) {
     throw new GeminiTtsAudioError(
       "Gemini TTS 未配置 GEMINI_API_KEY，将使用 Edge TTS。",
       503,
     );
   }
-  return apiKey;
+  return apiKeys;
 }
 
 function getEndpoint(model: string) {
@@ -155,12 +159,16 @@ function statusForProviderError(status: number) {
   return 502;
 }
 
-async function synthesizeOnce(input: GeminiTtsAudioInput) {
+async function synthesizeOnce(
+  input: GeminiTtsAudioInput,
+  apiKey: string,
+  timeoutMs: number,
+) {
   const model = input.model || DEFAULT_MODEL;
   const controller = new AbortController();
   const timeout = setTimeout(
     () => controller.abort(),
-    readPositiveInteger("GEMINI_TTS_TIMEOUT_MS", DEFAULT_TIMEOUT_MS, 28_000),
+    timeoutMs,
   );
 
   let response: Response;
@@ -169,7 +177,7 @@ async function synthesizeOnce(input: GeminiTtsAudioInput) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "x-goog-api-key": getGeminiApiKey(),
+        "x-goog-api-key": apiKey,
       },
       body: JSON.stringify({
         contents: [
@@ -252,27 +260,42 @@ async function synthesizeOnce(input: GeminiTtsAudioInput) {
 }
 
 export async function synthesizeGeminiTtsAudio(input: GeminiTtsAudioInput) {
+  const apiKeys = getGeminiApiKeys();
   const attempts = readPositiveInteger(
     "GEMINI_TTS_MAX_ATTEMPTS",
     DEFAULT_MAX_ATTEMPTS,
     2,
   );
+  const deadline =
+    Date.now() +
+    readPositiveInteger("GEMINI_TTS_TIMEOUT_MS", DEFAULT_TIMEOUT_MS, 28_000);
+  let remainingCalls = apiKeys.length * attempts;
   let lastError: unknown;
 
-  for (let attempt = 1; attempt <= attempts; attempt += 1) {
-    try {
-      return await synthesizeOnce(input);
-    } catch (error) {
-      lastError = error;
-      if (
-        attempt >= attempts ||
-        !(error instanceof GeminiTtsAudioError) ||
-        !isRetryableStatus(error.status)
-      ) {
-        throw error;
+  for (const apiKey of apiKeys) {
+    for (let attempt = 1; attempt <= attempts; attempt += 1) {
+      const timeoutMs = Math.max(
+        500,
+        Math.floor(Math.max(0, deadline - Date.now()) / remainingCalls),
+      );
+      remainingCalls -= 1;
+      try {
+        return await synthesizeOnce(input, apiKey, timeoutMs);
+      } catch (error) {
+        lastError = error;
+        if (
+          attempt >= attempts ||
+          !(error instanceof GeminiTtsAudioError) ||
+          !isRetryableStatus(error.status)
+        ) {
+          break;
+        }
       }
     }
   }
 
+  if (!lastError) {
+    throw new GeminiTtsAudioError("所有 Gemini API key 均不可用，将使用 Edge TTS。", 503);
+  }
   throw lastError;
 }

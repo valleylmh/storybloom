@@ -22,6 +22,10 @@ function resetTtsEnvironment() {
   delete process.env.GEMINI_TTS_MODEL;
   delete process.env.GEMINI_TTS_VOICE_ZH;
   delete process.env.GEMINI_TTS_VOICE_EN;
+  delete process.env.DASHSCOPE_TOKEN_KEY;
+  delete process.env.TOKEN_PLAN_TTS_ENABLED;
+  delete process.env.TOKEN_PLAN_TTS_VOICE_ZH;
+  delete process.env.TOKEN_PLAN_TTS_VOICE_EN;
   delete process.env.EDGE_TTS_VOICE_ZH;
   delete process.env.EDGE_TTS_VOICE_EN;
 }
@@ -74,6 +78,38 @@ describe("narration request resolution", () => {
     expect(request.format).toBe("wav");
   });
 
+  it("prefers Token Plan TTS when DASHSCOPE_TOKEN_KEY is configured", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.GEMINI_API_KEY = "test-key";
+    getCachedStoryMock.mockResolvedValue(null);
+
+    const request = await resolveNarrationRequest({ text: "测试", mode: "zh" });
+
+    expect(request.model).toBe("qwen-audio-3.0-tts-plus");
+    expect(request.voice).toBe("longanlingxin");
+    expect(request.format).toBe("mp3");
+  });
+
+  it("skips Token Plan TTS when the token is blank", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "   ";
+    process.env.GEMINI_API_KEY = "test-key";
+    getCachedStoryMock.mockResolvedValue(null);
+
+    const request = await resolveNarrationRequest({ text: "测试", mode: "zh" });
+
+    expect(request.model).toBe("gemini-2.5-flash-preview-tts");
+  });
+
+  it("can disable Token Plan TTS without removing the token", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.TOKEN_PLAN_TTS_ENABLED = "0";
+    getCachedStoryMock.mockResolvedValue(null);
+
+    const request = await resolveNarrationRequest({ text: "测试", mode: "zh" });
+
+    expect(request.model).toBe("edge-tts");
+  });
+
   it("can select Gemini 3.1 Flash TTS through configuration", async () => {
     process.env.GEMINI_API_KEY = "test-key";
     process.env.GEMINI_TTS_MODEL = "gemini-3.1-flash-tts-preview";
@@ -96,6 +132,15 @@ describe("narration request resolution", () => {
     expect(request.model).toBe("edge-tts");
     expect(request.voice).toBe("zh-CN-XiaoxiaoNeural");
     expect(request.format).toBe("mp3");
+  });
+
+  it("treats an empty comma-separated Gemini key list as unconfigured", async () => {
+    process.env.GEMINI_API_KEY = " , , ";
+    getCachedStoryMock.mockResolvedValue(null);
+
+    const request = await resolveNarrationRequest({ text: "测试", mode: "zh" });
+
+    expect(request.model).toBe("edge-tts");
   });
 
   it("selects the English Edge TTS voice for English narration", async () => {

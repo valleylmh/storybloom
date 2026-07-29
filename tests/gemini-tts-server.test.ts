@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   buildGeminiTtsPrompt,
+  parseGeminiApiKeys,
   synthesizeGeminiTtsAudio,
   wrapPcm16LeAsWav,
 } from "@/lib/gemini-tts-server";
@@ -33,6 +34,14 @@ describe("Gemini TTS server", () => {
 
     expect(prompt).toContain("儿童绘本旁白");
     expect(prompt.endsWith("小云朵回家了。")).toBe(true);
+  });
+
+  it("parses comma-separated Gemini API keys and removes blanks and duplicates", () => {
+    expect(parseGeminiApiKeys(" key-one, key-two ,,key-one,  key-three ")).toEqual([
+      "key-one",
+      "key-two",
+      "key-three",
+    ]);
   });
 
   it("calls Gemini generateContent and returns playable WAV bytes", async () => {
@@ -83,5 +92,73 @@ describe("Gemini TTS server", () => {
     expect(result.contentType).toBe("audio/wav");
     expect(result.bytes.subarray(0, 4).toString("ascii")).toBe("RIFF");
     expect(result.usage.outputTokens).toBe(34);
+  });
+
+  it("tries comma-separated API keys from left to right", async () => {
+    process.env.GEMINI_API_KEY = "first-key, second-key, first-key";
+    process.env.GEMINI_TTS_MAX_ATTEMPTS = "1";
+    const pcm = Buffer.from([0x00, 0x00, 0x10, 0x00]);
+    global.fetch = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            error: { code: 429, message: "Quota exceeded", status: "RESOURCE_EXHAUSTED" },
+          }),
+          { status: 429 },
+        ),
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            candidates: [
+              {
+                finishReason: "STOP",
+                content: {
+                  parts: [
+                    {
+                      inlineData: {
+                        mimeType: "audio/L16;codec=pcm;rate=24000",
+                        data: pcm.toString("base64"),
+                      },
+                    },
+                  ],
+                },
+              },
+            ],
+          }),
+          { status: 200 },
+        ),
+      );
+
+    const result = await synthesizeGeminiTtsAudio({
+      text: "你好。",
+      voice: "Leda",
+      mode: "zh",
+    });
+
+    expect(global.fetch).toHaveBeenCalledTimes(2);
+    expect(
+      vi.mocked(global.fetch).mock.calls.map(([, options]) =>
+        (options?.headers as Record<string, string>)["x-goog-api-key"],
+      ),
+    ).toEqual(["first-key", "second-key"]);
+    expect(result.bytes.subarray(0, 4).toString("ascii")).toBe("RIFF");
+  });
+
+  it("fails only after every configured API key has been tried", async () => {
+    process.env.GEMINI_API_KEY = "first-key,second-key";
+    process.env.GEMINI_TTS_MAX_ATTEMPTS = "1";
+    global.fetch = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({ error: { code: 403, message: "Invalid key" } }),
+        { status: 403 },
+      ),
+    );
+
+    await expect(
+      synthesizeGeminiTtsAudio({ text: "你好。", voice: "Leda", mode: "zh" }),
+    ).rejects.toThrow("Gemini TTS 请求失败");
+    expect(global.fetch).toHaveBeenCalledTimes(2);
   });
 });

@@ -4,10 +4,12 @@ const {
   getCachedStoryMock,
   synthesizeEdgeTtsAudioMock,
   synthesizeGeminiTtsAudioMock,
+  synthesizeTokenPlanTtsAudioMock,
 } = vi.hoisted(() => ({
   getCachedStoryMock: vi.fn(),
   synthesizeEdgeTtsAudioMock: vi.fn(),
   synthesizeGeminiTtsAudioMock: vi.fn(),
+  synthesizeTokenPlanTtsAudioMock: vi.fn(),
 }));
 
 vi.mock("@/lib/storage", () => ({
@@ -30,7 +32,16 @@ vi.mock("@/lib/gemini-tts-server", async (importOriginal) => {
   };
 });
 
+vi.mock("@/lib/token-plan-tts-server", async (importOriginal) => {
+  const original = await importOriginal<typeof import("@/lib/token-plan-tts-server")>();
+  return {
+    ...original,
+    synthesizeTokenPlanTtsAudio: synthesizeTokenPlanTtsAudioMock,
+  };
+});
+
 import { GeminiTtsAudioError } from "@/lib/gemini-tts-server";
+import { TokenPlanTtsError } from "@/lib/token-plan-tts-server";
 import {
   prepareNarrationAudio,
   resolveNarrationRequest,
@@ -38,11 +49,13 @@ import {
 
 beforeEach(() => {
   process.env.GEMINI_API_KEY = "test-key";
+  delete process.env.DASHSCOPE_TOKEN_KEY;
   delete process.env.NEXT_PUBLIC_SUPABASE_URL;
   delete process.env.SUPABASE_SERVICE_ROLE_KEY;
   getCachedStoryMock.mockResolvedValue(null);
   synthesizeGeminiTtsAudioMock.mockReset();
   synthesizeEdgeTtsAudioMock.mockReset();
+  synthesizeTokenPlanTtsAudioMock.mockReset();
   synthesizeGeminiTtsAudioMock.mockRejectedValue(
     new GeminiTtsAudioError("Gemini unavailable", 502),
   );
@@ -55,10 +68,41 @@ beforeEach(() => {
 
 afterEach(() => {
   delete process.env.GEMINI_API_KEY;
+  delete process.env.DASHSCOPE_TOKEN_KEY;
   vi.restoreAllMocks();
 });
 
 describe("narration provider fallback", () => {
+  it("uses Gemini when Token Plan TTS fails", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    synthesizeTokenPlanTtsAudioMock.mockRejectedValue(
+      new TokenPlanTtsError("Token Plan unavailable", 502),
+    );
+    synthesizeGeminiTtsAudioMock.mockResolvedValueOnce({
+      bytes: Buffer.from("RIFF-test-WAVE"),
+      contentType: "audio/wav",
+      usage: { characters: 2 },
+    });
+
+    const request = await resolveNarrationRequest({ text: "你好", mode: "zh" });
+    const result = await prepareNarrationAudio(request);
+
+    expect(request.model).toBe("qwen-audio-3.0-tts-plus");
+    expect(synthesizeTokenPlanTtsAudioMock).toHaveBeenCalledOnce();
+    expect(synthesizeGeminiTtsAudioMock).toHaveBeenCalledWith(
+      expect.objectContaining({ model: "gemini-2.5-flash-preview-tts" }),
+    );
+    expect(result.model).toBe("gemini-2.5-flash-preview-tts");
+    expect(warn).toHaveBeenCalledWith(
+      "[audio] TTS provider failed; using fallback",
+      expect.objectContaining({
+        model: "qwen-audio-3.0-tts-plus",
+        fallbackModel: "gemini-2.5-flash-preview-tts",
+      }),
+    );
+  });
+
   it("uses Gemini 3.1 when Gemini 2.5 fails", async () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
     synthesizeGeminiTtsAudioMock

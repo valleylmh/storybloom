@@ -7,12 +7,19 @@ import {
 } from "@/lib/edge-tts-server";
 import {
   GeminiTtsAudioError,
+  parseGeminiApiKeys,
   synthesizeGeminiTtsAudio,
 } from "@/lib/gemini-tts-server";
+import {
+  hasTokenPlanTtsConfig,
+  synthesizeTokenPlanTtsAudio,
+  TokenPlanTtsError,
+} from "@/lib/token-plan-tts-server";
 import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { getCachedStory } from "@/lib/storage";
 
 const STORY_AUDIO_BUCKET = "story-audio";
+const TOKEN_PLAN_TTS_MODEL = "qwen-audio-3.0-tts-plus";
 const GEMINI_TTS_MODEL_PRIMARY = "gemini-2.5-flash-preview-tts";
 const GEMINI_TTS_MODEL_FALLBACK = "gemini-3.1-flash-tts-preview";
 const EDGE_TTS_MODEL = "edge-tts";
@@ -20,6 +27,8 @@ const DEFAULT_EDGE_TTS_VOICE_ZH = "zh-CN-XiaoxiaoNeural";
 const DEFAULT_EDGE_TTS_VOICE_EN = "en-US-AnaNeural";
 const DEFAULT_GEMINI_TTS_VOICE_ZH = "Leda";
 const DEFAULT_GEMINI_TTS_VOICE_EN = "Aoede";
+const DEFAULT_TOKEN_PLAN_TTS_VOICE_ZH = "longanlingxin";
+const DEFAULT_TOKEN_PLAN_TTS_VOICE_EN = "longanlufeng";
 const DEFAULT_SAMPLE_RATE = 24000;
 const DEFAULT_SIGNED_URL_TTL_SECONDS = 3_600;
 const MAX_NARRATION_TEXT_LENGTH = 5_000;
@@ -27,6 +36,7 @@ const MAX_NARRATION_TEXT_LENGTH = 5_000;
 export const NARRATION_MODES = ["zh", "en", "zh-en"] as const;
 export const NARRATION_FORMATS = ["mp3", "wav"] as const;
 export const ALLOWED_TTS_MODELS = [
+  TOKEN_PLAN_TTS_MODEL,
   GEMINI_TTS_MODEL_PRIMARY,
   GEMINI_TTS_MODEL_FALLBACK,
   EDGE_TTS_MODEL,
@@ -67,7 +77,12 @@ export const EDGE_TTS_VOICES = [
   DEFAULT_EDGE_TTS_VOICE_ZH,
   DEFAULT_EDGE_TTS_VOICE_EN,
 ] as const;
+export const TOKEN_PLAN_TTS_VOICES = [
+  DEFAULT_TOKEN_PLAN_TTS_VOICE_ZH,
+  DEFAULT_TOKEN_PLAN_TTS_VOICE_EN,
+] as const;
 export const ALLOWED_TTS_VOICES = [
+  ...TOKEN_PLAN_TTS_VOICES,
   ...GEMINI_TTS_VOICES,
   ...EDGE_TTS_VOICES,
 ] as const;
@@ -179,12 +194,11 @@ function readPositiveInteger(name: string, fallback: number, maximum: number) {
   return Math.min(parsed, maximum);
 }
 
-function getConfiguredModel(requested?: AllowedTtsModel): AllowedTtsModel {
-  if (requested) return requested;
+function getConfiguredGeminiOrEdgeModel(): AllowedTtsModel {
   const geminiDisabled = /^(?:0|false|off)$/i.test(
     process.env.GEMINI_TTS_ENABLED?.trim() || "",
   );
-  if (!process.env.GEMINI_API_KEY?.trim() || geminiDisabled) return EDGE_TTS_MODEL;
+  if (parseGeminiApiKeys().length === 0 || geminiDisabled) return EDGE_TTS_MODEL;
 
   const configured = process.env.GEMINI_TTS_MODEL?.trim();
   return isOneOf(configured, [
@@ -195,11 +209,32 @@ function getConfiguredModel(requested?: AllowedTtsModel): AllowedTtsModel {
     : GEMINI_TTS_MODEL_PRIMARY;
 }
 
+function getConfiguredModel(requested?: AllowedTtsModel): AllowedTtsModel {
+  if (requested) return requested;
+  const tokenPlanDisabled = /^(?:0|false|off)$/i.test(
+    process.env.TOKEN_PLAN_TTS_ENABLED?.trim() || "",
+  );
+  if (hasTokenPlanTtsConfig() && !tokenPlanDisabled) return TOKEN_PLAN_TTS_MODEL;
+  return getConfiguredGeminiOrEdgeModel();
+}
+
 function getConfiguredVoice(
   mode: NarrationMode,
   model: AllowedTtsModel,
   requested?: AllowedTtsVoice,
 ): AllowedTtsVoice {
+  if (model === TOKEN_PLAN_TTS_MODEL) {
+    if (requested && isOneOf(requested, TOKEN_PLAN_TTS_VOICES)) return requested;
+    const fallback =
+      mode === "en"
+        ? DEFAULT_TOKEN_PLAN_TTS_VOICE_EN
+        : DEFAULT_TOKEN_PLAN_TTS_VOICE_ZH;
+    const configured = (mode === "en"
+      ? process.env.TOKEN_PLAN_TTS_VOICE_EN?.trim()
+      : process.env.TOKEN_PLAN_TTS_VOICE_ZH?.trim()) as AllowedTtsVoice | undefined;
+    return isOneOf(configured, TOKEN_PLAN_TTS_VOICES) ? configured : fallback;
+  }
+
   if (model !== EDGE_TTS_MODEL) {
     if (requested && isOneOf(requested, GEMINI_TTS_VOICES)) return requested;
     const fallback =
@@ -220,7 +255,7 @@ function getConfiguredVoice(
 }
 
 function formatForModel(model: AllowedTtsModel): NarrationFormat {
-  return model === EDGE_TTS_MODEL ? "mp3" : "wav";
+  return model === EDGE_TTS_MODEL || model === TOKEN_PLAN_TTS_MODEL ? "mp3" : "wav";
 }
 
 function getNarrationText(
@@ -319,6 +354,14 @@ async function synthesizeNarration(
   onProgress?.({ stage: "generating", model: request.model, voice: request.voice });
 
   try {
+    if (request.model === TOKEN_PLAN_TTS_MODEL) {
+      return await synthesizeTokenPlanTtsAudio({
+        text: request.text,
+        voice: request.voice,
+        model: request.model,
+      });
+    }
+
     if (request.model !== EDGE_TTS_MODEL) {
       return await synthesizeGeminiTtsAudio({
         text: request.text,
@@ -340,6 +383,9 @@ async function synthesizeNarration(
       usage: result.usage,
     };
   } catch (error) {
+    if (error instanceof TokenPlanTtsError) {
+      throw new NarrationAudioError(error.message, error.status, { cause: error });
+    }
     if (error instanceof GeminiTtsAudioError) {
       throw new NarrationAudioError(error.message, error.status, { cause: error });
     }
@@ -508,6 +554,29 @@ function createGeminiFallbackRequest(
   };
 }
 
+function createTokenPlanFallbackRequest(
+  request: ResolvedNarrationRequest,
+): ResolvedNarrationRequest {
+  const model = getConfiguredGeminiOrEdgeModel();
+  if (model === EDGE_TTS_MODEL) return createEdgeFallbackRequest(request);
+
+  const baseRequest = {
+    storyId: request.storyId,
+    text: request.text,
+    textSource: request.textSource,
+    mode: request.mode,
+    model,
+    voice: getConfiguredVoice(request.mode, model),
+    format: formatForModel(model),
+    sampleRate: DEFAULT_SAMPLE_RATE,
+  } satisfies Omit<ResolvedNarrationRequest, "cacheKey">;
+
+  return {
+    ...baseRequest,
+    cacheKey: makeCacheKey(baseRequest),
+  };
+}
+
 async function prepareNarrationAudioUncached(
   request: ResolvedNarrationRequest,
   options: PrepareNarrationOptions,
@@ -537,9 +606,11 @@ async function prepareNarrationAudioUncached(
     if (request.model === EDGE_TTS_MODEL) throw error;
 
     const nextRequest =
-      request.model === GEMINI_TTS_MODEL_PRIMARY
-        ? createGeminiFallbackRequest(request)
-        : createEdgeFallbackRequest(request);
+      request.model === TOKEN_PLAN_TTS_MODEL
+        ? createTokenPlanFallbackRequest(request)
+        : request.model === GEMINI_TTS_MODEL_PRIMARY
+          ? createGeminiFallbackRequest(request)
+          : createEdgeFallbackRequest(request);
 
     console.warn("[audio] TTS provider failed; using fallback", {
       model: request.model,
