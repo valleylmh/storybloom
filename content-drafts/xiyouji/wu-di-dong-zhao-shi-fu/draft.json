@@ -1,0 +1,56 @@
+{
+  "id": "wu-di-dong-zhao-shi-fu",
+  "title": "无底洞找师父",
+  "subtitle": "地下灯路里的回声线索",
+  "origin": "《西游记》第八十至八十三回（低龄温和改编）",
+  "moral": {
+    "zh": "走进陌生地方要留下清楚线索、互相照应；想邀请别人陪伴，也必须先得到对方同意。",
+    "en": "In unfamiliar places, leave clear clues and look after one another. Wanting company never replaces asking for consent."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 25,
+  "episodeNumber": 25,
+  "pages": [
+    {
+      "zh": "圆门下面不是深不见底的洞，而是一座层层向下的地下图书馆。每一层都挂着会发出不同声音的小灯。",
+      "en": "Below the round door was not an endless pit, but a library built in gentle underground levels. Each floor held small lamps that made different sounds.",
+      "prompt": "Use the established full team anchor. Show the travelers entering a spacious, warmly lit underground library with broad stairs, railings, many open levels, and small glowing bell lamps. No abyss or danger; White Dragon Horse has a wide ramp. Premium square 3D clay-like art; no text on books, darkness, falling, fear, or traps."
+    },
+    {
+      "zh": "图书馆的白鼠馆主热情邀请唐僧留下讲故事，却忘了先问他愿不愿意，还把回去的路灯调成了同一种声音。",
+      "en": "The White Mouse Librarian eagerly invited Tang Seng to stay and tell stories, but forgot to ask his permission and changed every return lamp to the same sound.",
+      "prompt": "Create the fixed White Mouse Librarian anchor beside Tang Seng. She is an adult friendly mouse spirit with pearl-gray fur, a warm oval face, large teal eyes, rounded pink ears, black hair in a low bun, an indigo-and-cream librarian robe, and a silver key-bell necklace; curious and lonely, never frightening, with no sharp teeth, claws, tail weapon, or cage. Bright library desk and bell lamps, square premium 3D clay-like art."
+    },
+    {
+      "zh": "唐僧平静地说：“我愿意讲一会儿故事，但讲完要和伙伴继续西行。”白鼠馆主听见后，有些不好意思。",
+      "en": "Tang Seng calmly said, “I can share one story, but afterward I must continue west with my friends.” The librarian realized her mistake.",
+      "prompt": "Reuse Tang Seng and White Mouse Librarian anchors. They sit at equal height beside an open picture scroll with no text; Tang Seng gestures toward the upward path and the librarian listens with hands folded. Warm library light, respectful distance, square premium 3D clay-like art; no confinement, crying, threats, or readable pages."
+    },
+    {
+      "zh": "悟空、八戒和沙僧沿路寻找。他们发现真正的路灯会依次发出“叮、咚、叮”的声音，假路线只会重复一个音。",
+      "en": "Wukong, Bajie, and Sha Wujing searched the levels. The true lamps chimed ding, dong, ding, while false routes repeated only one note.",
+      "prompt": "Reuse Wukong, Bajie, and Sha Wujing. Show them comparing three safe bell lamps of different rounded shapes along a broad railed corridor; Wukong raises three fingers, Bajie listens with one ear, and Sha marks the correct route using a loose guide ribbon on the floor. Square cinematic 3D clay-like art; no written notes, dangerous ledges, weapons, or fear."
+    },
+    {
+      "zh": "白龙马记住每层墙上的花纹，八戒用彩绳做记号，沙僧把来时的门一扇扇留着。大家很快拼出了回程地图。",
+      "en": "White Dragon Horse remembered the wall patterns, Bajie marked turns with colored cord, and Sha Wujing kept each return door open. Together they rebuilt the route home.",
+      "prompt": "Reuse Bajie, Sha Wujing, White Dragon Horse, and Wukong. Show a safe underground navigation scene with distinct wall patterns—leaf, moon, flower—plus loose colored cords tied only to rail posts; doors remain propped open with rounded blocks. The horse points its nose toward the correct ramp. Square premium 3D clay-like art; no text, body ties, blocked exits, or danger."
+    },
+    {
+      "zh": "伙伴们找到唐僧时，他刚好讲完故事。白鼠馆主主动把不同声音调回来，还打开了最宽的回程通道。",
+      "en": "The friends found Tang Seng just as he finished his story. The librarian restored the different lamp sounds and opened the widest route back.",
+      "prompt": "Reuse the full team and White Mouse Librarian. Tang Seng closes a blank picture scroll as the team arrives; the librarian turns a large rounded sound wheel and a broad illuminated ramp opens upward. Everyone smiles, tools packed. Square warm premium 3D clay-like art; no text, machinery danger, capture, or fear."
+    },
+    {
+      "zh": "临别前，大家帮图书馆办了一场公开故事会。白鼠馆主学会先问：“你愿意留下听一会儿吗？”",
+      "en": "Before leaving, everyone helped host an open story hour. The librarian learned to ask, “Would you like to stay and listen for a while?”",
+      "prompt": "Show the full team and White Mouse Librarian hosting an open underground story circle with families seated near the exit, all free to come and go. The librarian offers optional blank invitation tokens with an open hand; Tang Seng reads a wordless picture scroll. Square premium 3D clay-like art; no text, closed doors, pressure, or scary mice."
+    },
+    {
+      "zh": "走出地下图书馆，前方城门挂满各式帽子。守门人正在发愁：国王只允许大家戴同一种红帽子。",
+      "en": "Outside the library, the next city gate displayed many kinds of hats. The gatekeeper worried because the king allowed everyone to wear only one kind of red hat.",
+      "prompt": "Show the established travelers approaching a bright city gate decorated with many blank hat stands: straw hats, cloth caps, monk crowns, and one tall red cap. A friendly gatekeeper compares them with a puzzled expression. Square premium 3D clay-like art; no written rules, forced removal, humiliation, weapons, or ominous guards."
+    }
+  ]
+}

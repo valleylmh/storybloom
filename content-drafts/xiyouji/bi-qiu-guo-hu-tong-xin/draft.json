@@ -1,0 +1,56 @@
+{
+  "id": "bi-qiu-guo-hu-tong-xin",
+  "title": "比丘国护童心",
+  "subtitle": "孩子的愿望要被认真听见",
+  "origin": "《西游记》第七十八至七十九回（低龄温和改编）",
+  "moral": {
+    "zh": "孩子的安全和感受不能被任何漂亮理由忽略；大人要倾听、保护，也要勇敢拒绝不合理的要求。",
+    "en": "No beautiful excuse should outweigh a child's safety and feelings. Adults must listen, protect, and say no to unreasonable demands."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 24,
+  "episodeNumber": 24,
+  "pages": [
+    {
+      "zh": "师徒来到比丘国。家家门前都有一盏孩子亲手做的心愿灯，可白鹿国师却要求把所有灯都收进王宫。",
+      "en": "The travelers reached Bhikshu Kingdom. Every family displayed a wish lantern made by a child, but the White Deer Adviser wanted all the lanterns collected at the palace.",
+      "prompt": "Use the established full team anchor. Show a bright city street where children stand safely beside parents holding handmade wish lanterns; palace helpers carry empty baskets, not taking anything yet. The team listens with concern. Premium square 3D clay-like picture-book art; no child separation, cages, fear, text, or danger."
+    },
+    {
+      "zh": "白鹿国师说，把孩子们的灯合成一盏大灯，就能让国王永远开心。唐僧问：“你先问过孩子愿不愿意吗？”",
+      "en": "The White Deer Adviser claimed that combining the children's lanterns would keep the king happy forever. Tang Seng asked, “Did you first ask whether the children agreed?”",
+      "prompt": "Create the fixed White Deer Adviser anchor with Tang Seng. He is a gentle white-deer-faced adult with soft pearl fur, large brown eyes, small rounded antlers, a moss-green court robe, cream sash, and one silver bell pendant; earnest but mistaken, never frightening, with no weapon or sharp antlers. Tang Seng speaks calmly beside a model lantern on a palace table. Square warm 3D clay-like art; no coercion, child distress, or threat."
+    },
+    {
+      "zh": "孩子们纷纷说，灯里画着自己的家人、宠物和梦想，不想交出去。家长们也站到孩子身边，一起表达不同意。",
+      "en": "The children explained that their lanterns held drawings of family, pets, and dreams, and they did not want to give them away. Their parents stood beside them and agreed.",
+      "prompt": "Show several diverse children standing beside their parents in an open palace courtyard, each holding a lantern decorated only with simple non-text shapes such as family silhouettes, pawprints, flowers, and stars. Tang Seng and the team listen respectfully; White Deer Adviser looks thoughtful. Square premium 3D clay-like art; no readable drawings, crying, crowd pressure, or child separation."
+    },
+    {
+      "zh": "悟空提议做一盏新的公共花灯，不拿走任何孩子的作品。八戒找竹条，沙僧搭灯架，白龙马运来彩纸。",
+      "en": "Wukong suggested making a new public lantern without taking any child's work. Bajie gathered bamboo strips, Sha Wujing built the frame, and White Dragon Horse carried colored paper.",
+      "prompt": "Reuse the full team, families, and White Deer Adviser. Show a safe community craft scene: Bajie sorts rounded bamboo strips, Sha steadies a broad lantern frame, White Dragon Horse carries rolls of blank colored paper, and Wukong sketches shapes in sand. Children remain with parents and keep their own lanterns. Square warm 3D clay-like art; no tools pointed, text, glue hazards, or fire."
+    },
+    {
+      "zh": "国王也来到广场。他听见孩子们的想法后，决定让每个家庭把一个愿望图案贴到公共灯上，原来的灯仍归孩子所有。",
+      "en": "The king came to the square and listened. He decided each family could add one wish shape to the public lantern while children kept their original lanterns.",
+      "prompt": "Create the fixed King of Bhikshu anchor with families and team. He is a kind middle-aged Chinese ruler with warm brown skin, an oval face, calm dark eyes, a neat short black beard, layered burgundy-and-gold robes, and a simple pale-jade court crown; thoughtful, never weak or pompous. He kneels to child eye level and points to a large blank community lantern. Square premium 3D clay-like art; no forced giving or text."
+    },
+    {
+      "zh": "白鹿国师终于明白：让国王开心，不能靠拿走别人的珍爱之物。他向孩子们道歉，并把收灯的篮子改成了送纸的篮子。",
+      "en": "White Deer Adviser understood that the king's happiness could not come from taking cherished things. He apologized and turned the collection baskets into baskets for giving out paper.",
+      "prompt": "Reuse White Deer Adviser, King, children, and parents. The adviser offers baskets filled with blank colored paper and ribbons, bowing gently while children keep their lanterns. The king smiles approvingly. Bright open square, premium 3D clay-like art, 1:1; no shame, punishment, text, or frightening animal features."
+    },
+    {
+      "zh": "夜晚，千家小灯和一盏公共大灯一起亮起。每个孩子都能指给家人看：哪一小块图案是自己贡献的。",
+      "en": "That night, hundreds of family lanterns glowed beside one large community lantern. Every child could show their family the small shape they had contributed.",
+      "prompt": "Show the full team, King, White Deer Adviser, children, and families celebrating in a wide safe lantern square. One large lantern carries many simple colored shapes, while each child still holds an individual lantern. Warm fire-free magical light, square premium 3D clay-like art; no readable text, crowd danger, or fireworks."
+    },
+    {
+      "zh": "离城时，白鹿铃牌忽然响了三声。路边出现一扇通往地下的圆门，门缝里传来清脆的钥匙铃声。",
+      "en": "As they left, the white-deer token chimed three times. A round doorway appeared beside the road, and a tiny key bell rang from underground.",
+      "prompt": "Show the established team outside the lantern city discovering a broad, well-lit round stairway door descending gently underground. A small silver key-shaped bell hangs by the entrance and soft pearl-gray mouse footprints lead inward. Curious adventure mood, square premium 3D clay-like art; no dark pit, falling, traps, text, or scary rodents."
+    }
+  ]
+}

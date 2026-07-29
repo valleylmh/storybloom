@@ -1,0 +1,56 @@
+{
+  "id": "yu-hua-zhou-shou-xin-tu",
+  "title": "玉华州收新徒",
+  "subtitle": "三件工具的合作练习",
+  "origin": "《西游记》第八十八至九十回（低龄温和改编）",
+  "moral": {
+    "zh": "学习本领不是模仿威风，而是先学规则、练习控制，并让不同长处安全合作。",
+    "en": "Learning a skill is not copying how impressive it looks. It begins with rules, control, and safe cooperation."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 29,
+  "episodeNumber": 29,
+  "pages": [
+    {
+      "zh": "玉华州的三位年轻王子喜欢看悟空、八戒和沙僧使用工具，也照样做了三件练习器具。",
+      "en": "The three young princes of Yuhua admired how Wukong, Bajie, and Sha Wujing used their tools, so they made three practice tools of their own.",
+      "prompt": "Use the established Wukong, Bajie, Sha Wujing, Tang Seng, and White Dragon Horse anchors. Create the three fixed Yuhua princes: friendly young adult brothers with warm tan skin and dark eyes; the eldest has a square face, high black topknot, jade-green robe and cream sash; the second has a round face, side-tied black bun, amber robe and teal sash; the youngest has an oval face, short black ponytail, sky-blue robe and rust sash. Each holds one padded rounded practice tool low and safely. Square premium 3D clay-like art; no combat or intimidation."
+    },
+    {
+      "zh": "可是三人一练习就各顾各的：长棍碰倒水桶，木耙勾住彩带，圆铲把软球推得到处滚。",
+      "en": "But each practiced alone: the long pole tipped a bucket, the wooden rake caught a ribbon, and the round spade sent soft balls rolling everywhere.",
+      "prompt": "Reuse the three fixed Yuhua princes. Show a harmless practice mishap in a padded courtyard: one empty bucket tips, one loose ribbon catches on a rounded wooden rake, and several soft fabric balls roll across a flat floor. The princes look surprised, not hurt. Square premium 3D clay-like art; no collision, sharp tools, fighting, fear, or broken objects."
+    },
+    {
+      "zh": "唐僧请他们先放下工具，说：“第一课不是挥得快，而是知道什么时候停、离别人多远。”",
+      "en": "Tang Seng asked them to set the tools down. “The first lesson is not speed. It is knowing when to stop and how much space others need.”",
+      "prompt": "Reuse Tang Seng and the three Yuhua princes. The padded tools rest neatly on separate ground racks while Tang Seng demonstrates a wide safe circle using blank floor markers. The princes listen with empty hands and attentive expressions. Square premium 3D clay-like art; no text, discipline, humiliation, threatening gestures, or weapons."
+    },
+    {
+      "zh": "悟空教大王子用长棍轻推高处的风铃，先慢后稳；只要风铃发出一声，就立刻停下。",
+      "en": "Wukong taught the eldest prince to use the long pole to nudge a high chime—slowly, steadily, and stopping after one sound.",
+      "prompt": "Reuse Wukong and the eldest Yuhua prince anchors. Show a safe skill lesson with a padded red-and-gold practice pole gently touching one large hanging chime above an empty marked zone; both stand side by side with controlled posture. Square premium 3D clay-like art; no readable labels, swinging at people, dangerous height, or combat."
+    },
+    {
+      "zh": "八戒教二王子用木耙整理落叶，沙僧教三王子用圆铲把软球送进篮子。三人都学会先看清周围。",
+      "en": "Bajie taught the second prince to gather leaves with a wooden rake, while Sha Wujing showed the youngest how to guide soft balls into a basket. Each learned to check the space first.",
+      "prompt": "Reuse Bajie with the second prince and Sha Wujing with the youngest prince. In one broad courtyard, a rounded wooden rake gathers dry leaves into a pile while a broad round-edged practice spade guides soft balls into a basket. Clear safety space separates the activities. Square premium 3D clay-like art; no blades, pointed tools, text, or crowding."
+    },
+    {
+      "zh": "最后一课要三人合作：长棍挂灯，木耙铺开彩布，圆铲稳住灯座，共同搭好一条节日灯廊。",
+      "en": "The final lesson required teamwork: the pole hung lanterns, the rake spread colorful cloth, and the round spade steadied the bases as they built a festival walkway.",
+      "prompt": "Reuse all three fixed Yuhua princes and their mentors. Show them cooperatively building a bright festival lantern walkway: padded pole lifts blank lantern loops, rounded rake spreads cloth flat, and round-edged spade steadies broad bases. Mentors supervise with smiles. Square premium 3D clay-like art; no readable text, unstable ladders, fire, or weapon use."
+    },
+    {
+      "zh": "灯廊亮起时，三位王子向师父们行礼。他们明白，真正值得学习的是耐心、分寸和互相照应。",
+      "en": "When the walkway glowed, the three princes bowed to their teachers. They understood that patience, control, and looking after one another were the real skills.",
+      "prompt": "Show the three fixed Yuhua princes bowing respectfully to Wukong, Bajie, and Sha Wujing beneath completed safe glowing lanterns, with Tang Seng and White Dragon Horse nearby. All tools are placed on ground racks. Square premium 3D clay-like art; no text, kneeling submission, weapons in hand, or triumph over others."
+    },
+    {
+      "zh": "夜里，月光落在灯廊上。一只玉白色的小兔捡起桂花枝，朝天竺国的方向跳去，留下圆圆的月影。",
+      "en": "That night, moonlight fell across the lantern path. A jade-white rabbit picked up an osmanthus branch and hopped toward Tianzhu Kingdom, leaving round moonlit prints.",
+      "prompt": "Show the established team and three princes noticing a small jade-white magical rabbit with large violet eyes carrying one osmanthus branch as it hops along a moonlit path toward a distant Tianzhu gate. Round silver light patches mark the trail without written symbols. Square premium 3D clay-like art; no chase, predator behavior, fear, or dark threat."
+    }
+  ]
+}

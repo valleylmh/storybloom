@@ -1,0 +1,56 @@
+{
+  "id": "mie-fa-guo-huan-xin-yi",
+  "title": "灭法国换心意",
+  "subtitle": "一场让每顶帽子都被看见的节日",
+  "origin": "《西游记》第八十四回（低龄温和改编）",
+  "moral": {
+    "zh": "不能因为不了解就要求所有人变得一样；先倾听彼此的故事，差异也能成为一座桥。",
+    "en": "We should not force everyone to be the same simply because we do not understand them. Listening can turn differences into bridges."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 26,
+  "episodeNumber": 26,
+  "pages": [
+    {
+      "zh": "师徒来到一座帽子挂满城门的国度。守门人小声说，国王最近只许大家戴同一种红帽子。",
+      "en": "The travelers reached a kingdom whose gate was covered with hats. The gatekeeper whispered that the king now allowed only one kind of red hat.",
+      "prompt": "Use the established full traveling-team anchor. Show the five travelers at a bright ancient city gate lined with safe hat stands displaying straw hats, cloth caps, monk crowns, work hoods, and one tall red cap. A friendly adult gatekeeper explains the puzzle with open hands. Premium square 3D clay-like picture-book art; no readable signs, forced clothing removal, guards, weapons, shame, or fear."
+    },
+    {
+      "zh": "城里的人有的戴草帽种菜，有的戴布帽做木工，还有的戴小圆帽烤点心。大家都觉得自己的帽子很有用。",
+      "en": "Some people wore straw hats to garden, some wore cloth caps for carpentry, and others wore round caps while baking. Each hat had a useful story.",
+      "prompt": "Show a warm city market with adult gardeners in broad straw hats, carpenters in snug cloth caps, and bakers in soft round caps, all working safely and smiling. The established team observes respectfully from the side. Square premium 3D clay-like art; no text, ridicule, dangerous tools, uniforms, or frightened citizens."
+    },
+    {
+      "zh": "国王解释：“我小时候在大风里丢过帽子，所以觉得同一种高红帽最好找，也最安全。”",
+      "en": "The king explained, “When I was young, I lost my hat in a strong wind. I thought one tall red hat would be easiest to spot and safest for everyone.”",
+      "prompt": "Create the fixed King of Miefa anchor: a thoughtful middle-aged Chinese ruler with a warm round face, calm dark-brown eyes, a short neat black beard, black hair under one tall simple red cloth cap, and layered brick-red-and-cream court robes with a dark teal sash; worried but kind, never cruel. He speaks with Tang Seng at equal height beside a miniature windy garden display. Square warm 3D clay-like art; no anger, throne intimidation, readable rules, or punishment."
+    },
+    {
+      "zh": "唐僧说：“您的担心是真的，可每个人的工作和习惯不同。我们能不能先听听大家为什么选自己的帽子？”",
+      "en": "Tang Seng said, “Your worry is real, but people have different work and customs. Could we first hear why they choose their own hats?”",
+      "prompt": "Reuse the King of Miefa and Tang Seng anchors. Show them in a bright round-table meeting as Tang Seng invites several adult citizens to place their different hats on separate padded stands. The king leans forward to listen with open palms. Square premium 3D clay-like art; no text, courtroom, humiliation, confiscation, or fear."
+    },
+    {
+      "zh": "悟空想出一个办法：给每顶帽子缝上同样亮的小反光片。八戒和沙僧帮大家测试，大风里也看得清。",
+      "en": "Wukong had an idea: sew the same bright reflective patch onto every hat. Bajie and Sha Wujing helped test them, and each stayed easy to see in the wind.",
+      "prompt": "Reuse Wukong, Bajie, Sha Wujing, and the king. Show a safe courtyard wind test with many different hats secured on rounded stands, each bearing one small blank luminous patch; ribbons show a gentle breeze while Bajie steadies a stand and Sha checks spacing. Square premium 3D clay-like art; tools rounded and safely used, no storm, chasing hats, text, or weapons."
+    },
+    {
+      "zh": "国王看见草帽、布帽和圆帽都闪着清楚的光，终于笑了：“安全不等于一模一样。”",
+      "en": "When the king saw the straw, cloth, and round hats all shining clearly, he smiled. “Safe does not have to mean identical.”",
+      "prompt": "Reuse the fixed king and full team anchors. At sunset in the city square, different hats glow with matching small reflective patches while their adult owners stand proudly. The king removes only his own red cap and holds it beside the others with a warm smile. Square premium 3D clay-like art; no text, forced undressing, mockery, crowding, or fear."
+    },
+    {
+      "zh": "第二天，城里举办了“百帽节”。每个人介绍自己的帽子，国王也讲起那次大风和自己曾经的害怕。",
+      "en": "The next day, the city held a Festival of Many Hats. Everyone shared a hat story, and the king spoke about the wind that had once frightened him.",
+      "prompt": "Show the fixed king and established team at a joyful many-hat festival with blank display stands, colorful fabric canopies, and adult citizens sharing hats in a welcoming circle. The king speaks honestly while children stay beside caregivers. Square premium 3D clay-like art; no readable banners, ridicule, costume stereotypes, or unsafe crowd."
+    },
+    {
+      "zh": "师徒离城时，国王送来一块豹纹路牌。前方隐雾山的岔路上，竟出现了两块一模一样的指路牌。",
+      "en": "As the travelers left, the king gave them a leopard-patterned trail token. Ahead at Misty Hidden Mountain, two identical signposts pointed down different paths.",
+      "prompt": "Show the established travelers leaving the city with one small leopard-patterned wooden token and arriving at a bright misty mountain fork with two identical blank arrow-shaped signboards pointing in different directions. Everyone studies the clues calmly. Square premium 3D clay-like art; no readable text, darkness, stalking animal, danger, or fear."
+    }
+  ]
+}

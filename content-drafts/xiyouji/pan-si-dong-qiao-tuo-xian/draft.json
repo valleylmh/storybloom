@@ -1,0 +1,56 @@
+{
+  "id": "pan-si-dong-qiao-tuo-xian",
+  "title": "盘丝洞巧脱险",
+  "subtitle": "银丝迷宫里的合作密码",
+  "origin": "《西游记》第七十二至七十三回（低龄温和改编）",
+  "moral": {
+    "zh": "精巧的本领要尊重别人的选择；遇到缠绕的难题，停下来观察规律、坦诚沟通，比着急挣脱更有效。",
+    "en": "Skill should respect other people's choices. When a problem feels tangled, observing the pattern and speaking honestly works better than struggling in a hurry."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-29",
+  "order": 21,
+  "episodeNumber": 21,
+  "pages": [
+    {
+      "zh": "离开小雷音寺后，师徒走进一片挂满露珠银丝的树林。每根丝线都在风里轻轻发亮，像一张巨大的织布图。",
+      "en": "After leaving the Little Thunderclap Temple, the travelers entered a forest filled with silver, dew-bright threads. Each strand shimmered like part of a giant weaving pattern.",
+      "prompt": "Use the established five-traveler anchor. Show the team pausing in a bright ancient forest where harmless silver threads stretch between ferns and trees like an open weaving diagram, covered in dew. Tools remain upright or packed; everyone is curious, not frightened. Premium polished 3D clay-like children's picture-book illustration, warm cinematic light, square 1:1; no text, web horror, giant spiders, binding, injury, or scary imagery."
+    },
+    {
+      "zh": "树林深处住着一群盘丝织女。领头的银线姐姐说：她们正在准备彩线节，却把唯一的出口也织进了迷宫。",
+      "en": "Deep in the forest lived a group of silk-weaving sisters. Their leader explained that while preparing for a thread festival, they had accidentally woven the only exit into the maze.",
+      "prompt": "Create the fixed Silk-Weaver Sister anchor beside Wukong and Tang Seng. She is an adult Chinese craftswoman with a warm oval face, large dark-brown eyes, black hair braided into a crown with one silver-thread hairpin, plum-and-teal layered robes, an ivory craft apron, and a seven-color thread bracelet; clever, responsible, never frightening, with no spider body, extra limbs, fangs, or claws. Show friendly adult weaving sisters and looms in an airy flower cave. Square premium 3D clay-like picture-book art; no text or captivity."
+    },
+    {
+      "zh": "八戒一着急，想从两根丝线中间挤过去，结果线团越滚越大。沙僧提醒大家：先别拉，看看它们为什么会动。",
+      "en": "Bajie hurried between two strands, making the thread ball grow larger. Sha Wujing reminded everyone not to pull, but to first see what made the threads move.",
+      "prompt": "Reuse the established Bajie, Sha Wujing, Wukong, and Silk-Weaver Sister anchors. Bajie stands safely beside a large loose ball of soft silver yarn, mildly puzzled but not tied; Sha Wujing points calmly to small wooden pulleys while his round-edged spade rests upright. The sister listens with an open hand. Bright craft workshop, square 1:1; no body wrapping, panic, weapons, extra limbs, or spider imagery."
+    },
+    {
+      "zh": "悟空爬到高处观察，发现银丝会按“月亮、花朵、叶子”的顺序升起。唐僧把这个规律告诉了织女们。",
+      "en": "From a high branch, Wukong saw the threads rise in a moon, flower, leaf pattern. Tang Seng shared the pattern with the weavers.",
+      "prompt": "Reuse Wukong, Tang Seng, and the Silk-Weaver Sister. Wukong sits securely on a low broad branch and points to three large harmless thread shapes appearing in sequence: crescent moon, flower, leaf; Tang Seng and the sister compare matching wooden tokens below. Warm forest workshop, clear visual pattern, square premium 3D clay-like art; no readable symbols, dangerous height, fear, or entanglement."
+    },
+    {
+      "zh": "白龙马用蹄子轻点地面节拍，八戒转动花朵轮，沙僧扶稳叶子轮，悟空在月亮轮前数数。迷宫慢慢松开了。",
+      "en": "White Dragon Horse tapped a gentle rhythm, Bajie turned the flower wheel, Sha Wujing steadied the leaf wheel, and Wukong counted beside the moon wheel. The maze slowly opened.",
+      "prompt": "Show safe teamwork with the established Wukong, Bajie, Sha Wujing, and White Dragon Horse anchors. Three waist-high rounded wooden wheels carry moon, flower, and leaf shapes; Bajie turns one, Sha steadies one, Wukong counts with raised fingers, and the horse taps a padded rhythm tile. Silver strands lift into a wide clear doorway. Square cinematic 3D clay-like art; no text, sharp machinery, binding, or strain."
+    },
+    {
+      "zh": "出口出现后，银线姐姐不好意思地说：“我们只顾着展示手艺，忘了先问路人愿不愿意参加。”",
+      "en": "When the exit appeared, the Silk-Weaver Sister admitted, “We were so busy showing our craft that we forgot to ask whether travelers wanted to join.”",
+      "prompt": "Reuse the Silk-Weaver Sister, Tang Seng, and Wukong anchors. At the newly opened forest doorway, the sister places one hand over her heart and apologizes; Tang Seng responds kindly and Wukong smiles. Loose silver threads now hang as decorative festival ribbons, never touching anyone. Premium warm square picture-book art; no shame, punishment, text, or frightening expressions."
+    },
+    {
+      "zh": "大家一起把银丝改成不会挡路的彩带拱门，还在路边留出宽宽的通道。彩线节终于热热闹闹地开始了。",
+      "en": "Together they turned the silver threads into colorful arches that left a wide path. At last, the thread festival began with joyful music and laughter.",
+      "prompt": "Show the full established team and friendly weaving sisters celebrating beneath colorful thread arches with a broad unobstructed path through the forest. Children and families may watch from safe open ground; tools are packed. Warm festive premium 3D clay-like art, square 1:1; no text, crowded trapping threads, extra limbs, or modern objects."
+    },
+    {
+      "zh": "告别时，银线姐姐送来一朵金色菊花。花香飘向前方的黄花观，七只彩茶杯正冒出不同颜色的热气。",
+      "en": "At farewell, the sister gave them a golden chrysanthemum. Its scent drifted toward Yellow Flower Temple, where seven teacups released seven colors of steam.",
+      "prompt": "Show the established travelers leaving the bright thread festival while the Silk-Weaver Sister offers Tang Seng one golden chrysanthemum. Ahead, a peaceful yellow-flower temple garden holds seven small covered teacups with differently colored harmless steam ribbons. Clear next-story hook, square warm 3D clay-like art; no readable signs, poison, fear, or ominous temple."
+    }
+  ]
+}
