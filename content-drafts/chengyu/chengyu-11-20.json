@@ -1,0 +1,282 @@
+[
+  {
+    "id": "ye-gong-hao-long",
+    "title": "叶公好龙",
+    "subtitle": "真龙来做客",
+    "origin": "汉·刘向《新序·杂事五》",
+    "moral": {
+      "zh": "真正的喜欢不只停在表面，还要愿意了解、尊重并接纳真实的样子。",
+      "en": "Real appreciation goes beyond appearances; it grows through understanding, respect, and acceptance."
+    },
+    "idiomMeaning": {
+      "zh": "比喻表面上很喜欢某事物，其实并不了解，也不是真的喜欢。",
+      "en": "To profess a love of dragons while fearing a real one—claiming to like something without truly understanding or accepting it."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 11,
+    "visualAnchor": "Ancient Chu noble residence with carved wooden screens, muted red pillars, dragon paintings and ornaments; Lord Ye is a slender middle-aged man with a neat moustache, high scholar bun, ivory cross-collar robe, dark-jade sash and rust-red outer vest; the real dragon is long, jade-green, round-eyed, gentle and friendly, with small golden horns and no exposed fangs",
+    "pages": [
+      { "zh": "楚国的叶公最爱龙，屋里到处都是龙的图案。", "en": "Lord Ye of Chu said he loved dragons. Dragon pictures filled his home.", "prompt": "wide establishing view of Lord Ye happily arranging painted scrolls and carved dragon ornaments inside his residence" },
+      { "zh": "杯子上有龙，墙上有龙，连衣带上也绣着龙。", "en": "Dragons decorated his cups, walls, and even the sash around his robe.", "prompt": "medium scene of the same Lord Ye proudly showing guests his dragon cup, wall painting and embroidered sash" },
+      { "zh": "天上的真龙听说了，开心地乘着云来拜访他。", "en": "A real dragon heard the news and happily rode the clouds down to visit.", "prompt": "the same gentle jade-green dragon gliding through soft clouds toward the residence, excited to meet a friend" },
+      { "zh": "真龙把头探到窗边，礼貌地朝叶公眨了眨眼。", "en": "The dragon peeked politely through the window and blinked a friendly hello.", "prompt": "the friendly dragon peeking carefully through an open lattice window while Lord Ye paints at a desk" },
+      { "zh": "叶公吓了一跳，画笔落地，躲到了屏风后面。", "en": "Lord Ye jumped, dropped his brush, and hurried behind a screen.", "prompt": "Lord Ye startled but safe behind a wooden screen, fallen brush on the floor, dragon waiting quietly outside" },
+      { "zh": "他看见真龙没有恶意，便慢慢走出来认真观察。", "en": "Seeing that the dragon meant no harm, he slowly stepped out and looked more closely.", "prompt": "Lord Ye cautiously emerging, noticing the dragon's kind eyes and relaxed pose, warm eye-level composition" },
+      { "zh": "叶公明白了：只爱想象、不爱真实，正是叶公好龙。", "en": "Lord Ye understood: loving only an idea, but not the real thing, was exactly his mistake.", "prompt": "turning point as Lord Ye compares a flat dragon painting with the patient real dragon and realizes the difference" },
+      { "zh": "他向真龙道歉，也学会先了解，再说自己真正喜欢。", "en": "He apologized and learned to understand something before saying he truly loved it.", "prompt": "hopeful sunset farewell, Lord Ye bowing sincerely while the smiling dragon returns to the clouds" }
+    ]
+  },
+  {
+    "id": "zi-xiang-mao-dun",
+    "title": "自相矛盾",
+    "subtitle": "矛和盾的难题",
+    "origin": "《韩非子·难一》",
+    "moral": {
+      "zh": "说话要符合事实，也要前后一致；发现矛盾时，诚实改正并不丢脸。",
+      "en": "Speak truthfully and consistently. There is no shame in correcting a contradiction."
+    },
+    "idiomMeaning": {
+      "zh": "比喻自己的言语或做法前后冲突，不能同时成立。",
+      "en": "Literally, one's own spear against one's own shield; it describes words or actions that contradict each other."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 12,
+    "visualAnchor": "Busy ancient Chu market with cloth awnings and wooden stalls; the merchant is a sturdy clean-shaven man with thick brows, a low topknot, ochre robe, teal sash and brown trousers; his fixed wares are one bronze-tipped spear lying safely on a red cloth and one round dark-bronze shield with a cloud pattern",
+    "pages": [
+      { "zh": "楚国集市上，一位商人摆出一支矛和一面盾。", "en": "At a market in Chu, a merchant displayed a spear and a shield.", "prompt": "wide establishing market scene, merchant beside the spear and shield laid safely across his stall" },
+      { "zh": "他举起盾说：“我的盾最坚固，什么也刺不穿！”", "en": "He lifted the shield. “Nothing in the world can pierce this!”", "prompt": "merchant proudly holding the shield in front of his body while the spear remains flat on the stall" },
+      { "zh": "他又指着矛说：“我的矛最锋利，什么都能刺穿！”", "en": "Then he pointed to the spear. “This can pierce anything at all!”", "prompt": "merchant gesturing proudly toward the spear lying sideways, curious shoppers listening" },
+      { "zh": "一个孩子问：“用你的矛刺你的盾，会怎么样呢？”", "en": "A child asked, “What happens if your spear meets your shield?”", "prompt": "thoughtful child asking a question while pointing separately toward the safely displayed spear and shield" },
+      { "zh": "商人张了张嘴，却发现两句话不能同时都对。", "en": "The merchant opened his mouth, then saw that both claims could not be true.", "prompt": "merchant pausing with a surprised thoughtful face as the market grows quietly attentive" },
+      { "zh": "他放下盾，重新说明它们各自真正的长处。", "en": "He set the shield down and described each item's real strengths instead.", "prompt": "merchant calmly placing the shield beside the spear and explaining honestly to the gathered families" },
+      { "zh": "他笑着承认：“刚才的话自相矛盾，我说过头啦！”", "en": "He smiled. “My words contradicted each other. I exaggerated.”", "prompt": "turning point, merchant smiling modestly with open hands, shoppers responding warmly" },
+      { "zh": "从此，他诚实介绍货物，大家反而更愿意相信他。", "en": "From then on, his honest descriptions made customers trust him more.", "prompt": "hopeful closing market scene with merchant helping a customer examine the shield safely on the stall" }
+    ]
+  },
+  {
+    "id": "lan-yu-chong-shu",
+    "title": "滥竽充数",
+    "subtitle": "不会吹竽的乐手",
+    "origin": "《韩非子·内储说上》",
+    "moral": {
+      "zh": "混在人群里假装会做，终究不能长久；诚实学习，才能获得真正的本领。",
+      "en": "Pretending in a crowd cannot last. Honest practice is how real ability grows."
+    },
+    "idiomMeaning": {
+      "zh": "比喻没有真本领的人混在行家中充数，也可指拿不好的东西凑数。",
+      "en": "To fill a place in the ensemble without knowing how to play—passing as qualified or adding inferior work merely to make up the numbers."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 13,
+    "visualAnchor": "Ancient Qi palace music courtyard with cream stone floor and vermilion columns; Mr. Nanguo is a slim man with an oval clean-shaven face, small high bun, moss-green robe, beige sash and dark trousers; the fixed yu is a traditional bundled bamboo reed instrument with a small wooden wind chamber; all musicians are calm and child-friendly",
+    "pages": [
+      { "zh": "齐宣王爱听大合奏，常召许多乐师一起吹竽。", "en": "King Xuan of Qi loved hearing a great ensemble of yu players.", "prompt": "wide establishing palace courtyard with a seated ensemble holding traditional bundled bamboo yu instruments" },
+      { "zh": "南郭先生不会吹竽，却悄悄站进了队伍后排。", "en": "Mr. Nanguo could not play, but he quietly slipped into the back row.", "prompt": "Mr. Nanguo entering the back row with an uncertain smile and holding his yu awkwardly" },
+      { "zh": "大家吹奏时，他鼓着腮帮，装作十分投入。", "en": "When everyone played, he puffed his cheeks and pretended to join in.", "prompt": "ensemble performing while Mr. Nanguo imitates the others without covering the instrument holes correctly" },
+      { "zh": "合奏声很响，没人发现他一个音也没有吹出来。", "en": "The full ensemble was so loud that no one noticed his silence.", "prompt": "medium-wide view of layered musicians, Mr. Nanguo hidden among them and glancing sideways uneasily" },
+      { "zh": "后来，新国君想听每位乐师一个个独奏。", "en": "Later, the new ruler asked to hear every musician play alone.", "prompt": "palace steward kindly arranging one chair for solo performances as musicians prepare in a line" },
+      { "zh": "轮到南郭先生时，他低下头，再也装不下去了。", "en": "When his turn came, Mr. Nanguo lowered his head. He could pretend no longer.", "prompt": "Mr. Nanguo standing beside the solo chair, holding the yu quietly with a worried but safe expression" },
+      { "zh": "他承认自己一直滥竽充数，请老乐师教他真本领。", "en": "He admitted he had only filled a place and asked an elder musician to teach him.", "prompt": "turning point, Mr. Nanguo bowing honestly to a kind elderly yu teacher" },
+      { "zh": "他从一个长音练起，终于吹出了自己的第一支曲子。", "en": "Starting with one long note, he finally learned to play a tune of his own.", "prompt": "hopeful garden practice at sunrise, teacher listening as Mr. Nanguo plays one steady note with correct posture" }
+    ]
+  },
+  {
+    "id": "mai-du-huan-zhu",
+    "title": "买椟还珠",
+    "subtitle": "漂亮盒子里的珍珠",
+    "origin": "《韩非子·外储说左上》",
+    "moral": {
+      "zh": "外表可以吸引目光，但判断价值时，也要看清里面真正重要的东西。",
+      "en": "A beautiful appearance may catch the eye, but wise choices also consider what truly matters inside."
+    },
+    "idiomMeaning": {
+      "zh": "买下装珍珠的木匣，却退还珍珠；比喻取舍不当，只重外表而忽略本质。",
+      "en": "To buy the box and return the pearl—valuing attractive packaging while overlooking what is truly precious."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 14,
+    "visualAnchor": "Ancient Zheng market with warm wooden stalls; the Chu merchant is a careful middle-aged craftsman in a navy robe and rust-red sash; the buyer is a cheerful young man in a pale-ochre robe and teal belt; the fixed treasure is one round ivory pearl inside a small dark-red carved wooden box lined with cream silk, decorated with simple gold cloud motifs and no writing",
+    "pages": [
+      { "zh": "楚国商人有一颗温润的珍珠，准备带到郑国出售。", "en": "A merchant from Chu took a lustrous pearl to sell in Zheng.", "prompt": "wide establishing workshop scene, merchant carefully holding the single pearl beside simple carving tools" },
+      { "zh": "他做了精美木匣，还铺上香软的丝绸。", "en": "He carved a beautiful box and lined it with soft, fragrant silk.", "prompt": "merchant placing cream silk inside the fixed carved red wooden box, pearl waiting beside it" },
+      { "zh": "到了集市，木匣闪闪发亮，引来许多人围观。", "en": "At the market, the gleaming box drew a curious crowd.", "prompt": "market stall with the open box and pearl centered, buyer leaning closer in delight" },
+      { "zh": "一位客人一眼爱上木匣，立刻把它买了下来。", "en": "One shopper fell in love with the box and bought it at once.", "prompt": "buyer happily receiving the closed carved box with both hands as the merchant watches" },
+      { "zh": "他打开盒子，取出珍珠，又把珍珠还给商人。", "en": "He opened it, took out the pearl, and handed the pearl back.", "prompt": "buyer returning the single pearl gently while keeping the box, merchant visibly puzzled" },
+      { "zh": "商人提醒他：“木匣虽美，珍珠才是里面的宝贝。”", "en": "The merchant said, “The box is lovely, but the pearl is the treasure inside.”", "prompt": "merchant calmly showing the pearl beside the open box, buyer listening with dawning understanding" },
+      { "zh": "客人明白，买椟还珠，就是只看外表、忘了真正价值。", "en": "The buyer understood: choosing the box over the pearl meant missing the real value.", "prompt": "turning point as buyer studies both the box's decoration and the pearl's soft glow thoughtfully" },
+      { "zh": "他重新比较后，学会从外到里认真做选择。", "en": "After comparing both, he learned to look beyond the surface before choosing.", "prompt": "hopeful closing scene, buyer and merchant discussing the box and pearl together with respectful smiles" }
+    ]
+  },
+  {
+    "id": "nan-yuan-bei-zhe",
+    "title": "南辕北辙",
+    "subtitle": "去南方却向北走",
+    "origin": "《战国策·魏策四》",
+    "moral": {
+      "zh": "能力和条件再好，也要先找准方向；方向错了，越努力可能离目标越远。",
+      "en": "Even strong skills and good resources need the right direction; effort on the wrong road can carry us farther from the goal."
+    },
+    "idiomMeaning": {
+      "zh": "车头向南、车辙却向北；比喻行动和目的正好相反。",
+      "en": "The shafts point south while the tracks run north—actions going in the opposite direction from the intended goal."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 15,
+    "visualAnchor": "Ancient Wei countryside crossroads with a stone direction marker, rolling fields and distant hills; the traveler is a confident man with a round clean-shaven face, navy short robe, ochre sash and small topknot; his friend is lean with a sage-green robe and beige sash; fixed two-wheeled wooden carriage pulled by one calm chestnut horse with cream blaze",
+    "pages": [
+      { "zh": "魏国有个人准备去南方的楚国，带足行李出了门。", "en": "A traveler from Wei packed for the southern state of Chu and set out.", "prompt": "wide establishing crossroads, traveler loading his fixed carriage while a route map points toward southern hills" },
+      { "zh": "可是车夫挥动缰绳，马车却沿着北边大路前进。", "en": "But the driver guided the carriage onto the road heading north.", "prompt": "the same carriage rolling north past the stone marker, southern hills visible behind" },
+      { "zh": "朋友追上来提醒：“楚国在南边，你走反啦！”", "en": "His friend caught up. “Chu is south. You are going the wrong way!”", "prompt": "friend beside the stopped carriage pointing calmly toward the opposite southern road" },
+      { "zh": "旅人说：“别担心，我的马跑得又快又有力。”", "en": "“Do not worry,” said the traveler. “My horse is fast and strong.”", "prompt": "traveler proudly patting the calm chestnut horse while his friend remains concerned" },
+      { "zh": "他又说：“我带的钱很多，车夫的本领也特别好。”", "en": "“I have plenty of money, and my driver is very skilled,” he added.", "prompt": "traveler showing a tied coin pouch and gesturing toward the capable driver, all beside the carriage" },
+      { "zh": "朋友摇头：“这些越好，只会让你更快离开楚国。”", "en": "His friend shook his head. “Those advantages only take you away faster.”", "prompt": "friend drawing one simple route line in dust, traveler leaning closer and beginning to understand" },
+      { "zh": "旅人望着车辙，终于明白这正是南辕北辙。", "en": "Looking at the tracks, the traveler finally understood that his journey opposed his goal.", "prompt": "turning point, traveler comparing northbound wheel tracks with the southern road and stone marker" },
+      { "zh": "他调转马车，先认准方向，再踏踏实实向南出发。", "en": "He turned the carriage around, checked the direction, and started south.", "prompt": "hopeful wide ending, fixed carriage now traveling toward sunlit southern hills, friend waving goodbye" }
+    ]
+  },
+  {
+    "id": "bei-gong-she-ying",
+    "title": "杯弓蛇影",
+    "subtitle": "杯子里的影子",
+    "origin": "《晋书·乐广传》",
+    "moral": {
+      "zh": "害怕时先查清事实，许多担忧会在认真观察后消失。",
+      "en": "When fear appears, look for the facts; careful observation can make many worries disappear."
+    },
+    "idiomMeaning": {
+      "zh": "把映在杯中的弓影误认成蛇；比喻因疑神疑鬼而产生不必要的恐惧。",
+      "en": "Mistaking a bow's reflection in a cup for a snake—becoming frightened by an unfounded suspicion."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 16,
+    "visualAnchor": "Quiet Western Jin reception room with pale plaster wall, low dark-wood table, lattice window and one curved dark-red decorative bow hanging high on the wall; host Yue Guang is a calm middle-aged scholar in a deep-teal robe and cream sash; his guest is a gentle man in a rust-brown robe and jade belt; fixed small celadon cup filled with clear drink; any snake shape is only a harmless reflection, never a real animal",
+    "pages": [
+      { "zh": "乐广请朋友来家中小坐，两人对着清亮的杯子聊天。", "en": "Yue Guang invited a friend to sit and talk over clear cups.", "prompt": "wide establishing room scene with both friends at the low table, wall bow and celadon cup clearly visible" },
+      { "zh": "朋友低头一看，杯里竟有一条弯弯的“蛇”。", "en": "The guest looked down and saw a curved “snake” inside his cup.", "prompt": "close over-shoulder view of the cup showing only the curved bow reflection, guest startled but safe" },
+      { "zh": "他不敢多问，勉强喝下饮品，心里一直发慌。", "en": "Too embarrassed to ask, he drank and carried the worry home.", "prompt": "guest setting down the cup with an uneasy expression while the host remains unaware" },
+      { "zh": "回家后，他越想越害怕，连饭也吃不香了。", "en": "At home, the more he imagined, the more worried he became.", "prompt": "guest at a simple home table, untouched bowl nearby, thinking anxiously but not ill or harmed" },
+      { "zh": "乐广听说后，请他坐回原位，再仔细看看杯子。", "en": "Hearing this, Yue Guang invited him back to the same seat and cup.", "prompt": "same reception room and seating, host gently encouraging guest to inspect the cup together" },
+      { "zh": "乐广取下墙上的弓，杯里的“蛇”立刻不见了。", "en": "Yue Guang removed the wall bow, and the “snake” vanished at once.", "prompt": "host safely lowering the decorative bow while guest watches the clear reflection disappear from the cup" },
+      { "zh": "朋友恍然大悟：原来只是杯弓蛇影，并没有真蛇。", "en": "The guest understood: it was only a bow's reflection, never a real snake.", "prompt": "turning point, both friends comparing the bow's curve with the reflection, relieved smiles" },
+      { "zh": "他放下担心，也记住以后先观察、再作判断。", "en": "His worry lifted, and he remembered to investigate before deciding.", "prompt": "warm closing tea-table scene, relaxed guest enjoying food while daylight fills the room" }
+    ]
+  },
+  {
+    "id": "sai-weng-shi-ma",
+    "title": "塞翁失马",
+    "subtitle": "跑远又回来的马",
+    "origin": "《淮南子·人间训》",
+    "moral": {
+      "zh": "眼前的得失可能互相转化；遇到变化，先保持平静，再认真应对。",
+      "en": "Today's loss may become tomorrow's gain. Meet change calmly, then respond with care."
+    },
+    "idiomMeaning": {
+      "zh": "边塞老人丢马后反得好处；比喻坏事在一定条件下可能变成好事。",
+      "en": "The frontier old man's lost horse brought unexpected good—misfortune may sometimes turn into a blessing."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 17,
+    "visualAnchor": "Ancient northern frontier village with grassy hills, low stone wall and timber cottage; the old man is lean with silver hair in a low bun, short white beard, warm brown robe and dark-teal cloak; his adult son wears a sage-green short robe; fixed family horse is light gray with dark mane, joined later by one chestnut horse; gentle rounded horses, no battle or scary imagery",
+    "pages": [
+      { "zh": "边塞住着一位老人，他和儿子一起照料一匹灰马。", "en": "An old man on the frontier cared for a gray horse with his son.", "prompt": "wide establishing cottage and pasture, father and adult son brushing the fixed gray horse" },
+      { "zh": "一天，灰马跑过山口，不知去了哪里。", "en": "One day, the gray horse wandered through the pass and disappeared.", "prompt": "gray horse safely trotting toward distant grassy pass while father and son notice from afar" },
+      { "zh": "邻居来安慰，老人却说：“这也许会带来好事。”", "en": "Neighbors came to comfort him. “Perhaps something good may follow,” he said.", "prompt": "neighbors gathered kindly by the empty fence, old man calm and thoughtful" },
+      { "zh": "过了些日子，灰马带着一匹健壮的栗色马回来了。", "en": "Days later, the gray horse returned with a strong chestnut companion.", "prompt": "both horses entering the village together at sunrise, family and neighbors delighted" },
+      { "zh": "儿子试骑新马时滑进草堆，脚腕需要休养。", "en": "While trying the new horse, the son slipped into soft hay and hurt his ankle.", "prompt": "son seated safely in a large hay pile holding his ankle, chestnut horse standing calmly nearby" },
+      { "zh": "邻居又来叹息，老人仍说：“变化还没有结束。”", "en": "The neighbors sighed again. The old man said, “The story is not over.”", "prompt": "son resting comfortably on a bench with wrapped ankle, old man speaking calmly to neighbors" },
+      { "zh": "后来青年们要远行守边，儿子因养伤留在家中。", "en": "Later, young men left for a long frontier duty, while the son stayed home to heal.", "prompt": "peaceful village gate, traveling group waving farewell with packs and no weapons, son resting beside father" },
+      { "zh": "老人说：“塞翁失马，得失变化时，先平静看一看。”", "en": "“A loss may hide a gain,” said the old man. “Stay calm as things change.”", "prompt": "hopeful sunset pasture, healed son walking beside father and the two gentle horses" }
+    ]
+  },
+  {
+    "id": "wen-ji-qi-wu",
+    "title": "闻鸡起舞",
+    "subtitle": "清晨响起的鸡鸣",
+    "origin": "《晋书·祖逖传》",
+    "moral": {
+      "zh": "有目标后及时行动，坚持每天练习，才能让愿望慢慢变成本领。",
+      "en": "Once you have a goal, begin and practice steadily; daily effort turns wishes into ability."
+    },
+    "idiomMeaning": {
+      "zh": "听到鸡叫就起床舞剑；比喻有志向的人及时奋发、勤学苦练。",
+      "en": "To rise at the rooster's call and practice sword forms—acting promptly and training diligently toward an ambition."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 18,
+    "visualAnchor": "Western Jin scholars' residence with tiled courtyard, bamboo fence and dawn mist; Zu Ti is an athletic young man with broad brows, high topknot, navy practice robe and rust sash; Liu Kun is lean with an oval face, lower bun, moss-green practice robe and beige sash; both use blunt dark-wood practice swords only, held safely and never aimed at anyone; fixed red-brown rooster with black tail feathers",
+    "pages": [
+      { "zh": "年轻的祖逖和刘琨住在一起，常谈自己的远大志向。", "en": "Young Zu Ti and Liu Kun lived together and often spoke of their ambitions.", "prompt": "wide evening study scene, the two friends reading scrolls beside the courtyard window" },
+      { "zh": "一天清晨，天还微暗，祖逖忽然听见公鸡报晓。", "en": "Before dawn one morning, Zu Ti heard the rooster call.", "prompt": "dim dawn room, Zu Ti awake and listening toward the red-brown rooster outside" },
+      { "zh": "他叫醒刘琨：“这不是坏声音，正好提醒我们练习！”", "en": "He woke Liu Kun. “That sound is a fine reminder to practice!”", "prompt": "Zu Ti gently waking his friend, pointing toward first light beyond the lattice window" },
+      { "zh": "两人披衣来到院中，拿起木剑活动筋骨。", "en": "They dressed, stepped into the courtyard, and warmed up with wooden swords.", "prompt": "both friends stretching several steps apart, blunt wooden practice swords resting safely downward" },
+      { "zh": "他们一招一式认真练，汗珠在晨光里闪亮。", "en": "They practiced each careful movement as the morning light grew.", "prompt": "coordinated flowing sword forms with wide spacing, blades never aimed at each other, sunrise behind" },
+      { "zh": "刮风或天冷时，他们也按约定早起，不轻易停下。", "en": "Even on cold or windy mornings, they kept their promise to rise and train.", "prompt": "breezy autumn dawn, same friends practicing steadily as bamboo leaves move" },
+      { "zh": "闻鸡起舞，成了他们每天把志向变成行动的办法。", "en": "Rising at the rooster's call became their way of turning ambition into action.", "prompt": "turning point, rooster in foreground and friends beginning practice together in golden dawn" },
+      { "zh": "日复一日，他们更强健，也更懂得坚持的力量。", "en": "Day by day, they grew stronger and learned the power of persistence.", "prompt": "hopeful wide ending, friends finishing practice and bowing to each other as sun clears the roof" }
+    ]
+  },
+  {
+    "id": "tie-chu-cheng-zhen",
+    "title": "铁杵成针",
+    "subtitle": "磨呀磨的老婆婆",
+    "origin": "宋·祝穆《方舆胜览·眉州·磨针溪》",
+    "moral": {
+      "zh": "再难的事情，只要方法合适并坚持去做，也能一点点接近目标。",
+      "en": "Even a difficult goal comes closer when we use a sound method and keep working patiently."
+    },
+    "idiomMeaning": {
+      "zh": "把粗铁棒磨成细针；比喻只要有恒心、肯下功夫，再难的事也能成功。",
+      "en": "Grinding an iron pestle into a needle—patient, persistent effort can overcome even a very difficult task."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 19,
+    "visualAnchor": "Tang-dynasty mountain village near a clear stream and stone bridge; young Li Bai is a lively 12-year-old with round face, high child topknot, pale-blue short robe, navy sash and brown trousers, carrying a cloth book bag; the elderly woman has silver hair in a low bun, warm smile, plum-brown robe and beige apron; fixed thick dark iron pestle and flat gray grinding stone, handled calmly and safely",
+    "pages": [
+      { "zh": "少年李白读书遇到难处，心里烦闷，便走出了学堂。", "en": "Young Li Bai found his lessons difficult and wandered away from school.", "prompt": "wide establishing village path, Li Bai leaving a small schoolhouse with book bag and discouraged expression" },
+      { "zh": "溪边，一位老婆婆正拿着粗铁杵，在石头上慢慢磨。", "en": "By the stream, an old woman slowly rubbed a thick iron pestle on a stone.", "prompt": "Li Bai noticing the elderly woman seated safely beside the stream and grinding the fixed iron pestle" },
+      { "zh": "李白好奇地问：“这么粗的铁杵，要磨成什么呢？”", "en": "Li Bai asked, “What will that thick iron pestle become?”", "prompt": "Li Bai crouching at a respectful distance, pointing curiously while the woman pauses and smiles" },
+      { "zh": "老婆婆回答：“我要把它磨细，做成一根绣花针。”", "en": "“I will grind it thin enough to become a sewing needle,” she replied.", "prompt": "woman showing the thick pestle beside one tiny sewing needle held safely in a small cloth case" },
+      { "zh": "李白惊讶：“这要磨多久？”婆婆笑着继续磨。", "en": "“How long will that take?” Li Bai wondered. She smiled and kept going.", "prompt": "woman resuming steady grinding, Li Bai watching the repeated careful motion with wide eyes" },
+      { "zh": "水滴不停，铁杵一点点变细，李白也渐渐明白了。", "en": "The stream flowed on, and the iron grew thinner little by little. Li Bai began to understand.", "prompt": "close storytelling scene of slightly narrowed iron pestle, flowing stream and Li Bai's thoughtful face" },
+      { "zh": "铁杵成针靠的是恒心，读书学本领也是一样。", "en": "An iron pestle becomes a needle through persistence—and learning works the same way.", "prompt": "turning point, Li Bai looking from the grinding stone toward his book bag with renewed determination" },
+      { "zh": "他回到学堂，从一页读起，把难题一点点学会。", "en": "He returned to school, began with one page, and learned step by step.", "prompt": "hopeful classroom ending, Li Bai reading attentively by warm window light with a small confident smile" }
+    ]
+  },
+  {
+    "id": "xiong-you-cheng-zhu",
+    "title": "胸有成竹",
+    "subtitle": "落笔前的竹林",
+    "origin": "宋·苏轼《文与可画筼筜谷偃竹记》",
+    "moral": {
+      "zh": "动手之前认真观察、充分准备，心里有了清楚的图景，做事就更从容。",
+      "en": "Careful observation and preparation create a clear inner picture, making action calmer and more confident."
+    },
+    "idiomMeaning": {
+      "zh": "画竹前心中已有完整的竹子；比喻做事前已有成熟的考虑和把握。",
+      "en": "To have the finished bamboo already in one's mind—being well prepared and confident before beginning a task."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-29",
+    "order": 20,
+    "visualAnchor": "Northern Song scholar's garden and bamboo grove with gray rocks, tiled studio and soft seasonal light; painter Wen Tong is a calm slender middle-aged scholar with short neat beard, high black scholar bun, deep-teal long robe, cream inner collar and rust-red sash; fixed painting tools are a dark-wood brush, pale inkstone and vertical cream paper with no writing",
+    "pages": [
+      { "zh": "文同很爱竹子，常在院中的竹林旁静静观察。", "en": "Wen Tong loved bamboo and often watched the grove in his garden.", "prompt": "wide establishing garden scene, Wen Tong seated by bamboo with sketching tools still closed" },
+      { "zh": "晴天，他看竹叶怎样迎着阳光舒展。", "en": "On sunny days, he studied how bamboo leaves opened toward the light.", "prompt": "sunlit grove, Wen Tong observing leaf angles and bright edges with focused calm" },
+      { "zh": "风来时，他看竹竿怎样弯下，又轻轻弹回来。", "en": "When wind came, he watched the stems bend and spring gently back.", "prompt": "breezy bamboo grove, curved stems and moving leaves, Wen Tong studying their rhythm" },
+      { "zh": "雨后，他还记住竹节、叶尖和深浅不同的绿色。", "en": "After rain, he remembered every joint, leaf tip, and shade of green.", "prompt": "fresh post-rain close scene, droplets on bamboo, Wen Tong examining joints and leaves" },
+      { "zh": "回到书房，他闭上眼，完整的竹林已经在心里。", "en": "Back in his studio, he closed his eyes and saw the whole grove in his mind.", "prompt": "quiet studio, Wen Tong seated before blank paper with eyes closed, soft bamboo shadows on wall" },
+      { "zh": "他提起毛笔，一气呵成，画出有风、有光的竹子。", "en": "He lifted his brush and painted bamboo filled with wind and light.", "prompt": "Wen Tong painting confident flowing bamboo strokes on vertical paper, balanced medium composition" },
+      { "zh": "朋友赞叹：“你落笔前早已胸有成竹，难怪这样从容！”", "en": "A friend marveled, “The bamboo was already in your mind before the brush moved!”", "prompt": "turning point, friend admiring the finished bamboo painting while Wen Tong smiles modestly" },
+      { "zh": "文同说：“看得认真、想得清楚，动手时自然更有把握。”", "en": "Wen Tong said, “Observe carefully, think clearly, and your hand will know what to do.”", "prompt": "hopeful ending, Wen Tong and friend comparing the painting with the living bamboo outside the open studio" }
+    ]
+  }
+]

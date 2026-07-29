@@ -6,8 +6,9 @@ import keZhouQiuJianDraft from "../../../content-drafts/chengyu/ke-zhou-qiu-jian
 import wangYangBuLaoDraft from "../../../content-drafts/chengyu/wang-yang-bu-lao/draft.json";
 import yanErDaoLingDraft from "../../../content-drafts/chengyu/yan-er-dao-ling/draft.json";
 import yuGongYiShanDraft from "../../../content-drafts/chengyu/yu-gong-yi-shan/draft.json";
+import newChengyuDrafts from "../../../content-drafts/chengyu/chengyu-11-20.json";
 
-// A3 首批 10 本均已完成文字、插图验收并正式发布。
+// 首批 20 本均已完成文字、插图验收并正式发布。
 
 const SHOU_ZHU_DAI_TU_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
   {
@@ -248,6 +249,40 @@ function reviewedDraftToBook(draft: ReviewedBookDraft): LibraryBook {
   };
 }
 
+type AnchoredBookDraft = Omit<ReviewedBookDraft, "pages"> & {
+  visualAnchor: string;
+  pages: Array<{ zh: string; en: string; prompt: string }>;
+};
+
+const CHENGYU_IMAGE_STYLE =
+  "premium polished warm 3D clay-like animated-film children's picture-book illustration, tactile handmade textures, warm cinematic light, expressive rounded characters, square 1:1 composition";
+const CHENGYU_IMAGE_NEGATIVE =
+  "no text, letters, calligraphy, speech bubbles, logos, watermark, modern objects, distorted anatomy, frightening imagery, injury, blood, or split panels";
+
+function anchoredDraftToBook(draft: AnchoredBookDraft): LibraryBook {
+  const pages = draft.pages.map((page, index) => ({
+    ...page,
+    prompt: `${
+      index === 0
+        ? `Establish this fixed visual anchor: ${draft.visualAnchor}`
+        : `Use the established reference images for this book and keep every recurring face, hairstyle, costume, prop, architecture detail, palette, material and character scale unchanged. Fixed visual anchor: ${draft.visualAnchor}`
+    }; ${page.prompt}; ${CHENGYU_IMAGE_STYLE}; ${CHENGYU_IMAGE_NEGATIVE}; no text in image.`,
+  }));
+
+  return reviewedDraftToBook({
+    id: draft.id,
+    title: draft.title,
+    subtitle: draft.subtitle,
+    origin: draft.origin,
+    moral: draft.moral,
+    idiomMeaning: draft.idiomMeaning,
+    ageLabel: draft.ageLabel,
+    publishedAt: draft.publishedAt,
+    order: draft.order,
+    pages,
+  });
+}
+
 export const CHENGYU_BOOKS: LibraryBook[] = [
   {
     id: "shou-zhu-dai-tu",
@@ -337,6 +372,7 @@ export const CHENGYU_BOOKS: LibraryBook[] = [
     yanErDaoLingDraft,
     duiNiuTanQinDraft,
   ].map(reviewedDraftToBook),
+  ...(newChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
 ];
 
 export const CHENGYU_SERIES: LibrarySeries = {
