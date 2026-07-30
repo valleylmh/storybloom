@@ -1,0 +1,56 @@
+{
+  "id": "tong-tai-fu-jie-shan-yuan",
+  "title": "铜台府结善缘",
+  "subtitle": "一碗热粥里的真心",
+  "origin": "《西游记》第九十六回（低龄温和改编）",
+  "moral": {
+    "zh": "真诚的款待不在排场，而在看见别人真正需要什么。",
+    "en": "True hospitality is not about grandeur, but about noticing what others truly need."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 31,
+  "episodeNumber": 31,
+  "pages": [
+    {
+      "zh": "离开天竺国后，师徒来到铜台府。天色将晚，细雨把青石路洗得亮晶晶。",
+      "en": "After leaving Tianzhu, the travelers reached Tongtai Prefecture. Evening rain made the stone road shine.",
+      "prompt": "The established five travelers arrive on a rain-washed ancient Chinese street at dusk, warm windows glowing ahead, calm and hopeful; safe staff, rake, and spade positions; square premium polished 3D clay-like children's illustration, no text or fear."
+    },
+    {
+      "zh": "寇员外听说取经人路过，赶来请他们歇脚，还让家人先给白龙马擦干鬃毛。",
+      "en": "When Elder Kou heard that scripture pilgrims were passing by, he invited them to rest and first helped dry White Dragon Horse's mane.",
+      "prompt": "Create Elder Kou anchor: a kind elderly Chinese householder with a round warm face, silver eyebrows, a short neat white beard, gray hair in a low topknot, layered moss-green and warm-brown robes, and a plain wooden bead bracelet. He welcomes the established travelers while a caregiver gently towels White Dragon Horse's pale-blue mane under a covered gate; no luxury display or servants bowing."
+    },
+    {
+      "zh": "八戒看见满桌点心，眼睛一亮。唐僧却说：“雨夜里，一碗热粥就已经很好。”",
+      "en": "Bajie's eyes widened at a table of treats, but Tang Seng said, \"On a rainy night, one bowl of warm porridge is already a gift.\"",
+      "prompt": "Reuse the established team and Elder Kou. A cozy dining room with a modest bowl of steaming porridge placed before Tang Seng; Bajie smiles at several untouched snacks, while everyone sits comfortably as equals; warm lantern light, no excessive feast or text."
+    },
+    {
+      "zh": "寇员外收起排场，和家人一起端来热粥、干布和一盆温水，屋里立刻安静又暖和。",
+      "en": "Elder Kou set aside the grand preparations. His family brought porridge, dry cloths, and warm water, and the room became peaceful and snug.",
+      "prompt": "Reuse Elder Kou and the established travelers. Family members bring simple bowls, folded cloths, and a safe basin of warm water; Wukong warms his hands, Sha Wujing hangs a damp cloak, and Bajie carefully carries bowls; tactile homey ancient interior."
+    },
+    {
+      "zh": "悟空发现屋檐漏雨，便和八戒补瓦；沙僧把门前积水引进花沟，白龙马也驮来干草。",
+      "en": "Wukong noticed a leaking eave and repaired it with Bajie. Sha guided puddles into a flower channel, and White Dragon Horse carried dry straw.",
+      "prompt": "The established team cooperates in a safe courtyard: Wukong and Bajie repair low roof tiles from a stable platform, Sha Wujing clears a shallow flower channel, White Dragon Horse carries a small bundle of straw, Elder Kou watches gratefully; no dangerous height or storm."
+    },
+    {
+      "zh": "雨停后，邻居们也送来几把青菜。寇员外把多余的食物分给路边赶路的人。",
+      "en": "When the rain stopped, neighbors brought vegetables. Elder Kou shared the extra food with other travelers on the road.",
+      "prompt": "Reuse Elder Kou and the team. In a moonlit gate courtyard, neighbors contribute baskets of greens and Elder Kou shares small food parcels with ordinary traveling families; generous but orderly, caregivers with children, no poverty spectacle."
+    },
+    {
+      "zh": "寇员外笑着说：“原来积善不是把东西堆得高高的，而是让需要的人正好接住。”",
+      "en": "Elder Kou smiled. \"Doing good is not piling gifts high. It is placing the right help into hands that need it.\"",
+      "prompt": "Elder Kou and Tang Seng speak beside a low table holding only a few useful items: porridge bowl, folded cloth, vegetables, and roof tile; the team listens with warm expressions; balanced quiet composition, no readable labels."
+    },
+    {
+      "zh": "清晨，寇家门前的雨珠闪闪发亮。师徒答应多住几日，也把一路见闻讲给大家听。",
+      "en": "At dawn, raindrops sparkled outside the Kou home. The travelers agreed to stay a few days and share stories from their journey.",
+      "prompt": "The established travelers and Elder Kou gather beneath a sunlit eave at dawn, children and caregivers seated together listening as Wukong gestures toward a small map without writing; sparkling raindrops, welcoming calm, transition to a longer visit."
+    }
+  ]
+}

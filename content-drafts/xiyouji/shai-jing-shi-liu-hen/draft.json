@@ -1,0 +1,56 @@
+{
+  "id": "shai-jing-shi-liu-hen",
+  "title": "晒经石留痕",
+  "subtitle": "不完美的最后一难",
+  "origin": "《西游记》第九十九回（低龄温和改编）",
+  "moral": {
+    "zh": "成果遇到意外时，先保护、修复和记录；留下痕迹并不等于失去价值。",
+    "en": "When work meets an accident, protect, repair, and record it; a mark does not erase its value."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 39,
+  "episodeNumber": 39,
+  "pages": [
+    {
+      "zh": "上岸后，大家发现几层防潮布湿了。沙僧马上找到一块平整的大石头。",
+      "en": "After reaching shore, they found several damp outer cloths. Sha quickly found a broad, flat stone.",
+      "prompt": "The established team inspects damp outer wrapping beside a broad flat sunlit stone on the riverbank; scripture scrolls remain protected inside, practical calm mood."
+    },
+    {
+      "zh": "悟空用树枝搭起小架，八戒摊开布角，唐僧和白龙马按顺序看守经卷。",
+      "en": "Wukong built small drying racks, Bajie spread the cloth, and Tang Seng and White Dragon Horse guarded the scroll order.",
+      "prompt": "The established team sets up low safe twig drying racks: Wukong ties supports, Bajie spreads cloth, Tang Seng sorts scrolls by colored ribbons, White Dragon Horse watches; no fire."
+    },
+    {
+      "zh": "河风忽然变大，一页经纸贴在石面上。悟空伸手去揭，纸角却留下了一小块。",
+      "en": "A river breeze pressed one scripture page to the stone. When Wukong lifted it, a tiny corner remained behind.",
+      "prompt": "A cream scripture page with only abstract unreadable ink lines lies against the flat stone; Wukong carefully lifts it while one tiny corner remains, focused close-up, no tearing drama."
+    },
+    {
+      "zh": "唐僧没有责怪悟空。他们先用干布压平经纸，再把缺角的位置仔细记下来。",
+      "en": "Tang Seng did not blame Wukong. They pressed the page flat with dry cloth and carefully recorded the missing corner.",
+      "prompt": "Tang Seng and Wukong gently press the page beneath a clean cloth with smooth wooden weights; Sha records the location using blank diagram shapes, supportive teamwork."
+    },
+    {
+      "zh": "八戒担心经书不再完整。沙僧说：“完整不是从没受过风雨，而是每次都认真保护。”",
+      "en": "Bajie worried the scriptures were no longer complete. Sha said, \"Wholeness is not never meeting storms; it is caring for what remains every time.\"",
+      "prompt": "Sha Wujing reassures Bajie beside neatly drying scrolls and cloths; the team sits together on the warm riverbank, reflective and comforting."
+    },
+    {
+      "zh": "他们逐卷复查，确认文字都能读清，只少了空白边角，便用新的护纸包好。",
+      "en": "They rechecked every scroll. All teachings remained clear; only a blank edge was missing, so they added new protective paper.",
+      "prompt": "The full team carefully checks scrolls with tiny abstract ink lines, then adds cream protective edge paper and ties soft colored ribbons; precise restoration, no legible text."
+    },
+    {
+      "zh": "夕阳照在大石上，那片纸角像一枚小小的旅程印记，提醒后来人珍惜经卷。",
+      "en": "Sunset lit the stone, where the tiny paper corner became a travel mark reminding later visitors to care for the scrolls.",
+      "prompt": "Golden sunset on the broad flat drying stone, with one tiny cream paper corner visible like a gentle historical trace; the established travelers pack nearby, no shrine or readable inscription."
+    },
+    {
+      "zh": "经包装好后，师徒向东出发。前方云层散开，长安的城郭仿佛已在晨光里等待。",
+      "en": "With the scriptures packed, the travelers headed east. Clouds opened ahead, and Chang'an seemed to wait in the morning light.",
+      "prompt": "Wide dawn departure eastward: the established team carries securely wrapped scripture cases, leaving the drying stone beside a calm river; distant Chang'an walls glow beyond clouds."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "ling-yun-du-guo-qiao",
+  "title": "凌云渡过桥",
+  "subtitle": "放下沉重，走向最后一程",
+  "origin": "《西游记》第九十八回（低龄温和改编）",
+  "moral": {
+    "zh": "面对陌生的一步，先观察、互相照应，就能把害怕变成勇气。",
+    "en": "When a step feels unfamiliar, observing carefully and supporting one another can turn fear into courage."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 35,
+  "episodeNumber": 35,
+  "pages": [
+    {
+      "zh": "灵山脚下，一条清亮大河挡住去路。河上只有一座细细的凌云桥。",
+      "en": "At the foot of Spirit Mountain, a clear river blocked the road. Only a narrow Lingyun bridge crossed it.",
+      "prompt": "The established travelers arrive at a broad calm luminous river beneath Spirit Mountain; a narrow but sturdy stone-and-wood bridge has safe rope rails, magical cloud light, no dangerous drop or fear."
+    },
+    {
+      "zh": "八戒往下一看，腿有点发软。沙僧先检查桥绳，悟空则轻轻跳到第一块桥板上试稳。",
+      "en": "Bajie looked down and felt wobbly. Sha checked the ropes, while Wukong gently tested the first plank.",
+      "prompt": "The established team inspects the bridge safely: Sha checks thick rope rails, Wukong tests the first broad plank with staff behind one ear, Bajie holds the rail with a comic cautious smile; no peril."
+    },
+    {
+      "zh": "一位撑着空船的接引人从雾里来，说：“桥和船都能过，选让你们安心的办法。”",
+      "en": "A ferryman arrived through the mist with an empty boat. \"Bridge or boat—choose the way that helps you feel steady,\" he said.",
+      "prompt": "Create the gentle ferryman anchor: a serene elderly boatman with warm bronze skin, smiling dark eyes, a short cloud-white beard, a straw rain cape over pale-gray robes, and a smooth bamboo pole held vertically. He approaches in a broad stable wooden boat; never mysterious or frightening."
+    },
+    {
+      "zh": "唐僧选择坐船，悟空和沙僧扶他上去；八戒牵着白龙马，从有护绳的桥上慢慢走。",
+      "en": "Tang Seng chose the boat, helped by Wukong and Sha. Bajie led White Dragon Horse slowly across the bridge with rope rails.",
+      "prompt": "Split but coherent wide scene: the gentle ferryman steadies a broad boat as Wukong and Sha help Tang Seng aboard; Bajie calmly leads White Dragon Horse across the railed bridge nearby; no rushing or deep-water danger."
+    },
+    {
+      "zh": "河面映出他们一路背过的担子：担心、误会、舍不得，还有许多已经学会放下的事。",
+      "en": "The river reflected the burdens they had carried: worries, misunderstandings, reluctance, and many things they had learned to release.",
+      "prompt": "Poetic river reflections beneath the boat and bridge show soft symbolic shapes—a knotted ribbon becoming untied, a cloudy circle becoming clear, a heavy bundle becoming light—while the established travelers remain calm; no text or ghost imagery."
+    },
+    {
+      "zh": "大家在河心互相挥手。走不同的路，并没有让他们分开，反而更懂得照顾彼此。",
+      "en": "Midway across, they waved to one another. Taking different paths had not separated them; it helped them care for one another better.",
+      "prompt": "Tang Seng, Wukong, Sha, and the ferryman wave from the safe boat toward Bajie and White Dragon Horse on the bridge; joyful connection over sparkling calm water, bright clouds."
+    },
+    {
+      "zh": "到了对岸，唐僧的鞋没有沾湿，八戒也不再发抖。接引人指向云上的寺门。",
+      "en": "On the far bank, Tang Seng's shoes were dry and Bajie no longer trembled. The ferryman pointed toward a temple gate in the clouds.",
+      "prompt": "The full established team reunites on a broad safe riverbank; the gentle ferryman points his vertical bamboo pole toward a radiant temple gate above cloud steps; relief and wonder."
+    },
+    {
+      "zh": "师徒回头道谢，河面像一面安静的镜子。最后一段路，正等着他们自己走完。",
+      "en": "The travelers turned to give thanks. The river shone like a quiet mirror, and the final path waited for their own footsteps.",
+      "prompt": "The established team bows to the gentle ferryman beside the mirrorlike river, then faces a wide ascending path toward Spirit Mountain; contemplative golden morning, no text."
+    }
+  ]
+}

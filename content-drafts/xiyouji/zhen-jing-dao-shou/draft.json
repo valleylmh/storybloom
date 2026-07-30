@@ -1,0 +1,56 @@
+{
+  "id": "zhen-jing-dao-shou",
+  "title": "真经到手",
+  "subtitle": "把珍贵的知识带回家",
+  "origin": "《西游记》第九十八回（低龄温和改编）",
+  "moral": {
+    "zh": "重要的成果要共同核对、妥善保护，也要记得它是为了帮助更多人。",
+    "en": "Important work should be checked together, protected with care, and used to help more people."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 37,
+  "episodeNumber": 37,
+  "pages": [
+    {
+      "zh": "守经人打开另一座库房，一排排经卷系着朱红、靛蓝和金色的书带。",
+      "en": "The keepers opened another archive, where rows of scrolls were tied with vermilion, indigo, and gold ribbons.",
+      "prompt": "The established team enters a luminous archive filled with neatly rolled cream scrolls tied in vermilion, indigo, and muted-gold ribbons; no readable text, reverent but child-friendly."
+    },
+    {
+      "zh": "唐僧先抽看开头、中间和结尾，确认每卷都有清楚文字，再请徒弟们一起复核。",
+      "en": "Tang Seng checked the beginning, middle, and end of each set, confirming that every scroll contained clear writing before asking the others to verify.",
+      "prompt": "Tang Seng carefully checks scroll pages containing tiny abstract ink-like lines that are not legible language; Wukong, Bajie, and Sha use blank check counters, collaborative verification."
+    },
+    {
+      "zh": "悟空看编号顺序，八戒数箱子，沙僧检查防潮布，白龙马记住每只箱子的气味。",
+      "en": "Wukong checked the sequence, Bajie counted cases, Sha inspected the moisture cloth, and White Dragon Horse memorized each case's scent.",
+      "prompt": "The full team performs different safe checks around sealed scripture cases: Wukong compares colored ribbon order, Bajie counts, Sha examines wrapping cloth, White Dragon Horse sniffs gently; no text."
+    },
+    {
+      "zh": "这一次，守经人也和他们逐卷交接。每装好一箱，双方就放下一颗白石作为确认。",
+      "en": "This time, the keepers transferred the scrolls one by one. For every completed case, both sides placed a white pebble as confirmation.",
+      "prompt": "The two scripture keepers and established team jointly seal one case at a time, placing smooth white pebbles in matching bowls; careful handoff, equal partnership."
+    },
+    {
+      "zh": "经包很多，八戒想一次全背走。沙僧提醒他分轻重，大家重新把重量平均分好。",
+      "en": "There were many bundles, and Bajie wanted to carry them all. Sha reminded him to balance the load, so they shared the weight evenly.",
+      "prompt": "Bajie good-naturedly tries to lift too many soft bundles, while Sha helps redistribute them onto a balanced carrying pole and White Dragon Horse's padded packs; comic but safe ergonomics."
+    },
+    {
+      "zh": "唐僧向灵山众人道谢：“这些经卷不是我们的奖品，而是要带回去分享的灯。”",
+      "en": "Tang Seng thanked everyone at Spirit Mountain. \"These scrolls are not our prize. They are lamps to carry home and share.\"",
+      "prompt": "Tang Seng bows in gratitude before a small gathering of gentle monks while the established team stands beside safely packed scripture cases; warm lamp-like glow, no readable symbols."
+    },
+    {
+      "zh": "云路在山前铺开，师徒把经箱固定牢靠，还留下一份完整清单给守经人。",
+      "en": "A cloud road opened before the mountain. The travelers secured the cases and left a complete record with the keepers.",
+      "prompt": "The established team secures scripture cases with broad soft straps on a glowing cloud road; a keeper receives a sealed blank scroll record; practical departure scene."
+    },
+    {
+      "zh": "他们踏上归途。来时走了许多年，回去时，每个人都知道自己要守护的是什么。",
+      "en": "They began the journey home. The road there had taken years, but now each traveler knew exactly what they were protecting.",
+      "prompt": "Wide heroic but gentle departure from Spirit Mountain: the established five travelers carry balanced scripture packs along a luminous cloud path toward the east; sunrise, fulfilled purpose, no text."
+    }
+  ]
+}

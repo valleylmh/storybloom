@@ -1,0 +1,56 @@
+{
+  "id": "wu-kong-xun-zhen-zheng",
+  "title": "悟空寻真证",
+  "subtitle": "让每一条线索都开口",
+  "origin": "《西游记》第九十七回（低龄温和改编）",
+  "moral": {
+    "zh": "耐心查证比着急争辩更有力量，改正错误也包括公开还人清白。",
+    "en": "Patient verification is stronger than hurried argument, and correcting a mistake includes restoring someone's good name."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 34,
+  "episodeNumber": 34,
+  "pages": [
+    {
+      "zh": "芦苇荡里的车轮印时深时浅，悟空没有追快，只让大家先量清两轮之间的距离。",
+      "en": "The cart tracks changed depth through the reeds. Wukong did not rush; he asked everyone to measure the space between the wheels.",
+      "prompt": "The established team and friendly county helpers measure harmless cart tracks with a plain rope beside a shallow sunlit reed marsh; careful investigation, no chase or text."
+    },
+    {
+      "zh": "白龙马闻到熟悉的灯油香。八戒想起，寇府灯会剩下的旧车正用这种油保养轮轴。",
+      "en": "White Dragon Horse caught a familiar lamp-oil scent. Bajie remembered that an old festival cart at the Kou home used that oil on its axle.",
+      "prompt": "White Dragon Horse lowers his nose near a wooden wheel track while Bajie recalls a blank festival lantern cart shown softly in the background; Wukong listens, safe clue scene."
+    },
+    {
+      "zh": "大家在废弃的芦棚里找到米袋和布匹，旁边还有一辆被借走却没登记的旧车。",
+      "en": "In an unused reed shed, they found the rice, cloth, and an old cart that had been borrowed without being recorded.",
+      "prompt": "The team and county helpers discover intact rice sacks, folded cloth, and an old wooden cart inside an airy abandoned reed shelter; bright safe daylight, no criminals lurking or damage."
+    },
+    {
+      "zh": "两个搬运工红着脸走出来。他们本想把物资先运去受潮的村子，却害怕被拒绝，才没说明。",
+      "en": "Two embarrassed porters stepped forward. They had meant to take the supplies to a flood-damp village, but feared being refused and said nothing.",
+      "prompt": "Two adult porters in simple brown work robes step forward with open empty hands and remorseful expressions; the team listens calmly beside supplies, no villain styling, hiding, or threat."
+    },
+    {
+      "zh": "唐僧说，帮助别人是好心，可擅自拿走东西会让更多人担心，也会伤害信任。",
+      "en": "Tang Seng said that helping others was kind, but taking things without asking caused worry and damaged trust.",
+      "prompt": "Tang Seng speaks gently with the two porters at equal eye level; Elder Kou, Wukong, and the magistrate listen; rice sacks and folded cloth remain untouched, restorative conversation."
+    },
+    {
+      "zh": "寇员外愿意把物资送去村子，条件是以后先商量、记清数量，也让需要的人一起决定。",
+      "en": "Elder Kou agreed to send the supplies, provided that future plans were discussed, quantities recorded, and recipients included in decisions.",
+      "prompt": "Elder Kou, porters, villagers, and the team plan together around countable sacks and folded bolts of cloth using blank clay counters; cooperative circle, no readable records."
+    },
+    {
+      "zh": "县令当众说明师徒与失物无关，先前猜错的人也一一向他们道歉。",
+      "en": "The magistrate publicly confirmed that the travelers had nothing to do with the missing goods, and those who guessed wrongly apologized.",
+      "prompt": "The kind magistrate stands in a sunny town square with open hands, while neighbors bow apologetically to the established travelers; no public shaming, raised platform, or text."
+    },
+    {
+      "zh": "重新上路时，寇员外送来一张盖好印的证明。远方，灵山已在云光里露出轮廓。",
+      "en": "When they set out again, Elder Kou gave them a properly sealed note. Far away, Spirit Mountain appeared through luminous clouds.",
+      "prompt": "Elder Kou gives Tang Seng a rolled sealed document with no visible writing as the established team departs; distant radiant Spirit Mountain rises beyond clouds, hopeful milestone composition."
+    }
+  ]
+}

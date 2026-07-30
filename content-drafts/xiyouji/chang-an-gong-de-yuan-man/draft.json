@@ -1,0 +1,56 @@
+{
+  "id": "chang-an-gong-de-yuan-man",
+  "title": "长安功德圆满",
+  "subtitle": "把一路所得分享给更多人",
+  "origin": "《西游记》第一百回（低龄温和改编）",
+  "moral": {
+    "zh": "真正的圆满不是被赞美，而是把学到的智慧继续分享、继续实践。",
+    "en": "True fulfillment is not praise, but continuing to share and practice what you have learned."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 40,
+  "episodeNumber": 40,
+  "pages": [
+    {
+      "zh": "长安城门打开时，晨钟响起。人们认出取经队伍，惊喜地从街边挥手。",
+      "en": "As Chang'an's gates opened, morning bells rang. People recognized the pilgrims and waved in delight.",
+      "prompt": "The established five travelers enter ancient Chang'an through broad sunlit gates carrying balanced scripture cases; families wave from safe street edges, celebratory but uncrowded, no banners with text."
+    },
+    {
+      "zh": "唐王在大殿外迎接他们，却没有先问经历多危险，而是问：“一路学会了什么？”",
+      "en": "The Tang emperor welcomed them outside the hall. Instead of asking how dangerous the journey was, he asked, \"What did you learn?\"",
+      "prompt": "Create the Tang Emperor anchor: a dignified middle-aged Chinese ruler with warm tan skin, a kind square face, calm dark eyes, a neat black beard, layered deep-red and muted-gold dragon-free court robes, and a simple black-and-gold ceremonial cap. He welcomes the established team outdoors at equal ground level; no throne or grandeur."
+    },
+    {
+      "zh": "悟空说要先看清再行动，八戒说要懂得分享，沙僧说承诺要记牢，白龙马轻轻点头。",
+      "en": "Wukong spoke of observing before acting, Bajie of sharing, and Sha of remembering promises. White Dragon Horse nodded gently.",
+      "prompt": "The established team speaks in turn before the kind Tang Emperor: Wukong gestures thoughtfully, Bajie holds a shared fruit basket, Sha holds the small promise notebook, White Dragon Horse nods; no text."
+    },
+    {
+      "zh": "唐僧把经卷交给译经院，请学者先核对、誊写，再用大家听得懂的话慢慢讲解。",
+      "en": "Tang Seng delivered the scrolls to the translation hall, asking scholars to verify, copy, and explain them in words everyone could understand.",
+      "prompt": "Tang Seng and scholars in simple cream-and-blue robes jointly receive sealed scripture cases in a bright translation hall; blank paper, brushes, and colored counters, no readable text."
+    },
+    {
+      "zh": "城里没有只办盛大的庆典。大家还设了安静读书处、问答桌和给远行人的热粥棚。",
+      "en": "The city held more than a grand celebration. It opened quiet reading corners, question tables, and a porridge stall for travelers.",
+      "prompt": "A welcoming Chang'an community courtyard includes a quiet reading mat, an open question table, and a modest porridge stall; families, elders, and travelers participate, no readable signs."
+    },
+    {
+      "zh": "寇员外托人送来一封信，说救济物资已经按新办法送到；老鼋的托付也被认真登记。",
+      "en": "A letter arrived from Elder Kou: the aid had been delivered under the new plan, and Old Turtle's request had been properly recorded.",
+      "prompt": "The established team receives a sealed blank letter beside a small clay model of shared supplies and a green turtle token; Elder Kou and Old Turtle appear as warm vignette memories, no readable text."
+    },
+    {
+      "zh": "夜里，师徒登上城楼。一路遇见的人和事像星光一样，在他们心里一一亮起。",
+      "en": "That night, the travelers climbed the city wall. Every person and lesson from the road lit their hearts like stars.",
+      "prompt": "The established five travelers stand together on a safe broad Chang'an wall at night; soft star-like memory lights suggest peach mountain, rivers, villages, and Spirit Mountain without literal portraits; serene reunion."
+    },
+    {
+      "zh": "第二天，他们又各自忙起来：守护、讲述、整理、帮助。故事结束了，善意还在继续。",
+      "en": "The next day, they returned to useful work—protecting, teaching, organizing, and helping. The story ended, but kindness continued.",
+      "prompt": "Final warm sunrise tableau in Chang'an: Wukong helps children observe a puzzle beside caregivers, Bajie shares food, Sha organizes scroll cases, Tang Seng tells a story, White Dragon Horse carries books; hopeful ongoing service, no text."
+    }
+  ]
+}

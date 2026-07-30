@@ -1,0 +1,56 @@
+{
+  "id": "kou-fu-ci-bie",
+  "title": "寇府从容辞别",
+  "subtitle": "感谢好意，也记得自己的路",
+  "origin": "《西游记》第九十六回（低龄温和改编）",
+  "moral": {
+    "zh": "接受善意也要守住方向，温柔地说再见同样是一种尊重。",
+    "en": "Receiving kindness while keeping your direction—and saying goodbye gently—is also a form of respect."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 32,
+  "episodeNumber": 32,
+  "pages": [
+    {
+      "zh": "师徒在寇府住了几日，每天都给孩子们讲一个远方故事，再一起整理院子。",
+      "en": "The travelers stayed at the Kou home for several days, telling one faraway story each day and helping tidy the courtyard.",
+      "prompt": "Reuse the established five travelers and Elder Kou. In a bright courtyard, families listen to a travel story while Bajie sorts baskets, Sha sweeps leaves, and White Dragon Horse stands nearby; community warmth, no text."
+    },
+    {
+      "zh": "元宵将近，寇员外挂起花灯，想留他们看完灯会，再住十天。",
+      "en": "As the Lantern Festival approached, Elder Kou hung lanterns and hoped they would stay ten more days.",
+      "prompt": "Elder Kou hangs round blank silk lanterns across the courtyard and warmly invites the established travelers to stay; festive amber light, no writing on lanterns, no pressure or crowd."
+    },
+    {
+      "zh": "八戒舍不得香喷喷的汤圆，悟空也喜欢灯影。可唐僧摊开通关文牒，提醒大家西行还没有完成。",
+      "en": "Bajie hated to leave the sweet rice balls, and Wukong loved the lantern glow. Tang Seng opened their travel pass and reminded them that the westward journey was not finished.",
+      "prompt": "The established team sits around a table with a small bowl of rice balls and blank travel papers. Tang Seng points gently westward, Wukong and Bajie listen thoughtfully, no readable text or disappointment."
+    },
+    {
+      "zh": "他们商量出一个办法：陪寇家点亮第一盏灯，第二天清晨就出发。",
+      "en": "They found a kind solution: light the first lantern with the Kou family, then leave at dawn.",
+      "prompt": "The established team and Elder Kou jointly light one large blank lantern using a safe enclosed candle; everyone smiles at the agreed plan, evening blue and gold palette, no fire hazard."
+    },
+    {
+      "zh": "寇员外准备了许多金银，唐僧只收下一包干粮。悟空说：“轻装，才能走远。”",
+      "en": "Elder Kou offered gold and silver, but Tang Seng accepted only one packet of food. Wukong said, \"Travel light, and you can travel far.\"",
+      "prompt": "Elder Kou offers a closed decorative chest, while Tang Seng kindly chooses one simple cloth food bundle; Wukong lifts the light bundle with a smile; respectful equal eye level, no visible coins or greed."
+    },
+    {
+      "zh": "八戒把最爱的汤圆留给寇家的小朋友，沙僧把修屋用的工具摆回原处。",
+      "en": "Bajie left his favorite rice balls for the Kou children, while Sha returned every repair tool to its place.",
+      "prompt": "Bajie offers a covered bowl of rice balls to children beside caregivers; Sha Wujing neatly returns rounded repair tools to a rack; the rest of the team packs calmly, no unattended children."
+    },
+    {
+      "zh": "第一盏花灯亮起时，寇员外没有再挽留，只把一盏小路灯递给他们。",
+      "en": "When the first festival lantern glowed, Elder Kou no longer asked them to stay. He simply gave them a small road lantern.",
+      "prompt": "Elder Kou gives Tang Seng a small closed road lantern under a canopy of blank festival lanterns; the established team bows in thanks, tender farewell without tears or pressure."
+    },
+    {
+      "zh": "天刚亮，师徒踏上西去的路。寇家人站在门前挥手，灯光虽远，心意一直暖着。",
+      "en": "At first light, the travelers returned to the western road. The Kou family waved from the gate, and their kindness stayed warm even as the lantern faded behind.",
+      "prompt": "Wide sunrise farewell: the established travelers walk west along a gentle road while Elder Kou and family wave from the gate; a tiny warm lantern glows, spacious hopeful landscape, no sadness."
+    }
+  ]
+}
