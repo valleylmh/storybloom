@@ -35,6 +35,16 @@ const CHENGYU_BOOK_IDS = [
   "wen-ji-qi-wu",
   "tie-chu-cheng-zhen",
   "xiong-you-cheng-zhu",
+  "hua-long-dian-jing",
+  "cao-chong-cheng-xiang",
+  "lao-ma-shi-tu",
+  "han-dan-xue-bu",
+  "cheng-men-li-xue",
+  "wei-bian-san-jue",
+  "shui-di-shi-chuan",
+  "shu-neng-sheng-qiao",
+  "wang-mei-zhi-ke",
+  "meng-mu-san-qian",
 ];
 const XIYOUJI_BOOK_IDS = [
   "shi-hou-chu-shi",
@@ -148,7 +158,12 @@ describe("library access functions", () => {
         id: bookId,
         seriesId: "chengyu",
         order: index + 1,
-        publishedAt: index < 10 ? "2026-07-20" : "2026-07-29",
+        publishedAt:
+          index < 10
+            ? "2026-07-20"
+            : index < 20
+              ? "2026-07-29"
+              : "2026-07-30",
       });
       expect(book?.comingSoon).not.toBe(true);
       expect(book?.pages).toHaveLength(8);

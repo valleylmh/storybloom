@@ -1,0 +1,282 @@
+[
+  {
+    "id": "hua-long-dian-jing",
+    "title": "画龙点睛",
+    "subtitle": "最后两点最神奇",
+    "origin": "唐·张彦远《历代名画记·张僧繇》",
+    "moral": {
+      "zh": "关键的一笔能让作品完整有神；动手前要看清哪里最重要。",
+      "en": "One essential finishing touch can bring a whole work to life; first understand what matters most."
+    },
+    "idiomMeaning": {
+      "zh": "给画好的龙点上眼睛；比喻在关键处加上一笔，使内容更加生动有力。",
+      "en": "To dot the eyes of a painted dragon—adding the crucial finishing touch that makes something vivid and complete."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 21,
+    "visualAnchor": "Southern Dynasties Buddhist temple hall with cream plaster walls, dark wooden beams and warm daylight; painter Zhang Sengyou is a slender middle-aged man with an oval clean-shaven face, high scholar bun, deep-teal cross-collar robe, cream inner collar and rust-red sash; four large elegant ink-and-mineral-pigment dragon murals curl across two walls, initially all without painted pupils; fixed dark-wood brush, black inkstone and low painting table; dragons are majestic but friendly, with jade-green and muted-gold scales and no exposed fangs",
+    "pages": [
+      { "zh": "南朝画家张僧繇来到寺院，要在墙上画四条龙。", "en": "The painter Zhang Sengyou came to a temple to paint four dragons on its walls.", "prompt": "wide establishing hall scene, Zhang Sengyou sketching the first of four large wall dragons while assistants prepare pigments" },
+      { "zh": "四条龙栩栩如生，却都没有点上眼睛。", "en": "The four dragons looked wonderfully alive, but none had pupils in their eyes.", "prompt": "visitors admiring all four finished dragon murals, each dragon eye visibly left without a dark pupil" },
+      { "zh": "人们好奇地问：“为什么不给龙点上眼睛呢？”", "en": "People asked, “Why have you not finished their eyes?”", "prompt": "families asking the painter curiously while pointing gently toward the pupil-less dragon eyes" },
+      { "zh": "张僧繇说：“眼睛一点，龙也许就会飞走。”", "en": "Zhang Sengyou said, “Once I dot the eyes, the dragons may fly away.”", "prompt": "painter holding his brush calmly and explaining as skeptical visitors smile, all four murals behind" },
+      { "zh": "大家再三请求，他便提笔给其中两条龙点上眼睛。", "en": "At their urging, he carefully dotted the eyes of two dragons.", "prompt": "close storytelling scene, painter adding one small dark pupil to the second of exactly two selected dragons; other two remain pupil-less" },
+      { "zh": "忽然云风涌动，两条点睛的龙从墙上腾空而起。", "en": "Clouds stirred, and the two finished dragons lifted gently from the walls.", "prompt": "exactly two completed friendly dragons rising from their murals into soft indoor clouds, visitors amazed but safe; two unfinished murals remain on the wall" },
+      { "zh": "另外两条仍留在墙上。人们这才懂得什么叫画龙点睛。", "en": "The other two stayed on the wall. Everyone understood the power of the finishing touch.", "prompt": "turning point, visitors compare two empty mural spaces with the two remaining pupil-less dragons while painter watches thoughtfully" },
+      { "zh": "张僧繇收好画笔：关键的一笔，要用在最重要的地方。", "en": "Zhang put away his brush, knowing that the final touch belongs where it matters most.", "prompt": "hopeful temple courtyard ending, painter cleaning his brush as two friendly dragons circle high in golden clouds" }
+    ]
+  },
+  {
+    "id": "cao-chong-cheng-xiang",
+    "title": "曹冲称象",
+    "subtitle": "大船变成了秤",
+    "origin": "《三国志·魏书·武文世王公传》",
+    "moral": {
+      "zh": "大问题可以拆成容易处理的小步骤；认真观察，常能找到新办法。",
+      "en": "A big problem can be divided into manageable steps; careful observation often reveals a new solution."
+    },
+    "idiomMeaning": {
+      "zh": "曹冲利用船的浮沉和石头称出大象重量；常用来赞美善于观察、巧解难题。",
+      "en": "Cao Chong weighed an elephant by using a boat's displacement and stones—a classic example of solving a hard problem with observation and ingenuity."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 22,
+    "visualAnchor": "Eastern Han riverside compound with wooden docks, tiled halls and a wide calm river; Cao Chong is a bright 7-year-old boy with round face, one neat child topknot, pale-gold short robe, dark-teal sash, brown trousers and black cloth shoes; Cao Cao is a broad middle-aged man with short moustache and beard, dark-red robe and black sash; fixed gentle gray Asian elephant with small rounded ears and no decorative armor; fixed wide flat-bottomed wooden barge with sturdy ramp, low rail and no sail; smooth gray weighing stones and wicker baskets",
+    "pages": [
+      { "zh": "有人送来一头大象，曹操和大家都想知道它有多重。", "en": "A great elephant arrived, and Cao Cao wondered how much it weighed.", "prompt": "wide establishing riverside courtyard, Cao Chong beside his father and the friendly elephant, officials gathered at a safe distance" },
+      { "zh": "大象比牛还大，普通的秤根本放不下它。", "en": "The elephant was far too large for any ordinary scale.", "prompt": "officials comparing a small wooden balance scale with the enormous calm elephant, Cao Chong observing quietly" },
+      { "zh": "曹冲望着河里的船，想起船会随着重量上下浮动。", "en": "Watching a boat rise and sink, Cao Chong formed an idea.", "prompt": "Cao Chong studying the fixed empty barge at the dock as gentle ripples touch its hull" },
+      { "zh": "他让大象沿着宽木板，稳稳走上大船。", "en": "He guided the elephant safely up a wide ramp and onto the barge.", "prompt": "elephant walking calmly up the sturdy ramp onto the flat barge, adults guiding from the sides, no crowding" },
+      { "zh": "船身下沉，曹冲在水面碰到船身的地方做了记号。", "en": "The boat sank lower, and Cao Chong marked the waterline on its hull.", "prompt": "side view of barge floating lower with elephant aboard, Cao Chong painting one simple horizontal waterline mark on the hull, no writing" },
+      { "zh": "大象下船后，大家把石头装上船，直到水线重合。", "en": "After the elephant stepped off, stones were loaded until the boat reached the same line.", "prompt": "elephant safe on shore while adults load smooth stones into the barge until water meets the same single hull line" },
+      { "zh": "再把石头分批称重相加，就完成了曹冲称象。", "en": "They weighed the stones in batches and added them to find the elephant's weight.", "prompt": "turning point, baskets of stones measured on a large balance scale while Cao Chong explains and the elephant watches nearby" },
+      { "zh": "大家称赞曹冲：看懂规律，就能把大难题变成小步骤。", "en": "Everyone praised Cao Chong for turning one huge problem into simple steps.", "prompt": "warm closing dock scene, Cao Cao proudly rests a hand on Cao Chong's shoulder beside the relaxed elephant and barge" }
+    ]
+  },
+  {
+    "id": "lao-ma-shi-tu",
+    "title": "老马识途",
+    "subtitle": "雾里带路的老伙伴",
+    "origin": "《韩非子·说林上》",
+    "moral": {
+      "zh": "经验是宝贵的本领；遇到陌生难题，也要尊重并善用有经验者的判断。",
+      "en": "Experience is a valuable skill; unfamiliar problems often become clearer when we respect knowledgeable guides."
+    },
+    "idiomMeaning": {
+      "zh": "老马认识走过的道路；比喻有经验的人熟悉情况，能够发挥引导作用。",
+      "en": "An old horse knows the road—an experienced person can recognize the way and guide others."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 23,
+    "visualAnchor": "Ancient northern mountain route with pine forest, pale stone paths, layered ridges and soft morning mist; Guan Zhong is a calm lean middle-aged adviser with short beard, high scholar bun, navy traveling robe and rust-red cloak; Xi Peng is slightly older with graying temples, moss-green robe and beige cloak; fixed experienced gray mare has a white blaze, dark mane, gentle eyes and a simple brown cloth halter with no saddle armor; small peaceful traveling group carries packs but no weapons",
+    "pages": [
+      { "zh": "管仲和隰朋带着伙伴翻山回家，队伍里有一匹老灰马。", "en": "Guan Zhong and Xi Peng traveled home through the mountains with an old gray mare.", "prompt": "wide establishing mountain trail, both advisers walking beside the gray mare and a small peaceful pack group" },
+      { "zh": "山雾越来越浓，弯弯的小路很快分不清方向。", "en": "The mist thickened until every winding path looked the same.", "prompt": "travelers paused safely at a misty three-way mountain fork, distant landmarks hidden" },
+      { "zh": "大家看地图、找山峰，还是不知道哪条路通向家乡。", "en": "Maps and mountain peaks offered no clear answer.", "prompt": "Guan Zhong and Xi Peng study an unmarked route cloth while companions scan the foggy ridges" },
+      { "zh": "管仲说：“老马走过这些路，也许它还记得回家的方向。”", "en": "Guan Zhong said, “This old mare may remember the way home.”", "prompt": "Guan Zhong gently loosening the mare's lead while Xi Peng and travelers watch with hope" },
+      { "zh": "他们让老马走在前面，自己安静地跟在后面。", "en": "They let the old mare lead and followed quietly behind.", "prompt": "gray mare choosing one path with calm confidence, group following at a respectful distance" },
+      { "zh": "老马沿着溪水、松树和熟悉的山口，一步步前进。", "en": "She followed a stream, old pines, and a familiar mountain pass.", "prompt": "mare leading beside a clear stream toward a recognizable pine-lined stone pass as mist begins to lift" },
+      { "zh": "雾散以后，村庄出现在前方。大家赞叹老马识途。", "en": "When the mist cleared, the village appeared. The old mare truly knew the road.", "prompt": "turning point, sunlit village visible below as travelers smile and gently praise the mare" },
+      { "zh": "他们给老马添好草料，也记住经验值得认真倾听。", "en": "They fed and thanked their guide, remembering to listen to experience.", "prompt": "hopeful village stable ending, advisers offer hay and water to the comfortable gray mare" }
+    ]
+  },
+  {
+    "id": "han-dan-xue-bu",
+    "title": "邯郸学步",
+    "subtitle": "找回自己的脚步",
+    "origin": "《庄子·秋水》",
+    "moral": {
+      "zh": "学习别人可以借鉴长处，但不能盲目照搬，更不要丢掉适合自己的方式。",
+      "en": "Learn from others without copying blindly, and keep the way that genuinely fits you."
+    },
+    "idiomMeaning": {
+      "zh": "到邯郸模仿别人走路，反而忘了自己原来的步法；比喻机械模仿，连原有本领也丢掉。",
+      "en": "Learning to walk in Handan but forgetting one's own gait—blind imitation that causes a person to lose their original ability."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 24,
+    "visualAnchor": "Warring States Handan city with broad stone street, gray-tiled shops, willow trees and warm spring light; the visitor from Yan is a slim 18-year-old youth with round clean-shaven face, high simple topknot, sky-blue short robe, navy sash, brown trousers and cloth shoes; recurring local walkers include a tall merchant in ochre, an elderly woman in plum-gray and a lively child in green; expressions are kind, never mocking",
+    "pages": [
+      { "zh": "燕国有个年轻人，听说邯郸人走路特别好看。", "en": "A young man from Yan heard that the people of Handan walked beautifully.", "prompt": "wide establishing city gate scene, Yan youth arriving and watching varied local pedestrians" },
+      { "zh": "他站在街边观察，觉得每个人的步子都很有特点。", "en": "He watched the street and admired every person's different stride.", "prompt": "youth observing the tall merchant, elderly woman and child walking naturally along the broad street" },
+      { "zh": "他先学高个商人的大步，又学孩子轻快的小步。", "en": "First he copied a merchant's long stride, then a child's quick steps.", "prompt": "youth awkwardly switching between exaggerated long and short steps, locals continuing kindly" },
+      { "zh": "看见老人走得稳，他又立刻换成慢慢的小步。", "en": "Seeing an elder's steady pace, he changed his walk again.", "prompt": "youth imitating the elderly woman's small steady steps several paces behind her, respectful distance" },
+      { "zh": "几种步子混在一起，他越走越别扭，差点绊住自己。", "en": "All the copied steps tangled together until he nearly tripped.", "prompt": "youth catching his balance safely with arms out, one foot crossed awkwardly, no fall or ridicule" },
+      { "zh": "他坐下来想：每个人的身体和习惯本来就不一样。", "en": "He sat and realized that every body and habit is different.", "prompt": "youth resting on a stone bench, calmly observing the diverse walkers with new understanding" },
+      { "zh": "盲目模仿会变成邯郸学步，连自己的步子也会忘记。", "en": "Blind imitation had made him lose touch with his own natural walk.", "prompt": "turning point, youth stands slowly and tests one relaxed natural step while locals encourage him" },
+      { "zh": "他找回自己的节奏，也学会只借鉴真正适合的长处。", "en": "He found his own rhythm and kept only the lessons that suited him.", "prompt": "hopeful city-gate farewell, youth walking home naturally and confidently, no exaggerated gait" }
+    ]
+  },
+  {
+    "id": "cheng-men-li-xue",
+    "title": "程门立雪",
+    "subtitle": "雪中等候的一堂课",
+    "origin": "《宋史·杨时传》",
+    "moral": {
+      "zh": "认真求学需要尊重和耐心，也要用安全、体贴的方式照顾自己与他人。",
+      "en": "Learning asks for respect and patience, together with thoughtful care for ourselves and others."
+    },
+    "idiomMeaning": {
+      "zh": "学生冒雪在老师门外恭候；形容尊敬师长、诚心求学。",
+      "en": "Students waiting respectfully in snow outside their teacher's door—a symbol of sincere learning and respect for teachers."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 25,
+    "visualAnchor": "Northern Song scholar Cheng Yi's quiet courtyard residence with gray tiles, wooden study door, covered eaves, bare plum tree and soft winter snow; Yang Shi is a calm 30-year-old scholar with oval clean-shaven face, high black bun, deep-teal padded robe and cream scarf; You Zuo is slightly stockier with short moustache, moss-green padded robe and rust scarf; Cheng Yi is an elderly teacher with gray beard, dark-brown robe and warm beige cloak; students wear dry cloaks and wait safely under the covered eaves, never shivering dangerously",
+    "pages": [
+      { "zh": "杨时和游酢带着疑问，来到程颐老师家中求教。", "en": "Yang Shi and You Zuo came to Teacher Cheng Yi with an important question.", "prompt": "wide establishing winter courtyard, the two students arrive with closed book bundles beneath light snow" },
+      { "zh": "他们发现老师正在闭目休息，便没有敲门打扰。", "en": "Finding their teacher resting, they chose not to disturb him.", "prompt": "students quietly notice Cheng Yi resting inside through a partly open inner screen, then step back respectfully" },
+      { "zh": "雪越下越密，两人披好斗篷，在屋檐下安静等候。", "en": "As snow thickened, they wrapped their cloaks and waited beneath the eaves.", "prompt": "both students warm and dry under covered eaves, snow collecting in open courtyard, calm patient expressions" },
+      { "zh": "他们轻声整理问题，也互相提醒别着凉。", "en": "They quietly organized their questions and made sure each other stayed warm.", "prompt": "students speaking softly, one adjusts the other's scarf while holding closed book bundles" },
+      { "zh": "程颐醒来开门，看见院中的积雪和耐心等候的学生。", "en": "When Cheng Yi opened the door, he saw the snow and his patient students.", "prompt": "elderly teacher opens the study door with surprised warmth, students bow from beneath the eaves" },
+      { "zh": "他赶紧请两人进屋烤火、喝热茶，再慢慢解答问题。", "en": "He welcomed them inside for warmth, tea, and a careful lesson.", "prompt": "cozy study interior, teacher and students seated by a safe brazier with steaming tea, discussing an unmarked bamboo-slip bundle" },
+      { "zh": "程门立雪，讲的是尊重老师、诚心求学的态度。", "en": "Their snowy wait became a lasting symbol of respect and sincere learning.", "prompt": "turning point, teacher answering as both students listen attentively beside the warm brazier" },
+      { "zh": "老师也叮嘱：有诚意很好，安全照顾自己同样重要。", "en": "The teacher added, “Sincerity matters, and so does taking good care of yourselves.”", "prompt": "hopeful farewell at clearing sunset, teacher gives students warm hand covers before they leave" }
+    ]
+  },
+  {
+    "id": "wei-bian-san-jue",
+    "title": "韦编三绝",
+    "subtitle": "读断三次的书绳",
+    "origin": "《史记·孔子世家》",
+    "moral": {
+      "zh": "反复学习不是简单重复，而是在每一次阅读中多想一步、理解更深。",
+      "en": "Repeated study is not empty repetition; each return can bring a deeper question and clearer understanding."
+    },
+    "idiomMeaning": {
+      "zh": "编连竹简的皮绳多次断开；形容读书勤奋、反复钻研。",
+      "en": "The leather cords binding bamboo slips broke repeatedly—a description of devoted reading and deep study."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 26,
+    "visualAnchor": "Late Spring and Autumn period study with wooden shelves, woven mat, low desk and warm oil lamp; Confucius is an elderly scholar with kind rectangular face, long neat gray beard, high dark-gray scholar bun, deep-brown robe, muted-teal sash and cream inner collar; fixed ancient book is a roll of narrow honey-brown bamboo slips joined by three dark leather cords, with only subtle abstract ink strokes and no legible characters; two young adult disciples in simple navy and moss robes",
+    "pages": [
+      { "zh": "孔子晚年仍然爱学习，常读一卷用皮绳编起的竹简。", "en": "Even in later life, Confucius kept studying a book of bamboo slips.", "prompt": "wide establishing study scene, Confucius unrolls the fixed three-cord bamboo-slip book as two disciples organize shelves" },
+      { "zh": "清晨读，夜里也读，他每次都会停下来认真思考。", "en": "He read at dawn and at night, pausing often to think.", "prompt": "quiet dawn study, Confucius reading thoughtfully beside a fading oil lamp and cool window light" },
+      { "zh": "竹简卷起又展开，连接它们的皮绳渐渐磨薄。", "en": "The book rolled and unrolled until its leather cords wore thin.", "prompt": "close storytelling view of Confucius's careful hands and visibly worn but intact leather cords" },
+      { "zh": "一天，皮绳断了。弟子帮忙重新穿好，他继续读。", "en": "One day a cord broke. A disciple rebound it, and the reading continued.", "prompt": "one disciple gently threads a new leather cord through bamboo slips while Confucius watches appreciatively" },
+      { "zh": "日子久了，新绳又断。这样的事一共发生了三次。", "en": "With time, new cords wore out too—three times altogether.", "prompt": "single continuous scene, three neatly coiled worn leather cords displayed beside the still-usable bamboo book, no montage panels" },
+      { "zh": "孔子不只记住句子，还反复追问其中的道理。", "en": "Confucius did more than remember words; he kept asking what they meant.", "prompt": "teacher closes the bamboo book halfway and discusses an idea with two attentive disciples" },
+      { "zh": "人们用韦编三绝，赞美他勤读又勤思的精神。", "en": "People remembered the three broken bindings as a sign of devoted study.", "prompt": "turning point, disciples hold the repaired bamboo book while Confucius reflects calmly" },
+      { "zh": "读得多、想得深，旧书也能不断带来新的理解。", "en": "Reading often and thinking deeply can make an old book feel new again.", "prompt": "hopeful evening ending, Confucius teaches several students with the repaired bamboo book safely open on the desk" }
+    ]
+  },
+  {
+    "id": "shui-di-shi-chuan",
+    "title": "水滴石穿",
+    "subtitle": "一枚铜钱和一块石头",
+    "origin": "宋·罗大经《鹤林玉露》",
+    "moral": {
+      "zh": "再小的行动只要不断累积，也会产生很大影响；好习惯和坏习惯都是如此。",
+      "en": "Small actions grow powerful through repetition, whether they form a good habit or a harmful one."
+    },
+    "idiomMeaning": {
+      "zh": "水滴长久落下能穿透石头；比喻力量虽小，只要坚持也能完成困难的事。",
+      "en": "Constant drops can wear through stone—small but persistent effort can accomplish something difficult."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 27,
+    "visualAnchor": "Northern Song county office with pale stone courtyard, wooden treasury door, tiled eaves and one fixed rain chain dripping into a shallow hollow in a gray stone slab; Magistrate Zhang Guaiya is a composed middle-aged man with short moustache and beard, black official hat without writing, deep-navy robe and rust-red belt; the young clerk is slim with round clean-shaven face, low bun, pale-brown robe and teal sash; fixed single round bronze coin has a square center hole and no visible characters",
+    "pages": [
+      { "zh": "张乖崖管理县衙时，看见一位小吏从库房走出来。", "en": "Magistrate Zhang Guaiya once saw a young clerk leaving the treasury.", "prompt": "wide establishing county courtyard, magistrate notices the clerk near the wooden treasury door" },
+      { "zh": "小吏手里藏着一枚铜钱，说：“只是一枚，没什么吧？”", "en": "The clerk held one coin and said, “It is only one. Does it matter?”", "prompt": "clerk opens his palm to reveal exactly one bronze coin, looking uncertain rather than defiant" },
+      { "zh": "张乖崖没有责骂，带他去看屋檐下的一块石头。", "en": "Instead of scolding him, Zhang led him to a stone beneath the eaves.", "prompt": "magistrate calmly guides clerk toward the fixed rain chain and hollowed stone slab" },
+      { "zh": "一滴水很轻，落在石头上，几乎看不出变化。", "en": "One drop was tiny and seemed to change nothing.", "prompt": "close view of one clear droplet landing on the gray stone hollow as both men observe" },
+      { "zh": "可年年滴、天天滴，坚硬的石头也被滴出了小坑。", "en": "But years of drops had slowly made a hollow in the hard stone.", "prompt": "magistrate points to the smooth shallow hollow formed by many drops, clerk studies it closely" },
+      { "zh": "张乖崖说：“小事不断累积，也会变成很大的结果。”", "en": "“Small actions add up,” Zhang explained. “They can become a great result.”", "prompt": "magistrate speaks kindly beside dripping eave, clerk compares the single coin with the stone hollow" },
+      { "zh": "小吏明白水滴石穿的道理，马上把铜钱放回库房。", "en": "Understanding the lesson, the clerk returned the coin at once.", "prompt": "turning point, clerk places the single coin back into an open wooden cash box while magistrate watches" },
+      { "zh": "从此他认真记好每一笔，也让诚实成为每天的习惯。", "en": "From then on, he kept careful accounts and practiced honesty every day.", "prompt": "hopeful treasury ending, clerk counts coins into tidy trays with magistrate approving nearby, no visible writing" }
+    ]
+  },
+  {
+    "id": "shu-neng-sheng-qiao",
+    "title": "熟能生巧",
+    "subtitle": "铜钱孔里的油线",
+    "origin": "宋·欧阳修《归田录·卖油翁》",
+    "moral": {
+      "zh": "稳定练习会让动作越来越熟练；有本领也要保持谦虚，继续学习。",
+      "en": "Steady practice makes skill feel natural, and true ability grows best alongside humility."
+    },
+    "idiomMeaning": {
+      "zh": "熟练以后就能找到巧妙方法；说明反复实践可以提高技能。",
+      "en": "Practice breeds skill—repeated experience leads to fluency and clever technique."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 28,
+    "visualAnchor": "Northern Song country practice yard with willow tree, low wall and warm afternoon light; Chen Yaozi is a confident athletic 35-year-old man with straight brows, high topknot, dark-teal short robe, rust sash and leather wrist guard; fixed bow is unstrung except during target practice, arrows have blunt dark tips and are aimed only at a round straw target far from all people; elderly oil seller has silver low bun, short gray beard, ochre-brown robe, navy sash and two wooden oil gourds; fixed round bronze coin with square hole and no writing sits over one gourd mouth; oil is golden and clean",
+    "pages": [
+      { "zh": "陈尧咨擅长射箭，常常正中远处的草靶。", "en": "Chen Yaozi was an excellent archer who often hit the distant straw target.", "prompt": "wide establishing yard, Chen releases one blunt arrow toward the isolated straw target while everyone stands safely behind him" },
+      { "zh": "大家连声称赞，卖油翁却只在旁边微微点头。", "en": "The crowd praised him, while an old oil seller simply nodded.", "prompt": "Chen stands with bow safely lowered as neighbors applaud and the elderly seller watches calmly beside oil gourds" },
+      { "zh": "陈尧咨问：“你也懂射箭吗？”老人说：“只是练得熟。”", "en": "Chen asked, “Do you know archery?” The elder replied, “You have practiced well.”", "prompt": "friendly conversation, Chen's bow unstrung and resting on a rack, seller gestures modestly" },
+      { "zh": "老人把一枚铜钱放在油葫芦口，露出中间的小孔。", "en": "The seller placed a coin over a gourd, leaving its tiny center hole open.", "prompt": "close scene of seller safely placing the fixed square-hole coin flat over the oil gourd mouth" },
+      { "zh": "他舀起一勺油，细细的油线穿过小孔，铜钱一点没湿。", "en": "A thin stream of oil passed through the hole without wetting the coin.", "prompt": "golden oil forms one precise thin stream through the square coin hole into the gourd, Chen watches in amazement" },
+      { "zh": "卖油翁笑着说：“没有神奇，只是这双手做得多了。”", "en": "The seller smiled. “It is no magic. My hands have done this many times.”", "prompt": "seller sets ladle down and shows relaxed steady hands, Chen looks thoughtful and respectful" },
+      { "zh": "陈尧咨明白了：反复练习，才能熟能生巧。", "en": "Chen understood that repeated practice creates skill.", "prompt": "turning point, Chen bows slightly in thanks while the seller holds the dry coin beside the gourd" },
+      { "zh": "他不再骄傲，继续认真练习，也更懂得尊重别人的本领。", "en": "He returned to practice with humility and greater respect for others' skills.", "prompt": "hopeful sunset ending, Chen practices calm stance with no arrow nocked while seller walks past smiling" }
+    ]
+  },
+  {
+    "id": "wang-mei-zhi-ke",
+    "title": "望梅止渴",
+    "subtitle": "山坡后的酸梅林",
+    "origin": "南朝宋·刘义庆《世说新语·假谲》",
+    "moral": {
+      "zh": "想象和鼓励能帮助我们暂时坚持，但真正的需要仍要用实际办法解决。",
+      "en": "Imagination and encouragement can help us persist for a while, but real needs still require practical solutions."
+    },
+    "idiomMeaning": {
+      "zh": "想到酸梅就分泌口水、暂时缓解口渴；比喻用想象安慰自己或别人。",
+      "en": "Thinking of sour plums to ease thirst—using imagination to provide temporary comfort when the real thing is unavailable."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 29,
+    "visualAnchor": "Late Eastern Han summer countryside with dry golden road, low green hills, sparse shade trees and shimmering warm air; Cao Cao is a broad middle-aged leader with short moustache and beard, black traveling cap, deep-red lightweight robe and dark-teal belt; small peaceful traveling group wears tan, moss and navy robes, carries cloth packs and empty water gourds, with no armor or weapons; imagined plum grove has leafy trees full of small green plums and must appear only as a soft dreamlike visualization until the group reaches a real clear stream",
+    "pages": [
+      { "zh": "夏日里，曹操带着一队人赶路，水壶很快都空了。", "en": "On a hot summer journey, Cao Cao's group soon ran out of water.", "prompt": "wide establishing dry road, Cao Cao and peaceful travelers check empty gourds beneath strong sun" },
+      { "zh": "太阳火辣辣，大家口干舌燥，脚步也越来越慢。", "en": "The fierce sun made everyone thirsty and slow.", "prompt": "travelers rest briefly in a small patch of shade, tired but safe, Cao Cao studying the hills" },
+      { "zh": "曹操想起青梅又酸又多汁，心里有了一个办法。", "en": "Cao Cao remembered juicy sour green plums and formed an idea.", "prompt": "close thoughtful scene, Cao Cao imagines a small soft-edged vision of green plums, clearly not a real nearby grove" },
+      { "zh": "他指着前方说：“翻过山坡，就有一大片梅林！”", "en": "He pointed ahead. “Beyond that hill lies a grove of plums!”", "prompt": "Cao Cao points toward the next hill as travelers look up with renewed attention, no actual plum trees visible" },
+      { "zh": "大家想到酸梅，嘴里生出津液，又有力气继续走了。", "en": "Thinking of sour plums made their mouths water and helped them keep moving.", "prompt": "travelers walk toward the hill with brighter expressions; a faint dreamlike plum image floats only as imagination" },
+      { "zh": "越过山坡，他们终于找到一条清清的小溪。", "en": "Beyond the hill, they finally found a clear stream.", "prompt": "group discovers a real shaded stream, kneeling safely to fill gourds; no plum grove present" },
+      { "zh": "这就是望梅止渴：想象能暂时鼓劲，却不能代替真正的水。", "en": "That was relief through imagined plums—useful for a moment, but no substitute for water.", "prompt": "turning point, Cao Cao explains beside the stream while travelers drink and understand" },
+      { "zh": "休息以后，他们装满水壶，也学会下次提前做好准备。", "en": "After resting, they filled every gourd and planned better for the next journey.", "prompt": "hopeful ending, group departs along a greener road with visibly full water gourds" }
+    ]
+  },
+  {
+    "id": "meng-mu-san-qian",
+    "title": "孟母三迁",
+    "subtitle": "为成长寻找好邻居",
+    "origin": "西汉·刘向《列女传·母仪传》",
+    "moral": {
+      "zh": "环境会影响习惯，家人的引导也很重要；真正成长还需要自己的认真努力。",
+      "en": "Our surroundings shape habits, and family guidance matters; lasting growth also needs our own effort."
+    },
+    "idiomMeaning": {
+      "zh": "孟子的母亲为选择合适的成长环境多次搬家；形容重视环境对教育的影响。",
+      "en": "Mencius's mother moved repeatedly to find a better environment for her child—a symbol of thoughtful guidance and the influence of surroundings."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-07-30",
+    "order": 30,
+    "visualAnchor": "Warring States Zou region with three recurring neighborhoods: a quiet respectful memorial field with simple stone markers and no graves opened, a lively covered market, and a calm village school courtyard; young Mencius is a curious 6-year-old boy with round face, one small topknot, pale-blue short robe, beige sash and brown trousers; his mother is a warm composed woman with oval face, black hair in a low bun, plum-red cross-collar robe, dark-teal sash and cream shawl; fixed household belongings fit in two wicker baskets and one rolled sleeping mat",
+    "pages": [
+      { "zh": "孟子小时候和母亲住在一片安静的祭礼场所附近。", "en": "When Mencius was small, he and his mother lived near a place of memorial ceremonies.", "prompt": "wide establishing respectful memorial field, mother and child carry water near simple stone markers, no sadness or scary elements" },
+      { "zh": "他常模仿大人的祭礼动作，孟母觉得这里不适合久住。", "en": "He often copied the ceremonies, and his mother decided the place was not right for them.", "prompt": "young Mencius imitates a formal bow with innocent curiosity as mother watches thoughtfully" },
+      { "zh": "他们搬到集市旁，孟子又学着商贩高声叫卖、讨价还价。", "en": "They moved beside a market, where Mencius began copying the loud vendors.", "prompt": "same mother and child beside their wicker baskets in lively market, Mencius playfully imitates a vendor with empty hands" },
+      { "zh": "孟母想了想，带着他再次搬家，来到一所学堂附近。", "en": "His mother moved once more, this time near a school.", "prompt": "mother and child walk with two baskets and rolled mat toward a peaceful school courtyard" },
+      { "zh": "学堂里，孩子们有礼地读书、提问，也互相帮助。", "en": "At the school, children read, asked questions, and helped one another.", "prompt": "Mencius watches diverse pupils learning cooperatively through the open school gate, no visible writing" },
+      { "zh": "孟子受到吸引，坐进课堂，开始认真听老师讲课。", "en": "Drawn to the lessons, Mencius joined the class and listened carefully.", "prompt": "same boy seated among pupils before a kind teacher, mother watches quietly from the doorway" },
+      { "zh": "孟母三迁，是母亲用心选择环境，也耐心陪伴孩子成长。", "en": "The three moves showed a mother's thoughtful care in shaping her child's surroundings.", "prompt": "turning point, mother and child walk home from school together, discussing the day warmly" },
+      { "zh": "孟子也明白：好环境带来机会，真正学会还要靠自己努力。", "en": "Mencius learned that a good environment offers opportunity, while effort makes learning his own.", "prompt": "hopeful home ending, Mencius reviews an unmarked bamboo-slip bundle while mother mends cloth nearby" }
+    ]
+  }
+]
