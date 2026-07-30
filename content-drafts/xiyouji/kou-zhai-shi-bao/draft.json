@@ -1,0 +1,56 @@
+{
+  "id": "kou-zhai-shi-bao",
+  "title": "寇宅失宝",
+  "subtitle": "不要让猜测跑在证据前面",
+  "origin": "《西游记》第九十七回（低龄温和改编）",
+  "moral": {
+    "zh": "事情没查清之前，不急着责怪别人，才能给真相留下位置。",
+    "en": "Before facts are clear, holding back blame leaves room for the truth."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 33,
+  "episodeNumber": 33,
+  "pages": [
+    {
+      "zh": "师徒离开不久，寇府用来救济乡邻的珍珠米和布匹突然不见了。",
+      "en": "Soon after the travelers left, sacks of pearl rice and cloth meant for neighbors disappeared from the Kou home.",
+      "prompt": "Elder Kou and family discover an orderly storeroom with several empty marked-free shelves and a few loose grains; concern but no panic, no break-in violence or dark threat."
+    },
+    {
+      "zh": "有人想起唐僧曾拒绝金银，便胡乱猜测：“会不会是他们回来拿走了？”",
+      "en": "Someone remembered that Tang Seng had refused treasure and guessed, \"Could they have come back for it?\"",
+      "prompt": "Ancient-town neighbors discuss with uncertain open-hand gestures outside the Kou gate; Elder Kou raises one calming palm, refusing to accept a guess as fact; no angry mob, pointing fingers, or text."
+    },
+    {
+      "zh": "寇员外摇头说：“他们连多一件行李都不肯带。没有证据，不能先定罪。”",
+      "en": "Elder Kou shook his head. \"They would not carry even one extra bundle. Without evidence, we cannot decide guilt.\"",
+      "prompt": "Reuse Elder Kou anchor. He calmly stands beside the small food bundle the pilgrims left with, while neighbors lower their hands and listen; daylight, fairness and restraint."
+    },
+    {
+      "zh": "县里的差役在路上追上师徒，请他们回去说明。唐僧答应配合，悟空却先请大家保护好现场。",
+      "en": "County helpers caught up and asked the travelers to return and explain. Tang Seng agreed, while Wukong first asked everyone to preserve the scene.",
+      "prompt": "The established travelers meet two friendly county helpers in simple navy robes carrying blank wooden tablets. Tang Seng agrees calmly; Wukong gestures back toward town; no arrest, chains, weapons, or accusation."
+    },
+    {
+      "zh": "回到库房，悟空看见门锁完好，窗边却粘着湿泥，泥里还有一片芦苇叶。",
+      "en": "Back at the storeroom, Wukong saw that the lock was intact, but wet mud and a reed leaf clung to the window ledge.",
+      "prompt": "Wukong, Elder Kou, and a county helper inspect an intact rounded lock and a low window ledge with safe wet clay and one reed leaf; clear clue close-up, no readable marks or darkness."
+    },
+    {
+      "zh": "八戒闻到米袋上的荷叶香，沙僧发现车轮印朝城外的浅水滩去了。",
+      "en": "Bajie smelled lotus leaf on a grain sack, and Sha found cart tracks leading toward a shallow riverside marsh.",
+      "prompt": "Bajie examines a harmless torn grain-sack corner near lotus leaves while Sha Wujing points to shallow cart tracks in soft mud; team members investigate carefully, no pursuit danger."
+    },
+    {
+      "zh": "县令同意先查线索，不扣留任何人。寇员外也请乡邻把猜测收回来。",
+      "en": "The magistrate agreed to follow the clues and detain no one. Elder Kou asked the neighbors to take back their guesses.",
+      "prompt": "Create a kind magistrate: middle-aged Chinese official with an oval face, calm dark eyes, neat black mustache, navy-and-cream robes, and a simple black wingless cap. He sits at a low outdoor table listening equally to the team and Elder Kou; no courtroom intimidation or punishment."
+    },
+    {
+      "zh": "悟空望向芦苇荡：“真相已经留下脚印。我们一起去找，不让无辜的人背着误会。”",
+      "en": "Wukong looked toward the reeds. \"The truth has left footprints. Let us find it together, so no innocent person carries the blame.\"",
+      "prompt": "The established team, Elder Kou, and magistrate stand at the edge of a sunlit shallow reed marsh, following gentle cart tracks; Wukong leads with staff upright as a walking stick, suspenseful but safe."
+    }
+  ]
+}

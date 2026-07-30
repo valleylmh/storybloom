@@ -706,6 +706,66 @@ magic; child-friendly rounded animated-film proportions.
 | 第 30 回《天竺国辨玉兔》 | 天竺国公主 | 第 2 页 |
 |  | 玉兔舞者 | 第 6 页 |
 
+## 第 31–40 回新增角色锁定
+
+### 寇员外（第 31–34 回）
+
+Elder Kou is a kind elderly Chinese householder with a round warm face, silver eyebrows,
+a short neat white beard, and gray hair in a low topknot; he wears layered moss-green and
+warm-brown robes and one plain wooden bead bracelet; generous, thoughtful, and humble,
+never showy or commanding; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 31 回第 2 页。
+- 第 31–34 回固定圆脸、短白须、低发髻、苔绿棕色衣袍和木珠手串；不得变成官员、富商冠服或帝王形象。
+
+### 铜台府县令（第 33–34 回）
+
+The Tongtai magistrate is a fair middle-aged Chinese official with an oval face, calm dark
+eyes, a neat black mustache, navy-and-cream court robes, and a simple black wingless cap;
+patient, evidence-minded, and never stern; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 33 回第 7 页。
+- 不使用惊堂木、锁链、刑具、兵器或高台压迫构图；查证与澄清均在平等视线中完成。
+
+### 凌云渡接引人（第 35 回）
+
+The Lingyun ferryman is a serene elderly boatman with warm bronze skin, smiling dark eyes,
+a short cloud-white beard, a straw rain cape over pale-gray robes, and a smooth bamboo pole
+held vertically; welcoming, steady, and never mysterious or frightening; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 35 回第 3 页。
+- 船固定为宽而稳定的木船；竹篙只竖直撑船，不指向人物，不表现无底船、坠落或溺水。
+
+### 通天河老鼋（第 38 回）
+
+Old Turtle is a very large gentle river turtle with a rounded moss-green shell patterned
+with soft golden swirls, warm olive skin, large kind amber eyes, and two short silver
+whiskers; friendly, sturdy, expressive but never monstrous; child-friendly rounded proportions.
+
+- 首次与固定锚点：第 38 回第 1 页。
+- 第 6 页只允许在宽阔浅沙洲旁轻轻侧壳，人物滑入脚踝深浅水；不表现深水、翻覆、惊恐或经卷浸泡。
+
+### 唐王（第 40 回）
+
+The Tang Emperor is a dignified middle-aged Chinese ruler with warm tan skin, a kind square
+face, calm dark eyes, and a neat black beard; he wears layered deep-red and muted-gold
+dragon-free court robes and a simple black-and-gold ceremonial cap; curious, grateful, and
+never distant or intimidating; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 40 回第 2 页。
+- 迎接与问答均在大殿外同一地面完成；不使用高台王座、跪拜人群、武装仪仗或夸张金色排场。
+
+## 第 31–40 回视觉锚点速查
+
+| 回目 | 新增角色 | 锚点页 |
+| --- | --- | --- |
+| 第 31 回《铜台府结善缘》 | 寇员外 | 第 2 页 |
+| 第 33 回《寇宅失宝》 | 铜台府县令 | 第 7 页 |
+| 第 35 回《凌云渡过桥》 | 接引人 | 第 3 页 |
+| 第 38 回《老鼋问旧诺》 | 通天河老鼋 | 第 1 页 |
+| 第 40 回《长安功德圆满》 | 唐王 | 第 2 页 |
+
 ## 低龄改编原则（写进每次生成的正文 prompt）
 
 - 打斗一律改为“比试 / 智斗 / 追逐游戏 / 合作解决问题”，无兵刃相向。
@@ -737,6 +797,13 @@ magic; child-friendly rounded animated-film proportions.
 - 第 28 回求雨通过承认浪费、修复水渠、节水和公平分享完成；不表现饥荒、死亡、天罚或灾难风暴。
 - 第 29 回三件工具固定用于风铃、落叶、软球和节庆搭建；不演兵刃模仿、师徒对打或受伤。
 - 第 30 回通过舞步记忆、桂花香和月影足迹辨认玉兔；不羞辱、不围攻、不强迫婚恋，最终以真实身份合作演出。
+- 第 31–32 回寇府款待强调实用需求、尊重拒绝和从容辞别；不以金银排场或挽留压力衡量善意。
+- 第 33–34 回失物案只通过保存现场、线索核对和公开澄清解决；不抓捕、不刑讯、不围攻，也不把搬运工塑造成恶人。
+- 第 35 回凌云渡允许桥船分路、护绳和宽船；不表现无底船、坠落、溺水或以恐惧强迫渡河。
+- 第 36–37 回无字经书通过礼貌提问、共同复核和逐卷交接处理；不表现索贿、争抢、羞辱或宗教对立。
+- 第 38 回老鼋只在浅沙洲旁轻轻侧壳；人物滑入脚踝深水，经卷内层保持干燥，不表现报复性翻覆或危险落水。
+- 第 39 回经纸只缺空白边角，正文清楚完整；重点是晾晒、修复、记录和继续保护，不归责个人。
+- 第 40 回圆满以翻译、分享、答疑和服务收尾；不使用武装凯旋、跪拜人群或把经卷当作私人奖品。
 - “三更传艺”改写为祖师以三下轻敲提示悟空等大家休息后到安静书房请教，
   不渲染儿童独自夜行、翻墙或偷偷离家。
 - 学艺必须体现长期积累：祖师耐心讲解，悟空反复练习，明确经过许多年才学有所成；

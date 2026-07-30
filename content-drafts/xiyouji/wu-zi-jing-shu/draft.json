@@ -1,0 +1,56 @@
+{
+  "id": "wu-zi-jing-shu",
+  "title": "无字经书",
+  "subtitle": "看见空白，也敢提出疑问",
+  "origin": "《西游记》第九十八回（低龄温和改编）",
+  "moral": {
+    "zh": "尊重不等于不提问，认真检查和礼貌求证能保护重要的成果。",
+    "en": "Respect does not mean silence; careful checking and courteous questions protect important work."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 36,
+  "episodeNumber": 36,
+  "pages": [
+    {
+      "zh": "师徒走进大殿，两位守经人搬来整整齐齐的经卷，装满了他们的行囊。",
+      "en": "The travelers entered the great hall, where two scripture keepers filled their packs with neatly stacked scrolls.",
+      "prompt": "The established team enters a serene luminous Buddhist-inspired hall. Two kind adult scripture keepers in simple saffron-and-ivory robes place closed blank scrolls into travel cases; no readable religious text or imposing statues."
+    },
+    {
+      "zh": "八戒抱着沉甸甸的经包，开心得直喘气：“终于取到了！”",
+      "en": "Bajie hugged the heavy scripture bundle and puffed happily. \"We finally have them!\"",
+      "prompt": "Bajie cheerfully hugs a large but manageable cloth-wrapped scroll bundle while Wukong, Sha, Tang Seng, and White Dragon Horse smile; bright temple courtyard, no text."
+    },
+    {
+      "zh": "一阵风吹开卷角，白龙马看见纸面一片空白，轻轻用鼻尖碰了碰悟空。",
+      "en": "A breeze lifted one scroll corner. White Dragon Horse saw a blank page and gently nudged Wukong.",
+      "prompt": "Close scene: a breeze reveals one completely blank cream scroll page as White Dragon Horse gently nudges Wukong; surprised curiosity, no writing or hidden symbols."
+    },
+    {
+      "zh": "悟空又抽查三卷：没有字，也没有图。他没有发火，只请大家先停下来一起核对。",
+      "en": "Wukong checked three more scrolls: no words, no pictures. He did not grow angry; he asked everyone to pause and verify together.",
+      "prompt": "Wukong calmly opens three blank scrolls on a low table while the team gathers around; his red-and-gold staff rests safely upright, thoughtful expressions, no anger."
+    },
+    {
+      "zh": "守经人说，有些道理本来就藏在空白里。唐僧回答：“可我们还要带回去让许多人学习。”",
+      "en": "The keepers said that some truths live in silence. Tang Seng replied, \"But we must bring teachings home for many people to study.\"",
+      "prompt": "Tang Seng and the two kind scripture keepers converse respectfully across a low table of blank scrolls; equal posture, Wukong listening, warm calm light, no confrontation."
+    },
+    {
+      "zh": "沙僧拿出铜台府的证明和通关文牒，说明一路使命；八戒则数清每个箱子，避免再次拿错。",
+      "en": "Sha presented their sealed travel documents, while Bajie counted every case so nothing would be mixed up again.",
+      "prompt": "Sha Wujing presents rolled sealed documents with no visible writing; Bajie counts closed scripture cases using plain pebbles; the keepers observe, orderly verification."
+    },
+    {
+      "zh": "守经人重新查看库房，发现两批经卷放反了。他们认真道歉，带师徒去取有字的真经。",
+      "en": "The keepers checked the archive and found that two sets had been reversed. They apologized and led the travelers to the written scriptures.",
+      "prompt": "The scripture keepers discover two clearly separated shelves—blank scrolls and sealed decorated scrolls—with color-coded ribbons but no text; they bow apologetically and guide the team onward."
+    },
+    {
+      "zh": "悟空把无字经卷放回原位：“空白可以让人思考，但交付之前，也要先问清用途。”",
+      "en": "Wukong returned the blank scrolls. \"Silence can invite thought, but before giving something, we must understand its purpose.\"",
+      "prompt": "Wukong carefully returns blank scrolls to their shelf while Tang Seng and the keepers nod; orderly archive, soft gold light, lesson of careful communication, no readable labels."
+    }
+  ]
+}

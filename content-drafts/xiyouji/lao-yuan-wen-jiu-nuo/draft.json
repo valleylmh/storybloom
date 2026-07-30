@@ -1,0 +1,56 @@
+{
+  "id": "lao-yuan-wen-jiu-nuo",
+  "title": "老鼋问旧诺",
+  "subtitle": "忘记的承诺，也要认真补上",
+  "origin": "《西游记》第九十九回（低龄温和改编）",
+  "moral": {
+    "zh": "答应别人的事要记下来；真的忘了，就诚实道歉并想办法补救。",
+    "en": "Write down your promises; if you truly forget, apologize honestly and make amends."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-07-30",
+  "order": 38,
+  "episodeNumber": 38,
+  "pages": [
+    {
+      "zh": "归途中，师徒又来到通天河。老鼋从水里探出头，欢喜地来接他们过河。",
+      "en": "On the way home, the travelers returned to the River of Heaven. The old turtle surfaced happily to carry them across.",
+      "prompt": "Create Old Turtle anchor: a very large gentle river turtle with a rounded moss-green shell patterned with soft golden swirls, warm olive skin, large kind amber eyes, and two short silver whiskers; friendly and sturdy, never monstrous. He surfaces beside the established travelers at a calm broad river."
+    },
+    {
+      "zh": "走到河心，老鼋问：“多年前托你们问的那件事，可有答案？”",
+      "en": "At midstream, the old turtle asked, \"Did you find an answer to the question I entrusted to you years ago?\"",
+      "prompt": "The established team sits safely on Old Turtle's broad rounded shell at midstream; Old Turtle turns his kind face slightly to ask a question, calm water and open sky."
+    },
+    {
+      "zh": "唐僧一下愣住了。他们一路忙着过难关，竟把老鼋的托付忘得干干净净。",
+      "en": "Tang Seng froze. Through all their trials, they had completely forgotten the old turtle's request.",
+      "prompt": "Tang Seng looks honestly startled and remorseful while Wukong, Bajie, and Sha exchange thoughtful glances on Old Turtle's stable shell; no shame spectacle or fear."
+    },
+    {
+      "zh": "八戒想编个答案，悟空轻轻拉住他：“不知道就是不知道，不能用猜的补承诺。”",
+      "en": "Bajie started to invent an answer, but Wukong gently stopped him. \"If we do not know, we must not patch a promise with a guess.\"",
+      "prompt": "Wukong gently touches Bajie's sleeve before he speaks, both seated safely; Sha and Tang Seng listen, Old Turtle remains calm; friendly correction, no scolding."
+    },
+    {
+      "zh": "唐僧郑重道歉，说明自己没有问到答案，也不该一直不提。",
+      "en": "Tang Seng apologized sincerely, explaining that he had not asked—and should not have stayed silent about it.",
+      "prompt": "Tang Seng bows carefully while seated on Old Turtle's shell, hands joined in sincere apology; Old Turtle listens with kind but disappointed eyes, gentle dusk light."
+    },
+    {
+      "zh": "老鼋有些失望，壳边轻轻一歪。大家滑进浅浅的沙洲，只有鞋袜和经包外布沾了水。",
+      "en": "The old turtle was disappointed and tilted his shell slightly. Everyone slid onto a shallow sandbar; only shoes and the outer scripture cloth got wet.",
+      "prompt": "Child-safe comic moment: Old Turtle gently tilts near a broad shallow sandbar, and the established travelers slide a very short distance into ankle-deep sparkling water while holding scripture cases above water; no panic, deep water, or injury."
+    },
+    {
+      "zh": "师徒没有责怪老鼋。他们一起把经包搬上岸，还把承诺写在随身的小册子里。",
+      "en": "The travelers did not blame the old turtle. They carried the cases ashore together and recorded the promise in a small notebook.",
+      "prompt": "On a sunny sandbar, the established team safely carries dry scripture cases ashore; Tang Seng marks a small notebook with abstract non-readable strokes while Old Turtle watches nearby."
+    },
+    {
+      "zh": "老鼋把他们送到对岸。分别前，唐僧说：“有了答案，我一定托可靠的人带给你。”",
+      "en": "The old turtle brought them to the far bank. Tang Seng promised, \"When I have the answer, I will send it through someone dependable.\"",
+      "prompt": "The established travelers thank Old Turtle at the far bank; Tang Seng holds the closed notebook to his heart, Old Turtle smiles gently, restored trust at sunrise."
+    }
+  ]
+}
