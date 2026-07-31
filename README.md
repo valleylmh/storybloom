@@ -104,7 +104,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 当前代码主要有三类生成模型调用：
 
 - 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
-- 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations 或 Hugging Face；用户上传人物照片后改按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 使用支持参考图的 AGNES 与 CPA Nano Banana 2（默认上游模型 `gemini-3.1-flash-image`），并按配置顺序自动回退。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
+- 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations 或 Hugging Face；极简模式中确认并保存的照片角色会先由 CPA Nano Banana 2（默认上游模型 `gemini-3.1-flash-image`）生成统一设定稿，随后所有实际出现该角色的页面都固定使用 CPA，不回退到其他提供商。临时自定义参考图仍按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 工作。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
 - 音频：绘本网页朗读使用浏览器内置 `SpeechSynthesis`，不会调用云端 TTS，也不会在故事生成后自动准备音频。`src/app/api/audio/route.ts` 保留给需要真实音频文件的带旁白视频；配置 `DASHSCOPE_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，再依次回退 Gemini 2.5、Gemini 3.1 和 Edge TTS，结果优先写入 Supabase 私有 Storage。
 
 ## 技术栈
@@ -113,7 +113,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 |------|------|
 | 框架 | Next.js 15 App Router + TypeScript |
 | 故事生成 | 部署者配置的 OpenAI 兼容端点，未配置或失败时使用本地 fallback |
-| 插图生成 | AGNES、DashScope、Cloudflare、Pollinations、Hugging Face；参考图模式支持 AGNES / CPA |
+| 插图生成 | AGNES、DashScope、Cloudflare、Pollinations、Hugging Face；家庭照片角色固定使用 CPA Nano Banana |
 | 网页朗读 | 浏览器本机 SpeechSynthesis |
 | 视频旁白音频 | Token Plan 百炼 TTS → Gemini 2.5 → Gemini 3.1 → Edge TTS |
 | 导出与分享 | Browser Canvas 长图、图片 ZIP、Supabase 分享快照 |
@@ -274,7 +274,7 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" \
 
 ## 家庭角色库
 
-已登录用户可在 `/family` 建立可复用的家庭角色。参考照片保存在 Supabase 私有 Storage，AGNES 会先将照片转换为统一绘本形象；之后在首页极简模式选择角色，即可用一句话生成家庭专属绘本。照片不会发送给 Resend。
+已登录用户可在 `/family` 建立可复用的家庭角色。参考照片保存在 Supabase 私有 Storage，CPA Nano Banana 会先将照片转换为统一绘本形象；之后在首页极简模式选择角色，即可用一句话生成家庭专属绘本。极简入口也会在人物无法唯一匹配时请求确认姓名，并允许登录后保存供下次复用。照片不会发送给 Resend。
 
 1. 在同一个 Supabase 项目继续执行 `supabase/migrations/202607120002_family_profiles.sql`。
 2. 从 Supabase Project Settings → API 获取公开的 anon key（新项目也可能显示为 publishable key），配置其中一个：
