@@ -1,5 +1,9 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
-import { inferChildNameFromStoryIdea } from "@/lib/story-input";
+import {
+  analyzeStoryProtagonist,
+  inferChildNameFromStoryIdea,
+  matchStoryProtagonist,
+} from "@/lib/story-input";
 import { generateStoryText } from "@/lib/story-generator";
 import type { StoryInput, StoryPage } from "@/types";
 
@@ -113,9 +117,106 @@ describe("one-sentence story input", () => {
       "小满",
     );
   });
+
+  it("uses a first-person fallback when the sentence has no child name", () => {
+    expect(inferChildNameFromStoryIdea("第一次独自睡觉", "zh")).toBe("我");
+    expect(inferChildNameFromStoryIdea("a trip to the moon", "en")).toBe("I");
+  });
+
+  it("ignores a leading time phrase before inferring the child name", () => {
+    expect(
+      inferChildNameFromStoryIdea(
+        "今天童童去小区泳池玩水玩得非常开心",
+        "zh",
+      ),
+    ).toBe("童童");
+    expect(
+      inferChildNameFromStoryIdea(
+        "周末，小满在公园第一次学会骑自行车",
+        "zh",
+      ),
+    ).toBe("小满");
+  });
+
+  it("returns structured confidence and only auto-matches one saved character", () => {
+    const analysis = analyzeStoryProtagonist(
+      "今天童童去小区泳池玩水玩得非常开心",
+      "zh",
+    );
+    expect(analysis).toEqual({
+      candidateName: "童童",
+      normalizedName: "童童",
+      confidence: "high",
+      source: "leading-name",
+    });
+    expect(
+      matchStoryProtagonist(analysis, [
+        { id: "one", display_name: "童童" },
+        { id: "two", display_name: "小满" },
+      ]),
+    ).toEqual({ status: "matched", characterId: "one" });
+    expect(
+      matchStoryProtagonist(analysis, [
+        { id: "one", display_name: "童童" },
+        { id: "two", display_name: "童童" },
+      ]),
+    ).toEqual({ status: "confirm", matchingCharacterIds: ["one", "two"] });
+  });
+
+  it("requires confirmation when no protagonist name can be inferred", () => {
+    const analysis = analyzeStoryProtagonist("去小区泳池玩水", "zh");
+    expect(analysis.candidateName).toBeNull();
+    expect(matchStoryProtagonist(analysis, [])).toEqual({
+      status: "confirm",
+      matchingCharacterIds: [],
+    });
+  });
 });
 
 describe("custom story generation", () => {
+  it("writes minimal-mode fallback narration in first person", async () => {
+    process.env.STORY_TEXT_PROVIDER = "mock";
+    delete process.env.TEXT_MODEL_PROVIDER;
+
+    const story = await generateStoryText({
+      ...soloSleepInput,
+      narrativePerspective: "first-person",
+    });
+    const chineseBody = story.pages.slice(1).map((page) => page.zhText).join("\n");
+    const englishBody = story.pages.slice(1).map((page) => page.enText).join("\n");
+
+    expect(story.coverTitle).toBe("童童的第一次一个人在一个房间睡觉");
+    expect(chineseBody).toContain("我");
+    expect(chineseBody).not.toContain("童童");
+    expect(chineseBody).not.toContain("故事里的孩子");
+    expect(englishBody).toMatch(/\b(?:I|me|my)\b/);
+    expect(englishBody).not.toMatch(/\bthe child\b/i);
+  });
+
+  it("does not create a malformed first-person title from an action sentence", async () => {
+    process.env.STORY_TEXT_PROVIDER = "mock";
+    delete process.env.TEXT_MODEL_PROVIDER;
+
+    const story = await generateStoryText({
+      ...soloSleepInput,
+      childName: "童童",
+      customTheme: "今天童童去小区泳池玩水玩得非常开心",
+      narrativePerspective: "first-person",
+    });
+
+    expect(story.coverTitle).toBe("童童的快乐泳池日");
+    expect(story.coverTitle).not.toContain("我的去");
+    expect(story.pages[0].zhText).toContain("来到小区泳池");
+    expect(story.pages[0].zhText).not.toBe(
+      "今天童童去小区泳池玩水玩得非常开心",
+    );
+    const poolStory = story.pages.map((page) => page.zhText).join("\n");
+    expect(poolStory).not.toMatch(
+      /迎来了这件特别的小事|分成一个个小步骤|成长不是突然什么都不怕/,
+    );
+    expect(poolStory).toMatch(/泳池[\s\S]*泳衣[\s\S]*水花[\s\S]*浮球[\s\S]*毛巾/);
+  });
+
   it("keeps the fallback centered on the first night sleeping alone", async () => {
     process.env.STORY_TEXT_PROVIDER = "mock";
     delete process.env.TEXT_MODEL_PROVIDER;
@@ -188,6 +289,8 @@ describe("custom story generation", () => {
     expect(prompt).not.toContain("Use this fresh direction");
     expect(prompt).not.toContain("The Rainbow Bridge Practice");
     expect(prompt).not.toContain("sparrow");
+    expect(prompt).toContain("Page 1 opening");
+    expect(prompt).not.toContain("Page 1 cover");
     expect(body.temperature).toBe(0.68);
     expect(body.top_p).toBe(0.86);
   });

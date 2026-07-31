@@ -47,10 +47,13 @@ export interface FamilyCharacterInput {
   relation: string;
   appearance: string;
   referenceAssetPath?: string;
+  isProtagonist?: boolean;
 }
 
 export interface StoryInput {
   childName: string;
+  narrativePerspective?: "third-person" | "first-person";
+  protagonistFamilyCharacterId?: string;
   ageGroup: AgeGroup;
   favoriteToy?: string;
   favoriteFood?: string;

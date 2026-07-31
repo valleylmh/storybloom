@@ -5,6 +5,7 @@ import {
   AuthenticationError,
   requireAuthenticatedUser,
 } from "@/lib/supabase/server-auth";
+import { generateCpaReferenceImage } from "@/lib/image-generator";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -22,12 +23,6 @@ type FamilyCharacter = {
   source_photo_path: string | null;
 };
 
-type AgnesResponse = {
-  data?: Array<{ url?: string | null; b64_json?: string | null }>;
-  error?: { message?: string };
-  message?: string;
-};
-
 async function generateCanonicalCharacter(input: {
   imageDataUri: string;
   displayName: string;
@@ -35,9 +30,6 @@ async function generateCanonicalCharacter(input: {
   kind: "person" | "pet";
   description: string;
 }) {
-  const apiKey = process.env.AGNES_API_KEY;
-  if (!apiKey) throw new Error("AGNES_API_KEY is not configured.");
-
   const subject =
     input.kind === "pet"
       ? `the family pet called ${input.displayName}`
@@ -53,48 +45,15 @@ async function generateCanonicalCharacter(input: {
     .filter(Boolean)
     .join(" ");
 
-  const response = await fetch(
-    process.env.AGNES_IMAGE_ENDPOINT ||
-      "https://apihub.agnes-ai.com/v1/images/generations",
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        model: process.env.AGNES_IMAGE_MODEL || "agnes-image-2.1-flash",
-        prompt,
-        size: "1024x1024",
-        extra_body: {
-          image: [input.imageDataUri],
-          response_format: "b64_json",
-        },
-      }),
-      signal: AbortSignal.timeout(120_000),
-    }
-  );
-
-  const payload = (await response.json().catch(() => ({}))) as AgnesResponse;
-  const result = payload.data?.[0];
-  if (!response.ok || (!result?.b64_json && !result?.url)) {
-    throw new Error(
-      payload.error?.message || payload.message || `AGNES HTTP ${response.status}`
-    );
+  const imageDataUri = await generateCpaReferenceImage({
+    prompt,
+    referenceImages: [input.imageDataUri],
+  });
+  const match = imageDataUri.match(/^data:(image\/[a-z0-9.+-]+);base64,(.+)$/i);
+  if (!match) {
+    throw new Error("CPA Banana did not return an inline image.");
   }
-
-  if (result.b64_json) {
-    return { bytes: Buffer.from(result.b64_json, "base64"), contentType: "image/png" };
-  }
-
-  const imageResponse = await fetch(result.url!);
-  if (!imageResponse.ok) {
-    throw new Error(`AGNES image download HTTP ${imageResponse.status}`);
-  }
-  return {
-    bytes: Buffer.from(await imageResponse.arrayBuffer()),
-    contentType: imageResponse.headers.get("content-type") || "image/png",
-  };
+  return { bytes: Buffer.from(match[2], "base64"), contentType: match[1] };
 }
 
 export async function POST(
@@ -102,8 +61,10 @@ export async function POST(
   context: { params: Promise<{ id: string }> }
 ) {
   let characterId = "";
+  let userId = "";
   try {
     const user = await requireAuthenticatedUser(request);
+    userId = user.id;
     characterId = idSchema.parse((await context.params).id);
     const supabase = getSupabaseAdmin();
     const { data: character, error } = await supabase
@@ -176,12 +137,13 @@ export async function POST(
     }
 
     const message = error instanceof Error ? error.message : "角色形象生成失败。";
-    if (characterId) {
+    if (characterId && userId) {
       try {
         await getSupabaseAdmin()
           .from("family_characters")
           .update({ status: "failed", error_message: message })
-          .eq("id", characterId);
+          .eq("id", characterId)
+          .eq("user_id", userId);
       } catch {
         // Preserve the original generation error if status persistence also fails.
       }

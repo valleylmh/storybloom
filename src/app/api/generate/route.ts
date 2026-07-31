@@ -11,6 +11,7 @@ import {
   rateLimiter,
 } from "@/lib/storage";
 import { generateStoryText } from "@/lib/story-generator";
+import { normalizeCharacterName } from "@/lib/story-input";
 import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { AuthenticationError, requireAuthenticatedUser } from "@/lib/supabase/server-auth";
 import type {
@@ -19,10 +20,13 @@ import type {
   GenerateResponse,
   GeneratedStory,
   StoryInput,
+  StoryPage,
 } from "@/types";
 
 const generateSchema = z.object({
   childName: z.string().min(1).max(20),
+  narrativePerspective: z.enum(["third-person", "first-person"]).optional(),
+  protagonistFamilyCharacterId: z.string().uuid().optional(),
   ageGroup: z.enum(["2-3", "4-5", "6-8"]),
   favoriteToy: z.string().trim().max(80).optional(),
   favoriteFood: z.string().trim().max(80).optional(),
@@ -54,7 +58,8 @@ type FamilyCharacterRow = {
 
 async function getSelectedFamilyCharacters(
   req: NextRequest,
-  familyCharacterIds: string[] | undefined
+  familyCharacterIds: string[] | undefined,
+  protagonistFamilyCharacterId?: string,
 ): Promise<FamilyCharacterInput[]> {
   const uniqueIds = [...new Set(familyCharacterIds ?? [])];
   if (uniqueIds.length === 0) {
@@ -80,18 +85,20 @@ async function getSelectedFamilyCharacters(
     throw new AuthenticationError("One or more family characters are unavailable");
   }
 
-  return uniqueIds.map((id) => {
+  const orderedIds = protagonistFamilyCharacterId
+    ? [protagonistFamilyCharacterId, ...uniqueIds.filter((id) => id !== protagonistFamilyCharacterId)]
+    : uniqueIds;
+
+  return orderedIds.map((id) => {
     const row = rowsById.get(id)!;
-    const referenceAssetPath = row.canonical_photo_path || row.source_photo_path;
-    if (!referenceAssetPath) {
-      throw new Error(`Family character ${row.display_name} does not have a reference photo.`);
-    }
+    const referenceAssetPath = row.canonical_photo_path;
     return {
       id: row.id,
       name: row.display_name,
       relation: row.relationship,
       appearance: row.description?.trim() || `${row.relationship} ${row.display_name}`,
-      referenceAssetPath,
+      referenceAssetPath: referenceAssetPath || undefined,
+      isProtagonist: row.id === protagonistFamilyCharacterId,
     };
   });
 }
@@ -113,6 +120,16 @@ function createRateLimitIdentifier(ip: string, browserFingerprint?: string) {
   const identifierSource = `ip:${ip}|browser:${browserFingerprint?.trim() || "none"}`;
 
   return crypto.createHash("sha256").update(identifierSource).digest("hex");
+}
+
+function pageUsesFamilyPhoto(
+  page: StoryPage,
+  familyCharacters: FamilyCharacterInput[],
+) {
+  const castIds = new Set(page.castIds || []);
+  return familyCharacters.some(
+    (character) => character.referenceAssetPath && castIds.has(character.id),
+  );
 }
 
 type TurnstileVerificationResult = {
@@ -173,10 +190,29 @@ export async function POST(req: NextRequest) {
   }
 
   const ip = getClientIp(req);
-  const { browserFingerprint, turnstileToken, familyCharacterIds, ...baseInput } = parsed.data;
+  const {
+    browserFingerprint,
+    turnstileToken,
+    familyCharacterIds,
+    protagonistFamilyCharacterId,
+    ...baseInput
+  } = parsed.data;
+  if (
+    protagonistFamilyCharacterId &&
+    !(familyCharacterIds || []).includes(protagonistFamilyCharacterId)
+  ) {
+    return NextResponse.json(
+      { error: "确认的主角不在已选择的家庭角色中。" },
+      { status: 400 },
+    );
+  }
   let familyCharacters: FamilyCharacterInput[];
   try {
-    familyCharacters = await getSelectedFamilyCharacters(req, familyCharacterIds);
+    familyCharacters = await getSelectedFamilyCharacters(
+      req,
+      familyCharacterIds,
+      protagonistFamilyCharacterId,
+    );
   } catch (error) {
     if (error instanceof AuthenticationError) {
       return NextResponse.json({ error: error.message }, { status: error.status });
@@ -189,12 +225,25 @@ export async function POST(req: NextRequest) {
   }
   const input: StoryInput = {
     ...baseInput,
+    protagonistFamilyCharacterId,
     customCharacterReferenceToken:
       baseInput.characterReferenceId === "custom-upload"
         ? baseInput.customCharacterReferenceToken
         : undefined,
     familyCharacters: familyCharacters.length > 0 ? familyCharacters : undefined,
   };
+  const protagonistCharacter = protagonistFamilyCharacterId
+    ? familyCharacters.find((character) => character.id === protagonistFamilyCharacterId)
+    : undefined;
+  if (
+    protagonistCharacter &&
+    normalizeCharacterName(protagonistCharacter.name) !== normalizeCharacterName(input.childName)
+  ) {
+    return NextResponse.json(
+      { error: "确认的主角姓名与家庭角色不一致，请重新确认。" },
+      { status: 400 },
+    );
+  }
   if (input.characterReferenceId === "custom-upload") {
     if (!input.customCharacterReferenceToken) {
       return NextResponse.json(
@@ -254,8 +303,8 @@ export async function POST(req: NextRequest) {
   try {
     const { pages, coverTitle } = await generateStoryText(input);
     const previewPages = createDemoPages(pages, input.style).map((page) =>
-      familyCharacters.length > 0
-        ? { ...page, imagePlannedProvider: "agnes" as const }
+      pageUsesFamilyPhoto(page, familyCharacters)
+        ? { ...page, imagePlannedProvider: "cpa" as const }
         : input.customCharacterReferenceToken
           ? {
               ...page,

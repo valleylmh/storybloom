@@ -49,10 +49,23 @@ function isSameGenerationAttempt(
   );
 }
 
+function pageUsesFamilyPhoto(
+  story: GeneratedStory,
+  page: GeneratedStory["pages"][number],
+) {
+  const castIds = new Set(page.castIds || []);
+  return Boolean(
+    story.input.familyCharacters?.some(
+      (character) => character.referenceAssetPath && castIds.has(character.id),
+    ),
+  );
+}
+
 async function markPagePending(story: GeneratedStory, pageNumber: number) {
   const startedAt = new Date().toISOString();
-  const plannedProvider = story.input.familyCharacters?.length
-    ? "agnes"
+  const targetPage = story.pages.find((page) => page.page === pageNumber);
+  const plannedProvider = targetPage && pageUsesFamilyPhoto(story, targetPage)
+    ? "cpa"
     : story.input.customCharacterReferenceToken
       ? getImageToImageProviderForPage(pageNumber, story.pages.length)
       : getProviderForPage(pageNumber, story.pages.length);

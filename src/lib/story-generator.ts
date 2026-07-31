@@ -1,4 +1,5 @@
 import type { StoryInput, StoryPage, StoryTheme } from "@/types";
+import { stripChineseTimePrefix } from "@/lib/story-input";
 
 export const STYLE_SPINES: Record<string, string> = {
   watercolor:
@@ -34,14 +35,14 @@ const THEME_DESCRIPTIONS: Record<Exclude<StoryTheme, "custom">, string> = {
 };
 
 const STORY_BEATS = [
-  "Page 1 cover: a strong title image with the child as the clear hero",
-  "Page 2 opening: a specific everyday scene and one concrete wish or feeling",
-  "Page 3 discovery: the child notices a magical or meaningful detail",
-  "Page 4 action: the child chooses to try something visible and brave",
-  "Page 5 obstacle: a gentle problem creates tension without fear or danger",
-  "Page 6 climax: the child uses kindness, courage, or creativity to help",
-  "Page 7 resolution: the world responds warmly and the child feels growth",
-  "Page 8 closing: a quiet reflective ending or dedication-like final image",
+  "Page 1 opening: begin the requested event immediately with a concrete place, action, and feeling; do not repeat the title or premise as a cover page",
+  "Page 2 settling in: show the child preparing, noticing sensory details, or taking the first small action",
+  "Page 3 engagement: let the child actively explore or enjoy the exact requested activity",
+  "Page 4 development: add a new specific action, interaction, or delightful discovery within the same scene",
+  "Page 5 variation: deepen the activity with a gentle surprise, playful challenge, or change of pace",
+  "Page 6 high point: show the happiest, most meaningful, or most active moment of the requested experience",
+  "Page 7 winding down: let the activity reach a warm, concrete resolution without generic moralizing",
+  "Page 8 closing: end with a specific final image, memory, or feeling directly connected to the requested event",
 ];
 
 const SHOT_PLAN = [
@@ -107,6 +108,32 @@ function getThemeLabel(input: StoryInput) {
 
 function getEnglishCharacterName(name: string) {
   return /^[\x00-\x7F]+$/.test(name) ? name : "the child";
+}
+
+function usesFirstPerson(input: StoryInput) {
+  return input.narrativePerspective === "first-person";
+}
+
+function getNarrativeSubjects(input: StoryInput, childName = input.childName) {
+  const englishName = getEnglishCharacterName(childName);
+  if (usesFirstPerson(input)) {
+    return {
+      zhSubject: "我",
+      englishSubject: "I",
+      englishMidSentenceSubject: "I",
+      englishObject: "me",
+      englishPossessive: "my",
+    };
+  }
+
+  return {
+    zhSubject: childName,
+    englishSubject: englishName === "the child" ? "The child" : englishName,
+    englishMidSentenceSubject: englishName,
+    englishObject: englishName,
+    englishPossessive:
+      englishName === "the child" ? "the child's" : `${englishName}'s`,
+  };
 }
 
 function applyLanguageMode(input: StoryInput, zh: string, en: string) {
@@ -189,35 +216,40 @@ function createMockStory(input: StoryInput): {
   pages: StoryPage[];
 } {
   const childName = input.childName;
-  const englishName = getEnglishCharacterName(childName);
+  const { zhSubject, englishSubject, englishMidSentenceSubject } =
+    getNarrativeSubjects(input, childName);
   const themeLabel = getThemeLabel(input);
   const characterDescription = input.characterDescription?.trim()
     ? `主角外观锁定：${input.characterDescription.trim()}。每页都必须是同一个孩子，不改变性别呈现、发型、发色、脸型、服装主色和绘本渲染风格。`
     : `${childName} 是故事的主角。`;
   const storyMoments = [
     {
-      zh: `${childName}和一颗会发光的小种子`,
-      en: `${englishName} and the Little Glowing Seed`,
+      zh: usesFirstPerson(input)
+        ? "我和一颗会发光的小种子"
+        : `${childName}和一颗会发光的小种子`,
+      en: usesFirstPerson(input)
+        ? "My Little Glowing Seed"
+        : `${englishSubject} and the Little Glowing Seed`,
       scene: "cover art, child holding a glowing seed close to the heart, curious smile, soft sky",
     },
     {
-      zh: `清晨，${childName}在窗边发现了一颗会轻轻发亮的小种子。`,
-      en: `One morning, ${englishName} found a tiny seed glowing beside the window.`,
+      zh: `清晨，${zhSubject}在窗边发现了一颗会轻轻发亮的小种子。`,
+      en: `One morning, ${englishMidSentenceSubject} found a tiny seed glowing beside the window.`,
       scene: "morning bedroom window, golden dust in the air, child kneeling to inspect a glowing seed",
     },
     {
-      zh: `小种子一闪一闪，好像在邀请${childName}去寻找一座秘密花园。`,
+      zh: `小种子一闪一闪，好像在邀请${zhSubject}去寻找一座秘密花园。`,
       en: `The seed blinked like a tiny invitation to a secret garden.`,
       scene: "seed glowing like a map, flower-shaped light trail leading toward a secret garden",
     },
     {
-      zh: `${childName}鼓起勇气，背上小包，沿着花香一路向前。`,
-      en: `${englishName} took a brave breath, packed a little bag, and followed the scent of flowers.`,
+      zh: `${zhSubject}鼓起勇气，背上小包，沿着花香一路向前。`,
+      en: `${englishSubject} took a brave breath, packed a little bag, and followed the scent of flowers.`,
       scene: "child taking a brave first step along a winding flower path, determined expression",
     },
     {
-      zh: `路上吹来一阵风，小种子差点飞走，${childName}小心地把它护在手心里。`,
-      en: `A playful wind tried to lift the seed away, and ${englishName} protected it with both hands.`,
+      zh: `路上吹来一阵风，小种子差点飞走，${zhSubject}小心地把它护在手心里。`,
+      en: `A playful wind tried to lift the seed away, and ${englishMidSentenceSubject} protected it with both hands.`,
       scene: "windy meadow, scarf and leaves swirling, child protecting the glowing seed with both hands",
     },
     {
@@ -226,18 +258,18 @@ function createMockStory(input: StoryInput): {
       scene: "secret garden center, magical flower blooming with light ribbons and music notes",
     },
     {
-      zh: `花园里的小伙伴们都围了过来，感谢${childName}把温柔和勇气带回这里。`,
-      en: `The garden friends gathered around and thanked ${englishName} for bringing back courage and kindness.`,
+      zh: `花园里的小伙伴们都围了过来，感谢${zhSubject}把温柔和勇气带回这里。`,
+      en: `The garden friends gathered around and thanked ${usesFirstPerson(input) ? "me" : englishMidSentenceSubject} for bringing back courage and kindness.`,
       scene: "garden animals and small friendly creatures celebrating around the child, warm smiles",
     },
     {
       zh:
         input.dedication?.trim() ||
-        `${childName}明白了：只要心里有爱和想象，${themeLabel}就会慢慢开花。`,
+        `${zhSubject}明白了：只要心里有爱和想象，${themeLabel}就会慢慢开花。`,
       en:
         input.dedication?.trim()
           ? "A special note from someone who loves you."
-          : `${englishName} learned that courage and imagination can help every day bloom.`,
+          : `${englishSubject} learned that courage and imagination can help every day bloom.`,
       scene: "back cover feeling, warm garden glow, quiet ending, child holding a flower like a small lantern",
     },
   ];
@@ -280,7 +312,7 @@ type CustomFallbackMoment = {
 function getCustomStoryIdentity(input: StoryInput) {
   const childName = input.childName.trim().replace(/的$/, "") || "孩子";
   const theme = input.customTheme?.trim() || `${childName}的一次特别成长`;
-  let titleTheme = theme;
+  let titleTheme = stripChineseTimePrefix(theme);
 
   if (titleTheme.startsWith(`${childName}的`)) {
     titleTheme = titleTheme.slice(childName.length + 1);
@@ -293,16 +325,24 @@ function getCustomStoryIdentity(input: StoryInput) {
   const shortTheme = Array.from(titleTheme || "特别的一天")
     .slice(0, 24)
     .join("");
-  const englishName = getEnglishCharacterName(childName);
+  const narrativeSubjects = getNarrativeSubjects(input, childName);
+  const firstPersonTitleOwner = childName === "我" || childName === "I"
+    ? "我"
+    : childName;
+  const firstPersonCoverTitle = /^(?:去|到|在|和|跟|与|把|给|让|想|要|开始|参加|体验)/.test(
+    shortTheme,
+  )
+    ? `${firstPersonTitleOwner}的一天：${shortTheme}`
+    : `${firstPersonTitleOwner}的${shortTheme}`;
 
   return {
     childName,
     theme,
-    coverTitle: `${childName}的${shortTheme}`,
-    englishSubject:
-      englishName === "the child" ? "The child" : englishName,
-    englishMidSentenceSubject:
-      englishName === "the child" ? "the child" : englishName,
+    narrationTheme: shortTheme,
+    coverTitle: usesFirstPerson(input)
+      ? firstPersonCoverTitle
+      : `${childName}的${shortTheme}`,
+    ...narrativeSubjects,
   };
 }
 
@@ -351,12 +391,84 @@ function isSoloSleepTheme(theme: string) {
   );
 }
 
-function createSoloSleepFallbackStory(input: StoryInput): {
+function isPoolPlayTheme(theme: string) {
+  return /(泳池|游泳|玩水|戏水|水上乐园)/.test(theme);
+}
+
+function createPoolPlayFallbackStory(input: StoryInput): {
   coverTitle: string;
   pages: StoryPage[];
 } {
   const {
     childName,
+    theme,
+    zhSubject,
+    englishSubject,
+    englishMidSentenceSubject,
+    englishPossessive,
+  } = getCustomStoryIdentity(input);
+  const englishFollowupSubject = usesFirstPerson(input)
+    ? "I"
+    : englishSubject;
+  const englishPossessiveAtSentenceStart = `${englishPossessive[0].toUpperCase()}${englishPossessive.slice(1)}`;
+  const coverTitle = childName === "我" || childName === "I"
+    ? "我的快乐泳池日"
+    : `${childName}的快乐泳池日`;
+  const storyMoments: CustomFallbackMoment[] = [
+    {
+      zh: `今天，${zhSubject}来到小区泳池。蓝蓝的水在阳光下闪着亮光，${zhSubject}一看见水面就开心地笑了。`,
+      en: `Today, ${englishMidSentenceSubject} arrived at the neighborhood pool. The blue water sparkled in the sun, and ${englishFollowupSubject} smiled as soon as ${englishMidSentenceSubject} saw it.`,
+      scene: "opening at a sunny neighborhood swimming pool, child arriving excitedly beside sparkling blue water, pool tiles, small floats and warm summer light",
+    },
+    {
+      zh: `${zhSubject}换好泳衣、戴上泳镜，先坐在池边把脚伸进水里。凉凉的水轻轻晃动，像在和${zhSubject}打招呼。`,
+      en: `${englishSubject} changed into a swimsuit, put on goggles, and dipped both feet into the cool water at the pool edge.`,
+      scene: "same neighborhood pool, child in swimsuit and goggles sitting safely at the edge with feet in the water, small ripples and delighted expression",
+    },
+    {
+      zh: `${zhSubject}扶着池边慢慢走进浅水区，用手轻轻一拍，水花啪嗒一下跳到了脸颊上。`,
+      en: `${englishSubject} stepped into the shallow water while holding the pool edge and made a tiny splash that landed on ${englishPossessive} cheek.`,
+      scene: "child entering the shallow area safely while holding the pool edge, first playful splash touching the cheek, bright clear water",
+    },
+    {
+      zh: `${zhSubject}开始用两只手拍水。一朵、两朵、好多朵小水花飞起来，阳光把它们照得像透明的小星星。`,
+      en: `${englishSubject} patted the water with both hands. Dozens of little splashes glittered like transparent stars in the sunlight.`,
+      scene: "child happily splashing with both hands in the same shallow pool, sparkling droplets frozen in sunlight, energetic full-body action",
+    },
+    {
+      zh: `一只彩色小浮球漂了过来，${zhSubject}轻轻推一下，它就摇摇晃晃地游远了。${zhSubject}笑着追过去，又把它推了回来。`,
+      en: `A colorful floating ball drifted over. ${englishSubject} pushed it gently, followed it through the shallow water, and sent it bobbing back again.`,
+      scene: "playful floating ball game in the same neighborhood pool, child following a colorful ball through shallow water, clear direction and movement",
+    },
+    {
+      zh: `${zhSubject}鼓起腮帮子，把脸靠近水面，试着踢了几下腿。水面咕噜咕噜地响，身后拖出一串快乐的小浪花。`,
+      en: `${englishSubject} leaned close to the water and kicked several times, leaving a cheerful trail of bubbles and tiny waves behind.`,
+      scene: "high point of the pool play, child practicing gentle kicks near the pool edge, bubbles and a joyful trail of small waves, safe supervised setting",
+    },
+    {
+      zh: `玩累了，${zhSubject}裹着毛巾坐在池边休息。头发还湿漉漉的，可一想到刚才的水花，${zhSubject}又忍不住笑起来。`,
+      en: `After playing, ${englishSubject} rested beside the pool wrapped in a towel. ${englishPossessiveAtSentenceStart} hair was still wet, and remembering the splashes made ${usesFirstPerson(input) ? "me" : englishMidSentenceSubject} laugh again.`,
+      scene: "same pool winding down, child wrapped in a soft towel resting at the poolside, wet hair, warm smile, water and toys still visible",
+    },
+    {
+      zh: `回家前，${zhSubject}回头看了看亮晶晶的泳池。今天的快乐像一颗小水珠，被${zhSubject}轻轻装进了心里。`,
+      en: `Before going home, ${englishSubject} looked back at the sparkling pool. ${englishFollowupSubject} carried the happy memory along like one tiny drop of water.`,
+      scene: "quiet closing at the neighborhood pool, child looking back while leaving with towel and small swim bag, sparkling water and golden late-afternoon light",
+    },
+  ];
+
+  return {
+    coverTitle,
+    pages: createCustomFallbackPages(input, storyMoments, theme),
+  };
+}
+
+function createSoloSleepFallbackStory(input: StoryInput): {
+  coverTitle: string;
+  pages: StoryPage[];
+} {
+  const {
+    zhSubject,
     theme,
     coverTitle,
     englishSubject,
@@ -365,43 +477,43 @@ function createSoloSleepFallbackStory(input: StoryInput): {
   const comfortToy = input.favoriteToy?.trim() || "最喜欢的玩偶";
   const storyMoments: CustomFallbackMoment[] = [
     {
-      zh: coverTitle,
-      en: "My First Night Sleeping Alone",
+      zh: `傍晚，${zhSubject}把小床和枕头整理好。今晚，${zhSubject}要第一次一个人在自己的房间睡觉了。`,
+      en: `${englishSubject} prepared the bed and pillow in the evening. Tonight would be the first night sleeping alone in this room.`,
       scene:
-        "cover scene in the child's own cozy bedroom at bedtime, child beside a neatly made bed, warm night-light, favorite plush toy, calm home atmosphere",
+        "opening scene in the child's own cozy bedroom before bedtime, child preparing a neatly made bed and pillow, warm night-light, favorite plush toy, calm home atmosphere",
     },
     {
-      zh: `晚上，${childName}把${comfortToy}放在枕边。想到今晚要第一次一个人在房间睡觉，心里既期待又有一点紧张。`,
+      zh: `晚上，${zhSubject}把${comfortToy}放在枕边。想到今晚要第一次一个人在房间睡觉，心里既期待又有一点紧张。`,
       en: `${englishSubject} placed a favorite toy beside the pillow. Tonight would be the first night sleeping alone, which felt exciting and a little scary.`,
       scene:
         "cozy bedroom before lights out, child arranging a plush toy and blanket on the bed, warm bedside lamp, nervous but hopeful expression",
     },
     {
-      zh: `房间安静下来后，${childName}听见钟表轻轻滴答，也看见月光把窗帘的影子画在墙上。`,
+      zh: `房间安静下来后，${zhSubject}听见钟表轻轻滴答，也看见月光把窗帘的影子画在墙上。`,
       en: `When the room grew quiet, ${englishMidSentenceSubject} heard the clock ticking and watched moonlight draw soft curtain shadows on the wall.`,
       scene:
         "same bedroom after lights out, soft moonlight and small night-light, child listening from bed, familiar clock and curtains visible, safe gentle mood",
     },
     {
-      zh: `${childName}抱紧${comfortToy}，慢慢吸气、慢慢呼气，再把熟悉的房间一样样看清楚：书架、小床、拖鞋，都在原来的地方。`,
+      zh: `${zhSubject}抱紧${comfortToy}，慢慢吸气、慢慢呼气，再把熟悉的房间一样样看清楚：书架、小床、拖鞋，都在原来的地方。`,
       en: `${englishSubject} hugged the toy, breathed in and out slowly, and noticed the familiar bookshelf, bed, and slippers exactly where they belonged.`,
       scene:
         "child sitting in bed hugging a plush toy and breathing slowly, familiar bookshelf bed and slippers clearly visible, reassurance through ordinary bedroom details",
     },
     {
-      zh: `门外传来轻轻一声响，${childName}差点想叫人。仔细一看，原来只是风把门边的小挂饰碰了一下。`,
+      zh: `门外传来轻轻一声响，${zhSubject}差点想叫人。仔细一看，原来只是风把门边的小挂饰碰了一下。`,
       en: `A tiny sound came from the doorway. ${englishSubject} almost called for help, then saw that a breeze had only moved a small hanging decoration.`,
       scene:
         "gentle moment of doubt in the same bedroom, child looking toward a small doorway decoration moved by a breeze, no danger, calm night lighting",
     },
     {
-      zh: `${childName}自己拉好被角，小声告诉自己：“这是我的房间，我很安全，我可以慢慢睡着。”`,
+      zh: `${zhSubject}自己拉好被角，小声告诉自己：“这是我的房间，我很安全，我可以慢慢睡着。”`,
       en: `${englishSubject} tucked in the blanket and whispered, “This is my room. I am safe. I can fall asleep slowly.”`,
       scene:
         "child independently tucking the blanket around the body, relaxed shoulders, plush toy beside the pillow, warm night-light in the same bedroom",
     },
     {
-      zh: `呼吸越来越慢，月光安静地落在枕边。没过多久，${childName}就在自己的小床上安心地睡着了。`,
+      zh: `呼吸越来越慢，月光安静地落在枕边。没过多久，${zhSubject}就在自己的小床上安心地睡着了。`,
       en: `The breathing became slower as moonlight rested beside the pillow. Soon ${englishMidSentenceSubject} was peacefully asleep in the familiar bed.`,
       scene:
         "peaceful sleeping child in the same cozy bedroom, moonlight beside the pillow, favorite toy nearby, safe restful atmosphere",
@@ -409,7 +521,7 @@ function createSoloSleepFallbackStory(input: StoryInput): {
     {
       zh:
         input.dedication?.trim() ||
-        `早晨醒来时，${childName}开心地发现：自己真的完成了第一次一个人在房间睡觉。勇敢，就是紧张的时候也会照顾好自己。`,
+        `早晨醒来时，${zhSubject}开心地发现：自己真的完成了第一次一个人在房间睡觉。勇敢，就是紧张的时候也会照顾好自己。`,
       en: input.dedication?.trim()
         ? "A special note from someone who loves you."
         : `In the morning, ${englishMidSentenceSubject} felt proud after completing the first night alone. Courage meant knowing how to feel safe and care for oneself.`,
@@ -429,8 +541,9 @@ function createGroundedCustomFallbackStory(input: StoryInput): {
   pages: StoryPage[];
 } {
   const {
-    childName,
+    zhSubject,
     theme,
+    narrationTheme,
     coverTitle,
     englishSubject,
     englishMidSentenceSubject,
@@ -440,46 +553,45 @@ function createGroundedCustomFallbackStory(input: StoryInput): {
     return createSoloSleepFallbackStory(input);
   }
 
+  if (isPoolPlayTheme(theme)) {
+    return createPoolPlayFallbackStory(input);
+  }
+
   const storyMoments: CustomFallbackMoment[] = [
     {
-      zh: coverTitle,
-      en: "A Special Story",
-      scene: `cover scene directly depicting this exact real-life premise: ${theme}`,
-    },
-    {
-      zh: `${childName}迎来了这件特别的小事：${theme}。`,
-      en: `${englishSubject} reached the special moment described in the family's story idea.`,
+      zh: `今天，${zhSubject}开始了这件特别的小事：${narrationTheme}。故事就从眼前这个真实的场景展开。`,
+      en: `${englishSubject} began the special moment from the family's story idea in a real, specific place.`,
       scene: `opening scene at the actual place and moment described by this premise: ${theme}`,
     },
     {
-      zh: `${childName}先停下来看看周围，也认真说出了自己的期待和一点点担心。`,
+      zh: `${zhSubject}先停下来看看周围，也认真说出了自己的期待和一点点担心。`,
       en: `${englishSubject} looked around and named both the excitement and the small worry inside.`,
       scene: `same premise and location, child observing concrete surroundings and showing mixed anticipation and concern: ${theme}`,
     },
     {
-      zh: `${childName}把这件事分成一个个小步骤，决定先从最容易的一步开始。`,
+      zh: `${zhSubject}把这件事分成一个个小步骤，决定先从最容易的一步开始。`,
       en: `${englishSubject} divided the moment into small steps and began with the easiest one.`,
       scene: `child taking the first visible practical step within the exact situation: ${theme}`,
     },
     {
-      zh: `做到一半时，事情没有想象中那么顺利。${childName}停了一下，重新想了一个办法。`,
+      zh: `做到一半时，事情没有想象中那么顺利。${zhSubject}停了一下，重新想了一个办法。`,
       en: `Halfway through, the moment became harder than expected. ${englishSubject} paused and tried a new plan.`,
       scene: `gentle realistic obstacle arising inside the same situation, child pausing to think without leaving the original setting: ${theme}`,
     },
     {
-      zh: `${childName}按照自己的节奏继续尝试，终于完成了最重要的那一步。`,
+      zh: `${zhSubject}按照自己的节奏继续尝试，终于完成了最重要的那一步。`,
       en: `${englishSubject} continued at a comfortable pace and completed the most important step.`,
       scene: `child completing the decisive practical action from the original premise: ${theme}`,
     },
     {
-      zh: `当这件事真的完成时，${childName}松了一口气，也为自己的坚持感到开心。`,
+      zh: `当这件事真的完成时，${zhSubject}松了一口气，也为自己的坚持感到开心。`,
       en: `When the moment was complete, ${englishMidSentenceSubject} felt relieved and proud for continuing.`,
       scene: `warm realistic resolution in the same location, child visibly relieved and proud after completing the premise: ${theme}`,
     },
     {
       zh:
         input.dedication?.trim() ||
-        `${childName}明白了：成长不是突然什么都不怕，而是愿意按照自己的节奏，把重要的小事慢慢做好。`,
+        `${zhSubject}明白了：成长不是突然什么都不怕，而是愿意按照自己的节奏，把重要的小事慢慢做好。`,
       en: input.dedication?.trim()
         ? "A special note from someone who loves you."
         : `${englishSubject} learned that growing up can mean completing an important small moment one step at a time.`,
@@ -575,6 +687,11 @@ function createRandomizedMockStory(input: StoryInput): {
   pages: StoryPage[];
 } {
   const childName = input.childName;
+  const {
+    zhSubject,
+    englishSubject,
+    englishObject,
+  } = getNarrativeSubjects(input, childName);
   const englishName = getEnglishCharacterName(childName);
   const themeLabel = getThemeLabel(input);
   const isOneSentenceStory = input.theme === "custom" && Boolean(input.customTheme?.trim());
@@ -589,27 +706,27 @@ function createRandomizedMockStory(input: StoryInput): {
 
   const storyMoments = [
     {
-      zh: isOneSentenceStory ? `${childName}的${shortTheme}` : `${childName}的${direction.titleZh}`,
-      en: isOneSentenceStory ? `${englishName}'s One-Sentence Story` : `${englishName} and ${direction.titleEn}`,
-      scene: `cover art in ${direction.placeEn}, child with ${direction.objectEn}, helper ${direction.helperEn} nearby, clear storybook scene`,
+      zh: `${zhSubject}来到${direction.placeZh}，心里正期待着一件和${themeLabel}有关的新鲜事。`,
+      en: `${englishSubject} arrived at the ${direction.placeEn}, excited to begin a new ${themeLabel} story.`,
+      scene: `opening scene in ${direction.placeEn}, child arriving with anticipation, environment and story goal clearly established`,
     },
     {
       zh: isOneSentenceStory
         ? `故事从这一刻开始：${themeLabel}。`
-        : `${childName}在${direction.placeZh}发现了${direction.objectZh}。`,
+        : `${zhSubject}在${direction.placeZh}发现了${direction.objectZh}。`,
       en: isOneSentenceStory
         ? `The story began with one special moment: ${themeLabel}.`
-        : `${englishName} found ${direction.objectEn} in the ${direction.placeEn}.`,
+        : `${englishSubject} found ${direction.objectEn} in the ${direction.placeEn}.`,
       scene: `opening scene in ${direction.placeEn}, child noticing ${direction.objectEn}, warm morning light`,
     },
     {
       zh: `${direction.helperZh}轻轻出现，让这句话里的小愿望有了继续向前的方向。`,
-      en: `${direction.helperEn} appeared and seemed to ask ${englishName} for help.`,
+      en: `${direction.helperEn} appeared and seemed to ask ${englishObject} for help.`,
       scene: `helper ${direction.helperEn} appears beside child, child surprised and curious, object glowing`,
     },
     {
-      zh: `${childName}有一点紧张，但还是决定先试一试。`,
-      en: `${englishName} felt a little nervous, but decided to try.`,
+      zh: `${zhSubject}有一点紧张，但还是决定先试一试。`,
+      en: `${englishSubject} felt a little nervous, but decided to try.`,
       scene: `child taking a brave first step, full body visible, setting and goal clearly shown`,
     },
     {
@@ -618,8 +735,8 @@ function createRandomizedMockStory(input: StoryInput): {
       scene: `gentle obstacle scene: ${direction.obstacleEn}, child thinking, helper watching`,
     },
     {
-      zh: `${childName}${direction.actionZh}。`,
-      en: `${englishName} ${direction.actionEn}.`,
+      zh: `${zhSubject}${direction.actionZh}。`,
+      en: `${englishSubject} ${direction.actionEn}.`,
       scene: `climax action scene, child actively solving the problem: ${direction.actionEn}`,
     },
     {
@@ -630,11 +747,11 @@ function createRandomizedMockStory(input: StoryInput): {
     {
       zh:
         input.dedication?.trim() ||
-        `${childName}明白了：勇气不是一下子变大胆，而是愿意迈出小小一步。`,
+        `${zhSubject}明白了：勇气不是一下子变大胆，而是愿意迈出小小一步。`,
       en:
         input.dedication?.trim()
           ? "A special note from someone who loves you."
-          : `${englishName} learned that courage can begin with one small step.`,
+          : `${englishSubject} learned that courage can begin with one small step.`,
       scene: `quiet ending scene in ${direction.placeEn}, child calm and content, story resolved`,
     },
   ];
@@ -664,8 +781,8 @@ function createRandomizedMockStory(input: StoryInput): {
 
   return {
     coverTitle: isOneSentenceStory
-      ? `${childName}的${shortTheme}`
-      : `${childName}的${direction.titleZh}`,
+      ? `${usesFirstPerson(input) ? "我的" : `${childName}的`}${shortTheme}`
+      : `${usesFirstPerson(input) ? "我的" : `${childName}的`}${direction.titleZh}`,
     pages,
   };
 }
@@ -678,6 +795,9 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
   const styleSpine = STYLE_SPINES[input.style];
   const familyCharacters = getFamilyCharacters(input);
   const familyCharacterIds = new Set(familyCharacters.map((character) => character.id));
+  const protagonistCharacterId = familyCharacters.find(
+    (character) => character.isProtagonist,
+  )?.id;
   const characterDescription = input.characterDescription?.trim()
     ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same child identity across all 8 illustrations: gender presentation, haircut, hair color, face shape, eye style, outfit colors, body proportions, and rendering style. This is an identity constraint only; vary pose, expression, camera distance, and action to fit each story scene.`
     : `Consistent main character: ${input.childName}, a warm and expressive child hero.`;
@@ -685,7 +805,11 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
   return pages.map((page, index) => {
     const castIds = Array.isArray(page.castIds) ? page.castIds : [];
     const hasInvalidCastId = castIds.some((id) => !familyCharacterIds.has(id));
-    if (hasInvalidCastId || (familyCharacters.length > 0 && castIds.length === 0)) {
+    if (
+      hasInvalidCastId ||
+      (familyCharacters.length > 0 && castIds.length === 0) ||
+      (protagonistCharacterId && !castIds.includes(protagonistCharacterId))
+    ) {
       throw new Error(`Story page ${index + 1} returned invalid castIds`);
     }
     const uniqueCastIds = [...new Set(castIds)];
@@ -711,6 +835,44 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
       imageStatus: "pending" as const,
     };
   });
+}
+
+function isNarrativePerspectiveAligned(input: StoryInput, pages: StoryPage[]) {
+  if (!usesFirstPerson(input)) return true;
+
+  const bodyPages = pages.slice(1);
+  const chineseText = bodyPages.map((page) => page.zhText).join("\n");
+  const englishText = bodyPages.map((page) => page.enText).join("\n");
+  const childName = input.childName.trim();
+
+  if (input.language !== "en") {
+    const forbiddenChinese = ["故事里的孩子", "这个孩子"];
+    if (childName && childName !== "我") forbiddenChinese.push(childName);
+    if (
+      !/(?:^|[^\u4e00-\u9fff])我(?:的|们|在|把|会|想|要|也|先|又|就|能|可|慢|终|感|发|看|听|抱|走|做|学|明|发|来|去|是|很|有|没|正|已|尝|决定|按照|开心|紧张|勇敢)/m.test(
+        chineseText,
+      ) ||
+      forbiddenChinese.some((value) => chineseText.includes(value))
+    ) {
+      return false;
+    }
+  }
+
+  if (input.language !== "zh") {
+    const forbiddenEnglish = ["the child"];
+    if (childName && childName !== "I" && /^[\x00-\x7F]+$/.test(childName)) {
+      forbiddenEnglish.push(childName.toLowerCase());
+    }
+    const normalizedEnglish = englishText.toLowerCase();
+    if (
+      !/\b(?:i|me|my)\b/i.test(englishText) ||
+      forbiddenEnglish.some((value) => normalizedEnglish.includes(value.toLowerCase()))
+    ) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 function extractJson(text: string) {
@@ -785,7 +947,18 @@ async function requestChatCompletionStory({
       });
 
       const text = await response.text();
-      const data = text ? (JSON.parse(text) as ChatCompletionResponse) : {};
+      const contentType = response.headers.get("content-type") || "";
+      if (!/json/i.test(contentType)) {
+        throw new Error(
+          `${provider} returned non-JSON HTTP ${response.status} (${contentType || "unknown content type"}).`,
+        );
+      }
+      let data: ChatCompletionResponse;
+      try {
+        data = text ? (JSON.parse(text) as ChatCompletionResponse) : {};
+      } catch (error) {
+        throw new Error(`${provider} returned invalid JSON: ${error instanceof Error ? error.message : String(error)}`);
+      }
 
       if (!response.ok) {
         throw new Error(
@@ -903,6 +1076,9 @@ export async function generateStoryText(
       ? `Main character appearance lock: ${input.characterDescription.trim()}`
       : `Main character: a child named ${input.childName}`;
     const familyCharacters = getFamilyCharacters(input);
+    const protagonistCharacterId = familyCharacters.find(
+      (character) => character.isProtagonist,
+    )?.id;
     const familyCharacterBible = familyCharacters.length
       ? familyCharacters
           .map(
@@ -942,7 +1118,9 @@ ${storyDirectionRules}
 - If a character reference is provided, treat it as the fixed character bible. Do not change the child's gender presentation, haircut, hair color, face shape, outfit colors, or visual age between pages.
 - Keep one coherent illustration style across the full book: same brush texture, palette, lighting softness, line quality, and level of detail.
 - Respect language mode: ${input.language}
-- If the child's name is not English, do not force it into English grammar. Use "the child" or a natural transliteration in English text.
+- Narrative perspective: ${usesFirstPerson(input) ? "FIRST PERSON" : "third person"}.
+${usesFirstPerson(input) ? `- Write every story sentence from the child protagonist's own point of view. In Chinese narration use “我/我的”; in English narration use “I/me/my”. Do not call the protagonist by name, “孩子”, “故事里的孩子”, or “the child” in page text. The separate coverTitle should ${input.childName === "我" || input.childName === "I" ? "use 我的/My" : `include the confirmed name ${input.childName}, such as “${input.childName}的快乐一天”`}. Illustration prompts may still identify the selected child by name or character reference.` : "- Keep the existing third-person narration style."}
+${usesFirstPerson(input) ? '- Keep the first-person pronouns even when the selected child has a Chinese name.' : '- If the child\'s name is not English, do not force it into English grammar. Use "the child" or a natural transliteration in English text.'}
 - Use concrete sensory detail on every page: visible action, setting, emotion, and one memorable image.
 - Keep the story safe for ages 3-8: no violence, horror, humiliation, weapons, medical distress, or adult themes.
 - Chinese text should be rhythmic and easy for parents to read aloud.
@@ -952,6 +1130,7 @@ ${storyDirectionRules}
 ${STORY_BEATS.map((beat, index) => `  ${index + 1}. ${beat}`).join("\n")}
 - Every illustrationPrompt must describe a concrete storybook scene, not a character portrait.
 - Every page must include a castIds array. Use only ids from the selected family character bible. When family characters are selected, castIds must contain at least one id and must list only the people actually visible in that page's illustration. Do not mention or depict unlisted family members in illustrationPrompt.
+${protagonistCharacterId ? `- The confirmed protagonist id=${protagonistCharacterId} must appear in castIds on every page.` : ""}
 - Every illustrationPrompt must include: setting, props, visible action, emotion, camera distance, composition, style, and "no text in image".
 - Character consistency is important, but the child must change pose, gesture, facial expression, and placement to match the story moment. Do not repeat a front-facing bust portrait. The child should usually take only 25-45% of the image so the scene can tell the story.
 
@@ -971,6 +1150,9 @@ Return only valid JSON:
 
     const user = [
       `Create the storybook for ${input.childName}.`,
+      usesFirstPerson(input)
+        ? "Tell the page narration as the child speaking in first person: 我/我的 and I/me/my."
+        : null,
       `Illustration style: ${input.style}.`,
       `Use creative seed ${creativeSeed}.`,
       isCustomTheme
@@ -1008,6 +1190,15 @@ Return only valid JSON:
         "[story-generator] Model story drifted away from the custom premise; using grounded fallback",
       );
       return createGroundedCustomFallbackStory(input);
+    }
+
+    if (!isNarrativePerspectiveAligned(input, pages)) {
+      console.warn(
+        "[story-generator] Model ignored the requested first-person narration; using first-person fallback",
+      );
+      return isCustomTheme
+        ? createGroundedCustomFallbackStory(input)
+        : createRandomizedMockStory(input);
     }
 
     return {

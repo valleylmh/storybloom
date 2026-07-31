@@ -344,7 +344,10 @@ function getProviderPlan(pageCount: number) {
     return [];
   }
 
-  return Array.from({ length: pageCount }, (_, index) => providers[index % providers.length]);
+  return Array.from(
+    { length: pageCount },
+    (_, index) => providers[index % providers.length],
+  );
 }
 
 export function getProviderForPage(pageNumber: number, pageCount = 8) {
@@ -368,8 +371,8 @@ export function getImageToImageProviderForPage(pageNumber: number, pageCount = 8
   return plan[Math.max(0, pageNumber - 1) % plan.length];
 }
 
-function hasFamilyCharacters(options?: IllustrationOptions) {
-  return Boolean(options?.familyCharacters?.length);
+function hasPhotoFamilyCharacters(options?: IllustrationOptions) {
+  return getPageFamilyCharacters(options).some((character) => character.referenceAssetPath);
 }
 
 function hasCustomCharacterReference(options?: IllustrationOptions) {
@@ -1183,13 +1186,9 @@ async function generateCpaIllustration(
   _seed?: number,
   options?: IllustrationOptions
 ): Promise<string> {
-  const { baseUrl, apiKey, model } = getCpaImageConfig();
-  if (!apiKey || !baseUrl) {
-    throw new Error("CPA image provider requires CPA_API_KEY and CPA_BASE_URL.");
-  }
-  const referenceImage = await getCustomCharacterReferenceImage(options);
-  if (!referenceImage) {
-    throw new Error("CPA Nano Banana 2 requires a custom character reference image.");
+  const referenceImages = await getImageToImageReferenceImages(options);
+  if (referenceImages.length === 0) {
+    throw new Error("CPA Nano Banana 2 requires a character reference image.");
   }
 
   const promptText = truncateForImagePrompt(
@@ -1201,6 +1200,17 @@ async function generateCpaIllustration(
       "Render as a premium children's storybook character with soft rounded materials and polished animation quality. No text, captions, logos, watermark, duplicate people, distorted hands, or extra limbs.",
     ].join(" ")
   );
+  return requestCpaImage(promptText, referenceImages);
+}
+
+async function requestCpaImage(promptText: string, referenceImages: string[]) {
+  const { baseUrl, apiKey, model } = getCpaImageConfig();
+  if (!apiKey || !baseUrl) {
+    throw new Error("CPA image provider requires CPA_API_KEY and CPA_BASE_URL.");
+  }
+  if (referenceImages.length === 0) {
+    throw new Error("CPA Nano Banana 2 requires at least one reference image.");
+  }
   const maxAttempts = Math.max(
     1,
     getPositiveIntegerEnv("CPA_IMAGE_MAX_ATTEMPTS", DEFAULT_CPA_IMAGE_MAX_ATTEMPTS)
@@ -1235,7 +1245,10 @@ async function generateCpaIllustration(
                 role: "user",
                 content: [
                   { type: "text", text: promptText },
-                  { type: "image_url", image_url: { url: referenceImage } },
+                  ...referenceImages.map((referenceImage) => ({
+                    type: "image_url" as const,
+                    image_url: { url: referenceImage },
+                  })),
                 ],
               },
             ],
@@ -1279,6 +1292,13 @@ async function generateCpaIllustration(
   }
 
   throw new Error(lastError);
+}
+
+export async function generateCpaReferenceImage(input: {
+  prompt: string;
+  referenceImages: string[];
+}) {
+  return requestCpaImage(truncateForImagePrompt(input.prompt), input.referenceImages);
 }
 
 async function generateAgnesIllustration(
@@ -1399,11 +1419,11 @@ export async function generateIllustration(
     fallbackProviders?: ImageProvider[];
   }
 ): Promise<GeneratedIllustrationResult> {
-  if (hasFamilyCharacters(options) && !hasProviderKey("agnes")) {
-    throw new Error("Family illustration generation requires AGNES_API_KEY.");
+  if (hasPhotoFamilyCharacters(options) && !hasProviderKey("cpa")) {
+    throw new Error("Photo-backed family illustration generation requires CPA_API_KEY.");
   }
-  const providers = hasFamilyCharacters(options)
-    ? (["agnes"] as ImageProvider[])
+  const providers = hasPhotoFamilyCharacters(options)
+    ? (["cpa"] as ImageProvider[])
     : hasCustomCharacterReference(options)
       ? getImageToImageFallbackOrder(options?.preferredProvider)
       : getProviderFallbackOrder(options?.preferredProvider, options?.fallbackProviders);
@@ -1506,14 +1526,19 @@ export async function generateAllIllustrations(
   familyCharacters?: FamilyCharacterInput[],
   customCharacterReferenceToken?: string
 ): Promise<{ pages: StoryPage[]; mode: GenerationMode }> {
-  const providerPlan = familyCharacters?.length
-    ? Array.from({ length: pages.length }, () => "agnes" as const)
-    : customCharacterReferenceToken
-      ? Array.from({ length: pages.length }, (_, index) =>
-          getImageToImageProviderForPage(index + 1, pages.length)
-        ).filter((provider): provider is ImageProvider => Boolean(provider))
-      : getProviderPlan(pages.length);
-  if (providerPlan.length === 0) {
+  const ordinaryProviderPlan = getProviderPlan(pages.length);
+  const providerPlan = pages.map((page, index): ImageProvider | undefined => {
+    const castIds = new Set(page.castIds || []);
+    const usesFamilyPhoto = (familyCharacters || []).some(
+      (character) => character.referenceAssetPath && castIds.has(character.id),
+    );
+    if (usesFamilyPhoto) return "cpa";
+    if (customCharacterReferenceToken) {
+      return getImageToImageProviderForPage(index + 1, pages.length);
+    }
+    return ordinaryProviderPlan[index];
+  });
+  if (!providerPlan.some(Boolean)) {
     if (!canUseDemoImages()) {
       throw new IllustrationGenerationError(
         "Production must configure a real illustration provider and cannot use demo placeholder images.",
@@ -1633,6 +1658,10 @@ export async function regeneratePage(
   customCharacterReferenceToken?: string
 ): Promise<StoryPage> {
   const seed = newSeed ?? Math.floor(Math.random() * 999999);
+  const castIds = new Set(page.castIds || []);
+  const usesFamilyPhoto = (familyCharacters || []).some(
+    (character) => character.referenceAssetPath && castIds.has(character.id),
+  );
   const generated = await generateIllustration(page.illustrationPrompt, seed, {
     pageNumber: page.page,
     style,
@@ -1640,15 +1669,15 @@ export async function regeneratePage(
     customCharacterReferenceToken,
     familyCharacters,
     castIds: page.castIds,
-    preferredProvider: familyCharacters?.length
-      ? "agnes"
+    preferredProvider: usesFamilyPhoto
+      ? "cpa"
       : customCharacterReferenceToken
         ? getImageToImageProviderForPage(page.page)
         : fallbackProviders?.length
           ? undefined
           : getProviderForPage(page.page),
     fallbackProviders:
-      familyCharacters?.length || customCharacterReferenceToken
+      usesFamilyPhoto || customCharacterReferenceToken
         ? undefined
         : fallbackProviders,
   });
@@ -1658,8 +1687,8 @@ export async function regeneratePage(
     imageStatus: isDemoImageUrl(generated.imageUrl) ? "demo" : "complete",
     imagePlannedProvider:
       page.imagePlannedProvider ||
-      (familyCharacters?.length
-        ? "agnes"
+      (usesFamilyPhoto
+        ? "cpa"
         : customCharacterReferenceToken
           ? getImageToImageProviderForPage(page.page)
           : fallbackProviders?.length

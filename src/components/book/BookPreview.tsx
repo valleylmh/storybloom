@@ -93,7 +93,7 @@ interface Props {
 }
 
 function getPageLabel(page: StoryPage) {
-  return page.page === 1 ? "封面" : `Page ${page.page}`;
+  return `Page ${page.page}`;
 }
 
 function createSampleImageAssets(
