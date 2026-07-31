@@ -557,24 +557,7 @@ function createGeminiFallbackRequest(
 function createTokenPlanFallbackRequest(
   request: ResolvedNarrationRequest,
 ): ResolvedNarrationRequest {
-  const model = getConfiguredGeminiOrEdgeModel();
-  if (model === EDGE_TTS_MODEL) return createEdgeFallbackRequest(request);
-
-  const baseRequest = {
-    storyId: request.storyId,
-    text: request.text,
-    textSource: request.textSource,
-    mode: request.mode,
-    model,
-    voice: getConfiguredVoice(request.mode, model),
-    format: formatForModel(model),
-    sampleRate: DEFAULT_SAMPLE_RATE,
-  } satisfies Omit<ResolvedNarrationRequest, "cacheKey">;
-
-  return {
-    ...baseRequest,
-    cacheKey: makeCacheKey(baseRequest),
-  };
+  return createEdgeFallbackRequest(request);
 }
 
 async function prepareNarrationAudioUncached(

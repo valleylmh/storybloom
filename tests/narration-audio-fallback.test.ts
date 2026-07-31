@@ -73,32 +73,28 @@ afterEach(() => {
 });
 
 describe("narration provider fallback", () => {
-  it("uses Gemini when Token Plan TTS fails", async () => {
+  it("falls directly back to Edge when Token Plan TTS fails", async () => {
     process.env.DASHSCOPE_TOKEN_KEY = "test-token";
     const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
     synthesizeTokenPlanTtsAudioMock.mockRejectedValue(
       new TokenPlanTtsError("Token Plan unavailable", 502),
     );
-    synthesizeGeminiTtsAudioMock.mockResolvedValueOnce({
-      bytes: Buffer.from("RIFF-test-WAVE"),
-      contentType: "audio/wav",
-      usage: { characters: 2 },
-    });
-
     const request = await resolveNarrationRequest({ text: "你好", mode: "zh" });
     const result = await prepareNarrationAudio(request);
 
     expect(request.model).toBe("qwen-audio-3.0-tts-plus");
     expect(synthesizeTokenPlanTtsAudioMock).toHaveBeenCalledOnce();
-    expect(synthesizeGeminiTtsAudioMock).toHaveBeenCalledWith(
-      expect.objectContaining({ model: "gemini-2.5-flash-preview-tts" }),
+    expect(synthesizeGeminiTtsAudioMock).not.toHaveBeenCalled();
+    expect(synthesizeEdgeTtsAudioMock).toHaveBeenCalledWith(
+      expect.objectContaining({ maxAttempts: 1 }),
     );
-    expect(result.model).toBe("gemini-2.5-flash-preview-tts");
+    expect(result.model).toBe("edge-tts");
+    expect(result.format).toBe("mp3");
     expect(warn).toHaveBeenCalledWith(
       "[audio] TTS provider failed; using fallback",
       expect.objectContaining({
         model: "qwen-audio-3.0-tts-plus",
-        fallbackModel: "gemini-2.5-flash-preview-tts",
+        fallbackModel: "edge-tts",
       }),
     );
   });
