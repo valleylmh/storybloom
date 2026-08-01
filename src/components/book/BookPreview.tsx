@@ -8,15 +8,12 @@ import {
   SpinnerGap,
 } from "@phosphor-icons/react";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
+import NarrationToolbar from "@/components/book/NarrationToolbar";
 import ShareLinkPanel from "@/components/book/ShareLinkPanel";
 import SocialShareDialog, {
   type SocialSharePreviewPage,
 } from "@/components/book/SocialShareDialog";
 import StoryVideoPanel from "@/components/video/StoryVideoPanel";
-import {
-  getBrowserNarrationSegments,
-  pickBrowserVoice,
-} from "@/lib/browser-narration";
 import { createZipBlob } from "@/lib/client-zip";
 import {
   createBilingualStoryText,
@@ -35,39 +32,12 @@ import type {
   StoryPage,
 } from "@/types";
 
-type NarrationMode = "zh" | "en" | "zh-en";
-
 const SAMPLE_IMAGE_MODELS: Array<{ id: SampleImageModel; label: string }> = [
   { id: "gpt-image-2", label: "GPT-Image-2" },
   { id: "nano-banana", label: "Nano Banana" },
 ];
 const SAMPLE_IMAGE_MODEL_IDS = SAMPLE_IMAGE_MODELS.map((model) => model.id);
 
-const NARRATION_OPTIONS: {
-  mode: NarrationMode;
-  label: string;
-  generatingLabel: string;
-  playingLabel: string;
-}[] = [
-  {
-    mode: "zh",
-    label: "中文",
-    generatingLabel: "正在准备",
-    playingLabel: "停止",
-  },
-  {
-    mode: "en",
-    label: "English",
-    generatingLabel: "Preparing",
-    playingLabel: "Stop",
-  },
-  {
-    mode: "zh-en",
-    label: "中英文",
-    generatingLabel: "正在准备",
-    playingLabel: "停止",
-  },
-];
 const LIVE_IMAGE_REQUEST_CONCURRENCY = 4;
 const ILLUSTRATION_POLL_INTERVAL_MS = 2500;
 const ILLUSTRATION_STALE_THRESHOLD_MS = 3 * 60 * 1000;
@@ -192,17 +162,6 @@ export default function BookPreview({
 }: Props) {
   const [pages, setPages] = useState(result.pages);
   const [nowMs, setNowMs] = useState(() => Date.now());
-  const [activeNarration, setActiveNarration] = useState<NarrationMode | null>(
-    null,
-  );
-  const [audioStatus, setAudioStatus] = useState<
-    "idle" | "generating" | "playing"
-  >("idle");
-  const [audioError, setAudioError] = useState<string | null>(null);
-  const [audioMeta, setAudioMeta] = useState<string | null>(null);
-  const [narrationPlaybackKind, setNarrationPlaybackKind] = useState<
-    "browser" | "audio" | null
-  >(null);
   const [imageProgress, setImageProgress] = useState({
     complete: 0,
     total: result.pages.length,
@@ -224,12 +183,6 @@ export default function BookPreview({
   >(null);
   const [activeSampleImageModel, setActiveSampleImageModel] =
     useState<SampleImageModel>("gpt-image-2");
-  const narrationRunRef = useRef(0);
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const browserNarrationCancelRef = useRef<(() => void) | null>(null);
-  const staticNarrationAvailabilityRef = useRef(
-    new Map<string, Promise<boolean>>(),
-  );
   const activeStoryIdRef = useRef(result.storyId);
   const requestedImagePagesRef = useRef(new Set<number>());
   const activeImageRequestsRef = useRef(new Set<number>());
@@ -273,40 +226,6 @@ export default function BookPreview({
     setSocialShareDialogOpen(false);
   }
 
-  function stopNarrationPlayback() {
-    browserNarrationCancelRef.current?.();
-    browserNarrationCancelRef.current = null;
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
-
-    const audio = audioRef.current;
-    if (!audio) {
-      return;
-    }
-
-    audio.pause();
-    audio.onended = null;
-    audio.onplay = null;
-    audio.onpause = null;
-    audio.onerror = null;
-    audio.removeAttribute("src");
-    audio.load();
-  }
-
-  function hasStaticNarrationAsset(url: string) {
-    const existing = staticNarrationAvailabilityRef.current.get(url);
-    if (existing) {
-      return existing;
-    }
-
-    const request = fetch(url, { method: "HEAD", cache: "no-store" })
-      .then((response) => response.ok)
-      .catch(() => false);
-    staticNarrationAvailabilityRef.current.set(url, request);
-    return request;
-  }
-
   function getSocialShareSourceKey() {
     return [
       result.storyId,
@@ -332,8 +251,6 @@ export default function BookPreview({
       socialSharePreviewUrlsRef.current.forEach((url) => {
         URL.revokeObjectURL(url);
       });
-      narrationRunRef.current += 1;
-      stopNarrationPlayback();
     };
   }, []);
 
@@ -518,17 +435,10 @@ export default function BookPreview({
 
   useEffect(() => {
     if (activeStoryIdRef.current !== result.storyId) {
-      narrationRunRef.current += 1;
-      stopNarrationPlayback();
       activeStoryIdRef.current = result.storyId;
       requestedImagePagesRef.current.clear();
       activeImageRequestsRef.current.clear();
       freeFallbackRequestsRef.current.clear();
-      setActiveNarration(null);
-      setAudioStatus("idle");
-      setAudioError(null);
-      setAudioMeta(null);
-      setNarrationPlaybackKind(null);
     }
 
     setPages(result.pages);
@@ -837,62 +747,6 @@ export default function BookPreview({
     });
   }, [hasPendingImages, canRegenerateImages, pages, result.storyId]);
 
-  function getNarrationOption(mode: NarrationMode) {
-    return (
-      NARRATION_OPTIONS.find((item) => item.mode === mode) ||
-      NARRATION_OPTIONS[0]
-    );
-  }
-
-  function speakBrowserSegment(
-    segment: ReturnType<typeof getBrowserNarrationSegments>[number],
-  ) {
-    return new Promise<void>((resolve, reject) => {
-      if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        reject(new Error("当前浏览器不支持本机语音朗读。"));
-        return;
-      }
-
-      const utterance = new SpeechSynthesisUtterance(segment.text);
-      utterance.lang = segment.lang;
-      utterance.rate = segment.lang === "zh-CN" ? 0.88 : 0.92;
-      utterance.pitch = 1;
-      utterance.voice = pickBrowserVoice(
-        window.speechSynthesis.getVoices(),
-        segment.lang,
-      );
-
-      let settled = false;
-      const finish = () => {
-        if (settled) return;
-        settled = true;
-        if (browserNarrationCancelRef.current === finish) {
-          browserNarrationCancelRef.current = null;
-        }
-        resolve();
-      };
-      const fail = (message: string) => {
-        if (settled) return;
-        settled = true;
-        if (browserNarrationCancelRef.current === finish) {
-          browserNarrationCancelRef.current = null;
-        }
-        reject(new Error(message));
-      };
-
-      browserNarrationCancelRef.current = finish;
-      utterance.onend = finish;
-      utterance.onerror = (event) => {
-        if (event.error === "canceled" || event.error === "interrupted") {
-          finish();
-          return;
-        }
-        fail("本机语音朗读失败，请检查浏览器语音设置。");
-      };
-      window.speechSynthesis.speak(utterance);
-    });
-  }
-
   async function handleRetryPage(pageNumber: number) {
     if (freeFallbackRequestsRef.current.has(pageNumber)) {
       return;
@@ -949,126 +803,6 @@ export default function BookPreview({
         setRetryingPages((current) =>
           current.filter((page) => page !== pageNumber),
         );
-      }
-    }
-  }
-
-  async function handleNarration(mode: NarrationMode) {
-    const segments = getBrowserNarrationSegments(pages, mode);
-    if (!segments.length) {
-      setAudioError("当前语言模式没有可朗读文本。");
-      return;
-    }
-
-    narrationRunRef.current += 1;
-    const runId = narrationRunRef.current;
-    const shouldStop =
-      activeNarration === mode &&
-      (audioStatus === "generating" || audioStatus === "playing");
-    stopNarrationPlayback();
-    if (shouldStop) {
-      setActiveNarration(null);
-      setAudioStatus("idle");
-      setAudioMeta(null);
-      return;
-    }
-
-    setAudioError(null);
-    setAudioMeta(null);
-    setActiveNarration(mode);
-    setAudioStatus("generating");
-
-    try {
-      const staticNarrationUrl =
-        mode === "zh" ? result.narrationAudio?.url : undefined;
-      const hasStaticNarration =
-        Boolean(staticNarrationUrl) &&
-        (await hasStaticNarrationAsset(staticNarrationUrl || ""));
-
-      if (
-        narrationRunRef.current !== runId ||
-        activeStoryIdRef.current !== result.storyId
-      ) {
-        return;
-      }
-
-      if (hasStaticNarration && staticNarrationUrl) {
-        const audio = audioRef.current;
-        if (!audio) {
-          throw new Error("浏览器音频播放器未准备好。");
-        }
-
-        setNarrationPlaybackKind("audio");
-        setAudioMeta("精选绘本预生成音频 · 本次不产生 TTS 费用");
-        audio.src = staticNarrationUrl;
-        audio.load();
-        audio.onplay = () => {
-          if (narrationRunRef.current === runId) {
-            setActiveNarration(mode);
-            setAudioStatus("playing");
-          }
-        };
-        audio.onpause = () => {
-          if (narrationRunRef.current === runId && !audio.ended) {
-            setActiveNarration(null);
-            setAudioStatus("idle");
-          }
-        };
-        audio.onended = () => {
-          if (narrationRunRef.current === runId) {
-            setActiveNarration(null);
-            setAudioStatus("idle");
-          }
-        };
-        audio.onerror = () => {
-          if (narrationRunRef.current === runId) {
-            setAudioError("音频加载失败，请重试。");
-            setActiveNarration(null);
-            setAudioStatus("idle");
-          }
-        };
-
-        try {
-          await audio.play();
-        } catch {
-          setActiveNarration(null);
-          setAudioStatus("idle");
-          setAudioMeta("精选音频已准备好，请点击播放器开始");
-        }
-        return;
-      }
-
-      if (!("speechSynthesis" in window)) {
-        throw new Error("当前浏览器不支持本机语音朗读。");
-      }
-
-      setNarrationPlaybackKind("browser");
-      setAudioMeta("本机系统语音 · 不调用付费 TTS");
-      setAudioStatus("playing");
-      for (const segment of segments) {
-        if (
-          narrationRunRef.current !== runId ||
-          activeStoryIdRef.current !== result.storyId
-        ) {
-          return;
-        }
-        await speakBrowserSegment(segment);
-      }
-
-      if (narrationRunRef.current === runId) {
-        setActiveNarration(null);
-        setAudioStatus("idle");
-      }
-    } catch (error) {
-      if (narrationRunRef.current === runId) {
-        if (error instanceof DOMException && error.name === "AbortError") {
-          return;
-        }
-        setAudioError(
-          error instanceof Error ? error.message : "音频生成失败。",
-        );
-        setActiveNarration(null);
-        setAudioStatus("idle");
       }
     }
   }
@@ -1243,40 +977,11 @@ export default function BookPreview({
       </section>
 
       <section className="storybook-tools" aria-label="绘本工具">
-        <div className="tool-panel">
-          <div>
-            <h3>朗读</h3>
-            <p>
-              使用当前设备的系统语音朗读，不调用付费 TTS。精选绘本中文会复用已有音频。
-            </p>
-          </div>
-          <div className="segmented-buttons">
-            {NARRATION_OPTIONS.map((item) => (
-              <button
-                key={item.mode}
-                type="button"
-                className={`secondary-btn ${activeNarration === item.mode ? "secondary-btn-active" : ""}`}
-                onClick={() => handleNarration(item.mode)}
-                disabled={audioStatus === "generating"}
-              >
-                {activeNarration === item.mode
-                  ? audioStatus === "generating"
-                    ? getNarrationOption(item.mode).generatingLabel
-                    : getNarrationOption(item.mode).playingLabel
-                  : item.label}
-              </button>
-            ))}
-          </div>
-          <audio
-            ref={audioRef}
-            controls
-            preload="metadata"
-            className="audio-player"
-            hidden={narrationPlaybackKind !== "audio"}
-          />
-          {audioMeta ? <p className="tool-meta">{audioMeta}</p> : null}
-          {audioError ? <div className="tool-error">{audioError}</div> : null}
-        </div>
+        <NarrationToolbar
+          pages={pages}
+          storyKey={result.storyId}
+          staticChineseAudioUrl={result.narrationAudio?.url}
+        />
       </section>
 
       {shareDialogOpen && shareImageUrl ? (
