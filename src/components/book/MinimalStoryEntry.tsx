@@ -10,6 +10,17 @@ import {
   normalizeCharacterName,
 } from "@/lib/story-input";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import {
+  blobToDataUrl,
+  imageUrlToDataUrl,
+  isSupportedPrivateImage,
+  preparePrivateImage,
+} from "@/lib/client-images";
+import {
+  isValidGrowthDate,
+  type GrowthRecordDraft,
+  type GrowthRecordPhoto,
+} from "@/lib/growth-records";
 
 type AppLocale = "zh" | "en";
 
@@ -55,26 +66,21 @@ const DAILY_IDEA_QUERY_KEY = "idea";
 const PENDING_IDENTITY_KEY = "storybloom:minimal-identity-draft";
 
 async function cleanFamilyPhoto(file: File): Promise<Blob> {
-  if (
-    !["image/jpeg", "image/png", "image/webp"].includes(file.type) ||
-    file.size > 8 * 1024 * 1024
-  ) {
+  try {
+    return await preparePrivateImage(file);
+  } catch {
     throw new Error("请选择 8MB 内的 JPG、PNG 或 WebP 图片");
   }
-  const bitmap = await createImageBitmap(file);
-  const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
-  const canvas = document.createElement("canvas");
-  canvas.width = Math.round(bitmap.width * scale);
-  canvas.height = Math.round(bitmap.height * scale);
-  canvas.getContext("2d")?.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-  bitmap.close();
-  return new Promise((resolve, reject) =>
-    canvas.toBlob(
-      (blob) => (blob ? resolve(blob) : reject(new Error("照片处理失败"))),
-      "image/webp",
-      0.88,
-    ),
-  );
+}
+
+function getLocalDateValue() {
+  const now = new Date();
+  const offset = now.getTimezoneOffset() * 60_000;
+  return new Date(now.getTime() - offset).toISOString().slice(0, 10);
+}
+
+function isChildRelationship(relationship: string) {
+  return relationship === "孩子" || relationship === "Child";
 }
 
 async function fetchFamilyChoices(client: SupabaseClient, userId: string) {
@@ -147,6 +153,27 @@ const COPY = {
     previewTitle: "确认绘本形象",
     previewUse: "使用这个形象生成绘本",
     previewRetry: "重新生成形象",
+    growthTool: "成长记录",
+    growthPageTitle: "把今天的小成长，写进故事里",
+    growthTitle: "把这件小事放进孩子的成长书架",
+    growthHint: "文字、现场照片和生成后的绘本场景会一起保存在本机。",
+    growthEnable: "保存为成长记录",
+    growthChild: "记录主角",
+    growthChildPending: "生成时确认孩子姓名",
+    growthPhotos: "成长现场照片",
+    growthPhotoHint: "可选，最多 4 张。照片只用于记录，不会发送给模型。",
+    growthPhotoAction: "添加照片",
+    growthPhotoProcessing: "正在处理照片…",
+    growthPhotoInvalid: "请选择 8MB 内的 JPG、PNG 或 WebP 图片，最多 4 张。",
+    growthDate: "发生时间",
+    growthNote: "家长备注（选填）",
+    growthNotePlaceholder: "例如：他收好以后特别骄傲",
+    growthPrivacy: "当前版本仅保存在本机，可随时查看、修改或删除。",
+    growthLibrary: "查看成长书架",
+    growthNameRequired: "保存成长记录前，请确认孩子的姓名。",
+    growthChildRequired: "成长记录的主角需要选择为孩子。",
+    growthDateRequired: "请选择这件事发生的日期。",
+    growthAction: "生成并记录",
   },
   en: {
     prompts: [
@@ -192,6 +219,27 @@ const COPY = {
     previewTitle: "Confirm the storybook character",
     previewUse: "Use this character",
     previewRetry: "Generate another version",
+    growthTool: "Growth record",
+    growthPageTitle: "Turn today's little milestone into a story",
+    growthTitle: "Keep this moment in the child's growth shelf",
+    growthHint: "The note, photos, and generated storybook scene stay together on this device.",
+    growthEnable: "Save as a growth record",
+    growthChild: "Child",
+    growthChildPending: "Confirm the child's name before generation",
+    growthPhotos: "Moment photos",
+    growthPhotoHint: "Optional, up to 4. Photos are saved as records and are not sent to the model.",
+    growthPhotoAction: "Add photos",
+    growthPhotoProcessing: "Processing photos…",
+    growthPhotoInvalid: "Choose up to 4 JPG, PNG, or WebP images under 8 MB each.",
+    growthDate: "Date",
+    growthNote: "Parent note (optional)",
+    growthNotePlaceholder: "Example: He was very proud after finishing it",
+    growthPrivacy: "This version stays on this device and can be edited or deleted anytime.",
+    growthLibrary: "Open growth shelf",
+    growthNameRequired: "Confirm the child's name before saving a growth record.",
+    growthChildRequired: "Choose a child as the main character for a growth record.",
+    growthDateRequired: "Choose the date when this moment happened.",
+    growthAction: "Create and save",
   },
 } as const;
 
@@ -220,6 +268,12 @@ export default function MinimalStoryEntry({
   const [selectedFamilyIds, setSelectedFamilyIds] = useState<string[]>([]);
   const [familyAccessToken, setFamilyAccessToken] = useState("");
   const [familyUserId, setFamilyUserId] = useState("");
+  const [growthEnabled, setGrowthEnabled] = useState(false);
+  const [growthOccurredOn, setGrowthOccurredOn] = useState(getLocalDateValue);
+  const [growthNote, setGrowthNote] = useState("");
+  const [growthPhotos, setGrowthPhotos] = useState<GrowthRecordPhoto[]>([]);
+  const [growthPhotoBusy, setGrowthPhotoBusy] = useState(false);
+  const [growthError, setGrowthError] = useState("");
   const [identityOpen, setIdentityOpen] = useState(false);
   const [identityPhase, setIdentityPhase] = useState<
     "confirm" | "generating" | "preview"
@@ -463,6 +517,74 @@ export default function MinimalStoryEntry({
     setIdentityPhase("preview");
   }
 
+  async function handleGrowthPhotoFiles(files: File[]) {
+    setGrowthError("");
+    if (files.length === 0) return;
+    if (
+      growthPhotos.length + files.length > 4 ||
+      files.some((file) => !isSupportedPrivateImage(file))
+    ) {
+      setGrowthError(text.growthPhotoInvalid);
+      return;
+    }
+
+    setGrowthPhotoBusy(true);
+    try {
+      const photos = await Promise.all(
+        files.map(async (file) => {
+          const blob = await preparePrivateImage(file, {
+            maxDimension: 1400,
+            quality: 0.84,
+          });
+          return {
+            id: crypto.randomUUID(),
+            name: file.name,
+            dataUrl: await blobToDataUrl(blob),
+          } satisfies GrowthRecordPhoto;
+        }),
+      );
+      setGrowthPhotos((current) => [...current, ...photos].slice(0, 4));
+    } catch {
+      setGrowthError(text.growthPhotoInvalid);
+    } finally {
+      setGrowthPhotoBusy(false);
+    }
+  }
+
+  async function buildGrowthRecordDraft(
+    storyIdea: string,
+    childName: string,
+    protagonist?: FamilyChoice,
+  ): Promise<GrowthRecordDraft | undefined> {
+    if (!growthEnabled) return undefined;
+
+    const normalizedName = normalizeCharacterName(childName);
+    if (!normalizedName || normalizedName === "我" || normalizedName === "i") {
+      throw new Error(text.growthNameRequired);
+    }
+    if (protagonist && !isChildRelationship(protagonist.relationship)) {
+      throw new Error(text.growthChildRequired);
+    }
+    if (!isValidGrowthDate(growthOccurredOn)) {
+      throw new Error(text.growthDateRequired);
+    }
+
+    const imagePath = protagonist?.canonical_photo_path || protagonist?.source_photo_path;
+    const avatarUrl = imagePath ? familyUrls[imagePath] : identityPreviewUrl || undefined;
+
+    return {
+      version: 1,
+      childKey: protagonist?.id || `name:${normalizedName}`,
+      childName: childName.trim(),
+      childCharacterId: protagonist?.id,
+      childAvatarDataUrl: await imageUrlToDataUrl(avatarUrl),
+      occurredOn: growthOccurredOn,
+      note: growthNote.trim(),
+      idea: storyIdea,
+      photos: growthPhotos,
+    };
+  }
+
   async function submitStory(
     storyIdea: string,
     childName: string,
@@ -480,6 +602,17 @@ export default function MinimalStoryEntry({
     const nextFamilyIds = protagonistId
       ? [protagonistId, ...selectedFamilyIds.filter((id) => id !== protagonistId)].slice(0, 4)
       : selectedFamilyIds.filter((id) => id !== identitySelectedId);
+    let growthRecordDraft: GrowthRecordDraft | undefined;
+    try {
+      growthRecordDraft = await buildGrowthRecordDraft(storyIdea, childName, protagonist);
+    } catch (error) {
+      const nextMessage =
+        error instanceof Error ? error.message : text.growthNameRequired;
+      setGrowthError(nextMessage);
+      if (identityOpen) setIdentityError(nextMessage);
+      else setMessage(nextMessage);
+      return;
+    }
     setSubmitting(true);
     setMessage(null);
     try {
@@ -495,6 +628,7 @@ export default function MinimalStoryEntry({
         familyCharacterIds: nextFamilyIds.length > 0 ? nextFamilyIds : undefined,
         supabaseAccessToken: familyAccessToken || undefined,
         turnstileToken: turnstileEnabled ? turnstileToken : undefined,
+        growthRecordDraft,
       });
       setIdentityOpen(false);
       setIdentityPhase("confirm");
@@ -513,11 +647,15 @@ export default function MinimalStoryEntry({
     candidateName: string | null,
     matchingCharacterIds: string[],
   ) {
+    const matchedChoice =
+      matchingCharacterIds.length === 1
+        ? familyChoices.find((choice) => choice.id === matchingCharacterIds[0])
+        : undefined;
     setPendingIdea(storyIdea);
     setIdentityName(candidateName || "");
     setIdentityMatchingIds(matchingCharacterIds);
     setIdentitySelectedId(matchingCharacterIds.length === 1 ? matchingCharacterIds[0] : "");
-    setIdentityRelationship("孩子");
+    setIdentityRelationship(matchedChoice?.relationship || (locale === "zh" ? "孩子" : "Child"));
     setIdentitySave(Boolean(familyUserId));
     setIdentityFile(undefined);
     setIdentityCartoonize(true);
@@ -543,7 +681,7 @@ export default function MinimalStoryEntry({
 
     const explicitlySelectedChild = familyChoices.find(
       (choice) =>
-        selectedFamilyIds.includes(choice.id) && choice.relationship === "孩子",
+        selectedFamilyIds.includes(choice.id) && isChildRelationship(choice.relationship),
     );
     if (explicitlySelectedChild) {
       if (!explicitlySelectedChild.source_photo_path || explicitlySelectedChild.canonical_photo_path) {
@@ -577,11 +715,19 @@ export default function MinimalStoryEntry({
     const trimmedName = identityName.trim();
     const selected = familyChoices.find((choice) => choice.id === identitySelectedId);
     if (!trimmedName && !selected) {
+      if (growthEnabled) {
+        setIdentityError(text.growthNameRequired);
+        return;
+      }
       await submitStory(pendingIdea, locale === "zh" ? "我" : "I");
       return;
     }
     if (!trimmedName) {
       setIdentityError("请确认人物名称，或选择继续用“我”叙述。");
+      return;
+    }
+    if (growthEnabled && !isChildRelationship(identityRelationship)) {
+      setIdentityError(text.growthChildRequired);
       return;
     }
 
@@ -670,6 +816,15 @@ export default function MinimalStoryEntry({
         : subscriptionStatus === "error"
           ? text.subscribeError
           : null;
+  const selectedGrowthChild = familyChoices.find(
+    (choice) => selectedFamilyIds.includes(choice.id) && isChildRelationship(choice.relationship),
+  );
+  const selectedGrowthChildPath = selectedGrowthChild
+    ? selectedGrowthChild.canonical_photo_path || selectedGrowthChild.source_photo_path
+    : null;
+  const analyzedGrowthName = idea.trim()
+    ? analyzeStoryProtagonist(idea.trim(), locale).candidateName
+    : null;
 
   return (
     <section className="minimal-entry" aria-labelledby="minimal-entry-title">
@@ -690,7 +845,9 @@ export default function MinimalStoryEntry({
       <div className="rolling-prompt" aria-live="polite">
         <span key={`${locale}-${promptIndex}`}>{text.prompts[promptIndex]}</span>
       </div>
-      <h1 id="minimal-entry-title">{text.title}</h1>
+      <h1 id="minimal-entry-title">
+        {growthEnabled ? text.growthPageTitle : text.title}
+      </h1>
 
       <form className="story-search" onSubmit={handleGenerate}>
         <span className="story-search-icon" aria-hidden="true">⌁</span>
@@ -704,12 +861,16 @@ export default function MinimalStoryEntry({
         />
         <button
           type="submit"
-          disabled={submitting || remainingFreeGenerations <= 0}
-          aria-label={text.action}
+          disabled={submitting || growthPhotoBusy || remainingFreeGenerations <= 0}
+          aria-label={growthEnabled ? text.growthAction : text.action}
         >
           {submitting ? <span className="story-search-loader" /> : <span aria-hidden="true">→</span>}
           <span className="story-search-action-label">
-            {submitting ? text.generating : text.action}
+            {submitting
+              ? text.generating
+              : growthEnabled
+                ? text.growthAction
+                : text.action}
           </span>
         </button>
       </form>
@@ -764,6 +925,135 @@ export default function MinimalStoryEntry({
                   );
                 })}
               </div>
+            ) : null}
+          </div>
+        </details>
+
+        <span className="minimal-tools-separator" aria-hidden="true" />
+
+        <details className="minimal-tool minimal-growth-tool" name="minimal-tools">
+          <summary>
+            {text.growthTool}
+            {growthEnabled ? <em>✓</em> : null}
+          </summary>
+          <div className="minimal-tool-panel minimal-growth-panel">
+            <div className="minimal-growth-heading">
+              <div>
+                <strong>{text.growthTitle}</strong>
+                <span>{text.growthHint}</span>
+              </div>
+              <label className="minimal-growth-switch">
+                <input
+                  type="checkbox"
+                  checked={growthEnabled}
+                  onChange={(event) => {
+                    setGrowthEnabled(event.target.checked);
+                    setGrowthError("");
+                  }}
+                />
+                <span>{text.growthEnable}</span>
+              </label>
+            </div>
+
+            {growthEnabled ? (
+              <>
+                <div className="minimal-growth-child">
+                  {selectedGrowthChildPath && familyUrls[selectedGrowthChildPath] ? (
+                    <img src={familyUrls[selectedGrowthChildPath]} alt="" />
+                  ) : (
+                    <span aria-hidden="true">
+                      {(selectedGrowthChild?.display_name || analyzedGrowthName || "?").slice(0, 1)}
+                    </span>
+                  )}
+                  <div>
+                    <small>{text.growthChild}</small>
+                    <strong>
+                      {selectedGrowthChild?.display_name ||
+                        analyzedGrowthName ||
+                        text.growthChildPending}
+                    </strong>
+                  </div>
+                </div>
+
+                <div className="minimal-growth-photo-section">
+                  <div className="minimal-growth-photo-copy">
+                    <strong>{text.growthPhotos}</strong>
+                    <span>{text.growthPhotoHint}</span>
+                  </div>
+                  <div className="minimal-growth-photo-grid">
+                    {growthPhotos.map((photo) => (
+                      <div className="minimal-growth-photo-preview" key={photo.id}>
+                        <img src={photo.dataUrl} alt={photo.name} />
+                        <button
+                          type="button"
+                          aria-label={locale === "zh" ? `移除 ${photo.name}` : `Remove ${photo.name}`}
+                          onClick={() => {
+                            setGrowthError("");
+                            setGrowthPhotos((current) =>
+                              current.filter((item) => item.id !== photo.id),
+                            );
+                          }}
+                        >
+                          ×
+                        </button>
+                      </div>
+                    ))}
+                    {growthPhotos.length < 4 ? (
+                      <label className="minimal-growth-photo-upload">
+                        <input
+                          type="file"
+                          accept="image/jpeg,image/png,image/webp"
+                          multiple
+                          disabled={growthPhotoBusy}
+                          onChange={(event) => {
+                            const files = Array.from(event.currentTarget.files || []);
+                            event.currentTarget.value = "";
+                            void handleGrowthPhotoFiles(files);
+                          }}
+                        />
+                        <span aria-hidden="true">＋</span>
+                        <strong>
+                          {growthPhotoBusy
+                            ? text.growthPhotoProcessing
+                            : text.growthPhotoAction}
+                        </strong>
+                      </label>
+                    ) : null}
+                  </div>
+                </div>
+
+                <div className="minimal-growth-fields">
+                  <label>
+                    <span>{text.growthDate}</span>
+                    <input
+                      type="date"
+                      required
+                      value={growthOccurredOn}
+                      onChange={(event) => {
+                        setGrowthOccurredOn(event.target.value);
+                        setGrowthError("");
+                      }}
+                    />
+                  </label>
+                  <label>
+                    <span>{text.growthNote}</span>
+                    <input
+                      maxLength={200}
+                      value={growthNote}
+                      onChange={(event) => setGrowthNote(event.target.value)}
+                      placeholder={text.growthNotePlaceholder}
+                    />
+                  </label>
+                </div>
+
+                {growthError ? (
+                  <p className="minimal-growth-error" role="alert">{growthError}</p>
+                ) : null}
+                <div className="minimal-growth-footer">
+                  <span>{text.growthPrivacy}</span>
+                  <Link href="/growth">{text.growthLibrary}</Link>
+                </div>
+              </>
             ) : null}
           </div>
         </details>
@@ -1025,7 +1315,13 @@ export default function MinimalStoryEntry({
                     type="button"
                     className="secondary"
                     disabled={submitting}
-                    onClick={() => void submitStory(pendingIdea, locale === "zh" ? "我" : "I")}
+                    onClick={() => {
+                      if (growthEnabled) {
+                        setIdentityError(text.growthNameRequired);
+                        return;
+                      }
+                      void submitStory(pendingIdea, locale === "zh" ? "我" : "I");
+                    }}
                   >
                     {text.useMe}
                   </button>

@@ -11,6 +11,11 @@ import {
   upsertHistory,
   type StoryHistoryRecord,
 } from "@/lib/client-history";
+import {
+  isGrowthRecordDraft,
+  updateGrowthRecordStory,
+  upsertGrowthRecord,
+} from "@/lib/growth-records";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import { SAMPLE_BOOKS } from "@/lib/sample-books";
 import type { GenerateErrorResponse, GenerateResponse } from "@/types";
@@ -431,6 +436,11 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [localFreeUsage, setLocalFreeUsage] = useState(0);
   const [historyRecords, setHistoryRecords] = useState<StoryHistoryRecord[]>([]);
+  const [growthSavedChild, setGrowthSavedChild] = useState<{
+    childKey: string;
+    childName: string;
+  } | null>(null);
+  const [growthSaveError, setGrowthSaveError] = useState<string | null>(null);
   const sampleModalOpenRef = useRef(false);
   const historyPreviewOpenRef = useRef(false);
   const generationInFlightRef = useRef(false);
@@ -627,6 +637,8 @@ export default function Home() {
     setElapsedSeconds(0);
     setWaitingTipIndex(0);
     setError(null);
+    setGrowthSavedChild(null);
+    setGrowthSaveError(null);
 
     const progressInterval = window.setInterval(() => {
       setProgress((current) => {
@@ -649,7 +661,7 @@ export default function Home() {
 
     try {
       const browserFingerprint = await getBrowserFingerprint();
-      const { supabaseAccessToken, ...generationData } = formData;
+      const { supabaseAccessToken, growthRecordDraft, ...generationData } = formData;
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
@@ -684,6 +696,26 @@ export default function Home() {
         .catch((historyError) => {
           console.warn("[story-history] failed to save generated story", historyError);
         });
+
+      if (isGrowthRecordDraft(growthRecordDraft)) {
+        try {
+          const growthRecord = await upsertGrowthRecord(
+            generatedResult,
+            growthRecordDraft,
+          );
+          setGrowthSavedChild({
+            childKey: growthRecord.childKey,
+            childName: growthRecord.childName,
+          });
+        } catch (growthError) {
+          console.warn("[growth-record] failed to save generated story", growthError);
+          setGrowthSaveError(
+            locale === "zh"
+              ? "绘本已经生成，但成长记录未能保存到本机。"
+              : "The storybook was created, but the growth record could not be saved on this device.",
+          );
+        }
+      }
 
       if (generationViewActiveRef.current) {
         historyPreviewOpenRef.current = true;
@@ -768,6 +800,7 @@ export default function Home() {
       current?.storyId === nextResult.storyId ? nextResult : current
     );
     void upsertHistory(nextResult).then(setHistoryRecords);
+    void updateGrowthRecordStory(nextResult);
   }
 
   function getHistoryStatusLabel(record: StoryHistoryRecord) {
@@ -1058,14 +1091,42 @@ export default function Home() {
         ) : null}
 
         {step === "preview" && result ? (
-          <BookPreview
-            result={result}
-            variant="own"
-            onResultUpdate={handleResultUpdate}
-            sampleBooks={SAMPLE_BOOKS}
-            onOpenSample={(sample) => openSampleBook(sample, "preview")}
-            onBack={handlePreviewBack}
-          />
+          <>
+            {growthSavedChild ? (
+              <div className="growth-save-banner" role="status">
+                <div>
+                  <strong>
+                    {locale === "zh"
+                      ? `已加入${growthSavedChild.childName}的成长记录`
+                      : `Saved to ${growthSavedChild.childName}'s growth record`}
+                  </strong>
+                  <span>
+                    {locale === "zh"
+                      ? "插图完成后会继续自动更新这条记录。"
+                      : "This record will keep updating as the illustrations finish."}
+                  </span>
+                </div>
+                <Link
+                  href={`/growth/${encodeURIComponent(growthSavedChild.childKey)}`}
+                >
+                  {locale === "zh" ? "查看时间轴" : "Open timeline"}
+                </Link>
+              </div>
+            ) : null}
+            {growthSaveError ? (
+              <div className="growth-save-banner growth-save-banner-error" role="alert">
+                <span>{growthSaveError}</span>
+              </div>
+            ) : null}
+            <BookPreview
+              result={result}
+              variant="own"
+              onResultUpdate={handleResultUpdate}
+              sampleBooks={SAMPLE_BOOKS}
+              onOpenSample={(sample) => openSampleBook(sample, "preview")}
+              onBack={handlePreviewBack}
+            />
+          </>
         ) : null}
 
       </section>

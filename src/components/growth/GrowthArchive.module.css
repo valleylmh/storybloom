@@ -1,0 +1,730 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0 0, rgba(241, 174, 118, 0.18), transparent 28%),
+    radial-gradient(circle at 100% 100%, rgba(143, 174, 137, 0.14), transparent 30%),
+    linear-gradient(180deg, #fff9f2, #f3e9df);
+  color: #3d332d;
+}
+
+.nav {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 0 max(24px, calc((100vw - 1040px) / 2));
+  border-bottom: 1px solid rgba(79, 57, 43, 0.12);
+  background: rgba(255, 252, 247, 0.78);
+  backdrop-filter: blur(16px);
+}
+
+.brand,
+.navLink,
+.navActions,
+.privacyLabel,
+.primaryAction,
+.recordActions button,
+.timelineEnd {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand {
+  gap: 9px;
+  color: #493a31;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand > span {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border: 1px solid rgba(190, 85, 48, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 247, 238, 0.86);
+  color: #a8492d;
+}
+
+.brand small {
+  margin-left: 3px;
+  color: #7d6c61;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 400;
+}
+
+.navLink {
+  gap: 6px;
+  color: #75655a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navActions {
+  gap: 16px;
+}
+
+.privacyLabel {
+  gap: 6px;
+  color: #5c7258;
+  font-size: 0.76rem;
+}
+
+.shell {
+  width: min(1040px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.libraryHero,
+.timelineHero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 30px;
+}
+
+.libraryHero h1,
+.timelineHero h1,
+.emptyState h1 {
+  margin: 0;
+  color: #3d332d;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.libraryHero > div > p:last-child {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: #75655a;
+  line-height: 1.65;
+}
+
+.kicker,
+.childIdentity p {
+  margin: 0 0 7px;
+  color: #ad4d31;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.loadingState {
+  display: grid;
+  gap: 14px;
+  padding: 28px 0;
+}
+
+.loadingState span {
+  height: 150px;
+  border-radius: 22px;
+  background: rgba(255, 253, 249, 0.68);
+  animation: growthPulse 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes growthPulse {
+  to { opacity: 0.45; }
+}
+
+.emptyState {
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  padding: 36px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 26px;
+  background: rgba(255, 253, 249, 0.72);
+  text-align: center;
+}
+
+.emptyState > svg {
+  color: #b85739;
+}
+
+.emptyState h2 {
+  margin: 0;
+}
+
+.emptyState p {
+  max-width: 480px;
+  margin: 0;
+  color: #75655a;
+  line-height: 1.6;
+}
+
+.emptyState a,
+.primaryAction {
+  gap: 7px;
+  margin-top: 8px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  background: #be5530;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.childGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.childCard {
+  overflow: hidden;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 253, 249, 0.8);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 18px 52px rgba(88, 58, 36, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.childCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 64px rgba(88, 58, 36, 0.12);
+}
+
+.childVisual {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+  background: #eadfd4;
+}
+
+.childVisual > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.childAvatar {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  display: grid;
+  width: 62px;
+  height: 62px;
+  place-items: center;
+  overflow: hidden;
+  border: 4px solid #fffaf5;
+  border-radius: 18px;
+  background: #f1e2d6;
+  color: #a8492d;
+  font-size: 1.3rem;
+  font-weight: 800;
+  box-shadow: 0 10px 26px rgba(52, 35, 24, 0.16);
+}
+
+.childAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.childCardBody {
+  padding: 18px;
+}
+
+.childCardBody p,
+.childCardBody span {
+  margin: 0;
+  color: #806f63;
+  font-size: 0.76rem;
+}
+
+.childCardBody h2 {
+  margin: 5px 0 8px;
+  font-size: 1.2rem;
+}
+
+.childIdentity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 16px;
+}
+
+.childIdentity > img,
+.childIdentity > span {
+  display: grid;
+  width: 82px;
+  height: 82px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 4px solid rgba(255, 253, 249, 0.94);
+  border-radius: 22px;
+  object-fit: cover;
+  background: #f1e2d6;
+  color: #a8492d;
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow: 0 14px 36px rgba(88, 58, 36, 0.12);
+}
+
+.childIdentity h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+}
+
+.childIdentity div > span {
+  display: block;
+  margin-top: 7px;
+  color: #75655a;
+  line-height: 1.55;
+}
+
+.timelineToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 0 22px;
+  border-top: 1px solid rgba(79, 57, 43, 0.12);
+}
+
+.timelineToolbar > span {
+  color: #806f63;
+  font-size: 0.78rem;
+}
+
+.yearSwitch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.8);
+}
+
+.yearSwitch button {
+  min-height: 30px;
+  padding: 4px 13px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #75655a;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.yearSwitch .activeYear {
+  background: #a8492d;
+  color: #fff;
+}
+
+.notice {
+  margin: 0 0 16px 106px;
+  padding: 10px 13px;
+  border-radius: 12px;
+  background: rgba(237, 244, 232, 0.82);
+  color: #526149;
+  font-size: 0.78rem;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 17px;
+  bottom: 8px;
+  left: 91px;
+  width: 1px;
+  background: rgba(190, 85, 48, 0.24);
+  content: "";
+}
+
+.timelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 76px 30px minmax(0, 1fr);
+  align-items: start;
+  padding-bottom: 24px;
+}
+
+.timelineDate {
+  padding-top: 14px;
+  text-align: right;
+}
+
+.timelineDate strong,
+.timelineDate span {
+  display: block;
+}
+
+.timelineDate strong {
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.timelineDate span {
+  margin-top: 3px;
+  color: #9b8a7d;
+  font-size: 0.7rem;
+}
+
+.timelineNode {
+  position: relative;
+  z-index: 1;
+  width: 11px;
+  height: 11px;
+  margin: 18px auto 0;
+  border: 3px solid #f8eee5;
+  border-radius: 50%;
+  background: #be5530;
+  box-shadow: 0 0 0 1px rgba(190, 85, 48, 0.24);
+}
+
+.recordCard {
+  overflow: hidden;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 253, 249, 0.86);
+  box-shadow: 0 16px 42px rgba(88, 58, 36, 0.08);
+}
+
+.recordHeader {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+}
+
+.recordHeader > svg {
+  flex: 0 0 auto;
+  color: #9b8a7d;
+  transition: transform 160ms ease;
+}
+
+.caretOpen {
+  transform: rotate(180deg);
+}
+
+.recordHeaderCopy {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 13px;
+}
+
+.recordHeaderCopy > img {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  border-radius: 13px;
+  object-fit: cover;
+}
+
+.recordHeaderCopy > div {
+  min-width: 0;
+}
+
+.recordHeaderCopy span {
+  color: #ad4d31;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.recordHeaderCopy h2 {
+  margin: 4px 0 5px;
+  font-size: 1.05rem;
+}
+
+.recordHeaderCopy p {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #75655a;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.recordDetail {
+  padding: 0 16px 16px;
+  border-top: 1px solid rgba(79, 57, 43, 0.1);
+}
+
+.recordDetail blockquote {
+  margin: 0;
+  padding: 14px 0;
+  color: #75655a;
+  line-height: 1.65;
+}
+
+.mediaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.mediaGrid figure,
+.mediaEmpty {
+  position: relative;
+  min-height: 180px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #ede3d9;
+}
+
+.mediaGrid figure img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.mediaGrid figcaption {
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+  left: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 9px;
+  background: rgba(48, 37, 29, 0.72);
+  color: #fff;
+  font-size: 0.72rem;
+  backdrop-filter: blur(8px);
+}
+
+.mediaEmpty {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 8px;
+  color: #8a776a;
+}
+
+.recordActions,
+.editActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.recordActions button,
+.editActions button {
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 11px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 10px;
+  background: #fffaf5;
+  color: #75655a;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.recordActions .readButton,
+.editActions button:last-child {
+  border-color: transparent;
+  background: #be5530;
+  color: #fff;
+}
+
+.recordActions .deleteButton {
+  color: #9b3c2b;
+}
+
+.editForm {
+  display: grid;
+  gap: 12px;
+  padding: 14px 0 2px;
+}
+
+.editForm label {
+  display: grid;
+  gap: 6px;
+  color: #75655a;
+  font-size: 0.76rem;
+}
+
+.editForm input,
+.editForm textarea {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid rgba(79, 57, 43, 0.14);
+  border-radius: 11px;
+  outline: 0;
+  background: #fffaf5;
+  color: #49382e;
+}
+
+.editForm textarea {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.timelineEnd {
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 0 106px;
+  color: #8f7e72;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .nav {
+    min-height: 60px;
+    padding: 0 16px;
+  }
+
+  .brand small,
+  .privacyLabel {
+    display: none;
+  }
+
+  .shell {
+    width: min(calc(100% - 28px), 1040px);
+    padding: 30px 0 48px;
+  }
+
+  .libraryHero,
+  .timelineHero {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .childGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .childVisual {
+    height: 190px;
+  }
+
+  .childIdentity {
+    align-items: flex-start;
+  }
+
+  .childIdentity > img,
+  .childIdentity > span {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+  }
+
+  .primaryAction {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .timelineToolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .notice {
+    margin-left: 20px;
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timelineItem {
+    grid-template-columns: 12px minmax(0, 1fr);
+    gap: 8px;
+    padding-bottom: 18px;
+  }
+
+  .timelineDate {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    padding: 0 0 6px;
+    text-align: left;
+  }
+
+  .timelineDate strong,
+  .timelineDate span {
+    display: inline;
+  }
+
+  .timelineNode {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+  }
+
+  .recordCard {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .recordHeader {
+    padding: 13px;
+  }
+
+  .recordHeaderCopy > img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .recordDetail {
+    padding: 0 13px 13px;
+  }
+
+  .mediaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaGrid figure,
+  .mediaGrid figure img,
+  .mediaEmpty {
+    min-height: 160px;
+    height: 160px;
+  }
+
+  .recordActions {
+    justify-content: stretch;
+    flex-wrap: wrap;
+  }
+
+  .recordActions button {
+    flex: 1 1 auto;
+  }
+
+  .timelineEnd {
+    margin-left: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loadingState span,
+  .childCard,
+  .recordHeader > svg {
+    animation: none;
+    transition: none;
+  }
+}
