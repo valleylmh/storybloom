@@ -1,0 +1,15 @@
+{
+  "id": "jin-ping-fu-shou-hua-deng", "title": "金平府守花灯", "subtitle": "共享一盏光，也要先商量", "origin": "《西游记》第九十一至九十二回（低龄温和改编）",
+  "moral": { "zh": "有需要可以开口求助；未经同意拿走公共物品，会让更多人失去安全和快乐。", "en": "It is always okay to ask for help. Taking shared resources without agreement can leave many others without safety or joy." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 50, "episodeNumber": 50,
+  "pages": [
+    { "zh": "金平府灯会亮如星河，三盏大花灯守着全城夜路。", "en": "Jinping's lantern festival shone like a river of stars, with three great lanterns lighting the city's roads.", "prompt": "Full team enters a warm ancient lantern festival with three huge flower-shaped lanterns lighting broad safe streets; no fireworks, no text in image." },
+    { "zh": "半夜，三盏花灯同时暗了。地上只留下三串圆圆的蹄印。", "en": "At midnight, all three great lanterns went dark, leaving three trails of round hoofprints.", "prompt": "Team and townspeople inspect three dim flower lanterns and three harmless round hoofprint trails under moonlight; calm mystery, no text in image." },
+    { "zh": "悟空顺着蹄印来到寒谷，看见三位犀牛兄弟正把灯油分给怕冷的小动物。", "en": "Following the tracks, Wukong found three rhino brothers sharing lamp oil with cold animals in a valley.", "prompt": "Three friendly rounded rhino brothers in blue, green, and amber vests pour glowing oil into covered warming lamps for small animals; Wukong observes, no text in image." },
+    { "zh": "他们说山谷太冷，只想借一点光，却没想到城里的夜路也需要灯。", "en": "They said the valley was cold and they only wanted some light, not realizing the city roads needed it too.", "prompt": "Rhino brothers explain beside warm animal shelters while Wukong shows a small model of dark city paths; sympathetic expressions, no text in image." },
+    { "zh": "唐僧请大家围成一圈：先说各自需要多少，再看看怎样公平分配。", "en": "Tang Seng gathered everyone in a circle to share how much light they needed and plan a fair division.", "prompt": "Tang Seng, team, rhino brothers, townspeople, and animals sit in a cooperative circle around three covered lamps; no written charts, no text in image." },
+    { "zh": "沙僧搭反光板，八戒做保温罩，白龙马把新灯油稳稳送进山谷。", "en": "Sha built reflectors, Bajie made warm lamp covers, and White Dragon Horse carried fresh oil safely into the valley.", "prompt": "Team builds safe rounded reflectors and insulated lamp covers while White Dragon Horse carries sealed oil jars; no open flames, no text in image." },
+    { "zh": "三兄弟把原来的灯油送回城，还主动轮流守护山谷和城里的夜灯。", "en": "The brothers returned the city's oil and volunteered to take turns caring for both valley and city lights.", "prompt": "Three rhino brothers return sealed oil jars beneath relit flower lanterns and receive simple caretaker lanterns; cheerful accountability, no text in image." },
+    { "zh": "灯会重新亮起。远处传来天竺国乐声，师徒知道下一段路又开始了。", "en": "The festival glowed again. Music drifted from Tianzhu in the distance, and the travelers knew the next road was beginning.", "prompt": "Full team leaves the glowing festival toward a distant elegant city silhouette while rhino brothers and townspeople wave; warm finale, no text in image." }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "wu-zhuang-guan-ren-shen-guo", "title": "五庄观护人参果", "subtitle": "先问一声，果子才更香", "origin": "《西游记》第二十四至二十六回（低龄温和改编）",
+  "moral": { "zh": "想要的东西也要先问；犯错不可怕，诚实承认并一起修补，会让信任重新长出来。", "en": "Ask before taking what you want. Honest repair can help trust grow again after a mistake." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 44, "episodeNumber": 44,
+  "pages": [
+    { "zh": "五庄观后院有棵古树，枝头挂着会发金光的星形人参果。", "en": "An ancient tree at Wuzhuang Temple held star-shaped ginseng fruits that glowed gold.", "prompt": "Full team admires an ancient courtyard tree bearing friendly star-shaped golden fruits, never baby-shaped; Taoist temple garden, no text in image." },
+    { "zh": "清风明月说，果子要等主人回来才能摘，请大家先在客房休息。", "en": "The young caretakers asked everyone to wait for the master before picking any fruit.", "prompt": "Two young Taoist caretakers in blue-and-white robes gesture politely toward a closed fruit basket while team listens; no text in image." },
+    { "zh": "八戒闻见甜香，悟空也心痒。他轻轻摘下一颗，果子却滚进树根缝里。", "en": "The sweet scent tempted Bajie and Wukong. Wukong picked one, but it rolled into a gap among the roots.", "prompt": "Wukong reaches gently toward one golden star fruit as it slips and rolls toward exposed roots; Bajie looks surprised, no damage or danger, no text in image." },
+    { "zh": "悟空伸手去捞，不小心折弯一根嫩枝。古树的叶子顿时垂了下来。", "en": "Trying to retrieve it, Wukong bent a young branch. The old tree's leaves drooped.", "prompt": "Wukong freezes with concern beside one bent small branch while leaves droop softly; open hands, no violent breaking, no text in image." },
+    { "zh": "他本想悄悄扶正，可看见伙伴担心的眼神，还是主动说出了经过。", "en": "He first tried to hide the bend, but seeing his friends' concern, he told the whole truth.", "prompt": "Wukong speaks honestly to Tang Seng, Bajie, Sha, and the caretakers beside the tree; humble posture, supportive faces, no text in image." },
+    { "zh": "镇元大仙回来后没有责骂，只问：“你愿意和大家一起把树照顾好吗？”", "en": "When Master Zhenyuan returned, he did not scold. He asked, “Will you help everyone care for the tree?”", "prompt": "A serene elder in cream-and-teal Taoist robes kneels beside Wukong and the bent branch, asking gently; team gathered nearby, no text in image." },
+    { "zh": "观音送来一滴甘露，悟空扶枝，八戒培土，沙僧浇水，古树重新舒展。", "en": "Guanyin brought a drop of dew. Wukong supported the branch, Bajie packed soil, and Sha watered until the tree opened again.", "prompt": "Cooperative tree-care scene with a glowing dew drop, Wukong tying a soft support, Bajie adding soil, Sha watering; lush recovery, no text in image." },
+    { "zh": "主人请大家分享成熟果子。悟空先问：“现在可以摘了吗？”院里笑声一片。", "en": "The master invited everyone to share ripe fruit. Wukong asked first, “May I pick one now?” The courtyard filled with laughter.", "prompt": "Master Zhenyuan offers a basket of star-shaped fruit as Wukong raises a polite asking hand; team laughs warmly under the restored tree, no text in image." }
+  ]
+}

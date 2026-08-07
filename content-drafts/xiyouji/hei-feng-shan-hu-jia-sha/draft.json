@@ -1,0 +1,21 @@
+{
+  "id": "hei-feng-shan-hu-jia-sha",
+  "title": "黑风山护袈裟",
+  "subtitle": "喜欢珍宝，也要先问主人",
+  "origin": "《西游记》第十六至十七回（低龄温和改编）",
+  "moral": { "zh": "欣赏别人的珍爱之物，也要先征得同意；做错后诚实归还、认真修补，就是担当。", "en": "Admiring someone else's treasure never replaces asking permission. Returning it honestly and helping repair the harm is true responsibility." },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-05",
+  "order": 41,
+  "episodeNumber": 41,
+  "pages": [
+    { "zh": "师徒借宿观音院，老院主请大家欣赏一件霞光闪闪的锦襕袈裟。", "en": "The travelers stayed at Guanyin Temple, where the old abbot showed them a kasaya robe that shimmered like sunset clouds.", "prompt": "Tang Seng and the full team admire a folded red-and-gold kasaya on a low display table in a warm temple hall; respectful distance, gentle wonder, square clay-like storybook art, no text in image." },
+    { "zh": "夜里风吹倒灯架，大家忙着提水护院。混乱过后，袈裟却不见了。", "en": "That night, wind tipped a lamp stand. Everyone hurried to protect the temple, but afterward the kasaya was gone.", "prompt": "The team and monks safely carry water bowls in a lantern-lit courtyard while one empty robe stand is visible; no flames near people, no panic, square warm 3D illustration, no text in image." },
+    { "zh": "悟空循着一根金线来到黑风山，看见黑熊隐士正筹办宝物雅集。", "en": "Following a golden thread, Wukong reached Black Wind Mountain and found a bear hermit preparing a treasure gathering.", "prompt": "Wukong follows a loose golden thread into a bright pine cave where a friendly round black-bear hermit arranges harmless antiques and the folded kasaya; curious mood, no weapons, no text in image." },
+    { "zh": "黑熊说只是借来看看。悟空问：“没有问过主人，怎么能算借呢？”", "en": "The bear said he had only borrowed it. Wukong asked, “How can it be borrowing if the owner was never asked?”", "prompt": "Wukong speaks calmly with the friendly bear hermit across a tea table, the kasaya safely folded between them; open hands, thoughtful expressions, square storybook art, no text in image." },
+    { "zh": "悟空请他找出袈裟内侧的小补丁。黑熊翻了半天，却说不出补丁的来历。", "en": "Wukong asked him to find the tiny patch inside the robe. The bear found it, but could not tell the memory behind it.", "prompt": "Close scene of Wukong pointing to a tiny hand-sewn patch inside the opened kasaya while the bear looks puzzled; careful fabric handling, warm light, no readable symbols, no text in image." },
+    { "zh": "唐僧赶来讲起补丁的故事。黑熊听懂了：珍贵的不只是金线，还有主人的记忆。", "en": "Tang Seng arrived and shared the patch's story. The bear understood that the owner's memories mattered more than golden thread.", "prompt": "Tang Seng gently tells the robe's story while Wukong and the bear listen beside the open kasaya; soft emotional expressions, temple-like cave room, square 3D art, no text in image." },
+    { "zh": "黑熊郑重归还袈裟，还带着木料回到观音院，帮大家修好灯架和屋檐。", "en": "The bear returned the kasaya and brought timber to the temple, helping repair the lamp stand and roof.", "prompt": "Friendly bear, team, and monks work together in daylight repairing a low roof edge and sturdy lamp stand; safe rounded tools, kasaya protected in a box, no text in image." },
+    { "zh": "告别时，山风卷来一把黄沙。悟空望向前路：“下一站，要和风交朋友啦。”", "en": "As they left, a swirl of yellow sand crossed the road. Wukong looked ahead. “Next, we may need to make friends with the wind.”", "prompt": "The full team leaves the repaired temple as a gentle ribbon of yellow sand curls over the distant road; hopeful travel composition, no fear, square clay-like art, no text in image." }
+  ]
+}

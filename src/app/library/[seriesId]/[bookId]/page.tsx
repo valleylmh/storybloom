@@ -38,7 +38,9 @@ export async function generateMetadata({
 
   const description =
     book.idiomMeaning?.zh || book.moral?.zh || `${book.title} · ${book.subtitle}`;
-  const cover = book.pages[0]?.imageUrl;
+  const coverPage = book.pages[0];
+  const cover =
+    coverPage?.imageStatus === "complete" ? coverPage.imageUrl : undefined;
   // 「为什么」类问题句是高价值搜索词（任务 C），有 question 时直接作标题主体
   const title = book.question
     ? `${book.question} - 儿童科普双语绘本 | StoryBloom`

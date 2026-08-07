@@ -1,0 +1,15 @@
+{
+  "id": "mu-xian-an-shi-hui", "title": "木仙庵诗会", "subtitle": "欣赏好风景，也记得出发时间", "origin": "《西游记》第六十四回（低龄温和改编）",
+  "moral": { "zh": "喜欢一件事可以尽情欣赏，也可以清楚说出时间和边界，不忘记自己的重要计划。", "en": "Enjoy beautiful moments while keeping clear boundaries and remembering the plans that matter." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 48, "episodeNumber": 48,
+  "pages": [
+    { "zh": "荆棘岭路窄难行，几位树仙拨开枝叶，请师徒到木仙庵歇脚。", "en": "The path through Bramble Ridge was narrow, so several tree spirits opened the branches and invited the travelers to rest.", "prompt": "Friendly adult tree spirits with leaf hair and bark-pattern robes open a safe green path for the full team; rounded branches, no fear, no text in image." },
+    { "zh": "庵里没有金银，只有清茶、松果和一张能听见风声的木琴。", "en": "The woodland hall held no riches, only tea, pinecones, and a wooden zither that echoed the wind.", "prompt": "Team sits in a cozy open woodland pavilion with tea, pinecones, and a simple wooden zither; tree spirits host warmly, no text in image." },
+    { "zh": "树仙请唐僧一起作诗。唐僧说一句云，松树仙便接一句山。", "en": "The spirits invited Tang Seng to make a poem. He offered a line about clouds, and the pine spirit answered with mountains.", "prompt": "Tang Seng and a pine tree spirit take turns gesturing toward clouds and mountains while companions listen; no written poem, no text in image." },
+    { "zh": "八戒听得肚子咕咕叫，灵机一动，把“松果香”也编进了诗里。", "en": "Bajie's stomach rumbled, so he cleverly added the scent of pinecones to the poem.", "prompt": "Bajie humorously smells a bowl of roasted pinecones while reciting with one raised finger; everyone laughs kindly, no text in image." },
+    { "zh": "诗会越开越热闹，树仙还想留大家看月亮。悟空却发现沙漏快空了。", "en": "The gathering grew lively, and the spirits hoped everyone would stay for moonrise. Wukong noticed the sand timer was nearly empty.", "prompt": "Wukong points to a nearly empty glass sand timer while tree spirits prepare moon lanterns and team listens; no readable markings, no text in image." },
+    { "zh": "唐僧感谢邀请，也清楚说明：“我们答应天黑前走出荆棘岭。”", "en": "Tang Seng thanked them and explained clearly, “We promised to leave Bramble Ridge before dark.”", "prompt": "Tang Seng bows gratefully to the tree spirits while pointing toward the still-bright exit path; respectful boundary setting, no text in image." },
+    { "zh": "树仙没有生气，反而把最后一句诗变成路歌，陪他们穿过密林。", "en": "The spirits were not upset. They turned the final verse into a road song and guided the team through the woods.", "prompt": "Tree spirits walk beside team through a safe leafy corridor, playing flute and zither without written music; warm late-afternoon light, no text in image." },
+    { "zh": "走出山岭，月亮刚升起。八戒笑道：“好诗留在心里，脚步也没迟到！”", "en": "They left the ridge just as the moon rose. Bajie laughed, “The poem stayed with us, and our feet stayed on time!”", "prompt": "Full team emerges from the green ridge under a rising moon; Bajie gestures cheerfully while tree spirits wave from afar, no text in image." }
+  ]
+}

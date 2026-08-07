@@ -1,0 +1,15 @@
+{
+  "id": "hei-shui-he-bian-tuo-long", "title": "黑水河辨鼍龙", "subtitle": "多看线索，再相信带路人", "origin": "《西游记》第四十三回（低龄温和改编）",
+  "moral": { "zh": "陌生邀请要先核对身份和路线；发现不对时及时求助，比逞强更勇敢。", "en": "Check identities and routes before following an unfamiliar invitation. Asking for help is wiser than pretending nothing is wrong." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 45, "episodeNumber": 45,
+  "pages": [
+    { "zh": "黑水河没有桥，岸边却停着一只画着龙鳞花纹的小船。", "en": "There was no bridge over Blackwater River, only a little boat painted with scale patterns.", "prompt": "Full team stands at a calm dark-blue river beside a small safe ferry with abstract scale patterns and no writing; bright daytime, no text in image." },
+    { "zh": "船夫说能带大家过河。悟空却发现，他的船牌颜色和岸边告示不一样。", "en": "The boatman offered a crossing, but Wukong noticed his ferry token did not match the shore marker.", "prompt": "Wukong compares a blank blue ferry token with a differently colored geometric shore marker; friendly reptile-faced boatman waits, no readable text, no text in image." },
+    { "zh": "船刚离岸，就转向芦苇深处。悟空让伙伴坐稳，自己留下金线记路。", "en": "Once afloat, the boat turned into the reeds. Wukong kept everyone seated and left a golden thread to mark the route.", "prompt": "Team sits safely in a broad ferry through sunny reeds while Wukong trails a harmless glowing thread along posts; calm caution, no text in image." },
+    { "zh": "船来到水府，鼍龙少年端出点心：“我只是想请取经人来做客。”", "en": "At a water palace, the young river dragon served snacks. “I only wanted the travelers to visit,” he said.", "prompt": "A friendly rounded young crocodile-dragon with teal scales and a blue vest offers snacks in a bright underwater hall; team remains together, no fear, no text in image." },
+    { "zh": "唐僧说：“邀请要说清楚，带错路会让客人担心，也会耽误行程。”", "en": "Tang Seng replied, “An invitation must be clear. A false route worries guests and delays their journey.”", "prompt": "Tang Seng speaks kindly to the seated young river dragon across a low table; Wukong and companions listen, open respectful scene, no text in image." },
+    { "zh": "悟空请西海龙王核对身份。原来鼍龙是龙族晚辈，偷偷借了旧渡船。", "en": "Wukong asked the Western Dragon King to verify the visitor. The young dragon was a relative who had secretly borrowed an old ferry.", "prompt": "A dignified friendly sea dragon king arrives with pearl attendants and checks the old ferry token; young dragon looks embarrassed, no punishment, no text in image." },
+    { "zh": "鼍龙归还渡船，换上真正的船牌，还陪大家沿金线安全回到大河。", "en": "The young dragon returned the ferry, fitted the proper token, and guided everyone safely back along the golden thread.", "prompt": "Young river dragon steers the ferry along Wukong's glowing thread with correct matching color markers; team relaxed, bright river, no text in image." },
+    { "zh": "临别时，他在两岸挂起同色路标。以后每位旅人都能先确认、再上船。", "en": "Before goodbye, he placed matching markers on both shores so every traveler could check before boarding.", "prompt": "Young dragon and team install matching simple color-and-shape markers on both riverbanks; community safety ending, no readable words, no text in image." }
+  ]
+}

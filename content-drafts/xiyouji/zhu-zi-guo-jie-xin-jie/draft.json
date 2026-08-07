@@ -1,0 +1,15 @@
+{
+  "id": "zhu-zi-guo-jie-xin-jie", "title": "朱紫国解心结", "subtitle": "把担心说出来，线索就会出现", "origin": "《西游记》第六十八至七十一回（低龄温和改编）",
+  "moral": { "zh": "心里有担忧时，倾听、表达和共同寻找线索，比独自忍耐更有力量。", "en": "When worry feels heavy, listening, speaking honestly, and searching together can bring real strength." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 49, "episodeNumber": 49,
+  "pages": [
+    { "zh": "朱紫国王总望着空座位发呆，饭菜凉了也没发现。", "en": "The King of Zhuzi kept staring at an empty seat, not noticing his meal had grown cold.", "prompt": "Kind middle-aged king in plum-and-gold robes sits beside an empty matching chair at a quiet meal; advisors wait gently, no illness drama, no text in image." },
+    { "zh": "唐僧耐心听他说完：王后在麒麟山失去消息，他一直把担心藏在心里。", "en": "Tang Seng listened as the king explained that the queen had gone missing near Qilin Mountain, and he had hidden his worry.", "prompt": "Tang Seng listens at eye level as the king points to a small mountain keepsake beside the empty chair; full team nearby, no text in image." },
+    { "zh": "悟空在王后留下的丝带上发现三粒金色花粉，正是麒麟山才有的花。", "en": "Wukong found three grains of golden pollen on the queen's ribbon, from flowers that grew only on Qilin Mountain.", "prompt": "Close scene of Wukong examining a rose ribbon with three glowing pollen grains while king and team watch; no writing, no text in image." },
+    { "zh": "山中，金毛星兽请王后帮忙修一只会安抚小动物的紫金铃，却忘了送信。", "en": "On the mountain, a golden-furred star beast had asked the queen to repair a bell that soothed young animals, but forgot to send word.", "prompt": "Friendly golden-furred qilin-like star beast with rounded horns watches as an adult queen in rose robes repairs a small purple-gold bell at a bright workshop; no captivity, no text in image." },
+    { "zh": "王后说自己愿意帮忙，却不愿让家人一直担心。星兽这才明白遗漏了重要一步。", "en": "The queen wanted to help, but not leave her family worrying. The star beast realized it had missed an important step.", "prompt": "Queen speaks firmly but kindly to the seated star beast, pointing from repaired bell to a blank message ribbon; open doorway, no threat, no text in image." },
+    { "zh": "悟空带来国王的回信，大家约定：先报平安，再把最后一颗铃珠装好。", "en": "Wukong brought the king's reply. Everyone agreed to send news first, then fit the final bead into the bell.", "prompt": "Wukong delivers a sealed blank reply as queen, star beast, and small woodland animals gather around the nearly finished bell; no readable text, no text in image." },
+    { "zh": "紫金铃响起柔和清音，山里的小动物安静下来，王后也踏上回城的路。", "en": "The bell chimed softly, calming the mountain animals, and the queen began her journey home.", "prompt": "Queen gently rings the small bell while rabbits, deer, and birds relax; star beast carries her travel bag toward a safe path, no text in image." },
+    { "zh": "国王终于笑了。他在城门设下报平安信箱，让每次远行都少一点牵挂。", "en": "The king smiled again. He placed a message box at the city gate so future journeys would bring less worry.", "prompt": "King and queen reunite warmly at the gate beside a decorative blank message box; team and families celebrate calmly, no text in image." }
+  ]
+}

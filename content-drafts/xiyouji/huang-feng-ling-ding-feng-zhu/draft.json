@@ -1,0 +1,18 @@
+{
+  "id": "huang-feng-ling-ding-feng-zhu",
+  "title": "黄风岭借定风珠",
+  "subtitle": "看清方向，风也能帮忙",
+  "origin": "《西游记》第二十至二十一回（低龄温和改编）",
+  "moral": { "zh": "遇到混乱先稳住自己、看清方向，再向懂行的人求助，难题也能变成合作。", "en": "When things turn confusing, steady yourself, find your direction, and ask someone experienced for help." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 42, "episodeNumber": 42,
+  "pages": [
+    { "zh": "黄风岭上忽然沙雾漫天，路标和脚印一下都看不清了。", "en": "A sandy mist swept across Yellow Wind Ridge until road signs and footprints disappeared.", "prompt": "The full team pauses together on a bright ochre ridge as soft swirling sand hides distant markers; scarves held safely, no distress, square 3D storybook art, no text in image." },
+    { "zh": "悟空让大家牵好同行绳，沙僧敲木珠报位置，八戒插下彩布做记号。", "en": "Wukong linked everyone with a travel rope, Sha tapped wooden beads to mark his position, and Bajie planted colored cloth markers.", "prompt": "Team safety scene with a loose travel rope, Sha tapping wooden beads and Bajie placing bright blank cloth markers; Wukong leads calmly, no text in image." },
+    { "zh": "风里跑来一只黄毛貂鼠精。他着急地说，山谷的风铃阵失控了。", "en": "A yellow-furred marten spirit hurried from the wind, explaining that the valley's wind-bell array had spun out of control.", "prompt": "A friendly small yellow marten spirit with amber eyes and a mustard robe approaches with empty hands beside spinning wooden wind bells; rounded and never scary, no text in image." },
+    { "zh": "原来装着草籽的布袋散开了，他越追越急，风也被催得越来越大。", "en": "His seed sacks had burst. The faster he chased them, the stronger the wind became.", "prompt": "The marten points to many tiny seed pouches rolling through a broad valley while harmless wind wheels spin too fast; team observes, no dangerous storm, no text in image." },
+    { "zh": "悟空请灵吉菩萨借来定风珠。珠光一亮，乱风慢慢停在半空。", "en": "Wukong borrowed the Wind-Calming Pearl from Lingji. Its gentle glow slowed the tangled gusts.", "prompt": "A kind robed sage lends Wukong a small glowing pearl on an open palm; soft wind ribbons become orderly around them, square warm art, no text in image." },
+    { "zh": "大家顺着彩布记号找回种子，再按风向把风铃一排排调正。", "en": "Following the colored markers, everyone gathered the seeds and turned each wind bell to face the proper direction.", "prompt": "Team and marten collect seed pouches and gently align rows of rounded wooden wind bells; cooperative wide scene, safe tools, no text in image." },
+    { "zh": "清风重新吹起，草籽落进沙地。黄风怪答应以后先停阵、再找问题。", "en": "A clean breeze carried seeds into the sand. The marten promised to stop the array before solving future problems.", "prompt": "Green shoots begin appearing across the ridge as the friendly marten closes a large wooden wind control and shakes hands with Wukong; no text in image." },
+    { "zh": "前方庄院挂着四盏灯，门口摆着四封邀请，正等师徒去读。", "en": "Ahead, four lanterns glowed at a manor gate, where four invitations waited for the travelers.", "prompt": "The team approaches a welcoming manor at dusk with four blank lanterns and four sealed invitation cards bearing no readable marks; gentle mystery, no text in image." }
+  ]
+}

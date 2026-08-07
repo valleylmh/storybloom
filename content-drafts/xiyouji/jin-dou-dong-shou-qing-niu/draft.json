@@ -1,0 +1,15 @@
+{
+  "id": "jin-dou-dong-shou-qing-niu", "title": "金兜洞收青牛", "subtitle": "厉害工具，也要守使用规则", "origin": "《西游记》第五十至五十二回（低龄温和改编）",
+  "moral": { "zh": "越有力量的工具越需要规则、看护和责任；先停下来求助，才能安全解决问题。", "en": "The more powerful a tool is, the more it needs rules, supervision, and responsible use." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 46, "episodeNumber": 46,
+  "pages": [
+    { "zh": "金兜山脚，八戒的水壶忽然嗖地飞进洞里，连沙僧的行囊也跟着跑了。", "en": "At Mount Jindou, Bajie's water flask zipped into a cave, followed by Sha's travel bag.", "prompt": "Bajie's flask and Sha's soft bag float harmlessly toward a bright cave while the full team reaches out in surprise; no dangerous pulling, no text in image." },
+    { "zh": "洞里住着一头青牛，手腕上的银圈会把附近的金属和工具全吸过来。", "en": "A green bull lived inside, wearing a silver ring that pulled in every nearby tool and metal object.", "prompt": "Friendly broad green bull with warm brown eyes, cream horns, indigo work apron, and a smooth silver ring stands in a tidy workshop surrounded by floating harmless tools; no text in image." },
+    { "zh": "青牛说想开修理铺，却不知道银圈一转，连别人的东西也会被拿走。", "en": "The bull wanted to open a repair shop, but did not realize the spinning ring also took other people's belongings.", "prompt": "Green bull gestures apologetically at an overfilled workshop shelf while team points to their labeled-by-color belongings; no readable words, no text in image." },
+    { "zh": "悟空试着拉回行囊，金箍棒也差点被吸走。他立刻停手，先带大家退出洞口。", "en": "Wukong tried to retrieve the bag, but even his staff began to slide. He stopped and led everyone safely outside.", "prompt": "Wukong holds his staff upright as it gently tugs toward the ring, then signals the team to step back; calm safety action, no fighting, no text in image." },
+    { "zh": "太上老君赶来认出银圈：“这是工具圈，只有按顺序敲三下才会关闭。”", "en": "Laojun recognized the ring. “It is a tool ring. Three taps in the proper order will switch it off.”", "prompt": "Kind elderly sage in pale cloud robes demonstrates three gentle taps on a wooden practice ring while green bull and team watch; no text in image." },
+    { "zh": "八戒敲快了，沙僧敲慢了，最后大家跟着悟空的节拍一起数。", "en": "Bajie tapped too fast and Sha too slowly, so everyone followed Wukong's steady rhythm together.", "prompt": "Team practices a three-beat rhythm with rounded wooden blocks while Wukong conducts and green bull smiles; playful workshop scene, no text in image." },
+    { "zh": "银圈安静下来，所有物品稳稳落进各自主人的篮子。青牛一件件认真归还。", "en": "The ring grew still, and every object settled into its owner's basket. The bull returned them one by one.", "prompt": "Color-sorted baskets receive gently floating belongings as green bull checks each item with its owner; orderly cheerful resolution, no text in image." },
+    { "zh": "老君给修理铺挂上安全铃。青牛答应：先问、再收、有人看护时才开圈。", "en": "Laojun added a safety bell. The bull promised to ask first, collect carefully, and use the ring only with supervision.", "prompt": "Green bull opens a safe community repair table with a simple bell and closed silver ring in a padded box; team waves goodbye, no readable signs, no text in image." }
+  ]
+}

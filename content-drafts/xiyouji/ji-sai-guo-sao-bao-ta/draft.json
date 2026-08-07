@@ -1,0 +1,15 @@
+{
+  "id": "ji-sai-guo-sao-bao-ta", "title": "祭赛国扫宝塔", "subtitle": "先找证据，不让误会蒙尘", "origin": "《西游记》第六十二至六十三回（低龄温和改编）",
+  "moral": { "zh": "事情出了问题，不要急着责怪谁；一起寻找证据、听完原因，才能公平解决。", "en": "When something goes wrong, look for evidence and hear the full story before blaming anyone." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 47, "episodeNumber": 47,
+  "pages": [
+    { "zh": "祭赛国宝塔失去光彩，守塔僧人被误会没有认真看护。", "en": "The pagoda of Jisai Kingdom lost its glow, and the caretakers were blamed for not watching it well.", "prompt": "Full team arrives at a tall safe pagoda with dim upper windows while worried but calm caretakers hold brooms; no punishment, no text in image." },
+    { "zh": "唐僧说：“先别下结论。我们从第一层开始，一边扫塔，一边找线索。”", "en": "Tang Seng said, “Let us not decide too quickly. We can clean each floor and look for clues.”", "prompt": "Tang Seng organizes team and caretakers with brooms, baskets, and lanterns at the first pagoda floor; methodical friendly mood, no text in image." },
+    { "zh": "灰尘里有蓝色水珠、彩色羽毛，还有一条通往塔顶的湿脚印。", "en": "In the dust they found blue droplets, a colorful feather, and damp footprints leading upward.", "prompt": "Close floor-level view of blue droplets, one colorful feather, and rounded wet footprints beside a broom; Wukong observes with magnifier-like crystal, no text in image." },
+    { "zh": "塔顶宝珠不见了，窗外却有一道柔光，一直连向碧波潭。", "en": "The tower pearl was gone, but a soft trail of light stretched from the window toward Blue-Wave Lake.", "prompt": "Team at a broad safe tower balcony sees an empty pearl stand and a gentle light trail across the landscape toward a blue lake; no falling risk, no text in image." },
+    { "zh": "湖边，一只九羽彩鸟正用宝珠照亮刚孵化的小鸟。它说自己只是借一晚。", "en": "By the lake, a nine-feathered bird used the pearl to warm newly hatched chicks. It said it meant to borrow it for one night.", "prompt": "Friendly adult bird with one head and nine fan-like colorful tail feathers shelters fluffy chicks beside the glowing pearl; team approaches gently, no scary creature, no text in image." },
+    { "zh": "悟空指出，没留口信的“借用”让别人受了委屈。彩鸟低头向守塔人道歉。", "en": "Wukong explained that borrowing without a message had caused others to be blamed. The bird apologized to the caretakers.", "prompt": "Wukong calmly explains while the colorful bird bows to two caretakers; pearl rests safely on a cushion, open lakeside scene, no text in image." },
+    { "zh": "大家用镜片和灯罩给鸟巢做了新暖灯，彩鸟把宝珠送回塔顶。", "en": "Together they made a new warm lamp with mirrors and a cover, and the bird returned the pearl to the tower.", "prompt": "Team, caretakers, and bird assemble a safe enclosed glowing lamp near the nest using rounded mirrors; cooperative scene, no fire, no text in image." },
+    { "zh": "宝塔再次发光，守塔人的误会也解开了。扫净的每一层都亮堂堂。", "en": "The pagoda shone again, and the caretakers' names were cleared. Every freshly swept floor gleamed.", "prompt": "Bright restored pagoda at dusk with team, caretakers, and bird waving below; clean windows glow softly, celebratory but calm, no text in image." }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "si-sheng-shi-chan-xin", "title": "四圣试真心", "subtitle": "舒服的岔路，也要想清楚", "origin": "《西游记》第二十三回（低龄温和改编）",
+  "moral": { "zh": "好选择不只看眼前舒不舒服，也要记得自己的承诺、目标和同行伙伴。", "en": "A good choice is not only about immediate comfort; it also honors promises, purpose, and companions." },
+  "ageLabel": "4-8 岁", "publishedAt": "2026-08-05", "order": 43, "episodeNumber": 43,
+  "pages": [
+    { "zh": "暮色里，师徒来到一座温暖庄院，四位主人热情请他们住下。", "en": "At dusk, the travelers reached a warm manor where four hosts invited them to stay.", "prompt": "Full team at a cozy ancient manor doorway greeted by four kind adult women in different pastel robes; warm lanterns, respectful spacing, no text in image." },
+    { "zh": "院里有安静书房、满桌点心、结实小车，还有能飞的轻云鞋。", "en": "Inside were a quiet study, a table of treats, a sturdy cart, and cloud-light shoes that could fly.", "prompt": "Single wide room showing four inviting stations: study nook, snack table, sturdy handcart, and soft cloud shoes; team looks curious, no readable labels, no text in image." },
+    { "zh": "主人说：“只要留在这里，这些都送给你们，不必再去西天。”", "en": "The hosts said, “Stay here and these gifts are yours. You need not continue west.”", "prompt": "Four hosts present gifts with open hands while Tang Seng and team listen thoughtfully; no pressure or villain mood, square clay-like art, no text in image." },
+    { "zh": "八戒看看点心，又看看小车，差点把四样礼物都抱进怀里。", "en": "Bajie looked from snacks to cart and nearly gathered all four gifts into his arms.", "prompt": "Playful Bajie balances a snack basket, small cart handle, and cloud shoes while companions exchange amused gentle looks; safe comedy, no text in image." },
+    { "zh": "悟空发现院门后的四条路都绕回原处：“舒服不等于方向正确。”", "en": "Wukong noticed every path behind the manor curved back to the same place. “Comfort does not always mean the right direction.”", "prompt": "Wukong studies four garden paths forming soft circles back to the manor while the team looks from above a small hill; no maze danger, no text in image." },
+    { "zh": "唐僧、悟空、八戒和沙僧各自说出继续上路的理由，也互相提醒承诺。", "en": "Each traveler shared why the journey still mattered, reminding one another of their promise.", "prompt": "Team sits in a calm circle speaking sincerely, travel packs beside them and westward sunset visible through the gate; no text in image." },
+    { "zh": "四位主人微笑着化作四位智慧行者：“会思考、守承诺，才是真心。”", "en": "The four hosts gently revealed themselves as wise travelers. “Thinking carefully and keeping promises show a true heart.”", "prompt": "Four hosts glow softly and reveal elegant wise-traveler robes while remaining friendly adults; team bows, no dramatic magic or fear, no text in image." },
+    { "zh": "师徒重新上路。八戒把点心香记在心里，却把脚步坚定地迈向西方。", "en": "The team set out again. Bajie remembered the lovely smells, but his feet moved firmly west.", "prompt": "Full team walks west at sunrise; Bajie smiles back once at the manor then faces forward, warm humorous ending, no text in image." }
+  ]
+}
