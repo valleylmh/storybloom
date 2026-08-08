@@ -35,6 +35,18 @@ type SavedStoryRow = {
   updated_at: string;
 };
 
+type SavedStoryAssetRow = {
+  id: string;
+  asset_key: string;
+  storage_path: string;
+};
+
+type UploadedStoryAsset = {
+  assetKey: string;
+  storagePath: string;
+  byteSize?: number;
+};
+
 function getStoryStatus(result: GenerateResponse): StoryHistoryStatus {
   if (result.pages.some((page) => page.imageStatus === "failed")) return "failed";
   if (
@@ -46,11 +58,61 @@ function getStoryStatus(result: GenerateResponse): StoryHistoryStatus {
   return "generating";
 }
 
+function getStoryCompleteness(result: GenerateResponse) {
+  const textFields = result.pages.reduce(
+    (total, page) =>
+      total +
+      Number(page.zhText.trim().length > 0) +
+      Number(page.enText.trim().length > 0),
+    0,
+  );
+  const completedImages = result.pages.filter(
+    (page) => page.imageStatus === "complete" || Boolean(page.imageUrl),
+  ).length;
+  return [result.pages.length, textFields, completedImages, result.totalPages];
+}
+
+function compareStoryCompleteness(
+  left: GenerateResponse,
+  right: GenerateResponse,
+) {
+  const leftScore = getStoryCompleteness(left);
+  const rightScore = getStoryCompleteness(right);
+  for (let index = 0; index < leftScore.length; index += 1) {
+    if (leftScore[index] !== rightScore[index]) {
+      return leftScore[index] > rightScore[index] ? 1 : -1;
+    }
+  }
+  return 0;
+}
+
+function shouldKeepExistingStory(
+  existing: SavedStoryRow,
+  input: StorySaveInput,
+) {
+  const nextStatus = input.status || getStoryStatus(input.result);
+  if (existing.status === "complete" && nextStatus !== "complete") {
+    return true;
+  }
+  return (
+    compareStoryCompleteness(
+      input.result,
+      fromPersistedStorySnapshot(existing.story_snapshot),
+    ) < 0
+  );
+}
+
 function assertOwnedPath(path: string, userId: string, storyId: string) {
   if (!path.startsWith(`${userId}/${storyId}/`) || !isPersistedStoragePath(path)) {
     throw new Error("story-asset-path-invalid");
   }
   return path;
+}
+
+function getAssetKey(page: number | "cover") {
+  return page === "cover"
+    ? "cover"
+    : `page-${String(page).padStart(2, "0")}`;
 }
 
 async function uploadStoryAssets(
@@ -60,6 +122,7 @@ async function uploadStoryAssets(
   result: GenerateResponse,
 ) {
   const entries: StoryAssetManifest["pages"] = [];
+  const uploadedAssets: UploadedStoryAsset[] = [];
   const archivedPages = [...result.pages];
   let coverBlob: Blob | undefined;
 
@@ -73,6 +136,10 @@ async function uploadStoryAssets(
     ) {
       const storagePath = assertOwnedPath(page.imageUrl, userId, savedStoryId);
       entries.push({ page: page.page, storagePath, mimeType: "image/webp" });
+      uploadedAssets.push({
+        assetKey: getAssetKey(page.page),
+        storagePath,
+      });
       continue;
     }
 
@@ -83,6 +150,11 @@ async function uploadStoryAssets(
     await uploadPrivateWebp(supabase, STORY_BUCKET, storagePath, blob);
     archivedPages[index] = { ...page, imageUrl: storagePath };
     entries.push({ page: page.page, storagePath, mimeType: "image/webp" });
+    uploadedAssets.push({
+      assetKey: getAssetKey(page.page),
+      storagePath,
+      byteSize: blob.size,
+    });
     coverBlob ||= blob;
   }
 
@@ -90,12 +162,79 @@ async function uploadStoryAssets(
     const storagePath = `${userId}/${savedStoryId}/cover.webp`;
     await uploadPrivateWebp(supabase, STORY_BUCKET, storagePath, coverBlob);
     entries.unshift({ page: "cover", storagePath, mimeType: "image/webp" });
+    uploadedAssets.unshift({
+      assetKey: "cover",
+      storagePath,
+      byteSize: coverBlob.size,
+    });
   }
 
   return {
     archivedResult: { ...result, pages: archivedPages },
     manifest: { version: 1, pages: entries } satisfies StoryAssetManifest,
+    uploadedAssets,
   };
+}
+
+async function syncStoryAssetRows(
+  supabase: SupabaseClient,
+  userId: string,
+  storyId: string,
+  manifest: StoryAssetManifest,
+  uploadedAssets: UploadedStoryAsset[],
+) {
+  const existingResult = await supabase
+    .from("saved_story_assets")
+    .select("id,asset_key,storage_path")
+    .eq("user_id", userId)
+    .eq("saved_story_id", storyId);
+  if (existingResult.error) throw existingResult.error;
+  const existing = (existingResult.data || []) as SavedStoryAssetRow[];
+  const uploadedByPath = new Map(
+    uploadedAssets.map((asset) => [asset.storagePath, asset]),
+  );
+  const nextRows = manifest.pages.map((asset) => {
+    const uploaded = uploadedByPath.get(asset.storagePath);
+    return {
+      user_id: userId,
+      saved_story_id: storyId,
+      asset_key: getAssetKey(asset.page),
+      storage_path: assertOwnedPath(asset.storagePath, userId, storyId),
+      mime_type: "image/webp",
+      byte_size: uploaded?.byteSize ?? null,
+    };
+  });
+  const nextKeys = new Set(nextRows.map((row) => row.asset_key));
+  const nextPaths = new Set(nextRows.map((row) => row.storage_path));
+  const staleRows = existing.filter((row) => !nextKeys.has(row.asset_key));
+  const stalePaths = staleRows
+    .map((row) => assertOwnedPath(row.storage_path, userId, storyId))
+    .filter((path) => !nextPaths.has(path));
+
+  if (nextRows.length > 0) {
+    const upsertResult = await supabase
+      .from("saved_story_assets")
+      .upsert(nextRows, {
+        onConflict: "user_id,saved_story_id,asset_key",
+      });
+    if (upsertResult.error) throw upsertResult.error;
+  }
+  if (stalePaths.length > 0) {
+    const removal = await supabase.storage.from(STORY_BUCKET).remove(stalePaths);
+    if (removal.error) throw removal.error;
+  }
+  if (staleRows.length > 0) {
+    const deletion = await supabase
+      .from("saved_story_assets")
+      .delete()
+      .eq("user_id", userId)
+      .eq("saved_story_id", storyId)
+      .in(
+        "id",
+        staleRows.map((row) => row.id),
+      );
+    if (deletion.error) throw deletion.error;
+  }
 }
 
 async function hydrateRow(
@@ -157,13 +296,18 @@ export function createCloudStoryRepository(
   async function save(input: StorySaveInput) {
     const existingResult = await supabase
       .from("saved_stories")
-      .select("id,child_profile_id")
+      .select("*")
       .eq("user_id", userId)
       .eq("client_story_id", input.result.storyId)
       .maybeSingle();
     if (existingResult.error) throw existingResult.error;
-    const savedStoryId = existingResult.data?.id || crypto.randomUUID();
-    const { archivedResult, manifest } = await uploadStoryAssets(
+    const existingRow = existingResult.data as SavedStoryRow | null;
+    if (existingRow && shouldKeepExistingStory(existingRow, input)) {
+      return hydrateRow(supabase, userId, existingRow);
+    }
+    const savedStoryId =
+      existingRow?.id || input.preferredCloudId || crypto.randomUUID();
+    const { archivedResult, manifest, uploadedAssets } = await uploadStoryAssets(
       supabase,
       userId,
       savedStoryId,
@@ -178,7 +322,7 @@ export function createCloudStoryRepository(
           child_profile_id:
             input.childProfileId !== undefined
               ? input.childProfileId
-              : existingResult.data?.child_profile_id ?? null,
+              : existingRow?.child_profile_id ?? null,
           client_story_id: input.result.storyId,
           title: input.result.coverTitle,
           story_snapshot: toPersistedStorySnapshot(archivedResult),
@@ -190,7 +334,15 @@ export function createCloudStoryRepository(
       .select("*")
       .single();
     if (error) throw error;
-    return hydrateRow(supabase, userId, data as SavedStoryRow);
+    const savedRow = data as SavedStoryRow;
+    await syncStoryAssetRows(
+      supabase,
+      userId,
+      savedStoryId,
+      savedRow.asset_manifest || manifest,
+      uploadedAssets,
+    );
+    return hydrateRow(supabase, userId, savedRow);
   }
 
   return {

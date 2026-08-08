@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -14,20 +14,22 @@ import { useAuth } from "@/hooks/useAuth";
 import { buildLoginPath } from "@/lib/auth/return-to";
 import { countFamilyCharacters } from "@/lib/repositories/family-character-repository";
 import CloudSyncCard from "./CloudSyncCard";
+import LocalImportCard from "./LocalImportCard";
 import LocalDataSummary from "./LocalDataSummary";
+import { createAccountLocalImportController } from "./local-import-adapter";
 import styles from "./Account.module.css";
 
 const FEATURE_ITEMS = [
   {
     href: "/me/books",
     title: "我的绘本",
-    description: "查看、继续阅读或删除当前浏览器里的最近作品。",
+    description: "并列查看当前设备与主动导入云端的绘本副本。",
     icon: Books,
   },
   {
     href: "/me/growth",
     title: "成长记录",
-    description: "按孩子查看真实照片、家长备注和绘本场景。",
+    description: "切换查看当前设备或私有云端的照片、备注和绘本场景。",
     icon: TreeStructure,
   },
   {
@@ -45,7 +47,7 @@ const FEATURE_ITEMS = [
   {
     href: "/me/settings",
     title: "数据与隐私",
-    description: "了解本地保存边界、账户数据和后续同步计划。",
+    description: "查看保存位置，并管理可选同步与隐私设置。",
     icon: GearSix,
   },
 ];
@@ -53,6 +55,11 @@ const FEATURE_ITEMS = [
 export default function AccountOverview() {
   const { supabase, session, loading } = useAuth();
   const [cloudCharacterCount, setCloudCharacterCount] = useState<number | null>();
+  const userId = session?.user.id;
+  const localImportController = useMemo(() => {
+    if (!supabase || !userId) return null;
+    return createAccountLocalImportController(supabase, userId);
+  }, [supabase, userId]);
 
   useEffect(() => {
     let active = true;
@@ -84,6 +91,15 @@ export default function AccountOverview() {
         cloudCharacterCount={cloudCharacterCount}
       />
 
+      {!loading && userId && localImportController ? (
+        <div id="local-data-import">
+          <LocalImportCard
+            controller={localImportController}
+            userId={userId}
+          />
+        </div>
+      ) : null}
+
       <div className={styles.actions}>
         <Link className={styles.primaryButton} href="/?mode=minimal">
           继续创作 <ArrowRight />
@@ -95,7 +111,7 @@ export default function AccountOverview() {
         ) : null}
         {!loading && !session ? (
           <p className={styles.actionNote}>
-            登录先用于账户与家庭角色；本地绘本和成长记录的跨设备同步仍在开发中。
+            登录后仍不会自动上传；你可以进入账户页逐项选择要跨设备保存的内容。
           </p>
         ) : null}
       </div>

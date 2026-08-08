@@ -16,19 +16,19 @@ export default function CloudSyncCard() {
       </span>
       <div className={styles.cloudCopy}>
         <div className={styles.cloudHeader}>
-          <h2>云同步即将支持</h2>
+          <h2>{session ? "按你的选择同步" : "登录后可选择云同步"}</h2>
         </div>
         <p>
           {session
-            ? "家庭角色已绑定账户；当前浏览器里的绘本与成长记录仍不会因登录自动上传，跨设备同步将在后续版本接入。"
-            : "现在登录可以管理云端家庭角色，但当前浏览器里的绘本与成长记录仍只保存在这台设备。"}
+            ? "登录不会自动上传本地内容。你可以逐项选择绘本和成长记录导入云端，中断后继续，本地副本会一直保留。"
+            : "当前浏览器里的绘本和成长记录仍保存在本机；登录后也只有你主动选择的内容才会导入云端。"}
         </p>
       </div>
       <Link
         className={styles.cardLink}
-        href={session ? "/me/characters" : buildLoginPath("/me")}
+        href={session ? "/me#local-data-import" : buildLoginPath("/me")}
       >
-        {session ? "管理家庭角色" : "先建立账户"} <ArrowRight />
+        {session ? "管理导入内容" : "先建立账户"} <ArrowRight />
       </Link>
     </section>
   );

@@ -51,7 +51,7 @@ export default function AccountSidebar() {
       </nav>
       <div className={styles.sidebarNote}>
         <strong>当前阶段</strong>
-        <span>绘本与成长记录仍保存在当前浏览器，登录不会自动上传。</span>
+        <span>本地副本会一直保留；只有你主动选择的内容才会导入私有云端。</span>
       </div>
     </aside>
   );

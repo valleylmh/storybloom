@@ -7,6 +7,7 @@ import {
   BookOpenText,
   Camera,
   CaretDown,
+  Cloud,
   Clock,
   PencilSimpleLine,
   Plus,
@@ -19,13 +20,23 @@ import {
   type GrowthRecord,
 } from "@/lib/growth-records";
 import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
+import type { GrowthRepository } from "@/lib/repositories/growth-repository";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
+import {
+  getGrowthClientRecordId,
+  type GrowthDataSource,
+} from "./growth-source-model";
 import styles from "./GrowthArchive.module.css";
 
 interface Props {
   childKey: string;
   embedded?: boolean;
   basePath?: string;
+  repository?: GrowthRepository;
+  source?: GrowthDataSource;
+  pairedClientRecordIds?: ReadonlySet<string>;
+  onOpenStory?: (record: GrowthRecord) => Promise<void>;
+  onDeleteAll?: (record: GrowthRecord) => Promise<void>;
 }
 
 function formatLongDate(date: string) {
@@ -44,32 +55,59 @@ export default function GrowthTimeline({
   childKey,
   embedded = false,
   basePath = "/growth",
+  repository,
+  source = "local",
+  pairedClientRecordIds,
+  onOpenStory,
+  onDeleteAll,
 }: Props) {
+  const activeRepository = repository || localGrowthRepository;
   const [records, setRecords] = useState<GrowthRecord[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState("");
   const [selectedYear, setSelectedYear] = useState("");
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editDate, setEditDate] = useState("");
   const [editNote, setEditNote] = useState("");
   const [notice, setNotice] = useState("");
+  const [busyAction, setBusyAction] = useState("");
 
   useEffect(() => {
     let active = true;
-    void localGrowthRepository.getByChild(childKey).then((next) => {
-      if (!active) return;
-      setRecords(next);
-      const first = next[0];
-      if (first) {
-        setSelectedYear(first.occurredOn.slice(0, 4));
-        setExpandedIds(new Set([first.id]));
-      }
-      setLoading(false);
-    });
+    setLoading(true);
+    setLoadError("");
+    setRecords([]);
+    void activeRepository
+      .getByChild(childKey)
+      .then((next) => {
+        if (!active) return;
+        setRecords(next);
+        const first = next[0];
+        if (first) {
+          setSelectedYear(first.occurredOn.slice(0, 4));
+          setExpandedIds(new Set([first.id]));
+        } else {
+          setSelectedYear("");
+          setExpandedIds(new Set());
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setLoadError(
+            source === "cloud"
+              ? "私有云端成长记录暂时读取失败；当前设备里的记录不受影响。"
+              : "当前设备里的成长记录暂时读取失败，请稍后重试。",
+          );
+        }
+      })
+      .finally(() => {
+        if (active) setLoading(false);
+      });
     return () => {
       active = false;
     };
-  }, [childKey]);
+  }, [activeRepository, childKey, source]);
 
   const years = useMemo(
     () => Array.from(new Set(records.map((record) => record.occurredOn.slice(0, 4)))),
@@ -104,7 +142,7 @@ export default function GrowthTimeline({
       return;
     }
     try {
-      const updated = await localGrowthRepository.update(record.id, {
+      const updated = await activeRepository.update(record.id, {
         occurredOn: editDate,
         note: editNote.trim(),
       });
@@ -115,32 +153,100 @@ export default function GrowthTimeline({
       );
       setEditingId(null);
       setSelectedYear(updated.occurredOn.slice(0, 4));
-      setNotice("记录已更新。");
+      setNotice(
+        source === "cloud" ? "已仅更新私有云端记录。" : "已仅更新当前设备记录。",
+      );
     } catch {
-      setNotice("暂时无法更新记录，请稍后再试。");
+      setNotice(
+        source === "cloud"
+          ? "私有云端记录暂时无法更新；当前设备副本没有被修改。"
+          : "当前设备记录暂时无法更新；云端副本没有被修改。",
+      );
     }
   }
 
   async function removeRecord(record: GrowthRecord) {
-    if (!window.confirm(`删除《${record.story.coverTitle}》这条成长记录？`)) return;
+    const sourceLabel = source === "cloud" ? "私有云端" : "当前设备";
+    if (
+      !window.confirm(
+        `仅删除${sourceLabel}中的《${record.story.coverTitle}》成长记录？关联绘本会继续保留。`,
+      )
+    ) {
+      return;
+    }
+    setBusyAction(`delete:${record.id}`);
     try {
-      await localGrowthRepository.remove(record.id);
+      await activeRepository.remove(record.id);
     } catch {
-      setNotice("暂时无法删除记录，请稍后再试。");
+      setNotice(
+        source === "cloud"
+          ? "云端记录删除失败；当前设备副本没有被修改。"
+          : "本机记录删除失败；云端副本没有被修改。",
+      );
+      setBusyAction("");
       return;
     }
     const next = records.filter((item) => item.id !== record.id);
     setRecords(next);
     setEditingId(null);
-    setNotice("记录已删除。绘本仍保留在最近作品中。");
+    setBusyAction("");
+    setNotice(
+      source === "cloud"
+        ? "已仅删除私有云端记录。关联绘本仍保留。"
+        : "已仅删除当前设备记录。关联绘本仍保留。",
+    );
     if (!next.some((item) => item.occurredOn.startsWith(selectedYear))) {
       setSelectedYear(next[0]?.occurredOn.slice(0, 4) || "");
     }
   }
 
   async function openStory(record: GrowthRecord) {
-    await localStoryRepository.save({ result: record.story });
-    window.location.href = `/?mode=minimal&book=${encodeURIComponent(record.storyId)}`;
+    setBusyAction(`open:${record.id}`);
+    setNotice("");
+    try {
+      if (onOpenStory) {
+        await onOpenStory(record);
+      } else {
+        await localStoryRepository.save({ result: record.story });
+        window.location.href = `/?mode=minimal&book=${encodeURIComponent(record.storyId)}`;
+      }
+    } catch {
+      setBusyAction("");
+      setNotice(
+        source === "cloud"
+          ? "云端绘本的私有图片未能完整保存到本机，请检查网络后重试。云端副本没有被修改。"
+          : "绘本暂时无法打开，请稍后重试。",
+      );
+    }
+  }
+
+  async function removeAllCopies(record: GrowthRecord) {
+    if (!onDeleteAll) return;
+    const firstConfirmed = window.confirm(
+      `第一次确认：同时删除《${record.story.coverTitle}》在当前设备和私有云端的成长记录？`,
+    );
+    if (!firstConfirmed) return;
+    const secondConfirmed = window.confirm(
+      "第二次确认：两个成长记录副本都会删除，关联绘本仍会保留。确定继续吗？",
+    );
+    if (!secondConfirmed) return;
+
+    setBusyAction(`delete-all:${getGrowthClientRecordId(record)}`);
+    setNotice("");
+    try {
+      await onDeleteAll(record);
+      const next = records.filter((item) => item.id !== record.id);
+      setRecords(next);
+      setEditingId(null);
+      setNotice("当前设备与私有云端的成长记录副本均已删除；关联绘本仍保留。");
+      if (!next.some((item) => item.occurredOn.startsWith(selectedYear))) {
+        setSelectedYear(next[0]?.occurredOn.slice(0, 4) || "");
+      }
+    } catch {
+      setNotice("全部删除未能完整完成，请返回成长书架刷新并确认仍存在的副本。");
+    } finally {
+      setBusyAction("");
+    }
   }
 
   return (
@@ -154,7 +260,8 @@ export default function GrowthTimeline({
           </Link>
           <div className={styles.navActions}>
             <span className={styles.privacyLabel}>
-              <ShieldCheck /> 仅保存在当前浏览器
+              {source === "cloud" ? <Cloud /> : <ShieldCheck />}
+              {source === "cloud" ? "账户私有 · 跨设备可见" : "仅保存在当前浏览器"}
             </span>
             <Link href={basePath} className={styles.navLink}>
               <ArrowLeft /> 成长书架
@@ -167,7 +274,8 @@ export default function GrowthTimeline({
         {embedded ? (
           <div className={styles.embeddedToolbar}>
             <span className={styles.privacyLabel}>
-              <ShieldCheck /> 仅保存在当前浏览器
+              {source === "cloud" ? <Cloud /> : <ShieldCheck />}
+              {source === "cloud" ? "私有云端记录" : "当前设备记录"}
             </span>
             <Link href={basePath} className={styles.navLink}>
               <ArrowLeft /> 返回成长书架
@@ -179,11 +287,22 @@ export default function GrowthTimeline({
             <span />
             <span />
           </section>
+        ) : loadError ? (
+          <section className={styles.emptyState}>
+            {source === "cloud" ? <Cloud /> : <BookOpenText />}
+            <h1>暂时无法读取这条成长时间轴</h1>
+            <p>{loadError}</p>
+            <Link href={basePath}>返回成长书架</Link>
+          </section>
         ) : records.length === 0 ? (
           <section className={styles.emptyState}>
             <BookOpenText />
             <h1>没有找到这条成长时间轴</h1>
-            <p>记录可能已经删除，或者保存在另一台设备的浏览器中。</p>
+            <p>
+              {source === "cloud"
+                ? "记录可能尚未主动导入、已经删除，或属于当前设备副本。"
+                : "记录可能已经删除，或者只保存在私有云端。"}
+            </p>
             <Link href={basePath}>返回成长书架</Link>
           </section>
         ) : (
@@ -313,15 +432,53 @@ export default function GrowthTimeline({
                           </div>
 
                           <div className={styles.recordActions}>
-                            <button type="button" className={styles.readButton} onClick={() => void openStory(record)}>
-                              <BookOpenText /> 阅读绘本
+                            <button
+                              type="button"
+                              className={styles.readButton}
+                              disabled={Boolean(busyAction)}
+                              onClick={() => void openStory(record)}
+                            >
+                              <BookOpenText />
+                              {busyAction === `open:${record.id}`
+                                ? "正在保存图片…"
+                                : source === "cloud"
+                                  ? "保存到本机并阅读"
+                                  : "阅读本机绘本"}
                             </button>
-                            <button type="button" onClick={() => startEditing(record)}>
-                              <PencilSimpleLine /> 编辑记录
+                            <button
+                              type="button"
+                              disabled={Boolean(busyAction)}
+                              onClick={() => startEditing(record)}
+                            >
+                              <PencilSimpleLine />
+                              {source === "cloud" ? "仅编辑云端" : "仅编辑本机"}
                             </button>
-                            <button type="button" className={styles.deleteButton} onClick={() => void removeRecord(record)}>
-                              <Trash /> 删除
+                            <button
+                              type="button"
+                              className={styles.deleteButton}
+                              disabled={Boolean(busyAction)}
+                              onClick={() => void removeRecord(record)}
+                            >
+                              <Trash />
+                              {busyAction === `delete:${record.id}`
+                                ? "删除中…"
+                                : source === "cloud"
+                                  ? "仅删除云端"
+                                  : "仅删除本机"}
                             </button>
+                            {onDeleteAll && pairedClientRecordIds?.has(getGrowthClientRecordId(record)) ? (
+                              <button
+                                type="button"
+                                className={styles.deleteAllButton}
+                                disabled={Boolean(busyAction)}
+                                onClick={() => void removeAllCopies(record)}
+                              >
+                                <Trash />
+                                {busyAction === `delete-all:${getGrowthClientRecordId(record)}`
+                                  ? "全部删除中…"
+                                  : "全部删除"}
+                              </button>
+                            ) : null}
                           </div>
                         </div>
                       ) : null}

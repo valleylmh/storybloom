@@ -26,6 +26,8 @@ export interface StorySaveInput {
   result: GenerateResponse;
   childProfileId?: string | null;
   status?: StoryHistoryStatus;
+  /** Stable UUID allocated by the import controller before any asset upload. */
+  preferredCloudId?: string;
 }
 
 export interface StoryPatch {

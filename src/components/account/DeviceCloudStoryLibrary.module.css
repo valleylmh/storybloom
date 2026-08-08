@@ -1,0 +1,492 @@
+.page {
+  display: grid;
+  gap: 22px;
+}
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(22px, 4vw, 32px);
+  border: 1px solid rgba(79, 57, 43, 0.11);
+  border-radius: 25px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(221, 237, 213, 0.72), transparent 34%),
+    rgba(255, 253, 249, 0.88);
+  box-shadow: 0 18px 56px rgba(88, 58, 36, 0.06);
+}
+
+.intro > div {
+  display: grid;
+  max-width: 720px;
+  gap: 8px;
+}
+
+.intro p,
+.intro h2,
+.intro span,
+.columnHeader p,
+.columnHeader span,
+.storyCard h3,
+.storyCard p,
+.storyMeta span,
+.storyMeta strong,
+.missingCopy span,
+.sourceErrors p,
+.emptyLibrary h3,
+.emptyLibrary p {
+  margin: 0;
+}
+
+.intro p {
+  color: #a8492d;
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.intro h2 {
+  color: #3d332d;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: clamp(1.35rem, 3vw, 1.95rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+.intro span {
+  color: #77675d;
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.refreshButton,
+.openButton,
+.deleteButton,
+.deleteAllButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 0;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+.refreshButton {
+  min-height: 40px;
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.86);
+  color: #66574e;
+  font-size: 0.76rem;
+}
+
+.refreshButton:hover:not(:disabled),
+.openButton:hover:not(:disabled),
+.deleteButton:hover:not(:disabled),
+.deleteAllButton:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.refreshButton:disabled,
+.openButton:disabled,
+.deleteButton:disabled,
+.deleteAllButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+}
+
+.errorBanner,
+.sourceErrors p {
+  border: 1px solid rgba(172, 66, 43, 0.16);
+  background: rgba(255, 238, 233, 0.78);
+  color: #923e2b;
+}
+
+.errorBanner {
+  padding: 13px 15px;
+  border-radius: 15px;
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.columnHeaders,
+.sourceErrors,
+.storyRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.columnHeader {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 18px;
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 19px;
+  background: rgba(255, 253, 249, 0.84);
+}
+
+.columnHeader[data-source="local"] {
+  box-shadow: inset 3px 0 #d88763;
+}
+
+.columnHeader[data-source="cloud"] {
+  box-shadow: inset 3px 0 #728e68;
+}
+
+.columnIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 13px;
+  background: #fff0e8;
+  color: #a8492d;
+  font-size: 1.15rem;
+}
+
+.columnHeader[data-source="cloud"] .columnIcon {
+  background: #e7f0e2;
+  color: #587052;
+}
+
+.columnHeader > div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.columnHeader p {
+  color: #4b3d35;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.columnHeader span {
+  color: #8a796d;
+  font-size: 0.68rem;
+}
+
+.columnHeader > strong {
+  color: #6a5a50;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+
+.sourceErrors p {
+  padding: 11px 13px;
+  border-radius: 13px;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.storyRows {
+  display: grid;
+  gap: 14px;
+}
+
+.storyRow {
+  align-items: stretch;
+}
+
+.storyCell {
+  min-width: 0;
+}
+
+.storyCard,
+.missingCopy {
+  min-height: 100%;
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 253, 249, 0.86);
+  box-shadow: 0 14px 42px rgba(88, 58, 36, 0.045);
+}
+
+.storyCard {
+  display: grid;
+  gap: 15px;
+  padding: 18px;
+}
+
+.storyCard[data-source="cloud"] {
+  background:
+    linear-gradient(145deg, rgba(239, 247, 235, 0.66), transparent 44%),
+    rgba(255, 253, 249, 0.9);
+}
+
+.storyCardTopline,
+.storyMeta,
+.storyActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.storyCardTopline {
+  justify-content: space-between;
+}
+
+.sourceBadge,
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.sourceBadge {
+  padding: 6px 9px;
+  background: #fff0e8;
+  color: #9e492f;
+}
+
+.storyCard[data-source="cloud"] .sourceBadge {
+  background: #e5efdf;
+  color: #566e50;
+}
+
+.statusBadge {
+  padding: 5px 8px;
+  background: rgba(226, 238, 216, 0.78);
+  color: #587052;
+}
+
+.statusBadge[data-status="generating"] {
+  background: rgba(255, 239, 209, 0.86);
+  color: #8b6428;
+}
+
+.statusBadge[data-status="failed"] {
+  background: rgba(255, 226, 219, 0.82);
+  color: #9a432f;
+}
+
+.storyIdentity {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.storyIcon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 15px;
+  background: #fff7f1;
+  color: #a94b2f;
+  font-size: 1.25rem;
+}
+
+.storyIdentity > div {
+  display: grid;
+  min-width: 0;
+  gap: 5px;
+}
+
+.storyCard h3 {
+  overflow: hidden;
+  color: #46382f;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.storyCard p {
+  color: #86756a;
+  font-size: 0.7rem;
+}
+
+.storyMeta {
+  justify-content: space-between;
+  min-height: 22px;
+}
+
+.storyMeta span {
+  color: #8d7c70;
+  font-size: 0.66rem;
+}
+
+.storyMeta strong {
+  color: #62765b;
+  font-size: 0.64rem;
+}
+
+.storyActions {
+  align-self: end;
+  padding-top: 2px;
+}
+
+.openButton,
+.deleteButton,
+.deleteAllButton {
+  min-height: 36px;
+  padding: 7px 11px;
+  border-radius: 11px;
+  font-size: 0.68rem;
+}
+
+.openButton {
+  background: #a94b2f;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(169, 75, 47, 0.16);
+}
+
+.storyCard[data-source="cloud"] .openButton {
+  background: #607b58;
+  box-shadow: 0 8px 18px rgba(96, 123, 88, 0.16);
+}
+
+.deleteButton,
+.deleteAllButton {
+  border: 1px solid rgba(157, 61, 42, 0.16);
+  background: rgba(255, 250, 247, 0.9);
+  color: #98432f;
+}
+
+.deleteAllButton {
+  margin-left: auto;
+  border-color: rgba(157, 61, 42, 0.28);
+  background: #fff0eb;
+}
+
+.missingCopy {
+  display: grid;
+  min-height: 178px;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 22px;
+  border-style: dashed;
+  color: #a08f83;
+  text-align: center;
+}
+
+.missingCopy > svg {
+  font-size: 1.45rem;
+}
+
+.missingCopy span {
+  max-width: 260px;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.missingCopy a,
+.emptyLibrary a {
+  color: #a8492d;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mobileSourceLabel {
+  display: none;
+}
+
+.emptyLibrary {
+  display: grid;
+  grid-column: 1 / -1;
+  min-height: 250px;
+  place-items: center;
+  align-content: center;
+  gap: 9px;
+  padding: 34px;
+  border: 1px dashed rgba(79, 57, 43, 0.17);
+  border-radius: 22px;
+  background: rgba(255, 253, 249, 0.6);
+  color: #8a796d;
+  text-align: center;
+}
+
+.emptyLibrary > svg {
+  color: #b76547;
+  font-size: 1.8rem;
+}
+
+.emptyLibrary h3 {
+  color: #514239;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.08rem;
+}
+
+.emptyLibrary p {
+  max-width: 520px;
+  font-size: 0.74rem;
+  line-height: 1.65;
+}
+
+.spin {
+  animation: spin 900ms linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 820px) {
+  .columnHeaders,
+  .sourceErrors {
+    grid-template-columns: 1fr;
+  }
+
+  .columnHeaders {
+    display: none;
+  }
+
+  .storyRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+    border: 1px solid rgba(79, 57, 43, 0.09);
+    border-radius: 22px;
+    background: rgba(255, 253, 249, 0.48);
+  }
+
+  .mobileSourceLabel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 7px 4px;
+    color: #74645a;
+    font-size: 0.68rem;
+    font-weight: 850;
+  }
+}
+
+@media (max-width: 560px) {
+  .intro {
+    display: grid;
+  }
+
+  .refreshButton {
+    justify-self: start;
+  }
+
+  .storyActions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .deleteAllButton {
+    grid-column: 1 / -1;
+    margin-left: 0;
+  }
+}

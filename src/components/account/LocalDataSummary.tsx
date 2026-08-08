@@ -9,6 +9,7 @@ import styles from "./Account.module.css";
 interface Counts {
   books: number;
   growthRecords: number;
+  photos: number;
   children: number;
 }
 
@@ -33,6 +34,10 @@ export default function LocalDataSummary({
           setCounts({
             books: books.length,
             growthRecords: growthRecords.length,
+            photos: growthRecords.reduce(
+              (total, record) => total + record.photos.length,
+              0,
+            ),
             children: new Set(growthRecords.map((record) => record.childKey)).size,
           });
         },
@@ -50,6 +55,7 @@ export default function LocalDataSummary({
   const localStats = [
     { label: "最近绘本", value: counts?.books },
     { label: "成长记录", value: counts?.growthRecords },
+    { label: "成长照片", value: counts?.photos },
     { label: "孩子档案", value: counts?.children },
   ];
 
@@ -68,7 +74,19 @@ export default function LocalDataSummary({
         {localStats.map((item) => (
           <div className={styles.stat} key={item.label}>
             <span>{item.label}</span>
-            <strong>{item.value === undefined ? "—" : `${item.value} ${item.label === "最近绘本" ? "本" : item.label === "成长记录" ? "条" : "个"}`}</strong>
+            <strong>
+              {item.value === undefined
+                ? "—"
+                : `${item.value} ${
+                    item.label === "最近绘本"
+                      ? "本"
+                      : item.label === "成长记录"
+                        ? "条"
+                        : item.label === "成长照片"
+                          ? "张"
+                          : "个"
+                  }`}
+            </strong>
           </div>
         ))}
         {showCloudCharacters ? (

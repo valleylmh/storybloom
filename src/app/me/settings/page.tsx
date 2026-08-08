@@ -13,7 +13,7 @@ export default function SettingsPage() {
         <div>
           <p className={styles.sectionKicker}>DATA & PRIVACY</p>
           <h2>知道资料保存在哪里</h2>
-          <p>第一阶段不做云同步，也不会把当前浏览器里的作品描述成云端资料。</p>
+          <p>登录不会自动上传；只有你主动选择的内容才会导入私有云端，本地副本仍会保留。</p>
         </div>
       </section>
 

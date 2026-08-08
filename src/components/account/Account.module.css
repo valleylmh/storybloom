@@ -211,6 +211,7 @@
 }
 
 .summaryCard,
+.importCard,
 .cloudCard,
 .settingsCard,
 .featureCard {
@@ -222,6 +223,395 @@
 .summaryCard {
   padding: clamp(22px, 4vw, 34px);
   border-radius: 25px;
+}
+
+.importCard {
+  display: grid;
+  gap: 20px;
+  padding: clamp(22px, 4vw, 32px);
+  border-radius: 25px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(224, 238, 216, 0.7), transparent 34%),
+    rgba(255, 253, 249, 0.9);
+}
+
+.importCard h2,
+.importCard p {
+  margin: 0;
+}
+
+.importHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.importHeader h2,
+.importStatusCopy h2 {
+  color: #3d332d;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.importIcon,
+.importBackButton,
+.importCandidateIcon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+}
+
+.importIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  background: #e2eedc;
+  color: #587052;
+  font-size: 1.35rem;
+}
+
+.importLead {
+  color: #6e6259;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.importCountGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.importCountGrid > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 4px 9px;
+  padding: 16px;
+  border: 1px solid rgba(79, 57, 43, 0.08);
+  border-radius: 17px;
+  background: rgba(255, 248, 241, 0.88);
+}
+
+.importCountGrid svg {
+  grid-row: 1 / span 2;
+  color: #a8492d;
+  font-size: 1.25rem;
+}
+
+.importCountGrid strong {
+  color: #46382f;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.importCountGrid span {
+  color: #806f63;
+  font-size: 0.72rem;
+}
+
+.importPrivacyNote {
+  padding: 12px 14px;
+  border-radius: 13px;
+  background: rgba(237, 244, 233, 0.72);
+  color: #61725b;
+  font-size: 0.75rem;
+  line-height: 1.65;
+}
+
+.importActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.importPrimaryButton,
+.importSecondaryButton,
+.importTextButton,
+.importBackButton,
+.importConflictActions button {
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.importPrimaryButton,
+.importSecondaryButton {
+  min-height: 42px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.importPrimaryButton {
+  background: #a94b2f;
+  color: #fff;
+}
+
+.importSecondaryButton {
+  border: 1px solid rgba(79, 57, 43, 0.13);
+  background: #fffdf9;
+  color: #6d5d52;
+}
+
+.importPrimaryButton:disabled,
+.importTextButton:disabled,
+.importConflictActions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.importBackButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 50%;
+  background: #fffaf5;
+  color: #6d5d52;
+}
+
+.importSelectionGroups {
+  display: grid;
+  gap: 18px;
+}
+
+.importFieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.importFieldset legend {
+  margin-bottom: 9px;
+  color: #5a4b42;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.importCandidateList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.importCandidate {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 15px;
+  background: rgba(255, 253, 249, 0.84);
+  cursor: pointer;
+}
+
+.importCandidate:has(input:checked) {
+  border-color: rgba(169, 75, 47, 0.38);
+  background: #fff3eb;
+}
+
+.importCandidate input {
+  width: 17px;
+  height: 17px;
+  accent-color: #a94b2f;
+}
+
+.importCandidateIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  background: #fff0e8;
+  color: #a8492d;
+}
+
+.importCandidateCopy {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.importCandidateCopy strong {
+  overflow: hidden;
+  color: #4b3c33;
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.importCandidateCopy span {
+  overflow: hidden;
+  color: #8a796d;
+  font-size: 0.68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.importConsentCheck {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: flex-start;
+  gap: 10px;
+  padding: 13px 14px;
+  border: 1px solid rgba(88, 112, 82, 0.18);
+  border-radius: 14px;
+  background: rgba(237, 244, 233, 0.72);
+  color: #5f7059;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.importConsentCheck input {
+  width: 17px;
+  height: 17px;
+  margin-top: 2px;
+  accent-color: #587052;
+}
+
+.importSelectionFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(79, 57, 43, 0.1);
+}
+
+.importSelectionFooter > span {
+  color: #76665c;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.importCardCompact,
+.importStatusCard {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding-block: 20px;
+}
+
+.importStatusCopy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.importStatusCopy h2 {
+  font-size: 1.08rem;
+}
+
+.importStatusCopy p {
+  color: #75665c;
+  font-size: 0.76rem;
+  line-height: 1.6;
+}
+
+.importTextButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 4px;
+  background: transparent;
+  color: #526b4c;
+  font-size: 0.76rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.importProgress {
+  width: min(460px, 100%);
+  height: 7px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  accent-color: #6f8a66;
+}
+
+.importProgressLabel {
+  color: #8a796d;
+  font-size: 0.68rem;
+}
+
+.importIconWaiting {
+  background: #fff1d8;
+  color: #9a681d;
+}
+
+.importIconWarning {
+  background: #fff0e8;
+  color: #a8492d;
+}
+
+.importIconSuccess {
+  background: #e2eedc;
+  color: #4d7149;
+}
+
+.importConflictList {
+  display: grid;
+  gap: 10px;
+}
+
+.importConflict {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  padding: 16px;
+  border: 1px solid rgba(169, 75, 47, 0.18);
+  border-radius: 16px;
+  background: #fff9f4;
+}
+
+.importConflict strong {
+  color: #4b3c33;
+  font-size: 0.82rem;
+}
+
+.importConflict p,
+.importConflict span {
+  display: block;
+  margin-top: 5px;
+  color: #806f63;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.importConflictActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.importConflictActions button {
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: #6d5d52;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.spin {
+  color: #6f8a66;
+  animation: accountSpin 900ms linear infinite;
+}
+
+@keyframes accountSpin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .sectionKicker {
@@ -537,6 +927,18 @@
     grid-column: 2;
     justify-self: start;
   }
+
+  .importCandidateList {
+    grid-template-columns: 1fr;
+  }
+
+  .importConflict {
+    grid-template-columns: 1fr;
+  }
+
+  .importConflictActions {
+    justify-content: flex-start;
+  }
 }
 
 @media (max-width: 860px) {
@@ -619,6 +1021,7 @@
   }
 
   .summaryGrid,
+  .importCountGrid,
   .featureGrid,
   .settingsGrid {
     grid-template-columns: 1fr;
@@ -648,6 +1051,32 @@
     grid-template-columns: 1fr;
   }
 
+  .importCardCompact,
+  .importStatusCard {
+    grid-template-columns: 1fr;
+  }
+
+  .importCardCompact .importTextButton,
+  .importStatusCard .importTextButton {
+    justify-self: start;
+  }
+
+  .importSelectionFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .importSelectionFooter .importActions,
+  .importActions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .importConflictActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
   .cloudCard .cardLink {
     grid-column: 1;
   }
@@ -665,5 +1094,9 @@
   .navItem,
   .featureCard {
     transition: none;
+  }
+
+  .spin {
+    animation: none;
   }
 }

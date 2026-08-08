@@ -24,6 +24,8 @@ export interface GrowthRecordDraft {
 
 export interface GrowthRecord {
   id: string;
+  /** Stable local id used for cloud upserts; absent on legacy IndexedDB rows. */
+  clientRecordId?: string;
   storyId: string;
   childKey: string;
   childName: string;
@@ -143,6 +145,7 @@ export function createGrowthRecord(
 ): GrowthRecord {
   return {
     id: existing?.id || story.storyId,
+    clientRecordId: existing?.clientRecordId || existing?.id || story.storyId,
     storyId: story.storyId,
     childKey: draft.childKey,
     childName: draft.childName,

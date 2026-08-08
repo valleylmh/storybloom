@@ -16,6 +16,189 @@
   width: 100%;
 }
 
+.sourceOverview {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.sourceOverview h1 {
+  margin: 0;
+  color: #3d332d;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: clamp(1.5rem, 3vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.sourceOverview span {
+  display: block;
+  max-width: 680px;
+  margin-top: 8px;
+  color: #75655a;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.sourceRefresh {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.82);
+  color: #6f5f54;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.sourceRefresh:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.sourceTabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 5px;
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 253, 249, 0.6);
+}
+
+.sourceTabs button {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 11px;
+  min-height: 66px;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background: transparent;
+  color: #75655a;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sourceTabs button > svg {
+  color: #9a887c;
+  font-size: 1.25rem;
+}
+
+.sourceTabs button > span {
+  display: grid;
+  gap: 3px;
+}
+
+.sourceTabs strong {
+  color: #55463d;
+  font-size: 0.8rem;
+}
+
+.sourceTabs small {
+  color: #8a796d;
+  font-size: 0.68rem;
+}
+
+.sourceTabs b {
+  min-width: 30px;
+  color: #6d5d52;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.sourceTabs .sourceTabActive {
+  border-color: rgba(169, 75, 47, 0.16);
+  background: #fff7f0;
+  box-shadow: 0 8px 28px rgba(88, 58, 36, 0.07);
+}
+
+.sourceTabs .sourceTabActive > svg,
+.sourceTabs .sourceTabActive strong {
+  color: #a8492d;
+}
+
+.sourceError {
+  display: flex;
+  min-height: 150px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid rgba(169, 75, 47, 0.16);
+  border-radius: 18px;
+  background: #fff8f2;
+}
+
+.sourceError p {
+  margin: 0;
+  color: #8f4937;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
+.sourceError button {
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid rgba(169, 75, 47, 0.18);
+  border-radius: 999px;
+  background: #fff;
+  color: #9b3c2b;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.inactiveSourceNotice {
+  margin: 0 0 16px;
+  padding: 9px 12px;
+  border-radius: 11px;
+  background: rgba(255, 245, 226, 0.86);
+  color: #87662e;
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+.timelineSourceSwitch {
+  display: inline-flex;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding: 4px;
+  border: 1px solid rgba(79, 57, 43, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.76);
+}
+
+.timelineSourceSwitch a {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: #75655a;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.timelineSourceSwitch .timelineSourceActive {
+  background: #fff0e8;
+  color: #a8492d;
+}
+
 .embeddedToolbar {
   display: flex;
   align-items: center;
@@ -568,6 +751,18 @@
   color: #9b3c2b;
 }
 
+.recordActions .deleteAllButton {
+  border-color: rgba(155, 60, 43, 0.2);
+  background: #fff0ec;
+  color: #8d2f20;
+}
+
+.recordActions button:disabled,
+.editActions button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
 .editForm {
   display: grid;
   gap: 12px;
@@ -626,6 +821,15 @@
     align-items: flex-start;
     flex-direction: column;
     margin-bottom: 20px;
+  }
+
+  .sourceOverview {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sourceTabs {
+    grid-template-columns: 1fr;
   }
 
   .embeddedToolbar .privacyLabel {

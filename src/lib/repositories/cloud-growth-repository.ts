@@ -38,10 +38,15 @@ type GrowthPhotoRow = {
   id: string;
   user_id: string;
   growth_record_id: string;
+  client_photo_id: string | null;
   storage_path: string;
   original_name: string;
   sort_order: number;
+  mime_type: string;
+  byte_size: number | null;
+  checksum_sha256: string | null;
   created_at: string;
+  updated_at: string;
 };
 
 function assertOwnedPhotoPath(path: string, userId: string, recordId: string) {
@@ -49,6 +54,35 @@ function assertOwnedPhotoPath(path: string, userId: string, recordId: string) {
     throw new Error("growth-photo-path-invalid");
   }
   return path;
+}
+
+function fallbackPhotoKey(value: string) {
+  let first = 0x811c9dc5;
+  let second = 0x9e3779b9;
+  for (let index = 0; index < value.length; index += 1) {
+    const code = value.charCodeAt(index);
+    first = Math.imul(first ^ code, 0x01000193);
+    second = Math.imul(second ^ code, 0x85ebca6b);
+  }
+  return `${(first >>> 0).toString(16).padStart(8, "0")}${(
+    second >>> 0
+  )
+    .toString(16)
+    .padStart(8, "0")}`;
+}
+
+async function getStablePhotoKey(value: string) {
+  if (UUID_PATTERN.test(value)) return value.toLowerCase();
+  if (globalThis.crypto?.subtle) {
+    const digest = await globalThis.crypto.subtle.digest(
+      "SHA-256",
+      new TextEncoder().encode(value),
+    );
+    return Array.from(new Uint8Array(digest), (byte) =>
+      byte.toString(16).padStart(2, "0"),
+    ).join("");
+  }
+  return fallbackPhotoKey(value);
 }
 
 function createStoryFallback(
@@ -142,7 +176,7 @@ export function createCloudGrowthRepository(
       const photos: GrowthRecordPhoto[] = photoRows
         .filter((photo) => photo.growth_record_id === row.id)
         .map((photo) => ({
-          id: photo.id,
+          id: photo.client_photo_id || photo.id,
           name: photo.original_name,
           dataUrl: signedUrls.get(photo.storage_path) || "",
         }))
@@ -150,6 +184,7 @@ export function createCloudGrowthRepository(
 
       return {
         id: row.id,
+        clientRecordId: row.client_record_id,
         storyId: savedStory?.clientStoryId || row.client_record_id,
         childKey: row.child_profile_id,
         childName,
@@ -191,15 +226,24 @@ export function createCloudGrowthRepository(
       id: string;
       user_id: string;
       growth_record_id: string;
+      client_photo_id: string;
       storage_path: string;
       original_name: string;
       sort_order: number;
+      mime_type: "image/webp";
+      byte_size: number;
     }> = [];
 
     for (let index = 0; index < photos.length; index += 1) {
       const photo = photos[index];
-      const photoId = UUID_PATTERN.test(photo.id) ? photo.id : crypto.randomUUID();
-      const storagePath = `${userId}/${growthRecordId}/${photoId}.webp`;
+      const existingPhoto = existing.find(
+        (row) => row.client_photo_id === photo.id || row.id === photo.id,
+      );
+      const photoId =
+        existingPhoto?.id ||
+        (UUID_PATTERN.test(photo.id) ? photo.id : crypto.randomUUID());
+      const stablePhotoKey = await getStablePhotoKey(photo.id);
+      const storagePath = `${userId}/${growthRecordId}/${stablePhotoKey}.webp`;
       const blob = await imageSourceToWebp(photo.dataUrl, {
         maxDimension: 1600,
         quality: 0.86,
@@ -214,9 +258,12 @@ export function createCloudGrowthRepository(
         id: photoId,
         user_id: userId,
         growth_record_id: growthRecordId,
+        client_photo_id: photo.id,
         storage_path: storagePath,
         original_name: photo.name,
         sort_order: index,
+        mime_type: "image/webp",
+        byte_size: blob.size,
       });
     }
 
@@ -272,6 +319,7 @@ export function createCloudGrowthRepository(
           await storyRepository.save({
             result: input.story,
             childProfileId: input.childProfileId,
+            preferredCloudId: input.preferredStoryCloudId,
           })
         ).id;
       const existing = await supabase
@@ -281,7 +329,8 @@ export function createCloudGrowthRepository(
         .eq("client_record_id", input.clientRecordId)
         .maybeSingle();
       if (existing.error) throw existing.error;
-      const growthRecordId = existing.data?.id || crypto.randomUUID();
+      const growthRecordId =
+        existing.data?.id || input.preferredCloudId || crypto.randomUUID();
       const { data, error } = await supabase
         .from("growth_records")
         .upsert(
