@@ -130,6 +130,7 @@ async function generateAndCachePage(
       story.input.familyCharacters,
       story.input.customCharacterReferenceToken,
       story.input.visualBible,
+      story.id,
     );
 
     const latestStory = (await getCachedStory(story.id)) || story;

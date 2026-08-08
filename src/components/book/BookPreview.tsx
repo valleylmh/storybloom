@@ -32,6 +32,7 @@ import {
   isStaleWaitingPage,
   isWaitingImagePage,
 } from "@/lib/illustration-request-policy";
+import { getLiveIllustrationConcurrency } from "@/lib/illustration-client-concurrency";
 import type {
   GenerateResponse,
   SampleImageAssets,
@@ -45,7 +46,6 @@ const SAMPLE_IMAGE_MODELS: Array<{ id: SampleImageModel; label: string }> = [
 ];
 const SAMPLE_IMAGE_MODEL_IDS = SAMPLE_IMAGE_MODELS.map((model) => model.id);
 
-const LIVE_IMAGE_REQUEST_CONCURRENCY = 4;
 const ILLUSTRATION_POLL_INTERVAL_MS = 2500;
 const ILLUSTRATION_STALE_CLOCK_INTERVAL_MS = 5000;
 const STORY_VIDEO_ENABLED =
@@ -679,7 +679,9 @@ export default function BookPreview({
         Array.from(
           {
             length: Math.min(
-              LIVE_IMAGE_REQUEST_CONCURRENCY,
+              getLiveIllustrationConcurrency(
+                illustrationTasks.map((task) => task.page),
+              ),
               illustrationTasks.length,
             ),
           },

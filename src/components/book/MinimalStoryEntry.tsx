@@ -27,6 +27,10 @@ import {
   getRemainingFamilyCharacterGenerations,
   normalizeFamilyCharacterGenerationCount,
 } from "@/lib/family-character-generation";
+import {
+  dedupeFamilyCharacters,
+  findReusableFamilyCharacter,
+} from "@/lib/family-character-dedupe";
 
 type AppLocale = "zh" | "en";
 
@@ -110,7 +114,7 @@ async function fetchFamilyChoices(client: SupabaseClient, userId: string) {
     .eq("user_id", userId)
     .order("sort_order");
   if (error) throw error;
-  const choices = (data || []) as FamilyChoice[];
+  const choices = dedupeFamilyCharacters((data || []) as FamilyChoice[]);
   const paths = choices
     .map(getFamilyChoicePhotoPath)
     .filter(Boolean) as string[];
@@ -404,6 +408,10 @@ export default function MinimalStoryEntry({
         if (!active) return;
         setFamilyChoices(family.choices);
         setFamilyUrls(family.urls);
+        const availableIds = new Set(family.choices.map((choice) => choice.id));
+        setSelectedFamilyIds((current) =>
+          current.filter((id) => availableIds.has(id)),
+        );
       })
       .catch(() => {
         if (!active) return;
@@ -448,6 +456,10 @@ export default function MinimalStoryEntry({
     const family = await fetchFamilyChoices(supabase, familyUserId);
     setFamilyChoices(family.choices);
     setFamilyUrls(family.urls);
+    const availableIds = new Set(family.choices.map((choice) => choice.id));
+    setSelectedFamilyIds((current) =>
+      current.filter((id) => availableIds.has(id)),
+    );
     return family.choices;
   }
 
@@ -479,7 +491,13 @@ export default function MinimalStoryEntry({
   async function saveIdentityCharacter() {
     if (!familyUserId || !supabase) throw new Error(text.loginHint);
     const client = supabase;
-    const existing = familyChoices.find((choice) => choice.id === identitySelectedId);
+    const existing =
+      familyChoices.find((choice) => choice.id === identitySelectedId) ||
+      findReusableFamilyCharacter(
+        familyChoices,
+        identityName,
+        identityRelationship,
+      );
     const profileId = await ensureFamilyProfile(client);
     const id = existing?.id || crypto.randomUUID();
     const currentGenerationCount = normalizeFamilyCharacterGenerationCount(

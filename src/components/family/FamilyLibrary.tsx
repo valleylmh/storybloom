@@ -29,6 +29,10 @@ import {
   normalizeFamilyImageCrop,
   type FamilyImageCrop,
 } from "@/lib/family-image-crop";
+import {
+  dedupeFamilyCharacters,
+  findReusableFamilyCharacter,
+} from "@/lib/family-character-dedupe";
 
 type Character = {
   id: string;
@@ -197,7 +201,7 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
       .order("sort_order");
     if (error) throw error;
 
-    const rows = (data || []) as Character[];
+    const rows = dedupeFamilyCharacters((data || []) as Character[]);
     setItems(rows);
     const paths = rows
       .flatMap((item) => [item.canonical_photo_path, item.source_photo_path])
@@ -241,7 +245,10 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
     let autoGenerateId: string | undefined;
     try {
       const nextProfileId = profileId || (await ensureProfile(session.user.id));
-      const current = editing === "new" ? null : editing;
+      const current =
+        editing === "new"
+          ? findReusableFamilyCharacter(items, form.name, form.relation) || null
+          : editing;
       const id = current?.id || crypto.randomUUID();
       const kind = form.relation === "宠物" ? "pet" : "person";
       const currentGenerationCount = normalizeFamilyCharacterGenerationCount(

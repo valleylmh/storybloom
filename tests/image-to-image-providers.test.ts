@@ -33,6 +33,8 @@ const envKeys = [
   "CPA_IMAGE_REQUEST_DELAY_MS",
   "CPA_IMAGE_MAX_ATTEMPTS",
   "CPA_IMAGE_TIMEOUT_MS",
+  "FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS",
+  "FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS",
 ] as const;
 
 const originalEnv = Object.fromEntries(envKeys.map((key) => [key, process.env[key]]));
@@ -44,6 +46,8 @@ beforeEach(() => {
   process.env.CPA_IMAGE_REQUEST_DELAY_MS = "0";
   process.env.CPA_IMAGE_MAX_ATTEMPTS = "1";
   process.env.CPA_IMAGE_TIMEOUT_MS = "5000";
+  process.env.FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS = "3";
+  process.env.FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS = "1";
 });
 
 afterEach(() => {
@@ -341,6 +345,114 @@ describe("image-to-image provider routing", () => {
       "Neutral warm studio background",
     );
     expect(body.messages[0].content.filter((item: { type: string }) => item.type === "image_url")).toHaveLength(2);
+  });
+
+  it("retries a transient Supabase family reference fetch failure", async () => {
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    const download = vi
+      .fn()
+      .mockRejectedValueOnce(new TypeError("fetch failed"))
+      .mockResolvedValueOnce({
+        data: new Blob(["source"], { type: "image/webp" }),
+        error: null,
+      });
+    getSupabaseAdminMock.mockReturnValue({
+      storage: { from: () => ({ download }) },
+    });
+    const fetchMock = vi.fn().mockImplementation(async () =>
+      new Response(
+        JSON.stringify({
+          choices: [
+            {
+              message: {
+                images: [
+                  { image_url: { url: "data:image/png;base64,Y3Bh" } },
+                ],
+              },
+            },
+          ],
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      ),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const result = await generateIllustration("A child reads", 30, {
+      pageNumber: 1,
+      style: "fairytale",
+      preferredProvider: "cpa",
+      castIds: ["retry-child"],
+      familyCharacters: [
+        {
+          id: "retry-child",
+          name: "童童",
+          relation: "孩子",
+          appearance: "短发孩子",
+          sourceReferenceAssetPath: "user/retry-child/source.webp",
+        },
+      ],
+      referenceCacheKey: "retry-story",
+    });
+
+    expect(result.provider).toBe("cpa");
+    expect(download).toHaveBeenCalledTimes(2);
+  });
+
+  it("reuses downloaded family references for every page in the same story", async () => {
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    const download = vi.fn().mockResolvedValue({
+      data: new Blob(["source"], { type: "image/webp" }),
+      error: null,
+    });
+    getSupabaseAdminMock.mockReturnValue({
+      storage: { from: () => ({ download }) },
+    });
+    const fetchMock = vi.fn().mockImplementation(async () =>
+      new Response(
+        JSON.stringify({
+          choices: [
+            {
+              message: {
+                images: [
+                  { image_url: { url: "data:image/png;base64,Y3Bh" } },
+                ],
+              },
+            },
+          ],
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      ),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+    const options = {
+      style: "fairytale" as const,
+      preferredProvider: "cpa" as const,
+      castIds: ["cached-child"],
+      familyCharacters: [
+        {
+          id: "cached-child",
+          name: "童童",
+          relation: "孩子",
+          appearance: "短发孩子",
+          sourceReferenceAssetPath: "user/cached-child/source.webp",
+        },
+      ],
+      referenceCacheKey: "cached-story",
+    };
+
+    await generateIllustration("Page one", 31, {
+      ...options,
+      pageNumber: 1,
+    });
+    await generateIllustration("Page two", 32, {
+      ...options,
+      pageNumber: 2,
+    });
+
+    expect(download).toHaveBeenCalledOnce();
+    expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
   it("does not use CPA for a saved name without a canonical photo", async () => {

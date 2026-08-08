@@ -47,6 +47,10 @@ const DEFAULT_CPA_IMAGE_MAX_ATTEMPTS = 2;
 const DEFAULT_CPA_IMAGE_TIMEOUT_MS = 120_000;
 const MAX_CPA_REFERENCE_IMAGES = 10;
 const DEFAULT_FAMILY_ASSETS_BUCKET = "family-photos";
+const DEFAULT_FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS = 3;
+const DEFAULT_FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS = 500;
+const FAMILY_REFERENCE_CACHE_TTL_MS = 10 * 60 * 1000;
+const MAX_FAMILY_REFERENCE_CACHE_ENTRIES = 64;
 const DEFAULT_POLLINATIONS_IMAGE_SIZE = 512;
 const DEFAULT_POLLINATIONS_IMAGE_REQUEST_DELAY_MS = 8_000;
 const DEFAULT_POLLINATIONS_IMAGE_RETRY_DELAY_MS = 15_000;
@@ -89,6 +93,7 @@ type IllustrationOptions = {
   familyCharacters?: FamilyCharacterInput[];
   castIds?: string[];
   visualBible?: StoryVisualBible;
+  referenceCacheKey?: string;
 };
 
 type CpaReferenceImage = {
@@ -108,6 +113,11 @@ let agnesImageQueue: Promise<unknown> = Promise.resolve();
 let nextAgnesImageRequestAt = 0;
 let cpaImageQueue: Promise<unknown> = Promise.resolve();
 let nextCpaImageRequestAt = 0;
+const familyReferenceCache = new Map<
+  string,
+  { dataUri: string; expiresAt: number }
+>();
+const familyReferenceLoads = new Map<string, Promise<string>>();
 
 export class IllustrationGenerationError extends Error {
   failedPages: number[];
@@ -454,12 +464,44 @@ async function getPrivateFamilyReferenceImages(options?: IllustrationOptions) {
   }
 
   const bucket = process.env.SUPABASE_FAMILY_ASSETS_BUCKET || DEFAULT_FAMILY_ASSETS_BUCKET;
-  const supabase = getSupabaseAdmin();
   return Promise.all(
     references.map(async ({ assetPath, label }) => {
-      const { data, error } = await supabase.storage.from(bucket).download(assetPath);
+      return {
+        dataUri: await getPrivateFamilyReferenceDataUri(
+          bucket,
+          assetPath,
+          options?.referenceCacheKey,
+        ),
+        label,
+      };
+    })
+  );
+}
+
+async function downloadPrivateFamilyReferenceDataUri(
+  bucket: string,
+  assetPath: string,
+) {
+  const maxAttempts = Math.max(
+    1,
+    getPositiveIntegerEnv(
+      "FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS",
+      DEFAULT_FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS,
+    ),
+  );
+  const retryDelay = getPositiveIntegerEnv(
+    "FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS",
+    DEFAULT_FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS,
+  );
+  let lastError = assetPath;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      const { data, error } = await getSupabaseAdmin().storage
+        .from(bucket)
+        .download(assetPath);
       if (error || !data) {
-        throw new Error(`Unable to load family reference image: ${error?.message || assetPath}`);
+        throw new Error(error?.message || assetPath);
       }
 
       const contentType = data.type || "image/jpeg";
@@ -471,12 +513,54 @@ async function getPrivateFamilyReferenceImages(options?: IllustrationOptions) {
       }
 
       const bytes = Buffer.from(await data.arrayBuffer());
-      return {
-        dataUri: `data:${contentType};base64,${bytes.toString("base64")}`,
-        label,
-      };
+      return `data:${contentType};base64,${bytes.toString("base64")}`;
+    } catch (error) {
+      lastError = error instanceof Error ? error.message : String(error);
+      if (attempt < maxAttempts) {
+        await sleep(retryDelay * attempt);
+      }
+    }
+  }
+
+  throw new Error(`Unable to load family reference image: ${lastError}`);
+}
+
+function rememberFamilyReference(cacheKey: string, dataUri: string) {
+  if (familyReferenceCache.size >= MAX_FAMILY_REFERENCE_CACHE_ENTRIES) {
+    const oldestKey = familyReferenceCache.keys().next().value;
+    if (oldestKey) familyReferenceCache.delete(oldestKey);
+  }
+  familyReferenceCache.set(cacheKey, {
+    dataUri,
+    expiresAt: Date.now() + FAMILY_REFERENCE_CACHE_TTL_MS,
+  });
+}
+
+async function getPrivateFamilyReferenceDataUri(
+  bucket: string,
+  assetPath: string,
+  referenceCacheKey?: string,
+) {
+  const cacheKey = `${referenceCacheKey || "request"}:${bucket}:${assetPath}`;
+  const cached = referenceCacheKey ? familyReferenceCache.get(cacheKey) : null;
+  if (cached && cached.expiresAt > Date.now()) {
+    return cached.dataUri;
+  }
+  if (cached) familyReferenceCache.delete(cacheKey);
+
+  const activeLoad = familyReferenceLoads.get(cacheKey);
+  if (activeLoad) return activeLoad;
+
+  const load = downloadPrivateFamilyReferenceDataUri(bucket, assetPath)
+    .then((dataUri) => {
+      if (referenceCacheKey) rememberFamilyReference(cacheKey, dataUri);
+      return dataUri;
     })
-  );
+    .finally(() => {
+      familyReferenceLoads.delete(cacheKey);
+    });
+  familyReferenceLoads.set(cacheKey, load);
+  return load;
 }
 
 async function getCustomCharacterReferenceImage(options?: IllustrationOptions) {
@@ -1424,10 +1508,12 @@ export async function generateCpaReferenceImage(input: {
 export async function generateCpaStoryCharacterAnchor(input: {
   character: FamilyCharacterInput;
   visualBible: StoryVisualBible;
+  referenceCacheKey?: string;
 }) {
   const references = await getPrivateFamilyReferenceImages({
     familyCharacters: [input.character],
     castIds: [input.character.id],
+    referenceCacheKey: input.referenceCacheKey,
   });
   if (references.length === 0) {
     throw new Error("A story character anchor requires a saved family reference image.");
@@ -1673,6 +1759,7 @@ export async function generateAllIllustrations(
   familyCharacters?: FamilyCharacterInput[],
   customCharacterReferenceToken?: string,
   visualBible?: StoryVisualBible,
+  referenceCacheKey?: string,
 ): Promise<{ pages: StoryPage[]; mode: GenerationMode }> {
   const ordinaryProviderPlan = getProviderPlan(pages.length);
   const providerPlan = pages.map((page, index): ImageProvider | undefined => {
@@ -1731,6 +1818,7 @@ export async function generateAllIllustrations(
               familyCharacters,
               castIds: page.castIds,
               visualBible,
+              referenceCacheKey,
             }
           );
           return {
@@ -1807,6 +1895,7 @@ export async function regeneratePage(
   familyCharacters?: FamilyCharacterInput[],
   customCharacterReferenceToken?: string,
   visualBible?: StoryVisualBible,
+  referenceCacheKey?: string,
 ): Promise<StoryPage> {
   const seed = newSeed ?? Math.floor(Math.random() * 999999);
   const castIds = new Set(page.castIds || []);
@@ -1822,6 +1911,7 @@ export async function regeneratePage(
     familyCharacters,
     castIds: page.castIds,
     visualBible,
+    referenceCacheKey,
     preferredProvider: usesFamilyPhoto
       ? "cpa"
       : customCharacterReferenceToken

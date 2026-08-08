@@ -6,7 +6,7 @@ import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 export class AuthenticationError extends Error {
   readonly status = 401;
 
-  constructor(message = "Authentication required") {
+  constructor(message = "登录状态已失效，请重新登录后再试。") {
     super(message);
     this.name = "AuthenticationError";
   }

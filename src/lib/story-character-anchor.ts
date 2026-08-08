@@ -19,6 +19,7 @@ function decodeImageDataUri(imageDataUri: string) {
 export async function createStoryCharacterAnchorToken(input: {
   character: FamilyCharacterInput;
   visualBible: StoryVisualBible;
+  referenceCacheKey?: string;
 }) {
   const imageDataUri = await generateCpaStoryCharacterAnchor(input);
   const image = decodeImageDataUri(imageDataUri);

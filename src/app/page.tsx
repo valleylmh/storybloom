@@ -19,6 +19,8 @@ import {
 } from "@/lib/growth-records";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import { SAMPLE_BOOKS } from "@/lib/sample-books";
+import { requestStoryGeneration } from "@/lib/client-story-generation";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import type { GenerateErrorResponse, GenerateResponse } from "@/types";
 
 type AppLocale = "zh" | "en";
@@ -649,15 +651,18 @@ export default function Home() {
     try {
       const browserFingerprint = await getBrowserFingerprint();
       const { supabaseAccessToken, growthRecordDraft, ...generationData } = formData;
-      const response = await fetch("/api/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          ...(typeof supabaseAccessToken === "string" && supabaseAccessToken
-            ? { Authorization: `Bearer ${supabaseAccessToken}` }
-            : {}),
+      const response = await requestStoryGeneration({
+        payload: { ...generationData, browserFingerprint },
+        accessToken:
+          typeof supabaseAccessToken === "string"
+            ? supabaseAccessToken
+            : undefined,
+        refreshAccessToken: async () => {
+          const { data, error: refreshError } =
+            await getSupabaseBrowserClient().auth.refreshSession();
+          if (refreshError) return null;
+          return data.session?.access_token || null;
         },
-        body: JSON.stringify({ ...generationData, browserFingerprint }),
       });
 
       const data = (await response.json()) as GenerateResponse | GenerateErrorResponse;

@@ -93,7 +93,7 @@ async function getSelectedFamilyCharacters(
   const rows = (data ?? []) as FamilyCharacterRow[];
   const rowsById = new Map(rows.map((row) => [row.id, row]));
   if (rows.length !== uniqueIds.length || uniqueIds.some((id) => !rowsById.has(id))) {
-    throw new AuthenticationError("One or more family characters are unavailable");
+    throw new Error("部分家庭角色不可用，请刷新页面后重新选择。");
   }
 
   const orderedIds = protagonistFamilyCharacterId
@@ -324,6 +324,7 @@ export async function POST(req: NextRequest) {
       ? createStoryCharacterAnchorToken({
           character: protagonistCharacter!,
           visualBible: input.visualBible!,
+          referenceCacheKey: storyId,
         }).catch((error) => {
           console.warn("[generate] story character anchor unavailable", {
             storyId,
