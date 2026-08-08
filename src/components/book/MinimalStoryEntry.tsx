@@ -143,14 +143,20 @@ const COPY = {
     familyManage: "管理家庭角色",
     familySelected: (count: number) => `已选择 ${count} 位角色`,
     confirmTitle: "确认故事主角",
-    confirmHint: "正文会继续用“我”来讲，姓名只用于标题和人物形象。",
-    nameLabel: "人物名称",
-    relationLabel: "这是",
-    continueOnce: "仅本次使用并继续",
-    saveCharacter: "保存这个名字，下次自动匹配",
-    useCharacter: "使用这个角色",
-    useMe: "不指定姓名，继续用“我”",
+    confirmHint: "输入姓名后，标题和人物形象会使用这个名字；正文仍以“我”叙述。",
+    nameLabel: "主角姓名",
+    relationLabel: "角色身份",
+    continueOnce: "确认主角并继续",
+    saveAndContinue: "保存角色并继续",
+    saveCharacter: "保存为家庭角色，下次自动匹配",
+    saveCharacterHint: "取消勾选时，姓名只用于这一本绘本。",
+    savedCharacter: "已选择保存过的家庭角色",
+    useCharacter: "使用这个角色继续",
+    useMe: "改用“我”来讲",
     photoTitle: "添加参考照片（可选）",
+    photoHint: "JPG / PNG / WebP，最大 8MB",
+    photoChoose: "选择照片",
+    photoChange: "更换照片",
     cartoonizePerson: "将照片转换成统一的卡通绘本形象",
     cartoonizePet: "将照片转换成统一的卡通拟人形象",
     loginHint: "登录后可以保存姓名、私密照片和绘本形象。",
@@ -209,14 +215,20 @@ const COPY = {
     familyManage: "Manage family characters",
     familySelected: (count: number) => `${count} characters selected`,
     confirmTitle: "Confirm the main character",
-    confirmHint: "The story still uses I/me; the name is for the title and visual identity.",
-    nameLabel: "Character name",
-    relationLabel: "Relationship",
-    continueOnce: "Use once and continue",
-    saveCharacter: "Save this name for next time",
-    useCharacter: "Use this character",
-    useMe: "Continue as “I” without a name",
+    confirmHint: "The title and character will use this name; the story itself is still told as “I”.",
+    nameLabel: "Main character name",
+    relationLabel: "Character role",
+    continueOnce: "Confirm and continue",
+    saveAndContinue: "Save character and continue",
+    saveCharacter: "Save as a family character for next time",
+    saveCharacterHint: "Turn this off to use the name for this book only.",
+    savedCharacter: "Using a saved family character",
+    useCharacter: "Use this character and continue",
+    useMe: "Tell it as “I” instead",
     photoTitle: "Add a reference photo (optional)",
+    photoHint: "JPG / PNG / WebP, up to 8 MB",
+    photoChoose: "Choose photo",
+    photoChange: "Change photo",
     cartoonizePerson: "Turn the photo into a consistent storybook character",
     cartoonizePet: "Turn the photo into a consistent anthropomorphic character",
     loginHint: "Sign in to save names, private photos, and character artwork.",
@@ -1264,17 +1276,27 @@ export default function MinimalStoryEntry({
 
                 {familyUserId ? (
                   <>
-                    <label className="minimal-identity-check">
-                      <input
-                        type="checkbox"
-                        checked={identitySave}
-                        onChange={(event) => setIdentitySave(event.target.checked)}
-                      />
-                      <span>{text.saveCharacter}</span>
-                    </label>
+                    {identitySelectedId ? (
+                      <div className="minimal-identity-saved-status">
+                        <span aria-hidden="true">✓</span>
+                        <strong>{text.savedCharacter}</strong>
+                      </div>
+                    ) : (
+                      <label className="minimal-identity-check minimal-identity-save-check">
+                        <input
+                          type="checkbox"
+                          checked={identitySave}
+                          onChange={(event) => setIdentitySave(event.target.checked)}
+                        />
+                        <span>
+                          <strong>{text.saveCharacter}</strong>
+                          <small>{text.saveCharacterHint}</small>
+                        </span>
+                      </label>
+                    )}
                     <label className="minimal-identity-upload">
-                      <span>{text.photoTitle}</span>
                       <input
+                        className="minimal-identity-file-input"
                         type="file"
                         accept="image/jpeg,image/png,image/webp"
                         onChange={(event) => {
@@ -1283,7 +1305,14 @@ export default function MinimalStoryEntry({
                           if (event.target.files?.[0]) setIdentitySave(true);
                         }}
                       />
-                      {identityFile ? <em>{identityFile.name}</em> : null}
+                      <span className="minimal-identity-upload-icon" aria-hidden="true">＋</span>
+                      <span className="minimal-identity-upload-copy">
+                        <strong>{text.photoTitle}</strong>
+                        <small>{identityFile?.name || text.photoHint}</small>
+                      </span>
+                      <span className="minimal-identity-upload-action">
+                        {identityFile ? text.photoChange : text.photoChoose}
+                      </span>
                     </label>
                     {(identityFile || familyChoices.find((choice) => choice.id === identitySelectedId)?.source_photo_path) ? (
                       <label className="minimal-identity-check">
@@ -1353,10 +1382,16 @@ export default function MinimalStoryEntry({
                   <button
                     type="button"
                     className="primary"
-                    disabled={submitting}
+                    disabled={submitting || (!identityName.trim() && !identitySelectedId)}
                     onClick={() => void handleIdentityContinue()}
                   >
-                    {submitting ? text.generating : identitySelectedId ? text.useCharacter : text.continueOnce}
+                    {submitting
+                      ? text.generating
+                      : identitySelectedId
+                        ? text.useCharacter
+                        : identitySave && familyUserId
+                          ? text.saveAndContinue
+                          : text.continueOnce}
                   </button>
                 </div>
               </>

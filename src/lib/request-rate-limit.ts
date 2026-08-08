@@ -9,6 +9,7 @@ type RateLimitOptions = {
   window: `${number} ${"s" | "m" | "h" | "d"}`;
   windowMs: number;
   prefix: string;
+  identifier?: string;
 };
 
 const localAttempts = new Map<string, LocalAttempt>();
@@ -45,9 +46,14 @@ export function getClientIp(request: Request) {
   );
 }
 
+export function createRequestRateLimitIdentifier(ip: string, scope?: string) {
+  const identifierSource = scope ? `${ip}|scope:${scope}` : ip;
+  return crypto.createHash("sha256").update(identifierSource).digest("hex");
+}
+
 export async function allowIpRequest(request: Request, options: RateLimitOptions) {
   const ip = getClientIp(request);
-  const identifier = crypto.createHash("sha256").update(ip).digest("hex");
+  const identifier = createRequestRateLimitIdentifier(ip, options.identifier);
   const remoteLimiter = getRemoteLimiter(options);
 
   if (remoteLimiter) {

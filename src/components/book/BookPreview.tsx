@@ -25,6 +25,13 @@ import {
   sanitizeFileName,
   wrapText,
 } from "@/lib/social-share";
+import {
+  getImageStartedAtMs,
+  getInitialIllustrationAction,
+  ILLUSTRATION_STALE_THRESHOLD_MS,
+  isStaleWaitingPage,
+  isWaitingImagePage,
+} from "@/lib/illustration-request-policy";
 import type {
   GenerateResponse,
   SampleImageAssets,
@@ -40,7 +47,6 @@ const SAMPLE_IMAGE_MODEL_IDS = SAMPLE_IMAGE_MODELS.map((model) => model.id);
 
 const LIVE_IMAGE_REQUEST_CONCURRENCY = 4;
 const ILLUSTRATION_POLL_INTERVAL_MS = 2500;
-const ILLUSTRATION_STALE_THRESHOLD_MS = 3 * 60 * 1000;
 const ILLUSTRATION_STALE_CLOCK_INTERVAL_MS = 5000;
 const STORY_VIDEO_ENABLED =
   process.env.NEXT_PUBLIC_STORY_VIDEO_ENABLED !== "0";
@@ -92,32 +98,6 @@ function getSampleBookId(result: GenerateResponse) {
   );
 
   return match?.[1] || null;
-}
-
-function isWaitingImagePage(page: StoryPage) {
-  return page.imageStatus === "pending" || page.imageStatus === "demo";
-}
-
-function getImageStartedAtMs(page: StoryPage) {
-  if (!page.imageStartedAt) {
-    return null;
-  }
-
-  const startedAtMs = new Date(page.imageStartedAt).getTime();
-  return Number.isFinite(startedAtMs) ? startedAtMs : null;
-}
-
-function isStaleWaitingPage(page: StoryPage, nowMs: number) {
-  if (!isWaitingImagePage(page)) {
-    return false;
-  }
-
-  const startedAtMs = getImageStartedAtMs(page);
-  if (startedAtMs === null) {
-    return page.imageStatus === "demo";
-  }
-
-  return nowMs - startedAtMs > ILLUSTRATION_STALE_THRESHOLD_MS;
 }
 
 function getTimedOutImageError(useFreeFallback: boolean) {
@@ -394,6 +374,22 @@ export default function BookPreview({
     return request;
   }
 
+  async function resumeIllustrationPage(
+    page: StoryPage,
+  ): Promise<{ page: StoryPage; allComplete?: boolean }> {
+    const startedAtMs = getImageStartedAtMs(page);
+    if (startedAtMs === null) {
+      return requestIllustrationPage(page.page);
+    }
+
+    activeImageRequestsRef.current.add(page.page);
+    try {
+      return await pollIllustrationPage(page.page, false, startedAtMs);
+    } finally {
+      activeImageRequestsRef.current.delete(page.page);
+    }
+  }
+
   async function doRequestIllustrationPage(
     pageNumber: number,
     useFreeFallback: boolean,
@@ -605,24 +601,27 @@ export default function BookPreview({
     }
 
     async function generateLiveImages() {
-      const pendingPages = result.pages.filter((page) => {
-        if (
-          page.imageStatus === "complete" ||
-          requestedImagePagesRef.current.has(page.page)
-        ) {
-          return false;
-        }
+      const requestStartedAtMs = Date.now();
+      const illustrationTasks = result.pages.flatMap((page) => {
+        if (requestedImagePagesRef.current.has(page.page)) return [];
+
+        const action = getInitialIllustrationAction(page, requestStartedAtMs);
+        if (action === "wait") return [];
 
         requestedImagePagesRef.current.add(page.page);
-        return true;
+        return [{ page, action }];
       });
 
-      if (pendingPages.length === 0) {
+      if (illustrationTasks.length === 0) {
         return;
       }
 
       const startedAt = new Date().toISOString();
-      const pendingPageNumbers = new Set(pendingPages.map((page) => page.page));
+      const pendingPageNumbers = new Set(
+        illustrationTasks
+          .filter((task) => task.action === "start")
+          .map((task) => task.page.page),
+      );
       setPages((current) =>
         current.map((item) =>
           pendingPageNumbers.has(item.page)
@@ -638,12 +637,15 @@ export default function BookPreview({
       let nextIndex = 0;
 
       async function worker() {
-        while (nextIndex < pendingPages.length) {
-          const page = pendingPages[nextIndex];
+        while (nextIndex < illustrationTasks.length) {
+          const task = illustrationTasks[nextIndex];
           nextIndex += 1;
+          const { page } = task;
 
           try {
-            const data = await requestIllustrationPage(page.page);
+            const data = task.action === "resume"
+              ? await resumeIllustrationPage(page)
+              : await requestIllustrationPage(page.page);
 
             if (activeStoryIdRef.current !== result.storyId) {
               return;
@@ -678,7 +680,7 @@ export default function BookPreview({
           {
             length: Math.min(
               LIVE_IMAGE_REQUEST_CONCURRENCY,
-              pendingPages.length,
+              illustrationTasks.length,
             ),
           },
           () => worker(),

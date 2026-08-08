@@ -5,6 +5,7 @@ import {
   getProviderForPage,
   regeneratePage,
 } from "@/lib/image-generator";
+import { isRecentPendingIllustration } from "@/lib/illustration-request-policy";
 import { allowIpRequest } from "@/lib/request-rate-limit";
 import { cacheStory, getCachedStory } from "@/lib/storage";
 import type { GeneratedStory } from "@/types";
@@ -13,6 +14,17 @@ export const runtime = "nodejs";
 export const maxDuration = 300;
 
 const manualRegenerationProviderOrder = ["pollinations"] as const;
+const DEFAULT_ILLUSTRATION_RATE_LIMIT_PER_STORY = 64;
+
+function getIllustrationRateLimitPerStory() {
+  const configured = Number.parseInt(
+    process.env.ILLUSTRATION_RATE_LIMIT_PER_STORY || "",
+    10,
+  );
+  return Number.isFinite(configured) && configured >= 8
+    ? configured
+    : DEFAULT_ILLUSTRATION_RATE_LIMIT_PER_STORY;
+}
 
 const illustrationSchema = z.object({
   storyId: z.string().min(1),
@@ -214,20 +226,6 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  if (
-    !(await allowIpRequest(req, {
-      limit: 16,
-      window: "1 h",
-      windowMs: 60 * 60 * 1000,
-      prefix: "illustration",
-    }))
-  ) {
-    return NextResponse.json(
-      { error: "插图请求过于频繁，请稍后再试。" },
-      { status: 429, headers: { "Retry-After": "3600" } },
-    );
-  }
-
   const story = await getCachedStory(parsed.data.storyId);
   if (!story) {
     return NextResponse.json({ error: "没有找到对应故事，请重新生成。" }, { status: 404 });
@@ -236,6 +234,41 @@ export async function POST(req: NextRequest) {
   const targetPage = story.pages.find((page) => page.page === parsed.data.page);
   if (!targetPage) {
     return NextResponse.json({ error: "没有找到对应页面。" }, { status: 404 });
+  }
+
+  if (isRecentPendingIllustration(targetPage)) {
+    const payload = getPagePayload(story, parsed.data.page);
+    return NextResponse.json(
+      {
+        status: "accepted",
+        page: payload?.page || targetPage,
+        allComplete: false,
+        reused: true,
+      },
+      { status: 202 },
+    );
+  }
+
+  const rateLimit = getIllustrationRateLimitPerStory();
+  if (
+    !(await allowIpRequest(req, {
+      limit: rateLimit,
+      window: "1 h",
+      windowMs: 60 * 60 * 1000,
+      prefix: "illustration",
+      identifier: parsed.data.storyId,
+    }))
+  ) {
+    return NextResponse.json(
+      { error: "这本绘本的插图重试次数较多，请稍后再试。" },
+      {
+        status: 429,
+        headers: {
+          "Retry-After": "3600",
+          "X-RateLimit-Limit": String(rateLimit),
+        },
+      },
+    );
   }
 
   const pendingStory = await markPagePending(story, parsed.data.page);
