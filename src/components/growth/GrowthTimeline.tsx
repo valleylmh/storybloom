@@ -13,15 +13,13 @@ import {
   ShieldCheck,
   Trash,
 } from "@phosphor-icons/react";
-import { upsertHistory } from "@/lib/client-history";
 import {
-  deleteGrowthRecord,
   getGrowthRecordCover,
   isValidGrowthDate,
-  listGrowthRecords,
-  updateGrowthRecordDetails,
   type GrowthRecord,
 } from "@/lib/growth-records";
+import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
+import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import styles from "./GrowthArchive.module.css";
 
 interface Props {
@@ -58,9 +56,8 @@ export default function GrowthTimeline({
 
   useEffect(() => {
     let active = true;
-    void listGrowthRecords().then((allRecords) => {
+    void localGrowthRepository.getByChild(childKey).then((next) => {
       if (!active) return;
-      const next = allRecords.filter((record) => record.childKey === childKey);
       setRecords(next);
       const first = next[0];
       if (first) {
@@ -107,7 +104,7 @@ export default function GrowthTimeline({
       return;
     }
     try {
-      const updated = await updateGrowthRecordDetails(record.storyId, {
+      const updated = await localGrowthRepository.update(record.id, {
         occurredOn: editDate,
         note: editNote.trim(),
       });
@@ -126,8 +123,9 @@ export default function GrowthTimeline({
 
   async function removeRecord(record: GrowthRecord) {
     if (!window.confirm(`删除《${record.story.coverTitle}》这条成长记录？`)) return;
-    const deleted = await deleteGrowthRecord(record.storyId);
-    if (!deleted) {
+    try {
+      await localGrowthRepository.remove(record.id);
+    } catch {
       setNotice("暂时无法删除记录，请稍后再试。");
       return;
     }
@@ -141,7 +139,7 @@ export default function GrowthTimeline({
   }
 
   async function openStory(record: GrowthRecord) {
-    await upsertHistory(record.story);
+    await localStoryRepository.save({ result: record.story });
     window.location.href = `/?mode=minimal&book=${encodeURIComponent(record.storyId)}`;
   }
 

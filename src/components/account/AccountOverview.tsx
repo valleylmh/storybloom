@@ -12,6 +12,7 @@ import {
 } from "@phosphor-icons/react";
 import { useAuth } from "@/hooks/useAuth";
 import { buildLoginPath } from "@/lib/auth/return-to";
+import { countFamilyCharacters } from "@/lib/repositories/family-character-repository";
 import CloudSyncCard from "./CloudSyncCard";
 import LocalDataSummary from "./LocalDataSummary";
 import styles from "./Account.module.css";
@@ -63,22 +64,7 @@ export default function AccountOverview() {
     }
 
     setCloudCharacterCount(null);
-    void (async () => {
-      const profile = await supabase
-        .from("family_profiles")
-        .select("id")
-        .eq("user_id", session.user.id)
-        .maybeSingle();
-      if (profile.error) throw profile.error;
-      if (!profile.data) return 0;
-
-      const result = await supabase
-        .from("family_characters")
-        .select("id", { count: "exact", head: true })
-        .eq("profile_id", profile.data.id);
-      if (result.error) throw result.error;
-      return result.count || 0;
-    })()
+    void countFamilyCharacters(supabase, session.user.id)
       .then((count) => {
         if (active) setCloudCharacterCount(count);
       })

@@ -31,6 +31,14 @@ import {
   dedupeFamilyCharacters,
   findReusableFamilyCharacter,
 } from "@/lib/family-character-dedupe";
+import {
+  createFamilyPhotoUrls,
+  ensureFamilyProfile,
+  listFamilyCharacters,
+  removeFamilyPhotos,
+  uploadFamilyPhoto,
+  upsertFamilyCharacter,
+} from "@/lib/repositories/family-character-repository";
 
 type AppLocale = "zh" | "en";
 
@@ -105,28 +113,17 @@ function getFamilyChoicePhotoPath(choice: FamilyChoice) {
     : choice.canonical_photo_path || choice.source_photo_path;
 }
 
-async function fetchFamilyChoices(client: SupabaseClient, userId: string) {
-  const { data, error } = await client
-    .from("family_characters")
-    .select(
-      "id,display_name,relationship,kind,description,source_photo_path,canonical_photo_path,cartoonize,canonical_generation_count,status,sort_order",
-    )
-    .eq("user_id", userId)
-    .order("sort_order");
-  if (error) throw error;
-  const choices = dedupeFamilyCharacters((data || []) as FamilyChoice[]);
+async function fetchFamilyChoices(
+  client: SupabaseClient,
+  userId: string,
+) {
+  const choices = dedupeFamilyCharacters(
+    await listFamilyCharacters<FamilyChoice>(client, { userId }),
+  );
   const paths = choices
     .map(getFamilyChoicePhotoPath)
     .filter(Boolean) as string[];
-  const urls: Record<string, string> = {};
-  if (paths.length > 0) {
-    const { data: signed } = await client.storage
-      .from("family-photos")
-      .createSignedUrls(paths, 3600);
-    signed?.forEach((item, index) => {
-      if (item.signedUrl) urls[paths[index]] = item.signedUrl;
-    });
-  }
+  const urls = await createFamilyPhotoUrls(client, paths);
   return { choices, urls };
 }
 
@@ -463,31 +460,6 @@ export default function MinimalStoryEntry({
     return family.choices;
   }
 
-  async function ensureFamilyProfile(client: SupabaseClient) {
-    if (!familyUserId) throw new Error("请先登录后保存家庭角色。");
-    const existing = await client
-      .from("family_profiles")
-      .select("id")
-      .eq("user_id", familyUserId)
-      .maybeSingle();
-    if (existing.error) throw existing.error;
-    if (existing.data?.id) return existing.data.id as string;
-    const created = await client
-      .from("family_profiles")
-      .upsert(
-        {
-          user_id: familyUserId,
-          display_name: "我的家庭",
-          locale: locale === "zh" ? "zh-CN" : "en",
-        },
-        { onConflict: "user_id" },
-      )
-      .select("id")
-      .single();
-    if (created.error) throw created.error;
-    return created.data.id as string;
-  }
-
   async function saveIdentityCharacter() {
     if (!familyUserId || !supabase) throw new Error(text.loginHint);
     const client = supabase;
@@ -498,7 +470,9 @@ export default function MinimalStoryEntry({
         identityName,
         identityRelationship,
       );
-    const profileId = await ensureFamilyProfile(client);
+    const profileId = await ensureFamilyProfile(client, familyUserId, {
+      locale: locale === "zh" ? "zh-CN" : "en",
+    });
     const id = existing?.id || crypto.randomUUID();
     const currentGenerationCount = normalizeFamilyCharacterGenerationCount(
       existing?.canonical_generation_count,
@@ -534,10 +508,7 @@ export default function MinimalStoryEntry({
         await recordGuardianConsent(client, familyUserId);
       }
       sourcePath = `${familyUserId}/${id}/source.webp`;
-      const { error } = await client.storage
-        .from("family-photos")
-        .upload(sourcePath, photo, { contentType: "image/webp", upsert: true });
-      if (error) throw error;
+      await uploadFamilyPhoto(client, sourcePath, photo);
     }
     const canonicalPath = uploadsPhoto
       ? null
@@ -562,12 +533,9 @@ export default function MinimalStoryEntry({
         : "draft",
       sort_order: existing?.sort_order ?? familyChoices.length,
     };
-    const { error } = await client.from("family_characters").upsert(payload);
-    if (error) throw error;
+    await upsertFamilyCharacter(client, payload);
     if (uploadsPhoto && existing?.canonical_photo_path) {
-      await client.storage
-        .from("family-photos")
-        .remove([existing.canonical_photo_path]);
+      await removeFamilyPhotos(client, [existing.canonical_photo_path]);
     }
     const choices = await refreshFamilyChoices();
     return choices.find((choice) => choice.id === id) || ({

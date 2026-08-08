@@ -4,11 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BookOpenText, ShieldCheck } from "@phosphor-icons/react";
 import clsx from "clsx";
-import {
-  deleteHistory,
-  listHistory,
-  type StoryHistoryRecord,
-} from "@/lib/client-history";
+import type { StoryHistoryRecord } from "@/lib/client-history";
+import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import styles from "./Account.module.css";
 
 type Locale = "zh" | "en";
@@ -90,7 +87,7 @@ export default function LocalStoryLibrary({
     }
     let active = true;
     const load = () => {
-      void listHistory()
+      void localStoryRepository.list()
         .then((next) => {
           if (active) setInternalRecords(next);
         })
@@ -109,7 +106,8 @@ export default function LocalStoryLibrary({
   async function handleDelete(storyId: string) {
     setDeletingId(storyId);
     try {
-      const next = await deleteHistory(storyId);
+      await localStoryRepository.remove(storyId);
+      const next = await localStoryRepository.list();
       if (!controlled) setInternalRecords(next);
       onRecordsChange?.(next);
     } finally {

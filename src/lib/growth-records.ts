@@ -286,18 +286,46 @@ export async function updateGrowthRecordDetails(
   storyId: string,
   details: { occurredOn: string; note: string },
 ) {
-  if (!isValidGrowthDate(details.occurredOn)) {
+  return patchGrowthRecord(storyId, details);
+}
+
+export async function patchGrowthRecord(
+  id: string,
+  patch: {
+    occurredOn?: string;
+    note?: string;
+    idea?: string;
+    photos?: GrowthRecordPhoto[];
+    story?: GenerateResponse;
+  },
+) {
+  if (patch.occurredOn !== undefined && !isValidGrowthDate(patch.occurredOn)) {
     throw new Error("growth-date-invalid");
+  }
+  if (patch.photos !== undefined && !hasValidGrowthPhotos(patch.photos)) {
+    throw new Error("growth-photos-invalid");
   }
   const db = await openGrowthDb();
   if (!db) throw new Error("growth-storage-unavailable");
   const records = await readAllRecords(db);
-  const existing = records.find((record) => record.storyId === storyId);
+  const existing = records.find(
+    (record) => record.id === id || record.storyId === id,
+  );
   if (!existing) {
     db.close();
     throw new Error("growth-record-not-found");
   }
-  const next = { ...existing, ...details, updatedAt: new Date().toISOString() };
+  const next = {
+    ...existing,
+    ...(patch.occurredOn !== undefined
+      ? { occurredOn: patch.occurredOn }
+      : {}),
+    ...(patch.note !== undefined ? { note: patch.note } : {}),
+    ...(patch.idea !== undefined ? { idea: patch.idea } : {}),
+    ...(patch.photos !== undefined ? { photos: patch.photos } : {}),
+    ...(patch.story !== undefined ? { story: patch.story } : {}),
+    updatedAt: new Date().toISOString(),
+  };
   const saved = await putRecord(db, next);
   db.close();
   if (!saved) throw new Error("growth-storage-write-failed");

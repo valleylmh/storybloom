@@ -5,9 +5,9 @@ import { useEffect, useMemo, useState } from "react";
 import { ArrowLeft, BookOpenText, Plus, ShieldCheck } from "@phosphor-icons/react";
 import {
   groupGrowthRecordsByChild,
-  listGrowthRecords,
   type GrowthRecord,
 } from "@/lib/growth-records";
+import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
 import styles from "./GrowthArchive.module.css";
 
 function formatDate(date: string) {
@@ -32,7 +32,7 @@ export default function GrowthLibrary({
   useEffect(() => {
     let active = true;
     const load = () => {
-      void listGrowthRecords().then((next) => {
+      void localGrowthRepository.list().then((next) => {
         if (!active) return;
         setRecords(next);
         setLoading(false);

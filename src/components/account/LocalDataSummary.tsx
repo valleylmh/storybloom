@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { DeviceMobile, ShieldCheck } from "@phosphor-icons/react";
-import { listHistory } from "@/lib/client-history";
-import { listGrowthRecords } from "@/lib/growth-records";
+import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
+import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import styles from "./Account.module.css";
 
 interface Counts {
@@ -24,7 +24,10 @@ export default function LocalDataSummary({
   useEffect(() => {
     let active = true;
     const load = () => {
-      void Promise.all([listHistory(), listGrowthRecords()]).then(
+      void Promise.all([
+        localStoryRepository.list(),
+        localGrowthRepository.list(),
+      ]).then(
         ([books, growthRecords]) => {
           if (!active) return;
           setCounts({

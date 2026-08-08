@@ -33,6 +33,16 @@ import {
   dedupeFamilyCharacters,
   findReusableFamilyCharacter,
 } from "@/lib/family-character-dedupe";
+import {
+  createFamilyPhotoUrls,
+  deleteFamilyCharacter,
+  ensureFamilyProfile,
+  listFamilyCharacters,
+  removeFamilyPhotos,
+  updateFamilyCharacter,
+  uploadFamilyPhoto,
+  upsertFamilyCharacter,
+} from "@/lib/repositories/family-character-repository";
 
 type Character = {
   id: string;
@@ -163,45 +173,19 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
 
   async function ensureProfile(userId: string) {
     if (!supabase) throw new Error("账户服务尚未准备好，请稍后再试");
-    const existing = await supabase
-      .from("family_profiles")
-      .select("id")
-      .eq("user_id", userId)
-      .maybeSingle();
-    if (existing.error) throw existing.error;
-    if (existing.data) {
-      setProfileId(existing.data.id);
-      return existing.data.id;
-    }
-
-    const created = await supabase
-      .from("family_profiles")
-      .upsert(
-        {
-          user_id: userId,
-          display_name: "我的家庭",
-          locale: "zh-CN",
-        },
-        { onConflict: "user_id" },
-      )
-      .select("id")
-      .single();
-    if (created.error) throw created.error;
-    setProfileId(created.data.id);
-    return created.data.id;
+    const nextProfileId = await ensureFamilyProfile(supabase, userId);
+    setProfileId(nextProfileId);
+    return nextProfileId;
   }
 
   async function refresh(userId: string) {
     if (!supabase) throw new Error("账户服务尚未准备好，请稍后再试");
     const nextProfileId = await ensureProfile(userId);
-    const { data, error } = await supabase
-      .from("family_characters")
-      .select("*")
-      .eq("profile_id", nextProfileId)
-      .order("sort_order");
-    if (error) throw error;
-
-    const rows = dedupeFamilyCharacters((data || []) as Character[]);
+    const rows = dedupeFamilyCharacters(
+      await listFamilyCharacters<Character>(supabase, {
+        profileId: nextProfileId,
+      }),
+    );
     setItems(rows);
     const paths = rows
       .flatMap((item) => [item.canonical_photo_path, item.source_photo_path])
@@ -211,14 +195,7 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
       return;
     }
 
-    const { data: signed } = await supabase.storage
-      .from("family-photos")
-      .createSignedUrls(paths, 3600);
-    const nextUrls: Record<string, string> = {};
-    signed?.forEach((item, index) => {
-      if (item.signedUrl) nextUrls[paths[index]] = item.signedUrl;
-    });
-    setUrls(nextUrls);
+    setUrls(await createFamilyPhotoUrls(supabase, paths));
   }
 
   useEffect(() => {
@@ -277,10 +254,7 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
           await recordGuardianConsent(supabase, session.user.id);
         }
         source = `${session.user.id}/${id}/source.webp`;
-        const { error } = await supabase.storage
-          .from("family-photos")
-          .upload(source, blob, { contentType: "image/webp", upsert: true });
-        if (error) throw error;
+        await uploadFamilyPhoto(supabase, source, blob);
       }
 
       const canonical = form.file ? null : current?.canonical_photo_path || null;
@@ -312,12 +286,9 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
         status,
         sort_order: current?.sort_order ?? items.length,
       };
-      const { error } = await supabase.from("family_characters").upsert(payload);
-      if (error) throw error;
+      await upsertFamilyCharacter(supabase, payload);
       if (form.file && current?.canonical_photo_path) {
-        await supabase.storage
-          .from("family-photos")
-          .remove([current.canonical_photo_path]);
+        await removeFamilyPhotos(supabase, [current.canonical_photo_path]);
       }
       setEditing(null);
       await refresh(session.user.id);
@@ -371,12 +342,8 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
       const paths = [item.source_photo_path, item.canonical_photo_path].filter(
         Boolean,
       ) as string[];
-      if (paths.length) await supabase.storage.from("family-photos").remove(paths);
-      const { error } = await supabase
-        .from("family_characters")
-        .delete()
-        .eq("id", item.id);
-      if (error) throw error;
+      await removeFamilyPhotos(supabase, paths);
+      await deleteFamilyCharacter(supabase, session.user.id, item.id);
       await refresh(session.user.id);
     } catch (cause) {
       setNotice(cause instanceof Error ? cause.message : "删除失败");
@@ -393,12 +360,9 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
     setBusy(characterId);
     setNotice("");
     try {
-      const { error } = await supabase
-        .from("family_characters")
-        .update({ [cropping.image.field]: normalizeFamilyImageCrop(crop) })
-        .eq("id", characterId)
-        .eq("user_id", session.user.id);
-      if (error) throw error;
+      await updateFamilyCharacter(supabase, session.user.id, characterId, {
+        [cropping.image.field]: normalizeFamilyImageCrop(crop),
+      });
       setCropping(null);
       await refresh(session.user.id);
     } catch (cause) {

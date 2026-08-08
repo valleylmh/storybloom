@@ -7,16 +7,13 @@ import MinimalStoryEntry from "@/components/book/MinimalStoryEntry";
 import StoryForm from "@/components/book/StoryForm";
 import AccountEntryButton from "@/components/auth/AccountEntryButton";
 import LocalStoryLibrary from "@/components/account/LocalStoryLibrary";
-import {
-  listHistory,
-  upsertHistory,
-  type StoryHistoryRecord,
-} from "@/lib/client-history";
+import type { StoryHistoryRecord } from "@/lib/client-history";
 import {
   isGrowthRecordDraft,
-  updateGrowthRecordStory,
-  upsertGrowthRecord,
 } from "@/lib/growth-records";
+import { createGrowthRecordInput } from "@/lib/repositories/growth-repository";
+import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
+import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import { SAMPLE_BOOKS } from "@/lib/sample-books";
 import { requestStoryGeneration } from "@/lib/client-story-generation";
@@ -461,7 +458,7 @@ export default function Home() {
       replaceFormUrl();
     }
 
-    void listHistory().then((records) => {
+    void localStoryRepository.list().then((records) => {
       setHistoryRecords(records);
       const storyId = readStoryIdFromUrl();
       const record = storyId
@@ -493,7 +490,7 @@ export default function Home() {
           return;
         }
 
-        void listHistory().then((records) => {
+        void localStoryRepository.list().then((records) => {
           if (readStoryIdFromUrl() !== storyId) {
             return;
           }
@@ -683,7 +680,8 @@ export default function Home() {
       setProgress(100);
       setResult(generatedResult);
       setLocalFreeUsage(writeLocalFreeUsage(currentLocalUsage + 1));
-      void upsertHistory(generatedResult)
+      void localStoryRepository.save({ result: generatedResult })
+        .then(() => localStoryRepository.list())
         .then(setHistoryRecords)
         .catch((historyError) => {
           console.warn("[story-history] failed to save generated story", historyError);
@@ -691,9 +689,8 @@ export default function Home() {
 
       if (isGrowthRecordDraft(growthRecordDraft)) {
         try {
-          const growthRecord = await upsertGrowthRecord(
-            generatedResult,
-            growthRecordDraft,
+          const growthRecord = await localGrowthRepository.save(
+            createGrowthRecordInput(generatedResult, growthRecordDraft),
           );
           setGrowthSavedChild({
             childKey: growthRecord.childKey,
@@ -787,8 +784,13 @@ export default function Home() {
     setResult((current) =>
       current?.storyId === nextResult.storyId ? nextResult : current
     );
-    void upsertHistory(nextResult).then(setHistoryRecords);
-    void updateGrowthRecordStory(nextResult);
+    void localStoryRepository
+      .save({ result: nextResult })
+      .then(() => localStoryRepository.list())
+      .then(setHistoryRecords);
+    void localGrowthRepository.update(nextResult.storyId, {
+      story: nextResult,
+    });
   }
 
   const generationStepIndex = getGenerationStepIndex(elapsedSeconds, progress);
