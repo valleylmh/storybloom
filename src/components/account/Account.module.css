@@ -1,0 +1,669 @@
+.page {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 248px minmax(0, 1fr);
+  background:
+    radial-gradient(circle at 100% 0, rgba(241, 174, 118, 0.16), transparent 28%),
+    linear-gradient(180deg, #fffaf5 0%, #f4ece3 100%);
+  color: #3d332d;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  padding: 28px 20px;
+  border-right: 1px solid rgba(79, 57, 43, 0.11);
+  background: rgba(255, 253, 249, 0.82);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: grid;
+  gap: 5px;
+  padding: 0 10px 26px;
+  color: #3d332d;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: 1.28rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand small {
+  color: #8a796d;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: grid;
+  gap: 6px;
+}
+
+.navItem {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 12px;
+  border-radius: 13px;
+  color: #74645a;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.navItem:hover {
+  color: #a8492d;
+  transform: translateX(2px);
+}
+
+.navItemActive {
+  background: #fff0e8;
+  color: #a8492d;
+}
+
+.sidebarNote {
+  display: grid;
+  gap: 6px;
+  margin-top: auto;
+  padding: 14px 12px;
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 15px;
+  background: rgba(255, 250, 245, 0.72);
+  color: #85746a;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.sidebarNote strong {
+  color: #5b4b42;
+  font-size: 0.76rem;
+}
+
+.workspace {
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  min-height: 104px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px clamp(24px, 4vw, 58px);
+  border-bottom: 1px solid rgba(79, 57, 43, 0.1);
+  background: rgba(255, 252, 247, 0.7);
+  backdrop-filter: blur(18px);
+}
+
+.headerCopy {
+  min-width: 0;
+}
+
+.headerCopy p {
+  margin: 0 0 5px;
+  color: #a8492d;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.headerCopy h1 {
+  margin: 0;
+  color: #3d332d;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+.identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+.identityIcon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff0e8;
+  color: #a8492d;
+}
+
+.identityCopy {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.identityCopy span {
+  color: #8a796d;
+  font-size: 0.7rem;
+}
+
+.identityCopy strong {
+  overflow: hidden;
+  max-width: 260px;
+  color: #53443b;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.headerButton,
+.primaryButton,
+.secondaryButton,
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-decoration: none;
+}
+
+.headerButton {
+  min-height: 38px;
+  padding: 7px 12px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.76);
+  color: #6f5f54;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.headerError {
+  margin: 6px 0 0;
+  color: #9b3c2b;
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+.content {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 42px 0 76px;
+}
+
+.overview,
+.settingsPage {
+  display: grid;
+  gap: 26px;
+}
+
+.summaryCard,
+.cloudCard,
+.settingsCard,
+.featureCard {
+  border: 1px solid rgba(79, 57, 43, 0.11);
+  background: rgba(255, 253, 249, 0.78);
+  box-shadow: 0 18px 56px rgba(88, 58, 36, 0.06);
+}
+
+.summaryCard {
+  padding: clamp(22px, 4vw, 34px);
+  border-radius: 25px;
+}
+
+.sectionKicker {
+  margin: 0 0 8px;
+  color: #ad4d31;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.summaryHeader,
+.cloudHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.summaryHeader h2,
+.cloudHeader h2,
+.sectionIntro h2,
+.settingsCard h2 {
+  margin: 0;
+  color: #3d332d;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.summaryHeader h2,
+.cloudHeader h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+}
+
+.summaryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #edf4e9;
+  color: #587052;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.stat {
+  display: grid;
+  min-height: 112px;
+  align-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 17px;
+  background: #fff8f1;
+}
+
+.stat span {
+  color: #806f63;
+  font-size: 0.76rem;
+}
+
+.stat strong {
+  color: #46382f;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.summaryHint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 18px 0 0;
+  color: #806f63;
+  font-size: 0.76rem;
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 44px;
+  padding: 10px 17px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.primaryButton {
+  background: #be5530;
+  color: #fff;
+}
+
+.secondaryButton {
+  border: 1px solid rgba(79, 57, 43, 0.13);
+  background: rgba(255, 253, 249, 0.82);
+  color: #615148;
+}
+
+.actionNote {
+  flex-basis: 100%;
+  margin: 0;
+  color: #8a796d;
+  font-size: 0.72rem;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.featureCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  min-height: 112px;
+  padding: 20px;
+  border-radius: 19px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 170ms ease, box-shadow 170ms ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 62px rgba(88, 58, 36, 0.1);
+}
+
+.featureIcon,
+.cloudIcon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff0e8;
+  color: #a8492d;
+}
+
+.featureCopy h2 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+}
+
+.featureCopy p {
+  margin: 0;
+  color: #806f63;
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.featureCard > svg {
+  color: #9a887c;
+}
+
+.cloudCard {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  border-radius: 21px;
+  background: linear-gradient(135deg, rgba(237, 244, 232, 0.9), rgba(255, 253, 249, 0.84));
+}
+
+.cloudIcon {
+  background: #e2eedc;
+  color: #587052;
+}
+
+.cloudCopy p {
+  max-width: 700px;
+  margin: 7px 0 0;
+  color: #6e7767;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.cardLink {
+  color: #526b4c;
+  font-size: 0.76rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.sectionIntro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.sectionIntro h2 {
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+}
+
+.sectionIntro p:last-child {
+  max-width: 620px;
+  margin: 8px 0 0;
+  color: #806f63;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.localNotice {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #587052;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.emptyLibrary,
+.libraryBusy {
+  display: grid;
+  min-height: 280px;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 32px;
+  border: 1px dashed rgba(79, 57, 43, 0.16);
+  border-radius: 22px;
+  background: rgba(255, 253, 249, 0.56);
+  color: #806f63;
+  text-align: center;
+}
+
+.emptyLibrary h2,
+.emptyLibrary p,
+.libraryBusy p {
+  margin: 0;
+}
+
+.emptyLibrary a {
+  margin-top: 7px;
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.settingsCard {
+  padding: 22px;
+  border-radius: 20px;
+}
+
+.settingsCard h2 {
+  font-size: 1.15rem;
+}
+
+.settingsCard p,
+.settingsCard li {
+  color: #75655a;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.settingsCard ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+
+.settingsCard a {
+  color: #a8492d;
+  font-weight: 800;
+}
+
+.authGate {
+  display: grid;
+  place-items: center;
+  padding: 4px 0 24px;
+}
+
+.authGate :global(.family-login-shell) {
+  min-height: 590px;
+}
+
+.inlineLoading {
+  display: grid;
+  min-height: 320px;
+  place-items: center;
+  color: #806f63;
+}
+
+@media (max-width: 980px) {
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cloudCard {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .cloudCard .cardLink {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 860px) {
+  .page {
+    display: block;
+  }
+
+  .sidebar {
+    position: sticky;
+    z-index: 20;
+    top: 0;
+    height: auto;
+    padding: 12px 14px 10px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(79, 57, 43, 0.11);
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 0 4px 10px;
+    font-size: 1.05rem;
+  }
+
+  .nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 4px;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navItem {
+    min-height: 38px;
+    flex: 0 0 auto;
+    gap: 7px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+  }
+
+  .navItem:hover {
+    transform: none;
+  }
+
+  .sidebarNote {
+    display: none;
+  }
+
+  .header {
+    min-height: 92px;
+    padding: 20px 22px;
+  }
+
+  .content {
+    width: min(100% - 32px, 1120px);
+    padding: 30px 0 56px;
+  }
+}
+
+@media (max-width: 620px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .headerActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .headerError {
+    text-align: left;
+  }
+
+  .summaryGrid,
+  .featureGrid,
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .summaryHeader,
+  .sectionIntro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .summaryBadge {
+    align-self: flex-start;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .cloudCard {
+    grid-template-columns: 1fr;
+  }
+
+  .cloudCard .cardLink {
+    grid-column: 1;
+  }
+
+  .authGate {
+    margin: 0 -8px;
+  }
+
+  .authGate :global(.family-login-shell) {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navItem,
+  .featureCard {
+    transition: none;
+  }
+}

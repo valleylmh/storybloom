@@ -51,6 +51,9 @@
 @media(max-width:580px){.family-centered{padding:12px}.family-login-shell{border-radius:27px}.family-login-shell .family-login{padding:27px 22px 30px}.family-login .family-back{margin-bottom:36px}.family-login-brand{margin-bottom:42px}.family-login-shell .family-login h1{font-size:2.55rem;line-height:1.13}.family-login-shell .family-login>p:not(.family-kicker,.family-error){font-size:.9rem}.family-login-shell .family-login form{flex-direction:column;align-items:stretch;margin-top:26px}.family-login-shell .family-login form button{height:50px}}
 .family-dialog-error{margin:8px 0 4px;padding:10px 12px;border:1px solid #efc9b9;border-radius:11px;background:#fff1eb;color:#8b452e;font-size:.78rem;line-height:1.5}
 .family-consent-check{display:flex;align-items:flex-start;gap:10px;margin:14px 0;color:#63584e;font-size:.78rem;line-height:1.55}.family-consent-check input{flex:0 0 auto;margin-top:3px}.family-consent-check span{display:block}.family-primary:disabled{cursor:not-allowed;opacity:.55}
+.family-page-embedded{min-height:0;padding-bottom:8px;background:transparent}.family-page-embedded .family-hero{padding:4px 0 36px}.family-page-embedded .family-hero .family-primary{right:0;bottom:38px}.family-page-embedded .family-grid{max-width:none;padding:0}.family-page-embedded .family-notice{max-width:none}.family-inline-loading{display:grid;min-height:320px;place-items:center;color:#7c7469}
+@media(max-width:850px){.family-page-embedded .family-hero .family-primary{position:static;margin-top:20px}}
+@media(max-width:580px){.family-page-embedded .family-hero{padding:0 0 28px}.family-page-embedded .family-grid{padding:0}.family-inline-loading{min-height:240px}}
 
 *,
 *::before,

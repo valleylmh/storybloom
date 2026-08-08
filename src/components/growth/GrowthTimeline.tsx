@@ -26,6 +26,8 @@ import styles from "./GrowthArchive.module.css";
 
 interface Props {
   childKey: string;
+  embedded?: boolean;
+  basePath?: string;
 }
 
 function formatLongDate(date: string) {
@@ -40,7 +42,11 @@ function getStoryScene(record: GrowthRecord) {
   return record.story.pages.find((page) => page.imageUrl)?.imageUrl;
 }
 
-export default function GrowthTimeline({ childKey }: Props) {
+export default function GrowthTimeline({
+  childKey,
+  embedded = false,
+  basePath = "/growth",
+}: Props) {
   const [records, setRecords] = useState<GrowthRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState("");
@@ -140,24 +146,36 @@ export default function GrowthTimeline({ childKey }: Props) {
   }
 
   return (
-    <main className={styles.page}>
-      <header className={styles.nav}>
-        <Link href="/growth" className={styles.brand}>
-          <span>✦</span>
-          StoryBloom
-          <small>成长时间轴</small>
-        </Link>
-        <div className={styles.navActions}>
-          <span className={styles.privacyLabel}>
-            <ShieldCheck /> 仅保存在当前浏览器
-          </span>
-          <Link href="/growth" className={styles.navLink}>
-            <ArrowLeft /> 成长书架
+    <main className={embedded ? styles.embeddedPage : styles.page}>
+      {!embedded ? (
+        <header className={styles.nav}>
+          <Link href={basePath} className={styles.brand}>
+            <span>✦</span>
+            StoryBloom
+            <small>成长时间轴</small>
           </Link>
-        </div>
-      </header>
+          <div className={styles.navActions}>
+            <span className={styles.privacyLabel}>
+              <ShieldCheck /> 仅保存在当前浏览器
+            </span>
+            <Link href={basePath} className={styles.navLink}>
+              <ArrowLeft /> 成长书架
+            </Link>
+          </div>
+        </header>
+      ) : null}
 
-      <div className={styles.shell}>
+      <div className={embedded ? styles.embeddedShell : styles.shell}>
+        {embedded ? (
+          <div className={styles.embeddedToolbar}>
+            <span className={styles.privacyLabel}>
+              <ShieldCheck /> 仅保存在当前浏览器
+            </span>
+            <Link href={basePath} className={styles.navLink}>
+              <ArrowLeft /> 返回成长书架
+            </Link>
+          </div>
+        ) : null}
         {loading ? (
           <section className={styles.loadingState} aria-label="正在加载时间轴">
             <span />
@@ -168,7 +186,7 @@ export default function GrowthTimeline({ childKey }: Props) {
             <BookOpenText />
             <h1>没有找到这条成长时间轴</h1>
             <p>记录可能已经删除，或者保存在另一台设备的浏览器中。</p>
-            <Link href="/growth">返回成长书架</Link>
+            <Link href={basePath}>返回成长书架</Link>
           </section>
         ) : (
           <>

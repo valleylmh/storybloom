@@ -6,8 +6,8 @@ import BookPreview from "@/components/book/BookPreview";
 import MinimalStoryEntry from "@/components/book/MinimalStoryEntry";
 import StoryForm from "@/components/book/StoryForm";
 import AccountEntryButton from "@/components/auth/AccountEntryButton";
+import LocalStoryLibrary from "@/components/account/LocalStoryLibrary";
 import {
-  deleteHistory,
   listHistory,
   upsertHistory,
   type StoryHistoryRecord,
@@ -317,20 +317,6 @@ function formatElapsedTime(seconds: number) {
   const minutes = Math.floor(seconds / 60);
   const remainder = String(seconds % 60).padStart(2, "0");
   return `${minutes}:${remainder}`;
-}
-
-function formatHistoryTime(value: string) {
-  const date = new Date(value);
-  if (!Number.isFinite(date.getTime())) {
-    return "";
-  }
-
-  return date.toLocaleString(undefined, {
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
 }
 
 function readEntryModeFromUrl(): EntryMode | null {
@@ -789,10 +775,6 @@ export default function Home() {
     setProgress(0);
   }
 
-  function handleHistoryDelete(storyId: string) {
-    void deleteHistory(storyId).then(setHistoryRecords);
-  }
-
   function handleResultUpdate(nextResult: GenerateResponse) {
     if (latestGeneratedResultRef.current?.storyId === nextResult.storyId) {
       latestGeneratedResultRef.current = nextResult;
@@ -802,18 +784,6 @@ export default function Home() {
     );
     void upsertHistory(nextResult).then(setHistoryRecords);
     void updateGrowthRecordStory(nextResult);
-  }
-
-  function getHistoryStatusLabel(record: StoryHistoryRecord) {
-    if (record.status === "complete") {
-      return text.historyComplete;
-    }
-
-    if (record.status === "failed") {
-      return text.historyFailed;
-    }
-
-    return text.historyGenerating;
   }
 
   const generationStepIndex = getGenerationStepIndex(elapsedSeconds, progress);
@@ -841,55 +811,15 @@ export default function Home() {
       </span>
     </Link>
   );
-  const historyPanel = historyRecords.length > 0 ? (
-    <section
-      className={`history-panel ${entryMode === "minimal" ? "minimal-history-panel" : ""}`}
-      aria-label={text.historyTitle}
-    >
-      <div className="history-header">
-        <div>
-          <h2>{text.historyTitle}</h2>
-          <p>{text.historyHint}</p>
-        </div>
-      </div>
-      <div className="history-list">
-        {historyRecords.map((record) => (
-          <article
-            className="history-item"
-            data-status={record.status}
-            key={record.storyId}
-          >
-            <div>
-              <div className="history-title-row">
-                <h3>{record.result.coverTitle}</h3>
-                <span>{getHistoryStatusLabel(record)}</span>
-              </div>
-              <p>
-                {record.result.input.childName} · {record.imageProgress.complete}/
-                {record.imageProgress.total} · {formatHistoryTime(record.updatedAt)}
-              </p>
-            </div>
-            <div className="history-actions">
-              <button
-                type="button"
-                className="history-open-btn"
-                onClick={() => handleHistoryContinue(record)}
-              >
-                {text.historyContinue}
-              </button>
-              <button
-                type="button"
-                className="text-danger-btn"
-                onClick={() => handleHistoryDelete(record.storyId)}
-              >
-                {text.historyDelete}
-              </button>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  ) : null;
+  const historyPanel = (
+    <LocalStoryLibrary
+      locale={locale}
+      records={historyRecords}
+      minimal={entryMode === "minimal"}
+      onOpen={handleHistoryContinue}
+      onRecordsChange={setHistoryRecords}
+    />
+  );
 
   return (
     <main

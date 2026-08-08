@@ -10,11 +10,15 @@ export default function AuthGate({
   next = "/",
   loginVariant = "default",
   loadingFallback,
+  inline = false,
+  className,
 }: {
   children: ReactNode;
   next?: string;
   loginVariant?: LoginPanelVariant;
   loadingFallback?: ReactNode;
+  inline?: boolean;
+  className?: string;
 }) {
   const { session, loading } = useAuth();
 
@@ -27,6 +31,14 @@ export default function AuthGate({
   }
 
   if (!session) {
+    if (inline) {
+      return (
+        <section className={className}>
+          <LoginPanel next={next} variant={loginVariant} />
+        </section>
+      );
+    }
+
     return (
       <main className="family-page family-centered">
         <LoginPanel next={next} variant={loginVariant} />

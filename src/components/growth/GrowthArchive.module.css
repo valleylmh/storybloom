@@ -7,6 +7,25 @@
   color: #3d332d;
 }
 
+.embeddedPage {
+  min-width: 0;
+  color: #3d332d;
+}
+
+.embeddedShell {
+  width: 100%;
+}
+
+.embeddedToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(79, 57, 43, 0.11);
+}
+
 .nav {
   display: flex;
   min-height: 68px;
@@ -601,6 +620,16 @@
   .shell {
     width: min(calc(100% - 28px), 1040px);
     padding: 30px 0 48px;
+  }
+
+  .embeddedToolbar {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .embeddedToolbar .privacyLabel {
+    display: inline-flex;
   }
 
   .libraryHero,

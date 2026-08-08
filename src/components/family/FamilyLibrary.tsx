@@ -81,7 +81,7 @@ async function cleanPhoto(file: File): Promise<Blob> {
   );
 }
 
-export default function FamilyLibrary() {
+export default function FamilyLibrary({ embedded = false }: { embedded?: boolean }) {
   const { supabase, session, signOut } = useAuth();
   const [loading, setLoading] = useState(true);
   const [profileId, setProfileId] = useState<string>();
@@ -271,26 +271,28 @@ export default function FamilyLibrary() {
 
   if (loading) {
     return (
-      <main className="family-page family-centered">
+      <main className={embedded ? "family-inline-loading" : "family-page family-centered"}>
         <SpinnerGap className="spin" size={28} />
       </main>
     );
   }
 
   return (
-    <main className="family-page">
-      <header className="family-header">
-        <Link href="/" className="family-brand">
-          StoryBloom <span>家庭角色库</span>
-        </Link>
-        <button className="family-text-btn" onClick={() => void handleSignOut()}>
-          <SignOut />退出
-        </button>
-      </header>
+    <main className={`family-page ${embedded ? "family-page-embedded" : ""}`}>
+      {!embedded ? (
+        <header className="family-header">
+          <Link href="/" className="family-brand">
+            StoryBloom <span>家庭角色库</span>
+          </Link>
+          <button className="family-text-btn" onClick={() => void handleSignOut()}>
+            <SignOut />退出
+          </button>
+        </header>
+      ) : null}
       <section className="family-hero">
         <p className="family-kicker">YOUR STORY, YOUR FAMILY</p>
-        <h1>我的家庭角色</h1>
-        <p>为家人建立一次形象，以后只用一句话，就能让他们一起走进新的冒险。</p>
+        <h1>家庭角色</h1>
+        <p>为孩子、父母、长辈或宠物建立形象，以后只用一句话，就能让熟悉的家人走进新的绘本冒险。</p>
         <button className="family-primary" onClick={() => setEditing("new")}>
           <Plus /> 添加家庭成员
         </button>

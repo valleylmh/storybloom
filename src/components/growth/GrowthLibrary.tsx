@@ -18,7 +18,13 @@ function formatDate(date: string) {
   }).format(new Date(`${date}T00:00:00`));
 }
 
-export default function GrowthLibrary() {
+export default function GrowthLibrary({
+  embedded = false,
+  basePath = "/growth",
+}: {
+  embedded?: boolean;
+  basePath?: string;
+}) {
   const [records, setRecords] = useState<GrowthRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const children = useMemo(() => groupGrowthRecordsByChild(records), [records]);
@@ -40,20 +46,8 @@ export default function GrowthLibrary() {
     };
   }, []);
 
-  return (
-    <main className={styles.page}>
-      <header className={styles.nav}>
-        <Link href="/?mode=minimal" className={styles.brand}>
-          <span>✦</span>
-          StoryBloom
-          <small>成长书架</small>
-        </Link>
-        <Link href="/?mode=minimal" className={styles.navLink}>
-          <ArrowLeft /> 返回创作
-        </Link>
-      </header>
-
-      <div className={styles.shell}>
+  const content = (
+    <div className={embedded ? styles.embeddedShell : styles.shell}>
         <section className={styles.libraryHero}>
           <div>
             <p className={styles.kicker}>FAMILY GROWTH SHELF</p>
@@ -84,7 +78,7 @@ export default function GrowthLibrary() {
             {children.map((child) => (
               <Link
                 className={styles.childCard}
-                href={`/growth/${encodeURIComponent(child.childKey)}`}
+                href={`${basePath}/${encodeURIComponent(child.childKey)}`}
                 key={child.childKey}
               >
                 <div className={styles.childVisual}>
@@ -107,6 +101,25 @@ export default function GrowthLibrary() {
           </section>
         )}
       </div>
+  );
+
+  if (embedded) {
+    return <main className={styles.embeddedPage}>{content}</main>;
+  }
+
+  return (
+    <main className={styles.page}>
+      <header className={styles.nav}>
+        <Link href="/?mode=minimal" className={styles.brand}>
+          <span>✦</span>
+          StoryBloom
+          <small>成长书架</small>
+        </Link>
+        <Link href="/?mode=minimal" className={styles.navLink}>
+          <ArrowLeft /> 返回创作
+        </Link>
+      </header>
+      {content}
     </main>
   );
 }
