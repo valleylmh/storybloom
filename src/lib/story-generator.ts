@@ -1,5 +1,9 @@
 import type { StoryInput, StoryPage, StoryTheme } from "@/types";
 import { stripChineseTimePrefix } from "@/lib/story-input";
+import {
+  formatStoryVisualBible,
+  getStoryVisualBible,
+} from "@/lib/story-visual-bible";
 
 export const STYLE_SPINES: Record<string, string> = {
   watercolor:
@@ -179,7 +183,8 @@ function getFamilyCastPrompt(input: StoryInput, castIds: string[]) {
           `${character.name} (${character.relation}, id=${character.id}): ${character.appearance}`
       )
       .join("; ")}.`,
-    "Do not add any other family member. Preserve each listed person's recognizable face, age, hairstyle, and clothing cues from their reference image and description.",
+    formatStoryVisualBible(getStoryVisualBible(input), castIds),
+    "Do not add any other family member. The character and outfit locks override conflicting clothing, hairstyle, age, or appearance details suggested by the page scene.",
   ].join(" ");
 }
 
@@ -1076,6 +1081,7 @@ export async function generateStoryText(
       ? `Main character appearance lock: ${input.characterDescription.trim()}`
       : `Main character: a child named ${input.childName}`;
     const familyCharacters = getFamilyCharacters(input);
+    const visualBible = getStoryVisualBible(input);
     const protagonistCharacterId = familyCharacters.find(
       (character) => character.isProtagonist,
     )?.id;
@@ -1112,10 +1118,12 @@ Rules:
 - Character: ${input.childName}
 - ${characterDescription}
 - Selected family character bible:\n${familyCharacterBible}
+- Fixed story visual bible:\n${formatStoryVisualBible(visualBible)}
 ${personalizationRules}
 - Creative seed for this request: ${creativeSeed}
 ${storyDirectionRules}
-- If a character reference is provided, treat it as the fixed character bible. Do not change the child's gender presentation, haircut, hair color, face shape, outfit colors, or visual age between pages.
+- If a character reference is provided, treat it and the fixed story visual bible as binding. Do not change gender presentation, haircut, hair color, face shape, facial proportions, body proportions, exact outfit, outfit colors, patterns, footwear, or visual age between pages.
+- Never invent a wardrobe change merely to match a new scene. If a page-level illustrationPrompt conflicts with the fixed outfit lock, the outfit lock wins.
 - Keep one coherent illustration style across the full book: same brush texture, palette, lighting softness, line quality, and level of detail.
 - Respect language mode: ${input.language}
 - Narrative perspective: ${usesFirstPerson(input) ? "FIRST PERSON" : "third person"}.

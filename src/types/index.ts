@@ -46,8 +46,28 @@ export interface FamilyCharacterInput {
   name: string;
   relation: string;
   appearance: string;
+  /** @deprecated Use the role-specific reference paths below when available. */
   referenceAssetPath?: string;
+  sourceReferenceAssetPath?: string;
+  canonicalReferenceAssetPath?: string;
+  storyReferenceToken?: string;
   isProtagonist?: boolean;
+}
+
+export interface StoryCharacterVisualLock {
+  id: string;
+  name: string;
+  identityLock: string;
+  outfitLock: string;
+  referenceGuidance: string;
+}
+
+export interface StoryVisualBible {
+  version: 1;
+  seriesStyleLock: string;
+  paletteLock: string;
+  continuityPolicy: string;
+  characters: StoryCharacterVisualLock[];
 }
 
 export interface StoryInput {
@@ -70,6 +90,7 @@ export interface StoryInput {
   characterDescription?: string;
   dedication?: string;
   familyCharacters?: FamilyCharacterInput[];
+  visualBible?: StoryVisualBible;
 }
 
 export interface StoryPage {

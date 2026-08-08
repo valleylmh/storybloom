@@ -329,6 +329,55 @@ describe("custom story generation", () => {
     expect(prompt).toContain("must never override");
   });
 
+  it("repeats the fixed family identity and bedtime outfit bible in every image prompt", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const modelPages = createModelPages("aligned").map((page) => ({
+      ...page,
+      castIds: ["child"],
+    }));
+    const fetchMock = mockCpaStory("童童的安稳小夜晚", modelPages);
+
+    const story = await generateStoryText({
+      ...soloSleepInput,
+      protagonistFamilyCharacterId: "child",
+      familyCharacters: [
+        {
+          id: "child",
+          name: "童童",
+          relation: "孩子",
+          appearance: "五岁，黑色短发，圆脸",
+          sourceReferenceAssetPath: "user/child/source.webp",
+          canonicalReferenceAssetPath: "user/child/canonical.png",
+          referenceAssetPath: "user/child/canonical.png",
+          isProtagonist: true,
+        },
+      ],
+    });
+
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body)) as {
+      messages: Array<{ content: string }>;
+    };
+    const modelPrompt = body.messages.map((message) => message.content).join("\n");
+
+    expect(modelPrompt).toContain("Fixed story visual bible");
+    expect(modelPrompt).toContain("powder-blue long-sleeve pajama");
+    expect(modelPrompt).toContain("written outfit lock overrides");
+    expect(story.pages).toHaveLength(8);
+    story.pages.forEach((page) => {
+      expect(page.illustrationPrompt).toContain(
+        "powder-blue long-sleeve pajama",
+      );
+      expect(page.illustrationPrompt).toContain(
+        "real-photo reference is authoritative for face identity",
+      );
+    });
+  });
+
   it("replaces a validly formatted but unrelated model story", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";

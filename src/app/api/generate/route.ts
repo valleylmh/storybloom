@@ -12,6 +12,13 @@ import {
 } from "@/lib/storage";
 import { generateStoryText } from "@/lib/story-generator";
 import { normalizeCharacterName } from "@/lib/story-input";
+import { buildStoryVisualBible } from "@/lib/story-visual-bible";
+import { createStoryCharacterAnchorToken } from "@/lib/story-character-anchor";
+import {
+  attachStoryReferenceToken,
+  createPublicStoryInput,
+  hasFamilyCharacterReference,
+} from "@/lib/family-story-characters";
 import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { AuthenticationError, requireAuthenticatedUser } from "@/lib/supabase/server-auth";
 import type {
@@ -22,6 +29,9 @@ import type {
   StoryInput,
   StoryPage,
 } from "@/types";
+
+export const runtime = "nodejs";
+export const maxDuration = 300;
 
 const generateSchema = z.object({
   childName: z.string().min(1).max(20),
@@ -93,7 +103,7 @@ async function getSelectedFamilyCharacters(
   return orderedIds.map((id) => {
     const row = rowsById.get(id)!;
     const referenceAssetPath = row.cartoonize
-      ? row.canonical_photo_path
+      ? row.canonical_photo_path || row.source_photo_path
       : row.source_photo_path || row.canonical_photo_path;
     return {
       id: row.id,
@@ -101,22 +111,14 @@ async function getSelectedFamilyCharacters(
       relation: row.relationship,
       appearance: row.description?.trim() || `${row.relationship} ${row.display_name}`,
       referenceAssetPath: referenceAssetPath || undefined,
+      sourceReferenceAssetPath: row.source_photo_path || undefined,
+      canonicalReferenceAssetPath:
+        row.cartoonize && row.canonical_photo_path
+          ? row.canonical_photo_path
+          : undefined,
       isProtagonist: row.id === protagonistFamilyCharacterId,
     };
   });
-}
-
-function createPublicStoryInput(input: StoryInput): StoryInput {
-  const {
-    customCharacterReferenceToken: _customCharacterReferenceToken,
-    ...publicInput
-  } = input;
-  return {
-    ...publicInput,
-    familyCharacters: input.familyCharacters?.map(
-      ({ referenceAssetPath: _referenceAssetPath, ...character }) => character
-    ),
-  };
 }
 
 function createRateLimitIdentifier(ip: string, browserFingerprint?: string) {
@@ -131,7 +133,8 @@ function pageUsesFamilyPhoto(
 ) {
   const castIds = new Set(page.castIds || []);
   return familyCharacters.some(
-    (character) => character.referenceAssetPath && castIds.has(character.id),
+    (character) =>
+      castIds.has(character.id) && hasFamilyCharacterReference(character),
   );
 }
 
@@ -226,7 +229,7 @@ export async function POST(req: NextRequest) {
       { status: 400 }
     );
   }
-  const input: StoryInput = {
+  const storyInput: StoryInput = {
     ...baseInput,
     protagonistFamilyCharacterId,
     customCharacterReferenceToken:
@@ -234,6 +237,10 @@ export async function POST(req: NextRequest) {
         ? baseInput.customCharacterReferenceToken
         : undefined,
     familyCharacters: familyCharacters.length > 0 ? familyCharacters : undefined,
+  };
+  let input: StoryInput = {
+    ...storyInput,
+    visualBible: buildStoryVisualBible(storyInput),
   };
   const protagonistCharacter = protagonistFamilyCharacterId
     ? familyCharacters.find((character) => character.id === protagonistFamilyCharacterId)
@@ -304,7 +311,39 @@ export async function POST(req: NextRequest) {
   const storyId = nanoid(12);
 
   try {
-    const { pages, coverTitle } = await generateStoryText(input);
+    const shouldCreateStoryAnchor = Boolean(
+      protagonistCharacter &&
+        input.visualBible &&
+        process.env.CPA_API_KEY?.trim() &&
+        process.env.CPA_BASE_URL?.trim() &&
+        (protagonistCharacter.sourceReferenceAssetPath ||
+          protagonistCharacter.canonicalReferenceAssetPath ||
+          protagonistCharacter.referenceAssetPath),
+    );
+    const storyAnchorPromise = shouldCreateStoryAnchor
+      ? createStoryCharacterAnchorToken({
+          character: protagonistCharacter!,
+          visualBible: input.visualBible!,
+        }).catch((error) => {
+          console.warn("[generate] story character anchor unavailable", {
+            storyId,
+            characterId: protagonistCharacter?.id,
+            error: error instanceof Error ? error.message : String(error),
+          });
+          return null;
+        })
+      : Promise.resolve(null);
+    const [{ pages, coverTitle }, storyReferenceToken] = await Promise.all([
+      generateStoryText(input),
+      storyAnchorPromise,
+    ]);
+    if (storyReferenceToken && protagonistCharacter) {
+      input = attachStoryReferenceToken(
+        input,
+        protagonistCharacter.id,
+        storyReferenceToken,
+      );
+    }
     const previewPages = createDemoPages(pages, input.style).map((page) =>
       pageUsesFamilyPhoto(page, familyCharacters)
         ? { ...page, imagePlannedProvider: "cpa" as const }

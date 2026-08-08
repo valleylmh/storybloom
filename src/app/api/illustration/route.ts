@@ -6,6 +6,7 @@ import {
   regeneratePage,
 } from "@/lib/image-generator";
 import { isRecentPendingIllustration } from "@/lib/illustration-request-policy";
+import { hasFamilyCharacterReference } from "@/lib/family-story-characters";
 import { allowIpRequest } from "@/lib/request-rate-limit";
 import { cacheStory, getCachedStory } from "@/lib/storage";
 import type { GeneratedStory } from "@/types";
@@ -68,7 +69,8 @@ function pageUsesFamilyPhoto(
   const castIds = new Set(page.castIds || []);
   return Boolean(
     story.input.familyCharacters?.some(
-      (character) => character.referenceAssetPath && castIds.has(character.id),
+      (character) =>
+        castIds.has(character.id) && hasFamilyCharacterReference(character),
     ),
   );
 }
@@ -126,7 +128,8 @@ async function generateAndCachePage(
       story.input.characterReferenceId,
       fallbackProviders,
       story.input.familyCharacters,
-      story.input.customCharacterReferenceToken
+      story.input.customCharacterReferenceToken,
+      story.input.visualBible,
     );
 
     const latestStory = (await getCachedStory(story.id)) || story;

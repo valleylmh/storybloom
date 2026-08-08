@@ -5,11 +5,14 @@ import type {
   ImageAttemptMetric,
   ImageProvider,
   FamilyCharacterInput,
+  StoryVisualBible,
 } from "@/types";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { getCachedCharacterReferenceDataUri } from "@/lib/storage";
+import { formatStoryVisualBible } from "@/lib/story-visual-bible";
+import { hasFamilyCharacterReference } from "@/lib/family-story-characters";
 
 const MAX_IMAGE_ATTEMPTS = 3;
 const DEMO_IMAGE_MARKER = "StoryBloom%20Demo";
@@ -42,6 +45,7 @@ const DEFAULT_CPA_IMAGE_REQUEST_DELAY_MS = 1_500;
 const DEFAULT_CPA_IMAGE_RETRY_DELAY_MS = 8_000;
 const DEFAULT_CPA_IMAGE_MAX_ATTEMPTS = 2;
 const DEFAULT_CPA_IMAGE_TIMEOUT_MS = 120_000;
+const MAX_CPA_REFERENCE_IMAGES = 10;
 const DEFAULT_FAMILY_ASSETS_BUCKET = "family-photos";
 const DEFAULT_POLLINATIONS_IMAGE_SIZE = 512;
 const DEFAULT_POLLINATIONS_IMAGE_REQUEST_DELAY_MS = 8_000;
@@ -84,6 +88,12 @@ type IllustrationOptions = {
   customCharacterReferenceToken?: string;
   familyCharacters?: FamilyCharacterInput[];
   castIds?: string[];
+  visualBible?: StoryVisualBible;
+};
+
+type CpaReferenceImage = {
+  dataUri: string;
+  label: string;
 };
 
 let dashScopeImageQueue: Promise<unknown> = Promise.resolve();
@@ -372,7 +382,7 @@ export function getImageToImageProviderForPage(pageNumber: number, pageCount = 8
 }
 
 function hasPhotoFamilyCharacters(options?: IllustrationOptions) {
-  return getPageFamilyCharacters(options).some((character) => character.referenceAssetPath);
+  return getPageFamilyCharacters(options).some(hasFamilyCharacterReference);
 }
 
 function hasCustomCharacterReference(options?: IllustrationOptions) {
@@ -399,18 +409,54 @@ function validatePrivateAssetPath(assetPath: string) {
 }
 
 async function getPrivateFamilyReferenceImages(options?: IllustrationOptions) {
-  const paths = getPageFamilyCharacters(options).flatMap((character) =>
-    character.referenceAssetPath ? [validatePrivateAssetPath(character.referenceAssetPath)] : []
+  const characters = getPageFamilyCharacters(options);
+  const seenPaths = new Set<string>();
+  const primaryReferences: Array<{ assetPath: string; label: string }> = [];
+  const secondaryReferences: Array<{ assetPath: string; label: string }> = [];
+
+  for (const character of characters) {
+    const sourcePath = character.sourceReferenceAssetPath
+      ? validatePrivateAssetPath(character.sourceReferenceAssetPath)
+      : null;
+    const canonicalPath = character.canonicalReferenceAssetPath
+      ? validatePrivateAssetPath(character.canonicalReferenceAssetPath)
+      : null;
+    const legacyPath = character.referenceAssetPath
+      ? validatePrivateAssetPath(character.referenceAssetPath)
+      : null;
+    const primaryPath = sourcePath || canonicalPath || legacyPath;
+
+    if (primaryPath && !seenPaths.has(primaryPath)) {
+      seenPaths.add(primaryPath);
+      primaryReferences.push({
+        assetPath: primaryPath,
+        label: sourcePath === primaryPath
+          ? `CHARACTER ${character.id} (${character.name}) — REAL PHOTO IDENTITY REFERENCE. Use this image for the exact face, apparent age, skin tone, and distinctive facial features. Do not copy its clothing when the story outfit lock specifies another outfit.`
+          : `CHARACTER ${character.id} (${character.name}) — CANONICAL CARTOON REFERENCE. Use this image for the exact illustrated identity, hairstyle silhouette, body proportions, and rendering design. Obey the story outfit lock for clothing.`,
+      });
+    }
+
+    if (sourcePath && canonicalPath && !seenPaths.has(canonicalPath)) {
+      seenPaths.add(canonicalPath);
+      secondaryReferences.push({
+        assetPath: canonicalPath,
+        label: `CHARACTER ${character.id} (${character.name}) — CANONICAL CARTOON BODY AND STYLE REFERENCE. Match this character's hairstyle silhouette, body proportions, facial design translation, and storybook material style. The written story outfit lock is authoritative for clothing.`,
+      });
+    }
+  }
+
+  const references = [...primaryReferences, ...secondaryReferences].slice(
+    0,
+    MAX_CPA_REFERENCE_IMAGES,
   );
-  const uniquePaths = [...new Set(paths)];
-  if (uniquePaths.length === 0) {
+  if (references.length === 0) {
     return [];
   }
 
   const bucket = process.env.SUPABASE_FAMILY_ASSETS_BUCKET || DEFAULT_FAMILY_ASSETS_BUCKET;
   const supabase = getSupabaseAdmin();
   return Promise.all(
-    uniquePaths.map(async (assetPath) => {
+    references.map(async ({ assetPath, label }) => {
       const { data, error } = await supabase.storage.from(bucket).download(assetPath);
       if (error || !data) {
         throw new Error(`Unable to load family reference image: ${error?.message || assetPath}`);
@@ -425,7 +471,10 @@ async function getPrivateFamilyReferenceImages(options?: IllustrationOptions) {
       }
 
       const bytes = Buffer.from(await data.arrayBuffer());
-      return `data:${contentType};base64,${bytes.toString("base64")}`;
+      return {
+        dataUri: `data:${contentType};base64,${bytes.toString("base64")}`,
+        label,
+      };
     })
   );
 }
@@ -445,9 +494,45 @@ async function getCustomCharacterReferenceImage(options?: IllustrationOptions) {
 async function getImageToImageReferenceImages(options?: IllustrationOptions) {
   const customReference = await getCustomCharacterReferenceImage(options);
   if (customReference) {
-    return [customReference];
+    return [
+      {
+        dataUri: customReference,
+        label:
+          "MAIN CHARACTER — UPLOADED IDENTITY REFERENCE. Preserve the exact recognizable face, apparent age, hairstyle, skin tone, and distinctive visible features.",
+      },
+    ];
   }
-  return getPrivateFamilyReferenceImages(options);
+  const familyCharacters = getPageFamilyCharacters(options);
+  const storyAnchorCandidates = await Promise.all(
+    familyCharacters.flatMap((character) =>
+      character.storyReferenceToken
+        ? [
+            getCachedCharacterReferenceDataUri(character.storyReferenceToken).then(
+              (dataUri): CpaReferenceImage | null => {
+                if (!dataUri) {
+                  console.warn("[image-generator] story character anchor expired", {
+                    characterId: character.id,
+                  });
+                  return null;
+                }
+                return {
+                  dataUri,
+                  label: `CHARACTER ${character.id} (${character.name}) — FIXED STORY OUTFIT ANCHOR. This is the highest-priority full-body reference for this entire book. Preserve its exact illustrated face translation, hairstyle silhouette, body proportions, garment types, garment colors, piping, patterns, accessories, and footwear on every page.`,
+                };
+              },
+            ),
+          ]
+        : [],
+    ),
+  );
+  const storyAnchors = storyAnchorCandidates.filter(
+    (reference): reference is CpaReferenceImage => Boolean(reference),
+  );
+  const familyReferences = await getPrivateFamilyReferenceImages(options);
+  return [...storyAnchors, ...familyReferences].slice(
+    0,
+    MAX_CPA_REFERENCE_IMAGES,
+  );
 }
 
 async function getCharacterReferenceImage(referenceId?: string) {
@@ -701,6 +786,16 @@ function truncateForDashScope(prompt: string) {
 
 function truncateForImagePrompt(prompt: string) {
   const maxLength = 1600;
+  const characters = Array.from(prompt.replace(/\s+/g, " ").trim());
+  if (characters.length <= maxLength) {
+    return characters.join("");
+  }
+
+  return characters.slice(0, maxLength).join("");
+}
+
+function truncateForCpaPrompt(prompt: string) {
+  const maxLength = 6000;
   const characters = Array.from(prompt.replace(/\s+/g, " ").trim());
   if (characters.length <= maxLength) {
     return characters.join("");
@@ -1191,19 +1286,31 @@ async function generateCpaIllustration(
     throw new Error("CPA Nano Banana 2 requires a character reference image.");
   }
 
-  const promptText = truncateForImagePrompt(
+  const visualBible = formatStoryVisualBible(
+    options?.visualBible,
+    options?.castIds,
+  );
+  const promptText = truncateForCpaPrompt(
     [
-      "Create one polished children's storybook illustration by transforming the uploaded character reference into the story scene below.",
-      "The uploaded image is the authoritative identity reference. Preserve the same recognizable person, apparent age, face shape, facial proportions, hairstyle, hair color, skin tone, glasses, and distinctive visible features. Keep the identity stable while changing pose, expression, camera angle, clothing rendering, and background to fit the story.",
+      "Create one polished children's storybook illustration from the fixed character references and visual bible below.",
+      "Each reference image is preceded by a label that states its role. Match each labeled image only to that character id and name. Never blend, swap, or average identities between family members.",
+      visualBible,
+      "Identity and wardrobe continuity are binding. Preserve the same recognizable face, apparent age, face shape, facial proportions, hairstyle, hair color, skin tone, body proportions, glasses, distinctive features, and exact locked outfit. Do not recolor, restyle, add, remove, or substitute garments. Only pose, expression, camera angle, action, and background may change to fit the scene.",
       "Show a complete scene rather than a portrait. Include environment, props, action, and emotion. Keep the main character around 25-45% of the frame, usually full body or three-quarter body.",
+      "CURRENT PAGE SCENE:",
       prompt,
       "Render as a premium children's storybook character with soft rounded materials and polished animation quality. No text, captions, logos, watermark, duplicate people, distorted hands, or extra limbs.",
-    ].join(" ")
+    ]
+      .filter(Boolean)
+      .join(" ")
   );
   return requestCpaImage(promptText, referenceImages);
 }
 
-async function requestCpaImage(promptText: string, referenceImages: string[]) {
+async function requestCpaImage(
+  promptText: string,
+  referenceImages: Array<string | CpaReferenceImage>,
+) {
   const { baseUrl, apiKey, model } = getCpaImageConfig();
   if (!apiKey || !baseUrl) {
     throw new Error("CPA image provider requires CPA_API_KEY and CPA_BASE_URL.");
@@ -1211,6 +1318,16 @@ async function requestCpaImage(promptText: string, referenceImages: string[]) {
   if (referenceImages.length === 0) {
     throw new Error("CPA Nano Banana 2 requires at least one reference image.");
   }
+  const normalizedReferences = referenceImages
+    .slice(0, MAX_CPA_REFERENCE_IMAGES)
+    .map((reference, index): CpaReferenceImage =>
+      typeof reference === "string"
+        ? {
+            dataUri: reference,
+            label: `REFERENCE IMAGE ${index + 1}. Follow the prompt for how this reference should be used.`,
+          }
+        : reference,
+    );
   const maxAttempts = Math.max(
     1,
     getPositiveIntegerEnv("CPA_IMAGE_MAX_ATTEMPTS", DEFAULT_CPA_IMAGE_MAX_ATTEMPTS)
@@ -1245,10 +1362,13 @@ async function requestCpaImage(promptText: string, referenceImages: string[]) {
                 role: "user",
                 content: [
                   { type: "text", text: promptText },
-                  ...referenceImages.map((referenceImage) => ({
-                    type: "image_url" as const,
-                    image_url: { url: referenceImage },
-                  })),
+                  ...normalizedReferences.flatMap((reference) => [
+                    { type: "text" as const, text: reference.label },
+                    {
+                      type: "image_url" as const,
+                      image_url: { url: reference.dataUri },
+                    },
+                  ]),
                 ],
               },
             ],
@@ -1298,7 +1418,34 @@ export async function generateCpaReferenceImage(input: {
   prompt: string;
   referenceImages: string[];
 }) {
-  return requestCpaImage(truncateForImagePrompt(input.prompt), input.referenceImages);
+  return requestCpaImage(truncateForCpaPrompt(input.prompt), input.referenceImages);
+}
+
+export async function generateCpaStoryCharacterAnchor(input: {
+  character: FamilyCharacterInput;
+  visualBible: StoryVisualBible;
+}) {
+  const references = await getPrivateFamilyReferenceImages({
+    familyCharacters: [input.character],
+    castIds: [input.character.id],
+  });
+  if (references.length === 0) {
+    throw new Error("A story character anchor requires a saved family reference image.");
+  }
+  const visualBible = formatStoryVisualBible(input.visualBible, [input.character.id]);
+  const prompt = truncateForCpaPrompt(
+    [
+      "Create one fixed full-body character anchor for a children's picture-book series.",
+      "Use the labels before the reference images exactly: the real photo controls facial identity; the canonical cartoon reference controls the illustrated identity translation, hairstyle silhouette, body proportions, and material design.",
+      visualBible,
+      "The written outfit lock is authoritative. Show the exact locked clothes clearly from head to toe, including garment type, colors, piping, patterns, layers, accessories, and footwear. Do not substitute or redesign any garment.",
+      "Neutral warm studio background, centered full-body three-quarter standing pose, relaxed natural expression, arms visible, feet visible, even soft lighting, no scene props.",
+      "One subject only. No text, captions, labels, logos, watermark, extra people, duplicate body parts, crop, border, or photorealistic rendering.",
+    ]
+      .filter(Boolean)
+      .join(" "),
+  );
+  return requestCpaImage(prompt, references);
 }
 
 async function generateAgnesIllustration(
@@ -1353,7 +1500,7 @@ async function generateAgnesIllustration(
           ...(referenceImages.length > 0
             ? {
                 extra_body: {
-                  image: referenceImages,
+                  image: referenceImages.map((reference) => reference.dataUri),
                   response_format: "b64_json",
                 },
               }
@@ -1524,13 +1671,15 @@ export async function generateAllIllustrations(
   style: IllustrationStyle,
   characterReferenceId?: string,
   familyCharacters?: FamilyCharacterInput[],
-  customCharacterReferenceToken?: string
+  customCharacterReferenceToken?: string,
+  visualBible?: StoryVisualBible,
 ): Promise<{ pages: StoryPage[]; mode: GenerationMode }> {
   const ordinaryProviderPlan = getProviderPlan(pages.length);
   const providerPlan = pages.map((page, index): ImageProvider | undefined => {
     const castIds = new Set(page.castIds || []);
     const usesFamilyPhoto = (familyCharacters || []).some(
-      (character) => character.referenceAssetPath && castIds.has(character.id),
+      (character) =>
+        castIds.has(character.id) && hasFamilyCharacterReference(character),
     );
     if (usesFamilyPhoto) return "cpa";
     if (customCharacterReferenceToken) {
@@ -1581,6 +1730,7 @@ export async function generateAllIllustrations(
               preferredProvider,
               familyCharacters,
               castIds: page.castIds,
+              visualBible,
             }
           );
           return {
@@ -1655,12 +1805,14 @@ export async function regeneratePage(
   characterReferenceId?: string,
   fallbackProviders?: ImageProvider[],
   familyCharacters?: FamilyCharacterInput[],
-  customCharacterReferenceToken?: string
+  customCharacterReferenceToken?: string,
+  visualBible?: StoryVisualBible,
 ): Promise<StoryPage> {
   const seed = newSeed ?? Math.floor(Math.random() * 999999);
   const castIds = new Set(page.castIds || []);
   const usesFamilyPhoto = (familyCharacters || []).some(
-    (character) => character.referenceAssetPath && castIds.has(character.id),
+    (character) =>
+      castIds.has(character.id) && hasFamilyCharacterReference(character),
   );
   const generated = await generateIllustration(page.illustrationPrompt, seed, {
     pageNumber: page.page,
@@ -1669,6 +1821,7 @@ export async function regeneratePage(
     customCharacterReferenceToken,
     familyCharacters,
     castIds: page.castIds,
+    visualBible,
     preferredProvider: usesFamilyPhoto
       ? "cpa"
       : customCharacterReferenceToken
