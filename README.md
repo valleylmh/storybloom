@@ -291,11 +291,13 @@ Site URL: https://你的正式域名
 Redirect URLs:
 http://localhost:3000/family
 https://你的正式域名/family
+http://localhost:3000/auth/callback
+https://你的正式域名/auth/callback
 ```
 
 Vercel 的 `NEXT_PUBLIC_APP_URL` 也必须设置为正式域名（不要保留 `http://localhost:3000`）。如果线上 Magic Link 的 `redirect_to` 仍然是 localhost，说明 Supabase 没有匹配到允许的线上 Redirect URL，并回退到了 Site URL；保存 URL Configuration 后需要重新发送一封登录邮件，旧邮件中的地址不会更新。
 
-本地开发时 Magic Link 会回到 `/family` 并恢复登录会话。儿童照片建议使用清晰、单人正面照；上传前浏览器会缩放、转成 WebP 并移除 EXIF，服务端与 Storage 仍按私密儿童资料处理。
+新的 Magic Link 会先回到 `/auth/callback` 恢复登录会话，再通过只允许本站相对路径的 `next` 参数返回发起登录的页面；直接回到 `/family` 的地址仅为旧链接兼容保留。本地开发时也需要允许 `http://localhost:3000/auth/callback`。儿童照片建议使用清晰、单人正面照；上传前必须明确勾选本人或监护人授权，浏览器随后会缩放、转成 WebP 并移除 EXIF，服务端与 Storage 仍按私密儿童资料处理。
 
 定制入口默认展示“链接即将上线”。拿到平台链接后，在 `.env.local` 中配置：
 

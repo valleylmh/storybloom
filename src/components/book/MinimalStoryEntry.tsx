@@ -9,7 +9,6 @@ import {
   matchStoryProtagonist,
   normalizeCharacterName,
 } from "@/lib/story-input";
-import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import {
   blobToDataUrl,
   imageUrlToDataUrl,
@@ -21,6 +20,8 @@ import {
   type GrowthRecordDraft,
   type GrowthRecordPhoto,
 } from "@/lib/growth-records";
+import { useAuth } from "@/hooks/useAuth";
+import { recordGuardianConsent } from "@/lib/auth/guardian-consent";
 
 type AppLocale = "zh" | "en";
 
@@ -81,6 +82,10 @@ function getLocalDateValue() {
 
 function isChildRelationship(relationship: string) {
   return relationship === "孩子" || relationship === "Child";
+}
+
+function isPetRelationship(relationship: string) {
+  return relationship === "宠物" || relationship === "Pet";
 }
 
 async function fetchFamilyChoices(client: SupabaseClient, userId: string) {
@@ -250,6 +255,9 @@ export default function MinimalStoryEntry({
   onSubmit,
 }: Props) {
   const text = COPY[locale];
+  const { supabase, session, signInWithMagicLink } = useAuth();
+  const familyAccessToken = session?.access_token || "";
+  const familyUserId = session?.user.id || "";
   const [promptIndex, setPromptIndex] = useState(0);
   const [idea, setIdea] = useState("");
   const [submitting, setSubmitting] = useState(false);
@@ -266,8 +274,6 @@ export default function MinimalStoryEntry({
   const [familyChoices, setFamilyChoices] = useState<FamilyChoice[]>([]);
   const [familyUrls, setFamilyUrls] = useState<Record<string, string>>({});
   const [selectedFamilyIds, setSelectedFamilyIds] = useState<string[]>([]);
-  const [familyAccessToken, setFamilyAccessToken] = useState("");
-  const [familyUserId, setFamilyUserId] = useState("");
   const [growthEnabled, setGrowthEnabled] = useState(false);
   const [growthOccurredOn, setGrowthOccurredOn] = useState(getLocalDateValue);
   const [growthNote, setGrowthNote] = useState("");
@@ -286,6 +292,7 @@ export default function MinimalStoryEntry({
   const [identitySave, setIdentitySave] = useState(false);
   const [identityFile, setIdentityFile] = useState<File>();
   const [identityCartoonize, setIdentityCartoonize] = useState(true);
+  const [identityGuardianConsent, setIdentityGuardianConsent] = useState(false);
   const [identityPreviewChoice, setIdentityPreviewChoice] =
     useState<FamilyChoice | null>(null);
   const [identityPreviewUrl, setIdentityPreviewUrl] = useState("");
@@ -355,40 +362,30 @@ export default function MinimalStoryEntry({
 
   useEffect(() => {
     let active = true;
-    let unsubscribe: (() => void) | undefined;
 
-    async function loadFamily(client: SupabaseClient) {
-      const { data: sessionData } = await client.auth.getSession();
-      const session = sessionData.session;
-      if (!active) return;
-      setFamilyAccessToken(session?.access_token || "");
-      setFamilyUserId(session?.user.id || "");
-      if (!session) {
+    if (!supabase || !session) {
+      setFamilyChoices([]);
+      setFamilyUrls({});
+      setSelectedFamilyIds([]);
+      return;
+    }
+
+    void fetchFamilyChoices(supabase, session.user.id)
+      .then((family) => {
+        if (!active) return;
+        setFamilyChoices(family.choices);
+        setFamilyUrls(family.urls);
+      })
+      .catch(() => {
+        if (!active) return;
         setFamilyChoices([]);
         setFamilyUrls({});
-        setSelectedFamilyIds([]);
-        return;
-      }
-      const family = await fetchFamilyChoices(client, session.user.id);
-      if (!active) return;
-      setFamilyChoices(family.choices);
-      setFamilyUrls(family.urls);
-    }
-
-    try {
-      const client = getSupabaseBrowserClient();
-      void loadFamily(client);
-      const { data } = client.auth.onAuthStateChange(() => void loadFamily(client));
-      unsubscribe = () => data.subscription.unsubscribe();
-    } catch {
-      setFamilyChoices([]);
-    }
+      });
 
     return () => {
       active = false;
-      unsubscribe?.();
     };
-  }, []);
+  }, [session?.user.id, supabase]);
 
   useEffect(() => {
     try {
@@ -418,9 +415,8 @@ export default function MinimalStoryEntry({
   }, []);
 
   async function refreshFamilyChoices() {
-    if (!familyUserId) return familyChoices;
-    const client = getSupabaseBrowserClient();
-    const family = await fetchFamilyChoices(client, familyUserId);
+    if (!familyUserId || !supabase) return familyChoices;
+    const family = await fetchFamilyChoices(supabase, familyUserId);
     setFamilyChoices(family.choices);
     setFamilyUrls(family.urls);
     return family.choices;
@@ -442,8 +438,6 @@ export default function MinimalStoryEntry({
           user_id: familyUserId,
           display_name: "我的家庭",
           locale: locale === "zh" ? "zh-CN" : "en",
-          guardian_consent_at: new Date().toISOString(),
-          guardian_consent_version: "2026-07",
         },
         { onConflict: "user_id" },
       )
@@ -454,14 +448,26 @@ export default function MinimalStoryEntry({
   }
 
   async function saveIdentityCharacter() {
-    if (!familyUserId) throw new Error(text.loginHint);
-    const client = getSupabaseBrowserClient();
+    if (!familyUserId || !supabase) throw new Error(text.loginHint);
+    const client = supabase;
     const existing = familyChoices.find((choice) => choice.id === identitySelectedId);
     const profileId = await ensureFamilyProfile(client);
     const id = existing?.id || crypto.randomUUID();
     let sourcePath = existing?.source_photo_path || null;
+    const uploadsPhoto = Boolean(identityFile && identityCartoonize);
+    const uploadsPersonPhoto = uploadsPhoto && !isPetRelationship(identityRelationship);
+    if (uploadsPersonPhoto && !identityGuardianConsent) {
+      throw new Error(
+        locale === "zh"
+          ? "上传人物照片前，请确认你已获得本人或监护人的明确授权。"
+          : "Confirm permission from the person shown or their guardian before uploading.",
+      );
+    }
     if (identityFile && identityCartoonize) {
       const photo = await cleanFamilyPhoto(identityFile);
+      if (uploadsPersonPhoto) {
+        await recordGuardianConsent(client, familyUserId);
+      }
       sourcePath = `${familyUserId}/${id}/source.webp`;
       const { error } = await client.storage
         .from("family-photos")
@@ -474,11 +480,11 @@ export default function MinimalStoryEntry({
       user_id: familyUserId,
       display_name: identityName.trim(),
       relationship: identityRelationship,
-      kind: identityRelationship === "宠物" ? "pet" : "person",
+      kind: isPetRelationship(identityRelationship) ? "pet" : "person",
       description: existing?.description || "",
       source_photo_path: sourcePath,
-      canonical_photo_path: identityFile ? null : existing?.canonical_photo_path || null,
-      status: identityFile
+      canonical_photo_path: uploadsPhoto ? null : existing?.canonical_photo_path || null,
+      status: uploadsPhoto
         ? "source_uploaded"
         : existing?.canonical_photo_path
           ? "ready"
@@ -507,8 +513,8 @@ export default function MinimalStoryEntry({
     if (!refreshed?.canonical_photo_path) {
       throw new Error("绘本形象已经生成，但暂时无法加载预览。");
     }
-    const client = getSupabaseBrowserClient();
-    const { data } = await client.storage
+    if (!supabase) throw new Error("账户服务尚未准备好，请稍后再试。");
+    const { data } = await supabase.storage
       .from("family-photos")
       .createSignedUrl(refreshed.canonical_photo_path, 3600);
     if (!data?.signedUrl) throw new Error("绘本形象预览加载失败。");
@@ -659,6 +665,7 @@ export default function MinimalStoryEntry({
     setIdentitySave(Boolean(familyUserId));
     setIdentityFile(undefined);
     setIdentityCartoonize(true);
+    setIdentityGuardianConsent(false);
     setIdentityPreviewChoice(null);
     setIdentityPreviewUrl("");
     setIdentityError("");
@@ -733,6 +740,18 @@ export default function MinimalStoryEntry({
 
     try {
       let choice = selected;
+      if (
+        identityFile &&
+        identityCartoonize &&
+        !isPetRelationship(identityRelationship) &&
+        !identityGuardianConsent
+      ) {
+        throw new Error(
+          locale === "zh"
+            ? "上传人物照片前，请勾选并确认已获得本人或监护人的明确授权。"
+            : "Confirm permission from the person shown or their guardian before uploading.",
+        );
+      }
       if ((identitySave || identityFile) && familyUserId) {
         choice = await saveIdentityCharacter();
       }
@@ -768,12 +787,10 @@ export default function MinimalStoryEntry({
           relationship: identityRelationship,
         }),
       );
-      const client = getSupabaseBrowserClient();
-      const { error } = await client.auth.signInWithOtp({
-        email: identityEmail,
-        options: { emailRedirectTo: window.location.href },
-      });
-      if (error) throw error;
+      await signInWithMagicLink(
+        identityEmail,
+        `${window.location.pathname}${window.location.search}${window.location.hash}`,
+      );
       setIdentityLoginSent(true);
     } catch (error) {
       setIdentityError(error instanceof Error ? error.message : "登录链接发送失败。");
@@ -1262,6 +1279,7 @@ export default function MinimalStoryEntry({
                         accept="image/jpeg,image/png,image/webp"
                         onChange={(event) => {
                           setIdentityFile(event.target.files?.[0]);
+                          setIdentityGuardianConsent(false);
                           if (event.target.files?.[0]) setIdentitySave(true);
                         }}
                       />
@@ -1281,12 +1299,19 @@ export default function MinimalStoryEntry({
                         </span>
                       </label>
                     ) : null}
-                    {identityFile ? (
-                      <p className="minimal-identity-consent">
-                        {locale === "zh"
-                          ? "上传即表示你是照片中的本人或其监护人，并同意照片仅用于生成私密家庭绘本形象。"
-                          : "By uploading, you confirm that you are the person shown or their guardian and consent to private storybook generation."}
-                      </p>
+                    {identityFile && identityCartoonize && !isPetRelationship(identityRelationship) ? (
+                      <label className="minimal-identity-check minimal-identity-consent-check">
+                        <input
+                          type="checkbox"
+                          checked={identityGuardianConsent}
+                          onChange={(event) => setIdentityGuardianConsent(event.target.checked)}
+                        />
+                        <span>
+                          {locale === "zh"
+                            ? "我确认自己是照片中的本人或其监护人，已获得明确授权，并同意将照片用于生成私密家庭绘本形象。"
+                            : "I confirm I am the person shown or their guardian, have explicit permission, and consent to private storybook generation."}
+                        </span>
+                      </label>
                     ) : null}
                   </>
                 ) : (

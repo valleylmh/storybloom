@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import AuthGate from "@/components/auth/AuthGate";
 
 // Supabase auth reads NEXT_PUBLIC_* configuration and browser storage.
 // Keep the family library entirely client-side so Next.js does not construct
@@ -16,5 +17,18 @@ const FamilyLibrary = dynamic(
 );
 
 export default function FamilyPage() {
-  return <FamilyLibrary />;
+  return (
+    <AuthGate
+      next="/family"
+      loginVariant="family"
+      loadingFallback={(
+        <main
+          className="family-page family-centered"
+          aria-label="正在加载家庭角色库"
+        />
+      )}
+    >
+      <FamilyLibrary />
+    </AuthGate>
+  );
 }

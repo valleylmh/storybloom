@@ -5,6 +5,7 @@ import Link from "next/link";
 import BookPreview from "@/components/book/BookPreview";
 import MinimalStoryEntry from "@/components/book/MinimalStoryEntry";
 import StoryForm from "@/components/book/StoryForm";
+import AccountEntryButton from "@/components/auth/AccountEntryButton";
 import {
   deleteHistory,
   listHistory,
@@ -914,6 +915,7 @@ export default function Home() {
           >
             {locale === "zh" ? "EN" : "中"}
           </button>
+          <AccountEntryButton locale={locale} />
         </div>
       ) : null}
 
@@ -944,7 +946,10 @@ export default function Home() {
               </div>
               <span className="brand-sub">{text.brandSub}</span>
             </div>
-            <div className="hero-meta">{text.meta}</div>
+            <div className="hero-nav-actions">
+              <div className="hero-meta">{text.meta}</div>
+              <AccountEntryButton locale={locale} />
+            </div>
           </header>
 
           <div className="hero-grid">
