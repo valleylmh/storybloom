@@ -22,6 +22,11 @@ import {
 } from "@/lib/growth-records";
 import { useAuth } from "@/hooks/useAuth";
 import { recordGuardianConsent } from "@/lib/auth/guardian-consent";
+import {
+  MAX_FAMILY_CHARACTER_GENERATIONS,
+  getRemainingFamilyCharacterGenerations,
+  normalizeFamilyCharacterGenerationCount,
+} from "@/lib/family-character-generation";
 
 type AppLocale = "zh" | "en";
 
@@ -58,6 +63,8 @@ type FamilyChoice = {
   description: string | null;
   source_photo_path: string | null;
   canonical_photo_path: string | null;
+  cartoonize: boolean;
+  canonical_generation_count: number;
   status: string;
   sort_order: number;
 };
@@ -88,18 +95,24 @@ function isPetRelationship(relationship: string) {
   return relationship === "宠物" || relationship === "Pet";
 }
 
+function getFamilyChoicePhotoPath(choice: FamilyChoice) {
+  return choice.cartoonize === false
+    ? choice.source_photo_path || choice.canonical_photo_path
+    : choice.canonical_photo_path || choice.source_photo_path;
+}
+
 async function fetchFamilyChoices(client: SupabaseClient, userId: string) {
   const { data, error } = await client
     .from("family_characters")
     .select(
-      "id,display_name,relationship,kind,description,source_photo_path,canonical_photo_path,status,sort_order",
+      "id,display_name,relationship,kind,description,source_photo_path,canonical_photo_path,cartoonize,canonical_generation_count,status,sort_order",
     )
     .eq("user_id", userId)
     .order("sort_order");
   if (error) throw error;
   const choices = (data || []) as FamilyChoice[];
   const paths = choices
-    .map((choice) => choice.canonical_photo_path || choice.source_photo_path)
+    .map(getFamilyChoicePhotoPath)
     .filter(Boolean) as string[];
   const urls: Record<string, string> = {};
   if (paths.length > 0) {
@@ -159,6 +172,8 @@ const COPY = {
     photoChange: "更换照片",
     cartoonizePerson: "将照片转换成统一的卡通绘本形象",
     cartoonizePet: "将照片转换成统一的卡通拟人形象",
+    cartoonizeUsage: (remaining: number) =>
+      `每个家庭角色最多生成 ${MAX_FAMILY_CHARACTER_GENERATIONS} 次，还剩 ${remaining} 次`,
     loginHint: "登录后可以保存姓名、私密照片和绘本形象。",
     loginAction: "发送登录链接",
     previewTitle: "确认绘本形象",
@@ -231,6 +246,8 @@ const COPY = {
     photoChange: "Change photo",
     cartoonizePerson: "Turn the photo into a consistent storybook character",
     cartoonizePet: "Turn the photo into a consistent anthropomorphic character",
+    cartoonizeUsage: (remaining: number) =>
+      `Up to ${MAX_FAMILY_CHARACTER_GENERATIONS} generations per character · ${remaining} left`,
     loginHint: "Sign in to save names, private photos, and character artwork.",
     loginAction: "Send sign-in link",
     previewTitle: "Confirm the storybook character",
@@ -465,8 +482,26 @@ export default function MinimalStoryEntry({
     const existing = familyChoices.find((choice) => choice.id === identitySelectedId);
     const profileId = await ensureFamilyProfile(client);
     const id = existing?.id || crypto.randomUUID();
+    const currentGenerationCount = normalizeFamilyCharacterGenerationCount(
+      existing?.canonical_generation_count,
+    );
+    const needsNewCanonical = Boolean(
+      identityCartoonize &&
+      (identityFile || existing?.source_photo_path) &&
+      (identityFile || !existing?.canonical_photo_path),
+    );
+    if (
+      needsNewCanonical &&
+      currentGenerationCount >= MAX_FAMILY_CHARACTER_GENERATIONS
+    ) {
+      throw new Error(
+        locale === "zh"
+          ? "这个角色已经用完 5 次卡通形象生成机会，请关闭卡通化后使用真实照片。"
+          : "This character has used all 5 cartoon generations. Turn off cartoonization to use the real photo.",
+      );
+    }
     let sourcePath = existing?.source_photo_path || null;
-    const uploadsPhoto = Boolean(identityFile && identityCartoonize);
+    const uploadsPhoto = Boolean(identityFile);
     const uploadsPersonPhoto = uploadsPhoto && !isPetRelationship(identityRelationship);
     if (uploadsPersonPhoto && !identityGuardianConsent) {
       throw new Error(
@@ -475,7 +510,7 @@ export default function MinimalStoryEntry({
           : "Confirm permission from the person shown or their guardian before uploading.",
       );
     }
-    if (identityFile && identityCartoonize) {
+    if (identityFile) {
       const photo = await cleanFamilyPhoto(identityFile);
       if (uploadsPersonPhoto) {
         await recordGuardianConsent(client, familyUserId);
@@ -486,6 +521,9 @@ export default function MinimalStoryEntry({
         .upload(sourcePath, photo, { contentType: "image/webp", upsert: true });
       if (error) throw error;
     }
+    const canonicalPath = uploadsPhoto
+      ? null
+      : existing?.canonical_photo_path || null;
     const payload = {
       id,
       profile_id: profileId,
@@ -495,23 +533,40 @@ export default function MinimalStoryEntry({
       kind: isPetRelationship(identityRelationship) ? "pet" : "person",
       description: existing?.description || "",
       source_photo_path: sourcePath,
-      canonical_photo_path: uploadsPhoto ? null : existing?.canonical_photo_path || null,
-      status: uploadsPhoto
-        ? "source_uploaded"
-        : existing?.canonical_photo_path
-          ? "ready"
-          : sourcePath
-            ? "source_uploaded"
-            : existing?.status || "draft",
+      canonical_photo_path: canonicalPath,
+      cartoonize: identityCartoonize,
+      status: sourcePath
+        ? identityCartoonize
+          ? canonicalPath
+            ? "ready"
+            : "source_uploaded"
+          : "ready"
+        : "draft",
       sort_order: existing?.sort_order ?? familyChoices.length,
     };
     const { error } = await client.from("family_characters").upsert(payload);
     if (error) throw error;
+    if (uploadsPhoto && existing?.canonical_photo_path) {
+      await client.storage
+        .from("family-photos")
+        .remove([existing.canonical_photo_path]);
+    }
     const choices = await refreshFamilyChoices();
-    return choices.find((choice) => choice.id === id) || ({ ...payload } as FamilyChoice);
+    return choices.find((choice) => choice.id === id) || ({
+      ...payload,
+      canonical_generation_count:
+        existing?.canonical_generation_count || 0,
+    } as FamilyChoice);
   }
 
   async function generateCanonicalPreview(choice: FamilyChoice) {
+    if (getRemainingFamilyCharacterGenerations(choice.canonical_generation_count) === 0) {
+      throw new Error(
+        locale === "zh"
+          ? "这个家庭角色已经用完 5 次卡通形象生成机会。"
+          : "This family character has used all 5 cartoon generations.",
+      );
+    }
     setIdentityPhase("generating");
     setIdentityError("");
     const response = await fetch(`/api/family/characters/${choice.id}/generate`, {
@@ -587,7 +642,9 @@ export default function MinimalStoryEntry({
       throw new Error(text.growthDateRequired);
     }
 
-    const imagePath = protagonist?.canonical_photo_path || protagonist?.source_photo_path;
+    const imagePath = protagonist
+      ? getFamilyChoicePhotoPath(protagonist)
+      : undefined;
     const avatarUrl = imagePath ? familyUrls[imagePath] : identityPreviewUrl || undefined;
 
     return {
@@ -676,7 +733,7 @@ export default function MinimalStoryEntry({
     setIdentityRelationship(matchedChoice?.relationship || (locale === "zh" ? "孩子" : "Child"));
     setIdentitySave(Boolean(familyUserId));
     setIdentityFile(undefined);
-    setIdentityCartoonize(true);
+    setIdentityCartoonize(matchedChoice?.cartoonize ?? true);
     setIdentityGuardianConsent(false);
     setIdentityPreviewChoice(null);
     setIdentityPreviewUrl("");
@@ -703,7 +760,11 @@ export default function MinimalStoryEntry({
         selectedFamilyIds.includes(choice.id) && isChildRelationship(choice.relationship),
     );
     if (explicitlySelectedChild) {
-      if (!explicitlySelectedChild.source_photo_path || explicitlySelectedChild.canonical_photo_path) {
+      if (
+        !explicitlySelectedChild.source_photo_path ||
+        explicitlySelectedChild.canonical_photo_path ||
+        explicitlySelectedChild.cartoonize === false
+      ) {
         await submitStory(storyIdea, explicitlySelectedChild.display_name, explicitlySelectedChild);
         return;
       }
@@ -719,7 +780,11 @@ export default function MinimalStoryEntry({
     const match = matchStoryProtagonist(analysis, familyChoices);
     if (match.status === "matched") {
       const choice = familyChoices.find((item) => item.id === match.characterId)!;
-      if (!choice.source_photo_path || choice.canonical_photo_path) {
+      if (
+        !choice.source_photo_path ||
+        choice.canonical_photo_path ||
+        choice.cartoonize === false
+      ) {
         await submitStory(storyIdea, choice.display_name, choice);
         return;
       }
@@ -754,7 +819,6 @@ export default function MinimalStoryEntry({
       let choice = selected;
       if (
         identityFile &&
-        identityCartoonize &&
         !isPetRelationship(identityRelationship) &&
         !identityGuardianConsent
       ) {
@@ -778,7 +842,12 @@ export default function MinimalStoryEntry({
       await submitStory(
         pendingIdea,
         trimmedName,
-        choice && (!choice.source_photo_path || choice.canonical_photo_path) ? choice : undefined,
+        choice &&
+          (!choice.source_photo_path ||
+            choice.canonical_photo_path ||
+            choice.cartoonize === false)
+          ? choice
+          : undefined,
       );
     } catch (error) {
       setIdentityPhase("confirm");
@@ -849,8 +918,14 @@ export default function MinimalStoryEntry({
     (choice) => selectedFamilyIds.includes(choice.id) && isChildRelationship(choice.relationship),
   );
   const selectedGrowthChildPath = selectedGrowthChild
-    ? selectedGrowthChild.canonical_photo_path || selectedGrowthChild.source_photo_path
+    ? getFamilyChoicePhotoPath(selectedGrowthChild)
     : null;
+  const selectedIdentityChoice = familyChoices.find(
+    (choice) => choice.id === identitySelectedId,
+  );
+  const identityRemainingGenerations = getRemainingFamilyCharacterGenerations(
+    selectedIdentityChoice?.canonical_generation_count,
+  );
   const analyzedGrowthName = idea.trim()
     ? analyzeStoryProtagonist(idea.trim(), locale).candidateName
     : null;
@@ -927,7 +1002,7 @@ export default function MinimalStoryEntry({
             {familyChoices.length > 0 ? (
               <div className="minimal-family-choices">
                 {familyChoices.map((choice) => {
-                  const path = choice.canonical_photo_path || choice.source_photo_path;
+                  const path = getFamilyChoicePhotoPath(choice);
                   const selected = selectedFamilyIds.includes(choice.id);
                   return (
                     <button
@@ -1158,12 +1233,24 @@ export default function MinimalStoryEntry({
                 <div className="minimal-identity-preview">
                   <img src={identityPreviewUrl} alt={identityPreviewChoice.display_name} />
                 </div>
+                <p className="minimal-identity-generation-usage">
+                  {text.cartoonizeUsage(
+                    getRemainingFamilyCharacterGenerations(
+                      identityPreviewChoice.canonical_generation_count,
+                    ),
+                  )}
+                </p>
                 {identityError ? <p className="minimal-identity-error">{identityError}</p> : null}
                 <div className="minimal-identity-actions">
                   <button
                     type="button"
                     className="secondary"
-                    disabled={submitting}
+                    disabled={
+                      submitting ||
+                      getRemainingFamilyCharacterGenerations(
+                        identityPreviewChoice.canonical_generation_count,
+                      ) === 0
+                    }
                     onClick={() => {
                       setIdentityError("");
                       void generateCanonicalPreview(identityPreviewChoice).catch((error) => {
@@ -1174,7 +1261,11 @@ export default function MinimalStoryEntry({
                       });
                     }}
                   >
-                    {text.previewRetry}
+                    {getRemainingFamilyCharacterGenerations(
+                      identityPreviewChoice.canonical_generation_count,
+                    ) === 0
+                      ? locale === "zh" ? "已达 5 次上限" : "5 generation limit reached"
+                      : text.previewRetry}
                   </button>
                   <button
                     type="button"
@@ -1209,7 +1300,7 @@ export default function MinimalStoryEntry({
                 {familyChoices.length > 0 ? (
                   <div className="minimal-identity-existing">
                     {familyChoices.map((choice) => {
-                      const path = choice.canonical_photo_path || choice.source_photo_path;
+                      const path = getFamilyChoicePhotoPath(choice);
                       const selected = identitySelectedId === choice.id;
                       const suggested = identityMatchingIds.includes(choice.id);
                       return (
@@ -1223,6 +1314,7 @@ export default function MinimalStoryEntry({
                             setIdentityRelationship(choice.relationship);
                             setIdentitySave(true);
                             setIdentityFile(undefined);
+                            setIdentityCartoonize(choice.cartoonize ?? true);
                           }}
                         >
                           {path && familyUrls[path] ? (
@@ -1322,13 +1414,16 @@ export default function MinimalStoryEntry({
                           onChange={(event) => setIdentityCartoonize(event.target.checked)}
                         />
                         <span>
-                          {identityRelationship === "宠物" || identityRelationship === "Pet"
-                            ? text.cartoonizePet
-                            : text.cartoonizePerson}
+                          <strong>
+                            {identityRelationship === "宠物" || identityRelationship === "Pet"
+                              ? text.cartoonizePet
+                              : text.cartoonizePerson}
+                          </strong>
+                          <small>{text.cartoonizeUsage(identityRemainingGenerations)}</small>
                         </span>
                       </label>
                     ) : null}
-                    {identityFile && identityCartoonize && !isPetRelationship(identityRelationship) ? (
+                    {identityFile && !isPetRelationship(identityRelationship) ? (
                       <label className="minimal-identity-check minimal-identity-consent-check">
                         <input
                           type="checkbox"

@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Camera,
+  Crop,
   ImageSquare,
   MagicWand,
+  PencilSimple,
   Plus,
   SignOut,
   SpinnerGap,
@@ -14,6 +16,19 @@ import {
 } from "@phosphor-icons/react";
 import { useAuth } from "@/hooks/useAuth";
 import { recordGuardianConsent } from "@/lib/auth/guardian-consent";
+import CharacterImageCropDialog, {
+  getFamilyImageCropStyle,
+} from "@/components/family/CharacterImageCropDialog";
+import {
+  MAX_FAMILY_CHARACTER_GENERATIONS,
+  getRemainingFamilyCharacterGenerations,
+  normalizeFamilyCharacterGenerationCount,
+} from "@/lib/family-character-generation";
+import {
+  DEFAULT_FAMILY_IMAGE_CROP,
+  normalizeFamilyImageCrop,
+  type FamilyImageCrop,
+} from "@/lib/family-image-crop";
 
 type Character = {
   id: string;
@@ -23,6 +38,10 @@ type Character = {
   description: string | null;
   source_photo_path: string | null;
   canonical_photo_path: string | null;
+  source_crop: FamilyImageCrop | null;
+  canonical_crop: FamilyImageCrop | null;
+  cartoonize: boolean;
+  canonical_generation_count: number;
   status: string;
   error_message: string | null;
   sort_order: number;
@@ -33,6 +52,7 @@ type CharacterForm = {
   relation: string;
   description: string;
   file?: File;
+  cartoonize: boolean;
   guardianConsentConfirmed: boolean;
 };
 
@@ -53,10 +73,52 @@ const RELATIONS = [
 const STATUS_LABELS: Record<string, string> = {
   draft: "待上传照片",
   source_uploaded: "参考照已保存",
-  processing: "正在生成设定稿",
-  ready: "绘本形象已就绪",
+  processing: "正在生成卡通形象",
+  ready: "卡通形象已就绪",
   failed: "生成失败",
 };
+
+type CharacterImageSelection = {
+  path: string;
+  crop: unknown;
+  field: "source_crop" | "canonical_crop";
+  label: "真实照片" | "卡通形象";
+};
+
+function getCharacterImageSelection(character: Character): CharacterImageSelection | null {
+  if (character.cartoonize !== false && character.canonical_photo_path) {
+    return {
+      path: character.canonical_photo_path,
+      crop: character.canonical_crop,
+      field: "canonical_crop",
+      label: "卡通形象",
+    };
+  }
+  if (character.source_photo_path) {
+    return {
+      path: character.source_photo_path,
+      crop: character.source_crop,
+      field: "source_crop",
+      label: "真实照片",
+    };
+  }
+  if (character.canonical_photo_path) {
+    return {
+      path: character.canonical_photo_path,
+      crop: character.canonical_crop,
+      field: "canonical_crop",
+      label: "卡通形象",
+    };
+  }
+  return null;
+}
+
+function getCharacterStatusLabel(character: Character) {
+  if (character.source_photo_path && character.cartoonize === false) {
+    return "真实照片已保存";
+  }
+  return STATUS_LABELS[character.status] || character.status;
+}
 
 async function cleanPhoto(file: File): Promise<Blob> {
   if (
@@ -88,6 +150,10 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
   const [items, setItems] = useState<Character[]>([]);
   const [urls, setUrls] = useState<Record<string, string>>({});
   const [editing, setEditing] = useState<Character | "new" | null>(null);
+  const [cropping, setCropping] = useState<{
+    character: Character;
+    image: CharacterImageSelection;
+  } | null>(null);
   const [busy, setBusy] = useState<string>();
   const [notice, setNotice] = useState("");
 
@@ -172,11 +238,26 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
     if (!supabase || !session) throw new Error("登录状态已失效，请刷新页面后重新登录");
     setBusy("save");
     setNotice("");
+    let autoGenerateId: string | undefined;
     try {
       const nextProfileId = profileId || (await ensureProfile(session.user.id));
       const current = editing === "new" ? null : editing;
       const id = current?.id || crypto.randomUUID();
       const kind = form.relation === "宠物" ? "pet" : "person";
+      const currentGenerationCount = normalizeFamilyCharacterGenerationCount(
+        current?.canonical_generation_count,
+      );
+      const needsNewCanonical = Boolean(
+        form.cartoonize &&
+        (form.file || current?.source_photo_path) &&
+        (form.file || !current?.canonical_photo_path),
+      );
+      if (
+        needsNewCanonical &&
+        currentGenerationCount >= MAX_FAMILY_CHARACTER_GENERATIONS
+      ) {
+        throw new Error("这个角色已经用完 5 次卡通形象生成机会，请关闭卡通化后保存真实照片。");
+      }
       const uploadsPersonPhoto = Boolean(form.file) && kind === "person";
       if (uploadsPersonPhoto && !form.guardianConsentConfirmed) {
         throw new Error("上传人物照片前，请先确认你已获得本人或监护人的明确授权。");
@@ -195,6 +276,15 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
         if (error) throw error;
       }
 
+      const canonical = form.file ? null : current?.canonical_photo_path || null;
+      const status = source
+        ? form.cartoonize
+          ? canonical
+            ? "ready"
+            : "source_uploaded"
+          : "ready"
+        : "draft";
+
       const payload = {
         id,
         profile_id: nextProfileId,
@@ -204,19 +294,46 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
         kind,
         description: form.description.trim(),
         source_photo_path: source,
-        status: source ? "source_uploaded" : "draft",
+        canonical_photo_path: canonical,
+        source_crop: form.file
+          ? DEFAULT_FAMILY_IMAGE_CROP
+          : normalizeFamilyImageCrop(current?.source_crop),
+        canonical_crop: form.file
+          ? DEFAULT_FAMILY_IMAGE_CROP
+          : normalizeFamilyImageCrop(current?.canonical_crop),
+        cartoonize: form.cartoonize,
+        status,
         sort_order: current?.sort_order ?? items.length,
       };
       const { error } = await supabase.from("family_characters").upsert(payload);
       if (error) throw error;
+      if (form.file && current?.canonical_photo_path) {
+        await supabase.storage
+          .from("family-photos")
+          .remove([current.canonical_photo_path]);
+      }
       setEditing(null);
       await refresh(session.user.id);
+      const newlyEnabledCartoonization =
+        current?.cartoonize === false && form.cartoonize;
+      if (
+        form.cartoonize &&
+        source &&
+        !canonical &&
+        currentGenerationCount < MAX_FAMILY_CHARACTER_GENERATIONS &&
+        (Boolean(form.file) || newlyEnabledCartoonization)
+      ) {
+        autoGenerateId = id;
+      }
     } catch (cause) {
       const message = cause instanceof Error ? cause.message : "保存失败";
       setNotice(message);
       throw cause instanceof Error ? cause : new Error(message);
     } finally {
       setBusy(undefined);
+    }
+    if (autoGenerateId) {
+      void generate(autoGenerateId);
     }
   }
 
@@ -233,6 +350,7 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
       if (session) await refresh(session.user.id);
     } catch (cause) {
       setNotice(cause instanceof Error ? cause.message : "生成失败");
+      if (session) await refresh(session.user.id);
     } finally {
       setBusy(undefined);
     }
@@ -255,6 +373,29 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
       await refresh(session.user.id);
     } catch (cause) {
       setNotice(cause instanceof Error ? cause.message : "删除失败");
+    } finally {
+      setBusy(undefined);
+    }
+  }
+
+  async function saveCrop(crop: FamilyImageCrop) {
+    if (!supabase || !session || !cropping) {
+      throw new Error("裁剪状态已失效，请重新打开后再试");
+    }
+    const characterId = cropping.character.id;
+    setBusy(characterId);
+    setNotice("");
+    try {
+      const { error } = await supabase
+        .from("family_characters")
+        .update({ [cropping.image.field]: normalizeFamilyImageCrop(crop) })
+        .eq("id", characterId)
+        .eq("user_id", session.user.id);
+      if (error) throw error;
+      setCropping(null);
+      await refresh(session.user.id);
+    } catch (cause) {
+      throw cause instanceof Error ? cause : new Error("裁剪保存失败");
     } finally {
       setBusy(undefined);
     }
@@ -304,14 +445,61 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
       ) : null}
       <section className="family-grid">
         {items.map((item) => {
-          const image = item.canonical_photo_path || item.source_photo_path;
+          const imageSelection = getCharacterImageSelection(item);
+          const image = imageSelection?.path;
+          const generationCount = normalizeFamilyCharacterGenerationCount(
+            item.canonical_generation_count,
+          );
+          const remainingGenerations = getRemainingFamilyCharacterGenerations(
+            generationCount,
+          );
           return (
             <article className="family-card" key={item.id}>
               <div className="family-photo">
-                {image ? <img src={urls[image]} alt={item.display_name} /> : <ImageSquare />}
+                {image ? (
+                  <img
+                    src={urls[image]}
+                    alt={item.display_name}
+                    style={getFamilyImageCropStyle(imageSelection?.crop)}
+                  />
+                ) : <ImageSquare />}
                 <span className={`family-status ${item.status}`}>
-                  {STATUS_LABELS[item.status] || item.status}
+                  {getCharacterStatusLabel(item)}
                 </span>
+                <div className="family-photo-actions">
+                  {imageSelection ? (
+                    <button
+                      type="button"
+                      className="family-photo-action"
+                      onClick={() => setCropping({ character: item, image: imageSelection })}
+                      aria-label={`裁剪${item.display_name}的${imageSelection.label}`}
+                      title={`裁剪${imageSelection.label}`}
+                      disabled={busy === item.id || !urls[imageSelection.path]}
+                    >
+                      <Crop size={17} />
+                    </button>
+                  ) : null}
+                  <button
+                    type="button"
+                    className="family-photo-action"
+                    onClick={() => setEditing(item)}
+                    aria-label={`编辑${item.display_name}`}
+                    title="编辑角色"
+                    disabled={busy === item.id}
+                  >
+                    <PencilSimple size={17} />
+                  </button>
+                  <button
+                    type="button"
+                    className="family-photo-action family-photo-delete"
+                    onClick={() => void remove(item)}
+                    aria-label={`删除${item.display_name}`}
+                    title="删除角色"
+                    disabled={busy === item.id}
+                  >
+                    <Trash size={17} />
+                  </button>
+                </div>
               </div>
               <div className="family-card-body">
                 <p>{item.relationship}</p>
@@ -319,29 +507,36 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
                 <div className="family-description">
                   {item.description || "还没有补充角色特点"}
                 </div>
+                {item.source_photo_path ? (
+                  <small className="family-generation-meta">
+                    {item.cartoonize === false
+                      ? "保留真实照片"
+                      : `卡通化生成 ${generationCount}/${MAX_FAMILY_CHARACTER_GENERATIONS} 次`}
+                  </small>
+                ) : null}
                 {item.error_message ? (
                   <small className="family-error">{item.error_message}</small>
                 ) : null}
-                <div className="family-actions">
-                  <button onClick={() => setEditing(item)}>编辑</button>
-                  {item.source_photo_path && !item.canonical_photo_path ? (
+                {item.source_photo_path && item.cartoonize !== false ? (
+                  <div className="family-actions">
                     <button
                       className="magic"
-                      disabled={busy === item.id}
+                      disabled={
+                        busy === item.id ||
+                        item.status === "processing" ||
+                        remainingGenerations === 0
+                      }
                       onClick={() => void generate(item.id)}
                     >
                       {busy === item.id ? <SpinnerGap className="spin" /> : <MagicWand />}
-                      生成绘本形象
+                      {remainingGenerations === 0
+                        ? "已达 5 次上限"
+                        : item.canonical_photo_path
+                          ? `重新生成 · 剩 ${remainingGenerations} 次`
+                          : `生成卡通形象 · 剩 ${remainingGenerations} 次`}
                     </button>
-                  ) : null}
-                  <button
-                    className="danger"
-                    onClick={() => void remove(item)}
-                    aria-label="删除"
-                  >
-                    <Trash />
-                  </button>
-                </div>
+                  </div>
+                ) : null}
               </div>
             </article>
           );
@@ -358,6 +553,16 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
           busy={busy === "save"}
           onClose={() => setEditing(null)}
           onSave={save}
+        />
+      ) : null}
+      {cropping && urls[cropping.image.path] ? (
+        <CharacterImageCropDialog
+          imageUrl={urls[cropping.image.path]}
+          imageName={`${cropping.character.display_name}的${cropping.image.label}`}
+          initialCrop={cropping.image.crop}
+          busy={busy === cropping.character.id}
+          onClose={() => setCropping(null)}
+          onSave={saveCrop}
         />
       ) : null}
     </main>
@@ -381,9 +586,21 @@ function CharacterDialog({
   const [description, setDescription] = useState(existing?.description || "");
   const [file, setFile] = useState<File>();
   const [preview, setPreview] = useState("");
+  const [cartoonize, setCartoonize] = useState(existing?.cartoonize ?? true);
   const [guardianConsentConfirmed, setGuardianConsentConfirmed] = useState(false);
   const [error, setError] = useState("");
   const needsGuardianConsent = Boolean(file) && relation !== "宠物";
+  const hasPhoto = Boolean(file || existing?.source_photo_path);
+  const remainingGenerations = getRemainingFamilyCharacterGenerations(
+    existing?.canonical_generation_count,
+  );
+  const needsNewCanonical = Boolean(
+    hasPhoto && cartoonize && (file || !existing?.canonical_photo_path),
+  );
+  const cartoonLimitReached = needsNewCanonical && remainingGenerations === 0;
+  const willGenerateCartoon = Boolean(
+    needsNewCanonical && remainingGenerations > 0,
+  );
 
   useEffect(() => {
     if (!file) {
@@ -402,12 +619,17 @@ function CharacterDialog({
       setError("上传人物照片前，请勾选并确认你已获得本人或监护人的明确授权。");
       return;
     }
+    if (cartoonLimitReached) {
+      setError("这个角色已经用完 5 次卡通形象生成机会，请关闭卡通化后保存真实照片。");
+      return;
+    }
     try {
       await onSave({
         name,
         relation,
         description,
         file,
+        cartoonize,
         guardianConsentConfirmed,
       });
     } catch (cause) {
@@ -474,6 +696,33 @@ function CharacterDialog({
             />
           </label>
         </div>
+        {hasPhoto ? (
+          <label className="family-cartoon-option">
+            <input
+              type="checkbox"
+              checked={cartoonize}
+              onChange={(event) => setCartoonize(event.target.checked)}
+            />
+            <span>
+              <strong>
+                {relation === "宠物"
+                  ? "生成卡通拟人形象"
+                  : "生成卡通绘本形象"}
+              </strong>
+              <small>
+                使用 CPA Nano Banana 图生图模型保留外貌特征；每个家庭角色最多生成 5 次。
+                {existing
+                  ? ` 已使用 ${normalizeFamilyCharacterGenerationCount(existing.canonical_generation_count)}/${MAX_FAMILY_CHARACTER_GENERATIONS} 次。`
+                  : ""}
+              </small>
+            </span>
+          </label>
+        ) : null}
+        {cartoonLimitReached ? (
+          <p className="family-dialog-error" role="status">
+            已用完 5 次生成机会。关闭卡通化后，仍可保存并使用真实照片。
+          </p>
+        ) : null}
         {needsGuardianConsent ? (
           <label className="family-consent-check">
             <input
@@ -491,9 +740,19 @@ function CharacterDialog({
         {error ? <p className="family-dialog-error" role="alert">{error}</p> : null}
         <button
           className="family-primary submit"
-          disabled={busy || (needsGuardianConsent && !guardianConsentConfirmed)}
+          disabled={
+            busy ||
+            cartoonLimitReached ||
+            (needsGuardianConsent && !guardianConsentConfirmed)
+          }
         >
-          {busy ? <><SpinnerGap className="spin" />正在保存</> : "保存角色"}
+          {busy ? (
+            <><SpinnerGap className="spin" />正在保存</>
+          ) : willGenerateCartoon ? (
+            "保存并生成卡通形象"
+          ) : (
+            "保存角色"
+          )}
         </button>
       </form>
     </div>

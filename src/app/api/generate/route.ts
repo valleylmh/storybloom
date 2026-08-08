@@ -54,6 +54,7 @@ type FamilyCharacterRow = {
   description: string | null;
   canonical_photo_path: string | null;
   source_photo_path: string | null;
+  cartoonize: boolean;
 };
 
 async function getSelectedFamilyCharacters(
@@ -70,7 +71,7 @@ async function getSelectedFamilyCharacters(
   const { data, error } = await getSupabaseAdmin()
     .from("family_characters")
     .select(
-      "id, display_name, relationship, description, canonical_photo_path, source_photo_path"
+      "id, display_name, relationship, description, canonical_photo_path, source_photo_path, cartoonize"
     )
     .eq("user_id", user.id)
     .in("id", uniqueIds);
@@ -91,7 +92,9 @@ async function getSelectedFamilyCharacters(
 
   return orderedIds.map((id) => {
     const row = rowsById.get(id)!;
-    const referenceAssetPath = row.canonical_photo_path;
+    const referenceAssetPath = row.cartoonize
+      ? row.canonical_photo_path
+      : row.source_photo_path || row.canonical_photo_path;
     return {
       id: row.id,
       name: row.display_name,
