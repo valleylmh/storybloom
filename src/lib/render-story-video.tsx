@@ -200,10 +200,14 @@ async function getAudioDuration(blob: Blob, signal: AbortSignal) {
 async function generatePageAudio({
   page,
   narrationMode,
+  familyCharacterId,
+  accessToken,
   signal,
 }: {
   page: StoryPage;
   narrationMode: Exclude<StoryVideoNarrationMode, "none">;
+  familyCharacterId?: string;
+  accessToken?: string;
   signal: AbortSignal;
 }) {
   const text = getStoryVideoNarrationText(page, narrationMode);
@@ -213,11 +217,15 @@ async function generatePageAudio({
 
   const response = await fetch("/api/audio", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: {
+      "Content-Type": "application/json",
+      ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+    },
     body: JSON.stringify({
       text,
       mode: narrationMode,
       sampleRate: 24000,
+      familyCharacterId,
     }),
     signal,
   });
@@ -243,12 +251,16 @@ async function prepareAudioAssets({
   pages,
   narrationMode,
   cachedAudioAssets,
+  familyCharacterId,
+  accessToken,
   signal,
   onProgress,
 }: {
   pages: StoryPage[];
   narrationMode: StoryVideoNarrationMode;
   cachedAudioAssets?: StoryVideoAudioAsset[];
+  familyCharacterId?: string;
+  accessToken?: string;
   signal: AbortSignal;
   onProgress?: (progress: StoryVideoProgress) => void;
 }) {
@@ -272,6 +284,8 @@ async function prepareAudioAssets({
       const generated = await generatePageAudio({
         page,
         narrationMode,
+        familyCharacterId,
+        accessToken,
         signal,
       });
       if (generated) {
@@ -430,6 +444,8 @@ export async function renderStoryVideo({
   pages,
   narrationMode,
   cachedAudioAssets,
+  familyCharacterId,
+  accessToken,
   signal,
   onProgress,
 }: {
@@ -437,6 +453,8 @@ export async function renderStoryVideo({
   pages: StoryPage[];
   narrationMode: StoryVideoNarrationMode;
   cachedAudioAssets?: StoryVideoAudioAsset[];
+  familyCharacterId?: string;
+  accessToken?: string;
   signal: AbortSignal;
   onProgress?: (progress: StoryVideoProgress) => void;
 }): Promise<StoryVideoRenderResult> {
@@ -467,6 +485,8 @@ export async function renderStoryVideo({
       pages,
       narrationMode,
       cachedAudioAssets,
+      familyCharacterId,
+      accessToken,
       signal,
       onProgress,
     });

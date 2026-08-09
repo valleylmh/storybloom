@@ -100,4 +100,30 @@ describe("Token Plan TTS server", () => {
     ).rejects.toThrow("不可信的音频地址");
     expect(global.fetch).toHaveBeenCalledOnce();
   });
+
+  it("does not expose provider messages that may echo private text or voice IDs", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    global.fetch = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          code: "InvalidParameter",
+          message:
+            "voice private-provider-voice-id rejected text 家庭私密故事内容",
+        }),
+        { status: 400 },
+      ),
+    );
+
+    const error = await synthesizeTokenPlanTtsAudio({
+      text: "家庭私密故事内容",
+      voice: "private-provider-voice-id",
+    }).catch((cause) => cause);
+
+    expect(error).toBeInstanceOf(Error);
+    expect((error as Error).message).toBe(
+      "Token Plan TTS 请求失败：InvalidParameter",
+    );
+    expect((error as Error).message).not.toContain("private-provider-voice-id");
+    expect((error as Error).message).not.toContain("家庭私密故事内容");
+  });
 });

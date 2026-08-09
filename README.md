@@ -91,13 +91,13 @@ StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双
 
 ## 开源说明
 
-StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生成样例，不应提交真实儿童照片、客户绘本、私聊二维码或生产密钥。部署者需要使用自己的域名、API 端点、Supabase、Resend 和图片服务凭据。
+StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生成样例，不应提交真实儿童照片、家庭声音录音、客户绘本、私聊二维码或生产密钥。部署者需要使用自己的域名、API 端点、Supabase、Resend 和图片服务凭据。
 
 线上演示站的免费额度是当前托管服务策略，不代表第三方模型、存储、邮件或带宽永久免费；自托管者需要自行承担所启用服务的费用。
 
 本项目依赖 Remotion；其许可不包含在 StoryBloom 的 MIT 许可证中。启用视频功能前，请阅读 [Remotion License](https://www.remotion.dev/docs/license) 并确认当前用途符合条款；不需要视频时可设置 `NEXT_PUBLIC_STORY_VIDEO_ENABLED=0`。
 
-安全问题请按 [SECURITY.md](SECURITY.md) 私下报告，参与开发请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。公开仓库不应包含真实儿童照片、客户绘本、联系人二维码、生产密钥或本地生成缓存。
+安全问题请按 [SECURITY.md](SECURITY.md) 私下报告，参与开发请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。公开仓库不应包含真实儿童照片、家庭声音录音、客户绘本、联系人二维码、生产密钥或本地生成缓存。
 
 ## 模型调用说明
 
@@ -105,7 +105,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 
 - 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
 - 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations 或 Hugging Face；极简模式中确认并保存的照片角色会先由 CPA Nano Banana 2（默认上游模型 `gemini-3.1-flash-image`）生成统一设定稿，随后所有实际出现该角色的页面都固定使用 CPA，不回退到其他提供商。临时自定义参考图仍按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 工作。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
-- 音频：绘本网页朗读使用浏览器内置 `SpeechSynthesis`，不会调用云端 TTS，也不会在故事生成后自动准备音频。`src/app/api/audio/route.ts` 保留给需要真实音频文件的带旁白视频；配置 `DASHSCOPE_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，再依次回退 Gemini 2.5、Gemini 3.1 和 Edge TTS，结果优先写入 Supabase 私有 Storage。
+- 音频：绘本网页朗读使用浏览器内置 `SpeechSynthesis`，不会调用云端 TTS，也不会在故事生成后自动准备音频。`src/app/api/audio/route.ts` 保留给需要真实音频文件的带旁白视频；配置 `DASHSCOPE_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，失败后直接回退 Edge；未配置 Token Plan 时保留 Gemini 2.5 → Gemini 3.1 → Edge 路由。已绑定的家庭真人声音固定使用百炼 `qwen-audio-3.0-tts-plus`，不会静默替换成其他音色。
 
 ## 技术栈
 
@@ -115,7 +115,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 | 故事生成 | 部署者配置的 OpenAI 兼容端点，未配置或失败时使用本地 fallback |
 | 插图生成 | AGNES、DashScope、Cloudflare、Pollinations、Hugging Face；家庭照片角色固定使用 CPA Nano Banana |
 | 网页朗读 | 浏览器本机 SpeechSynthesis |
-| 视频旁白音频 | Token Plan 百炼 TTS → Gemini 2.5 → Gemini 3.1 → Edge TTS |
+| 视频旁白音频 | Token Plan 百炼 TTS（失败直达 Edge）；未配置时 Gemini 2.5 → Gemini 3.1 → Edge；家庭真人声音固定百炼 |
 | 导出与分享 | Browser Canvas 长图、图片 ZIP、Supabase 分享快照 |
 | 绘本视频 | Remotion Web Renderer + WebCodecs，浏览器本地输出 MP4 |
 | 邮件订阅 | Resend + Supabase，双重确认与一键退订 |
@@ -179,7 +179,9 @@ pnpm dev
 
 带旁白视频需要可解码的真实音频文件，因此仍会逐页调用 `/api/audio`；选择“无旁白”不会调用 TTS。接口只允许已配置的模型与音色，并按客户端 IP 限制请求频率。
 
-配置 `DASHSCOPE_TOKEN_KEY` 时，视频旁白首先使用 Token Plan 的 `qwen-audio-3.0-tts-plus`：中文默认音色 `longanlingxin`，英文默认音色 `longanlufeng`，输出为 24 kHz MP3。未配置、空字符串或设置 `TOKEN_PLAN_TTS_ENABLED=0` 时会完全跳过；请求失败时也不会阻断视频，而是进入原有 Gemini/Edge 回退链。可通过 `TOKEN_PLAN_TTS_VOICE_ZH`、`TOKEN_PLAN_TTS_VOICE_EN` 和 `TOKEN_PLAN_TTS_TIMEOUT_MS` 调整行为。服务端只接受可信的北京 OSS 音频地址，下载并验证 MP3 后再写入私有缓存，不会向前端暴露临时签名 URL。
+配置 `DASHSCOPE_TOKEN_KEY` 时，视频旁白首先使用 Token Plan 的 `qwen-audio-3.0-tts-plus`：中文默认音色 `longanlingxin`，英文默认音色 `longanlufeng`，输出为 24 kHz MP3。未配置、空字符串或设置 `TOKEN_PLAN_TTS_ENABLED=0` 时会完全跳过；普通 Token Plan 请求失败时直接回退 Edge。可通过 `TOKEN_PLAN_TTS_VOICE_ZH`、`TOKEN_PLAN_TTS_VOICE_EN` 和 `TOKEN_PLAN_TTS_TIMEOUT_MS` 调整行为。服务端只接受可信的北京 OSS 音频地址，下载并验证 MP3 后再写入私有缓存，不会向前端暴露临时签名 URL。
+
+家庭角色绑定真人声音后，视频逐页请求只提交 `familyCharacterId` 和登录令牌；服务端从私有 `family_character_voices` 表读取 `voice_id`，强制传给 `qwen-audio-3.0-tts-plus`。客户端不能提交任意 `voice_id`，响应也只返回安全标签。只有确实存在声音记录的角色才进入家庭声音路径；没有克隆声音的角色继续沿用原有视频旁白。家庭真人声音失败时会明确报错，不会回退为其他人物或系统音色；重新录制期间旧的已就绪声音仍可使用，生成结果跳过长期 `story-audio` 持久化缓存。
 
 配置 `GEMINI_API_KEY` 时，后续回退默认先使用价格更低的 `gemini-2.5-flash-preview-tts`，失败后尝试 `gemini-3.1-flash-tts-preview`：中文默认音色 `Leda`，英文默认音色 `Aoede`，Google 返回的 24 kHz、16-bit 单声道 PCM 会在服务端封装为 WAV。`GEMINI_API_KEY` 支持用英文逗号配置多个 key，例如 `key-1,key-2,key-3`；系统会去掉空格和重复项，并在每个 Gemini 模型内从左到右依次尝试全部 key。两个 Gemini 模型的全部 key 均失败时，系统自动回退到 `edge-tts`（中文 `zh-CN-XiaoxiaoNeural`、英文 `en-US-AnaNeural`、24 kHz MP3）。
 
@@ -274,9 +276,19 @@ curl -H "Authorization: Bearer YOUR_CRON_SECRET" \
 
 ## 家庭角色库
 
-已登录用户可在 `/family` 建立可复用的家庭角色。参考照片保存在 Supabase 私有 Storage，CPA Nano Banana 会先将照片转换为统一绘本形象；之后在首页极简模式选择角色，即可用一句话生成家庭专属绘本。极简入口也会在人物无法唯一匹配时请求确认姓名，并允许登录后保存供下次复用。照片不会发送给 Resend。
+已登录用户可在 `/family` 建立可复用的家庭角色。参考照片保存在 Supabase 私有 Storage，CPA Nano Banana 会先将照片转换为统一绘本形象；人物角色还可在明确授权后录制 10–60 秒真人声音。浏览器通过 Web Audio 采集单声道 PCM 并编码为 16-bit WAV，再上传到私有 `family-voice-samples` bucket；服务端会校验真实媒体容器、时长、采样率与 10MB 上限，签发 10 分钟临时 URL，再调用百炼 `voice-enrollment / create_voice`，固定绑定到 `qwen-audio-3.0-tts-plus`。创建返回 `voice_id` 后仍会通过 `query_voice` 等待状态进入 `OK`，`DEPLOYING` 保持审核中，`UNDEPLOYED` 会恢复旧声音或提示重新录制。网络响应中断留下的未引用上传会在 3 分钟安全窗口后自动对账清理。照片与声音都不会发送给 Resend，也不会进入公开分享快照。
 
-1. 在同一个 Supabase 项目继续执行 `supabase/migrations/202607120002_family_profiles.sql`。
+1. 在同一个 Supabase 项目依次执行：
+
+```text
+supabase/migrations/202607120002_family_profiles.sql
+supabase/migrations/202608090003_family_character_voices.sql
+supabase/migrations/202608090004_family_character_voice_lifecycle.sql
+```
+
+`202608090003` 新增 `family_character_voices` 和私有 `family-voice-samples` bucket；`202608090004` 是必须继续执行的生命周期升级：收紧为 WAV/MP3/M4A 与 10MB、加入私有样本清理队列和账户删除锁、阻止客户端绕过 provider 撤销直接级联删除角色，并把声音外键改为 `ON DELETE RESTRICT`。如果旧版 `202608090003` 已经手工部署，只需继续执行 `202608090004`，不要期待 Supabase 重跑旧迁移。`voice_id`、并发 claim token、旧音色/样本清理队列与恢复快照只有 service-role 可读写。用户可单独撤回真人声音；重新录制、删除角色和删除账户都会先按阿里云[声音复刻 HTTP API](https://help.aliyun.com/zh/model-studio/voice-clone-design-http-api)调用 `delete_voice`，确认私有样本已删除后才移除本地绑定。
+
+百炼没有承诺 `delete_voice` 幂等，也没有为当前接口定义“已不存在”的稳定错误码。因此新加入撤销队列的音色不会在同一次请求里仅凭短时 `list_voice` 缺席就视为已删除；失败状态会保留为可重试 tombstone，经过至少 15 分钟的第二观察窗后，后续请求才允许用完整列表缺席完成对账。这样既避免刚创建的音色因最终一致性成为孤儿，也让确实没有产生远端副作用的超时请求最终可以完成声音、角色或账户删除。
 2. 从 Supabase Project Settings → API 获取公开的 anon key（新项目也可能显示为 publishable key），配置其中一个：
 
 ```bash
@@ -284,7 +296,16 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 # 或 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...
 ```
 
-3. 在 Supabase Authentication → URL Configuration 配置：
+3. 为声音复刻配置服务端环境变量；浏览器不能接触 `DASHSCOPE_TOKEN_KEY`：
+
+```bash
+DASHSCOPE_TOKEN_KEY=...
+BAILIAN_VOICE_CLONING_ENDPOINT=https://token-plan.cn-beijing.maas.aliyuncs.com/api/v1/services/audio/tts/customization
+BAILIAN_VOICE_CLONING_TIMEOUT_MS=30000
+FAMILY_VOICE_ENROLLMENT_RATE_LIMIT_PER_HOUR=12
+```
+
+4. 在 Supabase Authentication → URL Configuration 配置：
 
 ```text
 Site URL: https://你的正式域名

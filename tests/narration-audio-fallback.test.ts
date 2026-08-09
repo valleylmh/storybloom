@@ -99,6 +99,57 @@ describe("narration provider fallback", () => {
     );
   });
 
+  it("does not replace a failed family voice with a default provider", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    synthesizeTokenPlanTtsAudioMock.mockRejectedValue(
+      new TokenPlanTtsError("family voice unavailable", 502),
+    );
+    const request = await resolveNarrationRequest(
+      { text: "你好", mode: "zh" },
+      {
+        familyVoice: {
+          familyCharacterId: "11111111-1111-4111-8111-111111111111",
+          voiceId: "private-provider-voice-id",
+        },
+      },
+    );
+
+    await expect(prepareNarrationAudio(request)).rejects.toThrow(
+      "family voice unavailable",
+    );
+    expect(synthesizeTokenPlanTtsAudioMock).toHaveBeenCalledWith(
+      expect.objectContaining({ voice: "private-provider-voice-id" }),
+    );
+    expect(synthesizeGeminiTtsAudioMock).not.toHaveBeenCalled();
+    expect(synthesizeEdgeTtsAudioMock).not.toHaveBeenCalled();
+  });
+
+  it("returns a safe label for successful family voice audio", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    synthesizeTokenPlanTtsAudioMock.mockResolvedValue({
+      bytes: Buffer.from([0x49, 0x44, 0x33, 0x04]),
+      contentType: "audio/mpeg",
+      usage: { characters: 2 },
+    });
+    const request = await resolveNarrationRequest(
+      { text: "你好", mode: "zh" },
+      {
+        familyVoice: {
+          familyCharacterId: "11111111-1111-4111-8111-111111111111",
+          voiceId: "private-provider-voice-id",
+        },
+      },
+    );
+
+    const result = await prepareNarrationAudio(request);
+
+    expect(result.voice).toBe("family-voice");
+    expect(result.familyCharacterId).toBe(
+      "11111111-1111-4111-8111-111111111111",
+    );
+    expect(result.storage).toBe("inline");
+  });
+
   it("uses Gemini 3.1 when Gemini 2.5 fails", async () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
     synthesizeGeminiTtsAudioMock

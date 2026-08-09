@@ -90,6 +90,46 @@ describe("narration request resolution", () => {
     expect(request.format).toBe("mp3");
   });
 
+  it("uses a trusted family voice without exposing its provider id", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    getCachedStoryMock.mockResolvedValue(null);
+
+    const request = await resolveNarrationRequest(
+      { text: "测试", mode: "zh" },
+      {
+        familyVoice: {
+          familyCharacterId: "11111111-1111-4111-8111-111111111111",
+          voiceId: "private-provider-voice-id",
+          revision: "2026-08-09T00:00:00.000Z",
+        },
+      },
+    );
+
+    expect(request.model).toBe("qwen-audio-3.0-tts-plus");
+    expect(request.voice).toBe("private-provider-voice-id");
+    expect(request.publicVoice).toBe("family-voice");
+    expect(request.familyCharacterId).toBe(
+      "11111111-1111-4111-8111-111111111111",
+    );
+    expect(request.disablePersistentCache).toBe(true);
+  });
+
+  it("requires Token Plan configuration for a family voice", async () => {
+    getCachedStoryMock.mockResolvedValue(null);
+
+    await expect(
+      resolveNarrationRequest(
+        { text: "测试", mode: "zh" },
+        {
+          familyVoice: {
+            familyCharacterId: "11111111-1111-4111-8111-111111111111",
+            voiceId: "private-provider-voice-id",
+          },
+        },
+      ),
+    ).rejects.toMatchObject({ status: 503 } satisfies Partial<NarrationAudioError>);
+  });
+
   it("skips Token Plan TTS when the token is blank", async () => {
     process.env.DASHSCOPE_TOKEN_KEY = "   ";
     process.env.GEMINI_API_KEY = "test-key";

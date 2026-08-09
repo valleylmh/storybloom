@@ -200,6 +200,33 @@ function mapCharacter(snapshot: AccountDataSnapshot, row: AccountDataRow) {
   };
 }
 
+function mapVoice(snapshot: AccountDataSnapshot, row: AccountDataRow) {
+  return {
+    id: row.id,
+    familyCharacterId: row.family_character_id,
+    profileId: row.profile_id,
+    sampleAudio: storageRef(
+      snapshot,
+      "family-voice-samples",
+      row.sample_audio_path,
+    ),
+    sampleDurationSeconds: row.sample_duration_seconds,
+    // A voice_id is account data, not a credential. It is intentionally kept
+    // in this authenticated private export so the enrollment can be audited.
+    voiceId: getString(row, "voice_id") ?? null,
+    targetModel: row.target_model,
+    status: row.status,
+    errorMessage:
+      typeof row.error_message === "string"
+        ? sanitizeText(row.error_message)
+        : row.error_message,
+    consentConfirmedAt: row.consent_confirmed_at,
+    consentVersion: row.consent_version,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
 function storyAssetsFor(snapshot: AccountDataSnapshot, storyId: unknown) {
   if (typeof storyId !== "string") return [];
   return snapshot.storageObjects
@@ -335,6 +362,7 @@ export function buildAccountExportEntries(
     counts: {
       children: snapshot.children.length,
       characters: snapshot.characters.length,
+      voices: snapshot.voices.length,
       stories: snapshot.stories.length,
       growthRecords: snapshot.growthRecords.length,
       storageObjects: snapshot.storageObjects.length,
@@ -350,6 +378,10 @@ export function buildAccountExportEntries(
     {
       name: "characters.json",
       data: json(snapshot.characters.map((row) => mapCharacter(snapshot, row))),
+    },
+    {
+      name: "voices.json",
+      data: json(snapshot.voices.map((row) => mapVoice(snapshot, row))),
     },
     {
       name: "stories/index.json",

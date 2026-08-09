@@ -4,6 +4,7 @@ import type { SupabaseClient, User } from "@supabase/supabase-js";
 
 export const ACCOUNT_STORAGE_BUCKETS = [
   "family-photos",
+  "family-voice-samples",
   "story-archive",
   "growth-record-photos",
 ] as const;
@@ -12,7 +13,11 @@ export type AccountStorageBucket = (typeof ACCOUNT_STORAGE_BUCKETS)[number];
 
 export type AccountDataRow = Record<string, unknown>;
 
-export type StorageReferenceKind = "character" | "story" | "growth-record";
+export type StorageReferenceKind =
+  | "character"
+  | "voice"
+  | "story"
+  | "growth-record";
 
 export interface StorageReference {
   bucket: AccountStorageBucket;
@@ -55,6 +60,7 @@ export interface AccountDataSnapshot {
   accountSettings: AccountDataRow | null;
   children: AccountDataRow[];
   characters: AccountDataRow[];
+  voices: AccountDataRow[];
   stories: AccountDataRow[];
   storyAssets: AccountDataRow[];
   growthRecords: AccountDataRow[];
@@ -85,6 +91,14 @@ export class InvalidAccountStoragePathError extends Error {
 const UUID_PATTERN =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const IMAGE_EXTENSIONS = new Set(["jpg", "jpeg", "png", "webp"]);
+const AUDIO_EXTENSIONS = new Set([
+  "webm",
+  "wav",
+  "mp3",
+  "mp4",
+  "m4a",
+  "ogg",
+]);
 
 function isRecord(value: unknown): value is AccountDataRow {
   return Boolean(value && typeof value === "object" && !Array.isArray(value));
@@ -121,7 +135,7 @@ function getFileExtension(fileName: string) {
 /**
  * Validate a private account object path before passing it to Supabase or
  * putting it in a ZIP. The current schema uses exactly uid/entity/file for all
- * three account buckets; keeping this strict prevents path traversal and
+ * account buckets; keeping this strict prevents path traversal and
  * cross-account reads when the service-role client is used.
  */
 export function validateOwnedStoragePath(
@@ -153,7 +167,11 @@ export function validateOwnedStoragePath(
   }
 
   const extension = getFileExtension(fileName);
-  if (!IMAGE_EXTENSIONS.has(extension)) {
+  if (bucket === "family-voice-samples") {
+    if (!AUDIO_EXTENSIONS.has(extension)) {
+      throw new InvalidAccountStoragePathError("家庭声音样本文件类型无效");
+    }
+  } else if (!IMAGE_EXTENSIONS.has(extension)) {
     throw new InvalidAccountStoragePathError("账户图片文件类型无效");
   }
   if (
@@ -178,6 +196,8 @@ function bucketArchiveFolder(bucket: AccountStorageBucket) {
   switch (bucket) {
     case "family-photos":
       return "photos/characters";
+    case "family-voice-samples":
+      return "voices/samples";
     case "story-archive":
       return "photos/stories";
     case "growth-record-photos":
@@ -186,6 +206,9 @@ function bucketArchiveFolder(bucket: AccountStorageBucket) {
 }
 
 function bucketOrphanFolder(bucket: AccountStorageBucket) {
+  if (bucket === "family-voice-samples") {
+    return "voices/orphans/family-voice-samples";
+  }
   return `photos/orphans/${bucket}`;
 }
 
@@ -252,6 +275,28 @@ export function isOptionalRelationMissing(error: unknown) {
     /relation .* does not exist/i.test(message) ||
     /could not find the table/i.test(message) ||
     /schema cache/i.test(message)
+  );
+}
+
+export function isOptionalStorageBucketMissing(error: unknown) {
+  if (!error || typeof error !== "object") return false;
+  const value = error as {
+    code?: unknown;
+    status?: unknown;
+    statusCode?: unknown;
+    message?: unknown;
+    error?: unknown;
+  };
+  const code = typeof value.code === "string" ? value.code.toLowerCase() : "";
+  const status = Number(value.status ?? value.statusCode);
+  const message = [value.message, value.error]
+    .filter((part): part is string => typeof part === "string")
+    .join(" ");
+  return (
+    code === "nosuchbucket" ||
+    code === "bucket_not_found" ||
+    status === 404 ||
+    /bucket .*not found|bucket does not exist|not found.*bucket/i.test(message)
   );
 }
 
@@ -336,6 +381,7 @@ function getManifestPaths(value: unknown) {
 function buildStorageReferences(
   userId: string,
   characters: AccountDataRow[],
+  voices: AccountDataRow[],
   stories: AccountDataRow[],
   storyAssets: AccountDataRow[],
   growthRecords: AccountDataRow[],
@@ -366,6 +412,15 @@ function buildStorageReferences(
       "canonicalPhoto",
     );
   });
+  voices.forEach((row) =>
+    add(
+      "family-voice-samples",
+      row.sample_audio_path,
+      "voice",
+      row.family_character_id,
+      "sampleAudio",
+    ),
+  );
   stories.forEach((row) => {
     getManifestPaths(row.asset_manifest).forEach((path) =>
       add("story-archive", path, "story", row.id, "assetManifest"),
@@ -545,17 +600,36 @@ export async function listUserStorageObjects(
   return result;
 }
 
+async function listOptionalUserStorageObjects(
+  supabase: SupabaseClient<any>,
+  userId: string,
+  bucket: AccountStorageBucket,
+) {
+  try {
+    return await listUserStorageObjects(supabase, userId, bucket);
+  } catch (error) {
+    if (isOptionalStorageBucketMissing(error)) return [];
+    throw error;
+  }
+}
+
 export async function readAccountData(
   supabase: SupabaseClient<any>,
   user: User,
 ): Promise<AccountDataSnapshot> {
   const userId = user.id;
-  const [familyProfile, accountSettings, children, characters, stories, storyAssets, growthRecords, growthRecordPhotos, sharedStories] =
+  const [familyProfile, accountSettings, children, characters, voices, stories, storyAssets, growthRecords, growthRecordPhotos, sharedStories] =
     await Promise.all([
       readOptionalSingle(supabase, "family_profiles", "user_id", userId),
       readOptionalSingle(supabase, "account_settings", "user_id", userId),
       readOwnedRows(supabase, "child_profiles", "user_id", userId),
       readOwnedRows(supabase, "family_characters", "user_id", userId),
+      readOptionalOwnedRows(
+        supabase,
+        "family_character_voices",
+        "user_id",
+        userId,
+      ),
       readOwnedRows(supabase, "saved_stories", "user_id", userId),
       readOptionalOwnedRows(supabase, "saved_story_assets", "user_id", userId),
       readOwnedRows(supabase, "growth_records", "user_id", userId),
@@ -572,6 +646,7 @@ export async function readAccountData(
   const references = buildStorageReferences(
     userId,
     characters,
+    voices,
     stories,
     storyAssets,
     growthRecords,
@@ -579,7 +654,9 @@ export async function readAccountData(
   );
   const listedByBucket = await Promise.all(
     ACCOUNT_STORAGE_BUCKETS.map((bucket) =>
-      listUserStorageObjects(supabase, userId, bucket),
+      bucket === "family-voice-samples"
+        ? listOptionalUserStorageObjects(supabase, userId, bucket)
+        : listUserStorageObjects(supabase, userId, bucket),
     ),
   );
   const inventory = buildStorageInventory(
@@ -594,6 +671,7 @@ export async function readAccountData(
     accountSettings,
     children,
     characters,
+    voices,
     stories,
     storyAssets,
     growthRecords,

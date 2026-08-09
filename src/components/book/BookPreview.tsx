@@ -1213,6 +1213,7 @@ export default function BookPreview({
           pages={pages}
           totalPages={result.totalPages}
           disabled={!allImagesReady}
+          familyCharacterId={result.input.protagonistFamilyCharacterId}
         />
       ) : null}
 

@@ -102,17 +102,29 @@ export interface NarrationRequestInput {
   sampleRate?: number;
 }
 
+export interface TrustedFamilyVoice {
+  familyCharacterId: string;
+  voiceId: string;
+  revision?: string;
+}
+
 export interface ResolvedNarrationRequest {
   storyId?: string;
   text: string;
   textSource: "story" | "text";
   mode: NarrationMode;
   model: AllowedTtsModel;
-  voice: AllowedTtsVoice;
+  /** Provider voice. Never return this value directly for cloned family voices. */
+  voice: string;
+  /** Browser-safe voice label used in progress and JSON responses. */
+  publicVoice: string;
   format: NarrationFormat;
   sampleRate: number;
   cacheKey: string;
   providerFallback?: boolean;
+  familyCharacterId?: string;
+  familyVoiceRevision?: string;
+  disablePersistentCache?: boolean;
 }
 
 export interface NarrationAudioResult {
@@ -129,11 +141,12 @@ export interface NarrationAudioResult {
     totalTokens?: number;
   };
   model: AllowedTtsModel;
-  voice: AllowedTtsVoice;
+  voice: string;
   format: NarrationFormat;
   sampleRate: number;
   mode: NarrationMode;
   storyId?: string;
+  familyCharacterId?: string;
   textSource: "story" | "text";
   cached: boolean;
   storage: "supabase" | "inline";
@@ -152,7 +165,7 @@ interface PrepareNarrationOptions {
   onProgress?: (progress: {
     stage: NarrationProgressStage;
     model: AllowedTtsModel;
-    voice: AllowedTtsVoice;
+    voice: string;
   }) => void;
 }
 
@@ -285,6 +298,8 @@ function makeCacheKey(request: Omit<ResolvedNarrationRequest, "cacheKey">) {
         mode: request.mode,
         model: request.model,
         voice: request.voice,
+        familyCharacterId: request.familyCharacterId,
+        familyVoiceRevision: request.familyVoiceRevision,
         format: request.format,
         sampleRate: request.sampleRate,
       }),
@@ -294,6 +309,7 @@ function makeCacheKey(request: Omit<ResolvedNarrationRequest, "cacheKey">) {
 
 export async function resolveNarrationRequest(
   input: NarrationRequestInput,
+  options: { familyVoice?: TrustedFamilyVoice } = {},
 ): Promise<ResolvedNarrationRequest> {
   const mode = input.mode || "zh";
   let text = "";
@@ -325,16 +341,34 @@ export async function resolveNarrationRequest(
     );
   }
 
-  const model = getConfiguredModel(input.model);
+  const familyVoice = options.familyVoice;
+  const tokenPlanDisabled = /^(?:0|false|off)$/i.test(
+    process.env.TOKEN_PLAN_TTS_ENABLED?.trim() || "",
+  );
+  if (familyVoice && (!hasTokenPlanTtsConfig() || tokenPlanDisabled)) {
+    throw new NarrationAudioError(
+      "家庭真人声音服务尚未配置，请联系站点管理员。",
+      503,
+    );
+  }
+
+  const model = familyVoice ? TOKEN_PLAN_TTS_MODEL : getConfiguredModel(input.model);
+  const providerVoice = familyVoice
+    ? familyVoice.voiceId
+    : getConfiguredVoice(mode, model, input.voice);
   const baseRequest = {
     storyId: input.storyId,
     text,
     textSource,
     mode,
     model,
-    voice: getConfiguredVoice(mode, model, input.voice),
+    voice: providerVoice,
+    publicVoice: familyVoice ? "family-voice" : providerVoice,
     format: formatForModel(model),
     sampleRate: DEFAULT_SAMPLE_RATE,
+    familyCharacterId: familyVoice?.familyCharacterId,
+    familyVoiceRevision: familyVoice?.revision,
+    disablePersistentCache: Boolean(familyVoice),
   } satisfies Omit<ResolvedNarrationRequest, "cacheKey">;
 
   return {
@@ -351,7 +385,11 @@ async function synthesizeNarration(
   request: ResolvedNarrationRequest,
   onProgress?: PrepareNarrationOptions["onProgress"],
 ): Promise<GeneratedAudio> {
-  onProgress?.({ stage: "generating", model: request.model, voice: request.voice });
+  onProgress?.({
+    stage: "generating",
+    model: request.model,
+    voice: request.publicVoice,
+  });
 
   try {
     if (request.model === TOKEN_PLAN_TTS_MODEL) {
@@ -504,11 +542,12 @@ async function storeAudio(request: ResolvedNarrationRequest, audio: GeneratedAud
 function resultMetadata(request: ResolvedNarrationRequest) {
   return {
     model: request.model,
-    voice: request.voice,
+    voice: request.publicVoice,
     format: request.format,
     sampleRate: request.sampleRate,
     mode: request.mode,
     storyId: request.storyId,
+    familyCharacterId: request.familyCharacterId,
     textSource: request.textSource,
   };
 }
@@ -516,13 +555,15 @@ function resultMetadata(request: ResolvedNarrationRequest) {
 function createEdgeFallbackRequest(
   request: ResolvedNarrationRequest,
 ): ResolvedNarrationRequest {
+  const voice = getConfiguredVoice(request.mode, EDGE_TTS_MODEL);
   const baseRequest = {
     storyId: request.storyId,
     text: request.text,
     textSource: request.textSource,
     mode: request.mode,
     model: EDGE_TTS_MODEL,
-    voice: getConfiguredVoice(request.mode, EDGE_TTS_MODEL),
+    voice,
+    publicVoice: voice,
     format: "mp3",
     sampleRate: DEFAULT_SAMPLE_RATE,
     providerFallback: true,
@@ -537,13 +578,15 @@ function createEdgeFallbackRequest(
 function createGeminiFallbackRequest(
   request: ResolvedNarrationRequest,
 ): ResolvedNarrationRequest {
+  const voice = getConfiguredVoice(request.mode, GEMINI_TTS_MODEL_FALLBACK);
   const baseRequest = {
     storyId: request.storyId,
     text: request.text,
     textSource: request.textSource,
     mode: request.mode,
     model: GEMINI_TTS_MODEL_FALLBACK,
-    voice: getConfiguredVoice(request.mode, GEMINI_TTS_MODEL_FALLBACK),
+    voice,
+    publicVoice: voice,
     format: "wav",
     sampleRate: DEFAULT_SAMPLE_RATE,
   } satisfies Omit<ResolvedNarrationRequest, "cacheKey">;
@@ -564,15 +607,22 @@ async function prepareNarrationAudioUncached(
   request: ResolvedNarrationRequest,
   options: PrepareNarrationOptions,
 ): Promise<NarrationAudioResult> {
-  if (hasSupabaseAdminConfig()) {
+  const canUsePersistentCache =
+    hasSupabaseAdminConfig() && !request.disablePersistentCache;
+
+  if (canUsePersistentCache) {
     options.onProgress?.({
       stage: "checking-cache",
       model: request.model,
-      voice: request.voice,
+      voice: request.publicVoice,
     });
     const stored = await findStoredAudio(request);
     if (stored) {
-      options.onProgress?.({ stage: "cached", model: request.model, voice: request.voice });
+      options.onProgress?.({
+        stage: "cached",
+        model: request.model,
+        voice: request.publicVoice,
+      });
       return {
         ...stored,
         ...resultMetadata(request),
@@ -586,7 +636,7 @@ async function prepareNarrationAudioUncached(
   try {
     generated = await synthesizeNarration(request, options.onProgress);
   } catch (error) {
-    if (request.model === EDGE_TTS_MODEL) throw error;
+    if (request.model === EDGE_TTS_MODEL || request.familyCharacterId) throw error;
 
     const nextRequest =
       request.model === TOKEN_PLAN_TTS_MODEL
@@ -603,11 +653,19 @@ async function prepareNarrationAudioUncached(
     return prepareNarrationAudio(nextRequest, options);
   }
 
-  if (hasSupabaseAdminConfig()) {
-    options.onProgress?.({ stage: "storing", model: request.model, voice: request.voice });
+  if (canUsePersistentCache) {
+    options.onProgress?.({
+      stage: "storing",
+      model: request.model,
+      voice: request.publicVoice,
+    });
     const stored = await storeAudio(request, generated);
     if (stored) {
-      options.onProgress?.({ stage: "ready", model: request.model, voice: request.voice });
+      options.onProgress?.({
+        stage: "ready",
+        model: request.model,
+        voice: request.publicVoice,
+      });
       return {
         ...stored,
         ...resultMetadata(request),
@@ -622,7 +680,11 @@ async function prepareNarrationAudioUncached(
     }
   }
 
-  options.onProgress?.({ stage: "ready", model: request.model, voice: request.voice });
+  options.onProgress?.({
+    stage: "ready",
+    model: request.model,
+    voice: request.publicVoice,
+  });
   return {
     audioUrl: `data:${generated.contentType};base64,${generated.bytes.toString("base64")}`,
     bytes: generated.bytes.length,
@@ -645,7 +707,7 @@ export async function prepareNarrationAudio(
     options.onProgress?.({
       stage: "deduplicated",
       model: request.model,
-      voice: request.voice,
+      voice: request.publicVoice,
     });
     return existing;
   }

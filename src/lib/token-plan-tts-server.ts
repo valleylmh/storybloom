@@ -62,7 +62,7 @@ function getTokenPlanApiKey() {
   const apiKey = process.env.DASHSCOPE_TOKEN_KEY?.trim();
   if (!apiKey) {
     throw new TokenPlanTtsError(
-      "Token Plan TTS 未配置 DASHSCOPE_TOKEN_KEY，将使用其他语音服务。",
+      "Token Plan TTS 未配置 DASHSCOPE_TOKEN_KEY。",
       503,
     );
   }
@@ -109,10 +109,10 @@ function isMp3(bytes: Buffer) {
 }
 
 function providerErrorMessage(payload: TokenPlanTtsResponse | null, status: number) {
-  const detail = payload?.message?.trim();
   const code = payload?.code?.trim();
-  if (detail && code) return `Token Plan TTS 请求失败：${code} - ${detail}`;
-  if (detail) return `Token Plan TTS 请求失败：${detail}`;
+  if (code && /^[a-z0-9._:-]{1,64}$/i.test(code)) {
+    return `Token Plan TTS 请求失败：${code}`;
+  }
   return `Token Plan TTS 请求失败：HTTP ${status}`;
 }
 
@@ -181,13 +181,13 @@ export async function synthesizeTokenPlanTtsAudio(input: TokenPlanTtsInput) {
     if (error instanceof TokenPlanTtsError) throw error;
     if (controller.signal.aborted) {
       throw new TokenPlanTtsError(
-        "Token Plan TTS 请求超时，将使用其他语音服务。",
+        "Token Plan TTS 请求超时，请稍后重试。",
         504,
         { cause: error },
       );
     }
     throw new TokenPlanTtsError(
-      "Token Plan TTS 暂时不可用，将使用其他语音服务。",
+      "Token Plan TTS 暂时不可用，请稍后重试。",
       502,
       { cause: error },
     );

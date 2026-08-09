@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { checkAudioRateLimit } from "@/lib/audio-rate-limit";
 import {
+  FamilyCharacterVoiceError,
+  getFamilyCharacterVoiceForNarration,
+} from "@/lib/family-character-voice-server";
+import {
   ALLOWED_TTS_MODELS,
   ALLOWED_TTS_VOICES,
   NARRATION_FORMATS,
@@ -12,6 +16,10 @@ import {
   type NarrationAudioResult,
   type NarrationProgressStage,
 } from "@/lib/narration-audio-server";
+import {
+  AuthenticationError,
+  requireAuthenticatedUser,
+} from "@/lib/supabase/server-auth";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -29,6 +37,7 @@ const audioSchema = z
     voice: z.enum(ALLOWED_TTS_VOICES).optional(),
     format: z.enum(NARRATION_FORMATS).optional(),
     sampleRate: z.literal(24_000).optional(),
+    familyCharacterId: z.string().uuid().optional(),
   })
   .superRefine((value, context) => {
     if (!value.storyId && !value.text) {
@@ -45,7 +54,12 @@ function encodeSse(event: string, data: unknown) {
 }
 
 function errorResponse(error: unknown) {
-  const status = error instanceof NarrationAudioError ? error.status : 500;
+  const status =
+    error instanceof NarrationAudioError ||
+    error instanceof AuthenticationError ||
+    error instanceof FamilyCharacterVoiceError
+      ? error.status
+      : 500;
   const message = error instanceof Error ? error.message : "音频生成失败。";
   return NextResponse.json({ error: message }, { status });
 }
@@ -71,7 +85,7 @@ function createAudioStream(
       send("progress", {
         stage: "connected",
         model: request.model,
-        voice: request.voice,
+        voice: request.publicVoice,
       });
 
       void prepareNarrationAudio(request, {
@@ -125,9 +139,18 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    const familyVoice = parsed.data.familyCharacterId
+      ? await getFamilyCharacterVoiceForNarration(
+          (await requireAuthenticatedUser(req)).id,
+          parsed.data.familyCharacterId,
+        )
+      : undefined;
+    const { familyCharacterId: _familyCharacterId, ...narrationInput } = parsed.data;
     // storyId always wins when its server-side story exists. text remains an
     // optional fallback for legacy, sample, and custom-book callers.
-    const narrationRequest = await resolveNarrationRequest(parsed.data);
+    const narrationRequest = await resolveNarrationRequest(narrationInput, {
+      familyVoice: familyVoice || undefined,
+    });
 
     if (req.nextUrl.searchParams.get("stream") === "1") {
       return new Response(createAudioStream(narrationRequest), {

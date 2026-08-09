@@ -9,6 +9,8 @@ import {
   type StoryVideoAudioAsset,
   type StoryVideoNarrationMode,
 } from "@/lib/story-video";
+import { useAuth } from "@/hooks/useAuth";
+import { listFamilyCharacterVoices } from "@/lib/repositories/family-character-voice-repository";
 import type { StoryPage } from "@/types";
 
 type VideoStatus = "idle" | "preparing" | "rendering" | "complete" | "error";
@@ -28,12 +30,25 @@ export default function StoryVideoPanel({
   pages,
   totalPages,
   disabled,
+  familyCharacterId,
 }: {
   title: string;
   pages: StoryPage[];
   totalPages: number;
   disabled: boolean;
+  familyCharacterId?: string;
 }) {
+  const {
+    session,
+    supabase,
+    loading: authLoading,
+    error: authError,
+  } = useAuth();
+  const [familyVoiceState, setFamilyVoiceState] = useState<
+    "checking" | "absent" | "present" | "error"
+  >(familyCharacterId ? "checking" : "absent");
+  const [familyVoiceError, setFamilyVoiceError] = useState<string | null>(null);
+  const [familyVoiceRetryKey, setFamilyVoiceRetryKey] = useState(0);
   const [narrationMode, setNarrationMode] =
     useState<StoryVideoNarrationMode>("zh");
   const [status, setStatus] = useState<VideoStatus>("idle");
@@ -60,6 +75,79 @@ export default function StoryVideoPanel({
     [pages, totalPages],
   );
   const isBusy = status === "preparing" || status === "rendering";
+  const activeFamilyCharacterId =
+    familyVoiceState === "present" ? familyCharacterId : undefined;
+
+  useEffect(() => {
+    if (!familyCharacterId) {
+      setFamilyVoiceState("absent");
+      setFamilyVoiceError(null);
+      return;
+    }
+    if (authLoading) {
+      setFamilyVoiceState("checking");
+      setFamilyVoiceError(null);
+      return;
+    }
+    if (!supabase || !session) {
+      setFamilyVoiceState("error");
+      setFamilyVoiceError(
+        authError || "无法确认家庭角色的声音状态，请登录后重试。",
+      );
+      return;
+    }
+    let active = true;
+    setFamilyVoiceState("checking");
+    setFamilyVoiceError(null);
+    void (async () => {
+      const initialVoices = await listFamilyCharacterVoices(
+        supabase,
+        {
+          userId: session.user.id,
+          familyCharacterId,
+        },
+        { missingRelation: "throw" },
+      );
+      if (initialVoices.length === 0) return initialVoices;
+      const response = await fetch(
+        `/api/family/characters/${familyCharacterId}/voice`,
+        {
+          headers: { Authorization: `Bearer ${session.access_token}` },
+        },
+      );
+      if (!response.ok) {
+        throw new Error("family-voice-status-refresh-failed");
+      }
+      return listFamilyCharacterVoices(
+        supabase,
+        {
+          userId: session.user.id,
+          familyCharacterId,
+        },
+        { missingRelation: "throw" },
+      );
+    })()
+      .then((voices) => {
+        if (!active) return;
+        setFamilyVoiceState(voices.length > 0 ? "present" : "absent");
+      })
+      .catch(() => {
+        if (!active) return;
+        setFamilyVoiceState("error");
+        setFamilyVoiceError("家庭声音状态读取失败，请重试后再生成视频。");
+      });
+    return () => {
+      active = false;
+    };
+  }, [
+    authError,
+    authLoading,
+    familyCharacterId,
+    familyVoiceRetryKey,
+    session?.access_token,
+    session?.user.id,
+    supabase,
+  ]);
 
   useEffect(() => {
     return () => {
@@ -150,6 +238,17 @@ export default function StoryVideoPanel({
       setError(currentReadinessError || "绘本插图还没有准备完成。");
       return;
     }
+    if (
+      familyCharacterId &&
+      (familyVoiceState === "checking" || familyVoiceState === "error")
+    ) {
+      setError("家庭声音状态尚未确认，请重试后再生成视频。");
+      return;
+    }
+    if (activeFamilyCharacterId && !session?.access_token) {
+      setError("登录状态已失效，请重新登录后再生成家庭声音视频。");
+      return;
+    }
 
     runIdRef.current += 1;
     const runId = runIdRef.current;
@@ -169,7 +268,13 @@ export default function StoryVideoPanel({
         title,
         pages,
         narrationMode,
-        cachedAudioAssets: audioCacheRef.current.get(narrationMode),
+        cachedAudioAssets: activeFamilyCharacterId
+          ? undefined
+          : audioCacheRef.current.get(narrationMode),
+        familyCharacterId: activeFamilyCharacterId,
+        accessToken: activeFamilyCharacterId
+          ? session?.access_token
+          : undefined,
         signal: controller.signal,
         onProgress: (nextProgress) => {
           if (runIdRef.current !== runId) {
@@ -185,7 +290,9 @@ export default function StoryVideoPanel({
         return;
       }
 
-      audioCacheRef.current.set(narrationMode, rendered.audioAssets);
+      if (!activeFamilyCharacterId) {
+        audioCacheRef.current.set(narrationMode, rendered.audioAssets);
+      }
       const nextVideoUrl = URL.createObjectURL(rendered.blob);
       replaceVideoUrl(nextVideoUrl);
       setVideoExtension(rendered.extension);
@@ -328,7 +435,13 @@ export default function StoryVideoPanel({
           <button
             type="button"
             className={`cta-btn story-video-generate-btn ${isBusy ? "story-video-generate-btn-busy" : ""}`}
-            disabled={disabled || Boolean(readinessError) || isBusy}
+            disabled={
+              disabled ||
+              Boolean(readinessError) ||
+              isBusy ||
+              familyVoiceState === "checking" ||
+              familyVoiceState === "error"
+            }
             onClick={handleGenerateVideo}
           >
             {isBusy ? <SpinnerGap aria-hidden="true" /> : <FilmSlate aria-hidden="true" />}
@@ -366,6 +479,19 @@ export default function StoryVideoPanel({
 
         {readinessError ? (
           <p className="tool-meta story-video-hint">插图完成后即可生成视频。</p>
+        ) : null}
+
+        {familyVoiceState === "error" ? (
+          <div className="tool-error" role="alert">
+            <span>{familyVoiceError || "家庭声音状态读取失败，请重试。"}</span>{" "}
+            <button
+              type="button"
+              className="secondary-btn"
+              onClick={() => setFamilyVoiceRetryKey((value) => value + 1)}
+            >
+              重试
+            </button>
+          </div>
         ) : null}
 
         {isBusy ? (

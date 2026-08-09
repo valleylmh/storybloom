@@ -1,6 +1,15 @@
 import "server-only";
 
 import { z } from "zod";
+import {
+  deleteBailianClonedVoice,
+  discoverBailianClonedVoiceIdsSince,
+} from "@/lib/bailian-voice-cloning-server";
+import {
+  createFamilyVoiceEnrollmentPrefix,
+  isFamilyVoiceAmbiguousAbsenceGraceElapsed,
+  isFamilyVoiceProcessingStale,
+} from "@/lib/family-voice";
 
 export const CHILD_DELETION_CONFIRMATION = "DELETE_CHILD_DATA";
 export const CLOUD_DELETION_CONFIRMATION = "DELETE_CLOUD_DATA";
@@ -45,7 +54,7 @@ export interface AccountDeletionFailure {
 
 export interface AccountDeletionStepReport {
   key: string;
-  kind: "discovery" | "storage" | "database" | "auth";
+  kind: "discovery" | "provider" | "storage" | "database" | "auth";
   status: AccountDeletionStepStatus;
   discovered: number;
   deleted: number;
@@ -142,6 +151,19 @@ type FamilyCharacterRow = {
   canonical_photo_path: string | null;
 };
 
+type FamilyCharacterVoiceRow = {
+  id: string;
+  family_character_id: string;
+  sample_audio_path: string;
+  voice_id: string | null;
+  status: "processing" | "ready" | "failed" | "deleting";
+  updated_at: string;
+  retired_voice_ids: string[] | null;
+  previous_ready_voice: unknown;
+  retired_sample_paths: string[] | null;
+  provider_voice_ids_before_attempt: string[] | null;
+};
+
 type SharedStoryRow = {
   share_id: string;
 };
@@ -154,6 +176,8 @@ type DeletionSnapshot = {
   savedStoryAssets: SavedStoryAssetRow[];
   savedStoryAssetsAvailable: boolean;
   familyCharacters: FamilyCharacterRow[];
+  familyCharacterVoices: FamilyCharacterVoiceRow[];
+  familyCharacterVoicesAvailable: boolean;
   sharedStories: SharedStoryRow[];
 };
 
@@ -242,7 +266,30 @@ export function isMissingOptionalTableError(error: unknown) {
     code === "42P01" ||
     code === "PGRST205" ||
     /relation .* does not exist/.test(message) ||
-    /could not find (?:the )?table .*saved_story_assets/.test(message)
+    /could not find (?:the )?table/.test(message) ||
+    /schema cache/.test(message)
+  );
+}
+
+function isMissingOptionalStorageBucketError(error: unknown) {
+  if (!error || typeof error !== "object") return false;
+  const candidate = error as SupabaseLikeError & { cause?: unknown };
+  const cause =
+    candidate.cause && typeof candidate.cause === "object"
+      ? (candidate.cause as SupabaseLikeError)
+      : undefined;
+  const code = String(candidate.code || cause?.code || "").toLowerCase();
+  const status = Number(
+    candidate.status ?? candidate.statusCode ?? cause?.status ?? cause?.statusCode,
+  );
+  const message = [candidate.message, cause?.message]
+    .filter(Boolean)
+    .join(" ");
+  return (
+    code === "nosuchbucket" ||
+    code === "bucket_not_found" ||
+    status === 404 ||
+    /bucket .*not found|bucket does not exist|not found.*bucket/i.test(message)
   );
 }
 
@@ -479,6 +526,69 @@ async function selectRowsByIds<T>(
   return { rows, available };
 }
 
+async function acquireAccountVoiceDeletionLock(
+  client: AccountDeletionAdminClient,
+  userId: string,
+  operationId: string,
+) {
+  const query = client.from("account_voice_deletion_locks").upsert(
+    {
+      user_id: userId,
+      operation_id: operationId,
+      locked_at: new Date().toISOString(),
+    },
+    { onConflict: "user_id" },
+  );
+  const { data, error } = (await query
+    .select("user_id")
+    .maybeSingle()) as {
+    data: { user_id: string } | null;
+    error: SupabaseLikeError | null;
+  };
+  if (error) {
+    if (isMissingOptionalTableError(error)) {
+      throw new AccountDeletionOperationError(
+        "家庭声音生命周期迁移尚未部署，已安全中止账户删除。",
+        {
+          code: "account-voice-lifecycle-migration-required",
+          retryable: false,
+          cause: error,
+        },
+      );
+    }
+    throw new AccountDeletionOperationError(
+      error.message || "无法锁定家庭声音删除状态。",
+      { code: error.code || "account-voice-deletion-lock-failed", cause: error },
+    );
+  }
+  if (!data) {
+    throw new AccountDeletionOperationError("无法锁定家庭声音删除状态。", {
+      code: "account-voice-deletion-lock-empty",
+    });
+  }
+  return true;
+}
+
+async function releaseAccountVoiceDeletionLock(
+  client: AccountDeletionAdminClient,
+  userId: string,
+  operationId: string,
+) {
+  const { error } = (await client
+    .from("account_voice_deletion_locks")
+    .delete()
+    .eq("user_id", userId)
+    .eq("operation_id", operationId)) as {
+    error: SupabaseLikeError | null;
+  };
+  if (error && !isMissingOptionalTableError(error)) {
+    throw new AccountDeletionOperationError(
+      error.message || "无法解除家庭声音删除锁。",
+      { code: error.code || "account-voice-deletion-unlock-failed", cause: error },
+    );
+  }
+}
+
 async function ensureOwnedChild(
   client: AccountDeletionAdminClient,
   userId: string,
@@ -588,6 +698,8 @@ async function discoverChildSnapshot(
     savedStoryAssets: storyAssetsResult.rows,
     savedStoryAssetsAvailable: storyAssetsResult.available,
     familyCharacters: [],
+    familyCharacterVoices: [],
+    familyCharacterVoicesAvailable: true,
     sharedStories: [],
   };
 }
@@ -635,6 +747,13 @@ async function discoverCloudSnapshot(
       [["eq", "user_id", userId]],
     )
   ).rows;
+  const familyCharacterVoicesResult = await selectRows<FamilyCharacterVoiceRow>(
+    client,
+    "family_character_voices",
+    "id,family_character_id,sample_audio_path,voice_id,status,updated_at,retired_voice_ids,previous_ready_voice,retired_sample_paths,provider_voice_ids_before_attempt",
+    [["eq", "user_id", userId]],
+    { optionalTable: true },
+  );
   const sharedStories = (
     await selectRows<SharedStoryRow>(
       client,
@@ -655,6 +774,7 @@ async function discoverCloudSnapshot(
     growth_record_photos: growthPhotos.length,
     saved_story_assets: storyAssetsResult.rows.length,
     family_characters: familyCharacters.length,
+    family_character_voices: familyCharacterVoicesResult.rows.length,
     shared_stories: sharedStories.length,
   };
   for (const table of countTables) {
@@ -675,6 +795,8 @@ async function discoverCloudSnapshot(
     savedStoryAssets: storyAssetsResult.rows,
     savedStoryAssetsAvailable: storyAssetsResult.available,
     familyCharacters,
+    familyCharacterVoices: familyCharacterVoicesResult.rows,
+    familyCharacterVoicesAvailable: familyCharacterVoicesResult.available,
     sharedStories,
   };
 }
@@ -686,9 +808,11 @@ async function executeStorageStep(
     key: string;
     bucket: string;
     paths: () => Promise<string[]>;
+    optionalBucket?: boolean;
   },
 ) {
   const step = createStep(input.key, "storage");
+  step.optional = input.optionalBucket || undefined;
   report.steps.push(step);
   try {
     const paths = Array.from(new Set(await input.paths())).sort();
@@ -706,10 +830,267 @@ async function executeStorageStep(
     }
     return true;
   } catch (error) {
+    if (input.optionalBucket && isMissingOptionalStorageBucketError(error)) {
+      step.status = "skipped";
+      step.reason = "bucket_not_available";
+      return true;
+    }
     step.status = "failed";
     step.error = toFailure(error);
     return false;
   }
+}
+
+async function executeProviderVoiceDeletionStep(
+  report: AccountDeletionReport,
+  client: AccountDeletionAdminClient,
+  userId: string,
+  snapshot: DeletionSnapshot,
+) {
+  let reconciliationFailure: unknown = null;
+  const freshlyQueuedVoiceRows = new Set<string>();
+  for (const voice of snapshot.familyCharacterVoices) {
+    if (
+      (voice.status !== "processing" && voice.status !== "deleting") ||
+      voice.voice_id ||
+      !Array.isArray(voice.provider_voice_ids_before_attempt)
+    ) {
+      continue;
+    }
+    try {
+      const discoveredVoiceIds = await discoverBailianClonedVoiceIdsSince(
+        createFamilyVoiceEnrollmentPrefix(voice.family_character_id),
+        voice.provider_voice_ids_before_attempt,
+      );
+      if (discoveredVoiceIds.length === 0) {
+        if (
+          voice.status === "deleting" &&
+          isFamilyVoiceAmbiguousAbsenceGraceElapsed(voice.updated_at)
+        ) {
+          continue;
+        }
+        if (voice.status === "processing") {
+          const { data, error } = (await client
+            .from("family_character_voices")
+            .update({ status: "deleting", error_message: null })
+            .eq("id", voice.id)
+            .eq("user_id", userId)
+            .eq("status", "processing")
+            .eq("updated_at", voice.updated_at)
+            .select("id")
+            .maybeSingle()) as {
+            data: { id: string } | null;
+            error: SupabaseLikeError | null;
+          };
+          if (error || !data) {
+            throw new AccountDeletionOperationError(
+              error?.message || "无法保存家庭声音对账状态。",
+              {
+                code:
+                  error?.code ||
+                  "family-voice-ambiguous-tombstone-save-failed",
+                cause: error || undefined,
+              },
+            );
+          }
+          voice.status = "deleting";
+        }
+        throw new AccountDeletionOperationError(
+          "百炼尚未返回在途家庭声音，无法安全完成账户删除，请稍后重试。",
+          {
+            code: "family-voice-ambiguous-create-still-pending",
+          },
+        );
+      }
+      voice.retired_voice_ids = Array.from(
+        new Set([...(voice.retired_voice_ids || []), ...discoveredVoiceIds]),
+      );
+      const { data, error } = (await client
+        .from("family_character_voices")
+        .update({
+          status: "deleting",
+          retired_voice_ids: voice.retired_voice_ids,
+          provider_voice_ids_before_attempt: null,
+        })
+        .eq("id", voice.id)
+        .eq("user_id", userId)
+        .eq("status", voice.status)
+        .eq("updated_at", voice.updated_at)
+        .select("id")
+        .maybeSingle()) as {
+        data: { id: string } | null;
+        error: SupabaseLikeError | null;
+      };
+      if (error || !data) {
+        throw new AccountDeletionOperationError(
+          error?.message || "无法保存家庭声音撤销队列。",
+          {
+            code:
+              error?.code || "family-voice-ambiguous-queue-save-failed",
+            cause: error || undefined,
+          },
+        );
+      }
+      voice.status = "deleting";
+      voice.provider_voice_ids_before_attempt = null;
+      freshlyQueuedVoiceRows.add(voice.id);
+    } catch (error) {
+      reconciliationFailure =
+        error instanceof AccountDeletionOperationError
+          ? error
+          : new AccountDeletionOperationError(
+              "无法确认在途家庭声音，请稍后重试账户删除。",
+              {
+                code: "family-voice-ambiguous-create-reconciliation-failed",
+                cause: error,
+              },
+            );
+      break;
+    }
+  }
+  const voiceIds = Array.from(
+    new Set(snapshot.familyCharacterVoices.flatMap(getVoiceIds)),
+  );
+  if (!snapshot.familyCharacterVoicesAvailable) {
+    addSkippedStep(
+      report,
+      "provider.family-character-voices",
+      "provider",
+      0,
+      "table_not_available",
+      true,
+    );
+    return true;
+  }
+
+  const step = createStep(
+    "provider.family-character-voices",
+    "provider",
+    voiceIds.length,
+  );
+  report.steps.push(step);
+  if (reconciliationFailure) {
+    step.status = "failed";
+    step.error = toFailure(reconciliationFailure);
+    return false;
+  }
+  const confirmedDeleted = new Set<string>();
+  try {
+    for (const voice of snapshot.familyCharacterVoices) {
+      const queuedVoiceIds = getVoiceIds(voice);
+      let allowListAbsenceConfirmation =
+        voice.status === "deleting" &&
+        !freshlyQueuedVoiceRows.has(voice.id) &&
+        isFamilyVoiceAmbiguousAbsenceGraceElapsed(voice.updated_at);
+      if (queuedVoiceIds.length > 0 && voice.status !== "deleting") {
+        const { data, error } = (await client
+          .from("family_character_voices")
+          .update({
+            status: "deleting",
+            error_message: null,
+            provider_voice_ids_before_attempt: null,
+          })
+          .eq("id", voice.id)
+          .eq("user_id", userId)
+          .eq("status", voice.status)
+          .eq("updated_at", voice.updated_at)
+          .select("id")
+          .maybeSingle()) as {
+          data: { id: string } | null;
+          error: SupabaseLikeError | null;
+        };
+        if (error || !data) {
+          throw new AccountDeletionOperationError(
+            error?.message || "无法锁定家庭声音撤销状态。",
+            {
+              code: error?.code || "family-voice-provider-claim-failed",
+              cause: error || undefined,
+            },
+          );
+        }
+        voice.status = "deleting";
+        voice.provider_voice_ids_before_attempt = null;
+        allowListAbsenceConfirmation = false;
+      }
+      let activeVoiceId = voice.voice_id;
+      let retiredVoiceIds = Array.isArray(voice.retired_voice_ids)
+        ? voice.retired_voice_ids.filter(
+            (voiceId): voiceId is string => typeof voiceId === "string",
+          )
+        : [];
+      let previousReadyVoice =
+        voice.previous_ready_voice &&
+        typeof voice.previous_ready_voice === "object" &&
+        !Array.isArray(voice.previous_ready_voice)
+          ? (voice.previous_ready_voice as Record<string, unknown>)
+          : null;
+
+      for (const voiceId of queuedVoiceIds) {
+        if (!confirmedDeleted.has(voiceId)) {
+          await deleteBailianClonedVoice(voiceId, {
+            allowListAbsenceConfirmation,
+          });
+          confirmedDeleted.add(voiceId);
+          step.deleted += 1;
+        }
+        if (activeVoiceId === voiceId) activeVoiceId = null;
+        retiredVoiceIds = retiredVoiceIds.filter((id) => id !== voiceId);
+        if (previousReadyVoice?.voice_id === voiceId) {
+          previousReadyVoice = null;
+        }
+        const { data, error } = (await client
+          .from("family_character_voices")
+          .update({
+            status: "deleting",
+            voice_id: activeVoiceId,
+            retired_voice_ids: retiredVoiceIds,
+            previous_ready_voice: previousReadyVoice,
+            provider_voice_ids_before_attempt: null,
+          })
+          .eq("id", voice.id)
+          .eq("user_id", userId)
+          .select("id")
+          .maybeSingle()) as {
+          data: { id: string } | null;
+          error: SupabaseLikeError | null;
+        };
+        if (error || !data) {
+          throw new AccountDeletionOperationError(
+            error?.message || "无法保存家庭声音撤销进度。",
+            {
+              code: error?.code || "family-voice-provider-progress-save-failed",
+              cause: error || undefined,
+            },
+          );
+        }
+      }
+    }
+    return true;
+  } catch (error) {
+    step.status = "failed";
+    step.error = toFailure(error);
+    return false;
+  }
+}
+
+function getVoiceIds(voice: FamilyCharacterVoiceRow) {
+  return Array.from(
+    new Set([
+      ...(typeof voice.voice_id === "string" ? [voice.voice_id] : []),
+      ...(Array.isArray(voice.retired_voice_ids)
+        ? voice.retired_voice_ids.filter(
+            (voiceId): voiceId is string => typeof voiceId === "string",
+          )
+        : []),
+      ...(voice.previous_ready_voice &&
+      typeof voice.previous_ready_voice === "object" &&
+      !Array.isArray(voice.previous_ready_voice) &&
+      typeof (voice.previous_ready_voice as { voice_id?: unknown }).voice_id ===
+        "string"
+        ? [(voice.previous_ready_voice as { voice_id: string }).voice_id]
+        : []),
+    ]),
+  );
 }
 
 async function executeDatabaseStep(
@@ -1002,12 +1383,90 @@ async function executeCloudDeletion(
   request: Extract<AccountDeletionRequest, { scope: "cloud" }>,
   report: AccountDeletionReport,
 ) {
+  const voiceDeletionLockAcquired = await acquireAccountVoiceDeletionLock(
+    client,
+    userId,
+    report.requestId,
+  );
   const snapshot = await discoverCloudSnapshot(client, userId);
   report.steps.push({
     ...createStep("discover.cloud", "discovery"),
     deleted: 0,
     discovered: Object.values(snapshot.counts).reduce((sum, count) => sum + count, 0),
   });
+
+  const freshVoiceOperations = snapshot.familyCharacterVoices.filter(
+    (voice) =>
+      (voice.status === "processing" ||
+        (voice.status === "deleting" &&
+          !Array.isArray(voice.provider_voice_ids_before_attempt))) &&
+      !isFamilyVoiceProcessingStale(voice.updated_at),
+  );
+  let providerSucceeded: boolean;
+  if (freshVoiceOperations.length > 0) {
+    const step = createStep(
+      "provider.family-character-voices",
+      "provider",
+      freshVoiceOperations.length,
+    );
+    step.status = "failed";
+    step.error = {
+      code: "family-voice-operation-in-progress",
+      message: "家庭声音仍在创建或删除，请稍后重试账户删除。",
+      retryable: true,
+    };
+    report.steps.push(step);
+    providerSucceeded = false;
+  } else {
+    providerSucceeded = await executeProviderVoiceDeletionStep(
+      report,
+      client,
+      userId,
+      snapshot,
+    );
+  }
+  if (!providerSucceeded) {
+    [
+      "storage.story-archive",
+      "storage.growth-record-photos",
+      "storage.family-photos",
+      "storage.family-voice-samples",
+      "storage.story-shares",
+    ].forEach((key) =>
+      addSkippedStep(report, key, "storage", 0, "blocked_by_provider_error"),
+    );
+    [
+      ["database.shared_stories", snapshot.counts.shared_stories],
+      ["database.growth_record_photos", snapshot.counts.growth_record_photos],
+      ["database.growth_records", snapshot.counts.growth_records],
+      ["database.saved_story_assets", snapshot.counts.saved_story_assets],
+      ["database.saved_stories", snapshot.counts.saved_stories],
+      ["database.child_profiles", snapshot.counts.child_profiles],
+      [
+        "database.family_character_voices",
+        snapshot.counts.family_character_voices,
+      ],
+      ["database.family_characters", snapshot.counts.family_characters],
+      ["database.family_profiles", snapshot.counts.family_profiles],
+      ["database.account_settings", snapshot.counts.account_settings],
+    ].forEach(([key, discovered]) =>
+      addSkippedStep(
+        report,
+        String(key),
+        "database",
+        Number(discovered),
+        "blocked_by_provider_error",
+      ),
+    );
+    addSkippedStep(
+      report,
+      "auth.user",
+      "auth",
+      request.deleteAuthUser ? 1 : 0,
+      request.deleteAuthUser ? "blocked_by_provider_error" : "not_requested",
+    );
+    return;
+  }
 
   const storageSucceeded = [
     await executeStorageStep(report, client, {
@@ -1024,6 +1483,12 @@ async function executeCloudDeletion(
       key: "storage.family-photos",
       bucket: "family-photos",
       paths: () => cloudBucketPaths(client, "family-photos", userId),
+    }),
+    await executeStorageStep(report, client, {
+      key: "storage.family-voice-samples",
+      bucket: "family-voice-samples",
+      paths: () => cloudBucketPaths(client, "family-voice-samples", userId),
+      optionalBucket: true,
     }),
     await executeStorageStep(report, client, {
       key: "storage.story-shares",
@@ -1070,6 +1535,15 @@ async function executeCloudDeletion(
       table: "child_profiles",
       discovered: snapshot.counts.child_profiles,
       filters: [["eq", "user_id", userId]] as Array<["eq" | "in", string, unknown]>,
+    },
+    {
+      key: "database.family_character_voices",
+      table: "family_character_voices",
+      discovered: snapshot.counts.family_character_voices,
+      idColumn: "id",
+      ids: snapshot.familyCharacterVoices.map((voice) => voice.id),
+      filters: [["eq", "user_id", userId]] as Array<["eq" | "in", string, unknown]>,
+      optionalTable: true,
     },
     {
       key: "database.family_characters",
@@ -1126,7 +1600,13 @@ async function executeCloudDeletion(
       );
       continue;
     }
-    if (step.optionalTable && !snapshot.savedStoryAssetsAvailable) {
+    if (
+      step.optionalTable &&
+      ((step.table === "saved_story_assets" &&
+        !snapshot.savedStoryAssetsAvailable) ||
+        (step.table === "family_character_voices" &&
+          !snapshot.familyCharacterVoicesAvailable))
+    ) {
       addSkippedStep(
         report,
         step.key,
@@ -1142,6 +1622,25 @@ async function executeCloudDeletion(
 
   if (!request.deleteAuthUser) {
     addSkippedStep(report, "auth.user", "auth", 0, "not_requested");
+    if (databaseSucceeded && voiceDeletionLockAcquired) {
+      const unlockStep = createStep(
+        "database.account_voice_deletion_locks",
+        "database",
+        1,
+      );
+      report.steps.push(unlockStep);
+      try {
+        await releaseAccountVoiceDeletionLock(
+          client,
+          userId,
+          report.requestId,
+        );
+        unlockStep.deleted = 1;
+      } catch (error) {
+        unlockStep.status = "failed";
+        unlockStep.error = toFailure(error);
+      }
+    }
     return;
   }
   if (!databaseSucceeded) {
