@@ -10,6 +10,9 @@ export default function Footer() {
         <Link href="/library" className="footer-link">
           绘本馆
         </Link>
+        <Link href="/inspiration" className="footer-link">
+          每日灵感
+        </Link>
         <Link href="/custom" className="footer-link">
           绘本定制
         </Link>

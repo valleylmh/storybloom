@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Books,
   GearSix,
-  Lightbulb,
   TreeStructure,
   UsersThree,
 } from "@phosphor-icons/react";
@@ -17,6 +16,7 @@ import CloudSyncCard from "./CloudSyncCard";
 import LocalImportCard from "./LocalImportCard";
 import LocalDataSummary from "./LocalDataSummary";
 import { createAccountLocalImportController } from "./local-import-adapter";
+import AccountTodayInspiration from "@/components/inspiration/AccountTodayInspiration";
 import styles from "./Account.module.css";
 
 const FEATURE_ITEMS = [
@@ -39,15 +39,9 @@ const FEATURE_ITEMS = [
     icon: UsersThree,
   },
   {
-    href: "/?mode=minimal",
-    title: "今日灵感",
-    description: "回到一句话创作入口，继续生成新的家庭故事。",
-    icon: Lightbulb,
-  },
-  {
     href: "/me/settings",
     title: "数据与隐私",
-    description: "查看保存位置，并管理可选同步与隐私设置。",
+    description: "查看保存位置，并管理导出、删除与可选同步偏好。",
     icon: GearSix,
   },
 ];
@@ -115,6 +109,8 @@ export default function AccountOverview() {
           </p>
         ) : null}
       </div>
+
+      <AccountTodayInspiration />
 
       <nav className={styles.featureGrid} aria-label="我的家庭功能">
         {FEATURE_ITEMS.map((item) => {

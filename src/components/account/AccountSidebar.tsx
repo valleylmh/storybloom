@@ -17,7 +17,7 @@ const NAV_ITEMS = [
   { href: "/me/books", label: "我的绘本", icon: Books },
   { href: "/me/growth", label: "成长记录", icon: TreeStructure },
   { href: "/me/characters", label: "家庭角色", icon: UsersThree },
-  { href: "/?mode=minimal", label: "今日灵感", icon: Lightbulb, exact: true },
+  { href: "/inspiration", label: "今日灵感", icon: Lightbulb, exact: true },
   { href: "/me/settings", label: "数据与隐私", icon: GearSix },
 ];
 

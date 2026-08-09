@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { LinkSimple, SpinnerGap, Trash } from "@phosphor-icons/react";
+import { useAuth } from "@/hooks/useAuth";
 import type { GenerateResponse } from "@/types";
 
 const SHARE_STORAGE_KEY = "storybloom.shareLinks.v1";
@@ -38,6 +39,7 @@ async function copyText(text: string) {
 }
 
 export default function ShareLinkPanel({ result }: { result: GenerateResponse }) {
+  const { session } = useAuth();
   const [status, setStatus] = useState<"idle" | "creating" | "ready" | "copied">(
     () =>
       typeof window !== "undefined" && readStoredShares()[result.storyId]
@@ -70,7 +72,12 @@ export default function ShareLinkPanel({ result }: { result: GenerateResponse })
     try {
       const response = await fetch("/api/share", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          ...(session?.access_token
+            ? { Authorization: `Bearer ${session.access_token}` }
+            : {}),
+        },
         body: JSON.stringify({
           coverTitle: result.coverTitle,
           childName: result.input.childName,
