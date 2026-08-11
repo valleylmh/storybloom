@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
   getSupabaseAdmin: vi.fn(),
@@ -41,6 +41,23 @@ function mockVoiceResult(
 describe("family character voice narration lookup", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED = "1";
+  });
+
+  afterEach(() => {
+    delete process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED;
+  });
+
+  it("does not read or use a cloned voice while the feature is disabled", async () => {
+    delete process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED;
+
+    await expect(
+      getFamilyCharacterVoiceForNarration("user-1", "character-1"),
+    ).rejects.toMatchObject({
+      status: 404,
+      message: expect.stringContaining("暂未开放"),
+    } satisfies Partial<FamilyCharacterVoiceError>);
+    expect(mocks.getSupabaseAdmin).not.toHaveBeenCalled();
   });
 
   it("returns a trusted ready voice owned by the current user", async () => {

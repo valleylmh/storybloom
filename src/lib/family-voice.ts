@@ -12,6 +12,12 @@ export const FAMILY_VOICE_AMBIGUOUS_ABSENCE_GRACE_MS = 15 * 60 * 1_000;
 export const FAMILY_VOICE_TARGET_MODEL = "qwen-audio-3.0-tts-plus";
 export const FAMILY_VOICE_CONSENT_VERSION = "2026-08";
 
+export function isFamilyVoiceCloningEnabled(
+  value = process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED,
+) {
+  return /^(?:1|true|on)$/i.test(value?.trim() || "");
+}
+
 export type FamilyVoiceContentType =
   | "audio/mp4"
   | "audio/mpeg"

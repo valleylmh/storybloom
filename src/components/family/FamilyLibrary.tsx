@@ -56,6 +56,7 @@ import {
 } from "@/lib/repositories/family-character-voice-repository";
 import {
   getFamilyVoiceCanonicalExtension,
+  isFamilyVoiceCloningEnabled,
   isFamilyVoiceProcessingStale,
   normalizeFamilyVoiceContentType,
 } from "@/lib/family-voice";
@@ -189,6 +190,7 @@ async function cleanPhoto(file: File): Promise<Blob> {
 
 export default function FamilyLibrary({ embedded = false }: { embedded?: boolean }) {
   const { supabase, session, signOut } = useAuth();
+  const voiceCloningEnabled = isFamilyVoiceCloningEnabled();
   const [loading, setLoading] = useState(true);
   const [profileId, setProfileId] = useState<string>();
   const [items, setItems] = useState<Character[]>([]);
@@ -267,11 +269,13 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
   const hasProcessingVoices = Object.values(voicesByCharacterId).some(
     (voice) => voice.status === "processing",
   );
-  const voiceMaintenanceCharacterIds = Object.values(voicesByCharacterId)
-    .filter((voice) => voice.status !== "deleting")
-    .map((voice) => voice.family_character_id)
-    .sort()
-    .join(",");
+  const voiceMaintenanceCharacterIds = voiceCloningEnabled
+    ? Object.values(voicesByCharacterId)
+        .filter((voice) => voice.status !== "deleting")
+        .map((voice) => voice.family_character_id)
+        .sort()
+        .join(",")
+    : "";
 
   useEffect(() => {
     if (!supabase || !session || !profileId || !voiceMaintenanceCharacterIds) {
@@ -587,6 +591,9 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
   }
 
   async function createVoice(recording: FamilyVoiceRecording) {
+    if (!voiceCloningEnabled) {
+      throw new Error("家庭真人声音功能暂未开放。");
+    }
     if (!supabase || !session || !voiceCharacter) {
       throw new Error("登录状态已失效，请刷新页面后重新登录");
     }
@@ -749,7 +756,11 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
       <section className="family-hero">
         <p className="family-kicker">YOUR STORY, YOUR FAMILY</p>
         <h1>家庭角色</h1>
-        <p>为孩子、父母、长辈或宠物建立形象，也可在明确授权后为人物创建私密真人声音，让熟悉的家人走进新的绘本冒险。</p>
+        <p>
+          {voiceCloningEnabled
+            ? "为孩子、父母、长辈或宠物建立形象，也可在明确授权后为人物创建私密真人声音，让熟悉的家人走进新的绘本冒险。"
+            : "为孩子、父母、长辈或宠物建立形象，让熟悉的家人走进新的绘本冒险。"}
+        </p>
         <button className="family-primary" onClick={() => setEditing("new")}>
           <Plus /> 添加家庭成员
         </button>
@@ -857,7 +868,9 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
                         : voice.error_message || "真人声音创建失败"}
                   </small>
                 ) : null}
-                {canGenerateCartoon || item.kind === "person" || voice ? (
+                {canGenerateCartoon ||
+                (voiceCloningEnabled && item.kind === "person") ||
+                voice ? (
                   <div className="family-actions">
                     {canGenerateCartoon ? (
                       <button
@@ -877,7 +890,7 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
                             : `生成卡通形象 · 剩 ${remainingGenerations} 次`}
                       </button>
                     ) : null}
-                    {item.kind === "person" ? (
+                    {voiceCloningEnabled && item.kind === "person" ? (
                       <button
                         type="button"
                         className="voice"
@@ -959,7 +972,7 @@ export default function FamilyLibrary({ embedded = false }: { embedded?: boolean
           onSave={saveCrop}
         />
       ) : null}
-      {voiceCharacter ? (
+      {voiceCloningEnabled && voiceCharacter ? (
         <FamilyVoiceDialog
           characterName={voiceCharacter.display_name}
           busy={voiceBusy === voiceCharacter.id}

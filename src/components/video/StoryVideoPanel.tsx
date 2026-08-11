@@ -10,6 +10,7 @@ import {
   type StoryVideoNarrationMode,
 } from "@/lib/story-video";
 import { useAuth } from "@/hooks/useAuth";
+import { isFamilyVoiceCloningEnabled } from "@/lib/family-voice";
 import { listFamilyCharacterVoices } from "@/lib/repositories/family-character-voice-repository";
 import type { StoryPage } from "@/types";
 
@@ -24,6 +25,8 @@ const VIDEO_NARRATION_OPTIONS: Array<{
   { mode: "zh-en", label: "双语" },
   { mode: "none", label: "无旁白" },
 ];
+
+const FAMILY_VOICE_CLONING_ENABLED = isFamilyVoiceCloningEnabled();
 
 export default function StoryVideoPanel({
   title,
@@ -46,7 +49,11 @@ export default function StoryVideoPanel({
   } = useAuth();
   const [familyVoiceState, setFamilyVoiceState] = useState<
     "checking" | "absent" | "present" | "error"
-  >(familyCharacterId ? "checking" : "absent");
+  >(
+    FAMILY_VOICE_CLONING_ENABLED && familyCharacterId
+      ? "checking"
+      : "absent",
+  );
   const [familyVoiceError, setFamilyVoiceError] = useState<string | null>(null);
   const [familyVoiceRetryKey, setFamilyVoiceRetryKey] = useState(0);
   const [narrationMode, setNarrationMode] =
@@ -79,7 +86,7 @@ export default function StoryVideoPanel({
     familyVoiceState === "present" ? familyCharacterId : undefined;
 
   useEffect(() => {
-    if (!familyCharacterId) {
+    if (!FAMILY_VOICE_CLONING_ENABLED || !familyCharacterId) {
       setFamilyVoiceState("absent");
       setFamilyVoiceError(null);
       return;

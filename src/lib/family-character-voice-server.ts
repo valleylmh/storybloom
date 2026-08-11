@@ -2,6 +2,7 @@ import "server-only";
 
 import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { parseFamilyVoiceReadySnapshot } from "@/lib/family-character-voice-private-server";
+import { isFamilyVoiceCloningEnabled } from "@/lib/family-voice";
 import type { TrustedFamilyVoice } from "@/lib/narration-audio-server";
 
 type FamilyCharacterVoiceRow = {
@@ -47,6 +48,12 @@ export async function getFamilyCharacterVoiceForNarration(
   userId: string,
   familyCharacterId: string,
 ): Promise<TrustedFamilyVoice | null> {
+  if (!isFamilyVoiceCloningEnabled()) {
+    throw new FamilyCharacterVoiceError(
+      "家庭真人声音功能暂未开放。",
+      404,
+    );
+  }
   const { data, error } = await getSupabaseAdmin()
     .from("family_character_voices")
     .select("voice_id,status,updated_at,previous_ready_voice")

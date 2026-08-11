@@ -263,11 +263,26 @@ describe("family character voice route", () => {
     });
     process.env.BAILIAN_VOICE_ABSENCE_RECHECK_MS = "1";
     process.env.FAMILY_VOICE_SAMPLE_READ_RETRY_MS = "1";
+    process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED = "1";
   });
 
   afterEach(() => {
     delete process.env.BAILIAN_VOICE_ABSENCE_RECHECK_MS;
     delete process.env.FAMILY_VOICE_SAMPLE_READ_RETRY_MS;
+    delete process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED;
+  });
+
+  it("rejects enrollment before authentication or provider access when disabled", async () => {
+    delete process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED;
+
+    const response = await callRoute();
+    const body = await response.json();
+
+    expect(response.status).toBe(404);
+    expect(body.error).toContain("暂未开放");
+    expect(mocks.requireAuthenticatedUser).not.toHaveBeenCalled();
+    expect(mocks.getSupabaseAdmin).not.toHaveBeenCalled();
+    expect(mocks.createBailianClonedVoice).not.toHaveBeenCalled();
   });
 
   it("requires explicit consent before touching storage or the provider", async () => {

@@ -8,6 +8,7 @@ import {
   encodeFamilyVoicePcm16Wav,
   getFamilyVoiceCanonicalExtension,
   isFamilyVoiceAmbiguousAbsenceGraceElapsed,
+  isFamilyVoiceCloningEnabled,
   isFamilyVoiceProcessingStale,
   isValidFamilyVoiceSampleDuration,
   isValidFamilyVoiceSampleSize,
@@ -20,6 +21,16 @@ const USER_ID = "22222222-2222-4222-8222-222222222222";
 const CHARACTER_ID = "11111111-1111-4111-8111-111111111111";
 
 describe("family voice helpers", () => {
+  it("keeps voice cloning disabled unless the public flag is explicitly enabled", () => {
+    expect(isFamilyVoiceCloningEnabled(undefined)).toBe(false);
+    expect(isFamilyVoiceCloningEnabled("")).toBe(false);
+    expect(isFamilyVoiceCloningEnabled("0")).toBe(false);
+    expect(isFamilyVoiceCloningEnabled("false")).toBe(false);
+    expect(isFamilyVoiceCloningEnabled("1")).toBe(true);
+    expect(isFamilyVoiceCloningEnabled(" true ")).toBe(true);
+    expect(isFamilyVoiceCloningEnabled("ON")).toBe(true);
+  });
+
   it("enforces the 10-60 second and 10MB sample limits", () => {
     expect(isValidFamilyVoiceSampleDuration(10)).toBe(true);
     expect(isValidFamilyVoiceSampleDuration(60)).toBe(true);

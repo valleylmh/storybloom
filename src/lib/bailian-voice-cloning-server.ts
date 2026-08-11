@@ -1,6 +1,9 @@
 import "server-only";
 
-import { FAMILY_VOICE_TARGET_MODEL } from "@/lib/family-voice";
+import {
+  FAMILY_VOICE_TARGET_MODEL,
+  isFamilyVoiceCloningEnabled,
+} from "@/lib/family-voice";
 
 const DEFAULT_ENDPOINT =
   "https://dashscope.aliyuncs.com/api/v1/services/audio/tts/customization";
@@ -357,6 +360,9 @@ export async function discoverBailianClonedVoiceIdsSince(
 export async function createBailianClonedVoice(
   input: BailianVoiceCloningInput,
 ): Promise<BailianVoiceCloningResult> {
+  if (!isFamilyVoiceCloningEnabled()) {
+    throw new BailianVoiceCloningError("家庭真人声音功能暂未开放。", 404);
+  }
   validateInput(input);
   const controller = new AbortController();
   const timeout = setTimeout(

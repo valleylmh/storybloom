@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   BailianVoiceCloningError,
   createBailianClonedVoice,
@@ -11,6 +11,7 @@ const originalFetch = global.fetch;
 
 afterEach(() => {
   global.fetch = originalFetch;
+  delete process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED;
   delete process.env.BAILIAN_VOICE_CLONING_API_KEY;
   delete process.env.DASHSCOPE_API_KEY;
   delete process.env.BAILIAN_VOICE_CLONING_ENDPOINT;
@@ -19,6 +20,24 @@ afterEach(() => {
 });
 
 describe("Bailian voice cloning adapter", () => {
+  beforeEach(() => {
+    process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED = "1";
+  });
+
+  it("does not call the provider while voice cloning is disabled", async () => {
+    delete process.env.NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED;
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
+    global.fetch = vi.fn();
+
+    await expect(
+      createBailianClonedVoice({
+        sampleUrl: "https://storage.example.test/signed/sample.wav",
+        prefix: "sb11111111",
+      }),
+    ).rejects.toMatchObject({ status: 404 });
+    expect(global.fetch).not.toHaveBeenCalled();
+  });
+
   it("parses the known voice ID response shapes", () => {
     expect(extractBailianVoiceId({ output: { voice_id: "voice-a" } })).toBe(
       "voice-a",

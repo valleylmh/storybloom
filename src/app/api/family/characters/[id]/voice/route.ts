@@ -29,6 +29,7 @@ import {
   areFamilyVoiceTypeAndExtensionCompatible,
   createFamilyVoiceEnrollmentPrefix,
   isFamilyVoiceAmbiguousAbsenceGraceElapsed,
+  isFamilyVoiceCloningEnabled,
   isFamilyVoiceProcessingStale,
   isValidFamilyVoiceSampleSize,
   normalizeFamilyVoiceContentType,
@@ -710,6 +711,9 @@ export async function POST(
   let recoverableReadyVoice: FamilyVoiceReadySnapshot | null = null;
 
   try {
+    if (!isFamilyVoiceCloningEnabled()) {
+      throw new FamilyVoiceRouteError("家庭真人声音功能暂未开放。", 404);
+    }
     const user = await requireAuthenticatedUser(request);
     userId = user.id;
     characterId = idSchema.parse((await context.params).id);
