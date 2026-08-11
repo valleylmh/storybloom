@@ -3,7 +3,7 @@ import "server-only";
 import { FAMILY_VOICE_TARGET_MODEL } from "@/lib/family-voice";
 
 const DEFAULT_ENDPOINT =
-  "https://token-plan.cn-beijing.maas.aliyuncs.com/api/v1/services/audio/tts/customization";
+  "https://dashscope.aliyuncs.com/api/v1/services/audio/tts/customization";
 const DEFAULT_TIMEOUT_MS = 30_000;
 const MAX_TIMEOUT_MS = 120_000;
 
@@ -142,10 +142,12 @@ function readPositiveInteger(name: string, fallback: number, maximum: number) {
 }
 
 function getApiKey() {
-  const apiKey = process.env.DASHSCOPE_TOKEN_KEY?.trim();
+  const apiKey =
+    process.env.BAILIAN_VOICE_CLONING_API_KEY?.trim() ||
+    process.env.DASHSCOPE_API_KEY?.trim();
   if (!apiKey) {
     throw new BailianVoiceCloningError(
-      "百炼声音复刻服务尚未配置。",
+      "百炼声音复刻服务尚未配置标准 DashScope API Key。",
       503,
     );
   }

@@ -11,7 +11,8 @@ const originalFetch = global.fetch;
 
 afterEach(() => {
   global.fetch = originalFetch;
-  delete process.env.DASHSCOPE_TOKEN_KEY;
+  delete process.env.BAILIAN_VOICE_CLONING_API_KEY;
+  delete process.env.DASHSCOPE_API_KEY;
   delete process.env.BAILIAN_VOICE_CLONING_ENDPOINT;
   delete process.env.BAILIAN_VOICE_CLONING_TIMEOUT_MS;
   delete process.env.BAILIAN_VOICE_ABSENCE_RECHECK_MS;
@@ -35,8 +36,8 @@ describe("Bailian voice cloning adapter", () => {
     ).toBeNull();
   });
 
-  it("sends the conventional enrollment body to the Token Plan endpoint", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+  it("sends the conventional enrollment body to the standard DashScope endpoint", async () => {
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
@@ -55,7 +56,7 @@ describe("Bailian voice cloning adapter", () => {
     expect(global.fetch).toHaveBeenCalledOnce();
     const [url, options] = vi.mocked(global.fetch).mock.calls[0];
     expect(String(url)).toBe(
-      "https://token-plan.cn-beijing.maas.aliyuncs.com/api/v1/services/audio/tts/customization",
+      "https://dashscope.aliyuncs.com/api/v1/services/audio/tts/customization",
     );
     expect(options?.headers).toMatchObject({
       Authorization: "Bearer test-token",
@@ -76,8 +77,31 @@ describe("Bailian voice cloning adapter", () => {
     });
   });
 
+  it("falls back to DASHSCOPE_API_KEY when no dedicated cloning key is configured", async () => {
+    process.env.DASHSCOPE_API_KEY = "standard-dashscope-key";
+    global.fetch = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          output: { voice: "sb11111111_voice" },
+          request_id: "request-2",
+        }),
+        { status: 200 },
+      ),
+    );
+
+    await createBailianClonedVoice({
+      sampleUrl: "https://storage.example.test/signed/sample.webm",
+      prefix: "sb11111111",
+    });
+
+    const [, options] = vi.mocked(global.fetch).mock.calls[0];
+    expect(options?.headers).toMatchObject({
+      Authorization: "Bearer standard-dashscope-key",
+    });
+  });
+
   it("does not expose a provider-echoed signed URL or API key in errors", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "super-secret-key";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "super-secret-key";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
@@ -106,7 +130,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("marks a provider 5xx create response as ambiguous for reconciliation", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(JSON.stringify({ code: "InternalError" }), {
         status: 500,
@@ -128,7 +152,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("keeps a provider 4xx create response as a definite rejection", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(JSON.stringify({ code: "InvalidParameter" }), {
         status: 400,
@@ -150,7 +174,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("deletes a cloned voice with the documented delete_voice action", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
@@ -177,7 +201,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("queries the documented provider review status without exposing resource links", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
@@ -205,7 +229,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("treats a failed repeated delete as complete only after list_voice confirms absence", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     process.env.BAILIAN_VOICE_ABSENCE_RECHECK_MS = "1";
     global.fetch = vi
       .fn()
@@ -247,7 +271,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("does not trust same-request list absence for a newly queued voice", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(JSON.stringify({ code: "InternalError" }), {
         status: 500,
@@ -263,7 +287,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("does not hide a delete failure when list_voice still contains the voice", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     const voiceId = "qwen-audio-3.0-tts-plus-sb11111111-existing";
     global.fetch = vi
       .fn()
@@ -289,7 +313,7 @@ describe("Bailian voice cloning adapter", () => {
   });
 
   it("rejects a non-HTTPS endpoint override without making a request", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_VOICE_CLONING_API_KEY = "test-token";
     process.env.BAILIAN_VOICE_CLONING_ENDPOINT = "http://localhost/customization";
     global.fetch = vi.fn();
 

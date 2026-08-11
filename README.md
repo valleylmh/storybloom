@@ -171,7 +171,7 @@ pnpm dev
 
 访问 `http://localhost:3000`。
 
-本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频在没有任何 TTS key 时会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key；`DASHSCOPE_API_KEY` 仍只用于选择 DashScope 作为图片服务商，语音使用独立的 `DASHSCOPE_TOKEN_KEY`。
+本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，网页朗读使用当前设备的系统语音；带旁白视频在没有任何 TTS key 时会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key。普通 Token Plan 视频旁白使用独立的 `DASHSCOPE_TOKEN_KEY`；声音复刻使用标准 `DASHSCOPE_API_KEY`，也可通过 `BAILIAN_VOICE_CLONING_API_KEY` 单独覆盖。
 
 ## 绘本朗读音频
 
@@ -296,11 +296,13 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 # 或 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...
 ```
 
-3. 为声音复刻配置服务端环境变量；浏览器不能接触 `DASHSCOPE_TOKEN_KEY`：
+3. 为声音复刻配置标准百炼 API Key；浏览器不能接触这些服务端密钥。Token Plan 的 `DASHSCOPE_TOKEN_KEY` 不能用于 `voice-enrollment`：
 
 ```bash
-DASHSCOPE_TOKEN_KEY=...
-BAILIAN_VOICE_CLONING_ENDPOINT=https://token-plan.cn-beijing.maas.aliyuncs.com/api/v1/services/audio/tts/customization
+DASHSCOPE_API_KEY=...
+# 可选：与图片等 DashScope 调用分开配置
+BAILIAN_VOICE_CLONING_API_KEY=...
+BAILIAN_VOICE_CLONING_ENDPOINT=https://dashscope.aliyuncs.com/api/v1/services/audio/tts/customization
 BAILIAN_VOICE_CLONING_TIMEOUT_MS=30000
 FAMILY_VOICE_ENROLLMENT_RATE_LIMIT_PER_HOUR=12
 ```
