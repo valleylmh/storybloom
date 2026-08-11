@@ -6603,6 +6603,11 @@ a.library-book-card:hover {
   margin-bottom: 32px;
 }
 
+.library-narration-tools {
+  display: grid;
+  margin-bottom: 14px;
+}
+
 .library-share-panel {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -6985,6 +6990,28 @@ a.library-book-card:hover {
     #fffaf4;
 }
 
+.book-spread-narrating {
+  border-color: rgba(190, 85, 48, 0.34);
+  box-shadow:
+    0 18px 50px rgba(47, 36, 29, 0.12),
+    0 0 0 3px rgba(233, 123, 85, 0.1);
+}
+
+.book-page-right .page-zh,
+.book-page-right .page-en {
+  border-radius: 10px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.book-page-right .book-text-narrating {
+  color: #2f241d;
+  background: rgba(255, 221, 148, 0.38);
+  box-shadow: 0 0 0 7px rgba(255, 221, 148, 0.38);
+}
+
 .book-page-number {
   margin: 0;
   font-size: 0.8rem;
@@ -7028,6 +7055,11 @@ a.library-book-card:hover {
   .book-turn-next,
   .book-turn-prev {
     animation: none;
+  }
+
+  .book-page-right .page-zh,
+  .book-page-right .page-en {
+    transition: none;
   }
 }
 

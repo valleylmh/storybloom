@@ -5,7 +5,6 @@ import { CheckCircle, Copy, ShareNetwork, SpinnerGap } from "@phosphor-icons/rea
 import SocialShareDialog, {
   type SocialSharePreviewPage,
 } from "@/components/book/SocialShareDialog";
-import NarrationToolbar from "@/components/book/NarrationToolbar";
 import StoryVideoPanel from "@/components/video/StoryVideoPanel";
 import { createZipBlob } from "@/lib/client-zip";
 import {
@@ -161,9 +160,7 @@ export default function LibraryBookTools({
   }
 
   return (
-    <section className="library-book-tools" aria-label="绘本朗读、视频与分享">
-      <NarrationToolbar pages={pages} storyKey={shareUrl} />
-
+    <section className="library-book-tools" aria-label="绘本视频与分享">
       {STORY_VIDEO_ENABLED ? (
         <StoryVideoPanel
           title={title}

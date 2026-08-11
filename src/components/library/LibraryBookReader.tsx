@@ -3,9 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { CaretLeft, CaretRight, X } from "@phosphor-icons/react";
+import type { BrowserNarrationMode } from "@/lib/browser-narration";
 import type { StoryPage } from "@/types";
 
-type ReaderMode = "turn" | "grid";
+export type ReaderMode = "turn" | "grid";
 
 /**
  * 绘本馆翻页阅读器：像翻实体书一样一页一页阅读，
@@ -15,36 +16,66 @@ export default function LibraryBookReader({
   title,
   pages,
   accent,
+  pageIndex: controlledPageIndex,
+  readerMode: controlledReaderMode,
+  narrationHighlight = null,
+  onPageIndexChange,
+  onReaderModeChange,
 }: {
   title: string;
   pages: StoryPage[];
   accent: string;
+  pageIndex?: number;
+  readerMode?: ReaderMode;
+  narrationHighlight?: BrowserNarrationMode | null;
+  onPageIndexChange?: (pageIndex: number) => void;
+  onReaderModeChange?: (mode: ReaderMode) => void;
 }) {
-  const [pageIndex, setPageIndex] = useState(0);
+  const [internalPageIndex, setInternalPageIndex] = useState(0);
   const [turnDirection, setTurnDirection] = useState<"next" | "prev">("next");
   const [turnKey, setTurnKey] = useState(0);
-  const [readerMode, setReaderMode] = useState<ReaderMode>("turn");
+  const [internalReaderMode, setInternalReaderMode] =
+    useState<ReaderMode>("turn");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const touchStartXRef = useRef<number | null>(null);
 
+  const pageIndex = controlledPageIndex ?? internalPageIndex;
+  const readerMode = controlledReaderMode ?? internalReaderMode;
+  const previousPageIndexRef = useRef(pageIndex);
   const total = pages.length;
   const page = pages[pageIndex];
+
+  useEffect(() => {
+    const previousPageIndex = previousPageIndexRef.current;
+    if (previousPageIndex === pageIndex) return;
+    setTurnDirection(pageIndex > previousPageIndex ? "next" : "prev");
+    setTurnKey((key) => key + 1);
+    previousPageIndexRef.current = pageIndex;
+  }, [pageIndex]);
 
   const goToPage = useCallback(
     (nextIndex: number) => {
       if (nextIndex < 0 || nextIndex >= total) {
         return;
       }
-      setPageIndex((current) => {
-        if (nextIndex === current) {
-          return current;
-        }
-        setTurnDirection(nextIndex > current ? "next" : "prev");
-        setTurnKey((key) => key + 1);
-        return nextIndex;
-      });
+      if (nextIndex === pageIndex) return;
+      if (controlledPageIndex === undefined) {
+        setInternalPageIndex(nextIndex);
+      }
+      onPageIndexChange?.(nextIndex);
     },
-    [total],
+    [controlledPageIndex, onPageIndexChange, pageIndex, total],
+  );
+
+  const changeReaderMode = useCallback(
+    (nextMode: ReaderMode) => {
+      if (nextMode === readerMode) return;
+      if (controlledReaderMode === undefined) {
+        setInternalReaderMode(nextMode);
+      }
+      onReaderModeChange?.(nextMode);
+    },
+    [controlledReaderMode, onReaderModeChange, readerMode],
   );
 
   const goToLightbox = useCallback(
@@ -146,7 +177,7 @@ export default function LibraryBookReader({
               readerMode === "turn" ? "library-reader-mode-btn-active" : ""
             }`}
             aria-pressed={readerMode === "turn"}
-            onClick={() => setReaderMode("turn")}
+            onClick={() => changeReaderMode("turn")}
           >
             翻页阅读
           </button>
@@ -156,7 +187,7 @@ export default function LibraryBookReader({
               readerMode === "grid" ? "library-reader-mode-btn-active" : ""
             }`}
             aria-pressed={readerMode === "grid"}
-            onClick={() => setReaderMode("grid")}
+            onClick={() => changeReaderMode("grid")}
           >
             平铺查看
           </button>
@@ -182,7 +213,9 @@ export default function LibraryBookReader({
 
             <article
               key={turnKey}
-              className={`book-spread book-turn-${turnDirection}`}
+              className={`book-spread book-turn-${turnDirection} ${
+                narrationHighlight ? "book-spread-narrating" : ""
+              }`}
               aria-label={`第 ${page.page} 页，共 ${total} 页`}
             >
               <div className="book-page book-page-left">
@@ -214,8 +247,26 @@ export default function LibraryBookReader({
                 <p className="book-page-number" style={{ color: accent }}>
                   {page.page} / {total}
                 </p>
-                <p className="page-zh">{page.zhText}</p>
-                <p className="page-en">{page.enText}</p>
+                <p
+                  className={`page-zh ${
+                    narrationHighlight === "zh" ||
+                    narrationHighlight === "zh-en"
+                      ? "book-text-narrating"
+                      : ""
+                  }`}
+                >
+                  {page.zhText}
+                </p>
+                <p
+                  className={`page-en ${
+                    narrationHighlight === "en" ||
+                    narrationHighlight === "zh-en"
+                      ? "book-text-narrating"
+                      : ""
+                  }`}
+                >
+                  {page.enText}
+                </p>
               </div>
             </article>
 

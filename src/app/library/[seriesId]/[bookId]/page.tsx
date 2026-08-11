@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import LibraryBookReader from "@/components/library/LibraryBookReader";
+import LibraryBookExperience from "@/components/library/LibraryBookExperience";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
 import {
   getAdjacentBooks,
@@ -160,10 +160,11 @@ export default async function LibraryBookPage({
         </section>
       ) : null}
 
-      <LibraryBookReader
+      <LibraryBookExperience
         title={book.title}
         pages={book.pages}
         accent={series.accent}
+        storyKey={`library-${series.id}-${book.id}`}
       />
 
       {/* 无 JS / 搜索引擎兜底：完整正文仍以平铺形式输出 */}
