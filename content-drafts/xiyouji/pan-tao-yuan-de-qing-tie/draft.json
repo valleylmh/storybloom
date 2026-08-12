@@ -1,0 +1,56 @@
+{
+  "id": "pan-tao-yuan-de-qing-tie",
+  "title": "蟠桃园的请帖",
+  "subtitle": "想被看见，也要好好开口",
+  "origin": "《西游记》第五回（低龄温和改编）",
+  "moral": {
+    "zh": "感到被忽略时，可以把失落说出来；未经同意拿取或打乱东西，只会让误会变得更大。",
+    "en": "When we feel left out, we can say so. Taking or disrupting things without permission only makes misunderstandings grow."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 52,
+  "episodeNumber": 52,
+  "pages": [
+    {
+      "zh": "悟空来到蟠桃园帮忙照看桃树，每天给树根松土、为嫩枝挡风。",
+      "en": "Wukong helped care for the Peach Garden, loosening soil around roots and shielding young branches from wind.",
+      "prompt": "Sun Wukong in golden-yellow tunic and dark red trousers, still without a headband, gently tends glowing peach trees using a small rounded wooden garden tool; celestial garden helpers nearby, no text."
+    },
+    {
+      "zh": "花会快到了，仙女们忙着整理果篮和请帖。悟空却一直没等到自己的那一份。",
+      "en": "As the festival approached, celestial attendants prepared fruit baskets and invitations, but Wukong never received one.",
+      "prompt": "Celestial attendants in soft pastel ancient robes sort peach baskets and blank gold invitation cards while Wukong waits at a respectful distance, looking puzzled rather than angry; no readable writing or text."
+    },
+    {
+      "zh": "他越想越委屈，伸手摘下一只桃子，又悄悄把几张请帖换了位置。",
+      "en": "Feeling more and more hurt, he picked one peach and quietly moved several invitation cards.",
+      "prompt": "Wukong pauses with one peach in hand beside several displaced blank invitation cards, his expression conflicted and regretful; no eating, no medicine, no text."
+    },
+    {
+      "zh": "结果，织云仙子收到了采露仙子的请帖，守门人也找不到该送往哪座云宫。",
+      "en": "Then the cloud weaver received the dew gatherer's invitation, and the gatekeeper could no longer tell where the cards belonged.",
+      "prompt": "Friendly celestial attendants compare mismatched blank cards marked only with simple cloud and dew-drop pictures, while a gatekeeper studies mixed baskets; gentle confusion, no text."
+    },
+    {
+      "zh": "王母娘娘没有责怪悟空，只问：“你真正想要的，是桃子，还是被大家记得？”",
+      "en": "The Queen Mother did not scold Wukong. She asked, “Did you truly want a peach, or did you want to be remembered?”",
+      "prompt": "The Queen Mother, a kind mature woman with a warm oval face, silver-black hair in a high cloud bun, lavender-and-rose robes and a simple jade phoenix hairpin, speaks gently with seated Wukong beneath peach blossoms; no throne, no text."
+    },
+    {
+      "zh": "悟空低头承认：“我怕大家觉得我不重要，所以做了更让人困扰的事。”",
+      "en": "Wukong admitted, “I feared I did not matter, so I did something that troubled everyone even more.”",
+      "prompt": "Wukong honestly apologizes with open empty hands to the Queen Mother and celestial attendants; peach and invitation cards remain safely on a low table, compassionate expressions, no text."
+    },
+    {
+      "zh": "大家一起按图案把请帖重新分类，也补上一张邀请悟空参加园艺分享会的新卡片。",
+      "en": "Together they sorted the invitations by picture, and made a new card inviting Wukong to share what he had learned in the garden.",
+      "prompt": "Wukong and attendants cooperatively sort blank picture cards into cloud, flower, and water-drop baskets; one new card shows only a peach-tree icon, no readable text."
+    },
+    {
+      "zh": "花会那天，悟空讲起怎样照顾桃树。原来好好开口，比偷偷拿一只桃子更能让人听见。",
+      "en": "At the festival, Wukong shared how to care for peach trees. Speaking honestly helped others hear him far better than taking a peach in secret.",
+      "prompt": "Wukong happily demonstrates gentle peach-tree care at an inclusive celestial garden gathering while Queen Mother and attendants listen; shared fruit stays in baskets, festive but calm, no text."
+    }
+  ]
+}

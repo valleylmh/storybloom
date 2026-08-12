@@ -1,0 +1,56 @@
+{
+  "id": "shuang-cha-ling-ren-lu",
+  "title": "双叉岭认路",
+  "subtitle": "害怕的时候，先把路线看清楚",
+  "origin": "《西游记》第十三回（低龄温和改编）",
+  "moral": {
+    "zh": "勇敢不是假装不害怕，而是承认担心、寻找可靠线索，并接受可信任的帮助。",
+    "en": "Courage is not pretending we are never afraid. It is naming our worry, finding reliable clues, and accepting trustworthy help."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 53,
+  "episodeNumber": 53,
+  "pages": [
+    {
+      "zh": "唐僧独自西行不久，来到两条一模一样的山路前，晨雾遮住了路牌。",
+      "en": "Not long after setting out alone, Tang Seng reached two identical mountain paths whose signposts were hidden by morning mist.",
+      "prompt": "Tang Seng, a gentle young monk in russet-and-gold kasaya, cream robes and five-buddha crown, stands with a calm white travel horse at two safe misty forest paths, uncertain but composed; no danger or text."
+    },
+    {
+      "zh": "风吹得树叶沙沙响，他心里有些害怕，便停下来深呼吸，没有随便选一条。",
+      "en": "Leaves rustled in the wind. Feeling afraid, he stopped to breathe instead of choosing a path at random.",
+      "prompt": "Tang Seng pauses beside his white horse, one hand over his heart and breathing calmly beneath rustling leaves; both paths remain open and safe, no scary shadows or text."
+    },
+    {
+      "zh": "这时，山林向导伯钦带着竹篮走来：“迷路先别赶路，我们一起找证据。”",
+      "en": "A forest guide named Boqin arrived with a bamboo basket. “When lost, do not rush. Let us look for evidence together.”",
+      "prompt": "Boqin, a friendly young adult forest guide with warm tan skin, square face, kind dark eyes, black hair in a high practical bun, moss-green tunic, brown trousers, straw cape and bamboo basket, greets Tang Seng with open hands; no weapon or text."
+    },
+    {
+      "zh": "他们发现左边石头长着朝北的青苔，右边泥地却留着来往商队的车辙。",
+      "en": "They found north-facing moss on the left stones and wagon tracks from traveling merchants on the right.",
+      "prompt": "Tang Seng and Boqin kneel at a safe fork comparing green moss on stones with gentle wagon ruts in dry soil, using observation rather than guesswork; white horse nearby, no text."
+    },
+    {
+      "zh": "伯钦又把松果、溪流和高山画成图案，拼出一张不用文字也能看懂的路图。",
+      "en": "Boqin used pictures of pinecones, a stream, and a peak to make a route map that needed no words.",
+      "prompt": "Boqin arranges pinecone, blue pebble, and mountain-shaped tokens on a cloth route map while Tang Seng checks the landscape; picture symbols only, no readable text."
+    },
+    {
+      "zh": "走到窄坡时，伯钦先系好护绳，唐僧牵马慢慢通过，谁也不逞强。",
+      "en": "At a narrow slope, Boqin secured a safety rope, and Tang Seng led the horse slowly. No one tried to show off.",
+      "prompt": "Boqin secures a thick safety handline along a broad gentle mountain slope while Tang Seng slowly leads the calm white horse; sturdy railing trees, safe footing, no cliff drama or text."
+    },
+    {
+      "zh": "到了山口，伯钦指着前方五指形的山峰：“沿着那条亮路，就能找到新的伙伴。”",
+      "en": "At the pass, Boqin pointed to a five-finger-shaped mountain. “Follow the bright road and you will find a new companion.”",
+      "prompt": "Boqin and Tang Seng stand at a sunny mountain pass looking toward a distant gentle five-finger-shaped mountain and bright winding road; hopeful destination, no trapped figure visible, no text."
+    },
+    {
+      "zh": "唐僧郑重道谢。害怕没有消失，但有了地图、方法和帮助，他的脚步更稳了。",
+      "en": "Tang Seng thanked him. His fear had not vanished, but with a map, a method, and help, his steps became steadier.",
+      "prompt": "Warm farewell: Tang Seng accepts the picture-token route cloth from Boqin, then continues with his calm white horse toward the sunlit mountain while Boqin waves; no text."
+    }
+  ]
+}

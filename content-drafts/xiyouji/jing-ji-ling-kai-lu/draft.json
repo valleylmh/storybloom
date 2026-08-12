@@ -1,0 +1,56 @@
+{
+  "id": "jing-ji-ling-kai-lu",
+  "title": "荆棘岭开路",
+  "subtitle": "慢一点，也能为后来的人留条路",
+  "origin": "《西游记》第六十四回（低龄温和改编）",
+  "moral": {
+    "zh": "遇到难走的路，合作整理、留下标记，不只帮助自己，也能让后来的人更安全。",
+    "en": "When a path is difficult, clearing it together and leaving markers helps us and everyone who comes after."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 57,
+  "episodeNumber": 57,
+  "pages": [
+    {
+      "zh": "荆棘岭的枝条长得密密麻麻，原来的山路只剩一条细缝。",
+      "en": "Branches grew thick across Bramble Ridge until the old mountain path became a narrow gap.",
+      "prompt": "Full Journey to the West team reaches a dense but sunlit bramble ridge where soft leafy branches cover a former broad path; no sharp threatening thorns, no text."
+    },
+    {
+      "zh": "悟空能一下跳过去，却发现白龙马和挑担的沙僧需要更宽、更平的路。",
+      "en": "Wukong could leap across, but White Dragon Horse and Sha carrying supplies needed a wider, smoother route.",
+      "prompt": "Wukong stands lightly on a rock while noticing White Dragon Horse and Sha Wujing need a wider safe passage; Tang Seng and Bajie assess the branches, no text."
+    },
+    {
+      "zh": "唐僧说：“能过得最快，不等于大家都能过。我们按最需要照顾的人来修路。”",
+      "en": "Tang Seng said, “The fastest way for one is not a path for all. Let us build for the one who needs the most care.”",
+      "prompt": "Tang Seng calmly gathers the full team in a planning circle beside the blocked trail, gesturing toward White Dragon Horse and supply baskets; no text."
+    },
+    {
+      "zh": "八戒用圆钝木耙把落叶扫到路边，沙僧把松动的石头稳稳垫平。",
+      "en": "Bajie used his rounded farm rake to move leaves aside, while Sha stabilized loose stones.",
+      "prompt": "Bajie safely rakes leaves with rounded farm tool and Sha uses broad round-edged spade to settle small stones; tools low and away from others, no text."
+    },
+    {
+      "zh": "悟空不砍活树，只把倒下的枯枝搬开，还为低垂的枝条系上软布带。",
+      "en": "Wukong did not cut living trees. He moved fallen branches and tied soft cloth bands around low boughs.",
+      "prompt": "Wukong carries one fallen dry branch while tying bright soft fabric around low living boughs to make them visible; staff shrunk safely behind ear, no text."
+    },
+    {
+      "zh": "白龙马先试走一遍。哪里容易绊脚，它就用蓝色蹄印牌提醒大家再检查。",
+      "en": "White Dragon Horse tested the route. Where footing felt uneven, it nudged a blue hoof marker for another check.",
+      "prompt": "White Dragon Horse with pearl-white coat, pale-blue mane and forehead diamond walks slowly on cleared path and nudges a blank blue hoof-shaped marker near an uneven spot; team checks, no text."
+    },
+    {
+      "zh": "树仙们也来帮忙，把修剪下的细枝编成扶手和小鸟休息架。",
+      "en": "The tree spirits joined in, weaving trimmed twigs into handrails and perches for birds.",
+      "prompt": "Friendly adult tree spirits with warm wooden-brown skin, leaf-green robes and branch-like hair cooperate with team to weave smooth twig handrails and bird perches; no frightening tree faces, no text."
+    },
+    {
+      "zh": "新山路终于能让马匹、老人和孩子安心通过。师徒留下彩带，继续赶路。",
+      "en": "The new path was safe for horses, elders, and children. The travelers left bright markers and continued on.",
+      "prompt": "A broad cleared forest trail with soft handrails and bright cloth markers welcomes an ancient family group while full team departs in warm sunset; inclusive access, no text."
+    }
+  ]
+}

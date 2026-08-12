@@ -1,0 +1,56 @@
+{
+  "id": "zhu-zi-guo-wen-wen-zhen",
+  "title": "朱紫国温问诊",
+  "subtitle": "先倾听身体，也尊重每个人的界限",
+  "origin": "《西游记》第六十八至六十九回（低龄温和改编）",
+  "moral": {
+    "zh": "照顾身体要先倾听感受、尊重同意，并把担心告诉可靠的大人和专业照护者。",
+    "en": "Caring for health begins with listening, consent, and sharing worries with trusted adults and qualified caregivers."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 59,
+  "episodeNumber": 59,
+  "pages": [
+    {
+      "zh": "朱紫国王总觉得胸口闷，吃不香、睡不稳，却一直说“我没事”。",
+      "en": "The King of Zhuzi felt tight in his chest and could not eat or sleep well, yet kept saying, “I am fine.”",
+      "prompt": "Kind middle-aged Zhuzi King with warm tan skin, gentle oval face, short neat black beard, plum-and-gold robes and simple dark-jade crown sits by untouched warm soup looking tired but safe; no text."
+    },
+    {
+      "zh": "唐僧先问：“我们可以坐下来听你说说吗？”国王点点头，才慢慢讲起对王后的担心。",
+      "en": "Tang Seng first asked, “May we sit and listen?” The king agreed and slowly shared his worry about the queen.",
+      "prompt": "Tang Seng asks permission with gentle open gesture before sitting at equal level with Zhuzi King in a quiet sunlit room; Wukong waits respectfully, no text."
+    },
+    {
+      "zh": "悟空会悬丝辨脉，但也先说明方法：丝线只系在柔软腕带上，不碰皮肤，也不代替真正的医者。",
+      "en": "Wukong knew a thread-pulse trick, but explained first: the thread would attach to a soft wristband, never touch skin, and never replace a real healer.",
+      "prompt": "Wukong demonstrates a soft fabric wristband connected to a loose golden thread on a cushion, explaining to king and adult royal healer; respectful distance, no needles or text."
+    },
+    {
+      "zh": "国王同意后，御医也在旁记录呼吸、睡眠和胃口，一项项核对。",
+      "en": "After the king agreed, the royal healer recorded breathing, sleep, and appetite, checking each item carefully.",
+      "prompt": "Adult royal healer with warm round face, silver-streaked hair in low bun, cream-and-teal robe and wooden medicine box uses picture tokens of moon, bowl and breath cloud while king consents; no readable text."
+    },
+    {
+      "zh": "大家发现，国王最难受的时候，总是在想象王后遇到危险，却又不肯把担心说出口。",
+      "en": "They found that the king felt worst when imagining the queen in danger while keeping his worry unspoken.",
+      "prompt": "Zhuzi King looks at an empty chair and a folded safe ribbon while Tang Seng, Wukong and healer listen compassionately; soft thought-cloud shaped like distant mountain, no text."
+    },
+    {
+      "zh": "御医安排清淡饭食和规律休息，唐僧陪他写下想问王后的三件事。",
+      "en": "The healer planned gentle meals and regular rest, while Tang Seng helped the king prepare three questions for the queen.",
+      "prompt": "Healer sets simple warm porridge and rest bell; Tang Seng and king arrange three blank picture cards with home, safety lantern and return path icons, no writing or text."
+    },
+    {
+      "zh": "悟空沿着丝带上的金色花粉找到麒麟山，也把一封报平安的图信带了回来。",
+      "en": "Following golden pollen on the ribbon, Wukong found Mount Qilin and returned with a picture message saying the queen was safe.",
+      "prompt": "Wukong returns through palace doorway holding a broad picture card with simple smiling queen, mountain flower and safe lantern icons; king rises with relief, no readable text."
+    },
+    {
+      "zh": "国王终于吃下一碗热粥。他明白，勇敢不只是忍住不说，也包括愿意求助和接受照顾。",
+      "en": "The king finally ate a bowl of warm porridge. He learned that courage includes asking for help and accepting care.",
+      "prompt": "Zhuzi King eats warm porridge at a bright low table with healer, Tang Seng and Wukong nearby; relaxed posture, hopeful morning light, no medical claims or text."
+    }
+  ]
+}

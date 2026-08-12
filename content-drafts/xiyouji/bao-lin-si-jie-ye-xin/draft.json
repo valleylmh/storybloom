@@ -1,0 +1,56 @@
+{
+  "id": "bao-lin-si-jie-ye-xin",
+  "title": "宝林寺接叶信",
+  "subtitle": "一封求助信，也需要认真核对",
+  "origin": "《西游记》第三十六至三十七回（低龄温和改编）",
+  "moral": {
+    "zh": "收到重要消息时，先核对来源、倾听双方，再决定怎样帮助，能保护每一个人。",
+    "en": "When an important message arrives, checking its source and listening to every side helps protect everyone."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 54,
+  "episodeNumber": 54,
+  "pages": [
+    {
+      "zh": "师徒在宝林寺借宿。夜里，一片画着白鹤的树叶从窗外轻轻飘进来。",
+      "en": "The travelers stayed at Baolin Temple. At night, a leaf painted with a white crane drifted gently through the window.",
+      "prompt": "Full Journey to the West team rests in a warm lamplit temple room as a broad green leaf with a simple white crane picture drifts through an open window; calm mystery, no readable text."
+    },
+    {
+      "zh": "叶子背面没有名字，只有水晶花园、五尾白鹤和一轮弯月三个图案。",
+      "en": "The leaf had no name, only pictures of a crystal garden, a five-feathered crane, and a crescent moon.",
+      "prompt": "Close view of a broad leaf held safely by Wukong, bearing only three simple painted pictures: crystal garden, white crane with five tail feathers, crescent moon; no letters or text."
+    },
+    {
+      "zh": "八戒觉得像寻宝图，沙僧却提醒：“也可能是求助信，先别拿它开玩笑。”",
+      "en": "Bajie thought it looked like a treasure map, but Sha reminded him, “It may be a request for help. Let us not joke before we know.”",
+      "prompt": "Zhu Bajie in dark teal tunic and Sha Wujing in slate-blue robe thoughtfully discuss the picture leaf while Tang Seng and Wukong listen; tools resting safely aside, no text."
+    },
+    {
+      "zh": "悟空检查叶脉上的水珠和花粉，发现它们都来自乌鸡国王宫附近。",
+      "en": "Wukong examined water drops and pollen on the leaf and found that both came from near the palace of Wuji Kingdom.",
+      "prompt": "Wukong uses a round magnifying crystal to inspect dew and pale flower pollen on the leaf beside a small bowl of matching palace-garden flowers; scientific careful mood, no text."
+    },
+    {
+      "zh": "第二天，乌鸡国太子也拿出一枚五尾白鹤玉牌，图案正好和叶信相同。",
+      "en": "The next day, the prince of Wuji showed them a jade token with the same five-feathered crane.",
+      "prompt": "A kind young Wuji prince in jade-green court robe shows a pale-jade token with a simple five-tail white crane picture to the full team in a bright courtyard; no readable text."
+    },
+    {
+      "zh": "唐僧没有马上认定谁对谁错，而是请太子讲清王宫最近发生的每件事。",
+      "en": "Tang Seng did not decide who was right. He asked the prince to explain everything that had recently happened at the palace.",
+      "prompt": "Tang Seng listens at equal eye level while the young prince arranges harmless picture tokens showing bridge, gardener, and crane on a low table; full team attentive, no text."
+    },
+    {
+      "zh": "叶信、玉牌和太子的记忆彼此对上了。大家决定进宫，用公开问答查明真相。",
+      "en": "The leaf, the token, and the prince's memories matched. Together they chose a public question-and-answer meeting to learn the truth.",
+      "prompt": "Team and prince compare matching crane pictures on leaf and jade token, then point toward an open sunny palace courtyard prepared with equal seats; evidence-based cooperation, no text."
+    },
+    {
+      "zh": "出发前，悟空把叶信装进透明小匣：“重要线索要保存好，也要让大家都看得见。”",
+      "en": "Before leaving, Wukong placed the leaf in a clear case. “Important evidence should be protected and visible to everyone.”",
+      "prompt": "Wukong gently places the crane leaf into a clear crystal case while Tang Seng, Bajie, Sha, White Dragon Horse and prince watch approvingly; bright departure, no text."
+    }
+  ]
+}

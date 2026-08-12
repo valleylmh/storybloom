@@ -2,6 +2,7 @@ import type { StoryPage } from "@/types";
 import type { LibraryBook, LibrarySeries } from "@/types/library";
 import baiLongMaDraft from "../../../content-drafts/xiyouji/bai-long-ma/draft.json";
 import baoXiangGuoJiuGongZhuDraft from "../../../content-drafts/xiyouji/bao-xiang-guo-jiu-gong-zhu/draft.json";
+import baoLinSiJieYeXinDraft from "../../../content-drafts/xiyouji/bao-lin-si-jie-ye-xin/draft.json";
 import biQiuGuoHuTongXinDraft from "../../../content-drafts/xiyouji/bi-qiu-guo-hu-tong-xin/draft.json";
 import changAnGongDeYuanManDraft from "../../../content-drafts/xiyouji/chang-an-gong-de-yuan-man/draft.json";
 import cheChiGuoSanChangBiShiDraft from "../../../content-drafts/xiyouji/che-chi-guo-san-chang-bi-shi/draft.json";
@@ -20,21 +21,27 @@ import liuShaHeShouShaSengDraft from "../../../content-drafts/xiyouji/liu-sha-he
 import longGongJieBaoDraft from "../../../content-drafts/xiyouji/long-gong-jie-bao/draft.json";
 import huangFengLingDingFengZhuDraft from "../../../content-drafts/xiyouji/huang-feng-ling-ding-feng-zhu/draft.json";
 import jiSaiGuoSaoBaoTaDraft from "../../../content-drafts/xiyouji/ji-sai-guo-sao-bao-ta/draft.json";
+import jingJiLingKaiLuDraft from "../../../content-drafts/xiyouji/jing-ji-ling-kai-lu/draft.json";
 import jinDouDongShouQingNiuDraft from "../../../content-drafts/xiyouji/jin-dou-dong-shou-qing-niu/draft.json";
 import jinPingFuShouHuaDengDraft from "../../../content-drafts/xiyouji/jin-ping-fu-shou-hua-deng/draft.json";
 import mieFaGuoHuanXinYiDraft from "../../../content-drafts/xiyouji/mie-fa-guo-huan-xin-yi/draft.json";
 import muXianAnShiHuiDraft from "../../../content-drafts/xiyouji/mu-xian-an-shi-hui/draft.json";
 import nuErGuoCiBieDraft from "../../../content-drafts/xiyouji/nu-er-guo-ci-bie/draft.json";
 import panSiDongQiaoTuoXianDraft from "../../../content-drafts/xiyouji/pan-si-dong-qiao-tuo-xian/draft.json";
+import panTaoYuanDeQingTieDraft from "../../../content-drafts/xiyouji/pan-tao-yuan-de-qing-tie/draft.json";
+import qiJueShanQingGuoXiangDraft from "../../../content-drafts/xiyouji/qi-jue-shan-qing-guo-xiang/draft.json";
 import sanJieBaJiaoShanDraft from "../../../content-drafts/xiyouji/san-jie-ba-jiao-shan/draft.json";
 import sanDaBaiGuJingDraft from "../../../content-drafts/xiyouji/san-da-bai-gu-jing/draft.json";
 import shaiJingShiLiuHenDraft from "../../../content-drafts/xiyouji/shai-jing-shi-liu-hen/draft.json";
+import shuangChaLingRenLuDraft from "../../../content-drafts/xiyouji/shuang-cha-ling-ren-lu/draft.json";
 import shiTuXiangYuDraft from "../../../content-drafts/xiyouji/shi-tu-xiang-yu/draft.json";
 import shiTuoLingSanGuanDraft from "../../../content-drafts/xiyouji/shi-tuo-ling-san-guan/draft.json";
 import siShengShiChanXinDraft from "../../../content-drafts/xiyouji/si-sheng-shi-chan-xin/draft.json";
 import tianZhuGuoBianYuTuDraft from "../../../content-drafts/xiyouji/tian-zhu-guo-bian-yu-tu/draft.json";
 import tongTaiFuJieShanYuanDraft from "../../../content-drafts/xiyouji/tong-tai-fu-jie-shan-yuan/draft.json";
 import tongTianHeJiuTongZiDraft from "../../../content-drafts/xiyouji/tong-tian-he-jiu-tong-zi/draft.json";
+import tongTianHeAnQuanLuDraft from "../../../content-drafts/xiyouji/tong-tian-he-an-quan-lu/draft.json";
+import tianMaYuanZhiBanBiaoDraft from "../../../content-drafts/xiyouji/tian-ma-yuan-zhi-ban-biao/draft.json";
 import wuDiDongZhaoShiFuDraft from "../../../content-drafts/xiyouji/wu-di-dong-zhao-shi-fu/draft.json";
 import wuXingShanXiaDraft from "../../../content-drafts/xiyouji/wu-xing-shan-xia/draft.json";
 import wuJiGuoBianZhenWangDraft from "../../../content-drafts/xiyouji/wu-ji-guo-bian-zhen-wang/draft.json";
@@ -44,12 +51,15 @@ import wuZhuangGuanRenShenGuoDraft from "../../../content-drafts/xiyouji/wu-zhua
 import xiaoLeiYinSiShiJiaFoDraft from "../../../content-drafts/xiyouji/xiao-lei-yin-si-shi-jia-fo/draft.json";
 import yinWuShanBianZhenYingDraft from "../../../content-drafts/xiyouji/yin-wu-shan-bian-zhen-ying/draft.json";
 import yuHuaZhouShouXinTuDraft from "../../../content-drafts/xiyouji/yu-hua-zhou-shou-xin-tu/draft.json";
+import yuHuaZhouZhaoGongJuDraft from "../../../content-drafts/xiyouji/yu-hua-zhou-zhao-gong-ju/draft.json";
+import huaGuoShanQingShiXiongDraft from "../../../content-drafts/xiyouji/hua-guo-shan-qing-shi-xiong/draft.json";
 import zhenJingDaoShouDraft from "../../../content-drafts/xiyouji/zhen-jing-dao-shou/draft.json";
 import zhenJiaMeiHouWangDraft from "../../../content-drafts/xiyouji/zhen-jia-mei-hou-wang/draft.json";
 import zhiDouJinJiaoYinJiaoDraft from "../../../content-drafts/xiyouji/zhi-dou-jin-jiao-yin-jiao/draft.json";
 import zhuZiGuoJieXinJieDraft from "../../../content-drafts/xiyouji/zhu-zi-guo-jie-xin-jie/draft.json";
+import zhuZiGuoWenWenZhenDraft from "../../../content-drafts/xiyouji/zhu-zi-guo-wen-wen-zhen/draft.json";
 
-// 50 回均完成文字、角色一致性与插图验收；全系列复用
+// 第 1–60 回均完成文字、角色一致性与插图验收；全系列复用
 // docs/library-prompts/xiyouji/characters.md 的角色锚点与低龄改编原则。
 
 const XIYOUJI_STYLE_LOCK =
@@ -293,6 +303,16 @@ export const XIYOUJI_BOOKS: LibraryBook[] = [
   ...ADDITIONAL_XIYOUJI_DRAFTS.map((draft) =>
     draftToLibraryBook(draft, "complete", false),
   ),
+  draftToLibraryBook(tianMaYuanZhiBanBiaoDraft, "complete", false),
+  draftToLibraryBook(panTaoYuanDeQingTieDraft, "complete", false),
+  draftToLibraryBook(shuangChaLingRenLuDraft, "complete", false),
+  draftToLibraryBook(baoLinSiJieYeXinDraft, "complete", false),
+  draftToLibraryBook(huaGuoShanQingShiXiongDraft, "complete", false),
+  draftToLibraryBook(tongTianHeAnQuanLuDraft, "complete", false),
+  draftToLibraryBook(jingJiLingKaiLuDraft, "complete", false),
+  draftToLibraryBook(qiJueShanQingGuoXiangDraft, "complete", false),
+  draftToLibraryBook(zhuZiGuoWenWenZhenDraft, "complete", false),
+  draftToLibraryBook(yuHuaZhouZhaoGongJuDraft, "complete", false),
 ];
 
 export const XIYOUJI_SERIES: LibrarySeries = {

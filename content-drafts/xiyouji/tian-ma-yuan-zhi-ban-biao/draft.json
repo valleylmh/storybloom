@@ -1,0 +1,56 @@
+{
+  "id": "tian-ma-yuan-zhi-ban-biao",
+  "title": "天马园值班表",
+  "subtitle": "真正的本领，藏在每天的照顾里",
+  "origin": "《西游记》第四回（低龄温和改编）",
+  "moral": {
+    "zh": "每一份工作都有价值；先了解责任、互相尊重，才能把本领用在真正需要的地方。",
+    "en": "Every job matters. Understanding responsibilities and respecting one another helps us use our skills where they are truly needed."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 51,
+  "episodeNumber": 51,
+  "pages": [
+    {
+      "zh": "悟空第一次来到天宫，接到一项新任务：照看会踏云的天马园。",
+      "en": "On his first visit to Heaven, Wukong received a new task: caring for a stable of cloud-treading horses.",
+      "prompt": "Sun Wukong, a small golden-brown monkey in a golden-yellow tunic, vermilion sash and dark red trousers with no headband yet, enters a bright celestial stable filled with friendly white horses with pale-gold manes standing safely on low soft clouds; warm welcome, no weapons or text."
+    },
+    {
+      "zh": "旧值班表只写着“喂草、关门”，却没有标明每匹马喜欢的食物和休息时间。",
+      "en": "The old duty board only said “feed” and “close,” without noting what each horse liked or when it needed rest.",
+      "prompt": "Wukong studies a blank-symbol wooden duty board beside several friendly celestial horses choosing hay, apples, or water; use only simple colored shapes with no readable writing, thoughtful storybook scene, no text."
+    },
+    {
+      "zh": "悟空先不急着显本领。他跟着马儿走了一整天，记下谁怕响声、谁爱慢慢吃。",
+      "en": "Instead of showing off, Wukong followed the horses for a whole day, noticing who disliked noise and who preferred to eat slowly.",
+      "prompt": "Wukong quietly observes three distinct gentle celestial horses in a peaceful cloud pasture, one resting away from bells, one eating slowly, one drinking; careful listening and observation, no text."
+    },
+    {
+      "zh": "他用月亮、太阳、苹果和水滴图案，做了一张人人都看得懂的新值班表。",
+      "en": "He made a new duty board with moons, suns, apples, and water drops that everyone could understand.",
+      "prompt": "Wukong arranges large carved picture tokens shaped like sun, moon, apple, and water drop on a wooden board while friendly stable helpers watch; icons only, no letters or readable text."
+    },
+    {
+      "zh": "八匹天马也被分成小组：晨风队先散步，晚霞队多休息，星点队轮流梳毛。",
+      "en": "The horses formed small groups: Dawn Breeze walked early, Sunset rested longer, and Starlight took turns being brushed.",
+      "prompt": "Three small groups of friendly white celestial horses follow a calm routine across a golden cloud stable: walking, resting, and receiving gentle grooming; Wukong coordinates cheerfully, no text."
+    },
+    {
+      "zh": "几天后，天马精神十足，马厩也不再手忙脚乱。大家第一次看清这份工作的学问。",
+      "en": "Within days, the horses were thriving and the stable ran calmly. Everyone finally saw how much skill the work required.",
+      "prompt": "Orderly celestial stable at sunrise, healthy horses with shining pale-gold manes, helpers calmly following picture tokens, Wukong smiling with quiet pride; no text."
+    },
+    {
+      "zh": "悟空也认真问清自己的职责和称呼。玉帝答应以后先说明任务，再安排合适的位置。",
+      "en": "Wukong also asked clearly about his role and title. The Jade Emperor agreed to explain each task before assigning a position.",
+      "prompt": "Kind Jade Emperor in ivory-and-pale-gold cloud robes and tall jade crown speaks at equal eye level with Wukong beside the stable, both using open respectful gestures; horses nearby, no throne or text."
+    },
+    {
+      "zh": "离开天马园时，悟空把值班表交给新管事：“照顾得好，就是了不起的本领。”",
+      "en": "Before leaving, Wukong handed the board to the new keeper. “Caring well is a remarkable skill.”",
+      "prompt": "Wukong hands the picture-token duty board to a smiling celestial stable keeper as friendly horses nuzzle nearby under peach-colored clouds; warm handoff and farewell, no text."
+    }
+  ]
+}

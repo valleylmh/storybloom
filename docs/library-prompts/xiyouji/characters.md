@@ -766,6 +766,111 @@ never distant or intimidating; child-friendly rounded animated-film proportions.
 | 第 38 回《老鼋问旧诺》 | 通天河老鼋 | 第 1 页 |
 | 第 40 回《长安功德圆满》 | 唐王 | 第 2 页 |
 
+## 第 51–60 回新增角色锁定
+
+以下十回是经典桥段拾遗，继续复用第 6 回起的五人取经团队锚点。第 51–52 回发生在悟空获赠细金色头环之前，
+必须复用“持金箍棒锁：无头环”；第 53 回发生在师徒相遇之前，画面中不得提前出现悟空、八戒、沙僧或白龙马。
+
+### 王母娘娘（第 52 回）
+
+The Queen Mother is a kind mature celestial woman with a warm oval face, calm dark-brown
+eyes, silver-black hair arranged in one high cloud-shaped bun, layered lavender-and-rose
+ancient robes with pale-gold cloud trim, and one simple jade phoenix hairpin; patient,
+fair, and never stern or intimidating; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 52 回第 5 页。
+- 蟠桃始终是普通庆典水果；不出现酒、仙丹、药瓶、醉态或误食药物。
+
+### 双叉岭向导伯钦（第 53 回）
+
+Boqin is a friendly young adult Chinese forest guide with warm tan skin, a square face,
+kind dark eyes, black hair in a high practical bun, a moss-green cross-collar tunic,
+brown trousers, a short straw rain cape, and one woven bamboo basket; he uses picture maps,
+safety rope, and natural landmarks, never a weapon; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 53 回第 3 页。
+- 双叉岭只有晨雾、路口和缓坡，不出现猛兽袭击、吃人、死亡、坠崖或恐怖洞穴。
+- 第 53 回唐僧所牵为普通白色旅行马，不得带白龙马的蓝菱形、淡蓝鬃毛或青绿眼色。
+
+### 乌鸡国太子（第 54 回）
+
+The Prince of Wuji is a thoughtful Chinese young adult with warm tan skin, a slim oval
+face, clear dark-brown eyes, black hair in a neat crown bun, layered jade-green and cream
+court robes, and one pale-jade token bearing a simple five-tail white-crane picture;
+earnest, observant, never commanding; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 54 回第 5 页。
+- 叶信与玉牌只使用白鹤、花园、弯月等图案，不出现可读文字；线索全程装匣保存并公开核对。
+
+### 七绝山红鳞山灵（第 58 回）
+
+The Red-Scale Mountain Spirit is a large rounded friendly adult guardian with soft
+coral-red and muted-gold scales, a cream belly, large kind amber eyes, a short rounded
+snout, a teal gardener vest, and one woven leaf basket; protective of roots and animal
+homes, never frightening, with no fangs, sharp claws, weapon, or attack pose;
+child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 58 回第 2 页。
+- 固定为守护果林的温和山灵，不画成巨蟒、蛇妖或吞人怪物；果巷不出现腐烂特写、虫群或恶心恐怖画面。
+
+### 朱紫国王（第 59 回）
+
+The King of Zhuzi is a kind middle-aged Chinese ruler with warm tan skin, a gentle oval
+face, tired but warm dark-brown eyes, a short neat black beard, layered plum-and-muted-gold
+court robes, and a simple dark-jade crown; worried but willing to listen, never gravely ill
+or frightening; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 59 回第 1 页。
+- 问诊必须先获得国王同意；只观察呼吸、睡眠、胃口和情绪，不下诊断、不承诺治愈、不代替专业医者。
+
+### 朱紫国御医（第 59 回）
+
+The Zhuzi royal healer is a calm adult Chinese caregiver with a warm round face,
+deep-brown eyes, silver-streaked black hair in a low bun, layered cream-and-teal robes,
+and one small wooden care box; careful, consent-focused, and reassuring, with no needles,
+sharp tools, mysterious pills, or intimidating medical equipment; child-friendly rounded
+animated-film proportions.
+
+- 首次与固定锚点：第 59 回第 4 页。
+- 悬丝固定为系在柔软腕带上的观察游戏，丝线不接触皮肤；不得表现扎针、强迫把脉、吞服药丸或即时痊愈。
+
+### 黄狮灯匠（第 60 回）
+
+Yellow Lion is a friendly adult lion craftsperson with soft golden-yellow fur, a fluffy
+amber mane, a cream muzzle, large warm brown eyes, an indigo work tunic, a saffron apron,
+and one small roll of colorful lantern paper; eager and creative but apologetic after his
+mistake, with no fangs, sharp claws, armor, weapon, or threatening pose; child-friendly
+rounded animated-film proportions.
+
+- 首次与固定锚点：第 60 回第 4 页。
+- 三件工具始终用于灯架搭建与安全检查，必须低持、固定或放在软垫工作台，不表现争抢或对战。
+
+### 九灵爷爷（第 60 回）
+
+Elder Nine-Spirit is a large gentle elderly lion guardian with soft ivory-gold fur, a
+rounded cream muzzle, kind teal eyes, nine small rounded cloud-like mane tufts arranged
+around one single head, layered sage-green robes, and one plain wooden bead bracelet;
+wise, warm, never frightening, with no extra heads, fangs, sharp claws, armor, weapon,
+or threatening pose; child-friendly rounded animated-film proportions.
+
+- 首次与固定锚点：第 60 回第 6 页。
+- “九灵”只以单头周围九团云形鬃毛表现，不出现九个头、多口、吞咬或怪物化身体。
+
+## 第 51–60 回视觉锚点速查
+
+| 回目 | 新增角色或跨书规则 | 锚点页 |
+| --- | --- | --- |
+| 第 51 回《天马园值班表》 | 无头环悟空、玉帝与天马 | 复用第 4 回锚点 |
+| 第 52 回《蟠桃园的请帖》 | 王母娘娘 | 第 5 页 |
+| 第 53 回《双叉岭认路》 | 伯钦、普通白色旅行马 | 第 3 页 |
+| 第 54 回《宝林寺接叶信》 | 乌鸡国太子 | 第 5 页 |
+| 第 55 回《花果山请师兄》 | 悟空、八戒与群猴 | 复用第 6、8 回及第 1 回群猴锚点 |
+| 第 56 回《通天河安全路》 | 陈家庄成年村民 | 当页统一古代冬装，无单独跨页角色 |
+| 第 57 回《荆棘岭开路》 | 树仙 | 复用第 48 回木仙庵风格 |
+| 第 58 回《七绝山清果巷》 | 红鳞山灵 | 第 2 页 |
+| 第 59 回《朱紫国温问诊》 | 朱紫国王、御医 | 第 1、4 页 |
+| 第 60 回《玉华州找工具》 | 黄狮灯匠、九灵爷爷 | 第 4、6 页 |
+
 ## 低龄改编原则（写进每次生成的正文 prompt）
 
 - 打斗一律改为“比试 / 智斗 / 追逐游戏 / 合作解决问题”，无兵刃相向。
@@ -804,6 +909,16 @@ never distant or intimidating; child-friendly rounded animated-film proportions.
 - 第 38 回老鼋只在浅沙洲旁轻轻侧壳；人物滑入脚踝深水，经卷内层保持干燥，不表现报复性翻覆或危险落水。
 - 第 39 回经纸只缺空白边角，正文清楚完整；重点是晾晒、修复、记录和继续保护，不归责个人。
 - 第 40 回圆满以翻译、分享、答疑和服务收尾；不使用武装凯旋、跪拜人群或把经卷当作私人奖品。
+- 第 51 回天马园只讲工作观察、值班图表和职责沟通；不表现贬低职业、驱赶天马或失控奔逃。
+- 第 52 回只出现蟠桃、果篮和无字图案请帖；不出现酒、仙丹、药瓶、醉态、偷吃药物或天宫围攻。
+- 第 53 回双叉岭改为迷路与认路；不出现猛兽伤人、吃人、死亡、坠崖或恐怖洞穴，伯钦只使用地图和护绳。
+- 第 54 回叶信、玉牌与记忆公开核对；不进入危险井底，不出现鬼魂、尸体、复活或恐怖梦境。
+- 第 55 回八戒直接说明事实、感受和请求；不使用辱骂、激将、暴怒或兄弟打斗推动悟空回归。
+- 第 56 回所有人物始终走受检桥梁，不踩冰、不凿冰、不落水；旧车印不能作为冰面安全证据。
+- 第 57 回只搬枯枝、整理落叶与稳固路面；不砍活树，不用锋利刀斧，不让角色被荆棘缠住或刺伤。
+- 第 58 回七绝山固定为果实分类与环境清理；红鳞山灵不怪物化，不出现吞人、腐烂特写、虫群或恶心恐怖画面。
+- 第 59 回问诊必须先征得同意，并由成年医者在场；不扎针、不强迫触碰、不吞神秘药丸、不宣称即时治愈。
+- 第 60 回工具借用通过线索、道歉、登记与检查解决；黄狮和九灵爷爷不多头怪物化，不争抢、不围攻、不对战。
 - “三更传艺”改写为祖师以三下轻敲提示悟空等大家休息后到安静书房请教，
   不渲染儿童独自夜行、翻墙或偷偷离家。
 - 学艺必须体现长期积累：祖师耐心讲解，悟空反复练习，明确经过许多年才学有所成；

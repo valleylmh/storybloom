@@ -1,0 +1,56 @@
+{
+  "id": "tong-tian-he-an-quan-lu",
+  "title": "通天河安全路",
+  "subtitle": "看起来结实，也要先认真确认",
+  "origin": "《西游记》第四十八回（低龄温和改编）",
+  "moral": {
+    "zh": "面对陌生的冰面、水路或捷径，不能只看表面；请熟悉环境的大人检查，并选择有保护的路线。",
+    "en": "On unfamiliar ice, water, or shortcuts, appearances are not enough. Ask knowledgeable adults to check and choose a protected route."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 56,
+  "episodeNumber": 56,
+  "pages": [
+    {
+      "zh": "冬天来到通天河，宽宽的河面结了一层亮晶晶的冰。",
+      "en": "Winter came to the River of Heaven, covering the wide surface with sparkling ice.",
+      "prompt": "Full Journey to the West team stands on a dry protected riverbank looking across a broad sparkling frozen river in gentle winter sunlight; wooden railings and village houses nearby, no one on ice, no text."
+    },
+    {
+      "zh": "八戒看见商队留下的车印，刚想抄近路，沙僧提醒：“旧车印不代表今天也安全。”",
+      "en": "Bajie saw old wagon tracks and wanted a shortcut, but Sha warned, “Old tracks do not prove the ice is safe today.”",
+      "prompt": "Bajie points from the dry bank toward faint old tracks on ice while Sha gently raises a stop hand; Tang Seng, Wukong and White Dragon Horse remain behind the railing, no text."
+    },
+    {
+      "zh": "陈家庄的大人带来测冰杆、长绳和不同颜色的圆牌，和师徒一起检查。",
+      "en": "Adults from Chen Village brought ice poles, safety ropes, and colored round markers to inspect the route with the travelers.",
+      "prompt": "Responsible village adults in warm ancient clothing demonstrate long rounded measuring poles and thick safety ropes from the protected bank; colored blank circle markers, no letters or text."
+    },
+    {
+      "zh": "靠近芦苇的冰层最薄，流水转弯处也会发出空空的声音，不能走。",
+      "en": "Ice near reeds was thinnest, and bends above moving water sounded hollow, so those areas were closed.",
+      "prompt": "Wukong and village adults identify thin ice near reeds from behind a rope barrier, placing red round markers on shore aligned with unsafe zones; no one steps on ice, no text."
+    },
+    {
+      "zh": "村民在上游架着一座有扶手的冬桥。虽然远一点，却经过每日检查。",
+      "en": "Upstream, villagers maintained a winter bridge with handrails. It was farther away, but inspected every day.",
+      "prompt": "A sturdy low wooden winter bridge with full railings crosses a narrow calm section upstream; village adults inspect planks while team approaches on dry path, no text."
+    },
+    {
+      "zh": "悟空把红牌放在危险处，八戒把绿牌排向安全桥，沙僧沿路检查护绳。",
+      "en": "Wukong marked unsafe areas red, Bajie pointed green markers toward the bridge, and Sha checked the handline.",
+      "prompt": "Team works from dry land: Wukong places red circle markers by closed riverbank, Bajie lays green circle markers along path, Sha checks bridge rope; no writing or text."
+    },
+    {
+      "zh": "大家牵着白龙马慢慢过桥，前后留出距离，没有人跑跳或挤在一起。",
+      "en": "Everyone crossed slowly with White Dragon Horse, leaving space between them. No one ran, jumped, or crowded.",
+      "prompt": "Full team crosses the sturdy railed wooden bridge in single file with generous spacing, White Dragon Horse walking calmly, village guide leading; safe winter scene, no text."
+    },
+    {
+      "zh": "到了对岸，八戒回头说：“真正的近路，是能让所有人平安到达的路。”",
+      "en": "On the far bank, Bajie looked back. “The best shortcut is the path that gets everyone there safely.”",
+      "prompt": "Team gathers on dry far bank beside green circle marker, looking back at safe bridge and sparkling closed ice route; warm winter sunset, no text."
+    }
+  ]
+}

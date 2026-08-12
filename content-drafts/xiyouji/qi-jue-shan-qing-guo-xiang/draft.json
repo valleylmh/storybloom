@@ -1,0 +1,56 @@
+{
+  "id": "qi-jue-shan-qing-guo-xiang",
+  "title": "七绝山清果巷",
+  "subtitle": "大麻烦，也能分成一小步一小步",
+  "origin": "《西游记》第六十七回（低龄温和改编）",
+  "moral": {
+    "zh": "面对又脏又大的难题，先分类、再分工、注意安全，一点点做就能让环境重新清爽。",
+    "en": "When a messy problem feels huge, sort it, share the work, stay safe, and improve the space one step at a time."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 58,
+  "episodeNumber": 58,
+  "pages": [
+    {
+      "zh": "七绝山盛产甜柿子，可熟果堆满窄巷，车马和村民都过不去。",
+      "en": "Seven Wonders Mountain grew sweet persimmons, but fallen ripe fruit clogged the narrow lane so carts and villagers could not pass.",
+      "prompt": "Full Journey to the West team arrives at a sunny ancient village lane gently piled with many ripe orange persimmons and leaves; carts wait safely, no rot horror or text."
+    },
+    {
+      "zh": "一位红鳞山灵守着果林，担心大家清路时会把树根和小动物的家一起弄坏。",
+      "en": "A red-scaled mountain spirit guarded the grove, worried that clearing the lane might harm roots and animal homes.",
+      "prompt": "Friendly Red-Scale Mountain Spirit, a large rounded adult with coral-red and gold soft scales, kind amber eyes, cream belly, teal gardener vest and woven leaf basket, stands protectively beside roots and rabbit homes; no fangs, claws or text."
+    },
+    {
+      "zh": "唐僧请村民和山灵先画出三块区域：能吃的、能做肥料的、需要清洗处理的。",
+      "en": "Tang Seng asked villagers and the spirit to mark three areas: edible fruit, compost fruit, and fruit needing cleaning.",
+      "prompt": "Tang Seng leads a cooperative sorting plan using three large colored mats with simple fruit, leaf and water-drop icons; villagers and friendly red-scaled spirit listen, no readable text."
+    },
+    {
+      "zh": "悟空把好果装篮，八戒用木耙归拢落叶，沙僧铺防滑草垫，白龙马运空筐。",
+      "en": "Wukong packed good fruit, Bajie raked leaves, Sha laid non-slip grass mats, and White Dragon Horse carried empty baskets.",
+      "prompt": "Full team sorts persimmons safely: Wukong fills baskets, Bajie uses rounded rake, Sha lays woven grass mats, White Dragon Horse carries empty side baskets; no text."
+    },
+    {
+      "zh": "山灵带小动物从树根旁捡出果核，埋进新苗圃，让来年还能长出小树。",
+      "en": "The spirit and small animals collected seeds near the roots and planted them in a nursery for future trees.",
+      "prompt": "Friendly red-scaled mountain spirit and small rabbits and birds place persimmon seeds into a neat nursery bed using tiny rounded scoops; warm regenerative scene, no text."
+    },
+    {
+      "zh": "村民把熟透的果子做成果泥和堆肥，不再把它们重新丢回路中央。",
+      "en": "Villagers made overripe fruit into puree and compost instead of throwing it back into the lane.",
+      "prompt": "Village adults use safe covered wooden presses and compost baskets to process ripe persimmons beside clean lane; no open waste, no flies, no text."
+    },
+    {
+      "zh": "大家从巷口一丈一丈向前清理，每完成一段，就挂上一枚绿色叶牌。",
+      "en": "They cleared the lane section by section, hanging a green leaf marker after each completed stretch.",
+      "prompt": "Team, villagers and mountain spirit progress down the lane in organized sections, hanging blank green leaf-shaped markers on posts; visibly cleaner path behind them, no text."
+    },
+    {
+      "zh": "果巷重新通畅，空气也清新了。山灵送来一篮甜柿子，感谢大家既清路又护林。",
+      "en": "The lane reopened and the air felt fresh. The spirit shared a basket of sweet persimmons, grateful that the team protected both road and grove.",
+      "prompt": "Clean sunny village lane, healthy persimmon grove and open passage; friendly red-scaled spirit offers a fruit basket to full team as villagers and animals celebrate gently, no text."
+    }
+  ]
+}

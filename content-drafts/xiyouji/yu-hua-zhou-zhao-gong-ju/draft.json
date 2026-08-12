@@ -1,0 +1,56 @@
+{
+  "id": "yu-hua-zhou-zhao-gong-ju",
+  "title": "玉华州找工具",
+  "subtitle": "借用之前先问，归还之前先检查",
+  "origin": "《西游记》第八十九至九十回（低龄温和改编）",
+  "moral": {
+    "zh": "工具再有趣也不能擅自拿走；借用要说明用途、约定时间，并在归还前认真检查。",
+    "en": "No tool should be taken without asking. Borrowing means explaining the purpose, agreeing on a time, and checking it before return."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 60,
+  "episodeNumber": 60,
+  "pages": [
+    {
+      "zh": "玉华州练习课后，悟空、八戒和沙僧把三件工具放进有编号图案的工具房。",
+      "en": "After practice in Yuhua, Wukong, Bajie, and Sha stored their three tools in a picture-coded tool room.",
+      "prompt": "Wukong, Bajie and Sha safely place red-gold staff, rounded farm rake and broad round-edged spade into separate wall racks marked only with circle, leaf and moon picture icons; no text."
+    },
+    {
+      "zh": "第二天，工具房空了，只剩一撮金黄色的软毛和几片做灯笼的彩纸。",
+      "en": "The next day the room was empty, leaving only a tuft of soft golden fur and pieces of lantern paper.",
+      "prompt": "Full team and three Yuhua princes inspect three empty racks, one soft golden fur tuft and colorful blank lantern paper on clean floor; calm clue-finding, no text."
+    },
+    {
+      "zh": "悟空没有马上追人，先请大家核对借用簿。可今天的三个图案格全是空的。",
+      "en": "Wukong did not rush after anyone. He checked the borrowing board, but all three picture spaces were empty.",
+      "prompt": "Wukong and princes examine a wooden borrowing board with three clearly empty picture-icon spaces, no letters; Bajie and Sha preserve the scene, no text."
+    },
+    {
+      "zh": "彩纸来自城外的黄狮灯坊。大家找到那里，看见黄狮正用三件工具搭一座大灯架。",
+      "en": "The paper came from Yellow Lion Lantern Workshop, where Yellow Lion was using the three tools to build a large lantern frame.",
+      "prompt": "Friendly Yellow Lion craftsperson with soft golden fur, fluffy amber mane, cream muzzle, large brown eyes, indigo work tunic and saffron apron uses the three tools safely to assemble a rounded lantern frame; no fangs, claws or text."
+    },
+    {
+      "zh": "黄狮说想给长辈九灵爷爷一个惊喜，怕开口借不到，才趁夜里拿走。",
+      "en": "Yellow Lion wanted to surprise Elder Nine-Spirit and feared the request would be refused, so he took the tools at night.",
+      "prompt": "Yellow Lion lowers his head and honestly explains beside unfinished lantern; tools rest safely on floor while Wukong, Bajie and Sha listen without threatening poses, no text."
+    },
+    {
+      "zh": "九灵爷爷来到灯坊：“惊喜不该让别人担心。先问一声，我们也许还能一起帮忙。”",
+      "en": "Elder Nine-Spirit arrived. “A surprise should not make others worry. Ask first, and perhaps we can help.”",
+      "prompt": "Elder Nine-Spirit, a large gentle lion elder with soft ivory-gold fur, nine small rounded cloud-like mane tufts, kind teal eyes, sage-green robe and wooden bead bracelet, speaks warmly; no extra heads, fangs or text."
+    },
+    {
+      "zh": "黄狮道歉后，大家重新登记借用时间，一起检查手柄、齿口和固定扣。",
+      "en": "After apologizing, Yellow Lion registered the borrowing time, and everyone checked handles, rounded teeth, and fasteners together.",
+      "prompt": "Yellow Lion, team and princes place sun-and-moon picture tokens on borrowing board and inspect each tool on padded benches; safe maintenance, no readable text."
+    },
+    {
+      "zh": "大灯架顺利亮起，三件工具也准时归位。黄狮学会：先征得同意，合作会让惊喜更圆满。",
+      "en": "The great lantern glowed, and all three tools returned on time. Yellow Lion learned that permission and teamwork make a surprise better.",
+      "prompt": "Beautiful rounded animal-shaped lantern frame glows safely with covered lights as Yellow Lion, Elder Nine-Spirit, full team and princes celebrate; three tools visibly returned to racks, no text."
+    }
+  ]
+}

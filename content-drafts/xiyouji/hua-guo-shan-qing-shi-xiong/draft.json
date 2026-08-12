@@ -1,0 +1,56 @@
+{
+  "id": "hua-guo-shan-qing-shi-xiong",
+  "title": "花果山请师兄",
+  "subtitle": "真心求助，不用故意说反话",
+  "origin": "《西游记》第三十至三十一回（低龄温和改编）",
+  "moral": {
+    "zh": "需要伙伴帮忙时，把事实、感受和请求说清楚，比激将、夸张或责怪更有力量。",
+    "en": "When we need help, clear facts, honest feelings, and a direct request are stronger than teasing, exaggeration, or blame."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-12",
+  "order": 55,
+  "episodeNumber": 55,
+  "pages": [
+    {
+      "zh": "宝象国遇到难题，八戒奉师父之托，回花果山请悟空帮忙。",
+      "en": "When Baoxiang Kingdom faced trouble, Bajie returned to the Mountain of Flowers and Fruit to ask Wukong for help.",
+      "prompt": "Zhu Bajie in dark teal tunic approaches sunny Water Curtain Cave where Wukong, wearing narrow golden headband and holding red-and-gold staff upright, shares peaches with friendly monkeys; peaceful reunion, no text."
+    },
+    {
+      "zh": "八戒怕悟空不答应，刚想说几句故意惹他生气的话，却看见猴群都安静下来。",
+      "en": "Afraid Wukong might refuse, Bajie almost tried to make him angry, but noticed the monkey troop had gone quiet.",
+      "prompt": "Bajie hesitates mid-sentence with an awkward expression while Wukong and smaller gray-brown monkeys listen quietly in the bright cave courtyard; no anger, no text."
+    },
+    {
+      "zh": "一只小猴问：“明明是来求助，为什么不直接说呢？”八戒的脸红了。",
+      "en": "A little monkey asked, “If you came for help, why not say it directly?” Bajie's cheeks turned pink.",
+      "prompt": "A small cream-faced monkey gently gestures with open paws toward Bajie, whose rosy cheeks deepen with embarrassment; Wukong listens kindly, no mocking or text."
+    },
+    {
+      "zh": "八戒重新开口：“师父很担心，公主也在等消息。我一个人想不出办法，想请你一起去。”",
+      "en": "Bajie began again. “Master is worried, and the princess awaits news. I cannot solve this alone. Will you come with me?”",
+      "prompt": "Bajie makes a sincere direct request with open empty hands; Wukong sits at equal level and listens closely, monkey troop supportive, no text."
+    },
+    {
+      "zh": "悟空没有立刻回答，而是问清地点、线索和大家已经试过的方法。",
+      "en": "Wukong did not answer at once. He asked about the place, the clues, and what the others had already tried.",
+      "prompt": "Wukong and Bajie arrange picture tokens of palace, flower, moon and road on a stone table to review facts; red-and-gold staff rests upright safely, no text."
+    },
+    {
+      "zh": "八戒一项项说明，还承认自己一路上很着急。悟空听完说：“这次你把话说清楚了。”",
+      "en": "Bajie explained each point and admitted he had been anxious. Wukong said, “This time you made the request clear.”",
+      "prompt": "Warm close conversation between Wukong and Bajie, both relaxed after honest communication; picture tokens neatly arranged, friendly monkeys bring travel bags, no text."
+    },
+    {
+      "zh": "猴群帮悟空收好果篮和水壶。悟空答应同行，也请八戒以后别再用气话当请帖。",
+      "en": "The monkeys packed fruit and water. Wukong agreed to go, asking Bajie not to use angry words as invitations again.",
+      "prompt": "Friendly monkeys pack a woven fruit basket and water flask while Wukong and Bajie seal their agreement with a cheerful palm-to-palm gesture; no text."
+    },
+    {
+      "zh": "两位师兄弟并肩踏上云路。八戒发现，真心说一句“请帮帮我”，一点也不丢脸。",
+      "en": "The two brothers set out side by side. Bajie learned that saying “Please help me” honestly was nothing to be ashamed of.",
+      "prompt": "Wukong rides a low golden cloud beside Bajie on a broad safe mountain path toward distant Baoxiang city, both smiling with restored teamwork; no text."
+    }
+  ]
+}
