@@ -498,33 +498,100 @@ describe("image-to-image provider routing", () => {
         }),
       },
     });
+    const sensitiveMessage =
+      "Bearer known-auth-secret 童童 private prompt https://example.test?a=token";
     const fetchMock = vi.fn().mockResolvedValue(
-      new Response(JSON.stringify({ error: { message: "CPA unavailable" } }), {
+      new Response(JSON.stringify({ error: { message: sensitiveMessage } }), {
         status: 503,
         headers: { "Content-Type": "application/json" },
       }),
     );
     vi.stubGlobal("fetch", fetchMock);
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
 
-    await expect(
-      generateIllustration("A child at the pool", 5, {
-        pageNumber: 1,
-        style: "fairytale",
-        castIds: ["child"],
-        familyCharacters: [
-          {
-            id: "child",
-            name: "童童",
-            relation: "孩子",
-            appearance: "童童",
-            referenceAssetPath: "user/child/canonical.png",
-          },
-        ],
-      }),
-    ).rejects.toThrow(/CPA unavailable/);
+    const rejected = generateIllustration("A child at the pool", 5, {
+      storyId: "story-safe",
+      pageNumber: 1,
+      style: "fairytale",
+      castIds: ["child"],
+      familyCharacters: [
+        {
+          id: "child",
+          name: "童童",
+          relation: "孩子",
+          appearance: "童童",
+          referenceAssetPath: "user/child/canonical.png",
+        },
+      ],
+    });
+
+    await expect(rejected).rejects.toMatchObject({
+      message: "All image providers failed.",
+      errorClass: "upstream_5xx",
+    });
+    expect(warn).toHaveBeenCalledWith({
+      operation: "illustration.provider_attempt",
+      story: "story-safe",
+      page: 1,
+      provider: "cpa",
+      model: "gemini-3.1-flash-image",
+      status: "failed",
+      duration: expect.any(Number),
+      errorClass: "upstream_5xx",
+    });
+    const serializedLogs = JSON.stringify(warn.mock.calls);
+    expect(serializedLogs).not.toContain("known-auth-secret");
+    expect(serializedLogs).not.toContain("童童 private prompt");
+    expect(serializedLogs).not.toContain("example.test");
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(String(fetchMock.mock.calls[0][0])).toBe(
       "https://relay.example/v1/chat/completions",
     );
+  });
+
+  it("stores only stable errors in failed provider attempts", async () => {
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = "cpa:1,agnes:1";
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    process.env.AGNES_API_KEY = "agnes-test";
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            error: { message: "Bearer private-key secret prompt for 童童" },
+          }),
+          { status: 503, headers: { "Content-Type": "application/json" } },
+        ),
+      )
+      .mockResolvedValueOnce(
+        new Response(JSON.stringify({ data: [{ b64_json: "c2FmZS1pbWFnZQ==" }] }), {
+          status: 200,
+          headers: { "Content-Type": "application/json" },
+        }),
+      );
+    vi.stubGlobal("fetch", fetchMock);
+    vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    vi.spyOn(console, "info").mockImplementation(() => undefined);
+
+    const result = await generateIllustration("private prompt for 童童", 5, {
+      storyId: "story-safe",
+      pageNumber: 1,
+      style: "fairytale",
+      characterReferenceId: "custom-upload",
+      customCharacterReferenceToken: "a".repeat(43),
+      preferredProvider: "cpa",
+    });
+
+    expect(result.provider).toBe("agnes");
+    expect(result.attempts[0]).toMatchObject({
+      provider: "cpa",
+      model: "gemini-3.1-flash-image",
+      status: "failed",
+      error: "插图生成失败，请稍后重试。",
+      errorClass: "upstream_5xx",
+    });
+    expect(JSON.stringify(result.attempts)).not.toContain("private-key");
+    expect(JSON.stringify(result.attempts)).not.toContain("童童");
   });
 });

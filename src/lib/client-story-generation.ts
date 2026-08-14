@@ -1,9 +1,42 @@
+import type { StoryPage } from "@/types";
+
 type StoryGenerationRequestInput = {
   payload: Record<string, unknown>;
   accessToken?: string;
   refreshAccessToken?: () => Promise<string | null>;
   fetcher?: typeof fetch;
 };
+
+type StoryGenerationTaskRequestInput = {
+  taskId: string;
+  fetcher?: typeof fetch;
+};
+
+type StoryOutlineConfirmationInput = {
+  taskId: string;
+  storyId: string;
+  pages: StoryPage[];
+  fetcher?: typeof fetch;
+};
+
+export function prepareStoryGenerationRequest(
+  formData: Record<string, unknown>,
+) {
+  const {
+    supabaseAccessToken,
+    growthRecordDraft,
+    ...payload
+  } = formData;
+
+  return {
+    payload,
+    accessToken:
+      typeof supabaseAccessToken === "string"
+        ? supabaseAccessToken
+        : undefined,
+    growthRecordDraft,
+  };
+}
 
 function hasSelectedFamilyCharacters(payload: Record<string, unknown>) {
   return (
@@ -44,4 +77,35 @@ export async function requestStoryGeneration({
 
   response = await send(refreshedToken);
   return response;
+}
+
+export function requestStoryGenerationTask({
+  taskId,
+  fetcher = fetch,
+}: StoryGenerationTaskRequestInput) {
+  return fetcher(`/api/generate?taskId=${encodeURIComponent(taskId)}`, {
+    method: "GET",
+    cache: "no-store",
+  });
+}
+
+export function confirmStoryOutline({
+  taskId,
+  storyId,
+  pages,
+  fetcher = fetch,
+}: StoryOutlineConfirmationInput) {
+  return fetcher("/api/generate", {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      taskId,
+      storyId,
+      pages: pages.map(({ page, zhText, enText }) => ({
+        page,
+        zhText,
+        enText,
+      })),
+    }),
+  });
 }

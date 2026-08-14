@@ -173,6 +173,67 @@ pnpm dev
 
 本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，普通生成预览朗读使用当前设备的系统语音；绘本馆朗读和带旁白视频会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key。普通 Token Plan 绘本馆朗读与视频旁白使用独立的 `DASHSCOPE_TOKEN_KEY`；显式启用声音复刻后使用标准 `DASHSCOPE_API_KEY`，也可通过 `BAILIAN_VOICE_CLONING_API_KEY` 单独覆盖。
 
+## Production Readiness v1
+
+Reliable Generation 的生产部署必须使用跨实例可访问的共享持久化。部署前在与目标环境相同的变量集合中运行：
+
+```bash
+npm run check:production
+```
+
+这个检查只读取本地环境变量，不联网、不调用模型或 Supabase，也不会输出任何 secret 的值；它只报告 **configuration readiness（配置就绪）**。JSON 中的 `configurationReady`（以及为兼容旧调用保留的 `ok`）不代表 `productionVerified`；脚本始终把后者报告为 `false`，直至部署者在目标平台完成并记录人工验收。生产环境必须配置一组且仅一组完整的共享存储凭据：`UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN`，或 `KV_REST_API_URL` + `KV_REST_API_TOKEN`。不完整、混用或同时填写两组都会被拒绝。Supabase 公钥可使用现有的 `NEXT_PUBLIC_SUPABASE_ANON_KEY`，也可使用 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`。
+
+Vercel 的多实例运行环境如果没有共享 Redis/KV，异步文本任务、刷新恢复和跨实例幂等都不可靠；生产检查应拒绝这种配置。仅依赖进程内存或实例本地文件不能作为生产持久化。部署到 Cloudflare 时，需要在 Cloudflare 侧自行绑定并验证共享存储（例如通过 Worker/平台变量提供上述完整配对）；仓库中的 `vercel.json` 只描述 Vercel Cron，在 Cloudflare 上不适用，定时任务需另行配置 Cloudflare Cron Trigger。
+
+部署完成后，再按下面的 smoke 清单逐项操作并记录结果；本节只定义验收动作，不会替你发起线上请求：
+
+- 在部署平台确认生产变量已保存，并再次运行 `npm run check:production`。
+- 匿名创建一本绘本，在文本生成进行中刷新页面，确认 task ID、真实状态和恢复入口仍在。
+- 完成 8 页大纲审阅与确认，确认确认前不显示插画预览，确认后逐页生成状态可见。
+- 制造或等待一页插画失败，确认只有用户点击该页的“重试”才会再次提交，其余页面不被重复提交。
+- 在另一实例或另一浏览器继续同一任务，确认文本任务、故事快照和插画状态来自共享存储。
+- 登录并检查家庭照片/声音流程：没有明确监护人同意时，不上传或自动同步本地资料。
+- 检查平台日志与告警，确认能定位任务失败、耗时和 provider 状态，且日志不含请求正文、凭据或儿童媒体。
+- 若启用邮件灵感，在目标平台按其方式配置并手动验证 Cron；Cloudflare 不使用 `vercel.json` 中的 Cron 声明。
+
+### Production Jobs & Assets（默认关闭）
+
+仓库正在为文本与插画任务建立带幂等键、worker lease、重试上限和过期 lease reclaim 的基础层，但生产入口默认关闭：
+
+```bash
+STORYBLOOM_PRODUCTION_JOBS_ENABLED=0
+```
+
+只有 worker/reclaim API、定时触发和共享临时图片字节存储都已部署并完成 smoke 后，才可改为 `1`。启用时 `npm run check:production` 还会要求：
+
+- 独立的服务端 `GENERATION_WORKER_SECRET` 与 `STORYBLOOM_ASSET_PRINCIPAL_SECRET`，均至少 32 个字符；不要彼此复用，也不要与 `CRON_SECRET`、Provider key 或 Supabase key 复用。后者只用于把登录用户 ID 或默认匿名 cookie `storybloom_asset_session` 派生为 opaque principal；cookie/用户标识原值不得写入 job、资产 metadata 或日志。
+- 唯一完整的 Upstash/KV 配对，用于队列、幂等键和 lease 状态。
+- `STORYBLOOM_TEMP_ASSET_BACKEND=supabase` 与一个已创建、保持私有的 `STORYBLOOM_TEMP_ASSET_BUCKET`（代码默认名为 `story-generation-assets`）。
+- Supabase URL、公开 key 与 service-role key 的既有生产基线。
+
+共享临时资产首次启用前，需要在目标 Supabase 项目手工执行：
+
+```text
+supabase/migrations/202608130001_temporary_story_generation_assets.sql
+```
+
+该迁移创建最大 16 MiB、只允许 JPEG/PNG/WebP 的私有 `story-generation-assets` bucket，且故意不创建浏览器可用的 Storage policy；读写与清理只能通过 service-role 和鉴权后的 `/api/story-assets/<assetId>` 应用路由完成。若自定义 `STORYBLOOM_TEMP_ASSET_BUCKET`，还需要在 Supabase 中建立同名、等效限制的私有 bucket；现有迁移只创建默认名称。
+
+在目标 Supabase 项目中，必须逐项记录下面的 bucket 验收结果；`npm run check:production` 只会把这些项目列为 `manualVerificationChecks`，不会替你执行：
+
+- 查询 bucket 配置，确认目标名称存在、`public=false`、`file_size_limit=16777216`，且 MIME allowlist 恰为 JPEG/PNG/WebP。
+- 使用 anon key 与已登录普通用户会话分别验证：不能直接 list/upload/download/update/delete `storage.objects`；“请求被拒绝”才是成功结果。
+- 使用仅在受控服务端持有的 service-role key 和一个无儿童信息的随机测试对象，验证 upload → download（字节一致）→ delete 全流程；测试后不得遗留对象，也不要把 key、signed URL 或对象正文写入日志。
+- 确认应用鉴权路由仍将不存在与无权限统一为 404，并验证其他匿名会话不能读取该测试资产。
+
+上述 probe 全部通过，只能证明 bucket 契约；仍需完成 worker/Cron、lease reclaim、失败重试、stale attempt fence 和过期/孤儿清理 smoke，才可把 `STORYBLOOM_PRODUCTION_JOBS_ENABLED` 从 `0` 改为 `1`。
+
+`GENERATION_WORKER_LEASE_MS`、`GENERATION_WORKER_CLAIM_LIMIT`、`GENERATION_RECLAIM_LIMIT`、`STORYBLOOM_TEMP_ASSET_TTL_SECONDS`、`STORYBLOOM_TEMP_ASSET_MAX_BYTES`、`STORYBLOOM_TEMP_ASSET_ORPHAN_GRACE_SECONDS` 和 `STORYBLOOM_TEMP_ASSET_SWEEP_LIMIT` 可按负载调整；它们不是提高可靠性的替代品。`local-file` 模式把图片字节写入实例文件系统，即使 Redis 保存 metadata，也仍不是 Vercel/Cloudflare 多实例生产后端；生产必须由 capabilities 同时确认私有共享 bytes 与 Redis metadata 已就绪。
+
+Vercel 需要在 `vercel.json` 中显式配置实际存在且鉴权的 worker/reclaim 路由；目前文件里只有每日灵感 Cron，不能宣称 generation reclaim 已启用。Cloudflare 不读取 `vercel.json`，需分别配置 Cron Trigger 或 Queue consumer、环境变量和 secrets；当前共享字节后端仍是 Supabase 私有 Storage，不应写成已经接入 Cloudflare R2。还需验证 OpenNext/Node runtime 的实际行为。两边都必须测试：两个 worker 不会同时 claim 同一 job、worker 被中断后 lease 能被 reclaim、旧 lease/旧插画 attempt 晚到会被忽略、达到重试上限进入明确失败，以及临时图片不能被其他匿名会话读取且过期/孤儿对象会被清理。
+
+这套任务队列和临时资产基础层不等于长期绘本归档。登录后的 `story-archive` 仍只在用户明确选择上传/同步时使用；登录本身不会上传本地故事、成长照片或声音。这里的 readiness 是配置判断，不会联网确认 bucket 存在、是否私有、迁移是否部署、Cron 是否触发或 worker 是否实际运行，因此在完成真实平台验收前不能宣称 Production Jobs & Assets 已生产验证。
+
 ## 绘本朗读音频
 
 新生成的绘本不会自动请求云端 TTS。普通生成预览中的中文、英文或双语朗读继续调用当前浏览器/操作系统提供的语音；绘本馆则只在用户点击后逐页请求音频，优先使用 Token Plan 百炼 TTS。翻页阅读会预取下一页音频，当前页播放时高亮对应语言文字，播放结束后自动翻页；切换到平铺查看会停止这次连续朗读。精选绘本的中文朗读继续使用仓库中已生成的静态 MP3。

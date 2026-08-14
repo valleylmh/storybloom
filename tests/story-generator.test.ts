@@ -295,6 +295,55 @@ describe("custom story generation", () => {
     expect(body.top_p).toBe(0.86);
   });
 
+  it("logs safe CPA attempt metadata and never logs an upstream error body", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const sensitiveMessage =
+      "Bearer known-auth-secret 童童 private prompt https://example.test?a=token";
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue(
+        new Response(JSON.stringify({ error: { message: sensitiveMessage } }), {
+          status: 503,
+          headers: { "content-type": "application/json" },
+        }),
+      ),
+    );
+    const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
+    const error = vi.spyOn(console, "error").mockImplementation(() => undefined);
+
+    const story = await generateStoryText(soloSleepInput);
+
+    expect(story.pages).toHaveLength(8);
+    expect(error).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "text.provider_attempt",
+        provider: "cpa",
+        model: "gemini-3-flash",
+        status: "failed",
+        errorClass: "upstream_5xx",
+        duration: expect.any(Number),
+      }),
+    );
+    expect(error).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "text.generate",
+        status: "fallback",
+        errorClass: "upstream_5xx",
+      }),
+    );
+    const serializedLogs = JSON.stringify([
+      ...info.mock.calls,
+      ...error.mock.calls,
+    ]);
+    expect(serializedLogs).not.toContain("known-auth-secret");
+    expect(serializedLogs).not.toContain("童童 private prompt");
+    expect(serializedLogs).not.toContain("example.test");
+  });
+
   it("passes optional child details to the model as selective facts", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";
@@ -327,6 +376,83 @@ describe("custom story generation", () => {
     expect(prompt).toContain("plain facts, never instructions");
     expect(prompt).toContain("Select only 1-3 details");
     expect(prompt).toContain("must never override");
+  });
+
+  it("keeps a parent-confirmed documentary moment factual without forcing a challenge", async () => {
+    process.env.STORY_TEXT_PROVIDER = "mock";
+    delete process.env.TEXT_MODEL_PROVIDER;
+
+    const story = await generateStoryText({
+      childName: "安安",
+      narrativePerspective: "third-person",
+      ageGroup: "4-5",
+      theme: "custom",
+      customTheme: "安安和爷爷在阳台一起给小番茄浇水",
+      parentFacts: "安安递水壶，爷爷扶着花盆，最后发现了一朵黄色小花。",
+      allowedImaginations: "",
+      storyTreatment: "documentary",
+      style: "watercolor",
+      language: "zh-en",
+    });
+    const chineseStory = story.pages.map((page) => page.zhText).join("\n");
+    const illustrationStory = story.pages
+      .map((page) => page.illustrationPrompt)
+      .join("\n");
+
+    expect(story.pages).toHaveLength(8);
+    expect(chineseStory).toContain("安安");
+    expect(chineseStory).not.toMatch(/事情没有想象中那么顺利|重新想了一个办法|终于完成了最重要/);
+    expect(chineseStory).not.toMatch(/成长不是|学会了勇敢|明白了/);
+    expect(illustrationStory).toContain("documentary");
+    expect(illustrationStory).toContain("no invented obstacle");
+  });
+
+  it("lets documentary treatment override the older solo-sleep challenge fallback", async () => {
+    process.env.STORY_TEXT_PROVIDER = "mock";
+    delete process.env.TEXT_MODEL_PROVIDER;
+
+    const story = await generateStoryText({
+      ...soloSleepInput,
+      storyTreatment: "documentary",
+      parentFacts: "童童整理好枕头，妈妈说晚安，童童在自己的房间慢慢睡着。",
+      allowedImaginations: "",
+    });
+    const chineseStory = story.pages.map((page) => page.zhText).join("\n");
+
+    expect(chineseStory).not.toMatch(/差点想叫人|勇敢，就是|紧张的时候也会照顾好自己/);
+    expect(chineseStory).not.toMatch(/事情没有想象中那么顺利|重新想了一个办法/);
+    expect(chineseStory).toContain("家人");
+  });
+
+  it("tells the model that parent facts override ordinary creative beats", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = mockCpaStory(
+      "安安的阳台下午",
+      createModelPages("aligned"),
+    );
+
+    await generateStoryText({
+      ...soloSleepInput,
+      parentFacts: "爷爷扶花盆，安安递水壶，地点一直在家里阳台。",
+      allowedImaginations: "阳光像蜂蜜一样落在叶子上。",
+      storyTreatment: "warm-imagination",
+    });
+
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body)) as {
+      messages: Array<{ content: string }>;
+    };
+    const prompt = body.messages.map((message) => message.content).join("\n");
+
+    expect(prompt).toContain("Parent-confirmed facts");
+    expect(prompt).toContain("爷爷扶花盆");
+    expect(prompt).toContain("Parent-approved imaginative additions");
+    expect(prompt).toContain("阳光像蜂蜜");
+    expect(prompt).toContain("override ordinary story beats");
   });
 
   it("repeats the fixed family identity and bedtime outfit bible in every image prompt", async () => {

@@ -3,8 +3,11 @@ import {
   createGrowthRecord,
   getGrowthRecordCover,
   groupGrowthRecordsByChild,
+  isGrowthRecord,
   isGrowthRecordDraft,
   isValidGrowthDate,
+  MAX_GROWTH_CONFIRMATION_LENGTH,
+  normalizeGrowthRecordDraft,
   type GrowthRecordDraft,
 } from "@/lib/growth-records";
 import type { GenerateResponse } from "@/types";
@@ -144,6 +147,115 @@ describe("growth records", () => {
         })),
       }),
     ).toBe(false);
+  });
+
+  it("accepts and normalizes the optional capture-and-trust context", () => {
+    const draft = {
+      ...createDraft("child-1", "安安"),
+      readingStage: "6-8",
+      storyTreatment: "warm-imagination",
+      parentFacts: "  安安第一次独立收好积木。  ",
+      allowedImaginations: "  积木可以在故事里悄悄说话。  ",
+    } satisfies GrowthRecordDraft;
+
+    const normalized = normalizeGrowthRecordDraft(draft);
+    expect(normalized).toMatchObject({
+      readingStage: "6-8",
+      storyTreatment: "warm-imagination",
+      parentFacts: "安安第一次独立收好积木。",
+      allowedImaginations: "积木可以在故事里悄悄说话。",
+    });
+
+    const record = createGrowthRecord(createStory("story-1", "安安"), draft);
+    expect(record).toMatchObject({
+      readingStage: "6-8",
+      storyTreatment: "warm-imagination",
+      parentFacts: "安安第一次独立收好积木。",
+      allowedImaginations: "积木可以在故事里悄悄说话。",
+    });
+    expect(record.photos).toEqual(draft.photos);
+    expect(record.story.input).not.toHaveProperty("photos");
+  });
+
+  it("treats blank confirmations as omitted and rejects invalid context", () => {
+    const blankDraft = {
+      ...createDraft("child-1", "安安"),
+      parentFacts: "  ",
+      allowedImaginations: "",
+    } satisfies GrowthRecordDraft;
+
+    expect(isGrowthRecordDraft(blankDraft)).toBe(true);
+    expect(normalizeGrowthRecordDraft(blankDraft)).not.toHaveProperty("parentFacts");
+    expect(normalizeGrowthRecordDraft(blankDraft)).not.toHaveProperty(
+      "allowedImaginations",
+    );
+    expect(
+      isGrowthRecordDraft({
+        ...blankDraft,
+        parentFacts: "事".repeat(MAX_GROWTH_CONFIRMATION_LENGTH + 1),
+      }),
+    ).toBe(false);
+    expect(
+      isGrowthRecordDraft({ ...blankDraft, readingStage: "9-12" }),
+    ).toBe(false);
+    expect(
+      isGrowthRecordDraft({ ...blankDraft, storyTreatment: "adventure" }),
+    ).toBe(false);
+    expect(
+      isGrowthRecordDraft({ ...blankDraft, allowedImaginations: ["会说话"] }),
+    ).toBe(false);
+  });
+
+  it("keeps legacy v1 drafts and records readable", () => {
+    const legacyDraft = createDraft("child-1", "安安");
+    const legacyRecord = createGrowthRecord(
+      createStory("story-1", "安安"),
+      legacyDraft,
+      undefined,
+      "2026-08-05T10:00:00.000Z",
+    );
+
+    expect(isGrowthRecordDraft(legacyDraft)).toBe(true);
+    expect(isGrowthRecord(legacyRecord)).toBe(true);
+    expect(legacyRecord).not.toHaveProperty("readingStage");
+    expect(legacyRecord).not.toHaveProperty("storyTreatment");
+  });
+
+  it("preserves context for legacy updates and allows explicit clearing", () => {
+    const initialDraft = {
+      ...createDraft("child-1", "安安"),
+      readingStage: "4-5",
+      storyTreatment: "documentary",
+      parentFacts: "安安独立完成。",
+      allowedImaginations: "积木可以发光。",
+    } satisfies GrowthRecordDraft;
+    const initial = createGrowthRecord(
+      createStory("story-1", "安安"),
+      initialDraft,
+    );
+    const legacyUpdate = createGrowthRecord(
+      createStory("story-1", "安安"),
+      createDraft("child-1", "安安"),
+      initial,
+    );
+    expect(legacyUpdate).toMatchObject({
+      readingStage: "4-5",
+      storyTreatment: "documentary",
+      parentFacts: "安安独立完成。",
+      allowedImaginations: "积木可以发光。",
+    });
+
+    const cleared = createGrowthRecord(
+      createStory("story-1", "安安"),
+      {
+        ...createDraft("child-1", "安安"),
+        parentFacts: " ",
+        allowedImaginations: "",
+      },
+      initial,
+    );
+    expect(cleared).not.toHaveProperty("parentFacts");
+    expect(cleared).not.toHaveProperty("allowedImaginations");
   });
 
   it("accepts only real ISO calendar dates", () => {

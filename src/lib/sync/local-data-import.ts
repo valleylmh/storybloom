@@ -784,6 +784,10 @@ export function createLocalDataImportEngine(
       note: record.note,
       idea: record.idea,
       photos,
+      readingStage: record.readingStage,
+      storyTreatment: record.storyTreatment,
+      parentFacts: record.parentFacts,
+      allowedImaginations: record.allowedImaginations,
     } satisfies GrowthRecordDraft;
   }
 

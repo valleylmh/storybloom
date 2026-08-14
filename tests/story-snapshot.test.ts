@@ -14,6 +14,9 @@ function createResult(): GenerateResponse {
       ageGroup: "4-5",
       theme: "custom",
       customTheme: "第一次自己收好积木",
+      parentFacts: "安安第一次独立收好积木，妈妈在旁边陪着。",
+      allowedImaginations: "积木可以轻轻说晚安。",
+      storyTreatment: "warm-imagination",
       otherDetails:
         "不要保存 Bearer known-auth-secret 或 data:image/png;base64,known-photo",
       style: "fairytale",
@@ -112,6 +115,9 @@ describe("persisted story snapshots", () => {
     expect(serialized).not.toContain("known-signed-token");
     expect(serialized).not.toContain("sourceReferenceAssetPath");
     expect(serialized).not.toContain("imageAttempts");
+    expect(snapshot.input.parentFacts).toContain("第一次独立收好积木");
+    expect(snapshot.input.allowedImaginations).toContain("轻轻说晚安");
+    expect(snapshot.input.storyTreatment).toBe("warm-imagination");
   });
 
   it("reconstructs a GenerateResponse without reviving temporary URLs", () => {
@@ -132,6 +138,9 @@ describe("persisted story snapshots", () => {
     expect(restored.pages[2].imageUrl).toBeUndefined();
     expect(restored.narrationAudio).toBeUndefined();
     expect(restored.input.customCharacterReferenceToken).toBeUndefined();
+    expect(restored.input.parentFacts).toContain("第一次独立收好积木");
+    expect(restored.input.allowedImaginations).toContain("轻轻说晚安");
+    expect(restored.input.storyTreatment).toBe("warm-imagination");
     expect("accessToken" in restored.input).toBe(false);
     expect("providerTaskId" in restored.pages[1]).toBe(false);
     expect(restored.input.familyCharacters?.[0]).toEqual({

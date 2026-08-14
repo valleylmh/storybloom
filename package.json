@@ -10,6 +10,7 @@
     "lint": "next lint",
     "test": "vitest run",
     "test:watch": "vitest",
+    "check:production": "tsx scripts/check-production-readiness.ts",
     "audio:generate-featured": "node --env-file=.env --import tsx scripts/generate-featured-audio.mjs",
     "library:generate": "tsx scripts/generate-library-book.ts",
     "wechat:library-picture": "node --import tsx scripts/wechat-publish-library-picture.mjs",

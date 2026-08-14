@@ -17,9 +17,11 @@ import {
 } from "@/lib/client-images";
 import {
   isValidGrowthDate,
+  MAX_GROWTH_CONFIRMATION_LENGTH,
   type GrowthRecordDraft,
   type GrowthRecordPhoto,
 } from "@/lib/growth-records";
+import type { AgeGroup, GrowthStoryTreatment } from "@/types";
 import { useAuth } from "@/hooks/useAuth";
 import { recordGuardianConsent } from "@/lib/auth/guardian-consent";
 import {
@@ -64,6 +66,7 @@ interface Props {
   locale: AppLocale;
   freeGenerationLimit: number;
   remainingFreeGenerations: number;
+  initialGrowthEnabled?: boolean;
   onSubmit: (data: Record<string, unknown>) => Promise<void> | void;
 }
 
@@ -84,6 +87,32 @@ type FamilyChoice = {
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
 const DAILY_IDEA_QUERY_KEY = "idea";
 const PENDING_IDENTITY_KEY = "storybloom:minimal-identity-draft";
+const GROWTH_PREFERENCES_KEY = "storybloom.growthStoryPreferences";
+
+type GrowthPreferences = {
+  readingStage: AgeGroup;
+  storyTreatment: GrowthStoryTreatment;
+};
+
+function getDefaultGrowthPreferences(): GrowthPreferences {
+  return {
+    readingStage: "4-5",
+    storyTreatment: "documentary",
+  };
+}
+
+function isGrowthPreferences(value: unknown): value is GrowthPreferences {
+  if (!value || typeof value !== "object") return false;
+  const preferences = value as Partial<GrowthPreferences>;
+  return (
+    (preferences.readingStage === "2-3" ||
+      preferences.readingStage === "4-5" ||
+      preferences.readingStage === "6-8") &&
+    (preferences.storyTreatment === "documentary" ||
+      preferences.storyTreatment === "warm-imagination" ||
+      preferences.storyTreatment === "fairytale")
+  );
+}
 
 async function cleanFamilyPhoto(file: File): Promise<Blob> {
   try {
@@ -138,6 +167,7 @@ const COPY = {
     ],
     title: "今天，想讲什么故事？",
     placeholder: "例如：小满第一次独自睡觉，月亮悄悄来陪她",
+    growthPlaceholder: "例如：周六，小满第一次自己骑车，爸爸在旁边陪着她",
     action: "生成绘本",
     generating: "正在种下故事…",
     hint: (remaining: number, limit: number) => `今日剩余 ${remaining} / ${limit} 本`,
@@ -195,6 +225,37 @@ const COPY = {
     growthDate: "发生时间",
     growthNote: "家长备注（选填）",
     growthNotePlaceholder: "例如：他收好以后特别骄傲",
+    growthReadingStage: "阅读阶段",
+    growthReadingOptions: {
+      "2-3": "2–3 岁 · 简短重复",
+      "4-5": "4–5 岁 · 清楚连贯",
+      "6-8": "6–8 岁 · 更丰富表达",
+    },
+    growthTreatment: "故事处理方式",
+    growthTreatments: {
+      documentary: {
+        label: "温暖纪实",
+        hint: "保留真实日常，不强加困难或寓意",
+      },
+      "warm-imagination": {
+        label: "温暖想象",
+        hint: "事实不变，只加入家长允许的轻柔想象",
+      },
+      fairytale: {
+        label: "童话延展",
+        hint: "从真实时刻展开冒险，结尾回到真实记忆",
+      },
+    },
+    growthFacts: "家长确认的事实",
+    growthFactsPlaceholder: "例如：周六和爸爸去公园；第一次自己骑车；妈妈在终点等候",
+    growthFactsHint: "人物关系、地点和结果会以这里为准。",
+    growthImaginations: "允许进行的想象（选填）",
+    growthImaginationsPlaceholder: "例如：树叶像在鼓掌，小鸟在旁边加油",
+    growthImaginationsHint: "留空时，纪实模式不会主动加入魔法事件或新角色。",
+    growthConfirmTitle: "生成前确认",
+    growthConfirmHint: "AI 只会使用文字事实和允许的想象；现场照片仍只保存在成长记录中。",
+    growthConfirmCheck: "我已确认故事想法和上述事实准确，并决定了允许的想象范围。",
+    growthConfirmRequired: "请先由家长确认真实事实和允许的想象范围。",
     growthPrivacy: "当前版本仅保存在本机，可随时查看、修改或删除。",
     growthLibrary: "查看成长书架",
     growthNameRequired: "保存成长记录前，请确认孩子的姓名。",
@@ -212,6 +273,7 @@ const COPY = {
     ],
     title: "What story shall we tell today?",
     placeholder: "Example: Emma sleeps alone for the first time, and the moon stays nearby",
+    growthPlaceholder: "Example: On Saturday, Emma rode her bike alone while Dad stayed nearby",
     action: "Create storybook",
     generating: "Growing your story…",
     hint: (remaining: number, limit: number) => `${remaining} / ${limit} books left today`,
@@ -269,6 +331,37 @@ const COPY = {
     growthDate: "Date",
     growthNote: "Parent note (optional)",
     growthNotePlaceholder: "Example: He was very proud after finishing it",
+    growthReadingStage: "Reading stage",
+    growthReadingOptions: {
+      "2-3": "Ages 2–3 · short and repetitive",
+      "4-5": "Ages 4–5 · clear and connected",
+      "6-8": "Ages 6–8 · richer language",
+    },
+    growthTreatment: "Story treatment",
+    growthTreatments: {
+      documentary: {
+        label: "Warm documentary",
+        hint: "Keep the real moment without forcing a problem or lesson",
+      },
+      "warm-imagination": {
+        label: "Warm imagination",
+        hint: "Preserve facts and add only parent-approved imagination",
+      },
+      fairytale: {
+        label: "Fairytale extension",
+        hint: "Grow an adventure from the moment, then return to the memory",
+      },
+    },
+    growthFacts: "Parent-confirmed facts",
+    growthFactsPlaceholder: "Example: Saturday at the park with Dad; first solo bike ride; Mom waited at the finish",
+    growthFactsHint: "People, place, and outcome will follow these facts.",
+    growthImaginations: "Allowed imagination (optional)",
+    growthImaginationsPlaceholder: "Example: leaves clap and a bird quietly cheers",
+    growthImaginationsHint: "Leave blank to avoid adding magical events or new characters in documentary mode.",
+    growthConfirmTitle: "Confirm before generating",
+    growthConfirmHint: "AI receives only the written facts and approved imagination. Moment photos stay in the record.",
+    growthConfirmCheck: "I confirm the story idea and facts are accurate, and I chose the allowed imagination boundary.",
+    growthConfirmRequired: "Ask a parent or guardian to confirm the facts and imagination boundary first.",
     growthPrivacy: "This version stays on this device and can be edited or deleted anytime.",
     growthLibrary: "Open growth shelf",
     growthNameRequired: "Confirm the child's name before saving a growth record.",
@@ -282,6 +375,7 @@ export default function MinimalStoryEntry({
   locale,
   freeGenerationLimit,
   remainingFreeGenerations,
+  initialGrowthEnabled = false,
   onSubmit,
 }: Props) {
   const text = COPY[locale];
@@ -296,6 +390,7 @@ export default function MinimalStoryEntry({
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileEnabled, setTurnstileEnabled] = useState(false);
   const turnstileContainerRef = useRef<HTMLDivElement | null>(null);
+  const growthDetailsRef = useRef<HTMLDetailsElement | null>(null);
   const widgetIdRef = useRef<string | null>(null);
   const [email, setEmail] = useState("");
   const [subscriptionStatus, setSubscriptionStatus] = useState<
@@ -304,9 +399,18 @@ export default function MinimalStoryEntry({
   const [familyChoices, setFamilyChoices] = useState<FamilyChoice[]>([]);
   const [familyUrls, setFamilyUrls] = useState<Record<string, string>>({});
   const [selectedFamilyIds, setSelectedFamilyIds] = useState<string[]>([]);
-  const [growthEnabled, setGrowthEnabled] = useState(false);
+  const [growthEnabled, setGrowthEnabled] = useState(initialGrowthEnabled);
   const [growthOccurredOn, setGrowthOccurredOn] = useState(getLocalDateValue);
   const [growthNote, setGrowthNote] = useState("");
+  const [growthReadingStage, setGrowthReadingStage] =
+    useState<AgeGroup>("4-5");
+  const [growthStoryTreatment, setGrowthStoryTreatment] =
+    useState<GrowthStoryTreatment>("documentary");
+  const [growthPreferencesLoaded, setGrowthPreferencesLoaded] = useState(false);
+  const [growthParentFacts, setGrowthParentFacts] = useState("");
+  const [growthAllowedImaginations, setGrowthAllowedImaginations] =
+    useState("");
+  const [growthFactsConfirmed, setGrowthFactsConfirmed] = useState(false);
   const [growthPhotos, setGrowthPhotos] = useState<GrowthRecordPhoto[]>([]);
   const [growthPhotoBusy, setGrowthPhotoBusy] = useState(false);
   const [growthError, setGrowthError] = useState("");
@@ -340,6 +444,41 @@ export default function MinimalStoryEntry({
   useEffect(() => {
     setPromptIndex(0);
   }, [locale]);
+
+  useEffect(() => {
+    if (initialGrowthEnabled && growthDetailsRef.current) {
+      growthDetailsRef.current.open = true;
+    }
+  }, [initialGrowthEnabled]);
+
+  useEffect(() => {
+    try {
+      const preferences = JSON.parse(
+        window.localStorage.getItem(GROWTH_PREFERENCES_KEY) || "null",
+      ) as unknown;
+      const nextPreferences = isGrowthPreferences(preferences)
+        ? preferences
+        : getDefaultGrowthPreferences();
+      setGrowthReadingStage(nextPreferences.readingStage);
+      setGrowthStoryTreatment(nextPreferences.storyTreatment);
+    } catch {
+      const defaults = getDefaultGrowthPreferences();
+      setGrowthReadingStage(defaults.readingStage);
+      setGrowthStoryTreatment(defaults.storyTreatment);
+    }
+    setGrowthPreferencesLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (!growthPreferencesLoaded) return;
+    window.localStorage.setItem(
+      GROWTH_PREFERENCES_KEY,
+      JSON.stringify({
+        readingStage: growthReadingStage,
+        storyTreatment: growthStoryTreatment,
+      } satisfies GrowthPreferences),
+    );
+  }, [growthPreferencesLoaded, growthReadingStage, growthStoryTreatment]);
 
   useEffect(() => {
     const sharedIdea = new URL(window.location.href).searchParams
@@ -627,6 +766,9 @@ export default function MinimalStoryEntry({
     if (!isValidGrowthDate(growthOccurredOn)) {
       throw new Error(text.growthDateRequired);
     }
+    if (!growthFactsConfirmed) {
+      throw new Error(text.growthConfirmRequired);
+    }
 
     const imagePath = protagonist
       ? getFamilyChoicePhotoPath(protagonist)
@@ -643,7 +785,21 @@ export default function MinimalStoryEntry({
       note: growthNote.trim(),
       idea: storyIdea,
       photos: growthPhotos,
+      readingStage: growthReadingStage,
+      storyTreatment: growthStoryTreatment,
+      parentFacts: growthParentFacts.trim() || undefined,
+      allowedImaginations: growthAllowedImaginations.trim() || undefined,
     };
+  }
+
+  function resetGrowthDraft() {
+    setGrowthOccurredOn(getLocalDateValue());
+    setGrowthNote("");
+    setGrowthPhotos([]);
+    setGrowthParentFacts("");
+    setGrowthAllowedImaginations("");
+    setGrowthFactsConfirmed(false);
+    setGrowthError("");
   }
 
   async function submitStory(
@@ -679,18 +835,27 @@ export default function MinimalStoryEntry({
     try {
       await onSubmit({
         childName: childName.trim() || (locale === "zh" ? "我" : "I"),
-        narrativePerspective: "first-person",
+        narrativePerspective: growthEnabled ? "third-person" : "first-person",
         protagonistFamilyCharacterId: protagonistId || undefined,
-        ageGroup: "4-5",
+        ageGroup: growthEnabled ? growthReadingStage : "4-5",
         theme: "custom",
         customTheme: storyIdea,
-        style: "fairytale",
+        style:
+          growthEnabled && growthStoryTreatment !== "fairytale"
+            ? "watercolor"
+            : "fairytale",
+        parentFacts: growthEnabled ? growthParentFacts.trim() || undefined : undefined,
+        allowedImaginations: growthEnabled
+          ? growthAllowedImaginations.trim() || undefined
+          : undefined,
+        storyTreatment: growthEnabled ? growthStoryTreatment : undefined,
         language: locale === "zh" ? "zh-en" : "en-zh",
         familyCharacterIds: nextFamilyIds.length > 0 ? nextFamilyIds : undefined,
         supabaseAccessToken: familyAccessToken || undefined,
         turnstileToken: turnstileEnabled ? turnstileToken : undefined,
         growthRecordDraft,
       });
+      if (growthRecordDraft) resetGrowthDraft();
       setIdentityOpen(false);
       setIdentityPhase("confirm");
       window.localStorage.removeItem(PENDING_IDENTITY_KEY);
@@ -737,6 +902,15 @@ export default function MinimalStoryEntry({
     }
     if (turnstileEnabled && !turnstileToken) {
       setMessage(text.verify);
+      return;
+    }
+    if (growthEnabled && !growthFactsConfirmed) {
+      setGrowthError(text.growthConfirmRequired);
+      setMessage(text.growthConfirmRequired);
+      growthDetailsRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
       return;
     }
     if (remainingFreeGenerations <= 0) return;
@@ -943,8 +1117,11 @@ export default function MinimalStoryEntry({
         <span className="story-search-icon" aria-hidden="true">⌁</span>
         <input
           value={idea}
-          onChange={(event) => setIdea(event.target.value)}
-          placeholder={text.placeholder}
+          onChange={(event) => {
+            setIdea(event.target.value);
+            if (growthEnabled) setGrowthFactsConfirmed(false);
+          }}
+          placeholder={growthEnabled ? text.growthPlaceholder : text.placeholder}
           maxLength={100}
           aria-label={text.title}
           autoFocus
@@ -964,6 +1141,17 @@ export default function MinimalStoryEntry({
           </span>
         </button>
       </form>
+
+      {growthEnabled ? (
+        <p className="minimal-capture-trust-note">
+          {locale === "zh"
+            ? "默认保存在当前设备 · 照片不会发送给故事模型 · 云端导入需你主动选择"
+            : "Saved on this device by default · Photos are not sent to the story model · Cloud import is your choice"}
+          <Link href="/child-family-data">
+            {locale === "zh" ? "了解数据边界" : "Data details"}
+          </Link>
+        </p>
+      ) : null}
 
       {message ? <p className="minimal-entry-message" role="alert">{message}</p> : null}
 
@@ -1021,7 +1209,11 @@ export default function MinimalStoryEntry({
 
         <span className="minimal-tools-separator" aria-hidden="true" />
 
-        <details className="minimal-tool minimal-growth-tool" name="minimal-tools">
+        <details
+          ref={growthDetailsRef}
+          className="minimal-tool minimal-growth-tool"
+          name="minimal-tools"
+        >
           <summary>
             {text.growthTool}
             {growthEnabled ? <em>✓</em> : null}
@@ -1136,6 +1328,108 @@ export default function MinimalStoryEntry({
                   </label>
                 </div>
 
+                <div className="minimal-growth-story-settings">
+                  <label>
+                    <span>{text.growthReadingStage}</span>
+                    <select
+                      value={growthReadingStage}
+                      onChange={(event) => {
+                        setGrowthReadingStage(event.target.value as AgeGroup);
+                        setGrowthFactsConfirmed(false);
+                      }}
+                    >
+                      {(["2-3", "4-5", "6-8"] as AgeGroup[]).map((stage) => (
+                        <option value={stage} key={stage}>
+                          {text.growthReadingOptions[stage]}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <fieldset>
+                    <legend>{text.growthTreatment}</legend>
+                    <div className="minimal-growth-treatment-options">
+                      {(
+                        [
+                          "documentary",
+                          "warm-imagination",
+                          "fairytale",
+                        ] as GrowthStoryTreatment[]
+                      ).map((treatment) => (
+                        <label
+                          className={
+                            growthStoryTreatment === treatment ? "selected" : ""
+                          }
+                          key={treatment}
+                        >
+                          <input
+                            type="radio"
+                            name="growth-story-treatment"
+                            value={treatment}
+                            checked={growthStoryTreatment === treatment}
+                            onChange={() => {
+                              setGrowthStoryTreatment(treatment);
+                              setGrowthFactsConfirmed(false);
+                            }}
+                          />
+                          <strong>{text.growthTreatments[treatment].label}</strong>
+                          <small>{text.growthTreatments[treatment].hint}</small>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+                </div>
+
+                <section
+                  className="minimal-growth-confirmation"
+                  aria-labelledby="growth-confirmation-title"
+                >
+                  <div className="minimal-growth-confirmation-heading">
+                    <strong id="growth-confirmation-title">
+                      {text.growthConfirmTitle}
+                    </strong>
+                    <span>{text.growthConfirmHint}</span>
+                  </div>
+                  <label>
+                    <span>{text.growthFacts}</span>
+                    <textarea
+                      value={growthParentFacts}
+                      onChange={(event) => {
+                        setGrowthParentFacts(event.target.value);
+                        setGrowthFactsConfirmed(false);
+                      }}
+                      maxLength={MAX_GROWTH_CONFIRMATION_LENGTH}
+                      placeholder={text.growthFactsPlaceholder}
+                    />
+                    <small>{text.growthFactsHint}</small>
+                  </label>
+                  <label>
+                    <span>{text.growthImaginations}</span>
+                    <textarea
+                      value={growthAllowedImaginations}
+                      onChange={(event) =>
+                        {
+                          setGrowthAllowedImaginations(event.target.value);
+                          setGrowthFactsConfirmed(false);
+                        }
+                      }
+                      maxLength={MAX_GROWTH_CONFIRMATION_LENGTH}
+                      placeholder={text.growthImaginationsPlaceholder}
+                    />
+                    <small>{text.growthImaginationsHint}</small>
+                  </label>
+                  <label className="minimal-growth-confirm-check">
+                    <input
+                      type="checkbox"
+                      checked={growthFactsConfirmed}
+                      onChange={(event) => {
+                        setGrowthFactsConfirmed(event.target.checked);
+                        setGrowthError("");
+                      }}
+                    />
+                    <span>{text.growthConfirmCheck}</span>
+                  </label>
+                </section>
+
                 {growthError ? (
                   <p className="minimal-growth-error" role="alert">{growthError}</p>
                 ) : null}
@@ -1147,6 +1441,30 @@ export default function MinimalStoryEntry({
             ) : null}
           </div>
         </details>
+
+        {growthEnabled ? (
+          <button
+            type="button"
+            className="minimal-imagination-switch"
+            onClick={() => {
+              setGrowthEnabled(false);
+              setGrowthError("");
+            }}
+          >
+            {locale === "zh" ? "只创作想象故事" : "Create an imaginary story instead"}
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="minimal-imagination-switch"
+            onClick={() => {
+              setGrowthEnabled(true);
+              setGrowthError("");
+            }}
+          >
+            {locale === "zh" ? "切换到成长记录" : "Switch to a growth record"}
+          </button>
+        )}
 
         <span className="minimal-tools-separator" aria-hidden="true" />
         <p className="minimal-free-note">

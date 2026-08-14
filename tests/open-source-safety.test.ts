@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { isAllowedShareImageUrl } from "@/lib/share-store";
+import {
+  isAllowedShareImageUrl,
+  isTemporaryShareAssetUrl,
+} from "@/lib/share-store";
 import { allowIpRequest } from "@/lib/request-rate-limit";
 
 describe("open-source safety boundaries", () => {
@@ -30,5 +33,12 @@ describe("open-source safety boundaries", () => {
     expect(await allowIpRequest(request("198.51.100.10"), options)).toBe(true);
     expect(await allowIpRequest(request("198.51.100.10"), options)).toBe(false);
     expect(await allowIpRequest(request("198.51.100.11"), options)).toBe(true);
+  });
+
+  it("keeps private temporary asset URLs out of the public allowlist", () => {
+    const temporaryUrl = `/api/story-assets/${"A".repeat(32)}`;
+    expect(isTemporaryShareAssetUrl(temporaryUrl)).toBe(true);
+    expect(isAllowedShareImageUrl(temporaryUrl)).toBe(false);
+    expect(isTemporaryShareAssetUrl("/api/story-assets/short")).toBe(false);
   });
 });

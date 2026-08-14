@@ -16,6 +16,12 @@ export default function Footer() {
         <Link href="/custom" className="footer-link">
           绘本定制
         </Link>
+        <Link href="/privacy" className="footer-link">
+          隐私与数据
+        </Link>
+        <Link href="/child-family-data" className="footer-link">
+          儿童与家庭数据
+        </Link>
       </div>
     </footer>
   );

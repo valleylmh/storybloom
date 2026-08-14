@@ -4,26 +4,52 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import BookPreview from "@/components/book/BookPreview";
 import MinimalStoryEntry from "@/components/book/MinimalStoryEntry";
+import StoryOutlineReview from "@/components/book/StoryOutlineReview";
 import StoryForm from "@/components/book/StoryForm";
+import {
+  shouldMountBookPreview,
+  type ReliableGenerationStage,
+} from "@/components/book/story-outline-controller";
 import AccountEntryButton from "@/components/auth/AccountEntryButton";
 import LocalStoryLibrary from "@/components/account/LocalStoryLibrary";
 import type { StoryHistoryRecord } from "@/lib/client-history";
 import {
   isGrowthRecordDraft,
+  type GrowthRecordDraft,
 } from "@/lib/growth-records";
 import { createGrowthRecordInput } from "@/lib/repositories/growth-repository";
 import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import { SAMPLE_BOOKS } from "@/lib/sample-books";
-import { requestStoryGeneration } from "@/lib/client-story-generation";
+import {
+  clearActiveGenerationTask,
+  getGenerationTaskIdFromSearch,
+  readActiveGenerationTask,
+  resolveGenerationTaskRecovery,
+  writeActiveGenerationTask,
+  TASK_QUERY_KEY,
+  type GenerationTaskRecoveryCandidate,
+} from "@/lib/client-generation-task";
+import {
+  confirmStoryOutline,
+  prepareStoryGenerationRequest,
+  requestStoryGeneration,
+  requestStoryGenerationTask,
+} from "@/lib/client-story-generation";
+import { summarizeIllustrationProgress } from "@/lib/illustration-request-policy";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
-import type { GenerateErrorResponse, GenerateResponse } from "@/types";
+import type { ClientTextGenerationTaskResponse } from "@/lib/text-generation-task";
+import type {
+  GenerateErrorResponse,
+  GenerateResponse,
+  StoryPage,
+} from "@/types";
 
 type AppLocale = "zh" | "en";
-type AppStep = "form" | "generating" | "preview";
+type AppStep = "form" | ReliableGenerationStage;
 type SampleReturnMode = "generating" | "preview";
-type EntryMode = "minimal" | "full";
+type EntryMode = "capture" | "minimal" | "full";
 
 const LOCALE_STORAGE_KEY = "storybloom.locale";
 const LOCALE_COOKIE_NAME = "storybloom_locale";
@@ -42,51 +68,50 @@ const FREE_GENERATION_DAILY_LIMIT = (() => {
 
 const COPY = {
   zh: {
-    brandSub: "AI 儿童绘本生成器",
-    meta: "完整 HTML 预览 · 图片分享 · 朗读",
+    brandSub: "家庭成长记忆绘本",
+    meta: "默认本机保存 · 主动开启云端 · 随时导出删除",
     badge: (limit: number) => `今日可免费生成 ${limit} 次`,
-    eyebrow: "Personalized storybook in 30 seconds",
-    headlinePrefix: "30 秒，把孩子的名字",
-    headlineEmphasis: "写进一本专属故事书",
-    lead: "直接生成完整 8 页 HTML 绘本，适合预览、朗读和分享。",
+    eyebrow: "KEEP THE LITTLE MOMENTS",
+    headlinePrefix: "把今天发生的一件小事，",
+    headlineEmphasis: "留成以后还能翻开的绘本",
+    lead: "写下一句话，记录一个真实时刻，也可以从纯想象开始创作。",
     description:
-      "选择年龄、主题和插画风格，系统会产出完整故事与插图；缺图时会提示重试，重点放在 HTML 预览、朗读和图片分享。",
-    timing: "生成约需 1-3 分钟；故事会先展示，插图会逐张完成并自动替换。",
+      "成长模式由家长确认事实和允许的想象；普通创作继续提供完整年龄、主题与风格设置。故事和记录默认留在当前设备。",
+    timing: "故事生成后会先展示，8 页插图随后逐页完成；通常需要 1–3 分钟。",
     points: [
       (limit: number) => `每天 ${limit} 次免费生成机会`,
-      () => "直接展示完整 8 页内容",
-      () => "中文、英文、中英三种朗读",
-      () => "生成分享长图 PNG",
+      () => "真实事实由家长确认",
+      () => "成长照片不会进入故事生成请求",
+      () => "本机与私有云端分开管理",
     ],
     metrics: [
       { value: (limit: number) => `${limit} 次`, label: "今日免费生成机会" },
       { value: () => "PNG", label: "可生成分享长图" },
       { value: () => "Audio", label: "本机语音朗读" },
     ],
-    generatingTitle: "正在生成故事与插画",
-    generatingKeepOpen: "请保持页面打开。",
-    generatingSavedHint: "故事生成后会自动保存到本机，稍后回来也能继续看。",
-    elapsed: "已等待",
-    progressLabel: "生成进度",
+    submittingTitle: "正在创建可恢复的生成任务",
+    textGeneratingTitle: "正在生成 8 页故事文本",
+    taskSubmittingDetail: "正在提交已确认的故事信息。",
+    taskGeneratingDetail: "服务端正在写完整故事；当前界面只显示真实任务状态。",
+    taskRecoveryHint: "任务标识已保存在此浏览器；刷新后会重新向服务端确认能否恢复。",
+    taskStatusLabel: "当前状态",
+    taskIdLabel: "任务标识",
+    taskStatusSubmitting: "正在提交",
+    taskStatusWriting: "文本生成中",
+    taskNextLabel: "下一步",
+    taskNextReview: "家长逐页审阅并确认大纲",
+    taskNextImages: "开始逐页生成插画",
+    unavailableTitle: "这个生成任务无法继续恢复",
+    unavailableHint: "服务端任务可能已过期、中断或不在当前实例中。你可以返回重新生成；本机已有作品不会被删除。",
+    failedTitle: "故事文本生成失败",
+    failedHint: "任务已明确返回失败，没有开始自动重试。你可以检查故事信息后重新生成。",
+    unavailableAction: "返回重新生成",
     localLimitError: (limit: number) => `今日 ${limit} 次免费生成机会已用完，请明天再试。`,
     failedPages: (pages: string) => `失败页码：${pages}。`,
     genericFailure: "生成失败，请稍后再试。",
     localeLabel: "语言",
     zh: "中文",
     en: "English",
-    steps: [
-      { label: "故事构思", detail: "整理角色、年龄和主题" },
-      { label: "文本生成", detail: "生成完整 8 页绘本文案" },
-      { label: "画面提示", detail: "统一角色和每页构图" },
-      { label: "插图生成", detail: "调用多平台图片模型逐页绘制" },
-      { label: "作品装订", detail: "准备 HTML 预览和分享素材" },
-    ],
-    waitingTips: [
-      "插图会逐页返回；512 尺寸会更快完成当前同步等待。",
-      "插图生成阶段耗时最长，页面没有刷新时请求仍在继续。",
-      "生成完成后可以直接预览、朗读，也可以导出分享长图。",
-      "如果某一页插图失败，系统会返回具体失败页码，便于重试定位。",
-    ],
     sampleShelfTitle: "先读一本精选绘本",
     sampleShelfHint: "你的专属绘本正在生成，可以先看看这些完整示例。",
     sampleOpen: "开始阅读",
@@ -103,51 +128,50 @@ const COPY = {
     historyFailed: "有页面需重试",
   },
   en: {
-    brandSub: "AI storybook generator for children",
-    meta: "HTML preview · Share image · Narration",
+    brandSub: "Family memory storybooks",
+    meta: "Device first · Cloud by choice · Export or delete anytime",
     badge: (limit: number) => `${limit} free generations today`,
-    eyebrow: "Personalized storybook in 30 seconds",
-    headlinePrefix: "Turn a child's name",
-    headlineEmphasis: "into a personal storybook",
-    lead: "Generate a complete 8-page HTML storybook for preview, narration, and sharing.",
+    eyebrow: "KEEP THE LITTLE MOMENTS",
+    headlinePrefix: "Turn one little moment from today",
+    headlineEmphasis: "into a storybook your family can reopen",
+    lead: "Write one sentence to preserve a real moment, or begin with pure imagination.",
     description:
-      "Choose an age range, theme, and illustration style. StoryBloom creates the story and illustrations, with retry hints when an image fails.",
-    timing: "Generation usually takes 1-3 minutes. The story appears first, then images are replaced page by page.",
+      "Parents confirm facts and allowed imagination for growth stories. The full creator remains available for age, theme, and style control. Records stay on this device by default.",
+    timing: "The story appears first, followed by 8 page illustrations. Generation usually takes 1–3 minutes.",
     points: [
       (limit: number) => `${limit} free generations per day`,
-      () => "Complete 8-page story preview",
-      () => "Chinese, English, and bilingual narration",
-      () => "Shareable long PNG image",
+      () => "Facts are confirmed by a parent",
+      () => "Moment photos are not sent with story generation",
+      () => "Device and private-cloud copies stay separate",
     ],
     metrics: [
       { value: (limit: number) => `${limit}`, label: "free generations today" },
       { value: () => "PNG", label: "share image export" },
       { value: () => "Audio", label: "Browser speech narration" },
     ],
-    generatingTitle: "Generating story and illustrations",
-    generatingKeepOpen: "Please keep this page open.",
-    generatingSavedHint: "Once the story is ready, it will be saved locally so you can come back later.",
-    elapsed: "Elapsed",
-    progressLabel: "Generation progress",
+    submittingTitle: "Creating a recoverable generation task",
+    textGeneratingTitle: "Writing the complete 8-page story",
+    taskSubmittingDetail: "Submitting the story details you confirmed.",
+    taskGeneratingDetail: "The server is writing the story. This screen shows only the real task state.",
+    taskRecoveryHint: "The task identifier is saved in this browser. After refresh, StoryBloom asks the server whether it can still be recovered.",
+    taskStatusLabel: "Current status",
+    taskIdLabel: "Task ID",
+    taskStatusSubmitting: "Submitting",
+    taskStatusWriting: "Writing story text",
+    taskNextLabel: "Next",
+    taskNextReview: "Parent review of all eight pages",
+    taskNextImages: "Generate illustrations page by page",
+    unavailableTitle: "This generation task cannot be recovered",
+    unavailableHint: "The server task may have expired, stopped, or be unavailable on this instance. You can start again; books already saved on this device are not deleted.",
+    failedTitle: "Story text generation failed",
+    failedHint: "The task returned a failure and was not retried automatically. Review the story details and start again when ready.",
+    unavailableAction: "Back to create again",
     localLimitError: (limit: number) => `You have used all ${limit} free generations today. Please try again tomorrow.`,
     failedPages: (pages: string) => `Failed pages: ${pages}.`,
     genericFailure: "Generation failed. Please try again later.",
     localeLabel: "Language",
     zh: "中文",
     en: "English",
-    steps: [
-      { label: "Story idea", detail: "Organizing character, age, and theme" },
-      { label: "Writing", detail: "Writing the complete 8-page story" },
-      { label: "Scene prompts", detail: "Aligning character and page composition" },
-      { label: "Illustrations", detail: "Generating each page across image providers" },
-      { label: "Packaging", detail: "Preparing preview and share assets" },
-    ],
-    waitingTips: [
-      "Illustrations return page by page; 512px helps synchronous generation finish faster.",
-      "Image generation is the longest step. If the page is not refreshed, the request is still running.",
-      "After generation, you can preview, narrate, or export a share image.",
-      "If an illustration fails, StoryBloom returns the exact page number for retry.",
-    ],
     sampleShelfTitle: "Read a featured book first",
     sampleShelfHint: "Your personal book is being generated. These complete samples are ready now.",
     sampleOpen: "Read now",
@@ -249,6 +273,13 @@ function fallbackHash(value: string) {
   return `fallback-${Math.abs(hash)}`;
 }
 
+function createClientGenerationTaskId() {
+  const randomPart =
+    window.crypto?.randomUUID?.().replaceAll("-", "") ||
+    `${Date.now()}${Math.random().toString(36).slice(2)}`;
+  return `task_${randomPart}`;
+}
+
 function getOrCreateBrowserId() {
   try {
     const existing = window.localStorage.getItem(BROWSER_ID_STORAGE_KEY);
@@ -292,45 +323,18 @@ async function getBrowserFingerprint() {
     .join("");
 }
 
-function getGenerationStepIndex(elapsedSeconds: number, progress: number) {
-  if (progress >= 96) {
-    return 4;
-  }
-
-  if (elapsedSeconds < 8) {
-    return 0;
-  }
-
-  if (elapsedSeconds < 22) {
-    return 1;
-  }
-
-  if (elapsedSeconds < 42) {
-    return 2;
-  }
-
-  return 3;
-}
-
-function formatElapsedTime(seconds: number) {
-  const minutes = Math.floor(seconds / 60);
-  const remainder = String(seconds % 60).padStart(2, "0");
-  return `${minutes}:${remainder}`;
-}
-
 function readEntryModeFromUrl(): EntryMode | null {
   const mode = new URL(window.location.href).searchParams.get(ENTRY_MODE_QUERY_KEY);
-  return mode === "minimal" || mode === "full" ? mode : null;
+  return mode === "capture" || mode === "minimal" || mode === "full"
+    ? mode
+    : null;
 }
 
 function getEntryModeUrl(mode: EntryMode) {
   const url = new URL(window.location.href);
 
-  if (mode === "minimal") {
-    url.searchParams.set(ENTRY_MODE_QUERY_KEY, "minimal");
-  } else {
-    url.searchParams.delete(ENTRY_MODE_QUERY_KEY);
-  }
+  if (mode === "capture") url.searchParams.delete(ENTRY_MODE_QUERY_KEY);
+  else url.searchParams.set(ENTRY_MODE_QUERY_KEY, mode);
 
   return `${url.pathname}${url.search}${url.hash}`;
 }
@@ -361,10 +365,15 @@ function readViewFromUrl() {
   return new URL(window.location.href).searchParams.get(VIEW_QUERY_KEY);
 }
 
-function pushGeneratingUrl() {
+function readTaskIdFromUrl() {
+  return getGenerationTaskIdFromSearch(window.location.search);
+}
+
+function pushGeneratingUrl(taskId: string) {
   const url = new URL(window.location.href);
   url.searchParams.delete(STORY_QUERY_KEY);
   url.searchParams.set(VIEW_QUERY_KEY, GENERATING_VIEW);
+  url.searchParams.set(TASK_QUERY_KEY, taskId);
   const nextUrl = `${url.pathname}${url.search}${url.hash}`;
   const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
 
@@ -373,9 +382,11 @@ function pushGeneratingUrl() {
   }
 }
 
-function replaceStoryUrl(storyId: string) {
+function replaceStoryUrl(storyId: string, taskId?: string) {
   const url = new URL(window.location.href);
   url.searchParams.delete(VIEW_QUERY_KEY);
+  if (taskId) url.searchParams.set(TASK_QUERY_KEY, taskId);
+  else url.searchParams.delete(TASK_QUERY_KEY);
   url.searchParams.set(STORY_QUERY_KEY, storyId);
   window.history.replaceState(
     window.history.state,
@@ -388,6 +399,7 @@ function replaceFormUrl() {
   const url = new URL(window.location.href);
   url.searchParams.delete(VIEW_QUERY_KEY);
   url.searchParams.delete(STORY_QUERY_KEY);
+  url.searchParams.delete(TASK_QUERY_KEY);
   window.history.replaceState(
     window.history.state,
     "",
@@ -398,6 +410,7 @@ function replaceFormUrl() {
 function pushStoryUrl(storyId: string) {
   const url = new URL(window.location.href);
   url.searchParams.delete(VIEW_QUERY_KEY);
+  url.searchParams.delete(TASK_QUERY_KEY);
   url.searchParams.set(STORY_QUERY_KEY, storyId);
   const nextUrl = `${url.pathname}${url.search}${url.hash}`;
   const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
@@ -409,11 +422,13 @@ function pushStoryUrl(storyId: string) {
 
 export default function Home() {
   const [locale, setLocale] = useState<AppLocale>("zh");
-  const [entryMode, setEntryMode] = useState<EntryMode>("full");
+  const [entryMode, setEntryMode] = useState<EntryMode>("capture");
   const [step, setStep] = useState<AppStep>("form");
-  const [progress, setProgress] = useState(0);
-  const [elapsedSeconds, setElapsedSeconds] = useState(0);
-  const [waitingTipIndex, setWaitingTipIndex] = useState(0);
+  const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
+  const [reviewBeforeIllustrations, setReviewBeforeIllustrations] =
+    useState(false);
+  const [activeGrowthDraft, setActiveGrowthDraft] =
+    useState<GrowthRecordDraft | null>(null);
   const [result, setResult] = useState<GenerateResponse | null>(null);
   const [sampleResult, setSampleResult] = useState<GenerateResponse | null>(null);
   const [sampleReturnMode, setSampleReturnMode] =
@@ -429,39 +444,188 @@ export default function Home() {
   const [growthSaveError, setGrowthSaveError] = useState<string | null>(null);
   const sampleModalOpenRef = useRef(false);
   const historyPreviewOpenRef = useRef(false);
-  const generationInFlightRef = useRef(false);
   const generationViewActiveRef = useRef(false);
   const latestGeneratedResultRef = useRef<GenerateResponse | null>(null);
+  const activeTaskIdRef = useRef<string | null>(null);
 
   const text = COPY[locale];
-  const generationSteps = text.steps;
-  const waitingTips = text.waitingTips;
+
+  function setCurrentTaskId(taskId: string | null) {
+    activeTaskIdRef.current = taskId;
+    setActiveTaskId(taskId);
+  }
+
+  function showTaskRecoveryFailure(
+    message?: string,
+    stage: Extract<ReliableGenerationStage, "failed" | "unrecoverable"> =
+      "unrecoverable",
+  ) {
+    if (activeTaskIdRef.current) {
+      clearActiveGenerationTask({ taskId: activeTaskIdRef.current });
+    }
+    generationViewActiveRef.current = false;
+    setResult(null);
+    setSampleResult(null);
+    setCurrentTaskId(null);
+    setActiveGrowthDraft(null);
+    setError(message || null);
+    setStep(stage);
+  }
+
+  async function saveGeneratedResult(
+    generatedResult: GenerateResponse,
+    growthRecordDraft?: GrowthRecordDraft,
+  ) {
+    latestGeneratedResultRef.current = generatedResult;
+    setResult(generatedResult);
+
+    try {
+      const existingStory = await localStoryRepository.get(
+        generatedResult.storyId,
+      );
+      await localStoryRepository.save({ result: generatedResult });
+      setHistoryRecords(await localStoryRepository.list());
+      if (!existingStory) {
+        setLocalFreeUsage(
+          writeLocalFreeUsage(readLocalFreeUsage() + 1),
+        );
+      }
+    } catch (historyError) {
+      console.warn("[story-history] failed to save generated story", historyError);
+    }
+
+    if (growthRecordDraft) {
+      try {
+        const growthRecord = await localGrowthRepository.save(
+          createGrowthRecordInput(generatedResult, growthRecordDraft),
+        );
+        setGrowthSavedChild({
+          childKey: growthRecord.childKey,
+          childName: growthRecord.childName,
+        });
+      } catch (growthError) {
+        console.warn("[growth-record] failed to save generated story", growthError);
+        setGrowthSaveError(
+          locale === "zh"
+            ? "绘本已经生成，但成长记录未能保存到本机。"
+            : "The storybook was created, but the growth record could not be saved on this device.",
+        );
+      }
+    }
+  }
+
+  async function applyTaskResponse(
+    task: ClientTextGenerationTaskResponse,
+    recovery: Pick<
+      GenerationTaskRecoveryCandidate,
+      "taskId" | "reviewBeforeIllustrations" | "growthRecordDraft"
+    >,
+  ) {
+    if (activeTaskIdRef.current !== recovery.taskId) return;
+
+    setReviewBeforeIllustrations(recovery.reviewBeforeIllustrations);
+    setActiveGrowthDraft(recovery.growthRecordDraft || null);
+
+    if (task.status === "generating_text") {
+      setResult(null);
+      setStep("generating_text");
+      return;
+    }
+
+    if (task.status === "unrecoverable" || task.status === "failed") {
+      clearActiveGenerationTask({ taskId: recovery.taskId });
+      showTaskRecoveryFailure(
+        task.error,
+        task.status === "failed" ? "failed" : "unrecoverable",
+      );
+      return;
+    }
+
+    if (!task.result) {
+      showTaskRecoveryFailure(
+        locale === "zh"
+          ? "服务端返回了任务状态，但没有可恢复的故事内容。"
+          : "The server returned a task state without recoverable story content.",
+      );
+      return;
+    }
+
+    if (task.status === "reviewing_outline") {
+      latestGeneratedResultRef.current = task.result;
+      setResult(task.result);
+      generationViewActiveRef.current = true;
+      if (sampleModalOpenRef.current) setOwnReadyNotice(true);
+      setStep("reviewing_outline");
+      return;
+    }
+
+    await saveGeneratedResult(task.result, recovery.growthRecordDraft);
+    generationViewActiveRef.current = false;
+    historyPreviewOpenRef.current = true;
+    const illustrationSummary = summarizeIllustrationProgress(
+      task.result.pages,
+    );
+    const nextStage =
+      task.status === "ready"
+        ? "ready"
+        : task.status === "partially_failed"
+          ? "partially_failed"
+          : "generating_images";
+    replaceStoryUrl(
+      task.result.storyId,
+      illustrationSummary.pending > 0 ? recovery.taskId : undefined,
+    );
+    if (illustrationSummary.pending === 0) {
+      clearActiveGenerationTask({ taskId: recovery.taskId });
+      setCurrentTaskId(null);
+      setActiveGrowthDraft(null);
+    }
+    if (sampleModalOpenRef.current) setOwnReadyNotice(true);
+    setStep(nextStage);
+  }
+
+  function recoverGenerationTask(
+    recovery: GenerationTaskRecoveryCandidate,
+  ) {
+    setCurrentTaskId(recovery.taskId);
+    setReviewBeforeIllustrations(recovery.reviewBeforeIllustrations);
+    setActiveGrowthDraft(recovery.growthRecordDraft || null);
+    generationViewActiveRef.current = true;
+    historyPreviewOpenRef.current = false;
+    setSampleResult(null);
+    setError(null);
+    setStep("generating_text");
+  }
 
   useEffect(() => {
     const detectedLocale = detectInitialLocale();
     setLocale(detectedLocale);
     const urlEntryMode = readEntryModeFromUrl();
-    const savedEntryMode = window.localStorage.getItem(ENTRY_MODE_STORAGE_KEY);
-    const initialEntryMode =
-      urlEntryMode ||
-      (savedEntryMode === "minimal" || savedEntryMode === "full"
-        ? savedEntryMode
-        : "full");
+    const initialEntryMode = urlEntryMode || "capture";
     setEntryMode(initialEntryMode);
     window.localStorage.setItem(ENTRY_MODE_STORAGE_KEY, initialEntryMode);
     replaceEntryModeUrl(initialEntryMode);
     setLocalFreeUsage(readLocalFreeUsage());
     document.documentElement.lang = detectedLocale === "zh" ? "zh-CN" : "en";
 
-    if (readViewFromUrl() === GENERATING_VIEW && !readStoryIdFromUrl()) {
-      // A synchronous browser request cannot be resumed after a full reload.
+    const explicitTaskId = readTaskIdFromUrl();
+    const recovery =
+      explicitTaskId || !readStoryIdFromUrl()
+        ? resolveGenerationTaskRecovery(
+            window.location.search,
+            readActiveGenerationTask(),
+            readEntryModeFromUrl() === "capture",
+          )
+        : null;
+    if (recovery) recoverGenerationTask(recovery);
+    else if (readViewFromUrl() === GENERATING_VIEW && !readStoryIdFromUrl()) {
       replaceFormUrl();
     }
 
     void localStoryRepository.list().then((records) => {
       setHistoryRecords(records);
       const storyId = readStoryIdFromUrl();
-      const record = storyId
+      const record = !recovery && storyId
         ? records.find((item) => item.storyId === storyId)
         : null;
 
@@ -471,22 +635,37 @@ export default function Home() {
     });
 
     const handlePopState = () => {
-      // A clean homepage URL is the canonical address for the original full mode.
+      // A clean homepage URL is the canonical address for the growth-first entry.
       // This makes Back/Forward deterministic instead of reapplying the last saved preference.
-      const nextMode = readEntryModeFromUrl() || "full";
+      const nextMode = readEntryModeFromUrl() || "capture";
       setEntryMode(nextMode);
       window.localStorage.setItem(ENTRY_MODE_STORAGE_KEY, nextMode);
 
       const storyId = readStoryIdFromUrl();
       if (storyId) {
         generationViewActiveRef.current = false;
+        const taskRecovery = readTaskIdFromUrl()
+          ? resolveGenerationTaskRecovery(
+              window.location.search,
+              readActiveGenerationTask(),
+              nextMode === "capture",
+            )
+          : null;
+        if (taskRecovery) {
+          recoverGenerationTask(taskRecovery);
+          return;
+        }
         const generatedResult = latestGeneratedResultRef.current;
         if (generatedResult?.storyId === storyId) {
+          setCurrentTaskId(readTaskIdFromUrl());
           historyPreviewOpenRef.current = true;
           setResult(generatedResult);
           setSampleResult(null);
           setError(null);
-          setStep("preview");
+          const illustrationStatus = summarizeIllustrationProgress(
+            generatedResult.pages,
+          ).status;
+          setStep(illustrationStatus);
           return;
         }
 
@@ -498,6 +677,7 @@ export default function Home() {
           setHistoryRecords(records);
           const record = records.find((item) => item.storyId === storyId);
           if (record) {
+            setCurrentTaskId(readTaskIdFromUrl());
             showHistoryRecord(record);
           }
         });
@@ -510,18 +690,15 @@ export default function Home() {
         setSampleResult(null);
         setError(null);
 
-        if (generationInFlightRef.current) {
-          setResult(null);
-          setStep("generating");
-          return;
-        }
-
-        const completedResult = latestGeneratedResultRef.current;
-        if (completedResult) {
-          historyPreviewOpenRef.current = true;
-          setResult(completedResult);
-          setStep("preview");
-          replaceStoryUrl(completedResult.storyId);
+        const taskId = readTaskIdFromUrl();
+        const taskRecord = readActiveGenerationTask();
+        const taskRecovery = resolveGenerationTaskRecovery(
+          window.location.search,
+          taskRecord,
+          nextMode === "capture",
+        );
+        if (taskId && taskRecovery) {
+          recoverGenerationTask(taskRecovery);
           return;
         }
 
@@ -545,19 +722,64 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    sampleModalOpenRef.current = Boolean(sampleResult);
-  }, [sampleResult]);
+    if (step !== "generating_text" || !activeTaskId) return;
+
+    let cancelled = false;
+    let timeoutId: number | undefined;
+    const recovery = resolveGenerationTaskRecovery(
+      window.location.search,
+      readActiveGenerationTask(),
+      reviewBeforeIllustrations,
+    ) || {
+      taskId: activeTaskId,
+      source: "active-record" as const,
+      reviewBeforeIllustrations,
+      ...(activeGrowthDraft
+        ? { growthRecordDraft: activeGrowthDraft }
+        : {}),
+      requiresServerVerification: true as const,
+    };
+
+    async function poll() {
+      try {
+        const response = await requestStoryGenerationTask({
+          taskId: recovery.taskId,
+        });
+        const task = (await response.json()) as ClientTextGenerationTaskResponse;
+        if (cancelled) return;
+
+        if (task.status === "unrecoverable") {
+          await applyTaskResponse(task, recovery);
+          return;
+        }
+        if (!response.ok) {
+          throw new Error(task.error || text.genericFailure);
+        }
+
+        setError(null);
+        await applyTaskResponse(task, recovery);
+        if (!cancelled && task.status === "generating_text") {
+          timeoutId = window.setTimeout(poll, task.pollAfterMs || 1200);
+        }
+      } catch (pollError) {
+        if (cancelled) return;
+        setError(
+          pollError instanceof Error ? pollError.message : text.genericFailure,
+        );
+        timeoutId = window.setTimeout(poll, 2200);
+      }
+    }
+
+    timeoutId = window.setTimeout(poll, 100);
+    return () => {
+      cancelled = true;
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+    };
+  }, [activeGrowthDraft, activeTaskId, reviewBeforeIllustrations, step]);
 
   useEffect(() => {
-    if (
-      step === "generating" &&
-      result &&
-      generationViewActiveRef.current &&
-      !sampleModalOpenRef.current
-    ) {
-      setStep("preview");
-    }
-  }, [result, step]);
+    sampleModalOpenRef.current = Boolean(sampleResult);
+  }, [sampleResult]);
 
   useEffect(() => {
     if (!sampleResult) {
@@ -572,17 +794,17 @@ export default function Home() {
   }, [sampleResult]);
 
   useEffect(() => {
-    if (step === "generating" && !result) {
+    if (step === "submitting" || step === "generating_text") {
       document.title = "绘本生成中 · StoryBloom";
       return;
     }
 
-    if (result && step === "preview") {
+    if (result && shouldMountBookPreview(step, true)) {
       document.title = "绘本好了 · StoryBloom";
       return;
     }
 
-    document.title = "StoryBloom | 一句话生成一本儿童绘本";
+    document.title = "StoryBloom | 把成长时刻留成家庭绘本";
   }, [result, step]);
 
   function changeLocale(nextLocale: AppLocale) {
@@ -610,50 +832,51 @@ export default function Home() {
       return;
     }
 
-    generationInFlightRef.current = true;
+    const taskId = createClientGenerationTaskId();
     generationViewActiveRef.current = true;
     latestGeneratedResultRef.current = null;
     historyPreviewOpenRef.current = false;
-    pushGeneratingUrl();
-    setStep("generating");
     setSampleResult(null);
     setOwnReadyNotice(false);
     setResult(null);
-    setProgress(8);
-    setElapsedSeconds(0);
-    setWaitingTipIndex(0);
     setError(null);
     setGrowthSavedChild(null);
     setGrowthSaveError(null);
 
-    const progressInterval = window.setInterval(() => {
-      setProgress((current) => {
-        const increment = current < 35 ? 3 : current < 70 ? 1.2 : 0.35;
-        return Math.min(current + increment, 92);
-      });
-    }, 1200);
-    const elapsedInterval = window.setInterval(() => {
-      setElapsedSeconds((current) => current + 1);
-    }, 1000);
-    const tipInterval = window.setInterval(() => {
-      setWaitingTipIndex((current) => (current + 1) % waitingTips.length);
-    }, 6500);
-
-    const stopTimers = () => {
-      window.clearInterval(progressInterval);
-      window.clearInterval(elapsedInterval);
-      window.clearInterval(tipInterval);
-    };
+    const {
+      payload: generationData,
+      accessToken: supabaseAccessToken,
+      growthRecordDraft,
+    } = prepareStoryGenerationRequest(formData);
+    const normalizedGrowthDraft = isGrowthRecordDraft(growthRecordDraft)
+      ? growthRecordDraft
+      : undefined;
+    const shouldReviewOutline = Boolean(normalizedGrowthDraft);
+    setCurrentTaskId(taskId);
+    setReviewBeforeIllustrations(shouldReviewOutline);
+    setActiveGrowthDraft(normalizedGrowthDraft || null);
+    writeActiveGenerationTask({
+      taskId,
+      reviewBeforeIllustrations: shouldReviewOutline,
+      ...(normalizedGrowthDraft
+        ? { growthRecordDraft: normalizedGrowthDraft }
+        : {}),
+    });
+    pushGeneratingUrl(taskId);
+    setStep("submitting");
 
     try {
       const browserFingerprint = await getBrowserFingerprint();
-      const { supabaseAccessToken, growthRecordDraft, ...generationData } = formData;
+
       const response = await requestStoryGeneration({
-        payload: { ...generationData, browserFingerprint },
-        accessToken:
-          typeof supabaseAccessToken === "string"
-            ? supabaseAccessToken
-            : undefined,
+        payload: {
+          ...generationData,
+          browserFingerprint,
+          generationRequestMode: "async",
+          generationTaskId: taskId,
+          reviewBeforeIllustrations: shouldReviewOutline,
+        },
+        accessToken: supabaseAccessToken,
         refreshAccessToken: async () => {
           const { data, error: refreshError } =
             await getSupabaseBrowserClient().auth.refreshSession();
@@ -662,75 +885,81 @@ export default function Home() {
         },
       });
 
-      const data = (await response.json()) as GenerateResponse | GenerateErrorResponse;
-      stopTimers();
+      const data = (await response.json()) as
+        | ClientTextGenerationTaskResponse
+        | GenerateErrorResponse;
 
-      if (!response.ok || ("error" in data && data.error)) {
+      if (!response.ok) {
         const failedPages =
           "failedPages" in data && data.failedPages?.length
             ? text.failedPages(data.failedPages.join(", "))
             : "";
         const message = "error" in data ? `${data.error}${failedPages}` : text.genericFailure;
-        throw new Error(message ?? text.genericFailure);
+        clearActiveGenerationTask({ taskId });
+        showTaskRecoveryFailure(message ?? text.genericFailure, "failed");
+        return;
       }
-
-      const generatedResult = data as GenerateResponse;
-      generationInFlightRef.current = false;
-      latestGeneratedResultRef.current = generatedResult;
-      setProgress(100);
-      setResult(generatedResult);
-      setLocalFreeUsage(writeLocalFreeUsage(currentLocalUsage + 1));
-      void localStoryRepository.save({ result: generatedResult })
-        .then(() => localStoryRepository.list())
-        .then(setHistoryRecords)
-        .catch((historyError) => {
-          console.warn("[story-history] failed to save generated story", historyError);
-        });
-
-      if (isGrowthRecordDraft(growthRecordDraft)) {
-        try {
-          const growthRecord = await localGrowthRepository.save(
-            createGrowthRecordInput(generatedResult, growthRecordDraft),
-          );
-          setGrowthSavedChild({
-            childKey: growthRecord.childKey,
-            childName: growthRecord.childName,
-          });
-        } catch (growthError) {
-          console.warn("[growth-record] failed to save generated story", growthError);
-          setGrowthSaveError(
-            locale === "zh"
-              ? "绘本已经生成，但成长记录未能保存到本机。"
-              : "The storybook was created, but the growth record could not be saved on this device.",
-          );
-        }
-      }
-
-      if (generationViewActiveRef.current) {
-        historyPreviewOpenRef.current = true;
-        replaceStoryUrl(generatedResult.storyId);
-        if (sampleModalOpenRef.current) {
-          setOwnReadyNotice(true);
-        } else {
-          setStep("preview");
-        }
-      }
+      await applyTaskResponse(data as ClientTextGenerationTaskResponse, {
+        taskId,
+        reviewBeforeIllustrations: shouldReviewOutline,
+        growthRecordDraft: normalizedGrowthDraft,
+      });
     } catch (requestError) {
-      stopTimers();
-      generationInFlightRef.current = false;
       latestGeneratedResultRef.current = null;
-      if (generationViewActiveRef.current) {
-        generationViewActiveRef.current = false;
-        replaceFormUrl();
-      }
-      setError(requestError instanceof Error ? requestError.message : text.genericFailure);
-      setStep("form");
+      setError(
+        requestError instanceof Error
+          ? requestError.message
+          : text.genericFailure,
+      );
+      setStep("generating_text");
     }
+  }
+
+  async function handleConfirmOutline(pages: StoryPage[]) {
+    if (!activeTaskId || !result) {
+      throw new Error(
+        locale === "zh" ? "大纲任务已失效，请重新生成。" : "The outline task is no longer available.",
+      );
+    }
+
+    const response = await confirmStoryOutline({
+      taskId: activeTaskId,
+      storyId: result.storyId,
+      pages,
+    });
+    const task = (await response.json()) as ClientTextGenerationTaskResponse;
+    if (!response.ok || !task.result) {
+      throw new Error(task.error || text.genericFailure);
+    }
+
+    await applyTaskResponse(task, {
+      taskId: activeTaskId,
+      reviewBeforeIllustrations: true,
+      growthRecordDraft: activeGrowthDraft || undefined,
+    });
+  }
+
+  function handleAbandonGeneration() {
+    if (activeTaskIdRef.current) {
+      clearActiveGenerationTask({ taskId: activeTaskIdRef.current });
+    }
+    setCurrentTaskId(null);
+    setActiveGrowthDraft(null);
+    latestGeneratedResultRef.current = null;
+    generationViewActiveRef.current = false;
+    historyPreviewOpenRef.current = false;
+    setResult(null);
+    setSampleResult(null);
+    setError(null);
+    replaceFormUrl();
+    setStep("form");
   }
 
   function openSampleBook(
     sample: GenerateResponse,
-    returnMode: SampleReturnMode = step === "preview" ? "preview" : "generating"
+    returnMode: SampleReturnMode = shouldMountBookPreview(step, Boolean(result))
+      ? "preview"
+      : "generating"
   ) {
     setSampleResult(sample);
     setSampleReturnMode(returnMode);
@@ -743,7 +972,9 @@ export default function Home() {
 
     setOwnReadyNotice(false);
     setSampleResult(null);
-    setStep("preview");
+    if (step === "reviewing_outline") return;
+    const illustrationStatus = summarizeIllustrationProgress(result.pages).status;
+    setStep(illustrationStatus);
   }
 
   function handleSampleBack() {
@@ -751,13 +982,13 @@ export default function Home() {
   }
 
   function showHistoryRecord(record: StoryHistoryRecord) {
+    setCurrentTaskId(null);
     historyPreviewOpenRef.current = true;
     setResult(record.result);
     setSampleResult(null);
     setOwnReadyNotice(false);
     setError(null);
-    setProgress(0);
-    setStep("preview");
+    setStep(summarizeIllustrationProgress(record.result.pages).status);
   }
 
   function handleHistoryContinue(record: StoryHistoryRecord) {
@@ -774,7 +1005,7 @@ export default function Home() {
     historyPreviewOpenRef.current = false;
     setStep("form");
     setResult(null);
-    setProgress(0);
+    setCurrentTaskId(null);
   }
 
   function handleResultUpdate(nextResult: GenerateResponse) {
@@ -784,6 +1015,19 @@ export default function Home() {
     setResult((current) =>
       current?.storyId === nextResult.storyId ? nextResult : current
     );
+    const illustrationStatus = summarizeIllustrationProgress(
+      nextResult.pages,
+    ).status;
+    setStep(illustrationStatus);
+    const illustrationSummary = summarizeIllustrationProgress(nextResult.pages);
+    if (illustrationSummary.pending === 0) {
+      if (activeTaskIdRef.current) {
+        clearActiveGenerationTask({ taskId: activeTaskIdRef.current });
+      }
+      setCurrentTaskId(null);
+      setActiveGrowthDraft(null);
+      replaceStoryUrl(nextResult.storyId);
+    }
     void localStoryRepository
       .save({ result: nextResult })
       .then(() => localStoryRepository.list())
@@ -793,14 +1037,12 @@ export default function Home() {
     });
   }
 
-  const generationStepIndex = getGenerationStepIndex(elapsedSeconds, progress);
-  const activeGenerationStep = generationSteps[generationStepIndex];
   const remainingFreeGenerations = Math.max(
     0,
     FREE_GENERATION_DAILY_LIMIT - localFreeUsage
   );
   const libraryEntryCard = (
-    <Link href="/library" className={`library-entry-card ${entryMode === "minimal" ? "minimal-library-card" : ""}`}>
+    <Link href="/library" className={`library-entry-card ${entryMode !== "full" ? "minimal-library-card" : ""}`}>
       <span className="library-entry-copy">
         <h3>
           {locale === "zh"
@@ -822,7 +1064,7 @@ export default function Home() {
     <LocalStoryLibrary
       locale={locale}
       records={historyRecords}
-      minimal={entryMode === "minimal"}
+      minimal={entryMode !== "full"}
       onOpen={handleHistoryContinue}
       onRecordsChange={setHistoryRecords}
     />
@@ -831,17 +1073,28 @@ export default function Home() {
   return (
     <main
       className={
-        step === "form" && entryMode === "minimal" ? "minimal-page-shell" : "page-shell"
+        step === "form" && entryMode !== "full" ? "minimal-page-shell" : "page-shell"
       }
     >
-      {step === "form" && entryMode === "minimal" ? (
+      {step === "form" && entryMode !== "full" ? (
         <div className="minimal-top-controls">
           <div className="entry-mode-toggle" aria-label="首页模式">
-            <button type="button" className="active" onClick={() => changeEntryMode("minimal") }>
-              {locale === "zh" ? "极简" : "Simple"}
+            <button
+              type="button"
+              className={entryMode === "capture" ? "active" : ""}
+              onClick={() => changeEntryMode("capture")}
+            >
+              {locale === "zh" ? "记录时刻" : "Capture"}
+            </button>
+            <button
+              type="button"
+              className={entryMode === "minimal" ? "active" : ""}
+              onClick={() => changeEntryMode("minimal")}
+            >
+              {locale === "zh" ? "快速创作" : "Quick"}
             </button>
             <button type="button" onClick={() => changeEntryMode("full") }>
-              {locale === "zh" ? "完整" : "Full"}
+              {locale === "zh" ? "完整创作" : "Create"}
             </button>
           </div>
           <button
@@ -873,10 +1126,10 @@ export default function Home() {
                 {step === "form" ? (
                   <div className="entry-mode-toggle entry-mode-toggle-full" aria-label="首页模式">
                     <button type="button" onClick={() => changeEntryMode("minimal") }>
-                      {locale === "zh" ? "极简" : "Simple"}
+                      {locale === "zh" ? "快速创作" : "Quick"}
                     </button>
                     <button type="button" className="active" onClick={() => changeEntryMode("full") }>
-                      {locale === "zh" ? "完整" : "Full"}
+                      {locale === "zh" ? "完整创作" : "Create"}
                     </button>
                   </div>
                 ) : null}
@@ -930,20 +1183,24 @@ export default function Home() {
 
       <section
         className={
-          step === "form" && entryMode === "minimal"
+          step === "form" && entryMode !== "full"
             ? "minimal-content-shell"
             : "content-shell"
         }
       >
-        {error ? <div className="error-banner">{error}</div> : null}
+        {step === "form" && error ? (
+          <div className="error-banner">{error}</div>
+        ) : null}
 
         {step === "form" ? (
-          entryMode === "minimal" ? (
+          entryMode !== "full" ? (
             <>
               <MinimalStoryEntry
+                key={entryMode}
                 locale={locale}
                 freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
                 remainingFreeGenerations={remainingFreeGenerations}
+                initialGrowthEnabled={entryMode === "capture"}
                 onSubmit={handleGenerate}
               />
               {libraryEntryCard}
@@ -963,7 +1220,7 @@ export default function Home() {
           )
         ) : null}
 
-        {step === "generating" ? (
+        {step === "submitting" || step === "generating_text" ? (
           <div className="generating-card">
             <div className="generation-visual" aria-hidden="true">
               <div className="spinner-orb" />
@@ -973,34 +1230,46 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <h2>{text.generatingTitle}</h2>
+            <h2>
+              {step === "submitting"
+                ? text.submittingTitle
+                : text.textGeneratingTitle}
+            </h2>
             <p>
-              {activeGenerationStep.detail}，{text.generatingKeepOpen}
+              {step === "submitting"
+                ? text.taskSubmittingDetail
+                : text.taskGeneratingDetail}
             </p>
-            <p className="generation-save-note">{text.generatingSavedHint}</p>
-            <div className="generation-status-row">
-              <span>
-                {text.elapsed} {formatElapsedTime(elapsedSeconds)}
-              </span>
-              <span>{Math.round(progress)}%</span>
-            </div>
-            <div className="progress-track">
-              <div className="progress-fill" style={{ width: `${progress}%` }} />
-            </div>
-            <div className="generation-steps" aria-label={text.progressLabel}>
-              {generationSteps.map((item, index) => (
-                <div
-                  key={item.label}
-                  className={`generation-step ${
-                    index <= generationStepIndex ? "generation-step-active" : ""
-                  }`}
-                >
-                  <span>{index + 1}</span>
-                  <strong>{item.label}</strong>
+            <p className="generation-save-note">{text.taskRecoveryHint}</p>
+            <dl className="generation-facts" aria-live="polite">
+              <div>
+                <dt>{text.taskStatusLabel}</dt>
+                <dd>
+                  {step === "submitting"
+                    ? text.taskStatusSubmitting
+                    : text.taskStatusWriting}
+                </dd>
+              </div>
+              <div>
+                <dt>{text.taskNextLabel}</dt>
+                <dd>
+                  {reviewBeforeIllustrations
+                    ? text.taskNextReview
+                    : text.taskNextImages}
+                </dd>
+              </div>
+              {activeTaskId ? (
+                <div>
+                  <dt>{text.taskIdLabel}</dt>
+                  <dd className="generation-task-id">{activeTaskId}</dd>
                 </div>
-              ))}
-            </div>
-            <div className="generation-tip">{waitingTips[waitingTipIndex]}</div>
+              ) : null}
+            </dl>
+            {error ? (
+              <div className="generation-retry-note" role="status">
+                {error}
+              </div>
+            ) : null}
             <section className="sample-shelf" aria-label={text.sampleShelfTitle}>
               <div className="sample-shelf-header">
                 <h3>{text.sampleShelfTitle}</h3>
@@ -1032,7 +1301,32 @@ export default function Home() {
           </div>
         ) : null}
 
-        {step === "preview" && result ? (
+        {step === "reviewing_outline" && result ? (
+          <StoryOutlineReview
+            locale={locale}
+            result={result}
+            onConfirm={handleConfirmOutline}
+            onBack={handleAbandonGeneration}
+          />
+        ) : null}
+
+        {step === "failed" || step === "unrecoverable" ? (
+          <div className="generation-unavailable" role="alert">
+            <span aria-hidden="true">↺</span>
+            <h2>
+              {step === "failed" ? text.failedTitle : text.unavailableTitle}
+            </h2>
+            <p>
+              {error ||
+                (step === "failed" ? text.failedHint : text.unavailableHint)}
+            </p>
+            <button type="button" className="cta-btn" onClick={handleAbandonGeneration}>
+              {text.unavailableAction}
+            </button>
+          </div>
+        ) : null}
+
+        {shouldMountBookPreview(step, Boolean(result)) && result ? (
           <>
             {growthSavedChild ? (
               <div className="growth-save-banner" role="status">

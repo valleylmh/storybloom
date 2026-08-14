@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/inspiration`, changeFrequency: "daily", priority: 0.8 },
     { url: `${BASE_URL}/custom`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE_URL}/library`, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE_URL}/privacy`, changeFrequency: "monthly", priority: 0.5 },
+    {
+      url: `${BASE_URL}/child-family-data`,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 
   for (const series of getAllSeries()) {

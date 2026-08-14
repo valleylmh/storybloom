@@ -1,3 +1,5 @@
+import type { GenerationErrorClass } from "@/lib/generation-error";
+
 export type AgeGroup = "2-3" | "4-5" | "6-8";
 export type StoryTheme =
   | "courage"
@@ -9,13 +11,20 @@ export type StoryTheme =
   | "custom";
 export type IllustrationStyle = "watercolor" | "cartoon" | "fairytale";
 export type Language = "zh-en" | "en-zh" | "zh" | "en";
+export type GrowthStoryTreatment =
+  | "documentary"
+  | "warm-imagination"
+  | "fairytale";
 export type GenerationMode = "live" | "demo";
 export type StoryStatus =
   | "pending"
   | "generating_text"
+  | "reviewing_outline"
   | "generating_images"
+  | "partially_failed"
   | "complete"
-  | "failed";
+  | "failed"
+  | "unrecoverable";
 export type ImageStatus = "pending" | "complete" | "demo" | "failed";
 export type ImageProvider =
   | "dashscope"
@@ -34,11 +43,13 @@ export interface SampleImageAssets {
 
 export interface ImageAttemptMetric {
   provider: ImageProvider;
+  model?: string;
   status: ImageAttemptStatus;
   durationMs: number;
   startedAt: string;
   completedAt: string;
   error?: string;
+  errorClass?: GenerationErrorClass;
 }
 
 export interface FamilyCharacterInput {
@@ -81,6 +92,12 @@ export interface StoryInput {
   otherDetails?: string;
   theme: StoryTheme;
   customTheme?: string;
+  /** Parent-confirmed facts for a real family moment. */
+  parentFacts?: string;
+  /** Imaginative additions explicitly allowed by the parent. */
+  allowedImaginations?: string;
+  /** How closely a growth story should stay to the real event. */
+  storyTreatment?: GrowthStoryTreatment;
   style: IllustrationStyle;
   language: Language;
   characterReferenceId?: string;
@@ -105,6 +122,15 @@ export interface StoryPage {
   imagePlannedProvider?: ImageProvider;
   imageProvider?: ImageProvider;
   imageStartedAt?: string;
+  /** Opaque server-side claim used to reject late or duplicate workers. */
+  imageAttemptId?: string;
+  /**
+   * Marks a page as owned by the durable generation queue. This remains true
+   * when enqueue acknowledgement is ambiguous and no job id is available yet.
+   */
+  imageDurableJob?: boolean;
+  /** Opaque durable job pointer used only for authoritative status polling. */
+  imageJobId?: string;
   imageCompletedAt?: string;
   imageDurationMs?: number;
   imageAttempts?: ImageAttemptMetric[];
@@ -113,10 +139,19 @@ export interface StoryPage {
 
 export interface GeneratedStory {
   id: string;
+  /** Opaque HMAC-derived principal ids allowed to access this cached story. */
+  generationPrincipalIds?: string[];
+  /** Internal durable text publication identity; omitted from public responses. */
+  textGenerationJobId?: string;
+  textGenerationJobAttempt?: number;
   input: StoryInput;
   pages: StoryPage[];
   coverTitle: string;
   createdAt: string;
+  /** Optional for backward compatibility with snapshots created before CAS. */
+  updatedAt?: string;
+  /** Monotonic server-side revision for atomic shared-cache mutations. */
+  revision?: number;
   status: StoryStatus;
   generationMode: GenerationMode;
 }

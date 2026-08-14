@@ -13,6 +13,12 @@ import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { getCachedCharacterReferenceDataUri } from "@/lib/storage";
 import { formatStoryVisualBible } from "@/lib/story-visual-bible";
 import { hasFamilyCharacterReference } from "@/lib/family-story-characters";
+import { logGenerationEvent } from "@/lib/generation-observability";
+import {
+  GenerationProviderError,
+  classifyGenerationError,
+  type GenerationErrorClass,
+} from "@/lib/generation-error";
 
 const MAX_IMAGE_ATTEMPTS = 3;
 const DEMO_IMAGE_MARKER = "StoryBloom%20Demo";
@@ -45,6 +51,9 @@ const DEFAULT_CPA_IMAGE_REQUEST_DELAY_MS = 1_500;
 const DEFAULT_CPA_IMAGE_RETRY_DELAY_MS = 8_000;
 const DEFAULT_CPA_IMAGE_MAX_ATTEMPTS = 2;
 const DEFAULT_CPA_IMAGE_TIMEOUT_MS = 120_000;
+const DEFAULT_IMAGE_PROVIDER_TIMEOUT_MS = 120_000;
+const MAX_IMAGE_PROVIDER_TIMEOUT_MS = 5 * 60 * 1000;
+const DEFAULT_IMAGE_DOWNLOAD_TIMEOUT_MS = 30_000;
 const MAX_CPA_REFERENCE_IMAGES = 10;
 const DEFAULT_FAMILY_ASSETS_BUCKET = "family-photos";
 const DEFAULT_FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS = 3;
@@ -61,6 +70,7 @@ const DEFAULT_NEGATIVE_PROMPT =
   "low resolution, low quality, deformed body, deformed fingers, oversaturated, waxy face, low facial detail, overly glossy, obvious AI artifacts, messy composition, blurry text, distorted text, logo, watermark";
 const STORY_SCENE_NEGATIVE_PROMPT =
   "repeated front-facing portrait, passport photo, selfie, bust shot, giant head close-up, empty background, identical pose, identical smile, character blocking the whole scene";
+const SAFE_ILLUSTRATION_ERROR = "插图生成失败，请稍后重试。";
 
 const CHARACTER_REFERENCE_FILES: Record<string, string> = {
   "boy-sunshine": "boy-sunshine.png",
@@ -86,6 +96,7 @@ type GeneratedIllustrationResult = {
 };
 
 type IllustrationOptions = {
+  storyId?: string;
   pageNumber?: number;
   style?: IllustrationStyle;
   characterReferenceId?: string;
@@ -95,6 +106,33 @@ type IllustrationOptions = {
   visualBible?: StoryVisualBible;
   referenceCacheKey?: string;
 };
+
+function classifyHttpStatus(status: number): GenerationErrorClass {
+  if (status === 429) return "rate_limit";
+  if (status === 401 || status === 403) return "authentication";
+  if (status === 404) return "not_found";
+  if (status === 409) return "conflict";
+  if (status >= 500) return "upstream_5xx";
+  if (status >= 400) return "upstream_4xx";
+  return "unknown";
+}
+
+function getImageProviderModel(provider: ImageProvider) {
+  switch (provider) {
+    case "dashscope":
+      return process.env.DASHSCOPE_IMAGE_MODEL || DEFAULT_DASHSCOPE_IMAGE_MODEL;
+    case "cloudflare":
+      return process.env.CLOUDFLARE_IMAGE_MODEL || DEFAULT_CLOUDFLARE_IMAGE_MODEL;
+    case "pollinations":
+      return process.env.POLLINATIONS_IMAGE_MODEL || "default";
+    case "huggingface":
+      return process.env.HUGGINGFACE_IMAGE_MODEL || DEFAULT_HUGGINGFACE_IMAGE_MODEL;
+    case "agnes":
+      return process.env.AGNES_IMAGE_MODEL || DEFAULT_AGNES_IMAGE_MODEL;
+    case "cpa":
+      return process.env.CPA_IMAGE_MODEL || DEFAULT_CPA_IMAGE_MODEL;
+  }
+}
 
 type CpaReferenceImage = {
   dataUri: string;
@@ -493,7 +531,7 @@ async function downloadPrivateFamilyReferenceDataUri(
     "FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS",
     DEFAULT_FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS,
   );
-  let lastError = assetPath;
+  let lastErrorClass: GenerationErrorClass = "storage_unavailable";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
@@ -501,7 +539,7 @@ async function downloadPrivateFamilyReferenceDataUri(
         .from(bucket)
         .download(assetPath);
       if (error || !data) {
-        throw new Error(error?.message || assetPath);
+        throw new GenerationProviderError("storage_unavailable");
       }
 
       const contentType = data.type || "image/jpeg";
@@ -515,14 +553,17 @@ async function downloadPrivateFamilyReferenceDataUri(
       const bytes = Buffer.from(await data.arrayBuffer());
       return `data:${contentType};base64,${bytes.toString("base64")}`;
     } catch (error) {
-      lastError = error instanceof Error ? error.message : String(error);
+      lastErrorClass = classifyGenerationError(error);
       if (attempt < maxAttempts) {
         await sleep(retryDelay * attempt);
       }
     }
   }
 
-  throw new Error(`Unable to load family reference image: ${lastError}`);
+  throw new GenerationProviderError(
+    lastErrorClass === "unknown" ? "storage_unavailable" : lastErrorClass,
+    "Unable to load family reference image.",
+  );
 }
 
 function rememberFamilyReference(cacheKey: string, dataUri: string) {
@@ -594,9 +635,18 @@ async function getImageToImageReferenceImages(options?: IllustrationOptions) {
             getCachedCharacterReferenceDataUri(character.storyReferenceToken).then(
               (dataUri): CpaReferenceImage | null => {
                 if (!dataUri) {
-                  console.warn("[image-generator] story character anchor expired", {
-                    characterId: character.id,
-                  });
+                  logGenerationEvent(
+                    {
+                      operation: "illustration.reference",
+                      story: options?.storyId,
+                      page: options?.pageNumber,
+                      provider: "cpa",
+                      model: getImageProviderModel("cpa"),
+                      status: "expired",
+                      errorClass: "not_found",
+                    },
+                    "warn",
+                  );
                   return null;
                 }
                 return {
@@ -680,6 +730,16 @@ function getPositiveIntegerEnv(name: string, fallback: number) {
   return Number.isFinite(parsed) && parsed >= 0 ? parsed : fallback;
 }
 
+function getBoundedImageTimeoutMs(
+  name: string,
+  fallback = DEFAULT_IMAGE_PROVIDER_TIMEOUT_MS,
+) {
+  return Math.min(
+    Math.max(1_000, getPositiveIntegerEnv(name, fallback)),
+    MAX_IMAGE_PROVIDER_TIMEOUT_MS,
+  );
+}
+
 function getOptionalPositiveIntegerEnv(name: string) {
   const parsed = Number.parseInt(process.env[name] ?? "", 10);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : null;
@@ -692,11 +752,7 @@ function sleep(ms: number) {
 }
 
 function isRateLimitError(error: unknown) {
-  if (!(error instanceof Error)) {
-    return false;
-  }
-
-  return /rate limit|too many requests|throttl|429/i.test(error.message);
+  return classifyGenerationError(error) === "rate_limit";
 }
 
 function encodePollinationsPathSegment(value: string) {
@@ -936,7 +992,14 @@ async function downloadImageAsDataUrl(imageUrl: string) {
     return imageUrl;
   }
 
-  const response = await fetch(imageUrl);
+  const response = await fetch(imageUrl, {
+    signal: AbortSignal.timeout(
+      getBoundedImageTimeoutMs(
+        "IMAGE_DOWNLOAD_TIMEOUT_MS",
+        DEFAULT_IMAGE_DOWNLOAD_TIMEOUT_MS,
+      ),
+    ),
+  });
   if (!response.ok) {
     throw new Error(`Image download failed: HTTP ${response.status}`);
   }
@@ -1027,7 +1090,7 @@ async function generateDashScopeIllustration(
 ): Promise<string> {
   const dashscopeKey = getDashScopeKey();
   if (!dashscopeKey) {
-    throw new Error("DashScope image provider is missing DASHSCOPE_API_KEY.");
+    throw new GenerationProviderError("configuration");
   }
 
   const referenceImage = await getCharacterReferenceImage(options?.characterReferenceId);
@@ -1077,18 +1140,21 @@ async function generateDashScopeIllustration(
           seed,
         },
       }),
+      signal: AbortSignal.timeout(
+        getBoundedImageTimeoutMs("DASHSCOPE_IMAGE_TIMEOUT_MS"),
+      ),
     })
   );
 
   const data = (await response.json().catch(() => ({}))) as DashScopeGenerationResponse;
 
   if (!response.ok) {
-    throw new Error(data.message || data.code || `DashScope image generation failed: HTTP ${response.status}`);
+    throw new GenerationProviderError(classifyHttpStatus(response.status));
   }
 
   const imageUrl = extractImageUrl(data);
   if (!imageUrl) {
-    throw new Error(data.message || "DashScope did not return an image URL.");
+    throw new GenerationProviderError("invalid_response");
   }
 
   return downloadImageAsDataUrl(imageUrl);
@@ -1105,7 +1171,7 @@ async function generateCloudflareIllustration(
 ): Promise<string> {
   const cloudflareConfig = getCloudflareConfig();
   if (!cloudflareConfig.accountId || !cloudflareConfig.apiToken) {
-    throw new Error("Cloudflare image provider is missing CLOUDFLARE_ACCOUNT_ID or CLOUDFLARE_API_TOKEN.");
+    throw new GenerationProviderError("configuration");
   }
 
   const promptText = truncateForImagePrompt(
@@ -1132,7 +1198,7 @@ async function generateCloudflareIllustration(
     "CLOUDFLARE_IMAGE_RETRY_DELAY_MS",
     DEFAULT_CLOUDFLARE_IMAGE_RETRY_DELAY_MS
   );
-  let lastError = "Cloudflare image generation failed.";
+  let lastErrorClass: GenerationErrorClass = "unknown";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     const response = await withCloudflareImageThrottle(() =>
@@ -1143,6 +1209,9 @@ async function generateCloudflareIllustration(
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ prompt: promptText }),
+        signal: AbortSignal.timeout(
+          getBoundedImageTimeoutMs("CLOUDFLARE_IMAGE_TIMEOUT_MS"),
+        ),
       })
     );
 
@@ -1160,11 +1229,8 @@ async function generateCloudflareIllustration(
  return `data:${fallbackType};base64,${bytes.toString("base64")}`;
     }
 
-    const errorPayload = (await response.json().catch(() => null)) as CloudflareErrorResponse | null;
-    lastError =
-      errorPayload?.errors?.[0]?.message ||
-      errorPayload?.error?.message ||
-      `Cloudflare image generation failed: HTTP ${response.status}`;
+    await response.json().catch(() => null) as CloudflareErrorResponse | null;
+    lastErrorClass = classifyHttpStatus(response.status);
 
     if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
       await sleep(getRetryAfterMs(response) ?? retryDelay);
@@ -1174,7 +1240,7 @@ async function generateCloudflareIllustration(
     break;
   }
 
-  throw new Error(lastError);
+  throw new GenerationProviderError(lastErrorClass);
 }
 
 async function generatePollinationsIllustration(
@@ -1235,6 +1301,9 @@ async function generatePollinationsIllustration(
           Accept: "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
           "User-Agent": `StoryBloom/1.0 (+${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"})`,
         },
+        signal: AbortSignal.timeout(
+          getBoundedImageTimeoutMs("POLLINATIONS_IMAGE_TIMEOUT_MS"),
+        ),
       })
     );
 
@@ -1254,7 +1323,9 @@ async function generatePollinationsIllustration(
     break;
   }
 
-  throw new Error(`Pollinations image generation failed: HTTP ${lastStatus ?? "unknown"}`);
+  throw new GenerationProviderError(
+    lastStatus === null ? "unknown" : classifyHttpStatus(lastStatus),
+  );
 }
 
 async function generateHuggingFaceIllustration(
@@ -1268,7 +1339,7 @@ async function generateHuggingFaceIllustration(
 ): Promise<string> {
   const huggingFaceKey = getHuggingFaceKey();
   if (!huggingFaceKey) {
-    throw new Error("Hugging Face image provider is missing HUGGINGFACE_API_TOKEN or HF_TOKEN.");
+    throw new GenerationProviderError("configuration");
   }
 
   const promptText = truncateForImagePrompt(
@@ -1299,7 +1370,7 @@ async function generateHuggingFaceIllustration(
     "HUGGINGFACE_IMAGE_RETRY_DELAY_MS",
     DEFAULT_HUGGINGFACE_IMAGE_RETRY_DELAY_MS
   );
-  let lastError = "Hugging Face image generation failed.";
+  let lastErrorClass: GenerationErrorClass = "unknown";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     const response = await withHuggingFaceImageThrottle(() =>
@@ -1318,6 +1389,9 @@ async function generateHuggingFaceIllustration(
             num_inference_steps: 4,
           },
         }),
+        signal: AbortSignal.timeout(
+          getBoundedImageTimeoutMs("HUGGINGFACE_IMAGE_TIMEOUT_MS"),
+        ),
       })
     );
 
@@ -1327,10 +1401,8 @@ async function generateHuggingFaceIllustration(
       return `data:${contentType};base64,${bytes.toString("base64")}`;
     }
 
-    const bodyText = await response.text().catch(() => "");
-    lastError =
-      bodyText ||
-      `Hugging Face image generation failed: HTTP ${response.status}`;
+    await response.body?.cancel().catch(() => undefined);
+    lastErrorClass = classifyHttpStatus(response.status);
 
     if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
       await sleep(getRetryAfterMs(response) ?? retryDelay);
@@ -1340,7 +1412,7 @@ async function generateHuggingFaceIllustration(
     break;
   }
 
-  throw new Error(lastError);
+  throw new GenerationProviderError(lastErrorClass);
 }
 
 function extractCpaImage(data: CpaImageGenerationResponse) {
@@ -1367,7 +1439,7 @@ async function generateCpaIllustration(
 ): Promise<string> {
   const referenceImages = await getImageToImageReferenceImages(options);
   if (referenceImages.length === 0) {
-    throw new Error("CPA Nano Banana 2 requires a character reference image.");
+    throw new GenerationProviderError("configuration");
   }
 
   const visualBible = formatStoryVisualBible(
@@ -1397,10 +1469,10 @@ async function requestCpaImage(
 ) {
   const { baseUrl, apiKey, model } = getCpaImageConfig();
   if (!apiKey || !baseUrl) {
-    throw new Error("CPA image provider requires CPA_API_KEY and CPA_BASE_URL.");
+    throw new GenerationProviderError("configuration");
   }
   if (referenceImages.length === 0) {
-    throw new Error("CPA Nano Banana 2 requires at least one reference image.");
+    throw new GenerationProviderError("configuration");
   }
   const normalizedReferences = referenceImages
     .slice(0, MAX_CPA_REFERENCE_IMAGES)
@@ -1424,7 +1496,7 @@ async function requestCpaImage(
     "CPA_IMAGE_TIMEOUT_MS",
     DEFAULT_CPA_IMAGE_TIMEOUT_MS
   );
-  let lastError = "CPA Nano Banana 2 image generation failed.";
+  let lastErrorClass: GenerationErrorClass = "unknown";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     let response: Response;
@@ -1461,17 +1533,12 @@ async function requestCpaImage(
         })
       );
     } catch (error) {
-      lastError =
-        error instanceof Error && /timeout|abort/i.test(`${error.name} ${error.message}`)
-          ? `CPA Nano Banana 2 timed out after ${Math.round(timeoutMs / 1000)}s.`
-          : error instanceof Error
-            ? error.message
-            : String(error);
+      lastErrorClass = classifyGenerationError(error);
       if (attempt < maxAttempts) {
         await sleep(retryDelay);
         continue;
       }
-      throw new Error(lastError);
+      throw new GenerationProviderError(lastErrorClass);
     }
 
     const data = (await response.json().catch(() => ({}))) as CpaImageGenerationResponse;
@@ -1480,12 +1547,9 @@ async function requestCpaImage(
       if (image) {
         return image.startsWith("http") ? downloadImageAsDataUrl(image) : image;
       }
-      lastError = "CPA Nano Banana 2 did not return an image.";
+      lastErrorClass = "invalid_response";
     } else {
-      lastError =
-        data.errors?.[0]?.message ||
-        data.error?.message ||
-        `CPA Nano Banana 2 failed: HTTP ${response.status}`;
+      lastErrorClass = classifyHttpStatus(response.status);
     }
 
     if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
@@ -1495,7 +1559,7 @@ async function requestCpaImage(
     break;
   }
 
-  throw new Error(lastError);
+  throw new GenerationProviderError(lastErrorClass);
 }
 
 export async function generateCpaReferenceImage(input: {
@@ -1516,7 +1580,7 @@ export async function generateCpaStoryCharacterAnchor(input: {
     referenceCacheKey: input.referenceCacheKey,
   });
   if (references.length === 0) {
-    throw new Error("A story character anchor requires a saved family reference image.");
+    throw new GenerationProviderError("configuration");
   }
   const visualBible = formatStoryVisualBible(input.visualBible, [input.character.id]);
   const prompt = truncateForCpaPrompt(
@@ -1541,7 +1605,7 @@ async function generateAgnesIllustration(
 ): Promise<string> {
   const agnesKey = getAgnesKey();
   if (!agnesKey) {
-    throw new Error("AGNES image provider is missing AGNES_API_KEY.");
+    throw new GenerationProviderError("configuration");
   }
 
   const promptText = truncateForImagePrompt(
@@ -1568,7 +1632,7 @@ async function generateAgnesIllustration(
     "AGNES_IMAGE_RETRY_DELAY_MS",
     DEFAULT_AGNES_IMAGE_RETRY_DELAY_MS
   );
-  let lastError = "AGNES image generation failed.";
+  let lastErrorClass: GenerationErrorClass = "unknown";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     const response = await withAgnesImageThrottle(() =>
@@ -1592,6 +1656,9 @@ async function generateAgnesIllustration(
               }
             : {}),
         }),
+        signal: AbortSignal.timeout(
+          getBoundedImageTimeoutMs("AGNES_IMAGE_TIMEOUT_MS"),
+        ),
       })
     );
 
@@ -1602,13 +1669,9 @@ async function generateAgnesIllustration(
         return image.startsWith("http") ? downloadImageAsDataUrl(image) : image;
       }
 
-      lastError = data.message || "AGNES did not return an image.";
+      lastErrorClass = "invalid_response";
     } else {
-      lastError =
-        data.error?.message ||
-        data.message ||
-        data.code ||
-        `AGNES image generation failed: HTTP ${response.status}`;
+      lastErrorClass = classifyHttpStatus(response.status);
     }
 
     if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
@@ -1619,7 +1682,7 @@ async function generateAgnesIllustration(
     break;
   }
 
-  throw new Error(lastError);
+  throw new GenerationProviderError(lastErrorClass);
 }
 
 async function generateWithProvider(
@@ -1653,7 +1716,7 @@ export async function generateIllustration(
   }
 ): Promise<GeneratedIllustrationResult> {
   if (hasPhotoFamilyCharacters(options) && !hasProviderKey("cpa")) {
-    throw new Error("Photo-backed family illustration generation requires CPA_API_KEY.");
+    throw new GenerationProviderError("configuration");
   }
   const providers = hasPhotoFamilyCharacters(options)
     ? (["cpa"] as ImageProvider[])
@@ -1661,16 +1724,15 @@ export async function generateIllustration(
       ? getImageToImageFallbackOrder(options?.preferredProvider)
       : getProviderFallbackOrder(options?.preferredProvider, options?.fallbackProviders);
   if (hasCustomCharacterReference(options) && providers.length === 0) {
-    throw new Error(
-      "Custom character image-to-image generation requires AGNES_API_KEY or CPA_API_KEY."
-    );
+    throw new GenerationProviderError("configuration");
   }
   if (providers.length > 0) {
     const attempts: ImageAttemptMetric[] = [];
-    const errors: string[] = [];
+    let lastErrorClass: GenerationErrorClass = "unknown";
     for (const provider of providers) {
       const startedAt = new Date().toISOString();
       const startedMs = Date.now();
+      const model = getImageProviderModel(provider);
 
       try {
         const imageUrl = await generateWithProvider(provider, prompt, seed, options);
@@ -1678,10 +1740,20 @@ export async function generateIllustration(
         const durationMs = Date.now() - startedMs;
         attempts.push({
           provider,
+          model,
           status: "success",
           durationMs,
           startedAt,
           completedAt,
+        });
+        logGenerationEvent({
+          operation: "illustration.provider_attempt",
+          story: options?.storyId,
+          page: options?.pageNumber,
+          provider,
+          model,
+          status: "success",
+          duration: durationMs,
         });
         return {
           imageUrl,
@@ -1692,27 +1764,39 @@ export async function generateIllustration(
           attempts,
         };
       } catch (error) {
-        const message = error instanceof Error ? error.message : String(error);
+        lastErrorClass = classifyGenerationError(error);
         const completedAt = new Date().toISOString();
         const durationMs = Date.now() - startedMs;
         attempts.push({
           provider,
+          model,
           status: "failed",
           durationMs,
           startedAt,
           completedAt,
-          error: message,
+          error: SAFE_ILLUSTRATION_ERROR,
+          errorClass: lastErrorClass,
         });
-        errors.push(`${provider}: ${message}`);
-        console.warn("[image-generator] provider failed", {
-          provider,
-          page: options?.pageNumber,
-          error: message,
-        });
+        logGenerationEvent(
+          {
+            operation: "illustration.provider_attempt",
+            story: options?.storyId,
+            page: options?.pageNumber,
+            provider,
+            model,
+            status: "failed",
+            duration: durationMs,
+            errorClass: lastErrorClass,
+          },
+          "warn",
+        );
       }
     }
 
-    throw new Error(`All image providers failed. ${errors.join(" | ")}`);
+    throw new GenerationProviderError(
+      lastErrorClass,
+      "All image providers failed.",
+    );
   }
 
   if (!canUseDemoImages()) {
@@ -1760,6 +1844,7 @@ export async function generateAllIllustrations(
   customCharacterReferenceToken?: string,
   visualBible?: StoryVisualBible,
   referenceCacheKey?: string,
+  storyId?: string,
 ): Promise<{ pages: StoryPage[]; mode: GenerationMode }> {
   const ordinaryProviderPlan = getProviderPlan(pages.length);
   const providerPlan = pages.map((page, index): ImageProvider | undefined => {
@@ -1801,7 +1886,6 @@ export async function generateAllIllustrations(
     pages,
     getImageConcurrency(),
     async (page, index) => {
-      let lastError: unknown;
       const preferredProvider = providerPlan[index];
 
       for (let attempt = 0; attempt < MAX_IMAGE_ATTEMPTS; attempt += 1) {
@@ -1819,6 +1903,7 @@ export async function generateAllIllustrations(
               castIds: page.castIds,
               visualBible,
               referenceCacheKey,
+              storyId,
             }
           );
           return {
@@ -1833,22 +1918,11 @@ export async function generateAllIllustrations(
             imageAttempts: generated.attempts,
           };
         } catch (error) {
-          lastError = error;
-          console.warn("[image-generator] page attempt failed", {
-            page: page.page,
-            attempt: attempt + 1,
-            error: error instanceof Error ? error.message : String(error),
-          });
-
           if (isRateLimitError(error) && attempt < MAX_IMAGE_ATTEMPTS - 1) {
             const retryDelay = getPositiveIntegerEnv(
               "DASHSCOPE_IMAGE_RATE_LIMIT_RETRY_MS",
               DEFAULT_RATE_LIMIT_RETRY_MS
             );
-            console.warn("[image-generator] rate limited, cooling down", {
-              page: page.page,
-              retryDelayMs: retryDelay,
-            });
             await sleep(retryDelay);
           }
         }
@@ -1857,8 +1931,7 @@ export async function generateAllIllustrations(
       return {
         ...page,
         imageStatus: "failed" as const,
-        imageError:
-          lastError instanceof Error ? lastError.message : "Illustration generation failed.",
+        imageError: SAFE_ILLUSTRATION_ERROR,
         imagePlannedProvider: preferredProvider,
         imageAttempts: [],
       };
@@ -1874,7 +1947,6 @@ export async function generateAllIllustrations(
   const failedPages = failedResults.map((page) => page.page);
 
   if (failedPages.length > 0) {
-    console.warn("[image-generator] failed pages", failedResults);
     throw new IllustrationGenerationError(
       "Some page illustrations failed. Please retry later.",
       failedPages,
@@ -1896,6 +1968,7 @@ export async function regeneratePage(
   customCharacterReferenceToken?: string,
   visualBible?: StoryVisualBible,
   referenceCacheKey?: string,
+  storyId?: string,
 ): Promise<StoryPage> {
   const seed = newSeed ?? Math.floor(Math.random() * 999999);
   const castIds = new Set(page.castIds || []);
@@ -1912,6 +1985,7 @@ export async function regeneratePage(
     castIds: page.castIds,
     visualBible,
     referenceCacheKey,
+    storyId,
     preferredProvider: usesFamilyPhoto
       ? "cpa"
       : customCharacterReferenceToken

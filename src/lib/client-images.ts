@@ -60,6 +60,19 @@ export function blobToDataUrl(blob: Blob) {
   });
 }
 
+export function isTemporaryStoryAssetUrl(url?: string) {
+  if (!url) return false;
+  try {
+    const parsed = new URL(
+      url,
+      typeof window === "undefined" ? "https://storybloom.invalid" : window.location.origin,
+    );
+    return /^\/api\/story-assets\/[A-Za-z0-9_-]{32}$/.test(parsed.pathname);
+  } catch {
+    return false;
+  }
+}
+
 export async function imageUrlToDataUrl(url?: string) {
   if (!url) return undefined;
   if (url.startsWith("data:")) return url;
@@ -71,4 +84,20 @@ export async function imageUrlToDataUrl(url?: string) {
   } catch {
     return undefined;
   }
+}
+
+export async function materializeTemporaryStoryImages<
+  T extends { pages: Array<{ imageUrl?: string }> },
+>(story: T): Promise<T> {
+  const pages = await Promise.all(
+    story.pages.map(async (page) => {
+      if (!isTemporaryStoryAssetUrl(page.imageUrl)) return page;
+      const dataUrl = await imageUrlToDataUrl(page.imageUrl);
+      if (!dataUrl?.startsWith("data:image/")) {
+        throw new Error("temporary-story-asset-materialization-failed");
+      }
+      return { ...page, imageUrl: dataUrl };
+    }),
+  );
+  return { ...story, pages };
 }

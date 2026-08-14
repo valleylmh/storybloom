@@ -33,6 +33,9 @@ export interface PersistedStoryInput {
   otherDetails?: string;
   theme: StoryInput["theme"];
   customTheme?: string;
+  parentFacts?: string;
+  allowedImaginations?: string;
+  storyTreatment?: StoryInput["storyTreatment"];
   style: StoryInput["style"];
   language: StoryInput["language"];
   characterReferenceId?: string;
@@ -106,6 +109,9 @@ function toPersistedInput(input: StoryInput): PersistedStoryInput {
     otherDetails: optionalText(input.otherDetails),
     theme: input.theme,
     customTheme: optionalText(input.customTheme),
+    parentFacts: optionalText(input.parentFacts),
+    allowedImaginations: optionalText(input.allowedImaginations),
+    storyTreatment: input.storyTreatment,
     style: input.style,
     language: input.language,
     characterReferenceId: optionalText(input.characterReferenceId),
@@ -213,6 +219,9 @@ export function fromPersistedStorySnapshot(
       otherDetails: snapshot.input.otherDetails,
       theme: snapshot.input.theme,
       customTheme: snapshot.input.customTheme,
+      parentFacts: snapshot.input.parentFacts,
+      allowedImaginations: snapshot.input.allowedImaginations,
+      storyTreatment: snapshot.input.storyTreatment,
       style: snapshot.input.style,
       language: snapshot.input.language,
       characterReferenceId: snapshot.input.characterReferenceId,

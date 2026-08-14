@@ -1,5 +1,19 @@
 # StoryBloom 内容生产脚本
 
+## check-production-readiness.ts — 生产配置检查
+
+在部署前检查 Reliable Generation 所需的生产环境基线：
+
+```bash
+npm run check:production
+```
+
+脚本只读取当前进程中的环境变量，不联网、不调用 provider 或 Supabase，也不会打印 secret 值。它报告的是 `configurationReady`；为兼容保留的 `ok` 只是同义字段，`productionVerified` 始终为 `false`。生产环境必须配置一组且仅一组完整的共享持久化配对：`UPSTASH_REDIS_REST_URL` + `UPSTASH_REDIS_REST_TOKEN`，或 `KV_REST_API_URL` + `KV_REST_API_TOKEN`；缺失、混用或同时配置两组会返回失败。通过检查不等于生产部署或真实 provider 已验证，部署后仍需按根目录 README 的 smoke 清单人工验收。
+
+`STORYBLOOM_PRODUCTION_JOBS_ENABLED` 默认关闭。开启后，检查脚本还会验证专用 worker secret、资产 principal HMAC secret、共享临时资产 backend/bucket 和可选 lease/claim/reclaim 数值范围，但仍不会连接 Redis 或 Supabase，也不会确认 worker、Cron、bucket 隐私和清理策略已经部署。当前没有独立的 worker/reclaim 命令可由本 README 承诺；只有相应 API/脚本真实接线并通过平台验收后，才应把它们加入部署计划。
+
+启用 Supabase 临时资产后端前，还需手工执行 `supabase/migrations/202608130001_temporary_story_generation_assets.sql`。开关为 `1` 时，输出会列出 `manualVerificationChecks`：确认 bucket 私有性/MIME/大小限制，确认 anon/auth 无法直接访问，使用无敏感内容的 disposable 对象确认 service-role upload/download/delete，以及完成 worker 平台 smoke。检查脚本不会替代这些动作，也不会探测默认私有 bucket 是否真实存在。
+
 ## generate-library-book.ts — 绘本馆书籍草稿生成
 
 为 `/library` 绘本馆生成单本书的**草稿 JSON**。公开内容生产边界见 [docs/feature-roadmap-tasks.md](../docs/feature-roadmap-tasks.md#b-绘本馆与内容生产)。

@@ -9,6 +9,7 @@ import type {
   StoryRepository,
   StorySaveInput,
 } from "@/lib/repositories/story-repository";
+import { materializeTemporaryStoryImages } from "@/lib/client-images";
 
 function fromHistory(record: StoryHistoryRecord): SavedStory {
   return {
@@ -20,7 +21,10 @@ function fromHistory(record: StoryHistoryRecord): SavedStory {
 }
 
 async function save(input: StorySaveInput) {
-  const records = await upsertHistory(input.result);
+  // Temporary server assets expire. A local save must own its image bytes so
+  // reopening a device story never depends on the 24-hour generation cache.
+  const durableResult = await materializeTemporaryStoryImages(input.result);
+  const records = await upsertHistory(durableResult);
   const saved = records.find(
     (record) => record.storyId === input.result.storyId,
   );

@@ -101,6 +101,10 @@ function createGrowthRecord(
     occurredOn: "2026-08-09",
     note: "他收好以后特别骄傲。",
     idea: "安安第一次自己收好积木",
+    readingStage: "6-8",
+    storyTreatment: "warm-imagination",
+    parentFacts: "安安第一次独立收好积木。",
+    allowedImaginations: "积木可以轻轻说晚安。",
     photos: [
       {
         id: "local-photo-1",
@@ -190,6 +194,10 @@ function createGrowthRepository(initial: GrowthRecord[] = []) {
         occurredOn: input.draft.occurredOn,
         note: input.draft.note,
         idea: input.draft.idea,
+        readingStage: input.draft.readingStage,
+        storyTreatment: input.draft.storyTreatment,
+        parentFacts: input.draft.parentFacts,
+        allowedImaginations: input.draft.allowedImaginations,
         photos: input.draft.photos,
         story: input.story,
         createdAt: existing?.createdAt || NOW,
@@ -375,6 +383,12 @@ describe("local data import", () => {
     expect(setup.cloudGrowth.saveInputs[0].draft.photos[0].id).toMatch(
       /^[0-9a-f-]{36}$/,
     );
+    expect(setup.cloudGrowth.saveInputs[0].draft).toMatchObject({
+      readingStage: "6-8",
+      storyTreatment: "warm-imagination",
+      parentFacts: "安安第一次独立收好积木。",
+      allowedImaginations: "积木可以轻轻说晚安。",
+    });
     expect(sync.writes.some((record) => record.status === "pending")).toBe(true);
     expect(sync.writes.some((record) => record.status === "syncing")).toBe(true);
     expect(await sync.store.get("story", "story-1")).toMatchObject({

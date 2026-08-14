@@ -29,8 +29,12 @@ import {
   getImageStartedAtMs,
   getInitialIllustrationAction,
   ILLUSTRATION_STALE_THRESHOLD_MS,
+  isDurablePendingIllustration,
+  markStaleIllustrationsFailed,
+  STALE_ILLUSTRATION_ERROR,
   isStaleWaitingPage,
   isWaitingImagePage,
+  summarizeIllustrationProgress,
 } from "@/lib/illustration-request-policy";
 import { getLiveIllustrationConcurrency } from "@/lib/illustration-client-concurrency";
 import type {
@@ -103,7 +107,7 @@ function getSampleBookId(result: GenerateResponse) {
 function getTimedOutImageError(useFreeFallback: boolean) {
   return useFreeFallback
     ? "免费生图模型超过 3 分钟仍未完成，请重新生成本页。"
-    : "插图生成超过 3 分钟，已切换免费生图模型重试。";
+    : STALE_ILLUSTRATION_ERROR;
 }
 
 function getSingleLineText(
@@ -142,10 +146,6 @@ export default function BookPreview({
 }: Props) {
   const [pages, setPages] = useState(result.pages);
   const [nowMs, setNowMs] = useState(() => Date.now());
-  const [imageProgress, setImageProgress] = useState({
-    complete: 0,
-    total: result.pages.length,
-  });
   const [shareStatus, setShareStatus] = useState<"idle" | "rendering">("idle");
   const [shareError, setShareError] = useState<string | null>(null);
   const [shareImageUrl, setShareImageUrl] = useState<string | null>(null);
@@ -254,14 +254,9 @@ export default function BookPreview({
 
   function replacePageInState(updatedPage: StoryPage) {
     setPages((current) => {
-      const next = current.map((item) =>
+      return current.map((item) =>
         item.page === updatedPage.page ? updatedPage : item,
       );
-      setImageProgress({
-        complete: next.filter((page) => page.imageStatus === "complete").length,
-        total: next.length,
-      });
-      return next;
     });
   }
 
@@ -275,15 +270,21 @@ export default function BookPreview({
     pageNumber: number,
     useFreeFallback: boolean,
     requestStartedAtMs: number,
+    initialPage?: StoryPage,
   ): Promise<{ page: StoryPage; allComplete?: boolean }> {
     const deadlineMs = requestStartedAtMs + ILLUSTRATION_STALE_THRESHOLD_MS;
+    let durablePending = initialPage
+      ? isDurablePendingIllustration(initialPage)
+      : false;
 
-    while (Date.now() < deadlineMs) {
+    while (durablePending || Date.now() < deadlineMs) {
       await wait(
-        Math.min(
-          ILLUSTRATION_POLL_INTERVAL_MS,
-          Math.max(0, deadlineMs - Date.now()),
-        ),
+        durablePending
+          ? ILLUSTRATION_POLL_INTERVAL_MS
+          : Math.min(
+              ILLUSTRATION_POLL_INTERVAL_MS,
+              Math.max(0, deadlineMs - Date.now()),
+            ),
       );
 
       const response = await fetch(
@@ -303,6 +304,9 @@ export default function BookPreview({
         continue;
       }
 
+      replacePageInState(data.page);
+      durablePending = isDurablePendingIllustration(data.page);
+
       if (activeStoryIdRef.current !== result.storyId) {
         throw new Error("Story changed before illustration finished.");
       }
@@ -315,23 +319,17 @@ export default function BookPreview({
         throw new Error(data.page.imageError || data.error || "插图生成失败。");
       }
 
-      if (!useFreeFallback && isStaleWaitingPage(data.page, Date.now())) {
-        console.warn(
-          "[BookPreview] Page " +
-            pageNumber +
-            " still waiting, retrying with free fallback",
-        );
-        return requestIllustrationPage(pageNumber, true);
+      if (
+        !durablePending &&
+        !useFreeFallback &&
+        isStaleWaitingPage(data.page, Date.now())
+      ) {
+        throw new Error(STALE_ILLUSTRATION_ERROR);
       }
     }
 
     if (!useFreeFallback) {
-      console.warn(
-        "[BookPreview] Page " +
-          pageNumber +
-          " exceeded 3 min, retrying with free fallback",
-      );
-      return requestIllustrationPage(pageNumber, true);
+      throw new Error(STALE_ILLUSTRATION_ERROR);
     }
 
     throw new Error(getTimedOutImageError(true));
@@ -384,7 +382,7 @@ export default function BookPreview({
 
     activeImageRequestsRef.current.add(page.page);
     try {
-      return await pollIllustrationPage(page.page, false, startedAtMs);
+      return await pollIllustrationPage(page.page, false, startedAtMs, page);
     } finally {
       activeImageRequestsRef.current.delete(page.page);
     }
@@ -419,6 +417,7 @@ export default function BookPreview({
         data.page
           ? (getImageStartedAtMs(data.page) ?? requestStartedAtMs)
           : requestStartedAtMs,
+        data.page,
       );
     }
 
@@ -439,11 +438,6 @@ export default function BookPreview({
 
     setPages(result.pages);
     setNowMs(Date.now());
-    setImageProgress({
-      complete: result.pages.filter((page) => page.imageStatus === "complete")
-        .length,
-      total: result.pages.length,
-    });
     setShareError(null);
     setShareImageUrl(null);
     setShareDialogOpen(false);
@@ -454,7 +448,10 @@ export default function BookPreview({
 
   const shareDialogRef = useRef<HTMLDivElement>(null);
   const hasTimedPendingImages = pages.some(
-    (page) => isWaitingImagePage(page) && Boolean(page.imageStartedAt),
+    (page) =>
+      isWaitingImagePage(page) &&
+      Boolean(page.imageStartedAt) &&
+      !isDurablePendingIllustration(page),
   );
 
   useEffect(() => {
@@ -698,31 +695,32 @@ export default function BookPreview({
       return;
     }
 
-    const stalePages = pages.filter(
-      (page) =>
-        isStaleWaitingPage(page, nowMs) &&
-        !retryingPages.includes(page.page) &&
-        !activeImageRequestsRef.current.has(page.page) &&
-        !freeFallbackRequestsRef.current.has(page.page),
-    );
-
-    stalePages.forEach((page) => {
-      handleRetryPage(page.page);
+    setPages((current) => {
+      const next = markStaleIllustrationsFailed(current, nowMs);
+      next
+        .filter(
+          (page) =>
+            page.imageStatus === "failed" &&
+            page.imageError === STALE_ILLUSTRATION_ERROR,
+        )
+        .forEach((page) => requestedImagePagesRef.current.add(page.page));
+      return next;
     });
-  }, [canRegenerateImages, nowMs, pages, retryingPages]);
+  }, [canRegenerateImages, nowMs]);
+
+  const illustrationProgress = useMemo(
+    () => summarizeIllustrationProgress(pages, nowMs),
+    [nowMs, pages],
+  );
 
   const allImagesReady = useMemo(
     () =>
-      pages.length === result.totalPages &&
-      pages.every(
-        (page) => Boolean(page.imageUrl) && page.imageStatus === "complete",
-      ),
-    [pages, result.totalPages],
+      illustrationProgress.total === result.totalPages &&
+      illustrationProgress.status === "ready",
+    [illustrationProgress, result.totalPages],
   );
   const hasDemoImages = pages.some((page) => page.imageStatus === "demo");
-  const hasPendingImages = pages.some(
-    (page) => page.imageStatus === "pending" || page.imageStatus === "demo",
-  );
+  const hasPendingImages = illustrationProgress.pending > 0;
   useEffect(() => {
     if (!canRegenerateImages || !onResultUpdateRef.current) {
       return;
@@ -735,6 +733,9 @@ export default function BookPreview({
         imageStatus: page.imageStatus,
         imageError: page.imageError,
         imageStartedAt: page.imageStartedAt,
+        imageAttemptId: page.imageAttemptId,
+        imageDurableJob: page.imageDurableJob,
+        imageJobId: page.imageJobId,
         imageCompletedAt: page.imageCompletedAt,
       })),
     );
@@ -770,6 +771,9 @@ export default function BookPreview({
               imageStatus: "pending" as const,
               imageError: undefined,
               imageStartedAt: startedAt,
+              imageAttemptId: undefined,
+              imageDurableJob: undefined,
+              imageJobId: undefined,
               imageCompletedAt: undefined,
               imageDurationMs: undefined,
             }
@@ -975,7 +979,9 @@ export default function BookPreview({
             : `这次已经生成完整 ${result.totalPages} 页内容。${
                 allImagesReady
                   ? " 可以直接朗读、预览，或生成一张适合分享的 PNG 长图。"
-                  : ` 故事主线已完成，插图正在逐张替换（${imageProgress.complete}/${imageProgress.total}）。`
+                  : illustrationProgress.status === "partially_failed"
+                    ? ` 故事主线已完成，已有 ${illustrationProgress.complete}/${illustrationProgress.total} 页插图完成；未完成页面需要手动重试。`
+                    : ` 故事主线已完成，插图正在逐张替换（${illustrationProgress.complete}/${illustrationProgress.total}）。`
               }`}
         </p>
       </section>

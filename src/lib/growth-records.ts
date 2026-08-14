@@ -1,8 +1,26 @@
-import type { GenerateResponse } from "@/types";
+import type {
+  AgeGroup,
+  GenerateResponse,
+  GrowthStoryTreatment,
+} from "@/types";
+import { materializeTemporaryStoryImages } from "@/lib/client-images";
 
 const DB_NAME = "storybloom-growth-records";
 const DB_VERSION = 1;
 const STORE_NAME = "records";
+
+export const MAX_GROWTH_CONFIRMATION_LENGTH = 300;
+
+export interface GrowthStoryContext {
+  /** Reading level selected for this real-life moment. */
+  readingStage?: AgeGroup;
+  /** How closely the generated story should stay to the real event. */
+  storyTreatment?: GrowthStoryTreatment;
+  /** Facts explicitly confirmed by the parent or guardian. */
+  parentFacts?: string;
+  /** Imaginative additions explicitly allowed by the parent or guardian. */
+  allowedImaginations?: string;
+}
 
 export interface GrowthRecordPhoto {
   id: string;
@@ -10,7 +28,7 @@ export interface GrowthRecordPhoto {
   dataUrl: string;
 }
 
-export interface GrowthRecordDraft {
+export interface GrowthRecordDraft extends GrowthStoryContext {
   version: 1;
   childKey: string;
   childName: string;
@@ -22,7 +40,7 @@ export interface GrowthRecordDraft {
   photos: GrowthRecordPhoto[];
 }
 
-export interface GrowthRecord {
+export interface GrowthRecord extends GrowthStoryContext {
   id: string;
   /** Stable local id used for cloud upserts; absent on legacy IndexedDB rows. */
   clientRecordId?: string;
@@ -91,7 +109,60 @@ function hasValidGrowthPhotos(value: unknown) {
   );
 }
 
-function isGrowthRecord(value: unknown): value is GrowthRecord {
+function isOptionalGrowthConfirmation(value: unknown) {
+  return (
+    value === undefined ||
+    (typeof value === "string" &&
+      value.trim().length <= MAX_GROWTH_CONFIRMATION_LENGTH)
+  );
+}
+
+function normalizeGrowthConfirmation(value: string | undefined) {
+  const normalized = value?.trim();
+  return normalized || undefined;
+}
+
+function isOptionalReadingStage(value: unknown): value is AgeGroup | undefined {
+  return (
+    value === undefined || value === "2-3" || value === "4-5" || value === "6-8"
+  );
+}
+
+function isOptionalStoryTreatment(
+  value: unknown,
+): value is GrowthStoryTreatment | undefined {
+  return (
+    value === undefined ||
+    value === "documentary" ||
+    value === "warm-imagination" ||
+    value === "fairytale"
+  );
+}
+
+function getGrowthStoryContext(
+  draft: GrowthStoryContext,
+  existing?: GrowthStoryContext,
+): GrowthStoryContext {
+  const readingStage = draft.readingStage ?? existing?.readingStage;
+  const storyTreatment = draft.storyTreatment ?? existing?.storyTreatment;
+  const parentFacts = normalizeGrowthConfirmation(
+    draft.parentFacts === undefined ? existing?.parentFacts : draft.parentFacts,
+  );
+  const allowedImaginations = normalizeGrowthConfirmation(
+    draft.allowedImaginations === undefined
+      ? existing?.allowedImaginations
+      : draft.allowedImaginations,
+  );
+
+  return {
+    ...(readingStage ? { readingStage } : {}),
+    ...(storyTreatment ? { storyTreatment } : {}),
+    ...(parentFacts ? { parentFacts } : {}),
+    ...(allowedImaginations ? { allowedImaginations } : {}),
+  };
+}
+
+export function isGrowthRecord(value: unknown): value is GrowthRecord {
   if (!value || typeof value !== "object") return false;
   const record = value as Partial<GrowthRecord>;
   const story = record.story as Partial<GenerateResponse> | undefined;
@@ -114,7 +185,11 @@ function isGrowthRecord(value: unknown): value is GrowthRecord {
     typeof story?.storyId === "string" &&
     typeof story.coverTitle === "string" &&
     Array.isArray(story.pages) &&
-    hasValidGrowthPhotos(record.photos)
+    hasValidGrowthPhotos(record.photos) &&
+    isOptionalReadingStage(record.readingStage) &&
+    isOptionalStoryTreatment(record.storyTreatment) &&
+    isOptionalGrowthConfirmation(record.parentFacts) &&
+    isOptionalGrowthConfirmation(record.allowedImaginations)
   );
 }
 
@@ -133,8 +208,34 @@ export function isGrowthRecordDraft(value: unknown): value is GrowthRecordDraft 
     draft.note.length <= 200 &&
     typeof draft.idea === "string" &&
     draft.idea.trim().length > 0 &&
-    hasValidGrowthPhotos(draft.photos)
+    hasValidGrowthPhotos(draft.photos) &&
+    isOptionalReadingStage(draft.readingStage) &&
+    isOptionalStoryTreatment(draft.storyTreatment) &&
+    isOptionalGrowthConfirmation(draft.parentFacts) &&
+    isOptionalGrowthConfirmation(draft.allowedImaginations)
   );
+}
+
+export function normalizeGrowthRecordDraft(
+  value: unknown,
+): GrowthRecordDraft | undefined {
+  if (!isGrowthRecordDraft(value)) return undefined;
+  const {
+    readingStage,
+    storyTreatment,
+    parentFacts,
+    allowedImaginations,
+    ...draft
+  } = value;
+  return {
+    ...draft,
+    ...getGrowthStoryContext({
+      readingStage,
+      storyTreatment,
+      parentFacts,
+      allowedImaginations,
+    }),
+  };
 }
 
 export function createGrowthRecord(
@@ -155,6 +256,7 @@ export function createGrowthRecord(
     note: draft.note,
     idea: draft.idea,
     photos: draft.photos,
+    ...getGrowthStoryContext(draft, existing),
     story,
     createdAt: existing?.createdAt || now,
     updatedAt: now,
@@ -262,8 +364,9 @@ export async function upsertGrowthRecord(
   const db = await openGrowthDb();
   if (!db) throw new Error("growth-storage-unavailable");
   const records = await readAllRecords(db);
+  const durableStory = await materializeTemporaryStoryImages(story);
   const existing = records.find((record) => record.storyId === story.storyId);
-  const record = createGrowthRecord(story, draft, existing);
+  const record = createGrowthRecord(durableStory, draft, existing);
   const saved = await putRecord(db, record);
   db.close();
   if (!saved) throw new Error("growth-storage-write-failed");
@@ -279,7 +382,12 @@ export async function updateGrowthRecordStory(story: GenerateResponse) {
     db.close();
     return undefined;
   }
-  const next = { ...existing, story, updatedAt: new Date().toISOString() };
+  const durableStory = await materializeTemporaryStoryImages(story);
+  const next = {
+    ...existing,
+    story: durableStory,
+    updatedAt: new Date().toISOString(),
+  };
   const saved = await putRecord(db, next);
   db.close();
   return saved ? next : undefined;
@@ -318,6 +426,9 @@ export async function patchGrowthRecord(
     db.close();
     throw new Error("growth-record-not-found");
   }
+  const durableStory = patch.story
+    ? await materializeTemporaryStoryImages(patch.story)
+    : undefined;
   const next = {
     ...existing,
     ...(patch.occurredOn !== undefined
@@ -326,7 +437,7 @@ export async function patchGrowthRecord(
     ...(patch.note !== undefined ? { note: patch.note } : {}),
     ...(patch.idea !== undefined ? { idea: patch.idea } : {}),
     ...(patch.photos !== undefined ? { photos: patch.photos } : {}),
-    ...(patch.story !== undefined ? { story: patch.story } : {}),
+    ...(durableStory !== undefined ? { story: durableStory } : {}),
     updatedAt: new Date().toISOString(),
   };
   const saved = await putRecord(db, next);

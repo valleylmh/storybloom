@@ -14,6 +14,7 @@ const KNOWN_CONTENT_DATABASES = [
 const CONTENT_LOCAL_STORAGE_KEYS = [
   "storybloom.history.v1",
   "storybloom.shareLinks.v1",
+  "storybloom.generation.active.v1",
   "storybloom:minimal-identity-draft",
 ] as const;
 

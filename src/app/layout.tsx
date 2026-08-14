@@ -9,12 +9,12 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: APP_METADATA_BASE,
-  title: "StoryBloom | 一句话生成一本儿童绘本",
+  title: "StoryBloom | 把成长时刻留成家庭绘本",
   description:
-    "写下一句话，免费生成完整儿童绘本；订阅每日绘本灵感、朗读与家庭分享内容。",
+    "记录孩子真实发生的一件小事，由家长确认事实后生成可朗读、可保存的家庭绘本；也支持从纯想象开始创作。",
   openGraph: {
-    title: "StoryBloom | 一句话生成一本儿童绘本",
-    description: "一句话、一个场景、一天一本免费儿童绘本。",
+    title: "StoryBloom | 把成长时刻留成家庭绘本",
+    description: "记录一个真实时刻，确认事实，再把它变成以后还能翻开的家庭绘本。",
     type: "website",
   },
 };
