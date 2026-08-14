@@ -21,6 +21,13 @@ const controlsSource = readFileSync(
   new URL("../src/components/growth/GrowthArchiveControls.tsx", import.meta.url),
   "utf8",
 );
+const cloudControlsSource = readFileSync(
+  new URL(
+    "../src/components/growth/CloudGrowthArchiveControls.tsx",
+    import.meta.url,
+  ),
+  "utf8",
+);
 
 describe("growth moment local UI contract", () => {
   it("exposes independent version, original-photo, and whole-Moment actions", () => {
@@ -50,5 +57,16 @@ describe("growth moment local UI contract", () => {
     expect(controlsSource).toContain("确认仅删除本机档案");
     expect(controlsSource).toContain("clearAll");
     expect(cloudRepositorySource).not.toContain("clearAll");
+  });
+
+  it("keeps private-cloud governance authenticated, scoped, and separate from local data", () => {
+    expect(cloudControlsSource).toContain("/api/account/growth-archive/export");
+    expect(cloudControlsSource).toContain(
+      "DELETE_ALL_CLOUD_GROWTH_CONFIRMATION",
+    );
+    expect(cloudControlsSource).toContain("不会读取、上传或删除当前设备");
+    expect(cloudControlsSource).toContain("普通绘本馆");
+    expect(cloudControlsSource).toContain("不会自动删除");
+    expect(cloudRepositorySource).not.toContain("moments:");
   });
 });

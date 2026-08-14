@@ -26,6 +26,7 @@ import {
   type GrowthDataSource,
 } from "./growth-source-model";
 import GrowthArchiveControls from "./GrowthArchiveControls";
+import CloudGrowthArchiveControls from "./CloudGrowthArchiveControls";
 import styles from "./GrowthArchive.module.css";
 
 function formatDate(date: string) {
@@ -217,6 +218,9 @@ export default function AccountGrowthLibrary({
 
         {source === "local" ? (
           <GrowthArchiveControls onArchiveChanged={loadRecords} />
+        ) : null}
+        {source === "cloud" && userId ? (
+          <CloudGrowthArchiveControls onArchiveChanged={loadRecords} />
         ) : null}
 
         {source === "local" && cloudError ? (

@@ -106,3 +106,15 @@ supabase/migrations/202608140001_growth_moments_storybook_versions.sql
 ```
 
 部署 schema 不代表允许同步。只有在家长主动选择具体内容、明确确认照片上传范围，并完成 RLS、私有 Storage、删除和多设备恢复验收后，才能接入 cloud repository。登录本身永远不触发本地儿童数据上传。
+
+### 私有云治理兼容层
+
+`/me/growth` 的“私有云端”来源现已具备独立治理代码路径：
+
+- 登录后通过专用服务端接口读取私有云成长档案摘要；
+- 兼容当前 `growth_records`，并在三个 GrowthMoment 新表部署后只读识别新结构；已迁移旧记录不会重复计数；
+- 生成只包含成长档案、关联绘本正文和可读取私有图片的专用 ZIP，不复用“全部账户数据”导出包；
+- `account_settings.retention_days` 只保存保留期限偏好，并按浏览器时区生成到期预览，不创建自动删除任务；
+- 完整删除和到期删除都要求再次确认，只删除成长表关系与 `growth-record-photos` 对象，不删除当前设备、`saved_stories`、家庭角色、真实声音或公开分享。
+
+这仍是部署验收基础，不代表生产跨设备能力已经验证。真实 Supabase 项目必须按 [私有云成长档案治理部署与多设备验收清单](cloud-growth-archive-deployment-checklist.md) 完成 migration、RLS、Storage、两个账户和两个设备验收。
