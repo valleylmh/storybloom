@@ -4,10 +4,27 @@ import type {
   GrowthStoryTreatment,
 } from "@/types";
 import { materializeTemporaryStoryImages } from "@/lib/client-images";
+import {
+  addStorybookVersion,
+  clearGrowthMomentOriginalAssets,
+  createGrowthMoment,
+  createStorybookVersion,
+  isGrowthMoment,
+  isStorybookVersion,
+  migrateLegacyGrowthRecord,
+  projectGrowthMomentBundle,
+  removeStorybookVersion,
+  selectActiveStorybookVersion,
+  type GrowthMomentBundle,
+  type StorybookVersion,
+} from "@/lib/growth-moments";
 
 const DB_NAME = "storybloom-growth-records";
 const DB_VERSION = 1;
 const STORE_NAME = "records";
+const MOMENT_ENVELOPE_PREFIX = "moment:";
+const STORYBOOK_ENVELOPE_PREFIX = "storybook:";
+const ENVELOPE_VERSION = 1 as const;
 
 export const MAX_GROWTH_CONFIRMATION_LENGTH = 300;
 
@@ -42,6 +59,12 @@ export interface GrowthRecordDraft extends GrowthStoryContext {
 
 export interface GrowthRecord extends GrowthStoryContext {
   id: string;
+  /** Logical Moment id when this record is a compatibility projection. */
+  momentId?: string;
+  /** Selected StorybookVersion id used by legacy story-oriented screens. */
+  activeStorybookVersionId?: string;
+  /** Number of versions linked to the same real-life Moment. */
+  storybookVersionCount?: number;
   /** Stable local id used for cloud upserts; absent on legacy IndexedDB rows. */
   clientRecordId?: string;
   storyId: string;
@@ -65,6 +88,187 @@ export interface GrowthChildSummary {
   coverUrl?: string;
   recordCount: number;
   latestOccurredOn: string;
+}
+
+interface GrowthMomentEnvelope {
+  id: string;
+  entityType: "growth-moment";
+  envelopeVersion: typeof ENVELOPE_VERSION;
+  moment: GrowthMomentBundle["moment"];
+  activeStorybookVersionId?: string;
+}
+
+interface StorybookVersionEnvelope {
+  id: string;
+  entityType: "storybook-version";
+  envelopeVersion: typeof ENVELOPE_VERSION;
+  version: StorybookVersion;
+}
+
+interface GrowthStoreMutation {
+  puts?: Array<GrowthRecord | GrowthMomentEnvelope | StorybookVersionEnvelope>;
+  deletes?: string[];
+}
+
+function getMomentEnvelopeId(momentId: string) {
+  return `${MOMENT_ENVELOPE_PREFIX}${momentId}`;
+}
+
+function getStorybookEnvelopeId(versionId: string) {
+  return `${STORYBOOK_ENVELOPE_PREFIX}${versionId}`;
+}
+
+function isGrowthMomentEnvelope(value: unknown): value is GrowthMomentEnvelope {
+  if (!value || typeof value !== "object") return false;
+  const envelope = value as Partial<GrowthMomentEnvelope>;
+  return (
+    envelope.entityType === "growth-moment" &&
+    envelope.envelopeVersion === ENVELOPE_VERSION &&
+    isGrowthMoment(envelope.moment) &&
+    envelope.id === getMomentEnvelopeId(envelope.moment.momentId) &&
+    (envelope.activeStorybookVersionId === undefined ||
+      (typeof envelope.activeStorybookVersionId === "string" &&
+        envelope.activeStorybookVersionId.trim().length > 0))
+  );
+}
+
+function isStorybookVersionEnvelope(
+  value: unknown,
+): value is StorybookVersionEnvelope {
+  if (!value || typeof value !== "object") return false;
+  const envelope = value as Partial<StorybookVersionEnvelope>;
+  return (
+    envelope.entityType === "storybook-version" &&
+    envelope.envelopeVersion === ENVELOPE_VERSION &&
+    isStorybookVersion(envelope.version) &&
+    envelope.id === getStorybookEnvelopeId(envelope.version.versionId)
+  );
+}
+
+function getRecordMomentId(record: GrowthRecord) {
+  return record.momentId || record.clientRecordId || record.id;
+}
+
+function sortGrowthMomentBundles(bundles: GrowthMomentBundle[]) {
+  return [...bundles].sort((left, right) => {
+    const occurredDiff = right.moment.occurredOn.localeCompare(
+      left.moment.occurredOn,
+    );
+    return occurredDiff || right.moment.updatedAt.localeCompare(left.moment.updatedAt);
+  });
+}
+
+/**
+ * Builds the new domain view from one mixed legacy/shadow object store.
+ * This stays pure so migration behavior can be regression-tested without a browser.
+ */
+export function buildGrowthMomentBundlesFromStoredValues(
+  values: unknown[],
+): GrowthMomentBundle[] {
+  const bundles = new Map<string, GrowthMomentBundle>();
+
+  values.filter(isGrowthMomentEnvelope).forEach((envelope) => {
+    bundles.set(envelope.moment.momentId, {
+      moment: envelope.moment,
+      storybookVersions: [],
+      ...(envelope.activeStorybookVersionId
+        ? { activeStorybookVersionId: envelope.activeStorybookVersionId }
+        : {}),
+    });
+  });
+
+  values.filter(isStorybookVersionEnvelope).forEach((envelope) => {
+    const bundle = bundles.get(envelope.version.momentId);
+    if (!bundle) return;
+    bundle.storybookVersions.push(envelope.version);
+  });
+
+  values.filter(isGrowthRecord).forEach((record) => {
+    const migrated = migrateLegacyGrowthRecord(record);
+    const momentId = migrated.moment.momentId;
+    const existing = bundles.get(momentId);
+    if (!existing) {
+      bundles.set(momentId, migrated);
+      return;
+    }
+
+    const legacyIsNewer =
+      Date.parse(migrated.moment.updatedAt) >
+      Date.parse(existing.moment.updatedAt);
+    if (legacyIsNewer) {
+      existing.moment = migrated.moment;
+    }
+
+    migrated.storybookVersions.forEach((version) => {
+      const existingIndex = existing.storybookVersions.findIndex(
+        (candidate) =>
+          candidate.versionId === version.versionId ||
+          candidate.storyId === version.storyId,
+      );
+      if (existingIndex < 0) {
+        existing.storybookVersions.push(version);
+      } else if (
+        Date.parse(version.updatedAt) >
+        Date.parse(existing.storybookVersions[existingIndex].updatedAt)
+      ) {
+        existing.storybookVersions[existingIndex] = version;
+      }
+    });
+    if (legacyIsNewer || !existing.activeStorybookVersionId) {
+      existing.activeStorybookVersionId = migrated.activeStorybookVersionId;
+    }
+  });
+
+  return sortGrowthMomentBundles(
+    Array.from(bundles.values()).map((bundle) => {
+      const storybookVersions = [...bundle.storybookVersions].sort(
+        (left, right) =>
+          Date.parse(left.createdAt) - Date.parse(right.createdAt) ||
+          left.versionId.localeCompare(right.versionId),
+      );
+      const active = selectActiveStorybookVersion({
+        ...bundle,
+        storybookVersions,
+      });
+      return {
+        moment: bundle.moment,
+        storybookVersions,
+        ...(active ? { activeStorybookVersionId: active.versionId } : {}),
+      };
+    }),
+  );
+}
+
+function createMomentEnvelope(bundle: GrowthMomentBundle): GrowthMomentEnvelope {
+  const active = selectActiveStorybookVersion(bundle);
+  return {
+    id: getMomentEnvelopeId(bundle.moment.momentId),
+    entityType: "growth-moment",
+    envelopeVersion: ENVELOPE_VERSION,
+    moment: bundle.moment,
+    ...(active ? { activeStorybookVersionId: active.versionId } : {}),
+  };
+}
+
+function createStorybookEnvelope(
+  version: StorybookVersion,
+): StorybookVersionEnvelope {
+  return {
+    id: getStorybookEnvelopeId(version.versionId),
+    entityType: "storybook-version",
+    envelopeVersion: ENVELOPE_VERSION,
+    version,
+  };
+}
+
+export function createGrowthMomentShadowValues(
+  input: GrowthMomentBundle,
+): Array<GrowthMomentEnvelope | StorybookVersionEnvelope> {
+  const bundle = normalizeGrowthMomentBundle(input);
+  return [
+    createMomentEnvelope(bundle),
+    ...bundle.storybookVersions.map(createStorybookEnvelope),
+  ];
 }
 
 function canUseIndexedDb() {
@@ -114,6 +318,20 @@ function isOptionalGrowthConfirmation(value: unknown) {
     value === undefined ||
     (typeof value === "string" &&
       value.trim().length <= MAX_GROWTH_CONFIRMATION_LENGTH)
+  );
+}
+
+function isOptionalGrowthRecordId(value: unknown) {
+  return (
+    value === undefined ||
+    (typeof value === "string" && value.trim().length > 0 && value.length <= 200)
+  );
+}
+
+function isOptionalStorybookVersionCount(value: unknown) {
+  return (
+    value === undefined ||
+    (typeof value === "number" && Number.isInteger(value) && value >= 1)
   );
 }
 
@@ -169,6 +387,9 @@ export function isGrowthRecord(value: unknown): value is GrowthRecord {
   return (
     typeof record.id === "string" &&
     record.id.trim().length > 0 &&
+    isOptionalGrowthRecordId(record.momentId) &&
+    isOptionalGrowthRecordId(record.activeStorybookVersionId) &&
+    isOptionalStorybookVersionCount(record.storybookVersionCount) &&
     typeof record.storyId === "string" &&
     record.storyId.trim().length > 0 &&
     typeof record.childKey === "string" &&
@@ -318,28 +539,26 @@ function openGrowthDb() {
   });
 }
 
-function readAllRecords(db: IDBDatabase) {
-  return new Promise<GrowthRecord[]>((resolve) => {
+function readAllStoredValues(db: IDBDatabase) {
+  return new Promise<unknown[]>((resolve) => {
     try {
       const request = db.transaction(STORE_NAME, "readonly").objectStore(STORE_NAME).getAll();
       request.onerror = () => resolve([]);
       request.onsuccess = () =>
-        resolve(
-          Array.isArray(request.result)
-            ? request.result.filter(isGrowthRecord)
-            : [],
-        );
+        resolve(Array.isArray(request.result) ? request.result : []);
     } catch {
       resolve([]);
     }
   });
 }
 
-function putRecord(db: IDBDatabase, record: GrowthRecord) {
+function mutateGrowthStore(db: IDBDatabase, mutation: GrowthStoreMutation) {
   return new Promise<boolean>((resolve) => {
     try {
       const transaction = db.transaction(STORE_NAME, "readwrite");
-      transaction.objectStore(STORE_NAME).put(record);
+      const store = transaction.objectStore(STORE_NAME);
+      Array.from(new Set(mutation.deletes || [])).forEach((id) => store.delete(id));
+      (mutation.puts || []).forEach((value) => store.put(value));
       transaction.oncomplete = () => resolve(true);
       transaction.onerror = () => resolve(false);
       transaction.onabort = () => resolve(false);
@@ -349,11 +568,152 @@ function putRecord(db: IDBDatabase, record: GrowthRecord) {
   });
 }
 
-export async function listGrowthRecords() {
+function findGrowthMomentBundle(
+  bundles: GrowthMomentBundle[],
+  id: string,
+) {
+  return bundles.find(
+    (bundle) =>
+      bundle.moment.momentId === id ||
+      bundle.moment.clientMomentId === id ||
+      bundle.storybookVersions.some(
+        (version) => version.versionId === id || version.storyId === id,
+      ),
+  );
+}
+
+function normalizeGrowthMomentBundle(
+  bundle: GrowthMomentBundle,
+): GrowthMomentBundle {
+  if (!isGrowthMoment(bundle.moment)) {
+    throw new Error("growth-moment-invalid");
+  }
+  if (
+    !bundle.storybookVersions.every(
+      (version) =>
+        isStorybookVersion(version) &&
+        version.momentId === bundle.moment.momentId,
+    )
+  ) {
+    throw new Error("growth-storybook-version-invalid");
+  }
+  const active = selectActiveStorybookVersion(bundle);
+  return {
+    moment: bundle.moment,
+    storybookVersions: bundle.storybookVersions,
+    ...(active ? { activeStorybookVersionId: active.versionId } : {}),
+  };
+}
+
+function createBundleMutation(
+  storedValues: unknown[],
+  input: GrowthMomentBundle,
+): { bundle: GrowthMomentBundle; mutation: GrowthStoreMutation } {
+  const bundle = normalizeGrowthMomentBundle(input);
+  const momentId = bundle.moment.momentId;
+  const nextVersionEnvelopeIds = new Set(
+    bundle.storybookVersions.map((version) =>
+      getStorybookEnvelopeId(version.versionId),
+    ),
+  );
+  const deletes = new Set<string>();
+
+  storedValues.filter(isStorybookVersionEnvelope).forEach((envelope) => {
+    if (
+      envelope.version.momentId === momentId &&
+      !nextVersionEnvelopeIds.has(envelope.id)
+    ) {
+      deletes.add(envelope.id);
+    }
+  });
+  storedValues.filter(isGrowthRecord).forEach((record) => {
+    if (getRecordMomentId(record) === momentId) deletes.add(record.id);
+  });
+
+  const projection = projectGrowthMomentBundle(bundle);
+  const puts: GrowthStoreMutation["puts"] = [
+    ...createGrowthMomentShadowValues(bundle),
+    ...(projection ? [projection] : []),
+  ];
+  return { bundle, mutation: { puts, deletes: Array.from(deletes) } };
+}
+
+async function persistGrowthMomentBundle(
+  db: IDBDatabase,
+  storedValues: unknown[],
+  input: GrowthMomentBundle,
+) {
+  const { bundle, mutation } = createBundleMutation(storedValues, input);
+  const saved = await mutateGrowthStore(db, mutation);
+  if (!saved) throw new Error("growth-storage-write-failed");
+  return bundle;
+}
+
+export async function listGrowthMomentBundles() {
   const db = await openGrowthDb();
   if (!db) return [];
-  const records = await readAllRecords(db);
+  const storedValues = await readAllStoredValues(db);
+  const bundles = buildGrowthMomentBundlesFromStoredValues(storedValues);
+
+  const momentEnvelopes = new Map(
+    storedValues
+      .filter(isGrowthMomentEnvelope)
+      .map((value) => [value.id, value] as const),
+  );
+  const storybookEnvelopes = new Map(
+    storedValues
+      .filter(isStorybookVersionEnvelope)
+      .map((value) => [value.id, value] as const),
+  );
+  const migrationPuts: GrowthStoreMutation["puts"] = [];
+  bundles.forEach((bundle) => {
+    const momentEnvelope = createMomentEnvelope(bundle);
+    const storedMomentEnvelope = momentEnvelopes.get(momentEnvelope.id);
+    if (
+      !storedMomentEnvelope ||
+      storedMomentEnvelope.moment.updatedAt !== bundle.moment.updatedAt ||
+      storedMomentEnvelope.activeStorybookVersionId !==
+        momentEnvelope.activeStorybookVersionId
+    ) {
+      migrationPuts.push(momentEnvelope);
+    }
+    bundle.storybookVersions.forEach((version) => {
+      const envelope = createStorybookEnvelope(version);
+      const storedEnvelope = storybookEnvelopes.get(envelope.id);
+      if (
+        !storedEnvelope ||
+        storedEnvelope.version.updatedAt !== version.updatedAt
+      ) {
+        migrationPuts.push(envelope);
+      }
+    });
+  });
+  if (migrationPuts.length > 0) {
+    await mutateGrowthStore(db, { puts: migrationPuts });
+  }
   db.close();
+  return bundles;
+}
+
+export async function getGrowthMomentBundle(id: string) {
+  return findGrowthMomentBundle(await listGrowthMomentBundles(), id);
+}
+
+export async function saveGrowthMomentBundle(input: GrowthMomentBundle) {
+  const db = await openGrowthDb();
+  if (!db) throw new Error("growth-storage-unavailable");
+  try {
+    const storedValues = await readAllStoredValues(db);
+    return await persistGrowthMomentBundle(db, storedValues, input);
+  } finally {
+    db.close();
+  }
+}
+
+export async function listGrowthRecords() {
+  const records = (await listGrowthMomentBundles())
+    .map(projectGrowthMomentBundle)
+    .filter((record): record is GrowthRecord => Boolean(record));
   return sortRecords(records);
 }
 
@@ -361,36 +721,151 @@ export async function upsertGrowthRecord(
   story: GenerateResponse,
   draft: GrowthRecordDraft,
 ) {
-  const db = await openGrowthDb();
-  if (!db) throw new Error("growth-storage-unavailable");
-  const records = await readAllRecords(db);
   const durableStory = await materializeTemporaryStoryImages(story);
-  const existing = records.find((record) => record.storyId === story.storyId);
-  const record = createGrowthRecord(durableStory, draft, existing);
-  const saved = await putRecord(db, record);
-  db.close();
-  if (!saved) throw new Error("growth-storage-write-failed");
-  return record;
+  const bundles = await listGrowthMomentBundles();
+  const existingBundle = bundles.find((bundle) =>
+    bundle.storybookVersions.some((version) => version.storyId === story.storyId),
+  );
+  if (!existingBundle) {
+    const record = createGrowthRecord(durableStory, draft);
+    const bundle = migrateLegacyGrowthRecord(record);
+    const saved = await saveGrowthMomentBundle(bundle);
+    const projection = projectGrowthMomentBundle(saved);
+    if (!projection) throw new Error("growth-storybook-version-missing");
+    return projection;
+  }
+
+  const now = new Date().toISOString();
+  const previousVersion = existingBundle.storybookVersions.find(
+    (version) => version.storyId === story.storyId,
+  );
+  const nextMoment = createGrowthMoment(draft, {
+    momentId: existingBundle.moment.momentId,
+    clientMomentId: existingBundle.moment.clientMomentId,
+    confirmedTags: existingBundle.moment.confirmedTags,
+    now,
+  });
+  const version = createStorybookVersion(
+    existingBundle.moment.momentId,
+    durableStory,
+    {
+      versionId: previousVersion?.versionId,
+      storyTreatment: draft.storyTreatment || previousVersion?.storyTreatment,
+      characterReferenceId:
+        draft.childCharacterId || previousVersion?.characterReferenceId,
+      promptVersion: previousVersion?.promptVersion,
+      textModel: previousVersion?.textModel,
+      characterBibleVersion: previousVersion?.characterBibleVersion,
+      source: previousVersion?.source || "generated",
+      createdAt: previousVersion?.createdAt || now,
+      updatedAt: now,
+    },
+  );
+  const saved = await saveGrowthMomentBundle(
+    addStorybookVersion(
+      {
+        ...existingBundle,
+        moment: {
+          ...nextMoment,
+          createdAt: existingBundle.moment.createdAt,
+          ...(nextMoment.childAvatarDataUrl
+            ? {}
+            : existingBundle.moment.childAvatarDataUrl
+              ? { childAvatarDataUrl: existingBundle.moment.childAvatarDataUrl }
+              : {}),
+        },
+      },
+      version,
+    ),
+  );
+  const projection = projectGrowthMomentBundle(saved);
+  if (!projection) throw new Error("growth-storybook-version-missing");
+  return projection;
 }
 
 export async function updateGrowthRecordStory(story: GenerateResponse) {
-  const db = await openGrowthDb();
-  if (!db) return undefined;
-  const records = await readAllRecords(db);
-  const existing = records.find((record) => record.storyId === story.storyId);
-  if (!existing) {
-    db.close();
-    return undefined;
-  }
+  const bundles = await listGrowthMomentBundles();
+  const bundle = bundles.find((candidate) =>
+    candidate.storybookVersions.some((version) => version.storyId === story.storyId),
+  );
+  if (!bundle) return undefined;
+  const existing = bundle.storybookVersions.find(
+    (version) => version.storyId === story.storyId,
+  );
+  if (!existing) return undefined;
   const durableStory = await materializeTemporaryStoryImages(story);
-  const next = {
-    ...existing,
-    story: durableStory,
-    updatedAt: new Date().toISOString(),
-  };
-  const saved = await putRecord(db, next);
-  db.close();
-  return saved ? next : undefined;
+  const now = new Date().toISOString();
+  const nextVersion = createStorybookVersion(bundle.moment.momentId, durableStory, {
+    versionId: existing.versionId,
+    storyTreatment: existing.storyTreatment,
+    characterReferenceId: existing.characterReferenceId,
+    promptVersion: existing.promptVersion,
+    textModel: existing.textModel,
+    characterBibleVersion: existing.characterBibleVersion,
+    source: existing.source,
+    createdAt: existing.createdAt,
+    updatedAt: now,
+  });
+  const saved = await saveGrowthMomentBundle({
+    ...bundle,
+    moment: {
+      ...bundle.moment,
+      updatedAt: now,
+    },
+    storybookVersions: bundle.storybookVersions.map((version) =>
+      version.versionId === existing.versionId ? nextVersion : version,
+    ),
+  });
+  return projectGrowthMomentBundle(saved) || undefined;
+}
+
+export async function addLocalStorybookVersion(
+  momentId: string,
+  story: GenerateResponse,
+  options: Parameters<typeof createStorybookVersion>[2] = {},
+) {
+  const bundle = await getGrowthMomentBundle(momentId);
+  if (!bundle) throw new Error("growth-moment-not-found");
+  const durableStory = await materializeTemporaryStoryImages(story);
+  return saveGrowthMomentBundle(
+    addStorybookVersion(
+      bundle,
+      createStorybookVersion(bundle.moment.momentId, durableStory, options),
+    ),
+  );
+}
+
+export async function selectLocalStorybookVersion(
+  momentId: string,
+  versionId: string,
+) {
+  const bundle = await getGrowthMomentBundle(momentId);
+  if (!bundle) throw new Error("growth-moment-not-found");
+  if (!bundle.storybookVersions.some((version) => version.versionId === versionId)) {
+    throw new Error("growth-storybook-version-not-found");
+  }
+  return saveGrowthMomentBundle({
+    ...bundle,
+    activeStorybookVersionId: versionId,
+  });
+}
+
+export async function removeLocalStorybookVersion(
+  momentId: string,
+  versionId: string,
+) {
+  const bundle = await getGrowthMomentBundle(momentId);
+  if (!bundle) throw new Error("growth-moment-not-found");
+  if (!bundle.storybookVersions.some((version) => version.versionId === versionId)) {
+    throw new Error("growth-storybook-version-not-found");
+  }
+  return saveGrowthMomentBundle(removeStorybookVersion(bundle, versionId));
+}
+
+export async function clearLocalMomentAssets(momentId: string) {
+  const bundle = await getGrowthMomentBundle(momentId);
+  if (!bundle) throw new Error("growth-moment-not-found");
+  return saveGrowthMomentBundle(clearGrowthMomentOriginalAssets(bundle));
 }
 
 export async function updateGrowthRecordDetails(
@@ -416,58 +891,97 @@ export async function patchGrowthRecord(
   if (patch.photos !== undefined && !hasValidGrowthPhotos(patch.photos)) {
     throw new Error("growth-photos-invalid");
   }
-  const db = await openGrowthDb();
-  if (!db) throw new Error("growth-storage-unavailable");
-  const records = await readAllRecords(db);
-  const existing = records.find(
-    (record) => record.id === id || record.storyId === id,
-  );
-  if (!existing) {
-    db.close();
-    throw new Error("growth-record-not-found");
+  const bundles = await listGrowthMomentBundles();
+  const existing = findGrowthMomentBundle(bundles, id);
+  if (!existing) throw new Error("growth-record-not-found");
+
+  const now = new Date().toISOString();
+  let storybookVersions = existing.storybookVersions;
+  let activeStorybookVersionId = existing.activeStorybookVersionId;
+  if (patch.story) {
+    const durableStory = await materializeTemporaryStoryImages(patch.story);
+    const active =
+      existing.storybookVersions.find(
+        (version) => version.storyId === durableStory.storyId,
+      ) || selectActiveStorybookVersion(existing);
+    const nextVersion = createStorybookVersion(
+      existing.moment.momentId,
+      durableStory,
+      {
+        versionId: active?.versionId,
+        storyTreatment: active?.storyTreatment,
+        characterReferenceId: active?.characterReferenceId,
+        promptVersion: active?.promptVersion,
+        textModel: active?.textModel,
+        characterBibleVersion: active?.characterBibleVersion,
+        source: active?.source || "generated",
+        createdAt: active?.createdAt || now,
+        updatedAt: now,
+      },
+    );
+    storybookVersions = active
+      ? existing.storybookVersions.map((version) =>
+          version.versionId === active.versionId ? nextVersion : version,
+        )
+      : [...existing.storybookVersions, nextVersion];
+    activeStorybookVersionId = nextVersion.versionId;
   }
-  const durableStory = patch.story
-    ? await materializeTemporaryStoryImages(patch.story)
-    : undefined;
-  const next = {
-    ...existing,
-    ...(patch.occurredOn !== undefined
-      ? { occurredOn: patch.occurredOn }
-      : {}),
-    ...(patch.note !== undefined ? { note: patch.note } : {}),
-    ...(patch.idea !== undefined ? { idea: patch.idea } : {}),
-    ...(patch.photos !== undefined ? { photos: patch.photos } : {}),
-    ...(durableStory !== undefined ? { story: durableStory } : {}),
-    updatedAt: new Date().toISOString(),
-  };
-  const saved = await putRecord(db, next);
-  db.close();
-  if (!saved) throw new Error("growth-storage-write-failed");
-  return next;
+
+  const saved = await saveGrowthMomentBundle({
+    moment: {
+      ...existing.moment,
+      ...(patch.occurredOn !== undefined
+        ? { occurredOn: patch.occurredOn }
+        : {}),
+      ...(patch.note !== undefined ? { parentNote: patch.note } : {}),
+      ...(patch.idea !== undefined ? { sourceIdea: patch.idea } : {}),
+      ...(patch.photos !== undefined
+        ? {
+            originalAssets: patch.photos.map((photo) => ({
+              assetId: photo.id,
+              kind: "photo" as const,
+              name: photo.name,
+              dataUrl: photo.dataUrl,
+            })),
+          }
+        : {}),
+      updatedAt: now,
+    },
+    storybookVersions,
+    ...(activeStorybookVersionId ? { activeStorybookVersionId } : {}),
+  });
+  const projection = projectGrowthMomentBundle(saved);
+  if (!projection) throw new Error("growth-storybook-version-missing");
+  return projection;
 }
 
-export async function deleteGrowthRecord(storyId: string) {
+export async function deleteLocalGrowthMoment(id: string) {
   const db = await openGrowthDb();
   if (!db) return false;
-  return new Promise<boolean>((resolve) => {
-    try {
-      const transaction = db.transaction(STORE_NAME, "readwrite");
-      transaction.objectStore(STORE_NAME).delete(storyId);
-      transaction.oncomplete = () => {
-        db.close();
-        resolve(true);
-      };
-      transaction.onerror = () => {
-        db.close();
-        resolve(false);
-      };
-      transaction.onabort = () => {
-        db.close();
-        resolve(false);
-      };
-    } catch {
-      db.close();
-      resolve(false);
-    }
-  });
+  try {
+    const storedValues = await readAllStoredValues(db);
+    const bundle = findGrowthMomentBundle(
+      buildGrowthMomentBundlesFromStoredValues(storedValues),
+      id,
+    );
+    if (!bundle) return true;
+    const momentId = bundle.moment.momentId;
+    const deletes = [
+      getMomentEnvelopeId(momentId),
+      ...bundle.storybookVersions.map((version) =>
+        getStorybookEnvelopeId(version.versionId),
+      ),
+      ...storedValues
+        .filter(isGrowthRecord)
+        .filter((record) => getRecordMomentId(record) === momentId)
+        .map((record) => record.id),
+    ];
+    return await mutateGrowthStore(db, { deletes });
+  } finally {
+    db.close();
+  }
+}
+
+export async function deleteGrowthRecord(id: string) {
+  return deleteLocalGrowthMoment(id);
 }

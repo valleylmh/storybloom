@@ -384,6 +384,12 @@ Vercel 的 `NEXT_PUBLIC_APP_URL` 也必须设置为正式域名（不要保留 `
 
 新的 Magic Link 会先回到 `/auth/callback` 恢复登录会话，再通过只允许本站相对路径的 `next` 参数返回发起登录的页面；直接回到 `/family` 的地址仅为旧链接兼容保留。本地开发时也需要允许 `http://localhost:3000/auth/callback`。儿童照片建议使用清晰、单人正面照；上传前必须明确勾选本人或监护人授权，浏览器随后会缩放、转成 WebP 并移除 EXIF，服务端与 Storage 仍按私密儿童资料处理。
 
+## 本地成长时刻与绘本版本
+
+本地成长档案已将家长确认的真实时刻、备注和现场照片保存为 `GrowthMoment`，把每次 AI 绘本结果保存为独立 `StorybookVersion`。同一个时刻可以拥有多个绘本版本，并可分别切换、删除版本或清除现场照片；删除最后一个版本不会删除真实时刻。既有 IndexedDB `GrowthRecord` 会在本机幂等迁移并保留兼容投影，登录不会触发上传。
+
+云端只新增了尚未部署、尚未接线的 schema 基础，不代表跨设备功能已可用。数据边界、删除语义和未来手工部署顺序见 [docs/growth-moments-v1.md](docs/growth-moments-v1.md)。
+
 定制入口默认展示“链接即将上线”。拿到平台链接后，在 `.env.local` 中配置：
 
 ```bash

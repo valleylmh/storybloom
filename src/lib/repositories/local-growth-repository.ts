@@ -1,7 +1,14 @@
 import {
+  addLocalStorybookVersion,
+  clearLocalMomentAssets,
   deleteGrowthRecord,
+  deleteLocalGrowthMoment,
+  getGrowthMomentBundle,
+  listGrowthMomentBundles,
   listGrowthRecords,
   patchGrowthRecord,
+  removeLocalStorybookVersion,
+  selectLocalStorybookVersion,
   upsertGrowthRecord,
 } from "@/lib/growth-records";
 import type { GrowthRepository } from "@/lib/repositories/growth-repository";
@@ -35,5 +42,18 @@ export const localGrowthRepository: GrowthRepository = {
   async remove(id) {
     const deleted = await deleteGrowthRecord(id);
     if (!deleted) throw new Error("local-growth-delete-failed");
+  },
+
+  moments: {
+    list: listGrowthMomentBundles,
+    get: getGrowthMomentBundle,
+    addVersion: addLocalStorybookVersion,
+    selectVersion: selectLocalStorybookVersion,
+    removeVersion: removeLocalStorybookVersion,
+    clearOriginalAssets: clearLocalMomentAssets,
+    async removeMoment(momentId) {
+      const deleted = await deleteLocalGrowthMoment(momentId);
+      if (!deleted) throw new Error("local-growth-delete-failed");
+    },
   },
 };

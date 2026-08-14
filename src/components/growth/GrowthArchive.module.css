@@ -660,6 +660,14 @@
   -webkit-line-clamp: 2;
 }
 
+.recordHeaderCopy .versionCount {
+  display: block;
+  margin-top: 5px;
+  color: #6f7f67;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
 .recordDetail {
   padding: 0 16px 16px;
   border-top: 1px solid rgba(79, 57, 43, 0.1);
@@ -670,6 +678,108 @@
   padding: 14px 0;
   color: #75655a;
   line-height: 1.65;
+}
+
+.versionPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.75fr) auto;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+  padding: 12px;
+  border: 1px solid rgba(91, 113, 83, 0.16);
+  border-radius: 14px;
+  background: rgba(241, 247, 238, 0.72);
+}
+
+.versionPanel > div {
+  display: grid;
+  gap: 3px;
+}
+
+.versionPanel strong {
+  color: #4f614a;
+  font-size: 0.78rem;
+}
+
+.versionPanel div span {
+  color: #71806d;
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.versionPanel select,
+.versionPanel button {
+  min-height: 36px;
+  border: 1px solid rgba(79, 57, 43, 0.13);
+  border-radius: 10px;
+  background: #fffdf9;
+  color: #625449;
+  font: inherit;
+  font-size: 0.72rem;
+}
+
+.versionPanel select {
+  width: 100%;
+  padding: 6px 9px;
+}
+
+.versionPanel button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 10px;
+  color: #963d2c;
+  font-weight: 700;
+}
+
+.versionPanel button:disabled,
+.versionPanel select:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+.momentOnlyCard {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+}
+
+.momentOnlyCard > div:first-child > span {
+  color: #ad4d31;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.momentOnlyCard h2 {
+  margin: 5px 0;
+  font-size: 1.05rem;
+}
+
+.momentOnlyCard p,
+.momentOnlyCard blockquote {
+  margin: 0;
+  color: #75655a;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.momentOnlyCard blockquote {
+  padding: 12px;
+  border-radius: 12px;
+  background: #fff8f0;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .mediaGrid {
@@ -926,6 +1036,10 @@
 
   .recordDetail {
     padding: 0 13px 13px;
+  }
+
+  .versionPanel {
+    grid-template-columns: 1fr;
   }
 
   .mediaGrid {

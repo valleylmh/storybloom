@@ -3,6 +3,7 @@ import type {
   GrowthRecordDraft,
   GrowthRecordPhoto,
 } from "@/lib/growth-records";
+import type { GrowthMomentBundle } from "@/lib/growth-moments";
 import type { GenerateResponse } from "@/types";
 
 export interface GrowthRecordInput {
@@ -32,6 +33,21 @@ export interface GrowthRepository {
   save(input: GrowthRecordInput): Promise<GrowthRecord>;
   update(id: string, patch: GrowthRecordPatch): Promise<GrowthRecord>;
   remove(id: string): Promise<void>;
+  /** Local-only v1 capability. Cloud remains legacy until consent and deployment are verified. */
+  moments?: GrowthMomentRepository;
+}
+
+export interface GrowthMomentRepository {
+  list(): Promise<GrowthMomentBundle[]>;
+  get(id: string): Promise<GrowthMomentBundle | undefined>;
+  addVersion(
+    momentId: string,
+    story: GenerateResponse,
+  ): Promise<GrowthMomentBundle>;
+  selectVersion(momentId: string, versionId: string): Promise<GrowthMomentBundle>;
+  removeVersion(momentId: string, versionId: string): Promise<GrowthMomentBundle>;
+  clearOriginalAssets(momentId: string): Promise<GrowthMomentBundle>;
+  removeMoment(momentId: string): Promise<void>;
 }
 
 export function createGrowthRecordInput(
