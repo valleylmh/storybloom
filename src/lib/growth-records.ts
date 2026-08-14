@@ -605,6 +605,22 @@ function mutateGrowthStore(db: IDBDatabase, mutation: GrowthStoreMutation) {
   });
 }
 
+function clearGrowthStore(db: IDBDatabase) {
+  return new Promise<void>((resolve, reject) => {
+    try {
+      const transaction = db.transaction(STORE_NAME, "readwrite");
+      transaction.objectStore(STORE_NAME).clear();
+      transaction.oncomplete = () => resolve();
+      transaction.onerror = () =>
+        reject(toGrowthStorageError(transaction.error));
+      transaction.onabort = () =>
+        reject(toGrowthStorageError(transaction.error));
+    } catch (error) {
+      reject(toGrowthStorageError(error));
+    }
+  });
+}
+
 function findGrowthMomentBundle(
   bundles: GrowthMomentBundle[],
   id: string,
@@ -1116,28 +1132,54 @@ export async function patchGrowthRecord(
 }
 
 export async function deleteLocalGrowthMoment(id: string) {
+  await deleteLocalGrowthMoments([id]);
+  return true;
+}
+
+export async function deleteLocalGrowthMoments(ids: readonly string[]) {
+  const requested = new Set(ids.filter((id) => id.trim().length > 0));
+  if (requested.size === 0) return [];
   const db = await openGrowthDb();
   if (!db) throw new GrowthStorageError("growth-storage-unavailable");
   try {
     const storedValues = await readAllStoredValues(db);
-    const bundle = findGrowthMomentBundle(
-      buildGrowthMomentBundlesFromStoredValues(storedValues),
-      id,
+    const bundles = buildGrowthMomentBundlesFromStoredValues(storedValues).filter(
+      (bundle) =>
+        requested.has(bundle.moment.momentId) ||
+        requested.has(bundle.moment.clientMomentId) ||
+        bundle.storybookVersions.some(
+          (version) =>
+            requested.has(version.versionId) || requested.has(version.storyId),
+        ),
     );
-    if (!bundle) return true;
-    const momentId = bundle.moment.momentId;
+    if (bundles.length === 0) return [];
+    const momentIds = new Set(
+      bundles.map((bundle) => bundle.moment.momentId),
+    );
     const deletes = [
-      getMomentEnvelopeId(momentId),
-      ...bundle.storybookVersions.map((version) =>
-        getStorybookEnvelopeId(version.versionId),
+      ...Array.from(momentIds, getMomentEnvelopeId),
+      ...bundles.flatMap((bundle) =>
+        bundle.storybookVersions.map((version) =>
+          getStorybookEnvelopeId(version.versionId),
+        ),
       ),
       ...storedValues
         .filter(isGrowthRecord)
-        .filter((record) => getRecordMomentId(record) === momentId)
+        .filter((record) => momentIds.has(getRecordMomentId(record)))
         .map((record) => record.id),
     ];
     await mutateGrowthStore(db, { deletes });
-    return true;
+    return Array.from(momentIds);
+  } finally {
+    db.close();
+  }
+}
+
+export async function clearLocalGrowthArchive() {
+  const db = await openGrowthDb();
+  if (!db) throw new GrowthStorageError("growth-storage-unavailable");
+  try {
+    await clearGrowthStore(db);
   } finally {
     db.close();
   }

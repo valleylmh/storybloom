@@ -52,6 +52,8 @@ export interface GrowthMomentRepository {
   removeVersion(momentId: string, versionId: string): Promise<GrowthMomentBundle>;
   clearOriginalAssets(momentId: string): Promise<GrowthMomentBundle>;
   removeMoment(momentId: string): Promise<void>;
+  removeMoments(momentIds: readonly string[]): Promise<string[]>;
+  clearAll(): Promise<void>;
 }
 
 export function createGrowthRecordInput(

@@ -17,6 +17,10 @@ const entrySource = readFileSync(
   new URL("../src/components/book/MinimalStoryEntry.tsx", import.meta.url),
   "utf8",
 );
+const controlsSource = readFileSync(
+  new URL("../src/components/growth/GrowthArchiveControls.tsx", import.meta.url),
+  "utf8",
+);
 
 describe("growth moment local UI contract", () => {
   it("exposes independent version, original-photo, and whole-Moment actions", () => {
@@ -37,5 +41,14 @@ describe("growth moment local UI contract", () => {
     expect(entrySource).toContain("estimateGrowthStorageCapacity");
     expect(timelineSource).toContain("refreshStorageCapacity");
     expect(timelineSource).toContain("本站本机空间");
+  });
+
+  it("keeps local export, retention preview, and complete deletion parent-controlled", () => {
+    expect(controlsSource).toContain("createLocalGrowthArchiveZip");
+    expect(controlsSource).toContain("createLocalGrowthRetentionPreview");
+    expect(controlsSource).toContain("不会自动删除");
+    expect(controlsSource).toContain("确认仅删除本机档案");
+    expect(controlsSource).toContain("clearAll");
+    expect(cloudRepositorySource).not.toContain("clearAll");
   });
 });

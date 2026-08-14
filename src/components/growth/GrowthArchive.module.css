@@ -309,6 +309,252 @@
   line-height: 1.65;
 }
 
+.governancePanel {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 28px;
+  padding: 22px;
+  border: 1px solid rgba(79, 57, 43, 0.12);
+  border-radius: 24px;
+  background: rgba(255, 253, 249, 0.78);
+  box-shadow: 0 18px 52px rgba(88, 58, 36, 0.06);
+}
+
+.governanceHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.governanceHeader h2,
+.governanceDanger h3,
+.governanceGrid h3 {
+  margin: 0;
+  color: #493a31;
+}
+
+.governanceHeader > div > p:last-child,
+.governanceDanger p,
+.governanceGrid p {
+  margin: 6px 0 0;
+  color: #7b6b60;
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.governanceHeader > span {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(99, 133, 106, 0.1);
+  color: #56705a;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.governanceStats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.governanceStats span {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 13px;
+  background: rgba(244, 235, 226, 0.7);
+  color: #806f63;
+  font-size: 0.68rem;
+}
+
+.governanceStats strong {
+  color: #514238;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: 1.05rem;
+}
+
+.governanceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.governanceGrid article {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 11px;
+  padding: 15px;
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 17px;
+  background: rgba(255, 250, 244, 0.78);
+}
+
+.governanceGrid article > svg {
+  margin-top: 2px;
+  color: #a8492d;
+  font-size: 1.25rem;
+}
+
+.governanceGrid article > small {
+  grid-column: 2 / -1;
+  color: #88766a;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.governanceGrid button,
+.governanceDangerActions button,
+.governanceConfirm button {
+  min-height: 34px;
+  padding: 6px 11px;
+  border: 1px solid rgba(169, 75, 47, 0.18);
+  border-radius: 999px;
+  background: #fff;
+  color: #9b472f;
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.governanceGrid button:disabled,
+.governanceDangerActions button:disabled,
+.governanceConfirm button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.governanceGrid select {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid rgba(79, 57, 43, 0.13);
+  border-radius: 10px;
+  background: #fffdf9;
+  color: #5f5046;
+  font: inherit;
+  font-size: 0.7rem;
+}
+
+.fieldGuide {
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 15px;
+  background: rgba(246, 242, 235, 0.66);
+}
+
+.fieldGuide summary {
+  padding: 12px 14px;
+  color: #66564c;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.fieldGuide > div {
+  display: grid;
+  gap: 8px;
+  padding: 0 14px 14px;
+}
+
+.fieldGuide p {
+  margin: 0;
+  color: #79695e;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.fieldGuide a {
+  justify-self: start;
+  color: #a8492d;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.governanceDanger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(79, 57, 43, 0.11);
+}
+
+.governanceDangerActions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.governanceDangerActions .governanceDeleteAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-color: rgba(163, 54, 41, 0.2);
+  color: #a33629;
+}
+
+.governanceConfirm {
+  display: grid;
+  gap: 8px;
+  padding: 13px 14px;
+  border: 1px solid rgba(163, 54, 41, 0.18);
+  border-radius: 14px;
+  background: #fff4ef;
+}
+
+.governanceConfirm strong {
+  color: #893a2e;
+  font-size: 0.78rem;
+}
+
+.governanceConfirm p {
+  margin: 0;
+  color: #805f55;
+  font-size: 0.7rem;
+  line-height: 1.55;
+}
+
+.governanceConfirm > div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.governanceConfirm > div button:last-child {
+  background: #a43d2d;
+  color: #fff;
+}
+
+.governanceNotice,
+.governanceError {
+  margin: 0;
+  padding: 9px 11px;
+  border-radius: 11px;
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.governanceNotice_success {
+  background: rgba(231, 242, 229, 0.86);
+  color: #4d694f;
+}
+
+.governanceNotice_status {
+  background: rgba(255, 244, 221, 0.86);
+  color: #87662e;
+}
+
+.governanceNotice_error,
+.governanceError {
+  background: rgba(255, 232, 224, 0.86);
+  color: #9a4031;
+}
+
 .kicker,
 .childIdentity p {
   margin: 0 0 7px;
@@ -1000,6 +1246,25 @@
     gap: 10px;
   }
 
+  .governanceHeader,
+  .governanceDanger {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .governanceHeader > span {
+    align-self: flex-start;
+  }
+
+  .governanceStats,
+  .governanceGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .governanceDangerActions {
+    flex-wrap: wrap;
+  }
+
   .timelineMeta {
     justify-items: start;
     text-align: left;
@@ -1086,6 +1351,34 @@
 
   .timelineEnd {
     margin-left: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .governancePanel {
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .governanceStats,
+  .governanceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .governanceGrid article {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .governanceGrid article > button,
+  .governanceGrid article > label,
+  .governanceGrid article > small {
+    grid-column: 2;
+  }
+
+  .governanceDangerActions,
+  .governanceConfirm > div {
+    align-items: stretch;
+    flex-direction: column;
   }
 }
 

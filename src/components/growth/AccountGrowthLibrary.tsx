@@ -25,6 +25,7 @@ import {
   chooseInitialGrowthSource,
   type GrowthDataSource,
 } from "./growth-source-model";
+import GrowthArchiveControls from "./GrowthArchiveControls";
 import styles from "./GrowthArchive.module.css";
 
 function formatDate(date: string) {
@@ -213,6 +214,10 @@ export default function AccountGrowthLibrary({
             {source === "cloud" ? "账户私有 · 跨设备可见" : "仅保存在当前浏览器"}
           </span>
         </section>
+
+        {source === "local" ? (
+          <GrowthArchiveControls onArchiveChanged={loadRecords} />
+        ) : null}
 
         {source === "local" && cloudError ? (
           <p className={styles.inactiveSourceNotice} role="status">

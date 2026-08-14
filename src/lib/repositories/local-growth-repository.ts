@@ -1,8 +1,10 @@
 import {
   addLocalStorybookVersion,
+  clearLocalGrowthArchive,
   clearLocalMomentAssets,
   deleteGrowthRecord,
   deleteLocalGrowthMoment,
+  deleteLocalGrowthMoments,
   getGrowthMomentBundle,
   listGrowthMomentBundles,
   listGrowthRecords,
@@ -55,5 +57,7 @@ export const localGrowthRepository: GrowthRepository = {
       const deleted = await deleteLocalGrowthMoment(momentId);
       if (!deleted) throw new Error("local-growth-delete-failed");
     },
+    removeMoments: deleteLocalGrowthMoments,
+    clearAll: clearLocalGrowthArchive,
   },
 };

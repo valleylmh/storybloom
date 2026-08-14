@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { ArrowLeft, BookOpenText, Plus, ShieldCheck } from "@phosphor-icons/react";
 import {
   groupGrowthRecordsByChild,
   type GrowthRecord,
 } from "@/lib/growth-records";
 import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
+import GrowthArchiveControls from "./GrowthArchiveControls";
 import styles from "./GrowthArchive.module.css";
 
 function formatDate(date: string) {
@@ -29,22 +30,25 @@ export default function GrowthLibrary({
   const [loading, setLoading] = useState(true);
   const children = useMemo(() => groupGrowthRecordsByChild(records), [records]);
 
+  const loadRecords = useCallback(async () => {
+    setLoading(true);
+    try {
+      setRecords(await localGrowthRepository.list());
+    } catch {
+      setRecords([]);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
   useEffect(() => {
-    let active = true;
-    const load = () => {
-      void localGrowthRepository.list().then((next) => {
-        if (!active) return;
-        setRecords(next);
-        setLoading(false);
-      });
-    };
+    const load = () => void loadRecords();
     load();
     window.addEventListener("focus", load);
     return () => {
-      active = false;
       window.removeEventListener("focus", load);
     };
-  }, []);
+  }, [loadRecords]);
 
   const content = (
     <div className={embedded ? styles.embeddedShell : styles.shell}>
@@ -58,6 +62,8 @@ export default function GrowthLibrary({
             <ShieldCheck /> 仅保存在当前浏览器
           </span>
         </section>
+
+        <GrowthArchiveControls onArchiveChanged={loadRecords} />
 
         {loading ? (
           <section className={styles.loadingState} aria-label="正在加载成长记录">

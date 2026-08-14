@@ -257,7 +257,9 @@ export default function PrivacyPage() {
           <section className={styles.section} id="controls">
             <h2>查看、导出与删除</h2>
             <ul>
-              <li>未登录用户可以在当前设备查看、编辑或清除本机绘本、成长记录、照片缓存和相关凭据。</li>
+              <li>未登录用户可以在成长书架查看本机成长档案保存字段与用途，并在浏览器内导出 ZIP；导出不会上传本机资料。</li>
+              <li>本机成长档案可以设置保留期限偏好并预览到期内容，但不会自动删除；删除到期内容或全部档案需要再次确认。</li>
+              <li>当前设备的普通绘本、成长记录、照片缓存和相关凭据仍可分别查看或清理。</li>
               <li>登录用户可以在“数据与隐私”中导出可读取的云端账户资料和文件，并可删除单个孩子档案或全部云端档案。</li>
               <li>本机清理与云端删除是两项独立操作；退出登录也不会删除任一处资料。</li>
               <li>这些数据控制入口不收费，也不应被订阅状态或剩余生成次数阻挡。</li>
@@ -267,7 +269,10 @@ export default function PrivacyPage() {
               也不能删除分享接收者自行保存的副本。家庭声音等外部服务资源的清理还可能需要异步完成。
             </p>
             <div className={styles.actions}>
-              <Link className={styles.primaryAction} href="/me/settings">
+              <Link className={styles.primaryAction} href="/growth">
+                管理本机成长档案
+              </Link>
+              <Link className={styles.secondaryAction} href="/me/settings">
                 打开数据与隐私设置
               </Link>
               <Link className={styles.secondaryAction} href="/child-family-data">
