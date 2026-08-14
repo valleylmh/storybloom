@@ -25,14 +25,17 @@ export interface ActiveGenerationTask {
    * Private, browser-local context used only after the story is complete.
    * It intentionally includes local photo data URLs and must never be added to
    * a generation request or URL.
-   */
+  */
   growthRecordDraft?: GrowthRecordDraft;
+  /** Browser-local destination for an additional StorybookVersion. */
+  targetMomentId?: string;
 }
 
 export interface ActiveGenerationTaskInput {
   taskId: string;
   reviewBeforeIllustrations: boolean;
   growthRecordDraft?: unknown;
+  targetMomentId?: unknown;
 }
 
 export interface ClientGenerationTaskStorageOptions {
@@ -55,6 +58,7 @@ export interface GenerationTaskRecoveryCandidate {
   source: "url" | "active-record";
   reviewBeforeIllustrations: boolean;
   growthRecordDraft?: GrowthRecordDraft;
+  targetMomentId?: string;
   /** A local pointer is not proof that the server-side task still exists. */
   requiresServerVerification: true;
 }
@@ -69,6 +73,16 @@ function normalizeTimestamp(value: unknown) {
   if (typeof value !== "string") return null;
   const timestamp = Date.parse(value);
   return Number.isFinite(timestamp) ? new Date(timestamp).toISOString() : null;
+}
+
+function normalizeTargetMomentId(value: unknown) {
+  if (typeof value !== "string") return null;
+  const normalized = value.trim();
+  return normalized.length > 0 &&
+    normalized.length <= 180 &&
+    !/[\u0000-\u001f]/.test(normalized)
+    ? normalized
+    : null;
 }
 
 function normalizeLocalGrowthRecordDraft(
@@ -163,6 +177,11 @@ function normalizeActiveGenerationTask(
     ? normalizeLocalGrowthRecordDraft(candidate.growthRecordDraft)
     : undefined;
   if (hasGrowthDraft && !growthRecordDraft) return null;
+  const hasTargetMomentId = candidate.targetMomentId !== undefined;
+  const targetMomentId = hasTargetMomentId
+    ? normalizeTargetMomentId(candidate.targetMomentId)
+    : null;
+  if (hasTargetMomentId && (!targetMomentId || !growthRecordDraft)) return null;
 
   return {
     version: ACTIVE_GENERATION_TASK_VERSION,
@@ -171,6 +190,7 @@ function normalizeActiveGenerationTask(
     createdAt,
     updatedAt,
     ...(growthRecordDraft ? { growthRecordDraft } : {}),
+    ...(targetMomentId ? { targetMomentId } : {}),
   };
 }
 
@@ -196,6 +216,11 @@ export function createActiveGenerationTask(
     ? normalizeLocalGrowthRecordDraft(input.growthRecordDraft)
     : undefined;
   if (hasGrowthDraft && !growthRecordDraft) return null;
+  const hasTargetMomentId = input.targetMomentId !== undefined;
+  const targetMomentId = hasTargetMomentId
+    ? normalizeTargetMomentId(input.targetMomentId)
+    : null;
+  if (hasTargetMomentId && (!targetMomentId || !growthRecordDraft)) return null;
 
   return {
     version: ACTIVE_GENERATION_TASK_VERSION,
@@ -204,6 +229,7 @@ export function createActiveGenerationTask(
     createdAt: normalizedCreatedAt,
     updatedAt: normalizedNow,
     ...(growthRecordDraft ? { growthRecordDraft } : {}),
+    ...(targetMomentId ? { targetMomentId } : {}),
   };
 }
 
@@ -340,6 +366,9 @@ export function resolveGenerationTaskRecovery(
       ...(matchingActiveTask?.growthRecordDraft
         ? { growthRecordDraft: matchingActiveTask.growthRecordDraft }
         : {}),
+      ...(matchingActiveTask?.targetMomentId
+        ? { targetMomentId: matchingActiveTask.targetMomentId }
+        : {}),
     };
   }
 
@@ -351,6 +380,9 @@ export function resolveGenerationTaskRecovery(
     requiresServerVerification: true,
     ...(normalizedActiveTask.growthRecordDraft
       ? { growthRecordDraft: normalizedActiveTask.growthRecordDraft }
+      : {}),
+    ...(normalizedActiveTask.targetMomentId
+      ? { targetMomentId: normalizedActiveTask.targetMomentId }
       : {}),
   };
 }

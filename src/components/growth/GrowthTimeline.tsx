@@ -24,6 +24,10 @@ import {
   selectActiveStorybookVersion,
   type GrowthMomentBundle,
 } from "@/lib/growth-moments";
+import {
+  getGrowthVersionCreationHref,
+  writeGrowthVersionCreationIntent,
+} from "@/lib/growth-version-creation";
 import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
 import type { GrowthRepository } from "@/lib/repositories/growth-repository";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
@@ -420,6 +424,15 @@ export default function GrowthTimeline({
     }
   }
 
+  function startGrowthVersionCreation(bundle: GrowthMomentBundle) {
+    const intent = writeGrowthVersionCreationIntent(bundle.moment.momentId);
+    if (!intent) {
+      setNotice("无法在当前浏览器保存版本创作入口，请刷新后重试。");
+      return;
+    }
+    window.location.href = getGrowthVersionCreationHref();
+  }
+
   async function removeMomentOnly(bundle: GrowthMomentBundle) {
     if (!activeRepository.moments) return;
     if (
@@ -758,6 +771,15 @@ export default function GrowthTimeline({
                           </div>
 
                           <div className={styles.recordActions}>
+                            {bundle ? (
+                              <button
+                                type="button"
+                                disabled={Boolean(busyAction)}
+                                onClick={() => startGrowthVersionCreation(bundle)}
+                              >
+                                <Plus /> 再生成一个版本
+                              </button>
+                            ) : null}
                             <button
                               type="button"
                               className={styles.readButton}
@@ -858,6 +880,13 @@ export default function GrowthTimeline({
                         </div>
                       ) : null}
                       <div className={styles.recordActions}>
+                        <button
+                          type="button"
+                          disabled={Boolean(busyAction)}
+                          onClick={() => startGrowthVersionCreation(bundle)}
+                        >
+                          <Plus /> 生成第一个绘本版本
+                        </button>
                         {bundle.moment.originalAssets.length > 0 ? (
                           <button
                             type="button"

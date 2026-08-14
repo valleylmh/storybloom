@@ -21,7 +21,12 @@ import {
   type GrowthRecordDraft,
   type GrowthRecordPhoto,
 } from "@/lib/growth-records";
-import type { AgeGroup, GrowthStoryTreatment } from "@/types";
+import type {
+  AgeGroup,
+  GrowthStoryTreatment,
+  IllustrationStyle,
+} from "@/types";
+import type { GrowthVersionCreationPreset } from "@/lib/growth-version-creation";
 import { useAuth } from "@/hooks/useAuth";
 import { recordGuardianConsent } from "@/lib/auth/guardian-consent";
 import {
@@ -67,6 +72,7 @@ interface Props {
   freeGenerationLimit: number;
   remainingFreeGenerations: number;
   initialGrowthEnabled?: boolean;
+  initialGrowthVersion?: GrowthVersionCreationPreset;
   onSubmit: (data: Record<string, unknown>) => Promise<void> | void;
 }
 
@@ -92,12 +98,14 @@ const GROWTH_PREFERENCES_KEY = "storybloom.growthStoryPreferences";
 type GrowthPreferences = {
   readingStage: AgeGroup;
   storyTreatment: GrowthStoryTreatment;
+  illustrationStyle?: IllustrationStyle;
 };
 
 function getDefaultGrowthPreferences(): GrowthPreferences {
   return {
     readingStage: "4-5",
     storyTreatment: "documentary",
+    illustrationStyle: "watercolor",
   };
 }
 
@@ -110,7 +118,11 @@ function isGrowthPreferences(value: unknown): value is GrowthPreferences {
       preferences.readingStage === "6-8") &&
     (preferences.storyTreatment === "documentary" ||
       preferences.storyTreatment === "warm-imagination" ||
-      preferences.storyTreatment === "fairytale")
+      preferences.storyTreatment === "fairytale") &&
+    (preferences.illustrationStyle === undefined ||
+      preferences.illustrationStyle === "watercolor" ||
+      preferences.illustrationStyle === "cartoon" ||
+      preferences.illustrationStyle === "fairytale")
   );
 }
 
@@ -231,6 +243,16 @@ const COPY = {
       "4-5": "4–5 岁 · 清楚连贯",
       "6-8": "6–8 岁 · 更丰富表达",
     },
+    growthStyle: "本版本插画风格",
+    growthStyleOptions: {
+      watercolor: "柔和水彩",
+      cartoon: "明快卡通",
+      fairytale: "童话绘本",
+    },
+    growthVersionTitle: (count: number) =>
+      count > 0 ? `为这个成长时刻创作第 ${count + 1} 个版本` : "为这个成长时刻创作第一本绘本",
+    growthVersionHint: "真实日期、事实、备注和现场照片保持不变；这里只调整新绘本版本。",
+    growthMomentLocked: "真实时刻内容已锁定，如需修改请先返回时间轴编辑。",
     growthTreatment: "故事处理方式",
     growthTreatments: {
       documentary: {
@@ -337,6 +359,18 @@ const COPY = {
       "4-5": "Ages 4–5 · clear and connected",
       "6-8": "Ages 6–8 · richer language",
     },
+    growthStyle: "Illustration style for this version",
+    growthStyleOptions: {
+      watercolor: "Soft watercolor",
+      cartoon: "Bright cartoon",
+      fairytale: "Fairytale picture book",
+    },
+    growthVersionTitle: (count: number) =>
+      count > 0
+        ? `Create version ${count + 1} for this moment`
+        : "Create the first storybook for this moment",
+    growthVersionHint: "The real date, facts, note, and photos stay unchanged. Only this storybook version is adjusted here.",
+    growthMomentLocked: "The real Moment is locked here. Return to the timeline to edit it.",
     growthTreatment: "Story treatment",
     growthTreatments: {
       documentary: {
@@ -376,14 +410,17 @@ export default function MinimalStoryEntry({
   freeGenerationLimit,
   remainingFreeGenerations,
   initialGrowthEnabled = false,
+  initialGrowthVersion,
   onSubmit,
 }: Props) {
   const text = COPY[locale];
+  const initialGrowthDraft = initialGrowthVersion?.draft;
+  const creatingGrowthVersion = Boolean(initialGrowthVersion);
   const { supabase, session, signInWithMagicLink } = useAuth();
   const familyAccessToken = session?.access_token || "";
   const familyUserId = session?.user.id || "";
   const [promptIndex, setPromptIndex] = useState(0);
-  const [idea, setIdea] = useState("");
+  const [idea, setIdea] = useState(initialGrowthDraft?.idea || "");
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [turnstileLoaded, setTurnstileLoaded] = useState(false);
@@ -398,20 +435,38 @@ export default function MinimalStoryEntry({
   >("idle");
   const [familyChoices, setFamilyChoices] = useState<FamilyChoice[]>([]);
   const [familyUrls, setFamilyUrls] = useState<Record<string, string>>({});
-  const [selectedFamilyIds, setSelectedFamilyIds] = useState<string[]>([]);
-  const [growthEnabled, setGrowthEnabled] = useState(initialGrowthEnabled);
-  const [growthOccurredOn, setGrowthOccurredOn] = useState(getLocalDateValue);
-  const [growthNote, setGrowthNote] = useState("");
+  const [selectedFamilyIds, setSelectedFamilyIds] = useState<string[]>(
+    initialGrowthDraft?.childCharacterId
+      ? [initialGrowthDraft.childCharacterId]
+      : [],
+  );
+  const [growthEnabled, setGrowthEnabled] = useState(
+    creatingGrowthVersion || initialGrowthEnabled,
+  );
+  const [growthOccurredOn, setGrowthOccurredOn] = useState(
+    initialGrowthDraft?.occurredOn || getLocalDateValue(),
+  );
+  const [growthNote, setGrowthNote] = useState(initialGrowthDraft?.note || "");
   const [growthReadingStage, setGrowthReadingStage] =
-    useState<AgeGroup>("4-5");
+    useState<AgeGroup>(initialGrowthDraft?.readingStage || "4-5");
   const [growthStoryTreatment, setGrowthStoryTreatment] =
-    useState<GrowthStoryTreatment>("documentary");
+    useState<GrowthStoryTreatment>(
+      initialGrowthDraft?.storyTreatment || "documentary",
+    );
+  const [growthIllustrationStyle, setGrowthIllustrationStyle] =
+    useState<IllustrationStyle>(
+      initialGrowthVersion?.illustrationStyle || "watercolor",
+    );
   const [growthPreferencesLoaded, setGrowthPreferencesLoaded] = useState(false);
-  const [growthParentFacts, setGrowthParentFacts] = useState("");
+  const [growthParentFacts, setGrowthParentFacts] = useState(
+    initialGrowthDraft?.parentFacts || "",
+  );
   const [growthAllowedImaginations, setGrowthAllowedImaginations] =
-    useState("");
+    useState(initialGrowthDraft?.allowedImaginations || "");
   const [growthFactsConfirmed, setGrowthFactsConfirmed] = useState(false);
-  const [growthPhotos, setGrowthPhotos] = useState<GrowthRecordPhoto[]>([]);
+  const [growthPhotos, setGrowthPhotos] = useState<GrowthRecordPhoto[]>(
+    initialGrowthDraft?.photos.map((photo) => ({ ...photo })) || [],
+  );
   const [growthPhotoBusy, setGrowthPhotoBusy] = useState(false);
   const [growthError, setGrowthError] = useState("");
   const [identityOpen, setIdentityOpen] = useState(false);
@@ -446,12 +501,21 @@ export default function MinimalStoryEntry({
   }, [locale]);
 
   useEffect(() => {
-    if (initialGrowthEnabled && growthDetailsRef.current) {
+    if ((initialGrowthEnabled || creatingGrowthVersion) && growthDetailsRef.current) {
       growthDetailsRef.current.open = true;
     }
-  }, [initialGrowthEnabled]);
+  }, [creatingGrowthVersion, initialGrowthEnabled]);
 
   useEffect(() => {
+    if (initialGrowthVersion) {
+      setGrowthReadingStage(initialGrowthVersion.draft.readingStage || "4-5");
+      setGrowthStoryTreatment(
+        initialGrowthVersion.draft.storyTreatment || "documentary",
+      );
+      setGrowthIllustrationStyle(initialGrowthVersion.illustrationStyle);
+      setGrowthPreferencesLoaded(true);
+      return;
+    }
     try {
       const preferences = JSON.parse(
         window.localStorage.getItem(GROWTH_PREFERENCES_KEY) || "null",
@@ -461,33 +525,44 @@ export default function MinimalStoryEntry({
         : getDefaultGrowthPreferences();
       setGrowthReadingStage(nextPreferences.readingStage);
       setGrowthStoryTreatment(nextPreferences.storyTreatment);
+      setGrowthIllustrationStyle(
+        nextPreferences.illustrationStyle || "watercolor",
+      );
     } catch {
       const defaults = getDefaultGrowthPreferences();
       setGrowthReadingStage(defaults.readingStage);
       setGrowthStoryTreatment(defaults.storyTreatment);
+      setGrowthIllustrationStyle(defaults.illustrationStyle || "watercolor");
     }
     setGrowthPreferencesLoaded(true);
-  }, []);
+  }, [initialGrowthVersion]);
 
   useEffect(() => {
-    if (!growthPreferencesLoaded) return;
+    if (!growthPreferencesLoaded || initialGrowthVersion) return;
     window.localStorage.setItem(
       GROWTH_PREFERENCES_KEY,
       JSON.stringify({
         readingStage: growthReadingStage,
         storyTreatment: growthStoryTreatment,
+        illustrationStyle: growthIllustrationStyle,
       } satisfies GrowthPreferences),
     );
-  }, [growthPreferencesLoaded, growthReadingStage, growthStoryTreatment]);
+  }, [
+    growthIllustrationStyle,
+    growthPreferencesLoaded,
+    growthReadingStage,
+    growthStoryTreatment,
+    initialGrowthVersion,
+  ]);
 
   useEffect(() => {
     const sharedIdea = new URL(window.location.href).searchParams
       .get(DAILY_IDEA_QUERY_KEY)
       ?.trim();
-    if (sharedIdea) {
+    if (sharedIdea && !initialGrowthVersion) {
       setIdea(sharedIdea.slice(0, 100));
     }
-  }, []);
+  }, [initialGrowthVersion]);
 
   useEffect(() => {
     if (!TURNSTILE_SITE_KEY) {
@@ -770,6 +845,18 @@ export default function MinimalStoryEntry({
       throw new Error(text.growthConfirmRequired);
     }
 
+    if (initialGrowthVersion) {
+      return {
+        ...initialGrowthVersion.draft,
+        ...(protagonist?.id
+          ? { childCharacterId: protagonist.id }
+          : { childCharacterId: undefined }),
+        photos: initialGrowthVersion.draft.photos.map((photo) => ({ ...photo })),
+        readingStage: growthReadingStage,
+        storyTreatment: growthStoryTreatment,
+      };
+    }
+
     const imagePath = protagonist
       ? getFamilyChoicePhotoPath(protagonist)
       : undefined;
@@ -793,6 +880,11 @@ export default function MinimalStoryEntry({
   }
 
   function resetGrowthDraft() {
+    if (creatingGrowthVersion) {
+      setGrowthFactsConfirmed(false);
+      setGrowthError("");
+      return;
+    }
     setGrowthOccurredOn(getLocalDateValue());
     setGrowthNote("");
     setGrowthPhotos([]);
@@ -816,9 +908,15 @@ export default function MinimalStoryEntry({
       return;
     }
     const protagonistId = protagonist?.id;
+    const availableSelectedFamilyIds = selectedFamilyIds.filter((id) =>
+      familyChoices.some((choice) => choice.id === id),
+    );
     const nextFamilyIds = protagonistId
-      ? [protagonistId, ...selectedFamilyIds.filter((id) => id !== protagonistId)].slice(0, 4)
-      : selectedFamilyIds.filter((id) => id !== identitySelectedId);
+      ? [
+          protagonistId,
+          ...availableSelectedFamilyIds.filter((id) => id !== protagonistId),
+        ].slice(0, 4)
+      : availableSelectedFamilyIds.filter((id) => id !== identitySelectedId);
     let growthRecordDraft: GrowthRecordDraft | undefined;
     try {
       growthRecordDraft = await buildGrowthRecordDraft(storyIdea, childName, protagonist);
@@ -840,10 +938,7 @@ export default function MinimalStoryEntry({
         ageGroup: growthEnabled ? growthReadingStage : "4-5",
         theme: "custom",
         customTheme: storyIdea,
-        style:
-          growthEnabled && growthStoryTreatment !== "fairytale"
-            ? "watercolor"
-            : "fairytale",
+        style: growthEnabled ? growthIllustrationStyle : "fairytale",
         parentFacts: growthEnabled ? growthParentFacts.trim() || undefined : undefined,
         allowedImaginations: growthEnabled
           ? growthAllowedImaginations.trim() || undefined
@@ -854,6 +949,9 @@ export default function MinimalStoryEntry({
         supabaseAccessToken: familyAccessToken || undefined,
         turnstileToken: turnstileEnabled ? turnstileToken : undefined,
         growthRecordDraft,
+        ...(growthEnabled && initialGrowthVersion
+          ? { targetMomentId: initialGrowthVersion.targetMomentId }
+          : {}),
       });
       if (growthRecordDraft) resetGrowthDraft();
       setIdentityOpen(false);
@@ -932,6 +1030,14 @@ export default function MinimalStoryEntry({
         storyIdea,
         explicitlySelectedChild.display_name,
         [explicitlySelectedChild.id],
+      );
+      return;
+    }
+
+    if (initialGrowthVersion) {
+      await submitStory(
+        storyIdea,
+        initialGrowthVersion.draft.childName,
       );
       return;
     }
@@ -1113,10 +1219,20 @@ export default function MinimalStoryEntry({
         {growthEnabled ? text.growthPageTitle : text.title}
       </h1>
 
+      {initialGrowthVersion ? (
+        <div className="minimal-growth-version-banner" role="status">
+          <strong>
+            {text.growthVersionTitle(initialGrowthVersion.existingVersionCount)}
+          </strong>
+          <span>{text.growthVersionHint}</span>
+        </div>
+      ) : null}
+
       <form className="story-search" onSubmit={handleGenerate}>
         <span className="story-search-icon" aria-hidden="true">⌁</span>
         <input
           value={idea}
+          readOnly={creatingGrowthVersion}
           onChange={(event) => {
             setIdea(event.target.value);
             if (growthEnabled) setGrowthFactsConfirmed(false);
@@ -1228,6 +1344,7 @@ export default function MinimalStoryEntry({
                 <input
                   type="checkbox"
                   checked={growthEnabled}
+                  disabled={creatingGrowthVersion}
                   onChange={(event) => {
                     setGrowthEnabled(event.target.checked);
                     setGrowthError("");
@@ -1244,13 +1361,19 @@ export default function MinimalStoryEntry({
                     <img src={familyUrls[selectedGrowthChildPath]} alt="" />
                   ) : (
                     <span aria-hidden="true">
-                      {(selectedGrowthChild?.display_name || analyzedGrowthName || "?").slice(0, 1)}
+                      {(
+                        selectedGrowthChild?.display_name ||
+                        initialGrowthDraft?.childName ||
+                        analyzedGrowthName ||
+                        "?"
+                      ).slice(0, 1)}
                     </span>
                   )}
                   <div>
                     <small>{text.growthChild}</small>
                     <strong>
                       {selectedGrowthChild?.display_name ||
+                        initialGrowthDraft?.childName ||
                         analyzedGrowthName ||
                         text.growthChildPending}
                     </strong>
@@ -1266,21 +1389,23 @@ export default function MinimalStoryEntry({
                     {growthPhotos.map((photo) => (
                       <div className="minimal-growth-photo-preview" key={photo.id}>
                         <img src={photo.dataUrl} alt={photo.name} />
-                        <button
-                          type="button"
-                          aria-label={locale === "zh" ? `移除 ${photo.name}` : `Remove ${photo.name}`}
-                          onClick={() => {
-                            setGrowthError("");
-                            setGrowthPhotos((current) =>
-                              current.filter((item) => item.id !== photo.id),
-                            );
-                          }}
-                        >
-                          ×
-                        </button>
+                        {!creatingGrowthVersion ? (
+                          <button
+                            type="button"
+                            aria-label={locale === "zh" ? `移除 ${photo.name}` : `Remove ${photo.name}`}
+                            onClick={() => {
+                              setGrowthError("");
+                              setGrowthPhotos((current) =>
+                                current.filter((item) => item.id !== photo.id),
+                              );
+                            }}
+                          >
+                            ×
+                          </button>
+                        ) : null}
                       </div>
                     ))}
-                    {growthPhotos.length < 4 ? (
+                    {!creatingGrowthVersion && growthPhotos.length < 4 ? (
                       <label className="minimal-growth-photo-upload">
                         <input
                           type="file"
@@ -1311,6 +1436,7 @@ export default function MinimalStoryEntry({
                       type="date"
                       required
                       value={growthOccurredOn}
+                      disabled={creatingGrowthVersion}
                       onChange={(event) => {
                         setGrowthOccurredOn(event.target.value);
                         setGrowthError("");
@@ -1322,11 +1448,18 @@ export default function MinimalStoryEntry({
                     <input
                       maxLength={200}
                       value={growthNote}
+                      readOnly={creatingGrowthVersion}
                       onChange={(event) => setGrowthNote(event.target.value)}
                       placeholder={text.growthNotePlaceholder}
                     />
                   </label>
                 </div>
+
+                {creatingGrowthVersion ? (
+                  <p className="minimal-growth-locked-note">
+                    {text.growthMomentLocked}
+                  </p>
+                ) : null}
 
                 <div className="minimal-growth-story-settings">
                   <label>
@@ -1341,6 +1474,25 @@ export default function MinimalStoryEntry({
                       {(["2-3", "4-5", "6-8"] as AgeGroup[]).map((stage) => (
                         <option value={stage} key={stage}>
                           {text.growthReadingOptions[stage]}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <label>
+                    <span>{text.growthStyle}</span>
+                    <select
+                      value={growthIllustrationStyle}
+                      onChange={(event) =>
+                        setGrowthIllustrationStyle(
+                          event.target.value as IllustrationStyle,
+                        )
+                      }
+                    >
+                      {(
+                        ["watercolor", "cartoon", "fairytale"] as IllustrationStyle[]
+                      ).map((style) => (
+                        <option value={style} key={style}>
+                          {text.growthStyleOptions[style]}
                         </option>
                       ))}
                     </select>
@@ -1393,6 +1545,7 @@ export default function MinimalStoryEntry({
                     <span>{text.growthFacts}</span>
                     <textarea
                       value={growthParentFacts}
+                      readOnly={creatingGrowthVersion}
                       onChange={(event) => {
                         setGrowthParentFacts(event.target.value);
                         setGrowthFactsConfirmed(false);
@@ -1406,6 +1559,7 @@ export default function MinimalStoryEntry({
                     <span>{text.growthImaginations}</span>
                     <textarea
                       value={growthAllowedImaginations}
+                      readOnly={creatingGrowthVersion}
                       onChange={(event) =>
                         {
                           setGrowthAllowedImaginations(event.target.value);
@@ -1442,7 +1596,7 @@ export default function MinimalStoryEntry({
           </div>
         </details>
 
-        {growthEnabled ? (
+        {creatingGrowthVersion ? null : growthEnabled ? (
           <button
             type="button"
             className="minimal-imagination-switch"

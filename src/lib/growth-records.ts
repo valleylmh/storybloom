@@ -17,6 +17,7 @@ import {
   selectActiveStorybookVersion,
   type GrowthMomentBundle,
   type StorybookVersion,
+  type StorybookVersionCreateOptions,
 } from "@/lib/growth-moments";
 
 const DB_NAME = "storybloom-growth-records";
@@ -822,7 +823,7 @@ export async function updateGrowthRecordStory(story: GenerateResponse) {
 export async function addLocalStorybookVersion(
   momentId: string,
   story: GenerateResponse,
-  options: Parameters<typeof createStorybookVersion>[2] = {},
+  options: StorybookVersionCreateOptions = {},
 ) {
   const bundle = await getGrowthMomentBundle(momentId);
   if (!bundle) throw new Error("growth-moment-not-found");

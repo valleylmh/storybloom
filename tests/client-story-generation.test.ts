@@ -101,6 +101,7 @@ describe("story generation authentication retry", () => {
       allowedImaginations: "树叶像在鼓掌。",
       storyTreatment: "warm-imagination",
       supabaseAccessToken: "private-session-token",
+      targetMomentId: "moment-1",
       growthRecordDraft: {
         version: 1,
         photos: [
@@ -115,6 +116,7 @@ describe("story generation authentication retry", () => {
 
     expect(prepared.accessToken).toBe("private-session-token");
     expect(prepared.growthRecordDraft).toBeDefined();
+    expect(prepared.targetMomentId).toBe("moment-1");
     expect(prepared.payload).toMatchObject({
       parentFacts: "安安第一次自己骑车。",
       allowedImaginations: "树叶像在鼓掌。",
@@ -122,6 +124,7 @@ describe("story generation authentication retry", () => {
     });
     expect(prepared.payload).not.toHaveProperty("growthRecordDraft");
     expect(prepared.payload).not.toHaveProperty("supabaseAccessToken");
+    expect(prepared.payload).not.toHaveProperty("targetMomentId");
     expect(JSON.stringify(prepared.payload)).not.toContain("data:image/");
 
     const fetcher = vi.fn().mockResolvedValue(createResponse(200));
@@ -131,6 +134,7 @@ describe("story generation authentication retry", () => {
     const body = JSON.parse(String(init.body)) as Record<string, unknown>;
     expect(body).toMatchObject(prepared.payload);
     expect(body).not.toHaveProperty("growthRecordDraft");
+    expect(body).not.toHaveProperty("targetMomentId");
     expect(body).not.toHaveProperty("photos");
     expect(JSON.stringify(body)).not.toContain("data:image/");
   });

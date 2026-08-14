@@ -69,6 +69,19 @@ export interface GrowthMomentBundle {
   activeStorybookVersionId?: string;
 }
 
+export interface StorybookVersionCreateOptions {
+  versionId?: string;
+  storyTreatment?: GrowthStoryTreatment;
+  characterReferenceId?: string;
+  promptVersion?: string;
+  textModel?: string;
+  imageProviders?: string[];
+  characterBibleVersion?: string;
+  source?: StorybookVersion["source"];
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
@@ -245,18 +258,7 @@ export function createGrowthMoment(
 export function createStorybookVersion(
   momentId: string,
   story: GenerateResponse,
-  input: {
-    versionId?: string;
-    storyTreatment?: GrowthStoryTreatment;
-    characterReferenceId?: string;
-    promptVersion?: string;
-    textModel?: string;
-    imageProviders?: string[];
-    characterBibleVersion?: string;
-    source?: StorybookVersion["source"];
-    createdAt?: string;
-    updatedAt?: string;
-  } = {},
+  input: StorybookVersionCreateOptions = {},
 ): StorybookVersion {
   if (!validId(momentId)) throw new Error("growth-moment-id-invalid");
   const versionId = input.versionId || createStorybookVersionId(story.storyId);

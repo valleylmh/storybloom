@@ -3,7 +3,10 @@ import type {
   GrowthRecordDraft,
   GrowthRecordPhoto,
 } from "@/lib/growth-records";
-import type { GrowthMomentBundle } from "@/lib/growth-moments";
+import type {
+  GrowthMomentBundle,
+  StorybookVersionCreateOptions,
+} from "@/lib/growth-moments";
 import type { GenerateResponse } from "@/types";
 
 export interface GrowthRecordInput {
@@ -43,6 +46,7 @@ export interface GrowthMomentRepository {
   addVersion(
     momentId: string,
     story: GenerateResponse,
+    options?: StorybookVersionCreateOptions,
   ): Promise<GrowthMomentBundle>;
   selectVersion(momentId: string, versionId: string): Promise<GrowthMomentBundle>;
   removeVersion(momentId: string, versionId: string): Promise<GrowthMomentBundle>;

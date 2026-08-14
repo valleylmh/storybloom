@@ -25,6 +25,7 @@ export function prepareStoryGenerationRequest(
   const {
     supabaseAccessToken,
     growthRecordDraft,
+    targetMomentId,
     ...payload
   } = formData;
 
@@ -35,6 +36,7 @@ export function prepareStoryGenerationRequest(
         ? supabaseAccessToken
         : undefined,
     growthRecordDraft,
+    targetMomentId,
   };
 }
 

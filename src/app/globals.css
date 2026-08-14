@@ -694,6 +694,30 @@ body {
   overscroll-behavior: contain;
 }
 
+.minimal-growth-version-banner,
+.growth-version-entry-loading {
+  display: grid;
+  gap: 4px;
+  width: min(720px, 100%);
+  margin: 0 auto 18px;
+  padding: 12px 14px;
+  border: 1px solid rgba(71, 105, 75, 0.18);
+  border-radius: 14px;
+  background: rgba(238, 246, 236, 0.72);
+  color: #526b55;
+}
+
+.minimal-growth-version-banner strong {
+  color: #405b45;
+  font-size: 0.84rem;
+}
+
+.minimal-growth-version-banner span,
+.growth-version-entry-loading {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
 .minimal-growth-heading,
 .minimal-growth-footer {
   display: flex;
@@ -881,6 +905,25 @@ body {
 .minimal-growth-fields input:focus {
   border-color: rgba(190, 85, 48, 0.42);
   box-shadow: 0 0 0 3px rgba(190, 85, 48, 0.07);
+}
+
+.minimal-growth-fields input:read-only,
+.minimal-growth-fields input:disabled,
+.minimal-growth-confirmation textarea:read-only,
+.story-search input:read-only {
+  cursor: default;
+  background: rgba(242, 237, 231, 0.72);
+  color: #6f6259;
+}
+
+.minimal-growth-locked-note {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(246, 241, 234, 0.82);
+  color: #7a6c62;
+  font-size: 0.7rem;
+  line-height: 1.5;
 }
 
 .minimal-growth-story-settings {

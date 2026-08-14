@@ -19,6 +19,15 @@ import {
 } from "@/lib/growth-records";
 import { createGrowthRecordInput } from "@/lib/repositories/growth-repository";
 import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
+import {
+  clearGrowthVersionCreationIntent,
+  createGrowthVersionCreationPreset,
+  GROWTH_VERSION_QUERY_KEY,
+  isGrowthVersionCreationRequested,
+  readGrowthVersionCreationIntent,
+  type GrowthVersionCreationPreset,
+} from "@/lib/growth-version-creation";
+import { appendGeneratedStorybookVersion } from "@/lib/growth-version-result";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import { SAMPLE_BOOKS } from "@/lib/sample-books";
@@ -385,6 +394,7 @@ function pushGeneratingUrl(taskId: string) {
 function replaceStoryUrl(storyId: string, taskId?: string) {
   const url = new URL(window.location.href);
   url.searchParams.delete(VIEW_QUERY_KEY);
+  url.searchParams.delete(GROWTH_VERSION_QUERY_KEY);
   if (taskId) url.searchParams.set(TASK_QUERY_KEY, taskId);
   else url.searchParams.delete(TASK_QUERY_KEY);
   url.searchParams.set(STORY_QUERY_KEY, storyId);
@@ -411,6 +421,7 @@ function pushStoryUrl(storyId: string) {
   const url = new URL(window.location.href);
   url.searchParams.delete(VIEW_QUERY_KEY);
   url.searchParams.delete(TASK_QUERY_KEY);
+  url.searchParams.delete(GROWTH_VERSION_QUERY_KEY);
   url.searchParams.set(STORY_QUERY_KEY, storyId);
   const nextUrl = `${url.pathname}${url.search}${url.hash}`;
   const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
@@ -429,6 +440,14 @@ export default function Home() {
     useState(false);
   const [activeGrowthDraft, setActiveGrowthDraft] =
     useState<GrowthRecordDraft | null>(null);
+  const [activeTargetMomentId, setActiveTargetMomentId] =
+    useState<string | null>(null);
+  const [growthVersionPreset, setGrowthVersionPreset] =
+    useState<GrowthVersionCreationPreset | null>(null);
+  const [growthVersionIntentLoading, setGrowthVersionIntentLoading] =
+    useState(false);
+  const [growthVersionIntentError, setGrowthVersionIntentError] =
+    useState<string | null>(null);
   const [result, setResult] = useState<GenerateResponse | null>(null);
   const [sampleResult, setSampleResult] = useState<GenerateResponse | null>(null);
   const [sampleReturnMode, setSampleReturnMode] =
@@ -440,6 +459,8 @@ export default function Home() {
   const [growthSavedChild, setGrowthSavedChild] = useState<{
     childKey: string;
     childName: string;
+    versionAdded?: boolean;
+    versionCount?: number;
   } | null>(null);
   const [growthSaveError, setGrowthSaveError] = useState<string | null>(null);
   const sampleModalOpenRef = useRef(false);
@@ -468,6 +489,7 @@ export default function Home() {
     setSampleResult(null);
     setCurrentTaskId(null);
     setActiveGrowthDraft(null);
+    setActiveTargetMomentId(null);
     setError(message || null);
     setStep(stage);
   }
@@ -475,6 +497,7 @@ export default function Home() {
   async function saveGeneratedResult(
     generatedResult: GenerateResponse,
     growthRecordDraft?: GrowthRecordDraft,
+    targetMomentId?: string,
   ) {
     latestGeneratedResultRef.current = generatedResult;
     setResult(generatedResult);
@@ -494,21 +517,54 @@ export default function Home() {
       console.warn("[story-history] failed to save generated story", historyError);
     }
 
+    if (targetMomentId && !growthRecordDraft) {
+      setGrowthSaveError(
+        locale === "zh"
+          ? "绘本已经生成，但缺少本机版本归属信息，未修改原成长时刻。"
+          : "The storybook was created, but its local Moment destination was unavailable. The original Moment was not changed.",
+      );
+      return;
+    }
+
     if (growthRecordDraft) {
       try {
-        const growthRecord = await localGrowthRepository.save(
-          createGrowthRecordInput(generatedResult, growthRecordDraft),
-        );
-        setGrowthSavedChild({
-          childKey: growthRecord.childKey,
-          childName: growthRecord.childName,
-        });
+        if (targetMomentId) {
+          const momentRepository = localGrowthRepository.moments;
+          if (!momentRepository) {
+            throw new Error("growth-version-repository-unavailable");
+          }
+          const updatedBundle = await appendGeneratedStorybookVersion({
+            repository: momentRepository,
+            targetMomentId,
+            growthRecordDraft,
+            result: generatedResult,
+          });
+          clearGrowthVersionCreationIntent();
+          setGrowthSavedChild({
+            childKey: updatedBundle.moment.childKey,
+            childName: updatedBundle.moment.childName,
+            versionAdded: true,
+            versionCount: updatedBundle.storybookVersions.length,
+          });
+        } else {
+          const growthRecord = await localGrowthRepository.save(
+            createGrowthRecordInput(generatedResult, growthRecordDraft),
+          );
+          setGrowthSavedChild({
+            childKey: growthRecord.childKey,
+            childName: growthRecord.childName,
+          });
+        }
       } catch (growthError) {
         console.warn("[growth-record] failed to save generated story", growthError);
         setGrowthSaveError(
-          locale === "zh"
-            ? "绘本已经生成，但成长记录未能保存到本机。"
-            : "The storybook was created, but the growth record could not be saved on this device.",
+          targetMomentId
+            ? locale === "zh"
+              ? "绘本已经生成，但新版本未能加入原成长时刻；原记录没有被覆盖。"
+              : "The storybook was created, but the new version could not be added to the original Moment. The original record was not overwritten."
+            : locale === "zh"
+              ? "绘本已经生成，但成长记录未能保存到本机。"
+              : "The storybook was created, but the growth record could not be saved on this device.",
         );
       }
     }
@@ -518,13 +574,17 @@ export default function Home() {
     task: ClientTextGenerationTaskResponse,
     recovery: Pick<
       GenerationTaskRecoveryCandidate,
-      "taskId" | "reviewBeforeIllustrations" | "growthRecordDraft"
+      | "taskId"
+      | "reviewBeforeIllustrations"
+      | "growthRecordDraft"
+      | "targetMomentId"
     >,
   ) {
     if (activeTaskIdRef.current !== recovery.taskId) return;
 
     setReviewBeforeIllustrations(recovery.reviewBeforeIllustrations);
     setActiveGrowthDraft(recovery.growthRecordDraft || null);
+    setActiveTargetMomentId(recovery.targetMomentId || null);
 
     if (task.status === "generating_text") {
       setResult(null);
@@ -559,7 +619,11 @@ export default function Home() {
       return;
     }
 
-    await saveGeneratedResult(task.result, recovery.growthRecordDraft);
+    await saveGeneratedResult(
+      task.result,
+      recovery.growthRecordDraft,
+      recovery.targetMomentId,
+    );
     generationViewActiveRef.current = false;
     historyPreviewOpenRef.current = true;
     const illustrationSummary = summarizeIllustrationProgress(
@@ -579,6 +643,7 @@ export default function Home() {
       clearActiveGenerationTask({ taskId: recovery.taskId });
       setCurrentTaskId(null);
       setActiveGrowthDraft(null);
+      setActiveTargetMomentId(null);
     }
     if (sampleModalOpenRef.current) setOwnReadyNotice(true);
     setStep(nextStage);
@@ -590,6 +655,7 @@ export default function Home() {
     setCurrentTaskId(recovery.taskId);
     setReviewBeforeIllustrations(recovery.reviewBeforeIllustrations);
     setActiveGrowthDraft(recovery.growthRecordDraft || null);
+    setActiveTargetMomentId(recovery.targetMomentId || null);
     generationViewActiveRef.current = true;
     historyPreviewOpenRef.current = false;
     setSampleResult(null);
@@ -598,6 +664,7 @@ export default function Home() {
   }
 
   useEffect(() => {
+    let mounted = true;
     const detectedLocale = detectInitialLocale();
     setLocale(detectedLocale);
     const urlEntryMode = readEntryModeFromUrl();
@@ -605,6 +672,49 @@ export default function Home() {
     setEntryMode(initialEntryMode);
     window.localStorage.setItem(ENTRY_MODE_STORAGE_KEY, initialEntryMode);
     replaceEntryModeUrl(initialEntryMode);
+    const growthVersionRequested = isGrowthVersionCreationRequested(
+      window.location.search,
+    );
+    if (growthVersionRequested) {
+      setGrowthVersionIntentLoading(true);
+      const intent = readGrowthVersionCreationIntent();
+      if (!intent) {
+        setGrowthVersionIntentError(
+          detectedLocale === "zh"
+            ? "这个版本创作入口已失效，请返回本机成长时间轴重新发起。"
+            : "This version-creation entry expired. Return to the local growth timeline and start again.",
+        );
+        setGrowthVersionIntentLoading(false);
+      } else {
+        void localGrowthRepository.moments
+          ?.get(intent.targetMomentId)
+          .then((bundle) => {
+            if (!mounted) return;
+            if (!bundle) {
+              setGrowthVersionIntentError(
+                detectedLocale === "zh"
+                  ? "没有找到对应的本机成长时刻，它可能已经被删除。"
+                  : "The local Moment was not found. It may have been deleted.",
+              );
+              return;
+            }
+            setGrowthVersionPreset(createGrowthVersionCreationPreset(bundle));
+          })
+          .catch(() => {
+            if (!mounted) return;
+            setGrowthVersionIntentError(
+              detectedLocale === "zh"
+                ? "暂时无法读取这个本机成长时刻，请返回时间轴后重试。"
+                : "This local Moment could not be read. Return to the timeline and try again.",
+            );
+          })
+          .finally(() => {
+            if (mounted) setGrowthVersionIntentLoading(false);
+          });
+      }
+    } else {
+      setGrowthVersionIntentLoading(false);
+    }
     setLocalFreeUsage(readLocalFreeUsage());
     document.documentElement.lang = detectedLocale === "zh" ? "zh-CN" : "en";
 
@@ -718,7 +828,10 @@ export default function Home() {
     };
 
     window.addEventListener("popstate", handlePopState);
-    return () => window.removeEventListener("popstate", handlePopState);
+    return () => {
+      mounted = false;
+      window.removeEventListener("popstate", handlePopState);
+    };
   }, []);
 
   useEffect(() => {
@@ -736,6 +849,9 @@ export default function Home() {
       reviewBeforeIllustrations,
       ...(activeGrowthDraft
         ? { growthRecordDraft: activeGrowthDraft }
+        : {}),
+      ...(activeTargetMomentId
+        ? { targetMomentId: activeTargetMomentId }
         : {}),
       requiresServerVerification: true as const,
     };
@@ -775,7 +891,13 @@ export default function Home() {
       cancelled = true;
       if (timeoutId !== undefined) window.clearTimeout(timeoutId);
     };
-  }, [activeGrowthDraft, activeTaskId, reviewBeforeIllustrations, step]);
+  }, [
+    activeGrowthDraft,
+    activeTargetMomentId,
+    activeTaskId,
+    reviewBeforeIllustrations,
+    step,
+  ]);
 
   useEffect(() => {
     sampleModalOpenRef.current = Boolean(sampleResult);
@@ -847,19 +969,31 @@ export default function Home() {
       payload: generationData,
       accessToken: supabaseAccessToken,
       growthRecordDraft,
+      targetMomentId,
     } = prepareStoryGenerationRequest(formData);
     const normalizedGrowthDraft = isGrowthRecordDraft(growthRecordDraft)
       ? growthRecordDraft
       : undefined;
     const shouldReviewOutline = Boolean(normalizedGrowthDraft);
+    const normalizedTargetMomentId =
+      normalizedGrowthDraft &&
+      typeof targetMomentId === "string" &&
+      targetMomentId.trim().length > 0 &&
+      targetMomentId.length <= 180
+        ? targetMomentId.trim()
+        : undefined;
     setCurrentTaskId(taskId);
     setReviewBeforeIllustrations(shouldReviewOutline);
     setActiveGrowthDraft(normalizedGrowthDraft || null);
+    setActiveTargetMomentId(normalizedTargetMomentId || null);
     writeActiveGenerationTask({
       taskId,
       reviewBeforeIllustrations: shouldReviewOutline,
       ...(normalizedGrowthDraft
         ? { growthRecordDraft: normalizedGrowthDraft }
+        : {}),
+      ...(normalizedTargetMomentId
+        ? { targetMomentId: normalizedTargetMomentId }
         : {}),
     });
     pushGeneratingUrl(taskId);
@@ -903,6 +1037,7 @@ export default function Home() {
         taskId,
         reviewBeforeIllustrations: shouldReviewOutline,
         growthRecordDraft: normalizedGrowthDraft,
+        targetMomentId: normalizedTargetMomentId,
       });
     } catch (requestError) {
       latestGeneratedResultRef.current = null;
@@ -936,6 +1071,7 @@ export default function Home() {
       taskId: activeTaskId,
       reviewBeforeIllustrations: true,
       growthRecordDraft: activeGrowthDraft || undefined,
+      targetMomentId: activeTargetMomentId || undefined,
     });
   }
 
@@ -945,6 +1081,7 @@ export default function Home() {
     }
     setCurrentTaskId(null);
     setActiveGrowthDraft(null);
+    setActiveTargetMomentId(null);
     latestGeneratedResultRef.current = null;
     generationViewActiveRef.current = false;
     historyPreviewOpenRef.current = false;
@@ -1006,6 +1143,10 @@ export default function Home() {
     setStep("form");
     setResult(null);
     setCurrentTaskId(null);
+    setActiveGrowthDraft(null);
+    setActiveTargetMomentId(null);
+    setGrowthVersionPreset(null);
+    setGrowthVersionIntentError(null);
   }
 
   function handleResultUpdate(nextResult: GenerateResponse) {
@@ -1026,6 +1167,7 @@ export default function Home() {
       }
       setCurrentTaskId(null);
       setActiveGrowthDraft(null);
+      setActiveTargetMomentId(null);
       replaceStoryUrl(nextResult.storyId);
     }
     void localStoryRepository
@@ -1195,14 +1337,30 @@ export default function Home() {
         {step === "form" ? (
           entryMode !== "full" ? (
             <>
-              <MinimalStoryEntry
-                key={entryMode}
-                locale={locale}
-                freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
-                remainingFreeGenerations={remainingFreeGenerations}
-                initialGrowthEnabled={entryMode === "capture"}
-                onSubmit={handleGenerate}
-              />
+              {growthVersionIntentLoading ? (
+                <div className="growth-version-entry-loading" role="status">
+                  {locale === "zh"
+                    ? "正在读取这个本机成长时刻…"
+                    : "Loading this local Moment…"}
+                </div>
+              ) : (
+                <MinimalStoryEntry
+                  key={`${entryMode}:${growthVersionPreset?.targetMomentId || "new"}`}
+                  locale={locale}
+                  freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
+                  remainingFreeGenerations={remainingFreeGenerations}
+                  initialGrowthEnabled={
+                    Boolean(growthVersionPreset) || entryMode === "capture"
+                  }
+                  initialGrowthVersion={growthVersionPreset || undefined}
+                  onSubmit={handleGenerate}
+                />
+              )}
+              {growthVersionIntentError ? (
+                <div className="error-banner" role="alert">
+                  {growthVersionIntentError} <Link href="/growth">返回成长书架</Link>
+                </div>
+              ) : null}
               {libraryEntryCard}
               {historyPanel}
             </>
@@ -1332,14 +1490,22 @@ export default function Home() {
               <div className="growth-save-banner" role="status">
                 <div>
                   <strong>
-                    {locale === "zh"
-                      ? `已加入${growthSavedChild.childName}的成长记录`
-                      : `Saved to ${growthSavedChild.childName}'s growth record`}
+                    {growthSavedChild.versionAdded
+                      ? locale === "zh"
+                        ? `已加入${growthSavedChild.childName}的同一成长时刻`
+                        : `Added to ${growthSavedChild.childName}'s existing Moment`
+                      : locale === "zh"
+                        ? `已加入${growthSavedChild.childName}的成长记录`
+                        : `Saved to ${growthSavedChild.childName}'s growth record`}
                   </strong>
                   <span>
-                    {locale === "zh"
-                      ? "插图完成后会继续自动更新这条记录。"
-                      : "This record will keep updating as the illustrations finish."}
+                    {growthSavedChild.versionAdded
+                      ? locale === "zh"
+                        ? `这是第 ${growthSavedChild.versionCount || 1} 个绘本版本；真实事实、备注和现场照片没有被覆盖。`
+                        : `This is storybook version ${growthSavedChild.versionCount || 1}; the real facts, note, and photos were not overwritten.`
+                      : locale === "zh"
+                        ? "插图完成后会继续自动更新这条记录。"
+                        : "This record will keep updating as the illustrations finish."}
                   </span>
                 </div>
                 <Link

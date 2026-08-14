@@ -66,6 +66,7 @@ describe("client generation task persistence", () => {
         taskId: "task_Abc-123",
         reviewBeforeIllustrations: true,
         growthRecordDraft,
+        targetMomentId: "moment-1",
       },
       { storage, now: "2026-08-12T10:00:00.000Z" },
     );
@@ -85,6 +86,7 @@ describe("client generation task persistence", () => {
     expect(restored?.growthRecordDraft?.parentFacts).toBe(
       "安安独立骑了三米。",
     );
+    expect(restored?.targetMomentId).toBe("moment-1");
     expect(raw).toContain("data:image/webp;base64,private-growth-photo");
     expect(raw).not.toContain("must-not-be-persisted");
   });
@@ -134,6 +136,16 @@ describe("client generation task persistence", () => {
       ...createGrowthDraft(),
       photos: [{ id: "photo-1", name: "bike.webp", dataUrl: "https://public/photo" }],
     };
+    expect(
+      createActiveGenerationTask(
+        {
+          taskId: "valid-task-123",
+          reviewBeforeIllustrations: true,
+          targetMomentId: "moment-without-private-draft",
+        },
+        "2026-08-12T10:00:00.000Z",
+      ),
+    ).toBeNull();
 
     expect(valid?.taskId).toBe("valid-task-123");
     expect(
@@ -222,6 +234,7 @@ describe("client generation task URL recovery", () => {
         taskId: "active-task-123",
         reviewBeforeIllustrations: false,
         growthRecordDraft: createGrowthDraft(),
+        targetMomentId: "moment-1",
       },
       "2026-08-12T10:00:00.000Z",
     );
@@ -247,6 +260,7 @@ describe("client generation task URL recovery", () => {
     expect(matching?.growthRecordDraft?.photos[0].dataUrl).toContain(
       "private-growth-photo",
     );
+    expect(matching?.targetMomentId).toBe("moment-1");
     expect(setGenerationTaskIdInSearch("", "active-task-123")).not.toContain(
       "data:image/",
     );
