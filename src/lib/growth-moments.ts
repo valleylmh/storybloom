@@ -4,6 +4,10 @@ import type {
   GrowthRecordPhoto,
   GrowthStoryContext,
 } from "@/lib/growth-records";
+import {
+  hasValidOptionalGrowthAssetMetadata,
+  type GrowthAssetMimeType,
+} from "@/lib/growth-asset-metadata";
 import type {
   AgeGroup,
   GenerateResponse,
@@ -24,6 +28,9 @@ export interface GrowthMomentAsset {
   kind: "photo";
   name: string;
   dataUrl: string;
+  mimeType?: GrowthAssetMimeType;
+  byteSize?: number;
+  checksumSha256?: string;
 }
 
 export interface GrowthMoment
@@ -167,7 +174,8 @@ function isGrowthMomentAsset(value: unknown): value is GrowthMomentAsset {
     value.kind === "photo" &&
     typeof value.name === "string" &&
     typeof value.dataUrl === "string" &&
-    value.dataUrl.startsWith("data:image/")
+    value.dataUrl.startsWith("data:image/") &&
+    hasValidOptionalGrowthAssetMetadata(value)
   );
 }
 
@@ -186,6 +194,11 @@ function clonePhotos(photos: GrowthRecordPhoto[]): GrowthMomentAsset[] {
     kind: "photo",
     name: photo.name,
     dataUrl: photo.dataUrl,
+    ...(photo.mimeType ? { mimeType: photo.mimeType } : {}),
+    ...(photo.byteSize !== undefined ? { byteSize: photo.byteSize } : {}),
+    ...(photo.checksumSha256
+      ? { checksumSha256: photo.checksumSha256 }
+      : {}),
   }));
 }
 
@@ -194,6 +207,11 @@ function projectPhotos(assets: GrowthMomentAsset[]): GrowthRecordPhoto[] {
     id: asset.assetId,
     name: asset.name,
     dataUrl: asset.dataUrl,
+    ...(asset.mimeType ? { mimeType: asset.mimeType } : {}),
+    ...(asset.byteSize !== undefined ? { byteSize: asset.byteSize } : {}),
+    ...(asset.checksumSha256
+      ? { checksumSha256: asset.checksumSha256 }
+      : {}),
   }));
 }
 

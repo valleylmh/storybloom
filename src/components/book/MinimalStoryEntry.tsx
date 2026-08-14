@@ -16,6 +16,18 @@ import {
   preparePrivateImage,
 } from "@/lib/client-images";
 import {
+  getGrowthAssetMetadataFromBlob,
+  normalizeAndDedupeGrowthAssets,
+  sumGrowthAssetDataUrlBytes,
+} from "@/lib/growth-asset-metadata";
+import {
+  assessGrowthStorageCapacity,
+  estimateGrowthPhotoWriteBytes,
+  estimateGrowthStorageCapacity,
+  formatGrowthStorageBytes,
+  type GrowthStorageCapacitySnapshot,
+} from "@/lib/growth-storage-capacity";
+import {
   isValidGrowthDate,
   MAX_GROWTH_CONFIRMATION_LENGTH,
   type GrowthRecordDraft,
@@ -234,6 +246,12 @@ const COPY = {
     growthPhotoAction: "添加照片",
     growthPhotoProcessing: "正在处理照片…",
     growthPhotoInvalid: "请选择 8MB 内的 JPG、PNG 或 WebP 图片，最多 4 张。",
+    growthPhotoDuplicate: (count: number) => `已跳过 ${count} 张内容相同的重复照片。`,
+    growthPhotoQuota: "当前浏览器为本站保留的空间不足，无法再加入这些照片。请先到成长时间轴删除部分现场照片或时刻。",
+    growthCapacityUnavailable: "浏览器未提供容量估算；保存时仍会进行实际检查。",
+    growthCapacity: (usage: string, quota: string, planned: string) =>
+      `本站本机空间已用 ${usage} / ${quota}；本次照片预计新增 ${planned}。`,
+    growthCapacityWarning: "本机空间接近上限，建议先删除不再需要的现场照片或成长时刻。",
     growthDate: "发生时间",
     growthNote: "家长备注（选填）",
     growthNotePlaceholder: "例如：他收好以后特别骄傲",
@@ -350,6 +368,12 @@ const COPY = {
     growthPhotoAction: "Add photos",
     growthPhotoProcessing: "Processing photos…",
     growthPhotoInvalid: "Choose up to 4 JPG, PNG, or WebP images under 8 MB each.",
+    growthPhotoDuplicate: (count: number) => `Skipped ${count} duplicate photo${count === 1 ? "" : "s"} with identical content.`,
+    growthPhotoQuota: "This browser does not have enough site storage for these photos. Remove unneeded Moment photos or Moments from the timeline first.",
+    growthCapacityUnavailable: "This browser does not expose a storage estimate. The actual save will still be checked.",
+    growthCapacity: (usage: string, quota: string, planned: string) =>
+      `Site storage: ${usage} used of ${quota}; these photos are expected to add ${planned}.`,
+    growthCapacityWarning: "Local site storage is close to its limit. Consider removing unneeded Moment photos or Moments.",
     growthDate: "Date",
     growthNote: "Parent note (optional)",
     growthNotePlaceholder: "Example: He was very proud after finishing it",
@@ -468,7 +492,16 @@ export default function MinimalStoryEntry({
     initialGrowthDraft?.photos.map((photo) => ({ ...photo })) || [],
   );
   const [growthPhotoBusy, setGrowthPhotoBusy] = useState(false);
+  const [growthPhotoNotice, setGrowthPhotoNotice] = useState("");
+  const [growthStorageCapacity, setGrowthStorageCapacity] =
+    useState<GrowthStorageCapacitySnapshot | null>(null);
   const [growthError, setGrowthError] = useState("");
+  const growthPhotoWriteBytes = estimateGrowthPhotoWriteBytes(
+    sumGrowthAssetDataUrlBytes(growthPhotos),
+  );
+  const growthCapacityAssessment = growthStorageCapacity
+    ? assessGrowthStorageCapacity(growthStorageCapacity, growthPhotoWriteBytes)
+    : null;
   const [identityOpen, setIdentityOpen] = useState(false);
   const [identityPhase, setIdentityPhase] = useState<
     "confirm" | "generating" | "preview"
@@ -505,6 +538,17 @@ export default function MinimalStoryEntry({
       growthDetailsRef.current.open = true;
     }
   }, [creatingGrowthVersion, initialGrowthEnabled]);
+
+  useEffect(() => {
+    if (!growthEnabled || creatingGrowthVersion) return;
+    let active = true;
+    void estimateGrowthStorageCapacity().then((snapshot) => {
+      if (active) setGrowthStorageCapacity(snapshot);
+    });
+    return () => {
+      active = false;
+    };
+  }, [creatingGrowthVersion, growthEnabled]);
 
   useEffect(() => {
     if (initialGrowthVersion) {
@@ -792,9 +836,10 @@ export default function MinimalStoryEntry({
 
   async function handleGrowthPhotoFiles(files: File[]) {
     setGrowthError("");
+    setGrowthPhotoNotice("");
     if (files.length === 0) return;
     if (
-      growthPhotos.length + files.length > 4 ||
+      files.length > 4 ||
       files.some((file) => !isSupportedPrivateImage(file))
     ) {
       setGrowthError(text.growthPhotoInvalid);
@@ -813,10 +858,35 @@ export default function MinimalStoryEntry({
             id: crypto.randomUUID(),
             name: file.name,
             dataUrl: await blobToDataUrl(blob),
+            ...(await getGrowthAssetMetadataFromBlob(blob)),
           } satisfies GrowthRecordPhoto;
         }),
       );
-      setGrowthPhotos((current) => [...current, ...photos].slice(0, 4));
+      const normalized = await normalizeAndDedupeGrowthAssets(
+        [...growthPhotos, ...photos],
+        { strict: true },
+      );
+      if (normalized.assets.length > 4) {
+        setGrowthError(text.growthPhotoInvalid);
+        return;
+      }
+      const snapshot = await estimateGrowthStorageCapacity();
+      const assessment = assessGrowthStorageCapacity(
+        snapshot,
+        estimateGrowthPhotoWriteBytes(
+          sumGrowthAssetDataUrlBytes(normalized.assets),
+        ),
+      );
+      setGrowthStorageCapacity(snapshot);
+      if (assessment.blocked) {
+        setGrowthError(text.growthPhotoQuota);
+        return;
+      }
+      const duplicateCount = growthPhotos.length + photos.length - normalized.assets.length;
+      setGrowthPhotos(normalized.assets);
+      if (duplicateCount > 0) {
+        setGrowthPhotoNotice(text.growthPhotoDuplicate(duplicateCount));
+      }
     } catch {
       setGrowthError(text.growthPhotoInvalid);
     } finally {
@@ -861,6 +931,22 @@ export default function MinimalStoryEntry({
       ? getFamilyChoicePhotoPath(protagonist)
       : undefined;
     const avatarUrl = imagePath ? familyUrls[imagePath] : identityPreviewUrl || undefined;
+    const normalizedPhotos = await normalizeAndDedupeGrowthAssets(growthPhotos, {
+      verifyExisting: true,
+      strict: true,
+    });
+    const storageSnapshot = await estimateGrowthStorageCapacity();
+    setGrowthStorageCapacity(storageSnapshot);
+    const storageAssessment = assessGrowthStorageCapacity(
+      storageSnapshot,
+      estimateGrowthPhotoWriteBytes(
+        sumGrowthAssetDataUrlBytes(normalizedPhotos.assets),
+      ),
+    );
+    if (storageAssessment.blocked) {
+      throw new Error(text.growthPhotoQuota);
+    }
+    if (normalizedPhotos.changed) setGrowthPhotos(normalizedPhotos.assets);
 
     return {
       version: 1,
@@ -871,7 +957,7 @@ export default function MinimalStoryEntry({
       occurredOn: growthOccurredOn,
       note: growthNote.trim(),
       idea: storyIdea,
-      photos: growthPhotos,
+      photos: normalizedPhotos.assets,
       readingStage: growthReadingStage,
       storyTreatment: growthStoryTreatment,
       parentFacts: growthParentFacts.trim() || undefined,
@@ -888,6 +974,7 @@ export default function MinimalStoryEntry({
     setGrowthOccurredOn(getLocalDateValue());
     setGrowthNote("");
     setGrowthPhotos([]);
+    setGrowthPhotoNotice("");
     setGrowthParentFacts("");
     setGrowthAllowedImaginations("");
     setGrowthFactsConfirmed(false);
@@ -1395,6 +1482,7 @@ export default function MinimalStoryEntry({
                             aria-label={locale === "zh" ? `移除 ${photo.name}` : `Remove ${photo.name}`}
                             onClick={() => {
                               setGrowthError("");
+                              setGrowthPhotoNotice("");
                               setGrowthPhotos((current) =>
                                 current.filter((item) => item.id !== photo.id),
                               );
@@ -1427,6 +1515,40 @@ export default function MinimalStoryEntry({
                       </label>
                     ) : null}
                   </div>
+                  {!creatingGrowthVersion && growthStorageCapacity ? (
+                    <div
+                      className={`minimal-growth-capacity ${
+                        growthCapacityAssessment?.warning
+                          ? "minimal-growth-capacity-warning"
+                          : ""
+                      }`}
+                    >
+                      <span>
+                        {growthStorageCapacity.usageBytes !== undefined &&
+                        growthStorageCapacity.quotaBytes !== undefined
+                          ? text.growthCapacity(
+                              formatGrowthStorageBytes(
+                                growthStorageCapacity.usageBytes,
+                              ),
+                              formatGrowthStorageBytes(
+                                growthStorageCapacity.quotaBytes,
+                              ),
+                              formatGrowthStorageBytes(
+                                growthPhotoWriteBytes,
+                              ),
+                            )
+                          : text.growthCapacityUnavailable}
+                      </span>
+                      {growthCapacityAssessment?.warning ? (
+                        <strong>{text.growthCapacityWarning}</strong>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  {growthPhotoNotice ? (
+                    <p className="minimal-growth-photo-notice" role="status">
+                      {growthPhotoNotice}
+                    </p>
+                  ) : null}
                 </div>
 
                 <div className="minimal-growth-fields">

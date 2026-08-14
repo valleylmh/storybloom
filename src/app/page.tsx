@@ -48,6 +48,7 @@ import {
 } from "@/lib/client-story-generation";
 import { summarizeIllustrationProgress } from "@/lib/illustration-request-policy";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import { getGrowthStorageErrorCode } from "@/lib/growth-storage-capacity";
 import type { ClientTextGenerationTaskResponse } from "@/lib/text-generation-task";
 import type {
   GenerateErrorResponse,
@@ -556,16 +557,31 @@ export default function Home() {
           });
         }
       } catch (growthError) {
-        console.warn("[growth-record] failed to save generated story", growthError);
-        setGrowthSaveError(
-          targetMomentId
-            ? locale === "zh"
-              ? "绘本已经生成，但新版本未能加入原成长时刻；原记录没有被覆盖。"
-              : "The storybook was created, but the new version could not be added to the original Moment. The original record was not overwritten."
-            : locale === "zh"
-              ? "绘本已经生成，但成长记录未能保存到本机。"
-              : "The storybook was created, but the growth record could not be saved on this device.",
-        );
+        const storageCode = getGrowthStorageErrorCode(growthError);
+        console.warn("[growth-record] local save failed", { code: storageCode });
+        if (storageCode === "growth-storage-quota-exceeded") {
+          setGrowthSaveError(
+            locale === "zh"
+              ? "绘本已经生成，但本站本机空间不足，成长记录未能写入。请先从成长时间轴删除不再需要的现场照片或时刻。"
+              : "The storybook was created, but this site does not have enough local storage for the growth record. Remove unneeded Moment photos or Moments first.",
+          );
+        } else if (storageCode === "growth-storage-unavailable") {
+          setGrowthSaveError(
+            locale === "zh"
+              ? "绘本已经生成，但浏览器的本机成长资料库当前不可用。请退出受限隐私模式或允许本站存储后重试。"
+              : "The storybook was created, but the browser's local growth archive is unavailable. Leave restricted private mode or allow site storage, then try again.",
+          );
+        } else {
+          setGrowthSaveError(
+            targetMomentId
+              ? locale === "zh"
+                ? "绘本已经生成，但新版本未能加入原成长时刻；原记录没有被覆盖。"
+                : "The storybook was created, but the new version could not be added to the original Moment. The original record was not overwritten."
+              : locale === "zh"
+                ? "绘本已经生成，但成长记录写入失败；现有本机记录没有被覆盖。"
+                : "The storybook was created, but the growth record write failed. Existing local records were not overwritten.",
+          );
+        }
       }
     }
   }

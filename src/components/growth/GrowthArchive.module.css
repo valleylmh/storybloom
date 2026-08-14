@@ -495,9 +495,26 @@
   border-top: 1px solid rgba(79, 57, 43, 0.12);
 }
 
-.timelineToolbar > span {
+.timelineMeta > span {
   color: #806f63;
   font-size: 0.78rem;
+}
+
+.timelineMeta {
+  display: grid;
+  justify-items: end;
+  gap: 3px;
+  text-align: right;
+}
+
+.timelineMeta small {
+  color: #7b8a75;
+  font-size: 0.68rem;
+}
+
+.timelineMeta .storageWarning {
+  color: #9b642f;
+  font-weight: 700;
 }
 
 .yearSwitch {
@@ -981,6 +998,11 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .timelineMeta {
+    justify-items: start;
+    text-align: left;
   }
 
   .notice {

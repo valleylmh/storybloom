@@ -35,6 +35,13 @@ import {
   getGrowthClientRecordId,
   type GrowthDataSource,
 } from "./growth-source-model";
+import {
+  assessGrowthStorageCapacity,
+  estimateGrowthStorageCapacity,
+  formatGrowthStorageBytes,
+  getGrowthStorageErrorCode,
+  type GrowthStorageCapacitySnapshot,
+} from "@/lib/growth-storage-capacity";
 import styles from "./GrowthArchive.module.css";
 
 interface Props {
@@ -82,6 +89,41 @@ export default function GrowthTimeline({
   const [editNote, setEditNote] = useState("");
   const [notice, setNotice] = useState("");
   const [busyAction, setBusyAction] = useState("");
+  const [storageCapacity, setStorageCapacity] =
+    useState<GrowthStorageCapacitySnapshot | null>(null);
+
+  async function refreshStorageCapacity() {
+    if (source !== "local") return;
+    setStorageCapacity(await estimateGrowthStorageCapacity());
+  }
+
+  function getLocalStorageFailureNotice(
+    error: unknown,
+    fallback: string,
+  ) {
+    const code = getGrowthStorageErrorCode(error);
+    if (code === "growth-storage-quota-exceeded") {
+      return "当前浏览器为本站保留的空间不足，操作没有完成。请先释放不再需要的本站本机内容后重试。";
+    }
+    if (code === "growth-storage-unavailable") {
+      return "浏览器的本机成长资料库当前不可用，请确认未处于受限隐私模式后重试。";
+    }
+    return fallback;
+  }
+
+  useEffect(() => {
+    if (source !== "local") {
+      setStorageCapacity(null);
+      return;
+    }
+    let active = true;
+    void estimateGrowthStorageCapacity().then((snapshot) => {
+      if (active) setStorageCapacity(snapshot);
+    });
+    return () => {
+      active = false;
+    };
+  }, [source]);
 
   useEffect(() => {
     let active = true;
@@ -123,12 +165,15 @@ export default function GrowthTimeline({
           setExpandedIds(new Set());
         }
       })
-      .catch(() => {
+      .catch((error) => {
         if (active) {
           setLoadError(
             source === "cloud"
               ? "私有云端成长记录暂时读取失败；当前设备里的记录不受影响。"
-              : "当前设备里的成长记录暂时读取失败，请稍后重试。",
+              : getLocalStorageFailureNotice(
+                  error,
+                  "当前设备里的成长记录暂时读取失败，请稍后重试。",
+                ),
           );
         }
       })
@@ -265,11 +310,14 @@ export default function GrowthTimeline({
       setNotice(
         source === "cloud" ? "已仅更新私有云端记录。" : "已仅更新当前设备记录。",
       );
-    } catch {
+    } catch (error) {
       setNotice(
         source === "cloud"
           ? "私有云端记录暂时无法更新；当前设备副本没有被修改。"
-          : "当前设备记录暂时无法更新；云端副本没有被修改。",
+          : getLocalStorageFailureNotice(
+              error,
+              "当前设备记录暂时无法更新；云端副本没有被修改。",
+            ),
       );
     }
   }
@@ -292,11 +340,14 @@ export default function GrowthTimeline({
     setBusyAction(`delete:${record.id}`);
     try {
       await activeRepository.remove(record.id);
-    } catch {
+    } catch (error) {
       setNotice(
         source === "cloud"
           ? "云端记录删除失败；当前设备副本没有被修改。"
-          : "本机记录删除失败；云端副本没有被修改。",
+          : getLocalStorageFailureNotice(
+              error,
+              "本机记录删除失败；云端副本没有被修改。",
+            ),
       );
       setBusyAction("");
       return;
@@ -316,6 +367,7 @@ export default function GrowthTimeline({
         ? "已仅删除私有云端记录。关联绘本仍保留。"
         : "已删除当前设备中的成长时刻；绘本馆中的独立副本未被修改。",
     );
+    if (source === "local") void refreshStorageCapacity();
     const remainingMoments = childMomentBundles.filter(
       (candidate) =>
         candidate.moment.momentId !== (record.momentId || record.id),
@@ -417,8 +469,14 @@ export default function GrowthTimeline({
       );
       applyMomentBundle(updated);
       setNotice("现场照片已从当前设备删除；绘本版本和家长备注仍保留。");
-    } catch {
-      setNotice("现场照片删除失败，成长时刻没有被修改。");
+      void refreshStorageCapacity();
+    } catch (error) {
+      setNotice(
+        getLocalStorageFailureNotice(
+          error,
+          "现场照片删除失败，成长时刻没有被修改。",
+        ),
+      );
     } finally {
       setBusyAction("");
     }
@@ -451,6 +509,7 @@ export default function GrowthTimeline({
         ),
       );
       setNotice("成长时刻已从当前设备删除。");
+      void refreshStorageCapacity();
       const remaining = childMomentBundles.filter(
         (candidate) => candidate.moment.momentId !== bundle.moment.momentId,
       );
@@ -467,8 +526,13 @@ export default function GrowthTimeline({
           ),
         );
       }
-    } catch {
-      setNotice("成长时刻删除失败，请稍后重试。");
+    } catch (error) {
+      setNotice(
+        getLocalStorageFailureNotice(
+          error,
+          "成长时刻删除失败，请稍后重试。",
+        ),
+      );
     } finally {
       setBusyAction("");
     }
@@ -486,8 +550,14 @@ export default function GrowthTimeline({
       );
       applyMomentBundle(updated);
       setNotice("现场照片已删除，成长时刻仍保留。");
-    } catch {
-      setNotice("现场照片删除失败，成长时刻没有被修改。");
+      void refreshStorageCapacity();
+    } catch (error) {
+      setNotice(
+        getLocalStorageFailureNotice(
+          error,
+          "现场照片删除失败，成长时刻没有被修改。",
+        ),
+      );
     } finally {
       setBusyAction("");
     }
@@ -530,8 +600,15 @@ export default function GrowthTimeline({
       await onDeleteAll(record);
       const next = records.filter((item) => item.id !== record.id);
       setRecords(next);
+      setMomentBundles((current) =>
+        current.filter(
+          (bundle) =>
+            bundle.moment.momentId !== (record.momentId || record.id),
+        ),
+      );
       setEditingId(null);
       setNotice("当前设备与私有云端的成长记录副本均已删除；关联绘本仍保留。");
+      if (source === "local") void refreshStorageCapacity();
       if (!next.some((item) => item.occurredOn.startsWith(selectedYear))) {
         setSelectedYear(next[0]?.occurredOn.slice(0, 4) || "");
       }
@@ -634,9 +711,29 @@ export default function GrowthTimeline({
                   </button>
                 ))}
               </div>
-              <span>
-                {visibleRecords.length + visibleMomentOnlyBundles.length} 个成长时刻
-              </span>
+              <div className={styles.timelineMeta}>
+                <span>
+                  {visibleRecords.length + visibleMomentOnlyBundles.length} 个成长时刻
+                </span>
+                {source === "local" && storageCapacity ? (
+                  <small
+                    className={
+                      assessGrowthStorageCapacity(storageCapacity, 0).warning
+                        ? styles.storageWarning
+                        : ""
+                    }
+                  >
+                    {storageCapacity.usageBytes !== undefined &&
+                    storageCapacity.quotaBytes !== undefined
+                      ? `本站本机空间 ${formatGrowthStorageBytes(
+                          storageCapacity.usageBytes,
+                        )} / ${formatGrowthStorageBytes(
+                          storageCapacity.quotaBytes,
+                        )}`
+                      : "浏览器未提供本站容量估算"}
+                  </small>
+                ) : null}
+              </div>
             </section>
 
             {notice ? <p className={styles.notice} role="status">{notice}</p> : null}

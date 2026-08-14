@@ -13,6 +13,10 @@ const cloudRepositorySource = readFileSync(
   new URL("../src/lib/repositories/cloud-growth-repository.ts", import.meta.url),
   "utf8",
 );
+const entrySource = readFileSync(
+  new URL("../src/components/book/MinimalStoryEntry.tsx", import.meta.url),
+  "utf8",
+);
 
 describe("growth moment local UI contract", () => {
   it("exposes independent version, original-photo, and whole-Moment actions", () => {
@@ -26,5 +30,12 @@ describe("growth moment local UI contract", () => {
     expect(localRepositorySource).toContain("moments: {");
     expect(localRepositorySource).toContain("selectVersion: selectLocalStorybookVersion");
     expect(cloudRepositorySource).not.toContain("moments:");
+  });
+
+  it("shows local capacity, deduplicates compressed photos, and refreshes after deletion", () => {
+    expect(entrySource).toContain("normalizeAndDedupeGrowthAssets");
+    expect(entrySource).toContain("estimateGrowthStorageCapacity");
+    expect(timelineSource).toContain("refreshStorageCapacity");
+    expect(timelineSource).toContain("本站本机空间");
   });
 });

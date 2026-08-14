@@ -10,6 +10,7 @@ import {
   buildGrowthMomentBundlesFromStoredValues,
   createGrowthMomentShadowValues,
   createGrowthRecord,
+  prepareGrowthMomentBundleForStorage,
   type GrowthRecordDraft,
 } from "@/lib/growth-records";
 import type { GenerateResponse } from "@/types";
@@ -157,5 +158,37 @@ describe("growth moment mixed-store compatibility", () => {
       firstBundle.storybookVersions[0].versionId,
     );
     expect(hydrated.storybookVersions).toHaveLength(2);
+  });
+
+  it("backfills asset metadata and removes duplicate bytes before persistence", async () => {
+    const dataUrl = `data:image/webp;base64,${Buffer.from("same-photo").toString(
+      "base64",
+    )}`;
+    const legacy = createGrowthRecord(story("story-1", "玩具回家"), {
+      ...draft(),
+      photos: [
+        { id: "photo-1", name: "first.webp", dataUrl },
+        { id: "photo-2", name: "renamed.webp", dataUrl },
+      ],
+    });
+    const migrated = migrateLegacyGrowthRecord(legacy);
+
+    const prepared = await prepareGrowthMomentBundleForStorage(migrated, {
+      verifyExisting: true,
+    });
+    const projected = projectGrowthMomentBundle(prepared);
+
+    expect(prepared.moment.originalAssets).toHaveLength(1);
+    expect(prepared.moment.originalAssets[0]).toMatchObject({
+      assetId: "photo-1",
+      mimeType: "image/webp",
+      byteSize: 10,
+    });
+    expect(prepared.moment.originalAssets[0].checksumSha256).toMatch(
+      /^[a-f0-9]{64}$/,
+    );
+    expect(projected?.photos[0].checksumSha256).toBe(
+      prepared.moment.originalAssets[0].checksumSha256,
+    );
   });
 });

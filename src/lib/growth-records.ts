@@ -5,6 +5,18 @@ import type {
 } from "@/types";
 import { materializeTemporaryStoryImages } from "@/lib/client-images";
 import {
+  hasValidOptionalGrowthAssetMetadata,
+  normalizeAndDedupeGrowthAssets,
+  sumGrowthAssetDataUrlBytes,
+  type GrowthAssetMimeType,
+} from "@/lib/growth-asset-metadata";
+import {
+  assertGrowthStorageCapacity,
+  estimateGrowthStorageCapacity,
+  GrowthStorageError,
+  toGrowthStorageError,
+} from "@/lib/growth-storage-capacity";
+import {
   addStorybookVersion,
   clearGrowthMomentOriginalAssets,
   createGrowthMoment,
@@ -44,6 +56,9 @@ export interface GrowthRecordPhoto {
   id: string;
   name: string;
   dataUrl: string;
+  mimeType?: GrowthAssetMimeType;
+  byteSize?: number;
+  checksumSha256?: string;
 }
 
 export interface GrowthRecordDraft extends GrowthStoryContext {
@@ -302,7 +317,8 @@ function isGrowthRecordPhoto(value: unknown): value is GrowthRecordPhoto {
     photo.id.trim().length > 0 &&
     typeof photo.name === "string" &&
     typeof photo.dataUrl === "string" &&
-    photo.dataUrl.startsWith("data:image/")
+    photo.dataUrl.startsWith("data:image/") &&
+    hasValidOptionalGrowthAssetMetadata(photo)
   );
 }
 
@@ -527,44 +543,64 @@ export function groupGrowthRecordsByChild(records: GrowthRecord[]) {
 function openGrowthDb() {
   if (!canUseIndexedDb()) return Promise.resolve(null);
 
-  return new Promise<IDBDatabase | null>((resolve) => {
-    const request = window.indexedDB.open(DB_NAME, DB_VERSION);
-    request.onupgradeneeded = () => {
-      const db = request.result;
-      if (!db.objectStoreNames.contains(STORE_NAME)) {
-        db.createObjectStore(STORE_NAME, { keyPath: "id" });
-      }
-    };
-    request.onerror = () => resolve(null);
-    request.onsuccess = () => resolve(request.result);
+  return new Promise<IDBDatabase | null>((resolve, reject) => {
+    try {
+      const request = window.indexedDB.open(DB_NAME, DB_VERSION);
+      request.onupgradeneeded = () => {
+        const db = request.result;
+        if (!db.objectStoreNames.contains(STORE_NAME)) {
+          db.createObjectStore(STORE_NAME, { keyPath: "id" });
+        }
+      };
+      request.onerror = () =>
+        reject(
+          toGrowthStorageError(
+            request.error,
+            "growth-storage-unavailable",
+          ),
+        );
+      request.onblocked = () =>
+        reject(new GrowthStorageError("growth-storage-unavailable"));
+      request.onsuccess = () => resolve(request.result);
+    } catch (error) {
+      reject(toGrowthStorageError(error, "growth-storage-unavailable"));
+    }
   });
 }
 
 function readAllStoredValues(db: IDBDatabase) {
-  return new Promise<unknown[]>((resolve) => {
+  return new Promise<unknown[]>((resolve, reject) => {
     try {
       const request = db.transaction(STORE_NAME, "readonly").objectStore(STORE_NAME).getAll();
-      request.onerror = () => resolve([]);
+      request.onerror = () =>
+        reject(
+          toGrowthStorageError(
+            request.error,
+            "growth-storage-unavailable",
+          ),
+        );
       request.onsuccess = () =>
         resolve(Array.isArray(request.result) ? request.result : []);
-    } catch {
-      resolve([]);
+    } catch (error) {
+      reject(toGrowthStorageError(error, "growth-storage-unavailable"));
     }
   });
 }
 
 function mutateGrowthStore(db: IDBDatabase, mutation: GrowthStoreMutation) {
-  return new Promise<boolean>((resolve) => {
+  return new Promise<void>((resolve, reject) => {
     try {
       const transaction = db.transaction(STORE_NAME, "readwrite");
       const store = transaction.objectStore(STORE_NAME);
       Array.from(new Set(mutation.deletes || [])).forEach((id) => store.delete(id));
       (mutation.puts || []).forEach((value) => store.put(value));
-      transaction.oncomplete = () => resolve(true);
-      transaction.onerror = () => resolve(false);
-      transaction.onabort = () => resolve(false);
-    } catch {
-      resolve(false);
+      transaction.oncomplete = () => resolve();
+      transaction.onerror = () =>
+        reject(toGrowthStorageError(transaction.error));
+      transaction.onabort = () =>
+        reject(toGrowthStorageError(transaction.error));
+    } catch (error) {
+      reject(toGrowthStorageError(error));
     }
   });
 }
@@ -606,6 +642,65 @@ function normalizeGrowthMomentBundle(
   };
 }
 
+export async function prepareGrowthMomentBundleForStorage(
+  input: GrowthMomentBundle,
+  options: { verifyExisting?: boolean } = {},
+) {
+  const bundle = normalizeGrowthMomentBundle(input);
+  const normalizedAssets = await normalizeAndDedupeGrowthAssets(
+    bundle.moment.originalAssets,
+    { verifyExisting: options.verifyExisting },
+  );
+  if (!normalizedAssets.changed) return bundle;
+  return {
+    ...bundle,
+    moment: {
+      ...bundle.moment,
+      originalAssets: normalizedAssets.assets,
+    },
+  };
+}
+
+function getStoredMomentPhotoBytes(storedValues: unknown[], momentId: string) {
+  let total = 0;
+  storedValues.filter(isGrowthMomentEnvelope).forEach((envelope) => {
+    if (envelope.moment.momentId === momentId) {
+      total += sumGrowthAssetDataUrlBytes(envelope.moment.originalAssets);
+    }
+  });
+  storedValues.filter(isGrowthRecord).forEach((record) => {
+    if (getRecordMomentId(record) === momentId) {
+      total += sumGrowthAssetDataUrlBytes(record.photos);
+    }
+  });
+  return total;
+}
+
+function getNextMomentPhotoBytes(bundle: GrowthMomentBundle) {
+  const momentBytes = sumGrowthAssetDataUrlBytes(bundle.moment.originalAssets);
+  return projectGrowthMomentBundle(bundle) ? momentBytes * 2 : momentBytes;
+}
+
+function hasSameGrowthPhotos(
+  left: readonly GrowthRecordPhoto[],
+  right: readonly GrowthRecordPhoto[],
+) {
+  return (
+    left.length === right.length &&
+    left.every((photo, index) => {
+      const candidate = right[index];
+      return (
+        candidate?.id === photo.id &&
+        candidate.name === photo.name &&
+        candidate.dataUrl === photo.dataUrl &&
+        candidate.mimeType === photo.mimeType &&
+        candidate.byteSize === photo.byteSize &&
+        candidate.checksumSha256 === photo.checksumSha256
+      );
+    })
+  );
+}
+
 function createBundleMutation(
   storedValues: unknown[],
   input: GrowthMomentBundle,
@@ -644,56 +739,113 @@ async function persistGrowthMomentBundle(
   storedValues: unknown[],
   input: GrowthMomentBundle,
 ) {
-  const { bundle, mutation } = createBundleMutation(storedValues, input);
-  const saved = await mutateGrowthStore(db, mutation);
-  if (!saved) throw new Error("growth-storage-write-failed");
+  const prepared = await prepareGrowthMomentBundleForStorage(input, {
+    verifyExisting: true,
+  });
+  const existingPhotoBytes = getStoredMomentPhotoBytes(
+    storedValues,
+    prepared.moment.momentId,
+  );
+  const additionalPhotoBytes = Math.max(
+    0,
+    getNextMomentPhotoBytes(prepared) - existingPhotoBytes,
+  );
+  if (additionalPhotoBytes > 0) {
+    assertGrowthStorageCapacity(
+      await estimateGrowthStorageCapacity(),
+      additionalPhotoBytes,
+    );
+  }
+  const { bundle, mutation } = createBundleMutation(storedValues, prepared);
+  await mutateGrowthStore(db, mutation);
   return bundle;
 }
 
 export async function listGrowthMomentBundles() {
   const db = await openGrowthDb();
-  if (!db) return [];
-  const storedValues = await readAllStoredValues(db);
-  const bundles = buildGrowthMomentBundlesFromStoredValues(storedValues);
-
-  const momentEnvelopes = new Map(
-    storedValues
-      .filter(isGrowthMomentEnvelope)
-      .map((value) => [value.id, value] as const),
-  );
-  const storybookEnvelopes = new Map(
-    storedValues
-      .filter(isStorybookVersionEnvelope)
-      .map((value) => [value.id, value] as const),
-  );
-  const migrationPuts: GrowthStoreMutation["puts"] = [];
-  bundles.forEach((bundle) => {
-    const momentEnvelope = createMomentEnvelope(bundle);
-    const storedMomentEnvelope = momentEnvelopes.get(momentEnvelope.id);
-    if (
-      !storedMomentEnvelope ||
-      storedMomentEnvelope.moment.updatedAt !== bundle.moment.updatedAt ||
-      storedMomentEnvelope.activeStorybookVersionId !==
-        momentEnvelope.activeStorybookVersionId
-    ) {
-      migrationPuts.push(momentEnvelope);
+  if (!db) {
+    if (typeof window !== "undefined") {
+      throw new GrowthStorageError("growth-storage-unavailable");
     }
-    bundle.storybookVersions.forEach((version) => {
-      const envelope = createStorybookEnvelope(version);
-      const storedEnvelope = storybookEnvelopes.get(envelope.id);
+    return [];
+  }
+  try {
+    const storedValues = await readAllStoredValues(db);
+    const rawBundles = buildGrowthMomentBundlesFromStoredValues(storedValues);
+    const bundles = await Promise.all(
+      rawBundles.map((bundle) => prepareGrowthMomentBundleForStorage(bundle)),
+    );
+    const metadataChangedMomentIds = new Set(
+      bundles.flatMap((bundle, index) =>
+        bundle === rawBundles[index] ? [] : [bundle.moment.momentId],
+      ),
+    );
+
+    const momentEnvelopes = new Map(
+      storedValues
+        .filter(isGrowthMomentEnvelope)
+        .map((value) => [value.id, value] as const),
+    );
+    const storybookEnvelopes = new Map(
+      storedValues
+        .filter(isStorybookVersionEnvelope)
+        .map((value) => [value.id, value] as const),
+    );
+    const growthRecordProjections = new Map(
+      storedValues
+        .filter(isGrowthRecord)
+        .map((value) => [value.id, value] as const),
+    );
+    const migrationPuts: GrowthStoreMutation["puts"] = [];
+    bundles.forEach((bundle) => {
+      const forceAssetMetadataUpdate = metadataChangedMomentIds.has(
+        bundle.moment.momentId,
+      );
+      const momentEnvelope = createMomentEnvelope(bundle);
+      const storedMomentEnvelope = momentEnvelopes.get(momentEnvelope.id);
       if (
-        !storedEnvelope ||
-        storedEnvelope.version.updatedAt !== version.updatedAt
+        forceAssetMetadataUpdate ||
+        !storedMomentEnvelope ||
+        storedMomentEnvelope.moment.updatedAt !== bundle.moment.updatedAt ||
+        storedMomentEnvelope.activeStorybookVersionId !==
+          momentEnvelope.activeStorybookVersionId
       ) {
-        migrationPuts.push(envelope);
+        migrationPuts.push(momentEnvelope);
+      }
+      bundle.storybookVersions.forEach((version) => {
+        const envelope = createStorybookEnvelope(version);
+        const storedEnvelope = storybookEnvelopes.get(envelope.id);
+        if (
+          !storedEnvelope ||
+          storedEnvelope.version.updatedAt !== version.updatedAt
+        ) {
+          migrationPuts.push(envelope);
+        }
+      });
+      const projection = projectGrowthMomentBundle(bundle);
+      const storedProjection = projection
+        ? growthRecordProjections.get(projection.id)
+        : undefined;
+      if (
+        projection &&
+        (forceAssetMetadataUpdate ||
+          !storedProjection ||
+          !hasSameGrowthPhotos(storedProjection.photos, projection.photos))
+      ) {
+        migrationPuts.push(projection);
       }
     });
-  });
-  if (migrationPuts.length > 0) {
-    await mutateGrowthStore(db, { puts: migrationPuts });
+    if (migrationPuts.length > 0) {
+      try {
+        await mutateGrowthStore(db, { puts: migrationPuts });
+      } catch {
+        // Metadata/shadow backfill is best-effort; validated local records remain readable.
+      }
+    }
+    return bundles;
+  } finally {
+    db.close();
   }
-  db.close();
-  return bundles;
 }
 
 export async function getGrowthMomentBundle(id: string) {
@@ -702,7 +854,7 @@ export async function getGrowthMomentBundle(id: string) {
 
 export async function saveGrowthMomentBundle(input: GrowthMomentBundle) {
   const db = await openGrowthDb();
-  if (!db) throw new Error("growth-storage-unavailable");
+  if (!db) throw new GrowthStorageError("growth-storage-unavailable");
   try {
     const storedValues = await readAllStoredValues(db);
     return await persistGrowthMomentBundle(db, storedValues, input);
@@ -943,6 +1095,13 @@ export async function patchGrowthRecord(
               kind: "photo" as const,
               name: photo.name,
               dataUrl: photo.dataUrl,
+              ...(photo.mimeType ? { mimeType: photo.mimeType } : {}),
+              ...(photo.byteSize !== undefined
+                ? { byteSize: photo.byteSize }
+                : {}),
+              ...(photo.checksumSha256
+                ? { checksumSha256: photo.checksumSha256 }
+                : {}),
             })),
           }
         : {}),
@@ -958,7 +1117,7 @@ export async function patchGrowthRecord(
 
 export async function deleteLocalGrowthMoment(id: string) {
   const db = await openGrowthDb();
-  if (!db) return false;
+  if (!db) throw new GrowthStorageError("growth-storage-unavailable");
   try {
     const storedValues = await readAllStoredValues(db);
     const bundle = findGrowthMomentBundle(
@@ -977,7 +1136,8 @@ export async function deleteLocalGrowthMoment(id: string) {
         .filter((record) => getRecordMomentId(record) === momentId)
         .map((record) => record.id),
     ];
-    return await mutateGrowthStore(db, { deletes });
+    await mutateGrowthStore(db, { deletes });
+    return true;
   } finally {
     db.close();
   }

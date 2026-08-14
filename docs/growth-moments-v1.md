@@ -55,6 +55,23 @@ storybook:<versionId>
 | 删除全部现场照片 | 保留 | 删除 | 保留 | 不修改 |
 | 删除整个 Moment | 删除 | 删除 | 删除 | 不自动删除 |
 
+## 本机照片容量与去重
+
+成长现场照片仍先在浏览器缩放、重编码为 WebP 并移除 EXIF。新保存的 `GrowthMomentAsset` 和兼容 `GrowthRecordPhoto` 会附带可选的 `mimeType`、`byteSize` 与 `checksumSha256`；旧对象不要求这些字段，因此无需升级 IndexedDB object store。读取旧记录或再次写入 Moment 时，会在本机按需补齐元数据。
+
+照片指纹基于重编码后的真实字节，不使用文件名、儿童标识或原文件元数据。同一 Moment 内字节相同的照片只保留第一份；选择照片和 IndexedDB 写入边界都会检查一次。照片仍不会进入生成 API、URL、服务端日志或 cloud repository。
+
+容量提示只调用当前 origin 的 `navigator.storage.estimate()`：
+
+- 显示本站估算用量、配额和本次照片预计新增占用；
+- 接近阈值时预警，但不会仅因预警阻止创作；
+- 只有预计新增量明确超过剩余配额，或 IndexedDB 实际返回 `QuotaExceededError` 时才阻止照片写入；
+- 不支持 estimate 的浏览器仍可继续，保存时由 IndexedDB 实际结果兜底；
+- 不调用 `navigator.storage.persist()`，不自动申请持久化权限；
+- 删除现场照片或整个 Moment 后，时间轴会重新读取容量快照。
+
+界面分别说明配额不足、浏览器本机资料库不可用和普通写入失败。为了兼容旧读取路径，仍有绘本版本的 Moment 会同时保存 shadow Moment 与旧 `GrowthRecord` 投影，因此新增照片占用估算按两份本机兼容数据计算；这不代表照片被上传或创建了跨 Moment 的全局资产关联。
+
 ## 云端状态
 
 `supabase/migrations/202608140001_growth_moments_storybook_versions.sql` 只建立未来兼容基础：

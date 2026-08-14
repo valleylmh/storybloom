@@ -221,6 +221,29 @@ describe("growth records", () => {
     expect(legacyRecord).not.toHaveProperty("storyTreatment");
   });
 
+  it("accepts optional asset metadata and rejects malformed fingerprints", () => {
+    const metadataDraft = createDraft("child-1", "安安");
+    metadataDraft.photos[0] = {
+      ...metadataDraft.photos[0],
+      mimeType: "image/webp",
+      byteSize: 5,
+      checksumSha256: "a".repeat(64),
+    };
+
+    expect(isGrowthRecordDraft(metadataDraft)).toBe(true);
+    expect(
+      isGrowthRecordDraft({
+        ...metadataDraft,
+        photos: [
+          {
+            ...metadataDraft.photos[0],
+            checksumSha256: "invalid",
+          },
+        ],
+      }),
+    ).toBe(false);
+  });
+
   it("preserves context for legacy updates and allows explicit clearing", () => {
     const initialDraft = {
       ...createDraft("child-1", "安安"),
