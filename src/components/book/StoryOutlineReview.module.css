@@ -1,0 +1,180 @@
+.shell {
+  width: min(920px, calc(100% - 32px));
+  margin: 42px auto 72px;
+  padding: clamp(24px, 4vw, 42px);
+  border: 1px solid rgba(111, 91, 66, 0.17);
+  border-radius: 28px;
+  background: rgba(255, 253, 248, 0.96);
+  box-shadow: 0 24px 70px rgba(75, 58, 38, 0.1);
+}
+
+.header {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #9c6b3f;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.header h1 {
+  margin: 0;
+  color: #3e342b;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  line-height: 1.2;
+}
+
+.header p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: #74685d;
+  line-height: 1.75;
+}
+
+.pages {
+  display: grid;
+  gap: 18px;
+}
+
+.pageCard {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #e8ded0;
+  border-radius: 20px;
+  background: #fffdfa;
+}
+
+.pageHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pageHeading h2 {
+  margin: 0;
+  color: #4b4036;
+  font-size: 1rem;
+}
+
+.pageHeading span {
+  color: #9a8d80;
+  font-size: 0.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field span {
+  color: #62574d;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.field textarea {
+  width: 100%;
+  min-height: 116px;
+  resize: vertical;
+  border: 1px solid #dcd0bf;
+  border-radius: 14px;
+  background: #fff;
+  color: #40372f;
+  padding: 13px 14px;
+  font: inherit;
+  line-height: 1.65;
+}
+
+.field textarea:focus {
+  outline: 3px solid rgba(198, 139, 78, 0.16);
+  border-color: #b87941;
+}
+
+.field textarea[aria-invalid="true"] {
+  border-color: #b34d45;
+  background: #fff9f8;
+}
+
+.fieldError {
+  margin: 0;
+  color: #a33c35;
+  font-size: 0.76rem;
+}
+
+.notice {
+  margin: 22px 0 0;
+  padding: 13px 15px;
+  border-radius: 13px;
+  background: #fff1ef;
+  color: #963e37;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.backButton,
+.confirmButton {
+  min-height: 46px;
+  border-radius: 999px;
+  padding: 11px 20px;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.backButton {
+  border: 1px solid #d9cdbc;
+  background: transparent;
+  color: #62574d;
+}
+
+.confirmButton {
+  border: 0;
+  background: #5f7249;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(74, 94, 57, 0.2);
+}
+
+.backButton:disabled,
+.confirmButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
+@media (max-width: 620px) {
+  .shell {
+    width: min(100% - 20px, 920px);
+    margin-top: 20px;
+    padding: 20px 15px;
+    border-radius: 22px;
+  }
+
+  .pageCard {
+    padding: 16px 13px;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .backButton,
+  .confirmButton {
+    width: 100%;
+  }
+}

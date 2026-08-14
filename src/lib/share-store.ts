@@ -127,7 +127,7 @@ export async function createSharedStory(input: {
 
   const uploadedPaths: string[] = [];
   try {
-    const pages = await Promise.all(
+    const pageResults = await Promise.allSettled(
       input.pages.slice(0, MAX_PAGES).map(async (page) => {
         const persisted = page.imageUrl
           ? await persistPageImage(
@@ -145,6 +145,13 @@ export async function createSharedStory(input: {
           imageUrl: persisted.imageUrl,
         };
       }),
+    );
+    const failedPage = pageResults.find(
+      (result): result is PromiseRejectedResult => result.status === "rejected",
+    );
+    if (failedPage) throw failedPage.reason;
+    const pages = pageResults.flatMap((result) =>
+      result.status === "fulfilled" ? [result.value] : [],
     );
 
     const story: SharedStorySnapshot = {

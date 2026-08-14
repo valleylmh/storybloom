@@ -228,7 +228,7 @@ supabase/migrations/202608130001_temporary_story_generation_assets.sql
 
 上述 probe 全部通过，只能证明 bucket 契约；仍需完成 worker/Cron、lease reclaim、失败重试、stale attempt fence 和过期/孤儿清理 smoke，才可把 `STORYBLOOM_PRODUCTION_JOBS_ENABLED` 从 `0` 改为 `1`。
 
-`GENERATION_WORKER_LEASE_MS`、`GENERATION_WORKER_CLAIM_LIMIT`、`GENERATION_RECLAIM_LIMIT`、`STORYBLOOM_TEMP_ASSET_TTL_SECONDS`、`STORYBLOOM_TEMP_ASSET_MAX_BYTES`、`STORYBLOOM_TEMP_ASSET_ORPHAN_GRACE_SECONDS` 和 `STORYBLOOM_TEMP_ASSET_SWEEP_LIMIT` 可按负载调整；它们不是提高可靠性的替代品。`local-file` 模式把图片字节写入实例文件系统，即使 Redis 保存 metadata，也仍不是 Vercel/Cloudflare 多实例生产后端；生产必须由 capabilities 同时确认私有共享 bytes 与 Redis metadata 已就绪。
+`GENERATION_WORKER_LEASE_MS`、`GENERATION_WORKER_CLAIM_LIMIT`、`GENERATION_RECLAIM_LIMIT`、`STORYBLOOM_TEMP_ASSET_TTL_SECONDS`、`STORYBLOOM_TEMP_ASSET_MAX_BYTES`、`STORYBLOOM_TEMP_ASSET_ORPHAN_GRACE_SECONDS` 和 `STORYBLOOM_TEMP_ASSET_SWEEP_LIMIT` 可按负载调整；它们不是提高可靠性的替代品。worker 在单个文本或插画 executor 运行期间会自动续租（按 lease 的三分之一、最长 60 秒一次），但最终写入仍必须通过当前 lease 与 task/page attempt fence；平台强制终止后仍要等待 lease 过期并由下一轮 reclaim 接管。`local-file` 模式把图片字节写入实例文件系统，即使 Redis 保存 metadata，也仍不是 Vercel/Cloudflare 多实例生产后端；生产必须由 capabilities 同时确认私有共享 bytes 与 Redis metadata 已就绪。
 
 Vercel 需要在 `vercel.json` 中显式配置实际存在且鉴权的 worker/reclaim 路由；目前文件里只有每日灵感 Cron，不能宣称 generation reclaim 已启用。Cloudflare 不读取 `vercel.json`，需分别配置 Cron Trigger 或 Queue consumer、环境变量和 secrets；当前共享字节后端仍是 Supabase 私有 Storage，不应写成已经接入 Cloudflare R2。还需验证 OpenNext/Node runtime 的实际行为。两边都必须测试：两个 worker 不会同时 claim 同一 job、worker 被中断后 lease 能被 reclaim、旧 lease/旧插画 attempt 晚到会被忽略、达到重试上限进入明确失败，以及临时图片不能被其他匿名会话读取且过期/孤儿对象会被清理。
 
