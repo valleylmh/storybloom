@@ -296,7 +296,9 @@ function getImageToImageProviderOrderConfig() {
 function getImageProviderOrder() {
   const configuredProviders = parseImageProviderConfig(getImageProviderOrderConfig()).map(
     (item) => item.provider
-  ).filter((provider) => provider !== "cpa");
+  ).filter(
+    (provider) => provider !== "cpa" || isCpaGptImageModel(getCpaImageConfig().model),
+  );
   const providers =
     configuredProviders.length > 0
       ? configuredProviders
@@ -351,7 +353,10 @@ function getWeightedImageProviders() {
   const providers: ImageProvider[] = [];
 
   for (const { provider, weight } of parseImageProviderConfig(configured)) {
-    if (provider === "cpa" || !hasProviderKey(provider)) {
+    if (
+      (provider === "cpa" && !isCpaGptImageModel(getCpaImageConfig().model)) ||
+      !hasProviderKey(provider)
+    ) {
       continue;
     }
 
@@ -1050,7 +1055,15 @@ interface CpaImageGenerationResponse {
       images?: Array<{ image_url?: { url?: string } }>;
     };
   }>;
-  error?: { message?: string };
+  data?: Array<{
+    b64_json?: string;
+    url?: string;
+  }>;
+  error?: {
+    message?: string;
+    code?: string;
+    type?: string;
+  };
   errors?: Array<{ message?: string }>;
 }
 
@@ -1416,6 +1429,14 @@ async function generateHuggingFaceIllustration(
 }
 
 function extractCpaImage(data: CpaImageGenerationResponse) {
+  const imageApiResult = data.data?.[0];
+  if (imageApiResult?.b64_json) {
+    return normalizeBase64Image(imageApiResult.b64_json);
+  }
+  if (imageApiResult?.url) {
+    return imageApiResult.url;
+  }
+
   const message = data.choices?.[0]?.message;
   const structuredImage = message?.images?.[0]?.image_url?.url;
   if (structuredImage) {
@@ -1432,13 +1453,153 @@ function extractCpaImage(data: CpaImageGenerationResponse) {
   );
 }
 
+function isCpaGptImageModel(model: string) {
+  return /^gpt-image(?:-|$)/i.test(model.trim());
+}
+
+function createCpaImageFile(dataUri: string, index: number) {
+  const match = dataUri.match(
+    /^data:(image\/(?:png|jpeg|webp));base64,([A-Za-z0-9+/=]+)$/i,
+  );
+  if (!match) {
+    throw new GenerationProviderError("invalid_response");
+  }
+
+  const mimeType = match[1].toLowerCase();
+  const bytes = Buffer.from(match[2], "base64");
+  if (bytes.length === 0) {
+    throw new GenerationProviderError("invalid_response");
+  }
+  const extension = mimeType === "image/jpeg" ? "jpg" : mimeType.split("/")[1];
+  return {
+    blob: new Blob([bytes], { type: mimeType }),
+    filename: `reference-${index + 1}.${extension}`,
+  };
+}
+
+function createCpaGptImageEditBody(
+  model: string,
+  promptText: string,
+  references: CpaReferenceImage[],
+) {
+  const form = new FormData();
+  form.append("model", model);
+  form.append("prompt", promptText);
+  form.append("size", process.env.CPA_IMAGE_SIZE || "1024x1024");
+  form.append("n", "1");
+  form.append("response_format", "b64_json");
+  references.forEach((reference, index) => {
+    const image = createCpaImageFile(reference.dataUri, index);
+    form.append("image[]", image.blob, image.filename);
+  });
+  return form;
+}
+
+function createCpaGptImageGenerationBody(model: string, promptText: string) {
+  return JSON.stringify({
+    model,
+    prompt: promptText,
+    size: process.env.CPA_IMAGE_SIZE || "1024x1024",
+    n: 1,
+    response_format: "b64_json",
+  });
+}
+
+async function requestCpaGptImage(input: {
+  baseUrl: string;
+  apiKey: string;
+  model: string;
+  promptText: string;
+  references: CpaReferenceImage[];
+  maxAttempts: number;
+  retryDelay: number;
+  timeoutMs: number;
+}) {
+  let lastErrorClass: GenerationErrorClass = "unknown";
+  const promptWithReferenceOrder = truncateForCpaPrompt(
+    [
+      input.promptText,
+      ...(input.references.length > 0
+        ? [
+            "Reference image order:",
+            ...input.references.map(
+              (reference, index) => `Image ${index + 1}: ${reference.label}`,
+            ),
+          ]
+        : []),
+    ].join(" "),
+  );
+  const isEdit = input.references.length > 0;
+
+  for (let attempt = 1; attempt <= input.maxAttempts; attempt += 1) {
+    let response: Response;
+    try {
+      response = await withCpaImageThrottle(() =>
+        fetch(`${input.baseUrl}/images/${isEdit ? "edits" : "generations"}`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${input.apiKey}`,
+            ...(isEdit ? {} : { "Content-Type": "application/json" }),
+            "HTTP-Referer":
+              process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+            "X-Title": "StoryBloom GPT Image",
+          },
+          body: isEdit
+            ? createCpaGptImageEditBody(
+                input.model,
+                promptWithReferenceOrder,
+                input.references,
+              )
+            : createCpaGptImageGenerationBody(
+                input.model,
+                promptWithReferenceOrder,
+              ),
+          signal: AbortSignal.timeout(input.timeoutMs),
+        }),
+      );
+    } catch (error) {
+      lastErrorClass = classifyGenerationError(error);
+      if (attempt < input.maxAttempts) {
+        await sleep(input.retryDelay);
+        continue;
+      }
+      throw new GenerationProviderError(lastErrorClass);
+    }
+
+    const data = (await response.json().catch(() => ({}))) as CpaImageGenerationResponse;
+    if (response.ok) {
+      const image = extractCpaImage(data);
+      if (image) {
+        return image.startsWith("http") ? downloadImageAsDataUrl(image) : image;
+      }
+      lastErrorClass = "invalid_response";
+    } else {
+      lastErrorClass = classifyHttpStatus(response.status);
+    }
+
+    if (
+      attempt < input.maxAttempts &&
+      (response.status === 429 || response.status >= 500)
+    ) {
+      await sleep(getRetryAfterMs(response) ?? input.retryDelay);
+      continue;
+    }
+    break;
+  }
+
+  throw new GenerationProviderError(lastErrorClass);
+}
+
 async function generateCpaIllustration(
   prompt: string,
   _seed?: number,
   options?: IllustrationOptions
 ): Promise<string> {
   const referenceImages = await getImageToImageReferenceImages(options);
-  if (referenceImages.length === 0) {
+  if (
+    referenceImages.length === 0 &&
+    !isCpaGptImageModel(getCpaImageConfig().model)
+  ) {
     throw new GenerationProviderError("configuration");
   }
 
@@ -1471,7 +1632,7 @@ async function requestCpaImage(
   if (!apiKey || !baseUrl) {
     throw new GenerationProviderError("configuration");
   }
-  if (referenceImages.length === 0) {
+  if (referenceImages.length === 0 && !isCpaGptImageModel(model)) {
     throw new GenerationProviderError("configuration");
   }
   const normalizedReferences = referenceImages
@@ -1496,6 +1657,18 @@ async function requestCpaImage(
     "CPA_IMAGE_TIMEOUT_MS",
     DEFAULT_CPA_IMAGE_TIMEOUT_MS
   );
+  if (isCpaGptImageModel(model)) {
+    return requestCpaGptImage({
+      baseUrl,
+      apiKey,
+      model,
+      promptText,
+      references: normalizedReferences,
+      maxAttempts,
+      retryDelay,
+      timeoutMs,
+    });
+  }
   let lastErrorClass: GenerationErrorClass = "unknown";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {

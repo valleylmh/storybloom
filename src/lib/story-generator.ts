@@ -427,6 +427,9 @@ function createCustomFallbackPages(
     ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same child identity across every page, but vary pose, expression, camera angle, and scene action.`
     : `${input.childName} is the main child hero.`;
   const primaryCastId = getFamilyCharacters(input)[0]?.id;
+  const weatherNameGuard = isSevereWeatherHomeTheme(theme)
+    ? "The storm name in the premise is a weather name, not a literal animal; do not depict a dolphin or another creature unless the premise explicitly asks for one."
+    : null;
   const shotPlan =
     input.storyTreatment === "documentary"
       ? [
@@ -457,6 +460,7 @@ function createCustomFallbackPages(
         characterDescription,
         getFamilyCastPrompt(input, castIds),
         `Binding story premise: ${theme}.`,
+        weatherNameGuard,
         STORYBOOK_COMPOSITION_RULES,
         "No text in image.",
         STYLE_SPINES[input.style],
@@ -478,6 +482,21 @@ function isSoloSleepTheme(theme: string) {
 
 function isPoolPlayTheme(theme: string) {
   return /(泳池|游泳|玩水|戏水|水上乐园)/.test(theme);
+}
+
+function isSevereWeatherHomeTheme(theme: string) {
+  return (
+    /(台风|暴雨|暴风雨|大风|飓风|龙卷风|雷雨|强风)/.test(theme) &&
+    /(在家|家里|家中|不出门|不能出门|不敢出门|留在家)/.test(theme)
+  );
+}
+
+function getSevereWeatherEvent(theme: string) {
+  const event = theme
+    .replace(/(?:，|,).*(?:在家|家里|家中|不出门|不能出门|不敢出门|留在家).*$/u, "")
+    .replace(/(?:来了|来啦|到啦)[。！!]?$/u, "")
+    .trim();
+  return event || theme;
 }
 
 function createPoolPlayFallbackStory(input: StoryInput): {
@@ -539,6 +558,73 @@ function createPoolPlayFallbackStory(input: StoryInput): {
       zh: `回家前，${zhSubject}回头看了看亮晶晶的泳池。今天的快乐像一颗小水珠，被${zhSubject}轻轻装进了心里。`,
       en: `Before going home, ${englishSubject} looked back at the sparkling pool. ${englishFollowupSubject} carried the happy memory along like one tiny drop of water.`,
       scene: "quiet closing at the neighborhood pool, child looking back while leaving with towel and small swim bag, sparkling water and golden late-afternoon light",
+    },
+  ];
+
+  return {
+    coverTitle,
+    pages: createCustomFallbackPages(input, storyMoments, theme),
+  };
+}
+
+function createSevereWeatherHomeFallbackStory(input: StoryInput): {
+  coverTitle: string;
+  pages: StoryPage[];
+} {
+  const {
+    childName,
+    theme,
+    narrationTheme,
+    coverTitle,
+    zhSubject,
+    englishSubject,
+    englishMidSentenceSubject,
+  } = getCustomStoryIdentity(input);
+  const weatherEvent = getSevereWeatherEvent(narrationTheme);
+  const storyMoments: CustomFallbackMoment[] = [
+    {
+      zh: `这个周末，屋外来了${weatherEvent}。${zhSubject}和家人发现天气很猛烈，决定先留在家里，把安全放在第一位。`,
+      en: `This weekend, ${englishSubject} faced the weather described in the story idea. The storm outside was strong, so everyone decided to stay home and keep safe.`,
+      scene: `opening scene inside the family's real home during the severe weather event described by the premise, child hearing wind outside while staying safely indoors with family`,
+    },
+    {
+      zh: `${zhSubject}和家人一起关好门窗，收起容易被风吹动的东西，也把手机、手电和饮用水放在顺手的地方。`,
+      en: `${englishSubject} and the family secured the windows and doors, moved loose objects away from the wind, and kept a phone, flashlight, and drinking water nearby.`,
+      scene: `same safe home interior, child and family calmly checking closed windows, doors, flashlight, phone, and water, no one outside`,
+    },
+    {
+      zh: `风声一阵比一阵响，${zhSubject}有一点害怕。家人陪在身边，告诉${zhSubject}：待在屋里、听从提醒，就是很好的保护自己。`,
+      en: `The wind grew louder, and ${englishMidSentenceSubject} felt a little scared. Family stayed close and explained that staying indoors and following safety updates was a good way to care for oneself.`,
+      scene: `child sitting safely with family in an interior room, loud weather suggested only through sound and moving curtains far from closed windows, calm supportive expressions`,
+    },
+    {
+      zh: `不能出门的周末也可以有自己的安排。${zhSubject}挑了一本喜欢的书，和家人一起坐在屋里慢慢读。`,
+      en: `A weekend indoors could still have a gentle rhythm. ${englishSubject} chose a favorite book and read together with the family inside.`,
+      scene: `warm indoor reading corner during the storm, child and family sharing a picture book, soft lamp light, closed windows, cozy safe setting`,
+    },
+    {
+      zh: `读累了，${zhSubject}又和家人做了一个小小的室内游戏。外面的风还在吹，屋里的笑声却让心里安定下来。`,
+      en: `After reading, ${englishSubject} played a small indoor game with the family. The wind continued outside, while laughter made the room feel steady and calm.`,
+      scene: `same home interior, child playing a simple quiet game with family on the floor, storm kept outside, no dangerous action or outdoor scene`,
+    },
+    {
+      zh: `大家一起看看天气提醒，确认暂时还不能出门，就继续在家里吃点心、聊天，耐心等风雨慢慢过去。`,
+      en: `The family checked the weather updates and confirmed that it was still safer to stay in. They shared a snack, talked, and patiently waited for the weather to pass.`,
+      scene: `family gathered safely indoors checking a weather update on a phone, snacks and water nearby, reassuring atmosphere, no readable text on the phone`,
+    },
+    {
+      zh: `后来，风声渐渐小了一些。${zhSubject}发现，害怕的时候有人陪着、知道该怎么做，心里就会一点点安静下来。`,
+      en: `Later, the wind grew quieter. ${englishSubject} noticed that fear became smaller when family stayed close and everyone knew what to do.`,
+      scene: `quiet home interior as the severe weather begins to ease, child relaxing beside family, warm light returning, windows still closed`,
+    },
+    {
+      zh:
+        input.dedication?.trim() ||
+        `这个周末，${zhSubject}没有冒险出门，而是和家人一起平安地留在家里。等天气真正放晴，再带着安心的心情走出去。`,
+      en: input.dedication?.trim()
+        ? "A special note from someone who loves you."
+        : `That weekend, ${englishSubject} stayed safely home with the family instead of going outside. When the weather truly cleared, they could step out again with calm hearts.`,
+      scene: `peaceful closing inside the same home after the storm eases, child and family looking toward brighter light through a closed window, safe hopeful memory`,
     },
   ];
 
@@ -695,6 +781,10 @@ function createGroundedCustomFallbackStory(input: StoryInput): {
     return createPoolPlayFallbackStory(input);
   }
 
+  if (isSevereWeatherHomeTheme(theme)) {
+    return createSevereWeatherHomeFallbackStory(input);
+  }
+
   const storyMoments: CustomFallbackMoment[] = [
     {
       zh: `今天，${zhSubject}开始了这件特别的小事：${narrationTheme}。故事就从眼前这个真实的场景展开。`,
@@ -734,6 +824,11 @@ function createGroundedCustomFallbackStory(input: StoryInput): {
         ? "A special note from someone who loves you."
         : `${englishSubject} learned that growing up can mean completing an important small moment one step at a time.`,
       scene: `quiet reflective ending that clearly shows the completed original premise and the child's growth: ${theme}`,
+    },
+    {
+      zh: `这件小事最后成为${zhSubject}愿意记住的一天：事情就在原来的地方完成了，${zhSubject}也更了解自己的节奏。`,
+      en: `The small moment became a day ${englishSubject} wanted to remember: the original situation reached a real ending, and ${englishSubject} understood the right pace for the next step.`,
+      scene: `specific quiet closing image from the original premise, same setting and completed activity, child remembering the real moment without a new event: ${theme}`,
     },
   ];
 

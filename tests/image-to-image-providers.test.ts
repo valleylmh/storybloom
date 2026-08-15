@@ -15,6 +15,7 @@ vi.mock("@/lib/email/supabase-admin", () => ({
 }));
 
 import {
+  generateCpaReferenceImage,
   generateCpaStoryCharacterAnchor,
   generateIllustration,
   getImageToImageProviderForPage,
@@ -69,6 +70,27 @@ describe("image-to-image provider routing", () => {
     expect(getProviderForPage(2)).toBe("pollinations");
     expect(getProviderForPage(3)).toBe("agnes");
     expect(getProviderForPage(8)).toBe("pollinations");
+  });
+
+  it("allows gpt-image models to participate in ordinary CPA page routing", () => {
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    process.env.CPA_IMAGE_MODEL = "gpt-image-1.5";
+    process.env.IMAGE_PROVIDER_ORDER = "cpa:1,agnes:1";
+    process.env.AGNES_API_KEY = "agnes-test";
+
+    expect(getProviderForPage(1)).toBe("cpa");
+    expect(getProviderForPage(2)).toBe("agnes");
+  });
+
+  it("keeps chat-based CPA image models out of ordinary page routing", () => {
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    process.env.CPA_IMAGE_MODEL = "gemini-3.1-flash-image";
+    process.env.IMAGE_PROVIDER_ORDER = "cpa:1,agnes:1";
+    process.env.AGNES_API_KEY = "agnes-test";
+
+    expect(getProviderForPage(1)).toBe("agnes");
   });
 
   it("supports IMAGE_TO_IMAGE_PROVIDER_ORDER weights", () => {
@@ -131,6 +153,74 @@ describe("image-to-image provider routing", () => {
     expect(body.messages[0].content[0].text).toContain(
       "Do not recolor, restyle, add, remove, or substitute garments",
     );
+  });
+
+  it("uses the Images edits API for gpt-image models with ordered references", async () => {
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    process.env.CPA_IMAGE_MODEL = "gpt-image-1.5";
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({ data: [{ b64_json: "Z3B0LWltYWdl" }] }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      ),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const image = await generateCpaReferenceImage({
+      prompt: "Keep both reference identities in a warm family scene.",
+      referenceImages: [
+        "data:image/png;base64,Zmlyc3Q=",
+        "data:image/webp;base64,c2Vjb25k",
+      ],
+    });
+
+    expect(image).toBe("data:image/png;base64,Z3B0LWltYWdl");
+    expect(fetchMock).toHaveBeenCalledOnce();
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe("https://relay.example/v1/images/edits");
+    expect(init.headers).not.toMatchObject({ "Content-Type": expect.anything() });
+    expect(init.body).toBeInstanceOf(FormData);
+    const form = init.body as FormData;
+    expect(form.get("model")).toBe("gpt-image-1.5");
+    expect(form.get("size")).toBe("1024x1024");
+    expect(form.get("response_format")).toBe("b64_json");
+    expect(form.getAll("image[]")).toHaveLength(2);
+    expect((form.getAll("image[]")[0] as Blob).type).toBe("image/png");
+    expect((form.getAll("image[]")[1] as Blob).type).toBe("image/webp");
+    expect(String(form.get("prompt"))).toContain("Image 1: REFERENCE IMAGE 1");
+    expect(String(form.get("prompt"))).toContain("Image 2: REFERENCE IMAGE 2");
+  });
+
+  it("uses the Images generations API for gpt-image models without references", async () => {
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    process.env.CPA_IMAGE_MODEL = "gpt-image-1.5";
+    process.env.IMAGE_PROVIDER_ORDER = "cpa:1";
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({ data: [{ b64_json: "Z2VuZXJhdGVk" }] }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      ),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const result = await generateIllustration("A small red paper boat", 7, {
+      pageNumber: 1,
+      style: "watercolor",
+      preferredProvider: "cpa",
+    });
+
+    expect(result.provider).toBe("cpa");
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe("https://relay.example/v1/images/generations");
+    expect(init.headers).toMatchObject({ "Content-Type": "application/json" });
+    expect(JSON.parse(String(init.body))).toMatchObject({
+      model: "gpt-image-1.5",
+      prompt: expect.stringContaining("A small red paper boat"),
+      size: "1024x1024",
+      response_format: "b64_json",
+    });
   });
 
   it("sends the uploaded reference through Agnes extra_body.image", async () => {

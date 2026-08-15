@@ -257,6 +257,47 @@ describe("custom story generation", () => {
     expect(chineseStory).not.toMatch(unrelatedTemplateWords);
   });
 
+  it("keeps a severe-weather home story grounded and at exactly eight pages", async () => {
+    process.env.STORY_TEXT_PROVIDER = "mock";
+    delete process.env.TEXT_MODEL_PROVIDER;
+
+    const story = await generateStoryText({
+      childName: "童童",
+      ageGroup: "6-8",
+      theme: "custom",
+      customTheme: "童童的12级台风“白海豚”来了，我们周末在家不敢出门",
+      style: "watercolor",
+      language: "zh-en",
+    });
+    const chineseStory = story.pages.map((page) => page.zhText).join("\n");
+    const illustrationStory = story.pages
+      .map((page) => page.illustrationPrompt)
+      .join("\n");
+
+    expect(story.pages).toHaveLength(8);
+    expect(story.pages.map((page) => page.page)).toEqual([
+      1, 2, 3, 4, 5, 6, 7, 8,
+    ]);
+    expect(chineseStory).toContain("台风");
+    expect(chineseStory).toContain("留在家里");
+    expect(chineseStory).toContain("门窗");
+    expect(chineseStory).not.toMatch(/分成一个个小步骤|终于完成了最重要的那一步/);
+    expect(illustrationStory).toContain("not a literal animal");
+  });
+
+  it("keeps the generic custom fallback at exactly eight pages", async () => {
+    process.env.STORY_TEXT_PROVIDER = "mock";
+    delete process.env.TEXT_MODEL_PROVIDER;
+
+    const story = await generateStoryText({
+      ...soloSleepInput,
+      customTheme: "周末在家整理自己的书架",
+    });
+
+    expect(story.pages).toHaveLength(8);
+    expect(story.pages[7].zhText).toContain("愿意记住的一天");
+  });
+
   it("uses the CPA gemini relay without injecting a random adventure", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";
