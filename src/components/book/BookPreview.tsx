@@ -9,6 +9,7 @@ import {
 } from "@phosphor-icons/react";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import NarrationToolbar from "@/components/book/NarrationToolbar";
+import LibraryBookExperience from "@/components/library/LibraryBookExperience";
 import ShareLinkPanel from "@/components/book/ShareLinkPanel";
 import SocialShareDialog, {
   type SocialSharePreviewPage,
@@ -986,13 +987,27 @@ export default function BookPreview({
         </p>
       </section>
 
-      <section className="storybook-tools" aria-label="绘本工具">
-        <NarrationToolbar
-          pages={pages}
-          storyKey={result.storyId}
-          staticChineseAudioUrl={result.narrationAudio?.url}
-        />
-      </section>
+      {variant === "own" ? (
+        <section className="personalized-reader" aria-label="专属绘本阅读器">
+          <LibraryBookExperience
+            title={result.coverTitle}
+            pages={pages}
+            accent="#df6d47"
+            storyKey={result.storyId}
+            contentType="personalized"
+            contentId={result.storyId}
+            preferCloudTts={false}
+          />
+        </section>
+      ) : (
+        <section className="storybook-tools" aria-label="绘本工具">
+          <NarrationToolbar
+            pages={pages}
+            storyKey={result.storyId}
+            staticChineseAudioUrl={result.narrationAudio?.url}
+          />
+        </section>
+      )}
 
       {shareDialogOpen && shareImageUrl ? (
         <div
@@ -1071,6 +1086,15 @@ export default function BookPreview({
               {model.label}
             </button>
           ))}
+        </div>
+      ) : null}
+
+      {variant === "own" ? (
+        <div className="personalized-page-management-heading">
+          <div>
+            <h3>页面管理与修复</h3>
+            <p>上方用于阅读和播放；这里保留逐页查看、重试和图片修复。</p>
+          </div>
         </div>
       ) : null}
 

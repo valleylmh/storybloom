@@ -63,23 +63,23 @@ StoryBloom 应从“AI 绘本生成器”收敛为家庭故事平台，核心由
 
 | 能力 | 状态 | 当前实现 | 主要缺口 |
 |---|---|---|---|
-| 馆藏翻页阅读器 | Existing | 受控页码、翻页/平铺模式、页码缩略图、图片灯箱 | 还未复用于用户生成绘本和分享页 |
-| 中文播放 | Existing | 馆藏优先云端 TTS，失败回退 `SpeechSynthesis` | 缺少统一状态机、明确重试和位置恢复 |
-| 英文播放 | Existing | 云端 TTS 与本机英语语音 | 同上 |
-| 中英双语播放 | Existing | 每页先中文、后英文 | 云端 MP3 只能整段高亮，切换模式后的恢复策略未持久化 |
-| 自动翻页 | Partial | 当前页 `audio.onended` 或系统语音完成后自动进入下一页，最后一页停止 | 没有用户可关闭的开关；错误后重试和失败页保护未形成状态机 |
-| 文字高亮 | Partial | 云端音频高亮当前语言段落；系统语音按当前中/英文段落切换 | 没有句子/词时间轴时只能段落级；这是允许的首版降级，但需在模型中明确 highlight granularity |
+| 馆藏翻页阅读器 | Existing | 受控页码、翻页/平铺模式、页码缩略图、图片灯箱；本地用户生成作品已复用同一 `LibraryBookExperience` | 公开分享页仍使用轻量静态阅读视图 |
+| 中文播放 | Existing | 馆藏优先云端 TTS，失败回退 `SpeechSynthesis`；统一状态机、重试和可用时的页内位置恢复 | 服务端跨设备进度尚未接入 |
+| 英文播放 | Existing | 云端 TTS 与本机英语语音，共用相同状态机和取消边界 | 同上 |
+| 中英双语播放 | Existing | 每页先中文、后英文；切换模式先取消旧任务并从当前页重播 | 云端 MP3 没有句子/词时间轴，只做当前语言段落高亮 |
+| 自动翻页 | Existing | 当前页结束后按开关进入下一页；最后一页停止；不会自动进入下一本 | 系列下一回仍由用户主动点击 |
+| 文字高亮 | Existing | 云端音频高亮当前语言段落；系统语音按当前中/英文段落切换；暂停时清除、继续时恢复 | 有时间轴前不承诺句子或词级同步 |
 | 键盘翻页 | Existing | 左右方向键；灯箱支持 Escape 和左右键 | 需要 E2E 回归 |
-| 触摸翻页 | Partial | 横向位移超过 48px 时翻页 | 只判断 X 位移，未判断纵向滚动意图，可能与页面滚动冲突 |
+| 触摸翻页 | Existing | 横向位移超过 48px 且显著大于纵向位移时翻页；阅读舞台使用 `touch-action: pan-y` | iPhone Safari 和 Android Chrome 仍需阶段 6 人工回归 |
 | Reduced motion | Existing | 翻页动画和文字过渡支持 `prefers-reduced-motion` | 新增播放 UI 必须沿用 |
-| 音频预取 | Partial | 播放当前页时预取下一页；内存 Promise 缓存 | 每次停止会清空整个缓存；未复用已有 IndexedDB `client-audio-cache`；没有签名 URL 过期判断 |
-| 音频取消 | Partial | 使用 `AbortController`、run id、`speechSynthesis.cancel()` 和清除 `<audio>` | 手动翻页会取消旧播放，但状态分散，快速操作仍缺少明确的命令层测试 |
-| 播放错误 | Partial | 展示错误文字，云端失败自动回退系统语音 | 错误 UI 没有统一“点击重试”，没有超时与离线状态，浏览器自动播放受限时退回原生播放器而非主按钮 |
-| 暂停/继续/重放/停止 | Partial | 云端 `<audio controls>` 可暂停继续；语言按钮再次点击会停止 | 主操作不是“一键播放故事”，系统语音路径不支持真正暂停/继续，缺少重放当前页和显式停止命令 |
-| 播放状态机 | Missing | 当前由 `activeNarration`、`audioStatus`、`playbackKind`、`audioError`、`audioMeta` 等状态共同决定 | 需要收敛为 `idle/loading/playing/paused/ended/error`，并用事件驱动迁移 |
-| 播放进度保存 | Missing | 馆藏阅读页每次从第 1 页开始 | 需要页码、模式、页内位置、完成比例、最后阅读时间和读完状态 |
+| 音频预取 | Existing | 优先请求当前页，只主动预取下一页；复用 IndexedDB `client-audio-cache` 和当前会话 Promise；校验 URL 过期并在加载失败时失效缓存 | 仍需阶段 6 做弱网和缓存容量评测 |
+| 音频取消 | Existing | `AbortController`、run id、`speechSynthesis.cancel()` 和清除 `<audio>` 共同保证页面/语言/离开时取消旧任务 | 需要 Playwright 竞态回归 |
+| 播放错误 | Existing | 45 秒请求超时、云端失败回退系统语音、自动播放受限回到主按钮、最终失败显示“点击重试” | 离线/格式失败的多浏览器自动化回归放在阶段 6 |
+| 暂停/继续/重放/停止 | Existing | 单一主按钮“播放故事 / 暂停 / 继续播放 / 重新播放”，另有重播当前页和停止 | `SpeechSynthesis.pause()` 的平台差异需继续人工验证 |
+| 播放状态机 | Existing | `playback-machine.ts` 提供 `idle/loading/playing/paused/ended/error` 和事件驱动迁移 | 后续埋点只消费状态，不再新增平行布尔状态 |
+| 播放进度保存 | Partial | 独立 IndexedDB `storybloom-reading-state`，localStorage fallback；保存页码、最大页、语言、自动翻页、可用时的页内位置、完成比例和时间 | 登录用户服务端保存与显式合并在阶段 2 |
 
-普通生成作品仍使用独立的 `NarrationToolbar`，按整本使用浏览器 `SpeechSynthesis`，没有翻页阅读、页级高亮或进度恢复。后续应让馆藏和用户生成作品复用同一个核心阅读器，但保留不同内容适配器，不强行把所有页面路由合并。
+本地用户生成作品的正式成品预览已经复用馆藏核心阅读器，默认继续使用浏览器 `SpeechSynthesis`，避免改变既有付费 TTS 成本和 Provider 边界。精选案例和定制案例仍保留旧 `NarrationToolbar`；页面管理、插图重试和修复区没有被阅读器替代，只在界面上与“阅读和播放”明确分区。
 
 ### 3.3 登录、匿名数据与云端保存
 
@@ -135,26 +135,26 @@ StoryBloom 应从“AI 绘本生成器”收敛为家庭故事平台，核心由
 | 测试层 | 状态 | 当前实现 | 主要缺口 |
 |---|---|---|---|
 | TypeScript | Existing | `tsconfig` 严格模式，默认使用 `npx tsc --noEmit` | 新增模块需保持无错误 |
-| 单元测试 | Partial | Vitest Node 环境覆盖馆藏数据、TTS 路由、生成任务、存储、分享和隐私基础 | 没有阅读状态机、阅读进度、收藏和组件交互测试 |
+| 单元测试 | Partial | Vitest Node 环境覆盖馆藏数据、TTS 路由、生成任务、存储、分享和隐私基础；已新增播放状态机、阅读进度和阅读器产品边界测试 | 收藏和真实组件交互测试仍待补充 |
 | 集成测试 | Partial | 多个 route/repository 测试实质上覆盖服务端集成边界 | `package.json` 没有独立 `integration` 脚本 |
 | 浏览器 E2E | Missing | 仓库没有 Playwright 配置和 E2E 目录 | 阶段 6 引入轻量 Playwright dev dependency，并先覆盖核心闭环 |
-| 浏览器兼容 | Partial | 之前做过人工桌面与移动尺寸验收，代码有触摸/键盘/reduced-motion | 没有 Chromium/WebKit/Firefox 自动回归 |
+| 浏览器兼容 | Partial | 已完成人工桌面与约 390px 手机宽度验收，代码有触摸/键盘/reduced-motion | 没有 Chromium/WebKit/Firefox 自动回归，Safari/Android 仍需人工复核 |
 
 ## 4. P0 阅读器验收差距
 
-| P0 场景 | 当前状态 | 阶段 1 动作 |
+| P0 场景 | 当前状态 | 当前实现 |
 |---|---|---|
-| 匿名用户一次点击播放 | Partial | 提供唯一主按钮“播放故事”，默认使用上次语言或中文 |
-| 播放结束自动翻页 | Existing | 纳入状态机并增加可关闭开关 |
-| 最后一页停止 | Existing | 增加 `ended` 结束态和家长确认的下一回提示 |
-| 暂停后继续 | Partial | 统一云端音频暂停/继续；系统语音无法可靠暂停时采用可解释的当前段重放策略 |
-| 手动翻页立即停止旧音频 | Existing | 增加快速连续翻页与竞态测试 |
-| 刷新恢复页码 | Missing | 新增本地阅读进度仓库 |
-| 网络错误后手动重试 | Partial | `error` 状态提供“播放失败，点击重试” |
-| 切换语言不重叠 | Partial | 模式切换事件先 cancel，再更新并从当前页重播 |
-| 手机浏览器可用 | Partial | 修复纵向滚动与横向滑动判定，保证 44px 以上主点击区 |
-| 不请求麦克风权限 | Existing | 主流程禁止调用 `getUserMedia`；加入源代码/E2E 保护 |
-| 馆藏和用户作品复用阅读器 | Missing | 建立内容适配层，优先把本地用户作品接入同一核心阅读器 |
+| 匿名用户一次点击播放 | Existing | 唯一主按钮“播放故事”，默认恢复上次语言或使用中文 |
+| 播放结束自动翻页 | Existing | 已纳入状态机并提供默认开启、可关闭的开关 |
+| 最后一页停止 | Existing | `ended` 结束态；不会自动进入下一本 |
+| 暂停后继续 | Existing | 云端音频和系统语音路径都提供暂停/继续；系统语音继续时恢复当前语言段落高亮 |
+| 手动翻页立即停止旧音频 | Existing | 页面选择先取消旧 session，可按原播放意图准备新页 |
+| 刷新恢复页码 | Existing | 本地阅读进度仓库恢复页码、语言、自动翻页和可用的页内位置 |
+| 网络错误后手动重试 | Existing | 云端失败先降级，最终 `error` 状态提供“播放失败，点击重试” |
+| 切换语言不重叠 | Existing | 模式切换先 cancel，再更新并从当前页重播；浏览器实测只高亮新语言 |
+| 手机浏览器可用 | Existing | 修复纵向滚动与横向滑动判定，主按钮 58px、次按钮至少 46px；手机宽度实测通过 |
+| 不请求麦克风权限 | Existing | 主流程不调用 `getUserMedia`/`MediaRecorder`，并有源代码保护测试 |
+| 馆藏和用户作品复用阅读器 | Existing | 本地用户成品通过 `LibraryBookExperience` 接入相同阅读器 |
 | 无时间轴仍可播放 | Existing | 保留 page/paragraph fallback，不把时间轴设为必填 |
 
 ## 5. 数据设计
@@ -189,6 +189,7 @@ type ReadingProgress = {
   contentType: "library" | "personalized";
   contentId: string;
   pageIndex: number;
+  maxPageIndex: number;
   positionMs?: number;
   languageMode: "zh" | "en" | "zh-en";
   playbackMode: "page";
@@ -329,26 +330,29 @@ type PlaybackState = {
   languageMode: "zh" | "en" | "zh-en";
   source: "cloud" | "browser" | null;
   autoAdvance: boolean;
-  highlight: "none" | "page" | "paragraph" | "sentence" | "word";
-  error?: { code: string; message: string; retryable: boolean };
+  highlight: "zh" | "en" | "zh-en" | null;
+  positionMs: number;
+  durationMs: number;
+  message: string | null;
+  error: { code: string; message: string; retryable: boolean } | null;
 };
 ```
 
-主要事件：
+主要事件（代码中使用明确的过去式/请求式事件名）：
 
-- `PLAY`
-- `AUDIO_READY`
-- `PAUSE`
-- `RESUME`
-- `STOP`
-- `REPLAY_PAGE`
+- `PLAY_REQUESTED`
+- `PLAY_STARTED`
+- `PAUSED`
+- `RESUMED`
+- `STOPPED`
 - `PAGE_SELECTED`
 - `LANGUAGE_CHANGED`
-- `SOURCE_FAILED`
-- `PLAYBACK_FAILED`
+- `AUTO_ADVANCE_CHANGED`
+- `POSITION_CHANGED`
+- `FAILED`
+- `RETRY_REQUESTED`
 - `PAGE_ENDED`
 - `BOOK_ENDED`
-- `RETRY`
 
 竞态规则：
 
@@ -381,9 +385,9 @@ interface AudioSource {
 
 缓存规则：
 
-- 内存只缓存当前页和下一页 Promise。
+- 客户端只主动请求当前页并预取下一页；已成功页的 Promise 可在当前会话内复用，整本最多只有少量页。
 - 使用已有 `client-audio-cache` 保存可复用 URL 前，必须校验 `signedUrlExpiresAt`。
-- data URL 可本地缓存；临时签名 URL 过期后重新向服务端请求，不重复生成付费 TTS，服务端应命中自己的文本/声音 cache key。
+- data URL 可本地缓存；临时签名 URL 过期或实际加载失败后清理内存与 IndexedDB 条目，再向服务端请求。服务端应命中自己的文本/声音 cache key，避免重复付费生成。
 - 语言、文本、声音或 Anchor 变化必须生成不同缓存键。
 
 ## 8. 埋点设计
@@ -463,16 +467,57 @@ interface AudioSource {
 
 ### 阶段 1：P0 有声绘本阅读器
 
-- 建立 reducer/状态机和命令层
-- 主按钮“播放故事 / 暂停 / 继续播放 / 重新播放”
-- 自动翻页开关、停止、重放当前页和明确重试
-- 本地阅读进度仓库、刷新恢复和“继续第 N 页”
-- 中/英/双语安全切换
-- 修复触摸滑动与滚动冲突
-- 让本地用户生成绘本通过内容适配器复用阅读器
-- 增加状态机、进度仓库和核心交互测试
+状态：**已完成实现、浏览器验收、全量测试和 production build，并作为独立阶段提交。**
+
+- [x] 建立 reducer/状态机和命令层
+- [x] 主按钮“播放故事 / 暂停 / 继续播放 / 重新播放”
+- [x] 自动翻页开关、停止、重放当前页和明确重试
+- [x] 本地阅读进度仓库、刷新恢复和“继续第 N 页”
+- [x] 中/英/双语安全切换
+- [x] 修复触摸滑动与滚动冲突
+- [x] 让本地用户生成绘本通过内容适配器复用阅读器
+- [x] 增加状态机、进度仓库和产品边界测试
 
 阶段 1 不引入数据库 migration；登录用户先保持本地优先。服务端进度与合并在阶段 2 随收藏一起交付。
+
+阶段 1 修改文件：
+
+- `src/lib/reader/playback-machine.ts`
+- `src/lib/reading-progress.ts`
+- `src/lib/client-audio-cache.ts`
+- `src/components/library/LibraryNarrationToolbar.tsx`
+- `src/components/library/LibraryBookExperience.tsx`
+- `src/components/library/LibraryBookReader.tsx`
+- `src/components/book/BookPreview.tsx`
+- `src/app/library/[seriesId]/[bookId]/page.tsx`
+- `src/app/globals.css`
+- `tests/playback-machine.test.ts`
+- `tests/reading-progress.test.ts`
+- `tests/library-reader-product-boundary.test.ts`
+
+数据库变化：无。没有新增 Supabase migration、表、列或 RLS；本地新建独立 IndexedDB `storybloom-reading-state`，并提供 `storybloom.readingProgress.v1` localStorage fallback。
+
+新增接口：没有新增 HTTP API。新增内部 `PlaybackState/PlaybackEvent`、`ReadingProgressRecord`、本地读写/合并函数和音频缓存失效函数；现有 `/api/audio` 请求契约、Provider endpoint、`DASHSCOPE_TOKEN_KEY` 和家庭声音配置均未改变。
+
+兼容性影响：馆藏继续云端 TTS 优先；本地用户成品复用相同阅读器但保持 `preferCloudTts={false}`，继续使用浏览器语音，不改变既有付费路径。登录不会自动上传阅读记录；家庭录音、麦克风和声音克隆不进入主流程。既有逐页插图重试、分享、视频和页面管理功能保留。
+
+阶段 1 质量结果：
+
+- `pnpm lint`：通过，0 error；107 条既有 warning，与阶段 0 基线相同。
+- `npx tsc --noEmit`：通过。
+- Vitest：94 个测试文件通过、3 个跳过；613 项测试通过、5 项跳过。完整套件中的 Edge TTS 本机 WebSocket 测试需允许临时监听 `127.0.0.1`，在该环境中已通过。
+- 集成测试：仓库没有独立 `integration` 脚本；完整 Vitest 已包含 route、repository、TTS server 和生成任务边界测试。
+- `pnpm build`：通过；Next.js 生成 133 个静态页面，包含 100 条馆藏详情静态路径。
+- 构建后已清理 `.next` 并恢复 `pnpm dev`，`http://localhost:3000` 可正常打开。
+
+阶段 1 浏览器验收：
+
+- 桌面端实测一键播放、暂停/继续、停止、重播、自动翻页关闭与开启、最后一页停止。
+- 实测播放中切换中/英文会取消旧任务，只高亮新的语言段落。
+- 实测快速连续跳页后只准备最终选择页，停止后没有遗留播放。
+- 实测刷新恢复页码、语言、自动翻页，并显示“继续第 N 页”。
+- 实测约 390px 手机宽度下播放控件单列、主按钮和次按钮可点击，播放与暂停正常。
+- 页面明确说明不需要录音，不请求麦克风权限；保护测试禁止核心阅读器出现 `getUserMedia`、`mediaDevices` 或 `MediaRecorder`。
 
 ### 阶段 2：绘本馆、收藏和三入口信息架构
 
@@ -541,7 +586,7 @@ interface AudioSource {
 - 登录不会自动上传本地作品、阅读记录、收藏、照片或声音。
 - 现有 `GenerateResponse`、生成任务和逐页插图恢复继续工作。
 - 旧本地历史和旧云端 `saved_stories` 没有新字段时仍可打开。
-- 普通生成预览在切换到统一阅读器前继续保留现有浏览器朗读，避免一次性重写。
+- 本地用户成品使用统一阅读器；精选/定制案例继续保留现有浏览器朗读，避免一次性改动所有预览变体。
 - 家庭照片仍需明确监护人授权，并只存私有 Storage。
 - 分享内容不会自动进入公共绘本馆。
 

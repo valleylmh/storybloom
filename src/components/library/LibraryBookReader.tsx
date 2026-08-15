@@ -38,6 +38,7 @@ export default function LibraryBookReader({
     useState<ReaderMode>("turn");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const touchStartXRef = useRef<number | null>(null);
+  const touchStartYRef = useRef<number | null>(null);
 
   const pageIndex = controlledPageIndex ?? internalPageIndex;
   const readerMode = controlledReaderMode ?? internalReaderMode;
@@ -135,18 +136,28 @@ export default function LibraryBookReader({
 
   function handleTouchStart(event: React.TouchEvent) {
     touchStartXRef.current = event.touches[0]?.clientX ?? null;
+    touchStartYRef.current = event.touches[0]?.clientY ?? null;
   }
 
   function handleTouchEnd(event: React.TouchEvent) {
     const startX = touchStartXRef.current;
+    const startY = touchStartYRef.current;
     touchStartXRef.current = null;
+    touchStartYRef.current = null;
     const endX = event.changedTouches[0]?.clientX;
-    if (startX === null || endX === undefined) {
+    const endY = event.changedTouches[0]?.clientY;
+    if (
+      startX === null ||
+      startY === null ||
+      endX === undefined ||
+      endY === undefined
+    ) {
       return;
     }
 
     const deltaX = endX - startX;
-    if (Math.abs(deltaX) < 48) {
+    const deltaY = endY - startY;
+    if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.2) {
       return;
     }
 
@@ -200,6 +211,10 @@ export default function LibraryBookReader({
             className="book-stage"
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
+            onTouchCancel={() => {
+              touchStartXRef.current = null;
+              touchStartYRef.current = null;
+            }}
           >
             <button
               type="button"

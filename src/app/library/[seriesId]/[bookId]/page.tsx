@@ -165,6 +165,8 @@ export default async function LibraryBookPage({
         pages={book.pages}
         accent={series.accent}
         storyKey={`library-${series.id}-${book.id}`}
+        contentType="library"
+        contentId={`${series.id}/${book.id}`}
       />
 
       {/* 无 JS / 搜索引擎兜底：完整正文仍以平铺形式输出 */}

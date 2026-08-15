@@ -145,3 +145,25 @@ export async function setCachedNarrationAudio(entry: CachedNarrationAudio) {
     // Audio remains usable in memory when storage is unavailable or full.
   }
 }
+
+export async function deleteCachedNarrationAudio(key: string) {
+  try {
+    const database = await openAudioCache();
+    if (!database) {
+      return;
+    }
+
+    await new Promise<void>((resolve) => {
+      const transaction = database.transaction(
+        AUDIO_CACHE_STORE,
+        "readwrite",
+      );
+      transaction.objectStore(AUDIO_CACHE_STORE).delete(key);
+      transaction.oncomplete = () => resolve();
+      transaction.onerror = () => resolve();
+      transaction.onabort = () => resolve();
+    });
+  } catch {
+    // A failed invalidation must not block the browser-voice fallback.
+  }
+}
