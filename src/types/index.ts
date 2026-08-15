@@ -36,6 +36,65 @@ export type ImageProvider =
 export type ImageAttemptStatus = "success" | "failed";
 export type SampleImageModel = "gpt-image-2" | "nano-banana";
 
+export interface LibraryStoryBeat {
+  page: number;
+  narrativeBeat: string;
+  scene: string;
+}
+
+export interface LibraryStorySpec {
+  version: 1;
+  sourceLibraryBookId: string;
+  sourceTitle: string;
+  sourceSeriesId: string;
+  sourceSeriesTitle: string;
+  sourceSeriesOrder?: number;
+  category: string;
+  ageGroup: AgeGroup;
+  theme: string;
+  tone: string;
+  storyBeats: LibraryStoryBeat[];
+  replaceableRoles: string[];
+  tags: string[];
+}
+
+export interface PersonalizationAnchorConfirmation {
+  version: 1;
+  displayName: string;
+  relationship: string;
+  appearance: string;
+  referenceType: "canonical" | "source" | "text";
+  characterId?: string;
+  storyReferenceToken?: string;
+  confirmedAt: string;
+}
+
+export type PersonalizationAnchorStatus =
+  | "pending"
+  | "preview"
+  | "confirmed"
+  | "failed";
+
+export interface PersonalizationDraft {
+  id: string;
+  userId?: string;
+  anonymousId?: string;
+  sourceLibraryBookId: string;
+  sourceTitle: string;
+  selectedCharacterIds: string[];
+  selectedStyle: IllustrationStyle;
+  storySettings: {
+    prompt: string;
+    ageGroup: AgeGroup;
+  };
+  anchorStatus: PersonalizationAnchorStatus;
+  anchor?: PersonalizationAnchorConfirmation;
+  generationJobId?: string;
+  generatedStoryId?: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface SampleImageAssets {
   placeholder: string;
   variants: Record<SampleImageModel, string>;
@@ -106,6 +165,9 @@ export interface StoryInput {
   customCharacterReferenceToken?: string;
   characterDescription?: string;
   dedication?: string;
+  sourceLibraryBookId?: string;
+  personalizationDraftId?: string;
+  personalizationAnchor?: PersonalizationAnchorConfirmation;
   familyCharacters?: FamilyCharacterInput[];
   visualBible?: StoryVisualBible;
 }

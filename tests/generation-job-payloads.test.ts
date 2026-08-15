@@ -181,6 +181,44 @@ describe("generation job payload references", () => {
     ).rejects.toThrow("storyInput fields");
   });
 
+  it("preserves validated library source and confirmed Anchor metadata", async () => {
+    const store = await import("@/lib/generation-job-payloads");
+    const personalizedPayload: TextGenerationJobPayload = {
+      ...payload,
+      storyInput: {
+        ...payload.storyInput,
+        sourceLibraryBookId: "xiyouji/shi-hou-chu-shi",
+        personalizationDraftId: "123e4567-e89b-42d3-a456-426614174000",
+        personalizationAnchor: {
+          version: 1,
+          displayName: "童童",
+          relationship: "孩子",
+          appearance: "齐耳短发、圆框眼镜、黄色外套",
+          referenceType: "text",
+          storyReferenceToken:
+            "abcdefghijklmnopqrstuvwxyzABCDEF1234567890_-storyanchor",
+          confirmedAt: "2026-08-16T05:00:00.000Z",
+        },
+      },
+    };
+    const ref = await store.putGenerationJobPayload(personalizedPayload);
+    await expect(store.getGenerationJobPayload(ref)).resolves.toEqual(
+      personalizedPayload,
+    );
+    await expect(
+      store.putGenerationJobPayload({
+        ...personalizedPayload,
+        storyInput: {
+          ...personalizedPayload.storyInput,
+          personalizationAnchor: {
+            ...personalizedPayload.storyInput.personalizationAnchor!,
+            referenceType: "voice" as never,
+          },
+        },
+      }),
+    ).rejects.toThrow("referenceType");
+  });
+
   it("rejects malformed family characters, executable values, credentials and excessive depth", async () => {
     const store = await import("@/lib/generation-job-payloads");
     await expect(

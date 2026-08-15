@@ -8,6 +8,7 @@ const mocks = vi.hoisted(() => ({
   mutateTask: vi.fn(),
   publishStory: vi.fn(),
   generateStoryText: vi.fn(),
+  createAnchor: vi.fn(),
   logEvent: vi.fn(),
 }));
 
@@ -22,7 +23,7 @@ vi.mock("@/lib/story-generator", () => ({
   generateStoryText: mocks.generateStoryText,
 }));
 vi.mock("@/lib/story-character-anchor", () => ({
-  createStoryCharacterAnchorToken: vi.fn(),
+  createStoryCharacterAnchorToken: mocks.createAnchor,
 }));
 vi.mock("@/lib/image-generator", () => ({
   createDemoPages: (pages: StoryPage[]) =>
@@ -159,5 +160,52 @@ describe("durable text publication fencing", () => {
       },
     );
     expect(mocks.cacheTask).not.toHaveBeenCalled();
+  });
+
+  it("reuses a parent-confirmed story Anchor instead of generating another one", async () => {
+    const protagonist = {
+      id: "123e4567-e89b-42d3-a456-426614174000",
+      name: "童童",
+      relation: "孩子",
+      appearance: "齐耳短发、圆框眼镜、黄色外套",
+      sourceReferenceAssetPath: "user/child/source.webp",
+      canonicalReferenceAssetPath: "user/child/canonical.png",
+      storyReferenceToken:
+        "abcdefghijklmnopqrstuvwxyzABCDEF1234567890_-storyanchor",
+      isProtagonist: true,
+    };
+    await executeTextGeneration({
+      task,
+      storyInput: {
+        childName: "童童",
+        protagonistFamilyCharacterId: protagonist.id,
+        ageGroup: "4-5",
+        theme: "custom",
+        customTheme: "家庭专属版石猴出世",
+        style: "fairytale",
+        language: "zh-en",
+        familyCharacters: [protagonist],
+        visualBible: {
+          version: 1,
+          seriesStyleLock: "style",
+          paletteLock: "palette",
+          continuityPolicy: "continuity",
+          characters: [],
+        },
+      },
+      protagonistCharacter: protagonist,
+      familyCharacters: [protagonist],
+      dailyLimit: 3,
+      persistTerminalFailure: false,
+      publishIdentity,
+      publishFence: vi.fn().mockResolvedValue(true),
+    });
+
+    expect(mocks.createAnchor).not.toHaveBeenCalled();
+    expect(mocks.generateStoryText).toHaveBeenCalledWith(
+      expect.objectContaining({
+        familyCharacters: [expect.objectContaining({ storyReferenceToken: protagonist.storyReferenceToken })],
+      }),
+    );
   });
 });

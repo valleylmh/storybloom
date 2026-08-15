@@ -99,6 +99,9 @@ export default async function LibraryBookPage({
       (page) => Boolean(page.imageUrl) && page.imageStatus === "complete",
     );
   const bookMetadata = resolveLibraryBookMetadata(book);
+  const personalizeHref = `/?mode=minimal&personalize=${encodeURIComponent(
+    `${series.id}/${book.id}`,
+  )}#story-creation`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -185,6 +188,9 @@ export default async function LibraryBookPage({
         storyKey={`library-${series.id}-${book.id}`}
         contentType="library"
         contentId={`${series.id}/${book.id}`}
+        personalizeHref={
+          bookMetadata.personalizationEnabled ? personalizeHref : undefined
+        }
       />
 
       {/* 无 JS / 搜索引擎兜底：完整正文仍以平铺形式输出 */}
@@ -274,12 +280,10 @@ export default async function LibraryBookPage({
           或写下任何一个小心愿，几分钟做成专属中英双语绘本。
         </p>
         <Link
-          href={`/?mode=minimal&idea=${encodeURIComponent(
-            `让孩子走进「${book.title}」的故事，和主角一起明白其中的道理`,
-          )}`}
+          href={personalizeHref}
           className="library-cta-btn"
         >
-          免费生成专属绘本
+          让孩子成为故事主角
         </Link>
       </section>
     </main>

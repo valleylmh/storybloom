@@ -22,6 +22,16 @@ function createResult(): GenerateResponse {
       style: "fairytale",
       language: "zh-en",
       customCharacterReferenceToken: "temporary-character-token",
+      sourceLibraryBookId: "xiyouji/shi-hou-chu-shi",
+      personalizationDraftId: "123e4567-e89b-42d3-a456-426614174000",
+      personalizationAnchor: {
+        version: 1,
+        displayName: "安安",
+        relationship: "孩子",
+        appearance: "短发，黄色上衣",
+        referenceType: "text",
+        confirmedAt: "2026-08-16T05:00:00.000Z",
+      },
       familyCharacters: [
         {
           id: "character-1",
@@ -118,6 +128,12 @@ describe("persisted story snapshots", () => {
     expect(snapshot.input.parentFacts).toContain("第一次独立收好积木");
     expect(snapshot.input.allowedImaginations).toContain("轻轻说晚安");
     expect(snapshot.input.storyTreatment).toBe("warm-imagination");
+    expect(snapshot.input.sourceLibraryBookId).toBe(
+      "xiyouji/shi-hou-chu-shi",
+    );
+    expect(snapshot.input.personalizationAnchor?.appearance).toBe(
+      "短发，黄色上衣",
+    );
   });
 
   it("reconstructs a GenerateResponse without reviving temporary URLs", () => {
@@ -141,6 +157,12 @@ describe("persisted story snapshots", () => {
     expect(restored.input.parentFacts).toContain("第一次独立收好积木");
     expect(restored.input.allowedImaginations).toContain("轻轻说晚安");
     expect(restored.input.storyTreatment).toBe("warm-imagination");
+    expect(restored.input.sourceLibraryBookId).toBe(
+      "xiyouji/shi-hou-chu-shi",
+    );
+    expect(restored.input.personalizationDraftId).toBe(
+      "123e4567-e89b-42d3-a456-426614174000",
+    );
     expect("accessToken" in restored.input).toBe(false);
     expect("providerTaskId" in restored.pages[1]).toBe(false);
     expect(restored.input.familyCharacters?.[0]).toEqual({

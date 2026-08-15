@@ -33,6 +33,12 @@ export function createPublicStoryInput(input: StoryInput): StoryInput {
 
   return {
     ...publicInput,
+    personalizationAnchor: input.personalizationAnchor
+      ? {
+          ...input.personalizationAnchor,
+          storyReferenceToken: undefined,
+        }
+      : undefined,
     familyCharacters: input.familyCharacters?.map(
       ({
         referenceAssetPath: _referenceAssetPath,

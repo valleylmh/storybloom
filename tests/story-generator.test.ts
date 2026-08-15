@@ -336,6 +336,44 @@ describe("custom story generation", () => {
     expect(body.top_p).toBe(0.86);
   });
 
+  it("adapts a library StorySpec without mechanical name replacement", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = mockCpaStory(
+      "童童的花果山清晨",
+      createModelPages("aligned"),
+    );
+
+    await generateStoryText({
+      ...soloSleepInput,
+      customTheme: "让孩子成为《石猴出世》的主角",
+      sourceLibraryBookId: "xiyouji/shi-hou-chu-shi",
+      personalizationDraftId: "123e4567-e89b-42d3-a456-426614174000",
+      personalizationAnchor: {
+        version: 1,
+        displayName: "童童",
+        relationship: "孩子",
+        appearance: "齐耳短发、圆框眼镜、黄色外套",
+        referenceType: "text",
+        confirmedAt: "2026-08-16T05:00:00.000Z",
+      },
+    });
+
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body)) as {
+      messages: Array<{ content: string }>;
+    };
+    const prompt = body.messages.map((message) => message.content).join("\n");
+    expect(prompt).toContain("source book id=xiyouji/shi-hou-chu-shi");
+    expect(prompt).toContain("Do not mechanically replace names");
+    expect(prompt).toContain("花果山");
+    expect(prompt).toContain("Parent-confirmed character Anchor");
+    expect(prompt).toContain("do not copy its prose");
+  });
+
   it("logs safe CPA attempt metadata and never logs an upstream error body", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";

@@ -104,6 +104,7 @@ export async function computeTextGeneration(input: {
   let storyInput = input.storyInput;
   const shouldCreateStoryAnchor = Boolean(
     input.protagonistCharacter &&
+      !input.protagonistCharacter.storyReferenceToken &&
       storyInput.visualBible &&
       process.env.CPA_API_KEY?.trim() &&
       process.env.CPA_BASE_URL?.trim() &&

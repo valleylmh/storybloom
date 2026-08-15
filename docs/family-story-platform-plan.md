@@ -48,7 +48,7 @@ StoryBloom 应从“AI 绘本生成器”收敛为家庭故事平台，核心由
 |---|---|---|---|
 | 绘本馆首页 `/library` | Existing | 继续阅读、最近播放、我的收藏、系列故事、分类浏览、按日期轮换“今晚读什么”；无历史时隐藏空模块 | 年龄/时长/主题组合筛选留到阶段 5 |
 | 系列页 `/library/[seriesId]` | Existing | 展示系列说明、有序书目、完成数量、系列进度、已读/未读和收藏状态；长系列由用户主动“显示更多” | 下一回仍由详情页用户主动进入，符合不自动连播原则 |
-| 馆藏详情页 `/library/[seriesId]/[bookId]` | Partial | SEO、结构化数据、8 页阅读器、收藏、分类/时长/年龄/语言、前后篇、分享与改编 CTA | 专属改编上下文仍未结构化 |
+| 馆藏详情页 `/library/[seriesId]/[bookId]` | Existing | SEO、结构化数据、8 页阅读器、收藏、metadata、前后篇、分享，以及携带来源 ID 的“让孩子成为故事主角”入口；读完状态也展示入口 | 页面级文字/场景修复仍在后续阶段 |
 | 馆藏数据 | Existing | `src/lib/library/` 静态内容保持不变；`LibraryBookMetadata` 和 resolver 统一补齐 category、ageRange、estimatedMinutes、languages、seriesOrder、tags、featured、bedtimeSuitable、personalizationEnabled | 个别书的 metadata override 可按内容运营逐步补充 |
 | 馆藏发布保护 | Existing | `comingSoon`、发布过滤、sitemap、图片存在性与大小测试 | 仍需为新增 metadata 建立完整性测试 |
 
@@ -98,16 +98,16 @@ StoryBloom 应从“AI 绘本生成器”收敛为家庭故事平台，核心由
 
 | 能力 | 状态 | 当前实现 | 主要缺口 |
 |---|---|---|---|
-| 家庭角色库 | Existing | 登录用户可创建孩子、家人和宠物角色；照片进入私有 Storage | 首次改编仍需允许不上传照片的快速角色 |
-| 快速人物确认 | Existing | 极简创作可输入名字/身份，选择已有角色或保存新角色 | 馆藏改编入口尚未带入这套流程 |
-| 卡通形象确认 | Partial | 新上传角色可先生成卡通形象，支持确认或重新生成 | 选择已有角色时不会形成“本故事 Anchor 确认”；缺少发型、年龄、眼镜、服装的结构化调整 |
-| 故事级 Anchor | Partial | 服务端可并行生成 story character anchor，并把私有 token 绑定到主角 | Anchor 在文本生成时自动尝试，失败可静默降级，家长无法在整本生成前确认 |
-| Character Bible | Existing | 结构化视觉锁、页级 `castIds`、参考图按实际出场角色传入 | 需要保存已确认 Anchor 版本并支持后续复用 |
+| 家庭角色库 | Existing | 登录用户可创建孩子、家人和宠物角色；照片进入私有 Storage；馆藏改编可直接选择已有角色 | 匿名用户仍只保存文字角色草稿，不上传照片 |
+| 快速人物确认 | Existing | 馆藏改编和普通极简创作共用名字/身份/已有角色选择；无照片时提供明确的文字 Anchor，不假装还原真实长相 | 多角色同时担任主角仍不在第一版范围 |
+| 卡通形象确认 | Existing | 新上传角色先生成卡通形象；已有角色展示私有参考图；可更换参考图、调整外观文字、返回修改和重试 | 真实 CPA 质量仍需使用已部署环境和家庭测试集持续评测 |
+| 故事级 Anchor | Existing | 登录且有参考图时，在整本生成前调用私有 Anchor API 生成预览；家长确认后临时 token 随任务复用，不再重复生成；匿名无照片时确认文字 Anchor | 本轮未调用真实付费 Provider，生产可用性仍需部署环境实测 |
+| Character Bible | Existing | 结构化视觉锁、页级 `castIds`、参考图按实际出场角色传入；确认的 Anchor v1 metadata 写入本地成品快照，临时 token 不长期保存 | 跨书复用确认 Anchor 和服装策略留到阶段 4 |
 | 可恢复生成任务 | Existing | 文本任务 ID、本地恢复指针、服务端任务状态、worker/lease 基础 | 生产共享存储和 worker 仍需按部署环境验收 |
 | 逐页插图与单页重试 | Existing | 先文本后逐页图片；失败页可手动重试，单页失败不废弃整本 | 只能重画图片；缺少“只改文字”“保留角色换场景”“锁定角色后重画”等明确操作 |
-| 馆藏改编入口 | Partial | 详情页 CTA 把书名拼入 `idea` 查询参数 | 没有 sourceLibraryBookId、StorySpec、系列、结构、场景和可替换角色位置 |
-| 来源关联 | Missing | 生成结果只知道当前 `StoryInput` | 需要保存来源馆藏与专属版本关联，并支持返回原故事 |
-| 自动进入私人书架 | Partial | 生成结果自动保存本机最近作品 | 没有专属书架状态、来源、主角色、最近打开和完成状态 |
+| 馆藏改编入口 | Existing | 详情页和读完状态传递 `sourceLibraryBookId`；公共 API 返回内部 `StorySpec` 的主题、8 页结构、场景、基调、适龄阶段和替换角色位置 | 批量内容运营工具留到后续 |
+| 来源关联 | Existing | `StoryInput`、生成任务和安全快照保留 `sourceLibraryBookId`、草稿 ID、确认 Anchor；成品页可返回原始馆藏 | 云端旧记录需要在主动导入后才出现新关联 |
+| 自动进入私人书架 | Existing | 文本任务返回后继续由现有 `localStoryRepository` 自动保存；专属成品复用统一阅读器并显示来源链接 | 云端书架仍遵循用户主动导入/同步，不因登录自动上传 |
 
 ### 3.5 分享、隐私和公共内容
 
@@ -252,26 +252,34 @@ type StoryPlatformMetadata = {
 ```ts
 type PersonalizationDraft = {
   id: string;
+  userId?: string;
+  anonymousId?: string;
   sourceLibraryBookId: string;
+  sourceTitle: string;
   selectedCharacterIds: string[];
-  selectedStyle?: string;
-  storySpec: {
-    theme: string;
-    structure: string[];
-    scenes: string[];
-    tone: string;
-    ageRange: string;
-    seriesId?: string;
-    replaceableRoles: string[];
+  selectedStyle: "watercolor" | "cartoon" | "fairytale";
+  storySettings: {
+    prompt: string;
+    ageGroup: "2-3" | "4-5" | "6-8";
   };
-  anchorStatus: "not_started" | "generating" | "review" | "confirmed" | "failed";
-  generationTaskId?: string;
+  anchorStatus: "pending" | "preview" | "confirmed" | "failed";
+  anchor?: {
+    version: 1;
+    displayName: string;
+    relationship: string;
+    appearance: string;
+    referenceType: "canonical" | "source" | "text";
+    characterId?: string;
+    confirmedAt: string;
+  };
+  generationJobId?: string;
+  generatedStoryId?: string;
   createdAt: string;
   updatedAt: string;
 };
 ```
 
-匿名草稿先存在本地。只有涉及私有家庭照片或跨设备保存时才要求登录和明确授权。
+匿名草稿先存在 `storybloom.personalizationDrafts.v1`，localStorage 不可用时退化到当前标签页内存。结构化 `StorySpec` 始终由馆藏源数据在服务端重新解析，query string 只携带 `${seriesId}/${bookId}`，客户端不能伪造馆藏正文。只有涉及私有家庭照片或故事级图片 Anchor 时才要求登录和明确授权；临时 Anchor token 不写入长期草稿或成品快照。
 
 ### 5.7 馆藏 metadata
 
@@ -576,12 +584,51 @@ interface AudioSource {
 
 ### 阶段 3：馆藏故事到专属版本
 
-- 结构化 `StorySpec` 和 `PersonalizationDraft`
-- 详情页与读完页“让孩子成为故事主角”
-- 三步内进入家庭角色选择
-- 故事级 Anchor 预览、调整、确认和重试
-- 保存 `sourceLibraryBookId` 与确认的 Anchor 版本
-- 生成完成后进入私人书架，并可返回原始馆藏
+状态：**完成。结构化来源、角色选择、整本生成前 Anchor 确认、任务关联、本地书架保存和返回原始馆藏已经打通；阶段 4 尚未开始。**
+
+- [x] 结构化 `LibraryStorySpec` 和本地 `PersonalizationDraft`
+- [x] 详情页与读完状态“让孩子成为故事主角”
+- [x] 从馆藏入口直接进入来源上下文，点击一次“选择角色”打开家庭角色确认
+- [x] 已有家庭角色/新参考图/无照片文字角色三种 Anchor 路径
+- [x] 登录家庭角色在整本生成前通过私有 API 生成故事级 Anchor 预览；支持重试
+- [x] Anchor 确认检查发型、年龄感、眼镜等显著特征、服装和鞋子
+- [x] 生成任务保存 `sourceLibraryBookId`、草稿 ID 和 Anchor v1 metadata
+- [x] 确认的临时 story Anchor token 由生成任务复用，公开响应、本地草稿和长期快照均不保存 token
+- [x] 生成结果继续自动进入本机私人书架，专属成品可返回原始馆藏
+
+阶段 3 修改范围：
+
+- StorySpec 与草稿：`src/lib/library/personalization.ts`、`src/lib/personalization-drafts.ts`、`src/types/index.ts`
+- 公共来源接口：`GET /api/library/personalization?book=${seriesId}/${bookId}`
+- 私有 Anchor 接口：`POST /api/library/personalization/anchor`
+- 创作闭环：馆藏详情、`LibraryBookExperience`、`MinimalStoryEntry`、`BookPreview`、首页入口收敛
+- 生成与持久化：`/api/generate`、`story-generator`、`text-generation-executor`、generation job payload 和 story snapshot
+- 测试：StorySpec、草稿恢复、私有 Anchor 边界、生成 prompt、任务 payload、快照、导航与 token 隐私
+
+数据库变化：无。本阶段不新增 Supabase migration。家庭角色继续复用 `family_characters` 和私有 `family-photos`；`PersonalizationDraft` 默认本地保存。跨设备草稿同步不在本阶段实现。
+
+新增接口：
+
+- `GET /api/library/personalization` 只返回公开馆藏的结构化 StorySpec，可短时公共缓存。
+- `POST /api/library/personalization/anchor` 必须登录，校验家庭角色 owner 和私有路径，返回 `private, no-store` 的 Anchor 图片与短期 token；匿名请求实测返回 401。
+
+兼容性影响：原有极简创作、成长记录、完整创作和生成任务字段全部保持可选；没有来源 ID 的旧作品继续正常打开。普通创作仍沿用原角色确认逻辑。登录不会自动上传匿名草稿；没有照片的匿名用户可以使用文字 Anchor，且界面明确不承诺还原真实长相。Provider endpoint 和 `DASHSCOPE_TOKEN_KEY` 均未改动。
+
+阶段 3 质量结果：
+
+- `pnpm lint`：通过，0 error；107 条既有 warning，与阶段 2 基线相同。
+- `npx tsc --noEmit`：通过。
+- Vitest：99 个测试文件通过、3 个跳过；630 项测试通过、5 项跳过。
+- 集成测试：仓库没有独立 `integration` 脚本；完整 Vitest 覆盖来源解析、任务 payload、Anchor token 复用/剥离、快照和既有生成边界。
+- production build：通过；生成 135 个静态页面和 100 条馆藏详情路径。
+
+阶段 3 浏览器验收：
+
+- 桌面：从《石猴出世》详情点击“让孩子成为故事主角”，URL 只携带来源 ID；创作页自动展示来源、8 页结构继承提示和预填故事方向。
+- 匿名：填写名字与外观后进入文字 Anchor；可返回调整，只有点击“确认并生成专属版”才会提交整本生成。本轮未点击该按钮，未消耗真实生成额度。
+- 私有接口：未登录调用 Anchor API 返回 `401 {"error":"请先登录。"}`；真实家庭照片和付费 CPA Anchor 未在本轮调用。
+- 390×844 Chrome：文档宽度 390px、无横向溢出；来源卡片 358px 宽，“选择角色”50×50px；Anchor 底部弹层 390px 宽，主按钮 352×44px。
+- 核心流程没有录音入口，也未请求麦克风权限。
 
 ### 阶段 4：私人书架、继续创作、分享与删除生命周期
 

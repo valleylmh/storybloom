@@ -14,6 +14,16 @@ const privateInput: StoryInput = {
   style: "fairytale",
   language: "zh-en",
   customCharacterReferenceToken: "private-upload-token",
+  personalizationAnchor: {
+    version: 1,
+    displayName: "童童",
+    relationship: "孩子",
+    appearance: "五岁短发孩子",
+    referenceType: "canonical",
+    characterId: "123e4567-e89b-42d3-a456-426614174000",
+    storyReferenceToken: "private-confirmed-anchor-token-123456",
+    confirmedAt: "2026-08-16T05:00:00.000Z",
+  },
   familyCharacters: [
     {
       id: "child",
@@ -78,6 +88,7 @@ describe("family story character privacy", () => {
 
     expect(result.customCharacterReferenceToken).toBeUndefined();
     expect(result.visualBible).toBeUndefined();
+    expect(result.personalizationAnchor?.storyReferenceToken).toBeUndefined();
     expect(character).toMatchObject({
       id: "child",
       name: "童童",

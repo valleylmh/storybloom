@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useReadingProgressCloudSync } from "@/hooks/useReadingProgressCloudSync";
 import type { BrowserNarrationMode } from "@/lib/browser-narration";
@@ -25,6 +26,7 @@ export default function LibraryBookExperience({
   contentType = "library",
   contentId = storyKey,
   preferCloudTts = true,
+  personalizeHref,
 }: {
   title: string;
   pages: StoryPage[];
@@ -33,6 +35,7 @@ export default function LibraryBookExperience({
   contentType?: StoryContentType;
   contentId?: string;
   preferCloudTts?: boolean;
+  personalizeHref?: string;
 }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [readerMode, setReaderMode] = useState<ReaderMode>("turn");
@@ -44,6 +47,8 @@ export default function LibraryBookExperience({
   const [initialPositionMs, setInitialPositionMs] = useState(0);
   const [resumeLabel, setResumeLabel] = useState<string | null>(null);
   const [progressReady, setProgressReady] = useState(false);
+  const [playbackStatus, setPlaybackStatus] =
+    useState<PlaybackState["status"]>("idle");
   const progressRef = useRef<ReadingProgressRecord | null>(null);
   const lastSavedFingerprintRef = useRef("");
   const syncProgressToAccount = useReadingProgressCloudSync();
@@ -58,6 +63,7 @@ export default function LibraryBookExperience({
     setInitialPositionMs(0);
     setResumeLabel(null);
     setProgressReady(false);
+    setPlaybackStatus("idle");
     progressRef.current = null;
     lastSavedFingerprintRef.current = "";
 
@@ -155,6 +161,7 @@ export default function LibraryBookExperience({
 
   const handlePageIndexChange = useCallback(
     (nextPageIndex: number) => {
+      setPlaybackStatus("idle");
       setInitialPositionMs(0);
       setResumeLabel(null);
       setPageIndex(nextPageIndex);
@@ -195,6 +202,7 @@ export default function LibraryBookExperience({
 
   const handlePlaybackStateChange = useCallback(
     (state: PlaybackState) => {
+      setPlaybackStatus(state.status);
       persistProgress({
         pageIndex: state.pageIndex,
         languageMode: state.languageMode,
@@ -237,6 +245,17 @@ export default function LibraryBookExperience({
         onPageIndexChange={handlePageIndexChange}
         onReaderModeChange={setReaderMode}
       />
+
+      {personalizeHref &&
+      playbackStatus === "ended" &&
+      pageIndex === pages.length - 1 ? (
+        <section className="library-reader-personalize" role="status">
+          <span>孩子喜欢这个故事？</span>
+          <strong>让孩子成为故事主角</strong>
+          <p>故事主题和结构会自动带入，只需选择家庭角色并确认形象。</p>
+          <Link href={personalizeHref}>让孩子成为主角</Link>
+        </section>
+      ) : null}
     </>
   );
 }

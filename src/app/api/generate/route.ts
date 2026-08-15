@@ -57,6 +57,7 @@ import {
 } from "@/lib/text-generation-executor";
 import { normalizeIllustrationPageForClient } from "@/lib/illustration-request-policy";
 import { rebuildStoryPagesFromOutline } from "@/lib/story-outline-server";
+import { getLibraryStorySpecByContentId } from "@/lib/library/personalization";
 import {
   createPendingTextGenerationTask,
   createTextGenerationTaskResponse,
@@ -93,6 +94,20 @@ function matchesTextGenerationJob(input: {
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
+const personalizationAnchorSchema = z.object({
+  version: z.literal(1),
+  displayName: z.string().trim().min(1).max(80),
+  relationship: z.string().trim().min(1).max(80),
+  appearance: z.string().trim().min(1).max(1200),
+  referenceType: z.enum(["canonical", "source", "text"]),
+  characterId: z.string().uuid().optional(),
+  storyReferenceToken: z
+    .string()
+    .regex(/^[A-Za-z0-9_-]{32,96}$/)
+    .optional(),
+  confirmedAt: z.string().datetime({ offset: true }),
+});
+
 const generateSchema = z.object({
   generationRequestMode: z.enum(["async"]).optional(),
   generationTaskId: z.string().regex(/^[A-Za-z0-9_-]{12,80}$/).optional(),
@@ -120,6 +135,12 @@ const generateSchema = z.object({
   customCharacterReferenceToken: z.string().regex(/^[A-Za-z0-9_-]{32,96}$/).optional(),
   characterDescription: z.string().max(1200).optional(),
   dedication: z.string().max(100).optional(),
+  sourceLibraryBookId: z
+    .string()
+    .regex(/^[a-z0-9-]+\/[a-z0-9-]+$/)
+    .optional(),
+  personalizationDraftId: z.string().uuid().optional(),
+  personalizationAnchor: personalizationAnchorSchema.optional(),
   familyCharacterIds: z.array(z.string().uuid()).max(8).optional(),
   browserFingerprint: z.string().min(8).max(256).optional(),
   turnstileToken: z.string().max(2048).optional(),
@@ -638,6 +659,35 @@ export async function POST(req: NextRequest) {
       { status: 400 },
     );
   }
+  const sourceStorySpec = baseInput.sourceLibraryBookId
+    ? getLibraryStorySpecByContentId(baseInput.sourceLibraryBookId)
+    : null;
+  if (baseInput.sourceLibraryBookId && !sourceStorySpec) {
+    return NextResponse.json(
+      { error: "来源绘本不存在或暂不支持家庭专属改编。" },
+      { status: 400 },
+    );
+  }
+  if (
+    sourceStorySpec &&
+    (!baseInput.personalizationDraftId || !baseInput.personalizationAnchor)
+  ) {
+    return NextResponse.json(
+      { error: "请先确认家庭角色形象，再生成专属绘本。" },
+      { status: 400 },
+    );
+  }
+  if (
+    baseInput.personalizationAnchor?.characterId !==
+      protagonistFamilyCharacterId &&
+    (baseInput.personalizationAnchor?.characterId ||
+      protagonistFamilyCharacterId)
+  ) {
+    return NextResponse.json(
+      { error: "确认的角色 Anchor 与故事主角不一致。" },
+      { status: 400 },
+    );
+  }
   let familyCharacters: FamilyCharacterInput[];
   try {
     familyCharacters = await getSelectedFamilyCharacters(
@@ -665,8 +715,38 @@ export async function POST(req: NextRequest) {
       { status: 400 },
     );
   }
+  const confirmedStoryAnchorToken =
+    baseInput.personalizationAnchor?.storyReferenceToken;
+  if (confirmedStoryAnchorToken) {
+    if (!protagonistFamilyCharacterId) {
+      return NextResponse.json(
+        { error: "故事级 Anchor 必须绑定已选择的家庭主角。" },
+        { status: 400 },
+      );
+    }
+    const confirmedAnchor = await getCachedCharacterReference(
+      confirmedStoryAnchorToken,
+    );
+    if (!confirmedAnchor) {
+      return NextResponse.json(
+        { error: "确认的角色 Anchor 已过期，请重新生成并确认。" },
+        { status: 410 },
+      );
+    }
+    familyCharacters = familyCharacters.map((character) =>
+      character.id === protagonistFamilyCharacterId
+        ? { ...character, storyReferenceToken: confirmedStoryAnchorToken }
+        : character,
+    );
+  }
   const storyInput: StoryInput = {
     ...baseInput,
+    ...(sourceStorySpec
+      ? {
+          ageGroup: sourceStorySpec.ageGroup,
+          theme: "custom" as const,
+        }
+      : {}),
     protagonistFamilyCharacterId,
     customCharacterReferenceToken:
       baseInput.characterReferenceId === "custom-upload"

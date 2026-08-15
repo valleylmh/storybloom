@@ -31,4 +31,20 @@ describe("family story platform navigation", () => {
     expect(sync).toContain("合并并开启同步");
     expect(sync).toContain("setReadingSyncEnabled(true)");
   });
+
+  it("connects a library book to character selection and Anchor confirmation", () => {
+    const detail = source(
+      "../src/app/library/[seriesId]/[bookId]/page.tsx",
+    );
+    const creation = source(
+      "../src/components/book/MinimalStoryEntry.tsx",
+    );
+    const preview = source("../src/components/book/BookPreview.tsx");
+    expect(detail).toContain("personalize=");
+    expect(detail).toContain("让孩子成为故事主角");
+    expect(creation).toContain("确认孩子在这个故事里的形象");
+    expect(creation).toContain("确认并生成专属版");
+    expect(creation).toContain("sourceLibraryBookId");
+    expect(preview).toContain("查看原始馆藏故事");
+  });
 });

@@ -5,6 +5,7 @@ import type {
   StoryInput,
   StoryPage,
   StoryVisualBible,
+  PersonalizationAnchorConfirmation,
 } from "@/types";
 
 export const PERSISTED_STORY_SNAPSHOT_VERSION = 1 as const;
@@ -43,6 +44,9 @@ export interface PersistedStoryInput {
   characterReferencePrompt?: string;
   characterDescription?: string;
   dedication?: string;
+  sourceLibraryBookId?: string;
+  personalizationDraftId?: string;
+  personalizationAnchor?: PersonalizationAnchorConfirmation;
   familyCharacters?: PersistedFamilyCharacter[];
   visualBible?: StoryVisualBible;
 }
@@ -119,6 +123,25 @@ function toPersistedInput(input: StoryInput): PersistedStoryInput {
     characterReferencePrompt: optionalText(input.characterReferencePrompt),
     characterDescription: optionalText(input.characterDescription),
     dedication: optionalText(input.dedication),
+    sourceLibraryBookId: optionalText(input.sourceLibraryBookId),
+    personalizationDraftId: optionalText(input.personalizationDraftId),
+    personalizationAnchor: input.personalizationAnchor
+      ? {
+          version: 1,
+          displayName: sanitizePersistedText(
+            input.personalizationAnchor.displayName,
+          ),
+          relationship: sanitizePersistedText(
+            input.personalizationAnchor.relationship,
+          ),
+          appearance: sanitizePersistedText(
+            input.personalizationAnchor.appearance,
+          ),
+          referenceType: input.personalizationAnchor.referenceType,
+          characterId: optionalText(input.personalizationAnchor.characterId),
+          confirmedAt: input.personalizationAnchor.confirmedAt,
+        }
+      : undefined,
     familyCharacters: input.familyCharacters?.map(toPersistedFamilyCharacter),
     visualBible: input.visualBible
       ? {
@@ -229,6 +252,11 @@ export function fromPersistedStorySnapshot(
       characterReferencePrompt: snapshot.input.characterReferencePrompt,
       characterDescription: snapshot.input.characterDescription,
       dedication: snapshot.input.dedication,
+      sourceLibraryBookId: snapshot.input.sourceLibraryBookId,
+      personalizationDraftId: snapshot.input.personalizationDraftId,
+      personalizationAnchor: snapshot.input.personalizationAnchor
+        ? { ...snapshot.input.personalizationAnchor }
+        : undefined,
       familyCharacters: snapshot.input.familyCharacters?.map((character) => ({
         id: character.id,
         name: character.name,

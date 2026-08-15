@@ -9,6 +9,7 @@ import {
 import type { TemporaryStoryAssetPrincipal } from "@/lib/temporary-story-asset-store";
 import type {
   FamilyCharacterInput,
+  PersonalizationAnchorConfirmation,
   StoryCharacterVisualLock,
   StoryInput,
   StoryVisualBible,
@@ -25,6 +26,9 @@ const OPAQUE_PRINCIPAL_PATTERN = /^v1_[a-f0-9]{64}$/;
 const QUOTA_RESERVATION_PATTERN = /^quota_[A-Za-z0-9_-]{12,80}$/;
 const SAFE_IDENTIFIER_PATTERN = /^[A-Za-z0-9_-]{1,120}$/;
 const REFERENCE_TOKEN_PATTERN = /^[A-Za-z0-9_-]{32,96}$/;
+const LIBRARY_CONTENT_ID_PATTERN = /^[a-z0-9-]+\/[a-z0-9-]+$/;
+const UUID_PATTERN =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
 const AGE_GROUPS = new Set(["2-3", "4-5", "6-8"]);
 const STORY_THEMES = new Set([
@@ -43,6 +47,11 @@ const STORY_TREATMENTS = new Set([
   "documentary",
   "warm-imagination",
   "fairytale",
+]);
+const PERSONALIZATION_REFERENCE_TYPES = new Set([
+  "canonical",
+  "source",
+  "text",
 ]);
 
 const CREDENTIAL_KEYS = new Set([
@@ -490,6 +499,58 @@ function parseVisualBible(value: unknown): StoryVisualBible {
   };
 }
 
+function parsePersonalizationAnchor(
+  value: unknown,
+): PersonalizationAnchorConfirmation {
+  const record = asRecord(value, "personalization anchor");
+  assertAllowedKeys(
+    record,
+    [
+      "version",
+      "displayName",
+      "relationship",
+      "appearance",
+      "referenceType",
+      "characterId",
+      "storyReferenceToken",
+      "confirmedAt",
+    ],
+    "personalization anchor",
+  );
+  if (record.version !== 1) invalidPayload("personalization anchor version");
+  const confirmedAt = requiredString(record, "confirmedAt", {
+    min: 20,
+    max: 40,
+  });
+  if (!Number.isFinite(Date.parse(confirmedAt))) {
+    invalidPayload("personalization anchor confirmedAt");
+  }
+  const characterId = optionalString(record, "characterId", {
+    min: 36,
+    max: 36,
+    pattern: UUID_PATTERN,
+  });
+  const storyReferenceToken = optionalString(
+    record,
+    "storyReferenceToken",
+    { min: 32, max: 96, pattern: REFERENCE_TOKEN_PATTERN },
+  );
+  return {
+    version: 1,
+    displayName: requiredString(record, "displayName", { min: 1, max: 80 }),
+    relationship: requiredString(record, "relationship", { min: 1, max: 80 }),
+    appearance: requiredString(record, "appearance", { min: 1, max: 1_200 }),
+    referenceType: requiredEnum(
+      record,
+      "referenceType",
+      PERSONALIZATION_REFERENCE_TYPES,
+    ),
+    ...(characterId ? { characterId } : {}),
+    ...(storyReferenceToken ? { storyReferenceToken } : {}),
+    confirmedAt,
+  };
+}
+
 function parseStoryInput(value: unknown): StoryInput {
   const record = asRecord(value, "storyInput");
   assertAllowedKeys(
@@ -516,6 +577,9 @@ function parseStoryInput(value: unknown): StoryInput {
       "customCharacterReferenceToken",
       "characterDescription",
       "dedication",
+      "sourceLibraryBookId",
+      "personalizationDraftId",
+      "personalizationAnchor",
       "familyCharacters",
       "visualBible",
     ],
@@ -575,6 +639,16 @@ function parseStoryInput(value: unknown): StoryInput {
     max: 1_200,
   });
   const dedication = optionalString(record, "dedication", { max: 100 });
+  const sourceLibraryBookId = optionalString(record, "sourceLibraryBookId", {
+    min: 3,
+    max: 160,
+    pattern: LIBRARY_CONTENT_ID_PATTERN,
+  });
+  const personalizationDraftId = optionalString(
+    record,
+    "personalizationDraftId",
+    { min: 36, max: 36, pattern: UUID_PATTERN },
+  );
 
   if (narrativePerspective !== undefined) input.narrativePerspective = narrativePerspective;
   if (protagonistFamilyCharacterId !== undefined) {
@@ -600,6 +674,17 @@ function parseStoryInput(value: unknown): StoryInput {
   }
   if (characterDescription !== undefined) input.characterDescription = characterDescription;
   if (dedication !== undefined) input.dedication = dedication;
+  if (sourceLibraryBookId !== undefined) {
+    input.sourceLibraryBookId = sourceLibraryBookId;
+  }
+  if (personalizationDraftId !== undefined) {
+    input.personalizationDraftId = personalizationDraftId;
+  }
+  if (record.personalizationAnchor !== undefined) {
+    input.personalizationAnchor = parsePersonalizationAnchor(
+      record.personalizationAnchor,
+    );
+  }
   if (record.familyCharacters !== undefined) {
     input.familyCharacters = parseFamilyCharacters(
       record.familyCharacters,

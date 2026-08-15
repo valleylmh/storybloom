@@ -49,6 +49,10 @@ import {
 import { summarizeIllustrationProgress } from "@/lib/illustration-request-policy";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import { getGrowthStorageErrorCode } from "@/lib/growth-storage-capacity";
+import {
+  markPersonalizationDraftCompleted,
+  markPersonalizationDraftGeneration,
+} from "@/lib/personalization-drafts";
 import type { ClientTextGenerationTaskResponse } from "@/lib/text-generation-task";
 import type {
   GenerateErrorResponse,
@@ -435,6 +439,7 @@ function pushStoryUrl(storyId: string) {
 export default function Home() {
   const [locale, setLocale] = useState<AppLocale>("zh");
   const [entryMode, setEntryMode] = useState<EntryMode>("capture");
+  const [personalizationEntry, setPersonalizationEntry] = useState(false);
   const [step, setStep] = useState<AppStep>("form");
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
   const [reviewBeforeIllustrations, setReviewBeforeIllustrations] =
@@ -508,6 +513,12 @@ export default function Home() {
         generatedResult.storyId,
       );
       await localStoryRepository.save({ result: generatedResult });
+      if (generatedResult.input.personalizationDraftId) {
+        markPersonalizationDraftCompleted(
+          generatedResult.input.personalizationDraftId,
+          generatedResult.storyId,
+        );
+      }
       setHistoryRecords(await localStoryRepository.list());
       if (!existingStory) {
         setLocalFreeUsage(
@@ -686,6 +697,11 @@ export default function Home() {
     const urlEntryMode = readEntryModeFromUrl();
     const initialEntryMode = urlEntryMode || "capture";
     setEntryMode(initialEntryMode);
+    setPersonalizationEntry(
+      Boolean(
+        new URL(window.location.href).searchParams.get("personalize")?.trim(),
+      ),
+    );
     window.localStorage.setItem(ENTRY_MODE_STORAGE_KEY, initialEntryMode);
     replaceEntryModeUrl(initialEntryMode);
     const growthVersionRequested = isGrowthVersionCreationRequested(
@@ -998,6 +1014,15 @@ export default function Home() {
       targetMomentId.length <= 180
         ? targetMomentId.trim()
         : undefined;
+    if (
+      typeof generationData.personalizationDraftId === "string" &&
+      generationData.personalizationDraftId.length > 0
+    ) {
+      markPersonalizationDraftGeneration(
+        generationData.personalizationDraftId,
+        taskId,
+      );
+    }
     setCurrentTaskId(taskId);
     setReviewBeforeIllustrations(shouldReviewOutline);
     setActiveGrowthDraft(normalizedGrowthDraft || null);
@@ -1333,7 +1358,7 @@ export default function Home() {
             : "content-shell"
         }
       >
-        {step === "form" ? (
+        {step === "form" && !personalizationEntry ? (
           <section className="home-platform-entry" aria-label="开始使用 StoryBloom">
             <Link href="/library" className="home-platform-entry-card home-platform-entry-read">
               <span>{locale === "zh" ? "今晚读一本" : "Read tonight"}</span>

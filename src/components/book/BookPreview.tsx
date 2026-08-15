@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   DownloadSimple,
@@ -177,6 +178,11 @@ export default function BookPreview({
   const socialShareSourceKeyRef = useRef("");
   const isSamplePreview = variant === "sample";
   const isCustomPreview = variant === "custom";
+  const sourceLibraryHref = /^[a-z0-9-]+\/[a-z0-9-]+$/.test(
+    result.input.sourceLibraryBookId || "",
+  )
+    ? `/library/${result.input.sourceLibraryBookId}`
+    : null;
   const canRegenerateImages = !isSamplePreview && !isCustomPreview;
   const sampleBookId = useMemo(() => getSampleBookId(result), [result]);
   const socialShareBilingualText = useMemo(
@@ -986,6 +992,16 @@ export default function BookPreview({
               }`}
         </p>
       </section>
+
+      {variant === "own" && sourceLibraryHref ? (
+        <section className="personalized-source-link" aria-label="来源绘本">
+          <div>
+            <span>家庭专属版本</span>
+            <strong>保留馆藏故事结构，用确认过的家庭角色重新讲述</strong>
+          </div>
+          <Link href={sourceLibraryHref}>查看原始馆藏故事</Link>
+        </section>
+      ) : null}
 
       {variant === "own" ? (
         <section className="personalized-reader" aria-label="专属绘本阅读器">

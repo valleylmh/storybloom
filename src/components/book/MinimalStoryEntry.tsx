@@ -37,6 +37,9 @@ import type {
   AgeGroup,
   GrowthStoryTreatment,
   IllustrationStyle,
+  LibraryStorySpec,
+  PersonalizationAnchorConfirmation,
+  PersonalizationDraft,
 } from "@/types";
 import type { GrowthVersionCreationPreset } from "@/lib/growth-version-creation";
 import { useAuth } from "@/hooks/useAuth";
@@ -58,6 +61,11 @@ import {
   uploadFamilyPhoto,
   upsertFamilyCharacter,
 } from "@/lib/repositories/family-character-repository";
+import {
+  createPersonalizationDraft,
+  getLatestPersonalizationDraft,
+  updatePersonalizationDraft,
+} from "@/lib/personalization-drafts";
 
 type AppLocale = "zh" | "en";
 
@@ -102,8 +110,24 @@ type FamilyChoice = {
   sort_order: number;
 };
 
+type LibraryPersonalizationContext = {
+  storySpec: LibraryStorySpec;
+  suggestedPrompt: string;
+};
+
+type IdentityAnchorPreview = {
+  choice?: FamilyChoice;
+  displayName: string;
+  relationship: string;
+  appearance: string;
+  imageUrl?: string;
+  referenceType: PersonalizationAnchorConfirmation["referenceType"];
+  storyReferenceToken?: string;
+};
+
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
 const DAILY_IDEA_QUERY_KEY = "idea";
+const PERSONALIZATION_QUERY_KEY = "personalize";
 const PENDING_IDENTITY_KEY = "storybloom:minimal-identity-draft";
 const GROWTH_PREFERENCES_KEY = "storybloom.growthStoryPreferences";
 
@@ -158,6 +182,16 @@ function isChildRelationship(relationship: string) {
 
 function isPetRelationship(relationship: string) {
   return relationship === "宠物" || relationship === "Pet";
+}
+
+function getDefaultAnchorAppearance(
+  name: string,
+  relationship: string,
+  ageGroup: AgeGroup = "4-5",
+) {
+  const ageLabel =
+    ageGroup === "2-3" ? "2-3 岁" : ageGroup === "6-8" ? "6-8 岁" : "4-5 岁";
+  return `${name || "孩子"}，${relationship || "孩子"}，${ageLabel}年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装`;
 }
 
 function getFamilyChoicePhotoPath(choice: FamilyChoice) {
@@ -515,12 +549,18 @@ export default function MinimalStoryEntry({
   const [identityFile, setIdentityFile] = useState<File>();
   const [identityCartoonize, setIdentityCartoonize] = useState(true);
   const [identityGuardianConsent, setIdentityGuardianConsent] = useState(false);
-  const [identityPreviewChoice, setIdentityPreviewChoice] =
-    useState<FamilyChoice | null>(null);
-  const [identityPreviewUrl, setIdentityPreviewUrl] = useState("");
+  const [identityAppearance, setIdentityAppearance] = useState("");
+  const [identityAnchorPreview, setIdentityAnchorPreview] =
+    useState<IdentityAnchorPreview | null>(null);
   const [identityError, setIdentityError] = useState("");
   const [identityEmail, setIdentityEmail] = useState("");
   const [identityLoginSent, setIdentityLoginSent] = useState(false);
+  const [personalizationContext, setPersonalizationContext] =
+    useState<LibraryPersonalizationContext | null>(null);
+  const [personalizationDraft, setPersonalizationDraft] =
+    useState<PersonalizationDraft | null>(null);
+  const [personalizationError, setPersonalizationError] = useState("");
+  const activePersonalizationDraftId = personalizationDraft?.id || "";
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -607,6 +647,89 @@ export default function MinimalStoryEntry({
       setIdea(sharedIdea.slice(0, 100));
     }
   }, [initialGrowthVersion]);
+
+  useEffect(() => {
+    if (initialGrowthVersion) return;
+    const contentId = new URL(window.location.href).searchParams
+      .get(PERSONALIZATION_QUERY_KEY)
+      ?.trim();
+    if (!contentId) {
+      setPersonalizationContext(null);
+      setPersonalizationDraft(null);
+      setPersonalizationError("");
+      return;
+    }
+
+    const controller = new AbortController();
+    setPersonalizationError("");
+    void fetch(
+      `/api/library/personalization?book=${encodeURIComponent(contentId)}`,
+      { signal: controller.signal },
+    )
+      .then(async (response) => {
+        const body = (await response.json().catch(() => ({}))) as
+          | LibraryPersonalizationContext
+          | { error?: string };
+        if (!response.ok || !("storySpec" in body)) {
+          throw new Error(
+            "error" in body && body.error
+              ? body.error
+              : "来源绘本暂时无法读取。",
+          );
+        }
+        return body;
+      })
+      .then((context) => {
+        if (controller.signal.aborted) return;
+        setPersonalizationContext(context);
+        setIdea((current) => current.trim() || context.suggestedPrompt);
+        const existing = getLatestPersonalizationDraft(
+          context.storySpec.sourceLibraryBookId,
+        );
+        const draft =
+          existing && !existing.generatedStoryId
+            ? existing
+            : createPersonalizationDraft({
+                sourceLibraryBookId:
+                  context.storySpec.sourceLibraryBookId,
+                sourceTitle: context.storySpec.sourceTitle,
+                prompt: context.suggestedPrompt,
+                ageGroup: context.storySpec.ageGroup,
+                userId: familyUserId || undefined,
+              });
+        setPersonalizationDraft(draft);
+        if (draft.selectedCharacterIds.length > 0) {
+          setSelectedFamilyIds(draft.selectedCharacterIds);
+        }
+      })
+      .catch((error) => {
+        if (controller.signal.aborted) return;
+        setPersonalizationContext(null);
+        setPersonalizationDraft(null);
+        setPersonalizationError(
+          error instanceof Error ? error.message : "来源绘本暂时无法读取。",
+        );
+      });
+
+    return () => controller.abort();
+  }, [familyUserId, initialGrowthVersion]);
+
+  useEffect(() => {
+    if (!activePersonalizationDraftId || !personalizationContext) return;
+    const updated = updatePersonalizationDraft(activePersonalizationDraftId, {
+      selectedCharacterIds: selectedFamilyIds,
+      storySettings: {
+        prompt: idea.trim() || personalizationContext.suggestedPrompt,
+        ageGroup: personalizationContext.storySpec.ageGroup,
+      },
+    });
+    if (updated) setPersonalizationDraft(updated);
+  }, [
+    idea,
+    activePersonalizationDraftId,
+    personalizationContext,
+    selectedFamilyIds,
+  ]);
 
   useEffect(() => {
     if (!TURNSTILE_SITE_KEY) {
@@ -778,7 +901,8 @@ export default function MinimalStoryEntry({
       display_name: identityName.trim(),
       relationship: identityRelationship,
       kind: isPetRelationship(identityRelationship) ? "pet" : "person",
-      description: existing?.description || "",
+      description:
+        identityAppearance.trim() || existing?.description || "",
       source_photo_path: sourcePath,
       canonical_photo_path: canonicalPath,
       cartoonize: identityCartoonize,
@@ -824,13 +948,96 @@ export default function MinimalStoryEntry({
     if (!refreshed?.canonical_photo_path) {
       throw new Error("绘本形象已经生成，但暂时无法加载预览。");
     }
+    if (personalizationContext) {
+      await generateStoryAnchorPreview(refreshed);
+      return;
+    }
     if (!supabase) throw new Error("账户服务尚未准备好，请稍后再试。");
     const { data } = await supabase.storage
       .from("family-photos")
       .createSignedUrl(refreshed.canonical_photo_path, 3600);
     if (!data?.signedUrl) throw new Error("绘本形象预览加载失败。");
-    setIdentityPreviewChoice(refreshed);
-    setIdentityPreviewUrl(`${data.signedUrl}#${Date.now()}`);
+    setIdentityAnchorPreview({
+      choice: refreshed,
+      displayName: refreshed.display_name,
+      relationship: refreshed.relationship,
+      appearance:
+        identityAppearance.trim() ||
+        refreshed.description?.trim() ||
+        getDefaultAnchorAppearance(
+          refreshed.display_name,
+          refreshed.relationship,
+        ),
+      imageUrl: `${data.signedUrl}#${Date.now()}`,
+      referenceType: "canonical",
+    });
+    if (personalizationDraft) {
+      const updated = updatePersonalizationDraft(personalizationDraft.id, {
+        selectedCharacterIds: [refreshed.id],
+        anchorStatus: "preview",
+      });
+      if (updated) setPersonalizationDraft(updated);
+    }
+    setIdentityPhase("preview");
+  }
+
+  async function generateStoryAnchorPreview(choice: FamilyChoice) {
+    if (!personalizationContext || !familyAccessToken) {
+      throw new Error("请先登录并选择一个已有家庭角色。");
+    }
+    setIdentityPhase("generating");
+    setIdentityError("");
+    const appearance =
+      identityAppearance.trim() ||
+      choice.description?.trim() ||
+      getDefaultAnchorAppearance(
+        choice.display_name,
+        choice.relationship,
+        personalizationContext.storySpec.ageGroup,
+      );
+    const response = await fetch("/api/library/personalization/anchor", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${familyAccessToken}`,
+      },
+      body: JSON.stringify({
+        sourceLibraryBookId:
+          personalizationContext.storySpec.sourceLibraryBookId,
+        characterId: choice.id,
+        personalizationDraftId: personalizationDraft?.id,
+        appearance,
+      }),
+    });
+    const body = (await response.json().catch(() => ({}))) as {
+      error?: string;
+      storyReferenceToken?: string;
+      imageDataUrl?: string;
+      referenceType?: "canonical" | "source";
+    };
+    if (
+      !response.ok ||
+      !body.storyReferenceToken ||
+      !body.imageDataUrl
+    ) {
+      throw new Error(body.error || "角色 Anchor 生成失败，请重试。");
+    }
+    setIdentityAnchorPreview({
+      choice,
+      displayName: choice.display_name,
+      relationship: choice.relationship,
+      appearance,
+      imageUrl: body.imageDataUrl,
+      referenceType: body.referenceType || "canonical",
+      storyReferenceToken: body.storyReferenceToken,
+    });
+    if (personalizationDraft) {
+      const updated = updatePersonalizationDraft(personalizationDraft.id, {
+        selectedCharacterIds: [choice.id],
+        anchorStatus: "preview",
+      });
+      if (updated) setPersonalizationDraft(updated);
+    }
     setIdentityPhase("preview");
   }
 
@@ -930,7 +1137,9 @@ export default function MinimalStoryEntry({
     const imagePath = protagonist
       ? getFamilyChoicePhotoPath(protagonist)
       : undefined;
-    const avatarUrl = imagePath ? familyUrls[imagePath] : identityPreviewUrl || undefined;
+    const avatarUrl = imagePath
+      ? familyUrls[imagePath]
+      : identityAnchorPreview?.imageUrl;
     const normalizedPhotos = await normalizeAndDedupeGrowthAssets(growthPhotos, {
       verifyExisting: true,
       strict: true,
@@ -985,12 +1194,24 @@ export default function MinimalStoryEntry({
     storyIdea: string,
     childName: string,
     protagonist?: FamilyChoice,
+    anchorConfirmation?: PersonalizationAnchorConfirmation,
   ) {
     if (turnstileEnabled && !turnstileToken) {
       setIdentityError(
         locale === "zh"
           ? "登录后请先关闭弹窗完成安全验证，再重新点击生成。人物信息已经保留。"
           : "Close this dialog, complete the security check, then create again. Your character details are saved.",
+      );
+      return;
+    }
+    if (
+      personalizationContext &&
+      (!personalizationDraft || !anchorConfirmation)
+    ) {
+      setIdentityError(
+        locale === "zh"
+          ? "请先确认角色 Anchor，再生成完整绘本。"
+          : "Confirm the character Anchor before creating the full book.",
       );
       return;
     }
@@ -1018,14 +1239,30 @@ export default function MinimalStoryEntry({
     setSubmitting(true);
     setMessage(null);
     try {
+      if (personalizationDraft && anchorConfirmation) {
+        const updated = updatePersonalizationDraft(personalizationDraft.id, {
+          selectedCharacterIds: protagonist?.id ? [protagonist.id] : [],
+          anchorStatus: "confirmed",
+          anchor: anchorConfirmation,
+        });
+        if (updated) setPersonalizationDraft(updated);
+      }
       await onSubmit({
         childName: childName.trim() || (locale === "zh" ? "我" : "I"),
         narrativePerspective: growthEnabled ? "third-person" : "first-person",
         protagonistFamilyCharacterId: protagonistId || undefined,
-        ageGroup: growthEnabled ? growthReadingStage : "4-5",
+        ageGroup: personalizationContext
+          ? personalizationContext.storySpec.ageGroup
+          : growthEnabled
+            ? growthReadingStage
+            : "4-5",
         theme: "custom",
         customTheme: storyIdea,
         style: growthEnabled ? growthIllustrationStyle : "fairytale",
+        characterDescription:
+          personalizationContext && !protagonist
+            ? anchorConfirmation?.appearance
+            : undefined,
         parentFacts: growthEnabled ? growthParentFacts.trim() || undefined : undefined,
         allowedImaginations: growthEnabled
           ? growthAllowedImaginations.trim() || undefined
@@ -1033,6 +1270,10 @@ export default function MinimalStoryEntry({
         storyTreatment: growthEnabled ? growthStoryTreatment : undefined,
         language: locale === "zh" ? "zh-en" : "en-zh",
         familyCharacterIds: nextFamilyIds.length > 0 ? nextFamilyIds : undefined,
+        sourceLibraryBookId:
+          personalizationContext?.storySpec.sourceLibraryBookId,
+        personalizationDraftId: personalizationDraft?.id,
+        personalizationAnchor: anchorConfirmation,
         supabaseAccessToken: familyAccessToken || undefined,
         turnstileToken: turnstileEnabled ? turnstileToken : undefined,
         growthRecordDraft,
@@ -1071,11 +1312,25 @@ export default function MinimalStoryEntry({
     setIdentityFile(undefined);
     setIdentityCartoonize(matchedChoice?.cartoonize ?? true);
     setIdentityGuardianConsent(false);
-    setIdentityPreviewChoice(null);
-    setIdentityPreviewUrl("");
+    setIdentityAppearance(
+      matchedChoice?.description?.trim() ||
+        getDefaultAnchorAppearance(
+          candidateName || matchedChoice?.display_name || "孩子",
+          matchedChoice?.relationship || (locale === "zh" ? "孩子" : "Child"),
+          personalizationContext?.storySpec.ageGroup,
+        ),
+    );
+    setIdentityAnchorPreview(null);
     setIdentityError("");
     setIdentityPhase("confirm");
     setIdentityOpen(true);
+    if (personalizationDraft) {
+      const updated = updatePersonalizationDraft(personalizationDraft.id, {
+        selectedCharacterIds: matchingCharacterIds,
+        anchorStatus: "pending",
+      });
+      if (updated) setPersonalizationDraft(updated);
+    }
   }
 
   async function handleGenerate(event: FormEvent<HTMLFormElement>) {
@@ -1105,6 +1360,14 @@ export default function MinimalStoryEntry({
         selectedFamilyIds.includes(choice.id) && isChildRelationship(choice.relationship),
     );
     if (explicitlySelectedChild) {
+      if (personalizationContext) {
+        openIdentityConfirmation(
+          storyIdea,
+          explicitlySelectedChild.display_name,
+          [explicitlySelectedChild.id],
+        );
+        return;
+      }
       if (
         !explicitlySelectedChild.source_photo_path ||
         explicitlySelectedChild.canonical_photo_path ||
@@ -1133,6 +1396,10 @@ export default function MinimalStoryEntry({
     const match = matchStoryProtagonist(analysis, familyChoices);
     if (match.status === "matched") {
       const choice = familyChoices.find((item) => item.id === match.characterId)!;
+      if (personalizationContext) {
+        openIdentityConfirmation(storyIdea, choice.display_name, [choice.id]);
+        return;
+      }
       if (
         !choice.source_photo_path ||
         choice.canonical_photo_path ||
@@ -1190,6 +1457,48 @@ export default function MinimalStoryEntry({
       if (wantsCanonical) {
         if (!choice) throw new Error("请先登录并保存角色，再生成绘本形象。");
         await generateCanonicalPreview(choice);
+        return;
+      }
+      if (personalizationContext) {
+        if (
+          choice &&
+          (choice.canonical_photo_path || choice.source_photo_path)
+        ) {
+          await generateStoryAnchorPreview(choice);
+          return;
+        }
+        const path = choice ? getFamilyChoicePhotoPath(choice) : null;
+        const appearance =
+          identityAppearance.trim() ||
+          choice?.description?.trim() ||
+          getDefaultAnchorAppearance(
+            trimmedName,
+            identityRelationship,
+            personalizationContext.storySpec.ageGroup,
+          );
+        const referenceType = choice?.canonical_photo_path
+          ? "canonical"
+          : choice?.source_photo_path
+            ? "source"
+            : "text";
+        setIdentityAnchorPreview({
+          ...(choice ? { choice } : {}),
+          displayName: choice?.display_name || trimmedName,
+          relationship: choice?.relationship || identityRelationship,
+          appearance,
+          ...(path && familyUrls[path]
+            ? { imageUrl: familyUrls[path] }
+            : {}),
+          referenceType,
+        });
+        if (personalizationDraft) {
+          const updated = updatePersonalizationDraft(personalizationDraft.id, {
+            selectedCharacterIds: choice?.id ? [choice.id] : [],
+            anchorStatus: "preview",
+          });
+          if (updated) setPersonalizationDraft(updated);
+        }
+        setIdentityPhase("preview");
         return;
       }
       await submitStory(
@@ -1303,7 +1612,13 @@ export default function MinimalStoryEntry({
         <span key={`${locale}-${promptIndex}`}>{text.prompts[promptIndex]}</span>
       </div>
       <h1 id="minimal-entry-title">
-        {growthEnabled ? text.growthPageTitle : text.title}
+        {personalizationContext
+          ? locale === "zh"
+            ? `让孩子成为《${personalizationContext.storySpec.sourceTitle}》的主角`
+            : `Make your child the hero of ${personalizationContext.storySpec.sourceTitle}`
+          : growthEnabled
+            ? text.growthPageTitle
+            : text.title}
       </h1>
 
       {initialGrowthVersion ? (
@@ -1313,6 +1628,34 @@ export default function MinimalStoryEntry({
           </strong>
           <span>{text.growthVersionHint}</span>
         </div>
+      ) : null}
+
+      {personalizationContext ? (
+        <section className="minimal-personalization-source" aria-label="来源绘本改编">
+          <div>
+            <span>来源绘本</span>
+            <strong>{personalizationContext.storySpec.sourceTitle}</strong>
+            <small>
+              已继承主题、8 页结构、适龄阶段和内容基调；不会只做名字替换。
+            </small>
+          </div>
+          <ol>
+            <li>选择家庭角色</li>
+            <li>确认角色 Anchor</li>
+            <li>生成并保存到书架</li>
+          </ol>
+          <Link
+            href={`/library/${personalizationContext.storySpec.sourceLibraryBookId}`}
+          >
+            返回原始绘本
+          </Link>
+        </section>
+      ) : null}
+
+      {personalizationError ? (
+        <p className="minimal-entry-message" role="alert">
+          {personalizationError} 你仍可以按普通创作继续。
+        </p>
       ) : null}
 
       <form className="story-search" onSubmit={handleGenerate}>
@@ -1332,12 +1675,24 @@ export default function MinimalStoryEntry({
         <button
           type="submit"
           disabled={submitting || growthPhotoBusy || remainingFreeGenerations <= 0}
-          aria-label={growthEnabled ? text.growthAction : text.action}
+          aria-label={
+            personalizationContext
+              ? locale === "zh"
+                ? "选择家庭角色"
+                : "Choose a family character"
+              : growthEnabled
+                ? text.growthAction
+                : text.action
+          }
         >
           {submitting ? <span className="story-search-loader" /> : <span aria-hidden="true">→</span>}
           <span className="story-search-action-label">
             {submitting
               ? text.generating
+              : personalizationContext
+                ? locale === "zh"
+                  ? "选择角色"
+                  : "Choose character"
               : growthEnabled
                 ? text.growthAction
                 : text.action}
@@ -1805,61 +2160,150 @@ export default function MinimalStoryEntry({
                 ×
               </button>
             ) : null}
-            {identityPhase === "preview" && identityPreviewChoice ? (
+            {identityPhase === "preview" && identityAnchorPreview ? (
               <>
-                <p className="family-kicker">CPA BANANA CHARACTER</p>
-                <h2 id="minimal-identity-title">{text.previewTitle}</h2>
-                <p>{text.confirmHint}</p>
-                <div className="minimal-identity-preview">
-                  <img src={identityPreviewUrl} alt={identityPreviewChoice.display_name} />
-                </div>
-                <p className="minimal-identity-generation-usage">
-                  {text.cartoonizeUsage(
-                    getRemainingFamilyCharacterGenerations(
-                      identityPreviewChoice.canonical_generation_count,
-                    ),
-                  )}
+                <p className="family-kicker">CHARACTER ANCHOR</p>
+                <h2 id="minimal-identity-title">
+                  {personalizationContext
+                    ? "确认孩子在这个故事里的形象"
+                    : text.previewTitle}
+                </h2>
+                <p>
+                  {personalizationContext
+                    ? "确认后才会生成完整绘本，减少整本完成后再重画的浪费。"
+                    : text.confirmHint}
                 </p>
+                <div className="minimal-identity-preview">
+                  {identityAnchorPreview.imageUrl ? (
+                    <img
+                      src={identityAnchorPreview.imageUrl}
+                      alt={identityAnchorPreview.displayName}
+                    />
+                  ) : (
+                    <div className="minimal-identity-preview-placeholder" aria-hidden="true">
+                      <span>{identityAnchorPreview.displayName.slice(0, 1)}</span>
+                      <small>文字 Anchor</small>
+                    </div>
+                  )}
+                </div>
+                <div className="minimal-anchor-summary">
+                  <strong>{identityAnchorPreview.displayName}</strong>
+                  <span>{identityAnchorPreview.appearance}</span>
+                  <ul>
+                    <li>发型与脸型</li>
+                    <li>年龄感</li>
+                    <li>眼镜等显著特征</li>
+                    <li>服装与鞋子</li>
+                  </ul>
+                  {!identityAnchorPreview.imageUrl ? (
+                    <small>
+                      未上传照片，将只按家长确认的文字特征生成，不会假装还原真实长相。
+                    </small>
+                  ) : null}
+                </div>
+                {identityAnchorPreview.choice?.source_photo_path &&
+                identityAnchorPreview.choice.cartoonize ? (
+                  <p className="minimal-identity-generation-usage">
+                    {text.cartoonizeUsage(
+                      getRemainingFamilyCharacterGenerations(
+                        identityAnchorPreview.choice.canonical_generation_count,
+                      ),
+                    )}
+                  </p>
+                ) : null}
                 {identityError ? <p className="minimal-identity-error">{identityError}</p> : null}
                 <div className="minimal-identity-actions">
                   <button
                     type="button"
                     className="secondary"
-                    disabled={
-                      submitting ||
-                      getRemainingFamilyCharacterGenerations(
-                        identityPreviewChoice.canonical_generation_count,
-                      ) === 0
-                    }
+                    disabled={submitting}
                     onClick={() => {
                       setIdentityError("");
-                      void generateCanonicalPreview(identityPreviewChoice).catch((error) => {
-                        setIdentityPhase("preview");
-                        setIdentityError(
-                          error instanceof Error ? error.message : "形象重新生成失败。",
-                        );
-                      });
+                      const choice = identityAnchorPreview.choice;
+                      if (
+                        personalizationContext &&
+                        choice &&
+                        (choice.canonical_photo_path ||
+                          choice.source_photo_path)
+                      ) {
+                        void generateStoryAnchorPreview(choice).catch((error) => {
+                          setIdentityPhase("preview");
+                          setIdentityError(
+                            error instanceof Error
+                              ? error.message
+                              : "角色 Anchor 生成失败。",
+                          );
+                        });
+                        return;
+                      }
+                      if (
+                        choice?.source_photo_path &&
+                        choice.cartoonize &&
+                        getRemainingFamilyCharacterGenerations(
+                          choice.canonical_generation_count,
+                        ) > 0
+                      ) {
+                        void generateCanonicalPreview(choice).catch((error) => {
+                          setIdentityPhase("preview");
+                          setIdentityError(
+                            error instanceof Error
+                              ? error.message
+                              : "形象重新生成失败。",
+                          );
+                        });
+                        return;
+                      }
+                      setIdentityPhase("confirm");
                     }}
                   >
-                    {getRemainingFamilyCharacterGenerations(
-                      identityPreviewChoice.canonical_generation_count,
-                    ) === 0
-                      ? locale === "zh" ? "已达 5 次上限" : "5 generation limit reached"
-                      : text.previewRetry}
+                    {personalizationContext &&
+                    identityAnchorPreview.choice &&
+                    (identityAnchorPreview.choice.canonical_photo_path ||
+                      identityAnchorPreview.choice.source_photo_path)
+                      ? "重新生成 Anchor"
+                      : identityAnchorPreview.choice?.source_photo_path &&
+                    identityAnchorPreview.choice.cartoonize &&
+                    getRemainingFamilyCharacterGenerations(
+                      identityAnchorPreview.choice.canonical_generation_count,
+                    ) > 0
+                      ? text.previewRetry
+                      : "返回调整"}
                   </button>
                   <button
                     type="button"
                     className="primary"
                     disabled={submitting}
-                    onClick={() =>
+                    onClick={() => {
+                      const anchor: PersonalizationAnchorConfirmation = {
+                        version: 1,
+                        displayName: identityAnchorPreview.displayName,
+                        relationship: identityAnchorPreview.relationship,
+                        appearance: identityAnchorPreview.appearance,
+                        referenceType: identityAnchorPreview.referenceType,
+                        ...(identityAnchorPreview.choice?.id
+                          ? { characterId: identityAnchorPreview.choice.id }
+                          : {}),
+                        ...(identityAnchorPreview.storyReferenceToken
+                          ? {
+                              storyReferenceToken:
+                                identityAnchorPreview.storyReferenceToken,
+                            }
+                          : {}),
+                        confirmedAt: new Date().toISOString(),
+                      };
                       void submitStory(
                         pendingIdea,
-                        identityPreviewChoice.display_name,
-                        identityPreviewChoice,
-                      )
-                    }
+                        identityAnchorPreview.displayName,
+                        identityAnchorPreview.choice,
+                        personalizationContext ? anchor : undefined,
+                      );
+                    }}
                   >
-                    {submitting ? text.generating : text.previewUse}
+                    {submitting
+                      ? text.generating
+                      : personalizationContext
+                        ? "确认并生成专属版"
+                        : text.previewUse}
                   </button>
                 </div>
               </>
@@ -1895,6 +2339,14 @@ export default function MinimalStoryEntry({
                             setIdentitySave(true);
                             setIdentityFile(undefined);
                             setIdentityCartoonize(choice.cartoonize ?? true);
+                            setIdentityAppearance(
+                              choice.description?.trim() ||
+                                getDefaultAnchorAppearance(
+                                  choice.display_name,
+                                  choice.relationship,
+                                  personalizationContext?.storySpec.ageGroup,
+                                ),
+                            );
                           }}
                         >
                           {path && familyUrls[path] ? (
@@ -1944,6 +2396,22 @@ export default function MinimalStoryEntry({
                       ).map((relation) => <option key={relation}>{relation}</option>)}
                     </select>
                   </label>
+                  {personalizationContext ? (
+                    <label className="minimal-identity-appearance-field">
+                      <span>角色外观特征</span>
+                      <textarea
+                        maxLength={1200}
+                        value={identityAppearance}
+                        onChange={(event) =>
+                          setIdentityAppearance(event.target.value)
+                        }
+                        placeholder="例如：齐耳短发、圆框眼镜、6 岁年龄感、黄色外套和白色运动鞋"
+                      />
+                      <small>
+                        请只填写你确认过的外观；不填写现实经历、学校或住址。
+                      </small>
+                    </label>
+                  ) : null}
                 </div>
 
                 {familyUserId ? (
@@ -2047,6 +2515,24 @@ export default function MinimalStoryEntry({
                     onClick={() => {
                       if (growthEnabled) {
                         setIdentityError(text.growthNameRequired);
+                        return;
+                      }
+                      if (personalizationContext) {
+                        const displayName = locale === "zh" ? "我" : "I";
+                        const appearance =
+                          identityAppearance.trim() ||
+                          getDefaultAnchorAppearance(
+                            displayName,
+                            locale === "zh" ? "孩子" : "Child",
+                            personalizationContext.storySpec.ageGroup,
+                          );
+                        setIdentityAnchorPreview({
+                          displayName,
+                          relationship: locale === "zh" ? "孩子" : "Child",
+                          appearance,
+                          referenceType: "text",
+                        });
+                        setIdentityPhase("preview");
                         return;
                       }
                       void submitStory(pendingIdea, locale === "zh" ? "我" : "I");

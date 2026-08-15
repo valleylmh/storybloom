@@ -12,6 +12,7 @@ import {
   classifyGenerationError,
   type GenerationErrorClass,
 } from "@/lib/generation-error";
+import { getLibraryStorySpecByContentId } from "@/lib/library/personalization";
 
 export const STYLE_SPINES: Record<string, string> = {
   watercolor:
@@ -1320,10 +1321,14 @@ export async function generateStoryText(
 
   try {
     const isCustomTheme = input.theme === "custom";
+    const sourceStorySpec = input.sourceLibraryBookId
+      ? getLibraryStorySpecByContentId(input.sourceLibraryBookId)
+      : null;
     const themeDescription =
-      input.theme === "custom"
+      sourceStorySpec?.theme ||
+      (input.theme === "custom"
         ? input.customTheme?.trim() || "a magical personalized adventure"
-        : THEME_DESCRIPTIONS[input.theme];
+        : THEME_DESCRIPTIONS[input.theme]);
 
     const characterDescription = input.characterDescription?.trim()
       ? `Main character appearance lock: ${input.characterDescription.trim()}`
@@ -1344,12 +1349,24 @@ export async function generateStoryText(
     const personalizationDetails = getPersonalizationDetails(input);
     const personalizationRules = getPersonalizationRules(input);
     const growthStoryRules = getGrowthStoryRules(input);
-    const storyBeatMap = getStoryBeatMap(input);
+    const storyBeatMap = sourceStorySpec
+      ? sourceStorySpec.storyBeats.map(
+          (beat) =>
+            `Page ${beat.page}: preserve this source beat's narrative purpose without copying its wording: ${beat.narrativeBeat}. Scene inspiration: ${beat.scene}`,
+        )
+      : getStoryBeatMap(input);
     const creativeSeed = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
     const randomDirection = isCustomTheme
       ? null
       : pickRandom(RANDOM_STORY_DIRECTIONS);
-    const storyDirectionRules = isCustomTheme
+    const storyDirectionRules = sourceStorySpec
+      ? `- This is a family adaptation of source book id=${sourceStorySpec.sourceLibraryBookId}, title=${sourceStorySpec.sourceTitle}, series=${sourceStorySpec.sourceSeriesTitle}.
+- Preserve the source theme, emotional arc, eight-beat order, age suitability, and tone: ${sourceStorySpec.tone}.
+- Rebuild the story around the confirmed family protagonist and selected family cast. Write genuinely new Chinese and English page text and fresh scene descriptions.
+- Do not mechanically replace names, copy source sentences, quote the source pages, or merely paraphrase line by line.
+- Do not invent real-life facts about the family. Only use confirmed character information and the safe fictional structure of the source story.
+- Keep a recognizable connection to the source so the family can return to and compare with the original book.`
+      : isCustomTheme
       ? `- The user's exact story premise is binding: "${themeDescription}".
 - Keep all 8 pages centered on this same event, setting, goal, and emotional arc. Every page must visibly advance the user's premise.
 - Do not replace the premise with an unrelated quest, magical object, animal helper, secret garden, bridge, forest, or other random adventure.
@@ -1369,6 +1386,7 @@ Rules:
 - ${characterDescription}
 - Selected family character bible:\n${familyCharacterBible}
 - Fixed story visual bible:\n${formatStoryVisualBible(visualBible)}
+${input.personalizationAnchor ? `- Parent-confirmed character Anchor: name=${input.personalizationAnchor.displayName}; relationship=${input.personalizationAnchor.relationship}; appearance=${input.personalizationAnchor.appearance}; reference=${input.personalizationAnchor.referenceType}. Treat it as binding.` : ""}
 ${personalizationRules}
 ${growthStoryRules || ""}
 - Creative seed for this request: ${creativeSeed}
@@ -1415,7 +1433,9 @@ Return only valid JSON:
       `Illustration style: ${input.style}.`,
       `Use creative seed ${creativeSeed}.`,
       isCustomTheme
-        ? `The exact binding story premise is: ${themeDescription}. Do not change it into another story.`
+        ? sourceStorySpec
+          ? `Create a new family version of ${sourceStorySpec.sourceTitle}. Preserve its theme and beat order, but do not copy its prose or perform simple name replacement.`
+          : `The exact binding story premise is: ${themeDescription}. Do not change it into another story.`
         : `Use this fresh direction as inspiration, not as a rigid template: ${randomDirection?.titleEn}, ${randomDirection?.placeEn}, ${randomDirection?.objectEn}, ${randomDirection?.helperEn}.`,
       personalizationDetails.length > 0
         ? `Use these optional child facts selectively when relevant: ${personalizationDetails
