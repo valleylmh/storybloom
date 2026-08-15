@@ -7203,6 +7203,597 @@ a.library-book-card:hover {
   background: var(--accent-dark);
 }
 
+/* 家庭故事平台首页入口与三入口导航 */
+.hero-platform-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-platform-links a {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.hero-platform-links a:hover {
+  color: var(--accent-dark);
+}
+
+.home-platform-entry {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.home-platform-entry-card {
+  display: flex;
+  min-height: 156px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 7px;
+  padding: 22px;
+  border: 1px solid rgba(190, 85, 48, 0.14);
+  border-radius: 22px;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 14px 36px rgba(111, 74, 46, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.home-platform-entry-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(111, 74, 46, 0.13);
+}
+
+.home-platform-entry-read {
+  background:
+    radial-gradient(circle at top right, rgba(255, 221, 148, 0.45), transparent 42%),
+    #fffaf4;
+}
+
+.home-platform-entry-create {
+  background:
+    radial-gradient(circle at top right, rgba(223, 109, 71, 0.18), transparent 42%),
+    #fff7ef;
+}
+
+.home-platform-entry-card span {
+  color: var(--accent-dark);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.home-platform-entry-card strong {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(1.2rem, 2.8vw, 1.65rem);
+  font-weight: 600;
+}
+
+.home-platform-entry-card small {
+  color: var(--muted);
+}
+
+.family-platform-nav {
+  display: none;
+}
+
+/* 绘本馆发现、收藏和进度 */
+.library-home-section {
+  margin: 46px 0;
+}
+
+.library-home-section-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.library-home-section-header p,
+.library-home-section-header h2 {
+  margin: 0;
+}
+
+.library-home-section-header p {
+  margin-bottom: 4px;
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.library-home-section-header h2 {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  font-weight: 600;
+}
+
+.library-home-row,
+.library-catalog-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.library-catalog-experience-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.library-catalog-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 28px rgba(111, 74, 46, 0.08);
+}
+
+.library-catalog-card-link {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.library-catalog-cover {
+  position: relative;
+  display: grid;
+  aspect-ratio: 1 / 1;
+  place-items: center;
+  overflow: hidden;
+}
+
+.library-catalog-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.22s ease;
+}
+
+.library-catalog-card-link:hover .library-catalog-cover img {
+  transform: scale(1.025);
+}
+
+.library-catalog-cover > span {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.library-catalog-cover em {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(255, 250, 244, 0.9);
+  color: var(--accent-dark);
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.library-catalog-card-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 14px;
+}
+
+.library-catalog-category {
+  align-self: flex-start;
+  color: var(--accent-dark);
+  font-size: 0.68rem;
+  font-weight: 900;
+}
+
+.library-catalog-card h3 {
+  margin: 5px 0 3px;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.library-catalog-card p {
+  display: -webkit-box;
+  min-height: 2.8em;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.library-catalog-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.library-catalog-facts span {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: rgba(247, 239, 230, 0.9);
+  color: var(--muted);
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.library-card-progress {
+  height: 5px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(47, 36, 29, 0.09);
+}
+
+.library-card-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), #efb06f);
+}
+
+.library-catalog-open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 12px;
+  color: var(--accent-dark);
+  font-size: 0.76rem;
+}
+
+.library-catalog-open svg {
+  width: 16px;
+  height: 16px;
+}
+
+.library-card-favorite {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 10px;
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(47, 36, 29, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 250, 244, 0.92);
+  color: var(--muted);
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(47, 36, 29, 0.12);
+}
+
+.library-card-favorite-active {
+  color: #c84f3d;
+}
+
+.library-catalog-card-compact .library-catalog-card-copy {
+  padding: 12px;
+}
+
+.library-catalog-card-compact .library-catalog-facts span:nth-child(n + 3) {
+  display: none;
+}
+
+.library-category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.library-category-filters button {
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fffaf4;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.library-category-filters button[aria-pressed="true"] {
+  border-color: rgba(190, 85, 48, 0.3);
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.library-catalog-more {
+  display: flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fffaf4;
+  color: var(--accent-dark);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.library-series-overview {
+  display: grid;
+  gap: 32px;
+}
+
+.library-series-overview-item > header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.library-series-overview-item h3,
+.library-series-overview-item p {
+  margin: 0;
+}
+
+.library-series-overview-item h3 {
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.25rem;
+}
+
+.library-series-overview-item p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.library-series-overview-item header a {
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.library-tonight {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.55fr);
+  align-items: center;
+  gap: 28px;
+  margin: 48px 0;
+  padding: 28px;
+  border: 1px solid rgba(190, 85, 48, 0.14);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 221, 148, 0.42), transparent 40%),
+    rgba(255, 250, 244, 0.88);
+}
+
+.library-tonight-copy > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.library-tonight-copy h2,
+.library-tonight-copy h3,
+.library-tonight-copy p {
+  margin: 0;
+}
+
+.library-tonight-copy h2 {
+  margin-top: 8px;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+}
+
+.library-tonight-copy h3 {
+  margin-top: 16px;
+  font-size: 1.15rem;
+}
+
+.library-tonight-copy p {
+  margin-top: 5px;
+  color: var(--muted);
+}
+
+.library-tonight-copy > a {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.library-sync-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding: 15px 17px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.library-sync-card > svg {
+  width: 26px;
+  height: 26px;
+  color: var(--accent-dark);
+}
+
+.library-sync-card strong,
+.library-sync-card p {
+  margin: 0;
+}
+
+.library-sync-card p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.library-sync-card span[role="status"] {
+  display: block;
+  margin-top: 5px;
+  color: var(--accent-dark);
+  font-size: 0.76rem;
+}
+
+.library-sync-card button,
+.library-sync-card > a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border: 1px solid rgba(190, 85, 48, 0.22);
+  border-radius: 999px;
+  background: #fffaf4;
+  color: var(--accent-dark);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.library-book-detail-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.library-book-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.library-book-facts span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(247, 239, 230, 0.9);
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.library-favorite-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border: 1px solid rgba(190, 85, 48, 0.2);
+  border-radius: 999px;
+  background: #fffaf4;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.library-favorite-button-active {
+  color: #c84f3d;
+}
+
+.library-series-progress {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.library-series-progress > div:first-child {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.library-series-progress span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.library-series-progress-track {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(47, 36, 29, 0.08);
+}
+
+.library-series-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), #efb06f);
+}
+
+.bookshelf-reading-sections {
+  display: grid;
+  gap: 30px;
+  margin-bottom: 38px;
+}
+
+.bookshelf-reading-section h2,
+.bookshelf-created-section > header h2,
+.bookshelf-created-section > header p {
+  margin: 0;
+}
+
+.bookshelf-reading-section h2,
+.bookshelf-created-section > header h2 {
+  margin-bottom: 14px;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.bookshelf-created-section > header {
+  margin-bottom: 14px;
+}
+
+.bookshelf-created-section > header p {
+  margin-bottom: 4px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
 /* 首页绘本馆入口卡片 */
 .library-entry-card {
   display: flex;
@@ -7244,6 +7835,18 @@ a.library-book-card:hover {
 }
 
 @media (max-width: 580px) {
+  .hero-platform-links {
+    display: none;
+  }
+
+  .home-platform-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .home-platform-entry-card {
+    min-height: 138px;
+  }
+
   .library-page {
     width: calc(100% - 28px);
   }
@@ -7323,6 +7926,121 @@ a.library-book-card:hover {
   .library-entry-card {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .library-home-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .library-catalog-experience-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .library-catalog-card-copy {
+    padding: 11px;
+  }
+
+  .library-catalog-card h3 {
+    font-size: 1rem;
+  }
+
+  .library-catalog-card p {
+    min-height: 0;
+    -webkit-line-clamp: 1;
+  }
+
+  .library-catalog-facts span:nth-child(n + 3) {
+    display: none;
+  }
+
+  .library-card-favorite {
+    top: 7px;
+    right: 7px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .library-tonight {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .library-tonight-card {
+    max-width: 260px;
+  }
+
+  .library-sync-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .library-sync-card button,
+  .library-sync-card > a {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .library-book-detail-actions,
+  .library-series-progress > div:first-child {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .library-favorite-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .family-platform-nav {
+    position: fixed;
+    z-index: 70;
+    right: 12px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    left: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 7px;
+    border: 1px solid rgba(47, 36, 29, 0.12);
+    border-radius: 20px;
+    background: rgba(255, 250, 244, 0.94);
+    box-shadow: 0 16px 42px rgba(47, 36, 29, 0.2);
+    backdrop-filter: blur(18px);
+  }
+
+  .family-platform-nav a {
+    display: grid;
+    min-height: 52px;
+    place-items: center;
+    align-content: center;
+    gap: 2px;
+    border-radius: 14px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-decoration: none;
+  }
+
+  .family-platform-nav a[aria-current="page"] {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+  }
+
+  .family-platform-nav svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .family-platform-nav ~ .site-footer {
+    margin-bottom: 84px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-platform-entry-card,
+  .library-catalog-cover img {
+    transition: none;
   }
 }
 

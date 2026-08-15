@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import LibraryBookCard from "@/components/library/LibraryBookCard";
+import LibrarySeriesExperience from "@/components/library/LibrarySeriesExperience";
 import { getAllSeries, getSeries, getSeriesBooks } from "@/lib/library";
+import { createLibraryBookSummary } from "@/lib/library/catalog";
 
 type Params = { seriesId: string };
 
@@ -47,6 +48,9 @@ export default async function LibrarySeriesPage({
   }
 
   const books = getSeriesBooks(seriesId);
+  const bookSummaries = books.map((book) =>
+    createLibraryBookSummary(series, book),
+  );
 
   return (
     <main className="library-page">
@@ -64,14 +68,13 @@ export default async function LibrarySeriesPage({
         <p className="library-lead">{series.description}</p>
       </header>
 
-      <section className="library-book-grid" aria-label={`${series.title}书目`}>
-        {books.map((book) => (
-          <LibraryBookCard key={book.id} series={series} book={book} />
-        ))}
-        {books.length === 0 ? (
+      {books.length > 0 ? (
+        <LibrarySeriesExperience books={bookSummaries} />
+      ) : (
+        <section className="library-book-grid" aria-label={`${series.title}书目`}>
           <p className="library-empty">本系列正在筹备中，敬请期待。</p>
-        ) : null}
-      </section>
+        </section>
+      )}
     </main>
   );
 }

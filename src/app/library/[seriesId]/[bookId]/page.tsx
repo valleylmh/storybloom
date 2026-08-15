@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LibraryBookExperience from "@/components/library/LibraryBookExperience";
+import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
 import {
   getAdjacentBooks,
@@ -10,6 +11,11 @@ import {
   getSeries,
   getSeriesBooks,
 } from "@/lib/library";
+import {
+  formatLibraryLanguages,
+  LIBRARY_CATEGORY_LABELS,
+  resolveLibraryBookMetadata,
+} from "@/lib/library/metadata";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
 
 type Params = { seriesId: string; bookId: string };
@@ -92,6 +98,7 @@ export default async function LibraryBookPage({
     book.pages.every(
       (page) => Boolean(page.imageUrl) && page.imageStatus === "complete",
     );
+  const bookMetadata = resolveLibraryBookMetadata(book);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -107,8 +114,8 @@ export default async function LibraryBookPage({
     },
     audience: {
       "@type": "PeopleAudience",
-      suggestedMinAge: 4,
-      suggestedMaxAge: 8,
+      suggestedMinAge: bookMetadata.ageRange.min,
+      suggestedMaxAge: bookMetadata.ageRange.max,
     },
     ...(coverImage ? { image: toAbsoluteAppUrl(coverImage) } : {}),
   };
@@ -142,6 +149,17 @@ export default async function LibraryBookPage({
         </p>
         <h1>{book.title}</h1>
         <p className="library-lead">{book.subtitle}</p>
+        <div className="library-book-detail-actions">
+          <div className="library-book-facts" aria-label="绘本信息">
+            <span>{LIBRARY_CATEGORY_LABELS[bookMetadata.category]}</span>
+            <span>约 {bookMetadata.estimatedMinutes} 分钟</span>
+            <span>
+              {bookMetadata.ageRange.min}-{bookMetadata.ageRange.max} 岁
+            </span>
+            <span>{formatLibraryLanguages(bookMetadata.languages)}</span>
+          </div>
+          <LibraryFavoriteButton contentId={`${series.id}/${book.id}`} />
+        </div>
       </header>
 
       {book.idiomMeaning || book.origin ? (

@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useReadingProgressCloudSync } from "@/hooks/useReadingProgressCloudSync";
 import type { BrowserNarrationMode } from "@/lib/browser-narration";
 import {
   calculateReadingProgressPercent,
@@ -45,6 +46,7 @@ export default function LibraryBookExperience({
   const [progressReady, setProgressReady] = useState(false);
   const progressRef = useRef<ReadingProgressRecord | null>(null);
   const lastSavedFingerprintRef = useRef("");
+  const syncProgressToAccount = useReadingProgressCloudSync();
 
   useEffect(() => {
     let active = true;
@@ -140,8 +142,15 @@ export default function LibraryBookExperience({
       if (fingerprint === lastSavedFingerprintRef.current) return;
       lastSavedFingerprintRef.current = fingerprint;
       void saveReadingProgress(next);
+      syncProgressToAccount(next, input.status);
     },
-    [contentId, contentType, pages.length, progressReady],
+    [
+      contentId,
+      contentType,
+      pages.length,
+      progressReady,
+      syncProgressToAccount,
+    ],
   );
 
   const handlePageIndexChange = useCallback(

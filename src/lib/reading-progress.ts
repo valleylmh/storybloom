@@ -23,6 +23,8 @@ const DB_NAME = "storybloom-reading-state";
 const DB_VERSION = 1;
 const STORE_NAME = "progress";
 const FALLBACK_KEY = "storybloom.readingProgress.v1";
+export const READING_PROGRESS_CHANGED_EVENT =
+  "storybloom:reading-progress-changed";
 
 let databasePromise: Promise<IDBDatabase | null> | null = null;
 
@@ -135,6 +137,11 @@ function writeFallbackMap(records: Record<string, ReadingProgressRecord>) {
   }
 }
 
+function notifyReadingProgressChanged() {
+  if (!canUseBrowserStorage()) return;
+  window.dispatchEvent(new Event(READING_PROGRESS_CHANGED_EVENT));
+}
+
 function openDatabase() {
   if (!canUseBrowserStorage() || !("indexedDB" in window)) {
     return Promise.resolve<IDBDatabase | null>(null);
@@ -210,12 +217,16 @@ export async function saveReadingProgress(record: ReadingProgressRecord) {
         resolve(false);
       }
     });
-    if (didSave) return normalized;
+    if (didSave) {
+      notifyReadingProgressChanged();
+      return normalized;
+    }
   }
 
   const records = readFallbackMap();
   records[key] = normalized;
   writeFallbackMap(records);
+  notifyReadingProgressChanged();
   return normalized;
 }
 

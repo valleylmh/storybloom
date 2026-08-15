@@ -46,10 +46,10 @@ StoryBloom 应从“AI 绘本生成器”收敛为家庭故事平台，核心由
 
 | 项目 | 状态 | 当前实现 | 主要缺口 |
 |---|---|---|---|
-| 绘本馆首页 `/library` | Partial | 按系列展示馆藏，支持成语故事、西游记、好奇为什么 | 没有继续阅读、最近播放、收藏、今晚读什么、分类筛选 |
-| 系列页 `/library/[seriesId]` | Partial | 展示系列说明和有序书目 | 没有系列完成比例、已读状态和明确的继续下一回状态 |
-| 馆藏详情页 `/library/[seriesId]/[bookId]` | Partial | SEO、结构化数据、8 页正文、阅读器、前后篇、分享与改编 CTA | 详情 metadata 不完整，结束态和专属改编上下文未结构化 |
-| 馆藏数据 | Existing | `src/lib/library/` 静态 TypeScript 数据，当前 3 个系列、100 本已发布、每本 8 页 | `LibraryBook` 缺少 category、estimatedMinutes、languages、tags、featured、bedtimeSuitable、personalizationEnabled 等字段 |
+| 绘本馆首页 `/library` | Existing | 继续阅读、最近播放、我的收藏、系列故事、分类浏览、按日期轮换“今晚读什么”；无历史时隐藏空模块 | 年龄/时长/主题组合筛选留到阶段 5 |
+| 系列页 `/library/[seriesId]` | Existing | 展示系列说明、有序书目、完成数量、系列进度、已读/未读和收藏状态；长系列由用户主动“显示更多” | 下一回仍由详情页用户主动进入，符合不自动连播原则 |
+| 馆藏详情页 `/library/[seriesId]/[bookId]` | Partial | SEO、结构化数据、8 页阅读器、收藏、分类/时长/年龄/语言、前后篇、分享与改编 CTA | 专属改编上下文仍未结构化 |
+| 馆藏数据 | Existing | `src/lib/library/` 静态内容保持不变；`LibraryBookMetadata` 和 resolver 统一补齐 category、ageRange、estimatedMinutes、languages、seriesOrder、tags、featured、bedtimeSuitable、personalizationEnabled | 个别书的 metadata override 可按内容运营逐步补充 |
 | 馆藏发布保护 | Existing | `comingSoon`、发布过滤、sitemap、图片存在性与大小测试 | 仍需为新增 metadata 建立完整性测试 |
 
 当前馆藏数量：
@@ -89,7 +89,7 @@ StoryBloom 应从“AI 绘本生成器”收敛为家庭故事平台，核心由
 | 匿名作品保存 | Existing | `client-history` 使用 IndexedDB，localStorage 作为 fallback | 只保留最多 10 本；没有阅读进度、收藏、分享管理和书架 metadata |
 | 登录作品保存 | Partial | `saved_stories` + 私有 `story-archive`，由用户主动导入/同步 | 登录不自动同步是正确边界；尚无阅读进度和收藏表 |
 | 本地/云端书架 | Partial | `/me/books` 展示本机与云端副本，支持打开和删除 | 不是产品化“我的书架”；缺少收藏、继续阅读、最近阅读、改标题、来源馆藏、角色系列和分享状态 |
-| 匿名登录后合并 | Partial | 已有显式、本地优先的作品导入与冲突处理 | 没有阅读进度“按更新时间取新”和收藏并集的合并逻辑 |
+| 匿名登录后合并 | Partial | 作品仍使用显式导入；阅读进度和收藏新增家长主动“合并并开启同步”，进度按更新时间取新并保留最大完成度，收藏支持删除 tombstone | migration 未部署前只在本机可用；不会因为登录自动上传 |
 | 删除生命周期 | Partial | 本地删除作品记录；云端删除主记录后再删图片；分享可用令牌撤销 | 云端先删行后删 Storage，失败会产生孤立资源；没有统一处理音频、分享、生成任务和可恢复规则 |
 
 隐私边界必须保持：登录不等于同意上传，本地作品、阅读记录、收藏和照片都不能因为登录自动上传。首次云端同步仍需用户明确选择。
@@ -124,11 +124,11 @@ StoryBloom 应从“AI 绘本生成器”收敛为家庭故事平台，核心由
 
 | 能力 | 状态 | 当前实现 | 主要缺口 |
 |---|---|---|---|
-| 绘本馆入口 | Partial | 首页表单之后有绘本馆卡片，Footer 有入口 | 不够首要；没有“今晚读一本”主入口 |
-| 创作入口 | Existing | 首页默认是记录/快速/完整创作表单 | 首次进入仍直接面对创作状态，阅读价值不够突出 |
-| 我的书架入口 | Partial | “我的”进入 `/me`，侧栏有“我的绘本” | 首页和移动端没有清晰“书架”入口 |
-| 三入口主导航 | Missing | 当前没有统一的绘本馆/创作/书架导航 | 阶段 2 建立；不能破坏匿名创作 |
-| 移动端底部导航 | Missing | 无 | 阶段 2 实现，阅读页可使用精简版或隐藏非必要入口 |
+| 绘本馆入口 | Existing | 首页首屏内容区提供同等清晰的“今晚读一本”，进入 `/library` | 保持匿名直接打开 |
+| 创作入口 | Existing | 首页同区提供“给孩子做一本”，保留记录/快速/完整创作和匿名优先 | 后续阶段 3 再接馆藏改编草稿 |
+| 我的书架入口 | Existing | Footer、桌面首页导航和移动底部导航进入 `/me/books`；书架显示继续阅读、收藏、最近阅读和我创作的 | 私人作品的标题/分享/删除生命周期在阶段 4 完善 |
+| 三入口主导航 | Existing | 绘本馆 / 创作 / 书架形成统一入口，未替换既有创作模式 | 阅读详情页隐藏移动导航以减少干扰 |
+| 移动端底部导航 | Existing | 已实现大点击区、安全区和当前项状态；390×844 Chrome 视口实测三入口均为约 117×52px，阅读详情页隐藏固定导航 | iPhone Safari 与 Android Chrome 仍需阶段 6 真机复核 |
 
 ### 3.7 测试覆盖
 
@@ -521,12 +521,58 @@ interface AudioSource {
 
 ### 阶段 2：绘本馆、收藏和三入口信息架构
 
-- LibraryBook metadata 与完整性测试
-- 继续阅读、最近播放、收藏、系列进度、今晚读什么
-- 首页“今晚读一本 / 给孩子做一本”双主入口
-- 绘本馆 / 创作 / 书架主导航和移动底部导航
-- 新增 `reading_progress`、`favorites` 迁移、RLS、回滚 SQL
-- 显式合并匿名进度和收藏
+状态：**完成。代码、桌面及 390×844 手机视口、lint、TypeScript、完整测试和 production build 均已通过；阶段 3 尚未开始。**
+
+- [x] LibraryBook metadata、resolver 与完整性测试
+- [x] 继续阅读、最近播放、收藏、系列进度、今晚读什么
+- [x] 首页“今晚读一本 / 给孩子做一本”双主入口
+- [x] 绘本馆 / 创作 / 书架主导航和移动底部导航代码
+- [x] 新增 `reading_progress`、`favorites` migration、RLS、回滚 SQL
+- [x] 家长显式合并匿名进度和收藏；登录本身不自动上传
+- [x] 完成 390×844 Chrome 手机视口复核
+- [x] 阶段 2 独立提交
+
+阶段 2 修改范围：
+
+- 馆藏 metadata 与摘要：`src/types/library.ts`、`src/lib/library/metadata.ts`、`src/lib/library/catalog.ts`
+- 本地/云端状态：`src/lib/favorites.ts`、`src/lib/cloud-reading-state.ts`、`src/lib/reading-sync-preference.ts`、`src/hooks/useFavorites.ts`、`src/hooks/useReadingProgressCloudSync.ts`
+- 绘本馆和书架 UI：`LibraryCatalogExperience`、`LibraryCatalogCard`、`LibrarySeriesExperience`、`LibraryFavoriteButton`、`ReadingSyncControl`、`BookshelfReadingSections`
+- 信息架构：`FamilyPlatformNav`、首页双入口、Footer 三入口
+- 数据库：`supabase/migrations/202608160001_family_reading_state.sql` 与对应 rollback
+- 测试：`tests/library-platform-state.test.ts`、`tests/family-platform-navigation.test.ts`
+
+数据库变化：新增 `reading_progress` 和 `favorites` 两张 owner-only RLS 表。迁移为 additive；rollback 仅删除本阶段表和专用更新时间函数。迁移文件尚未在 Supabase Dashboard 部署，所以生产环境跨设备同步不得宣称已可用；本机收藏与阅读进度不受影响。
+
+新增接口：没有新增 HTTP route。登录用户在明确点击“合并并开启同步”后，浏览器通过现有 Supabase 会话直接访问 RLS 表；收藏使用 `updated_at/deleted_at` tombstone，阅读进度沿用阶段 1 合并规则。未选择同步时不发送本机阅读记录。
+
+兼容性影响：100 本馆藏正文和静态路由未改；馆藏首屏只渲染有限卡片，通过“显示更多”主动展开，避免无限滚动。现有本机/云端私人作品边界、匿名创作、家庭照片和声音配置不变。移动主导航在阅读详情页自动隐藏。
+
+阶段 2 质量结果：
+
+- `pnpm lint`：通过，0 error；107 条既有 warning，与阶段 0/1 基线相同。
+- `npx tsc --noEmit`：通过。
+- Vitest：96 个测试文件通过、3 个跳过；620 项测试通过、5 项跳过。
+- 集成测试：仓库没有独立 `integration` 脚本；完整 Vitest 已覆盖 migration 结构、合并规则和既有 route/repository/TTS 边界。
+- `pnpm build`：通过；仍生成 133 个静态页面和 100 条馆藏详情路径。
+- 构建后已清理 `.next` 并恢复 `pnpm dev`。
+
+阶段 2 桌面浏览器验收：
+
+- 绘本馆按真实历史显示最近阅读；无继续阅读/收藏历史时对应模块不渲染。
+- 收藏点击后所有重复卡片即时变为已收藏，并立即出现“我的收藏”。
+- `/me/books` 同时显示“继续阅读 / 我的收藏 / 最近阅读 / 我创作的”；空分区不展示。
+- 西游记系列页显示 `1 / 60 本已读完`、逐本进度、回目和收藏状态。
+- 详情页展示分类、预计时长、年龄、语言和收藏入口。
+- 首页首屏内容区显示“今晚读一本 / 给孩子做一本”双入口。
+
+阶段 2 手机视口验收：
+
+- Chrome DevTools 以 `390×844`、`devicePixelRatio=2` 复核；`documentWidth` 和 `bodyWidth` 均为 390px，无横向溢出。
+- 馆藏列表稳定为两列，每张常规卡片约 173px 宽；首屏“今晚读什么”和同步提示在窄屏下不溢出。
+- 固定底部导航显示“绘本馆 / 创作 / 书架”，三个入口各约 `117×52px`；详情阅读页不渲染该固定导航。
+- 馆藏收藏按钮点击区统一为 `44×44px`；点击后立即切换为取消收藏，本地写入 `storybloom.favorites.v1` 并出现“我的收藏”。
+- 详情页保持 390px 文档宽度，“播放故事”主按钮可见；整个流程未请求麦克风权限。
+- 本轮为桌面 Chrome 手机视口验收，不替代阶段 6 的 iPhone Safari 和 Android Chrome 真机人工复核。
 
 ### 阶段 3：馆藏故事到专属版本
 

@@ -29,6 +29,26 @@ export interface LibrarySeries {
   comingSoon?: boolean;
 }
 
+export type LibraryCategory =
+  | "idiom"
+  | "classic"
+  | "science"
+  | "bedtime"
+  | "family-growth";
+
+export interface LibraryBookMetadata {
+  category: LibraryCategory;
+  ageRange: { min: number; max: number };
+  estimatedMinutes: number;
+  languages: Array<"zh" | "en">;
+  seriesId: string;
+  seriesOrder: number;
+  personalizationEnabled: boolean;
+  tags: string[];
+  featured: boolean;
+  bedtimeSuitable: boolean;
+}
+
 export interface LibraryBook {
   /** URL slug, e.g. "shou-zhu-dai-tu" */
   id: string;
@@ -55,4 +75,6 @@ export interface LibraryBook {
   /** Listed on the series page but not yet readable */
   comingSoon?: boolean;
   quiz?: LibraryQuizQuestion[];
+  /** Optional source overrides; UI always consumes resolved metadata. */
+  metadata?: Partial<LibraryBookMetadata>;
 }

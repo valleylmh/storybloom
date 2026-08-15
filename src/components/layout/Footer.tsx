@@ -10,6 +10,12 @@ export default function Footer() {
         <Link href="/library" className="footer-link">
           绘本馆
         </Link>
+        <Link href="/?mode=minimal#story-creation" className="footer-link">
+          创作
+        </Link>
+        <Link href="/me/books" className="footer-link">
+          我的书架
+        </Link>
         <Link href="/inspiration" className="footer-link">
           每日灵感
         </Link>

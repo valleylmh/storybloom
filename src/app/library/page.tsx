@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import LibraryBookCard from "@/components/library/LibraryBookCard";
+import LibraryCatalogExperience from "@/components/library/LibraryCatalogExperience";
 import {
   getAllSeries,
   getPublishedBookCount,
   getSeriesBooks,
   getUpcomingSeries,
 } from "@/lib/library";
+import { createLibraryBookSummary } from "@/lib/library/catalog";
 
 const PUBLISHED_BOOK_COUNT = getPublishedBookCount();
 const HAS_PUBLISHED_BOOKS = PUBLISHED_BOOK_COUNT > 0;
@@ -38,6 +39,11 @@ export const metadata: Metadata = HAS_PUBLISHED_BOOKS
 export default function LibraryPage() {
   const series = getAllSeries();
   const upcoming = getUpcomingSeries();
+  const books = series.flatMap((item) =>
+    getSeriesBooks(item.id).map((book) =>
+      createLibraryBookSummary(item, book),
+    ),
+  );
 
   return (
     <main className="library-page library-index-page">
@@ -49,42 +55,23 @@ export default function LibraryPage() {
 
       <header className="library-hero">
         <p className="library-kicker">STORYBLOOM 绘本馆</p>
-        <h1>经典故事，讲给孩子听</h1>
-        <p className="library-lead">中英双语绘本，打开就读。</p>
+        <h1>今晚，先读一本好故事</h1>
+        <p className="library-lead">
+          精选内容、有声阅读和家庭收藏，匿名打开即可使用。
+        </p>
       </header>
 
-      <section className="library-catalog" aria-label="按分类浏览绘本">
-        {series.map((item) => {
-          const books = getSeriesBooks(item.id);
-          const publishedCount = getPublishedBookCount(item.id);
+      <LibraryCatalogExperience
+        books={books}
+        series={series.map((item) => ({
+          id: item.id,
+          title: item.title,
+          subtitle: item.subtitle,
+          href: `/library/${item.id}`,
+        }))}
+      />
 
-          return (
-            <section
-              key={item.id}
-              className="library-series-section"
-              aria-labelledby={`library-series-${item.id}`}
-            >
-              <header
-                className="library-series-section-header"
-              >
-                <h2 id={`library-series-${item.id}`}>{item.title}</h2>
-                <span className="library-series-count">
-                  {publishedCount > 0 ? `${publishedCount} 本可读` : "即将上新"}
-                </span>
-              </header>
-
-              <div className="library-book-grid library-catalog-grid">
-                {books.map((book) => (
-                  <LibraryBookCard key={book.id} series={item} book={book} />
-                ))}
-                {books.length === 0 ? (
-                  <p className="library-empty">本分类正在筹备中，敬请期待。</p>
-                ) : null}
-              </div>
-            </section>
-          );
-        })}
-
+      <section className="library-catalog" aria-label="即将上线绘本">
         {upcoming.map((item) => (
           <section
             key={item.id}

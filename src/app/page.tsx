@@ -1199,25 +1199,6 @@ export default function Home() {
     0,
     FREE_GENERATION_DAILY_LIMIT - localFreeUsage
   );
-  const libraryEntryCard = (
-    <Link href="/library" className={`library-entry-card ${entryMode !== "full" ? "minimal-library-card" : ""}`}>
-      <span className="library-entry-copy">
-        <h3>
-          {locale === "zh"
-            ? "绘本馆 · 双语故事书架"
-            : "Story Library · Bilingual series"}
-        </h3>
-        <p>
-          {locale === "zh"
-            ? "浏览成语故事等系列双语绘本与即将上线书目。"
-            : "Browse bilingual picture-book series and upcoming titles."}
-        </p>
-      </span>
-      <span className="library-entry-arrow">
-        {locale === "zh" ? "查看绘本馆 →" : "Browse →"}
-      </span>
-    </Link>
-  );
   const historyPanel = (
     <LocalStoryLibrary
       locale={locale}
@@ -1295,6 +1276,11 @@ export default function Home() {
               <span className="brand-sub">{text.brandSub}</span>
             </div>
             <div className="hero-nav-actions">
+              <nav className="hero-platform-links" aria-label="家庭故事平台">
+                <Link href="/library">绘本馆</Link>
+                <Link href="/?mode=minimal#story-creation">创作</Link>
+                <Link href="/me/books">我的书架</Link>
+              </nav>
               <div className="hero-meta">{text.meta}</div>
               <AccountEntryButton locale={locale} />
             </div>
@@ -1340,12 +1326,47 @@ export default function Home() {
       ) : null}
 
       <section
+        id="story-creation"
         className={
           step === "form" && entryMode !== "full"
             ? "minimal-content-shell"
             : "content-shell"
         }
       >
+        {step === "form" ? (
+          <section className="home-platform-entry" aria-label="开始使用 StoryBloom">
+            <Link href="/library" className="home-platform-entry-card home-platform-entry-read">
+              <span>{locale === "zh" ? "今晚读一本" : "Read tonight"}</span>
+              <strong>
+                {locale === "zh"
+                  ? "进入绘本馆，打开就能听"
+                  : "Open the library and start listening"}
+              </strong>
+              <small>{locale === "zh" ? "无需登录或录音" : "No login or recording needed"}</small>
+            </Link>
+            <button
+              type="button"
+              className="home-platform-entry-card home-platform-entry-create"
+              onClick={() => {
+                changeEntryMode("minimal");
+                window.requestAnimationFrame(() =>
+                  document
+                    .getElementById("story-creation")
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" }),
+                );
+              }}
+            >
+              <span>{locale === "zh" ? "给孩子做一本" : "Make one for my child"}</span>
+              <strong>
+                {locale === "zh"
+                  ? "用家庭角色创作专属故事"
+                  : "Create with your family characters"}
+              </strong>
+              <small>{locale === "zh" ? "先从一句话开始" : "Start with one sentence"}</small>
+            </button>
+          </section>
+        ) : null}
+
         {step === "form" && error ? (
           <div className="error-banner">{error}</div>
         ) : null}
@@ -1377,7 +1398,6 @@ export default function Home() {
                   {growthVersionIntentError} <Link href="/growth">返回成长书架</Link>
                 </div>
               ) : null}
-              {libraryEntryCard}
               {historyPanel}
             </>
           ) : (
@@ -1388,7 +1408,6 @@ export default function Home() {
                 remainingFreeGenerations={remainingFreeGenerations}
                 onSubmit={handleGenerate}
               />
-              {libraryEntryCard}
               {historyPanel}
             </>
           )
