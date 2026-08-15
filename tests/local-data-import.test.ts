@@ -94,6 +94,7 @@ function createGrowthRecord(
 ): GrowthRecord {
   return {
     id: clientRecordId,
+    activeStorybookVersionId: "storybook-version-1",
     clientRecordId,
     storyId,
     childKey: "name:安安",
@@ -379,6 +380,7 @@ describe("local data import", () => {
     expect(setup.cloudGrowth.saveInputs[0]).toMatchObject({
       clientRecordId: "growth-1",
       savedStoryId: setup.cloudStories.records[0].id,
+      clientVersionId: "storybook-version-1",
     });
     expect(setup.cloudGrowth.saveInputs[0].draft.photos[0].id).toMatch(
       /^[0-9a-f-]{36}$/,

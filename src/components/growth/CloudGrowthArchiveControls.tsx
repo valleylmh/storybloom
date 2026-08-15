@@ -356,7 +356,7 @@ export default function CloudGrowthArchiveControls({
           : error
             ? "暂时无法确认 GrowthMoment 云端兼容表状态；不会因此执行同步或删除。"
             : summary?.foundation === "available"
-              ? "GrowthMoment 云端兼容表可读取，但仍未完成生产多设备验收，不能据此视为自动同步已上线。"
+              ? "GrowthMoment 基础表、权限和主动导入双写已通过生产验收；同一账户两台真实设备的完整 UI 流程仍待最终确认。"
               : "当前仍使用旧版私有云成长记录；GrowthMoment 云端 migration 尚未部署或不可读取。"}
       </p>
 

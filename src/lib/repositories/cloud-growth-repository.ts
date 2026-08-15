@@ -2,8 +2,16 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import {
   isValidGrowthDate,
   type GrowthRecord,
+  type GrowthRecordDraft,
   type GrowthRecordPhoto,
 } from "@/lib/growth-records";
+import {
+  mirrorLegacyGrowthRecordToMoment,
+  removeMirroredGrowthMoment,
+  type LegacyGrowthPhotoMirrorRow,
+  type LegacyGrowthRecordMirrorRow,
+  type SavedStoryMirrorRow,
+} from "@/lib/repositories/cloud-growth-moment-mirror";
 import { createCloudStoryRepository } from "@/lib/repositories/cloud-story-repository";
 import type {
   GrowthRecordInput,
@@ -69,6 +77,17 @@ function fallbackPhotoKey(value: string) {
   )
     .toString(16)
     .padStart(8, "0")}`;
+}
+
+function collectImageProviders(story: GenerateResponse) {
+  const providers = new Set<string>();
+  story.pages.forEach((page) => {
+    if (page.imageProvider) providers.add(page.imageProvider);
+    page.imageAttempts?.forEach((attempt) => {
+      if (attempt.provider) providers.add(attempt.provider);
+    });
+  });
+  return Array.from(providers);
 }
 
 async function getStablePhotoKey(value: string) {
@@ -210,6 +229,66 @@ export function createCloudGrowthRepository(
     return data as GrowthRecordRow | null;
   }
 
+  async function getPhotoRows(growthRecordId: string) {
+    const result = await supabase
+      .from("growth_record_photos")
+      .select("*")
+      .eq("user_id", userId)
+      .eq("growth_record_id", growthRecordId)
+      .order("sort_order", { ascending: true });
+    if (result.error) throw result.error;
+    return (result.data || []) as GrowthPhotoRow[];
+  }
+
+  async function getSavedStoryMirrorRow(savedStoryId: string) {
+    const result = await supabase
+      .from("saved_stories")
+      .select("id,story_snapshot,asset_manifest,created_at,updated_at")
+      .eq("user_id", userId)
+      .eq("id", savedStoryId)
+      .maybeSingle();
+    if (result.error) throw result.error;
+    if (!result.data) throw new Error("cloud-growth-saved-story-not-found");
+    return result.data as SavedStoryMirrorRow;
+  }
+
+  async function mirrorGrowthMoment(
+    row: GrowthRecordRow,
+    options: {
+      draft?: GrowthRecordDraft;
+      clientVersionId?: string;
+      imageProviders?: string[];
+      photos?: GrowthPhotoRow[];
+    } = {},
+  ) {
+    if (!row.saved_story_id) return;
+    const savedStory = await getSavedStoryMirrorRow(row.saved_story_id);
+    const draft =
+      options.draft ||
+      ({
+        version: 1,
+        childKey: row.child_profile_id,
+        childName: savedStory.story_snapshot.input.childName || "孩子",
+        occurredOn: row.occurred_on,
+        note: row.note,
+        idea: row.idea,
+        photos: [],
+        readingStage: savedStory.story_snapshot.input.ageGroup,
+        storyTreatment: savedStory.story_snapshot.input.storyTreatment,
+        parentFacts: savedStory.story_snapshot.input.parentFacts,
+        allowedImaginations:
+          savedStory.story_snapshot.input.allowedImaginations,
+      } satisfies GrowthRecordDraft);
+    await mirrorLegacyGrowthRecordToMoment(supabase, userId, {
+      record: row as LegacyGrowthRecordMirrorRow,
+      photos: (options.photos || (await getPhotoRows(row.id))) as LegacyGrowthPhotoMirrorRow[],
+      savedStory,
+      draft,
+      clientVersionId: options.clientVersionId,
+      imageProviders: options.imageProviders,
+    });
+  }
+
   async function replacePhotos(
     growthRecordId: string,
     photos: GrowthRecordPhoto[],
@@ -289,6 +368,7 @@ export function createCloudGrowthRepository(
         .remove(stalePaths);
       if (removal.error) throw removal.error;
     }
+    return getPhotoRows(growthRecordId);
   }
 
   async function hydrateOne(row: GrowthRecordRow) {
@@ -349,8 +429,15 @@ export function createCloudGrowthRepository(
         .select("*")
         .single();
       if (error) throw error;
-      await replacePhotos(growthRecordId, input.draft.photos);
-      return hydrateOne(data as GrowthRecordRow);
+      const row = data as GrowthRecordRow;
+      const photos = await replacePhotos(growthRecordId, input.draft.photos);
+      await mirrorGrowthMoment(row, {
+        draft: input.draft,
+        clientVersionId: input.clientVersionId,
+        imageProviders: collectImageProviders(input.story),
+        photos,
+      });
+      return hydrateOne(row);
     },
 
     async update(id: string, patch: GrowthRecordPatch) {
@@ -384,7 +471,15 @@ export function createCloudGrowthRepository(
         if (error) throw error;
         row = data as GrowthRecordRow;
       }
-      if (patch.photos) await replacePhotos(id, patch.photos);
+      const photos = patch.photos
+        ? await replacePhotos(id, patch.photos)
+        : await getPhotoRows(id);
+      await mirrorGrowthMoment(row, {
+        imageProviders: patch.story
+          ? collectImageProviders(patch.story)
+          : undefined,
+        photos,
+      });
       return hydrateOne(row);
     },
 
@@ -404,6 +499,7 @@ export function createCloudGrowthRepository(
         .eq("user_id", userId)
         .eq("id", id);
       if (error) throw error;
+      await removeMirroredGrowthMoment(supabase, userId, id);
       if (paths.length > 0) {
         const removal = await supabase.storage
           .from(GROWTH_PHOTO_BUCKET)

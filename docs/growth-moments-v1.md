@@ -95,9 +95,9 @@ storybook:<versionId>
 - 不回填旧 `growth_records`；
 - 不创建或开放任何 Storage policy；
 - 不修改 `account_settings.cloud_sync_enabled`；
-- 当前 cloud repository 不读取或写入这些表。
+- 云端列表继续读取兼容 `growth_records`；只有家长主动选择导入或更新相应云端记录时，才会把同一份记录镜像写入新表。
 
-该 migration **尚未部署，也未做生产多设备验证**。未来部署前需先确认并依次执行已有基础 migration：
+该 migration 已于 2026-08-15 在当前 StoryBloom Supabase 项目部署，并与前两项基础 migration 一起完成 RLS、私有 Storage、双账户隔离和合成数据双写验收。其他自托管部署仍需按以下顺序执行：
 
 ```text
 supabase/migrations/202608090001_cloud_growth_archive.sql
@@ -105,16 +105,16 @@ supabase/migrations/202608090002_local_import_sync_foundation.sql
 supabase/migrations/202608140001_growth_moments_storybook_versions.sql
 ```
 
-部署 schema 不代表允许同步。只有在家长主动选择具体内容、明确确认照片上传范围，并完成 RLS、私有 Storage、删除和多设备恢复验收后，才能接入 cloud repository。登录本身永远不触发本地儿童数据上传。
+部署 schema 不代表允许同步。当前代码只在家长主动选择具体内容、明确确认照片上传范围后执行兼容双写；登录、扫描数量和打开云端页面都不会上传本地儿童资料。若新表尚未部署，显式导入仍可保留旧表兼容路径；权限、约束或数据错误则会明确失败，不能静默跳过。
 
 ### 私有云治理兼容层
 
 `/me/growth` 的“私有云端”来源现已具备独立治理代码路径：
 
 - 登录后通过专用服务端接口读取私有云成长档案摘要；
-- 兼容当前 `growth_records`，并在三个 GrowthMoment 新表部署后只读识别新结构；已迁移旧记录不会重复计数；
+- 兼容当前 `growth_records`，并识别三个 GrowthMoment 新表；主动导入产生的镜像记录通过 `legacy_growth_record_id` 去重，不会重复计数；
 - 生成只包含成长档案、关联绘本正文和可读取私有图片的专用 ZIP，不复用“全部账户数据”导出包；
 - `account_settings.retention_days` 只保存保留期限偏好，并按浏览器时区生成到期预览，不创建自动删除任务；
 - 完整删除和到期删除都要求再次确认，只删除成长表关系与 `growth-record-photos` 对象，不删除当前设备、`saved_stories`、家庭角色、真实声音或公开分享。
 
-这仍是部署验收基础，不代表生产跨设备能力已经验证。真实 Supabase 项目必须按 [私有云成长档案治理部署与多设备验收清单](cloud-growth-archive-deployment-checklist.md) 完成 migration、RLS、Storage、两个账户和两个设备验收。
+当前真实项目已经完成 migration、RLS、私有 Storage、双账户隔离，以及合成记录的双写、更新和删除边界验收；同一账户两台真实设备的完整 UI 流程仍需按 [私有云成长档案治理部署与多设备验收清单](cloud-growth-archive-deployment-checklist.md) 做最终确认。

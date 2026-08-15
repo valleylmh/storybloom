@@ -37,10 +37,12 @@ describe("growth moment local UI contract", () => {
     expect(timelineSource).toContain("当前没有绘本版本");
   });
 
-  it("wires Moment capabilities only into the local repository", () => {
+  it("keeps advanced Moment editing local while explicit cloud imports mirror the foundation", () => {
     expect(localRepositorySource).toContain("moments: {");
     expect(localRepositorySource).toContain("selectVersion: selectLocalStorybookVersion");
     expect(cloudRepositorySource).not.toContain("moments:");
+    expect(cloudRepositorySource).toContain("mirrorLegacyGrowthRecordToMoment");
+    expect(cloudRepositorySource).toContain("removeMirroredGrowthMoment");
   });
 
   it("shows local capacity, deduplicates compressed photos, and refreshes after deletion", () => {

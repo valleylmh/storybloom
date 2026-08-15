@@ -1,11 +1,12 @@
 -- Compatibility foundation for the local-first GrowthMoment / StorybookVersion v1.
 --
--- This migration is intentionally schema-only:
+-- This migration is intentionally non-backfilling:
 -- - it does not backfill legacy growth_records;
 -- - it does not enable account cloud sync;
 -- - it does not add Storage policies or make any bucket public;
--- - the application cloud repository remains on the legacy schema until an
---   explicit-consent import path and production verification are completed.
+-- - after this migration is deployed, the application may mirror only records
+--   selected in the explicit-consent import flow while retaining legacy rows
+--   for backward-compatible reads and rollback safety.
 
 create table if not exists public.growth_moments (
   id uuid primary key default gen_random_uuid(),

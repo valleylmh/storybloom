@@ -27,7 +27,7 @@ export default function ChildFamilyDataPage() {
           涉及真实成长经历、照片、声音和家庭关系的功能，应由家长或监护人决定是否使用。
           StoryBloom 不把登录当作同意，也不应根据儿童内容推断心理状态、能力标签或长期性格档案。
         </p>
-        <p className={styles.updated}>面向家长与监护人 · 基于当前代码更新：2026 年 8 月 12 日</p>
+        <p className={styles.updated}>面向家长与监护人 · 基于当前代码更新：2026 年 8 月 15 日</p>
       </header>
 
       <div className={styles.principles} aria-label="家庭资料原则">
@@ -145,11 +145,10 @@ export default function ChildFamilyDataPage() {
               一侧删除不会被描述为另一侧也已删除。
             </p>
             <div className={styles.warning}>
-              <strong>当前仍需生产验收</strong>
+              <strong>基础验收已完成，仍保留两设备终验</strong>
               <p>
-                代码仓库包含云端迁移、RLS、私有 Storage、可恢复导入和冲突处理实现，
-                但这些实现不能替代具体部署的迁移检查与真实多账户、多设备验证。
-                在验证完成前，不应向家庭承诺云同步已达到生产可用状态。
+                当前 StoryBloom 站点已完成 migration、RLS、私有 Storage、双账户隔离、可恢复导入及合成记录双写验收。
+                同一账户两台真实设备的完整导入、查看、导出和删除流程仍需最终确认；其他自托管部署也必须独立验收。
               </p>
             </div>
           </section>
@@ -190,7 +189,7 @@ export default function ChildFamilyDataPage() {
               <li>优先使用孩子昵称，只写完成故事需要的事实。</li>
               <li>确认照片和声音中的每个人都已授权，尤其是其他儿童。</li>
               <li>成长记录保存在本机时，定期检查浏览器空间，并从成长书架下载 ZIP 作为自己的备份。</li>
-              <li>启用私有云前，确认当前部署已经完成迁移、权限和跨设备验证。</li>
+              <li>启用私有云前，确认当前部署已经完成迁移、权限，并了解其跨设备验收状态。</li>
               <li>把分享链接视为可转发的公开链接，发布前逐页检查。</li>
               <li>不再需要时，分别检查本机、私有云、公开分享和家庭声音资源是否都已处理。</li>
             </ol>

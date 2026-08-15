@@ -1091,9 +1091,11 @@ export function createLocalDataImportEngine(
           draft: await createStableGrowthDraft(record),
           preferredCloudId: syncing.cloudId,
           preferredStoryCloudId: storyMeta?.cloudId,
+          clientVersionId: record.activeStorybookVersionId,
         } satisfies GrowthRecordInput & {
           preferredCloudId?: string;
           preferredStoryCloudId?: string;
+          clientVersionId?: string;
         };
         const saved = await retry(() => dependencies.cloudGrowthRecords.save(input));
         cloudGrowthByClientId.set(localId, saved);

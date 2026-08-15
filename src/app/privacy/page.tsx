@@ -78,7 +78,7 @@ export default function PrivacyPage() {
           但“保存在本机”不代表生成过程完全离线：你提交的创作文字会经 StoryBloom
           服务器和当前配置的 AI 服务处理。
         </p>
-        <p className={styles.updated}>基于当前代码更新：2026 年 8 月 12 日</p>
+        <p className={styles.updated}>基于当前代码更新：2026 年 8 月 15 日</p>
       </header>
 
       <div className={styles.principles} aria-label="核心隐私原则">
@@ -120,10 +120,10 @@ export default function PrivacyPage() {
               它不是法律意见、合规认证或对所有第三方服务留存策略的保证。
             </p>
             <div className={styles.warning}>
-              <strong>部署状态需要单独核实</strong>
+              <strong>部署状态按具体站点核实</strong>
               <p>
-                仓库已经包含可选私有云档案、导入、导出和删除代码，但不能据此声称数据库迁移、RLS、
-                Storage 策略及真实跨设备流程已在每个生产部署完成验证。
+                当前 StoryBloom 站点已经完成私有云 migration、RLS、私有 Storage、双账户隔离和合成记录双写验收；
+                同一账户两台真实设备的完整 UI 闭环仍待最终确认。其他自托管部署不能直接沿用本站的验收结论。
               </p>
             </div>
           </section>
@@ -287,7 +287,7 @@ export default function PrivacyPage() {
         <strong>关于后续更新</strong>
         <p>
           当数据流、第三方服务、分析范围或云端部署状态发生实质变化时，这份说明应随代码一起更新；
-          在完成生产验证前，不会把“已有实现”写成“已上线并验证”。
+          已验证和仍待人工终验的部分会分开说明，不会把代码实现本身等同于所有部署都已完成生产验证。
         </p>
       </aside>
     </main>

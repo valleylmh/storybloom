@@ -2,6 +2,14 @@
 
 本清单用于验收私有云成长档案的专用摘要、ZIP 导出、保留期限预览和明确确认删除。完成代码合并不等于生产可用；只有真实 Supabase 项目完成以下检查后，才能对外宣称跨设备成长档案治理已上线。
 
+## 当前项目记录（2026-08-15）
+
+- 已完成三个 migration、9 张相关表、RLS、私有 Storage、容量限制和匿名访问阻断检查。
+- 已用两个临时账户验证跨账户表与 Storage 隔离；临时账户和数据已清理。
+- 已验证未登录 `401`、登录摘要、专用 ZIP、保留期限、错误确认阻断、到期删除及普通绘本保留边界。
+- 已用纯合成临时账户验证主动导入同时写入 `growth_records` 与 GrowthMoment 新表，更新会同步镜像，删除成长档案不会删除 `saved_stories`。
+- 尚需一项人工终验：同一账户在两台真实设备完成第 6 节的完整 UI 闭环。
+
 ## 1. 部署边界
 
 - 登录不等于同意上传，本机 IndexedDB 不得因登录、查看或治理操作被自动导入。
@@ -20,7 +28,7 @@ supabase/migrations/202608090002_local_import_sync_foundation.sql
 supabase/migrations/202608140001_growth_moments_storybook_versions.sql
 ```
 
-不得跳过前两项直接执行 GrowthMoment migration。第三项不回填旧 `growth_records`，也不创建 Storage policy；部署后 cloud repository 仍继续读取旧表，直到另一个经过同意与验收的迁移阶段。
+不得跳过前两项直接执行 GrowthMoment migration。第三项不回填旧 `growth_records`，也不创建 Storage policy；云端列表继续兼容读取旧表，只有家长主动选择导入或更新记录时才镜像写入新表。
 
 ## 3. schema 与 RLS 验收
 

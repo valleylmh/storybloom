@@ -388,7 +388,7 @@ Vercel 的 `NEXT_PUBLIC_APP_URL` 也必须设置为正式域名（不要保留 `
 
 本地成长档案已将家长确认的真实时刻、备注和现场照片保存为 `GrowthMoment`，把每次 AI 绘本结果保存为独立 `StorybookVersion`。同一个时刻可以从时间轴再次发起创作，复用只读事实与现场照片，并为新版本单独选择阅读阶段、故事处理方式、插画风格和角色引用；生成任务恢复后仍会幂等归属原 Moment。同一个时刻的版本可分别切换或删除，也可单独清除现场照片；删除最后一个版本不会删除真实时刻。现场照片在浏览器重编码为 WebP 后记录 MIME、压缩后字节数和 SHA-256，同一 Moment 内按实际内容去重；界面使用当前站点的 `navigator.storage.estimate()` 显示容量快照和预警，不申请 persistent storage 权限。成长书架提供浏览器端 ZIP 导出、保存字段与用途说明、保留期限偏好及到期预览；保留期限不会自动删除内容，删除到期时刻或全部本机档案都需要家长再次确认。既有 IndexedDB `GrowthRecord` 会在本机幂等迁移、按需补齐照片元数据并保留兼容投影，登录不会触发上传。
 
-私有云端现有旧 `growth_records` 增加了独立治理代码路径：登录后可读取摘要、生成成长档案专用 ZIP、保存不自动执行的保留期限偏好，并在二次确认后只删除私有云成长档案。该路径也能在 GrowthMoment 新表未来部署后识别新结构，但不会让登录触发本机上传，也不会删除普通绘本馆、家庭角色、真实声音或公开分享。新的 GrowthMoment schema 仍未部署、cloud repository 仍未接线，不能据此宣称生产跨设备功能已完成；数据边界、部署顺序和多设备验收见 [docs/growth-moments-v1.md](docs/growth-moments-v1.md) 与 [部署验收清单](docs/cloud-growth-archive-deployment-checklist.md)。
+私有云成长档案提供独立治理代码路径：登录后可读取摘要、生成成长档案专用 ZIP、保存不自动执行的保留期限偏好，并在二次确认后只删除私有云成长档案。真实项目已经部署 GrowthMoment schema，并完成 RLS、私有 Storage、双账户隔离和合成数据双写验收；家长主动导入时仍保存兼容 `growth_records`，同时镜像到 `growth_moments`、`growth_moment_assets` 与 `storybook_versions`。登录、扫描和查看不会触发本机上传，删除成长档案也不会删除普通绘本馆、家庭角色、真实声音或公开分享。同一账户两台真实设备的最终 UI 闭环仍待确认，数据边界、部署顺序和验收记录见 [docs/growth-moments-v1.md](docs/growth-moments-v1.md) 与 [部署验收清单](docs/cloud-growth-archive-deployment-checklist.md)。
 
 定制入口默认展示“链接即将上线”。拿到平台链接后，在 `.env.local` 中配置：
 

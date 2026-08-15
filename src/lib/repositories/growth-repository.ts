@@ -17,6 +17,8 @@ export interface GrowthRecordInput {
   preferredCloudId?: string;
   /** Stable UUID for the linked story when it is imported with the record. */
   preferredStoryCloudId?: string;
+  /** Active local StorybookVersion id mirrored only after explicit import. */
+  clientVersionId?: string;
   story: GenerateResponse;
   draft: GrowthRecordDraft;
 }
@@ -36,7 +38,7 @@ export interface GrowthRepository {
   save(input: GrowthRecordInput): Promise<GrowthRecord>;
   update(id: string, patch: GrowthRecordPatch): Promise<GrowthRecord>;
   remove(id: string): Promise<void>;
-  /** Local-only v1 capability. Cloud remains legacy until consent and deployment are verified. */
+  /** Advanced Moment operations remain optional; explicit cloud imports dual-write separately. */
   moments?: GrowthMomentRepository;
 }
 
@@ -65,6 +67,7 @@ export function createGrowthRecordInput(
     savedStoryId?: string;
     preferredCloudId?: string;
     preferredStoryCloudId?: string;
+    clientVersionId?: string;
   } = {},
 ): GrowthRecordInput {
   return {
@@ -73,6 +76,7 @@ export function createGrowthRecordInput(
     savedStoryId: options.savedStoryId,
     preferredCloudId: options.preferredCloudId,
     preferredStoryCloudId: options.preferredStoryCloudId,
+    clientVersionId: options.clientVersionId,
     story,
     draft,
   };
