@@ -674,7 +674,7 @@ export async function POST(req: NextRequest) {
         : undefined,
     familyCharacters: familyCharacters.length > 0 ? familyCharacters : undefined,
   };
-  let input: StoryInput = {
+  const input: StoryInput = {
     ...storyInput,
     visualBible: buildStoryVisualBible(storyInput),
   };
@@ -881,7 +881,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    let assetPrincipal: StoryAssetRequestPrincipal | null = generationOwner;
+    const assetPrincipal: StoryAssetRequestPrincipal | null = generationOwner;
     if (useDurableJobs) {
       let payloadRef: string | null = null;
       const idempotencyKey = `text:${pendingTask.taskId}`;

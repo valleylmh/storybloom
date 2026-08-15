@@ -97,6 +97,16 @@ const XIYOUJI_BOOK_IDS = [
   "mu-xian-an-shi-hui",
   "zhu-zi-guo-jie-xin-jie",
   "jin-ping-fu-shou-hua-deng",
+  "tian-ma-yuan-zhi-ban-biao",
+  "pan-tao-yuan-de-qing-tie",
+  "shuang-cha-ling-ren-lu",
+  "bao-lin-si-jie-ye-xin",
+  "hua-guo-shan-qing-shi-xiong",
+  "tong-tian-he-an-quan-lu",
+  "jing-ji-ling-kai-lu",
+  "qi-jue-shan-qing-guo-xiang",
+  "zhu-zi-guo-wen-wen-zhen",
+  "yu-hua-zhou-zhao-gong-ju",
 ];
 const HAOQI_BOOK_IDS = [
   "tian-kong-wei-shen-me-shi-lan-se",
@@ -275,7 +285,7 @@ describe("library access functions", () => {
 });
 
 describe("xiyouji and haoqi published series (tasks B/C)", () => {
-  it("publishes all fifty xiyouji books with complete optimized images", () => {
+  it("publishes all sixty xiyouji books with complete optimized images", () => {
     const books = getSeriesBooks("xiyouji");
     expect(books).toHaveLength(XIYOUJI_BOOK_IDS.length);
     expect(getSeries("xiyouji")?.bookCount).toBe(XIYOUJI_BOOK_IDS.length);

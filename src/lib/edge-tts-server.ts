@@ -262,8 +262,6 @@ function synthesizeChunkOnce(text: string, voice: string): Promise<{ bytes: Buff
     const requestId = connectionId();
     const chunks: Buffer[] = [];
     let settled = false;
-    let socket: WebSocket;
-
     const finish = () => {
       if (settled) return;
       const bytes = Buffer.concat(chunks);
@@ -292,7 +290,7 @@ function synthesizeChunkOnce(text: string, voice: string): Promise<{ bytes: Buff
       );
     };
 
-    socket = new WebSocket(createWebSocketUrl(), {
+    const socket = new WebSocket(createWebSocketUrl(), {
       headers: {
         Pragma: "no-cache",
         "Cache-Control": "no-cache",

@@ -1,0 +1,8 @@
+.next/
+node_modules/
+output/
+public/
+content-drafts/
+coverage/
+cloudflare-env.d.ts
+next-env.d.ts
