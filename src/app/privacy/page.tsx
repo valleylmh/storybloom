@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AnalyticsPrivacyControls from "@/components/analytics/AnalyticsPrivacyControls";
 import styles from "./TrustDocument.module.css";
 
 export const metadata: Metadata = {
@@ -51,8 +52,8 @@ const PROCESSORS = [
   ["Supabase", "登录、数据库、私有文件存储和公开分享存储；是否启用取决于部署配置。"],
   ["已配置的 AI 服务", "处理故事、插图或朗读请求。文本和图片供应商会随部署配置及故障切换策略变化。"],
   ["阿里云百炼", "仅在用户明确进入家庭声音复刻流程并同意后，处理声音样本和私有 voice_id。"],
-  ["Vercel Analytics", "当前代码在站点级加载，用于基础访问统计。"],
-  ["Microsoft Clarity", "仅在部署者配置项目 ID 时加载；当前代码仍是站点级会话体验分析。"],
+  ["Vercel Analytics", "默认关闭；当前设备明确允许后，只统计公开内容页面的基础访问。"],
+  ["Microsoft Clarity", "当前暂停接入，不加载会话回放脚本；页面保留全局遮罩标记作为未来重新评估时的安全默认。"],
   ["Tawk.to", "只有用户主动打开在线客服后才加载，处理用户在客服窗口中提交的内容。"],
   ["Resend", "处理主动提交并完成确认的每日灵感邮件订阅与投递。"],
   ["Upstash / Cloudflare Turnstile", "在启用时用于请求限流、验证码与防滥用校验。"],
@@ -196,10 +197,16 @@ export default function PrivacyPage() {
             <h2>分析、防滥用与客服</h2>
             <h3>访问分析</h3>
             <p>
-              当前代码在站点级加载 Vercel Analytics；部署者配置 Microsoft Clarity 项目 ID 后，也会在站点级加载会话体验分析。
-              应用代码没有把故事正文作为自定义分析事件主动上报，但当前代码尚未对成长记录、家庭角色等敏感页面单独停用分析脚本，
-              因此不能声称这些页面已完成分析隔离。
+              访问分析默认关闭。只有当前设备明确允许后，Vercel Analytics 才会记录绘本馆、每日灵感、隐私说明等公开内容页的基础访问；
+              首页创作、成长记录、家庭角色、账户、登录和公开分享页均通过路由白名单与事件 URL 过滤器阻止记录和发送。
+              如果已在公开页加载分析脚本后通过站内链接进入敏感页面，脚本文件可能暂时保留到刷新页面，但自动追踪已关闭，敏感页面事件仍会被过滤。
+              Microsoft Clarity 会话回放目前暂停接入，不会因为环境变量存在而加载。
             </p>
+            <div id="analytics-controls" className={styles.callout}>
+              <strong>当前设备的访问分析选择</strong>
+              <p>拒绝或尚未选择都不会影响绘本生成、登录、私有云、下载、分享或客服功能。</p>
+              <AnalyticsPrivacyControls />
+            </div>
             <h3>防滥用</h3>
             <p>
               免费生成会使用 IP 和浏览器散列标识进行限流，并可在生产环境要求 Cloudflare Turnstile。

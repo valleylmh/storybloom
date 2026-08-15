@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next";
-import ClarityAnalytics from "@/components/analytics/ClarityAnalytics";
+import AnalyticsConsentManager from "@/components/analytics/AnalyticsConsentManager";
 import TawkToChat from "@/components/analytics/TawkToChat";
 import Footer from "@/components/layout/Footer";
 import { APP_METADATA_BASE } from "@/lib/site-url";
@@ -32,13 +31,12 @@ export default function RootLayout({
           content="q5VVkwXgzlXATGPVkfoAdsMnEVNXDytB0dVufv_eHy8"
         />
       </head>
-      <body>
+      <body data-clarity-mask="true">
         <Providers>
           {children}
           <Footer />
         </Providers>
-        <Analytics />
-        <ClarityAnalytics />
+        <AnalyticsConsentManager />
         <TawkToChat />
       </body>
     </html>

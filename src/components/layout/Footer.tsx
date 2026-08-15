@@ -19,6 +19,9 @@ export default function Footer() {
         <Link href="/privacy" className="footer-link">
           隐私与数据
         </Link>
+        <Link href="/privacy#analytics-controls" className="footer-link">
+          分析设置
+        </Link>
         <Link href="/child-family-data" className="footer-link">
           儿童与家庭数据
         </Link>

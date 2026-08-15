@@ -7646,3 +7646,116 @@ a.library-book-card:hover {
     gap: 4px;
   }
 }
+
+.analytics-consent-banner {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(680px, calc(100% - 36px));
+  gap: 22px;
+  padding: 18px 20px;
+  border: 1px solid rgba(102, 73, 54, 0.18);
+  border-radius: 20px;
+  background: rgba(255, 253, 249, 0.97);
+  color: #4d3d33;
+  box-shadow: 0 18px 60px rgba(62, 45, 34, 0.18);
+  backdrop-filter: blur(14px);
+}
+
+.analytics-consent-banner strong {
+  display: block;
+  margin-bottom: 5px;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1rem;
+}
+
+.analytics-consent-banner p {
+  margin: 0;
+  color: #75675e;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.analytics-consent-banner a {
+  display: inline-block;
+  margin-top: 7px;
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.analytics-consent-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.analytics-consent-actions button,
+.analytics-privacy-controls button {
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid rgba(102, 73, 54, 0.16);
+  border-radius: 999px;
+  background: #f5eee5;
+  color: #5f5046;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.analytics-consent-actions .analytics-consent-allow,
+.analytics-privacy-controls .analytics-consent-allow {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.analytics-privacy-controls {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(71, 105, 75, 0.14);
+}
+
+.analytics-privacy-controls p {
+  margin: 0 !important;
+}
+
+.analytics-privacy-controls > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.analytics-privacy-controls button[aria-pressed="true"] {
+  outline: 3px solid rgba(190, 85, 48, 0.18);
+  outline-offset: 2px;
+}
+
+.analytics-privacy-controls small {
+  color: #81736a;
+  line-height: 1.6;
+}
+
+@media (max-width: 680px) {
+  .analytics-consent-banner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .analytics-consent-actions {
+    width: 100%;
+  }
+
+  .analytics-consent-actions button {
+    flex: 1;
+  }
+}
