@@ -8043,49 +8043,75 @@ a.library-book-card:hover {
 .library-quick-panels {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 38px;
-  margin: 46px 0;
+  gap: 0;
+  margin: 42px 0 54px;
+  padding: 22px;
+  border: 1px solid rgba(111, 74, 46, 0.12);
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(255, 253, 249, 0.82), rgba(255, 248, 240, 0.58));
+  box-shadow:
+    0 18px 46px rgba(92, 61, 40, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+.library-quick-panels-single {
+  grid-template-columns: 1fr;
+}
+
+.library-quick-panel {
+  min-width: 0;
+  padding: 2px 22px 4px;
+}
+
+.library-quick-panel + .library-quick-panel {
+  border-left: 1px solid rgba(47, 36, 29, 0.1);
 }
 
 .library-quick-panel > header {
-  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
 }
 
-.library-quick-panel > header p,
 .library-quick-panel > header h2 {
   margin: 0;
-}
-
-.library-quick-panel > header p {
-  margin-bottom: 3px;
-  color: var(--accent-dark);
-  font-size: 0.7rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-}
-
-.library-quick-panel > header h2 {
   font-family: Georgia, "Songti SC", serif;
-  font-size: 1.28rem;
+  font-size: 1.18rem;
   font-weight: 600;
 }
 
+.library-quick-panel > header span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
 .library-quick-list {
-  border-top: 1px solid rgba(47, 36, 29, 0.1);
+  display: grid;
+  gap: 3px;
 }
 
 .library-quick-list-item {
   position: relative;
-  border-bottom: 1px solid rgba(47, 36, 29, 0.1);
+  border-radius: 16px;
+  transition: background 0.16s ease, transform 0.16s ease;
+}
+
+.library-quick-list-item:hover {
+  background: rgba(255, 255, 255, 0.56);
+  transform: translateX(2px);
 }
 
 .library-quick-list-item > a {
   display: grid;
-  min-height: 86px;
-  grid-template-columns: 64px minmax(0, 1fr);
+  min-height: 78px;
+  grid-template-columns: 60px minmax(0, 1fr);
   align-items: center;
-  gap: 13px;
-  padding: 10px 48px 10px 0;
+  gap: 12px;
+  padding: 8px 44px 8px 8px;
   color: var(--text);
   text-decoration: none;
 }
@@ -8093,11 +8119,12 @@ a.library-book-card:hover {
 .library-quick-list-cover {
   position: relative;
   display: grid;
-  width: 64px;
+  width: 60px;
   aspect-ratio: 1;
   place-items: center;
   overflow: hidden;
   border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(83, 59, 42, 0.09);
 }
 
 .library-quick-list-cover img {
@@ -8115,7 +8142,7 @@ a.library-book-card:hover {
 }
 
 .library-quick-list-copy h3,
-.library-quick-list-copy p {
+.library-quick-list-meta p {
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -8124,21 +8151,36 @@ a.library-book-card:hover {
 
 .library-quick-list-copy h3 {
   font-family: Georgia, "Songti SC", serif;
-  font-size: 0.94rem;
+  font-size: 0.92rem;
   font-weight: 600;
 }
 
-.library-quick-list-copy p {
+.library-quick-list-meta {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
   margin-top: 5px;
+}
+
+.library-quick-list-meta span {
+  flex: 0 0 auto;
+  color: var(--accent-dark);
+  font-size: 0.66rem;
+  font-weight: 900;
+}
+
+.library-quick-list-meta p {
+  min-width: 0;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
 }
 
 .library-quick-list-favorite {
   position: absolute;
   z-index: 2;
   top: 50%;
-  right: -9px;
+  right: 3px;
   display: grid;
   width: 44px;
   height: 44px;
@@ -8412,20 +8454,38 @@ a.library-book-card:hover {
 }
 
 .library-catalog-card-minimal .library-card-favorite {
-  top: auto;
-  right: -4px;
-  bottom: 0;
-  color: rgba(47, 36, 29, 0.5);
+  top: 7px;
+  right: 7px;
+  bottom: auto;
+  color: rgba(255, 255, 255, 0.98);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease, color 0.16s ease;
 }
 
 .library-catalog-card-minimal .library-card-favorite svg {
-  width: 22px;
-  height: 22px;
-  filter: none;
+  width: 24px;
+  height: 24px;
+  filter:
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.65))
+    drop-shadow(0 2px 5px rgba(47, 36, 29, 0.52));
+}
+
+.library-catalog-card-minimal:hover .library-card-favorite,
+.library-catalog-card-minimal:focus-within .library-card-favorite {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .library-catalog-card-minimal .library-card-favorite-active {
   color: #e55b49;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .library-catalog-card-minimal .library-card-favorite {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 
 .library-category-filters {
@@ -8912,16 +8972,30 @@ a.library-book-card:hover {
 
   .library-quick-panels {
     grid-template-columns: 1fr;
-    gap: 34px;
+    gap: 0;
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .library-quick-panel {
+    padding: 4px;
+  }
+
+  .library-quick-panel + .library-quick-panel {
+    margin-top: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(47, 36, 29, 0.1);
+    border-left: 0;
   }
 
   .library-quick-list-item > a {
-    grid-template-columns: 58px minmax(0, 1fr);
-    min-height: 78px;
+    grid-template-columns: 56px minmax(0, 1fr);
+    min-height: 74px;
+    padding-left: 5px;
   }
 
   .library-quick-list-cover {
-    width: 58px;
+    width: 56px;
     border-radius: 13px;
   }
 

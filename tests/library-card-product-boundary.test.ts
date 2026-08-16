@@ -52,8 +52,10 @@ describe("library series card product boundary", () => {
   it("renders recent playback and favorites as lightweight paired lists", () => {
     expect(catalogSource).toContain("library-quick-panels");
     expect(catalogSource).toContain("library-quick-list-item");
+    expect(catalogSource).toContain("library-quick-list-meta");
     expect(catalogSource).toContain("renderQuickItem(book, true)");
     expect(globalStyles).toContain(".library-quick-panels");
+    expect(globalStyles).toContain(".library-quick-panel + .library-quick-panel");
   });
 
   it("does not duplicate recent progress in a separate continue-reading block", () => {
@@ -69,6 +71,14 @@ describe("library series card product boundary", () => {
     expect(catalogSource).not.toContain("今晚读什么");
   });
 
+  it("keeps discovery filters and the full catalog off the current home", () => {
+    expect(catalogSource).not.toContain("library-discovery");
+    expect(catalogSource).not.toContain("library-filter-panel");
+    expect(catalogSource).not.toContain("全部精选绘本");
+    expect(catalogSource).not.toContain("filterLibraryBooks");
+    expect(catalogSource).not.toContain("searchPrivateStoryItems");
+  });
+
   it("keeps an accessible favorite target without a visible circular plate", () => {
     const favoriteRule = globalStyles.match(
       /\.library-card-favorite \{([\s\S]*?)\n\}/,
@@ -81,7 +91,11 @@ describe("library series card product boundary", () => {
     expect(globalStyles).toContain(
       ".library-catalog-card-minimal .library-card-favorite",
     );
-    expect(globalStyles).toContain("top: auto");
-    expect(globalStyles).toContain("bottom: 0");
+    expect(globalStyles).toContain("opacity: 0");
+    expect(globalStyles).toContain("pointer-events: none");
+    expect(globalStyles).toContain(
+      ".library-catalog-card-minimal:hover .library-card-favorite",
+    );
+    expect(globalStyles).toContain("@media (hover: none), (pointer: coarse)");
   });
 });
