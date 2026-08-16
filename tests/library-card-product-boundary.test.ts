@@ -24,6 +24,12 @@ const globalStyles = readFileSync(
   fileURLToPath(new URL("../src/app/globals.css", import.meta.url)),
   "utf8",
 );
+const footerSource = readFileSync(
+  fileURLToPath(
+    new URL("../src/components/layout/Footer.tsx", import.meta.url),
+  ),
+  "utf8",
+);
 
 describe("library series card product boundary", () => {
   it("keeps series previews focused on the cover, episode title and subtitle", () => {
@@ -41,12 +47,20 @@ describe("library series card product boundary", () => {
     expect(cardSource).toContain("library-catalog-minimal-progress");
   });
 
-  it("keeps complete series on the library page without a view-all route", () => {
-    expect(catalogSource).toContain("expandedSeriesIds");
-    expect(catalogSource).toContain("展开全部 ${allSeriesBooks.length}");
-    expect(catalogSource).toContain('aria-expanded={expanded}');
+  it("renders every series book immediately without expansion controls", () => {
+    expect(catalogSource).toContain(
+      "allSeriesBooks.map((book) => renderCard(book, true, true))",
+    );
+    expect(catalogSource).not.toContain("expandedSeriesIds");
+    expect(catalogSource).not.toContain("library-series-expand");
+    expect(catalogSource).not.toContain("展开全部");
     expect(catalogSource).not.toContain("查看全部");
     expect(catalogSource).not.toContain("item.href");
+  });
+
+  it("keeps the bookshelf out of the global footer", () => {
+    expect(footerSource).not.toContain('href="/me/books"');
+    expect(footerSource).not.toContain("我的书架");
   });
 
   it("renders recent playback and favorites as lightweight paired lists", () => {

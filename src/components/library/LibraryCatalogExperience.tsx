@@ -21,8 +21,6 @@ type SeriesSummary = {
   subtitle: string;
 };
 
-const SERIES_PREVIEW_COUNT = 4;
-
 function readingMap(records: ReadingProgressRecord[]) {
   return new Map(
     records.map((record) => [record.contentId, record] as const),
@@ -39,9 +37,6 @@ export default function LibraryCatalogExperience({
   const [progressRecords, setProgressRecords] = useState<
     ReadingProgressRecord[]
   >([]);
-  const [expandedSeriesIds, setExpandedSeriesIds] = useState<Set<string>>(
-    () => new Set(),
-  );
   const { records: favoriteRecords, keys: favoriteKeys, toggle } =
     useFavorites();
 
@@ -161,15 +156,6 @@ export default function LibraryCatalogExperience({
     );
   };
 
-  function toggleSeriesExpanded(seriesId: string) {
-    setExpandedSeriesIds((current) => {
-      const next = new Set(current);
-      if (next.has(seriesId)) next.delete(seriesId);
-      else next.add(seriesId);
-      return next;
-    });
-  }
-
   return (
     <>
       <ReadingSyncControl />
@@ -227,10 +213,6 @@ export default function LibraryCatalogExperience({
             const allSeriesBooks = publishedBooks.filter(
               (book) => book.seriesId === item.id,
             );
-            const expanded = expandedSeriesIds.has(item.id);
-            const seriesBooks = expanded
-              ? allSeriesBooks
-              : allSeriesBooks.slice(0, SERIES_PREVIEW_COUNT);
             return (
               <section key={item.id} className="library-series-overview-item">
                 <header>
@@ -240,24 +222,8 @@ export default function LibraryCatalogExperience({
                   </div>
                 </header>
                 <div className="library-home-row">
-                  {seriesBooks.map((book) => renderCard(book, true, true))}
+                  {allSeriesBooks.map((book) => renderCard(book, true, true))}
                 </div>
-                {allSeriesBooks.length > SERIES_PREVIEW_COUNT ? (
-                  <button
-                    type="button"
-                    className="library-series-expand"
-                    aria-expanded={expanded}
-                    onClick={() => toggleSeriesExpanded(item.id)}
-                  >
-                    {expanded
-                      ? "收起"
-                      : `展开全部 ${allSeriesBooks.length} ${
-                          allSeriesBooks.some((book) => book.episodeNumber)
-                            ? "回"
-                            : "本"
-                        }`}
-                  </button>
-                ) : null}
               </section>
             );
           })}
