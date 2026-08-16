@@ -54,6 +54,12 @@ export default function LibraryBookReader({
     previousPageIndexRef.current = pageIndex;
   }, [pageIndex]);
 
+  useEffect(() => {
+    setLightboxIndex((currentIndex) =>
+      currentIndex === null ? null : pageIndex,
+    );
+  }, [pageIndex]);
+
   const goToPage = useCallback(
     (nextIndex: number) => {
       if (nextIndex < 0 || nextIndex >= total) {
