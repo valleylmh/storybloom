@@ -47,13 +47,21 @@ export const localStoryRepository: StoryRepository = {
   async update(id, patch) {
     const existing = await this.get(id);
     if (!existing) throw new Error("local-story-not-found");
-    if (!patch.result) {
+    const title = patch.title?.trim();
+    if (patch.title !== undefined && (!title || title.length > 120)) {
+      throw new Error("local-story-title-invalid");
+    }
+    const nextResult = patch.result ||
+      (title
+        ? { ...existing.result, coverTitle: title }
+        : undefined);
+    if (!nextResult) {
       return existing;
     }
-    if (patch.result.storyId !== id) {
+    if (nextResult.storyId !== id) {
       throw new Error("local-story-id-mismatch");
     }
-    return save({ result: patch.result });
+    return save({ result: nextResult });
   },
 
   async remove(id) {

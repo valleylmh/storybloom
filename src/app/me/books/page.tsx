@@ -1,4 +1,5 @@
 import BookshelfReadingSections from "@/components/account/BookshelfReadingSections";
+import BookshelfShareManager from "@/components/account/BookshelfShareManager";
 import DeviceCloudStoryLibrary from "@/components/account/DeviceCloudStoryLibrary";
 import ReadingSyncControl from "@/components/library/ReadingSyncControl";
 import { getAllSeries, getSeriesBooks } from "@/lib/library";
@@ -20,6 +21,7 @@ export default function MyBooksPage() {
     <>
       <ReadingSyncControl />
       <BookshelfReadingSections books={books} />
+      <BookshelfShareManager />
       <section className="bookshelf-created-section" aria-label="我创作的绘本">
         <header>
           <p>家庭专属内容</p>

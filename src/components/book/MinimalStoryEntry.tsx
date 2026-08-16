@@ -66,6 +66,7 @@ import {
   getLatestPersonalizationDraft,
   updatePersonalizationDraft,
 } from "@/lib/personalization-drafts";
+import { getStoryContinuationDraft } from "@/lib/story-continuation-drafts";
 
 type AppLocale = "zh" | "en";
 
@@ -128,6 +129,7 @@ type IdentityAnchorPreview = {
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
 const DAILY_IDEA_QUERY_KEY = "idea";
 const PERSONALIZATION_QUERY_KEY = "personalize";
+const CONTINUATION_QUERY_KEY = "continue";
 const PENDING_IDENTITY_KEY = "storybloom:minimal-identity-draft";
 const GROWTH_PREFERENCES_KEY = "storybloom.growthStoryPreferences";
 
@@ -560,7 +562,10 @@ export default function MinimalStoryEntry({
   const [personalizationDraft, setPersonalizationDraft] =
     useState<PersonalizationDraft | null>(null);
   const [personalizationError, setPersonalizationError] = useState("");
+  const [continuationStyle, setContinuationStyle] =
+    useState<IllustrationStyle>();
   const activePersonalizationDraftId = personalizationDraft?.id || "";
+  const continuationLoadedRef = useRef("");
 
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -801,6 +806,40 @@ export default function MinimalStoryEntry({
       active = false;
     };
   }, [session?.user.id, supabase]);
+
+  useEffect(() => {
+    const sourceStoryId = new URL(window.location.href).searchParams
+      .get(CONTINUATION_QUERY_KEY)
+      ?.trim();
+    if (
+      !sourceStoryId ||
+      continuationLoadedRef.current === sourceStoryId ||
+      familyChoices.length === 0
+    ) {
+      return;
+    }
+    const draft = getStoryContinuationDraft(sourceStoryId);
+    if (!draft) return;
+    const character = familyChoices.find(
+      (choice) => choice.id === draft.characterId,
+    );
+    if (!character) {
+      setMessage("原绘本使用的家庭角色在当前账户中不可用，请重新选择角色。");
+      continuationLoadedRef.current = sourceStoryId;
+      return;
+    }
+    continuationLoadedRef.current = sourceStoryId;
+    setIdea((current) => current.trim() || draft.suggestedIdea);
+    setSelectedFamilyIds([character.id]);
+    setIdentitySelectedId(character.id);
+    setIdentityName(character.display_name || draft.characterName);
+    setIdentityRelationship(character.relationship || draft.relationship);
+    // Reuse the durable family identity, not story-specific clothes or scene
+    // details that may have been present in the previous Anchor description.
+    setIdentityAppearance(character.description || "");
+    setContinuationStyle(draft.style);
+    setMessage("已沿用家庭角色和画风。请修改新冒险内容后生成；旧服装和场景不会自动带入。");
+  }, [familyChoices]);
 
   useEffect(() => {
     try {
@@ -1258,7 +1297,9 @@ export default function MinimalStoryEntry({
             : "4-5",
         theme: "custom",
         customTheme: storyIdea,
-        style: growthEnabled ? growthIllustrationStyle : "fairytale",
+        style: growthEnabled
+          ? growthIllustrationStyle
+          : continuationStyle || "fairytale",
         characterDescription:
           personalizationContext && !protagonist
             ? anchorConfirmation?.appearance

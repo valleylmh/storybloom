@@ -62,6 +62,7 @@
 
 .refreshButton,
 .openButton,
+.renameButton,
 .deleteButton,
 .deleteAllButton {
   display: inline-flex;
@@ -88,6 +89,7 @@
 
 .refreshButton:hover:not(:disabled),
 .openButton:hover:not(:disabled),
+.renameButton:hover:not(:disabled),
 .deleteButton:hover:not(:disabled),
 .deleteAllButton:hover:not(:disabled) {
   transform: translateY(-1px);
@@ -95,6 +97,7 @@
 
 .refreshButton:disabled,
 .openButton:disabled,
+.renameButton:disabled,
 .deleteButton:disabled,
 .deleteAllButton:disabled {
   cursor: not-allowed;
@@ -323,6 +326,9 @@
 }
 
 .storyMeta strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   color: #62765b;
   font-size: 0.64rem;
 }
@@ -333,9 +339,10 @@
 }
 
 .openButton,
+.renameButton,
 .deleteButton,
 .deleteAllButton {
-  min-height: 36px;
+  min-height: 44px;
   padding: 7px 11px;
   border-radius: 11px;
   font-size: 0.68rem;
@@ -353,10 +360,16 @@
 }
 
 .deleteButton,
+.renameButton,
 .deleteAllButton {
   border: 1px solid rgba(157, 61, 42, 0.16);
   background: rgba(255, 250, 247, 0.9);
   color: #98432f;
+}
+
+.renameButton {
+  border-color: rgba(97, 113, 86, 0.2);
+  color: #5d7155;
 }
 
 .deleteAllButton {

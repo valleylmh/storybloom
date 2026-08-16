@@ -4,7 +4,9 @@ const DB_NAME = "storybloom-client-history";
 const DB_VERSION = 1;
 const STORE_NAME = "stories";
 const LOCAL_STORAGE_KEY = "storybloom.history.v1";
-const HISTORY_LIMIT = 10;
+// A private family shelf is a long-lived collection, not a short "recent"
+// carousel. Keep the existing v1 store and raise only its retention ceiling.
+const HISTORY_LIMIT = 50;
 
 export type StoryHistoryStatus = "generating" | "complete" | "failed";
 

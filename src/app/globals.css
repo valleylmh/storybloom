@@ -8274,6 +8274,10 @@ a.library-book-card:hover {
   border-top: 1px solid var(--line);
 }
 
+.share-link-panel {
+  position: relative;
+}
+
 .share-link-row .secondary-btn {
   display: inline-flex;
   align-items: center;
@@ -8288,6 +8292,293 @@ a.library-book-card:hover {
   font-size: 0.78rem;
   color: var(--muted);
   word-break: break-all;
+}
+
+.share-link-details,
+.share-recovery-row,
+.share-preview-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.share-link-details {
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.share-link-details button,
+.share-recovery-toggle,
+.share-recovery-row button,
+.share-preview-actions > button:first-child {
+  border: 0;
+  background: transparent;
+  color: var(--accent-dark);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.share-recovery-row {
+  margin-top: 10px;
+}
+
+.share-recovery-row input {
+  min-width: min(360px, 100%);
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+}
+
+.share-privacy-preview {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 18px;
+  border: 1px solid rgba(172, 91, 59, 0.2);
+  border-radius: 16px;
+  background: #fff9f4;
+  box-shadow: 0 18px 45px rgba(88, 58, 36, 0.09);
+}
+
+.share-privacy-preview > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9a482f;
+}
+
+.share-privacy-preview h4,
+.share-privacy-preview p {
+  margin: 0;
+}
+
+.share-privacy-preview p {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+
+.share-privacy-preview > label {
+  display: grid;
+  gap: 7px;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.share-privacy-preview select {
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+}
+
+.share-risk-confirmation {
+  grid-template-columns: auto 1fr !important;
+  align-items: start;
+}
+
+.share-risk-confirmation input {
+  width: 20px;
+  height: 20px;
+  margin: 1px 0 0;
+}
+
+.share-risk-confirmation span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1.5;
+}
+
+.share-preview-actions {
+  justify-content: flex-end;
+}
+
+.story-continuation-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 24px;
+  padding: 18px 20px;
+  border: 1px solid rgba(100, 126, 88, 0.18);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(235, 246, 228, 0.9), #fffdf9);
+}
+
+.story-continuation-card > div {
+  display: grid;
+  gap: 4px;
+}
+
+.story-continuation-card span {
+  color: #607957;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.story-continuation-card strong {
+  color: var(--text);
+  font-family: Georgia, "Songti SC", serif;
+}
+
+.story-continuation-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.story-continuation-card button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  flex: 0 0 auto;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 12px;
+  background: #617d57;
+  color: #fff;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.bookshelf-share-manager {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0;
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid rgba(79, 57, 43, 0.1);
+  border-radius: 22px;
+  background: rgba(255, 253, 249, 0.86);
+}
+
+.bookshelf-share-manager > header {
+  display: grid;
+  gap: 4px;
+}
+
+.bookshelf-share-manager > header p,
+.bookshelf-share-manager > header h2,
+.bookshelf-share-manager > header span {
+  margin: 0;
+}
+
+.bookshelf-share-manager > header p {
+  color: #a8492d;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.bookshelf-share-manager > header h2 {
+  color: var(--text);
+  font-family: Georgia, "Songti SC", serif;
+}
+
+.bookshelf-share-manager > header span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.bookshelf-share-list {
+  display: grid;
+  gap: 9px;
+}
+
+.bookshelf-share-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.bookshelf-share-list article > div:first-child {
+  display: grid;
+  gap: 3px;
+}
+
+.bookshelf-share-list article strong {
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.bookshelf-share-list article span {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.bookshelf-share-list article > div:last-child {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.bookshelf-share-list a,
+.bookshelf-share-list button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fffaf6;
+  color: var(--accent-dark);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bookshelf-share-list .bookshelf-share-revoke {
+  color: #98432f;
+}
+
+@media (max-width: 640px) {
+  .story-continuation-card {
+    display: grid;
+  }
+
+  .story-continuation-card button {
+    width: 100%;
+  }
+
+  .share-preview-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bookshelf-share-list article {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .bookshelf-share-list article > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .library-adjacent-upcoming {

@@ -1215,9 +1215,17 @@ export default function Home() {
       .save({ result: nextResult })
       .then(() => localStoryRepository.list())
       .then(setHistoryRecords);
-    void localGrowthRepository.update(nextResult.storyId, {
-      story: nextResult,
-    });
+    void localGrowthRepository
+      .list()
+      .then((records) => {
+        if (!records.some((record) => record.storyId === nextResult.storyId)) {
+          return undefined;
+        }
+        return localGrowthRepository.update(nextResult.storyId, {
+          story: nextResult,
+        });
+      })
+      .catch(() => undefined);
   }
 
   const remainingFreeGenerations = Math.max(

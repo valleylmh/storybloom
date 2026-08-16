@@ -32,6 +32,7 @@ export interface StorySaveInput {
 
 export interface StoryPatch {
   result?: GenerateResponse;
+  title?: string;
   childProfileId?: string | null;
   status?: StoryHistoryStatus;
 }

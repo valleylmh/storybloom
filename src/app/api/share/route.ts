@@ -6,7 +6,9 @@ import { Redis } from "@upstash/redis";
 import { getAuthenticatedUser } from "@/lib/supabase/server-auth";
 import {
   createSharedStory,
-  deleteSharedStory,
+  listOwnedSharedStories,
+  revokeOwnedStoryShares,
+  revokeSharedStory,
 } from "@/lib/share-store";
 import {
   StoryAssetPrincipalConfigurationError,
@@ -29,15 +31,20 @@ const pageSchema = z.object({
 });
 
 const createSchema = z.object({
+  clientStoryId: z.string().trim().min(1).max(200).optional(),
   coverTitle: z.string().trim().min(1).max(120),
   childName: z.string().trim().min(1).max(40),
   language: z.enum(["zh-en", "en-zh", "zh", "en"]),
   pages: z.array(pageSchema).min(1).max(16),
+  expiry: z.enum(["7d", "30d", "never"]).default("30d"),
 });
 
 const deleteSchema = z.object({
-  shareId: z.string().trim().min(10).max(30),
-  deleteToken: z.string().trim().min(10).max(40),
+  shareId: z.string().trim().min(10).max(30).optional(),
+  deleteToken: z.string().trim().min(10).max(40).optional(),
+  clientStoryId: z.string().trim().min(1).max(200).optional(),
+}).refine((value) => Boolean(value.shareId || value.clientStoryId), {
+  message: "shareId or clientStoryId is required",
 });
 
 const localAttempts = new Map<string, { count: number; resetAt: number }>();
@@ -80,6 +87,36 @@ function getIdentifier(request: Request) {
   return crypto.createHash("sha256").update(ip).digest("hex");
 }
 
+export async function GET(request: NextRequest) {
+  try {
+    const user = await getAuthenticatedUser(request);
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+    const shares = await listOwnedSharedStories(user.id);
+    return NextResponse.json({
+      shares: shares.map((share) => ({
+        shareId: share.shareId,
+        clientStoryId: share.clientStoryId,
+        coverTitle: share.story.coverTitle,
+        createdAt: share.createdAt,
+        expiresAt: share.expiresAt,
+        revokedAt: share.revokedAt,
+      })),
+    });
+  } catch (error) {
+    logGenerationEvent(
+      {
+        operation: "share.list",
+        status: "failed",
+        errorClass: classifyGenerationError(error),
+      },
+      "error",
+    );
+    return NextResponse.json({ error: "Unable to list share links" }, { status: 500 });
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const parsed = createSchema.safeParse(await request.json());
@@ -105,13 +142,13 @@ export async function POST(request: NextRequest) {
       // Backward-compatible while temporary assets are disabled: data URIs and
       // stable site assets still share normally without a principal secret.
     }
-    const { shareId, deleteToken } = await createSharedStory({
+    const { shareId, deleteToken, expiresAt } = await createSharedStory({
       ...parsed.data,
       ownerUserId: user?.id,
       assetPrincipals,
     });
 
-    return NextResponse.json({ shareId, deleteToken });
+    return NextResponse.json({ shareId, deleteToken, expiresAt });
   } catch (error) {
     logGenerationEvent(
       {
@@ -132,12 +169,37 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ error: "Invalid delete request" }, { status: 400 });
     }
 
-    const deleted = await deleteSharedStory(
-      parsed.data.shareId,
-      parsed.data.deleteToken,
-    );
-    if (!deleted) {
+    const user = await getAuthenticatedUser(request);
+    if (parsed.data.clientStoryId) {
+      if (!user) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
+      const result = await revokeOwnedStoryShares(
+        user.id,
+        parsed.data.clientStoryId,
+      );
+      if (result.cleanupPending > 0) {
+        return NextResponse.json(
+          { error: "Share was revoked but asset cleanup is pending", revoked: true },
+          { status: 503 },
+        );
+      }
+      return NextResponse.json({ ok: true, revoked: result.total });
+    }
+
+    const result = await revokeSharedStory({
+      shareId: parsed.data.shareId!,
+      deleteToken: parsed.data.deleteToken,
+      ownerUserId: user?.id,
+    });
+    if (result.status === "not-found") {
       return NextResponse.json({ error: "Share link not found" }, { status: 404 });
+    }
+    if (result.status === "cleanup-pending") {
+      return NextResponse.json(
+        { error: "Share was revoked but asset cleanup is pending", revoked: true },
+        { status: 503 },
+      );
     }
 
     return NextResponse.json({ ok: true });

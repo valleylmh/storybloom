@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   DownloadSimple,
   ImagesSquare,
+  MagicWand,
   ShareNetwork,
   SpinnerGap,
 } from "@phosphor-icons/react";
@@ -45,6 +46,7 @@ import type {
   SampleImageModel,
   StoryPage,
 } from "@/types";
+import { createStoryContinuationDraft } from "@/lib/story-continuation-drafts";
 
 const SAMPLE_IMAGE_MODELS: Array<{ id: SampleImageModel; label: string }> = [
   { id: "gpt-image-2", label: "GPT-Image-2" },
@@ -211,6 +213,14 @@ export default function BookPreview({
     socialShareSourceKeyRef.current = "";
     setSocialSharePreviewPages([]);
     setSocialShareDialogOpen(false);
+  }
+
+  function handleContinueWithCharacter() {
+    const draft = createStoryContinuationDraft({ ...result, pages });
+    if (!draft) return;
+    window.location.href = `/?mode=minimal&continue=${encodeURIComponent(
+      result.storyId,
+    )}#story-creation`;
   }
 
   function getSocialShareSourceKey() {
@@ -1000,6 +1010,19 @@ export default function BookPreview({
             <strong>保留馆藏故事结构，用确认过的家庭角色重新讲述</strong>
           </div>
           <Link href={sourceLibraryHref}>查看原始馆藏故事</Link>
+        </section>
+      ) : null}
+
+      {variant === "own" && result.input.protagonistFamilyCharacterId ? (
+        <section className="story-continuation-card" aria-label="继续创作">
+          <div>
+            <span>家庭角色系列</span>
+            <strong>让这个角色继续下一次冒险</strong>
+            <p>沿用已确认的人物身份和画风；新故事不会自动沿用旧服装与场景。</p>
+          </div>
+          <button type="button" onClick={handleContinueWithCharacter}>
+            <MagicWand /> 沿用角色创作下一本
+          </button>
         </section>
       ) : null}
 

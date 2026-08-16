@@ -104,6 +104,16 @@ export default function LocalStoryLibrary({
   }, [controlled]);
 
   async function handleDelete(storyId: string) {
+    const record = visibleRecords.find((item) => item.storyId === storyId);
+    if (
+      !window.confirm(
+        locale === "zh"
+          ? `仅删除当前浏览器里的《${record?.result.coverTitle || "这本绘本"}》吗？`
+          : `Delete “${record?.result.coverTitle || "this storybook"}” from this browser only?`,
+      )
+    ) {
+      return;
+    }
     setDeletingId(storyId);
     try {
       await localStoryRepository.remove(storyId);

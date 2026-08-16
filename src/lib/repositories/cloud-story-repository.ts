@@ -22,6 +22,17 @@ import type { GenerateResponse } from "@/types";
 
 const STORY_BUCKET = "story-archive" as const;
 
+function isSavedStoryAssetsSchemaMissing(error: unknown) {
+  if (!error || typeof error !== "object") return false;
+  const candidate = error as { code?: string; message?: string };
+  return (
+    candidate.code === "42P01" ||
+    /saved_story_assets.*(?:does not exist|schema cache)/i.test(
+      candidate.message || "",
+    )
+  );
+}
+
 type SavedStoryRow = {
   id: string;
   user_id: string;
@@ -383,7 +394,18 @@ export function createCloudStoryRepository(
           status: patch.status || existing.status,
         });
       }
-      const payload: Record<string, string | null> = {};
+      const payload: Record<string, unknown> = {};
+      if (patch.title !== undefined) {
+        const title = patch.title.trim();
+        if (!title || title.length > 120) {
+          throw new Error("cloud-story-title-invalid");
+        }
+        payload.title = title;
+        payload.story_snapshot = toPersistedStorySnapshot({
+          ...fromPersistedStorySnapshot(existing.story_snapshot),
+          coverTitle: title,
+        });
+      }
       if (patch.childProfileId !== undefined) {
         payload.child_profile_id = patch.childProfileId;
       }
@@ -402,19 +424,38 @@ export function createCloudStoryRepository(
     async remove(id) {
       const row = await getRow(id);
       if (!row) return;
+      const assetRows = await supabase
+        .from("saved_story_assets")
+        .select("storage_path")
+        .eq("user_id", userId)
+        .eq("saved_story_id", id);
+      if (assetRows.error && !isSavedStoryAssetsSchemaMissing(assetRows.error)) {
+        throw assetRows.error;
+      }
+      const paths = Array.from(
+        new Set([
+          ...(row.asset_manifest?.pages || []).map((asset) =>
+            assertOwnedPath(asset.storagePath, userId, id),
+          ),
+          ...((assetRows.error ? [] : assetRows.data || []) as Array<{
+            storage_path: string;
+          }>).map(
+            (asset) => assertOwnedPath(asset.storage_path, userId, id),
+          ),
+        ]),
+      );
+      if (paths.length > 0) {
+        const removal = await supabase.storage.from(STORY_BUCKET).remove(paths);
+        if (removal.error) throw removal.error;
+      }
+      // Storage is removed first. If the row deletion fails, retrying is safe
+      // and no unreachable object is left behind in the private bucket.
       const { error } = await supabase
         .from("saved_stories")
         .delete()
         .eq("user_id", userId)
         .eq("id", id);
       if (error) throw error;
-      const paths = (row.asset_manifest?.pages || []).map((asset) =>
-        assertOwnedPath(asset.storagePath, userId, id),
-      );
-      if (paths.length > 0) {
-        const removal = await supabase.storage.from(STORY_BUCKET).remove(paths);
-        if (removal.error) throw removal.error;
-      }
     },
   };
 }

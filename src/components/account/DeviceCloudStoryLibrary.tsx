@@ -8,6 +8,8 @@ import {
   Cloud,
   CloudArrowDown,
   DeviceMobile,
+  PencilSimple,
+  ShareNetwork,
   Trash,
 } from "@phosphor-icons/react";
 import { useAuth } from "@/hooks/useAuth";
@@ -16,6 +18,18 @@ import { imageUrlToDataUrl } from "@/lib/client-images";
 import { createCloudStoryRepository } from "@/lib/repositories/cloud-story-repository";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import type { SavedStory } from "@/lib/repositories/story-repository";
+import {
+  listReadingProgress,
+  READING_PROGRESS_CHANGED_EVENT,
+  type ReadingProgressRecord,
+} from "@/lib/reading-progress";
+import {
+  listOwnedShareSummaries,
+  isStoredShareExpired,
+  readStoredShares,
+  revokeSharesBeforeStoryDeletion,
+  SHARE_LINKS_CHANGED_EVENT,
+} from "@/lib/client-share-management";
 import {
   getStoryVisibility,
   mergeStoryCopies,
@@ -67,7 +81,10 @@ function StoryCard({
   paired,
   disabled,
   busyAction,
+  shared,
+  readingProgress,
   onOpen,
+  onRename,
   onDelete,
   onDeleteAll,
 }: {
@@ -76,13 +93,17 @@ function StoryCard({
   paired: boolean;
   disabled: boolean;
   busyAction: string;
+  shared: boolean;
+  readingProgress?: ReadingProgressRecord;
   onOpen: () => void;
+  onRename: () => void;
   onDelete: () => void;
   onDeleteAll?: () => void;
 }) {
   const actionPrefix = `${source}:${story.clientStoryId}`;
   const opening = busyAction === `open:${actionPrefix}`;
   const deleting = busyAction === `delete:${actionPrefix}`;
+  const renaming = busyAction === `rename:${actionPrefix}`;
   const deletingAll = busyAction === `delete-all:${story.clientStoryId}`;
 
   return (
@@ -111,11 +132,31 @@ function StoryCard({
       </div>
 
       <div className={styles.storyMeta}>
-        <span>更新于 {formatTime(story.updatedAt)}</span>
+        <span>创建于 {formatTime(story.createdAt)}</span>
+        <span>
+          {readingProgress
+            ? `最近阅读 ${formatTime(readingProgress.lastReadAt)} · ${Math.round(
+                readingProgress.progressPercent,
+              )}%`
+            : `更新于 ${formatTime(story.updatedAt)}`}
+        </span>
+        {readingProgress?.completedAt ? <strong>已读完</strong> : null}
+        {story.result.input.protagonistFamilyCharacterId ? (
+          <strong>家庭角色系列</strong>
+        ) : null}
+        {shared ? <strong><ShareNetwork /> 已创建分享</strong> : null}
         {paired ? <strong>当前设备与云端都有副本</strong> : null}
       </div>
 
       <div className={styles.storyActions}>
+        <button
+          type="button"
+          className={styles.renameButton}
+          disabled={disabled}
+          onClick={onRename}
+        >
+          <PencilSimple /> {renaming ? "保存中…" : "改标题"}
+        </button>
         <button
           type="button"
           className={styles.openButton}
@@ -207,6 +248,21 @@ export default function DeviceCloudStoryLibrary() {
   const [cloudError, setCloudError] = useState("");
   const [actionError, setActionError] = useState("");
   const [busyAction, setBusyAction] = useState("");
+  const [sharedStoryIds, setSharedStoryIds] = useState<Set<string>>(new Set());
+  const [readingProgress, setReadingProgress] = useState<
+    Map<string, ReadingProgressRecord>
+  >(new Map());
+
+  const refreshReadingProgress = useCallback(async () => {
+    const records = await listReadingProgress();
+    setReadingProgress(
+      new Map(
+        records
+          .filter((record) => record.contentType === "personalized")
+          .map((record) => [record.contentId, record] as const),
+      ),
+    );
+  }, []);
 
   const loadStories = useCallback(async () => {
     const requestId = ++requestIdRef.current;
@@ -223,10 +279,17 @@ export default function DeviceCloudStoryLibrary() {
       userId && supabase
         ? createCloudStoryRepository(supabase, userId).list()
         : Promise.resolve([]);
-    const [localResult, cloudResult] = await Promise.allSettled([
-      localTask,
-      cloudTask,
-    ]);
+    const shareTask = session?.access_token
+      ? listOwnedShareSummaries(session.access_token)
+      : Promise.resolve([]);
+    const progressTask = listReadingProgress();
+    const [localResult, cloudResult, shareResult, progressResult] =
+      await Promise.allSettled([
+        localTask,
+        cloudTask,
+        shareTask,
+        progressTask,
+      ]);
 
     if (requestIdRef.current !== requestId) return;
 
@@ -236,6 +299,31 @@ export default function DeviceCloudStoryLibrary() {
       setLocalError("当前设备里的绘本暂时读取失败，请刷新后重试。");
     }
     setLocalLoading(false);
+
+    const localSharedIds = Object.entries(readStoredShares()).flatMap(
+      ([storyId, share]) => (isStoredShareExpired(share) ? [] : [storyId]),
+    );
+    const ownedSharedIds =
+      shareResult.status === "fulfilled"
+        ? shareResult.value.flatMap((share) =>
+            share.clientStoryId &&
+            !share.revokedAt &&
+            (!share.expiresAt ||
+              new Date(share.expiresAt).getTime() > Date.now())
+              ? [share.clientStoryId]
+              : [],
+          )
+        : [];
+    setSharedStoryIds(new Set([...localSharedIds, ...ownedSharedIds]));
+    if (progressResult.status === "fulfilled") {
+      setReadingProgress(
+        new Map(
+          progressResult.value
+            .filter((record) => record.contentType === "personalized")
+            .map((record) => [record.contentId, record] as const),
+        ),
+      );
+    }
 
     if (!userId) {
       setCloudStories([]);
@@ -255,18 +343,26 @@ export default function DeviceCloudStoryLibrary() {
       setCloudError("云端绘本暂时读取失败；本机阅读不会受到影响。");
     }
     setCloudLoading(false);
-  }, [supabase, userId]);
+  }, [session?.access_token, supabase, userId]);
 
   useEffect(() => {
     if (authLoading) return;
     const refresh = () => void loadStories();
+    const refreshProgress = () => void refreshReadingProgress();
     refresh();
     window.addEventListener("focus", refresh);
+    window.addEventListener(SHARE_LINKS_CHANGED_EVENT, refresh);
+    window.addEventListener(READING_PROGRESS_CHANGED_EVENT, refreshProgress);
     return () => {
       requestIdRef.current += 1;
       window.removeEventListener("focus", refresh);
+      window.removeEventListener(SHARE_LINKS_CHANGED_EVENT, refresh);
+      window.removeEventListener(
+        READING_PROGRESS_CHANGED_EVENT,
+        refreshProgress,
+      );
     };
-  }, [authLoading, loadStories]);
+  }, [authLoading, loadStories, refreshReadingProgress]);
 
   const rows = useMemo(
     () => mergeStoryCopies(localStories, cloudStories),
@@ -304,10 +400,47 @@ export default function DeviceCloudStoryLibrary() {
     window.location.href = `/?book=${encodeURIComponent(story.clientStoryId)}`;
   }
 
-  async function handleDeleteLocal(story: SavedStory) {
+  async function handleRename(story: SavedStory, source: "local" | "cloud") {
+    const nextTitle = window.prompt("输入新的绘本标题", story.result.coverTitle)?.trim();
+    if (!nextTitle || nextTitle === story.result.coverTitle) return;
+    if (nextTitle.length > 120) {
+      setActionError("标题不能超过 120 个字符。");
+      return;
+    }
+    setBusyAction(`rename:${source}:${story.clientStoryId}`);
+    setActionError("");
+    try {
+      if (source === "cloud") {
+        if (!userId || !supabase) throw new Error("cloud-session-required");
+        await createCloudStoryRepository(supabase, userId).update(story.id, {
+          title: nextTitle,
+        });
+      } else {
+        await localStoryRepository.update(story.clientStoryId, {
+          title: nextTitle,
+        });
+      }
+      await loadStories();
+    } catch {
+      setActionError("标题修改失败，请稍后重试。另一份副本没有被修改。");
+    } finally {
+      setBusyAction("");
+    }
+  }
+
+  async function handleDeleteLocal(story: SavedStory, revokeShares: boolean) {
+    if (!window.confirm(`仅删除当前设备里的《${story.result.coverTitle}》吗？`)) {
+      return;
+    }
     setBusyAction(`delete:local:${story.clientStoryId}`);
     setActionError("");
     try {
+      if (revokeShares) {
+        await revokeSharesBeforeStoryDeletion({
+          storyId: story.clientStoryId,
+          accessToken: session?.access_token,
+        });
+      }
       await localStoryRepository.remove(story.clientStoryId);
       await loadStories();
     } catch {
@@ -317,11 +450,20 @@ export default function DeviceCloudStoryLibrary() {
     }
   }
 
-  async function handleDeleteCloud(story: SavedStory) {
+  async function handleDeleteCloud(story: SavedStory, revokeShares: boolean) {
     if (!userId || !supabase) return;
+    if (!window.confirm(`仅删除云端账户里的《${story.result.coverTitle}》吗？`)) {
+      return;
+    }
     setBusyAction(`delete:cloud:${story.clientStoryId}`);
     setActionError("");
     try {
+      if (revokeShares) {
+        await revokeSharesBeforeStoryDeletion({
+          storyId: story.clientStoryId,
+          accessToken: session?.access_token,
+        });
+      }
       await createCloudStoryRepository(supabase, userId).remove(story.id);
       await loadStories();
     } catch {
@@ -345,6 +487,10 @@ export default function DeviceCloudStoryLibrary() {
     setBusyAction(`delete-all:${row.clientStoryId}`);
     setActionError("");
     try {
+      await revokeSharesBeforeStoryDeletion({
+        storyId: row.clientStoryId,
+        accessToken: session?.access_token,
+      });
       // Delete the cloud copy first so a network failure leaves the reliable
       // local copy untouched.
       await createCloudStoryRepository(supabase, userId).remove(row.cloud.id);
@@ -447,10 +593,13 @@ export default function DeviceCloudStoryLibrary() {
                       story={row.local}
                       source="local"
                       paired={paired}
+                      shared={sharedStoryIds.has(row.clientStoryId)}
+                      readingProgress={readingProgress.get(row.clientStoryId)}
                       disabled={actionsDisabled}
                       busyAction={busyAction}
                       onOpen={() => handleOpenLocal(row.local!)}
-                      onDelete={() => void handleDeleteLocal(row.local!)}
+                      onRename={() => void handleRename(row.local!, "local")}
+                      onDelete={() => void handleDeleteLocal(row.local!, !paired)}
                       onDeleteAll={
                         paired ? () => void handleDeleteAll(row) : undefined
                       }
@@ -472,10 +621,13 @@ export default function DeviceCloudStoryLibrary() {
                       story={row.cloud}
                       source="cloud"
                       paired={paired}
+                      shared={sharedStoryIds.has(row.clientStoryId)}
+                      readingProgress={readingProgress.get(row.clientStoryId)}
                       disabled={actionsDisabled}
                       busyAction={busyAction}
                       onOpen={() => void handleOpenCloud(row.cloud!)}
-                      onDelete={() => void handleDeleteCloud(row.cloud!)}
+                      onRename={() => void handleRename(row.cloud!, "cloud")}
+                      onDelete={() => void handleDeleteCloud(row.cloud!, !paired)}
                     />
                   ) : (
                     <MissingCopy
