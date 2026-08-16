@@ -66,7 +66,11 @@ export default function LibraryCatalogCard({
             </span>
           ) : null}
           <h3>{book.title}</h3>
-          {!minimal ? (
+          {minimal ? (
+            <p className="library-catalog-minimal-subtitle">
+              {book.subtitle}
+            </p>
+          ) : (
             <>
               <p>{book.subtitle}</p>
               <div className="library-catalog-facts">
@@ -84,7 +88,7 @@ export default function LibraryCatalogCard({
                 {progressLabel || "打开播放"}
               </strong>
             </>
-          ) : null}
+          )}
         </div>
       </Link>
       <button

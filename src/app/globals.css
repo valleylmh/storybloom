@@ -8252,8 +8252,10 @@ a.library-book-card:hover {
 }
 
 .library-catalog-card-minimal .library-catalog-card-copy {
+  position: relative;
   display: block;
-  padding: 0 2px;
+  min-height: 50px;
+  padding: 0 42px 0 2px;
 }
 
 .library-catalog-card-minimal h3 {
@@ -8263,6 +8265,35 @@ a.library-book-card:hover {
   line-height: 1.35;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.library-catalog-card-minimal .library-catalog-minimal-subtitle {
+  display: block;
+  min-height: 0;
+  margin: 3px 0 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.library-catalog-card-minimal .library-card-favorite {
+  top: auto;
+  right: -4px;
+  bottom: 0;
+  color: rgba(47, 36, 29, 0.5);
+}
+
+.library-catalog-card-minimal .library-card-favorite svg {
+  width: 22px;
+  height: 22px;
+  filter: none;
+}
+
+.library-catalog-card-minimal .library-card-favorite-active {
+  color: #e55b49;
 }
 
 .library-category-filters {

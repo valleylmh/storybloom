@@ -29,6 +29,7 @@ describe("library series card product boundary", () => {
   it("keeps series previews focused on the cover and title", () => {
     expect(catalogSource).toContain("renderCard(book, true, true)");
     expect(cardSource).toContain("library-catalog-card-minimal");
+    expect(cardSource).toContain("library-catalog-minimal-subtitle");
     expect(cardSource).toContain("!minimal ?");
   });
 
@@ -41,5 +42,10 @@ describe("library series card product boundary", () => {
     expect(favoriteRule).toContain("border: 0");
     expect(favoriteRule).toContain("background: transparent");
     expect(favoriteRule).not.toContain("border-radius: 999px");
+    expect(globalStyles).toContain(
+      ".library-catalog-card-minimal .library-card-favorite",
+    );
+    expect(globalStyles).toContain("top: auto");
+    expect(globalStyles).toContain("bottom: 0");
   });
 });
