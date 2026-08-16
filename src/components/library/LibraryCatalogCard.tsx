@@ -16,12 +16,14 @@ export default function LibraryCatalogCard({
   favorite,
   onToggleFavorite,
   compact = false,
+  minimal = false,
 }: {
   book: LibraryBookSummary;
   progress?: ReadingProgressRecord;
   favorite: boolean;
   onToggleFavorite: () => void;
   compact?: boolean;
+  minimal?: boolean;
 }) {
   const metadata = book.metadata;
   const progressLabel = progress?.completedAt
@@ -34,7 +36,7 @@ export default function LibraryCatalogCard({
     <article
       className={`library-catalog-card ${
         compact ? "library-catalog-card-compact" : ""
-      }`}
+      } ${minimal ? "library-catalog-card-minimal" : ""}`}
     >
       <Link href={book.href} className="library-catalog-card-link">
         <div
@@ -58,25 +60,31 @@ export default function LibraryCatalogCard({
           ) : null}
         </div>
         <div className="library-catalog-card-copy">
-          <span className="library-catalog-category">
-            {LIBRARY_CATEGORY_LABELS[metadata.category]}
-          </span>
-          <h3>{book.title}</h3>
-          <p>{book.subtitle}</p>
-          <div className="library-catalog-facts">
-            <span>{metadata.ageRange.min}-{metadata.ageRange.max} 岁</span>
-            <span>约 {metadata.estimatedMinutes} 分钟</span>
-            <span>{formatLibraryLanguages(metadata.languages)}</span>
-          </div>
-          {progress ? (
-            <div className="library-card-progress">
-              <span style={{ width: `${progress.progressPercent}%` }} />
-            </div>
+          {!minimal ? (
+            <span className="library-catalog-category">
+              {LIBRARY_CATEGORY_LABELS[metadata.category]}
+            </span>
           ) : null}
-          <strong className="library-catalog-open">
-            <Play aria-hidden="true" weight="fill" />
-            {progressLabel || "打开播放"}
-          </strong>
+          <h3>{book.title}</h3>
+          {!minimal ? (
+            <>
+              <p>{book.subtitle}</p>
+              <div className="library-catalog-facts">
+                <span>{metadata.ageRange.min}-{metadata.ageRange.max} 岁</span>
+                <span>约 {metadata.estimatedMinutes} 分钟</span>
+                <span>{formatLibraryLanguages(metadata.languages)}</span>
+              </div>
+              {progress ? (
+                <div className="library-card-progress">
+                  <span style={{ width: `${progress.progressPercent}%` }} />
+                </div>
+              ) : null}
+              <strong className="library-catalog-open">
+                <Play aria-hidden="true" weight="fill" />
+                {progressLabel || "打开播放"}
+              </strong>
+            </>
+          ) : null}
         </div>
       </Link>
       <button

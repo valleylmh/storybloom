@@ -8190,22 +8190,40 @@ a.library-book-card:hover {
 .library-card-favorite {
   position: absolute;
   z-index: 2;
-  top: 10px;
-  right: 10px;
+  top: 7px;
+  right: 7px;
   display: inline-grid;
   width: 44px;
   height: 44px;
   place-items: center;
-  border: 1px solid rgba(47, 36, 29, 0.1);
-  border-radius: 999px;
-  background: rgba(255, 250, 244, 0.92);
-  color: var(--muted);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.96);
   cursor: pointer;
-  box-shadow: 0 6px 16px rgba(47, 36, 29, 0.12);
+}
+
+.library-card-favorite svg {
+  width: 25px;
+  height: 25px;
+  filter:
+    drop-shadow(0 1px 1px rgba(255, 255, 255, 0.7))
+    drop-shadow(0 2px 4px rgba(47, 36, 29, 0.5));
+  transition: transform 0.16s ease, color 0.16s ease;
+}
+
+.library-card-favorite:hover svg {
+  transform: scale(1.08);
+}
+
+.library-card-favorite:focus-visible {
+  outline: 3px solid rgba(190, 85, 48, 0.38);
+  outline-offset: 1px;
+  border-radius: 10px;
 }
 
 .library-card-favorite-active {
-  color: #c84f3d;
+  color: #e55b49;
 }
 
 .library-catalog-card-compact .library-catalog-card-copy {
@@ -8214,6 +8232,37 @@ a.library-book-card:hover {
 
 .library-catalog-card-compact .library-catalog-facts span:nth-child(n + 3) {
   display: none;
+}
+
+.library-catalog-card-minimal {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.library-catalog-card-minimal .library-catalog-card-link {
+  gap: 10px;
+}
+
+.library-catalog-card-minimal .library-catalog-cover {
+  border-radius: 17px;
+  box-shadow: 0 10px 24px rgba(83, 59, 42, 0.1);
+}
+
+.library-catalog-card-minimal .library-catalog-card-copy {
+  display: block;
+  padding: 0 2px;
+}
+
+.library-catalog-card-minimal h3 {
+  margin: 0;
+  overflow: hidden;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .library-category-filters {
@@ -8707,6 +8756,10 @@ a.library-book-card:hover {
     right: 7px;
     width: 44px;
     height: 44px;
+  }
+
+  .library-catalog-card-minimal h3 {
+    font-size: 0.95rem;
   }
 
   .library-tonight {

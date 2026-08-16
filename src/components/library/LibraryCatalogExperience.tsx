@@ -274,7 +274,11 @@ export default function LibraryCatalogExperience({
     key === "bedtimeOnly" ? value === true : value !== "all",
   );
 
-  const renderCard = (book: LibraryBookSummary, compact = false) => (
+  const renderCard = (
+    book: LibraryBookSummary,
+    compact = false,
+    minimal = false,
+  ) => (
     <LibraryCatalogCard
       key={book.contentId}
       book={book}
@@ -282,6 +286,7 @@ export default function LibraryCatalogExperience({
       favorite={favoriteKeys.has(createFavoriteKey("library", book.contentId))}
       onToggleFavorite={() => toggle("library", book.contentId)}
       compact={compact}
+      minimal={minimal}
     />
   );
 
@@ -404,7 +409,7 @@ export default function LibraryCatalogExperience({
                     <Link href={item.href}>查看全部</Link>
                   </header>
                   <div className="library-home-row">
-                    {seriesBooks.map((book) => renderCard(book, true))}
+                    {seriesBooks.map((book) => renderCard(book, true, true))}
                   </div>
                 </section>
               );
