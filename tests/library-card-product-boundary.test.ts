@@ -62,6 +62,13 @@ describe("library series card product boundary", () => {
     expect(catalogSource).not.toContain("接着上次");
   });
 
+  it("keeps the tonight recommendation out of the current library home", () => {
+    expect(catalogSource).not.toContain("selectTonightRecommendation");
+    expect(catalogSource).not.toContain("TONIGHT_AGE_PREFERENCE_KEY");
+    expect(catalogSource).not.toContain("library-tonight");
+    expect(catalogSource).not.toContain("今晚读什么");
+  });
+
   it("keeps an accessible favorite target without a visible circular plate", () => {
     const favoriteRule = globalStyles.match(
       /\.library-card-favorite \{([\s\S]*?)\n\}/,

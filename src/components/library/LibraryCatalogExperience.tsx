@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Heart, MagnifyingGlass, Sparkle, X } from "@phosphor-icons/react";
+import { Heart, MagnifyingGlass, X } from "@phosphor-icons/react";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useAuth } from "@/hooks/useAuth";
 import { createFavoriteKey, FAVORITES_CHANGED_EVENT } from "@/lib/favorites";
@@ -15,7 +15,6 @@ import {
   LIBRARY_AGE_FILTER_OPTIONS,
   normalizeSearchText,
   searchPrivateStoryItems,
-  selectTonightRecommendation,
   type LibraryAgeFilter,
   type LibraryDiscoveryFilters,
   type LibraryDurationFilter,
@@ -59,7 +58,6 @@ const CATEGORY_ORDER: LibraryCategory[] = [
   "bedtime",
   "family-growth",
 ];
-const TONIGHT_AGE_PREFERENCE_KEY = "storybloom.library.tonight-age.v1";
 const SERIES_PREVIEW_COUNT = 4;
 
 function readingMap(records: ReadingProgressRecord[]) {
@@ -115,7 +113,6 @@ export default function LibraryCatalogExperience({
   const [filters, setFilters] = useState<LibraryDiscoveryFilters>({
     ...DEFAULT_LIBRARY_DISCOVERY_FILTERS,
   });
-  const [tonightAge, setTonightAge] = useState<LibraryAgeFilter>("all");
   const [visibleCount, setVisibleCount] = useState(24);
   const [expandedSeriesIds, setExpandedSeriesIds] = useState<Set<string>>(
     () => new Set(),
@@ -147,19 +144,6 @@ export default function LibraryCatalogExperience({
       window.removeEventListener(FAVORITES_CHANGED_EVENT, refresh);
       window.removeEventListener("focus", refresh);
     };
-  }, []);
-
-  useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(TONIGHT_AGE_PREFERENCE_KEY);
-      if (
-        LIBRARY_AGE_FILTER_OPTIONS.some((option) => option.value === stored)
-      ) {
-        setTonightAge(stored as LibraryAgeFilter);
-      }
-    } catch {
-      // A blocked localStorage must not prevent anonymous library use.
-    }
   }, []);
 
   const privateDataKey = user?.id || "anonymous";
@@ -252,9 +236,6 @@ export default function LibraryCatalogExperience({
     .map((record) => bookByContent.get(record.contentId))
     .filter((book): book is LibraryBookSummary => Boolean(book))
     .slice(0, 4);
-  const tonightRecommendation = selectTonightRecommendation(publishedBooks, {
-    age: tonightAge,
-  });
   const filteredBooks = filterLibraryBooks(publishedBooks, {
     query,
     filters,
@@ -277,7 +258,6 @@ export default function LibraryCatalogExperience({
     book: LibraryBookSummary,
     compact = false,
     minimal = false,
-    imagePriority = false,
   ) => (
     <LibraryCatalogCard
       key={book.contentId}
@@ -287,7 +267,6 @@ export default function LibraryCatalogExperience({
       onToggleFavorite={() => toggle("library", book.contentId)}
       compact={compact}
       minimal={minimal}
-      imagePriority={imagePriority}
     />
   );
 
@@ -368,15 +347,6 @@ export default function LibraryCatalogExperience({
     setFilters((current) => ({ ...current, [key]: value }));
   }
 
-  function updateTonightAge(value: LibraryAgeFilter) {
-    setTonightAge(value);
-    try {
-      window.localStorage.setItem(TONIGHT_AGE_PREFERENCE_KEY, value);
-    } catch {
-      // The recommendation remains usable for this session.
-    }
-  }
-
   return (
     <>
       <ReadingSyncControl />
@@ -407,40 +377,6 @@ export default function LibraryCatalogExperience({
             </section>
           ) : null}
         </div>
-      ) : null}
-
-      {!searchActive && tonightRecommendation ? (
-        <section className="library-tonight" aria-labelledby="tonight-title">
-          <div className="library-tonight-copy">
-            <span><Sparkle weight="fill" /> 简单、可解释的日期轮换</span>
-            <h2 id="tonight-title">今晚读什么</h2>
-            <label className="library-tonight-age">
-              <span>今晚阅读年龄</span>
-              <select
-                value={tonightAge}
-                onChange={(event) =>
-                  updateTonightAge(event.target.value as LibraryAgeFilter)
-                }
-              >
-                {LIBRARY_AGE_FILTER_OPTIONS.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <h3>{tonightRecommendation.book.title}</h3>
-            <p>{tonightRecommendation.book.subtitle}</p>
-            <small>
-              {tonightRecommendation.explanation} 只使用家长主动选择的年龄，
-              不建立儿童行为画像。
-            </small>
-            <Link href={tonightRecommendation.book.href}>今晚读这本</Link>
-          </div>
-          <div className="library-tonight-card">
-            {renderCard(tonightRecommendation.book, true, true, true)}
-          </div>
-        </section>
       ) : null}
 
       {!searchActive ? (

@@ -17,7 +17,6 @@ export default function LibraryCatalogCard({
   onToggleFavorite,
   compact = false,
   minimal = false,
-  imagePriority = false,
 }: {
   book: LibraryBookSummary;
   progress?: ReadingProgressRecord;
@@ -25,7 +24,6 @@ export default function LibraryCatalogCard({
   onToggleFavorite: () => void;
   compact?: boolean;
   minimal?: boolean;
-  imagePriority?: boolean;
 }) {
   const metadata = book.metadata;
   const progressLabel = progress?.completedAt
@@ -59,7 +57,6 @@ export default function LibraryCatalogCard({
               alt={`${book.title}封面`}
               fill
               sizes={compact ? "(max-width: 580px) 44vw, 220px" : "(max-width: 580px) 44vw, 280px"}
-              priority={imagePriority}
             />
           ) : (
             <span style={{ color: book.seriesAccent }}>
