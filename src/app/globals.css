@@ -9861,11 +9861,9 @@ a.library-book-card:hover {
   inset: 0;
   z-index: 140;
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 8px;
+  place-items: center;
   padding: 20px;
-  background: rgba(25, 18, 14, 0.9);
+  background: rgba(18, 15, 13, 0.96);
 }
 
 .lightbox-figure {
@@ -9886,8 +9884,17 @@ a.library-book-card:hover {
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.5);
 }
 
+.lightbox-media {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+}
+
 .lightbox-fallback {
   width: min(76dvh, 76vw, 640px);
+  max-width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 16px;
 }
@@ -9922,17 +9929,19 @@ a.library-book-card:hover {
 }
 
 .lightbox-nav {
+  position: static;
   width: 46px;
   height: 46px;
   font-size: 1.3rem;
+  backdrop-filter: blur(8px);
 }
 
 .lightbox-nav-prev {
-  transform: translateX(24px);
+  grid-column: 1;
 }
 
 .lightbox-nav-next {
-  transform: translateX(-24px);
+  grid-column: 3;
 }
 
 .lightbox-nav:hover,
@@ -10055,23 +10064,20 @@ a.library-book-card:hover {
   }
 
   .lightbox-backdrop {
-    grid-template-columns: 1fr;
     padding: 16px;
   }
 
   .lightbox-nav {
-    position: fixed;
-    top: 50%;
-    z-index: 2;
-    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
   }
 
   .lightbox-nav-prev {
-    left: 12px;
+    grid-column: 1;
   }
 
   .lightbox-nav-next {
-    right: 12px;
+    grid-column: 3;
   }
 
   .lightbox-figure figcaption {

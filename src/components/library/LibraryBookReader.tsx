@@ -385,30 +385,43 @@ export default function LibraryBookReader({
               >
                 <X aria-hidden="true" />
               </button>
-              <button
-                type="button"
-                className="lightbox-nav lightbox-nav-prev"
-                aria-label="上一张"
-                onClick={() => goToLightbox((lightboxIndex ?? 0) - 1)}
-              >
-                <CaretLeft aria-hidden="true" />
-              </button>
               <figure className="lightbox-figure">
-                {lightboxPage.imageUrl &&
-                lightboxPage.imageStatus === "complete" ? (
-                  <img
-                    src={lightboxPage.imageUrl}
-                    alt={`${title} 第 ${lightboxPage.page} 页插图`}
-                  />
-                ) : (
-                  <div
-                    className="book-image-fallback lightbox-fallback"
-                    style={{ backgroundColor: `${accent}30`, color: "#fffaf4" }}
-                    aria-hidden="true"
+                <div className="lightbox-media">
+                  <button
+                    type="button"
+                    className="lightbox-nav lightbox-nav-prev"
+                    aria-label="上一张"
+                    onClick={() => goToLightbox((lightboxIndex ?? 0) - 1)}
                   >
-                    <span>{lightboxPage.page}</span>
-                  </div>
-                )}
+                    <CaretLeft aria-hidden="true" />
+                  </button>
+                  {lightboxPage.imageUrl &&
+                  lightboxPage.imageStatus === "complete" ? (
+                    <img
+                      src={lightboxPage.imageUrl}
+                      alt={`${title} 第 ${lightboxPage.page} 页插图`}
+                    />
+                  ) : (
+                    <div
+                      className="book-image-fallback lightbox-fallback"
+                      style={{
+                        backgroundColor: `${accent}30`,
+                        color: "#fffaf4",
+                      }}
+                      aria-hidden="true"
+                    >
+                      <span>{lightboxPage.page}</span>
+                    </div>
+                  )}
+                  <button
+                    type="button"
+                    className="lightbox-nav lightbox-nav-next"
+                    aria-label="下一张"
+                    onClick={() => goToLightbox((lightboxIndex ?? 0) + 1)}
+                  >
+                    <CaretRight aria-hidden="true" />
+                  </button>
+                </div>
                 <figcaption>
                   <span className="lightbox-counter">
                     {lightboxPage.page} / {total}
@@ -418,14 +431,6 @@ export default function LibraryBookReader({
                   </span>
                 </figcaption>
               </figure>
-              <button
-                type="button"
-                className="lightbox-nav lightbox-nav-next"
-                aria-label="下一张"
-                onClick={() => goToLightbox((lightboxIndex ?? 0) + 1)}
-              >
-                <CaretRight aria-hidden="true" />
-              </button>
             </div>,
             document.body,
           )

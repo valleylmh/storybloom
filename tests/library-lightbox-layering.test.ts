@@ -6,6 +6,15 @@ const globalStyles = readFileSync(
   fileURLToPath(new URL("../src/app/globals.css", import.meta.url)),
   "utf8",
 );
+const readerSource = readFileSync(
+  fileURLToPath(
+    new URL(
+      "../src/components/library/LibraryBookReader.tsx",
+      import.meta.url,
+    ),
+  ),
+  "utf8",
+);
 
 function readZIndex(selector: string): number {
   const escapedSelector = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -27,12 +36,14 @@ describe("library image preview layering", () => {
     );
   });
 
-  it("pulls desktop arrows inward toward the image edges", () => {
+  it("places navigation beside the enlarged image", () => {
+    expect(readerSource).toContain('className="lightbox-media"');
     expect(globalStyles).toContain(
-      ".lightbox-nav-prev {\n  transform: translateX(24px);",
+      ".lightbox-media {\n  display: grid;\n  grid-template-columns: auto minmax(0, 1fr) auto;",
     );
     expect(globalStyles).toContain(
-      ".lightbox-nav-next {\n  transform: translateX(-24px);",
+      ".lightbox-nav {\n  position: static;",
     );
+    expect(globalStyles).not.toContain("translateX(24px)");
   });
 });
