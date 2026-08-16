@@ -56,6 +56,12 @@ describe("library series card product boundary", () => {
     expect(globalStyles).toContain(".library-quick-panels");
   });
 
+  it("does not duplicate recent progress in a separate continue-reading block", () => {
+    expect(catalogSource).not.toContain("continueReading");
+    expect(catalogSource).not.toContain("continue-reading-title");
+    expect(catalogSource).not.toContain("接着上次");
+  });
+
   it("keeps an accessible favorite target without a visible circular plate", () => {
     const favoriteRule = globalStyles.match(
       /\.library-card-favorite \{([\s\S]*?)\n\}/,

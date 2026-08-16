@@ -244,11 +244,6 @@ export default function LibraryCatalogExperience({
     () => new Map(publishedBooks.map((book) => [book.contentId, book] as const)),
     [publishedBooks],
   );
-  const continueReading = progressRecords
-    .filter((record) => !record.completedAt && record.progressPercent > 0)
-    .map((record) => bookByContent.get(record.contentId))
-    .filter((book): book is LibraryBookSummary => Boolean(book))
-    .slice(0, 4);
   const recentBooks = progressRecords
     .map((record) => bookByContent.get(record.contentId))
     .filter((book): book is LibraryBookSummary => Boolean(book))
@@ -385,20 +380,6 @@ export default function LibraryCatalogExperience({
   return (
     <>
       <ReadingSyncControl />
-
-      {!searchActive && continueReading.length > 0 ? (
-        <section className="library-home-section" aria-labelledby="continue-reading-title">
-          <header className="library-home-section-header">
-            <div>
-              <p>接着上次</p>
-              <h2 id="continue-reading-title">继续阅读</h2>
-            </div>
-          </header>
-          <div className="library-home-row">
-            {continueReading.map((book) => renderCard(book, true))}
-          </div>
-        </section>
-      ) : null}
 
       {!searchActive && (recentBooks.length > 0 || favoriteBooks.length > 0) ? (
         <div className="library-quick-panels">
