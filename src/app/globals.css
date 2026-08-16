@@ -7218,7 +7218,12 @@ a.library-book-card:hover {
 
 .library-book-experience-bedtime .book-spread {
   border-color: rgba(225, 231, 222, 0.16);
+  background: rgba(29, 38, 36, 0.96);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+.library-book-experience-bedtime .book-spread::after {
+  background: rgba(225, 231, 222, 0.12);
 }
 
 .library-book-experience-bedtime .book-page-left img {
@@ -7226,8 +7231,28 @@ a.library-book-card:hover {
 }
 
 .library-book-experience-bedtime .book-page-right {
-  background: #ede8dc;
-  color: #2f322f;
+  background:
+    linear-gradient(
+      to right,
+      rgba(238, 232, 218, 0.035),
+      transparent 30px
+    ),
+    rgba(31, 40, 38, 0.96);
+  color: #eee8da;
+}
+
+.library-book-experience-bedtime .book-page-number {
+  color: #a8c0b7 !important;
+}
+
+.library-book-experience-bedtime .book-page-right .page-en {
+  color: #aeb8b4;
+}
+
+.library-book-experience-bedtime .book-page-right .book-text-narrating {
+  color: #f6f0e4;
+  background: rgba(127, 155, 145, 0.2);
+  box-shadow: 0 0 0 7px rgba(127, 155, 145, 0.2);
 }
 
 .library-book-experience-bedtime .book-turn-next,
