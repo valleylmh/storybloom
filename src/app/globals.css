@@ -9859,7 +9859,7 @@ a.library-book-card:hover {
 .lightbox-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 90;
+  z-index: 140;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
