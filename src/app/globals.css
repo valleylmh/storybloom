@@ -9927,6 +9927,14 @@ a.library-book-card:hover {
   font-size: 1.3rem;
 }
 
+.lightbox-nav-prev {
+  transform: translateX(24px);
+}
+
+.lightbox-nav-next {
+  transform: translateX(-24px);
+}
+
 .lightbox-nav:hover,
 .lightbox-close:hover {
   background: rgba(255, 250, 244, 0.24);

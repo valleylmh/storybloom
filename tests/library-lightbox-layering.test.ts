@@ -26,4 +26,13 @@ describe("library image preview layering", () => {
       readZIndex(".library-book-experience-bedtime"),
     );
   });
+
+  it("pulls desktop arrows inward toward the image edges", () => {
+    expect(globalStyles).toContain(
+      ".lightbox-nav-prev {\n  transform: translateX(24px);",
+    );
+    expect(globalStyles).toContain(
+      ".lightbox-nav-next {\n  transform: translateX(-24px);",
+    );
+  });
 });
