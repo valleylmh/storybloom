@@ -7181,6 +7181,23 @@ a.library-book-card:hover {
   box-shadow: none;
 }
 
+.library-book-experience-bedtime .library-narration-panel {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 16px;
+}
+
+.library-book-experience-bedtime .library-narration-heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .library-book-experience-bedtime .library-narration-heading h3,
 .library-book-experience-bedtime .library-reader-toolbar-copy strong {
   color: #eee8da;
@@ -7199,8 +7216,38 @@ a.library-book-card:hover {
 }
 
 .library-book-experience-bedtime .library-playback-primary {
+  min-height: 48px;
+  padding: 10px 18px;
+  border-radius: 14px;
   background: #668278;
   box-shadow: none;
+  font-size: 0.92rem;
+}
+
+.library-book-experience-bedtime .library-playback-secondary-actions {
+  display: flex;
+  width: auto;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.library-book-experience-bedtime
+  .library-playback-secondary-actions
+  .secondary-btn {
+  width: 48px;
+  min-height: 48px;
+  gap: 0;
+  padding: 0;
+  border-radius: 14px;
+  font-size: 0;
+}
+
+.library-book-experience-bedtime
+  .library-playback-secondary-actions
+  .secondary-btn
+  svg {
+  width: 20px;
+  height: 20px;
 }
 
 .library-book-experience-bedtime .library-playback-primary:hover:not(:disabled),
