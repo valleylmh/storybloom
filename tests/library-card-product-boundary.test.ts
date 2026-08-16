@@ -58,6 +58,13 @@ describe("library series card product boundary", () => {
     expect(catalogSource).not.toContain("item.href");
   });
 
+  it("uses a centered series heading without an extra kicker", () => {
+    expect(catalogSource).toContain("library-series-home-header");
+    expect(catalogSource).not.toContain("按顺序慢慢读");
+    expect(globalStyles).toContain(".library-series-home-header");
+    expect(globalStyles).toContain(".library-series-home-header h2::after");
+  });
+
   it("keeps the bookshelf out of the global footer", () => {
     expect(footerSource).not.toContain('href="/me/books"');
     expect(footerSource).not.toContain("我的书架");

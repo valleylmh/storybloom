@@ -202,11 +202,8 @@ export default function LibraryCatalogExperience({
         className="library-home-section"
         aria-labelledby="series-stories-title"
       >
-        <header className="library-home-section-header">
-          <div>
-            <p>按顺序慢慢读</p>
-            <h2 id="series-stories-title">系列故事</h2>
-          </div>
+        <header className="library-home-section-header library-series-home-header">
+          <h2 id="series-stories-title">系列故事</h2>
         </header>
         <div className="library-series-overview">
           {series.map((item) => {

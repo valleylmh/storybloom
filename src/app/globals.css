@@ -8040,6 +8040,22 @@ a.library-book-card:hover {
   font-weight: 600;
 }
 
+.library-series-home-header {
+  justify-content: center;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.library-series-home-header h2::after {
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #d66f49, #e9b06c);
+  content: "";
+}
+
 .library-quick-panels {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
