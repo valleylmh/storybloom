@@ -17,6 +17,7 @@ export default function LibraryCatalogCard({
   onToggleFavorite,
   compact = false,
   minimal = false,
+  imagePriority = false,
 }: {
   book: LibraryBookSummary;
   progress?: ReadingProgressRecord;
@@ -24,12 +25,21 @@ export default function LibraryCatalogCard({
   onToggleFavorite: () => void;
   compact?: boolean;
   minimal?: boolean;
+  imagePriority?: boolean;
 }) {
   const metadata = book.metadata;
   const progressLabel = progress?.completedAt
     ? "已读完"
     : progress && progress.pageIndex > 0
       ? `继续第 ${progress.pageIndex + 1} 页`
+      : null;
+  const seriesTitle = book.episodeNumber
+    ? `第 ${book.episodeNumber} 回 · ${book.title}`
+    : book.title;
+  const seriesProgressLabel = progress?.completedAt
+    ? "已读"
+    : progress && progress.progressPercent > 0
+      ? `当前 · 第 ${progress.pageIndex + 1} 页`
       : null;
 
   return (
@@ -49,15 +59,13 @@ export default function LibraryCatalogCard({
               alt={`${book.title}封面`}
               fill
               sizes={compact ? "(max-width: 580px) 44vw, 220px" : "(max-width: 580px) 44vw, 280px"}
+              priority={imagePriority}
             />
           ) : (
             <span style={{ color: book.seriesAccent }}>
               {book.title.slice(0, 4)}
             </span>
           )}
-          {book.episodeNumber ? (
-            <em>第 {book.episodeNumber} 回</em>
-          ) : null}
         </div>
         <div className="library-catalog-card-copy">
           {!minimal ? (
@@ -65,11 +73,24 @@ export default function LibraryCatalogCard({
               {LIBRARY_CATEGORY_LABELS[metadata.category]}
             </span>
           ) : null}
-          <h3>{book.title}</h3>
+          <h3>{minimal ? seriesTitle : book.title}</h3>
           {minimal ? (
-            <p className="library-catalog-minimal-subtitle">
-              {book.subtitle}
-            </p>
+            <>
+              <p className="library-catalog-minimal-subtitle">
+                {book.subtitle}
+              </p>
+              {seriesProgressLabel ? (
+                <strong
+                  className={`library-catalog-minimal-progress ${
+                    progress?.completedAt
+                      ? "library-catalog-minimal-progress-complete"
+                      : "library-catalog-minimal-progress-current"
+                  }`}
+                >
+                  {seriesProgressLabel}
+                </strong>
+              ) : null}
+            </>
           ) : (
             <>
               <p>{book.subtitle}</p>

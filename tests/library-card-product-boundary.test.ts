@@ -26,11 +26,34 @@ const globalStyles = readFileSync(
 );
 
 describe("library series card product boundary", () => {
-  it("keeps series previews focused on the cover and title", () => {
+  it("keeps series previews focused on the cover, episode title and subtitle", () => {
     expect(catalogSource).toContain("renderCard(book, true, true)");
     expect(cardSource).toContain("library-catalog-card-minimal");
     expect(cardSource).toContain("library-catalog-minimal-subtitle");
+    expect(cardSource).toContain("第 ${book.episodeNumber} 回 · ${book.title}");
+    expect(cardSource).not.toContain("<em>第 {book.episodeNumber} 回</em>");
     expect(cardSource).toContain("!minimal ?");
+  });
+
+  it("shows read and current progress directly on series cards", () => {
+    expect(cardSource).toContain('progress?.completedAt\n    ? "已读"');
+    expect(cardSource).toContain("当前 · 第 ${progress.pageIndex + 1} 页");
+    expect(cardSource).toContain("library-catalog-minimal-progress");
+  });
+
+  it("keeps complete series on the library page without a view-all route", () => {
+    expect(catalogSource).toContain("expandedSeriesIds");
+    expect(catalogSource).toContain("展开全部 ${allSeriesBooks.length}");
+    expect(catalogSource).toContain('aria-expanded={expanded}');
+    expect(catalogSource).not.toContain("查看全部");
+    expect(catalogSource).not.toContain("item.href");
+  });
+
+  it("renders recent playback and favorites as lightweight paired lists", () => {
+    expect(catalogSource).toContain("library-quick-panels");
+    expect(catalogSource).toContain("library-quick-list-item");
+    expect(catalogSource).toContain("renderQuickItem(book, true)");
+    expect(globalStyles).toContain(".library-quick-panels");
   });
 
   it("keeps an accessible favorite target without a visible circular plate", () => {

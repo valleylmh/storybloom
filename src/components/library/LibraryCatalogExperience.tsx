@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { MagnifyingGlass, Sparkle, X } from "@phosphor-icons/react";
+import Image from "next/image";
+import { Heart, MagnifyingGlass, Sparkle, X } from "@phosphor-icons/react";
 import { useFavorites } from "@/hooks/useFavorites";
 import { useAuth } from "@/hooks/useAuth";
 import { createFavoriteKey, FAVORITES_CHANGED_EVENT } from "@/lib/favorites";
@@ -38,7 +39,6 @@ type SeriesSummary = {
   id: string;
   title: string;
   subtitle: string;
-  href: string;
 };
 
 type PrivateStorySearchItem = {
@@ -60,6 +60,7 @@ const CATEGORY_ORDER: LibraryCategory[] = [
   "family-growth",
 ];
 const TONIGHT_AGE_PREFERENCE_KEY = "storybloom.library.tonight-age.v1";
+const SERIES_PREVIEW_COUNT = 4;
 
 function readingMap(records: ReadingProgressRecord[]) {
   return new Map(
@@ -116,6 +117,9 @@ export default function LibraryCatalogExperience({
   });
   const [tonightAge, setTonightAge] = useState<LibraryAgeFilter>("all");
   const [visibleCount, setVisibleCount] = useState(24);
+  const [expandedSeriesIds, setExpandedSeriesIds] = useState<Set<string>>(
+    () => new Set(),
+  );
   const [privateStories, setPrivateStories] = useState<
     PrivateStorySearchItem[]
   >([]);
@@ -278,6 +282,7 @@ export default function LibraryCatalogExperience({
     book: LibraryBookSummary,
     compact = false,
     minimal = false,
+    imagePriority = false,
   ) => (
     <LibraryCatalogCard
       key={book.contentId}
@@ -287,8 +292,79 @@ export default function LibraryCatalogExperience({
       onToggleFavorite={() => toggle("library", book.contentId)}
       compact={compact}
       minimal={minimal}
+      imagePriority={imagePriority}
     />
   );
+
+  const renderQuickItem = (
+    book: LibraryBookSummary,
+    showFavoriteAction = false,
+  ) => {
+    const progress = progressByContent.get(book.contentId);
+    const status = progress?.completedAt
+      ? "已读"
+      : progress && progress.progressPercent > 0
+        ? `当前 · 第 ${progress.pageIndex + 1} 页`
+        : null;
+    const title = book.episodeNumber
+      ? `第 ${book.episodeNumber} 回 · ${book.title}`
+      : book.title;
+    const favorite = favoriteKeys.has(
+      createFavoriteKey("library", book.contentId),
+    );
+
+    return (
+      <article key={book.contentId} className="library-quick-list-item">
+        <Link href={book.href}>
+          <div
+            className="library-quick-list-cover"
+            style={{ backgroundColor: `${book.seriesAccent}22` }}
+          >
+            {book.coverImage ? (
+              <Image
+                src={book.coverImage}
+                alt=""
+                fill
+                sizes="72px"
+              />
+            ) : (
+              <span style={{ color: book.seriesAccent }}>
+                {book.title.slice(0, 2)}
+              </span>
+            )}
+          </div>
+          <div className="library-quick-list-copy">
+            <h3>{title}</h3>
+            <p>{status ? `${status} · ${book.subtitle}` : book.subtitle}</p>
+          </div>
+        </Link>
+        {showFavoriteAction ? (
+          <button
+            type="button"
+            className={`library-quick-list-favorite ${
+              favorite ? "library-quick-list-favorite-active" : ""
+            }`}
+            aria-label={
+              favorite ? `取消收藏《${book.title}》` : `收藏《${book.title}》`
+            }
+            aria-pressed={favorite}
+            onClick={() => toggle("library", book.contentId)}
+          >
+            <Heart aria-hidden="true" weight={favorite ? "fill" : "regular"} />
+          </button>
+        ) : null}
+      </article>
+    );
+  };
+
+  function toggleSeriesExpanded(seriesId: string) {
+    setExpandedSeriesIds((current) => {
+      const next = new Set(current);
+      if (next.has(seriesId)) next.delete(seriesId);
+      else next.add(seriesId);
+      return next;
+    });
+  }
 
   function updateFilter<Key extends keyof LibraryDiscoveryFilters>(
     key: Key,
@@ -324,32 +400,32 @@ export default function LibraryCatalogExperience({
         </section>
       ) : null}
 
-      {!searchActive && recentBooks.length > 0 ? (
-        <section className="library-home-section" aria-labelledby="recent-reading-title">
-          <header className="library-home-section-header">
-            <div>
-              <p>最近打开</p>
-              <h2 id="recent-reading-title">最近播放</h2>
-            </div>
-          </header>
-          <div className="library-home-row">
-            {recentBooks.map((book) => renderCard(book, true))}
-          </div>
-        </section>
-      ) : null}
+      {!searchActive && (recentBooks.length > 0 || favoriteBooks.length > 0) ? (
+        <div className="library-quick-panels">
+          {recentBooks.length > 0 ? (
+            <section className="library-quick-panel" aria-labelledby="recent-reading-title">
+              <header>
+                <p>最近打开</p>
+                <h2 id="recent-reading-title">最近播放</h2>
+              </header>
+              <div className="library-quick-list">
+                {recentBooks.map((book) => renderQuickItem(book))}
+              </div>
+            </section>
+          ) : null}
 
-      {!searchActive && favoriteBooks.length > 0 ? (
-        <section className="library-home-section" aria-labelledby="favorite-books-title">
-          <header className="library-home-section-header">
-            <div>
-              <p>家庭收藏</p>
-              <h2 id="favorite-books-title">我的收藏</h2>
-            </div>
-          </header>
-          <div className="library-home-row">
-            {favoriteBooks.map((book) => renderCard(book, true))}
-          </div>
-        </section>
+          {favoriteBooks.length > 0 ? (
+            <section className="library-quick-panel" aria-labelledby="favorite-books-title">
+              <header>
+                <p>家庭收藏</p>
+                <h2 id="favorite-books-title">我的收藏</h2>
+              </header>
+              <div className="library-quick-list">
+                {favoriteBooks.map((book) => renderQuickItem(book, true))}
+              </div>
+            </section>
+          ) : null}
+        </div>
       ) : null}
 
       {!searchActive && tonightRecommendation ? (
@@ -381,7 +457,7 @@ export default function LibraryCatalogExperience({
             <Link href={tonightRecommendation.book.href}>今晚读这本</Link>
           </div>
           <div className="library-tonight-card">
-            {renderCard(tonightRecommendation.book, true)}
+            {renderCard(tonightRecommendation.book, true, true, true)}
           </div>
         </section>
       ) : null}
@@ -396,9 +472,13 @@ export default function LibraryCatalogExperience({
           </header>
           <div className="library-series-overview">
             {series.map((item) => {
-              const seriesBooks = publishedBooks
-                .filter((book) => book.seriesId === item.id)
-                .slice(0, 4);
+              const allSeriesBooks = publishedBooks.filter(
+                (book) => book.seriesId === item.id,
+              );
+              const expanded = expandedSeriesIds.has(item.id);
+              const seriesBooks = expanded
+                ? allSeriesBooks
+                : allSeriesBooks.slice(0, SERIES_PREVIEW_COUNT);
               return (
                 <section key={item.id} className="library-series-overview-item">
                   <header>
@@ -406,11 +486,26 @@ export default function LibraryCatalogExperience({
                       <h3>{item.title}</h3>
                       <p>{item.subtitle}</p>
                     </div>
-                    <Link href={item.href}>查看全部</Link>
                   </header>
                   <div className="library-home-row">
                     {seriesBooks.map((book) => renderCard(book, true, true))}
                   </div>
+                  {allSeriesBooks.length > SERIES_PREVIEW_COUNT ? (
+                    <button
+                      type="button"
+                      className="library-series-expand"
+                      aria-expanded={expanded}
+                      onClick={() => toggleSeriesExpanded(item.id)}
+                    >
+                      {expanded
+                        ? "收起"
+                        : `展开全部 ${allSeriesBooks.length} ${
+                            allSeriesBooks.some((book) => book.episodeNumber)
+                              ? "回"
+                              : "本"
+                          }`}
+                    </button>
+                  ) : null}
                 </section>
               );
             })}

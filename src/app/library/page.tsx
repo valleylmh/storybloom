@@ -67,7 +67,6 @@ export default function LibraryPage() {
           id: item.id,
           title: item.title,
           subtitle: item.subtitle,
-          href: `/library/${item.id}`,
         }))}
       />
 
