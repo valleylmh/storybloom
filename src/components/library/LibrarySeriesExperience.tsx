@@ -19,7 +19,6 @@ export default function LibrarySeriesExperience({
   const [progressRecords, setProgressRecords] = useState<
     ReadingProgressRecord[]
   >([]);
-  const [visibleCount, setVisibleCount] = useState(24);
   const { keys, toggle } = useFavorites();
 
   useEffect(() => {
@@ -76,26 +75,19 @@ export default function LibrarySeriesExperience({
         </div>
       </section>
 
-      <section className="library-catalog-experience-grid" aria-label="系列书目">
-        {books.slice(0, visibleCount).map((book) => (
+      <section className="library-home-row" aria-label="系列书目">
+        {publishedBooks.map((book) => (
           <LibraryCatalogCard
             key={book.contentId}
             book={book}
             progress={progressMap.get(book.contentId)}
             favorite={keys.has(createFavoriteKey("library", book.contentId))}
             onToggleFavorite={() => toggle("library", book.contentId)}
+            compact
+            minimal
           />
         ))}
       </section>
-      {visibleCount < books.length ? (
-        <button
-          type="button"
-          className="library-catalog-more"
-          onClick={() => setVisibleCount((count) => count + 24)}
-        >
-          显示更多本系列绘本
-        </button>
-      ) : null}
     </>
   );
 }

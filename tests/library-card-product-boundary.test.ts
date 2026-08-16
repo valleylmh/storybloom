@@ -30,6 +30,15 @@ const footerSource = readFileSync(
   ),
   "utf8",
 );
+const seriesSource = readFileSync(
+  fileURLToPath(
+    new URL(
+      "../src/components/library/LibrarySeriesExperience.tsx",
+      import.meta.url,
+    ),
+  ),
+  "utf8",
+);
 
 describe("library series card product boundary", () => {
   it("keeps series previews focused on the cover, episode title and subtitle", () => {
@@ -68,6 +77,15 @@ describe("library series card product boundary", () => {
   it("keeps the bookshelf out of the global footer", () => {
     expect(footerSource).not.toContain('href="/me/books"');
     expect(footerSource).not.toContain("我的书架");
+  });
+
+  it("uses the same minimal cards across every series detail page", () => {
+    expect(seriesSource).toContain('className="library-home-row"');
+    expect(seriesSource).toContain("publishedBooks.map((book)");
+    expect(seriesSource).toContain("compact");
+    expect(seriesSource).toContain("minimal");
+    expect(seriesSource).not.toContain("visibleCount");
+    expect(seriesSource).not.toContain("library-catalog-more");
   });
 
   it("renders recent playback and favorites as lightweight paired lists", () => {
