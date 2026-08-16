@@ -23,6 +23,15 @@ const bookPreviewSource = readFileSync(
   ),
   "utf8",
 );
+const libraryBookExperienceSource = readFileSync(
+  fileURLToPath(
+    new URL(
+      "../src/components/library/LibraryBookExperience.tsx",
+      import.meta.url,
+    ),
+  ),
+  "utf8",
+);
 
 describe("family story reader product boundaries", () => {
   it("keeps the core reader free from microphone and recording APIs", () => {
@@ -54,5 +63,19 @@ describe("family story reader product boundaries", () => {
       "cloudAudioCacheRef.current.delete",
     );
     expect(narrationToolbarSource).toContain("playBrowserFallback");
+  });
+
+  it("keeps bedtime mode finite, low-friction and microphone free", () => {
+    expect(libraryBookExperienceSource).toContain(
+      "library-book-experience-bedtime",
+    );
+    expect(libraryBookExperienceSource).toContain('setReaderMode("turn")');
+    expect(libraryBookExperienceSource).toContain(
+      "handleAutoAdvanceChange(true)",
+    );
+    expect(libraryBookExperienceSource).toContain('event.key === "Escape"');
+    expect(libraryBookExperienceSource).toContain("读完整本后停止");
+    expect(libraryBookExperienceSource).not.toContain("getUserMedia");
+    expect(libraryBookExperienceSource).not.toContain("nextBook");
   });
 });

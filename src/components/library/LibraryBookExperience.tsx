@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { MoonStars, X } from "@phosphor-icons/react";
 import { useReadingProgressCloudSync } from "@/hooks/useReadingProgressCloudSync";
 import type { BrowserNarrationMode } from "@/lib/browser-narration";
 import {
@@ -49,8 +50,10 @@ export default function LibraryBookExperience({
   const [progressReady, setProgressReady] = useState(false);
   const [playbackStatus, setPlaybackStatus] =
     useState<PlaybackState["status"]>("idle");
+  const [bedtimeMode, setBedtimeMode] = useState(false);
   const progressRef = useRef<ReadingProgressRecord | null>(null);
   const lastSavedFingerprintRef = useRef("");
+  const bedtimeExitButtonRef = useRef<HTMLButtonElement>(null);
   const syncProgressToAccount = useReadingProgressCloudSync();
 
   useEffect(() => {
@@ -64,6 +67,7 @@ export default function LibraryBookExperience({
     setResumeLabel(null);
     setProgressReady(false);
     setPlaybackStatus("idle");
+    setBedtimeMode(false);
     progressRef.current = null;
     lastSavedFingerprintRef.current = "";
 
@@ -90,6 +94,25 @@ export default function LibraryBookExperience({
       active = false;
     };
   }, [contentId, contentType, pages.length, storyKey]);
+
+  useEffect(() => {
+    if (!bedtimeMode) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focusTimer = window.setTimeout(
+      () => bedtimeExitButtonRef.current?.focus(),
+      0,
+    );
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setBedtimeMode(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.clearTimeout(focusTimer);
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [bedtimeMode]);
 
   const persistProgress = useCallback(
     (input: {
@@ -213,40 +236,87 @@ export default function LibraryBookExperience({
     }, [persistProgress],
   );
 
+  const enterBedtimeMode = useCallback(() => {
+    setReaderMode("turn");
+    handleAutoAdvanceChange(true);
+    setBedtimeMode(true);
+  }, [handleAutoAdvanceChange]);
+
   return (
-    <>
-      <section className="library-narration-tools" aria-label="绘本朗读">
-        <LibraryNarrationToolbar
+    <section
+      className={`library-book-experience ${
+        bedtimeMode ? "library-book-experience-bedtime" : ""
+      }`}
+      aria-label={bedtimeMode ? `${title}睡前阅读` : undefined}
+    >
+      <div className="library-bedtime-stage">
+        {bedtimeMode ? (
+          <header className="library-bedtime-header">
+            <div>
+              <MoonStars aria-hidden="true" weight="fill" />
+              <span>
+                <strong>{title}</strong>
+                <small>低刺激显示 · 读完整本后停止，不会自动进入下一本</small>
+              </span>
+            </div>
+            <button
+              ref={bedtimeExitButtonRef}
+              type="button"
+              onClick={() => setBedtimeMode(false)}
+            >
+              <X aria-hidden="true" />
+              退出睡前模式
+            </button>
+          </header>
+        ) : (
+          <div className="library-bedtime-entry">
+            <div>
+              <MoonStars aria-hidden="true" weight="fill" />
+              <span>
+                <strong>睡前模式</strong>
+                <small>降低视觉刺激，保留大号播放和翻页；读完整本即停止。</small>
+              </span>
+            </div>
+            <button type="button" onClick={enterBedtimeMode}>
+              进入睡前模式
+            </button>
+          </div>
+        )}
+
+        <section className="library-narration-tools" aria-label="绘本朗读">
+          <LibraryNarrationToolbar
+            pages={pages}
+            storyKey={storyKey}
+            currentPageIndex={pageIndex}
+            turnModeActive={readerMode === "turn"}
+            languageMode={languageMode}
+            autoAdvance={autoAdvance}
+            initialPositionMs={initialPositionMs}
+            resumeLabel={resumeLabel}
+            preferCloudTts={preferCloudTts}
+            onPageIndexChange={handlePageIndexChange}
+            onLanguageModeChange={handleLanguageModeChange}
+            onAutoAdvanceChange={handleAutoAdvanceChange}
+            onHighlightChange={setNarrationHighlight}
+            onPlaybackStateChange={handlePlaybackStateChange}
+            onRequestTurnMode={() => setReaderMode("turn")}
+          />
+        </section>
+
+        <LibraryBookReader
+          title={title}
           pages={pages}
-          storyKey={storyKey}
-          currentPageIndex={pageIndex}
-          turnModeActive={readerMode === "turn"}
-          languageMode={languageMode}
-          autoAdvance={autoAdvance}
-          initialPositionMs={initialPositionMs}
-          resumeLabel={resumeLabel}
-          preferCloudTts={preferCloudTts}
+          accent={accent}
+          pageIndex={pageIndex}
+          readerMode={readerMode}
+          narrationHighlight={narrationHighlight}
           onPageIndexChange={handlePageIndexChange}
-          onLanguageModeChange={handleLanguageModeChange}
-          onAutoAdvanceChange={handleAutoAdvanceChange}
-          onHighlightChange={setNarrationHighlight}
-          onPlaybackStateChange={handlePlaybackStateChange}
-          onRequestTurnMode={() => setReaderMode("turn")}
+          onReaderModeChange={setReaderMode}
         />
-      </section>
+      </div>
 
-      <LibraryBookReader
-        title={title}
-        pages={pages}
-        accent={accent}
-        pageIndex={pageIndex}
-        readerMode={readerMode}
-        narrationHighlight={narrationHighlight}
-        onPageIndexChange={handlePageIndexChange}
-        onReaderModeChange={setReaderMode}
-      />
-
-      {personalizeHref &&
+      {!bedtimeMode &&
+      personalizeHref &&
       playbackStatus === "ended" &&
       pageIndex === pages.length - 1 ? (
         <section className="library-reader-personalize" role="status">
@@ -256,6 +326,6 @@ export default function LibraryBookExperience({
           <Link href={personalizeHref}>让孩子成为主角</Link>
         </section>
       ) : null}
-    </>
+    </section>
   );
 }

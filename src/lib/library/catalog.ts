@@ -14,6 +14,8 @@ export type LibraryBookSummary = {
   episodeNumber?: number;
   comingSoon: boolean;
   metadata: LibraryBookMetadata;
+  /** Maintained search corpus; intentionally excludes full page text. */
+  searchText: string;
 };
 
 export function createLibraryBookSummary(
@@ -21,6 +23,7 @@ export function createLibraryBookSummary(
   book: LibraryBook,
 ): LibraryBookSummary {
   const coverPage = book.pages[0];
+  const metadata = resolveLibraryBookMetadata(book);
   return {
     id: book.id,
     contentId: `${series.id}/${book.id}`,
@@ -35,6 +38,21 @@ export function createLibraryBookSummary(
       : {}),
     ...(book.episodeNumber ? { episodeNumber: book.episodeNumber } : {}),
     comingSoon: Boolean(book.comingSoon),
-    metadata: resolveLibraryBookMetadata(book),
+    metadata,
+    searchText: [
+      book.title,
+      book.subtitle,
+      series.title,
+      series.subtitle,
+      book.question,
+      book.origin,
+      book.moral?.zh,
+      book.moral?.en,
+      book.idiomMeaning?.zh,
+      book.idiomMeaning?.en,
+      ...metadata.tags,
+    ]
+      .filter(Boolean)
+      .join(" "),
   };
 }

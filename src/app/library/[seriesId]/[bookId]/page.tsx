@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import LibraryBookExperience from "@/components/library/LibraryBookExperience";
 import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
+import LibraryRelatedBooks from "@/components/library/LibraryRelatedBooks";
 import {
   getAdjacentBooks,
   getAllSeries,
@@ -16,6 +17,8 @@ import {
   LIBRARY_CATEGORY_LABELS,
   resolveLibraryBookMetadata,
 } from "@/lib/library/metadata";
+import { createLibraryBookSummary } from "@/lib/library/catalog";
+import { getLibraryRecommendations } from "@/lib/library/discovery";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
 
 type Params = { seriesId: string; bookId: string };
@@ -99,6 +102,15 @@ export default async function LibraryBookPage({
       (page) => Boolean(page.imageUrl) && page.imageStatus === "complete",
     );
   const bookMetadata = resolveLibraryBookMetadata(book);
+  const currentBookSummary = createLibraryBookSummary(series, book);
+  const relatedBooks = getLibraryRecommendations(
+    currentBookSummary,
+    getAllSeries().flatMap((item) =>
+      getSeriesBooks(item.id).map((candidate) =>
+        createLibraryBookSummary(item, candidate),
+      ),
+    ),
+  );
   const personalizeHref = `/?mode=minimal&personalize=${encodeURIComponent(
     `${series.id}/${book.id}`,
   )}#story-creation`;
@@ -241,6 +253,8 @@ export default async function LibraryBookPage({
         pages={book.pages}
         shareUrl={toAbsoluteAppUrl(`/library/${series.id}/${book.id}`)}
       />
+
+      <LibraryRelatedBooks recommendations={relatedBooks} />
 
       <nav className="library-adjacent" aria-label="继续阅读">
         {previous ? (
