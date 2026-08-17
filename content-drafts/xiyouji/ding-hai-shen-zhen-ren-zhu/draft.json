@@ -1,0 +1,56 @@
+{
+  "id": "ding-hai-shen-zhen-ren-zhu",
+  "title": "定海神针认主",
+  "subtitle": "力量越大，越要先约定怎样使用",
+  "origin": "《西游记》第三回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "真正可靠的力量来自清楚的规则：不对人挥舞、不逞强，并在不用时妥善收好。",
+    "en": "Reliable power needs clear rules: never swing it at others, never show off, and store it safely when not in use."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 65,
+  "episodeNumber": 65,
+  "pages": [
+    {
+      "zh": "红金柱子太高，宝库的门都装不下。悟空试着说：“如果能小一点就好了。”",
+      "en": "The red-and-gold pillar was too tall for the treasury doors. “A little smaller would help,” Wukong said.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] Wukong stands beside the towering vermilion-red pillar with narrow engraved gold ends, hands off and thoughtful; palace doorway shows scale."
+    },
+    {
+      "zh": "柱子真的缓缓缩短，变成一根细长的红金棒，稳稳立在石座上。",
+      "en": "The pillar slowly shortened into a slender red-and-gold staff standing safely on its stone base.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] Gentle golden sparkles transform the pillar into one slender straight red-and-gold staff on the base; Wukong watches, not yet holding it."
+    },
+    {
+      "zh": "悟空双手握住中段，先直直举起，再慢慢放下，没有碰到任何东西。",
+      "en": "Wukong gripped the center with both hands, lifted it upright, and lowered it without touching anything.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] Wukong performs a slow two-handed upright lift in a wide empty practice circle; Dragon King watches from a safe distance."
+    },
+    {
+      "zh": "龙王请他绕过三只软珊瑚标记。悟空把棒当手杖，一步一步走得很稳。",
+      "en": "The Dragon King placed three soft coral markers. Wukong used the staff like a walking stick and moved carefully around them.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] [[DRAGON_KING]] Wukong walks a gentle curve around exactly three soft coral markers, keeping the staff vertical like a walking stick."
+    },
+    {
+      "zh": "“再小一点。”金箍棒缩成绣花针大小，悟空把它安全藏在耳后。",
+      "en": "“Smaller still.” The staff shrank to needle size, and Wukong tucked it safely behind his ear.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] Close friendly view: the red-and-gold staff is safely shrunk behind Wukong's round ear; both hands empty, no sharp needle imagery."
+    },
+    {
+      "zh": "他们一起定下三条规则：不指向别人，不在窄处挥动，不用时就收好。",
+      "en": "Together they made three rules: point it at no one, never swing it in tight spaces, and store it when unused.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] [[DRAGON_KING]] Wukong and Dragon King arrange three wordless picture tokens showing open space, upright staff, and ear storage; no letters."
+    },
+    {
+      "zh": "悟空向龙王认真道谢，给这件宝物取名“如意金箍棒”。",
+      "en": "Wukong thanked the Dragon King and named the treasure the Ruyi Jingu Bang.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] [[DRAGON_KING]] Wukong bows gratefully while the same red-and-gold staff stands upright beside him; warm underwater light, no text."
+    },
+    {
+      "zh": "回到花果山，悟空先把三条规则告诉群猴，才用金箍棒帮大家挪开挡路的枯木。",
+      "en": "Back home, Wukong shared the three rules before using the staff to lever a fallen log away from the path.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] On Flower-Fruit Mountain, Wukong uses the staff safely as a low lever under a fallen log while monkeys stand well back behind a rope marker."
+    }
+  ]
+}

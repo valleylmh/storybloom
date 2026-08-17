@@ -1,0 +1,56 @@
+{
+  "id": "huo-yan-shan-liang-feng-lu",
+  "title": "火焰山量风路",
+  "subtitle": "先找到安全路线，再请风来帮忙",
+  "origin": "《西游记》第五十九至六十一回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "面对炎热和大风，先测量、分区和照顾同行者，再使用强大的工具。",
+    "en": "In heat and wind, measure, divide the route, and care for companions before using powerful tools."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 70,
+  "episodeNumber": 70,
+  "pages": [
+    {
+      "zh": "火焰山前，热风一阵一阵吹来。悟空没有马上借扇，而是先请大家退到凉亭。",
+      "en": "Hot gusts swept from Fire Mountain. Wukong first guided everyone to a shaded pavilion instead of reaching for a fan.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]] Team rests safely in a shaded stone pavilion facing warm red mountains; no flames near people."
+    },
+    {
+      "zh": "他把金箍棒直立在空地上，系上三条轻布，观察不同高度的风向。",
+      "en": "He stood the staff upright in an empty field and tied three light ribbons to measure wind at different heights.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong plants the slender red-and-gold staff vertically in a safe ground socket, with exactly three light ribbons showing wind direction; no one nearby."
+    },
+    {
+      "zh": "沙僧画出背风处，八戒摆好水壶，唐僧为村民和动物安排分批休息。",
+      "en": "Sha mapped sheltered spots, Bajie set out water, and Tang Seng organized rest groups for villagers and animals.",
+      "prompt": "[[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] They arrange water gourds and a wordless pebble route map under shade for friendly villagers and small animals."
+    },
+    {
+      "zh": "铁扇公主带着芭蕉扇来到凉亭。悟空先给她看风向图，再说明需要多大的风。",
+      "en": "Princess Iron Fan arrived with her palm-leaf fan. Wukong showed the wind map and explained how much breeze was needed.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Princess Iron Fan is a dignified adult woman with warm oval face, dark eyes, long black hair in a high ponytail, deep red-and-cream travel robes and a large green palm-leaf fan held closed; she and Wukong study a wordless route map."
+    },
+    {
+      "zh": "第一下只轻轻扇，热气退到远处；第二下停下来，看彩布有没有越过安全线。",
+      "en": "The first gentle wave pushed the heat away. Then they paused to check that the ribbons stayed within the safety line.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Princess Iron Fan gives one gentle fan wave toward an empty mountain pass while Wukong watches three ribbons behind a low safety rope; no one blown away."
+    },
+    {
+      "zh": "他们发现一条风太急的山沟，便用石牌引导大家走更平缓的谷道。",
+      "en": "They found one windy gully and guided travelers toward a gentler valley route with picture markers.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong, Sha and villagers place blank picture-only stone markers toward a broad shaded valley, while a narrow windy gully remains roped off."
+    },
+    {
+      "zh": "村民推着水车和粮车分批通过，白龙马走在最凉快的时段，谁也不赶路。",
+      "en": "Villagers moved water and grain carts in small groups, and White Dragon Horse crossed during the coolest hour without rushing.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[WHITE_DRAGON_HORSE]] Villagers calmly push rounded wooden carts along the safe valley path; horse walks in shade, Wukong holds staff upright."
+    },
+    {
+      "zh": "最后，悟空和铁扇公主把风向图留给村里。以后每次过山，都先量风再出发。",
+      "en": "Wukong and Princess Iron Fan left the wind map with the village so every crossing could begin with a safety check.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong and Princess Iron Fan hand villagers a durable wordless wind-route board; green fan closed, red-and-gold staff upright, warm safe sunset."
+    }
+  ]
+}

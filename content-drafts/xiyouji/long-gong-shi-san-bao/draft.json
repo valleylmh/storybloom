@@ -1,0 +1,56 @@
+{
+  "id": "long-gong-shi-san-bao",
+  "title": "龙宫试三宝",
+  "subtitle": "合适的工具，要看用途也要看自己",
+  "origin": "《西游记》第三回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "选择工具不是越大越好，而要看用途、重量和是否能安全控制。",
+    "en": "The best tool is not always the biggest. It should fit the job, the user, and safe control."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 64,
+  "episodeNumber": 64,
+  "pages": [
+    {
+      "zh": "悟空来到东海龙宫，说明自己想找一件能帮助花果山的工具。",
+      "en": "At the Dragon Palace, Wukong explained that he sought a tool to help Flower-Fruit Mountain.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] At the turquoise Dragon Palace entrance, Wukong politely explains his purpose with open hands; no staff present."
+    },
+    {
+      "zh": "龙王先拿来一把宽大的铜扇。悟空轻轻一摇，桌上的贝壳全滚走了。",
+      "en": "The Dragon King first offered a broad bronze fan. One gentle wave sent the shells rolling away.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] Wukong gently tests a broad rounded bronze fan toward an empty practice lane as loose shells roll safely across a low table."
+    },
+    {
+      "zh": "“风太大，不适合山里的小路。”悟空把铜扇合好，双手送回。",
+      "en": "“Too much wind for our mountain paths.” Wukong closed the fan and returned it with both hands.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] Wukong respectfully returns the closed bronze fan with both hands; palace attendants reset the shells, calm smiles."
+    },
+    {
+      "zh": "第二件是沉重的玉石推杆。悟空能抬起，却发现转弯时会碰到珊瑚。",
+      "en": "Next came a heavy jade bar. Wukong could lift it, but it was too awkward around the coral.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] Wukong carefully lifts a thick pale-jade practice bar in a wide empty area, then notices a soft coral marker would block a turn; no impact."
+    },
+    {
+      "zh": "他又把玉杆放回软垫：“能拿得动，不等于用得合适。”",
+      "en": "He set the jade bar back on its cushion. “Being able to lift it does not make it suitable.”",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong lowers the jade bar onto a thick padded stand using bent knees and careful hands; Dragon King nods approvingly."
+    },
+    {
+      "zh": "龙王带他来到海底宝库。最深处，一根红金柱子正发出柔和的光。",
+      "en": "Deep in the treasury, a red-and-gold pillar glowed with a gentle light.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] In a grand underwater treasury, a tall straight vermilion-red pillar with narrow engraved gold ends stands separately on a stone base; Wukong has not touched it."
+    },
+    {
+      "zh": "悟空没有立刻拔它，而是先量通道、看柱脚，还问清能不能试。",
+      "en": "Wukong did not pull at once. He measured the passage, checked the base, and asked permission to try.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] Wukong uses a plain measuring cord around the red-and-gold pillar base while asking permission; safe inspection, no pulling."
+    },
+    {
+      "zh": "龙王点头：“先想用途、再看安全，你已经找到选择宝物的第一把尺。”",
+      "en": "The Dragon King nodded. “Purpose and safety are the first measures for choosing any treasure.”",
+      "prompt": "[[WUKONG_NO_STAFF]] [[DRAGON_KING]] Dragon King gives a warm approving gesture beside the untouched glowing pillar as Wukong holds the coiled measuring cord."
+    }
+  ]
+}

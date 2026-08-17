@@ -1,0 +1,56 @@
+{
+  "id": "qi-shi-er-bian-lian-xi",
+  "title": "七十二变练习",
+  "subtitle": "本领不是一下子变出来的",
+  "origin": "《西游记》第二回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "学习新本领会出错，先从小目标开始、认真复盘，就能一天比一天更稳。",
+    "en": "New skills come with mistakes. Small goals and thoughtful practice make us steadier day by day."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 63,
+  "episodeNumber": 63,
+  "pages": [
+    {
+      "zh": "祖师让悟空先别急着变大老虎，只从一片松叶开始练。",
+      "en": "Master Puti told Wukong not to begin with a great tiger, but with one small pine leaf.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] In a safe temple clearing, Master Puti holds one pine leaf while Wukong watches closely; no tiger or scary imagery."
+    },
+    {
+      "zh": "悟空念动口诀，脑袋变成松叶，尾巴却还在后面摇呀摇。",
+      "en": "Wukong tried the spell. His head became a pine leaf, but his tail still wagged behind him.",
+      "prompt": "[[WUKONG_NO_STAFF]] Playful gentle transformation practice: Wukong remains friendly, with a soft pine-leaf-shaped green head silhouette while his familiar tail sticks out; classmates giggle kindly."
+    },
+    {
+      "zh": "大家没有笑话他，只把看到的地方画成圆点和线，帮他找到遗漏。",
+      "en": "No one teased him. The students used dots and lines to show what he had missed.",
+      "prompt": "[[WUKONG_NO_STAFF]] Temple students arrange pebbles and twigs into a wordless body-and-tail checklist on the ground while Wukong listens with a grin."
+    },
+    {
+      "zh": "第二次，他变成一只小鸟，翅膀会拍，脚却还是猴脚。",
+      "en": "The second time he became a little bird, but his feet were still monkey feet.",
+      "prompt": "[[WUKONG_NO_STAFF]] A charming partial bird transformation hovers just above a padded grass mat: golden-brown bird body, Wukong's amber eyes and harmless monkey feet; joyful, not uncanny."
+    },
+    {
+      "zh": "悟空停下来，先摸摸脚趾，再观察树枝上的麻雀怎样收起小脚。",
+      "en": "Wukong paused, checked his toes, and watched how a sparrow tucked its feet on a branch.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong in normal monkey form observes a friendly sparrow tucking its feet on a low branch; attentive close study, warm morning."
+    },
+    {
+      "zh": "第三次，小鸟稳稳落在软垫上，又变回了笑眯眯的悟空。",
+      "en": "On the third try, the bird landed safely on the mat and changed back into smiling Wukong.",
+      "prompt": "[[WUKONG_NO_STAFF]] Soft golden sparkles show a small bird landing on a woven mat and becoming Wukong again; Master Puti and students applaud gently."
+    },
+    {
+      "zh": "祖师说：“七十二变不是七十二次炫耀，而是七十二次认真观察。”",
+      "en": "“The seventy-two transformations are not for showing off,” said the Master, “but for seventy-two acts of careful observation.”",
+      "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] Master Puti gestures toward leaf, bird feather, pinecone and round coin study objects while Wukong sits focused; no readable text."
+    },
+    {
+      "zh": "悟空把今天的三次尝试记在心里，决定明天再从一片叶子练起。",
+      "en": "Wukong remembered his three attempts and chose to begin again with a leaf the next day.",
+      "prompt": "[[WUKONG_NO_STAFF]] At sunset Wukong places one pine leaf, one feather and three pebbles neatly on a practice mat, smiling at tomorrow's lesson."
+    }
+  ]
+}

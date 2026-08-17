@@ -1,0 +1,56 @@
+{
+  "id": "san-geng-wu-an-hao",
+  "title": "三更悟暗号",
+  "subtitle": "看懂提示之后，也要先确认",
+  "origin": "《西游记》第二回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "留心观察能帮助我们理解别人，但重要的事情仍要礼貌确认，不能只靠猜。",
+    "en": "Careful observation helps us understand others, but important things should still be confirmed politely rather than guessed."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 62,
+  "episodeNumber": 62,
+  "pages": [
+    {
+      "zh": "方寸山上，悟空和师兄们围坐听课。菩提祖师讲完本领，也讲耐心。",
+      "en": "On the mountain, Wukong listened with the other students as Master Puti taught both skill and patience.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] Wukong sits with young temple students in a warm wooden hall, listening carefully to Master Puti; calm lesson, scrolls without readable text."
+    },
+    {
+      "zh": "祖师忽然在桌边轻轻敲了三下，又把手背到身后，微微一笑。",
+      "en": "The Master gently tapped the table three times, folded his hands behind him, and smiled.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] Master Puti taps a wooden table exactly three times with one finger; Wukong notices while classmates remain curious."
+    },
+    {
+      "zh": "悟空想：是三天以后？第三间屋？还是夜里三更？他没有马上跑出去。",
+      "en": "Did it mean three days, the third room, or the third watch of night? Wukong did not rush away.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong pauses thoughtfully in the courtyard beside three harmless picture clues: three moon-shaped stones, three doors, and three seed pods; no text."
+    },
+    {
+      "zh": "下课后，他先把扫帚和水桶归位，再去问守夜师兄什么时候最安静。",
+      "en": "After class, he put away the broom and bucket, then asked when the temple was quietest.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong neatly returns a broom and bucket, then politely asks an older student beside a moon clock made of blank wooden symbols."
+    },
+    {
+      "zh": "到了三更，悟空轻轻敲门：“师父，是您让我来的吗？”",
+      "en": "At the third watch, Wukong knocked softly. “Master, did you mean for me to come?”",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong softly knocks at a quiet study door under moonlight, hands respectful and expression hopeful; warm lamplight inside."
+    },
+    {
+      "zh": "祖师点点头：“你看懂了提示，还知道先确认，这比猜中更重要。”",
+      "en": "The Master nodded. “You understood the clue and still confirmed it. That matters more than a lucky guess.”",
+      "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] Master Puti welcomes Wukong into the moonlit study with a kind nod; open hands, intimate teacher-student warmth."
+    },
+    {
+      "zh": "祖师展开一幅无字云图，教他先看风向，再学腾云的第一步。",
+      "en": "The Master opened a wordless cloud chart and taught him to read the wind before learning cloud travel.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] They study a wordless painted cloud-and-wind diagram on a low table; Wukong traces a safe curved route with one finger."
+    },
+    {
+      "zh": "天亮前，悟空把图卷好放回原处。他明白：聪明，也要配上礼貌和耐心。",
+      "en": "Before dawn, Wukong returned the chart neatly. He learned that cleverness works best with courtesy and patience.",
+      "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] At first light Wukong carefully returns the rolled chart to a shelf while Master Puti smiles; peaceful temple garden beyond."
+    }
+  ]
+}

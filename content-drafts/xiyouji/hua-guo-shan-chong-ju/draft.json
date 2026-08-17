@@ -1,0 +1,56 @@
+{
+  "id": "hua-guo-shan-chong-ju",
+  "title": "花果山重聚",
+  "subtitle": "回到熟悉的地方，也要听听新的变化",
+  "origin": "《西游记》第四至五回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "回家不只是讲自己的见闻，也要听伙伴说说这段时间发生了什么。",
+    "en": "Coming home is not only sharing our adventures. It is also listening to what changed while we were away."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 66,
+  "episodeNumber": 66,
+  "pages": [
+    {
+      "zh": "悟空从天庭回到花果山，群猴捧着桃子和花，一路跑来迎接。",
+      "en": "Wukong returned from Heaven, and the monkeys raced to welcome him with peaches and flowers.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] On Flower-Fruit Mountain, smaller gray-brown monkeys with cream faces welcome Wukong; he keeps the red-and-gold staff upright beside him."
+    },
+    {
+      "zh": "悟空正想讲天马园的趣事，小猴子却指着一条被雨水冲坏的山路。",
+      "en": "Wukong was ready to tell stories of the celestial horses, but a young monkey pointed to a rain-damaged path.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] A young monkey points toward a shallow washed-out section of mountain path while Wukong stops and listens; no cliff or danger."
+    },
+    {
+      "zh": "“先听你们说。”悟空收起金箍棒，坐在石头上，让大家一个一个讲。",
+      "en": "“You tell me first.” Wukong stored the staff and sat on a stone as everyone took turns speaking.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] The staff is safely shrunk behind Wukong's ear as he sits at the same height as the monkeys and listens to each speaker."
+    },
+    {
+      "zh": "原来大雨冲走了踏脚石，桃篮运不过去，小猴子们只好绕很远。",
+      "en": "Rain had washed away the stepping stones, forcing the monkeys carrying peach baskets to take a long detour.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] Wukong and monkeys inspect a gentle muddy gap where flat stepping stones are missing; peach baskets wait safely on dry ground."
+    },
+    {
+      "zh": "悟空没有一棒敲下去，而是先用细绳量宽度，再找来扁平石块。",
+      "en": "Wukong did not strike the ground. He measured the gap with cord and chose flat stones.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] Wukong uses a soft measuring cord while monkeys sort broad flat stones; the staff remains vertical in a safe holder."
+    },
+    {
+      "zh": "大家分工搬石、填沙、压稳。悟空只在最后用金箍棒轻轻测试承重。",
+      "en": "Everyone carried stones, packed sand, and checked stability. Wukong used the staff only for the final gentle test.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] Wukong presses the upright staff gently onto a finished flat stepping stone while monkeys watch from the side; teamwork, no swinging."
+    },
+    {
+      "zh": "第一篮桃子稳稳通过，猴群欢呼。悟空也听见了山里新的笑声。",
+      "en": "The first peach basket crossed safely, and the mountain rang with new laughter.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] Monkeys carry a peach basket across the repaired broad stones while Wukong smiles and keeps the staff upright like a walking stick."
+    },
+    {
+      "zh": "晚上，悟空才讲起天庭见闻。他发现，最好的重聚，是彼此都有话可说。",
+      "en": "Only that evening did Wukong share his heavenly adventures. The best reunion gave everyone a turn to speak.",
+      "prompt": "[[WUKONG_STAFF_NO_HEADBAND]] Warm evening in Water Curtain Cave: Wukong tells stories with open hands, staff safely resting in a wall rack, monkeys gathered with peaches."
+    }
+  ]
+}

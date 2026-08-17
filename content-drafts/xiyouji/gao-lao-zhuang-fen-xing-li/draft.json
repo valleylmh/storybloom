@@ -1,0 +1,56 @@
+{
+  "id": "gao-lao-zhuang-fen-xing-li",
+  "title": "高老庄分行李",
+  "subtitle": "新伙伴加入，先把分工说清楚",
+  "origin": "《西游记》第十九回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "团队有了新伙伴，要一起说明需要、调整分工，而不是把最重的东西都交给一个人。",
+    "en": "When someone joins a team, everyone should explain needs and rebalance the work instead of giving one person every heavy load."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 67,
+  "episodeNumber": 67,
+  "pages": [
+    {
+      "zh": "八戒决定一起西行。院子里却摆着经包、水壶、干粮、毯子和工具，谁来拿呢？",
+      "en": "Bajie joined the westward journey, but who would carry the books, water, food, blankets, and tools?",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] In Gao Village courtyard, Wukong, Tang Seng and Bajie examine neatly arranged travel supplies; staff upright, rake resting safely."
+    },
+    {
+      "zh": "八戒拍拍肚子：“重的都给我！”悟空却说，能搬得动，也不能一路都搬。",
+      "en": "“Give me everything heavy!” Bajie said. Wukong reminded him that carrying once is not the same as carrying all day.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[BAJIE]] Bajie cheerfully lifts one padded bundle while Wukong gestures toward a long road model, encouraging a sustainable plan."
+    },
+    {
+      "zh": "唐僧把物品分成常用、怕湿和需要轮换三组，只用图案做标记。",
+      "en": "Tang Seng sorted the supplies into often-used, keep-dry, and rotate groups, marked only with pictures.",
+      "prompt": "[[TANG_SENG]] [[WUKONG_STAFF_HEADBAND]] [[BAJIE]] Tang Seng arranges supplies on three mats marked with sun, umbrella and circular arrows picture icons; no text."
+    },
+    {
+      "zh": "悟空把金箍棒缩小收在耳后，自己背上轻便的地图袋，方便随时探路。",
+      "en": "Wukong stored the staff behind his ear and took the light map bag so he could scout freely.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Close full-body view of Wukong fastening a small map pouch while the staff is visibly and safely shrunk behind one ear."
+    },
+    {
+      "zh": "八戒背干粮和毯子，唐僧拿通关文牒，白龙马只驮平衡好的经包。",
+      "en": "Bajie carried food and blankets, Tang Seng kept the papers, and White Dragon Horse carried balanced book bundles.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[WHITE_DRAGON_HORSE]] The team checks balanced loads; all straps broad and comfortable, no overloading."
+    },
+    {
+      "zh": "走到村口，八戒肩带有点松。大家马上停下，不笑他，也不催他。",
+      "en": "At the village gate, Bajie's strap loosened. Everyone stopped without teasing or rushing him.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] The team pauses on a broad path as Bajie adjusts a loose padded strap; Wukong steadies the bundle with empty hands."
+    },
+    {
+      "zh": "悟空用软绳多加一道固定，八戒也把一包干粮分给白龙马两侧的小袋。",
+      "en": "Wukong added a soft tie, and Bajie split one food bag evenly between the horse's side pouches.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[BAJIE]] [[WHITE_DRAGON_HORSE]] Wukong ties a broad soft safety knot while Bajie balances two small food pouches; staff remains behind ear."
+    },
+    {
+      "zh": "新队伍重新出发。八戒笑着说：“不是谁最能扛，而是谁都能走得远。”",
+      "en": "The new team set off again. “It is not about who carries most,” Bajie said, “but helping everyone travel far.”",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[WHITE_DRAGON_HORSE]] The four travel together at sunrise with relaxed balanced loads; Wukong's staff upright like a walking stick."
+    }
+  ]
+}

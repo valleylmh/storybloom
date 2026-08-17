@@ -1,0 +1,56 @@
+{
+  "id": "liu-sha-he-da-mu-pai",
+  "title": "流沙河搭木排",
+  "subtitle": "让每个人都安全过河",
+  "origin": "《西游记》第二十二回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "好的办法要照顾每个人的能力和感受；先测试、再通过，比逞快更可靠。",
+    "en": "A good plan fits everyone's abilities and feelings. Testing first is safer than rushing."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 68,
+  "episodeNumber": 68,
+  "pages": [
+    {
+      "zh": "沙僧加入后，第一件事就是帮大家过流沙河。可河面宽，白龙马也有些犹豫。",
+      "en": "After joining the team, Sha helped everyone cross the broad river, where even White Dragon Horse hesitated.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]] Full team stands on a calm broad riverbank, discussing the crossing; no fear or rough water."
+    },
+    {
+      "zh": "沙僧说哪里水浅，悟空用金箍棒直立量深，八戒在岸边摆下彩石记号。",
+      "en": "Sha showed the shallows, Wukong measured depth with the upright staff, and Bajie marked the bank with colored stones.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[BAJIE]] [[SHA_WUJING]] Wukong holds the red-and-gold staff straight down as a depth gauge in shallow clear water; Sha guides, Bajie places stones."
+    },
+    {
+      "zh": "他们把短木排成两层，用软藤绑紧，还在四周加上低低的护绳。",
+      "en": "They built a two-layer wooden raft, tied it with soft vines, and added a low safety rope around the edge.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[BAJIE]] [[SHA_WUJING]] The three build a broad low raft on dry sand using short logs, soft vines and rounded safety posts; tools rest safely."
+    },
+    {
+      "zh": "悟空先放上一篮石头测试。木排浮得稳，他们才请唐僧和白龙马上去。",
+      "en": "Wukong tested the raft with a basket of stones before Tang Seng and the horse stepped aboard.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] A basket of smooth stones sits centered on the raft in shallow water while Wukong checks the rope; staff upright beside him."
+    },
+    {
+      "zh": "唐僧坐在中间，白龙马站在防滑草垫上，八戒把行李平均放在两边。",
+      "en": "Tang Seng sat in the middle, the horse stood on a grass mat, and Bajie balanced the bags on both sides.",
+      "prompt": "[[TANG_SENG]] [[BAJIE]] [[WHITE_DRAGON_HORSE]] Tang Seng sits calmly, horse stands on a woven non-slip mat, and Bajie balances two equal bundles on the raft."
+    },
+    {
+      "zh": "沙僧在前面拉引绳，悟空和八戒在两侧扶稳，谁也没有抢着往前。",
+      "en": "Sha guided the front rope while Wukong and Bajie steadied the sides, moving without racing.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[BAJIE]] [[SHA_WUJING]] Sha walks in shallow water holding a guide rope; Wukong and Bajie steady the raft from dry stepping ledges, staff stored behind ear."
+    },
+    {
+      "zh": "到了对岸，悟空又检查一遍绳结。沙僧把彩石收好，不给后来的人留障碍。",
+      "en": "On the far bank, Wukong checked every knot, while Sha collected the marker stones so no obstacle remained.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[SHA_WUJING]] Wukong checks vine knots on the beached raft while Sha gathers colored marker stones into a basket; tidy riverbank."
+    },
+    {
+      "zh": "沙僧笑了：“从今天起，我不只熟悉这条河，也熟悉了每位伙伴的步子。”",
+      "en": "Sha smiled. “Now I know not only this river, but also how each of my companions travels.”",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]] Full team waves beside the safely moored raft at sunset; relaxed friendship."
+    }
+  ]
+}
