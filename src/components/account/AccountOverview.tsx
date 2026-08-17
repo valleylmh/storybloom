@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Books,
   GearSix,
+  ShieldCheck,
   TreeStructure,
   UsersThree,
 } from "@phosphor-icons/react";
@@ -85,6 +86,18 @@ export default function AccountOverview() {
         cloudCharacterCount={cloudCharacterCount}
       />
 
+      <section className={styles.dataBoundaryNote} aria-labelledby="account-data-boundary-title">
+        <span className={styles.dataBoundaryIcon} aria-hidden="true">
+          <ShieldCheck size={23} weight="duotone" />
+        </span>
+        <div>
+          <h2 id="account-data-boundary-title">本机与私有云分开管理</h2>
+          <p>
+            登录不会自动上传。本机资料会继续留在当前设备，只有你主动选择导入的内容，才会保存到家庭私有云。
+          </p>
+        </div>
+      </section>
+
       {!loading && userId && localImportController ? (
         <div id="local-data-import">
           <LocalImportCard
@@ -102,11 +115,6 @@ export default function AccountOverview() {
           <Link className={styles.secondaryButton} href={buildLoginPath("/me")}>
             登录并跨设备保存
           </Link>
-        ) : null}
-        {!loading && !session ? (
-          <p className={styles.actionNote}>
-            登录后仍不会自动上传；你可以进入账户页逐项选择要跨设备保存的内容。
-          </p>
         ) : null}
       </div>
 

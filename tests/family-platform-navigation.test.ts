@@ -11,16 +11,46 @@ describe("family story platform navigation", () => {
     const nav = source("../src/components/layout/FamilyPlatformNav.tsx");
     expect(nav).toContain('label: "绘本馆"');
     expect(nav).toContain('label: "创作"');
+    expect(nav).toContain('label: "成长"');
     expect(nav).toContain('label: "书架"');
+    expect(nav).toContain('href: "/#story-creation"');
     expect(nav).toContain("isReaderDetail(pathname)");
   });
 
   it("gives the home page equal reading and creation entry points", () => {
     const home = source("../src/app/page.tsx");
+    const creation = source("../src/components/book/MinimalStoryEntry.tsx");
     expect(home).toContain("今晚读一本");
-    expect(home).toContain("给孩子做一本");
+    expect(creation).toContain("把今天的小事，");
+    expect(creation).toContain("写进故事里");
+    expect(home).toContain("home-header-mode-toggle");
+    expect(creation).toContain("同时保存为成长记录");
+    expect(creation).toContain('role="switch"');
+    expect(creation).not.toContain("minimal-home-growth-option");
     expect(home).toContain('href="/library"');
+    expect(home).toContain("https://github.com/valleylmh/storybloom");
     expect(home).toContain('id="story-creation"');
+    expect(home).not.toContain('href="/me/books"');
+    expect(home).not.toContain("home-library-listen");
+    expect(home).not.toContain("home-privacy-note");
+  });
+
+  it("keeps local and private-cloud guidance in My instead of the homepage", () => {
+    const account = source("../src/components/account/AccountOverview.tsx");
+    expect(account).toContain("本机与私有云分开管理");
+    expect(account).toContain("登录不会自动上传");
+    expect(account).toContain("只有你主动选择导入的内容");
+  });
+
+  it("shows an illustration or a book-cover placeholder for every recent work", () => {
+    const library = source("../src/components/account/LocalStoryLibrary.tsx");
+    expect(library).toContain(
+      'page.imageStatus === "complete" && isUsableStoryCover(page.imageUrl)',
+    );
+    expect(library).toContain('!normalized.startsWith("data:image/svg+xml")');
+    expect(library).toContain('className="history-cover"');
+    expect(library).toContain("<img src={coverImage}");
+    expect(library).toContain("<BookOpenText");
   });
 
   it("requires an explicit action before account reading sync", () => {

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import LibraryBookExperience from "@/components/library/LibraryBookExperience";
 import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
-import LibraryRelatedBooks from "@/components/library/LibraryRelatedBooks";
 import {
   getAdjacentBooks,
   getAllSeries,
@@ -17,8 +16,6 @@ import {
   LIBRARY_CATEGORY_LABELS,
   resolveLibraryBookMetadata,
 } from "@/lib/library/metadata";
-import { createLibraryBookSummary } from "@/lib/library/catalog";
-import { getLibraryRecommendations } from "@/lib/library/discovery";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
 
 type Params = { seriesId: string; bookId: string };
@@ -102,15 +99,6 @@ export default async function LibraryBookPage({
       (page) => Boolean(page.imageUrl) && page.imageStatus === "complete",
     );
   const bookMetadata = resolveLibraryBookMetadata(book);
-  const currentBookSummary = createLibraryBookSummary(series, book);
-  const relatedBooks = getLibraryRecommendations(
-    currentBookSummary,
-    getAllSeries().flatMap((item) =>
-      getSeriesBooks(item.id).map((candidate) =>
-        createLibraryBookSummary(item, candidate),
-      ),
-    ),
-  );
   const personalizeHref = `/?mode=minimal&personalize=${encodeURIComponent(
     `${series.id}/${book.id}`,
   )}#story-creation`;
@@ -162,7 +150,13 @@ export default async function LibraryBookPage({
           {book.episodeNumber ? ` · 第 ${book.episodeNumber} 回` : ""} ·{" "}
           {book.ageLabel}
         </p>
-        <h1>{book.title}</h1>
+        <div className="library-book-title-row">
+          <h1>{book.title}</h1>
+          <LibraryFavoriteButton
+            contentId={`${series.id}/${book.id}`}
+            compact
+          />
+        </div>
         <p className="library-lead">{book.subtitle}</p>
         <div className="library-book-detail-actions">
           <div className="library-book-facts" aria-label="绘本信息">
@@ -173,7 +167,6 @@ export default async function LibraryBookPage({
             </span>
             <span>{formatLibraryLanguages(bookMetadata.languages)}</span>
           </div>
-          <LibraryFavoriteButton contentId={`${series.id}/${book.id}`} />
         </div>
       </header>
 
@@ -248,14 +241,6 @@ export default async function LibraryBookPage({
         </section>
       ) : null}
 
-      <LibraryBookTools
-        title={book.title}
-        pages={book.pages}
-        shareUrl={toAbsoluteAppUrl(`/library/${series.id}/${book.id}`)}
-      />
-
-      <LibraryRelatedBooks recommendations={relatedBooks} />
-
       <nav className="library-adjacent" aria-label="继续阅读">
         {previous ? (
           <Link
@@ -286,6 +271,12 @@ export default async function LibraryBookPage({
           <span />
         )}
       </nav>
+
+      <LibraryBookTools
+        title={book.title}
+        pages={book.pages}
+        shareUrl={toAbsoluteAppUrl(`/library/${series.id}/${book.id}`)}
+      />
 
       <section className="library-cta" aria-label="生成专属绘本">
         <h2>让孩子走进这个故事</h2>

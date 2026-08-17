@@ -2,7 +2,12 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { FilmSlate, SpinnerGap } from "@phosphor-icons/react";
+import {
+  Check,
+  FilmSlate,
+  SpinnerGap,
+  X,
+} from "@phosphor-icons/react";
 import {
   createStoryVideoFilename,
   getStoryVideoReadinessError,
@@ -19,11 +24,12 @@ type VideoStatus = "idle" | "preparing" | "rendering" | "complete" | "error";
 const VIDEO_NARRATION_OPTIONS: Array<{
   mode: StoryVideoNarrationMode;
   label: string;
+  shortLabel: string;
 }> = [
-  { mode: "zh", label: "中文" },
-  { mode: "en", label: "English" },
-  { mode: "zh-en", label: "双语" },
-  { mode: "none", label: "无旁白" },
+  { mode: "zh", label: "中文", shortLabel: "中" },
+  { mode: "en", label: "English", shortLabel: "英" },
+  { mode: "zh-en", label: "双语", shortLabel: "双" },
+  { mode: "none", label: "无旁白", shortLabel: "无" },
 ];
 
 const FAMILY_VOICE_CLONING_ENABLED = isFamilyVoiceCloningEnabled();
@@ -34,12 +40,14 @@ export default function StoryVideoPanel({
   totalPages,
   disabled,
   familyCharacterId,
+  compact = false,
 }: {
   title: string;
   pages: StoryPage[];
   totalPages: number;
   disabled: boolean;
   familyCharacterId?: string;
+  compact?: boolean;
 }) {
   const {
     session,
@@ -58,6 +66,7 @@ export default function StoryVideoPanel({
   const [familyVoiceRetryKey, setFamilyVoiceRetryKey] = useState(0);
   const [narrationMode, setNarrationMode] =
     useState<StoryVideoNarrationMode>("zh");
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const [status, setStatus] = useState<VideoStatus>("idle");
   const [progress, setProgress] = useState(0);
   const [progressMessage, setProgressMessage] = useState(
@@ -74,6 +83,9 @@ export default function StoryVideoPanel({
   const videoCloseButtonRef = useRef<HTMLButtonElement>(null);
   const videoPreviewRef = useRef<HTMLVideoElement>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
+  const languageMenuRef = useRef<HTMLDivElement>(null);
+  const languageTriggerRef = useRef<HTMLButtonElement>(null);
+  const languageOptionRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const audioCacheRef = useRef(
     new Map<StoryVideoNarrationMode, StoryVideoAudioAsset[]>(),
   );
@@ -228,6 +240,32 @@ export default function StoryVideoPanel({
     };
   }, [videoDialogOpen]);
 
+  useEffect(() => {
+    if (!languageMenuOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (
+        event.target instanceof Node &&
+        !languageMenuRef.current?.contains(event.target)
+      ) {
+        setLanguageMenuOpen(false);
+      }
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      setLanguageMenuOpen(false);
+      languageTriggerRef.current?.focus();
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [languageMenuOpen]);
+
   function replaceVideoUrl(nextUrl: string | null) {
     if (videoUrlRef.current) {
       URL.revokeObjectURL(videoUrlRef.current);
@@ -237,6 +275,7 @@ export default function StoryVideoPanel({
   }
 
   async function handleGenerateVideo() {
+    setLanguageMenuOpen(false);
     const currentReadinessError = getStoryVideoReadinessError(
       pages,
       totalPages,
@@ -357,6 +396,136 @@ export default function StoryVideoPanel({
     link.remove();
   }
 
+  const generateLabel = isBusy
+    ? "正在生成视频"
+    : status === "complete"
+      ? "重新生成绘本视频"
+      : "生成绘本视频";
+
+  const selectedNarrationLabel =
+    VIDEO_NARRATION_OPTIONS.find((option) => option.mode === narrationMode)
+      ?.label ?? "中文";
+  const selectedNarrationShortLabel =
+    VIDEO_NARRATION_OPTIONS.find((option) => option.mode === narrationMode)
+      ?.shortLabel ?? "中";
+  const selectedNarrationIndex = Math.max(
+    0,
+    VIDEO_NARRATION_OPTIONS.findIndex(
+      (option) => option.mode === narrationMode,
+    ),
+  );
+  const focusLanguageOption = (index: number) => {
+    const total = VIDEO_NARRATION_OPTIONS.length;
+    languageOptionRefs.current[((index % total) + total) % total]?.focus();
+  };
+  const narrationPicker = (
+    <div
+      className="story-video-language-picker"
+      ref={languageMenuRef}
+      onPointerDown={(event) => event.stopPropagation()}
+    >
+      <button
+        ref={languageTriggerRef}
+        type="button"
+        className="story-video-language-trigger"
+        aria-label={`选择视频旁白语言，当前为${selectedNarrationLabel}`}
+        aria-haspopup="listbox"
+        aria-expanded={languageMenuOpen}
+        disabled={isBusy}
+        onClick={() => setLanguageMenuOpen((open) => !open)}
+        onKeyDown={(event) => {
+          if (event.key !== "ArrowDown" && event.key !== "ArrowUp") return;
+          event.preventDefault();
+          setLanguageMenuOpen(true);
+          window.requestAnimationFrame(() => {
+            focusLanguageOption(
+              event.key === "ArrowUp"
+                ? selectedNarrationIndex - 1
+                : selectedNarrationIndex,
+            );
+          });
+        }}
+      >
+        <span>{selectedNarrationShortLabel}</span>
+      </button>
+
+      {languageMenuOpen ? (
+        <div
+          className="story-video-language-popover"
+          role="listbox"
+          aria-label="选择视频旁白语言"
+        >
+          {VIDEO_NARRATION_OPTIONS.map((option, index) => {
+            const selected = option.mode === narrationMode;
+            return (
+              <button
+                key={option.mode}
+                ref={(node) => {
+                  languageOptionRefs.current[index] = node;
+                }}
+                type="button"
+                className={`story-video-language-option ${
+                  selected ? "story-video-language-option-selected" : ""
+                }`}
+                role="option"
+                aria-selected={selected}
+                onClick={() => {
+                  setNarrationMode(option.mode);
+                  setLanguageMenuOpen(false);
+                  window.requestAnimationFrame(() =>
+                    languageTriggerRef.current?.focus(),
+                  );
+                }}
+                onKeyDown={(event) => {
+                  if (event.key === "ArrowDown") {
+                    event.preventDefault();
+                    focusLanguageOption(index + 1);
+                  } else if (event.key === "ArrowUp") {
+                    event.preventDefault();
+                    focusLanguageOption(index - 1);
+                  } else if (event.key === "Home") {
+                    event.preventDefault();
+                    focusLanguageOption(0);
+                  } else if (event.key === "End") {
+                    event.preventDefault();
+                    focusLanguageOption(VIDEO_NARRATION_OPTIONS.length - 1);
+                  }
+                }}
+              >
+                <span>{option.label}</span>
+                {selected ? <Check aria-hidden="true" weight="bold" /> : null}
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
+    </div>
+  );
+
+  const generateButton = (
+    <button
+      type="button"
+      className={`cta-btn story-video-generate-btn ${isBusy ? "story-video-generate-btn-busy" : ""}`}
+      aria-label={generateLabel}
+      title={compact ? generateLabel : undefined}
+      disabled={
+        disabled ||
+        Boolean(readinessError) ||
+        isBusy ||
+        familyVoiceState === "checking" ||
+        familyVoiceState === "error"
+      }
+      onClick={handleGenerateVideo}
+    >
+      {isBusy ? (
+        <SpinnerGap aria-hidden="true" />
+      ) : (
+        <FilmSlate aria-hidden="true" />
+      )}
+      {compact ? null : <span>{generateLabel}</span>}
+    </button>
+  );
+
   const videoDialog =
     typeof document !== "undefined" && videoDialogOpen && videoUrl
       ? createPortal(
@@ -429,57 +598,35 @@ export default function StoryVideoPanel({
 
   return (
     <>
-      <div className="tool-panel story-video-panel">
-        <div>
+      <div
+        className={`tool-panel story-video-panel ${
+          compact ? "story-video-panel-compact" : ""
+        }`}
+      >
+        <div className="story-video-copy">
           <h3 className="section-accent-title">绘本视频</h3>
           <p>
-            将当前插图、字幕和旁白合成为 720 × 1280
-            竖屏视频，适合手机分享。
+            {compact
+              ? "将当前插图、字幕和旁白合成为适合手机分享的竖屏视频。"
+              : "将当前插图、字幕和旁白合成为 720 × 1280 竖屏视频，适合手机分享。"}
           </p>
         </div>
 
         <div className="story-video-toolbar">
-          <button
-            type="button"
-            className={`cta-btn story-video-generate-btn ${isBusy ? "story-video-generate-btn-busy" : ""}`}
-            disabled={
-              disabled ||
-              Boolean(readinessError) ||
-              isBusy ||
-              familyVoiceState === "checking" ||
-              familyVoiceState === "error"
-            }
-            onClick={handleGenerateVideo}
-          >
-            {isBusy ? <SpinnerGap aria-hidden="true" /> : <FilmSlate aria-hidden="true" />}
-            <span>
-              {isBusy
-                ? "正在生成视频"
-                : status === "complete"
-                  ? "重新生成绘本视频"
-                  : "生成绘本视频"}
-            </span>
-          </button>
-
-          <select
-            className="story-video-select"
-            aria-label="选择视频旁白语言"
-            value={narrationMode}
-            disabled={isBusy}
-            onChange={(event) =>
-              setNarrationMode(event.target.value as StoryVideoNarrationMode)
-            }
-          >
-            {VIDEO_NARRATION_OPTIONS.map((option) => (
-              <option key={option.mode} value={option.mode}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+          {compact ? narrationPicker : generateButton}
+          {compact ? generateButton : narrationPicker}
 
           {isBusy ? (
-            <button type="button" className="secondary-btn" onClick={handleCancel}>
-              取消
+            <button
+              type="button"
+              className={`secondary-btn ${
+                compact ? "story-video-cancel-btn" : ""
+              }`}
+              aria-label={compact ? "取消生成视频" : undefined}
+              title={compact ? "取消生成视频" : undefined}
+              onClick={handleCancel}
+            >
+              {compact ? <X aria-hidden="true" /> : "取消"}
             </button>
           ) : null}
         </div>

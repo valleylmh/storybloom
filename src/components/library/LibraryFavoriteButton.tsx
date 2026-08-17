@@ -22,6 +22,7 @@ export default function LibraryFavoriteButton({
       } ${compact ? "library-favorite-button-compact" : ""}`}
       aria-pressed={active}
       aria-label={active ? "取消收藏这本绘本" : "收藏这本绘本"}
+      title={compact ? (active ? "取消收藏" : "收藏") : undefined}
       onClick={() => toggle("library", contentId)}
     >
       <Heart aria-hidden="true" weight={active ? "fill" : "regular"} />

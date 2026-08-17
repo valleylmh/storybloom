@@ -19,6 +19,9 @@ export default function LibraryBookReader({
   pageIndex: controlledPageIndex,
   readerMode: controlledReaderMode,
   narrationHighlight = null,
+  playbackPositionMs = 0,
+  playbackDurationMs = 0,
+  showToolbar = true,
   onPageIndexChange,
   onReaderModeChange,
 }: {
@@ -28,6 +31,9 @@ export default function LibraryBookReader({
   pageIndex?: number;
   readerMode?: ReaderMode;
   narrationHighlight?: BrowserNarrationMode | null;
+  playbackPositionMs?: number;
+  playbackDurationMs?: number;
+  showToolbar?: boolean;
   onPageIndexChange?: (pageIndex: number) => void;
   onReaderModeChange?: (mode: ReaderMode) => void;
 }) {
@@ -174,42 +180,44 @@ export default function LibraryBookReader({
 
   return (
     <section className="library-reader" aria-label="绘本正文">
-      <div className="library-reader-toolbar">
-        <div className="library-reader-toolbar-copy">
-          <strong>阅读方式</strong>
-          <span>
-            {readerMode === "turn"
-              ? "左右箭头、键盘或滑动翻页；点击插图可放大。"
-              : "平铺查看全部页面；点击任意插图可放大轮播。"}
-          </span>
-        </div>
-        <div
-          className="library-reader-mode-switch"
-          role="group"
-          aria-label="切换阅读方式"
-        >
-          <button
-            type="button"
-            className={`library-reader-mode-btn ${
-              readerMode === "turn" ? "library-reader-mode-btn-active" : ""
-            }`}
-            aria-pressed={readerMode === "turn"}
-            onClick={() => changeReaderMode("turn")}
+      {showToolbar ? (
+        <div className="library-reader-toolbar">
+          <div className="library-reader-toolbar-copy">
+            <strong>阅读方式</strong>
+            <span>
+              {readerMode === "turn"
+                ? "左右箭头、键盘或滑动翻页；点击插图可放大。"
+                : "平铺查看全部页面；点击任意插图可放大轮播。"}
+            </span>
+          </div>
+          <div
+            className="library-reader-mode-switch"
+            role="group"
+            aria-label="切换阅读方式"
           >
-            翻页阅读
-          </button>
-          <button
-            type="button"
-            className={`library-reader-mode-btn ${
-              readerMode === "grid" ? "library-reader-mode-btn-active" : ""
-            }`}
-            aria-pressed={readerMode === "grid"}
-            onClick={() => changeReaderMode("grid")}
-          >
-            平铺查看
-          </button>
+            <button
+              type="button"
+              className={`library-reader-mode-btn ${
+                readerMode === "turn" ? "library-reader-mode-btn-active" : ""
+              }`}
+              aria-pressed={readerMode === "turn"}
+              onClick={() => changeReaderMode("turn")}
+            >
+              翻页阅读
+            </button>
+            <button
+              type="button"
+              className={`library-reader-mode-btn ${
+                readerMode === "grid" ? "library-reader-mode-btn-active" : ""
+              }`}
+              aria-pressed={readerMode === "grid"}
+              onClick={() => changeReaderMode("grid")}
+            >
+              平铺查看
+            </button>
+          </div>
         </div>
-      </div>
+      ) : null}
 
       {readerMode === "turn" ? (
         <>
@@ -239,6 +247,14 @@ export default function LibraryBookReader({
               }`}
               aria-label={`第 ${page.page} 页，共 ${total} 页`}
             >
+              {playbackDurationMs > 0 ? (
+                <progress
+                  className="book-page-audio-progress"
+                  aria-label={`第 ${page.page} 页音频播放进度`}
+                  max={playbackDurationMs}
+                  value={Math.min(playbackPositionMs, playbackDurationMs)}
+                />
+              ) : null}
               <div className="book-page book-page-left">
                 {page.imageUrl && page.imageStatus === "complete" ? (
                   <button

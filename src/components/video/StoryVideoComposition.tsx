@@ -8,6 +8,8 @@ import {
 } from "remotion";
 import {
   STORY_VIDEO_AUDIO_LEAD_IN_SECONDS,
+  getStoryVideoImageReveal,
+  getStoryVideoTransitionFrames,
   type StoryVideoNarrationMode,
   type StoryVideoSubtitlePair,
 } from "@/lib/story-video";
@@ -80,19 +82,12 @@ function StoryVideoScene({
   narrationMode: StoryVideoNarrationMode;
 }) {
   const frame = useCurrentFrame();
-  const blankFrames = Math.round(0.2 * fps);
-  const grayscaleEnd = blankFrames + Math.round(1.45 * fps);
-  const colorEnd = grayscaleEnd + Math.round(1.2 * fps);
-  const grayReveal = clampInterpolate(
+  const { grayscaleEnd, colorEnd } = getStoryVideoTransitionFrames(fps);
+  const { grayReveal, colorReveal } = getStoryVideoImageReveal({
     frame,
-    [blankFrames, grayscaleEnd],
-    [0, 100],
-  );
-  const colorReveal = clampInterpolate(
-    frame,
-    [grayscaleEnd, colorEnd],
-    [0, 100],
-  );
+    fps,
+    coverScene: scene.startFrame === 0,
+  });
   const zoom = clampInterpolate(
     frame,
     [0, Math.max(1, scene.durationInFrames - 1)],

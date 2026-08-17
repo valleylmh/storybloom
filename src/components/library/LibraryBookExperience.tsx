@@ -50,6 +50,8 @@ export default function LibraryBookExperience({
   const [progressReady, setProgressReady] = useState(false);
   const [playbackStatus, setPlaybackStatus] =
     useState<PlaybackState["status"]>("idle");
+  const [playbackPositionMs, setPlaybackPositionMs] = useState(0);
+  const [playbackDurationMs, setPlaybackDurationMs] = useState(0);
   const [bedtimeMode, setBedtimeMode] = useState(false);
   const progressRef = useRef<ReadingProgressRecord | null>(null);
   const lastSavedFingerprintRef = useRef("");
@@ -67,6 +69,8 @@ export default function LibraryBookExperience({
     setResumeLabel(null);
     setProgressReady(false);
     setPlaybackStatus("idle");
+    setPlaybackPositionMs(0);
+    setPlaybackDurationMs(0);
     setBedtimeMode(false);
     progressRef.current = null;
     lastSavedFingerprintRef.current = "";
@@ -185,6 +189,8 @@ export default function LibraryBookExperience({
   const handlePageIndexChange = useCallback(
     (nextPageIndex: number) => {
       setPlaybackStatus("idle");
+      setPlaybackPositionMs(0);
+      setPlaybackDurationMs(0);
       setInitialPositionMs(0);
       setResumeLabel(null);
       setPageIndex(nextPageIndex);
@@ -199,6 +205,8 @@ export default function LibraryBookExperience({
 
   const handleLanguageModeChange = useCallback(
     (nextMode: BrowserNarrationMode) => {
+      setPlaybackPositionMs(0);
+      setPlaybackDurationMs(0);
       setInitialPositionMs(0);
       setResumeLabel(null);
       setLanguageMode(nextMode);
@@ -226,6 +234,8 @@ export default function LibraryBookExperience({
   const handlePlaybackStateChange = useCallback(
     (state: PlaybackState) => {
       setPlaybackStatus(state.status);
+      setPlaybackPositionMs(state.positionMs);
+      setPlaybackDurationMs(state.durationMs);
       persistProgress({
         pageIndex: state.pageIndex,
         languageMode: state.languageMode,
@@ -268,20 +278,7 @@ export default function LibraryBookExperience({
               退出睡前模式
             </button>
           </header>
-        ) : (
-          <div className="library-bedtime-entry">
-            <div>
-              <MoonStars aria-hidden="true" weight="fill" />
-              <span>
-                <strong>睡前模式</strong>
-                <small>降低视觉刺激，保留大号播放和翻页；读完整本即停止。</small>
-              </span>
-            </div>
-            <button type="button" onClick={enterBedtimeMode}>
-              进入睡前模式
-            </button>
-          </div>
-        )}
+        ) : null}
 
         <section className="library-narration-tools" aria-label="绘本朗读">
           <LibraryNarrationToolbar
@@ -289,6 +286,8 @@ export default function LibraryBookExperience({
             storyKey={storyKey}
             currentPageIndex={pageIndex}
             turnModeActive={readerMode === "turn"}
+            compactControls={!bedtimeMode}
+            readerMode={readerMode}
             languageMode={languageMode}
             autoAdvance={autoAdvance}
             initialPositionMs={initialPositionMs}
@@ -300,6 +299,8 @@ export default function LibraryBookExperience({
             onHighlightChange={setNarrationHighlight}
             onPlaybackStateChange={handlePlaybackStateChange}
             onRequestTurnMode={() => setReaderMode("turn")}
+            onReaderModeChange={setReaderMode}
+            onEnterBedtimeMode={enterBedtimeMode}
           />
         </section>
 
@@ -310,6 +311,9 @@ export default function LibraryBookExperience({
           pageIndex={pageIndex}
           readerMode={readerMode}
           narrationHighlight={narrationHighlight}
+          playbackPositionMs={playbackPositionMs}
+          playbackDurationMs={playbackDurationMs}
+          showToolbar={false}
           onPageIndexChange={handlePageIndexChange}
           onReaderModeChange={setReaderMode}
         />

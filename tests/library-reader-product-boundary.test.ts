@@ -32,6 +32,15 @@ const libraryBookExperienceSource = readFileSync(
   ),
   "utf8",
 );
+const libraryBookReaderSource = readFileSync(
+  fileURLToPath(
+    new URL(
+      "../src/components/library/LibraryBookReader.tsx",
+      import.meta.url,
+    ),
+  ),
+  "utf8",
+);
 
 describe("family story reader product boundaries", () => {
   it("keeps the core reader free from microphone and recording APIs", () => {
@@ -46,6 +55,41 @@ describe("family story reader product boundaries", () => {
     expect(bookPreviewSource).toContain("<LibraryBookExperience");
     expect(bookPreviewSource).toContain('contentType="personalized"');
     expect(bookPreviewSource).toContain('preferCloudTts={false}');
+  });
+
+  it("merges standard playback and reading mode into one compact toolbar", () => {
+    expect(libraryBookExperienceSource).toContain(
+      "compactControls={!bedtimeMode}",
+    );
+    expect(libraryBookExperienceSource).toContain("readerMode={readerMode}");
+    expect(libraryBookExperienceSource).toContain("showToolbar={false}");
+    expect(narrationToolbarSource).toContain("library-reader-control-bar");
+    expect(narrationToolbarSource).toContain("library-reader-play-btn");
+    expect(narrationToolbarSource).toContain("library-reader-settings-menu");
+    expect(narrationToolbarSource).toContain("library-reader-bedtime-btn");
+    expect(libraryBookExperienceSource).toContain(
+      "onEnterBedtimeMode={enterBedtimeMode}",
+    );
+    expect(libraryBookExperienceSource).not.toContain(
+      "library-bedtime-entry",
+    );
+    expect(narrationToolbarSource).not.toContain(
+      "library-reader-control-progress",
+    );
+    expect(narrationToolbarSource).toContain('aria-label="切换阅读方式"');
+    expect(libraryBookReaderSource).toContain("showToolbar = true");
+  });
+
+  it("renders the audio progress along the active page top edge", () => {
+    expect(libraryBookExperienceSource).toContain(
+      "playbackPositionMs={playbackPositionMs}",
+    );
+    expect(libraryBookExperienceSource).toContain(
+      "playbackDurationMs={playbackDurationMs}",
+    );
+    expect(libraryBookReaderSource).toContain("book-page-audio-progress");
+    expect(libraryBookReaderSource).toContain("playbackDurationMs > 0");
+    expect(narrationToolbarSource).not.toContain("library-audio-progress");
   });
 
   it("keeps page completion finite and user controlled", () => {

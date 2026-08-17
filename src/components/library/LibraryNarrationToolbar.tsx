@@ -3,10 +3,14 @@
 import { useCallback, useEffect, useReducer, useRef } from "react";
 import {
   ArrowClockwise,
+  GearSix,
+  MoonStars,
   Pause,
   Play,
+  SpinnerGap,
   Stop,
 } from "@phosphor-icons/react";
+import type { ReaderMode } from "@/components/library/LibraryBookReader";
 import {
   getBrowserNarrationSegments,
   pickBrowserVoice,
@@ -84,12 +88,6 @@ function cachedAudioIsUsable(input: {
   return input.audioUrl.startsWith("/") && Date.now() - input.updatedAt < 86_400_000;
 }
 
-function formatPlaybackTime(milliseconds: number) {
-  const seconds = Math.max(0, Math.floor(milliseconds / 1000));
-  const minutes = Math.floor(seconds / 60);
-  return `${minutes}:${String(seconds % 60).padStart(2, "0")}`;
-}
-
 function toPlaybackError(error: unknown): PlaybackError {
   if (error instanceof AudioRequestTimeoutError) {
     return {
@@ -113,6 +111,8 @@ export default function LibraryNarrationToolbar({
   storyKey,
   currentPageIndex,
   turnModeActive,
+  compactControls = false,
+  readerMode = "turn",
   languageMode,
   autoAdvance,
   initialPositionMs = 0,
@@ -124,11 +124,15 @@ export default function LibraryNarrationToolbar({
   onHighlightChange,
   onPlaybackStateChange,
   onRequestTurnMode,
+  onReaderModeChange,
+  onEnterBedtimeMode,
 }: {
   pages: StoryPage[];
   storyKey: string;
   currentPageIndex: number;
   turnModeActive: boolean;
+  compactControls?: boolean;
+  readerMode?: ReaderMode;
   languageMode: BrowserNarrationMode;
   autoAdvance: boolean;
   initialPositionMs?: number;
@@ -140,6 +144,8 @@ export default function LibraryNarrationToolbar({
   onHighlightChange: (mode: BrowserNarrationMode | null) => void;
   onPlaybackStateChange?: (state: PlaybackState) => void;
   onRequestTurnMode: () => void;
+  onReaderModeChange?: (mode: ReaderMode) => void;
+  onEnterBedtimeMode?: () => void;
 }) {
   const [state, dispatch] = useReducer(
     playbackReducer,
@@ -797,6 +803,169 @@ export default function LibraryNarrationToolbar({
               ? "重试播放"
               : resumeLabel || "播放故事";
 
+  const playbackStatusLabel =
+    state.status === "loading"
+      ? "正在准备"
+      : state.status === "playing"
+        ? "播放中"
+        : state.status === "paused"
+          ? "已暂停"
+          : state.status === "ended"
+            ? "已播放完"
+            : state.status === "error"
+              ? "播放失败"
+              : "等待播放";
+
+  if (compactControls) {
+    return (
+      <div
+        className="library-reader-control-bar"
+        data-playback-status={state.status}
+      >
+        {onEnterBedtimeMode ? (
+          <button
+            type="button"
+            className="library-reader-bedtime-btn"
+            aria-label="进入睡前模式"
+            title="进入睡前模式"
+            onClick={onEnterBedtimeMode}
+          >
+            <MoonStars aria-hidden="true" weight="fill" />
+            <span>睡前</span>
+          </button>
+        ) : (
+          <span className="library-reader-control-spacer" aria-hidden="true" />
+        )}
+
+        <div
+          className="library-reader-mode-switch"
+          role="group"
+          aria-label="切换阅读方式"
+        >
+          <button
+            type="button"
+            className={`library-reader-mode-btn ${
+              readerMode === "turn" ? "library-reader-mode-btn-active" : ""
+            }`}
+            aria-pressed={readerMode === "turn"}
+            onClick={() => onReaderModeChange?.("turn")}
+          >
+            翻页阅读
+          </button>
+          <button
+            type="button"
+            className={`library-reader-mode-btn ${
+              readerMode === "grid" ? "library-reader-mode-btn-active" : ""
+            }`}
+            aria-pressed={readerMode === "grid"}
+            onClick={() => onReaderModeChange?.("grid")}
+          >
+            平铺查看
+          </button>
+        </div>
+
+        <div className="library-reader-control-actions">
+          <span className="library-reader-control-status" aria-live="polite">
+            {playbackStatusLabel}
+          </span>
+          <button
+            type="button"
+            className="library-reader-icon-btn library-reader-play-btn"
+            aria-label={primaryLabel}
+            title={primaryLabel}
+            onClick={handlePrimaryAction}
+            disabled={state.status === "loading"}
+          >
+            {state.status === "loading" ? (
+              <SpinnerGap
+                aria-hidden="true"
+                className="library-reader-control-spinner"
+              />
+            ) : state.status === "playing" ? (
+              <Pause aria-hidden="true" weight="fill" />
+            ) : (
+              <Play aria-hidden="true" weight="fill" />
+            )}
+          </button>
+
+          <details className="library-reader-settings-menu">
+            <summary
+              className="library-reader-icon-btn library-reader-settings-btn"
+              aria-label="语言与播放设置"
+              title="语言与播放设置"
+            >
+              <GearSix aria-hidden="true" />
+            </summary>
+            <div className="library-reader-settings-popover">
+              <strong>语言与播放设置</strong>
+              <div className="segmented-buttons" role="group" aria-label="朗读语言">
+                {NARRATION_OPTIONS.map((item) => (
+                  <button
+                    key={item.mode}
+                    type="button"
+                    className={`secondary-btn ${
+                      languageMode === item.mode ? "secondary-btn-active" : ""
+                    }`}
+                    aria-pressed={languageMode === item.mode}
+                    onClick={() => handleLanguageModeChange(item.mode)}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              <label className="library-auto-advance-toggle">
+                <input
+                  type="checkbox"
+                  checked={autoAdvance}
+                  onChange={(event) => onAutoAdvanceChange(event.target.checked)}
+                />
+                <span>播放完成后自动翻到下一页</span>
+              </label>
+              <div className="library-reader-settings-actions">
+                <button
+                  type="button"
+                  className="secondary-btn"
+                  onClick={replayCurrentPage}
+                  disabled={state.status === "loading"}
+                >
+                  <ArrowClockwise aria-hidden="true" />
+                  重播当前页
+                </button>
+                <button
+                  type="button"
+                  className="secondary-btn"
+                  onClick={stopPlayback}
+                  disabled={state.status === "idle"}
+                >
+                  <Stop aria-hidden="true" weight="fill" />
+                  停止
+                </button>
+              </div>
+              <p>最后一页播放结束后会停止，不会自动打开下一本绘本。</p>
+              {state.message ? <p aria-live="polite">{state.message}</p> : null}
+            </div>
+          </details>
+        </div>
+
+        <audio ref={audioRef} preload="metadata" hidden />
+
+        {state.error ? (
+          <div
+            className="tool-error library-playback-error library-reader-control-error"
+            role="alert"
+          >
+            <span>{state.error.message || "播放失败，点击重试。"}</span>
+            {state.error.retryable ? (
+              <button type="button" onClick={replayCurrentPage}>
+                点击重试
+              </button>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+
   return (
     <div className="tool-panel library-narration-panel" data-playback-status={state.status}>
       <div className="library-narration-heading">
@@ -805,17 +974,7 @@ export default function LibraryNarrationToolbar({
           <p>打开即可播放；不需要录音，也不会请求麦克风权限。</p>
         </div>
         <span className="library-playback-state" aria-live="polite">
-          {state.status === "loading"
-            ? "正在准备"
-            : state.status === "playing"
-              ? "播放中"
-              : state.status === "paused"
-                ? "已暂停"
-                : state.status === "ended"
-                  ? "已播放完"
-                  : state.status === "error"
-                    ? "播放失败"
-                    : "等待播放"}
+          {playbackStatusLabel}
         </span>
       </div>
 
@@ -853,15 +1012,6 @@ export default function LibraryNarrationToolbar({
           停止
         </button>
       </div>
-
-      {state.durationMs > 0 ? (
-        <div className="library-audio-progress" aria-label="当前页播放进度">
-          <progress max={state.durationMs} value={Math.min(state.positionMs, state.durationMs)} />
-          <span>
-            {formatPlaybackTime(state.positionMs)} / {formatPlaybackTime(state.durationMs)}
-          </span>
-        </div>
-      ) : null}
 
       <details className="library-playback-settings">
         <summary>语言与播放设置</summary>

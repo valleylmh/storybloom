@@ -32,6 +32,17 @@ function getStatusLabel(record: StoryHistoryRecord, locale: Locale) {
   return "生成中";
 }
 
+function isUsableStoryCover(imageUrl?: string) {
+  const normalized = imageUrl?.trim().toLowerCase();
+  return Boolean(normalized && !normalized.startsWith("data:image/svg+xml"));
+}
+
+function getStoryCover(record: StoryHistoryRecord) {
+  return record.result.pages.find(
+    (page) => page.imageStatus === "complete" && isUsableStoryCover(page.imageUrl),
+  )?.imageUrl;
+}
+
 export default function LocalStoryLibrary({
   locale = "zh",
   records,
@@ -173,41 +184,54 @@ export default function LocalStoryLibrary({
         ) : null}
       </div>
       <div className="history-list">
-        {visibleRecords.slice(0, 10).map((record) => (
-          <article
-            className="history-item"
-            data-status={record.status}
-            key={record.storyId}
-          >
-            <div>
-              <div className="history-title-row">
-                <h3>{record.result.coverTitle}</h3>
-                <span>{getStatusLabel(record, locale)}</span>
+        {visibleRecords.slice(0, 10).map((record) => {
+          const coverImage = getStoryCover(record);
+          return (
+            <article
+              className="history-item"
+              data-status={record.status}
+              key={record.storyId}
+            >
+              <div className="history-cover" data-placeholder={!coverImage}>
+                {coverImage ? (
+                  <img src={coverImage} alt="" loading="lazy" />
+                ) : (
+                  <>
+                    <BookOpenText aria-hidden="true" weight="duotone" />
+                    <small>{locale === "zh" ? "绘本" : "BOOK"}</small>
+                  </>
+                )}
               </div>
-              <p>
-                {record.result.input.childName} · {record.imageProgress.complete}/
-                {record.imageProgress.total} · {formatHistoryTime(record.updatedAt, locale)}
-              </p>
-            </div>
-            <div className="history-actions">
-              <button
-                type="button"
-                className="history-open-btn"
-                onClick={() => handleOpen(record)}
-              >
-                {copy.open}
-              </button>
-              <button
-                type="button"
-                className="text-danger-btn"
-                disabled={deletingId === record.storyId}
-                onClick={() => void handleDelete(record.storyId)}
-              >
-                {deletingId === record.storyId && locale === "zh" ? "删除中" : copy.remove}
-              </button>
-            </div>
-          </article>
-        ))}
+              <div className="history-copy">
+                <div className="history-title-row">
+                  <h3>{record.result.coverTitle}</h3>
+                  <span>{getStatusLabel(record, locale)}</span>
+                </div>
+                <p>
+                  {record.result.input.childName} · {record.imageProgress.complete}/
+                  {record.imageProgress.total} · {formatHistoryTime(record.updatedAt, locale)}
+                </p>
+              </div>
+              <div className="history-actions">
+                <button
+                  type="button"
+                  className="history-open-btn"
+                  onClick={() => handleOpen(record)}
+                >
+                  {copy.open}
+                </button>
+                <button
+                  type="button"
+                  className="text-danger-btn"
+                  disabled={deletingId === record.storyId}
+                  onClick={() => void handleDelete(record.storyId)}
+                >
+                  {deletingId === record.storyId && locale === "zh" ? "删除中" : copy.remove}
+                </button>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

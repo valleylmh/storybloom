@@ -5,6 +5,14 @@ import Link from "next/link";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
+  DeviceMobile,
+  Gift,
+  HeartStraight,
+  MagicWand,
+  Plant,
+  ShieldCheck,
+} from "@phosphor-icons/react";
+import {
   analyzeStoryProtagonist,
   matchStoryProtagonist,
   normalizeCharacterName,
@@ -94,6 +102,7 @@ interface Props {
   remainingFreeGenerations: number;
   initialGrowthEnabled?: boolean;
   initialGrowthVersion?: GrowthVersionCreationPreset;
+  homeHero?: boolean;
   onSubmit: (data: Record<string, unknown>) => Promise<void> | void;
 }
 
@@ -471,6 +480,7 @@ export default function MinimalStoryEntry({
   remainingFreeGenerations,
   initialGrowthEnabled = false,
   initialGrowthVersion,
+  homeHero = false,
   onSubmit,
 }: Props) {
   const text = COPY[locale];
@@ -579,10 +589,13 @@ export default function MinimalStoryEntry({
   }, [locale]);
 
   useEffect(() => {
-    if ((initialGrowthEnabled || creatingGrowthVersion) && growthDetailsRef.current) {
+    if (
+      (creatingGrowthVersion || (initialGrowthEnabled && !homeHero)) &&
+      growthDetailsRef.current
+    ) {
       growthDetailsRef.current.open = true;
     }
-  }, [creatingGrowthVersion, initialGrowthEnabled]);
+  }, [creatingGrowthVersion, homeHero, initialGrowthEnabled]);
 
   useEffect(() => {
     if (!growthEnabled || creatingGrowthVersion) return;
@@ -1363,6 +1376,10 @@ export default function MinimalStoryEntry({
     );
     setIdentityAnchorPreview(null);
     setIdentityError("");
+    if (homeHero && growthEnabled) {
+      setGrowthParentFacts((current) => current.trim() || storyIdea);
+      setGrowthFactsConfirmed(true);
+    }
     setIdentityPhase("confirm");
     setIdentityOpen(true);
     if (personalizationDraft) {
@@ -1385,16 +1402,39 @@ export default function MinimalStoryEntry({
       setMessage(text.verify);
       return;
     }
+    if (remainingFreeGenerations <= 0) return;
+    if (homeHero) {
+      const analysis = analyzeStoryProtagonist(storyIdea, locale);
+      const match = matchStoryProtagonist(analysis, familyChoices);
+      if (match.status === "matched") {
+        const choice = familyChoices.find((item) => item.id === match.characterId);
+        openIdentityConfirmation(
+          storyIdea,
+          choice?.display_name || analysis.candidateName,
+          choice ? [choice.id] : [match.characterId],
+        );
+      } else {
+        openIdentityConfirmation(
+          storyIdea,
+          analysis.candidateName,
+          match.matchingCharacterIds,
+        );
+      }
+      return;
+    }
     if (growthEnabled && !growthFactsConfirmed) {
       setGrowthError(text.growthConfirmRequired);
       setMessage(text.growthConfirmRequired);
-      growthDetailsRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
+      window.requestAnimationFrame(() => {
+        if (!growthDetailsRef.current) return;
+        growthDetailsRef.current.open = true;
+        growthDetailsRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
       });
       return;
     }
-    if (remainingFreeGenerations <= 0) return;
 
     const explicitlySelectedChild = familyChoices.find(
       (choice) =>
@@ -1634,7 +1674,10 @@ export default function MinimalStoryEntry({
     : null;
 
   return (
-    <section className="minimal-entry" aria-labelledby="minimal-entry-title">
+    <section
+      className={`minimal-entry${homeHero ? " minimal-entry-home" : ""}`}
+      aria-labelledby="minimal-entry-title"
+    >
       {turnstileEnabled ? (
         <Script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
@@ -1644,16 +1687,34 @@ export default function MinimalStoryEntry({
         />
       ) : null}
 
-      <div className="minimal-brand-row">
-        <span className="minimal-brand-seed" aria-hidden="true">✦</span>
-        <span>StoryBloom</span>
-      </div>
+      {homeHero ? null : (
+        <>
+          <div className="minimal-brand-row">
+            <span className="minimal-brand-seed" aria-hidden="true">✦</span>
+            <span>StoryBloom</span>
+          </div>
 
-      <div className="rolling-prompt" aria-live="polite">
-        <span key={`${locale}-${promptIndex}`}>{text.prompts[promptIndex]}</span>
-      </div>
+          <div className="rolling-prompt" aria-live="polite">
+            <span key={`${locale}-${promptIndex}`}>{text.prompts[promptIndex]}</span>
+          </div>
+        </>
+      )}
       <h1 id="minimal-entry-title">
-        {personalizationContext
+        {homeHero
+          ? locale === "zh"
+            ? (
+                <>
+                  <span>把今天的小事，</span>
+                  <span>写进故事里</span>
+                </>
+              )
+            : (
+                <>
+                  <span>Turn today’s little moment</span>
+                  <span>into a story</span>
+                </>
+              )
+          : personalizationContext
           ? locale === "zh"
             ? `让孩子成为《${personalizationContext.storySpec.sourceTitle}》的主角`
             : `Make your child the hero of ${personalizationContext.storySpec.sourceTitle}`
@@ -1661,6 +1722,22 @@ export default function MinimalStoryEntry({
             ? text.growthPageTitle
             : text.title}
       </h1>
+      {homeHero ? (
+        <div className="minimal-home-ornament" aria-hidden="true">
+          <span />
+          <Plant weight="fill" />
+          <HeartStraight weight="fill" />
+          <Plant className="minimal-home-ornament-reverse" weight="fill" />
+          <span />
+        </div>
+      ) : null}
+      {homeHero ? (
+        <p className="minimal-home-description">
+          {locale === "zh"
+            ? "写下一句话，为孩子生成一本可以反复阅读的专属故事。"
+            : "Write one sentence and create a personal story your family can revisit."}
+        </p>
+      ) : null}
 
       {initialGrowthVersion ? (
         <div className="minimal-growth-version-banner" role="status">
@@ -1700,7 +1777,7 @@ export default function MinimalStoryEntry({
       ) : null}
 
       <form className="story-search" onSubmit={handleGenerate}>
-        <span className="story-search-icon" aria-hidden="true">⌁</span>
+        {homeHero ? null : <span className="story-search-icon" aria-hidden="true">⌁</span>}
         <input
           value={idea}
           readOnly={creatingGrowthVersion}
@@ -1717,7 +1794,11 @@ export default function MinimalStoryEntry({
           type="submit"
           disabled={submitting || growthPhotoBusy || remainingFreeGenerations <= 0}
           aria-label={
-            personalizationContext
+            homeHero
+              ? locale === "zh"
+                ? "AI 生成绘本"
+                : "Create with AI"
+              : personalizationContext
               ? locale === "zh"
                 ? "选择家庭角色"
                 : "Choose a family character"
@@ -1726,22 +1807,49 @@ export default function MinimalStoryEntry({
                 : text.action
           }
         >
-          {submitting ? <span className="story-search-loader" /> : <span aria-hidden="true">→</span>}
-          <span className="story-search-action-label">
-            {submitting
-              ? text.generating
-              : personalizationContext
-                ? locale === "zh"
-                  ? "选择角色"
-                  : "Choose character"
-              : growthEnabled
-                ? text.growthAction
-                : text.action}
-          </span>
+          {submitting ? (
+            <span className="story-search-loader" />
+          ) : homeHero ? (
+            <MagicWand aria-hidden="true" weight="fill" />
+          ) : (
+            <span aria-hidden="true">→</span>
+          )}
+          {homeHero ? null : (
+            <span className="story-search-action-label">
+              {submitting
+                ? text.generating
+                : personalizationContext
+                  ? locale === "zh"
+                    ? "选择角色"
+                    : "Choose character"
+                : growthEnabled
+                  ? text.growthAction
+                  : text.action}
+            </span>
+          )}
         </button>
       </form>
 
-      {growthEnabled ? (
+      {homeHero ? (
+        <div className="minimal-home-trust" aria-label="创作与数据说明">
+          <span>
+            <DeviceMobile aria-hidden="true" />
+            {locale === "zh" ? "默认保存在当前设备" : "Saved on this device"}
+          </span>
+          <span>
+            <ShieldCheck aria-hidden="true" />
+            {locale === "zh"
+              ? "成长照片不会进入故事生成请求"
+              : "Moment photos stay out of story generation"}
+          </span>
+          <span>
+            <Gift aria-hidden="true" />
+            {locale === "zh"
+              ? `每天 ${freeGenerationLimit} 次免费`
+              : `${freeGenerationLimit} free each day`}
+          </span>
+        </div>
+      ) : growthEnabled ? (
         <p className="minimal-capture-trust-note">
           {locale === "zh"
             ? "默认保存在当前设备 · 照片不会发送给故事模型 · 云端导入需你主动选择"
@@ -1754,7 +1862,8 @@ export default function MinimalStoryEntry({
 
       {message ? <p className="minimal-entry-message" role="alert">{message}</p> : null}
 
-      <div className="minimal-tools">
+      {!homeHero ? (
+        <div className="minimal-tools">
         <details className="minimal-tool minimal-family-picker" name="minimal-tools">
           <summary>
             {text.familyTool}
@@ -1823,18 +1932,20 @@ export default function MinimalStoryEntry({
                 <strong>{text.growthTitle}</strong>
                 <span>{text.growthHint}</span>
               </div>
-              <label className="minimal-growth-switch">
-                <input
-                  type="checkbox"
-                  checked={growthEnabled}
-                  disabled={creatingGrowthVersion}
-                  onChange={(event) => {
-                    setGrowthEnabled(event.target.checked);
-                    setGrowthError("");
-                  }}
-                />
-                <span>{text.growthEnable}</span>
-              </label>
+              {homeHero ? null : (
+                <label className="minimal-growth-switch">
+                  <input
+                    type="checkbox"
+                    checked={growthEnabled}
+                    disabled={creatingGrowthVersion}
+                    onChange={(event) => {
+                      setGrowthEnabled(event.target.checked);
+                      setGrowthError("");
+                    }}
+                  />
+                  <span>{text.growthEnable}</span>
+                </label>
+              )}
             </div>
 
             {growthEnabled ? (
@@ -2114,7 +2225,7 @@ export default function MinimalStoryEntry({
           </div>
         </details>
 
-        {creatingGrowthVersion ? null : growthEnabled ? (
+        {homeHero || creatingGrowthVersion ? null : growthEnabled ? (
           <button
             type="button"
             className="minimal-imagination-switch"
@@ -2164,7 +2275,8 @@ export default function MinimalStoryEntry({
             <p className="minimal-subscribe-note">{subscriptionMessage || text.privacy}</p>
           </div>
         </details>
-      </div>
+        </div>
+      ) : null}
 
       {turnstileEnabled ? (
         <div className={`minimal-turnstile-wrap${turnstileToken ? " verified" : ""}`}>
@@ -2360,7 +2472,13 @@ export default function MinimalStoryEntry({
               <>
                 <p className="family-kicker">STORY PROTAGONIST</p>
                 <h2 id="minimal-identity-title">{text.confirmTitle}</h2>
-                <p>{text.confirmHint}</p>
+                <p>
+                  {homeHero && growthEnabled
+                    ? locale === "zh"
+                      ? "确认孩子姓名；保存成长记录时，正文会使用孩子姓名进行第三人称叙述。"
+                      : "Confirm the child's name. Moment stories use the child's name in third-person narration."
+                    : text.confirmHint}
+                </p>
 
                 {familyChoices.length > 0 ? (
                   <div className="minimal-identity-existing">
@@ -2546,6 +2664,53 @@ export default function MinimalStoryEntry({
                     )}
                   </div>
                 )}
+
+                {homeHero ? (
+                  <div className="minimal-identity-growth-option">
+                    <div>
+                      <strong>
+                        {locale === "zh"
+                          ? "同时保存为成长记录"
+                          : "Also save as a Moment"}
+                      </strong>
+                      <span>
+                        {locale === "zh"
+                          ? "将当前故事想法作为家长确认的事实，默认保存在本机。"
+                          : "Use this story idea as the parent-confirmed fact and save it on this device."}
+                      </span>
+                      <Link href="/child-family-data">
+                        {locale === "zh" ? "了解数据边界" : "Data details"}
+                      </Link>
+                    </div>
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={growthEnabled}
+                      aria-label={
+                        locale === "zh"
+                          ? "同时保存为成长记录"
+                          : "Also save as a Moment"
+                      }
+                      className={growthEnabled ? "active" : ""}
+                      onClick={() => {
+                        const nextEnabled = !growthEnabled;
+                        setGrowthEnabled(nextEnabled);
+                        setGrowthError("");
+                        setIdentityError("");
+                        if (nextEnabled) {
+                          setGrowthParentFacts(
+                            (current) => current.trim() || pendingIdea.trim(),
+                          );
+                          setGrowthFactsConfirmed(true);
+                        } else {
+                          setGrowthFactsConfirmed(false);
+                        }
+                      }}
+                    >
+                      <span aria-hidden="true" />
+                    </button>
+                  </div>
+                ) : null}
 
                 {identityError ? <p className="minimal-identity-error">{identityError}</p> : null}
                 <div className="minimal-identity-actions">

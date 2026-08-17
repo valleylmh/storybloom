@@ -2,6 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import {
+  ArrowRight,
+  BookOpenText,
+  CalendarDots,
+  GithubLogo,
+  Plant,
+} from "@phosphor-icons/react";
 import BookPreview from "@/components/book/BookPreview";
 import MinimalStoryEntry from "@/components/book/MinimalStoryEntry";
 import StoryOutlineReview from "@/components/book/StoryOutlineReview";
@@ -31,6 +39,7 @@ import { appendGeneratedStorybookVersion } from "@/lib/growth-version-result";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import { SAMPLE_BOOKS } from "@/lib/sample-books";
+import { HOME_FEATURED_LIBRARY_BOOKS } from "@/lib/library/home-featured";
 import {
   clearActiveGenerationTask,
   getGenerationTaskIdFromSearch,
@@ -1245,80 +1254,84 @@ export default function Home() {
   return (
     <main
       className={
-        step === "form" && entryMode !== "full" ? "minimal-page-shell" : "page-shell"
+        step === "form" && entryMode !== "full"
+          ? `minimal-page-shell${
+              !personalizationEntry && !growthVersionPreset
+                ? " home-page-shell"
+                : ""
+            }`
+          : step === "form" && entryMode === "full"
+            ? "page-shell full-creator-page-shell"
+            : "page-shell"
       }
     >
-      {step === "form" && entryMode !== "full" ? (
-        <div className="minimal-top-controls">
-          <div className="entry-mode-toggle" aria-label="首页模式">
-            <button
-              type="button"
-              className={entryMode === "capture" ? "active" : ""}
-              onClick={() => changeEntryMode("capture")}
-            >
-              {locale === "zh" ? "记录时刻" : "Capture"}
-            </button>
-            <button
-              type="button"
-              className={entryMode === "minimal" ? "active" : ""}
-              onClick={() => changeEntryMode("minimal")}
-            >
-              {locale === "zh" ? "快速创作" : "Quick"}
-            </button>
-            <button type="button" onClick={() => changeEntryMode("full") }>
-              {locale === "zh" ? "完整创作" : "Create"}
-            </button>
-          </div>
-          <button
-            type="button"
-            className="minimal-locale-toggle"
-            aria-label={text.localeLabel}
-            onClick={() => changeLocale(locale === "zh" ? "en" : "zh")}
-          >
-            {locale === "zh" ? "EN" : "中"}
-          </button>
-          <AccountEntryButton locale={locale} />
-        </div>
-      ) : null}
-
-      {entryMode === "full" ? (
-        <section className="hero-shell">
-          <header className="hero-nav">
-            <div className="brand">
-              <div className="brand-topline">
-                <span className="brand-mark">StoryBloom</span>
+      {step === "form" ? (
+        <header className="home-topbar">
+          <div className="home-topbar-inner">
+            <div className="home-brand-cluster">
+              <Link
+                href="/"
+                className="home-wordmark"
+                aria-label={locale === "zh" ? "StoryBloom 首页" : "StoryBloom home"}
+              >
+                StoryBloom
+              </Link>
+              <div className="home-brand-utilities">
                 <button
                   type="button"
-                  className="locale-toggle"
+                  className="home-language-toggle"
                   aria-label={text.localeLabel}
                   onClick={() => changeLocale(locale === "zh" ? "en" : "zh")}
                 >
                   {locale === "zh" ? "EN" : "中"}
                 </button>
-                {step === "form" ? (
-                  <div className="entry-mode-toggle entry-mode-toggle-full" aria-label="首页模式">
-                    <button type="button" onClick={() => changeEntryMode("minimal") }>
-                      {locale === "zh" ? "快速创作" : "Quick"}
-                    </button>
-                    <button type="button" className="active" onClick={() => changeEntryMode("full") }>
-                      {locale === "zh" ? "完整创作" : "Create"}
-                    </button>
-                  </div>
-                ) : null}
+                <Link
+                  href="https://github.com/valleylmh/storybloom"
+                  className="home-github-link"
+                  aria-label={locale === "zh" ? "打开 StoryBloom GitHub 开源仓库" : "Open the StoryBloom GitHub repository"}
+                  title={locale === "zh" ? "GitHub 开源仓库" : "GitHub repository"}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <GithubLogo aria-hidden="true" weight="fill" />
+                </Link>
               </div>
-              <span className="brand-sub">{text.brandSub}</span>
             </div>
-            <div className="hero-nav-actions">
-              <nav className="hero-platform-links" aria-label="家庭故事平台">
-                <Link href="/library">绘本馆</Link>
-                <Link href="/?mode=minimal#story-creation">创作</Link>
-                <Link href="/me/books">我的书架</Link>
-              </nav>
-              <div className="hero-meta">{text.meta}</div>
+            <div className="home-header-mode-toggle" aria-label="创作模式">
+              <button
+                type="button"
+                className={entryMode !== "full" ? "active" : ""}
+                aria-pressed={entryMode !== "full"}
+                onClick={() => changeEntryMode("capture")}
+              >
+                {locale === "zh" ? "快速" : "Quick"}
+              </button>
+              <button
+                type="button"
+                className={entryMode === "full" ? "active" : ""}
+                aria-pressed={entryMode === "full"}
+                onClick={() => changeEntryMode("full")}
+              >
+                {locale === "zh" ? "完整" : "Full"}
+              </button>
+            </div>
+            <nav className="home-primary-nav" aria-label="家庭故事平台">
+              <Link href="/library">
+                <BookOpenText aria-hidden="true" />
+                <span>{locale === "zh" ? "绘本馆" : "Library"}</span>
+              </Link>
+              <Link href="/growth">
+                <CalendarDots aria-hidden="true" />
+                <span>{locale === "zh" ? "成长记录" : "Moments"}</span>
+              </Link>
               <AccountEntryButton locale={locale} />
-            </div>
-          </header>
+            </nav>
+          </div>
+        </header>
+      ) : null}
 
+      {entryMode === "full" ? (
+        <section className="hero-shell">
           <div className="hero-grid">
             <div className="hero-copy">
               <div className="hero-intro">
@@ -1366,40 +1379,6 @@ export default function Home() {
             : "content-shell"
         }
       >
-        {step === "form" && !personalizationEntry ? (
-          <section className="home-platform-entry" aria-label="开始使用 StoryBloom">
-            <Link href="/library" className="home-platform-entry-card home-platform-entry-read">
-              <span>{locale === "zh" ? "今晚读一本" : "Read tonight"}</span>
-              <strong>
-                {locale === "zh"
-                  ? "进入绘本馆，打开就能听"
-                  : "Open the library and start listening"}
-              </strong>
-              <small>{locale === "zh" ? "无需登录或录音" : "No login or recording needed"}</small>
-            </Link>
-            <button
-              type="button"
-              className="home-platform-entry-card home-platform-entry-create"
-              onClick={() => {
-                changeEntryMode("minimal");
-                window.requestAnimationFrame(() =>
-                  document
-                    .getElementById("story-creation")
-                    ?.scrollIntoView({ behavior: "smooth", block: "start" }),
-                );
-              }}
-            >
-              <span>{locale === "zh" ? "给孩子做一本" : "Make one for my child"}</span>
-              <strong>
-                {locale === "zh"
-                  ? "用家庭角色创作专属故事"
-                  : "Create with your family characters"}
-              </strong>
-              <small>{locale === "zh" ? "先从一句话开始" : "Start with one sentence"}</small>
-            </button>
-          </section>
-        ) : null}
-
         {step === "form" && error ? (
           <div className="error-banner">{error}</div>
         ) : null}
@@ -1414,17 +1393,81 @@ export default function Home() {
                     : "Loading this local Moment…"}
                 </div>
               ) : (
-                <MinimalStoryEntry
-                  key={`${entryMode}:${growthVersionPreset?.targetMomentId || "new"}`}
-                  locale={locale}
-                  freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
-                  remainingFreeGenerations={remainingFreeGenerations}
-                  initialGrowthEnabled={
-                    Boolean(growthVersionPreset) || entryMode === "capture"
-                  }
-                  initialGrowthVersion={growthVersionPreset || undefined}
-                  onSubmit={handleGenerate}
-                />
+                !personalizationEntry && !growthVersionPreset ? (
+                  <section className="home-landing-grid" aria-label="StoryBloom 首页创作与阅读">
+                    <div className="home-creator-pane">
+                      <MinimalStoryEntry
+                        key={`${entryMode}:home`}
+                        locale={locale}
+                        freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
+                        remainingFreeGenerations={remainingFreeGenerations}
+                        initialGrowthEnabled={entryMode === "capture"}
+                        homeHero
+                        onSubmit={handleGenerate}
+                      />
+                    </div>
+
+                    <aside className="home-library-spotlight" aria-labelledby="home-library-title">
+                      <p className="home-library-kicker">
+                        <Plant aria-hidden="true" weight="fill" />
+                        <span>{locale === "zh" ? "今晚读一本" : "Read tonight"}</span>
+                        <Plant
+                          aria-hidden="true"
+                          className="home-library-kicker-leaf-reverse"
+                          weight="fill"
+                        />
+                      </p>
+                      <h2 id="home-library-title">
+                        {locale === "zh"
+                          ? "打开绘本馆，选一本就能听"
+                          : "Choose a book and start listening"}
+                      </h2>
+                      <p className="home-library-summary">
+                        {locale === "zh"
+                          ? "绘本馆三大系列 · 有声阅读 · 无需登录"
+                          : "Three library series · Narration · No sign-in"}
+                      </p>
+                      <div className="home-library-covers" aria-label={locale === "zh" ? "绘本馆系列推荐" : "Library series books"}>
+                        {HOME_FEATURED_LIBRARY_BOOKS.map((book, index) => (
+                          <Link
+                            key={`${book.seriesId}/${book.id}`}
+                            href={book.href}
+                            className={`home-library-cover home-library-cover-${index + 1}`}
+                            aria-label={locale === "zh" ? `打开《${book.title}》` : `Open ${book.title}`}
+                          >
+                            <Image
+                              className="home-library-cover-image"
+                              src={book.coverImage}
+                              alt={`${book.seriesTitle}《${book.title}》封面`}
+                              fill
+                              loading="eager"
+                              sizes="(max-width: 680px) 38vw, 220px"
+                              unoptimized
+                            />
+                            <span>
+                              <small style={{ color: book.accent }}>{book.seriesTitle}</small>
+                              <strong>{book.title}</strong>
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                      <Link href="/library" className="home-library-link">
+                        {locale === "zh" ? "去绘本馆" : "Open library"}
+                        <ArrowRight aria-hidden="true" />
+                      </Link>
+                    </aside>
+                  </section>
+                ) : (
+                  <MinimalStoryEntry
+                    key={`${entryMode}:${growthVersionPreset?.targetMomentId || "new"}`}
+                    locale={locale}
+                    freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
+                    remainingFreeGenerations={remainingFreeGenerations}
+                    initialGrowthEnabled={Boolean(growthVersionPreset) || entryMode === "capture"}
+                    initialGrowthVersion={growthVersionPreset || undefined}
+                    onSubmit={handleGenerate}
+                  />
+                )
               )}
               {growthVersionIntentError ? (
                 <div className="error-banner" role="alert">

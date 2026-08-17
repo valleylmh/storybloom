@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Books, House, MagicWand } from "@phosphor-icons/react";
+import { Books, CalendarDots, House, MagicWand } from "@phosphor-icons/react";
 
 function isReaderDetail(pathname: string) {
   const parts = pathname.split("/").filter(Boolean);
@@ -22,7 +22,8 @@ export default function FamilyPlatformNav() {
 
   const items = [
     { href: "/library", label: "绘本馆", icon: Books, active: pathname.startsWith("/library") },
-    { href: "/?mode=minimal#story-creation", label: "创作", icon: MagicWand, active: pathname === "/" },
+    { href: "/#story-creation", label: "创作", icon: MagicWand, active: pathname === "/" },
+    { href: "/growth", label: "成长", icon: CalendarDots, active: pathname.startsWith("/growth") },
     { href: "/me/books", label: "书架", icon: House, active: pathname.startsWith("/me/books") },
   ];
 

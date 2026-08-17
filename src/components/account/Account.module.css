@@ -214,10 +214,50 @@
 .importCard,
 .cloudCard,
 .settingsCard,
-.featureCard {
+.featureCard,
+.dataBoundaryNote {
   border: 1px solid rgba(79, 57, 43, 0.11);
   background: rgba(255, 253, 249, 0.78);
   box-shadow: 0 18px 56px rgba(88, 58, 36, 0.06);
+}
+
+.dataBoundaryNote {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 19px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(226, 238, 220, 0.78), transparent 38%),
+    rgba(255, 253, 249, 0.88);
+}
+
+.dataBoundaryIcon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 14px;
+  background: #e2eedc;
+  color: #587052;
+}
+
+.dataBoundaryNote h2,
+.dataBoundaryNote p {
+  margin: 0;
+}
+
+.dataBoundaryNote h2 {
+  color: #453930;
+  font-size: 0.9rem;
+}
+
+.dataBoundaryNote p {
+  margin-top: 5px;
+  color: #6f7569;
+  font-size: 0.76rem;
+  line-height: 1.65;
 }
 
 .summaryCard {
@@ -721,13 +761,6 @@
   border: 1px solid rgba(79, 57, 43, 0.13);
   background: rgba(255, 253, 249, 0.82);
   color: #615148;
-}
-
-.actionNote {
-  flex-basis: 100%;
-  margin: 0;
-  color: #8a796d;
-  font-size: 0.72rem;
 }
 
 .featureGrid {

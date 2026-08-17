@@ -167,6 +167,7 @@ export default function LibraryBookTools({
           pages={pages}
           totalPages={pages.length}
           disabled={!allImagesReady}
+          compact
         />
       ) : null}
 
@@ -180,6 +181,12 @@ export default function LibraryBookTools({
           <button
             type="button"
             className="cta-btn library-share-action"
+            aria-label={
+              socialShareStatus === "rendering"
+                ? "正在生成分享预览"
+                : "分享这本绘本"
+            }
+            title="分享这本绘本"
             onClick={handleOpenSharePreview}
             disabled={socialShareStatus !== "idle"}
           >
@@ -188,13 +195,12 @@ export default function LibraryBookTools({
             ) : (
               <ShareNetwork aria-hidden="true" />
             )}
-            {socialShareStatus === "rendering"
-              ? "正在生成预览..."
-              : "分享这本绘本"}
           </button>
           <button
             type="button"
             className="secondary-btn library-share-action"
+            aria-label={shareStatus === "copied" ? "链接已复制" : "复制阅读链接"}
+            title={shareStatus === "copied" ? "链接已复制" : "复制阅读链接"}
             onClick={handleCopyLink}
           >
             {shareStatus === "copied" ? (
@@ -202,7 +208,6 @@ export default function LibraryBookTools({
             ) : (
               <Copy aria-hidden="true" />
             )}
-            {shareStatus === "copied" ? "链接已复制" : "复制阅读链接"}
           </button>
         </div>
 

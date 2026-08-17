@@ -5,6 +5,7 @@ import {
   createStoryVideoFilename,
   createStoryVideoSubtitlePairs,
   createStoryVideoTimeline,
+  getStoryVideoImageReveal,
   getStoryVideoNarrationText,
   getStoryVideoReadinessError,
   getStoryVideoTotalFrames,
@@ -146,6 +147,26 @@ describe("story video timeline", () => {
     expect(getStoryVideoTotalFrames(timeline)).toBe(
       timeline[0].durationInFrames + timeline[1].durationInFrames,
     );
+  });
+});
+
+describe("story video cover frame", () => {
+  it("keeps the first page fully visible from frame zero", () => {
+    expect(
+      getStoryVideoImageReveal({
+        frame: 0,
+        coverScene: true,
+      }),
+    ).toEqual({ grayReveal: 100, colorReveal: 100 });
+  });
+
+  it("preserves the reveal animation for later pages", () => {
+    expect(
+      getStoryVideoImageReveal({
+        frame: 0,
+        coverScene: false,
+      }),
+    ).toEqual({ grayReveal: 0, colorReveal: 0 });
   });
 });
 

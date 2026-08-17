@@ -9,6 +9,52 @@ export const STORY_VIDEO_MIN_SCENE_SECONDS = 6.4;
 export const STORY_VIDEO_AUDIO_LEAD_IN_SECONDS = 0.45;
 export const STORY_VIDEO_AUDIO_TAIL_SECONDS = 0.55;
 
+export function getStoryVideoTransitionFrames(fps = STORY_VIDEO_FPS) {
+  const blankFrames = Math.round(0.2 * fps);
+  const grayscaleEnd = blankFrames + Math.round(1.45 * fps);
+  const colorEnd = grayscaleEnd + Math.round(1.2 * fps);
+  return { blankFrames, grayscaleEnd, colorEnd };
+}
+
+function interpolateStoryVideoReveal(
+  frame: number,
+  startFrame: number,
+  endFrame: number,
+) {
+  if (frame <= startFrame) return 0;
+  if (frame >= endFrame) return 100;
+  return ((frame - startFrame) / Math.max(1, endFrame - startFrame)) * 100;
+}
+
+export function getStoryVideoImageReveal({
+  frame,
+  fps = STORY_VIDEO_FPS,
+  coverScene,
+}: {
+  frame: number;
+  fps?: number;
+  coverScene: boolean;
+}) {
+  if (coverScene) {
+    return { grayReveal: 100, colorReveal: 100 };
+  }
+
+  const { blankFrames, grayscaleEnd, colorEnd } =
+    getStoryVideoTransitionFrames(fps);
+  return {
+    grayReveal: interpolateStoryVideoReveal(
+      frame,
+      blankFrames,
+      grayscaleEnd,
+    ),
+    colorReveal: interpolateStoryVideoReveal(
+      frame,
+      grayscaleEnd,
+      colorEnd,
+    ),
+  };
+}
+
 export type StoryVideoAudioAsset = {
   page: number;
   text: string;
