@@ -1,0 +1,56 @@
+{
+  "id": "wu-zhuang-guan-xiu-guo-zhi",
+  "title": "五庄观修果枝",
+  "subtitle": "犯错之后，认真照顾比藏起来更勇敢",
+  "origin": "《西游记》第二十四至二十六回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "说出错误只是开始；愿意学习正确方法、一起修复，才能重新建立信任。",
+    "en": "Admitting a mistake is the beginning. Learning the right repair and doing it together rebuilds trust."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 69,
+  "episodeNumber": 69,
+  "pages": [
+    {
+      "zh": "人参果树的嫩枝被碰弯后，悟空主动把经过告诉镇元大仙。",
+      "en": "After a young branch bent, Wukong told Immortal Zhenyuan exactly what had happened.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong speaks honestly with open empty hands beside a gently bent glowing fruit-tree branch; staff upright in a distant rack."
+    },
+    {
+      "zh": "镇元大仙没有让他马上拉直：“嫩枝需要托住，不是用力拽。”",
+      "en": "Zhenyuan did not let him pull it straight. “A young branch needs support, not force.”",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] A kind elderly Taoist gardener in pale teal robes demonstrates supporting a soft practice twig with both palms; Wukong watches."
+    },
+    {
+      "zh": "八戒找来软布，沙僧削平木片，唐僧把周围的人请到树影外等候。",
+      "en": "Bajie brought soft cloth, Sha smoothed wooden splints, and Tang Seng cleared a quiet working space.",
+      "prompt": "[[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] The team prepares soft cloth strips and rounded wooden splints on a padded tray; no sharp tools or crowding."
+    },
+    {
+      "zh": "悟空托住枝条，镇元大仙把木片放在两侧，再用软布松松固定。",
+      "en": "Wukong supported the branch while Zhenyuan placed splints on both sides and tied them loosely with cloth.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong gently supports the glowing branch with both hands while the elderly gardener applies rounded splints and soft cloth; no staff in hand."
+    },
+    {
+      "zh": "他们在树下围出一圈彩绳，提醒大家这几天从旁边绕行。",
+      "en": "They placed a ring of colored rope beneath the tree so everyone would take another path for a few days.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] Team places a low colorful boundary rope and a picture-only leaf marker around the resting branch."
+    },
+    {
+      "zh": "悟空每天来看湿度、松紧和新芽，从不因为着急就多绑一层。",
+      "en": "Each day Wukong checked moisture, tightness, and new buds without adding extra ties in impatience.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong uses a small wooden moisture bead and gently checks the loose cloth tie; fresh buds visible, staff shrunk behind ear."
+    },
+    {
+      "zh": "第七天，嫩枝重新抬起头。镇元大仙请悟空亲手拆下软布。",
+      "en": "On the seventh day, the branch lifted again, and Zhenyuan invited Wukong to remove the cloth.",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong carefully unwraps the soft cloth from a healthy upright branch while the elderly gardener and team smile."
+    },
+    {
+      "zh": "悟空把木片收进工具篮：“修好不是忘掉错误，而是记住以后怎样照顾。”",
+      "en": "Wukong returned the splints to the tool basket. “Repair means remembering how to care better next time.”",
+      "prompt": "[[WUKONG_STAFF_HEADBAND]] Wukong places rounded splints and folded cloth into a basket beneath the glowing healthy tree; staff upright beside the path."
+    }
+  ]
+}

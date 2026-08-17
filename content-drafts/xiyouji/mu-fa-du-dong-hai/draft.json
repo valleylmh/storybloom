@@ -1,0 +1,56 @@
+{
+  "id": "mu-fa-du-dong-hai",
+  "title": "木筏渡东海",
+  "subtitle": "出发之前，先把每一步准备好",
+  "origin": "《西游记》第一回（低龄温和改编补遗）",
+  "moral": {
+    "zh": "勇敢不只是敢出发，也包括提前准备、观察天气，并在需要时停下来调整。",
+    "en": "Courage is not only setting out. It is also preparing well, watching the weather, and pausing to adjust when needed."
+  },
+  "ageLabel": "4-8 岁",
+  "publishedAt": "2026-08-17",
+  "order": 61,
+  "episodeNumber": 61,
+  "pages": [
+    {
+      "zh": "猴王想去远方学本领，可东海宽得看不见边。他先在沙地画下木筏的样子。",
+      "en": "The Monkey King wished to learn beyond the sea. Before leaving, he drew his raft plan in the sand.",
+      "prompt": "[[WUKONG_NO_STAFF]] On a sunny beach below Flower-Fruit Mountain, Wukong kneels beside a simple raft plan made only with shells and sticks; thoughtful preparation, no readable text."
+    },
+    {
+      "zh": "群猴找来结实的竹子、软藤和一片大叶子。悟空把每根竹子都压一压、滚一滚。",
+      "en": "The monkeys brought bamboo, soft vines, and a broad leaf. Wukong tested every pole before using it.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong and smaller gray-brown monkeys with cream faces safely test bamboo poles on flat sand; vines and a broad leaf sail lie neatly nearby."
+    },
+    {
+      "zh": "他把竹子排齐，用软藤打成宽宽的结，还留出装水和桃子的地方。",
+      "en": "He lined up the bamboo, tied broad soft knots, and left space for water and peaches.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong ties wide soft vine knots around an even bamboo raft while monkeys place a sealed water gourd and peach basket in the center."
+    },
+    {
+      "zh": "海风忽然变大，叶帆鼓得圆圆的。悟空没有急着下水，而是把帆收低。",
+      "en": "A strong breeze filled the leaf sail. Wukong did not rush into the water; he lowered the sail first.",
+      "prompt": "[[WUKONG_NO_STAFF]] A gust lifts the broad leaf sail on shore; Wukong calmly lowers it while the monkeys hold the raft steady from dry sand."
+    },
+    {
+      "zh": "等海面重新变得平缓，他才推木筏入水，并把一根竹篙横放在脚边。",
+      "en": "When the sea grew calm again, he launched the raft and kept a bamboo paddle safely at his feet.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong launches the little raft into gentle shallow water at dawn; a plain bamboo paddle lies horizontally at his bare feet, clearly not the magic staff."
+    },
+    {
+      "zh": "白天，他看太阳辨方向；夜里，他看星星，却从不在大浪里逞强。",
+      "en": "By day he followed the sun, and by night the stars, never trying to show off in rough water.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong sits safely centered on the raft beneath a calm starry sky, checking a shell-and-rope direction marker; gentle waves, no storm or danger."
+    },
+    {
+      "zh": "一只海鸟落在帆上，告诉他前方有陆地。悟空笑着分给它一小块桃子。",
+      "en": "A seabird landed on the sail and showed him land ahead. Wukong shared a little peach in thanks.",
+      "prompt": "[[WUKONG_NO_STAFF]] A friendly white seabird perches on the lowered leaf sail and points toward a green coastline; Wukong offers a small peach slice."
+    },
+    {
+      "zh": "木筏终于靠岸。悟空把绳结重新收好，背起小包，向山里的道观走去。",
+      "en": "At last the raft reached shore. Wukong packed the ropes neatly and set off toward a mountain temple.",
+      "prompt": "[[WUKONG_NO_STAFF]] Wukong secures the raft above the tide line, carries a tiny cloth bundle, and looks toward a serene temple on a misty mountain; hopeful sunrise."
+    }
+  ]
+}

@@ -107,6 +107,16 @@ const XIYOUJI_BOOK_IDS = [
   "qi-jue-shan-qing-guo-xiang",
   "zhu-zi-guo-wen-wen-zhen",
   "yu-hua-zhou-zhao-gong-ju",
+  "mu-fa-du-dong-hai",
+  "san-geng-wu-an-hao",
+  "qi-shi-er-bian-lian-xi",
+  "long-gong-shi-san-bao",
+  "ding-hai-shen-zhen-ren-zhu",
+  "hua-guo-shan-chong-ju",
+  "gao-lao-zhuang-fen-xing-li",
+  "liu-sha-he-da-mu-pai",
+  "wu-zhuang-guan-xiu-guo-zhi",
+  "huo-yan-shan-liang-feng-lu",
 ];
 const HAOQI_BOOK_IDS = [
   "tian-kong-wei-shen-me-shi-lan-se",
@@ -285,7 +295,7 @@ describe("library access functions", () => {
 });
 
 describe("xiyouji and haoqi published series (tasks B/C)", () => {
-  it("publishes all sixty xiyouji books with complete optimized images", () => {
+  it("publishes all seventy xiyouji books with complete optimized images", () => {
     const books = getSeriesBooks("xiyouji");
     expect(books).toHaveLength(XIYOUJI_BOOK_IDS.length);
     expect(getSeries("xiyouji")?.bookCount).toBe(XIYOUJI_BOOK_IDS.length);
@@ -311,6 +321,7 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
         expect(page.zhText).toBeTruthy();
         expect(page.enText).toBeTruthy();
         expect(page.illustrationPrompt).toBeTruthy();
+        expect(page.illustrationPrompt).not.toContain("[[");
         expect(imageUrl).toBe(
           `/library/xiyouji/${book.id}/${page.page}.webp`,
         );
