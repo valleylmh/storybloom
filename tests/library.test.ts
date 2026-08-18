@@ -48,25 +48,49 @@ const CHENGYU_BOOK_IDS = [
 ];
 const XIYOUJI_BOOK_IDS = [
   "shi-hou-chu-shi",
-  "bai-shi-xue-yi",
-  "long-gong-jie-bao",
+  "mu-fa-du-dong-hai",
+  "san-geng-wu-an-hao",
+  "qi-shi-er-bian-lian-xi",
+  "long-gong-shi-san-bao",
+  "ding-hai-shen-zhen-ren-zhu",
+  "tian-ma-yuan-zhi-ban-biao",
+  "pan-tao-yuan-de-qing-tie",
   "da-nao-tian-gong",
   "wu-xing-shan-xia",
+  "shuang-cha-ling-ren-lu",
   "shi-tu-xiang-yu",
   "bai-long-ma",
+  "hei-feng-shan-hu-jia-sha",
   "gao-lao-zhuang-yu-ba-jie",
+  "gao-lao-zhuang-fen-xing-li",
+  "huang-feng-ling-ding-feng-zhu",
   "liu-sha-he-shou-sha-seng",
+  "liu-sha-he-da-mu-pai",
+  "si-sheng-shi-chan-xin",
+  "wu-zhuang-guan-ren-shen-guo",
   "san-da-bai-gu-jing",
+  "hua-guo-shan-qing-shi-xiong",
   "bao-xiang-guo-jiu-gong-zhu",
   "zhi-dou-jin-jiao-yin-jiao",
+  "bao-lin-si-jie-ye-xin",
   "wu-ji-guo-bian-zhen-wang",
   "huo-yun-dong-shou-hong-hai-er",
+  "hei-shui-he-bian-tuo-long",
   "che-chi-guo-san-chang-bi-shi",
+  "tong-tian-he-an-quan-lu",
   "tong-tian-he-jiu-tong-zi",
+  "jin-dou-dong-shou-qing-niu",
   "nu-er-guo-ci-bie",
   "zhen-jia-mei-hou-wang",
   "san-jie-ba-jiao-shan",
+  "huo-yan-shan-liang-feng-lu",
+  "ji-sai-guo-sao-bao-ta",
+  "jing-ji-ling-kai-lu",
+  "mu-xian-an-shi-hui",
   "xiao-lei-yin-si-shi-jia-fo",
+  "qi-jue-shan-qing-guo-xiang",
+  "zhu-zi-guo-wen-wen-zhen",
+  "zhu-zi-guo-jie-xin-jie",
   "pan-si-dong-qiao-tuo-xian",
   "huang-hua-guan-jie-cai-cha",
   "shi-tuo-ling-san-guan",
@@ -76,6 +100,8 @@ const XIYOUJI_BOOK_IDS = [
   "yin-wu-shan-bian-zhen-ying",
   "feng-xian-jun-qiu-gan-yu",
   "yu-hua-zhou-shou-xin-tu",
+  "yu-hua-zhou-zhao-gong-ju",
+  "jin-ping-fu-shou-hua-deng",
   "tian-zhu-guo-bian-yu-tu",
   "tong-tai-fu-jie-shan-yuan",
   "kou-fu-ci-bie",
@@ -87,36 +113,6 @@ const XIYOUJI_BOOK_IDS = [
   "lao-yuan-wen-jiu-nuo",
   "shai-jing-shi-liu-hen",
   "chang-an-gong-de-yuan-man",
-  "hei-feng-shan-hu-jia-sha",
-  "huang-feng-ling-ding-feng-zhu",
-  "si-sheng-shi-chan-xin",
-  "wu-zhuang-guan-ren-shen-guo",
-  "hei-shui-he-bian-tuo-long",
-  "jin-dou-dong-shou-qing-niu",
-  "ji-sai-guo-sao-bao-ta",
-  "mu-xian-an-shi-hui",
-  "zhu-zi-guo-jie-xin-jie",
-  "jin-ping-fu-shou-hua-deng",
-  "tian-ma-yuan-zhi-ban-biao",
-  "pan-tao-yuan-de-qing-tie",
-  "shuang-cha-ling-ren-lu",
-  "bao-lin-si-jie-ye-xin",
-  "hua-guo-shan-qing-shi-xiong",
-  "tong-tian-he-an-quan-lu",
-  "jing-ji-ling-kai-lu",
-  "qi-jue-shan-qing-guo-xiang",
-  "zhu-zi-guo-wen-wen-zhen",
-  "yu-hua-zhou-zhao-gong-ju",
-  "mu-fa-du-dong-hai",
-  "san-geng-wu-an-hao",
-  "qi-shi-er-bian-lian-xi",
-  "long-gong-shi-san-bao",
-  "ding-hai-shen-zhen-ren-zhu",
-  "hua-guo-shan-chong-ju",
-  "gao-lao-zhuang-fen-xing-li",
-  "liu-sha-he-da-mu-pai",
-  "wu-zhuang-guan-xiu-guo-zhi",
-  "huo-yan-shan-liang-feng-lu",
 ];
 const HAOQI_BOOK_IDS = [
   "tian-kong-wei-shen-me-shi-lan-se",
@@ -295,7 +291,7 @@ describe("library access functions", () => {
 });
 
 describe("xiyouji and haoqi published series (tasks B/C)", () => {
-  it("publishes all seventy xiyouji books with complete optimized images", () => {
+  it("publishes the curated chronological xiyouji books with complete optimized images", () => {
     const books = getSeriesBooks("xiyouji");
     expect(books).toHaveLength(XIYOUJI_BOOK_IDS.length);
     expect(getSeries("xiyouji")?.bookCount).toBe(XIYOUJI_BOOK_IDS.length);
@@ -351,6 +347,47 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
     }
 
     expect(verifiedImageCount).toBe(XIYOUJI_BOOK_IDS.length * 8);
+  });
+
+  it("replaces or withdraws duplicated xiyouji storylines instead of publishing supplements", () => {
+    const books = getSeriesBooks("xiyouji");
+    const titlesById = new Map(books.map((book) => [book.id, book.title]));
+
+    expect(books).toHaveLength(66);
+    expect(books.every((book) => !book.origin?.includes("补遗"))).toBe(true);
+    expect(titlesById.get("mu-fa-du-dong-hai")).toBe(
+      "拜师学艺·上篇：木筏渡东海",
+    );
+    expect(titlesById.get("san-geng-wu-an-hao")).toBe(
+      "拜师学艺·中篇：三更悟暗号",
+    );
+    expect(titlesById.get("qi-shi-er-bian-lian-xi")).toBe(
+      "拜师学艺·下篇：七十二变练习",
+    );
+    expect(titlesById.get("long-gong-shi-san-bao")).toBe(
+      "龙宫借宝·上篇：试三宝",
+    );
+    expect(titlesById.get("ding-hai-shen-zhen-ren-zhu")).toBe(
+      "龙宫借宝·下篇：定海神针认主",
+    );
+    expect(titlesById.get("gao-lao-zhuang-fen-xing-li")).toBe(
+      "高老庄·下篇：分行李",
+    );
+    expect(titlesById.get("liu-sha-he-da-mu-pai")).toBe(
+      "流沙河·下篇：搭木排",
+    );
+    expect(titlesById.get("huo-yan-shan-liang-feng-lu")).toBe(
+      "火焰山·下篇：量风路",
+    );
+
+    for (const withdrawnId of [
+      "bai-shi-xue-yi",
+      "long-gong-jie-bao",
+      "hua-guo-shan-chong-ju",
+      "wu-zhuang-guan-xiu-guo-zhi",
+    ]) {
+      expect(getBook("xiyouji", withdrawnId)).toBeNull();
+    }
   });
 
   it("publishes all ten haoqi books with scientifically reviewed optimized images", () => {

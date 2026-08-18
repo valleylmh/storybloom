@@ -22,7 +22,6 @@ import laoYuanWenJiuNuoDraft from "../../../content-drafts/xiyouji/lao-yuan-wen-
 import lingYunDuGuoQiaoDraft from "../../../content-drafts/xiyouji/ling-yun-du-guo-qiao/draft.json";
 import liuShaHeShouShaSengDraft from "../../../content-drafts/xiyouji/liu-sha-he-shou-sha-seng/draft.json";
 import liuShaHeDaMuPaiDraft from "../../../content-drafts/xiyouji/liu-sha-he-da-mu-pai/draft.json";
-import longGongJieBaoDraft from "../../../content-drafts/xiyouji/long-gong-jie-bao/draft.json";
 import longGongShiSanBaoDraft from "../../../content-drafts/xiyouji/long-gong-shi-san-bao/draft.json";
 import huangFengLingDingFengZhuDraft from "../../../content-drafts/xiyouji/huang-feng-ling-ding-feng-zhu/draft.json";
 import jiSaiGuoSaoBaoTaDraft from "../../../content-drafts/xiyouji/ji-sai-guo-sao-bao-ta/draft.json";
@@ -56,12 +55,10 @@ import wuJiGuoBianZhenWangDraft from "../../../content-drafts/xiyouji/wu-ji-guo-
 import wuKongXunZhenZhengDraft from "../../../content-drafts/xiyouji/wu-kong-xun-zhen-zheng/draft.json";
 import wuZiJingShuDraft from "../../../content-drafts/xiyouji/wu-zi-jing-shu/draft.json";
 import wuZhuangGuanRenShenGuoDraft from "../../../content-drafts/xiyouji/wu-zhuang-guan-ren-shen-guo/draft.json";
-import wuZhuangGuanXiuGuoZhiDraft from "../../../content-drafts/xiyouji/wu-zhuang-guan-xiu-guo-zhi/draft.json";
 import xiaoLeiYinSiShiJiaFoDraft from "../../../content-drafts/xiyouji/xiao-lei-yin-si-shi-jia-fo/draft.json";
 import yinWuShanBianZhenYingDraft from "../../../content-drafts/xiyouji/yin-wu-shan-bian-zhen-ying/draft.json";
 import yuHuaZhouShouXinTuDraft from "../../../content-drafts/xiyouji/yu-hua-zhou-shou-xin-tu/draft.json";
 import yuHuaZhouZhaoGongJuDraft from "../../../content-drafts/xiyouji/yu-hua-zhou-zhao-gong-ju/draft.json";
-import huaGuoShanChongJuDraft from "../../../content-drafts/xiyouji/hua-guo-shan-chong-ju/draft.json";
 import huaGuoShanQingShiXiongDraft from "../../../content-drafts/xiyouji/hua-guo-shan-qing-shi-xiong/draft.json";
 import zhenJingDaoShouDraft from "../../../content-drafts/xiyouji/zhen-jing-dao-shou/draft.json";
 import zhenJiaMeiHouWangDraft from "../../../content-drafts/xiyouji/zhen-jia-mei-hou-wang/draft.json";
@@ -70,7 +67,7 @@ import zhuZiGuoJieXinJieDraft from "../../../content-drafts/xiyouji/zhu-zi-guo-j
 import zhuZiGuoWenWenZhenDraft from "../../../content-drafts/xiyouji/zhu-zi-guo-wen-wen-zhen/draft.json";
 import dingHaiShenZhenRenZhuDraft from "../../../content-drafts/xiyouji/ding-hai-shen-zhen-ren-zhu/draft.json";
 
-// 第 1–60 回均完成文字、角色一致性与插图验收；全系列复用
+// 已发布篇章均完成文字、角色一致性与插图验收；全系列复用
 // docs/library-prompts/xiyouji/characters.md 的角色锚点与低龄改编原则。
 
 const XIYOUJI_STYLE_LOCK =
@@ -81,9 +78,6 @@ const BARE_STONE_MONKEY_LOCK =
 
 const MONKEY_KING_LOCK =
   "Character lock — Sun Wukong is a small lively monkey with warm golden-brown fur, a bare tan face and chest, big bright amber eyes, round ears, and a long expressive tail; from his coronation onward he wears the same golden-yellow sleeveless tunic, vermilion sash, and dark red trousers, with no crown, circlet, armor, or staff; cheerful, curious, never menacing, with child-friendly rounded animated-film proportions.";
-
-const MASTER_PUTI_LOCK =
-  "Character lock — Master Puti is a serene elderly sage with a long flowing white beard and eyebrows, hair in a high topknot, layered cream-and-sage Taoist robes with wide sleeves, and a wooden staff; kind, wise, and gently smiling.";
 
 interface XiyoujiBookDraft {
   id: string;
@@ -98,59 +92,10 @@ interface XiyoujiBookDraft {
   pages: Array<{ zh: string; en: string; prompt: string }>;
 }
 
-const EXPANDED_XIYOUJI_DRAFTS: XiyoujiBookDraft[] = [
-  longGongJieBaoDraft,
-  daNaoTianGongDraft,
-  wuXingShanXiaDraft,
-  shiTuXiangYuDraft,
-  baiLongMaDraft,
-  gaoLaoZhuangYuBaJieDraft,
-  liuShaHeShouShaSengDraft,
-  sanDaBaiGuJingDraft,
-  baoXiangGuoJiuGongZhuDraft,
-  zhiDouJinJiaoYinJiaoDraft,
-  wuJiGuoBianZhenWangDraft,
-  huoYunDongShouHongHaiErDraft,
-  cheChiGuoSanChangBiShiDraft,
-  tongTianHeJiuTongZiDraft,
-  nuErGuoCiBieDraft,
-  zhenJiaMeiHouWangDraft,
-  sanJieBaJiaoShanDraft,
-  xiaoLeiYinSiShiJiaFoDraft,
-  panSiDongQiaoTuoXianDraft,
-  huangHuaGuanJieCaiChaDraft,
-  shiTuoLingSanGuanDraft,
-  biQiuGuoHuTongXinDraft,
-  wuDiDongZhaoShiFuDraft,
-  mieFaGuoHuanXinYiDraft,
-  yinWuShanBianZhenYingDraft,
-  fengXianJunQiuGanYuDraft,
-  yuHuaZhouShouXinTuDraft,
-  tianZhuGuoBianYuTuDraft,
-  tongTaiFuJieShanYuanDraft,
-  kouFuCiBieDraft,
-  kouZhaiShiBaoDraft,
-  wuKongXunZhenZhengDraft,
-  lingYunDuGuoQiaoDraft,
-  wuZiJingShuDraft,
-  zhenJingDaoShouDraft,
-  laoYuanWenJiuNuoDraft,
-  shaiJingShiLiuHenDraft,
-  changAnGongDeYuanManDraft,
-];
-
-const ADDITIONAL_XIYOUJI_DRAFTS: XiyoujiBookDraft[] = [
-  heiFengShanHuJiaShaDraft,
-  huangFengLingDingFengZhuDraft,
-  siShengShiChanXinDraft,
-  wuZhuangGuanRenShenGuoDraft,
-  heiShuiHeBianTuoLongDraft,
-  jinDouDongShouQingNiuDraft,
-  jiSaiGuoSaoBaoTaDraft,
-  muXianAnShiHuiDraft,
-  zhuZiGuoJieXinJieDraft,
-  jinPingFuShouHuaDengDraft,
-];
+interface XiyoujiDraftSpec {
+  draft: XiyoujiBookDraft;
+  title?: string;
+}
 
 const SHI_HOU_CHU_SHI_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
   {
@@ -196,49 +141,6 @@ const SHI_HOU_CHU_SHI_PAGES: Array<{ zh: string; en: string; prompt: string }> =
   },
 ];
 
-const BAI_SHI_XUE_YI_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
-  {
-    zh: "猴王想学真本领，便扎了木筏，漂过大海去寻访仙师。",
-    en: "Longing to learn real skills, the Monkey King built a raft and sailed across the sea to find a master.",
-    prompt: `${MONKEY_KING_LOCK} Sun Wukong stands on a small wooden raft, paddling across gentle sunlit waves with determination while the Mountain of Flowers and Fruit fades behind him; hopeful adventure mood. ${XIYOUJI_STYLE_LOCK}`,
-  },
-  {
-    zh: "他走过许多地方，终于在灵台方寸山找到一座清幽的道观。",
-    en: "After a long journey he reached a peaceful temple on the Mountain of Heart and Mind.",
-    prompt: `${MONKEY_KING_LOCK} A serene Taoist temple nestles among misty pines and blossoming trees on a mystical mountain; Sun Wukong climbs the stone steps toward the gate and looks up in awe; tranquil morning light. ${XIYOUJI_STYLE_LOCK}`,
-  },
-  {
-    zh: "菩提祖师收下了这只诚心的猴子，给他取名——孙悟空。",
-    en: "The wise Master Puti accepted the sincere monkey and gave him a name — Sun Wukong.",
-    prompt: `${MONKEY_KING_LOCK} ${MASTER_PUTI_LOCK} Inside the temple hall, Master Puti gently raises one hand in blessing toward the kneeling Sun Wukong, who beams with gratitude as he receives his new name; incense curls in soft golden light. ${XIYOUJI_STYLE_LOCK}`,
-  },
-  {
-    zh: "悟空每天扫地挑水、诵读练功，一点也不偷懒。",
-    en: "Wukong swept the yard, carried water, studied and practiced every day — never once lazy.",
-    prompt: `${MONKEY_KING_LOCK} Montage-free single scene: Sun Wukong sweeps the temple courtyard with a big broom while a water bucket rests nearby; other students read scrolls under a pine; diligent cheerful energy in morning light. ${XIYOUJI_STYLE_LOCK}`,
-  },
-  {
-    zh: "祖师轻轻敲了三下桌边。悟空明白：等大家休息后，再到安静的书房请教。",
-    en: "The Master gently tapped the table three times. Wukong understood: return to the quiet study after everyone had gone to rest.",
-    prompt: `${MONKEY_KING_LOCK} ${MASTER_PUTI_LOCK} Playful secret moment in the temple hall: Master Puti gently taps the edge of a wooden table three times with one finger and hides a knowing smile; Sun Wukong's amber eyes sparkle as he understands, while the other students look mildly puzzled; warm lamplight, safe and gentle mood. ${XIYOUJI_STYLE_LOCK}`,
-  },
-  {
-    zh: "从那以后，祖师耐心讲解七十二变和筋斗云，悟空一遍遍认真练习。",
-    en: "From then on, the Master patiently taught the seventy-two transformations and the cloud somersault, while Wukong practiced them again and again.",
-    prompt: `${MONKEY_KING_LOCK} ${MASTER_PUTI_LOCK} In a quiet moonlit temple study, Master Puti patiently demonstrates a hand gesture while Sun Wukong listens cross-legged and practices with focused care; an open scroll, fireflies, and a gentle moon suggest many evenings of steady learning rather than instant mastery; intimate teacher-student warmth. ${XIYOUJI_STYLE_LOCK}`,
-  },
-  {
-    zh: "经过许多年练习，悟空一个筋斗能翻十万八千里，还学会变小鸟、松树和铜钱。",
-    en: "After years of practice, Wukong could travel one hundred and eight thousand li in a single somersault and transform into a bird, a pine tree, or even a coin.",
-    prompt: `${MONKEY_KING_LOCK} Joyful practice scene after years of training above the temple clearing: Sun Wukong rides a fluffy golden somersault cloud in a wide arc across the sky, while small friendly magical silhouettes of a bird, a pine tree, and a round coin suggest his transformations; classmates below cheer; confident skill earned through long practice. ${XIYOUJI_STYLE_LOCK}`,
-  },
-  {
-    zh: "许多年后，悟空学有所成，拜别祖师：“师父的教导，我永远记在心里。”",
-    en: "Many years later, with his training complete, Wukong bowed farewell: \"Master, I will always carry your teaching in my heart.\"",
-    prompt: `${MONKEY_KING_LOCK} ${MASTER_PUTI_LOCK} Touching farewell at the temple gate at sunrise: Sun Wukong bows deeply with his hands respectfully joined before Master Puti, whose cream-and-sage robes and long white beard stir in the gentle wind as he nods kindly; pink blossom petals drift; gratitude after many years of learning and a sense of new beginnings. ${XIYOUJI_STYLE_LOCK}`,
-  },
-];
-
 function toStoryPages(
   bookId: string,
   items: Array<{ zh: string; en: string; prompt: string }>,
@@ -255,25 +157,99 @@ function toStoryPages(
 }
 
 function draftToLibraryBook(
-  draft: XiyoujiBookDraft,
-  imageStatus: NonNullable<StoryPage["imageStatus"]>,
-  comingSoon: boolean,
+  spec: XiyoujiDraftSpec,
+  order: number,
 ): LibraryBook {
+  const { draft } = spec;
+
   return {
     id: draft.id,
     seriesId: "xiyouji",
-    title: draft.title,
+    title: spec.title ?? draft.title,
     subtitle: draft.subtitle,
-    origin: draft.origin,
+    origin: draft.origin.replace("改编补遗", "改编"),
     moral: draft.moral,
-    pages: toStoryPages(draft.id, draft.pages, imageStatus),
+    pages: toStoryPages(draft.id, draft.pages, "complete"),
     ageLabel: draft.ageLabel,
     publishedAt: draft.publishedAt,
-    order: draft.order,
-    episodeNumber: draft.episodeNumber,
-    comingSoon,
+    order,
+    episodeNumber: order,
+    comingSoon: false,
   };
 }
+
+const CURATED_XIYOUJI_DRAFTS: XiyoujiDraftSpec[] = [
+  // 第一至三回：用更完整的连续篇替换原先的浓缩重复版本。
+  { draft: muFaDuDongHaiDraft, title: "拜师学艺·上篇：木筏渡东海" },
+  { draft: sanGengWuAnHaoDraft, title: "拜师学艺·中篇：三更悟暗号" },
+  { draft: qiShiErBianLianXiDraft, title: "拜师学艺·下篇：七十二变练习" },
+  { draft: longGongShiSanBaoDraft, title: "龙宫借宝·上篇：试三宝" },
+  { draft: dingHaiShenZhenRenZhuDraft, title: "龙宫借宝·下篇：定海神针认主" },
+
+  // 天宫与取经开篇。
+  { draft: tianMaYuanZhiBanBiaoDraft, title: "大闹天宫·上篇：天马园值班表" },
+  { draft: panTaoYuanDeQingTieDraft, title: "大闹天宫·中篇：蟠桃园的请帖" },
+  { draft: daNaoTianGongDraft, title: "大闹天宫·下篇：齐天大圣" },
+  { draft: wuXingShanXiaDraft },
+  { draft: shuangChaLingRenLuDraft },
+  { draft: shiTuXiangYuDraft },
+  { draft: baiLongMaDraft },
+  { draft: heiFengShanHuJiaShaDraft },
+  { draft: gaoLaoZhuangYuBaJieDraft, title: "高老庄·上篇：遇八戒" },
+  { draft: gaoLaoZhuangFenXingLiDraft, title: "高老庄·下篇：分行李" },
+  { draft: huangFengLingDingFengZhuDraft },
+  { draft: liuShaHeShouShaSengDraft, title: "流沙河·上篇：收沙僧" },
+  { draft: liuShaHeDaMuPaiDraft, title: "流沙河·下篇：搭木排" },
+  { draft: siShengShiChanXinDraft },
+  { draft: wuZhuangGuanRenShenGuoDraft },
+  { draft: sanDaBaiGuJingDraft },
+  { draft: huaGuoShanQingShiXiongDraft, title: "宝象国·上篇：花果山请师兄" },
+  { draft: baoXiangGuoJiuGongZhuDraft, title: "宝象国·下篇：救公主" },
+  { draft: zhiDouJinJiaoYinJiaoDraft },
+  { draft: baoLinSiJieYeXinDraft, title: "乌鸡国·上篇：宝林寺接叶信" },
+  { draft: wuJiGuoBianZhenWangDraft, title: "乌鸡国·下篇：辨真王" },
+  { draft: huoYunDongShouHongHaiErDraft },
+  { draft: heiShuiHeBianTuoLongDraft },
+  { draft: cheChiGuoSanChangBiShiDraft },
+  { draft: tongTianHeAnQuanLuDraft, title: "通天河·上篇：安全路" },
+  { draft: tongTianHeJiuTongZiDraft, title: "通天河·下篇：救童子" },
+  { draft: jinDouDongShouQingNiuDraft },
+  { draft: nuErGuoCiBieDraft },
+  { draft: zhenJiaMeiHouWangDraft },
+  { draft: sanJieBaJiaoShanDraft, title: "火焰山·上篇：三借芭蕉扇" },
+  { draft: huoYanShanLiangFengLuDraft, title: "火焰山·下篇：量风路" },
+
+  // 西行后半程，按原著章节顺序插回主线。
+  { draft: jiSaiGuoSaoBaoTaDraft },
+  { draft: jingJiLingKaiLuDraft, title: "荆棘岭·上篇：开路" },
+  { draft: muXianAnShiHuiDraft, title: "荆棘岭·下篇：木仙庵诗会" },
+  { draft: xiaoLeiYinSiShiJiaFoDraft },
+  { draft: qiJueShanQingGuoXiangDraft },
+  { draft: zhuZiGuoWenWenZhenDraft, title: "朱紫国·上篇：温问诊" },
+  { draft: zhuZiGuoJieXinJieDraft, title: "朱紫国·下篇：解心结" },
+  { draft: panSiDongQiaoTuoXianDraft },
+  { draft: huangHuaGuanJieCaiChaDraft },
+  { draft: shiTuoLingSanGuanDraft },
+  { draft: biQiuGuoHuTongXinDraft },
+  { draft: wuDiDongZhaoShiFuDraft },
+  { draft: mieFaGuoHuanXinYiDraft },
+  { draft: yinWuShanBianZhenYingDraft },
+  { draft: fengXianJunQiuGanYuDraft },
+  { draft: yuHuaZhouShouXinTuDraft, title: "玉华州·上篇：收新徒" },
+  { draft: yuHuaZhouZhaoGongJuDraft, title: "玉华州·下篇：找工具" },
+  { draft: jinPingFuShouHuaDengDraft },
+  { draft: tianZhuGuoBianYuTuDraft },
+  { draft: tongTaiFuJieShanYuanDraft },
+  { draft: kouFuCiBieDraft },
+  { draft: kouZhaiShiBaoDraft },
+  { draft: wuKongXunZhenZhengDraft },
+  { draft: lingYunDuGuoQiaoDraft },
+  { draft: wuZiJingShuDraft },
+  { draft: zhenJingDaoShouDraft },
+  { draft: laoYuanWenJiuNuoDraft },
+  { draft: shaiJingShiLiuHenDraft },
+  { draft: changAnGongDeYuanManDraft },
+];
 
 export const XIYOUJI_BOOKS: LibraryBook[] = [
   {
@@ -292,48 +268,9 @@ export const XIYOUJI_BOOKS: LibraryBook[] = [
     order: 1,
     episodeNumber: 1,
   },
-  {
-    id: "bai-shi-xue-yi",
-    seriesId: "xiyouji",
-    title: "拜师学艺",
-    subtitle: "悟空的名字和筋斗云",
-    origin: "《西游记》第一至二回（低龄改编）",
-    moral: {
-      zh: "真本领来自诚心和坚持，一天一点，慢慢练成。",
-      en: "Real skill grows from sincerity and practice — a little every day.",
-    },
-    pages: toStoryPages("bai-shi-xue-yi", BAI_SHI_XUE_YI_PAGES, "complete"),
-    ageLabel: "4-8 岁",
-    publishedAt: "2026-07-22",
-    order: 2,
-    episodeNumber: 2,
-  },
-  ...EXPANDED_XIYOUJI_DRAFTS.map((draft) =>
-    draftToLibraryBook(draft, "complete", false),
+  ...CURATED_XIYOUJI_DRAFTS.map((spec, index) =>
+    draftToLibraryBook(spec, index + 2),
   ),
-  ...ADDITIONAL_XIYOUJI_DRAFTS.map((draft) =>
-    draftToLibraryBook(draft, "complete", false),
-  ),
-  draftToLibraryBook(tianMaYuanZhiBanBiaoDraft, "complete", false),
-  draftToLibraryBook(panTaoYuanDeQingTieDraft, "complete", false),
-  draftToLibraryBook(shuangChaLingRenLuDraft, "complete", false),
-  draftToLibraryBook(baoLinSiJieYeXinDraft, "complete", false),
-  draftToLibraryBook(huaGuoShanQingShiXiongDraft, "complete", false),
-  draftToLibraryBook(tongTianHeAnQuanLuDraft, "complete", false),
-  draftToLibraryBook(jingJiLingKaiLuDraft, "complete", false),
-  draftToLibraryBook(qiJueShanQingGuoXiangDraft, "complete", false),
-  draftToLibraryBook(zhuZiGuoWenWenZhenDraft, "complete", false),
-  draftToLibraryBook(yuHuaZhouZhaoGongJuDraft, "complete", false),
-  draftToLibraryBook(muFaDuDongHaiDraft, "complete", false),
-  draftToLibraryBook(sanGengWuAnHaoDraft, "complete", false),
-  draftToLibraryBook(qiShiErBianLianXiDraft, "complete", false),
-  draftToLibraryBook(longGongShiSanBaoDraft, "complete", false),
-  draftToLibraryBook(dingHaiShenZhenRenZhuDraft, "complete", false),
-  draftToLibraryBook(huaGuoShanChongJuDraft, "complete", false),
-  draftToLibraryBook(gaoLaoZhuangFenXingLiDraft, "complete", false),
-  draftToLibraryBook(liuShaHeDaMuPaiDraft, "complete", false),
-  draftToLibraryBook(wuZhuangGuanXiuGuoZhiDraft, "complete", false),
-  draftToLibraryBook(huoYanShanLiangFengLuDraft, "complete", false),
 ];
 
 export const XIYOUJI_SERIES: LibrarySeries = {

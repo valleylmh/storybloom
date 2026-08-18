@@ -81,7 +81,7 @@ describe("library discovery", () => {
     const current = createLibraryBookSummary(series, currentBook);
     const recommendations = getLibraryRecommendations(current, summaries());
     expect(recommendations[0]).toMatchObject({
-      book: { contentId: "xiyouji/bai-shi-xue-yi" },
+      book: { contentId: "xiyouji/mu-fa-du-dong-hai" },
       reason: "同系列下一本",
     });
     expect(recommendations.map((item) => item.book.metadata.seriesOrder)).toEqual([

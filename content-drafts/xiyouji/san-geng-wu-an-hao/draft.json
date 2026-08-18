@@ -13,8 +13,8 @@
   "episodeNumber": 62,
   "pages": [
     {
-      "zh": "方寸山上，悟空和师兄们围坐听课。菩提祖师讲完本领，也讲耐心。",
-      "en": "On the mountain, Wukong listened with the other students as Master Puti taught both skill and patience.",
+      "zh": "猴王来到方寸山，菩提祖师收他为徒，赐名孙悟空。一天，他和师兄们围坐听课。",
+      "en": "After the Monkey King reached Mount Fangcun, Master Puti accepted him and named him Sun Wukong. One day, he sat with the other students for a lesson.",
       "prompt": "[[WUKONG_NO_STAFF]] [[MASTER_PUTI]] Wukong sits with young temple students in a warm wooden hall, listening carefully to Master Puti; calm lesson, scrolls without readable text."
     },
     {
