@@ -54,7 +54,7 @@ describe("family story reader product boundaries", () => {
     expect(libraryBookPageSource).toContain("<LibraryBookExperience");
     expect(bookPreviewSource).toContain("<LibraryBookExperience");
     expect(bookPreviewSource).toContain('contentType="personalized"');
-    expect(bookPreviewSource).toContain('preferCloudTts={false}');
+    expect(bookPreviewSource).toContain('preferCloudTts={true}');
   });
 
   it("merges standard playback and reading mode into one compact toolbar", () => {

@@ -1035,7 +1035,7 @@ export default function BookPreview({
             storyKey={result.storyId}
             contentType="personalized"
             contentId={result.storyId}
-            preferCloudTts={false}
+            preferCloudTts={true}
           />
         </section>
       ) : (
