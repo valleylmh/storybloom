@@ -205,16 +205,32 @@ export default function LibraryCatalogExperience({
         <header className="library-home-section-header library-series-home-header">
           <h2 id="series-stories-title">系列故事</h2>
         </header>
+        <nav className="library-series-tabs" aria-label="系列故事导航">
+          <div className="library-series-tabs-track">
+            {series.map((item) => (
+              <a key={item.id} href={`#library-series-${item.id}`}>
+                {item.title}
+              </a>
+            ))}
+          </div>
+        </nav>
         <div className="library-series-overview">
           {series.map((item) => {
             const allSeriesBooks = publishedBooks.filter(
               (book) => book.seriesId === item.id,
             );
             return (
-              <section key={item.id} className="library-series-overview-item">
+              <section
+                key={item.id}
+                id={`library-series-${item.id}`}
+                className="library-series-overview-item"
+                aria-labelledby={`library-series-title-${item.id}`}
+              >
                 <header>
                   <div>
-                    <h3>{item.title}</h3>
+                    <h3 id={`library-series-title-${item.id}`}>
+                      {item.title}
+                    </h3>
                     <p>{item.subtitle}</p>
                   </div>
                 </header>

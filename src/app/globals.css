@@ -9243,7 +9243,7 @@ a.library-book-card:hover {
 
 .library-series-home-header {
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
   text-align: center;
 }
 
@@ -9255,6 +9255,62 @@ a.library-book-card:hover {
   border-radius: 999px;
   background: linear-gradient(90deg, #d66f49, #e9b06c);
   content: "";
+}
+
+.library-series-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  padding: 3px 0 7px;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.library-series-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.library-series-tabs-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+  justify-content: center;
+  gap: 8px;
+}
+
+.library-series-tabs a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 20px;
+  border: 1px solid rgba(190, 85, 48, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 250, 244, 0.76);
+  color: #715b4d;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.library-series-tabs a:hover {
+  border-color: rgba(190, 85, 48, 0.34);
+  background: #fff8f0;
+  color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.library-series-tabs a:focus-visible {
+  outline: 3px solid rgba(190, 85, 48, 0.28);
+  outline-offset: 2px;
 }
 
 .library-quick-panels {
@@ -9753,6 +9809,10 @@ a.library-book-card:hover {
   gap: 32px;
 }
 
+.library-series-overview-item {
+  scroll-margin-top: 24px;
+}
+
 .library-series-overview-item > header {
   display: flex;
   align-items: end;
@@ -10223,6 +10283,21 @@ a.library-book-card:hover {
     gap: 12px;
   }
 
+  .library-series-tabs {
+    justify-content: flex-start;
+    margin-inline: -14px;
+    padding-inline: 14px;
+  }
+
+  .library-series-tabs-track {
+    min-width: max-content;
+    justify-content: flex-start;
+  }
+
+  .library-series-tabs a {
+    padding-inline: 17px;
+  }
+
   .library-quick-panels {
     grid-template-columns: 1fr;
     gap: 0;
@@ -10409,6 +10484,14 @@ a.library-book-card:hover {
   .home-library-link svg,
   .library-catalog-cover img {
     transition: none;
+  }
+
+  .library-series-tabs a {
+    transition: none;
+  }
+
+  .library-series-tabs a:hover {
+    transform: none;
   }
 }
 
