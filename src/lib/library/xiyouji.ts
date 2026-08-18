@@ -13,7 +13,6 @@ import gaoLaoZhuangYuBaJieDraft from "../../../content-drafts/xiyouji/gao-lao-zh
 import gaoLaoZhuangFenXingLiDraft from "../../../content-drafts/xiyouji/gao-lao-zhuang-fen-xing-li/draft.json";
 import huangHuaGuanJieCaiChaDraft from "../../../content-drafts/xiyouji/huang-hua-guan-jie-cai-cha/draft.json";
 import huoYunDongShouHongHaiErDraft from "../../../content-drafts/xiyouji/huo-yun-dong-shou-hong-hai-er/draft.json";
-import huoYanShanLiangFengLuDraft from "../../../content-drafts/xiyouji/huo-yan-shan-liang-feng-lu/draft.json";
 import heiFengShanHuJiaShaDraft from "../../../content-drafts/xiyouji/hei-feng-shan-hu-jia-sha/draft.json";
 import heiShuiHeBianTuoLongDraft from "../../../content-drafts/xiyouji/hei-shui-he-bian-tuo-long/draft.json";
 import kouFuCiBieDraft from "../../../content-drafts/xiyouji/kou-fu-ci-bie/draft.json";
@@ -21,7 +20,6 @@ import kouZhaiShiBaoDraft from "../../../content-drafts/xiyouji/kou-zhai-shi-bao
 import laoYuanWenJiuNuoDraft from "../../../content-drafts/xiyouji/lao-yuan-wen-jiu-nuo/draft.json";
 import lingYunDuGuoQiaoDraft from "../../../content-drafts/xiyouji/ling-yun-du-guo-qiao/draft.json";
 import liuShaHeShouShaSengDraft from "../../../content-drafts/xiyouji/liu-sha-he-shou-sha-seng/draft.json";
-import liuShaHeDaMuPaiDraft from "../../../content-drafts/xiyouji/liu-sha-he-da-mu-pai/draft.json";
 import longGongShiSanBaoDraft from "../../../content-drafts/xiyouji/long-gong-shi-san-bao/draft.json";
 import huangFengLingDingFengZhuDraft from "../../../content-drafts/xiyouji/huang-feng-ling-ding-feng-zhu/draft.json";
 import jiSaiGuoSaoBaoTaDraft from "../../../content-drafts/xiyouji/ji-sai-guo-sao-bao-ta/draft.json";
@@ -95,6 +93,7 @@ interface XiyoujiBookDraft {
 interface XiyoujiDraftSpec {
   draft: XiyoujiBookDraft;
   title?: string;
+  episodeNumber?: number;
 }
 
 const SHI_HOU_CHU_SHI_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
@@ -173,60 +172,60 @@ function draftToLibraryBook(
     ageLabel: draft.ageLabel,
     publishedAt: draft.publishedAt,
     order,
-    episodeNumber: order,
+    episodeNumber: spec.episodeNumber ?? draft.episodeNumber,
     comingSoon: false,
   };
 }
 
 const CURATED_XIYOUJI_DRAFTS: XiyoujiDraftSpec[] = [
-  // 第一至三回：用更完整的连续篇替换原先的浓缩重复版本。
-  { draft: muFaDuDongHaiDraft, title: "拜师学艺·上篇：木筏渡东海" },
-  { draft: sanGengWuAnHaoDraft, title: "拜师学艺·中篇：三更悟暗号" },
-  { draft: qiShiErBianLianXiDraft, title: "拜师学艺·下篇：七十二变练习" },
-  { draft: longGongShiSanBaoDraft, title: "龙宫借宝·上篇：试三宝" },
-  { draft: dingHaiShenZhenRenZhuDraft, title: "龙宫借宝·下篇：定海神针认主" },
-
-  // 天宫与取经开篇。
-  { draft: tianMaYuanZhiBanBiaoDraft, title: "大闹天宫·上篇：天马园值班表" },
-  { draft: panTaoYuanDeQingTieDraft, title: "大闹天宫·中篇：蟠桃园的请帖" },
-  { draft: daNaoTianGongDraft, title: "大闹天宫·下篇：齐天大圣" },
+  // 有价值的扩展篇共享原回号，不把上中下篇计算成新回目。
+  {
+    draft: muFaDuDongHaiDraft,
+    title: "拜师学艺·上篇：木筏渡东海",
+    episodeNumber: 2,
+  },
+  {
+    draft: sanGengWuAnHaoDraft,
+    title: "拜师学艺·中篇：三更悟暗号",
+    episodeNumber: 2,
+  },
+  {
+    draft: qiShiErBianLianXiDraft,
+    title: "拜师学艺·下篇：七十二变练习",
+    episodeNumber: 2,
+  },
+  {
+    draft: longGongShiSanBaoDraft,
+    title: "龙宫借宝·上篇：试三宝",
+    episodeNumber: 3,
+  },
+  {
+    draft: dingHaiShenZhenRenZhuDraft,
+    title: "龙宫借宝·下篇：定海神针认主",
+    episodeNumber: 3,
+  },
+  { draft: daNaoTianGongDraft },
   { draft: wuXingShanXiaDraft },
-  { draft: shuangChaLingRenLuDraft },
   { draft: shiTuXiangYuDraft },
   { draft: baiLongMaDraft },
-  { draft: heiFengShanHuJiaShaDraft },
   { draft: gaoLaoZhuangYuBaJieDraft, title: "高老庄·上篇：遇八戒" },
-  { draft: gaoLaoZhuangFenXingLiDraft, title: "高老庄·下篇：分行李" },
-  { draft: huangFengLingDingFengZhuDraft },
-  { draft: liuShaHeShouShaSengDraft, title: "流沙河·上篇：收沙僧" },
-  { draft: liuShaHeDaMuPaiDraft, title: "流沙河·下篇：搭木排" },
-  { draft: siShengShiChanXinDraft },
-  { draft: wuZhuangGuanRenShenGuoDraft },
+  {
+    draft: gaoLaoZhuangFenXingLiDraft,
+    title: "高老庄·下篇：分行李",
+    episodeNumber: 8,
+  },
+  { draft: liuShaHeShouShaSengDraft },
   { draft: sanDaBaiGuJingDraft },
-  { draft: huaGuoShanQingShiXiongDraft, title: "宝象国·上篇：花果山请师兄" },
-  { draft: baoXiangGuoJiuGongZhuDraft, title: "宝象国·下篇：救公主" },
+  { draft: baoXiangGuoJiuGongZhuDraft },
   { draft: zhiDouJinJiaoYinJiaoDraft },
-  { draft: baoLinSiJieYeXinDraft, title: "乌鸡国·上篇：宝林寺接叶信" },
-  { draft: wuJiGuoBianZhenWangDraft, title: "乌鸡国·下篇：辨真王" },
+  { draft: wuJiGuoBianZhenWangDraft },
   { draft: huoYunDongShouHongHaiErDraft },
-  { draft: heiShuiHeBianTuoLongDraft },
   { draft: cheChiGuoSanChangBiShiDraft },
-  { draft: tongTianHeAnQuanLuDraft, title: "通天河·上篇：安全路" },
-  { draft: tongTianHeJiuTongZiDraft, title: "通天河·下篇：救童子" },
-  { draft: jinDouDongShouQingNiuDraft },
+  { draft: tongTianHeJiuTongZiDraft },
   { draft: nuErGuoCiBieDraft },
   { draft: zhenJiaMeiHouWangDraft },
-  { draft: sanJieBaJiaoShanDraft, title: "火焰山·上篇：三借芭蕉扇" },
-  { draft: huoYanShanLiangFengLuDraft, title: "火焰山·下篇：量风路" },
-
-  // 西行后半程，按原著章节顺序插回主线。
-  { draft: jiSaiGuoSaoBaoTaDraft },
-  { draft: jingJiLingKaiLuDraft, title: "荆棘岭·上篇：开路" },
-  { draft: muXianAnShiHuiDraft, title: "荆棘岭·下篇：木仙庵诗会" },
+  { draft: sanJieBaJiaoShanDraft },
   { draft: xiaoLeiYinSiShiJiaFoDraft },
-  { draft: qiJueShanQingGuoXiangDraft },
-  { draft: zhuZiGuoWenWenZhenDraft, title: "朱紫国·上篇：温问诊" },
-  { draft: zhuZiGuoJieXinJieDraft, title: "朱紫国·下篇：解心结" },
   { draft: panSiDongQiaoTuoXianDraft },
   { draft: huangHuaGuanJieCaiChaDraft },
   { draft: shiTuoLingSanGuanDraft },
@@ -235,9 +234,7 @@ const CURATED_XIYOUJI_DRAFTS: XiyoujiDraftSpec[] = [
   { draft: mieFaGuoHuanXinYiDraft },
   { draft: yinWuShanBianZhenYingDraft },
   { draft: fengXianJunQiuGanYuDraft },
-  { draft: yuHuaZhouShouXinTuDraft, title: "玉华州·上篇：收新徒" },
-  { draft: yuHuaZhouZhaoGongJuDraft, title: "玉华州·下篇：找工具" },
-  { draft: jinPingFuShouHuaDengDraft },
+  { draft: yuHuaZhouShouXinTuDraft },
   { draft: tianZhuGuoBianYuTuDraft },
   { draft: tongTaiFuJieShanYuanDraft },
   { draft: kouFuCiBieDraft },
@@ -249,6 +246,28 @@ const CURATED_XIYOUJI_DRAFTS: XiyoujiDraftSpec[] = [
   { draft: laoYuanWenJiuNuoDraft },
   { draft: shaiJingShiLiuHenDraft },
   { draft: changAnGongDeYuanManDraft },
+
+  // 原第41–60回保持原回号和原顺序。
+  { draft: heiFengShanHuJiaShaDraft },
+  { draft: huangFengLingDingFengZhuDraft },
+  { draft: siShengShiChanXinDraft },
+  { draft: wuZhuangGuanRenShenGuoDraft },
+  { draft: heiShuiHeBianTuoLongDraft },
+  { draft: jinDouDongShouQingNiuDraft },
+  { draft: jiSaiGuoSaoBaoTaDraft },
+  { draft: muXianAnShiHuiDraft },
+  { draft: zhuZiGuoJieXinJieDraft },
+  { draft: jinPingFuShouHuaDengDraft },
+  { draft: tianMaYuanZhiBanBiaoDraft },
+  { draft: panTaoYuanDeQingTieDraft },
+  { draft: shuangChaLingRenLuDraft },
+  { draft: baoLinSiJieYeXinDraft },
+  { draft: huaGuoShanQingShiXiongDraft },
+  { draft: tongTianHeAnQuanLuDraft },
+  { draft: jingJiLingKaiLuDraft },
+  { draft: qiJueShanQingGuoXiangDraft },
+  { draft: zhuZiGuoWenWenZhenDraft },
+  { draft: yuHuaZhouZhaoGongJuDraft },
 ];
 
 export const XIYOUJI_BOOKS: LibraryBook[] = [

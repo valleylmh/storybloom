@@ -85,7 +85,7 @@ describe("library discovery", () => {
       reason: "同系列下一本",
     });
     expect(recommendations.map((item) => item.book.metadata.seriesOrder)).toEqual([
-      2, 3, 4, 5,
+      2, 2, 2, 3,
     ]);
     expect(
       recommendations.some((item) => item.book.contentId === current.contentId),
