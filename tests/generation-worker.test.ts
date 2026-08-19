@@ -606,6 +606,21 @@ describe("generation worker", () => {
     );
   });
 
+  it("routes durable free fallback regeneration through Agnes", async () => {
+    mockSingleClaim("illustration", illustrationJob);
+    mocks.getPayload.mockResolvedValue({
+      ...illustrationPayload,
+      fallbackMode: "free-fallback",
+    });
+
+    const summary = await runGenerationWorker();
+
+    expect(summary).toMatchObject({ claimed: 1, succeeded: 1 });
+    expect(mocks.executeIllustration).toHaveBeenCalledWith(
+      expect.objectContaining({ fallbackProviders: ["agnes"] }),
+    );
+  });
+
   it("requeues illustration failure and leaves terminal page state to cleanup", async () => {
     mockSingleClaim("illustration", illustrationJob);
     mocks.getPayload.mockResolvedValue(illustrationPayload);

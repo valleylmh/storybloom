@@ -111,11 +111,15 @@ function createPage(overrides: Partial<StoryPage> = {}): StoryPage {
   };
 }
 
-function createRequest() {
+function createRequest(regenerationMode?: "free-fallback") {
   return new NextRequest("http://localhost/api/illustration", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ storyId: "story-12345678", page: 1 }),
+    body: JSON.stringify({
+      storyId: "story-12345678",
+      page: 1,
+      ...(regenerationMode ? { regenerationMode } : {}),
+    }),
   });
 }
 
@@ -675,6 +679,21 @@ describe("illustration route request control", () => {
       }),
     );
     expect(mocks.after).toHaveBeenCalledTimes(1);
+  });
+
+  it("routes free fallback regeneration through Agnes", async () => {
+    mocks.getCachedStory.mockResolvedValue(
+      createStory(createPage({ imageStatus: "failed" })),
+    );
+
+    const response = await POST(createRequest("free-fallback"));
+
+    expect(response.status).toBe(202);
+    await vi.waitFor(() => {
+      expect(mocks.executeIllustrationGeneration).toHaveBeenCalledWith(
+        expect.objectContaining({ fallbackProviders: ["agnes"] }),
+      );
+    });
   });
 
   it("enqueues a durable illustration job without using after", async () => {

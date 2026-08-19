@@ -40,6 +40,9 @@ import {
   markIllustrationAttemptFailed,
 } from "@/lib/illustration-generation-executor";
 import {
+  getFreeRegenerationFallbackProviders,
+} from "@/lib/illustration-regeneration-policy";
+import {
   sweepExpiredTemporaryStoryAssets,
   type TemporaryStoryAssetSweepResult,
 } from "@/lib/temporary-story-asset-store";
@@ -476,7 +479,7 @@ async function executeClaimedIllustrationJob(
         assetPrincipals: payload.assetPrincipals,
         fallbackProviders:
           payload.fallbackMode === "free-fallback"
-            ? ["pollinations"]
+            ? getFreeRegenerationFallbackProviders()
             : undefined,
         persistTerminalFailure: false,
         publishFence: renewLease,

@@ -12,6 +12,9 @@ import {
   normalizeIllustrationPageForClient,
   SAFE_ILLUSTRATION_ERROR,
 } from "@/lib/illustration-request-policy";
+import {
+  getFreeRegenerationFallbackProviders,
+} from "@/lib/illustration-regeneration-policy";
 import { hasFamilyCharacterReference } from "@/lib/family-story-characters";
 import { allowIpRequest } from "@/lib/request-rate-limit";
 import { getCachedStory, mutateCachedStory } from "@/lib/storage";
@@ -46,7 +49,6 @@ import type { GeneratedStory } from "@/types";
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-const manualRegenerationProviderOrder = ["pollinations"] as const;
 const DEFAULT_ILLUSTRATION_RATE_LIMIT_PER_STORY = 64;
 
 function matchesIllustrationGenerationJob(input: {
@@ -888,7 +890,7 @@ export async function POST(req: NextRequest) {
         attemptId: pending.attemptId!,
         fallbackProviders:
           parsed.data.regenerationMode === "free-fallback"
-            ? [...manualRegenerationProviderOrder]
+            ? getFreeRegenerationFallbackProviders()
             : undefined,
         ...(authorizationPrincipal
           ? { assetPrincipals: illustrationAssetPrincipals(authorizationPrincipal) }
