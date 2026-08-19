@@ -1,0 +1,282 @@
+[
+  {
+    "id": "gao-shan-liu-shui",
+    "title": "高山流水",
+    "subtitle": "听懂琴声的朋友",
+    "origin": "《列子·汤问》",
+    "moral": {
+      "zh": "认真倾听，不急着替别人作答，才能听见表达背后的心意。",
+      "en": "Attentive listening helps us understand the feelings and ideas behind another person's words or art."
+    },
+    "idiomMeaning": {
+      "zh": "原指高妙的琴曲，后来也比喻真正理解自己的知音和真挚友情。",
+      "en": "Originally describing sublime music, it also came to mean a true friend who deeply understands another's heart and art."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 41,
+    "visualAnchor": "Ancient pine-lined river valley with a broad safe stone bank, layered blue-green mountains and light mist; Boya is a thoughtful lean 35-year-old musician with an oval clean-shaven face, high scholar bun, indigo cross-collar robe, cream inner collar and jade-green sash; Zhong Ziqi is a sturdy friendly 32-year-old traveler with a square face, low bun, moss-green short robe, beige sash and fixed empty woven shoulder basket; fixed dark-brown lacquered qin with seven subtle strings on a low wooden qin table; mountain and water imagery remains natural scenery or gentle reflection, never literal magic",
+    "pages": [
+      { "zh": "古时，伯牙带着琴来到河边，在松树下静静弹奏。", "en": "Long ago, Boya brought his qin to the river and played quietly beneath the pines.", "prompt": "wide establishing riverside scene, Boya sits safely on the broad stone bank tuning the fixed qin while mountains and calm water frame the setting" },
+      { "zh": "路过的钟子期停下脚步，没有打扰，只专心听琴。", "en": "Zhong Ziqi, passing by, stopped without interrupting and listened with full attention.", "prompt": "Zhong Ziqi pauses several steps away with respectful open posture while Boya continues playing, empty basket resting beside him" },
+      { "zh": "伯牙心里想着高山，琴声变得沉稳又高远。", "en": "Boya pictured lofty mountains, and his music grew steady, spacious, and high.", "prompt": "Boya plays with calm focus as the real distant mountains rise clearly behind him, no magical shapes leaving the instrument" },
+      { "zh": "子期赞叹：“多么巍峨，就像眼前的高山！”", "en": "Ziqi exclaimed, “How majestic—it feels like the mountains before us!”", "prompt": "Ziqi gestures gently toward the high mountains while Boya looks pleasantly surprised, qin and river remain in place" },
+      { "zh": "伯牙又想着流水，琴声轻快地向远方铺开。", "en": "Then Boya imagined flowing water, and the melody moved lightly into the distance.", "prompt": "Boya plays a flowing passage beside the calm river, sunlight and ripples naturally echo the rhythm without fantasy effects" },
+      { "zh": "子期笑着说：“多么宽广，就像奔流的江河！”", "en": "Ziqi smiled. “How broad—it feels like a river running far away!”", "prompt": "Ziqi listens beside the wide river and traces its distant curve with one hand, both men warm and engaged" },
+      { "zh": "伯牙惊喜地发现，子期听懂了琴声里的心意。", "en": "Boya was delighted to find that Ziqi understood the feeling inside his music.", "prompt": "turning point, Boya pauses with a delighted gentle expression as the two men meet each other's eyes across the qin" },
+      { "zh": "两人成为知音，高山流水也成了理解与友情的故事。", "en": "They became true friends, and high mountains and flowing water became a story of understanding.", "prompt": "hopeful sunset ending, both friends sit beside the fixed qin sharing quiet conversation, mountains and river glowing behind them" }
+    ]
+  },
+  {
+    "id": "tong-zhou-gong-ji",
+    "title": "同舟共济",
+    "subtitle": "风里的一条船",
+    "origin": "《孙子·九地》",
+    "moral": {
+      "zh": "即使原本有分歧，面对共同问题时，也可以互相帮助、一起前行。",
+      "en": "Even people who disagree can help one another and move forward when they face the same challenge."
+    },
+    "idiomMeaning": {
+      "zh": "同乘一条船渡河；比喻在困难中团结合作，共同渡过难关。",
+      "en": "To cross in the same boat—working together through a shared difficulty."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 42,
+    "visualAnchor": "Ancient broad but gentle river with both green banks always visible, a sturdy wide-bottom wooden ferry with high sides, two fixed wooden oars, one bamboo basket, one tied cloth bundle and one shallow wooden scoop; the 50-year-old boatman has a weathered kind face, straw rain hat and brown short robe; the Wu traveler is a slim 30-year-old in an indigo robe and cream sash; the Yue traveler is a sturdy 32-year-old in a rust-red robe and dark-teal sash; all three are adults, visually equal, unarmed and free of flags or stereotypes",
+    "pages": [
+      { "zh": "古时，吴地和越地的两位旅人来到同一处渡口。", "en": "Long ago, two travelers from Wu and Yue arrived at the same ferry crossing.", "prompt": "wide establishing ferry scene, both adult travelers approach the fixed wooden boat from the same safe dock while the boatman welcomes them" },
+      { "zh": "他们过去彼此不亲近，上船后也安静地坐在两边。", "en": "They had never been friendly, so they sat quietly on opposite sides of the boat.", "prompt": "both travelers sit apart inside the stable ferry with neutral respectful expressions, boatman rows through calm water" },
+      { "zh": "船到河心，风夹着细雨吹来，渡船轻轻摇晃。", "en": "At mid-river, wind and light rain arrived, and the ferry began to rock gently.", "prompt": "mild wind and fine rain over the river, ferry remains upright with high sides and both banks clearly visible, adults alert but calm" },
+      { "zh": "船夫请两人留在安全位置，一起护好船上的物品。", "en": "The boatman asked them to stay in safe positions and secure the things aboard.", "prompt": "boatman gives calm instructions while both travelers kneel low inside the boat beside the fixed basket and tied bundle" },
+      { "zh": "一人稳住竹篮，一人用木瓢舀走浅浅的积水。", "en": "One steadied the bamboo basket while the other scooped out a little rainwater.", "prompt": "clear cooperative action, indigo traveler secures the basket and rust-red traveler uses the shallow wooden scoop on a small puddle, boatman keeps both hands on the oar" },
+      { "zh": "三个人像左右手一样配合，渡船渐渐恢复平稳。", "en": "The three worked like two hands together, and the ferry soon felt steady again.", "prompt": "balanced teamwork scene inside the upright ferry, rain easing and expressions focused, no one standing or leaning over the side" },
+      { "zh": "船安全靠岸，两位旅人又互相帮助搬下行李。", "en": "The ferry reached shore safely, and the travelers helped each other unload.", "prompt": "boat tied safely at the dock, both travelers pass the fixed basket and bundle hand to hand while boatman smiles" },
+      { "zh": "同舟共济告诉我们，遇到困难时，合作能带大家前行。", "en": "Working in the same boat reminds us that cooperation carries everyone forward.", "prompt": "hopeful clearing-sky ending, the two travelers walk onward beside the river sharing the bundle while the boatman waves from the dock" }
+    ]
+  },
+  {
+    "id": "kong-rong-rang-li",
+    "title": "孔融让梨",
+    "subtitle": "一篮大小不同的梨",
+    "origin": "《后汉书·孔融传》李贤注引《融家传》",
+    "moral": {
+      "zh": "分享时可以多想一想别人的需要；善意应当自愿，也要照顾公平。",
+      "en": "Sharing can consider other people's needs, while kindness remains voluntary and fair."
+    },
+    "idiomMeaning": {
+      "zh": "孔融小时候主动选择小梨，把大梨留给哥哥；常用来赞美谦让和友爱。",
+      "en": "Young Kong Rong chose a smaller pear and left the larger ones for his older brothers—a story of considerate sharing."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 43,
+    "visualAnchor": "Warm Eastern Han family courtyard with a low wooden table, gray-tiled home, pomegranate tree and soft autumn sunlight; four-year-old Kong Rong has a round face, one tiny topknot, pale-yellow short robe, sage-green sash and dark cloth shoes; his two older brothers are eight and ten, one in indigo and one in rust-red, both gentle and distinct; their mother has a low bun and muted-plum dress; fixed shallow tan wicker basket holds clean yellow-green pears in clearly mixed sizes, with one visibly small pear; no knives or whole-pear biting",
+    "pages": [
+      { "zh": "汉代，四岁的孔融和哥哥们正在庭院里玩耍。", "en": "In the Han dynasty, four-year-old Kong Rong was playing in the courtyard with his older brothers.", "prompt": "wide establishing family courtyard, Kong Rong and his two older brothers play calmly near the low table while their mother approaches" },
+      { "zh": "母亲端来一篮洗净的梨，有的大，有的小。", "en": "Their mother brought a basket of washed pears, some large and some small.", "prompt": "mother sets the fixed wicker basket on the table, mixed pear sizes clearly visible, children wait without grabbing" },
+      { "zh": "大家一起分梨，孔融看看哥哥们，又看看篮子。", "en": "As the family began to share, Kong Rong looked at his brothers and then at the basket.", "prompt": "Kong Rong thoughtfully compares the brothers and the mixed pears while everyone remains seated around the table" },
+      { "zh": "他没有争抢，伸手拿起了那只较小的梨。", "en": "Without rushing or grabbing, he reached for the smaller pear.", "prompt": "Kong Rong gently lifts exactly one visibly small pear with both hands, larger pears remain in basket, brothers calm" },
+      { "zh": "母亲好奇地问：“你为什么不拿大的呢？”", "en": "His mother asked with curiosity, “Why didn't you choose a larger one?”", "prompt": "mother kneels beside Kong Rong with a warm curious expression, brothers listen without judgment, small pear still in his hands" },
+      { "zh": "孔融说：“我还小，小梨够了，大的留给哥哥们。”", "en": "Kong Rong said, “I am little, so this is enough. The larger pears can be for my brothers.”", "prompt": "Kong Rong explains with a sincere smile while gesturing toward his brothers, no one eating yet" },
+      { "zh": "家人赞许他的心意，也照顾每个人的需要，公平分享。", "en": "The family appreciated his kindness and shared fairly according to everyone's needs.", "prompt": "mother distributes prepared pear slices on small plates, all three children receive food, no knife visible and no comparison or pressure" },
+      { "zh": "孔融让梨让人记住：分享时，多想一想别人。", "en": "Kong Rong's choice reminds us to think of others when we share.", "prompt": "hopeful afternoon ending, siblings sit together sharing prepared pear slices and smiling warmly, fixed basket beside them" }
+    ]
+  },
+  {
+    "id": "wang-yang-xing-tan",
+    "title": "望洋兴叹",
+    "subtitle": "河伯第一次看见大海",
+    "origin": "《庄子·秋水》",
+    "moral": {
+      "zh": "认识自己的局限不是终点；发现差距后，还可以继续学习、准备和求助。",
+      "en": "Recognizing our limits is a beginning: we can keep learning, prepare, and ask for help."
+    },
+    "idiomMeaning": {
+      "zh": "河伯面对北海仰视感叹；今比喻因能力或条件不足，面对宏大事物感到无可奈何。",
+      "en": "In the ancient tale, the River Spirit looked up in awe toward the North Sea Spirit; today the idiom describes feeling unable to meet something immense with limited ability or means."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 44,
+    "visualAnchor": "Mythic autumn meeting of the ochre Yellow River and deep-blue North Sea, golden reeds, layered clouds, broad horizon and a wide stable pale-stone overlook with protective natural boulders; the friendly River Spirit is an adult with a round clean-shaven face, high dark bun, blue-green and ochre flowing robe and jade belt; the older North Sea Spirit has warm eyes, white brows and short beard, deep-blue robe with subtle white wave trim and cream sash; both remain normal human scale on dry stone, never giants, monsters or people in the water",
+    "pages": [
+      { "zh": "秋雨落下，许多溪流汇入黄河，河面变得宽阔。", "en": "Autumn rain fed many streams into the Yellow River, making its surface broad.", "prompt": "wide establishing river landscape after gentle rain, full banks and golden reeds with no homes, people or animals threatened" },
+      { "zh": "河伯望着滚滚河水，以为天下没有比它更大的水面。", "en": "The River Spirit admired the wide current and thought no water in the world could be greater.", "prompt": "River Spirit stands safely on the broad stone overlook with proud but friendly posture, looking over the ochre river" },
+      { "zh": "他沿着河岸向东，来到黄河汇入北海的地方。", "en": "He followed the safe riverbank eastward until the Yellow River met the North Sea.", "prompt": "River Spirit walks along a broad dry stone path toward the visible meeting of river and sea, no boat and no wading" },
+      { "zh": "眼前的大海一直伸到天边，怎么也望不到尽头。", "en": "Before him, the sea stretched to the horizon with no end in sight.", "prompt": "vast reveal of deep-blue sea and horizon, River Spirit small but safe on the protected overlook, expression amazed rather than afraid" },
+      { "zh": "河伯向北海之神感叹，自己见过的天地原来很有限。", "en": "He told the North Sea Spirit that his own view of the world had been limited.", "prompt": "both spirits meet on the wide stone overlook, River Spirit speaks honestly while North Sea Spirit listens kindly" },
+      { "zh": "北海之神说：“看得越远，越知道世界广大。”", "en": "The North Sea Spirit said, “The farther we look, the more we see how wide the world is.”", "prompt": "North Sea Spirit gestures gently across the peaceful horizon while River Spirit listens with open thoughtful posture" },
+      { "zh": "河伯不再自满，愿意继续观察，也听取别人的见识。", "en": "The River Spirit let go of pride and chose to observe more and learn from others.", "prompt": "turning point, River Spirit studies river currents, shells and distant clouds beside the North Sea Spirit, curious and calm" },
+      { "zh": "望洋兴叹提醒我们：发现差距后，还可以继续学习。", "en": "The idiom reminds us that noticing a gap can lead to further learning.", "prompt": "hopeful sunset ending, both spirits walk along the safe overlook with vast river and sea joined behind them" }
+    ]
+  },
+  {
+    "id": "luo-yang-zhi-gui",
+    "title": "洛阳纸贵",
+    "subtitle": "一篇文章传遍洛阳",
+    "origin": "《晋书·文苑传·左思传》",
+    "moral": {
+      "zh": "好作品来自长期观察、查证和修改；受欢迎是结果，不是价值的唯一标准。",
+      "en": "Strong work grows through observation, checking, and revision; popularity is a result, not its only measure of value."
+    },
+    "idiomMeaning": {
+      "zh": "左思的作品广受欢迎，洛阳人争相传抄；比喻作品受到赞誉、广泛流传。",
+      "en": "Zuo Si's work was copied so widely in Luoyang that paper became precious—a saying for a celebrated, widely shared work."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 45,
+    "visualAnchor": "Western Jin Luoyang with gray-tiled streets, warm paper shops and a quiet scholar's study; Zuo Si is a slim 30-year-old writer with a long thoughtful face, high neat bun, muted-plum robe, sage-green sash and cream inner collar; the older scholar has a short gray beard and indigo robe; fixed low dark-wood desk, black inkstone, deep-brown brush, cream paper sheets and scrolls; every paper surface contains only abstract non-readable ink landscapes, plant motifs or soft brush textures, never letters, calligraphy, numerals or pseudo-text",
+    "pages": [
+      { "zh": "西晋文人左思，想写一篇描绘三座都城的长文章。", "en": "The Western Jin writer Zuo Si wanted to create a long work about three ancient capitals.", "prompt": "wide establishing study scene, Zuo Si considers three small blank wooden city models beside his fixed desk, paper still mostly empty" },
+      { "zh": "他搜集许多资料，把观察到的事认真整理起来。", "en": "He gathered many sources and carefully organized what he observed.", "prompt": "Zuo Si compares blank maps, landscape sketches and architectural models, all surfaces abstract and unreadable" },
+      { "zh": "家中几处都放着纸笔，方便他随时记录和修改。", "en": "He kept paper and brushes in several rooms so he could record and revise ideas.", "prompt": "continuous home scene with modest writing stations in study and courtyard, Zuo Si moves between them thoughtfully, no paper waste" },
+      { "zh": "前后十年，他一次次修改，终于完成了这篇作品。", "en": "Across ten years, he revised again and again until the work was complete.", "prompt": "mature turning point, Zuo Si ties one carefully ordered finished scroll bundle beside a small stack of earlier drafts, morning light" },
+      { "zh": "有学问的人读过后，为它作注，也向别人推荐。", "en": "Learned readers studied it, added explanations, and recommended it to others.", "prompt": "older scholar and two readers examine the scroll with appreciative expressions, paper shows only abstract mountain and plant motifs" },
+      { "zh": "当时书籍主要靠手抄，许多人都想抄一份阅读。", "en": "Books were copied by hand then, and many people wanted a copy to read.", "prompt": "orderly shared copying room with adults carefully making a few treasured copies, no crowds, no readable marks" },
+      { "zh": "洛阳纸铺格外忙碌，传说纸价也跟着上涨。", "en": "Luoyang's paper shops grew unusually busy, and tradition says paper prices rose.", "prompt": "busy but calm paper shop, artisans wrap modest bundles and readers wait politely, no signs, price tags, coins or numerals" },
+      { "zh": "人们用洛阳纸贵，称赞广受欢迎、流传很广的作品。", "en": "Paper becoming precious in Luoyang came to praise a work loved and shared by many.", "prompt": "hopeful courtyard ending, families and scholars carefully pass a few scrolls from hand to hand while Zuo Si watches humbly" }
+    ]
+  },
+  {
+    "id": "san-ren-cheng-hu",
+    "title": "三人成虎",
+    "subtitle": "说得多就是真的吗",
+    "origin": "《战国策·魏策二》",
+    "moral": {
+      "zh": "重复不是证据；听到传言时，要核对来源和事实，再决定是否相信。",
+      "en": "Repetition is not evidence. Check sources and facts before deciding whether a rumor is true."
+    },
+    "idiomMeaning": {
+      "zh": "错误说法被多人反复传播，容易让人信以为真；比喻谣言足以迷惑人。",
+      "en": "When many people repeat a false claim, it can begin to seem true—a warning about the power of rumor."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 46,
+    "visualAnchor": "Ancient state of Wei with a quiet lacquered audience hall and distant orderly walled marketplace; Pang Cong is a thoughtful slim 34-year-old official with narrow clean-shaven face, high neat topknot, deep-teal cross-collar robe, rust-red sash and dark cloth shoes; King Wei is a sturdy 48-year-old with short moustache, low crown, muted-gold robe and burgundy belt; fixed low wooden market model and one palm-sized orange wooden tiger token represent the hypothetical rumor; later rumor-bearers wear muted gray-blue robes; the tiger is never alive or full-sized",
+    "pages": [
+      { "zh": "魏国大臣庞葱要陪太子远行，临行前拜见魏王。", "en": "Before accompanying the prince on a distant journey, the Wei official Pang Cong visited the king.", "prompt": "wide establishing audience hall, Pang Cong respectfully meets King Wei beside the fixed low market model and tiny wooden tiger token" },
+      { "zh": "他问：“若一人说集市有老虎，您会相信吗？”", "en": "He asked, “If one person said there was a tiger in the market, would you believe it?”", "prompt": "Pang Cong places the palm-sized wooden tiger beside the market model as a clear hypothetical example, king calmly shakes his head" },
+      { "zh": "魏王摇头；若有两个人这样说，他便开始迟疑。", "en": "The king said no, though he admitted that two voices might make him hesitate.", "prompt": "two small gray-blue wooden messenger tokens stand beside the market model, king thoughtful but not frightened, no living tiger" },
+      { "zh": "若三个人都这样说，魏王答：“那我可能会信。”", "en": "Asked about three people repeating it, the king replied, “Then I might believe it.”", "prompt": "three messenger tokens now surround the tiny wooden tiger token, king leans closer uncertainly while Pang Cong watches seriously" },
+      { "zh": "庞葱提醒：集市本来没有虎，重复不能代替证据。", "en": "Pang Cong reminded him that no tiger was there and repetition could not replace evidence.", "prompt": "Pang Cong opens the window toward the clearly peaceful distant market, pointing to ordinary vendors and carts, wooden tiger remains tiny on table" },
+      { "zh": "他担心远行以后，会有人把流言反复传给魏王。", "en": "He worried that while he was away, people would repeat rumors about him to the king.", "prompt": "Pang Cong prepares his travel bundle while several distant gray-blue rumor-bearers approach the hall separately, no crowding or hostility" },
+      { "zh": "后来流言增多，魏王没有查证，渐渐疏远了他。", "en": "Later, rumors multiplied, and without checking them, the king gradually distanced himself from Pang Cong.", "prompt": "restrained consequence scene, King Wei sits uncertainly with three rumor-bearers while Pang Cong's empty place remains across the hall, no punishment or humiliation" },
+      { "zh": "三人成虎提醒我们：听得再多，也要先查清真相。", "en": "Three people making a tiger reminds us to check the truth, however often a claim is repeated.", "prompt": "reflective ending, King Wei looks from the tiny wooden tiger and three messenger tokens toward the visibly peaceful market, then quietly sets the wooden tiger aside; no new historical action" }
+    ]
+  },
+  {
+    "id": "mao-sui-zi-jian",
+    "title": "毛遂自荐",
+    "subtitle": "最后一个名额",
+    "origin": "《史记·平原君虞卿列传》",
+    "moral": {
+      "zh": "真正的自荐不是空口夸耀，而是了解任务、做好准备并愿意承担责任。",
+      "en": "Putting yourself forward means understanding the task, preparing well, and accepting responsibility—not merely boasting."
+    },
+    "idiomMeaning": {
+      "zh": "毛遂主动推荐自己随平原君出使；比喻自告奋勇，主动承担任务。",
+      "en": "Mao Sui volunteered to join Lord Pingyuan's mission—a saying for putting oneself forward for a task."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 47,
+    "visualAnchor": "Ancient Zhao and Chu with two distinct peaceful audience halls; Mao Sui is a slim 28-year-old with oval clean-shaven face, high topknot tied with ochre ribbon, deep-teal robe, warm-ochre sash and fixed bamboo document case; Lord Pingyuan is 45 with broad face, short moustache, burgundy robe and cream sash; King of Chu is 50 in dark-purple and muted-gold robes; fixed shallow wooden selection tray has twenty round slots, nineteen blue tokens and one empty slot; blank maps and round wooden cooperation tokens contain no writing; no weapons, armies, threats or blood rituals",
+    "pages": [
+      { "zh": "赵国遇到难题，平原君准备去楚国请求合作。", "en": "When Zhao faced a serious problem, Lord Pingyuan prepared to ask Chu for cooperation.", "prompt": "wide establishing Zhao hall, Lord Pingyuan studies a blank map with advisers and the fixed selection tray nearby, peaceful planning only" },
+      { "zh": "他要选二十位随行者，却只找到十九位合适的人。", "en": "He needed twenty companions but had found only nineteen suitable people.", "prompt": "selection tray clearly shows nineteen blue tokens and one empty slot while a representative group of advisers waits, no need to show nineteen faces" },
+      { "zh": "门客毛遂走上前说：“请让我补上最后一个名额。”", "en": "Mao Sui stepped forward. “Please let me fill the final place,” he said.", "prompt": "Mao Sui politely steps forward with one hand near his bamboo document case, Lord Pingyuan listens without ridicule" },
+      { "zh": "平原君没听过他的才名，毛遂说自己一直没有机会。", "en": "Lord Pingyuan had not heard of his talent, and Mao Sui explained that he had lacked an opportunity.", "prompt": "calm conversation beside the empty tray slot, Mao Sui sincere and composed, other advisers respectful" },
+      { "zh": "到了楚国，毛遂认真倾听，把双方的难处想清楚。", "en": "In Chu, Mao Sui listened carefully and understood the concerns on both sides.", "prompt": "distinct Chu hall, Mao Sui listens behind Lord Pingyuan as King Chu and advisers discuss around a blank map" },
+      { "zh": "会谈迟迟没有进展，他礼貌请求发言，清楚说明理由。", "en": "When the talks stalled, he politely asked to speak and explained his reasoning clearly.", "prompt": "Mao Sui raises an open hand to request permission, then points to two cooperation tokens on the table, no interruption or aggressive pose" },
+      { "zh": "楚王听懂合作的好处，终于答应互相帮助。", "en": "The King of Chu understood the benefit of cooperation and agreed that the two states should help each other.", "prompt": "King Chu places two round cooperation tokens together while Mao Sui and Lord Pingyuan exchange relieved smiles" },
+      { "zh": "毛遂自荐，是有准备地站出来，并愿意承担责任。", "en": "Mao Sui's example shows how to step forward prepared and ready to take responsibility.", "prompt": "hopeful return scene, Mao Sui places the final blue token into the empty tray slot as Lord Pingyuan acknowledges his contribution" }
+    ]
+  },
+  {
+    "id": "guan-bao-zhi-jiao",
+    "title": "管鲍之交",
+    "subtitle": "最懂我的朋友",
+    "origin": "《史记·管晏列传》",
+    "moral": {
+      "zh": "真正的朋友会理解处境、看见长处、坦诚相待，也不会把包庇错误当成支持。",
+      "en": "A true friend understands circumstances, sees strengths, speaks honestly, and does not confuse support with hiding mistakes."
+    },
+    "idiomMeaning": {
+      "zh": "比喻像管仲和鲍叔牙那样彼此理解、相互信任的深厚友谊。",
+      "en": "The deep friendship of Guan Zhong and Bao Shuya—a bond of understanding and trust."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 48,
+    "visualAnchor": "Ancient Qi market and later peaceful palace courtyard; Guan Zhong is a slim 30-year-old with oval clean-shaven face, high topknot, sage-green cross-collar robe, dark-brown sash and fixed scroll case; Bao Shuya is a sturdy 32-year-old with round face, short moustache, low bun, ochre robe and deep-teal sash; Duke Huan is 45 in burgundy and cream; fixed props include a two-handled wooden grain cart, three tan grain sacks, a small wooden balance and paired blank bamboo account slips; both friends always use respectful warm body language, with no war, prison or weapons",
+    "pages": [
+      { "zh": "春秋时，管仲和鲍叔牙年轻时就成了好朋友。", "en": "During the Spring and Autumn period, Guan Zhong and Bao Shuya became close friends as young men.", "prompt": "wide establishing Qi market, both friends greet beside the fixed grain cart, sacks and balance in warm morning light" },
+      { "zh": "两人商量好分法，因管仲家里困难，同意让他多分一些。", "en": "They worked together, and because Guan's family struggled, they agreed that he would receive a larger share.", "prompt": "both friends knowingly divide grain and simple wooden tokens together, Guan receives a little more with Bao's clear agreement, no secret taking" },
+      { "zh": "鲍叔牙了解原因，认可这次分法，没有误会他贪心。", "en": "Bao understood the reason and did not mistake the agreed arrangement for greed.", "prompt": "Bao gestures warmly toward Guan's modest home needs while they close the paired blank account slips together" },
+      { "zh": "管仲的主意有时没成功，鲍叔牙知道时机也有好坏。", "en": "Some of Guan's plans did not work, and Bao knew that timing could affect an idea.", "prompt": "a market plan has modestly stalled, Guan studies the quiet cart while Bao reviews the situation with him, no ridicule or loss scene" },
+      { "zh": "后来鲍叔牙受齐桓公信任，可以担任重要职位。", "en": "Later, Duke Huan trusted Bao and considered him for an important position.", "prompt": "peaceful palace courtyard, Duke Huan offers Bao a blank appointment token while Guan stands respectfully at a distance" },
+      { "zh": "他却说管仲更能担当，并诚恳地推荐了朋友。", "en": "Bao explained that Guan was better suited and sincerely recommended his friend.", "prompt": "Bao returns the token toward Duke Huan and openly gestures to Guan, everyone thoughtful and respectful" },
+      { "zh": "管仲施展才干，感叹：“最了解我的，是鲍叔牙。”", "en": "Guan used his abilities well and said, “The person who understands me best is Bao Shuya.”", "prompt": "Guan successfully organizes grain carts in the civic courtyard while Bao watches with quiet pride, Duke Huan approves" },
+      { "zh": "管鲍之交，是理解处境、欣赏长处，也愿意成就朋友。", "en": "Their friendship means understanding circumstances, valuing strengths, and helping a friend grow.", "prompt": "hopeful sunset ending, Guan and Bao walk side by side past the fixed cart and three sacks, equal and warmly connected" }
+    ]
+  },
+  {
+    "id": "da-gong-wu-si",
+    "title": "大公无私",
+    "subtitle": "只问谁最合适",
+    "origin": "《吕氏春秋·去私》",
+    "moral": {
+      "zh": "公平不是只看亲疏，而是用同一标准考察能力、责任和大家的需要。",
+      "en": "Fairness means using the same standards of ability, responsibility, and public need rather than personal likes or dislikes."
+    },
+    "idiomMeaning": {
+      "zh": "办事公正，以公共利益为重，不夹杂个人私心。",
+      "en": "To act impartially for the public good, without letting personal preference control the decision."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 49,
+    "visualAnchor": "Ancient Jin palace and bright Nanyang civic courtyard; Qi Huangyang is a lean 58-year-old elder with gray temples, short beard, ivory robe and deep-teal sash; Duke Ping is 46 with round face, low crown, burgundy robe and muted-gold belt; Jie Hu is 50 with calm square face and blue-gray robe; Qi Wu is 27 in sage green, resembling his father but with distinct topknot; fixed blank bamboo recommendation slips and matching round wooden candidate tokens are evaluated against the same three unmarked wooden balance blocks; no weapons, armies or threatening officials",
+    "pages": [
+      { "zh": "晋平公问祁黄羊：“南阳缺少长官，谁最合适？”", "en": "Duke Ping asked Qi Huangyang, “Who is best suited to lead Nanyang?”", "prompt": "wide establishing Jin hall, Duke Ping asks Qi Huangyang beside blank recommendation slips, candidate tokens and three matching standard blocks" },
+      { "zh": "祁黄羊认真想过，推荐了曾与自己有过节的解狐。", "en": "After careful thought, Qi recommended Jie Hu, a man with whom he had once disagreed.", "prompt": "Qi calmly places Jie Hu's distinct blue-gray candidate token beside the same three standard blocks, no angry imagery" },
+      { "zh": "晋平公很惊讶，他答：“您问的是谁有能力。”", "en": "The duke was surprised. Qi replied, “You asked who had the ability.”", "prompt": "Duke Ping raises his brows while Qi gestures evenly to the shared evaluation blocks, respectful discussion" },
+      { "zh": "解狐得到任用，大家都称赞这个公正选择。", "en": "Jie Hu was appointed, and people appreciated the fair choice.", "prompt": "bright Nanyang courtyard, Jie Hu listens to residents and organizes grain measures fairly, no banners or written signs" },
+      { "zh": "后来又有重要职位空缺，晋平公再次来询问。", "en": "Later another important position opened, and the duke asked Qi again.", "prompt": "back in the same hall, one empty place and a blank slip await a recommendation, Duke Ping consults Qi" },
+      { "zh": "祁黄羊这次推荐儿子祁午，国君更加惊讶。", "en": "This time Qi recommended his son, Qi Wu, surprising the duke even more.", "prompt": "Qi places Qi Wu's sage-green candidate token beside the exact same standard blocks, Duke Ping reacts thoughtfully" },
+      { "zh": "他解释：不因亲疏改标准，只看谁最适合为大家做事。", "en": "He explained that closeness should not change the standard; the question was who could serve everyone best.", "prompt": "Qi compares both candidate tokens against identical blocks while Qi Wu waits at a respectful distance, no favoritism gestures" },
+      { "zh": "大公无私，就是把公平和公共需要放在个人好恶前。", "en": "Impartiality places fairness and public need before personal likes and dislikes.", "prompt": "hopeful civic ending, Jie Hu and Qi Wu serve residents at separate tables using the same fair measures while Qi and Duke observe" }
+    ]
+  },
+  {
+    "id": "an-tu-suo-ji",
+    "title": "按图索骥",
+    "subtitle": "照着书找到的“马”",
+    "origin": "《汉书·梅福传》；通行故事见明·杨慎《艺林伐山》",
+    "moral": {
+      "zh": "书和图能提供线索，但真正理解还需要观察整体、核对事实并灵活判断。",
+      "en": "Books and pictures provide clues, but real understanding also requires observing the whole, checking facts, and adapting."
+    },
+    "idiomMeaning": {
+      "zh": "原指照图寻找良马；可指依线索寻找，也常比喻拘泥成法、不顾实际。",
+      "en": "Literally finding a fine horse from a picture; it can mean following clues, or it can criticize following a guide mechanically without checking reality."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-18",
+    "order": 50,
+    "visualAnchor": "Ancient horse meadow with wooden stable, low safe fence and lotus pond; Bole is a lean 48-year-old horse expert with warm face, neat moustache, small goatee, rust-red robe and dark-teal sash; his 16-year-old son has round face, small high topknot, sage-green short robe and ochre sash; fixed indigo-bound silk-and-bamboo horse manual contains only simple non-readable horse silhouettes, never letters; fixed gentle chestnut horse has white forehead star; one round brown-gold toad with amber eyes rests beside lotus leaves; the son never touches or carries the toad, and all horse observation happens beside the fence with adult supervision",
+    "pages": [
+      { "zh": "伯乐很会识马，还把观察良马的方法整理成书。", "en": "Bole knew horses well and organized his observations into a guide.", "prompt": "wide establishing stable meadow, Bole observes the fixed chestnut horse while showing his son the indigo manual with simple horse silhouettes" },
+      { "zh": "他的儿子记住几个外形特点，便照着说明去找马。", "en": "His son remembered a few outward features and set out to search by the guide.", "prompt": "son studies two simple horse silhouettes in the manual, then walks along a safe meadow path with the closed book" },
+      { "zh": "他一路只对照那些特点，却忘了观察完整的样子。", "en": "He matched isolated features but forgot to observe the whole animal.", "prompt": "son compares the manual with harmless animal shapes at a distance, focusing narrowly through a small wooden viewing frame" },
+      { "zh": "池塘边有只大蟾蜍，额头和眼睛竟有几分相似。", "en": "By the pond, a large toad had a brow and eyes that seemed to match a few clues.", "prompt": "fixed round toad rests safely beside lotus leaves while son notices from several steps away, book open but no readable marks" },
+      { "zh": "他没有碰它，只请父亲来看，高兴地说找到了马。", "en": "Without touching it, he called Bole over and happily announced that he had found the horse.", "prompt": "son points from a respectful distance as Bole arrives, toad remains undisturbed beside pond, no handling" },
+      { "zh": "伯乐温和地说：“它会跳，可不是能骑的马呀！”", "en": "Bole said kindly, “It can hop, but it certainly is not a horse to ride!”", "prompt": "Bole kneels beside his son but away from the toad, explaining with a warm smile, never mocking child or animal" },
+      { "zh": "他解释：书和图是线索，还要看整体和真实情况。", "en": "He explained that a guide offers clues, but we must also check the whole and the real situation.", "prompt": "Bole and son compare the manual silhouette with the full gentle chestnut horse behind the low fence, observing body, gait and behavior" },
+      { "zh": "按图索骥提醒我们：依线索寻找，也要观察和变通。", "en": "Searching by a picture reminds us to use clues while still observing and adapting.", "prompt": "hopeful ending, son closes the manual and carefully watches the chestnut horse walk beside Bole, toad visible safely back at pond" }
+    ]
+  }
+]

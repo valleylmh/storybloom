@@ -45,6 +45,26 @@ const CHENGYU_BOOK_IDS = [
   "shu-neng-sheng-qiao",
   "wang-mei-zhi-ke",
   "meng-mu-san-qian",
+  "qi-ren-you-tian",
+  "zhuan-xin-zhi-zhi",
+  "zhao-san-mu-si",
+  "kai-juan-you-yi",
+  "yu-bang-xiang-zheng",
+  "ru-mu-san-fen",
+  "zao-bi-tou-guang",
+  "nang-ying-ye-du",
+  "san-gu-mao-lu",
+  "jing-wei-tian-hai",
+  "gao-shan-liu-shui",
+  "tong-zhou-gong-ji",
+  "kong-rong-rang-li",
+  "wang-yang-xing-tan",
+  "luo-yang-zhi-gui",
+  "san-ren-cheng-hu",
+  "mao-sui-zi-jian",
+  "guan-bao-zhi-jiao",
+  "da-gong-wu-si",
+  "an-tu-suo-ji",
 ];
 const XIYOUJI_BOOK_IDS = [
   "shi-hou-chu-shi",
@@ -203,7 +223,11 @@ describe("library access functions", () => {
             ? "2026-07-20"
             : index < 20
               ? "2026-07-29"
-              : "2026-07-30",
+              : index < 30
+                ? "2026-07-30"
+                : index < 40
+                  ? "2026-08-17"
+                  : "2026-08-18",
       });
       expect(book?.comingSoon).not.toBe(true);
       expect(book?.pages).toHaveLength(8);

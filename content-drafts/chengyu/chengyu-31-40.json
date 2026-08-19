@@ -1,0 +1,282 @@
+[
+  {
+    "id": "qi-ren-you-tian",
+    "title": "杞人忧天",
+    "subtitle": "天空会掉下来吗",
+    "origin": "《列子·天瑞》",
+    "moral": {
+      "zh": "担心时先找事实、问清楚，再把精力放回今天能做的事。",
+      "en": "When worry grows, look for facts, ask for help, and return to what you can do today."
+    },
+    "idiomMeaning": {
+      "zh": "杞国人担心天会塌下来；比喻为没有根据或不必担忧的事情发愁。",
+      "en": "A man of Qi worried that the sky would fall—an expression for fretting over something without good reason."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 31,
+    "visualAnchor": "Ancient state of Qi village with packed-earth lanes, low gray-tiled homes, willow trees and a broad open sky; the worried man is a gentle slim 30-year-old with an oval clean-shaven face, high simple topknot, rust-orange cross-collar robe, dark-brown sash, charcoal trousers and cloth shoes; his calm friend is a sturdy 32-year-old with round face, short moustache, low bun, deep-teal robe, cream sash and brown cloth shoes; fixed small blue paper kite with a long cream tail; all reassurance is kind and evidence-based, never mocking",
+    "pages": [
+      { "zh": "杞国有个人常常仰望天空，越看越觉得不安。", "en": "A man in the state of Qi often stared at the sky until worry filled his thoughts.", "prompt": "wide establishing village scene, the worried man stands in his courtyard looking up at the immense calm sky while neighbors continue ordinary daily life" },
+      { "zh": "他担心天会掉下来，连饭也吃不香，夜里也睡不好。", "en": "He feared the sky might fall, and the thought spoiled his meals and sleep.", "prompt": "quiet early-evening home scene, the worried man sits beside an untouched simple meal and looks through the open doorway at the peaceful sky, tired but safe" },
+      { "zh": "朋友听说后，没有笑他，而是陪他到村外走一走。", "en": "His friend did not laugh. He invited him to take a walk beyond the village.", "prompt": "the calm friend gently invites the worried man along a sunny village path, supportive body language, open fields ahead" },
+      { "zh": "他们感受风、看云和飞鸟，发现天空一直安稳地展开。", "en": "They felt the wind and watched clouds and birds move through the steady sky.", "prompt": "both men in an open meadow observing drifting clouds, swallows and grass bending in the breeze, the friend gestures calmly toward visible evidence" },
+      { "zh": "朋友说：“能担心的事，要看有没有真实的迹象。”", "en": "“A worry deserves attention when there is real evidence,” his friend explained.", "prompt": "gentle teaching moment beneath a willow tree, the friend points to the stable ground and calm horizon while the worried man listens thoughtfully" },
+      { "zh": "“如果只是反复想象，就先深呼吸，再找人问清楚。”", "en": "“If it is only an imagined fear, breathe slowly and ask someone you trust.”", "prompt": "both men practice one slow calming breath beside the fixed blue kite, relaxed shoulders and warm afternoon light" },
+      { "zh": "他终于明白：没有根据地发愁，就是杞人忧天。", "en": "He understood that baseless worry was what people called fearing the sky like the man of Qi.", "prompt": "turning point, the worried man's expression softens into relief as he looks at the wide sky with clearer understanding, friend beside him" },
+      { "zh": "从此他学会查清事实，也重新安心吃饭、睡觉和生活。", "en": "From then on, he checked the facts and returned to eating, sleeping, and living with ease.", "prompt": "hopeful sunset ending, both friends fly the fixed blue kite in the field while the once-worried man smiles calmly, village glowing in the distance" }
+    ]
+  },
+  {
+    "id": "zhuan-xin-zhi-zhi",
+    "title": "专心致志",
+    "subtitle": "弈秋的两位学生",
+    "origin": "《孟子·告子上》",
+    "moral": {
+      "zh": "把注意力放在眼前的一步，认真听、认真想，学习才会真正发生。",
+      "en": "Learning grows when we give the present step our full attention and thought."
+    },
+    "idiomMeaning": {
+      "zh": "把全部心思集中在一件事上；形容一心一意、聚精会神。",
+      "en": "To focus one's whole mind on one task—with complete attention and purpose."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 32,
+    "visualAnchor": "Warring States garden teaching pavilion with dark wooden posts, woven mats, bamboo grove and a low square wooden weiqi table; teacher Yi Qiu is a kind lean elderly man with long neat gray beard, high scholar bun, deep-brown robe, muted-gold sash and cream inner collar; the focused student is a 12-year-old child with round face, one small topknot, moss-green robe and beige sash; the distracted student is the same age with oval face, side-tied topknot, sky-blue robe and rust sash; fixed smooth black and ivory game stones with no markings; wild geese may appear only high in the sky",
+    "pages": [
+      { "zh": "弈秋是有名的下棋老师，一天收下了两位学生。", "en": "Yi Qiu was a famous game teacher. One day, two students came to learn from him.", "prompt": "wide establishing pavilion scene, Yi Qiu welcomes both students at the fixed low weiqi table in the bamboo garden" },
+      { "zh": "老师摆下一颗棋子，慢慢讲清每一步为什么这样走。", "en": "He placed one stone and carefully explained the reason behind each move.", "prompt": "teacher places one black stone on the board and gestures to nearby positions while both students sit opposite him" },
+      { "zh": "绿衣学生专心听讲，眼睛一直跟着棋盘上的变化。", "en": "The student in green listened closely and followed every change on the board.", "prompt": "focused green-robed student studies the board with attentive eyes while Yi Qiu explains, balanced medium scene" },
+      { "zh": "蓝衣学生听见雁叫，心里只想着天空中的大雁。", "en": "The student in blue heard geese and began thinking only about the birds overhead.", "prompt": "blue-robed student turns toward a small flock of wild geese high beyond the pavilion while teacher and green student remain engaged, no hunting objects" },
+      { "zh": "轮到他落子时，他才发现自己漏听了好几步。", "en": "When his turn came, he realized he had missed several important steps.", "prompt": "blue-robed student holds one game stone uncertainly above the board, puzzled but not shamed, teacher waits patiently" },
+      { "zh": "弈秋请他收回目光，先看懂眼前这一颗棋子。", "en": "Yi Qiu gently asked him to return his attention to the single move before him.", "prompt": "teacher points kindly to one clear board position as the blue-robed student turns back and settles his posture" },
+      { "zh": "同样跟老师学习，专心致志的人才能真正学会。", "en": "The same lesson bears fruit when a learner gives it wholehearted attention.", "prompt": "turning point, both students now study the same move carefully, green student confident and blue student newly focused" },
+      { "zh": "后来，两位学生都学会先静下心，再一步一步思考。", "en": "Later, both students learned to quiet their minds and think one move at a time.", "prompt": "hopeful late-afternoon game, both students play thoughtfully while Yi Qiu watches with a warm approving smile" }
+    ]
+  },
+  {
+    "id": "zhao-san-mu-si",
+    "title": "朝三暮四",
+    "subtitle": "七颗栗子的算法",
+    "origin": "《庄子·齐物论》",
+    "moral": {
+      "zh": "别只被说法牵着走，要看清总数和事实，也要把规则讲明白。",
+      "en": "Look past changing words to the whole fact, and make rules clear and fair."
+    },
+    "idiomMeaning": {
+      "zh": "原指用不同说法改变感受，实际内容不变；后来也形容反复无常。",
+      "en": "Originally, changing the wording while the total stayed the same; later, it also came to describe fickle changes."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 33,
+    "visualAnchor": "Ancient Song hillside monkey keeper's courtyard with bamboo fence, chestnut tree, stone feeding ledge and warm autumn light; the keeper is a patient 55-year-old man with kind square face, short gray beard, low bun, ochre-brown robe, deep-teal sash and cloth shoes; four fixed golden-brown macaques have cream faces, dark hands, long tails and distinct child-friendly expressions; fixed small woven morning basket, larger evening basket and glossy brown chestnuts, with quantities shown only by visible objects and never by written numerals",
+    "pages": [
+      { "zh": "宋国有位老人照顾一群猴子，每天都给它们分栗子。", "en": "An old keeper in Song cared for a lively group of monkeys and shared chestnuts with them each day.", "prompt": "wide establishing autumn courtyard, keeper greets the four macaques beside the chestnut tree and two empty woven baskets" },
+      { "zh": "一天栗子不多，他说：“早上三颗，晚上四颗。”", "en": "One day he said, “Three in the morning and four in the evening.”", "prompt": "keeper places exactly three chestnuts in the small morning basket and exactly four in the evening basket as monkeys watch, no numerals" },
+      { "zh": "猴子们一听早上只有三颗，全都不高兴地摇头。", "en": "Hearing that morning meant only three, the monkeys shook their heads unhappily.", "prompt": "four macaques react with mild disappointment toward the small basket, expressive but peaceful, keeper thoughtful" },
+      { "zh": "老人换个说法：“那就早上四颗，晚上三颗吧。”", "en": "The keeper changed the wording: “Then four in the morning and three at night.”", "prompt": "keeper calmly swaps the basket contents so the morning basket has exactly four chestnuts and evening basket exactly three" },
+      { "zh": "猴子们立刻欢呼，却没发现一天还是一共七颗。", "en": "The monkeys cheered, not noticing that the daily total was still seven.", "prompt": "macaques clap happily around the four-chestnut morning basket while both baskets remain visible for comparison" },
+      { "zh": "老人把两篮栗子放在一起，请它们重新数一遍。", "en": "The keeper set both baskets together and invited them to count again.", "prompt": "keeper lines up all seven chestnuts in one clear row on the stone ledge while monkeys count with curious faces, no written symbols" },
+      { "zh": "大家明白了：朝三暮四，变的是说法，不是总数。", "en": "They understood: morning-three-evening-four changed the words, not the total.", "prompt": "turning point, monkeys compare the two baskets and the row of seven chestnuts with dawning understanding" },
+      { "zh": "从此老人把分法讲清楚，猴子们也学会先看完整。", "en": "After that, the keeper explained the whole plan, and the monkeys learned to look at the full picture.", "prompt": "hopeful feeding scene, keeper shares chestnuts fairly while all four macaques wait calmly beside both clearly visible baskets" }
+    ]
+  },
+  {
+    "id": "kai-juan-you-yi",
+    "title": "开卷有益",
+    "subtitle": "每天打开一卷书",
+    "origin": "宋·王辟之《渑水燕谈录·文儒》",
+    "moral": {
+      "zh": "常读好书、边读边想，知识会一点点拓宽我们的眼界。",
+      "en": "Good books widen our view when we read often and think about what we find."
+    },
+    "idiomMeaning": {
+      "zh": "打开书本阅读就会有收获；形容读书对人有益。",
+      "en": "Opening a book brings benefit—reading can always offer something to learn."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 34,
+    "visualAnchor": "Early Northern Song palace library with tall dark-wood shelves, latticed windows, woven mats and warm daylight; Emperor Taizong is shown primarily as a devoted middle-aged reader with broad calm face, short moustache and beard, black scholar cap, deep-maroon plain robe, muted-gold sash and no ceremonial weapons; two scholar editors wear navy and moss robes; fixed large set of cream stitched volumes stored in pale-blue cloth cases, with only abstract ink marks and no legible characters; reading scenes are quiet, curious and collaborative",
+    "pages": [
+      { "zh": "宋太宗请学者编成一大套书，里面收集了许多知识。", "en": "Emperor Taizong asked scholars to gather many kinds of knowledge into a great collection.", "prompt": "wide establishing palace library, Taizong and two editors stand beside orderly shelves and the fixed pale-blue book cases" },
+      { "zh": "书编好以后，他决定每天认真读三卷。", "en": "When the collection was finished, he decided to read three volumes each day.", "prompt": "Taizong selects exactly three cream stitched volumes from one pale-blue case at a low reading desk" },
+      { "zh": "有时事情太多，他也会找安静时间把当天的书读完。", "en": "Even on busy days, he found a quiet time to finish his reading.", "prompt": "evening library scene, Taizong reads one open volume by a safe covered lamp after setting aside official work objects with no visible writing" },
+      { "zh": "读到不懂的地方，他就停下来，请学者一起讨论。", "en": "When a passage puzzled him, he paused and discussed it with the scholars.", "prompt": "collaborative discussion around the low desk, Taizong asks a question while both editors compare two open books, no readable text" },
+      { "zh": "书里有历史、山川、草木，也有前人的经验和办法。", "en": "The books held history, landscapes, plants, and lessons from people of earlier times.", "prompt": "imaginative but single continuous library scene, open volumes display text-free painted miniatures of mountains, crops and tools while readers observe" },
+      { "zh": "每天多懂一点，他处理问题时也能看得更全面。", "en": "Learning a little each day helped him see questions from more than one side.", "prompt": "Taizong compares a small landscape model and a book illustration while scholars point out different details, thoughtful expressions" },
+      { "zh": "他说：“只要打开好书认真读，开卷就会有益。”", "en": "He said that opening a worthwhile book with care would always bring benefit.", "prompt": "turning point, Taizong closes one finished volume with a satisfied thoughtful smile as morning light fills the library" },
+      { "zh": "后来，他仍常常读书，也提醒大家边读边想、选择好书。", "en": "He kept reading and encouraged others to choose good books and think as they read.", "prompt": "hopeful library ending, Taizong and several young adult scholars read at separate desks in warm daylight, calm shared learning" }
+    ]
+  },
+  {
+    "id": "yu-bang-xiang-zheng",
+    "title": "鹬蚌相争",
+    "subtitle": "河滩上的小争执",
+    "origin": "《战国策·燕策二》",
+    "moral": {
+      "zh": "只顾争斗会让双方都失去选择；及时停下、合作解决，才不会让别人得利。",
+      "en": "Endless struggle traps both sides; pausing to cooperate protects everyone's choices."
+    },
+    "idiomMeaning": {
+      "zh": "鹬和蚌互不相让，反被渔人一起捉住；比喻双方相争，让第三方得利。",
+      "en": "A snipe and a clam fought until a fisher could take both—two rivals struggle while a third party gains."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 35,
+    "visualAnchor": "Ancient northern river shallows with pale sandbar, reeds, smooth stones and sparkling spring water; fixed child-friendly shorebird is a slim warm-brown snipe with cream chest, long dark beak, amber eyes and delicate gray legs; fixed freshwater clam has a rounded blue-gray shell with soft lavender inner edge and expressive eyes visible only when open; elderly fisher has kind weathered face, gray low bun, short beard, indigo robe, straw cape and an empty woven basket, with no hooks, blades or nets; all animal action is gentle and non-injurious",
+    "pages": [
+      { "zh": "春天的河滩上，一只河蚌张开贝壳，舒舒服服晒太阳。", "en": "On a spring sandbar, a river clam opened its shell and basked in the sun.", "prompt": "wide establishing river scene, the open blue-gray clam rests at the water's edge among reeds and smooth stones" },
+      { "zh": "一只鹬鸟走来啄小虫，不小心把长嘴伸到了蚌边。", "en": "A snipe searched for tiny insects and accidentally reached too close to the clam.", "prompt": "the warm-brown snipe gently probes damp sand beside the open clam, accidental closeness, no injury" },
+      { "zh": "河蚌吓了一跳，立刻合住壳，夹住了鹬鸟的嘴。", "en": "Startled, the clam shut its shell and held the bird's beak fast.", "prompt": "clam lightly holds only the tip of the snipe's beak, both surprised, clear child-safe spacing with no pain or damage" },
+      { "zh": "鹬说蚌会晒干，蚌说鹬会挨饿，谁也不肯先放开。", "en": "Each warned the other of trouble, yet neither was willing to let go first.", "prompt": "snipe and clam exchange stubborn expressive looks on the sandbar, fixed positions, no speech bubbles" },
+      { "zh": "一位渔人提着空篮走近，看见它们动也动不了。", "en": "A fisher approached with an empty basket and saw that neither could move.", "prompt": "elderly fisher notices the stuck pair from several steps away, empty woven basket visible, animals remain unharmed" },
+      { "zh": "鹬和蚌这才发现，再争下去，双方都会失去自由。", "en": "Only then did the two realize that continued struggle would cost both their freedom.", "prompt": "close turning realization, bird and clam glance toward the approaching basket and then at each other, expressions soften" },
+      { "zh": "河蚌松开贝壳，鹬也退后一步，它们终于停止相争。", "en": "The clam opened, and the snipe stepped back. At last, they ended the struggle.", "prompt": "clam safely releases the beak and snipe takes one respectful step back, fisher pauses and smiles gently" },
+      { "zh": "渔人空篮离开，鹬和蚌记住：合作比僵持更有办法。", "en": "The fisher left with an empty basket, while the pair remembered that cooperation beats a standoff.", "prompt": "hopeful river ending, fisher walks away with empty basket as snipe and open clam share the sunny sandbar peacefully" }
+    ]
+  },
+  {
+    "id": "ru-mu-san-fen",
+    "title": "入木三分",
+    "subtitle": "写进木板的笔力",
+    "origin": "唐·张怀瓘《书断·王羲之》",
+    "moral": {
+      "zh": "深厚本领来自长期认真练习；观察得深入，表达也会更有力量。",
+      "en": "Deep skill grows from careful practice, and close understanding gives expression real strength."
+    },
+    "idiomMeaning": {
+      "zh": "墨迹深入木板三分；原来形容书法笔力强劲，后来也比喻见解或描写深刻。",
+      "en": "Ink penetrating deep into wood—first praising powerful calligraphy, later describing insight or expression of great depth."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 36,
+    "visualAnchor": "Eastern Jin scholar's garden studio with bamboo, dark wooden veranda, low writing table and warm morning light; Wang Xizhi is an elegant slim 40-year-old man with long oval clean-shaven face, high scholar bun, flowing ivory robe, deep-teal sash and charcoal outer shawl; his young assistant wears a moss-green robe and beige sash; fixed rectangular pale-cypress signboard, dark-wood brush, black inkstone and clean water bowl; brush marks must remain abstract flowing black strokes with no legible Chinese characters",
+    "pages": [
+      { "zh": "东晋书法家王羲之从小爱写字，天天观察、天天练习。", "en": "The calligrapher Wang Xizhi loved brushwork and practiced with careful observation every day.", "prompt": "wide establishing garden studio, Wang Xizhi practices abstract brush strokes at the low table while assistant prepares paper" },
+      { "zh": "他看鹅游水、看云舒展，把看到的力量记在心里。", "en": "He watched geese glide and clouds unfold, remembering the movement he saw.", "prompt": "Wang Xizhi observes two white geese gliding across a garden pond beneath long clouds, thoughtful pose" },
+      { "zh": "写字时，他坐得稳、握笔松，落笔却沉着有力。", "en": "At the desk, his posture was steady, his grip relaxed, and every stroke controlled.", "prompt": "medium studio view, Wang Xizhi holds the fixed brush naturally and paints one bold abstract stroke, assistant watches" },
+      { "zh": "一次，他在木板上写下几笔，墨色又匀又深。", "en": "One day he brushed several balanced, powerful marks onto a wooden board.", "prompt": "Wang Xizhi paints several abstract black flowing marks across the fixed pale-cypress signboard, no readable characters" },
+      { "zh": "后来工匠刨去木板表面，发现里面还有清楚的墨痕。", "en": "Later, a craftsperson planed the surface and found ink still visible beneath it.", "prompt": "adult craftsperson safely shaves a thin curl from one edge of the board on a workbench while Wang and assistant stand back, dark ink visible within the wood grain" },
+      { "zh": "墨迹竟深入木头，人们惊叹他的笔力入木三分。", "en": "The ink had sunk deep into the wood, and everyone marveled at the strength of his brush.", "prompt": "close storytelling view of the board's planed edge showing dark ink within pale wood, three adults react with quiet amazement" },
+      { "zh": "王羲之说，好笔力不是一天练成，而是日积月累。", "en": "Wang explained that such control came from practice gathered day after day.", "prompt": "turning point, Wang Xizhi speaks modestly beside stacks of practice sheets with abstract marks, assistant listens" },
+      { "zh": "他仍旧每天提笔，让每一笔都比昨天更准确、更有神。", "en": "He kept practicing, making each new stroke more precise and alive than the last.", "prompt": "hopeful sunset studio ending, Wang practices one fresh abstract stroke as geese rest by the pond outside" }
+    ]
+  },
+  {
+    "id": "zao-bi-tou-guang",
+    "title": "凿壁偷光",
+    "subtitle": "墙缝里的一束光",
+    "origin": "晋·葛洪《西京杂记》卷二",
+    "moral": {
+      "zh": "条件有限也能主动想办法，但使用别人的东西要先说明、守规则并注意安全。",
+      "en": "Resourcefulness matters, together with permission, fairness, and safety when we share what belongs to others."
+    },
+    "idiomMeaning": {
+      "zh": "匡衡在墙上凿孔借邻家的灯光读书；形容在困难条件下仍刻苦学习。",
+      "en": "Kuang Heng opened a wall gap to borrow a neighbor's lamplight—a story of determined study despite hardship."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 37,
+    "visualAnchor": "Western Han rural village with two adjoining clay-brick homes, thatched roofs and simple wooden interiors; Kuang Heng is a diligent slim 13-year-old boy with round face, one small topknot, faded sky-blue short robe, brown sash, charcoal trousers and cloth shoes; kind neighbor is a sturdy 45-year-old man with short moustache, low bun, ochre robe and dark-teal sash; fixed stable covered oil lamp sits far from cloth and straw; fixed old wall has one small existing crack later widened and safely framed by an adult carpenter; books are honey-brown bamboo slips with abstract ink marks only",
+    "pages": [
+      { "zh": "汉代少年匡衡很爱读书，可家里晚上没有灯。", "en": "Young Kuang Heng loved to read, but his family had no lamp at night.", "prompt": "wide establishing adjoining homes at dusk, Kuang Heng holds a closed bamboo-slip book in his dim room while warm light glows next door" },
+      { "zh": "白天干完活，他就趁天还亮，抓紧读几页竹简。", "en": "After daytime chores, he used every remaining ray of daylight to study.", "prompt": "Kuang Heng reads bamboo slips beside an open doorway in late-afternoon light, simple tidy home" },
+      { "zh": "一天，他发现旧墙缝里透来邻居灯火的一线亮光。", "en": "One evening, he noticed a thin beam from the neighbor's lamp shining through an old wall crack.", "prompt": "dim room scene, one narrow warm beam passes through the fixed existing wall crack onto Kuang Heng's bamboo slips" },
+      { "zh": "邻居知道后，请大人把墙缝安全地修成一个小光孔。", "en": "When the neighbor heard, an adult safely framed the gap into a small light opening.", "prompt": "kind neighbor and adult carpenter safely tidy the tiny opening with hand tools while Kuang Heng stands well back, covered lamp stable next door" },
+      { "zh": "夜里，他坐在光孔旁安静读书，不碰灯，也不打扰邻居。", "en": "At night, he read quietly by the shared light without touching the lamp or disturbing the home next door.", "prompt": "Kuang Heng reads in his room beside the small framed light opening, warm beam on bamboo slips, lamp visible safely in neighboring room" },
+      { "zh": "为了读更多书，他还帮藏书人做事，换来借书的机会。", "en": "To reach more books, he worked for a book owner in exchange for time to read them.", "prompt": "daytime courtyard library, Kuang Heng neatly stacks bamboo-slip bundles while an elderly book owner offers another volume" },
+      { "zh": "人们用凿壁偷光，赞美他在困难中仍不放弃学习。", "en": "People remembered the borrowed beam as a sign of learning that would not give up.", "prompt": "turning point, Kuang Heng studies confidently by the small beam as several finished book bundles rest nearby" },
+      { "zh": "那束小小的光，陪他把一个个不懂的问题慢慢照亮。", "en": "That little beam helped him illuminate one question after another.", "prompt": "hopeful dawn ending, sunrise joins the fading lamp beam as Kuang Heng closes a finished bamboo book with a grateful smile" }
+    ]
+  },
+  {
+    "id": "nang-ying-ye-du",
+    "title": "囊萤夜读",
+    "subtitle": "萤火虫的小灯笼",
+    "origin": "《晋书·车胤传》",
+    "moral": {
+      "zh": "珍惜条件、善用办法能帮助学习，也要爱护生命、保护眼睛并按时休息。",
+      "en": "Use what you have with care, while protecting living things, your eyes, and your need for rest."
+    },
+    "idiomMeaning": {
+      "zh": "车胤把萤火虫装在薄囊里借光读书；形容条件艰苦仍勤奋学习。",
+      "en": "Che Yin read by fireflies gathered in a thin pouch—a symbol of diligent study in difficult conditions."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 38,
+    "visualAnchor": "Eastern Jin countryside home beside a summer meadow, with thatched roof, bamboo window, low desk and moonlit garden; Che Yin is a curious slim 12-year-old boy with oval face, one neat topknot, moss-green short robe, cream sash, brown trousers and cloth shoes; his mother is a gentle 38-year-old woman with low bun, muted-plum robe and beige apron; fixed loose translucent white silk pouch contains several glowing fireflies with fresh grass and wide breathable weave, never sealed or crowded; books are bamboo slips with no legible writing; fireflies are handled briefly and released before bedtime",
+    "pages": [
+      { "zh": "晋代少年车胤喜欢读书，可家里常常点不起灯。", "en": "Che Yin loved books, but his family could not always afford a lamp.", "prompt": "wide establishing summer home at twilight, Che Yin reads beside the last window light while mother tends the simple room" },
+      { "zh": "夏夜里，他看见草丛中许多萤火虫一闪一闪。", "en": "One summer night, he saw fireflies blinking across the meadow.", "prompt": "Che Yin and mother watch many fireflies glow above grass and wildflowers under a bright moon" },
+      { "zh": "他做了一个透气的薄纱囊，请几只萤火虫暂时住进去。", "en": "He made a loose, airy silk pouch and let a few fireflies rest inside for a short while.", "prompt": "mother helps Che Yin hold the fixed open-weave silk pouch near grass as a few fireflies enter gently, no grabbing" },
+      { "zh": "点点微光聚在一起，像一盏柔和的小灯笼。", "en": "Their tiny lights gathered into a soft little lantern.", "prompt": "close warm scene, the breathable pouch glows softly beside fresh grass, fireflies spacious and unharmed" },
+      { "zh": "车胤把书放近一些，只读一小会儿，让眼睛不太累。", "en": "Che Yin brought the book closer and read only briefly so his eyes would not tire.", "prompt": "Che Yin reads one bamboo-slip section at the low desk with glowing pouch nearby and moonlight through window, upright safe posture" },
+      { "zh": "读完以后，他和母亲把萤火虫送回清凉的草地。", "en": "When he finished, he and his mother returned every firefly to the cool meadow.", "prompt": "Che Yin opens the pouch above the grass as all fireflies drift free, mother watches with a gentle smile" },
+      { "zh": "囊萤夜读的故事，留下了珍惜条件、勤奋求知的精神。", "en": "The firefly-light story became a symbol of making the most of every chance to learn.", "prompt": "turning point, Che Yin rolls up the bamboo book and looks gratefully toward the free fireflies across the meadow" },
+      { "zh": "夜深了，他按时休息，等明天再借太阳光继续读。", "en": "When night grew late, he rested and waited for tomorrow's sunlight to read again.", "prompt": "hopeful ending, Che Yin sleeps peacefully while closed bamboo books rest on the desk and fireflies glow outside the window" }
+    ]
+  },
+  {
+    "id": "san-gu-mao-lu",
+    "title": "三顾茅庐",
+    "subtitle": "第三次终于见面",
+    "origin": "《三国志·蜀书·诸葛亮传》",
+    "moral": {
+      "zh": "真诚邀请别人合作，需要尊重、耐心，也要认真听见对方的想法。",
+      "en": "Sincere collaboration begins with respect, patience, and real attention to another person's ideas."
+    },
+    "idiomMeaning": {
+      "zh": "刘备三次到茅庐拜访诸葛亮；比喻诚心诚意地一再邀请贤能的人。",
+      "en": "Liu Bei visited Zhuge Liang's cottage three times—repeatedly and sincerely seeking a capable person's help."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 39,
+    "visualAnchor": "Late Eastern Han Longzhong countryside with terraced fields, bamboo, pine trees and one fixed neat thatched cottage behind a low woven fence; Liu Bei is a calm 38-year-old man with long oval face, short moustache and beard, high bun, deep-teal traveling robe, cream scarf and brown cloak; Guan Yu is tall with long neat dark beard, deep-rust robe and dark-green cloak; Zhang Fei is sturdy with round face, short beard, ochre robe and charcoal cloak; Zhuge Liang is a slim 27-year-old scholar with clean-shaven oval face, high scholar bun, ivory robe, muted-blue sash, gray outer shawl and fixed white feather fan; no armor or weapons",
+    "pages": [
+      { "zh": "刘备听说诸葛亮很有智慧，想请他一起做重要的事。", "en": "Liu Bei heard of Zhuge Liang's wisdom and hoped to invite him to work together.", "prompt": "wide establishing Longzhong landscape, Liu Bei, Guan Yu and Zhang Fei walk toward the fixed thatched cottage across terraced fields" },
+      { "zh": "第一次来到茅庐，诸葛亮正好外出，他们只好回去。", "en": "On the first visit, Zhuge Liang was away, so the travelers returned home.", "prompt": "three visitors wait politely outside the closed cottage gate while a young household helper explains that Zhuge Liang is away" },
+      { "zh": "第二次冒着冬雪来访，还是没能见到他。", "en": "They came again through light winter snow, but still did not find him home.", "prompt": "same three visitors beneath warm cloaks at the cottage gate in gentle snow, safe path and patient expressions" },
+      { "zh": "张飞有些着急，刘备却说：“真心邀请，就要有耐心。”", "en": "Zhang Fei grew impatient, but Liu Bei reminded him that sincerity requires patience.", "prompt": "on the return path, Zhang Fei gestures with mild frustration while Liu Bei answers calmly and Guan Yu listens" },
+      { "zh": "春天，他们第三次来到茅庐，诸葛亮正在屋里午睡。", "en": "In spring they visited a third time and found Zhuge Liang resting inside.", "prompt": "spring cottage courtyard, three visitors arrive as helper quietly indicates the sleeping scholar inside behind a screen" },
+      { "zh": "刘备安静等在门外，直到诸葛亮醒来开门相迎。", "en": "Liu Bei waited quietly until Zhuge Liang awoke and welcomed them in.", "prompt": "Liu Bei waits beneath the eaves while companions stand farther back; Zhuge Liang opens the cottage door warmly with feather fan" },
+      { "zh": "两人认真交谈，诸葛亮被这份诚意打动，愿意相助。", "en": "They spoke at length, and Zhuge Liang accepted the sincere invitation to help.", "prompt": "turning point inside cottage, Liu Bei and Zhuge Liang discuss a text-free cloth map at low table while companions listen respectfully" },
+      { "zh": "三顾茅庐让大家记住：尊重和耐心，能请来真心的合作。", "en": "The three visits showed how respect and patience can begin a wholehearted partnership.", "prompt": "hopeful cottage farewell, four men step together onto the spring path as equal collaborators, bamboo and fields glowing" }
+    ]
+  },
+  {
+    "id": "jing-wei-tian-hai",
+    "title": "精卫填海",
+    "subtitle": "衔着石子的勇敢小鸟",
+    "origin": "《山海经·北山经》",
+    "moral": {
+      "zh": "面对巨大的困难，坚持能积累勇气；也要找到安全、合适并能真正推进的办法。",
+      "en": "Persistence builds courage before a great challenge, especially when joined with safe and useful steps."
+    },
+    "idiomMeaning": {
+      "zh": "精卫鸟不停衔来木石，想把大海填平；比喻意志坚定、不畏艰难。",
+      "en": "The bird Jingwei carried twigs and stones to fill the sea—a symbol of steadfast will before immense difficulty."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-17",
+    "order": 40,
+    "visualAnchor": "Mythic ancient eastern coast with dark-blue sea, pale cliffs, red sunrise and forested Fajiu Mountain; Nüwa is a brave 10-year-old girl with round face, two small side buns tied with coral ribbons, coral-red cross-collar dress, cream sash and dark cloth shoes; her fixed tiny wooden boat has curved ends and no sail; Jingwei is a small child-friendly dark-blue bird with patterned black-and-white head, white beak, red feet, warm amber eyes and rounded wings; transformation is symbolic and luminous, never showing drowning, injury or fear; fixed smooth gray pebbles and short dry twigs",
+    "pages": [
+      { "zh": "传说炎帝的小女儿女娃，最喜欢到东海边看日出。", "en": "Legend says Nüwa, the youngest daughter of the Flame Emperor, loved watching sunrise by the Eastern Sea.", "prompt": "wide establishing sunrise coast, Nüwa stands safely on pale cliff path beside the fixed tiny wooden boat pulled onto shore" },
+      { "zh": "一天海风忽然变大，小船在远处的浪花间摇晃起来。", "en": "One day the wind rose suddenly, and her little boat rocked among distant waves.", "prompt": "distant wide sea scene, tiny boat rides broad but non-scary waves while Nüwa holds the sides steadily, coast still visible" },
+      { "zh": "古老的故事说，风浪过后，女娃化成了一只精卫鸟。", "en": "The old tale says that after the storm, Nüwa became a bird called Jingwei.", "prompt": "symbolic luminous transformation above now-calm water, coral-colored glow becomes the fixed small Jingwei bird, empty boat floating safely nearby, no distress" },
+      { "zh": "精卫望着大海，决定从山上衔来树枝和小石子。", "en": "Looking across the sea, Jingwei decided to carry twigs and pebbles from the mountain.", "prompt": "Jingwei perches on Fajiu Mountain beside fixed pebbles and twigs, gazing toward the vast sea with determined gentle eyes" },
+      { "zh": "它一次衔一颗石子，飞过山谷，再轻轻放进海里。", "en": "One pebble at a time, she flew across the valley and dropped it gently into the sea.", "prompt": "Jingwei flies safely above the coast carrying exactly one small gray pebble in white beak, wide scale shows mountain and sea" },
+      { "zh": "大海那么辽阔，小鸟却天天来，从来不说放弃。", "en": "The sea was vast, but the little bird returned day after day without giving up.", "prompt": "single continuous dawn scene, Jingwei places one twig beside a small tidy line of pebbles at the shoreline, subtle repeated flight tracks without montage" },
+      { "zh": "人们用精卫填海，赞美面对困难仍坚定前行的勇气。", "en": "People remembered Jingwei's work as courage that keeps moving before a great challenge.", "prompt": "turning point, Jingwei rests on a driftwood branch above the pebble-lined shore, sunrise behind and expression quietly resolute" },
+      { "zh": "每一次小小行动，都让它更勇敢，也让后来的人记住坚持。", "en": "Every small action strengthened her courage and left later generations a lesson in persistence.", "prompt": "hopeful final sunrise, Jingwei flies along the glowing coast with one small twig, a few other birds accompany at a respectful distance, vast sea peaceful" }
+    ]
+  }
+]

@@ -8,8 +8,10 @@ import yanErDaoLingDraft from "../../../content-drafts/chengyu/yan-er-dao-ling/d
 import yuGongYiShanDraft from "../../../content-drafts/chengyu/yu-gong-yi-shan/draft.json";
 import newChengyuDrafts from "../../../content-drafts/chengyu/chengyu-11-20.json";
 import newestChengyuDrafts from "../../../content-drafts/chengyu/chengyu-21-30.json";
+import latestChengyuDrafts from "../../../content-drafts/chengyu/chengyu-31-40.json";
+import nextChengyuDrafts from "../../../content-drafts/chengyu/chengyu-41-50.json";
 
-// 首批 30 本均已完成文字、插图验收并正式发布。
+// 首批 50 本均已完成文字、插图验收并正式发布。
 
 const SHOU_ZHU_DAI_TU_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
   {
@@ -375,6 +377,8 @@ export const CHENGYU_BOOKS: LibraryBook[] = [
   ].map(reviewedDraftToBook),
   ...(newChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
   ...(newestChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
+  ...(latestChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
+  ...(nextChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
 ];
 
 export const CHENGYU_SERIES: LibrarySeries = {
