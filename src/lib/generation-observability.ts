@@ -23,6 +23,8 @@ export interface GenerationEvent {
   model?: string;
   status: string;
   duration?: number;
+  payloadBytes?: number;
+  payloadLimitBytes?: number;
   errorClass?: GenerationErrorClass;
 }
 
@@ -35,6 +37,8 @@ export interface GenerationLogPayload {
   model?: string;
   status: string;
   duration?: number;
+  payloadBytes?: number;
+  payloadLimitBytes?: number;
   errorClass?: GenerationErrorClass;
 }
 
@@ -82,6 +86,14 @@ function safeDuration(value: unknown) {
     : undefined;
 }
 
+function safeByteCount(value: unknown) {
+  return typeof value === "number" &&
+    Number.isSafeInteger(value) &&
+    value >= 0
+    ? value
+    : undefined;
+}
+
 function safeErrorClass(value: unknown): GenerationErrorClass | undefined {
   return typeof value === "string" && errorClasses.has(value)
     ? (value as GenerationErrorClass)
@@ -107,6 +119,8 @@ export function createGenerationLogPayload(
   const provider = safeLabel(event.provider);
   const model = safeLabel(event.model);
   const duration = safeDuration(event.duration);
+  const payloadBytes = safeByteCount(event.payloadBytes);
+  const payloadLimitBytes = safeByteCount(event.payloadLimitBytes);
   const errorClass = safeErrorClass(event.errorClass);
 
   if (task !== undefined) payload.task = task;
@@ -115,6 +129,10 @@ export function createGenerationLogPayload(
   if (provider !== undefined) payload.provider = provider;
   if (model !== undefined) payload.model = model;
   if (duration !== undefined) payload.duration = duration;
+  if (payloadBytes !== undefined) payload.payloadBytes = payloadBytes;
+  if (payloadLimitBytes !== undefined) {
+    payload.payloadLimitBytes = payloadLimitBytes;
+  }
   if (errorClass !== undefined) payload.errorClass = errorClass;
 
   return payload;

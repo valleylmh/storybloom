@@ -489,6 +489,116 @@ describe("generation storage safety and durability", () => {
     });
   });
 
+  it("warns on large Story payloads and rejects an oversized Redis CAS before sending it", async () => {
+    process.env.UPSTASH_REDIS_REST_URL = "https://upstash.invalid";
+    process.env.UPSTASH_REDIS_REST_TOKEN = "token-placeholder";
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    const {
+      cacheStory,
+      getCachedStory,
+      mutateCachedStory,
+    } = await import("@/lib/storage");
+    const story = createStory("story-large-payload");
+    const largeImageUrl = `data:image/png;base64,${Buffer.alloc(
+      3 * 1024 * 1024,
+    ).toString("base64")}`;
+    const largeStory = {
+      ...story,
+      pages: [{ ...story.pages[0], imageUrl: largeImageUrl }],
+    };
+
+    await expect(cacheStory(story.id, largeStory)).resolves.toBeUndefined();
+    expect(warn).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "storage.story_payload",
+        story: story.id,
+        status: "large_payload",
+        payloadBytes: expect.any(Number),
+        payloadLimitBytes: 8 * 1024 * 1024,
+      }),
+    );
+
+    const oversizedImageUrl = `data:image/png;base64,${Buffer.alloc(
+      6 * 1024 * 1024,
+    ).toString("base64")}`;
+    await expect(
+      mutateCachedStory(story.id, (current) => ({
+        nextStory: {
+          ...current,
+          pages: [{ ...current.pages[0], imageUrl: oversizedImageUrl }],
+        },
+        value: true,
+      })),
+    ).rejects.toMatchObject({
+      code: "REDIS_PAYLOAD_TOO_LARGE",
+      errorClass: "storage_unavailable",
+    });
+    expect(warn).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "storage.story_payload",
+        story: story.id,
+        status: "rejected_too_large",
+        payloadBytes: expect.any(Number),
+        payloadLimitBytes: 8 * 1024 * 1024,
+        errorClass: "storage_unavailable",
+      }),
+    );
+    await expect(getCachedStory(story.id)).resolves.toMatchObject({
+      pages: [expect.objectContaining({ imageUrl: largeImageUrl })],
+    });
+    expect(JSON.stringify(warn.mock.calls)).not.toContain("data:image");
+  });
+
+  it("rejects oversized character references before writing their Base64 to Redis", async () => {
+    process.env.UPSTASH_REDIS_REST_URL = "https://upstash.invalid";
+    process.env.UPSTASH_REDIS_REST_TOKEN = "token-placeholder";
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    const { cacheCharacterReference } = await import("@/lib/storage");
+
+    await expect(
+      cacheCharacterReference({
+        bytes: Buffer.alloc(6 * 1024 * 1024),
+        contentType: "image/png",
+      }),
+    ).rejects.toMatchObject({
+      code: "REDIS_PAYLOAD_TOO_LARGE",
+      errorClass: "storage_unavailable",
+    });
+    expect(
+      [...redisState.values.keys()].some((key) =>
+        key.startsWith("storybloom:character-reference:v1:"),
+      ),
+    ).toBe(false);
+    expect(warn).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "storage.character_reference_payload",
+        status: "rejected_too_large",
+        payloadLimitBytes: 8 * 1024 * 1024,
+      }),
+    );
+  });
+
+  it("restores serialized character references from shared Redis", async () => {
+    process.env.UPSTASH_REDIS_REST_URL = "https://upstash.invalid";
+    process.env.UPSTASH_REDIS_REST_TOKEN = "token-placeholder";
+    const {
+      cacheCharacterReference,
+      getCachedCharacterReferenceDataUri,
+    } = await import("@/lib/storage");
+
+    const token = await cacheCharacterReference({
+      bytes: Buffer.from("shared-reference"),
+      contentType: "image/webp",
+    });
+
+    expect(
+      redisState.values.get(`storybloom:character-reference:v1:${token}`),
+    ).toEqual(expect.any(String));
+    await expect(getCachedCharacterReferenceDataUri(token)).resolves.toBe(
+      `data:image/webp;base64,${Buffer.from("shared-reference").toString("base64")}`,
+    );
+  });
+
   it("retries Redis CAS conflicts so concurrent page mutations are both preserved with monotonic revisions", async () => {
     process.env.UPSTASH_REDIS_REST_URL = "https://upstash.invalid";
     process.env.UPSTASH_REDIS_REST_TOKEN = "token-placeholder";

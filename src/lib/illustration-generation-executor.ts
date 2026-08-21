@@ -3,7 +3,7 @@ import "server-only";
 import { regeneratePage } from "@/lib/image-generator";
 import { areProductionGenerationJobsEnabled } from "@/lib/generation-job-config";
 import { SAFE_ILLUSTRATION_ERROR } from "@/lib/illustration-request-policy";
-import { mutateCachedStory } from "@/lib/storage";
+import { getStorageCapabilities, mutateCachedStory } from "@/lib/storage";
 import {
   commitTemporaryStoryAsset,
   deleteTemporaryStoryAsset,
@@ -58,12 +58,12 @@ type PendingStoredAsset = {
 };
 
 export function getIllustrationAssetMode(): IllustrationAssetMode {
-  if (!areProductionGenerationJobsEnabled()) {
-    return { enabled: false, reason: "flag_disabled" };
+  if (getTemporaryStoryAssetCapabilities().configurationReady) {
+    return { enabled: true, reason: null };
   }
-  return getTemporaryStoryAssetCapabilities().configurationReady
-    ? { enabled: true, reason: null }
-    : { enabled: false, reason: "storage_not_ready" };
+  return areProductionGenerationJobsEnabled() || getStorageCapabilities().shared
+    ? { enabled: false, reason: "storage_not_ready" }
+    : { enabled: false, reason: "flag_disabled" };
 }
 
 function getStoryIllustrationStatus(pages: GeneratedStory["pages"]) {

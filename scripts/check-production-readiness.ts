@@ -14,7 +14,7 @@ const output = {
   productionVerified: report.productionVerified,
   summary: report.configurationReady
     ? report.manualVerificationRequired
-      ? "Environment configuration is valid. Production is not verified; complete every manual verification check before enabling Production Jobs & Assets."
+      ? "Environment configuration is valid. Production is not verified; complete every applicable manual check before serving shared illustrations or enabling production jobs."
       : "Environment configuration is valid. This offline check does not verify the deployed platform."
     : "Environment configuration is invalid.",
   manualVerificationRequired: report.manualVerificationRequired,

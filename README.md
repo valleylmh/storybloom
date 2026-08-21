@@ -196,20 +196,26 @@ Vercel 的多实例运行环境如果没有共享 Redis/KV，异步文本任务�
 - 检查平台日志与告警，确认能定位任务失败、耗时和 provider 状态，且日志不含请求正文、凭据或儿童媒体。
 - 若启用邮件灵感，在目标平台按其方式配置并手动验证 Cron；Cloudflare 不使用 `vercel.json` 中的 Cron 声明。
 
-### Production Jobs & Assets（默认关闭）
+### Shared Illustration Assets 与 Production Jobs
 
-仓库正在为文本与插画任务建立带幂等键、worker lease、重试上限和过期 lease reclaim 的基础层，但生产入口默认关闭：
+生产使用共享 Redis/KV 保存故事状态时，生成图片必须写入私有共享 Storage，Redis 只保存受鉴权的 `/api/story-assets/<assetId>` 短路径。该资产层不再受 worker 开关控制：即使下面的 durable jobs 保持关闭，普通 `after()` 插画路径也会使用同一私有资产层；若共享 Redis 已启用但资产层未就绪，插画接口会在改变页面状态前返回 503，而不是回退为把 Base64 写进整本故事。
+
+带幂等键、worker lease、重试上限和过期 lease reclaim 的 durable jobs 仍默认关闭：
 
 ```bash
 STORYBLOOM_PRODUCTION_JOBS_ENABLED=0
 ```
 
-只有 worker/reclaim API、定时触发和共享临时图片字节存储都已部署并完成 smoke 后，才可改为 `1`。启用时 `npm run check:production` 还会要求：
+共享 Redis/KV 的生产基线始终要求：
 
-- 独立的服务端 `GENERATION_WORKER_SECRET` 与 `STORYBLOOM_ASSET_PRINCIPAL_SECRET`，均至少 32 个字符；不要彼此复用，也不要与 `CRON_SECRET`、Provider key 或 Supabase key 复用。后者只用于把登录用户 ID 或默认匿名 cookie `storybloom_asset_session` 派生为 opaque principal；cookie/用户标识原值不得写入 job、资产 metadata 或日志。
-- 唯一完整的 Upstash/KV 配对，用于队列、幂等键和 lease 状态。
+- 独立的服务端 `STORYBLOOM_ASSET_PRINCIPAL_SECRET`，至少 32 个字符；不要与 `CRON_SECRET`、worker secret、Provider key 或 Supabase key 复用。它只用于把登录用户 ID 或默认匿名 cookie `storybloom_asset_session` 派生为 opaque principal；cookie/用户标识原值不得写入 job、资产 metadata 或日志。
+- 唯一完整的 Upstash/KV 配对，用于故事状态与临时资产 metadata；启用 durable jobs 后也用于队列、幂等键和 lease 状态。
 - `STORYBLOOM_TEMP_ASSET_BACKEND=supabase` 与一个已创建、保持私有的 `STORYBLOOM_TEMP_ASSET_BUCKET`（代码默认名为 `story-generation-assets`）。
 - Supabase URL、公开 key 与 service-role key 的既有生产基线。
+
+只有 worker/reclaim API、定时触发和上述共享临时图片字节存储都已部署并完成 smoke 后，才可把 `STORYBLOOM_PRODUCTION_JOBS_ENABLED` 改为 `1`；此时还需要一个独立且至少 32 字符的 `GENERATION_WORKER_SECRET`。
+
+共享 Redis 写入会按 UTF-8 JSON 大小记录安全指标：超过 4 MiB 时输出 `storage.story_payload` 或 `storage.character_reference_payload` 的 `large_payload` 警告；超过 8 MiB 时在发送命令前以 `rejected_too_large` 拒绝。日志只包含 story id、字节数与上限，不包含图片、故事正文、URL 或凭据。
 
 共享临时资产首次启用前，需要在目标 Supabase 项目手工执行：
 
@@ -226,13 +232,13 @@ supabase/migrations/202608130001_temporary_story_generation_assets.sql
 - 使用仅在受控服务端持有的 service-role key 和一个无儿童信息的随机测试对象，验证 upload → download（字节一致）→ delete 全流程；测试后不得遗留对象，也不要把 key、signed URL 或对象正文写入日志。
 - 确认应用鉴权路由仍将不存在与无权限统一为 404，并验证其他匿名会话不能读取该测试资产。
 
-上述 probe 全部通过，只能证明 bucket 契约；仍需完成 worker/Cron、lease reclaim、失败重试、stale attempt fence 和过期/孤儿清理 smoke，才可把 `STORYBLOOM_PRODUCTION_JOBS_ENABLED` 从 `0` 改为 `1`。
+上述 probe 全部通过，只能证明 bucket 契约并允许普通插画路径安全使用共享资产；仍需完成 worker/Cron、lease reclaim、失败重试、stale attempt fence 和过期/孤儿清理 smoke，才可把 `STORYBLOOM_PRODUCTION_JOBS_ENABLED` 从 `0` 改为 `1`。
 
 `GENERATION_WORKER_LEASE_MS`、`GENERATION_WORKER_CLAIM_LIMIT`、`GENERATION_RECLAIM_LIMIT`、`STORYBLOOM_TEMP_ASSET_TTL_SECONDS`、`STORYBLOOM_TEMP_ASSET_MAX_BYTES`、`STORYBLOOM_TEMP_ASSET_ORPHAN_GRACE_SECONDS` 和 `STORYBLOOM_TEMP_ASSET_SWEEP_LIMIT` 可按负载调整；它们不是提高可靠性的替代品。worker 在单个文本或插画 executor 运行期间会自动续租（按 lease 的三分之一、最长 60 秒一次），但最终写入仍必须通过当前 lease 与 task/page attempt fence；平台强制终止后仍要等待 lease 过期并由下一轮 reclaim 接管。`local-file` 模式把图片字节写入实例文件系统，即使 Redis 保存 metadata，也仍不是 Vercel/Cloudflare 多实例生产后端；生产必须由 capabilities 同时确认私有共享 bytes 与 Redis metadata 已就绪。
 
 Vercel 需要在 `vercel.json` 中显式配置实际存在且鉴权的 worker/reclaim 路由；目前文件里只有每日灵感 Cron，不能宣称 generation reclaim 已启用。Cloudflare 不读取 `vercel.json`，需分别配置 Cron Trigger 或 Queue consumer、环境变量和 secrets；当前共享字节后端仍是 Supabase 私有 Storage，不应写成已经接入 Cloudflare R2。还需验证 OpenNext/Node runtime 的实际行为。两边都必须测试：两个 worker 不会同时 claim 同一 job、worker 被中断后 lease 能被 reclaim、旧 lease/旧插画 attempt 晚到会被忽略、达到重试上限进入明确失败，以及临时图片不能被其他匿名会话读取且过期/孤儿对象会被清理。
 
-这套任务队列和临时资产基础层不等于长期绘本归档。登录后的 `story-archive` 仍只在用户明确选择上传/同步时使用；登录本身不会上传本地故事、成长照片或声音。这里的 readiness 是配置判断，不会联网确认 bucket 存在、是否私有、迁移是否部署、Cron 是否触发或 worker 是否实际运行，因此在完成真实平台验收前不能宣称 Production Jobs & Assets 已生产验证。
+这套任务队列和临时资产基础层不等于长期绘本归档。登录后的 `story-archive` 仍只在用户明确选择上传/同步时使用；登录本身不会上传本地故事、成长照片或声音。这里的 readiness 是配置判断，不会联网确认 bucket 存在、是否私有、迁移是否部署、Cron 是否触发或 worker 是否实际运行，因此在完成对应真实平台验收前不能宣称共享资产或 Production Jobs 已生产验证。
 
 ## 绘本朗读音频
 

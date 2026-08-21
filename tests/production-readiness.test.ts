@@ -14,6 +14,9 @@ const healthyEnvironment: ProductionEnvironment = {
   TURNSTILE_SECRET_KEY: "server-turnstile-secret",
   UPSTASH_REDIS_REST_URL: "https://redis.example.com",
   UPSTASH_REDIS_REST_TOKEN: "server-redis-token",
+  STORYBLOOM_ASSET_PRINCIPAL_SECRET: "p".repeat(32),
+  STORYBLOOM_TEMP_ASSET_BACKEND: "supabase",
+  STORYBLOOM_TEMP_ASSET_BUCKET: "story-generation-assets",
 };
 
 function issueCodes(environment: ProductionEnvironment) {
@@ -70,7 +73,7 @@ describe("production readiness profile", () => {
     );
     expect(PRODUCTION_READINESS_PROFILE.features).toContainEqual(
       expect.objectContaining({
-        name: "production-jobs-and-assets",
+        name: "production-jobs",
         flag: "STORYBLOOM_PRODUCTION_JOBS_ENABLED",
         defaultEnabled: false,
       }),
@@ -83,11 +86,20 @@ describe("production readiness profile", () => {
       assessment: "configuration",
       configurationReady: true,
       productionVerified: false,
-      manualVerificationRequired: false,
-      manualVerificationChecks: [],
+      manualVerificationRequired: true,
       ok: true,
       issues: [],
     });
+    expect(
+      evaluateProductionReadiness(healthyEnvironment).manualVerificationChecks.map(
+        (check) => check.id,
+      ),
+    ).toEqual([
+      "temporary_asset_migration_applied",
+      "temporary_asset_bucket_contract",
+      "temporary_asset_role_access",
+      "temporary_asset_service_role_crud",
+    ]);
   });
 
   it("accepts the Supabase publishable key and a complete KV pair", () => {
@@ -261,6 +273,25 @@ describe("production readiness profile", () => {
     ).toMatchObject({ ok: true, issues: [] });
   });
 
+  it("requires private shared illustration assets even while production jobs are disabled", () => {
+    const report = evaluateProductionReadiness({
+      ...healthyEnvironment,
+      STORYBLOOM_PRODUCTION_JOBS_ENABLED: "0",
+      STORYBLOOM_ASSET_PRINCIPAL_SECRET: undefined,
+      STORYBLOOM_TEMP_ASSET_BACKEND: undefined,
+      STORYBLOOM_TEMP_ASSET_BUCKET: undefined,
+    });
+
+    expect(report.ok).toBe(false);
+    expect(report.issues).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({ code: "asset_principal_secret_required" }),
+        expect.objectContaining({ code: "temporary_asset_backend_required" }),
+        expect.objectContaining({ code: "temporary_asset_bucket_required" }),
+      ]),
+    );
+  });
+
   it("reports configuration readiness without claiming production verification", () => {
     const report = evaluateProductionReadiness({
       ...healthyEnvironment,
@@ -304,6 +335,9 @@ describe("production readiness profile", () => {
     const missing = evaluateProductionReadiness({
       ...healthyEnvironment,
       STORYBLOOM_PRODUCTION_JOBS_ENABLED: "true",
+      STORYBLOOM_ASSET_PRINCIPAL_SECRET: undefined,
+      STORYBLOOM_TEMP_ASSET_BACKEND: undefined,
+      STORYBLOOM_TEMP_ASSET_BUCKET: undefined,
     });
     expect(missing.ok).toBe(false);
     expect(missing.issues).toEqual(

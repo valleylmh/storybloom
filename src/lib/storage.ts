@@ -29,6 +29,8 @@ const PRIVATE_FILE_MODE = 0o600;
 const STORY_ID_PATTERN = /^[A-Za-z0-9_-]{1,80}$/;
 const MAX_STORY_MUTATION_ATTEMPTS = 8;
 const MAX_TEXT_TASK_MUTATION_ATTEMPTS = 8;
+const SHARED_REDIS_PAYLOAD_WARN_BYTES = 4 * 1024 * 1024;
+const SHARED_REDIS_PAYLOAD_LIMIT_BYTES = 8 * 1024 * 1024;
 const localCacheDir =
   process.env.STORYBLOOM_CACHE_DIR ||
   path.join(process.env.VERCEL ? os.tmpdir() : process.cwd(), ".storybloom-cache");
@@ -116,6 +118,44 @@ export class DurableStorageUnavailableError extends Error {
     );
     this.name = "DurableStorageUnavailableError";
   }
+}
+
+export class SharedRedisPayloadTooLargeError extends Error {
+  readonly code = "REDIS_PAYLOAD_TOO_LARGE";
+  readonly errorClass = "storage_unavailable" as const;
+
+  constructor(kind: "story" | "character_reference") {
+    super(`Shared Redis ${kind} payload exceeds the safe size limit.`);
+    this.name = "SharedRedisPayloadTooLargeError";
+  }
+}
+
+function serializeSharedRedisPayload(input: {
+  kind: "story" | "character_reference";
+  operation: string;
+  value: object;
+  storyId?: string;
+}) {
+  const serialized = JSON.stringify(input.value);
+  const payloadBytes = Buffer.byteLength(serialized, "utf8");
+  if (payloadBytes >= SHARED_REDIS_PAYLOAD_WARN_BYTES) {
+    const rejected = payloadBytes > SHARED_REDIS_PAYLOAD_LIMIT_BYTES;
+    logGenerationEvent(
+      {
+        operation: input.operation,
+        ...(input.storyId ? { story: input.storyId } : {}),
+        status: rejected ? "rejected_too_large" : "large_payload",
+        payloadBytes,
+        payloadLimitBytes: SHARED_REDIS_PAYLOAD_LIMIT_BYTES,
+        ...(rejected ? { errorClass: "storage_unavailable" as const } : {}),
+      },
+      "warn",
+    );
+    if (rejected) {
+      throw new SharedRedisPayloadTooLargeError(input.kind);
+    }
+  }
+  return serialized;
 }
 
 function readConfiguredValue(value: string | undefined) {
@@ -614,6 +654,18 @@ function isLiveCharacterReference(value: CachedCharacterReference | null | undef
   return Boolean(value && value.expiresAt > Date.now());
 }
 
+function parseCachedCharacterReference(raw: unknown) {
+  if (!raw) return null;
+  if (typeof raw === "string") {
+    try {
+      return JSON.parse(raw) as CachedCharacterReference;
+    } catch {
+      return null;
+    }
+  }
+  return raw as CachedCharacterReference;
+}
+
 async function removeLocalCharacterReference(token: string) {
   characterReferenceCache.delete(token);
   await fs.rm(getCharacterReferenceFilePath(token), { force: true }).catch(() => undefined);
@@ -667,7 +719,12 @@ export async function cacheCharacterReference(input: {
 
   const redis = getRedis();
   if (redis) {
-    await redis.set(getCharacterReferenceKey(token), reference, {
+    const serialized = serializeSharedRedisPayload({
+      kind: "character_reference",
+      operation: "storage.character_reference_payload",
+      value: reference,
+    });
+    await redis.set(getCharacterReferenceKey(token), serialized, {
       ex: CHARACTER_REFERENCE_TTL_SECONDS,
     });
     characterReferenceCache.set(token, reference);
@@ -694,8 +751,10 @@ export async function getCachedCharacterReference(token: string) {
 
   const redis = getRedis();
   if (redis) {
-    const reference = await redis.get<CachedCharacterReference>(
-      getCharacterReferenceKey(normalized)
+    const reference = parseCachedCharacterReference(
+      await redis.get<CachedCharacterReference | string>(
+        getCharacterReferenceKey(normalized),
+      ),
     );
     if (!isLiveCharacterReference(reference)) {
       if (reference) await redis.del(getCharacterReferenceKey(normalized));
@@ -806,7 +865,15 @@ export async function cacheStory(storyId: string, data: GeneratedStory) {
 
   const redis = getRedis();
   if (redis) {
-    await redis.set(getStoryKey(normalized), data, { ex: STORY_CACHE_TTL_SECONDS });
+    const serialized = serializeSharedRedisPayload({
+      kind: "story",
+      operation: "storage.story_payload",
+      value: data,
+      storyId: normalized,
+    });
+    await redis.set(getStoryKey(normalized), serialized, {
+      ex: STORY_CACHE_TTL_SECONDS,
+    });
     rememberStory(normalized, data);
     return;
   }
@@ -854,12 +921,18 @@ export async function mutateCachedStory<T>(
       }
       const currentRevision = getStoryRevision(current);
       const revised = createRevisedStory(decision.nextStory, currentRevision);
+      const serialized = serializeSharedRedisPayload({
+        kind: "story",
+        operation: "storage.story_payload",
+        value: revised,
+        storyId: normalized,
+      });
       const result = await redis.eval<string[], number>(
         MUTATE_STORY_SCRIPT,
         [getStoryKey(normalized)],
         [
           String(currentRevision),
-          JSON.stringify(revised),
+          serialized,
           String(STORY_CACHE_TTL_SECONDS),
         ],
       );
@@ -1112,6 +1185,12 @@ export async function publishTextGenerationStory(input: {
 
   if (redis) {
     const updatedAt = new Date().toISOString();
+    const serialized = serializeSharedRedisPayload({
+      kind: "story",
+      operation: "storage.story_payload",
+      value: input.story,
+      storyId,
+    });
     const raw = await redis.eval<string[], string | null>(
       PUBLISH_TEXT_GENERATION_STORY_SCRIPT,
       [getTextGenerationTaskKey(taskId), getStoryKey(storyId)],
@@ -1120,7 +1199,7 @@ export async function publishTextGenerationStory(input: {
         storyId,
         input.durableJobId,
         String(input.durableJobAttempt),
-        JSON.stringify(input.story),
+        serialized,
         String(STORY_CACHE_TTL_SECONDS),
         updatedAt,
       ],

@@ -31,6 +31,8 @@ describe("generation observability", () => {
       model: "@cf/stabilityai/stable-diffusion-xl-base-1.0",
       status: "failed",
       duration: 1234.6,
+      payloadBytes: 4 * 1024 * 1024,
+      payloadLimitBytes: 8 * 1024 * 1024,
       errorClass: "upstream_5xx",
       // @ts-expect-error Raw errors are deliberately excluded from the logger contract.
       error: new Error(`${SECRET} ${PROMPT} ${SIGNED_URL}`),
@@ -51,6 +53,8 @@ describe("generation observability", () => {
       provider: "cpa",
       model: "@cf/stabilityai/stable-diffusion-xl-base-1.0",
       duration: 1235,
+      payloadBytes: 4 * 1024 * 1024,
+      payloadLimitBytes: 8 * 1024 * 1024,
       errorClass: "upstream_5xx",
     });
     expect(Object.keys(payload).sort()).toEqual(
@@ -60,6 +64,8 @@ describe("generation observability", () => {
         "model",
         "operation",
         "page",
+        "payloadBytes",
+        "payloadLimitBytes",
         "provider",
         "status",
         "story",

@@ -4,6 +4,7 @@ import type { GeneratedStory, StoryPage } from "@/types";
 const mocks = vi.hoisted(() => ({
   regeneratePage: vi.fn(),
   mutateCachedStory: vi.fn(),
+  getStorageCapabilities: vi.fn(),
   getTemporaryStoryAssetCapabilities: vi.fn(),
   putTemporaryStoryAsset: vi.fn(),
   grantTemporaryStoryAssetPrincipal: vi.fn(),
@@ -19,6 +20,7 @@ vi.mock("@/lib/image-generator", () => ({
 
 vi.mock("@/lib/storage", () => ({
   mutateCachedStory: mocks.mutateCachedStory,
+  getStorageCapabilities: mocks.getStorageCapabilities,
 }));
 
 vi.mock("@/lib/temporary-story-asset-store", () => ({
@@ -149,6 +151,7 @@ beforeEach(() => {
     productionVerified: false,
     productionReady: true,
   });
+  mocks.getStorageCapabilities.mockReturnValue({ shared: true });
   mocks.regeneratePage.mockImplementation(async (page: StoryPage) => ({
     ...page,
     imageStatus: "complete" as const,
@@ -167,21 +170,29 @@ afterEach(() => {
 });
 
 describe("illustration generation executor", () => {
-  it("uses private assets only when the flag and durable backend are both ready", () => {
+  it("uses private assets whenever the durable backend is ready, independent of the jobs flag", () => {
     expect(getIllustrationAssetMode()).toEqual({ enabled: true, reason: null });
 
     vi.stubEnv("STORYBLOOM_PRODUCTION_JOBS_ENABLED", "0");
+    expect(getIllustrationAssetMode()).toEqual({ enabled: true, reason: null });
+
+    mocks.getTemporaryStoryAssetCapabilities.mockReturnValue({
+      configurationReady: false,
+      productionVerified: false,
+      productionReady: false,
+    });
+    expect(getIllustrationAssetMode()).toEqual({
+      enabled: false,
+      reason: "storage_not_ready",
+    });
+
+    mocks.getStorageCapabilities.mockReturnValue({ shared: false });
     expect(getIllustrationAssetMode()).toEqual({
       enabled: false,
       reason: "flag_disabled",
     });
 
     vi.stubEnv("STORYBLOOM_PRODUCTION_JOBS_ENABLED", "1");
-    mocks.getTemporaryStoryAssetCapabilities.mockReturnValue({
-      configurationReady: false,
-      productionVerified: false,
-      productionReady: false,
-    });
     expect(getIllustrationAssetMode()).toEqual({
       enabled: false,
       reason: "storage_not_ready",

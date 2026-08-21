@@ -54,41 +54,45 @@ export type ProductionManualVerificationCheck = {
     | "temporary_asset_role_access"
     | "temporary_asset_service_role_crud"
     | "generation_worker_platform_smoke";
-  requiredWhen: "production_jobs_enabled";
+  requiredWhen: "shared_illustration_assets" | "production_jobs_enabled";
   automated: false;
   message: string;
 };
 
-export const PRODUCTION_JOBS_MANUAL_VERIFICATION_CHECKS: readonly ProductionManualVerificationCheck[] =
+export const PRODUCTION_ASSET_MANUAL_VERIFICATION_CHECKS: readonly ProductionManualVerificationCheck[] =
   [
     {
       id: "temporary_asset_migration_applied",
-      requiredWhen: "production_jobs_enabled",
+      requiredWhen: "shared_illustration_assets",
       automated: false,
       message:
         "Apply supabase/migrations/202608130001_temporary_story_generation_assets.sql to the target Supabase project.",
     },
     {
       id: "temporary_asset_bucket_contract",
-      requiredWhen: "production_jobs_enabled",
+      requiredWhen: "shared_illustration_assets",
       automated: false,
       message:
         "Verify the configured temporary asset bucket exists, is private, permits only JPEG/PNG/WebP, and enforces the expected size limit.",
     },
     {
       id: "temporary_asset_role_access",
-      requiredWhen: "production_jobs_enabled",
+      requiredWhen: "shared_illustration_assets",
       automated: false,
       message:
         "Verify anonymous and authenticated browser clients cannot list, upload, download, update, or delete temporary asset objects directly.",
     },
     {
       id: "temporary_asset_service_role_crud",
-      requiredWhen: "production_jobs_enabled",
+      requiredWhen: "shared_illustration_assets",
       automated: false,
       message:
         "Using a disposable probe object, verify the service-role client can upload, download, and delete temporary asset bytes.",
     },
+  ];
+
+export const PRODUCTION_JOBS_MANUAL_VERIFICATION_CHECKS: readonly ProductionManualVerificationCheck[] =
+  [
     {
       id: "generation_worker_platform_smoke",
       requiredWhen: "production_jobs_enabled",
@@ -191,15 +195,10 @@ export const PRODUCTION_READINESS_PROFILE = {
   ],
   features: [
     {
-      name: "production-jobs-and-assets",
+      name: "production-jobs",
       flag: PRODUCTION_JOBS_FLAG,
       defaultEnabled: false,
-      requiredWhenEnabled: [
-        "GENERATION_WORKER_SECRET",
-        "STORYBLOOM_ASSET_PRINCIPAL_SECRET",
-        "STORYBLOOM_TEMP_ASSET_BACKEND",
-        "STORYBLOOM_TEMP_ASSET_BUCKET",
-      ],
+      requiredWhenEnabled: ["GENERATION_WORKER_SECRET"],
       dependencies: ["shared-persistence", "supabase"],
     },
   ],
@@ -549,37 +548,10 @@ function checkOptionalIntegerSetting(
   }
 }
 
-function checkProductionJobsAndAssets(
+function checkProductionAssets(
   environment: ProductionEnvironment,
   issues: ProductionReadinessIssue[],
 ) {
-  const flag = parseProductionJobsFlag(environment);
-  if (!flag.valid) {
-    issues.push({
-      code: "production_jobs_flag_invalid",
-      severity: "error",
-      message:
-        "STORYBLOOM_PRODUCTION_JOBS_ENABLED must be one of 1, true, on, 0, false, or off.",
-    });
-    return;
-  }
-  if (!flag.enabled) return;
-
-  if (!hasEnvironmentValue(environment, "GENERATION_WORKER_SECRET")) {
-    issues.push({
-      code: "generation_worker_secret_required",
-      severity: "error",
-      message:
-        "Production jobs require a dedicated GENERATION_WORKER_SECRET.",
-    });
-  } else if (environment.GENERATION_WORKER_SECRET!.trim().length < 32) {
-    issues.push({
-      code: "generation_worker_secret_too_short",
-      severity: "error",
-      message: "GENERATION_WORKER_SECRET must contain at least 32 characters.",
-    });
-  }
-
   if (!hasEnvironmentValue(environment, "STORYBLOOM_ASSET_PRINCIPAL_SECRET")) {
     issues.push({
       code: "asset_principal_secret_required",
@@ -603,7 +575,7 @@ function checkProductionJobsAndAssets(
       code: "temporary_asset_backend_required",
       severity: "error",
       message:
-        "Production jobs require STORYBLOOM_TEMP_ASSET_BACKEND=supabase.",
+        "Shared production illustration storage requires STORYBLOOM_TEMP_ASSET_BACKEND=supabase.",
     });
   } else if (
     environment.STORYBLOOM_TEMP_ASSET_BACKEND!.trim().toLowerCase() !==
@@ -613,7 +585,7 @@ function checkProductionJobsAndAssets(
       code: "temporary_asset_backend_unsupported",
       severity: "error",
       message:
-        "STORYBLOOM_TEMP_ASSET_BACKEND must be supabase for production jobs.",
+        "STORYBLOOM_TEMP_ASSET_BACKEND must be supabase for shared production illustrations.",
     });
   }
 
@@ -622,7 +594,7 @@ function checkProductionJobsAndAssets(
       code: "temporary_asset_bucket_required",
       severity: "error",
       message:
-        "Production jobs require a private STORYBLOOM_TEMP_ASSET_BUCKET.",
+        "Shared production illustrations require a private STORYBLOOM_TEMP_ASSET_BUCKET.",
     });
   } else if (
     !TEMPORARY_ASSET_BUCKET_PATTERN.test(
@@ -637,27 +609,6 @@ function checkProductionJobsAndAssets(
     });
   }
 
-  checkOptionalIntegerSetting(
-    environment,
-    issues,
-    "GENERATION_WORKER_LEASE_MS",
-    1_000,
-    15 * 60 * 1_000,
-  );
-  checkOptionalIntegerSetting(
-    environment,
-    issues,
-    "GENERATION_WORKER_CLAIM_LIMIT",
-    1,
-    20,
-  );
-  checkOptionalIntegerSetting(
-    environment,
-    issues,
-    "GENERATION_RECLAIM_LIMIT",
-    1,
-    100,
-  );
   checkOptionalIntegerSetting(
     environment,
     issues,
@@ -688,6 +639,60 @@ function checkProductionJobsAndAssets(
   );
 }
 
+function checkProductionJobs(
+  environment: ProductionEnvironment,
+  issues: ProductionReadinessIssue[],
+) {
+  const flag = parseProductionJobsFlag(environment);
+  if (!flag.valid) {
+    issues.push({
+      code: "production_jobs_flag_invalid",
+      severity: "error",
+      message:
+        "STORYBLOOM_PRODUCTION_JOBS_ENABLED must be one of 1, true, on, 0, false, or off.",
+    });
+    return;
+  }
+  if (!flag.enabled) return;
+
+  if (!hasEnvironmentValue(environment, "GENERATION_WORKER_SECRET")) {
+    issues.push({
+      code: "generation_worker_secret_required",
+      severity: "error",
+      message:
+        "Production jobs require a dedicated GENERATION_WORKER_SECRET.",
+    });
+  } else if (environment.GENERATION_WORKER_SECRET!.trim().length < 32) {
+    issues.push({
+      code: "generation_worker_secret_too_short",
+      severity: "error",
+      message: "GENERATION_WORKER_SECRET must contain at least 32 characters.",
+    });
+  }
+
+  checkOptionalIntegerSetting(
+    environment,
+    issues,
+    "GENERATION_WORKER_LEASE_MS",
+    1_000,
+    15 * 60 * 1_000,
+  );
+  checkOptionalIntegerSetting(
+    environment,
+    issues,
+    "GENERATION_WORKER_CLAIM_LIMIT",
+    1,
+    20,
+  );
+  checkOptionalIntegerSetting(
+    environment,
+    issues,
+    "GENERATION_RECLAIM_LIMIT",
+    1,
+    100,
+  );
+}
+
 export function evaluateProductionReadiness(
   environment: ProductionEnvironment,
 ): ProductionReadinessReport {
@@ -707,13 +712,16 @@ export function evaluateProductionReadiness(
   checkSupabaseBaseline(environment, issues);
   checkTurnstilePair(environment, issues);
   checkSharedPersistence(environment, issues);
-  checkProductionJobsAndAssets(environment, issues);
+  checkProductionAssets(environment, issues);
+  checkProductionJobs(environment, issues);
 
   const productionJobsFlag = parseProductionJobsFlag(environment);
-  const manualVerificationChecks =
-    productionJobsFlag.valid && productionJobsFlag.enabled
-      ? [...PRODUCTION_JOBS_MANUAL_VERIFICATION_CHECKS]
-      : [];
+  const manualVerificationChecks = [
+    ...PRODUCTION_ASSET_MANUAL_VERIFICATION_CHECKS,
+    ...(productionJobsFlag.valid && productionJobsFlag.enabled
+      ? PRODUCTION_JOBS_MANUAL_VERIFICATION_CHECKS
+      : []),
+  ];
   const configurationReady = !issues.some(
     (issue) => issue.severity === "error",
   );
