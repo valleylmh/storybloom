@@ -31,8 +31,10 @@ import {
   generateCpaReferenceImage,
   generateCpaStoryCharacterAnchor,
   generateIllustration,
+  getAgnesKeyIndexForPage,
   getImageToImageProviderForPage,
   getProviderForPage,
+  parseAgnesApiKeys,
 } from "@/lib/image-generator";
 
 const envKeys = [
@@ -83,6 +85,107 @@ afterEach(() => {
 });
 
 describe("image-to-image provider routing", () => {
+  it("parses unique Agnes keys and assigns pages evenly with a stable order", () => {
+    expect(parseAgnesApiKeys(" key-one, key-two ,, key-one, key-three ")).toEqual([
+      "key-one",
+      "key-two",
+      "key-three",
+    ]);
+    expect(
+      Array.from({ length: 8 }, (_, index) =>
+        getAgnesKeyIndexForPage(index + 1, 2),
+      ),
+    ).toEqual([0, 1, 0, 1, 0, 1, 0, 1]);
+    expect(getAgnesKeyIndexForPage(3, 0)).toBeNull();
+  });
+
+  it("routes concurrent Agnes pages across configured keys by page number", async () => {
+    process.env.AGNES_API_KEY = "agnes-key-one, agnes-key-two";
+    process.env.IMAGE_PROVIDER_ORDER = "agnes:1";
+    const fetchMock = vi.fn().mockImplementation(async () =>
+      new Response(
+        JSON.stringify({ data: [{ b64_json: "YWduZXMtaW1hZ2U=" }] }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      ),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    await Promise.all(
+      Array.from({ length: 8 }, (_, index) =>
+        generateIllustration(`Page ${index + 1}`, index + 1, {
+          pageNumber: index + 1,
+          style: "watercolor",
+          preferredProvider: "agnes",
+        }),
+      ),
+    );
+
+    const authorizationByPrompt = new Map<string, string>();
+    for (const [, init] of fetchMock.mock.calls as Array<[string, RequestInit]>) {
+      const body = JSON.parse(String(init.body)) as { prompt: string };
+      authorizationByPrompt.set(
+        body.prompt.match(/Page (\d+)/)?.[0] || "",
+        String((init.headers as Record<string, string>).Authorization),
+      );
+    }
+    expect(Array.from(authorizationByPrompt.entries()).sort()).toEqual([
+      ["Page 1", "Bearer agnes-key-one"],
+      ["Page 2", "Bearer agnes-key-two"],
+      ["Page 3", "Bearer agnes-key-one"],
+      ["Page 4", "Bearer agnes-key-two"],
+      ["Page 5", "Bearer agnes-key-one"],
+      ["Page 6", "Bearer agnes-key-two"],
+      ["Page 7", "Bearer agnes-key-one"],
+      ["Page 8", "Bearer agnes-key-two"],
+    ]);
+  });
+
+  it("does not make pages assigned to different Agnes keys wait on one queue", async () => {
+    process.env.AGNES_API_KEY = "agnes-key-one,agnes-key-two";
+    process.env.IMAGE_PROVIDER_ORDER = "agnes:1";
+    let releaseFirstRequest: (() => void) | undefined;
+    const fetchMock = vi.fn((_: string, init: RequestInit) => {
+      const authorization = String(
+        (init.headers as Record<string, string>).Authorization,
+      );
+      if (authorization === "Bearer agnes-key-one") {
+        return new Promise<Response>((resolve) => {
+          releaseFirstRequest = () =>
+            resolve(
+              new Response(
+                JSON.stringify({ data: [{ b64_json: "YWduZXMtaW1hZ2U=" }] }),
+                { status: 200, headers: { "Content-Type": "application/json" } },
+              ),
+            );
+        });
+      }
+      return Promise.resolve(
+        new Response(
+          JSON.stringify({ data: [{ b64_json: "YWduZXMtaW1hZ2U=" }] }),
+          { status: 200, headers: { "Content-Type": "application/json" } },
+        ),
+      );
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    const firstPage = generateIllustration("Page one", 1, {
+      pageNumber: 1,
+      style: "watercolor",
+      preferredProvider: "agnes",
+    });
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+
+    const secondPage = generateIllustration("Page two", 2, {
+      pageNumber: 2,
+      style: "watercolor",
+      preferredProvider: "agnes",
+    });
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+
+    releaseFirstRequest?.();
+    await Promise.all([firstPage, secondPage]);
+  });
+
   it("keeps configured ordinary providers distributed across book pages", () => {
     process.env.AGNES_API_KEY = "agnes-test";
     process.env.IMAGE_PROVIDER_ORDER = "agnes:1,pollinations:1";

@@ -155,8 +155,8 @@ let pollinationsImageQueue: Promise<unknown> = Promise.resolve();
 let nextPollinationsImageRequestAt = 0;
 let huggingFaceImageQueue: Promise<unknown> = Promise.resolve();
 let nextHuggingFaceImageRequestAt = 0;
-let agnesImageQueue: Promise<unknown> = Promise.resolve();
-let nextAgnesImageRequestAt = 0;
+const agnesImageQueues = new Map<number, Promise<unknown>>();
+const nextAgnesImageRequestAt = new Map<number, number>();
 let cpaImageQueue: Promise<unknown> = Promise.resolve();
 let nextCpaImageRequestAt = 0;
 const familyReferenceCache = new Map<
@@ -220,8 +220,37 @@ function getHuggingFaceKey() {
   );
 }
 
-function getAgnesKey() {
-  return process.env.AGNES_API_KEY || null;
+export function parseAgnesApiKeys(value = process.env.AGNES_API_KEY || "") {
+  const keys: string[] = [];
+  const seen = new Set<string>();
+
+  for (const candidate of value.split(",")) {
+    const key = candidate.trim();
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    keys.push(key);
+  }
+
+  return keys;
+}
+
+export function getAgnesKeyIndexForPage(
+  pageNumber: number | undefined,
+  keyCount: number,
+) {
+  if (keyCount <= 0) return null;
+  const safePageNumber =
+    typeof pageNumber === "number" && Number.isSafeInteger(pageNumber) && pageNumber > 0
+      ? pageNumber
+      : 1;
+  return (safePageNumber - 1) % keyCount;
+}
+
+function getAgnesKey(pageNumber?: number) {
+  const keys = parseAgnesApiKeys();
+  const keyIndex = getAgnesKeyIndexForPage(pageNumber, keys.length);
+  if (keyIndex === null) return null;
+  return { key: keys[keyIndex], keyIndex };
 }
 
 function getCpaImageConfig() {
@@ -881,14 +910,21 @@ async function withHuggingFaceImageThrottle<T>(task: () => Promise<T>): Promise<
   return run;
 }
 
-async function withAgnesImageThrottle<T>(task: () => Promise<T>): Promise<T> {
+async function withAgnesImageThrottle<T>(
+  keyIndex: number,
+  task: () => Promise<T>,
+): Promise<T> {
   const requestDelay = getPositiveIntegerEnv(
     "AGNES_IMAGE_REQUEST_DELAY_MS",
     DEFAULT_AGNES_IMAGE_REQUEST_DELAY_MS
   );
 
-  const run = agnesImageQueue.then(async () => {
-    const waitMs = Math.max(0, nextAgnesImageRequestAt - Date.now());
+  const previousQueue = agnesImageQueues.get(keyIndex) || Promise.resolve();
+  const run = previousQueue.then(async () => {
+    const waitMs = Math.max(
+      0,
+      (nextAgnesImageRequestAt.get(keyIndex) || 0) - Date.now(),
+    );
     if (waitMs > 0) {
       await sleep(waitMs);
     }
@@ -896,11 +932,11 @@ async function withAgnesImageThrottle<T>(task: () => Promise<T>): Promise<T> {
     try {
       return await task();
     } finally {
-      nextAgnesImageRequestAt = Date.now() + requestDelay;
+      nextAgnesImageRequestAt.set(keyIndex, Date.now() + requestDelay);
     }
   });
 
-  agnesImageQueue = run.catch(() => undefined);
+  agnesImageQueues.set(keyIndex, run.catch(() => undefined));
   return run;
 }
 
@@ -1785,7 +1821,7 @@ async function generateAgnesIllustration(
   _seed?: number,
   options?: IllustrationOptions
 ): Promise<string> {
-  const agnesKey = getAgnesKey();
+  const agnesKey = getAgnesKey(options?.pageNumber);
   if (!agnesKey) {
     throw new GenerationProviderError("configuration");
   }
@@ -1817,11 +1853,11 @@ async function generateAgnesIllustration(
   let lastErrorClass: GenerationErrorClass = "unknown";
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    const response = await withAgnesImageThrottle(() =>
+    const response = await withAgnesImageThrottle(agnesKey.keyIndex, () =>
       fetch(AGNES_IMAGE_ENDPOINT, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${agnesKey}`,
+          Authorization: `Bearer ${agnesKey.key}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
