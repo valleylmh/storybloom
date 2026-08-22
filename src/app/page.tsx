@@ -12,7 +12,6 @@ import {
 } from "@phosphor-icons/react";
 import BookPreview from "@/components/book/BookPreview";
 import MinimalStoryEntry from "@/components/book/MinimalStoryEntry";
-import StoryOutlineReview from "@/components/book/StoryOutlineReview";
 import StoryForm from "@/components/book/StoryForm";
 import {
   shouldMountBookPreview,
@@ -122,7 +121,6 @@ const COPY = {
     taskStatusSubmitting: "正在提交",
     taskStatusWriting: "文本生成中",
     taskNextLabel: "下一步",
-    taskNextReview: "家长逐页审阅并确认大纲",
     taskNextImages: "开始逐页生成插画",
     unavailableTitle: "这个生成任务无法继续恢复",
     unavailableHint: "服务端任务可能已过期、中断或不在当前实例中。你可以返回重新生成；本机已有作品不会被删除。",
@@ -182,7 +180,6 @@ const COPY = {
     taskStatusSubmitting: "Submitting",
     taskStatusWriting: "Writing story text",
     taskNextLabel: "Next",
-    taskNextReview: "Parent review of all eight pages",
     taskNextImages: "Generate illustrations page by page",
     unavailableTitle: "This generation task cannot be recovered",
     unavailableHint: "The server task may have expired, stopped, or be unavailable on this instance. You can start again; books already saved on this device are not deleted.",
@@ -471,8 +468,6 @@ export default function Home() {
     null,
   );
   const [generationNowMs, setGenerationNowMs] = useState(() => Date.now());
-  const [reviewBeforeIllustrations, setReviewBeforeIllustrations] =
-    useState(false);
   const [activeGrowthDraft, setActiveGrowthDraft] =
     useState<GrowthRecordDraft | null>(null);
   const [activeTargetMomentId, setActiveTargetMomentId] =
@@ -638,7 +633,6 @@ export default function Home() {
   ) {
     if (activeTaskIdRef.current !== recovery.taskId) return;
 
-    setReviewBeforeIllustrations(recovery.reviewBeforeIllustrations);
     setActiveGrowthDraft(recovery.growthRecordDraft || null);
     setActiveTargetMomentId(recovery.targetMomentId || null);
 
@@ -667,11 +661,29 @@ export default function Home() {
     }
 
     if (task.status === "reviewing_outline") {
-      latestGeneratedResultRef.current = task.result;
-      setResult(task.result);
-      generationViewActiveRef.current = true;
-      if (sampleModalOpenRef.current) setOwnReadyNotice(true);
-      setStep("reviewing_outline");
+      // Older in-flight tasks may still be marked for the retired outline
+      // review. Confirm their unchanged pages once and continue directly to
+      // illustration generation instead of stopping at an eight-page form.
+      const response = await confirmStoryOutline({
+        taskId: recovery.taskId,
+        storyId: task.result.storyId,
+        pages: task.result.pages,
+      });
+      const confirmedTask = (await response.json()) as ClientTextGenerationTaskResponse;
+      if (!response.ok || !confirmedTask.result) {
+        showTaskRecoveryFailure(
+          confirmedTask.error ||
+            (locale === "zh"
+              ? "故事文本已完成，但暂时无法开始生成插图。请刷新后重试。"
+              : "The story text is ready, but illustrations could not start. Refresh and try again."),
+          "failed",
+        );
+        return;
+      }
+      await applyTaskResponse(confirmedTask, {
+        ...recovery,
+        reviewBeforeIllustrations: false,
+      });
       return;
     }
 
@@ -710,7 +722,6 @@ export default function Home() {
     recovery: GenerationTaskRecoveryCandidate,
   ) {
     setCurrentTaskId(recovery.taskId);
-    setReviewBeforeIllustrations(recovery.reviewBeforeIllustrations);
     setActiveGrowthDraft(recovery.growthRecordDraft || null);
     setActiveTargetMomentId(recovery.targetMomentId || null);
     generationViewActiveRef.current = true;
@@ -803,7 +814,6 @@ export default function Home() {
         ? resolveGenerationTaskRecovery(
             window.location.search,
             readActiveGenerationTask(),
-            readEntryModeFromUrl() === "capture",
           )
         : null;
     if (recovery) recoverGenerationTask(recovery);
@@ -837,7 +847,6 @@ export default function Home() {
           ? resolveGenerationTaskRecovery(
               window.location.search,
               readActiveGenerationTask(),
-              nextMode === "capture",
             )
           : null;
         if (taskRecovery) {
@@ -884,7 +893,6 @@ export default function Home() {
         const taskRecovery = resolveGenerationTaskRecovery(
           window.location.search,
           taskRecord,
-          nextMode === "capture",
         );
         if (taskId && taskRecovery) {
           recoverGenerationTask(taskRecovery);
@@ -921,11 +929,11 @@ export default function Home() {
     const recovery = resolveGenerationTaskRecovery(
       window.location.search,
       readActiveGenerationTask(),
-      reviewBeforeIllustrations,
+      false,
     ) || {
       taskId: activeTaskId,
       source: "active-record" as const,
-      reviewBeforeIllustrations,
+      reviewBeforeIllustrations: false,
       ...(activeGrowthDraft
         ? { growthRecordDraft: activeGrowthDraft }
         : {}),
@@ -974,7 +982,6 @@ export default function Home() {
     activeGrowthDraft,
     activeTargetMomentId,
     activeTaskId,
-    reviewBeforeIllustrations,
     step,
   ]);
 
@@ -1054,7 +1061,10 @@ export default function Home() {
     const normalizedGrowthDraft = isGrowthRecordDraft(growthRecordDraft)
       ? growthRecordDraft
       : undefined;
-    const shouldReviewOutline = Boolean(normalizedGrowthDraft);
+    // A one-sentence creation should flow directly from story text to
+    // illustration. A growth record must not introduce a separate review
+    // gate; older in-flight review tasks are confirmed automatically below.
+    const shouldReviewOutline = false;
     const normalizedTargetMomentId =
       normalizedGrowthDraft &&
       typeof targetMomentId === "string" &&
@@ -1072,7 +1082,6 @@ export default function Home() {
       );
     }
     setCurrentTaskId(taskId);
-    setReviewBeforeIllustrations(shouldReviewOutline);
     setActiveGrowthDraft(normalizedGrowthDraft || null);
     setActiveTargetMomentId(normalizedTargetMomentId || null);
     writeActiveGenerationTask({
@@ -1139,31 +1148,6 @@ export default function Home() {
     }
   }
 
-  async function handleConfirmOutline(pages: StoryPage[]) {
-    if (!activeTaskId || !result) {
-      throw new Error(
-        locale === "zh" ? "大纲任务已失效，请重新生成。" : "The outline task is no longer available.",
-      );
-    }
-
-    const response = await confirmStoryOutline({
-      taskId: activeTaskId,
-      storyId: result.storyId,
-      pages,
-    });
-    const task = (await response.json()) as ClientTextGenerationTaskResponse;
-    if (!response.ok || !task.result) {
-      throw new Error(task.error || text.genericFailure);
-    }
-
-    await applyTaskResponse(task, {
-      taskId: activeTaskId,
-      reviewBeforeIllustrations: true,
-      growthRecordDraft: activeGrowthDraft || undefined,
-      targetMomentId: activeTargetMomentId || undefined,
-    });
-  }
-
   function handleAbandonGeneration() {
     if (activeTaskIdRef.current) {
       clearActiveGenerationTask({ taskId: activeTaskIdRef.current });
@@ -1199,7 +1183,6 @@ export default function Home() {
 
     setOwnReadyNotice(false);
     setSampleResult(null);
-    if (step === "reviewing_outline") return;
     const illustrationStatus = summarizeIllustrationProgress(result.pages).status;
     setStep(illustrationStatus);
   }
@@ -1576,11 +1559,7 @@ export default function Home() {
               </div>
               <div>
                 <dt>{text.taskNextLabel}</dt>
-                <dd>
-                  {reviewBeforeIllustrations
-                    ? text.taskNextReview
-                    : text.taskNextImages}
-                </dd>
+                <dd>{text.taskNextImages}</dd>
               </div>
               {activeTaskId ? (
                 <div>
@@ -1623,15 +1602,6 @@ export default function Home() {
               </div>
             </section>
           </div>
-        ) : null}
-
-        {step === "reviewing_outline" && result ? (
-          <StoryOutlineReview
-            locale={locale}
-            result={result}
-            onConfirm={handleConfirmOutline}
-            onBack={handleAbandonGeneration}
-          />
         ) : null}
 
         {step === "failed" || step === "unrecoverable" ? (

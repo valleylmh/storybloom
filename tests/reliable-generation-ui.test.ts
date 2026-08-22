@@ -23,12 +23,16 @@ describe("reliable generation homepage contract", () => {
     expect(pageSource).not.toContain("Math.round(progress)");
   });
 
-  it("uses persistent text tasks and writes the reviewed outline before images", () => {
+  it("uses persistent text tasks without showing outline review as a generation gate", () => {
     expect(pageSource).toContain('generationRequestMode: "async"');
     expect(pageSource).toContain("writeActiveGenerationTask({");
     expect(pageSource).toContain("requestStoryGenerationTask({");
+    expect(pageSource).toContain("const shouldReviewOutline = false;");
+    expect(pageSource).not.toContain("<StoryOutlineReview");
+    // Older in-flight tasks are confirmed automatically, then continue to
+    // illustration generation without showing an eight-page form.
     expect(pageSource).toContain("confirmStoryOutline({");
-    expect(pageSource).toContain('step === "reviewing_outline"');
+    expect(pageSource).toContain('task.status === "reviewing_outline"');
     expect(pageSource).toContain("shouldMountBookPreview(step, Boolean(result))");
   });
 

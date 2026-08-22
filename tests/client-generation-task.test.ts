@@ -244,7 +244,7 @@ describe("client generation task URL recovery", () => {
     ).toEqual({
       taskId: "url-task-12345",
       source: "url",
-      reviewBeforeIllustrations: true,
+      reviewBeforeIllustrations: false,
       requiresServerVerification: true,
     });
     const matching = resolveGenerationTaskRecovery(
@@ -278,7 +278,7 @@ describe("client generation task URL recovery", () => {
     expect(resolveGenerationTaskRecovery("?mode=minimal", activeTask)).toEqual({
       taskId: "active-task-123",
       source: "active-record",
-      reviewBeforeIllustrations: true,
+      reviewBeforeIllustrations: false,
       requiresServerVerification: true,
     });
     expect(resolveGenerationTaskRecovery("", null)).toBeNull();

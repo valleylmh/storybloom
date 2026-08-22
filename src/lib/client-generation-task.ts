@@ -344,7 +344,7 @@ export function clearGenerationTaskIdFromSearch(input: TaskSearchInput) {
 export function resolveGenerationTaskRecovery(
   search: TaskSearchInput,
   activeTask: ActiveGenerationTask | null,
-  defaultReviewBeforeIllustrations = true,
+  defaultReviewBeforeIllustrations = false,
 ): GenerationTaskRecoveryCandidate | null {
   const taskIdFromUrl = getGenerationTaskIdFromSearch(search);
   const normalizedActiveTask = activeTask
@@ -359,9 +359,9 @@ export function resolveGenerationTaskRecovery(
     return {
       taskId: taskIdFromUrl,
       source: "url",
-      reviewBeforeIllustrations:
-        matchingActiveTask?.reviewBeforeIllustrations ??
-        defaultReviewBeforeIllustrations,
+      // Ignore the retired client-side review flag in older browser records.
+      // The task will still be server-verified before anything is resumed.
+      reviewBeforeIllustrations: defaultReviewBeforeIllustrations,
       requiresServerVerification: true,
       ...(matchingActiveTask?.growthRecordDraft
         ? { growthRecordDraft: matchingActiveTask.growthRecordDraft }
@@ -376,7 +376,7 @@ export function resolveGenerationTaskRecovery(
   return {
     taskId: normalizedActiveTask.taskId,
     source: "active-record",
-    reviewBeforeIllustrations: normalizedActiveTask.reviewBeforeIllustrations,
+    reviewBeforeIllustrations: false,
     requiresServerVerification: true,
     ...(normalizedActiveTask.growthRecordDraft
       ? { growthRecordDraft: normalizedActiveTask.growthRecordDraft }
