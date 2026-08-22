@@ -44,7 +44,7 @@ describe("illustration request policy", () => {
     expect(isRecentPendingIllustration(page, now)).toBe(true);
   });
 
-  it("leaves stale pending pages for the bounded fallback retry path", () => {
+  it("routes stale pending pages to the bounded fallback retry path", () => {
     const page = createPage({
       imageStatus: "pending",
       imageStartedAt: new Date(
@@ -52,7 +52,7 @@ describe("illustration request policy", () => {
       ).toISOString(),
     });
 
-    expect(getInitialIllustrationAction(page, now)).toBe("wait");
+    expect(getInitialIllustrationAction(page, now)).toBe("retry");
     expect(isStaleWaitingPage(page, now)).toBe(true);
     expect(isRecentPendingIllustration(page, now)).toBe(false);
   });
@@ -112,7 +112,7 @@ describe("illustration request policy", () => {
     });
   });
 
-  it("treats stale pending work as partially failed without starting it again", () => {
+  it("treats stale pending work as partially failed until it is retried", () => {
     const page = createPage({
       imageStatus: "pending",
       imageStartedAt: new Date(
@@ -135,6 +135,19 @@ describe("illustration request policy", () => {
       imageDurationMs: ILLUSTRATION_STALE_THRESHOLD_MS + 1,
     });
     expect(getInitialIllustrationAction(nextPages[0], now)).toBe("wait");
+  });
+
+  it("does not mark a page stale while a retry has already been scheduled", () => {
+    const page = createPage({
+      imageStatus: "pending",
+      imageStartedAt: new Date(
+        now - ILLUSTRATION_STALE_THRESHOLD_MS - 1,
+      ).toISOString(),
+    });
+
+    expect(
+      markStaleIllustrationsFailed([page], now, new Set([page.page])),
+    ).toEqual([page]);
   });
 
   it("reports ready only when every completed page has a usable image", () => {

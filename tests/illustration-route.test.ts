@@ -616,6 +616,9 @@ describe("illustration route request control", () => {
         {
           provider: "cpa",
           status: "failed",
+          requestAttempt: 2,
+          retry: true,
+          qualityStatus: "warning",
           durationMs: 100,
           startedAt: "2026-08-13T02:00:00.000Z",
           completedAt: "2026-08-13T02:00:00.100Z",
@@ -638,6 +641,9 @@ describe("illustration route request control", () => {
       imageError: "插图生成失败，请稍后重试。",
       imageAttempts: [
         expect.objectContaining({
+          requestAttempt: 2,
+          retry: true,
+          qualityStatus: "warning",
           error: "插图生成失败，请稍后重试。",
           errorClass: "unknown",
         }),
@@ -668,8 +674,14 @@ describe("illustration route request control", () => {
     mocks.getCachedStory.mockResolvedValue(createStory(createPage()));
 
     const response = await POST(createRequest());
+    const body = await response.json();
 
     expect(response.status).toBe(202);
+    expect(body.page).toMatchObject({
+      imageRequestCount: 1,
+      imageRetryCount: 0,
+    });
+    expect(body.page.imageQuality).toBeUndefined();
     expect(mocks.allowIpRequest).toHaveBeenCalledWith(
       expect.any(NextRequest),
       expect.objectContaining({
@@ -683,7 +695,21 @@ describe("illustration route request control", () => {
 
   it("routes free fallback regeneration through Agnes", async () => {
     mocks.getCachedStory.mockResolvedValue(
-      createStory(createPage({ imageStatus: "failed" })),
+      createStory(
+        createPage({
+          imageStatus: "failed",
+          imageRequestCount: 2,
+          imageRetryCount: 1,
+          imageQuality: {
+            version: 1,
+            status: "warning",
+            width: 768,
+            height: 768,
+            format: "png",
+            bytes: 1024,
+          },
+        }),
+      ),
     );
 
     const response = await POST(createRequest("free-fallback"));
@@ -691,7 +717,18 @@ describe("illustration route request control", () => {
     expect(response.status).toBe(202);
     await vi.waitFor(() => {
       expect(mocks.executeIllustrationGeneration).toHaveBeenCalledWith(
-        expect.objectContaining({ fallbackProviders: ["agnes"] }),
+        expect.objectContaining({
+          fallbackProviders: ["agnes"],
+          story: expect.objectContaining({
+            pages: [
+              expect.objectContaining({
+                imageRequestCount: 3,
+                imageRetryCount: 2,
+                imageQuality: undefined,
+              }),
+            ],
+          }),
+        }),
       );
     });
   });

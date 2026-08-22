@@ -1,6 +1,8 @@
 import type { StoryPage } from "@/types";
 
-export const DEFAULT_LIVE_ILLUSTRATION_CONCURRENCY = 4;
+// Keep ordinary providers below the burst that previously caused several
+// pages to time out together. CPA remains strictly serialized below.
+export const DEFAULT_LIVE_ILLUSTRATION_CONCURRENCY = 2;
 
 export function getLiveIllustrationConcurrency(
   pages: Array<Pick<StoryPage, "imagePlannedProvider" | "imageProvider">>,

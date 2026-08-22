@@ -176,10 +176,93 @@ async function deleteStoredAsset(
   }).catch(() => false);
 }
 
-function completedPageWithImage(updatedPage: StoryPage, imageUrl: string) {
+function getIllustrationDurationMs(page: StoryPage) {
+  if (!page.imageStartedAt) return page.imageDurationMs;
+  const startedAtMs = new Date(page.imageStartedAt).getTime();
+  return Number.isFinite(startedAtMs)
+    ? Math.max(0, Date.now() - startedAtMs)
+    : page.imageDurationMs;
+}
+
+function isIllustrationRetry(page: StoryPage) {
+  return (page.imageRetryCount || 0) > 0;
+}
+
+function getIllustrationMetricFields(
+  targetPage: StoryPage,
+  completedPage?: StoryPage,
+) {
+  return {
+    duration: getIllustrationDurationMs(targetPage),
+    attempt: targetPage.imageRequestCount,
+    retry: isIllustrationRetry(targetPage),
+    width: completedPage?.imageQuality?.width,
+    height: completedPage?.imageQuality?.height,
+    qualityChecked: Boolean(completedPage?.imageQuality),
+    qualityWarnings: completedPage?.imageQuality?.warnings?.length || 0,
+  };
+}
+
+function logIllustrationSuccess(input: {
+  storyId: string;
+  pageNumber: number;
+  targetPage: StoryPage;
+  completedPage: StoryPage;
+  pages: StoryPage[];
+}) {
+  const metricFields = getIllustrationMetricFields(
+    input.targetPage,
+    input.completedPage,
+  );
+  logGenerationEvent({
+    operation: "illustration.commit",
+    story: input.storyId,
+    page: input.pageNumber,
+    status: "succeeded",
+    ...metricFields,
+  });
+
+  if (metricFields.retry) {
+    logGenerationEvent({
+      operation: "illustration.retry_outcome",
+      story: input.storyId,
+      page: input.pageNumber,
+      status: "succeeded",
+      ...metricFields,
+    });
+  }
+
+  if (input.pages.length > 0 && input.pages.every((page) => page.imageStatus === "complete")) {
+    const qualityCheckedPages = input.pages.filter(
+      (page) => page.imageQuality && page.imageQuality.status !== "demo",
+    ).length;
+    const qualityWarningPages = input.pages.filter(
+      (page) => page.imageQuality?.status === "warning",
+    ).length;
+    logGenerationEvent({
+      operation: "illustration.quality_summary",
+      story: input.storyId,
+      status:
+        qualityCheckedPages < input.pages.length
+          ? "partial"
+          : qualityWarningPages > 0
+            ? "warning"
+            : "passed",
+      qualityChecked: qualityCheckedPages === input.pages.length,
+      qualityWarnings: qualityWarningPages,
+    });
+  }
+}
+
+function completedPageWithImage(
+  updatedPage: StoryPage,
+  imageUrl: string,
+  durationMs: number | undefined,
+) {
   return {
     ...updatedPage,
     imageUrl,
+    imageDurationMs: durationMs,
     imageAttemptId: undefined,
     imageDurableJob: undefined,
     imageJobId: undefined,
@@ -250,6 +333,19 @@ async function persistIllustrationFailure(input: {
     },
     outcome ? "error" : "warn",
   );
+  if (outcome && isIllustrationRetry(input.targetPage)) {
+    logGenerationEvent(
+      {
+        operation: "illustration.retry_outcome",
+        story: input.story.id,
+        page: input.pageNumber,
+        status: "failed",
+        ...getIllustrationMetricFields(input.targetPage),
+        errorClass: classifyGenerationError(input.error),
+      },
+      "warn",
+    );
+  }
   return outcome;
 }
 
@@ -348,6 +444,7 @@ export async function executeIllustrationGeneration(
   let pendingAsset: PendingStoredAsset | null = null;
   let updatedPage: StoryPage;
   let persistedImageUrl: string | undefined;
+  const durationMs = () => getIllustrationDurationMs(targetPage);
 
   try {
     updatedPage = await regeneratePage(
@@ -410,7 +507,11 @@ export async function executeIllustrationGeneration(
       }
       const pages = latestStory.pages.map((page) =>
         page.page === updatedPage.page
-          ? completedPageWithImage(updatedPage, persistedImageUrl || "")
+          ? completedPageWithImage(
+              updatedPage,
+              persistedImageUrl || "",
+              durationMs(),
+            )
           : page,
       );
       return {
@@ -436,6 +537,18 @@ export async function executeIllustrationGeneration(
         "warn",
       );
       return { outcome: "stale" };
+    }
+    const completedPage = outcome.story.pages.find(
+      (page) => page.page === input.pageNumber,
+    );
+    if (completedPage) {
+      logIllustrationSuccess({
+        storyId: input.story.id,
+        pageNumber: input.pageNumber,
+        targetPage,
+        completedPage,
+        pages: outcome.story.pages,
+      });
     }
     return { outcome: "succeeded" };
   }
@@ -552,7 +665,11 @@ export async function executeIllustrationGeneration(
       }
       const pages = latestStory.pages.map((page) =>
         page.page === input.pageNumber
-          ? completedPageWithImage(updatedPage, pendingAsset.imageUrl)
+          ? completedPageWithImage(
+              updatedPage,
+              pendingAsset.imageUrl,
+              durationMs(),
+            )
           : page,
       );
       return {
@@ -565,7 +682,21 @@ export async function executeIllustrationGeneration(
         value: true,
       };
     });
-    if (finalized) return { outcome: "succeeded" };
+    if (finalized) {
+      const completedPage = finalized.story.pages.find(
+        (page) => page.page === input.pageNumber,
+      );
+      if (completedPage) {
+        logIllustrationSuccess({
+          storyId: input.story.id,
+          pageNumber: input.pageNumber,
+          targetPage,
+          completedPage,
+          pages: finalized.story.pages,
+        });
+      }
+      return { outcome: "succeeded" };
+    }
   } catch (error) {
     finalizationError = error;
     // The committed private asset must not survive without a matching Story

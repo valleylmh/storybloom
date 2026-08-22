@@ -234,6 +234,85 @@ describe("illustration generation executor", () => {
     expect(mocks.discardTemporaryStoryAsset).not.toHaveBeenCalled();
   });
 
+  it("logs page duration, quality, and a successful retry outcome", async () => {
+    const page = createPage({
+      imageStartedAt: new Date(Date.now() - 500).toISOString(),
+      imageRequestCount: 2,
+      imageRetryCount: 1,
+    });
+    const store = installStoryStore(createStory(page));
+    mocks.regeneratePage.mockImplementation(async (currentPage: StoryPage) => ({
+      ...currentPage,
+      imageStatus: "complete" as const,
+      imageUrl: "data:image/png;base64,provider-bytes",
+      imageCompletedAt: new Date().toISOString(),
+      imageQuality: {
+        version: 1 as const,
+        status: "passed" as const,
+        width: 1024,
+        height: 768,
+        format: "png",
+        bytes: 2048,
+      },
+    }));
+
+    await execute(store.story);
+
+    expect(mocks.logGenerationEvent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "illustration.commit",
+        status: "succeeded",
+        attempt: 2,
+        retry: true,
+        width: 1024,
+        height: 768,
+        qualityChecked: true,
+        duration: expect.any(Number),
+      }),
+    );
+    expect(mocks.logGenerationEvent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "illustration.retry_outcome",
+        status: "succeeded",
+        attempt: 2,
+        retry: true,
+      }),
+    );
+    expect(mocks.logGenerationEvent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "illustration.quality_summary",
+        status: "passed",
+        qualityChecked: true,
+        qualityWarnings: 0,
+      }),
+    );
+    expect(store.story.pages[0].imageDurationMs).toEqual(expect.any(Number));
+  });
+
+  it("logs the terminal failure reason for a retry", async () => {
+    const page = createPage({
+      imageStartedAt: new Date(Date.now() - 250).toISOString(),
+      imageRequestCount: 3,
+      imageRetryCount: 2,
+    });
+    const store = installStoryStore(createStory(page));
+    mocks.regeneratePage.mockRejectedValue(new Error("provider unavailable"));
+
+    await execute(store.story);
+
+    expect(mocks.logGenerationEvent).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "illustration.retry_outcome",
+        status: "failed",
+        attempt: 3,
+        retry: true,
+        errorClass: "storage_unavailable",
+        duration: expect.any(Number),
+      }),
+      "warn",
+    );
+  });
+
   it("keeps demo and static provider results as passthrough assets", async () => {
     const store = installStoryStore();
     mocks.regeneratePage.mockImplementation(async (page: StoryPage) => ({

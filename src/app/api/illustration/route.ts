@@ -135,6 +135,7 @@ async function markPagePending(
   story: GeneratedStory,
   pageNumber: number,
   durable: boolean,
+  isRetry: boolean,
 ): Promise<PagePendingResult | null> {
   const attemptId = crypto.randomUUID();
   const outcome = await mutateCachedStory<PagePendingValue>(
@@ -164,6 +165,13 @@ async function markPagePending(
         : latestStory.input.customCharacterReferenceToken
           ? getImageToImageProviderForPage(pageNumber, latestStory.pages.length)
           : getProviderForPage(pageNumber, latestStory.pages.length);
+      const requestAttempt = (targetPage.imageRequestCount || 0) + 1;
+      const retry =
+        isRetry ||
+        (targetPage.imageRequestCount || 0) > 0 ||
+        Boolean(targetPage.imageStartedAt || targetPage.imageCompletedAt) ||
+        targetPage.imageStatus === "failed" ||
+        targetPage.imageStatus === "complete";
       const pages = latestStory.pages.map((page) =>
         page.page === pageNumber
           ? {
@@ -178,7 +186,10 @@ async function markPagePending(
               imageJobId: undefined,
               imageCompletedAt: undefined,
               imageDurationMs: undefined,
+              imageRequestCount: requestAttempt,
+              imageRetryCount: (targetPage.imageRetryCount || 0) + (retry ? 1 : 0),
               imageAttempts: [],
+              imageQuality: undefined,
             }
           : page,
       );
@@ -743,10 +754,17 @@ export async function POST(req: NextRequest) {
   }
 
   const productionJobsEnabled = areProductionGenerationJobsEnabled();
+  const isRetry =
+    parsed.data.regenerationMode === "free-fallback" ||
+    (targetPage.imageRequestCount || 0) > 0 ||
+    Boolean(targetPage.imageStartedAt || targetPage.imageCompletedAt) ||
+    targetPage.imageStatus === "failed" ||
+    targetPage.imageStatus === "complete";
   const pending = await markPagePending(
     currentStory,
     parsed.data.page,
     productionJobsEnabled,
+    isRetry,
   );
   if (!pending) {
     return responseWithAssetSession(

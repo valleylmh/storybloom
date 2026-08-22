@@ -11,6 +11,13 @@ export function normalizeIllustrationPageForClient(page: StoryPage): StoryPage {
     provider: attempt.provider,
     model: attempt.model,
     status: attempt.status,
+    ...(attempt.requestAttempt !== undefined
+      ? { requestAttempt: attempt.requestAttempt }
+      : {}),
+    ...(attempt.retry !== undefined ? { retry: attempt.retry } : {}),
+    ...(attempt.qualityStatus !== undefined
+      ? { qualityStatus: attempt.qualityStatus }
+      : {}),
     durationMs: attempt.durationMs,
     startedAt: attempt.startedAt,
     completedAt: attempt.completedAt,
@@ -36,7 +43,11 @@ export function normalizeIllustrationPageForClient(page: StoryPage): StoryPage {
   };
 }
 
-export type InitialIllustrationAction = "start" | "resume" | "wait";
+export type InitialIllustrationAction =
+  | "start"
+  | "resume"
+  | "retry"
+  | "wait";
 export type IllustrationProgressStatus =
   | "generating_images"
   | "ready"
@@ -109,7 +120,7 @@ export function getInitialIllustrationAction(
 
   return nowMs - startedAtMs <= ILLUSTRATION_STALE_THRESHOLD_MS
     ? "resume"
-    : "wait";
+    : "retry";
 }
 
 /**
@@ -156,11 +167,14 @@ export function summarizeIllustrationProgress(
 export function markStaleIllustrationsFailed(
   pages: StoryPage[],
   nowMs = Date.now(),
+  skipPages?: ReadonlySet<number>,
 ) {
   let changed = false;
   const completedAt = new Date(nowMs).toISOString();
   const nextPages = pages.map((page) => {
-    if (!isStaleWaitingPage(page, nowMs)) return page;
+    if (skipPages?.has(page.page) || !isStaleWaitingPage(page, nowMs)) {
+      return page;
+    }
 
     changed = true;
     const startedAtMs = getImageStartedAtMs(page);

@@ -23,6 +23,12 @@ export interface GenerationEvent {
   model?: string;
   status: string;
   duration?: number;
+  attempt?: number;
+  retry?: boolean;
+  width?: number;
+  height?: number;
+  qualityChecked?: boolean;
+  qualityWarnings?: number;
   payloadBytes?: number;
   payloadLimitBytes?: number;
   errorClass?: GenerationErrorClass;
@@ -37,6 +43,12 @@ export interface GenerationLogPayload {
   model?: string;
   status: string;
   duration?: number;
+  attempt?: number;
+  retry?: boolean;
+  width?: number;
+  height?: number;
+  qualityChecked?: boolean;
+  qualityWarnings?: number;
   payloadBytes?: number;
   payloadLimitBytes?: number;
   errorClass?: GenerationErrorClass;
@@ -86,6 +98,26 @@ function safeDuration(value: unknown) {
     : undefined;
 }
 
+function safePositiveInteger(value: unknown) {
+  return typeof value === "number" &&
+    Number.isSafeInteger(value) &&
+    value > 0
+    ? value
+    : undefined;
+}
+
+function safeNonNegativeInteger(value: unknown) {
+  return typeof value === "number" &&
+    Number.isSafeInteger(value) &&
+    value >= 0
+    ? value
+    : undefined;
+}
+
+function safeBoolean(value: unknown) {
+  return typeof value === "boolean" ? value : undefined;
+}
+
 function safeByteCount(value: unknown) {
   return typeof value === "number" &&
     Number.isSafeInteger(value) &&
@@ -119,6 +151,12 @@ export function createGenerationLogPayload(
   const provider = safeLabel(event.provider);
   const model = safeLabel(event.model);
   const duration = safeDuration(event.duration);
+  const attempt = safePositiveInteger(event.attempt);
+  const retry = safeBoolean(event.retry);
+  const width = safePositiveInteger(event.width);
+  const height = safePositiveInteger(event.height);
+  const qualityChecked = safeBoolean(event.qualityChecked);
+  const qualityWarnings = safeNonNegativeInteger(event.qualityWarnings);
   const payloadBytes = safeByteCount(event.payloadBytes);
   const payloadLimitBytes = safeByteCount(event.payloadLimitBytes);
   const errorClass = safeErrorClass(event.errorClass);
@@ -129,6 +167,12 @@ export function createGenerationLogPayload(
   if (provider !== undefined) payload.provider = provider;
   if (model !== undefined) payload.model = model;
   if (duration !== undefined) payload.duration = duration;
+  if (attempt !== undefined) payload.attempt = attempt;
+  if (retry !== undefined) payload.retry = retry;
+  if (width !== undefined) payload.width = width;
+  if (height !== undefined) payload.height = height;
+  if (qualityChecked !== undefined) payload.qualityChecked = qualityChecked;
+  if (qualityWarnings !== undefined) payload.qualityWarnings = qualityWarnings;
   if (payloadBytes !== undefined) payload.payloadBytes = payloadBytes;
   if (payloadLimitBytes !== undefined) {
     payload.payloadLimitBytes = payloadLimitBytes;
