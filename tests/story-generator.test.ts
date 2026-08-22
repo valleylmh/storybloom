@@ -336,6 +336,34 @@ describe("custom story generation", () => {
     expect(body.top_p).toBe(0.86);
   });
 
+  it("replaces a generic model title with the concrete custom event", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = mockCpaStory(
+      "童童的快乐一天",
+      createModelPages("aligned"),
+    );
+
+    const story = await generateStoryText({
+      ...soloSleepInput,
+      customTheme: "童童在门口系好鞋带，抱着小熊去幼儿园",
+    });
+
+    expect(story.coverTitle).not.toBe("童童的快乐一天");
+    expect(story.coverTitle).toContain("鞋带");
+    expect(story.coverTitle).toContain("小熊");
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body)) as {
+      messages: Array<{ content: string }>;
+    };
+    const prompt = body.messages.map((message) => message.content).join("\n");
+    expect(prompt).toContain("concrete action, place, or key prop");
+    expect(prompt).toContain("Avoid generic titles");
+  });
+
   it("adapts a library StorySpec without mechanical name replacement", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";
@@ -405,6 +433,8 @@ describe("custom story generation", () => {
         status: "failed",
         errorClass: "upstream_5xx",
         duration: expect.any(Number),
+        attempt: 1,
+        retry: false,
       }),
     );
     expect(error).toHaveBeenCalledWith(
@@ -421,6 +451,64 @@ describe("custom story generation", () => {
     expect(serializedLogs).not.toContain("known-auth-secret");
     expect(serializedLogs).not.toContain("童童 private prompt");
     expect(serializedLogs).not.toContain("example.test");
+  });
+
+  it("marks the second text-provider attempt as a retry", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "2";
+    vi.stubGlobal(
+      "fetch",
+      vi
+        .fn()
+        .mockResolvedValueOnce(
+          new Response(JSON.stringify({ error: { message: "busy" } }), {
+            status: 503,
+            headers: { "content-type": "application/json" },
+          }),
+        )
+        .mockResolvedValueOnce(
+          new Response(
+            JSON.stringify({
+              choices: [
+                {
+                  message: {
+                    content: JSON.stringify({
+                      coverTitle: "童童的安稳小夜晚",
+                      pages: createModelPages("aligned"),
+                    }),
+                  },
+                },
+              ],
+            }),
+            { status: 200, headers: { "content-type": "application/json" } },
+          ),
+        ),
+    );
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+    const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
+
+    const story = await generateStoryText(soloSleepInput);
+
+    expect(story.coverTitle).toBe("童童的安稳小夜晚");
+    expect(warn).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "text.provider_attempt",
+        status: "failed",
+        attempt: 1,
+        retry: false,
+      }),
+    );
+    expect(info).toHaveBeenCalledWith(
+      expect.objectContaining({
+        operation: "text.provider_attempt",
+        status: "success",
+        attempt: 2,
+        retry: true,
+      }),
+    );
   });
 
   it("passes optional child details to the model as selective facts", async () => {
@@ -580,6 +668,37 @@ describe("custom story generation", () => {
       expect(page.illustrationPrompt).toContain(
         "real-photo reference is authoritative for face identity",
       );
+    });
+  });
+
+  it("repeats the visual bible and favorite-toy prop lock without saved family characters", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = mockCpaStory(
+      "童童和蓝色小恐龙的安稳夜晚",
+      createModelPages("aligned"),
+    );
+
+    const story = await generateStoryText({
+      ...soloSleepInput,
+      favoriteToy: "蓝色小恐龙",
+      familyCharacters: [],
+    });
+
+    const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body)) as {
+      messages: Array<{ content: string }>;
+    };
+    const modelPrompt = body.messages.map((message) => message.content).join("\n");
+    expect(modelPrompt).toContain("audit all 8 pages together");
+    expect(story.pages).toHaveLength(8);
+    story.pages.forEach((page) => {
+      expect(page.illustrationPrompt).toContain("RECURRING TOY LOCK");
+      expect(page.illustrationPrompt).toContain("蓝色小恐龙");
+      expect(page.illustrationPrompt).toContain("SERIES STYLE LOCK");
     });
   });
 

@@ -200,8 +200,12 @@ function getMockCastIds(input: StoryInput, pageIndex: number) {
 function getFamilyCastPrompt(input: StoryInput, castIds: string[]) {
   const castIdSet = new Set(castIds);
   const cast = getFamilyCharacters(input).filter((character) => castIdSet.has(character.id));
+  const visualBiblePrompt = formatStoryVisualBible(
+    getStoryVisualBible(input),
+    castIds,
+  );
   if (cast.length === 0) {
-    return null;
+    return visualBiblePrompt;
   }
 
   return [
@@ -211,7 +215,7 @@ function getFamilyCastPrompt(input: StoryInput, castIds: string[]) {
           `${character.name} (${character.relation}, id=${character.id}): ${character.appearance}`
       )
       .join("; ")}.`,
-    formatStoryVisualBible(getStoryVisualBible(input), castIds),
+    visualBiblePrompt,
     "Do not add any other family member. The character and outfit locks override conflicting clothing, hairstyle, age, or appearance details suggested by the page scene.",
   ].join(" ");
 }
@@ -402,19 +406,17 @@ function getCustomStoryIdentity(input: StoryInput) {
   const firstPersonTitleOwner = childName === "我" || childName === "I"
     ? "我"
     : childName;
-  const firstPersonCoverTitle = /^(?:去|到|在|和|跟|与|把|给|让|想|要|开始|参加|体验)/.test(
-    shortTheme,
-  )
-    ? `${firstPersonTitleOwner}的一天：${shortTheme}`
-    : `${firstPersonTitleOwner}的${shortTheme}`;
+  const actionCoverTitle = /^(?:去|到|在|和|跟|与)/.test(shortTheme)
+    ? `${firstPersonTitleOwner}${shortTheme}`
+    : /^(?:把|给|让|想|要|开始|参加|体验)/.test(shortTheme)
+      ? `${firstPersonTitleOwner}的一天：${shortTheme}`
+      : `${firstPersonTitleOwner}的${shortTheme}`;
 
   return {
     childName,
     theme,
     narrationTheme: shortTheme,
-    coverTitle: usesFirstPerson(input)
-      ? firstPersonCoverTitle
-      : `${childName}的${shortTheme}`,
+    coverTitle: actionCoverTitle,
     ...narrativeSubjects,
   };
 }
@@ -912,6 +914,63 @@ const RANDOM_STORY_DIRECTIONS = [
   },
 ];
 
+function isGenericCoverTitle(value: unknown) {
+  if (typeof value !== "string") return true;
+  const title = value.trim();
+  if (title.length < 3) return true;
+
+  const compactChinese = title.replace(/[\s《》“”'"：:，,。！!?？·-]/g, "");
+  if (
+    /^(?:我的|.{1,12}的)?(?:快乐一天|快乐的一天|美好一天|美好的一天|特别一天|特别的一天|奇妙之旅|冒险之旅|成长故事|温暖故事|我的故事|儿童故事|绘本故事|故事)$/.test(
+      compactChinese,
+    )
+  ) {
+    return true;
+  }
+
+  const compactEnglish = title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  return /^(?:my |[a-z0-9]+ s )?(?:happy day|wonderful day|special day|wonderful journey|magical journey|growth story|adventure story|my story|children s story|story)$/.test(
+    compactEnglish,
+  );
+}
+
+function getSpecificFallbackTitle(input: StoryInput, options: {
+  sourceTitle?: string;
+  randomTitle?: string;
+}) {
+  const childName = input.childName.trim();
+  const owner = childName === "我" || childName === "I" ? "我" : childName || "孩子";
+
+  if (options.sourceTitle) {
+    return `${owner}的《${options.sourceTitle}》新故事`;
+  }
+
+  if (input.theme === "custom") {
+    const customTitle = getCustomStoryIdentity(input).coverTitle;
+    if (!isGenericCoverTitle(customTitle)) return customTitle;
+    const recurringDetail = input.favoriteToy?.trim() || input.favoriteFood?.trim();
+    if (recurringDetail) return `${owner}和${recurringDetail}`;
+    return `${owner}的专属小发现`;
+  }
+
+  if (options.randomTitle) {
+    return `${owner}的${options.randomTitle}`;
+  }
+
+  return `${owner}的${THEME_LABELS[input.theme]}新发现`;
+}
+
+function normalizeCoverTitle(
+  input: StoryInput,
+  value: unknown,
+  options: { sourceTitle?: string; randomTitle?: string },
+) {
+  const title = typeof value === "string" ? value.trim() : "";
+  return isGenericCoverTitle(title)
+    ? getSpecificFallbackTitle(input, options)
+    : title;
+}
+
 function pickRandom<T>(items: T[]) {
   return items[Math.floor(Math.random() * items.length)];
 }
@@ -1070,7 +1129,7 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
       characterDescription,
       getFamilyCastPrompt(input, uniqueCastIds),
       "Series consistency: this image is one page from the same storybook, so keep the same 3D character identity, outfit, palette, clay-like material texture, lighting softness, and render quality. Do not repeat the same pose, crop, or facial expression.",
-      "Avoid: repeated front-facing portrait, giant head close-up, empty background, character blocking the whole scene, scary imagery, violence, photorealistic adult styling, distorted hands, extra limbs, text, logos, watermarks.",
+      "Avoid: repeated front-facing portrait, giant head close-up, empty background, character blocking the whole scene, scary imagery, violence, photorealistic adult styling, distorted or fused hands, duplicated fingers, missing or extra limbs, malformed faces, duplicated characters, broken anatomy, melted objects, text, logos, watermarks.",
     ];
 
     return {
@@ -1224,6 +1283,8 @@ async function requestChatCompletionStory({
         model,
         status: "success",
         duration: Date.now() - startedMs,
+        attempt,
+        retry: attempt > 1,
       });
       return content;
     } catch (error) {
@@ -1236,6 +1297,8 @@ async function requestChatCompletionStory({
           model,
           status: "failed",
           duration: Date.now() - startedMs,
+          attempt,
+          retry: attempt > 1,
           errorClass: lastErrorClass,
         },
         attempt < maxAttempts ? "warn" : "error",
@@ -1391,12 +1454,13 @@ ${personalizationRules}
 ${growthStoryRules || ""}
 - Creative seed for this request: ${creativeSeed}
 ${storyDirectionRules}
+- The cover title must be concise, vivid, and recognizable. Include at least one concrete action, place, or key prop from this exact story. Avoid generic titles such as “快乐的一天”, “奇妙之旅”, “成长故事”, “A Happy Day”, or “A Wonderful Journey”.
 - If a character reference is provided, treat it and the fixed story visual bible as binding. Do not change gender presentation, haircut, hair color, face shape, facial proportions, body proportions, exact outfit, outfit colors, patterns, footwear, or visual age between pages.
 - Never invent a wardrobe change merely to match a new scene. If a page-level illustrationPrompt conflicts with the fixed outfit lock, the outfit lock wins.
 - Keep one coherent illustration style across the full book: same brush texture, palette, lighting softness, line quality, and level of detail.
 - Respect language mode: ${input.language}
 - Narrative perspective: ${usesFirstPerson(input) ? "FIRST PERSON" : "third person"}.
-${usesFirstPerson(input) ? `- Write every story sentence from the child protagonist's own point of view. In Chinese narration use “我/我的”; in English narration use “I/me/my”. Do not call the protagonist by name, “孩子”, “故事里的孩子”, or “the child” in page text. The separate coverTitle should ${input.childName === "我" || input.childName === "I" ? "use 我的/My" : `include the confirmed name ${input.childName}, such as “${input.childName}的快乐一天”`}. Illustration prompts may still identify the selected child by name or character reference.` : "- Keep the existing third-person narration style."}
+${usesFirstPerson(input) ? `- Write every story sentence from the child protagonist's own point of view. In Chinese narration use “我/我的”; in English narration use “I/me/my”. Do not call the protagonist by name, “孩子”, “故事里的孩子”, or “the child” in page text. The separate coverTitle should ${input.childName === "我" || input.childName === "I" ? "use 我的/My" : `include the confirmed name ${input.childName}`} and must still name a concrete action, place, or key prop. Illustration prompts may still identify the selected child by name or character reference.` : "- Keep the existing third-person narration style."}
 ${usesFirstPerson(input) ? '- Keep the first-person pronouns even when the selected child has a Chinese name.' : '- If the child\'s name is not English, do not force it into English grammar. Use "the child" or a natural transliteration in English text.'}
 - Use concrete sensory detail on every page: visible action, setting, emotion, and one memorable image.
 - Keep the story safe for ages 3-8: no violence, horror, humiliation, weapons, medical distress, or adult themes.
@@ -1410,6 +1474,7 @@ ${storyBeatMap.map((beat, index) => `  ${index + 1}. ${beat}`).join("\n")}
 ${protagonistCharacterId ? `- The confirmed protagonist id=${protagonistCharacterId} must appear in castIds on every page.` : ""}
 - Every illustrationPrompt must include: setting, props, visible action, emotion, camera distance, composition, style, and "no text in image".
 - Character consistency is important, but the child must change pose, gesture, facial expression, and placement to match the story moment. Do not repeat a front-facing bust portrait. The child should usually take only 25-45% of the image so the scene can tell the story.
+- Before returning JSON, audit all 8 pages together: the same person must keep the same face, apparent age, hairstyle, exact outfit, footwear, and recurring key props; no toy, bag, book, blanket, food container, or other carried object may change design or disappear without a story reason.
 
 Return only valid JSON:
 {
@@ -1513,7 +1578,10 @@ Return only valid JSON:
     }
 
     return {
-      coverTitle: parsed.coverTitle,
+      coverTitle: normalizeCoverTitle(input, parsed.coverTitle, {
+        sourceTitle: sourceStorySpec?.sourceTitle,
+        randomTitle: randomDirection?.titleZh,
+      }),
       pages,
     };
   } catch (error) {

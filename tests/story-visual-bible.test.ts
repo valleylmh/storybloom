@@ -74,4 +74,21 @@ describe("story visual bible", () => {
     );
     expect(bible.characters[0].outfitLock).toContain("Do not restyle");
   });
+
+  it("locks confirmed recurring props and parent facts across all pages", () => {
+    const bible = buildStoryVisualBible(
+      createInput({
+        favoriteToy: "蓝色小恐龙",
+        favoriteFood: "草莓蛋糕",
+        parentFacts: "童童一直抱着小恐龙，蛋糕放在白色盘子里。",
+      }),
+    );
+
+    expect(bible.continuityPolicy).toContain("RECURRING TOY LOCK");
+    expect(bible.continuityPolicy).toContain("蓝色小恐龙");
+    expect(bible.continuityPolicy).toContain("FOOD PROP LOCK");
+    expect(bible.continuityPolicy).toContain("草莓蛋糕");
+    expect(bible.continuityPolicy).toContain("白色盘子");
+    expect(bible.continuityPolicy).toContain("do not let it disappear");
+  });
 });
