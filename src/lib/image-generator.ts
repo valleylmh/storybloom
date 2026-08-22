@@ -6,6 +6,7 @@ import type {
   ImageProvider,
   FamilyCharacterInput,
   StoryVisualBible,
+  IllustrationQualityReport,
 } from "@/types";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -19,6 +20,10 @@ import {
   classifyGenerationError,
   type GenerationErrorClass,
 } from "@/lib/generation-error";
+import {
+  createDemoIllustrationQualityReport,
+  inspectIllustrationQuality,
+} from "@/lib/illustration-quality";
 
 const MAX_IMAGE_ATTEMPTS = 3;
 const DEMO_IMAGE_MARKER = "StoryBloom%20Demo";
@@ -88,6 +93,7 @@ type ImageProviderConfigItem = {
 
 type GeneratedIllustrationResult = {
   imageUrl: string;
+  quality: IllustrationQualityReport;
   provider?: ImageProvider;
   durationMs?: number;
   startedAt?: string;
@@ -105,6 +111,8 @@ type IllustrationOptions = {
   castIds?: string[];
   visualBible?: StoryVisualBible;
   referenceCacheKey?: string;
+  requestAttempt?: number;
+  retry?: boolean;
 };
 
 function classifyHttpStatus(status: number): GenerationErrorClass {
@@ -989,6 +997,7 @@ export function createDemoPages(pages: StoryPage[], style: IllustrationStyle) {
     imageStatus: "demo" as const,
     imagePlannedProvider: page.imagePlannedProvider || getProviderForPage(page.page, pageCount),
     imageAttempts: [],
+    imageQuality: createDemoIllustrationQualityReport(),
   }));
 }
 
@@ -1909,12 +1918,38 @@ export async function generateIllustration(
 
       try {
         const imageUrl = await generateWithProvider(provider, prompt, seed, options);
+        let quality: IllustrationQualityReport;
+        try {
+          quality = await inspectIllustrationQuality(imageUrl);
+        } catch (qualityError) {
+          logGenerationEvent(
+            {
+              operation: "illustration.quality_check",
+              story: options?.storyId,
+              page: options?.pageNumber,
+              provider,
+              model,
+              status: "failed",
+              attempt: options?.requestAttempt,
+              retry: options?.retry,
+              qualityChecked: true,
+              errorClass: classifyGenerationError(qualityError),
+            },
+            "warn",
+          );
+          throw qualityError;
+        }
         const completedAt = new Date().toISOString();
         const durationMs = Date.now() - startedMs;
         attempts.push({
           provider,
           model,
           status: "success",
+          ...(options?.requestAttempt !== undefined
+            ? { requestAttempt: options.requestAttempt }
+            : {}),
+          ...(options?.retry !== undefined ? { retry: options.retry } : {}),
+          qualityStatus: quality.status,
           durationMs,
           startedAt,
           completedAt,
@@ -1927,9 +1962,30 @@ export async function generateIllustration(
           model,
           status: "success",
           duration: durationMs,
+          attempt: options?.requestAttempt,
+          retry: options?.retry,
+          width: quality.width,
+          height: quality.height,
+          qualityChecked: true,
+          qualityWarnings: quality.warnings?.length || 0,
+        });
+        logGenerationEvent({
+          operation: "illustration.quality_check",
+          story: options?.storyId,
+          page: options?.pageNumber,
+          provider,
+          model,
+          status: quality.status,
+          attempt: options?.requestAttempt,
+          retry: options?.retry,
+          width: quality.width,
+          height: quality.height,
+          qualityChecked: true,
+          qualityWarnings: quality.warnings?.length || 0,
         });
         return {
           imageUrl,
+          quality,
           provider,
           durationMs,
           startedAt,
@@ -1944,6 +2000,10 @@ export async function generateIllustration(
           provider,
           model,
           status: "failed",
+          ...(options?.requestAttempt !== undefined
+            ? { requestAttempt: options.requestAttempt }
+            : {}),
+          ...(options?.retry !== undefined ? { retry: options.retry } : {}),
           durationMs,
           startedAt,
           completedAt,
@@ -1959,6 +2019,8 @@ export async function generateIllustration(
             model,
             status: "failed",
             duration: durationMs,
+            attempt: options?.requestAttempt,
+            retry: options?.retry,
             errorClass: lastErrorClass,
           },
           "warn",
@@ -1982,6 +2044,7 @@ export async function generateIllustration(
 
   return {
     imageUrl: createDemoImage(prompt, options?.pageNumber ?? 1, options?.style ?? "watercolor"),
+    quality: createDemoIllustrationQualityReport(),
     attempts: [],
   };
 }
@@ -2159,6 +2222,8 @@ export async function regeneratePage(
     visualBible,
     referenceCacheKey,
     storyId,
+    requestAttempt: page.imageRequestCount,
+    retry: (page.imageRetryCount || 0) > 0,
     preferredProvider: usesFamilyPhoto
       ? "cpa"
       : customCharacterReferenceToken
@@ -2189,6 +2254,7 @@ export async function regeneratePage(
     imageCompletedAt: generated.completedAt,
     imageDurationMs: generated.durationMs,
     imageAttempts: generated.attempts,
+    imageQuality: generated.quality,
     imageError: undefined,
   };
 }

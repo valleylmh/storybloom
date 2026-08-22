@@ -104,11 +104,32 @@ export interface ImageAttemptMetric {
   provider: ImageProvider;
   model?: string;
   status: ImageAttemptStatus;
+  requestAttempt?: number;
+  retry?: boolean;
+  qualityStatus?: IllustrationQualityStatus;
   durationMs: number;
   startedAt: string;
   completedAt: string;
   error?: string;
   errorClass?: GenerationErrorClass;
+}
+
+export type IllustrationQualityStatus = "passed" | "warning" | "demo";
+export type IllustrationQualityWarning =
+  | "low-resolution"
+  | "low-detail"
+  | "low-sharpness";
+
+export interface IllustrationQualityReport {
+  version: 1;
+  status: IllustrationQualityStatus;
+  width: number;
+  height: number;
+  format: string;
+  bytes: number;
+  entropy?: number;
+  sharpness?: number;
+  warnings?: IllustrationQualityWarning[];
 }
 
 export interface FamilyCharacterInput {
@@ -195,7 +216,10 @@ export interface StoryPage {
   imageJobId?: string;
   imageCompletedAt?: string;
   imageDurationMs?: number;
+  imageRequestCount?: number;
+  imageRetryCount?: number;
   imageAttempts?: ImageAttemptMetric[];
+  imageQuality?: IllustrationQualityReport;
   sampleImage?: SampleImageAssets;
 }
 
@@ -233,6 +257,9 @@ export interface GenerateResponse {
   totalPages: number;
   generationMode: GenerationMode;
   freeChanceLabel: string;
+  /** Remaining daily free generations after reserving this generation. */
+  freeGenerationsRemaining?: number;
+  freeGenerationsLimit?: number;
   imagesPending?: boolean;
   narrationAudio?: NarrationAudioAsset;
 }

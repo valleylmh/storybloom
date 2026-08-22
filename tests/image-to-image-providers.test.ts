@@ -1,7 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-const { getSupabaseAdminMock } = vi.hoisted(() => ({
+const { getSupabaseAdminMock, inspectIllustrationQualityMock } = vi.hoisted(() => ({
   getSupabaseAdminMock: vi.fn(),
+  inspectIllustrationQualityMock: vi.fn(),
 }));
 
 vi.mock("@/lib/storage", () => ({
@@ -12,6 +13,18 @@ vi.mock("@/lib/storage", () => ({
 
 vi.mock("@/lib/email/supabase-admin", () => ({
   getSupabaseAdmin: getSupabaseAdminMock,
+}));
+
+vi.mock("@/lib/illustration-quality", () => ({
+  inspectIllustrationQuality: inspectIllustrationQualityMock,
+  createDemoIllustrationQualityReport: vi.fn(() => ({
+    version: 1 as const,
+    status: "demo" as const,
+    width: 1024,
+    height: 1024,
+    format: "svg",
+    bytes: 0,
+  })),
 }));
 
 import {
@@ -42,6 +55,14 @@ const originalEnv = Object.fromEntries(envKeys.map((key) => [key, process.env[ke
 
 beforeEach(() => {
   getSupabaseAdminMock.mockReset();
+  inspectIllustrationQualityMock.mockReset().mockResolvedValue({
+    version: 1 as const,
+    status: "passed" as const,
+    width: 1024,
+    height: 1024,
+    format: "png",
+    bytes: 2048,
+  });
   process.env.AGNES_IMAGE_REQUEST_DELAY_MS = "0";
   process.env.AGNES_IMAGE_MAX_ATTEMPTS = "1";
   process.env.CPA_IMAGE_REQUEST_DELAY_MS = "0";
@@ -683,5 +704,70 @@ describe("image-to-image provider routing", () => {
     });
     expect(JSON.stringify(result.attempts)).not.toContain("private-key");
     expect(JSON.stringify(result.attempts)).not.toContain("童童");
+  });
+
+  it("falls back to the next provider when image quality validation fails", async () => {
+    process.env.IMAGE_PROVIDER_ORDER = "cpa:1,agnes:1";
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    process.env.CPA_IMAGE_MODEL = "gpt-image-1.5";
+    process.env.AGNES_API_KEY = "agnes-test";
+    const invalidQuality = Object.assign(new Error("invalid image"), {
+      errorClass: "invalid_response" as const,
+    });
+    inspectIllustrationQualityMock
+      .mockRejectedValueOnce(invalidQuality)
+      .mockResolvedValueOnce({
+        version: 1 as const,
+        status: "passed" as const,
+        width: 1024,
+        height: 1024,
+        format: "png",
+        bytes: 2048,
+      });
+    vi.stubGlobal(
+      "fetch",
+      vi
+        .fn()
+        .mockResolvedValueOnce(
+          new Response(JSON.stringify({ data: [{ b64_json: "Y3Bh" }] }), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          }),
+        )
+        .mockResolvedValueOnce(
+          new Response(JSON.stringify({ data: [{ b64_json: "YWduZXM=" }] }), {
+            status: 200,
+            headers: { "Content-Type": "application/json" },
+          }),
+        ),
+    );
+
+    const result = await generateIllustration("A child tying a shoe", 9, {
+      storyId: "story-safe",
+      pageNumber: 1,
+      style: "fairytale",
+      preferredProvider: "cpa",
+      requestAttempt: 2,
+      retry: true,
+    });
+
+    expect(result.provider).toBe("agnes");
+    expect(result.attempts).toEqual([
+      expect.objectContaining({
+        provider: "cpa",
+        status: "failed",
+        requestAttempt: 2,
+        retry: true,
+        errorClass: "invalid_response",
+      }),
+      expect.objectContaining({
+        provider: "agnes",
+        status: "success",
+        requestAttempt: 2,
+        retry: true,
+        qualityStatus: "passed",
+      }),
+    ]);
   });
 });
