@@ -30,4 +30,12 @@ describe("library reader illustration accessibility", () => {
       /className="(?:book-image-fallback|library-page-fallback)"[\s\S]{0,180}aria-hidden="true"/,
     );
   });
+
+  it("keeps per-page wait, retry, and regeneration controls in the reader", () => {
+    expect(readerSource).toContain("renderIllustrationControls");
+    expect(readerSource).toContain("正在重新生成…");
+    expect(readerSource).toContain("重新生成本页");
+    expect(readerSource).toContain("重新生成第 ${item.page} 页插图");
+    expect(readerSource).toContain("page-image-frame-loading");
+  });
 });

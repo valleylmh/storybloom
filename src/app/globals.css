@@ -7891,6 +7891,20 @@ a.library-book-card:hover {
   opacity: 0.55;
 }
 
+.library-reader .page-image-frame .image-loading-badge,
+.library-reader .page-image-frame .image-error-badge {
+  max-width: calc(100% - 24px);
+}
+
+.library-reader .book-page-left .image-loading-badge,
+.library-reader .book-page-left .image-error-badge {
+  max-width: calc(100% - 24px);
+}
+
+.library-reader .book-page-left {
+  position: relative;
+}
+
 .library-moral {
   margin-bottom: 32px;
   padding: 20px 24px;

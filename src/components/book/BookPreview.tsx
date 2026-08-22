@@ -1226,6 +1226,25 @@ export default function BookPreview({
             contentId={result.storyId}
             preferCloudTts={true}
             initialReaderMode="grid"
+            onRetryIllustration={(pageNumber) => {
+              void handleRetryPage(pageNumber);
+            }}
+            isIllustrationRetryable={(page) =>
+              page.imageStatus === "failed" || isStaleWaitingPage(page, nowMs)
+            }
+            getIllustrationStatusDetail={(page) => {
+              if (page.imageStatus === "failed") {
+                return page.imageError || "插图生成失败，请重新生成本页";
+              }
+              if (page.imageStatus === "pending") {
+                const startedAtMs = getImageStartedAtMs(page);
+                return startedAtMs === null
+                  ? "正在生成插图"
+                  : `正在生成 · 已等待 ${formatElapsed(nowMs - startedAtMs)}`;
+              }
+              return undefined;
+            }}
+            retryingIllustrationPages={retryingPages}
           />
         </section>
       ) : (

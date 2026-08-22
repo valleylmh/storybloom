@@ -28,6 +28,10 @@ export default function LibraryBookExperience({
   contentId = storyKey,
   preferCloudTts = true,
   initialReaderMode = "turn",
+  onRetryIllustration,
+  isIllustrationRetryable,
+  getIllustrationStatusDetail,
+  retryingIllustrationPages = [],
   personalizeHref,
 }: {
   title: string;
@@ -38,6 +42,10 @@ export default function LibraryBookExperience({
   contentId?: string;
   preferCloudTts?: boolean;
   initialReaderMode?: ReaderMode;
+  onRetryIllustration?: (pageNumber: number) => void;
+  isIllustrationRetryable?: (page: StoryPage) => boolean;
+  getIllustrationStatusDetail?: (page: StoryPage) => string | undefined;
+  retryingIllustrationPages?: readonly number[];
   personalizeHref?: string;
 }) {
   const [pageIndex, setPageIndex] = useState(0);
@@ -317,6 +325,10 @@ export default function LibraryBookExperience({
           playbackPositionMs={playbackPositionMs}
           playbackDurationMs={playbackDurationMs}
           showToolbar={false}
+          onRetryIllustration={onRetryIllustration}
+          isIllustrationRetryable={isIllustrationRetryable}
+          getIllustrationStatusDetail={getIllustrationStatusDetail}
+          retryingIllustrationPages={retryingIllustrationPages}
           onPageIndexChange={handlePageIndexChange}
           onReaderModeChange={setReaderMode}
         />

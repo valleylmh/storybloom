@@ -35,6 +35,10 @@ export default function LibraryBookReader({
   playbackPositionMs = 0,
   playbackDurationMs = 0,
   showToolbar = true,
+  onRetryIllustration,
+  isIllustrationRetryable,
+  getIllustrationStatusDetail,
+  retryingIllustrationPages = [],
   onPageIndexChange,
   onReaderModeChange,
 }: {
@@ -47,6 +51,10 @@ export default function LibraryBookReader({
   playbackPositionMs?: number;
   playbackDurationMs?: number;
   showToolbar?: boolean;
+  onRetryIllustration?: (pageNumber: number) => void;
+  isIllustrationRetryable?: (page: StoryPage) => boolean;
+  getIllustrationStatusDetail?: (page: StoryPage) => string | undefined;
+  retryingIllustrationPages?: readonly number[];
   onPageIndexChange?: (pageIndex: number) => void;
   onReaderModeChange?: (mode: ReaderMode) => void;
 }) {
@@ -195,6 +203,51 @@ export default function LibraryBookReader({
       ? getIllustrationStatusLabel(page)
       : `插图状态：${pages.map(getIllustrationStatusLabel).join("；")}`;
 
+  function renderIllustrationControls(item: StoryPage) {
+    if (!onRetryIllustration) return null;
+
+    const retrying = retryingIllustrationPages.includes(item.page);
+    const retryable = isIllustrationRetryable?.(item) || false;
+    const statusDetail = getIllustrationStatusDetail?.(item);
+
+    return (
+      <>
+        {item.imageStatus !== "complete" ? (
+          <div
+            className={
+              item.imageStatus === "failed"
+                ? "image-error-badge"
+                : "image-loading-badge"
+            }
+          >
+            {statusDetail || getIllustrationStatusLabel(item)}
+          </div>
+        ) : null}
+        {retryable ? (
+          <button
+            type="button"
+            className="image-retry-btn"
+            onClick={() => onRetryIllustration(item.page)}
+            disabled={retrying}
+          >
+            {retrying ? "正在重新生成…" : "重新生成本页"}
+          </button>
+        ) : item.imageStatus === "complete" ? (
+          <button
+            type="button"
+            className="image-refresh-btn"
+            aria-label={`重新生成第 ${item.page} 页插图`}
+            title="重新生成本页"
+            onClick={() => onRetryIllustration(item.page)}
+            disabled={retrying}
+          >
+            ↻
+          </button>
+        ) : null}
+      </>
+    );
+  }
+
   return (
     <section className="library-reader" aria-label="绘本正文">
       <p className="sr-only" aria-live="polite" aria-atomic="true">
@@ -275,7 +328,13 @@ export default function LibraryBookReader({
                   value={Math.min(playbackPositionMs, playbackDurationMs)}
                 />
               ) : null}
-              <div className="book-page book-page-left">
+              <div
+                className={`book-page book-page-left ${
+                  page.imageStatus === "pending" || page.imageStatus === "failed"
+                    ? "page-image-frame-loading"
+                    : ""
+                }`}
+              >
                 {page.imageUrl && page.imageStatus === "complete" ? (
                   <button
                     type="button"
@@ -300,6 +359,7 @@ export default function LibraryBookReader({
                     <span>{page.page}</span>
                   </div>
                 )}
+                {renderIllustrationControls(page)}
               </div>
               <div className="book-page book-page-right">
                 <p className="book-page-number" style={{ color: accent }}>
@@ -372,7 +432,13 @@ export default function LibraryBookReader({
               className="page-card"
               aria-label={`第 ${item.page} 页，${getIllustrationStatusLabel(item)}`}
             >
-              <div className="page-image-frame">
+              <div
+                className={`page-image-frame ${
+                  item.imageStatus === "pending" || item.imageStatus === "failed"
+                    ? "page-image-frame-loading"
+                    : ""
+                }`}
+              >
                 {item.imageUrl && item.imageStatus === "complete" ? (
                   <button
                     type="button"
@@ -398,6 +464,7 @@ export default function LibraryBookReader({
                     <span>{item.page}</span>
                   </div>
                 )}
+                {renderIllustrationControls(item)}
               </div>
               <div className="page-copy">
                 <p className="page-zh">{item.zhText}</p>
