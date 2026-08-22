@@ -18,6 +18,8 @@ export interface TextGenerationTask {
   generationPrincipalIds?: string[];
   status: TextGenerationTaskStatus;
   reviewBeforeIllustrations: boolean;
+  /** Remaining daily free generations captured at reservation time. */
+  freeGenerationsRemaining?: number;
   createdAt: string;
   updatedAt: string;
   result?: GenerateResponse;
@@ -56,6 +58,7 @@ export function createPendingTextGenerationTask(input: {
   taskId: string;
   storyId: string;
   reviewBeforeIllustrations: boolean;
+  freeGenerationsRemaining?: number;
   durableJob?: boolean;
   generationPrincipalIds?: string[];
   now?: Date;
@@ -69,6 +72,9 @@ export function createPendingTextGenerationTask(input: {
       : {}),
     status: "generating_text",
     reviewBeforeIllustrations: input.reviewBeforeIllustrations,
+    ...(input.freeGenerationsRemaining !== undefined
+      ? { freeGenerationsRemaining: input.freeGenerationsRemaining }
+      : {}),
     ...(input.durableJob ? { durableJob: true } : {}),
     createdAt: timestamp,
     updatedAt: timestamp,

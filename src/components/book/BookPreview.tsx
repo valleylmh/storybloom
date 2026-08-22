@@ -56,6 +56,8 @@ const SAMPLE_IMAGE_MODEL_IDS = SAMPLE_IMAGE_MODELS.map((model) => model.id);
 
 const ILLUSTRATION_POLL_INTERVAL_MS = 2500;
 const ILLUSTRATION_STALE_CLOCK_INTERVAL_MS = 5000;
+const AUTOMATIC_ILLUSTRATION_RETRY_LIMIT = 1;
+const AUTOMATIC_ILLUSTRATION_RETRY_DELAY_MS = 3000;
 const STORY_VIDEO_ENABLED =
   process.env.NEXT_PUBLIC_STORY_VIDEO_ENABLED !== "0";
 
@@ -114,6 +116,13 @@ function getTimedOutImageError(useFreeFallback: boolean) {
     : STALE_ILLUSTRATION_ERROR;
 }
 
+function formatElapsed(ms: number) {
+  const seconds = Math.max(0, Math.floor(ms / 1000));
+  if (seconds < 1) return "不到 1 秒";
+  if (seconds < 60) return `${seconds} 秒`;
+  return `${Math.floor(seconds / 60)} 分钟`;
+}
+
 function getSingleLineText(
   ctx: CanvasRenderingContext2D,
   text: string,
@@ -170,6 +179,7 @@ export default function BookPreview({
   const activeStoryIdRef = useRef(result.storyId);
   const requestedImagePagesRef = useRef(new Set<number>());
   const activeImageRequestsRef = useRef(new Set<number>());
+  const automaticRetryAttemptsRef = useRef(new Map<number, number>());
   const freeFallbackRequestsRef = useRef(
     new Map<number, Promise<{ page: StoryPage; allComplete?: boolean }>>(),
   );
@@ -267,6 +277,17 @@ export default function BookPreview({
       page: pageNumber,
       regenerationMode: useFreeFallback ? "free-fallback" : undefined,
     };
+  }
+
+  function canAutomaticallyRetryIllustration(error: unknown) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (message.includes("Story changed before illustration finished")) {
+      return false;
+    }
+
+    return /插图生成失败|插图状态查询失败|长时间没有更新|超时|Failed to fetch|NetworkError/i.test(
+      message,
+    );
   }
 
   function replacePageInState(updatedPage: StoryPage) {
@@ -450,6 +471,7 @@ export default function BookPreview({
       activeStoryIdRef.current = result.storyId;
       requestedImagePagesRef.current.clear();
       activeImageRequestsRef.current.clear();
+      automaticRetryAttemptsRef.current.clear();
       freeFallbackRequestsRef.current.clear();
     }
 
@@ -464,7 +486,7 @@ export default function BookPreview({
   }, [result.storyId]);
 
   const shareDialogRef = useRef<HTMLDivElement>(null);
-  const hasTimedPendingImages = pages.some(
+  const hasPendingImagesWithStart = pages.some(
     (page) =>
       isWaitingImagePage(page) &&
       Boolean(page.imageStartedAt) &&
@@ -472,7 +494,7 @@ export default function BookPreview({
   );
 
   useEffect(() => {
-    if (!hasTimedPendingImages) {
+    if (!hasPendingImagesWithStart) {
       return;
     }
 
@@ -484,7 +506,7 @@ export default function BookPreview({
     return () => {
       window.clearInterval(interval);
     };
-  }, [hasTimedPendingImages]);
+  }, [hasPendingImagesWithStart]);
 
   useEffect(() => {
     if (!shareDialogOpen) {
@@ -643,6 +665,7 @@ export default function BookPreview({
                 ...item,
                 imageStatus: "pending" as const,
                 imageStartedAt: item.imageStartedAt || startedAt,
+                imageQuality: undefined,
               }
             : item,
         ),
@@ -657,9 +680,13 @@ export default function BookPreview({
           const { page } = task;
 
           try {
-            const data = task.action === "resume"
-              ? await resumeIllustrationPage(page)
-              : await requestIllustrationPage(page.page);
+            const data =
+              task.action === "resume"
+                ? await resumeIllustrationPage(page)
+                : await requestIllustrationPage(
+                    page.page,
+                    task.action === "retry",
+                  );
 
             if (activeStoryIdRef.current !== result.storyId) {
               return;
@@ -669,6 +696,34 @@ export default function BookPreview({
           } catch (error) {
             if (activeStoryIdRef.current !== result.storyId) {
               return;
+            }
+
+            const automaticRetryAttempts =
+              automaticRetryAttemptsRef.current.get(page.page) || 0;
+            if (
+              task.action !== "retry" &&
+              automaticRetryAttempts < AUTOMATIC_ILLUSTRATION_RETRY_LIMIT &&
+              canAutomaticallyRetryIllustration(error)
+            ) {
+              automaticRetryAttemptsRef.current.set(
+                page.page,
+                automaticRetryAttempts + 1,
+              );
+
+              try {
+                await wait(AUTOMATIC_ILLUSTRATION_RETRY_DELAY_MS);
+                const retryData = await requestIllustrationPage(
+                  page.page,
+                  true,
+                );
+                if (activeStoryIdRef.current !== result.storyId) {
+                  return;
+                }
+                replacePageInState(retryData.page);
+                continue;
+              } catch (retryError) {
+                error = retryError;
+              }
             }
 
             setPages((current) =>
@@ -713,7 +768,11 @@ export default function BookPreview({
     }
 
     setPages((current) => {
-      const next = markStaleIllustrationsFailed(current, nowMs);
+      const next = markStaleIllustrationsFailed(
+        current,
+        nowMs,
+        requestedImagePagesRef.current,
+      );
       next
         .filter(
           (page) =>
@@ -738,6 +797,62 @@ export default function BookPreview({
   );
   const hasDemoImages = pages.some((page) => page.imageStatus === "demo");
   const hasPendingImages = illustrationProgress.pending > 0;
+  const retryablePageNumbers = useMemo(
+    () =>
+      pages
+        .filter(
+          (page) =>
+            page.imageStatus === "failed" || isStaleWaitingPage(page, nowMs),
+        )
+        .map((page) => page.page),
+    [nowMs, pages],
+  );
+  const oldestPendingImageStartedAtMs = useMemo(() => {
+    const startedAtValues = pages
+      .filter((page) => isWaitingImagePage(page))
+      .map(getImageStartedAtMs)
+      .filter((value): value is number => value !== null);
+    return startedAtValues.length > 0 ? Math.min(...startedAtValues) : null;
+  }, [pages]);
+  const pendingElapsedLabel =
+    oldestPendingImageStartedAtMs === null
+      ? null
+      : `已等待 ${formatElapsed(nowMs - oldestPendingImageStartedAtMs)}`;
+  const illustrationQualitySummary = useMemo(() => {
+    if (!allImagesReady) return null;
+    const checkedPages = pages.filter(
+      (page) =>
+        page.imageStatus === "complete" &&
+        page.imageQuality &&
+        page.imageQuality.status !== "demo",
+    );
+    if (checkedPages.length === 0) return null;
+    const warningPages = checkedPages.filter(
+      (page) => page.imageQuality?.status === "warning",
+    ).length;
+    return {
+      checked: checkedPages.length,
+      warning: warningPages,
+      total: pages.length,
+    };
+  }, [allImagesReady, pages]);
+
+  useEffect(() => {
+    if (variant !== "own") return;
+
+    const title =
+      illustrationProgress.status === "ready"
+        ? "绘本好了 · StoryBloom"
+        : illustrationProgress.status === "partially_failed"
+          ? "绘本需修复 · StoryBloom"
+          : "故事已完成 · 插图生成中 · StoryBloom";
+    const timeoutId = window.setTimeout(() => {
+      document.title = title;
+    }, 0);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [illustrationProgress.status, variant]);
+
   useEffect(() => {
     if (!canRegenerateImages || !onResultUpdateRef.current) {
       return;
@@ -754,6 +869,10 @@ export default function BookPreview({
         imageDurableJob: page.imageDurableJob,
         imageJobId: page.imageJobId,
         imageCompletedAt: page.imageCompletedAt,
+        imageDurationMs: page.imageDurationMs,
+        imageRequestCount: page.imageRequestCount,
+        imageRetryCount: page.imageRetryCount,
+        imageQuality: page.imageQuality,
       })),
     );
     if (lastPublishedPagesKeyRef.current === pagesKey) {
@@ -793,6 +912,7 @@ export default function BookPreview({
               imageJobId: undefined,
               imageCompletedAt: undefined,
               imageDurationMs: undefined,
+              imageQuality: undefined,
             }
           : page,
       ),
@@ -829,6 +949,14 @@ export default function BookPreview({
           current.filter((page) => page !== pageNumber),
         );
       }
+    }
+  }
+
+  async function handleRetryAllPages() {
+    if (retryablePageNumbers.length === 0) return;
+
+    for (const pageNumber of retryablePageNumbers) {
+      await handleRetryPage(pageNumber);
     }
   }
 
@@ -983,9 +1111,13 @@ export default function BookPreview({
             ? "精选绘本 · 等待时先读一本"
             : isCustomPreview
               ? `${result.freeChanceLabel} · ${result.totalPages} 页成品`
-            : hasDemoImages
-              ? "本地演示图 · 仅用于流程验收"
-              : result.freeChanceLabel}
+              : allImagesReady
+                ? result.freeChanceLabel
+                : illustrationProgress.status === "partially_failed"
+                  ? "故事文字已完成 · 部分插图待重试"
+                  : hasDemoImages
+                    ? "故事文字已完成 · 插图处理中"
+                    : "故事文字已完成 · 插图生成中"}
         </div>
         <h2>{result.coverTitle}</h2>
         <p>
@@ -993,12 +1125,12 @@ export default function BookPreview({
             ? "这是一本文字和插图都已准备好的精选绘本，可以在等待专属绘本时先读。"
             : isCustomPreview
               ? "这是一套已完成的绘本案例，可以查看成品节奏、画面一致性，也可以生成分享长图。"
-            : `这次已经生成完整 ${result.totalPages} 页内容。${
+              : `故事文字已完成 ${result.totalPages} 页。${
                 allImagesReady
-                  ? " 可以直接朗读、预览，或生成一张适合分享的 PNG 长图。"
+                  ? " 文字和插图都已完成，可以直接朗读、预览，或生成一张适合分享的 PNG 长图。"
                   : illustrationProgress.status === "partially_failed"
-                    ? ` 故事主线已完成，已有 ${illustrationProgress.complete}/${illustrationProgress.total} 页插图完成；未完成页面需要手动重试。`
-                    : ` 故事主线已完成，插图正在逐张替换（${illustrationProgress.complete}/${illustrationProgress.total}）。`
+                    ? ` 已有 ${illustrationProgress.complete}/${illustrationProgress.total} 页插图完成，未完成页面可以统一重试。`
+                    : ` 插图正在逐页生成（${illustrationProgress.complete}/${illustrationProgress.total}）。`
               }`}
         </p>
       </section>
@@ -1026,6 +1158,63 @@ export default function BookPreview({
         </section>
       ) : null}
 
+      {variant === "own" && !allImagesReady ? (
+        <section className="illustration-progress-card" aria-label="插图生成进度">
+          <div>
+            <strong>
+              插图进度 {illustrationProgress.complete}/{illustrationProgress.total}
+            </strong>
+            <span>
+              {[
+                retryablePageNumbers.length > 0
+                  ? `失败/超时 ${retryablePageNumbers.length} 页`
+                  : null,
+                illustrationProgress.pending > 0
+                  ? `${illustrationProgress.pending} 页生成中`
+                  : null,
+                pendingElapsedLabel,
+              ]
+                .filter(Boolean)
+                .join(" · ") || "等待插图任务更新"}
+            </span>
+          </div>
+          {retryablePageNumbers.length > 0 ? (
+            <button
+              type="button"
+              className="secondary-btn"
+              onClick={() => void handleRetryAllPages()}
+              disabled={retryingPages.length > 0}
+            >
+              {retryingPages.length > 0
+                ? "正在重试…"
+                : `重试未完成插图（${retryablePageNumbers.length}）`}
+            </button>
+          ) : null}
+        </section>
+      ) : null}
+
+      {variant === "own" && illustrationQualitySummary ? (
+        <section
+          className="illustration-progress-card illustration-quality-card"
+          aria-label="插图质量检查结果"
+        >
+          <div>
+            <strong>
+              {illustrationQualitySummary.warning > 0
+                ? `${illustrationQualitySummary.warning} 页建议复查`
+                : illustrationQualitySummary.checked ===
+                    illustrationQualitySummary.total
+                  ? "插图质量检查通过"
+                  : "插图质量已检查"}
+            </strong>
+            <span>
+              已检查 {illustrationQualitySummary.checked}/
+              {illustrationQualitySummary.total} 页的尺寸、清晰度和占位图残留
+            </span>
+          </div>
+        </section>
+      ) : null}
+
       {variant === "own" ? (
         <section className="personalized-reader" aria-label="专属绘本阅读器">
           <LibraryBookExperience
@@ -1036,6 +1225,7 @@ export default function BookPreview({
             contentType="personalized"
             contentId={result.storyId}
             preferCloudTts={true}
+            initialReaderMode="grid"
           />
         </section>
       ) : (
@@ -1128,28 +1318,20 @@ export default function BookPreview({
         </div>
       ) : null}
 
-      {variant === "own" ? (
-        <div className="personalized-page-management-heading">
-          <div>
-            <h3>页面管理与修复</h3>
-            <p>上方用于阅读和播放；这里保留逐页查看、重试和图片修复。</p>
-          </div>
-        </div>
-      ) : null}
+      {variant !== "own" ? (
+        <section
+          className="pages-grid"
+          data-sample-model={isSamplePreview ? activeSampleImageModel : undefined}
+        >
+          {pages.map((page) => {
+            const sampleImage = isSamplePreview ? getSamplePageImage(page) : null;
 
-      <section
-        className="pages-grid"
-        data-sample-model={isSamplePreview ? activeSampleImageModel : undefined}
-      >
-        {pages.map((page) => {
-          const sampleImage = isSamplePreview ? getSamplePageImage(page) : null;
-
-          return (
-          <article
-            key={page.page}
-            className="page-card"
-            aria-label={getPageLabel(page)}
-          >
+            return (
+              <article
+                key={page.page}
+                className="page-card"
+                aria-label={getPageLabel(page)}
+              >
             <div
               className={`page-image-frame ${
                 page.imageStatus === "pending" ||
@@ -1270,23 +1452,29 @@ export default function BookPreview({
               {page.zhText ? <p className="page-zh">{page.zhText}</p> : null}
               {page.enText ? <p className="page-en">{page.enText}</p> : null}
             </div>
-          </article>
-          );
-        })}
-      </section>
+              </article>
+            );
+          })}
+        </section>
+      ) : null}
 
-      {canRegenerateImages && STORY_VIDEO_ENABLED ? (
+      {variant === "own" && !allImagesReady ? (
+        <section className="tool-panel deferred-tools-card" aria-label="高级功能提示">
+          <strong>视频与分享功能将在插图完成后开放</strong>
+          <p>先继续阅读文字和已完成的页面；全部插图完成后，可以生成绘本视频、分享长图和分享包。</p>
+        </section>
+      ) : canRegenerateImages && STORY_VIDEO_ENABLED ? (
         <StoryVideoPanel
           key={result.storyId}
           title={result.coverTitle}
           pages={pages}
           totalPages={result.totalPages}
-          disabled={!allImagesReady}
+          disabled={false}
           familyCharacterId={result.input.protagonistFamilyCharacterId}
         />
       ) : null}
 
-      <section className="tool-panel social-share-panel" aria-label="社交分享">
+      {variant !== "own" || allImagesReady ? <section className="tool-panel social-share-panel" aria-label="社交分享">
         <div className="social-share-toolbar">
           <div className="social-share-copy">
             <h3 className="section-accent-title">社交分享</h3>
@@ -1335,7 +1523,7 @@ export default function BookPreview({
         ) : null}
         {shareError ? <div className="tool-error">{shareError}</div> : null}
         {variant === "own" ? <ShareLinkPanel result={result} /> : null}
-      </section>
+      </section> : null}
 
       {canRegenerateImages && sampleBooks.length > 0 && onOpenSample ? (
         <section

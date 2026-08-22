@@ -24,7 +24,7 @@ describe("family story platform navigation", () => {
     expect(creation).toContain("把今天的小事，");
     expect(creation).toContain("写进故事里");
     expect(home).toContain("home-header-mode-toggle");
-    expect(creation).toContain("同时保存为成长记录");
+    expect(creation).toContain("生成绘本并保存为成长记录");
     expect(creation).toContain('role="switch"');
     expect(creation).not.toContain("minimal-home-growth-option");
     expect(home).toContain('href="/library"');

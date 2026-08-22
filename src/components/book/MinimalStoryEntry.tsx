@@ -256,7 +256,7 @@ const COPY = {
     familyManage: "管理家庭角色",
     familySelected: (count: number) => `已选择 ${count} 位角色`,
     confirmTitle: "确认故事主角",
-    confirmHint: "输入姓名后，标题和人物形象会使用这个名字；正文仍以“我”叙述。",
+    confirmHint: "确认姓名后，标题和人物形象会使用这个名字；你也可以选择用姓名或“我”来讲。",
     nameLabel: "主角姓名",
     relationLabel: "角色身份",
     continueOnce: "确认主角并继续",
@@ -274,8 +274,8 @@ const COPY = {
     cartoonizePet: "将照片转换成统一的卡通拟人形象",
     cartoonizeUsage: (remaining: number) =>
       `每个家庭角色最多生成 ${MAX_FAMILY_CHARACTER_GENERATIONS} 次，还剩 ${remaining} 次`,
-    loginHint: "登录后可以保存姓名、私密照片和绘本形象。",
-    loginAction: "发送登录链接",
+    loginHint: "登录是可选的；需要跨设备保存姓名、私密照片或家庭角色时再登录。",
+    loginAction: "前往登录",
     previewTitle: "确认绘本形象",
     previewUse: "使用这个形象生成绘本",
     previewRetry: "重新生成形象",
@@ -283,7 +283,7 @@ const COPY = {
     growthPageTitle: "把今天的小成长，写进故事里",
     growthTitle: "把这件小事放进孩子的成长书架",
     growthHint: "文字、现场照片和生成后的绘本场景会一起保存在本机。",
-    growthEnable: "保存为成长记录",
+    growthEnable: "同时生成绘本并保存为成长记录（默认开启）",
     growthChild: "记录主角",
     growthChildPending: "生成时确认孩子姓名",
     growthPhotos: "成长现场照片",
@@ -378,7 +378,7 @@ const COPY = {
     familyManage: "Manage family characters",
     familySelected: (count: number) => `${count} characters selected`,
     confirmTitle: "Confirm the main character",
-    confirmHint: "The title and character will use this name; the story itself is still told as “I”.",
+    confirmHint: "The title and character use this name; choose whether the story is told with the name or as “I”.",
     nameLabel: "Main character name",
     relationLabel: "Character role",
     continueOnce: "Confirm and continue",
@@ -396,8 +396,8 @@ const COPY = {
     cartoonizePet: "Turn the photo into a consistent anthropomorphic character",
     cartoonizeUsage: (remaining: number) =>
       `Up to ${MAX_FAMILY_CHARACTER_GENERATIONS} generations per character · ${remaining} left`,
-    loginHint: "Sign in to save names, private photos, and character artwork.",
-    loginAction: "Send sign-in link",
+    loginHint: "Sign-in is optional. Use it when you want names, private photos, or family characters across devices.",
+    loginAction: "Go to sign in",
     previewTitle: "Confirm the storybook character",
     previewUse: "Use this character",
     previewRetry: "Generate another version",
@@ -405,7 +405,7 @@ const COPY = {
     growthPageTitle: "Turn today's little milestone into a story",
     growthTitle: "Keep this moment in the child's growth shelf",
     growthHint: "The note, photos, and generated storybook scene stay together on this device.",
-    growthEnable: "Save as a growth record",
+    growthEnable: "Create the book and save it as a growth record (on by default)",
     growthChild: "Child",
     growthChildPending: "Confirm the child's name before generation",
     growthPhotos: "Moment photos",
@@ -486,7 +486,7 @@ export default function MinimalStoryEntry({
   const text = COPY[locale];
   const initialGrowthDraft = initialGrowthVersion?.draft;
   const creatingGrowthVersion = Boolean(initialGrowthVersion);
-  const { supabase, session, signInWithMagicLink } = useAuth();
+  const { supabase, session } = useAuth();
   const familyAccessToken = session?.access_token || "";
   const familyUserId = session?.user.id || "";
   const [promptIndex, setPromptIndex] = useState(0);
@@ -565,8 +565,6 @@ export default function MinimalStoryEntry({
   const [identityAnchorPreview, setIdentityAnchorPreview] =
     useState<IdentityAnchorPreview | null>(null);
   const [identityError, setIdentityError] = useState("");
-  const [identityEmail, setIdentityEmail] = useState("");
-  const [identityLoginSent, setIdentityLoginSent] = useState(false);
   const [personalizationContext, setPersonalizationContext] =
     useState<LibraryPersonalizationContext | null>(null);
   const [personalizationDraft, setPersonalizationDraft] =
@@ -1598,29 +1596,6 @@ export default function MinimalStoryEntry({
     }
   }
 
-  async function handleIdentityLogin(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setIdentityError("");
-    try {
-      window.localStorage.setItem(
-        PENDING_IDENTITY_KEY,
-        JSON.stringify({
-          savedAt: Date.now(),
-          idea: pendingIdea,
-          name: identityName,
-          relationship: identityRelationship,
-        }),
-      );
-      await signInWithMagicLink(
-        identityEmail,
-        `${window.location.pathname}${window.location.search}${window.location.hash}`,
-      );
-      setIdentityLoginSent(true);
-    } catch (error) {
-      setIdentityError(error instanceof Error ? error.message : "登录链接发送失败。");
-    }
-  }
-
   async function handleSubscribe(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!email.trim()) {
@@ -2475,9 +2450,18 @@ export default function MinimalStoryEntry({
                 <p>
                   {homeHero && growthEnabled
                     ? locale === "zh"
-                      ? "确认孩子姓名；保存成长记录时，正文会使用孩子姓名进行第三人称叙述。"
-                      : "Confirm the child's name. Moment stories use the child's name in third-person narration."
+                      ? "确认孩子姓名；本次会生成绘本并保存为成长记录，正文会使用孩子姓名进行第三人称叙述。"
+                      : "Confirm the child's name. This book will also be saved as a Moment, using the child's name in third-person narration."
                     : text.confirmHint}
+                </p>
+                <p className="minimal-identity-perspective" aria-live="polite">
+                  {growthEnabled
+                    ? locale === "zh"
+                      ? `叙事方式：用“${identityName.trim() || "孩子姓名"}”来讲（第三人称）`
+                      : `Narration: tell it with “${identityName.trim() || "the child's name"}” (third person)`
+                    : locale === "zh"
+                      ? "叙事方式：用“我”来讲（第一人称）"
+                      : "Narration: tell it as “I” (first person)"}
                 </p>
 
                 {familyChoices.length > 0 ? (
@@ -2648,20 +2632,7 @@ export default function MinimalStoryEntry({
                 ) : (
                   <div className="minimal-identity-login">
                     <p>{text.loginHint}</p>
-                    {identityLoginSent ? (
-                      <strong>{locale === "zh" ? "登录链接已发送，请查看邮箱。" : "Sign-in link sent."}</strong>
-                    ) : (
-                      <form onSubmit={handleIdentityLogin}>
-                        <input
-                          type="email"
-                          required
-                          value={identityEmail}
-                          onChange={(event) => setIdentityEmail(event.target.value)}
-                          placeholder={text.emailPlaceholder}
-                        />
-                        <button type="submit">{text.loginAction}</button>
-                      </form>
-                    )}
+                    <Link href="/login">{text.loginAction} →</Link>
                   </div>
                 )}
 
@@ -2670,13 +2641,17 @@ export default function MinimalStoryEntry({
                     <div>
                       <strong>
                         {locale === "zh"
-                          ? "同时保存为成长记录"
-                          : "Also save as a Moment"}
+                          ? "同时生成绘本并保存为成长记录（默认开启）"
+                          : "Create the book and save it as a Moment (on by default)"}
                       </strong>
                       <span>
-                        {locale === "zh"
-                          ? "将当前故事想法作为家长确认的事实，默认保存在本机。"
-                          : "Use this story idea as the parent-confirmed fact and save it on this device."}
+                        {growthEnabled
+                          ? locale === "zh"
+                            ? "当前开关已开启；故事想法会作为家长确认的事实，记录只保存在当前设备。"
+                            : "This is on now. The story idea becomes a parent-confirmed fact, and the record stays on this device."
+                          : locale === "zh"
+                            ? "当前开关已关闭；只生成纯绘本，正文用第一人称，不保存成长记录。"
+                            : "This is off. Create an imagination-first book in first person without saving a Moment."}
                       </span>
                       <Link href="/child-family-data">
                         {locale === "zh" ? "了解数据边界" : "Data details"}
@@ -2688,8 +2663,8 @@ export default function MinimalStoryEntry({
                       aria-checked={growthEnabled}
                       aria-label={
                         locale === "zh"
-                          ? "同时保存为成长记录"
-                          : "Also save as a Moment"
+                          ? "同时生成绘本并保存为成长记录"
+                          : "Create the book and save it as a Moment"
                       }
                       className={growthEnabled ? "active" : ""}
                       onClick={() => {
@@ -2720,7 +2695,10 @@ export default function MinimalStoryEntry({
                     disabled={submitting}
                     onClick={() => {
                       if (growthEnabled) {
-                        setIdentityError(text.growthNameRequired);
+                        setGrowthEnabled(false);
+                        setGrowthFactsConfirmed(false);
+                        setGrowthError("");
+                        setIdentityError("");
                         return;
                       }
                       if (personalizationContext) {

@@ -51,6 +51,7 @@ export type ExecuteTextGenerationInput = {
   protagonistCharacter?: FamilyCharacterInput;
   familyCharacters: FamilyCharacterInput[];
   dailyLimit: number;
+  freeGenerationsRemaining?: number;
   generationPrincipalIds?: string[];
   /** Must atomically confirm or renew the current lease immediately before publish. */
   publishFence?: TextGenerationPublishFence;
@@ -79,7 +80,9 @@ function createGenerateResponse(input: {
   coverTitle: string;
   pages: StoryPage[];
   dailyLimit: number;
+  freeGenerationsRemaining?: number;
 }): GenerateResponse {
+  const hasRemaining = input.freeGenerationsRemaining !== undefined;
   return {
     storyId: input.storyId,
     input: createPublicStoryInput(input.storyInput),
@@ -87,7 +90,15 @@ function createGenerateResponse(input: {
     pages: input.pages,
     totalPages: input.pages.length,
     generationMode: "live",
-    freeChanceLabel: `今日免费生成 ${input.dailyLimit} 次`,
+    freeChanceLabel: hasRemaining
+      ? `今日剩余 ${input.freeGenerationsRemaining} / ${input.dailyLimit} 次`
+      : `今日免费生成 ${input.dailyLimit} 次`,
+    ...(hasRemaining
+      ? {
+          freeGenerationsRemaining: input.freeGenerationsRemaining,
+          freeGenerationsLimit: input.dailyLimit,
+        }
+      : {}),
     imagesPending: true,
   };
 }
@@ -98,6 +109,7 @@ export async function computeTextGeneration(input: {
   protagonistCharacter?: FamilyCharacterInput;
   familyCharacters: FamilyCharacterInput[];
   dailyLimit: number;
+  freeGenerationsRemaining?: number;
   reviewBeforeIllustrations: boolean;
   generationPrincipalIds?: string[];
 }) {
@@ -177,6 +189,7 @@ export async function computeTextGeneration(input: {
     coverTitle,
     pages: previewPages,
     dailyLimit: input.dailyLimit,
+    freeGenerationsRemaining: input.freeGenerationsRemaining,
   });
   return { story, response, status };
 }
@@ -188,6 +201,7 @@ export async function generateAndPersistStory(input: {
   protagonistCharacter?: FamilyCharacterInput;
   familyCharacters: FamilyCharacterInput[];
   dailyLimit: number;
+  freeGenerationsRemaining?: number;
   reviewBeforeIllustrations: boolean;
   generationPrincipalIds?: string[];
   publishFence?: TextGenerationPublishFence;
@@ -225,6 +239,8 @@ export async function executeTextGeneration(input: ExecuteTextGenerationInput) {
       protagonistCharacter: input.protagonistCharacter,
       familyCharacters: input.familyCharacters,
       dailyLimit: input.dailyLimit,
+      freeGenerationsRemaining:
+        input.freeGenerationsRemaining ?? input.task.freeGenerationsRemaining,
       reviewBeforeIllustrations: input.task.reviewBeforeIllustrations,
       generationPrincipalIds:
         input.generationPrincipalIds || input.task.generationPrincipalIds,

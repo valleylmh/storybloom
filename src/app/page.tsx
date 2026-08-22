@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -392,6 +392,22 @@ function readTaskIdFromUrl() {
   return getGenerationTaskIdFromSearch(window.location.search);
 }
 
+function getStoryDocumentTitle(pages: StoryPage[]) {
+  const illustrationStatus = summarizeIllustrationProgress(pages).status;
+  return illustrationStatus === "ready"
+    ? "绘本好了 · StoryBloom"
+    : illustrationStatus === "partially_failed"
+      ? "绘本需修复 · StoryBloom"
+      : "故事已完成 · 插图生成中 · StoryBloom";
+}
+
+function formatGenerationElapsed(ms: number) {
+  const seconds = Math.max(0, Math.floor(ms / 1000));
+  if (seconds < 1) return "不到 1 秒";
+  if (seconds < 60) return `${seconds} 秒`;
+  return `${Math.floor(seconds / 60)} 分钟`;
+}
+
 function pushGeneratingUrl(taskId: string) {
   const url = new URL(window.location.href);
   url.searchParams.delete(STORY_QUERY_KEY);
@@ -451,6 +467,10 @@ export default function Home() {
   const [personalizationEntry, setPersonalizationEntry] = useState(false);
   const [step, setStep] = useState<AppStep>("form");
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
+  const [generationStartedAtMs, setGenerationStartedAtMs] = useState<number | null>(
+    null,
+  );
+  const [generationNowMs, setGenerationNowMs] = useState(() => Date.now());
   const [reviewBeforeIllustrations, setReviewBeforeIllustrations] =
     useState(false);
   const [activeGrowthDraft, setActiveGrowthDraft] =
@@ -682,6 +702,7 @@ export default function Home() {
       setActiveTargetMomentId(null);
     }
     if (sampleModalOpenRef.current) setOwnReadyNotice(true);
+    setGenerationStartedAtMs(null);
     setStep(nextStage);
   }
 
@@ -696,8 +717,25 @@ export default function Home() {
     historyPreviewOpenRef.current = false;
     setSampleResult(null);
     setError(null);
+    setGenerationStartedAtMs(Date.now());
     setStep("generating_text");
   }
+
+  useEffect(() => {
+    if (
+      generationStartedAtMs === null ||
+      (step !== "submitting" && step !== "generating_text")
+    ) {
+      return;
+    }
+
+    setGenerationNowMs(Date.now());
+    const interval = window.setInterval(() => {
+      setGenerationNowMs(Date.now());
+    }, 1000);
+
+    return () => window.clearInterval(interval);
+  }, [generationStartedAtMs, step]);
 
   useEffect(() => {
     let mounted = true;
@@ -956,14 +994,14 @@ export default function Home() {
     };
   }, [sampleResult]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (step === "submitting" || step === "generating_text") {
       document.title = "绘本生成中 · StoryBloom";
       return;
     }
 
     if (result && shouldMountBookPreview(step, true)) {
-      document.title = "绘本好了 · StoryBloom";
+      document.title = getStoryDocumentTitle(result.pages);
       return;
     }
 
@@ -996,6 +1034,7 @@ export default function Home() {
     }
 
     const taskId = createClientGenerationTaskId();
+    setGenerationStartedAtMs(Date.now());
     generationViewActiveRef.current = true;
     latestGeneratedResultRef.current = null;
     historyPreviewOpenRef.current = false;
@@ -1138,6 +1177,7 @@ export default function Home() {
     setResult(null);
     setSampleResult(null);
     setError(null);
+    setGenerationStartedAtMs(null);
     replaceFormUrl();
     setStep("form");
   }
@@ -1175,7 +1215,9 @@ export default function Home() {
     setSampleResult(null);
     setOwnReadyNotice(false);
     setError(null);
+    setGenerationStartedAtMs(null);
     setStep(summarizeIllustrationProgress(record.result.pages).status);
+    document.title = getStoryDocumentTitle(record.result.pages);
   }
 
   function handleHistoryContinue(record: StoryHistoryRecord) {
@@ -1210,6 +1252,8 @@ export default function Home() {
       nextResult.pages,
     ).status;
     setStep(illustrationStatus);
+    setGenerationStartedAtMs(null);
+    document.title = getStoryDocumentTitle(nextResult.pages);
     const illustrationSummary = summarizeIllustrationProgress(nextResult.pages);
     if (illustrationSummary.pending === 0) {
       if (activeTaskIdRef.current) {
@@ -1510,6 +1554,17 @@ export default function Home() {
                 : text.taskGeneratingDetail}
             </p>
             <p className="generation-save-note">{text.taskRecoveryHint}</p>
+            {generationStartedAtMs !== null ? (
+              <p className="generation-elapsed" role="status">
+                {locale === "zh"
+                  ? `已等待 ${formatGenerationElapsed(
+                      generationNowMs - generationStartedAtMs,
+                    )}`
+                  : `Elapsed ${formatGenerationElapsed(
+                      generationNowMs - generationStartedAtMs,
+                    )}`}
+              </p>
+            ) : null}
             <dl className="generation-facts" aria-live="polite">
               <div>
                 <dt>{text.taskStatusLabel}</dt>

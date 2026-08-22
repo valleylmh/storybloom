@@ -92,6 +92,33 @@ beforeEach(() => {
 });
 
 describe("durable text publication fencing", () => {
+  it("returns the remaining free-generation count captured at reservation time", async () => {
+    const result = await executeTextGeneration({
+      task,
+      storyInput: {
+        childName: "童童",
+        ageGroup: "4-5",
+        theme: "custom",
+        customTheme: "整理书包",
+        style: "watercolor",
+        language: "zh",
+      },
+      familyCharacters: [],
+      dailyLimit: 3,
+      freeGenerationsRemaining: 2,
+      persistTerminalFailure: false,
+      publishIdentity,
+      publishFence: vi.fn().mockResolvedValue(true),
+    });
+
+    expect(result.outcome).toBe("succeeded");
+    if (result.outcome === "succeeded") {
+      expect(result.generated.response.freeChanceLabel).toBe("今日剩余 2 / 3 次");
+      expect(result.generated.response.freeGenerationsRemaining).toBe(2);
+      expect(result.generated.response.freeGenerationsLimit).toBe(3);
+    }
+  });
+
   it("does not publish the task result when the lease is lost after Story publication", async () => {
     const publishFence = vi
       .fn()

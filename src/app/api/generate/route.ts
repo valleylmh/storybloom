@@ -290,7 +290,9 @@ function createGenerateResponse(input: {
   coverTitle: string;
   pages: StoryPage[];
   dailyLimit: number;
+  freeGenerationsRemaining?: number;
 }): GenerateResponse {
+  const hasRemaining = input.freeGenerationsRemaining !== undefined;
   return {
     storyId: input.storyId,
     input: createPublicStoryInput(input.storyInput),
@@ -298,15 +300,27 @@ function createGenerateResponse(input: {
     pages: input.pages,
     totalPages: input.pages.length,
     generationMode: "live",
-    freeChanceLabel: `今日免费生成 ${input.dailyLimit} 次`,
+    freeChanceLabel: hasRemaining
+      ? `今日剩余 ${input.freeGenerationsRemaining} / ${input.dailyLimit} 次`
+      : `今日免费生成 ${input.dailyLimit} 次`,
+    ...(hasRemaining
+      ? {
+          freeGenerationsRemaining: input.freeGenerationsRemaining,
+          freeGenerationsLimit: input.dailyLimit,
+        }
+      : {}),
     imagesPending: true,
   };
 }
 
 function createGenerateResponseFromStory(
   story: GeneratedStory,
-  freeChanceLabel?: string,
+  previousResult?: Pick<
+    GenerateResponse,
+    "freeChanceLabel" | "freeGenerationsRemaining" | "freeGenerationsLimit"
+  >,
 ): GenerateResponse {
+  const hasRemaining = previousResult?.freeGenerationsRemaining !== undefined;
   return {
     storyId: story.id,
     input: createPublicStoryInput(story.input),
@@ -315,7 +329,19 @@ function createGenerateResponseFromStory(
     totalPages: story.pages.length,
     generationMode: story.generationMode,
     freeChanceLabel:
-      freeChanceLabel || `今日免费生成 ${getDailyFreeGenerationLimit()} 次`,
+      previousResult?.freeChanceLabel ||
+      (hasRemaining
+        ? `今日剩余 ${previousResult.freeGenerationsRemaining} / ${
+            previousResult.freeGenerationsLimit || getDailyFreeGenerationLimit()
+          } 次`
+        : `今日免费生成 ${getDailyFreeGenerationLimit()} 次`),
+    ...(hasRemaining
+      ? {
+          freeGenerationsRemaining: previousResult.freeGenerationsRemaining,
+          freeGenerationsLimit:
+            previousResult.freeGenerationsLimit || getDailyFreeGenerationLimit(),
+        }
+      : {}),
     imagesPending: !story.pages.every((page) => page.imageStatus === "complete"),
   };
 }
@@ -376,7 +402,7 @@ async function createLatestTextGenerationTaskResponse(task: TextGenerationTask) 
     status: getClientGenerationStatus(story),
     result: createGenerateResponseFromStory(
       story,
-      task.result?.freeChanceLabel,
+      task.result,
     ),
   };
 }
@@ -387,6 +413,7 @@ async function runAsyncTextGeneration(input: {
   protagonistCharacter?: FamilyCharacterInput;
   familyCharacters: FamilyCharacterInput[];
   dailyLimit: number;
+  freeGenerationsRemaining?: number;
   releaseRateLimit: () => Promise<void>;
 }) {
   await executeTextGeneration({
@@ -395,6 +422,7 @@ async function runAsyncTextGeneration(input: {
     protagonistCharacter: input.protagonistCharacter,
     familyCharacters: input.familyCharacters,
     dailyLimit: input.dailyLimit,
+    freeGenerationsRemaining: input.freeGenerationsRemaining,
     onFailure: async () => {
       await input.releaseRateLimit().catch((releaseError) => {
         logGenerationEvent(
@@ -577,7 +605,7 @@ export async function PATCH(req: NextRequest) {
     status: "generating_images",
     result: createGenerateResponseFromStory(
       mutation.story,
-      `今日免费生成 ${getDailyFreeGenerationLimit()} 次`,
+      task.result,
     ),
     updatedAt: new Date().toISOString(),
   };
@@ -896,6 +924,7 @@ export async function POST(req: NextRequest) {
       storyId,
       reviewBeforeIllustrations,
       durableJob: useDurableJobs,
+      freeGenerationsRemaining: remaining,
       generationPrincipalIds,
     });
     let taskReservation: Awaited<
@@ -1085,6 +1114,7 @@ export async function POST(req: NextRequest) {
           protagonistCharacter,
           familyCharacters,
           dailyLimit,
+          freeGenerationsRemaining: remaining,
           releaseRateLimit: rateLimitReservation!.release,
         }),
       );
@@ -1111,6 +1141,7 @@ export async function POST(req: NextRequest) {
       protagonistCharacter,
       familyCharacters,
       dailyLimit,
+      freeGenerationsRemaining: remaining,
       reviewBeforeIllustrations: false,
     });
 
