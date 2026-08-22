@@ -8,6 +8,19 @@ import type { StoryPage } from "@/types";
 
 export type ReaderMode = "turn" | "grid";
 
+function getIllustrationStatusLabel(page: StoryPage) {
+  if (page.imageStatus === "complete" && page.imageUrl) {
+    return `第 ${page.page} 页插图已完成`;
+  }
+  if (page.imageStatus === "failed") {
+    return `第 ${page.page} 页插图生成失败`;
+  }
+  if (page.imageStatus === "pending") {
+    return `第 ${page.page} 页插图正在生成`;
+  }
+  return `第 ${page.page} 页插图等待生成`;
+}
+
 /**
  * 绘本馆翻页阅读器：像翻实体书一样一页一页阅读，
  * 点击插图可放大查看并左右轮播。
@@ -177,9 +190,16 @@ export default function LibraryBookReader({
   }
 
   const lightboxPage = lightboxIndex !== null ? pages[lightboxIndex] : null;
+  const illustrationStatusAnnouncement =
+    readerMode === "turn"
+      ? getIllustrationStatusLabel(page)
+      : `插图状态：${pages.map(getIllustrationStatusLabel).join("；")}`;
 
   return (
     <section className="library-reader" aria-label="绘本正文">
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        {illustrationStatusAnnouncement}
+      </p>
       {showToolbar ? (
         <div className="library-reader-toolbar">
           <div className="library-reader-toolbar-copy">
@@ -245,7 +265,7 @@ export default function LibraryBookReader({
               className={`book-spread book-turn-${turnDirection} ${
                 narrationHighlight ? "book-spread-narrating" : ""
               }`}
-              aria-label={`第 ${page.page} 页，共 ${total} 页`}
+              aria-label={`第 ${page.page} 页，共 ${total} 页，${getIllustrationStatusLabel(page)}`}
             >
               {playbackDurationMs > 0 ? (
                 <progress
@@ -261,7 +281,7 @@ export default function LibraryBookReader({
                     type="button"
                     className="book-image-btn"
                     onClick={() => setLightboxIndex(pageIndex)}
-                    aria-label={`放大查看第 ${page.page} 页插图`}
+                    aria-label={`放大查看第 ${page.page} 页插图，${getIllustrationStatusLabel(page)}`}
                     title="点击放大查看"
                   >
                     <img
@@ -274,7 +294,8 @@ export default function LibraryBookReader({
                   <div
                     className="book-image-fallback"
                     style={{ backgroundColor: `${accent}18`, color: accent }}
-                    aria-hidden="true"
+                    role="img"
+                    aria-label={getIllustrationStatusLabel(page)}
                   >
                     <span>{page.page}</span>
                   </div>
@@ -327,7 +348,7 @@ export default function LibraryBookReader({
                 aria-selected={index === pageIndex}
                 className={`book-thumb ${index === pageIndex ? "book-thumb-active" : ""}`}
                 onClick={() => goToPage(index)}
-                aria-label={`跳到第 ${item.page} 页`}
+                aria-label={`跳到第 ${item.page} 页，${getIllustrationStatusLabel(item)}`}
               >
                 {item.imageUrl && item.imageStatus === "complete" ? (
                   <img src={item.imageUrl} alt="" loading="lazy" />
@@ -349,7 +370,7 @@ export default function LibraryBookReader({
             <article
               key={item.page}
               className="page-card"
-              aria-label={`第 ${item.page} 页`}
+              aria-label={`第 ${item.page} 页，${getIllustrationStatusLabel(item)}`}
             >
               <div className="page-image-frame">
                 {item.imageUrl && item.imageStatus === "complete" ? (
@@ -357,7 +378,7 @@ export default function LibraryBookReader({
                     type="button"
                     className="library-grid-image-btn"
                     onClick={() => setLightboxIndex(index)}
-                    aria-label={`放大查看第 ${item.page} 页插图`}
+                    aria-label={`放大查看第 ${item.page} 页插图，${getIllustrationStatusLabel(item)}`}
                     title="点击放大查看"
                   >
                     <img
@@ -371,7 +392,8 @@ export default function LibraryBookReader({
                   <div
                     className="library-page-fallback"
                     style={{ backgroundColor: `${accent}18`, color: accent }}
-                    aria-hidden="true"
+                    role="img"
+                    aria-label={getIllustrationStatusLabel(item)}
                   >
                     <span>{item.page}</span>
                   </div>
@@ -430,7 +452,8 @@ export default function LibraryBookReader({
                         backgroundColor: `${accent}30`,
                         color: "#fffaf4",
                       }}
-                      aria-hidden="true"
+                      role="img"
+                      aria-label={getIllustrationStatusLabel(lightboxPage)}
                     >
                       <span>{lightboxPage.page}</span>
                     </div>

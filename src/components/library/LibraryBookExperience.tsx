@@ -27,6 +27,7 @@ export default function LibraryBookExperience({
   contentType = "library",
   contentId = storyKey,
   preferCloudTts = true,
+  initialReaderMode = "turn",
   personalizeHref,
 }: {
   title: string;
@@ -36,10 +37,12 @@ export default function LibraryBookExperience({
   contentType?: StoryContentType;
   contentId?: string;
   preferCloudTts?: boolean;
+  initialReaderMode?: ReaderMode;
   personalizeHref?: string;
 }) {
   const [pageIndex, setPageIndex] = useState(0);
-  const [readerMode, setReaderMode] = useState<ReaderMode>("turn");
+  const [readerMode, setReaderMode] =
+    useState<ReaderMode>(initialReaderMode);
   const [languageMode, setLanguageMode] =
     useState<BrowserNarrationMode>("zh");
   const [autoAdvance, setAutoAdvance] = useState(true);
@@ -61,7 +64,7 @@ export default function LibraryBookExperience({
   useEffect(() => {
     let active = true;
     setPageIndex(0);
-    setReaderMode("turn");
+    setReaderMode(initialReaderMode);
     setLanguageMode("zh");
     setAutoAdvance(true);
     setNarrationHighlight(null);
@@ -97,7 +100,7 @@ export default function LibraryBookExperience({
     return () => {
       active = false;
     };
-  }, [contentId, contentType, pages.length, storyKey]);
+  }, [contentId, contentType, initialReaderMode, pages.length, storyKey]);
 
   useEffect(() => {
     if (!bedtimeMode) return;
