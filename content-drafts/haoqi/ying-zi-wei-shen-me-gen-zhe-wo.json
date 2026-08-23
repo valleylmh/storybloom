@@ -1,0 +1,73 @@
+{
+  "_draft": "RESTORED AND REVIEWED DRAFT — text and images were recovered from the prior isolated worktree session.",
+  "book": {
+    "id": "ying-zi-wei-shen-me-gen-zhe-wo",
+    "seriesId": "haoqi",
+    "title": "影子为什么跟着我",
+    "subtitle": "光被挡住后的黑色伙伴",
+    "question": "影子为什么跟着我？",
+    "moral": {
+      "zh": "身体挡住光，另一侧就会出现较暗的影子；人移动时，挡光的位置也一起移动。",
+      "en": "When a body blocks light, it makes a darker area on the other side that moves with the body."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "放学后，乐乐在操场上蹦跳。咦，黑黑的影子也蹦跳！",
+        "enText": "After school, Lele jumps across the playground. Hey, the dark shadow jumps too!",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 1: After school, Lele jumps across the playground. Hey, the dark shadow jumps too! Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 2,
+        "zhText": "“影子为什么总跟着我？”乐乐拉住妈妈的手。",
+        "enText": "\"Why does my shadow always follow me?\" Lele asks, holding Mom's hand.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 2: \"Why does my shadow always follow me?\" Lele asks, holding Mom's hand. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 3,
+        "zhText": "太阳光大致沿直线来到地面。乐乐站住，身体挡住了一部分光。",
+        "enText": "Sunlight travels roughly in straight lines to the ground. When Lele stands still, his body blocks some of it.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 3: Sunlight travels roughly in straight lines to the ground. When Lele stands still, his body blocks some of it. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 4,
+        "zhText": "身体另一侧少了直射光，地上就出现较暗的地方——影子。",
+        "enText": "On the other side of his body, less direct light reaches the ground, making a darker patch: his shadow.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 4: On the other side of his body, less direct light reaches the ground, making a darker patch: his shadow. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 5,
+        "zhText": "乐乐向前走，挡光的位置也向前走，影子便跟着移动。",
+        "enText": "Lele walks forward, and the place where he blocks the light moves forward too, so the shadow moves with him.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 5: Lele walks forward, and the place where he blocks the light moves forward too, so the shadow moves with him. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 6,
+        "zhText": "光源的角度变了，影子的方向也会变，长短还会不一样。",
+        "enText": "When the light source comes from a different angle, the shadow changes direction and can become longer or shorter.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 6: When the light source comes from a different angle, the shadow changes direction and can become longer or shorter. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 7,
+        "zhText": "乐乐跑到路灯下：我懂了！不是影子跟着我，是我一直在挡光。",
+        "enText": "Lele runs under a streetlamp. \"I get it! It isn't following me—I'm carrying the place where I block the light!\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 7: Lele runs under a streetlamp. \"I get it! It isn't following me—I'm carrying the place where I block the light!\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 8,
+        "zhText": "乐乐看看镜子，又问：“镜子为什么能照出我？”",
+        "enText": "Lele looks into a mirror and asks, \"Why can a mirror show me?\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan. Scene for page 8: Lele looks into a mirror and asks, \"Why can a mirror show me?\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-23",
+    "order": 17,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium dreamy 3D clay-like animated children’s picture-book illustration, warm cinematic light, gentle storybook color palette, square composition, consistent characters and materials across pages.",
+    "characterConsistency": "Keep these protagonists identical across all eight pages: Lele, a lively six-year-old East Asian child with short black hair, yellow hoodie, teal shorts and red sneakers, with a caring mother in a coral cardigan.",
+    "negative": "No text, letters, labels, captions, logos, watermarks, scary imagery, distorted anatomy, duplicate main characters, or anthropomorphic Sun, clouds, water, ice, flowers, or animals."
+  }
+}

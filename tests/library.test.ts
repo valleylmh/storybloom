@@ -149,6 +149,26 @@ const HAOQI_BOOK_IDS = [
   "wei-shen-me-yao-shui-jiao",
   "du-zi-wei-shen-me-hui-gu-gu-jiao",
   "hai-shui-wei-shen-me-shi-xian-de",
+  "hai-lang-wei-shen-me-yi-xia-yi-xia",
+  "chao-xi-wei-shen-me-hui-zhang-luo",
+  "bai-tian-wei-shen-me-kan-bu-jian-xing-xing",
+  "yun-wei-shen-me-hui-piao",
+  "xue-wei-shen-me-shi-bai-se-de",
+  "lu-zhu-shi-zen-me-lai-de",
+  "ying-zi-wei-shen-me-gen-zhe-wo",
+  "jing-zi-wei-shen-me-neng-zhao-chu-wo",
+  "fei-zao-pao-wei-shen-me-you-cai-se",
+  "da-lei-wei-shen-me-hui-xiang",
+  "wei-shen-me-xian-kan-dao-shan-dian-zai-ting-dao-lei-sheng",
+  "bing-wei-shen-me-fu-zai-shui-mian",
+  "re-qi-qiu-wei-shen-me-neng-fei",
+  "niao-wei-shen-me-hui-fei",
+  "yu-wei-shen-me-neng-zai-shui-li-hu-xi",
+  "ying-huo-chong-wei-shen-me-hui-fa-guang",
+  "xiang-ri-kui-wei-shen-me-chao-zhe-tai-yang",
+  "zhi-wu-wei-shen-me-xu-yao-yang-guang",
+  "mao-de-hu-zi-you-shen-me-yong",
+  "ban-ma-wei-shen-me-you-tiao-wen",
 ];
 const MAX_LIBRARY_IMAGE_SIZE_BYTES = 300 * 1024;
 
@@ -426,7 +446,7 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
     }
   });
 
-  it("publishes all ten haoqi books with scientifically reviewed optimized images", () => {
+  it("publishes all thirty haoqi books with scientifically reviewed optimized images", () => {
     const books = getSeriesBooks("haoqi");
     expect(books).toHaveLength(HAOQI_BOOK_IDS.length);
     expect(getSeries("haoqi")?.bookCount).toBe(HAOQI_BOOK_IDS.length);

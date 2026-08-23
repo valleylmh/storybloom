@@ -1,0 +1,73 @@
+{
+  "_draft": "RESTORED AND REVIEWED DRAFT — text and images were recovered from the prior isolated worktree session.",
+  "book": {
+    "id": "wei-shen-me-xian-kan-dao-shan-dian-zai-ting-dao-lei-sheng",
+    "seriesId": "haoqi",
+    "title": "为什么先看到闪电再听到雷声",
+    "subtitle": "光和声音的赛跑",
+    "question": "为什么先看到闪电再听到雷声？",
+    "moral": {
+      "zh": "闪电和雷声几乎同时出发，但光比声音快得多，所以我们先看到闪电，再听到雷声。",
+      "en": "Lightning and thunder begin almost together, but light travels much faster than sound, so we see lightning first."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "窗外闪电一亮，小雨点吓得缩了缩。",
+        "enText": "A flash lit the window, and Xiaoyu jumped.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 1: A flash lit the window, and Xiaoyu jumped. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 2,
+        "zhText": "“咦，为什么先看见闪电，再听到雷声？”",
+        "enText": "\"Why do we see lightning before we hear thunder?\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 2: \"Why do we see lightning before we hear thunder?\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 3,
+        "zhText": "闪电让周围空气突然变热、快速膨胀，发出雷声。",
+        "enText": "Lightning heats nearby air very quickly. The air expands and makes thunder.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 3: Lightning heats nearby air very quickly. The air expands and makes thunder. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 4,
+        "zhText": "光和声音几乎同时出发，像一起起跑。",
+        "enText": "The light and sound begin almost together, like runners starting at the same time.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 4: The light and sound begin almost together, like runners starting at the same time. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 5,
+        "zhText": "光每秒跑约三十万公里，声音每秒跑约三百四十米。",
+        "enText": "Light travels about 300,000 kilometers each second. Sound travels about 340 meters.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 5: Light travels about 300,000 kilometers each second. Sound travels about 340 meters. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 6,
+        "zhText": "所以光先到眼睛，声音后到耳朵。别在雷雨中停留哦！",
+        "enText": "So light reaches our eyes first, and sound reaches our ears later. Stay indoors in a storm!",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 6: So light reaches our eyes first, and sound reaches our ears later. Stay indoors in a storm! Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 7,
+        "zhText": "雨声停后，小雨点明白了：闪电和雷声是同场伙伴。",
+        "enText": "When the rain eased, Xiaoyu understood: lightning and thunder belong to the same event.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 7: When the rain eased, Xiaoyu understood: lightning and thunder belong to the same event. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 8,
+        "zhText": "小雨点又问：“那冰为什么能浮在水面呢？”",
+        "enText": "Then Xiaoyu asked, \"Why can ice float on water?\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 8: Then Xiaoyu asked, \"Why can ice float on water?\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-23",
+    "order": 21,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium dreamy 3D clay-like animated children’s picture-book illustration, warm cinematic light, gentle storybook color palette, square composition, consistent characters and materials across pages.",
+    "characterConsistency": "Keep these protagonists identical across all eight pages: Xiao Yu, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan.",
+    "negative": "No text, letters, labels, captions, logos, watermarks, scary imagery, distorted anatomy, duplicate main characters, or anthropomorphic Sun, clouds, water, ice, flowers, or animals."
+  }
+}

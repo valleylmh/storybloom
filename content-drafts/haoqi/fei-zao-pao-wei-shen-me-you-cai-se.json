@@ -1,0 +1,73 @@
+{
+  "_draft": "RESTORED AND REVIEWED DRAFT — text and images were recovered from the prior isolated worktree session.",
+  "book": {
+    "id": "fei-zao-pao-wei-shen-me-you-cai-se",
+    "seriesId": "haoqi",
+    "title": "肥皂泡为什么有彩色",
+    "subtitle": "透明薄膜里的彩虹",
+    "question": "肥皂泡为什么有彩色？",
+    "moral": {
+      "zh": "泡泡薄膜两面反射的光会发生薄膜干涉，不同厚度让不同颜色增强或减弱。",
+      "en": "Light reflected from the two sides of a soap film can interfere, making different colors stronger or weaker."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "阳台上，米米吹出一串泡泡。咦，肥皂泡为什么有彩色？",
+        "enText": "On the balcony, Mimi blows a stream of bubbles. “Why do soap bubbles have colors?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 1: On the balcony, Mimi blows a stream of bubbles. “Why do soap bubbles have colors?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸蹲下来。泡泡明明透明，彩色从哪里来呢？",
+        "enText": "Dad kneels beside her. “They look transparent, so where do the colors come from?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 2: Dad kneels beside her. “They look transparent, so where do the colors come from?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 3,
+        "zhText": "爸爸说：“泡泡外面和里面，夹着一层很薄的肥皂水膜。”",
+        "enText": "Dad explains, “A bubble is a very thin film of soapy water, with air on both sides.”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 3: Dad explains, “A bubble is a very thin film of soapy water, with air on both sides.” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 4,
+        "zhText": "阳光照来，一部分在外表面反射，一部分穿进膜，在内表面反射。",
+        "enText": "When sunlight arrives, some reflects from the outer surface, and some travels through the film and reflects from the inner surface.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 4: When sunlight arrives, some reflects from the outer surface, and some travels through the film and reflects from the inner surface. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 5,
+        "zhText": "两束反射光叠在一起：有的颜色变强，有的变弱，这叫薄膜干涉。",
+        "enText": "The two reflected light waves overlap: some colors become stronger, while others become weaker. This is called thin-film interference.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 5: The two reflected light waves overlap: some colors become stronger, while others become weaker. This is called thin-film interference. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 6,
+        "zhText": "水膜慢慢向下流，越来越薄；颜色流动变化，破前局部还会发暗。",
+        "enText": "The soapy film slowly drains downward and gets thinner. Its colors shift and flow, and parts may grow dark just before it pops.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 6: The soapy film slowly drains downward and gets thinner. Its colors shift and flow, and parts may grow dark just before it pops. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 7,
+        "zhText": "米米点点头：原来彩色来自反射光的叠加，不是泡泡里藏着颜料！",
+        "enText": "Mimi nods. “So the colors come from overlapping reflected light, not paint hiding inside the bubble!”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 7: Mimi nods. “So the colors come from overlapping reflected light, not paint hiding inside the bubble!” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 8,
+        "zhText": "米米又问：“那打雷为什么会响呢？”",
+        "enText": "Mimi asks another question: “Then why does thunder make a sound?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan. Scene for page 8: Mimi asks another question: “Then why does thunder make a sound?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-23",
+    "order": 19,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium dreamy 3D clay-like animated children’s picture-book illustration, warm cinematic light, gentle storybook color palette, square composition, consistent characters and materials across pages.",
+    "characterConsistency": "Keep these protagonists identical across all eight pages: Mimi, a cheerful six-year-old East Asian girl with a black bob, yellow hoodie, teal shorts and red sneakers, with a caring father with curly black hair, round glasses and green cardigan.",
+    "negative": "No text, letters, labels, captions, logos, watermarks, scary imagery, distorted anatomy, duplicate main characters, or anthropomorphic Sun, clouds, water, ice, flowers, or animals."
+  }
+}

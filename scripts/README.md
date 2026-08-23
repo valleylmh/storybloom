@@ -63,6 +63,48 @@ pnpm library:generate chengyu shou-zhu-dai-tu \
 
 草稿目录 `content-drafts/` 建议提交进 git，便于追溯审核修改。
 
+## generate-library-draft-images.ts — 草稿插图批量生成
+
+读取 `content-drafts/haoqi/*.json` 中已经人工审核的草稿，按 `order` 范围逐页调用现有图片 Provider，压缩成 1200×1200 WebP，并写入 `public/library/haoqi/<bookId>/<page>.webp`。已有非空图片会跳过，因此可在个别页面失败后用同一命令安全续跑。
+
+```bash
+node --env-file=.env --env-file=.env.local --import tsx \
+  scripts/generate-library-draft-images.ts \
+  --from 11 --to 30 --concurrency 4
+```
+
+脚本只完成初稿生成和文件规格压缩；上线前仍必须逐本制作联系表，检查人物数量与一致性、无文字/水印、儿童安全和科学画面，再替换不合格页面。
+
+## generate-library-contact-sheets.ts — 插图联系表
+
+将已生成的 8 页 HAOQI 插图拼成 4×2、1200×600 的联系表，供发布前逐本视觉验收：
+
+```bash
+node --import tsx scripts/generate-library-contact-sheets.ts --from 11 --to 30
+```
+
+输出为 `content-drafts/haoqi/<bookId>/contact-sheet.jpg`。脚本只读取既有 WebP；缺页或不是完整 1–8 页会报错，不会把不完整插图标记为已验收。
+
+## import-library-image-grid.ts — 导入经审核的四格重绘图
+
+将一张严格的 2×2 正方形联系图切分为四张正式 1200×1200 WebP。默认不会覆盖已有资源；只有逐页审核后才加 `--replace`：
+
+```bash
+node --import tsx scripts/import-library-image-grid.ts \
+  --source /absolute/path/to/approved-grid.png \
+  --book hai-lang-wei-shen-me-yi-xia-yi-xia \
+  --pages 1,2,3,4 --replace
+```
+
+导入时会验证四格大小一致、重新编码到 300KB 以下；它不生成图片，也不会跳过视觉审核。`--pages` 中的 `0` 表示丢弃对应格子，便于只替换已判定不合格的页。
+
+`build-library-image-grid-prompt.ts` 仅从审核过的草稿生成四格重绘 prompt；它不调用任何 provider：
+
+```bash
+node --import tsx scripts/build-library-image-grid-prompt.ts \
+  --book hai-lang-wei-shen-me-yi-xia-yi-xia --pages 1,2,3,4
+```
+
 ## wechat-publish-library-picture.mjs — 公众号图片消息草稿
 
 读取绘本馆正式书目和 `public/library/<seriesId>/<bookId>/1-8.webp`，生成与网页“社交分享”弹窗一致的 1080×1440 逐页双语贴图，然后创建微信公众号 `newspic` 图片消息草稿。

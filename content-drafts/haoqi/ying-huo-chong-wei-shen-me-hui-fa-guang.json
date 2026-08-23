@@ -1,0 +1,73 @@
+{
+  "_draft": "RESTORED AND REVIEWED DRAFT — text and images were recovered from the prior isolated worktree session.",
+  "book": {
+    "id": "ying-huo-chong-wei-shen-me-hui-fa-guang",
+    "seriesId": "haoqi",
+    "title": "萤火虫为什么会发光",
+    "subtitle": "小小腹部里的冷光信号",
+    "question": "萤火虫为什么会发光？",
+    "moral": {
+      "zh": "萤火虫发光器里的荧光素在荧光素酶、氧气等参与下发生反应，把大部分能量变成光，常用闪光与同类交流、寻找伴侣。",
+      "en": "A reaction involving luciferin, luciferase and oxygen makes fireflies’ cool light, often used to communicate with other fireflies."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "夏夜，小雨和妈妈坐在草地边。草丛里一闪一闪。“萤火虫为什么会发光？”",
+        "enText": "On a summer night, Xiaoyu sits beside a meadow with Mother. Fireflies blink in the grass. “Why do fireflies glow?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 1: On a summer night, Xiaoyu sits beside a meadow with Mother. Fireflies blink in the grass. “Why do fireflies glow?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈轻声说：“我们安静看，不抓它们。答案藏在它的腹部。”",
+        "enText": "Mother whispers, “Let’s watch quietly and not catch them. The answer is inside their abdomens.”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 2: Mother whispers, “Let’s watch quietly and not catch them. The answer is inside their abdomens.” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 3,
+        "zhText": "萤火虫腹部有个发光器，里面有荧光素和荧光素酶。",
+        "enText": "A firefly’s abdomen has a special light organ containing luciferin and luciferase.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 3: A firefly’s abdomen has a special light organ containing luciferin and luciferase. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 4,
+        "zhText": "氧气也参加进来。在荧光素酶帮助下，它们发生化学反应。",
+        "enText": "Oxygen joins in too. With luciferase helping, the substances take part in a chemical reaction.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 4: Oxygen joins in too. With luciferase helping, the substances take part in a chemical reaction. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 5,
+        "zhText": "这场反应把大部分能量变成光，只变出很少的热。",
+        "enText": "This reaction turns most of its energy into light, with only a tiny amount becoming heat.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 5: This reaction turns most of its energy into light, with only a tiny amount becoming heat. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 6,
+        "zhText": "这种光叫生物发光。不同种萤火虫用不同节奏闪光，交流、寻找伙伴。",
+        "enText": "This is called bioluminescence. Different firefly species use different flashing rhythms to communicate and find mates.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 6: This is called bioluminescence. Different firefly species use different flashing rhythms to communicate and find mates. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 7,
+        "zhText": "小雨屏住呼吸观察：“原来，光来自身体里的化学反应！”",
+        "enText": "Xiaoyu holds their breath and watches. “So the light comes from a chemical reaction inside the body!”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 7: Xiaoyu holds their breath and watches. “So the light comes from a chemical reaction inside the body!” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 8,
+        "zhText": "小雨抬头问：“那向日葵为什么朝着太阳呢？”",
+        "enText": "Xiaoyu looks up and asks, “Then why do sunflowers turn toward the sun?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan. Scene for page 8: Xiaoyu looks up and asks, “Then why do sunflowers turn toward the sun?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-23",
+    "order": 26,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium dreamy 3D clay-like animated children’s picture-book illustration, warm cinematic light, gentle storybook color palette, square composition, consistent characters and materials across pages.",
+    "characterConsistency": "Keep these protagonists identical across all eight pages: Xiao Yu, a curious six-year-old East Asian child with a black bob, yellow hoodie and red boots, with a caring mother in a coral cardigan.",
+    "negative": "No text, letters, labels, captions, logos, watermarks, scary imagery, distorted anatomy, duplicate main characters, or anthropomorphic Sun, clouds, water, ice, flowers, or animals."
+  }
+}

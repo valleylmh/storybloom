@@ -1,0 +1,73 @@
+{
+  "_draft": "RESTORED AND REVIEWED DRAFT — text and images were recovered from the prior isolated worktree session.",
+  "book": {
+    "id": "bing-wei-shen-me-fu-zai-shui-mian",
+    "seriesId": "haoqi",
+    "title": "冰为什么浮在水面",
+    "subtitle": "水结冰后的小秘密",
+    "question": "冰为什么浮在水面？",
+    "moral": {
+      "zh": "水结冰时结构变得疏松，同样质量占的体积更大，密度比水小，所以冰会浮起。",
+      "en": "When water freezes, its structure becomes more open, making ice less dense than liquid water so it floats."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "厨房里，冰块“扑通”跳进水杯。小雨问：“冰为什么浮在水面？”",
+        "enText": "In the kitchen, an ice cube plops into a glass. “Why does ice float?” Xiaoyu asks.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 1: In the kitchen, an ice cube plops into a glass. “Why does ice float?” Xiaoyu asks. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈笑着说：“我们先做个冰水实验，看看冰有多少藏在水下。”",
+        "enText": "Mom smiles. “Let’s do a little ice-and-water experiment and see how much ice hides below the water.”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 2: Mom smiles. “Let’s do a little ice-and-water experiment and see how much ice hides below the water.” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 3,
+        "zhText": "水里的小分子总在动。结冰时，它们排成较疏松的晶体空架子。",
+        "enText": "Tiny molecules in water are always moving. As water freezes, they arrange into a more open crystal structure.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 3: Tiny molecules in water are always moving. As water freezes, they arrange into a more open crystal structure. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 4,
+        "zhText": "所以，同样多的水结成冰，体积变大，密度变小，冰就更容易浮起。",
+        "enText": "So the same amount of water takes up more space as ice. Ice is less dense, which helps it float.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 4: So the same amount of water takes up more space as ice. Ice is less dense, which helps it float. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 5,
+        "zhText": "冰块浮着时，大约九成在水下，只有一小角露在水面上。",
+        "enText": "When an ice cube floats, about nine-tenths stays underwater, with only a small part above the surface.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 5: When an ice cube floats, about nine-tenths stays underwater, with only a small part above the surface. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 6,
+        "zhText": "湖面也会这样：上层先结冰，冰层像被子，减慢水的散热，保护水下生物。",
+        "enText": "A lake does this too. The top freezes first, and the ice layer slows heat loss like a blanket, protecting life below.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 6: A lake does this too. The top freezes first, and the ice layer slows heat loss like a blanket, protecting life below. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 7,
+        "zhText": "小雨把冰放进杯里，观察水线：冰大约九成在水下。冰融化后，水面几乎不变。",
+        "enText": "Xiaoyu watches the waterline: about nine-tenths of the ice is underwater. When it melts, the water level barely changes.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 7: Xiaoyu watches the waterline: about nine-tenths of the ice is underwater. When it melts, the water level barely changes. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 8,
+        "zhText": "小雨点点头：“疏松结构让冰的密度更小！”她又问：“热气球为什么能飞？”",
+        "enText": "Xiaoyu nods. “The open structure makes ice less dense!” Then she asks, “Why can a hot-air balloon fly?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan. Scene for page 8: Xiaoyu nods. “The open structure makes ice less dense!” Then she asks, “Why can a hot-air balloon fly?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-23",
+    "order": 22,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium dreamy 3D clay-like animated children’s picture-book illustration, warm cinematic light, gentle storybook color palette, square composition, consistent characters and materials across pages.",
+    "characterConsistency": "Keep these protagonists identical across all eight pages: Xiaoyu, a cheerful six-year-old East Asian child with a black bob, yellow shirt, teal overalls and red boots, with a caring mother in a lavender cardigan.",
+    "negative": "No text, letters, labels, captions, logos, watermarks, scary imagery, distorted anatomy, duplicate main characters, or anthropomorphic Sun, clouds, water, ice, flowers, or animals."
+  }
+}

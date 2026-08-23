@@ -1,0 +1,73 @@
+{
+  "_draft": "RESTORED AND REVIEWED DRAFT — text and images were recovered from the prior isolated worktree session.",
+  "book": {
+    "id": "da-lei-wei-shen-me-hui-xiang",
+    "seriesId": "haoqi",
+    "title": "打雷为什么会响",
+    "subtitle": "闪电让空气发出的声音",
+    "question": "打雷为什么会响？",
+    "moral": {
+      "zh": "闪电让周围空气瞬间变热并迅速膨胀，产生向外传播的压力波，我们听到的就是雷声。",
+      "en": "Lightning heats nearby air so quickly that it expands and sends out the pressure wave we hear as thunder."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "夜雨敲窗，闪电一亮，乐乐缩了缩肩。",
+        "enText": "Rain tapped the window. A flash lit the room, and Lele huddled a little.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 1: Rain tapped the window. A flash lit the room, and Lele huddled a little. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 2,
+        "zhText": "“妈妈，打雷为什么会响？它在天空里做什么？”",
+        "enText": "\"Mom, why does thunder make a sound? What is happening up in the sky?\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 2: \"Mom, why does thunder make a sound? What is happening up in the sky?\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈说：“闪电让周围空气瞬间变得非常热。”",
+        "enText": "Mom explained, \"Lightning makes the air around it extremely hot in an instant.\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 3: Mom explained, \"Lightning makes the air around it extremely hot in an instant.\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 4,
+        "zhText": "热空气来不及慢慢散开，立刻向四周迅速膨胀。",
+        "enText": "The hot air cannot spread out slowly. It expands rapidly in every direction.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 4: The hot air cannot spread out slowly. It expands rapidly in every direction. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 5,
+        "zhText": "这一下推开空气，形成强烈的压力波，向外传播。",
+        "enText": "That sudden push creates a strong pressure wave that travels outward through the air.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 5: That sudden push creates a strong pressure wave that travels outward through the air. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 6,
+        "zhText": "压力波到达耳朵，就是雷声；远处会轰隆拖长。",
+        "enText": "When the pressure waves reach our ears, we hear thunder. From far away, different paths make it rumble longer.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 6: When the pressure waves reach our ears, we hear thunder. From far away, different paths make it rumble longer. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 7,
+        "zhText": "乐乐点点头：“原来雷声是空气的压力波！”",
+        "enText": "Lele nodded. \"So thunder is a pressure wave in the air!\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 7: Lele nodded. \"So thunder is a pressure wave in the air!\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 8,
+        "zhText": "乐乐又问：“为什么先看到闪电，再听到雷声？”",
+        "enText": "Lele asked another question: \"Why do we see lightning before we hear thunder?\"",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan. Scene for page 8: Lele asked another question: \"Why do we see lightning before we hear thunder?\" Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-23",
+    "order": 20,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium dreamy 3D clay-like animated children’s picture-book illustration, warm cinematic light, gentle storybook color palette, square composition, consistent characters and materials across pages.",
+    "characterConsistency": "Keep these protagonists identical across all eight pages: Lele, a curious six-year-old East Asian child with a black bob, blue star hair clip, yellow raincoat and red boots, with a caring mother in a green cardigan.",
+    "negative": "No text, letters, labels, captions, logos, watermarks, scary imagery, distorted anatomy, duplicate main characters, or anthropomorphic Sun, clouds, water, ice, flowers, or animals."
+  }
+}

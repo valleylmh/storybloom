@@ -8,8 +8,28 @@ import shuYeDraft from "../../../content-drafts/haoqi/shu-ye-wei-shen-me-hui-bia
 import weiShenMeShuiJiaoDraft from "../../../content-drafts/haoqi/wei-shen-me-yao-shui-jiao/draft.json";
 import xiaYuDraft from "../../../content-drafts/haoqi/wei-shen-me-hui-xia-yu/draft.json";
 import xingXingDraft from "../../../content-drafts/haoqi/xing-xing-wei-shen-me-hui-zha-yan/draft.json";
+import baiTianXingXingDraft from "../../../content-drafts/haoqi/bai-tian-wei-shen-me-kan-bu-jian-xing-xing.json";
+import banMaDraft from "../../../content-drafts/haoqi/ban-ma-wei-shen-me-you-tiao-wen.json";
+import bingDraft from "../../../content-drafts/haoqi/bing-wei-shen-me-fu-zai-shui-mian.json";
+import chaoXiDraft from "../../../content-drafts/haoqi/chao-xi-wei-shen-me-hui-zhang-luo.json";
+import daLeiDraft from "../../../content-drafts/haoqi/da-lei-wei-shen-me-hui-xiang.json";
+import feiZaoPaoDraft from "../../../content-drafts/haoqi/fei-zao-pao-wei-shen-me-you-cai-se.json";
+import haiLangDraft from "../../../content-drafts/haoqi/hai-lang-wei-shen-me-yi-xia-yi-xia.json";
+import jingZiDraft from "../../../content-drafts/haoqi/jing-zi-wei-shen-me-neng-zhao-chu-wo.json";
+import luZhuDraft from "../../../content-drafts/haoqi/lu-zhu-shi-zen-me-lai-de.json";
+import maoHuZiDraft from "../../../content-drafts/haoqi/mao-de-hu-zi-you-shen-me-yong.json";
+import niaoDraft from "../../../content-drafts/haoqi/niao-wei-shen-me-hui-fei.json";
+import reQiQiuDraft from "../../../content-drafts/haoqi/re-qi-qiu-wei-shen-me-neng-fei.json";
+import shanDianLeiShengDraft from "../../../content-drafts/haoqi/wei-shen-me-xian-kan-dao-shan-dian-zai-ting-dao-lei-sheng.json";
+import xiangRiKuiDraft from "../../../content-drafts/haoqi/xiang-ri-kui-wei-shen-me-chao-zhe-tai-yang.json";
+import xueDraft from "../../../content-drafts/haoqi/xue-wei-shen-me-shi-bai-se-de.json";
+import yingHuoChongDraft from "../../../content-drafts/haoqi/ying-huo-chong-wei-shen-me-hui-fa-guang.json";
+import yingZiDraft from "../../../content-drafts/haoqi/ying-zi-wei-shen-me-gen-zhe-wo.json";
+import yuHuXiDraft from "../../../content-drafts/haoqi/yu-wei-shen-me-neng-zai-shui-li-hu-xi.json";
+import yunDraft from "../../../content-drafts/haoqi/yun-wei-shen-me-hui-piao.json";
+import zhiWuYangGuangDraft from "../../../content-drafts/haoqi/zhi-wu-wei-shen-me-xu-yao-yang-guang.json";
 
-// 任务 C：10 本均遵守科学性审核与插图验收流程，并坚持
+// 任务 C：全系列均遵守科学性审核与插图验收流程，并坚持
 // “简化但不错误”的原则（见 docs/feature-roadmap-tasks.md 任务 C）。
 
 interface HaoqiBookDraft {
@@ -33,6 +53,37 @@ const EXPANDED_HAOQI_DRAFTS: HaoqiBookDraft[] = [
   weiShenMeShuiJiaoDraft,
   duZiDraft,
   haiShuiDraft,
+];
+
+interface GeneratedHaoqiDraft {
+  book: Omit<LibraryBook, "pages"> & {
+    pages: Array<
+      Pick<StoryPage, "page" | "zhText" | "enText" | "illustrationPrompt">
+    >;
+  };
+}
+
+const NEW_HAOQI_DRAFTS: GeneratedHaoqiDraft[] = [
+  haiLangDraft,
+  chaoXiDraft,
+  baiTianXingXingDraft,
+  yunDraft,
+  xueDraft,
+  luZhuDraft,
+  yingZiDraft,
+  jingZiDraft,
+  feiZaoPaoDraft,
+  daLeiDraft,
+  shanDianLeiShengDraft,
+  bingDraft,
+  reQiQiuDraft,
+  niaoDraft,
+  yuHuXiDraft,
+  yingHuoChongDraft,
+  xiangRiKuiDraft,
+  zhiWuYangGuangDraft,
+  maoHuZiDraft,
+  banMaDraft,
 ];
 
 const TIAN_KONG_LAN_PAGES: Array<{ zh: string; en: string; prompt: string }> = [
@@ -172,6 +223,21 @@ function draftToLibraryBook(
   };
 }
 
+function generatedDraftToLibraryBook(draft: GeneratedHaoqiDraft): LibraryBook {
+  const book = draft.book;
+  return {
+    ...book,
+    seriesId: "haoqi",
+    publishedAt: "2026-08-23",
+    comingSoon: false,
+    pages: book.pages.map((page) => ({
+      ...page,
+      imageUrl: `/library/haoqi/${book.id}/${page.page}.webp`,
+      imageStatus: "complete",
+    })),
+  };
+}
+
 export const HAOQI_BOOKS: LibraryBook[] = [
   {
     id: "tian-kong-wei-shen-me-shi-lan-se",
@@ -214,6 +280,7 @@ export const HAOQI_BOOKS: LibraryBook[] = [
   ...EXPANDED_HAOQI_DRAFTS.map((draft) =>
     draftToLibraryBook(draft, "complete", false),
   ),
+  ...NEW_HAOQI_DRAFTS.map(generatedDraftToLibraryBook),
 ];
 
 export const HAOQI_SERIES: LibrarySeries = {

@@ -1,0 +1,73 @@
+{
+  "_draft": "RESTORED AND REVIEWED DRAFT — text and images were recovered from the prior isolated worktree session.",
+  "book": {
+    "id": "chao-xi-wei-shen-me-hui-zhang-luo",
+    "seriesId": "haoqi",
+    "title": "潮汐为什么会涨落",
+    "subtitle": "月亮、太阳与旋转的海岸",
+    "question": "潮汐为什么会涨落？",
+    "moral": {
+      "zh": "月球和太阳的引力、地球自转以及海岸地形共同影响潮汐。",
+      "en": "The Moon, Sun, Earth’s rotation, and the shape of a coast all influence the tides."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨的沙滩上，小雨用贝壳画下水线：“妈妈，海水怎么退远了？”",
+        "enText": "On the beach that morning, Xiaoyu marked the waterline with a shell. “Mom, why has the sea moved farther away?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 1: On the beach that morning, Xiaoyu marked the waterline with a shell. “Mom, why has the sea moved farther away?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 2,
+        "zhText": "傍晚再来，水线又靠近了。小雨抱住妈妈：潮汐为什么会涨落？",
+        "enText": "When they returned in the evening, the waterline was closer again. Xiaoyu hugged Mom. “Why do the tides rise and fall?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 2: When they returned in the evening, the waterline was closer again. Xiaoyu hugged Mom. “Why do the tides rise and fall?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈说：月球的引力遍及地球，近处和远处受力略不同，海水因此形成两处隆起。",
+        "enText": "Mom explained, “The Moon’s gravity reaches across Earth. It pulls a little differently at different places, making two broad ocean bulges.”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 3: Mom explained, “The Moon’s gravity reaches across Earth. It pulls a little differently at different places, making two broad ocean bulges.” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 4,
+        "zhText": "一处隆起朝着月球，另一处在背向月球的一边；不是只吸起正下方的海水。",
+        "enText": "One bulge faces the Moon, and the other is on the far side of Earth. The Moon is not simply lifting water right below itself.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 4: One bulge faces the Moon, and the other is on the far side of Earth. The Moon is not simply lifting water right below itself. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 5,
+        "zhText": "太阳也有引力。月球、太阳和地球排成一线时，潮差常较大；方向成直角时，潮差常较小。",
+        "enText": "The Sun has gravity too. When the Sun, Moon, and Earth line up, the difference between high and low tide is often larger. At a right angle, it is often smaller.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 5: The Sun has gravity too. When the Sun, Moon, and Earth line up, the difference between high and low tide is often larger. At a right angle, it is often smaller. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 6,
+        "zhText": "地球自转，让海岸轮流经过高低潮；海岸形状和水深也会改变潮汐。",
+        "enText": "As Earth spins, coasts pass through high and low tides. Coastline shape and water depth also change each tide.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 6: As Earth spins, each coast passes through a bulge and then a lower place, so its waterline rises and falls. Coastlines and water depth can change the timing and height. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 7,
+        "zhText": "下午水线果然远了。小雨说：“月球、太阳、自转和海岸都在影响潮汐！”",
+        "enText": "That afternoon the waterline was farther out. “The Moon, Sun, Earth’s spin, and the coast all shape the tides!” said Xiaoyu.",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 7: When they came back that afternoon, the waterline was farther out. “The Moon makes two bulges, Earth’s spin brings them past us, and the Sun and coast matter too!” said Xiaoyu. Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      },
+      {
+        "page": 8,
+        "zhText": "小雨抬头问：“白天为什么看不见星星呢？”",
+        "enText": "Xiaoyu looked up and asked, “Then why can’t we see the stars in daytime?”",
+        "illustrationPrompt": "Premium dreamy 3D clay-like children’s science picture-book illustration. Same protagonists on every page: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans. Scene for page 8: Xiaoyu looked up and asked, “Then why can’t we see the stars in daytime?” Warm cinematic light, safe child-friendly setting, accurate science visualization where needed, square composition, no text in image, no letters, no labels, no logos, no watermark, no anthropomorphic natural objects."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-23",
+    "order": 12,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium dreamy 3D clay-like animated children’s picture-book illustration, warm cinematic light, gentle storybook color palette, square composition, consistent characters and materials across pages.",
+    "characterConsistency": "Keep these protagonists identical across all eight pages: Xiaoyu, a curious six-year-old East Asian child with a short brown bob, yellow raincoat, teal rain boots and a small red shell-shaped bag, with a caring mother in a cream cardigan and blue jeans.",
+    "negative": "No text, letters, labels, captions, logos, watermarks, scary imagery, distorted anatomy, duplicate main characters, or anthropomorphic Sun, clouds, water, ice, flowers, or animals."
+  }
+}
