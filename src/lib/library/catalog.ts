@@ -50,6 +50,12 @@ export function createLibraryBookSummary(
       book.moral?.en,
       book.idiomMeaning?.zh,
       book.idiomMeaning?.en,
+      book.poem?.dynasty,
+      book.poem?.author,
+      ...(book.poem?.originalLines ?? []),
+      ...(book.poem?.englishLines ?? []),
+      book.poem?.appreciation.zh,
+      book.poem?.appreciation.en,
       ...metadata.tags,
     ]
       .filter(Boolean)

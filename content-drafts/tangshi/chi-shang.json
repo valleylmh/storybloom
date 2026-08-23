@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "chi-shang",
+    "seriesId": "tangshi",
+    "title": "池上",
+    "subtitle": "浮萍藏不住的小秘密",
+    "poem": {
+      "dynasty": "唐",
+      "author": "白居易",
+      "originalLines": [
+        "小娃撑小艇，",
+        "偷采白莲回。",
+        "不解藏踪迹，",
+        "浮萍一道开。"
+      ],
+      "englishLines": [
+        "A child poles a little boat,",
+        "Returning with a secretly picked white lotus.",
+        "Not knowing how to hide the trail,",
+        "He parts the duckweed in a bright green line."
+      ],
+      "appreciation": {
+        "zh": "小娃想藏住采莲的小秘密，却让分开的浮萍画出一条路，天真和调皮都藏不住。",
+        "en": "The child tries to hide a lotus-picking secret, but the parted duckweed draws a trail—innocence and mischief cannot stay hidden."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "小娃撑小艇，\n偷采白莲回。\n不解藏踪迹，\n浮萍一道开。",
+        "enText": "A child poles a little boat,\nReturning with a secretly picked white lotus.\nNot knowing how to hide the trail,\nHe parts the duckweed in a bright green line.",
+        "illustrationPrompt": "Sunny summer lotus pond in a safe enclosed Tang village garden, a cheerful small child in pale ochre robe and teal trousers stands steadily in a tiny wooden skiff using a short pole in shallow calm water, one white lotus rests in the boat and a clear trail parts bright green duckweed behind, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "小娃撑小艇，\n小娃双手握着竹篙，让小船慢慢穿过荷叶。",
+        "enText": "A child poles a little boat.\nBoth hands guide the skiff gently between lotus leaves.",
+        "illustrationPrompt": "Medium-wide view of the same Tang child standing low and balanced in the same small wooden skiff, both hands safely gripping a short bamboo pole, boat gliding slowly between broad lotus leaves in shallow calm pond, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "偷采白莲回。\n他悄悄摘下一朵白莲，开心地往回划。",
+        "enText": "Returning with a secretly picked white lotus.\nA white bloom rides home in the little boat.",
+        "illustrationPrompt": "The same child sits securely in the skiff with one freshly picked white lotus placed beside him, looking delighted and slightly mischievous while turning the boat homeward, abundant unbroken lotus plants remain around him, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "不解藏踪迹，\n他只顾着守住小秘密，却不知道水面也会留下脚印。",
+        "enText": "Not knowing how to hide the trail.\nHe guards his secret but forgets that water keeps a path.",
+        "illustrationPrompt": "Overhead three-quarter view of the same child glancing around playfully from the skiff, unaware of the long visible wake behind; green duckweed covers the rest of the pond like a soft carpet, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "浮萍一道开。\n船头一过，密密的浮萍向两边分开，画出一条长长的绿路。",
+        "enText": "He parts the duckweed in a bright green line.\nThe bow opens a long path across the pond.",
+        "illustrationPrompt": "High top-down view emphasizing the same small boat cutting one clean winding channel through dense bright green duckweed, child and white lotus clearly visible, water trail sparkling in the sun, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "小船走得轻轻的，白莲也藏得好好的，可那条水路一直跟在后面。",
+        "enText": "The boat moves softly and the lotus stays tucked away, but the watery trail follows behind.",
+        "illustrationPrompt": "Long side-wide pond view with the same child quietly poling toward shore, white lotus partly tucked beside the seat, unmistakable parted-duckweed trail stretching across the otherwise still surface, playful visual storytelling, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "诗人没有责怪小娃，只笑着看见：孩子的小秘密，总会露出可爱的尾巴。",
+        "enText": "The poet does not scold; he smiles at how a child's little secret leaves a charming clue.",
+        "illustrationPrompt": "Warm humorous scene near the pond bank: the same child arrives with shy proud smile and lotus while a kind adult observer under a willow notices the obvious green water trail, no anger or punishment, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "小娃撑小艇，\n偷采白莲回。\n不解藏踪迹，\n浮萍一道开。\n再轻轻读一遍吧。",
+        "enText": "A child poles a little boat,\nReturning with a secretly picked white lotus.\nNot knowing how to hide the trail,\nHe parts the duckweed in a bright green line.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing golden summer view of the same child carrying the white lotus safely on shore beside the tied skiff, the parted duckweed path slowly closing across the glowing pond, willow and lotus blossoms framing the scene, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 10,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same small Tang child throughout: about six years old, round cheerful face, black hair in two small side buns, pale ochre short cross-collar robe, teal trousers, red-brown sash and straw sandals; same low stable wooden skiff, short bamboo pole, white lotus and calm shallow pond.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, deep dangerous water, child falling or standing precariously, punishment, frightening animals, photorealism, extra limbs, distorted boat or anatomy"
+  }
+}

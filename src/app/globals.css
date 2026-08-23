@@ -5737,11 +5737,13 @@ img {
   margin: 0 0 8px;
   font-size: 1rem;
   line-height: 1.8;
+  white-space: pre-line;
 }
 
 .page-en {
   margin: 0;
   line-height: 1.7;
+  white-space: pre-line;
 }
 
 .custom-page {

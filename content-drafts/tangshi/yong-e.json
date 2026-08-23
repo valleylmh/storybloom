@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "yong-e",
+    "seriesId": "tangshi",
+    "title": "咏鹅",
+    "subtitle": "白鹅拨开一池清波",
+    "poem": {
+      "dynasty": "唐",
+      "author": "骆宾王",
+      "originalLines": [
+        "鹅，鹅，鹅，",
+        "曲项向天歌。",
+        "白毛浮绿水，",
+        "红掌拨清波。"
+      ],
+      "englishLines": [
+        "Geese, geese, geese,",
+        "Curved necks sing to the sky.",
+        "White feathers float on green water,",
+        "Red feet paddle through clear ripples."
+      ],
+      "appreciation": {
+        "zh": "诗人用声音、颜色和动作，画出一群自在又神气的白鹅。",
+        "en": "With sound, color, and movement, the poet paints a lively flock of proud white geese."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "鹅，鹅，鹅，\n曲项向天歌。\n白毛浮绿水，\n红掌拨清波。",
+        "enText": "Geese, geese, geese,\nCurved necks sing to the sky.\nWhite feathers float on green water,\nRed feet paddle through clear ripples.",
+        "illustrationPrompt": "A joyful wide view of three elegant white geese gliding across a clear green lotus pond, long necks lifted, red-orange webbed feet visible beneath gentle ripples, willow branches and distant low Tang-era garden walls secondary, fresh morning light, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "鹅，鹅，鹅，\n三声呼唤，把安静的池边叫热闹了。",
+        "enText": "Geese, geese, geese!\nThree bright calls wake the quiet pond.",
+        "illustrationPrompt": "Medium-wide pond-edge scene of the same three white geese gathering near the reeds, beaks open in cheerful calls, tiny concentric ripples and startled dragonflies showing the sudden sound, playful energy with generous sky and water, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "曲项向天歌。\n白鹅弯起长长的脖子，朝天空放声歌唱。",
+        "enText": "Curved necks sing to the sky.\nThe geese lift their long necks and call aloud.",
+        "illustrationPrompt": "Low child-eye viewpoint close to the water, one leading white goose gracefully curves its long neck upward while two companions echo behind, pale blue sky framed by loose willow leaves, expressive but natural birds, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "白毛浮绿水，\n雪白的羽毛，轻轻托在碧绿的池水上。",
+        "enText": "White feathers float on green water.\nTheir snowy bodies rest lightly on the jade-green pond.",
+        "illustrationPrompt": "Calm side view emphasizing the clean white feathers of the same geese floating weightlessly over translucent jade-green water, soft reflections and a few round lotus leaves, serene balanced composition, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "红掌拨清波。\n红红的脚掌一划，清亮的水纹就一圈圈荡开。",
+        "enText": "Red feet paddle through clear ripples.\nOne stroke sends shining rings across the water.",
+        "illustrationPrompt": "Gentle near-water close-up showing red-orange webbed feet paddling beneath the clear surface while the white goose body remains visible above, sparkling circular ripples spreading across the pond, anatomically correct and child-friendly, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "耳朵听见鹅歌，眼睛看见白、绿、红，整座池塘都活了起来。",
+        "enText": "We hear their song and see white, green, and red—the whole pond comes alive.",
+        "illustrationPrompt": "Lively panoramic pond scene combining the poem's sensory details: three singing white geese, green water, red feet, swaying reeds, darting dragonflies and layered ripples, harmonious rather than crowded, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "认真看一看，平常的白鹅，也能变成一幅有声音的画。",
+        "enText": "Look closely, and an ordinary goose becomes a painting full of sound.",
+        "illustrationPrompt": "Quiet reflective composition of one white goose centered among soft ink-wash water and willow shadows, its wake forming an elegant curved path, the scene feeling observed with wonder rather than magical, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "鹅，鹅，鹅，\n曲项向天歌。\n白毛浮绿水，\n红掌拨清波。\n再轻轻读一遍吧。",
+        "enText": "Geese, geese, geese,\nCurved necks sing to the sky.\nWhite feathers float on green water,\nRed feet paddle through clear ripples.\nNow read it softly once more.",
+        "illustrationPrompt": "Warm closing view at golden morning light: the same three white geese travel together across the calm green pond, long reflections and widening ripples leading toward open space, peaceful invitation to remember the poem, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 1,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same three natural white geese throughout: smooth white feathers, long graceful necks, small orange beaks, red-orange webbed feet, friendly alert eyes, no clothing or human expressions.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, photorealism, human-like goose hands or clothes, frightening imagery, muddy focal subjects, distorted anatomy"
+  }
+}

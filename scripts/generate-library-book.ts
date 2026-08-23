@@ -21,16 +21,100 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 import process from "node:process";
 import { z } from "zod";
-import { requestCpaStory, STYLE_SPINES } from "../src/lib/story-generator";
 import type { LibraryBook } from "../src/types/library";
 
 // Package scripts run from the project root. Using cwd also keeps this file
 // compatible with tsx's CommonJS transform in a package without `type: module`.
 const ROOT = path.resolve(process.cwd());
+const LIBRARY_FAIRYTALE_STYLE =
+  "premium dreamy 3D cartoon fairytale illustration, whimsical lighting, magical atmosphere, rounded clay-like character materials, elegant storybook scene, consistent camera, lighting, material, and color palette across the whole series";
+const DEFAULT_STORY_TEXT_MODEL = "gemini-3-flash";
+
+type ChatCompletionResponse = {
+  choices?: Array<{ message?: { content?: string } }>;
+  error?: { message?: string };
+};
+
+function positiveIntegerEnv(name: string, fallback: number) {
+  const parsed = Number.parseInt(process.env[name] ?? "", 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+async function requestCpaStory(
+  system: string,
+  user: string,
+  sampling: { temperature: number; topP: number },
+) {
+  const apiKey = process.env.CPA_API_KEY?.trim();
+  const configuredBaseUrl = process.env.CPA_BASE_URL?.trim();
+  if (!apiKey || !configuredBaseUrl) return null;
+
+  const endpoint = `${configuredBaseUrl.replace(/\/+$/, "")}/chat/completions`;
+  const model = process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_STORY_TEXT_MODEL;
+  const timeoutMs = positiveIntegerEnv(
+    "STORY_TEXT_TIMEOUT_MS",
+    positiveIntegerEnv("CPA_TEXT_TIMEOUT_MS", 120_000),
+  );
+  const maxTokens = positiveIntegerEnv("STORY_TEXT_MAX_TOKENS", 8192);
+  const maxAttempts = positiveIntegerEnv("STORY_TEXT_MAX_ATTEMPTS", 2);
+  let lastError: unknown = new Error("Text provider request failed");
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        signal: controller.signal,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+          "HTTP-Referer":
+            process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
+          "X-Title": "StoryBloom Library Draft Generator",
+        },
+        body: JSON.stringify({
+          model,
+          temperature: sampling.temperature,
+          top_p: sampling.topP,
+          max_tokens: maxTokens,
+          messages: [
+            { role: "system", content: system },
+            { role: "user", content: user },
+          ],
+        }),
+      });
+      const data = (await response.json().catch(() => ({}))) as ChatCompletionResponse;
+      if (!response.ok) {
+        throw new Error(
+          data.error?.message || `Text provider returned HTTP ${response.status}`,
+        );
+      }
+      const content = data.choices?.[0]?.message?.content;
+      if (!content) throw new Error("Text provider returned no content");
+      return content;
+    } catch (error) {
+      lastError = error;
+      if (attempt === maxAttempts) throw error;
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  throw lastError;
+}
 
 const bilingualSchema = z.object({
   zh: z.string().trim().min(1),
   en: z.string().trim().min(1),
+});
+
+const poemSchema = z.object({
+  dynasty: z.string().trim().min(1),
+  author: z.string().trim().min(1),
+  originalLines: z.array(z.string().trim().min(1)).length(4),
+  englishLines: z.array(z.string().trim().min(1)).length(4),
+  appreciation: bilingualSchema,
 });
 
 const draftPageSchema = z.object({
@@ -43,11 +127,12 @@ const draftPageSchema = z.object({
 const modelOutputSchema = z.object({
   title: z.string().trim().min(1),
   subtitle: z.string().trim().min(1),
-  // chengyu/xiyouji 产出 origin；haoqi 产出 question；idiomMeaning 仅 chengyu
+  // chengyu/xiyouji 产出 origin；haoqi 产出 question；tangshi 产出 poem
   origin: z.string().trim().min(1).optional(),
   question: z.string().trim().min(1).optional(),
   idiomMeaning: bilingualSchema.optional(),
-  moral: bilingualSchema,
+  poem: poemSchema.optional(),
+  moral: bilingualSchema.optional(),
   imagePromptKit: z.object({
     globalStyle: z.string().trim().min(1),
     characterConsistency: z.string().trim().min(1),
@@ -72,6 +157,7 @@ const libraryBookSchema = z.object({
   question: z.string().trim().min(1).optional(),
   moral: bilingualSchema.optional(),
   idiomMeaning: bilingualSchema.optional(),
+  poem: poemSchema.optional(),
   pages: z.array(draftPageSchema).length(8),
   ageLabel: z.string().trim().min(1),
   publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
@@ -99,7 +185,7 @@ Rules:
 - Chinese text: at most 40 characters per page, rhythmic and pleasant to read aloud.
 - English text: a natural free translation for ages 4-8, not word-for-word.
 - Every illustrationPrompt must describe one concrete storybook scene in English: setting, props, visible action, emotion, camera distance, composition, and end with "no text in image". Keep the same protagonist appearance across all 8 prompts.
-- imagePromptKit.globalStyle: one reusable style sentence for the whole series, based on: ${STYLE_SPINES.fairytale}
+- imagePromptKit.globalStyle: one reusable style sentence for the whole series, based on: ${LIBRARY_FAIRYTALE_STYLE}
 - imagePromptKit.characterConsistency: one sentence locking the protagonist's appearance (clothing colors, hair, build, era) across all pages.
 - imagePromptKit.negative: one sentence of things to avoid (text, watermarks, scary imagery, distorted anatomy, modern objects).
 
@@ -125,7 +211,7 @@ Rules:
 - Chinese text: at most 40 characters per page, rhythmic for reading aloud.
 - English text: natural free translation for ages 4-8.
 - Every illustrationPrompt: one concrete scene in English (setting, props, action, emotion, camera distance, composition), ending with "no text in image".
-- imagePromptKit.globalStyle: one reusable sentence based on: ${STYLE_SPINES.fairytale}
+- imagePromptKit.globalStyle: one reusable sentence based on: ${LIBRARY_FAIRYTALE_STYLE}
 - imagePromptKit.characterConsistency: lock every recurring character's appearance across pages and across episodes.
 - imagePromptKit.negative: things to avoid (text, watermarks, scary imagery, weapons aimed at characters, modern objects).
 
@@ -148,7 +234,7 @@ Rules:
 - Chinese text: at most 45 characters per page, warm and read-aloud friendly.
 - English text: natural free translation for ages 4-8.
 - Every illustrationPrompt: one concrete scene in English (setting, props, action, emotion, camera distance, composition), ending with "no text in image". Keep the same child and family member appearance across all pages.
-- imagePromptKit.globalStyle: one reusable sentence based on: ${STYLE_SPINES.fairytale}
+- imagePromptKit.globalStyle: one reusable sentence based on: ${LIBRARY_FAIRYTALE_STYLE}
 - imagePromptKit.characterConsistency: lock the child protagonist's appearance across pages.
 - imagePromptKit.negative: things to avoid (text, watermarks, scary imagery, incorrect science visuals like a literal face on the sun explaining things as fact).
 
@@ -158,6 +244,39 @@ Return only valid JSON:
   "subtitle": "a short poetic Chinese tagline",
   "question": "the full question with question mark, e.g. 天空为什么是蓝色的？",
   "moral": { "zh": "一句话总结的科学答案", "en": "one-line answer" },
+  "imagePromptKit": { "globalStyle": "...", "characterConsistency": "...", "negative": "..." },
+  "pages": [ { "page": 1, "zhText": "...", "enText": "...", "illustrationPrompt": "..." } ]
+}`;
+
+const TANGSHI_SYSTEM = `You are an expert editor of Tang poetry and a bilingual children's picture-book author.
+Turn one four-line Tang poem into an 8-page read-aloud picture book for ages 4-8. Series name: 唐诗入画.
+
+Rules:
+- Preserve the supplied Chinese poem exactly. Do not modernize, paraphrase, reorder, or silently substitute textual variants.
+- Write an original, natural English poetic translation. Do not copy a published translator.
+- Do not invent a child protagonist or fictional adventure. Help the child enter the poem through visible scenery, sound, movement, and emotion.
+- Follow this exact page map:
+  1. The complete four-line Chinese poem and the complete four-line English translation.
+  2-5. One original line per page, followed by a short child-friendly explanation of the visible image or action.
+  6. Connect what the poet sees and hears across the whole poem.
+  7. Explain the feeling or imagination gently, without forcing a moral lesson.
+  8. Repeat the complete poem and invite the child to read it softly once more.
+- Chinese explanation text must be concise and natural for ages 4-8. English must be a free, child-friendly equivalent.
+- Every illustrationPrompt must describe one concrete square scene in English with Tang-era setting accuracy where people or buildings appear.
+- Use a playful contemporary Chinese ink-and-watercolor picture-book style: rice-paper texture, soft ink wash, mineral blue-green and restrained cinnabar, generous breathing room, friendly shapes.
+- Images must contain no written poem, calligraphy, captions, seals, logos, watermarks, modern objects, frightening imagery, or photorealism.
+
+Return only valid JSON:
+{
+  "title": "poem title",
+  "subtitle": "a short poetic Chinese tagline for children",
+  "poem": {
+    "dynasty": "唐",
+    "author": "author name",
+    "originalLines": ["exact line 1", "exact line 2", "exact line 3", "exact line 4"],
+    "englishLines": ["original English line 1", "original English line 2", "original English line 3", "original English line 4"],
+    "appreciation": { "zh": "一句温柔诗意", "en": "one gentle appreciation" }
+  },
   "imagePromptKit": { "globalStyle": "...", "characterConsistency": "...", "negative": "..." },
   "pages": [ { "page": 1, "zhText": "...", "enText": "...", "illustrationPrompt": "..." } ]
 }`;
@@ -177,6 +296,11 @@ const SERIES_TEMPLATES: Record<string, SeriesTemplate> = {
     system: HAOQI_SYSTEM,
     buildUser: (brief) =>
       `Create the 8-page science story for this question: ${brief} Return only the JSON object, no markdown fences.`,
+  },
+  tangshi: {
+    system: TANGSHI_SYSTEM,
+    buildUser: (brief) =>
+      `Create the 8-page poetry picture book from this authoritative poem text and editorial brief: ${brief} Return only the JSON object, no markdown fences.`,
   },
 };
 
@@ -296,11 +420,18 @@ async function main() {
   }
 
   const modelOutput = modelOutputSchema.parse(extractJson(raw));
+  if (seriesId === "tangshi" && !modelOutput.poem) {
+    fail("Tang poetry drafts must include poem metadata.");
+  }
+  if (seriesId !== "tangshi" && !modelOutput.moral) {
+    fail(`${seriesId} drafts must include a bilingual moral.`);
+  }
 
   for (const page of modelOutput.pages) {
-    if (page.zhText.length > 40) {
+    const targetLength = seriesId === "tangshi" ? 100 : 40;
+    if (page.zhText.length > targetLength) {
       console.warn(
-        `[generate-library-book] warning: page ${page.page} zhText is ${page.zhText.length} chars (target ≤ 40) — trim during review.`,
+        `[generate-library-book] warning: page ${page.page} zhText is ${page.zhText.length} chars (target ≤ ${targetLength}) — trim during review.`,
       );
     }
   }

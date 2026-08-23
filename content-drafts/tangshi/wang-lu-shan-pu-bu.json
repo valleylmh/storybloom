@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "wang-lu-shan-pu-bu",
+    "seriesId": "tangshi",
+    "title": "望庐山瀑布",
+    "subtitle": "从山顶飞下来的银河",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": [
+        "日照香炉生紫烟，",
+        "遥看瀑布挂前川。",
+        "飞流直下三千尺，",
+        "疑是银河落九天。"
+      ],
+      "englishLines": [
+        "Sunlight crowns Incense Burner Peak with violet mist.",
+        "From afar, the waterfall hangs before the mountain.",
+        "Its flying stream plunges three thousand feet.",
+        "Could the Milky Way be falling from the highest sky?"
+      ],
+      "appreciation": {
+        "zh": "真实的阳光、云雾和瀑布，在大胆想象里变成从九天落下的银河。",
+        "en": "Sunlight, mist, and falling water become, through bold imagination, a river of stars pouring from the heavens."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "日照香炉生紫烟，\n遥看瀑布挂前川。\n飞流直下三千尺，\n疑是银河落九天。",
+        "enText": "Sunlight crowns Incense Burner Peak with violet mist.\nFrom afar, the waterfall hangs before the mountain.\nIts flying stream plunges three thousand feet.\nCould the Milky Way be falling from the highest sky?",
+        "illustrationPrompt": "Grand wide view of Mount Lu in bright morning light, violet-tinted mist rises around Incense Burner Peak and a long white waterfall drops down the dark green cliff; a small adult Tang poet in pale blue stands safely at a distant overlook for scale, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "日照香炉生紫烟，\n阳光照上香炉峰，水汽和云雾染出淡淡的紫色。",
+        "enText": "Sunlight crowns Incense Burner Peak with violet mist.\nMorning light colors the rising cloud and spray.",
+        "illustrationPrompt": "Morning close-wide view of Incense Burner Peak, warm sunlight meets cool mountain vapor to create subtle violet mist, layered rock and pines visible through translucent wash, natural atmospheric color rather than smoke from fire, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "遥看瀑布挂前川。\n远远望去，白色瀑布像一条长长的绸带挂在山前。",
+        "enText": "From afar, the waterfall hangs before the mountain.\nIt looks like a long white ribbon suspended on the cliff.",
+        "illustrationPrompt": "Distant viewpoint with the same pale-blue-robed poet standing on a safe rocky terrace, the entire white waterfall appears ribbonlike against the vertical green-black mountain face, balanced scale and negative space, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "飞流直下三千尺，\n水从高处飞快落下，长得好像有三千尺。",
+        "enText": "Its flying stream plunges three thousand feet.\nWater rushes down from an astonishing height.",
+        "illustrationPrompt": "Dynamic upward-looking view along the powerful waterfall, white water and fine spray descend through the tall square frame while cliff pines provide scale, energetic brushwork but no danger or people near the edge, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "疑是银河落九天。\n诗人仰头惊叹：会不会是天上的银河落下来了？",
+        "enText": "Could the Milky Way be falling from the highest sky?\nThe poet looks up and imagines a river of stars.",
+        "illustrationPrompt": "The same Tang poet gazes upward in delighted wonder as sunlit waterfall spray sparkles like a faint starry river, grounded daytime mountain scene with only a gentle visual resemblance to the Milky Way, no literal outer space portal, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "先看见紫雾，再看见长瀑；目光从山脚一路抬到天空，瀑布越来越壮阔。",
+        "enText": "Mist leads to waterfall, and our eyes travel from the valley all the way to the sky.",
+        "illustrationPrompt": "Sweeping vertical landscape composition connecting misty valley, full waterfall, high peak and luminous sky in one continuous view, the poet a tiny stable figure at the bottom, clear visual journey upward, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "“三千尺”和“银河”不是尺子量出的答案，而是惊喜大得装不下了。",
+        "enText": "“Three thousand feet” and “the Milky Way” express wonder too large for ordinary words.",
+        "illustrationPrompt": "Warm medium scene of the same poet smiling in awe with sleeves gently lifted by waterfall breeze, immense cascade behind him yet safely distant, expressive scale and imagination without written symbols, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "日照香炉生紫烟，\n遥看瀑布挂前川。\n飞流直下三千尺，\n疑是银河落九天。\n再轻轻读一遍吧。",
+        "enText": "Sunlight crowns Incense Burner Peak with violet mist.\nFrom afar, the waterfall hangs before the mountain.\nIts flying stream plunges three thousand feet.\nCould the Milky Way be falling from the highest sky?\nNow read it softly once more.",
+        "illustrationPrompt": "Closing panoramic Mount Lu view in clear golden light, violet mist thins around the peak, the white waterfall glows across the full cliff and the same poet continues along a safe valley path, majestic but peaceful, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 6,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "When visible, keep the same adult Tang poet: tall slim build, lively oval face, black hair in a high knot, pale blue flowing cross-collar robe, dark indigo sash and travel shoes; keep Mount Lu's long white waterfall and violet morning mist recognizable.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern structures, photorealism, literal space portal, fire or chimney smoke on the mountain, dangerous cliff pose, frightening flood, distorted anatomy"
+  }
+}

@@ -2,6 +2,7 @@ import type { LibraryBook, LibrarySeries } from "@/types/library";
 import { CHENGYU_BOOKS, CHENGYU_SERIES } from "./chengyu";
 import { HAOQI_BOOKS, HAOQI_SERIES } from "./haoqi";
 import { isPublishedLibraryBook } from "./status";
+import { TANGSHI_BOOKS, TANGSHI_SERIES } from "./tangshi";
 import { XIYOUJI_BOOKS, XIYOUJI_SERIES } from "./xiyouji";
 
 // 预告占位卡（/library 首页展示，不可点击、无路由）。
@@ -12,12 +13,14 @@ const BOOKS_BY_SERIES: Record<string, LibraryBook[]> = {
   [CHENGYU_SERIES.id]: sortBooks(CHENGYU_BOOKS),
   [XIYOUJI_SERIES.id]: sortBooks(XIYOUJI_BOOKS),
   [HAOQI_SERIES.id]: sortBooks(HAOQI_BOOKS),
+  [TANGSHI_SERIES.id]: sortBooks(TANGSHI_BOOKS),
 };
 
 const SERIES: LibrarySeries[] = [
   CHENGYU_SERIES,
   XIYOUJI_SERIES,
   HAOQI_SERIES,
+  TANGSHI_SERIES,
 ].map((series) => ({
   ...series,
   bookCount: (BOOKS_BY_SERIES[series.id] ?? []).filter(isPublishedLibraryBook)

@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "deng-guan-que-lou",
+    "seriesId": "tangshi",
+    "title": "登鹳雀楼",
+    "subtitle": "再上一层，看得更远",
+    "poem": {
+      "dynasty": "唐",
+      "author": "王之涣",
+      "originalLines": [
+        "白日依山尽，",
+        "黄河入海流。",
+        "欲穷千里目，",
+        "更上一层楼。"
+      ],
+      "englishLines": [
+        "The white sun sinks behind the mountains.",
+        "The Yellow River runs toward the sea.",
+        "To see a thousand miles farther,",
+        "Climb one more level of the tower."
+      ],
+      "appreciation": {
+        "zh": "落日和大河把天地铺得很远，而再上一层的脚步，让眼界继续打开。",
+        "en": "Sunset and river open a vast world, and one more upward step lets the view unfold even farther."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "白日依山尽，\n黄河入海流。\n欲穷千里目，\n更上一层楼。",
+        "enText": "The white sun sinks behind the mountains.\nThe Yellow River runs toward the sea.\nTo see a thousand miles farther,\nClimb one more level of the tower.",
+        "illustrationPrompt": "Majestic wide sunset view from a historically inspired Tang frontier tower: a thoughtful adult poet in a russet robe stands on an upper balcony, the pale sun sinks behind layered mountains and the broad Yellow River curves toward the horizon, wooden railings and tiled eaves accurate and secondary, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "白日依山尽，\n白亮的太阳慢慢靠近群山，最后藏到山后。",
+        "enText": "The white sun sinks behind the mountains.\nIt leans toward the peaks and slowly disappears.",
+        "illustrationPrompt": "Panoramic mountain horizon at sunset viewed from the tower, a pale round sun half hidden behind layered ink-wash peaks, the same poet small at the railing to show scale, warm amber fading into mineral blue, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "黄河入海流。\n脚下的黄河滚滚向前，一直奔向看不见的远方。",
+        "enText": "The Yellow River runs toward the sea.\nBelow, the great river keeps moving toward a faraway horizon.",
+        "illustrationPrompt": "High-angle view from the tower over the broad ochre-gold Yellow River sweeping through the plain, small period boats moving safely with the current, distant water dissolving into mist, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "欲穷千里目，\n诗人还想看得更远：山的后面、河的尽头，会是什么样？",
+        "enText": "To see a thousand miles farther.\nWhat lies beyond the mountains and at the river's end?",
+        "illustrationPrompt": "Medium view of the same poet at a lower balcony shading his eyes and studying the vast horizon with bright curiosity, mountains and river partially blocked by the upper eaves, clear desire for a wider view, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "更上一层楼。\n于是，他转身踏上木阶，再向高处走一层。",
+        "enText": "Climb one more level of the tower.\nHe turns and walks up the wooden stairs.",
+        "illustrationPrompt": "Dynamic but calm interior stair scene inside the Tang tower, the same poet climbs sturdy wooden steps toward an opening filled with sunset light, one hand lightly on the rail, accurate robe movement and architecture, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "到了高处，落日、群山和黄河连在一起，眼前的天地忽然更辽阔了。",
+        "enText": "From higher up, sun, mountains, and river join into one immense view.",
+        "illustrationPrompt": "Expansive reveal from the highest balcony: the same poet sees the complete landscape of sinking sun, layered mountains, winding Yellow River and endless plain in one sweeping square composition, exhilaration without spectacle, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "有时，只要愿意多走一步，原来看不到的风景就会出现。",
+        "enText": "Sometimes one more step reveals a view that was hidden before.",
+        "illustrationPrompt": "Quiet symbolic scene grounded in reality: the same poet stands firmly on the upper floor while the open horizon fills most of the image, a simple upward staircase remains visible behind him, confident and thoughtful mood, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "白日依山尽，\n黄河入海流。\n欲穷千里目，\n更上一层楼。\n再轻轻读一遍吧。",
+        "enText": "The white sun sinks behind the mountains.\nThe Yellow River runs toward the sea.\nTo see a thousand miles farther,\nClimb one more level of the tower.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing twilight panorama from outside the tall wooden tower, the same poet a small peaceful silhouette on the top balcony, last sun glow behind mountains and river shining toward the distance, spacious inspiring finish, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 4,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "When visible, keep the same adult Tang poet: lean build, open thoughtful face, black hair in a high topknot, muted russet cross-collar robe, dark teal sash and black cloth shoes; keep the same sturdy multi-level wooden frontier tower with tiled eaves.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern city, modern ships, fantasy tower, unsafe broken railings, photorealism, frightening height, distorted architecture or anatomy"
+  }
+}

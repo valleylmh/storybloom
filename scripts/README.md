@@ -32,6 +32,14 @@ pnpm library:generate chengyu shou-zhu-dai-tu \
   --order 1
 ```
 
+示例（唐诗入画，素材中应给出经过校对的完整原诗）：
+
+```bash
+pnpm library:generate tangshi jing-ye-si \
+  "李白《静夜思》：床前明月光，疑是地上霜。举头望明月，低头思故乡。保留原文，以月光和思乡为意境导读。" \
+  --order 2
+```
+
 - `--dry-run`：只打印 prompt，不调用 API（检查 prompt 内容用）。
 - 需要 `.env.local` 中配置文本模型（`CPA_API_KEY` 等，与 `/api/generate` 相同）。脚本自己加载 `.env.local` / `.env`。
 - 生成失败会**响亮报错退出**，绝不回退到模板内容（与线上生成链路的兜底行为刻意不同）。
@@ -55,7 +63,7 @@ pnpm library:generate chengyu shou-zhu-dai-tu \
 ### 审核与上线流程（人工环节，不可跳过）
 
 1. **生成草稿**：运行脚本，得到 `content-drafts/<seriesId>/<bookId>.json`。
-2. **人工审核文字**：直接编辑 JSON——中文节奏/字数（每页 ≤ 40 字）、英文自然度、教育性、结局温和化、`idiomMeaning`/`moral` 准确性。
+2. **人工审核文字**：直接编辑 JSON——中文节奏/字数、英文自然度、教育性、结局温和化、`idiomMeaning`/`moral` 准确性。唐诗还必须逐字核对 `poem.originalLines`，英文译意应为项目原创表达，不复制现成译本。
 3. **生成插图**：为 8 页分别生成插图。先用第 1 页建立角色、服装和材质锚点，后续页面复用同一参考图或等效的身份约束。每页最终 prompt = `imagePromptKit.globalStyle` + `imagePromptKit.characterConsistency` + 该页 `illustrationPrompt` + `imagePromptKit.negative`（流程同 [docs/sample-book-prompts/README.md](../docs/sample-book-prompts/README.md)）。无论使用哪种工具，都必须人工挑选并复核整本角色一致性。
 4. **放置图片**：webp、单张 ≤ 300KB，放 `public/library/<seriesId>/<bookId>/<page>.webp`（1-8）。
 5. **转正式数据**：把审核后的 `book` 对象搬进 `src/lib/library/<seriesId>.ts`：每页补 `imageUrl: "/library/<seriesId>/<bookId>/<n>.webp"` 与 `imageStatus: "complete"`；确认 `order`；移除 `comingSoon`。
@@ -77,13 +85,14 @@ node --env-file=.env --env-file=.env.local --import tsx \
 
 ## generate-library-contact-sheets.ts — 插图联系表
 
-将已生成的 8 页 HAOQI 插图拼成 4×2、1200×600 的联系表，供发布前逐本视觉验收：
+将指定系列已生成的 8 页插图拼成 4×2、1200×600 的联系表，供发布前逐本视觉验收；`--series` 默认为 `haoqi`：
 
 ```bash
-node --import tsx scripts/generate-library-contact-sheets.ts --from 11 --to 30
+node --import tsx scripts/generate-library-contact-sheets.ts \
+  --series tangshi --from 1 --to 10
 ```
 
-输出为 `content-drafts/haoqi/<bookId>/contact-sheet.jpg`。脚本只读取既有 WebP；缺页或不是完整 1–8 页会报错，不会把不完整插图标记为已验收。
+输出为 `content-drafts/<seriesId>/<bookId>/contact-sheet.jpg`。脚本只读取既有 WebP；缺页或不是完整 1–8 页会报错，不会把不完整插图标记为已验收。
 
 ## import-library-image-grid.ts — 导入经审核的四格重绘图
 

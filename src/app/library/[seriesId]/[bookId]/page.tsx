@@ -43,14 +43,19 @@ export async function generateMetadata({
   }
 
   const description =
-    book.idiomMeaning?.zh || book.moral?.zh || `${book.title} · ${book.subtitle}`;
+    book.idiomMeaning?.zh ||
+    book.poem?.appreciation.zh ||
+    book.moral?.zh ||
+    `${book.title} · ${book.subtitle}`;
   const coverPage = book.pages[0];
   const cover =
     coverPage?.imageStatus === "complete" ? coverPage.imageUrl : undefined;
   // 「为什么」类问题句是高价值搜索词（任务 C），有 question 时直接作标题主体
   const title = book.question
     ? `${book.question} - 儿童科普双语绘本 | StoryBloom`
-    : `${book.title} - 中英双语${series.title}绘本 | StoryBloom`;
+    : book.poem
+      ? `${book.title} - ${book.poem.author}唐诗双语绘本 | StoryBloom`
+      : `${book.title} - 中英双语${series.title}绘本 | StoryBloom`;
 
   return {
     title,
@@ -111,6 +116,9 @@ export default async function LibraryBookPage({
     inLanguage: ["zh-CN", "en"],
     numberOfPages: book.pages.length,
     datePublished: book.publishedAt,
+    ...(book.poem
+      ? { author: { "@type": "Person", name: book.poem.author } }
+      : {}),
     isPartOf: {
       "@type": "BookSeries",
       name: `StoryBloom ${series.title}`,
@@ -161,6 +169,11 @@ export default async function LibraryBookPage({
         <div className="library-book-detail-actions">
           <div className="library-book-facts" aria-label="绘本信息">
             <span>{LIBRARY_CATEGORY_LABELS[bookMetadata.category]}</span>
+            {book.poem ? (
+              <span>
+                {book.poem.dynasty} · {book.poem.author}
+              </span>
+            ) : null}
             <span>约 {bookMetadata.estimatedMinutes} 分钟</span>
             <span>
               {bookMetadata.ageRange.min}-{bookMetadata.ageRange.max} 岁
@@ -234,10 +247,17 @@ export default async function LibraryBookPage({
         </section>
       </noscript>
 
-      {book.moral ? (
-        <section className="library-moral" aria-label="寓意">
-          <p className="library-moral-zh">{book.moral.zh}</p>
-          <p className="library-moral-en">{book.moral.en}</p>
+      {book.poem?.appreciation || book.moral ? (
+        <section
+          className="library-moral"
+          aria-label={book.poem ? "诗意" : "寓意"}
+        >
+          <p className="library-moral-zh">
+            {book.poem?.appreciation.zh ?? book.moral?.zh}
+          </p>
+          <p className="library-moral-en">
+            {book.poem?.appreciation.en ?? book.moral?.en}
+          </p>
         </section>
       ) : null}
 
@@ -278,19 +298,18 @@ export default async function LibraryBookPage({
         shareUrl={toAbsoluteAppUrl(`/library/${series.id}/${book.id}`)}
       />
 
-      <section className="library-cta" aria-label="生成专属绘本">
-        <h2>让孩子走进这个故事</h2>
-        <p>
-          生成一本以孩子为主角的「{book.title}」新编绘本，
-          或写下任何一个小心愿，几分钟做成专属中英双语绘本。
-        </p>
-        <Link
-          href={personalizeHref}
-          className="library-cta-btn"
-        >
-          让孩子成为故事主角
-        </Link>
-      </section>
+      {bookMetadata.personalizationEnabled ? (
+        <section className="library-cta" aria-label="生成专属绘本">
+          <h2>让孩子走进这个故事</h2>
+          <p>
+            生成一本以孩子为主角的「{book.title}」新编绘本，
+            或写下任何一个小心愿，几分钟做成专属中英双语绘本。
+          </p>
+          <Link href={personalizeHref} className="library-cta-btn">
+            让孩子成为故事主角
+          </Link>
+        </section>
+      ) : null}
     </main>
   );
 }

@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "lu-chai",
+    "seriesId": "tangshi",
+    "title": "鹿柴",
+    "subtitle": "空山里的一束晚光",
+    "poem": {
+      "dynasty": "唐",
+      "author": "王维",
+      "originalLines": [
+        "空山不见人，",
+        "但闻人语响。",
+        "返景入深林，",
+        "复照青苔上。"
+      ],
+      "englishLines": [
+        "Empty mountains—no one can be seen.",
+        "Yet voices echo somewhere.",
+        "Returning sunlight enters the deep woods.",
+        "And shines again upon green moss."
+      ],
+      "appreciation": {
+        "zh": "山林看似空寂，却有远远的人声和落在青苔上的晚光，安静里藏着生命。",
+        "en": "The mountain seems empty, yet distant voices and late light on moss reveal a quiet world full of life."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "空山不见人，\n但闻人语响。\n返景入深林，\n复照青苔上。",
+        "enText": "Empty mountains—no one can be seen.\nYet voices echo somewhere.\nReturning sunlight enters the deep woods.\nAnd shines again upon green moss.",
+        "illustrationPrompt": "Serene wide view into an empty mountain forest at late afternoon, layered pines and broadleaf trees recede into pale mist, a narrow path curves out of sight, one shaft of returning sunlight reaches deep green moss in the foreground, no people visible, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "空山不见人，\n山路弯进树林，四下望去，一个人影也没有。",
+        "enText": "Empty mountains—no one can be seen.\nThe path bends into the woods, with not a person in sight.",
+        "illustrationPrompt": "Child-eye wide view along the same winding mountain path under tall trees, open clear foreground and softly layered empty slopes beyond, no human figure, peaceful rather than lonely, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "但闻人语响。\n看不见人，却有说话声从远处传来，在山谷里轻轻回荡。",
+        "enText": "Yet voices echo somewhere.\nUnseen speakers sound faintly through the valley.",
+        "illustrationPrompt": "View across the same wooded valley with no people visible; a few distant birds pause and leaves subtly stir as if listening, overlapping ridges and the hidden path suggest voices traveling from beyond the frame, no visible sound symbols, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "返景入深林，\n太阳快落山时，一束金色的光又斜斜钻进密林。",
+        "enText": "Returning sunlight enters the deep woods.\nNear sunset, a golden beam slips between the trees.",
+        "illustrationPrompt": "Late sunbeam enters the same dense forest at a low angle, illuminating trunks, floating dust and fern edges while most of the woods remain cool mineral green, dramatic yet gentle natural light, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "复照青苔上。\n光走过树干，最后停在柔软湿润的青苔上。",
+        "enText": "And shines again upon green moss.\nThe light crosses the trunks and settles on soft damp moss.",
+        "illustrationPrompt": "Intimate ground-level close view of lush green moss on an old stone and tree roots, touched by one warm patch of sunset light, tiny leaves and dew rendered simply and clearly, no animals or people needed, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "山里没有人影，却有人声；树林很暗，却亮起一小块青苔。",
+        "enText": "No person appears, yet voices remain; the woods are dim, yet one patch of moss glows.",
+        "illustrationPrompt": "Balanced forest composition showing the hidden curving path in the upper distance and the illuminated moss in the lower foreground, cool shadow and warm light held together, no visible people, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "安静并不是什么都没有。越轻的声音、越小的光，越值得慢慢发现。",
+        "enText": "Quiet does not mean empty. Small sounds and little lights reward careful attention.",
+        "illustrationPrompt": "Contemplative forest clearing with a tiny stream, one resting bird and the warm moss light as subtle signs of life, ample rice-paper negative space between branches, meditative child-friendly mood, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "空山不见人，\n但闻人语响。\n返景入深林，\n复照青苔上。\n再轻轻读一遍吧。",
+        "enText": "Empty mountains—no one can be seen.\nYet voices echo somewhere.\nReturning sunlight enters the deep woods.\nAnd shines again upon green moss.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing wide forest view as late light fades, the glowing moss remains the small focal point beneath tall quiet trees and a pale mountain ridge, the hidden path continues beyond sight, peaceful open ending, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 5,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep one continuous late-afternoon mountain forest world across all pages: layered pines and broadleaf trees, a winding hidden path, dark green moss, pale mist and low golden returning sunlight; no visible human figure.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, visible people, ghosts, magical glowing creatures, frightening darkness, photorealism, neon colors, muddy focal point"
+  }
+}

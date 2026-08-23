@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "chun-xiao",
+    "seriesId": "tangshi",
+    "title": "春晓",
+    "subtitle": "鸟声叫醒花香的早晨",
+    "poem": {
+      "dynasty": "唐",
+      "author": "孟浩然",
+      "originalLines": [
+        "春眠不觉晓，",
+        "处处闻啼鸟。",
+        "夜来风雨声，",
+        "花落知多少。"
+      ],
+      "englishLines": [
+        "Sleeping in spring, I missed the dawn.",
+        "Birdsong rises everywhere.",
+        "Last night came the sound of wind and rain.",
+        "How many blossoms fell, I wonder?"
+      ],
+      "appreciation": {
+        "zh": "一个春日早晨，从鸟鸣想到夜雨，也从喜悦里生出对落花的怜爱。",
+        "en": "A spring morning begins with birdsong, remembers the night's rain, and holds a tender thought for fallen blossoms."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "春眠不觉晓，\n处处闻啼鸟。\n夜来风雨声，\n花落知多少。",
+        "enText": "Sleeping in spring, I missed the dawn.\nBirdsong rises everywhere.\nLast night came the sound of wind and rain.\nHow many blossoms fell, I wonder?",
+        "illustrationPrompt": "Fresh spring dawn around a modest Tang-era garden room, peach blossoms and young willow leaves glowing after rain, several small birds singing from branches while a gentle adult poet wakes behind an open lattice window, dew and a few fallen petals visible, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "春眠不觉晓，\n春夜暖暖的，诗人睡得香，天亮了也没有察觉。",
+        "enText": "Sleeping in spring, I missed the dawn.\nThe warm night made sleep so deep that morning arrived unnoticed.",
+        "illustrationPrompt": "Quiet Tang-era bedroom just after sunrise, the same gentle adult poet still resting beneath a light woven cover, soft golden dawn entering through the lattice, budding branches outside, peaceful natural sleep, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "处处闻啼鸟。\n一睁眼，窗外这边一声、那边一声，到处都是鸟鸣。",
+        "enText": "Birdsong rises everywhere.\nOne call comes from here, another from there, filling the garden.",
+        "illustrationPrompt": "The same poet sits up smiling toward the open window as sparrows and orioles sing from different branches across the spring garden, visible sound suggested by lively poses and fluttering leaves without symbols, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "夜来风雨声，\n他想起昨夜半梦半醒时，听见风吹窗、雨敲叶。",
+        "enText": "Last night came the sound of wind and rain.\nHalf asleep, he heard wind at the window and rain on the leaves.",
+        "illustrationPrompt": "Nighttime memory shown as one continuous scene: the same room under deep blue spring rain, branches bend gently beyond the closed lattice and droplets tap broad leaves, the poet rests safely inside under warm lamplight, no split panels, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "花落知多少。\n风雨走后，枝头还在开花，地上也多了柔软的花瓣。",
+        "enText": "How many blossoms fell, I wonder?\nFlowers still bloom above, while soft petals now cover the ground.",
+        "illustrationPrompt": "Morning garden close-medium view after rain, the same poet steps outside and looks gently at pink petals scattered on wet stone while many blossoms remain on the branches, fresh rather than sad, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "先听见清亮的鸟声，再想起昨夜的风雨，春天就在声音里慢慢醒来。",
+        "enText": "Birdsong leads back to last night's rain, and spring slowly wakes through sound.",
+        "illustrationPrompt": "Wide harmonious garden scene linking morning details: singing birds, rain-bright leaves, dripping eaves and fallen petals, the same poet listening beneath a porch, layered depth and airy spring light, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "诗人喜欢热闹的春晨，也惦记被风雨吹落的花，快乐里藏着温柔。",
+        "enText": "He enjoys the lively morning yet cares for the fallen flowers—joy can hold tenderness too.",
+        "illustrationPrompt": "The same poet gently lifts one fallen blossom from the wet path while birds continue singing overhead, a thoughtful warm smile and abundant living flowers keep the mood hopeful, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "春眠不觉晓，\n处处闻啼鸟。\n夜来风雨声，\n花落知多少。\n再轻轻读一遍吧。",
+        "enText": "Sleeping in spring, I missed the dawn.\nBirdsong rises everywhere.\nLast night came the sound of wind and rain.\nHow many blossoms fell, I wonder?\nNow read it softly once more.",
+        "illustrationPrompt": "Warm closing panorama of the rain-washed Tang garden under rising sun, the same poet at the doorway, birds crossing the sky, blossoms above and a delicate path of petals below, luminous spring renewal, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 3,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "When visible, keep the same gentle adult Tang poet: early thirties, calm round-oval face, black hair in a simple topknot, light moss-green cross-collar robe, cream inner layer and brown sash; modest wooden garden room with lattice window.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, photorealism, frightening storm, dead garden, magical sound symbols, split panels, distorted anatomy"
+  }
+}

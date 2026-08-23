@@ -3,11 +3,14 @@ import { HOME_FEATURED_LIBRARY_BOOKS } from "../src/lib/library/home-featured";
 import { getBook, getSeries } from "../src/lib/library";
 
 describe("homepage library series selection", () => {
-  it("shows one published book from each real library series", () => {
+  it("keeps the curated homepage trio and leaves tangshi in the library", () => {
     expect(HOME_FEATURED_LIBRARY_BOOKS).toHaveLength(3);
     expect(
       new Set(HOME_FEATURED_LIBRARY_BOOKS.map((book) => book.seriesId)).size,
     ).toBe(3);
+    expect(
+      HOME_FEATURED_LIBRARY_BOOKS.map((book) => String(book.seriesId)),
+    ).not.toContain("tangshi");
 
     for (const featured of HOME_FEATURED_LIBRARY_BOOKS) {
       const series = getSeries(featured.seriesId);

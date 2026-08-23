@@ -19,30 +19,32 @@ const COLUMNS = 4;
 function parseArgs(argv: string[]) {
   let from = 1;
   let to = Number.MAX_SAFE_INTEGER;
+  let series = "haoqi";
 
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === "--from") from = Number(argv[++index]);
     else if (arg === "--to") to = Number(argv[++index]);
+    else if (arg === "--series") series = argv[++index]?.trim() || "";
     else throw new Error(`Unknown argument: ${arg}`);
   }
 
-  if (![from, to].every(Number.isFinite)) {
-    throw new Error("--from and --to must be valid numbers");
+  if (![from, to].every(Number.isFinite) || !series) {
+    throw new Error("--from, --to and --series must be valid");
   }
 
-  return { from, to };
+  return { from, to, series };
 }
 
-async function loadDrafts(from: number, to: number) {
-  const draftDir = path.join(ROOT, "content-drafts", "haoqi");
+async function loadDrafts(series: string, from: number, to: number) {
+  const draftDir = path.join(ROOT, "content-drafts", series);
   const fileNames = await fs.readdir(draftDir);
   const drafts: GeneratedDraft[] = [];
 
   for (const fileName of fileNames.filter((name) => name.endsWith(".json"))) {
     const raw = await fs.readFile(path.join(draftDir, fileName), "utf8");
     const draft = JSON.parse(raw) as Partial<GeneratedDraft>;
-    if (!draft.book || draft.book.seriesId !== "haoqi") continue;
+    if (!draft.book || draft.book.seriesId !== series) continue;
     if (draft.book.order < from || draft.book.order > to) continue;
     drafts.push(draft as GeneratedDraft);
   }
@@ -80,7 +82,12 @@ async function createContactSheet(draft: GeneratedDraft) {
     }),
   );
 
-  const outputDir = path.join(ROOT, "content-drafts", "haoqi", draft.book.id);
+  const outputDir = path.join(
+    ROOT,
+    "content-drafts",
+    draft.book.seriesId,
+    draft.book.id,
+  );
   const outputPath = path.join(outputDir, "contact-sheet.jpg");
   await fs.mkdir(outputDir, { recursive: true });
   await sharp({
@@ -99,8 +106,8 @@ async function createContactSheet(draft: GeneratedDraft) {
 }
 
 async function main() {
-  const { from, to } = parseArgs(process.argv.slice(2));
-  const drafts = await loadDrafts(from, to);
+  const { from, to, series } = parseArgs(process.argv.slice(2));
+  const drafts = await loadDrafts(series, from, to);
   await Promise.all(drafts.map(createContactSheet));
   console.log(`[contact-sheet] complete: ${drafts.length} books`);
 }

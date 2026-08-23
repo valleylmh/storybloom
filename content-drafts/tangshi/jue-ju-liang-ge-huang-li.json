@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "jue-ju-liang-ge-huang-li",
+    "seriesId": "tangshi",
+    "title": "绝句·两个黄鹂鸣翠柳",
+    "subtitle": "一扇窗装下春天和远方",
+    "poem": {
+      "dynasty": "唐",
+      "author": "杜甫",
+      "originalLines": [
+        "两个黄鹂鸣翠柳，",
+        "一行白鹭上青天。",
+        "窗含西岭千秋雪，",
+        "门泊东吴万里船。"
+      ],
+      "englishLines": [
+        "Two golden orioles sing in green willows.",
+        "A row of white egrets climbs the blue sky.",
+        "My window frames the West Ridge's ancient snow.",
+        "By the gate, boats from faraway Eastern Wu are moored."
+      ],
+      "appreciation": {
+        "zh": "近处有鸟鸣和新柳，远处有雪山与归船，一扇窗把春天和辽阔天地连在一起。",
+        "en": "Birdsong and fresh willows nearby meet snowy peaks and far-traveled boats beyond one open window."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "两个黄鹂鸣翠柳，\n一行白鹭上青天。\n窗含西岭千秋雪，\n门泊东吴万里船。",
+        "enText": "Two golden orioles sing in green willows.\nA row of white egrets climbs the blue sky.\nMy window frames the West Ridge's ancient snow.\nBy the gate, boats from faraway Eastern Wu are moored.",
+        "illustrationPrompt": "Bright spring panorama from a Tang-era riverside cottage in Chengdu: two golden orioles sing in fresh green willow branches, a row of white egrets rises into clear blue sky, a square lattice window frames distant snowy western mountains, and wooden river boats rest by the gate, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "两个黄鹂鸣翠柳，\n两只金黄的小鸟，在嫩绿的柳条间一唱一和。",
+        "enText": "Two golden orioles sing in green willows.\nThe bright little birds call back and forth among new leaves.",
+        "illustrationPrompt": "Close-medium spring scene of exactly two golden orioles perched on separate bending willow twigs, facing one another as they sing, vivid yellow against tender mineral green leaves, cottage softly blurred behind, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "一行白鹭上青天。\n白鹭排成一行，拍着翅膀飞向高高的蓝天。",
+        "enText": "A row of white egrets climbs the blue sky.\nThey beat their wings in a graceful rising line.",
+        "illustrationPrompt": "Upward-looking composition of a clean diagonal row of white egrets flying into a broad clear blue sky above willow tips, elegant natural wing positions and plenty of breathing room, no extra bird flock, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "窗含西岭千秋雪，\n从窗里望去，远远的西岭雪山，好像被窗框轻轻装起来。",
+        "enText": "My window frames the West Ridge's ancient snow.\nThe distant white peaks fit gently inside the window.",
+        "illustrationPrompt": "Interior view from the simple Tang cottage: an open square lattice window precisely frames distant blue-gray western mountains capped with enduring snow, a gentle middle-aged poet in muted brown looks out from the side, no winter weather near the cottage, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "门泊东吴万里船。\n门外河边停着远道而来的船，它们走过了长长的水路。",
+        "enText": "By the gate, boats from faraway Eastern Wu are moored.\nThey have traveled a long river road to rest here.",
+        "illustrationPrompt": "View through the cottage gate toward several historically appropriate Tang wooden river boats moored calmly along the bank, folded sails and simple cargo baskets suggest a long journey, spring willow reflections on water, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "目光从柳枝飞上蓝天，又穿过窗子到雪山，最后落在门外的远船。",
+        "enText": "Our eyes travel from willow to sky, through the window to snow peaks, then down to distant boats.",
+        "illustrationPrompt": "Layered wide composition that naturally leads the eye from foreground orioles and willow, upward to egrets, through the cottage window to snowy peaks, then toward moored boats by the river, one coherent landscape, no collage or text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "诗人坐在家中，却看见四面八方：春天很近，远方也并不遥远。",
+        "enText": "Sitting at home, the poet sees every direction: spring is close, and the wider world feels near.",
+        "illustrationPrompt": "Warm medium-wide cottage scene with the same middle-aged Tang poet seated peacefully near the open window and door, birds, mountains and boats all visible in believable depth, expression of renewed openness and delight, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "两个黄鹂鸣翠柳，\n一行白鹭上青天。\n窗含西岭千秋雪，\n门泊东吴万里船。\n再轻轻读一遍吧。",
+        "enText": "Two golden orioles sing in green willows.\nA row of white egrets climbs the blue sky.\nMy window frames the West Ridge's ancient snow.\nBy the gate, boats from faraway Eastern Wu are moored.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing sunlit view outside the riverside cottage, exactly two orioles remain in the willow, egrets recede into blue sky, snowy mountains and resting boats complete the layered spring world, harmonious spacious finish, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 7,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "When visible, keep the same gentle middle-aged Tang poet: lean build, short neat beard, black hair in a low topknot, muted brown cross-collar robe and moss-green sash; keep the same riverside thatched cottage, green willow, distant snowy West Ridge and Tang wooden boats.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern buildings or boats, winter snow at the spring cottage, more than two orioles in focal scenes, photorealism, collage panels, distorted birds or anatomy"
+  }
+}

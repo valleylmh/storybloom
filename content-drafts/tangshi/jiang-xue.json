@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "jiang-xue",
+    "seriesId": "tangshi",
+    "title": "江雪",
+    "subtitle": "雪江上的一叶小舟",
+    "poem": {
+      "dynasty": "唐",
+      "author": "柳宗元",
+      "originalLines": [
+        "千山鸟飞绝，",
+        "万径人踪灭。",
+        "孤舟蓑笠翁，",
+        "独钓寒江雪。"
+      ],
+      "englishLines": [
+        "Across a thousand hills, no birds are flying.",
+        "Along ten thousand paths, no footprints remain.",
+        "One old man in cape and hat sits in a lone boat,",
+        "Fishing alone on the snowy river."
+      ],
+      "appreciation": {
+        "zh": "天地被大雪按下静音，一位老翁仍安稳坐在江上，孤单的画面里有坚定和从容。",
+        "en": "Snow hushes the whole world, while one old fisherman remains steady on the river—alone, calm, and resolute."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "千山鸟飞绝，\n万径人踪灭。\n孤舟蓑笠翁，\n独钓寒江雪。",
+        "enText": "Across a thousand hills, no birds are flying.\nAlong ten thousand paths, no footprints remain.\nOne old man in cape and hat sits in a lone boat,\nFishing alone on the snowy river.",
+        "illustrationPrompt": "Vast winter river landscape under soft falling snow, layered white mountains and empty paths surround a single small wooden boat; one calm elderly fisherman in brown straw rain cape and broad bamboo hat sits safely holding a simple fishing rod, immense negative space, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "千山鸟飞绝，\n一座座雪山静静立着，天空里连一只飞鸟也看不见。",
+        "enText": "Across a thousand hills, no birds are flying.\nSnowy peaks stand beneath an empty sky.",
+        "illustrationPrompt": "Extremely wide view of layered snow-covered mountains beneath a pale blank winter sky, no birds anywhere, soft ink outlines and broad rice-paper white space create silence without menace, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "万径人踪灭。\n大雪盖住山路，也盖住了来来往往的脚印。",
+        "enText": "Along ten thousand paths, no footprints remain.\nSnow has covered every trail and track.",
+        "illustrationPrompt": "High quiet view of several winding mountain paths disappearing beneath fresh snow, old pines and rocks mark the routes but no people or footprints remain, gentle snowfall and clear shapes, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "孤舟蓑笠翁，\n白茫茫的江面上，只有一叶小舟和披蓑戴笠的老翁。",
+        "enText": "One old man in cape and hat sits in a lone boat.\nHe is the only figure on the wide white river.",
+        "illustrationPrompt": "Medium-wide view of the same lone wooden skiff on a calm dark strip of river amid snow, the elderly fisherman wears a brown woven straw cape and broad bamboo hat, seated securely near the boat center, no danger, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "独钓寒江雪。\n雪花落在帽檐和船头，他仍静静握着鱼竿。",
+        "enText": "Fishing alone on the snowy river.\nSnow rests on his hat and bow as he holds the rod in stillness.",
+        "illustrationPrompt": "Closer side view of the same calm elderly fisherman holding a simple fishing rod over dark cold water, snow collecting softly on hat brim, straw cape and wooden bow, relaxed steady posture and anatomically correct hands, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "山、路、天空都空了，老翁和小舟便成了整幅雪景里最清楚的一点。",
+        "enText": "With mountain, path, and sky emptied, the fisherman becomes the clearest point in the snowy world.",
+        "illustrationPrompt": "Graphic balanced composition with enormous pale snowy landscape and the small dark boat precisely placed as the single focal point, the fisherman clearly readable but not enlarged, elegant contrast and negative space, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "他不是被大雪吓住的人。越安静，越能看见他的坚定和从容。",
+        "enText": "The snow has not frightened him. The deeper the quiet, the clearer his steady courage appears.",
+        "illustrationPrompt": "Warm close-medium portrait within the landscape of the same elderly fisherman beneath the bamboo hat, calm eyes and a small peaceful expression, snow soft around him and boat stable, dignified rather than suffering, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "千山鸟飞绝，\n万径人踪灭。\n孤舟蓑笠翁，\n独钓寒江雪。\n再轻轻读一遍吧。",
+        "enText": "Across a thousand hills, no birds are flying.\nAlong ten thousand paths, no footprints remain.\nOne old man in cape and hat sits in a lone boat,\nFishing alone on the snowy river.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing twilight winter panorama, layered mountains fade into pale snow and the same lone boat rests calmly on the river, a faint warm gray-blue horizon gives quiet depth, fisherman steady at center, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 8,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same calm elderly fisherman whenever visible: weathered kind face, short gray beard, broad woven bamboo hat, brown straw rain cape over a muted indigo robe; same small dark wooden skiff and simple fishing rod.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern fishing gear, dangerous storm, drowning risk, misery, dead animals, photorealism, colorful crowd, distorted boat or anatomy"
+  }
+}

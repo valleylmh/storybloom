@@ -5,6 +5,14 @@ export interface BilingualText {
   en: string;
 }
 
+export interface LibraryPoemMetadata {
+  dynasty: string;
+  author: string;
+  originalLines: string[];
+  englishLines: string[];
+  appreciation: BilingualText;
+}
+
 /** Reserved for task F (post-reading quiz). Type only for now — no UI. */
 export interface LibraryQuizQuestion {
   question: string;
@@ -33,6 +41,7 @@ export type LibraryCategory =
   | "idiom"
   | "classic"
   | "science"
+  | "poetry"
   | "bedtime"
   | "family-growth";
 
@@ -62,6 +71,8 @@ export interface LibraryBook {
   moral?: BilingualText;
   /** Idiom meaning with English translation (chengyu series only) */
   idiomMeaning?: BilingualText;
+  /** Original poem, authorship, translation, and child-friendly appreciation. */
+  poem?: LibraryPoemMetadata;
   /** Reuses the shared bilingual page structure from @/types */
   pages: StoryPage[];
   ageLabel: string;

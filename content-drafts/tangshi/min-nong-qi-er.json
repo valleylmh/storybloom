@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "min-nong-qi-er",
+    "seriesId": "tangshi",
+    "title": "悯农·其二",
+    "subtitle": "一粒米走过的路",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李绅",
+      "originalLines": [
+        "锄禾日当午，",
+        "汗滴禾下土。",
+        "谁知盘中餐，",
+        "粒粒皆辛苦。"
+      ],
+      "englishLines": [
+        "Hoeing the grain beneath the noon sun,",
+        "His sweat falls into the soil below.",
+        "Who remembers, when a meal is served,",
+        "That every grain comes from hard work?"
+      ],
+      "appreciation": {
+        "zh": "从烈日下的田地到桌上的饭，每一粒粮食都走过许多认真劳作的时光。",
+        "en": "From the field beneath the noon sun to the meal on our table, every grain carries hours of careful work."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "锄禾日当午，\n汗滴禾下土。\n谁知盘中餐，\n粒粒皆辛苦。",
+        "enText": "Hoeing the grain beneath the noon sun,\nHis sweat falls into the soil below.\nWho remembers, when a meal is served,\nThat every grain comes from hard work?",
+        "illustrationPrompt": "Wide Tang-era farm field at bright noon, a sturdy adult farmer in a rolled-sleeve earth-brown robe and straw hat carefully hoes between healthy green grain rows, sun high but scene humane and safe; distant farmhouse, water jar and shade tree visible, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "锄禾日当午，\n太阳升到头顶，农人仍弯下腰，为禾苗锄去杂草。",
+        "enText": "Hoeing the grain beneath the noon sun.\nThe farmer bends to clear weeds while the sun stands high.",
+        "illustrationPrompt": "Medium-wide view of the same adult farmer using a traditional wooden-handled hoe carefully between grain seedlings at midday, correct safe posture, bright sun softened by watercolor, water jar waiting beneath a nearby tree, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "汗滴禾下土。\n汗珠从额头落进泥土，脚边的小苗在风里轻轻摇。",
+        "enText": "His sweat falls into the soil below.\nA drop reaches the earth as young plants sway nearby.",
+        "illustrationPrompt": "Respectful close-medium scene of the same farmer pausing to wipe his brow, one visible sweat drop falling toward dark cared-for soil beside green seedlings, tired but healthy expression, no suffering exaggeration, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "谁知盘中餐，\n饭香飘上桌时，我们还能想起田野里的阳光和身影吗？",
+        "enText": "Who remembers, when a meal is served?\nCan we picture the field behind the fragrant bowl?",
+        "illustrationPrompt": "Simple Tang family dining table with a steaming ceramic bowl of cooked grain in the foreground, open doorway reveals the sunlit field and the same farmer returning in the distance, family hands waiting respectfully rather than eating wastefully, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "粒粒皆辛苦。\n播种、浇水、除草、收获，许多双手才换来一粒粒粮食。",
+        "enText": "Every grain comes from hard work.\nSowing, watering, weeding, and harvest all come before the meal.",
+        "illustrationPrompt": "One coherent harvest-yard scene, not split panels: the same farmer and two adult family members gather golden grain, carry a watering bucket and sort a small harvest, tools arranged naturally to suggest many stages of work, warm cooperative mood, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "诗从一滴汗，看见一片田；又从一碗饭，想起一整季的劳动。",
+        "enText": "From one drop of sweat, the poem sees a whole field; from one bowl, an entire season of work.",
+        "illustrationPrompt": "Layered but continuous composition linking green field, golden harvested sheaves and a simple bowl on a porch table along one curving path, the same farmer present naturally in the middle distance, no collage or text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "珍惜粮食，是记得食物从哪里来，也谢谢认真种下它的人。",
+        "enText": "Valuing food means remembering where it came from and thanking those who grew it.",
+        "illustrationPrompt": "Warm evening meal scene where the same farmer and family sit together with modest bowls, a child carefully holds a bowl with both hands while the farmer smiles, complete but not excessive food, respectful gratitude, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "锄禾日当午，\n汗滴禾下土。\n谁知盘中餐，\n粒粒皆辛苦。\n再轻轻读一遍吧。",
+        "enText": "Hoeing the grain beneath the noon sun,\nHis sweat falls into the soil below.\nWho remembers, when a meal is served,\nThat every grain comes from hard work?\nNow read it softly once more.",
+        "illustrationPrompt": "Closing golden-hour farm panorama with the same farmer standing beside healthy grain and neatly stacked harvest baskets, family home beyond and one simple bowl suggested on the porch, earned calm pride and abundance without luxury, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 9,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same healthy adult Tang farmer whenever visible: sturdy build, warm sun-browned face, short black beard, woven straw hat, earth-brown cross-collar work robe with sleeves rolled safely, dark green sash, cloth trousers and shoes; same well-tended grain field and simple wooden-handled hoe.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern machinery, plastic tools, extreme heat injury, starvation, misery, child labor, wasteful feast, photorealism, distorted anatomy"
+  }
+}

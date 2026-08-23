@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "jing-ye-si",
+    "seriesId": "tangshi",
+    "title": "静夜思",
+    "subtitle": "一束月光照见故乡",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": [
+        "床前明月光，",
+        "疑是地上霜。",
+        "举头望明月，",
+        "低头思故乡。"
+      ],
+      "englishLines": [
+        "Moonlight shines before my bed,",
+        "I wonder if frost covers the ground.",
+        "I lift my head to watch the bright moon,",
+        "Then lower it, thinking of home."
+      ],
+      "appreciation": {
+        "zh": "同一轮月亮照着远方和故乡，也轻轻牵起诗人的思念。",
+        "en": "The same moon shines on the traveler and his distant home, gently drawing his thoughts across the night."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "床前明月光，\n疑是地上霜。\n举头望明月，\n低头思故乡。",
+        "enText": "Moonlight shines before my bed,\nI wonder if frost covers the ground.\nI lift my head to watch the bright moon,\nThen lower it, thinking of home.",
+        "illustrationPrompt": "Wide quiet Tang-era guest room at night, a thoughtful young adult poet in a pale blue cross-collar robe and dark indigo sash sits beside a simple wooden bed, clear moonlight pours through an open lattice window and spreads across the floor like silver, travel bundle and low table understated, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "床前明月光，\n月光穿过窗子，静静落在床前。",
+        "enText": "Moonlight shines before my bed.\nIt slips through the window and rests quietly on the floor.",
+        "illustrationPrompt": "Interior medium-wide view of the same Tang poet noticing a bright rectangle of moonlight beside the wooden bed, cool silver light contrasting with a tiny warm oil lamp, uncluttered room and calm night, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "疑是地上霜。\n银白的光铺了一地，远看真像薄薄的秋霜。",
+        "enText": "I wonder if frost covers the ground.\nThe silver light looks like a thin layer of autumn frost.",
+        "illustrationPrompt": "Low viewpoint across the room floor where pale moonlight resembles delicate frost without showing literal ice, the same poet leans forward with gentle surprise, soft rice-paper shadows and precise Tang furnishings, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "举头望明月，\n诗人抬起头，圆圆的月亮正挂在深蓝的夜空。",
+        "enText": "I lift my head to watch the bright moon.\nA round moon hangs in the deep blue sky.",
+        "illustrationPrompt": "Over-shoulder view from behind the same poet as he raises his head toward a luminous full moon framed by the open lattice window, a few distant rooflines and quiet clouds outside, spacious contemplative composition, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "低头思故乡。\n他慢慢低下头，想起很远很远的家。",
+        "enText": "Then I lower my head, thinking of home.\nHis thoughts travel far beyond the room.",
+        "illustrationPrompt": "The same poet lowers his gaze with a tender homesick expression, hands resting calmly in his lap; a small travel pouch and familiar wooden keepsake suggest home without a fantasy thought bubble, moonlight still connecting the scene, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "月光从窗前照到天边。诗人看见的是月亮，心里走向的却是故乡。",
+        "enText": "Moonlight reaches from the window to the horizon. His eyes see the moon; his heart travels home.",
+        "illustrationPrompt": "Poetic wide exterior-interior composition seen through the window: the same moon above the guesthouse, a winding pale river and distant mountains leading toward the horizon, the poet small and still inside, one continuous real landscape rather than split panels, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "想家不是难过的错。那是心在告诉我们：远方有人和地方很重要。",
+        "enText": "Missing home is not wrong. It means a person and place far away matter deeply to us.",
+        "illustrationPrompt": "Gentle close-medium scene of the same poet by the window, expression softened from loneliness into warmth, moonlight touching both his face and the travel keepsake, calm reassuring atmosphere, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "床前明月光，\n疑是地上霜。\n举头望明月，\n低头思故乡。\n再轻轻读一遍吧。",
+        "enText": "Moonlight shines before my bed,\nI wonder if frost covers the ground.\nI lift my head to watch the bright moon,\nThen lower it, thinking of home.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing square scene of the same poet standing peacefully at the open window beneath the full moon, silver light joining the quiet room, distant mountains and a tiny warm village glow on the horizon, balanced hope and homesickness, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 2,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "When visible, keep the same thoughtful young adult Tang poet: slim build, warm oval face, black hair tied in a neat high knot, pale blue cross-collar robe, dark indigo sash, soft black cloth shoes; quiet guest room with simple wooden bed and lattice window.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, photorealism, literal fantasy thought bubbles, exaggerated sadness, snow or real frost indoors, distorted anatomy"
+  }
+}

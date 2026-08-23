@@ -27,12 +27,18 @@ const SERIES_DEFAULTS: Record<
     tags: ["科普", "好奇心", "自然启蒙"],
     bedtimeSuitable: false,
   },
+  tangshi: {
+    category: "poetry",
+    tags: ["唐诗", "古诗", "传统文化", "意境启蒙"],
+    bedtimeSuitable: true,
+  },
 };
 
 export const LIBRARY_CATEGORY_LABELS: Record<LibraryCategory, string> = {
   idiom: "成语故事",
   classic: "经典故事",
   science: "科普启蒙",
+  poetry: "古诗启蒙",
   bedtime: "睡前故事",
   "family-growth": "家庭成长",
 };
