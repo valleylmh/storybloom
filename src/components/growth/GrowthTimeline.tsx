@@ -35,6 +35,7 @@ import {
   getGrowthClientRecordId,
   type GrowthDataSource,
 } from "./growth-source-model";
+import { selectGrowthTimelineBundles } from "@/lib/growth-timeline-route";
 import {
   assessGrowthStorageCapacity,
   estimateGrowthStorageCapacity,
@@ -46,6 +47,7 @@ import styles from "./GrowthArchive.module.css";
 
 interface Props {
   childKey: string;
+  momentId?: string;
   embedded?: boolean;
   basePath?: string;
   repository?: GrowthRepository;
@@ -69,6 +71,7 @@ function getStoryScene(record: GrowthRecord) {
 
 export default function GrowthTimeline({
   childKey,
+  momentId,
   embedded = false,
   basePath = "/growth",
   repository,
@@ -136,8 +139,7 @@ export default function GrowthTimeline({
       : Promise.resolve([] as GrowthMomentBundle[]);
     const recordTask = activeRepository.moments
       ? momentTask.then((bundles) =>
-          bundles
-            .filter((bundle) => bundle.moment.childKey === childKey)
+          selectGrowthTimelineBundles(bundles, { childKey, momentId })
             .map(projectGrowthMomentBundle)
             .filter((record): record is GrowthRecord => Boolean(record)),
         )
@@ -145,10 +147,10 @@ export default function GrowthTimeline({
     void Promise.all([recordTask, momentTask])
       .then(([next, bundles]) => {
         if (!active) return;
+        const nextBundles = activeRepository.moments
+          ? selectGrowthTimelineBundles(bundles, { childKey, momentId })
+          : bundles.filter((bundle) => bundle.moment.childKey === childKey);
         setRecords(next);
-        const nextBundles = bundles.filter(
-          (bundle) => bundle.moment.childKey === childKey,
-        );
         setMomentBundles(nextBundles);
         const first = next[0];
         const firstMoment = nextBundles[0]?.moment;
@@ -183,12 +185,11 @@ export default function GrowthTimeline({
     return () => {
       active = false;
     };
-  }, [activeRepository, childKey, source]);
+  }, [activeRepository, childKey, momentId, source]);
 
   const childMomentBundles = useMemo(
-    () =>
-      momentBundles.filter((bundle) => bundle.moment.childKey === childKey),
-    [childKey, momentBundles],
+    () => momentBundles,
+    [momentBundles],
   );
   const momentOnlyBundles = useMemo(
     () =>

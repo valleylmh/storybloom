@@ -36,6 +36,7 @@ import {
 } from "@/lib/growth-version-creation";
 import { appendGeneratedStorybookVersion } from "@/lib/growth-version-result";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
+import { getGrowthTimelineHref } from "@/lib/growth-timeline-route";
 import SampleStoryImage from "@/components/book/SampleStoryImage";
 import { SAMPLE_BOOKS } from "@/lib/sample-books";
 import { HOME_FEATURED_LIBRARY_BOOKS } from "@/lib/library/home-featured";
@@ -489,6 +490,7 @@ export default function Home() {
   const [growthSavedChild, setGrowthSavedChild] = useState<{
     childKey: string;
     childName: string;
+    momentId: string;
     versionAdded?: boolean;
     versionCount?: number;
   } | null>(null);
@@ -575,20 +577,33 @@ export default function Home() {
             growthRecordDraft,
             result: generatedResult,
           });
+          const persistedBundle = await momentRepository.get(
+            updatedBundle.moment.momentId,
+          );
+          if (!persistedBundle) {
+            throw new Error("growth-version-persistence-verification-failed");
+          }
           clearGrowthVersionCreationIntent();
           setGrowthSavedChild({
-            childKey: updatedBundle.moment.childKey,
-            childName: updatedBundle.moment.childName,
+            childKey: persistedBundle.moment.childKey,
+            childName: persistedBundle.moment.childName,
+            momentId: persistedBundle.moment.momentId,
             versionAdded: true,
-            versionCount: updatedBundle.storybookVersions.length,
+            versionCount: persistedBundle.storybookVersions.length,
           });
         } else {
           const growthRecord = await localGrowthRepository.save(
             createGrowthRecordInput(generatedResult, growthRecordDraft),
           );
+          const momentId = growthRecord.momentId || growthRecord.id;
+          const persistedBundle = await localGrowthRepository.moments?.get(momentId);
+          if (!persistedBundle) {
+            throw new Error("growth-record-persistence-verification-failed");
+          }
           setGrowthSavedChild({
-            childKey: growthRecord.childKey,
-            childName: growthRecord.childName,
+            childKey: persistedBundle.moment.childKey,
+            childName: persistedBundle.moment.childName,
+            momentId: persistedBundle.moment.momentId,
           });
         }
       } catch (growthError) {
@@ -1428,7 +1443,7 @@ export default function Home() {
                         locale={locale}
                         freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
                         remainingFreeGenerations={remainingFreeGenerations}
-                        initialGrowthEnabled={entryMode === "capture"}
+                        initialGrowthEnabled
                         homeHero
                         onSubmit={handleGenerate}
                       />
@@ -1490,7 +1505,7 @@ export default function Home() {
                     locale={locale}
                     freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
                     remainingFreeGenerations={remainingFreeGenerations}
-                    initialGrowthEnabled={Boolean(growthVersionPreset) || entryMode === "capture"}
+                    initialGrowthEnabled
                     initialGrowthVersion={growthVersionPreset || undefined}
                     onSubmit={handleGenerate}
                   />
@@ -1645,7 +1660,14 @@ export default function Home() {
                   </span>
                 </div>
                 <Link
-                  href={`/growth/${encodeURIComponent(growthSavedChild.childKey)}`}
+                  href={getGrowthTimelineHref({
+                    ...growthSavedChild,
+                    // Existing in-memory result screens from before this
+                    // change do not yet carry a Moment id. For a newly
+                    // created Moment its id is the story id, so retain a
+                    // useful direct path through a hot reload as well.
+                    momentId: growthSavedChild.momentId || result.storyId,
+                  })}
                 >
                   {locale === "zh" ? "查看时间轴" : "Open timeline"}
                 </Link>
