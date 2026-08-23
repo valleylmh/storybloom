@@ -17,7 +17,9 @@ import {
 afterEach(() => {
   delete process.env.CPA_API_KEY;
   delete process.env.CPA_BASE_URL;
-  delete process.env.CPA_TEXT_MODEL;
+  delete process.env.STORY_TEXT_MODEL;
+  delete process.env.STORY_TEXT_PROVIDER;
+  delete process.env.AGNES_API_KEY;
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
 });
@@ -76,7 +78,7 @@ describe("daily newsletter inspiration", () => {
   it("uses the configured CPA OpenAI-compatible endpoint and model", async () => {
     process.env.CPA_API_KEY = "test-cpa-key";
     process.env.CPA_BASE_URL = "https://example.com/v1/";
-    process.env.CPA_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
     const fetchMock = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
@@ -114,6 +116,47 @@ describe("daily newsletter inspiration", () => {
     );
     const body = JSON.parse(String(init.body)) as { model: string };
     expect(body.model).toBe("gemini-3-flash");
+  });
+
+  it("routes daily inspiration to the Agnes official endpoint when STORY_TEXT_PROVIDER=agnes", async () => {
+    process.env.STORY_TEXT_PROVIDER = "agnes";
+    process.env.AGNES_API_KEY = "agnes-key-1,agnes-key-2";
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          choices: [
+            {
+              message: {
+                content: JSON.stringify({
+                  theme: "耐心与等待",
+                  title_zh: "慢慢开的向日葵",
+                  title_en: "The Sunflower That Took Its Time",
+                  opening_zh: "孩子种下一颗种子，每天浇水观察，学会等待慢慢发芽的过程。",
+                  opening_en: "A child plants a seed, waters it daily, and learns the gentle art of waiting.",
+                  questions_zh: ["你种过什么植物？", "等待时可以做什么？", "发芽那一刻像什么？"],
+                  questions_en: ["What have you planted?", "What can you do while waiting?", "What did sprouting feel like?"],
+                  story_prompt_zh: "孩子照料一颗慢慢发芽的向日葵种子",
+                  story_prompt_en: "A child tends a sunflower seed that slowly sprouts",
+                }),
+              },
+            },
+          ],
+        }),
+        { status: 200, headers: { "content-type": "application/json" } },
+      ),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const inspiration = await generateDailyInspiration("2026-07-15");
+
+    expect(inspiration.source).toBe("generated");
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe("https://apihub.agnes-ai.com/v1/chat/completions");
+    expect((init.headers as Record<string, string>).Authorization).toBe(
+      "Bearer agnes-key-1",
+    );
+    const body = JSON.parse(String(init.body)) as { model: string };
+    expect(body.model).toBe("agnes-2.5-flash");
   });
 
   it("falls back to curated content when CPA rejects the model", async () => {

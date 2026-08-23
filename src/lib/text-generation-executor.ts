@@ -297,10 +297,7 @@ export async function executeTextGeneration(input: ExecuteTextGenerationInput) {
       task: input.task.taskId,
       story: input.task.storyId,
       provider: "cpa",
-      model:
-        process.env.STORY_TEXT_MODEL?.trim() ||
-        process.env.CPA_TEXT_MODEL?.trim() ||
-        "gemini-3-flash",
+      model: process.env.STORY_TEXT_MODEL?.trim() || "gemini-3-flash",
       status: generated.status,
       duration: Date.now() - startedAt,
     });
@@ -312,10 +309,7 @@ export async function executeTextGeneration(input: ExecuteTextGenerationInput) {
         task: input.task.taskId,
         story: input.task.storyId,
         provider: "cpa",
-        model:
-          process.env.STORY_TEXT_MODEL?.trim() ||
-          process.env.CPA_TEXT_MODEL?.trim() ||
-          "gemini-3-flash",
+        model: process.env.STORY_TEXT_MODEL?.trim() || "gemini-3-flash",
         status: error instanceof StaleTextGenerationLeaseError
           ? "stale_ignored"
           : "failed",

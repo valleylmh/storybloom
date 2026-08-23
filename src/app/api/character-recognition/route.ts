@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { allowIpRequest } from "@/lib/request-rate-limit";
 import { cacheCharacterReference } from "@/lib/storage";
+import { getStoryTextEndpoint } from "@/lib/story-generator";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -9,6 +10,7 @@ export const maxDuration = 60;
 const MAX_IMAGE_BYTES = 4 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 const DEFAULT_VISION_MODEL = "gemini-3-flash";
+const DEFAULT_AGNES_VISION_MODEL = "agnes-2.5-flash";
 
 const recognitionSchema = z.object({
   valid: z.boolean(),
@@ -80,9 +82,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const apiKey = process.env.CPA_API_KEY?.trim();
-    const baseUrl = process.env.CPA_BASE_URL?.trim();
-    if (!apiKey || !baseUrl) {
+    const endpoint = getStoryTextEndpoint();
+    if (!endpoint) {
       return NextResponse.json(
         {
           error: getErrorMessage(
@@ -97,17 +98,16 @@ export async function POST(request: Request) {
 
     const bytes = Buffer.from(await image.arrayBuffer());
     const imageDataUri = `data:${image.type};base64,${bytes.toString("base64")}`;
-    const normalizedBaseUrl = baseUrl.replace(/\/+$/, "");
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 45_000);
 
     let response: Response;
     try {
-      response = await fetch(`${normalizedBaseUrl}/chat/completions`, {
+      response = await fetch(`${endpoint.baseUrl}/chat/completions`, {
         method: "POST",
         signal: controller.signal,
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${endpoint.apiKey}`,
           "Content-Type": "application/json",
           "HTTP-Referer": process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
           "X-Title": "StoryBloom Character Recognition",
@@ -115,9 +115,10 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           model:
             process.env.CHARACTER_VISION_MODEL?.trim() ||
-            process.env.CPA_TEXT_MODEL?.trim() ||
             process.env.STORY_TEXT_MODEL?.trim() ||
-            DEFAULT_VISION_MODEL,
+            (endpoint.provider === "agnes"
+              ? DEFAULT_AGNES_VISION_MODEL
+              : DEFAULT_VISION_MODEL),
           temperature: 0.1,
           max_tokens: 700,
           messages: [

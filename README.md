@@ -103,7 +103,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 
 当前代码主要有三类生成模型调用：
 
-- 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
+- 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。将 `STORY_TEXT_PROVIDER` 设为 `agnes` 时，故事文本、每日灵感邮件和角色识别三个文本调用方统一改用 Agnes 官方端点 `https://apihub.agnes-ai.com/v1`，密钥取 `AGNES_API_KEY` 的第一把，模型仍由 `STORY_TEXT_MODEL`（或各调用方的专用变量如 `CHARACTER_VISION_MODEL`）指定，未设置时默认 `agnes-2.5-flash`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
 - 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations、Hugging Face，或配置为 GPT Image 时使用 CPA；极简模式中确认并保存的照片角色会先通过 CPA 生成统一设定稿，随后所有实际出现该角色的页面都固定使用 CPA，不回退到其他提供商。CPA 的 Gemini 图片模型继续使用 `chat/completions`；`gpt-image-*` 带参考图时自动使用支持多图的 `images/edits`，无参考图时使用 `images/generations`。可通过 `CPA_IMAGE_SIZE` 设置 GPT Image 输出尺寸，默认 `1024x1024`。临时自定义参考图仍按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 工作。`AGNES_API_KEY` 可配置多个逗号分隔的 key：绘本页面按页号稳定轮转到各 key（第 1 页用第 1 把、第 2 页用第 2 把），且每把 key 独立限流，从而并行提速并让同一页重试保持同一条生成路径。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
 - 音频：普通生成预览使用浏览器内置 `SpeechSynthesis`；绘本馆在用户点击朗读后调用 `src/app/api/audio/route.ts`，配置 `DASHSCOPE_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，失败后直接回退 Edge；未配置 Token Plan 时保留 Gemini 2.5 → Gemini 3.1 → Edge 路由。带旁白视频复用同一音频接口。家庭真人声音默认关闭；显式启用后固定使用百炼 `qwen-audio-3.0-tts-plus`，不会静默替换成其他音色。
 
@@ -308,7 +308,7 @@ CRON_SECRET=...
 
 部署在 Vercel 时，平台会根据 `vercel.json` 在每天 UTC 00:00（北京时间 08:00）请求
 `/api/cron/daily-inspiration`。系统通过部署者配置的 OpenAI 兼容端点
-调用文本模型，每天生成一份新的
+调用文本模型（模型名复用 `STORY_TEXT_MODEL`），每天生成一份新的
 中英双语灵感；密钥、模型或服务不可用时会自动使用内置精选灵感。当天内容只生成一次并写入
 `daily_story_inspirations`，投递结果写入 `newsletter_deliveries`，重复触发不会重复发送。
 
@@ -325,7 +325,6 @@ openssl rand -base64 32
 ```bash
 CPA_API_KEY=...
 CPA_BASE_URL=https://your-provider.example/v1
-CPA_TEXT_MODEL=gemini-3-flash
 CPA_TEXT_TIMEOUT_MS=30000
 NEWSLETTER_SEND_CONCURRENCY=5
 ```

@@ -1,6 +1,7 @@
 import "server-only";
 
 import { z } from "zod";
+import { getStoryTextEndpoint } from "@/lib/story-generator";
 
 export type DailyInspirationSource = "generated" | "fallback";
 
@@ -33,6 +34,7 @@ const generatedSchema = z.object({
 });
 
 const DEFAULT_CPA_TEXT_MODEL = "gemini-3-flash";
+const DEFAULT_AGNES_TEXT_MODEL = "agnes-2.5-flash";
 
 type CpaChatCompletionResponse = {
   choices?: Array<{ message?: { content?: string } }>;
@@ -207,9 +209,8 @@ function extractJson(value: string) {
 export async function generateDailyInspiration(
   dateKey: string,
 ): Promise<DailyInspirationContent> {
-  const apiKey = process.env.CPA_API_KEY?.trim();
-  const configuredBaseUrl = process.env.CPA_BASE_URL?.trim();
-  if (!apiKey || !configuredBaseUrl) {
+  const endpoint = getStoryTextEndpoint();
+  if (!endpoint) {
     return getFallbackDailyInspiration(dateKey);
   }
 
@@ -227,15 +228,18 @@ export async function generateDailyInspiration(
   );
 
   try {
-    const baseUrl = configuredBaseUrl.replace(/\/+$/, "");
-    const response = await fetch(baseUrl + "/chat/completions", {
+    const response = await fetch(endpoint.baseUrl + "/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: "Bearer " + apiKey,
+        Authorization: "Bearer " + endpoint.apiKey,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: process.env.CPA_TEXT_MODEL || DEFAULT_CPA_TEXT_MODEL,
+        model:
+          process.env.STORY_TEXT_MODEL?.trim() ||
+          (endpoint.provider === "agnes"
+            ? DEFAULT_AGNES_TEXT_MODEL
+            : DEFAULT_CPA_TEXT_MODEL),
         temperature: 0.9,
         max_tokens: 1400,
         messages: [

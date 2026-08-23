@@ -1157,10 +1157,7 @@ export async function POST(req: NextRequest) {
         operation: "text.generate_request",
         story: storyId,
         provider: "cpa",
-        model:
-          process.env.STORY_TEXT_MODEL?.trim() ||
-          process.env.CPA_TEXT_MODEL?.trim() ||
-          "gemini-3-flash",
+        model: process.env.STORY_TEXT_MODEL?.trim() || "gemini-3-flash",
         status: "failed",
         errorClass: classifyGenerationError(error),
       },

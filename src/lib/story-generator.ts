@@ -84,11 +84,13 @@ const STORYBOOK_COMPOSITION_RULES =
   "Story-first composition: illustrate the exact page event with setting, props, action, and emotion. The child should usually occupy 25-45% of the frame, with full body or three-quarter body visible when possible. Vary camera distance, pose, gesture, and facial expression from page to page. Do not make a repeated front-facing portrait, passport photo, selfie, bust shot, or giant head close-up.";
 
 const DEFAULT_CPA_STORY_MODEL = "gemini-3-flash";
+const DEFAULT_AGNES_STORY_MODEL = "agnes-2.5-flash";
+const AGNES_TEXT_BASE_URL = "https://apihub.agnes-ai.com/v1";
 const DEFAULT_STORY_TEXT_TIMEOUT_MS = 120_000;
 const DEFAULT_STORY_TEXT_MAX_TOKENS = 8192;
 const DEFAULT_STORY_TEXT_MAX_ATTEMPTS = 2;
 
-type StoryTextProvider = "cpa" | "mock";
+type StoryTextProvider = "cpa" | "agnes" | "mock";
 
 interface ChatCompletionResponse {
   choices?: Array<{
@@ -122,7 +124,64 @@ function getStoryTextProvider(): StoryTextProvider {
     process.env.TEXT_MODEL_PROVIDER ||
     "cpa";
 
-  return provider === "mock" ? "mock" : "cpa";
+  if (provider === "mock") return "mock";
+  if (provider === "agnes") return "agnes";
+  return "cpa";
+}
+
+export interface StoryTextEndpoint {
+  baseUrl: string;
+  apiKey: string;
+  provider: "cpa" | "agnes";
+}
+
+/**
+ * Resolve the OpenAI-compatible text endpoint shared by story generation,
+ * character recognition, and the daily inspiration email.
+ * `agnes` targets the official Agnes API hub; anything else (including `mock`
+ * deployments that still want remote text features) falls back to the CPA relay.
+ */
+export function getStoryTextEndpoint(
+  allowed?: Array<Exclude<StoryTextProvider, "mock">>,
+): StoryTextEndpoint | null {
+  let provider = getStoryTextProvider();
+  if (provider === "mock") {
+    provider = "cpa";
+  }
+  if (allowed && !allowed.includes(provider)) {
+    provider = "cpa";
+  }
+
+  if (provider === "agnes") {
+    const apiKey = getAgnesTextApiKey();
+    return apiKey
+      ? { provider: "agnes", baseUrl: AGNES_TEXT_BASE_URL, apiKey }
+      : null;
+  }
+
+  const apiKey = getCpaKey();
+  const baseUrl = process.env.CPA_BASE_URL?.trim();
+  if (!apiKey || !baseUrl) {
+    return null;
+  }
+  return {
+    provider: "cpa",
+    baseUrl: baseUrl.replace(/\/+$/, ""),
+    apiKey,
+  };
+}
+
+function getStoryTextModelLabel(provider: StoryTextProvider) {
+  if (provider === "mock") return "mock";
+  return (
+    process.env.STORY_TEXT_MODEL?.trim() ||
+    (provider === "agnes" ? DEFAULT_AGNES_STORY_MODEL : DEFAULT_CPA_STORY_MODEL)
+  );
+}
+
+function getAgnesTextApiKey() {
+  const first = process.env.AGNES_API_KEY?.split(",")[0]?.trim();
+  return first || null;
 }
 
 function getPositiveIntegerEnv(name: string, fallback: number) {
@@ -1331,9 +1390,45 @@ export async function requestCpaStory(
     endpoint: `${baseUrl}/chat/completions`,
     apiKey,
     model:
-      process.env.STORY_TEXT_MODEL?.trim() ||
-      process.env.CPA_TEXT_MODEL?.trim() ||
-      DEFAULT_CPA_STORY_MODEL,
+      process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_CPA_STORY_MODEL,
+    system,
+    user,
+    timeoutMs: getPositiveIntegerEnv(
+      "STORY_TEXT_TIMEOUT_MS",
+      getPositiveIntegerEnv(
+        "CPA_TEXT_TIMEOUT_MS",
+        DEFAULT_STORY_TEXT_TIMEOUT_MS,
+      ),
+    ),
+    maxTokens: getPositiveIntegerEnv(
+      "STORY_TEXT_MAX_TOKENS",
+      DEFAULT_STORY_TEXT_MAX_TOKENS,
+    ),
+    maxAttempts: getPositiveIntegerEnv(
+      "STORY_TEXT_MAX_ATTEMPTS",
+      DEFAULT_STORY_TEXT_MAX_ATTEMPTS,
+    ),
+    temperature: sampling.temperature,
+    topP: sampling.topP,
+  });
+}
+
+async function requestAgnesStory(
+  system: string,
+  user: string,
+  sampling: { temperature: number; topP: number },
+) {
+  const apiKey = getAgnesTextApiKey();
+  if (!apiKey) {
+    return null;
+  }
+
+  return requestChatCompletionStory({
+    provider: "agnes",
+    endpoint: `${AGNES_TEXT_BASE_URL}/chat/completions`,
+    apiKey,
+    model:
+      process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_AGNES_STORY_MODEL,
     system,
     user,
     timeoutMs: getPositiveIntegerEnv(
@@ -1513,25 +1608,25 @@ Return only valid JSON:
       .join(" ");
 
     const raw =
-      textProvider === "cpa"
-        ? await requestCpaStory(system, user, {
+      textProvider === "agnes"
+        ? await requestAgnesStory(system, user, {
             temperature: isCustomTheme ? 0.68 : 0.95,
             topP: isCustomTheme ? 0.86 : 0.92,
           })
-        : null;
+        : textProvider === "cpa"
+          ? await requestCpaStory(system, user, {
+              temperature: isCustomTheme ? 0.68 : 0.95,
+              topP: isCustomTheme ? 0.86 : 0.92,
+            })
+          : null;
 
     if (!raw) {
       logGenerationEvent({
         operation: "text.generate",
         provider: textProvider,
-        model:
-          textProvider === "cpa"
-            ? process.env.STORY_TEXT_MODEL?.trim() ||
-              process.env.CPA_TEXT_MODEL?.trim() ||
-              DEFAULT_CPA_STORY_MODEL
-            : "mock",
+        model: getStoryTextModelLabel(textProvider),
         status: "fallback",
-        errorClass: textProvider === "cpa" ? "configuration" : undefined,
+        errorClass: textProvider === "mock" ? undefined : "configuration",
       });
       return isCustomTheme
         ? createGroundedCustomFallbackStory(input)
@@ -1546,10 +1641,7 @@ Return only valid JSON:
         {
           operation: "text.generate",
           provider: textProvider,
-          model:
-            process.env.STORY_TEXT_MODEL?.trim() ||
-            process.env.CPA_TEXT_MODEL?.trim() ||
-            DEFAULT_CPA_STORY_MODEL,
+          model: getStoryTextModelLabel(textProvider),
           status: "fallback",
           errorClass: "invalid_response",
         },
@@ -1563,10 +1655,7 @@ Return only valid JSON:
         {
           operation: "text.generate",
           provider: textProvider,
-          model:
-            process.env.STORY_TEXT_MODEL?.trim() ||
-            process.env.CPA_TEXT_MODEL?.trim() ||
-            DEFAULT_CPA_STORY_MODEL,
+          model: getStoryTextModelLabel(textProvider),
           status: "fallback",
           errorClass: "invalid_response",
         },
@@ -1589,12 +1678,7 @@ Return only valid JSON:
       {
         operation: "text.generate",
         provider: textProvider,
-        model:
-          textProvider === "cpa"
-            ? process.env.STORY_TEXT_MODEL?.trim() ||
-              process.env.CPA_TEXT_MODEL?.trim() ||
-              DEFAULT_CPA_STORY_MODEL
-            : "mock",
+        model: getStoryTextModelLabel(textProvider),
         status: "fallback",
         errorClass: classifyGenerationError(error),
       },

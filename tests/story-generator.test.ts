@@ -14,7 +14,7 @@ const envKeys = [
   "STORY_TEXT_MAX_ATTEMPTS",
   "CPA_API_KEY",
   "CPA_BASE_URL",
-  "CPA_TEXT_MODEL",
+  "AGNES_API_KEY",
 ] as const;
 const originalEnv = Object.fromEntries(
   envKeys.map((key) => [key, process.env[key]]),
@@ -334,6 +334,42 @@ describe("custom story generation", () => {
     expect(prompt).not.toContain("Page 1 cover");
     expect(body.temperature).toBe(0.68);
     expect(body.top_p).toBe(0.86);
+  });
+
+  it("routes story text to the Agnes official endpoint when STORY_TEXT_PROVIDER=agnes", async () => {
+    process.env.STORY_TEXT_PROVIDER = "agnes";
+    process.env.AGNES_API_KEY = "agnes-key-1,agnes-key-2";
+    process.env.STORY_TEXT_MODEL = "agnes-2.5-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = mockCpaStory(
+      "童童的安稳小夜晚",
+      createModelPages("aligned"),
+    );
+
+    const story = await generateStoryText(soloSleepInput);
+
+    expect(story.coverTitle).toBe("童童的安稳小夜晚");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe("https://apihub.agnes-ai.com/v1/chat/completions");
+    expect((init.headers as Record<string, string>).Authorization).toBe(
+      "Bearer agnes-key-1",
+    );
+    const body = JSON.parse(String(init.body)) as { model: string };
+    expect(body.model).toBe("agnes-2.5-flash");
+  });
+
+  it("falls back to the grounded local story when Agnes has no API key", async () => {
+    process.env.STORY_TEXT_PROVIDER = "agnes";
+    delete process.env.AGNES_API_KEY;
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+
+    const story = await generateStoryText(soloSleepInput);
+
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(story.pages).toHaveLength(8);
+    expect(story.pages[1].zhText).toContain("第一次一个人在房间睡觉");
   });
 
   it("replaces a generic model title with the concrete custom event", async () => {
