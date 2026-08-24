@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "jiu-yue-jiu-ri-yi-shan-dong-xiong-di",
+    "seriesId": "tangshi",
+    "title": "九月九日忆山东兄弟",
+    "subtitle": "登高的日子，少了远方的我",
+    "poem": {
+      "dynasty": "唐",
+      "author": "王维",
+      "originalLines": [
+        "独在异乡为异客，",
+        "每逢佳节倍思亲。",
+        "遥知兄弟登高处，",
+        "遍插茱萸少一人。"
+      ],
+      "englishLines": [
+        "Alone in a strange land, I am a stranger,",
+        "At every festival, I miss my family even more.",
+        "Far away, I know my brothers climb the heights,",
+        "Wearing dogwood sprigs—yet one person is missing."
+      ],
+      "appreciation": {
+        "zh": "重阳佳节里，诗人想象家人登高团聚，也清楚地看见那个属于自己的空位。",
+        "en": "During the Double Ninth Festival, the poet imagines his family climbing together and sees, in his mind, the empty place where he should be."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "独在异乡为异客，\n每逢佳节倍思亲。\n遥知兄弟登高处，\n遍插茱萸少一人。",
+        "enText": "Alone in a strange land, I am a stranger,\nAt every festival, I miss my family even more.\nFar away, I know my brothers climb the heights,\nWearing dogwood sprigs—yet one person is missing.",
+        "illustrationPrompt": "Clear autumn Double Ninth morning in a Tang city, a young Wang Wei in muted blue-green scholar robe stands alone at a simple guesthouse balcony holding a small dogwood sprig, distant people carry picnic baskets toward hills, warm sunlight and high sky, homesick but gentle, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "独在异乡为异客，\n诗人一个人住在陌生的地方，街道和面孔都不熟悉。",
+        "enText": "Alone in a strange land, I am a stranger.\nThe streets and faces around the poet are all unfamiliar.",
+        "illustrationPrompt": "Street-level Tang city scene with the same young poet walking calmly among unfamiliar festival travelers, his modest travel bag and muted robe distinguishing him without isolation or danger, period wooden shops with no signs or writing, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "每逢佳节倍思亲。\n越是家人团聚的日子，他越想念远方的亲人。",
+        "enText": "At every festival, I miss my family even more.\nA day for gathering makes his distant family feel especially dear.",
+        "illustrationPrompt": "The same poet pauses beside a courtyard where a Tang family prepares a simple festival outing together, he watches with a tender reflective expression while holding the dogwood sprig, respectful distance and no melodrama, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "遥知兄弟登高处，\n他仿佛看见兄弟们正在家乡的山路上一起登高。",
+        "enText": "Far away, I know my brothers climb the heights.\nIn his mind, his brothers are walking together up their familiar hill.",
+        "illustrationPrompt": "Poetic continuous landscape transition from the same poet at a city overlook to far blue-green home mountains where three adult brothers in coordinated earth-tone Tang robes climb a safe autumn path together, no thought-bubble border, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "遍插茱萸少一人。\n大家都佩着茱萸，队伍里却空着一个位置。",
+        "enText": "Wearing dogwood sprigs—yet one person is missing.\nEveryone carries a sprig, but one place in the group is empty.",
+        "illustrationPrompt": "On the home mountain, the same three brothers rest safely at a scenic terrace wearing small dogwood sprigs; beside them an intentionally empty cushion and cup quietly mark the missing brother, autumn hills bright rather than sad, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "异乡有人在过节，家乡也有人在登高。相隔很远的两处，因为想念连在了一起。",
+        "enText": "The festival unfolds in both the strange city and the home hills. Remembrance joins the two distant places.",
+        "illustrationPrompt": "Wide poetic landscape linking the same city guesthouse in the foreground and distant home mountains beneath one continuous autumn sky, the poet and his brothers tiny in their separate places but touched by the same golden light, no split panel, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "想家会让心里空一小块，也会提醒我们：无论走多远，家人仍彼此惦念。",
+        "enText": "Missing home can leave a small empty place inside, while reminding us that family members still care across any distance.",
+        "illustrationPrompt": "Warm close-medium scene of the same poet placing the dogwood sprig beside a simple cup at his guesthouse window, expression peaceful as he looks toward home under the clear autumn moon just rising, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "独在异乡为异客，\n每逢佳节倍思亲。\n遥知兄弟登高处，\n遍插茱萸少一人。\n再轻轻读一遍吧。",
+        "enText": "Alone in a strange land, I am a stranger,\nAt every festival, I miss my family even more.\nFar away, I know my brothers climb the heights,\nWearing dogwood sprigs—yet one person is missing.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing autumn twilight with the same poet at the guesthouse balcony and three distant birds flying toward layered home mountains, dogwood sprig secure at his sash, city lantern glow kept subtle and without writing, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 15,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same young Wang Wei throughout: slim warm oval face, black hair in neat high knot, muted blue-green cross-collar scholar robe, brown sash, black cloth shoes and small beige travel bag; same small red-green dogwood sprig. Brothers wear coordinated ochre, rust and sage Tang robes.",
+    "negative": "written text, calligraphy, shop signs, captions, seals, logos, watermark, modern city, modern holiday objects, medicinal claims, eating dogwood, dangerous cliffs, fantasy thought bubbles, exaggerated crying, photorealism, distorted anatomy"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "xiang-si",
+    "seriesId": "tangshi",
+    "title": "相思",
+    "subtitle": "一颗红豆，装着一份想念",
+    "poem": {
+      "dynasty": "唐",
+      "author": "王维",
+      "originalLines": [
+        "红豆生南国，",
+        "春来发几枝。",
+        "愿君多采撷，",
+        "此物最相思。"
+      ],
+      "englishLines": [
+        "Red beans grow in the southern land,",
+        "How many new branches come with spring?",
+        "May you gather a few of them,",
+        "For they carry the deepest remembrance."
+      ],
+      "appreciation": {
+        "zh": "小小的红豆被诗人变成想念的信物，让看不见的牵挂有了颜色和形状。",
+        "en": "The poet turns tiny red beans into keepsakes, giving invisible affection a bright color and a gentle shape."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "红豆生南国，\n春来发几枝。\n愿君多采撷，\n此物最相思。",
+        "enText": "Red beans grow in the southern land,\nHow many new branches come with spring?\nMay you gather a few of them,\nFor they carry the deepest remembrance.",
+        "illustrationPrompt": "Spring morning in a lush southern Tang garden, a thoughtful young poet in a pale celadon robe stands beneath a red-bean tree with fresh green leaves and a few bright red seeds, holding a small plain cloth pouch as a keepsake, warm distant hills and elegant negative space, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "红豆生南国，\n温暖的南方，红豆树长得青翠又茂盛。",
+        "enText": "Red beans grow in the southern land.\nIn the warm south, the tree grows green and full.",
+        "illustrationPrompt": "Wide view of the same southern garden and red-bean tree thriving beside misty blue-green hills, the same poet small beneath its canopy, several red seeds visible among glossy leaves, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "春来发几枝。\n春风一吹，枝头悄悄冒出许多嫩芽。",
+        "enText": "How many new branches come with spring?\nThe spring breeze wakes tender shoots along the branches.",
+        "illustrationPrompt": "Close-medium spring scene of tender new shoots opening on the same red-bean tree while the same poet gently lifts one branch to look, soft breeze moving his robe and fresh leaves, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "愿君多采撷，\n诗人想把几颗红豆送给远方的朋友。",
+        "enText": "May you gather a few of them.\nThe poet wishes a distant friend could keep a few.",
+        "illustrationPrompt": "The same poet carefully gathers a few fallen bright red seeds from a clean woven mat beneath the tree into the same small cloth pouch, treating them as keepsakes rather than food, calm child-friendly action, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "此物最相思。\n一颗小小的红豆，像一声轻轻的‘我想你’。",
+        "enText": "For they carry the deepest remembrance.\nOne tiny red bean can softly say, ‘I remember you.’",
+        "illustrationPrompt": "Gentle close view of the same poet holding one red seed safely in his open palm beside the tied cloth pouch, expression warm and thoughtful, distant migrating birds suggesting a faraway friend without a thought bubble, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "春天让树枝长出新芽，也让诗人想起远方的朋友。红豆虽小，牵挂却很长。",
+        "enText": "Spring grows new branches and awakens thoughts of a distant friend. The bean is small, but the bond reaches far.",
+        "illustrationPrompt": "Poetic wide landscape with the same poet beneath the red-bean tree in the foreground and a winding river road leading through southern mountains toward a tiny distant pavilion, the red pouch held close, one continuous real scene, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "想念不一定要说很多话。有时，一件小小的信物就能替心记住一个人。",
+        "enText": "Remembrance does not need many words. A tiny keepsake can help the heart hold someone close.",
+        "illustrationPrompt": "Quiet warm scene of the same poet tying the small pouch securely to his sash while looking toward the distant road with a soft smile, red-bean leaves framing open sky, no sadness or text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "红豆生南国，\n春来发几枝。\n愿君多采撷，\n此物最相思。\n再轻轻读一遍吧。",
+        "enText": "Red beans grow in the southern land,\nHow many new branches come with spring?\nMay you gather a few of them,\nFor they carry the deepest remembrance.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing spring sunset in the same garden, the poet walks along a path with the keepsake pouch as the red-bean tree glows against misty southern hills, a few red seeds and new green leaves forming a gentle visual rhythm, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 11,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same thoughtful young Tang poet throughout: warm oval face, black hair in a neat high knot, pale celadon cross-collar robe, muted rust sash and black cloth shoes; same southern red-bean tree, bright red seeds and small unmarked beige cloth keepsake pouch.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, eating red beans, poisonous imagery, photorealism, fantasy thought bubbles, exaggerated sadness, distorted anatomy, extra fingers"
+  }
+}

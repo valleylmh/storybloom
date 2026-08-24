@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "zao-fa-bai-di-cheng",
+    "seriesId": "tangshi",
+    "title": "早发白帝城",
+    "subtitle": "轻舟穿过万重山",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": [
+        "朝辞白帝彩云间，",
+        "千里江陵一日还。",
+        "两岸猿声啼不住，",
+        "轻舟已过万重山。"
+      ],
+      "englishLines": [
+        "At dawn I leave Baidi among colored clouds,",
+        "Returning a thousand li to Jiangling in one day.",
+        "From both banks, gibbons call without end,",
+        "While my light boat has passed ten thousand mountains."
+      ],
+      "appreciation": {
+        "zh": "彩云、猿声和飞快的轻舟，把诗人顺流而下的轻快心情写得明亮又有速度。",
+        "en": "Colored clouds, echoing gibbons, and a swift light boat fill the downstream journey with brightness, speed, and relief."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "朝辞白帝彩云间，\n千里江陵一日还。\n两岸猿声啼不住，\n轻舟已过万重山。",
+        "enText": "At dawn I leave Baidi among colored clouds,\nReturning a thousand li to Jiangling in one day.\nFrom both banks, gibbons call without end,\nWhile my light boat has passed ten thousand mountains.",
+        "illustrationPrompt": "Dawn on the upper Yangtze, a light narrow Tang wooden passenger boat carries Li Bai and a skilled boatman safely downstream between towering blue-green gorge mountains, Baidi's ancient hilltop walls receding beneath rose-gold clouds, energetic but calm water, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "朝辞白帝彩云间，\n清晨，诗人告别高高的白帝城，彩云正绕着山顶。",
+        "enText": "At dawn I leave Baidi among colored clouds.\nMorning clouds glow around the high city as the poet departs.",
+        "illustrationPrompt": "Looking back from the same boat, Li Bai in white-blue robe watches Baidi's period-appropriate wooden gate and walls high on the cliff, wrapped in luminous peach and gold dawn clouds, boatman steady at the stern, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "千里江陵一日还。\n顺着江水，小船像被清风推着，一天就能走很远。",
+        "enText": "Returning a thousand li to Jiangling in one day.\nThe current and breeze carry the boat a great distance before nightfall.",
+        "illustrationPrompt": "Dynamic high-angle view of the same light boat riding a smooth swift current through a broad sunlit bend, Li Bai seated securely under a small canopy while the boatman guides with a long oar, long river opening ahead, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "两岸猿声啼不住，\n山林里的猿猴一声接一声，叫声在峡谷里回荡。",
+        "enText": "From both banks, gibbons call without end.\nTheir calls echo from one forested cliff to the other.",
+        "illustrationPrompt": "The same boat passes between lush forested cliffs where a few realistic child-friendly gibbons perch safely on distant branches on both banks, Li Bai looks up listening as echoes seem to cross the gorge through rippling atmosphere, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "轻舟已过万重山。\n猿声还没停，小船已经越过一层又一层青山。",
+        "enText": "While my light boat has passed ten thousand mountains.\nBefore the calls fade, the boat has slipped beyond ridge after ridge.",
+        "illustrationPrompt": "Very wide layered gorge landscape with the same small light boat already far along a winding silver river, many overlapping mineral blue-green mountain ridges receding into mist, lively sense of forward motion, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "眼前是彩云和青山，耳边是不断的猿声，脚下的江水把轻舟一路送向远方。",
+        "enText": "Colored clouds and green mountains fill the eyes, gibbon calls fill the ears, and the river carries the light boat onward.",
+        "illustrationPrompt": "Immersive medium-wide view from near water level beside the same boat: dawn clouds ahead, forested cliffs rising on both sides, distant gibbons visible, Li Bai's robe and boat pennant lifted by a clean breeze, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "这趟旅程为什么这样轻快？也许因为诗人的心，终于像小船一样自在了。",
+        "enText": "Why does the journey feel so light? Perhaps the poet's heart has finally become as free as the boat.",
+        "illustrationPrompt": "Gentle close-medium view of the same Li Bai seated safely at the bow with an open joyful expression, morning light on his face as the gorge widens and the river becomes peaceful ahead, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "朝辞白帝彩云间，\n千里江陵一日还。\n两岸猿声啼不住，\n轻舟已过万重山。\n再轻轻读一遍吧。",
+        "enText": "At dawn I leave Baidi among colored clouds,\nReturning a thousand li to Jiangling in one day.\nFrom both banks, gibbons call without end,\nWhile my light boat has passed ten thousand mountains.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing bright morning view of the same light boat emerging from the last gorge into a broad golden-blue river, countless mountains layered behind and open sky ahead, Li Bai and boatman small but peaceful, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 13,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same young Li Bai throughout: warm oval face, black hair in a high Tang knot, flowing white robe with pale blue trim and indigo sash; same skilled middle-aged boatman in brown-green work robe; same light narrow wooden boat with small plain canopy and long stern oar.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern city, modern ship, motor, dangerous rapids, capsizing, child passengers, scary apes, oversized animals, photorealism, distorted boat, distorted anatomy"
+  }
+}

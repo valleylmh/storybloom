@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "zeng-wang-lun",
+    "seriesId": "tangshi",
+    "title": "赠汪伦",
+    "subtitle": "岸边的歌，送小船远行",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": [
+        "李白乘舟将欲行，",
+        "忽闻岸上踏歌声。",
+        "桃花潭水深千尺，",
+        "不及汪伦送我情。"
+      ],
+      "englishLines": [
+        "Li Bai boards his boat, about to leave,",
+        "When suddenly a farewell song rises from the shore.",
+        "The Peach Blossom Pool may be a thousand feet deep,",
+        "Yet not as deep as Wang Lun's friendship for me."
+      ],
+      "appreciation": {
+        "zh": "临行时忽然响起的踏歌，让深深的桃花潭也比不过朋友真挚的情意。",
+        "en": "A surprise farewell song makes even the deep Peach Blossom Pool seem shallower than a friend's sincere affection."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "李白乘舟将欲行，\n忽闻岸上踏歌声。\n桃花潭水深千尺，\n不及汪伦送我情。",
+        "enText": "Li Bai boards his boat, about to leave,\nWhen suddenly a farewell song rises from the shore.\nThe Peach Blossom Pool may be a thousand feet deep,\nYet not as deep as Wang Lun's friendship for me.",
+        "illustrationPrompt": "Bright spring morning at Peach Blossom Pool, Li Bai in a white-blue Tang robe stands safely in a small roofed wooden passenger boat near shore while his friend Wang Lun in a warm ochre robe arrives beneath blooming peach trees with several villagers singing and stepping rhythmically, turquoise water and layered hills, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "李白乘舟将欲行，\n行李已经放好，小船正要离开岸边。",
+        "enText": "Li Bai boards his boat, about to leave.\nHis bundle is packed, and the boat is ready to push off.",
+        "illustrationPrompt": "Medium-wide view of the same Li Bai standing steadily inside the same moored wooden boat beside a seated boatman, a simple travel bundle secured under the canopy as the boat begins to turn from shore, peach blossoms overhead, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "忽闻岸上踏歌声。\n岸上忽然传来脚步和歌声，是朋友赶来送行。",
+        "enText": "When suddenly a farewell song rises from the shore.\nFootsteps and singing announce a friend who has come to say goodbye.",
+        "illustrationPrompt": "The same Li Bai turns in delighted surprise toward shore as Wang Lun and friendly villagers perform a gentle Tang-era stepping song under peach trees, hands raised in greeting, boat still close and safe, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "桃花潭水深千尺，\n碧绿的潭水映着山影，看起来又清又深。",
+        "enText": "The Peach Blossom Pool may be a thousand feet deep.\nClear green water holds the reflections of tall mountains.",
+        "illustrationPrompt": "High wide view emphasizing the clear deep-looking turquoise pool with mountain and peach-blossom reflections, the same boat and farewell group small but clearly visible near the bank, peaceful water with no danger, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "不及汪伦送我情。\n再深的潭水，也比不上朋友送别的情意。",
+        "enText": "Yet not as deep as Wang Lun's friendship for me.\nEven this deep pool cannot match a friend's heartfelt farewell.",
+        "illustrationPrompt": "Warm medium scene across a short stretch of water: Li Bai bows with both hands from the boat while Wang Lun returns the farewell bow from shore, their smiling eyes meeting, peach petals drifting between them, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "小船慢慢向前，岸上的歌声却一直跟着。诗人看见潭水，也听见友情。",
+        "enText": "The boat glides on, but the song follows. The poet sees the water and hears friendship in every note.",
+        "illustrationPrompt": "Long panoramic square composition of the same boat moving gently across the pool while Wang Lun and villagers continue waving and singing on the peach-lined shore, soft sound-like ripples spreading across the water without graphic symbols, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "真正的朋友，会让一次告别也带着温暖。离得再远，那份情意还在心里。",
+        "enText": "A true friend can fill a goodbye with warmth. Distance does not erase what the heart remembers.",
+        "illustrationPrompt": "The same Li Bai sits under the boat canopy farther from shore, one hand over his heart and a warm smile as he looks back toward tiny Wang Lun beneath the blossoms, calm hopeful mood, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "李白乘舟将欲行，\n忽闻岸上踏歌声。\n桃花潭水深千尺，\n不及汪伦送我情。\n再轻轻读一遍吧。",
+        "enText": "Li Bai boards his boat, about to leave,\nWhen suddenly a farewell song rises from the shore.\nThe Peach Blossom Pool may be a thousand feet deep,\nYet not as deep as Wang Lun's friendship for me.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing wide view at golden spring light, the same boat follows a shining path across Peach Blossom Pool while Li Bai and Wang Lun still wave to one another, blooming shore and blue-green mountains holding the scene together, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 12,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep Li Bai consistent: cheerful young adult with warm oval face, black hair in high Tang knot, flowing white robe with pale blue trim and indigo sash. Keep Wang Lun consistent: friendly rounder face, ochre robe, dark green sash. Same small roofed wooden passenger boat, calm turquoise pool and blooming pink peach trees.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, motorboat, modern music instruments, unsafe standing, falling into water, giant waves, photorealism, distorted anatomy, extra limbs"
+  }
+}

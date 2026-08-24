@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "huang-he-lou-song-meng-hao-ran-zhi-guang-ling",
+    "seriesId": "tangshi",
+    "title": "黄鹤楼送孟浩然之广陵",
+    "subtitle": "孤帆远去，长江仍在流",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": [
+        "故人西辞黄鹤楼，",
+        "烟花三月下扬州。",
+        "孤帆远影碧空尽，",
+        "唯见长江天际流。"
+      ],
+      "englishLines": [
+        "My old friend leaves the west by Yellow Crane Tower,",
+        "Sailing to Yangzhou through misty blossoms of March.",
+        "His lone sail fades into the blue distance,",
+        "Until only the Yangtze flows at the edge of the sky."
+      ],
+      "appreciation": {
+        "zh": "诗人一直望着朋友的帆影，直到它消失在天边；留下的长江，像一份没有说完的送别。",
+        "en": "The poet watches his friend's sail until it vanishes; the river left behind seems to carry a farewell too deep for words."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "故人西辞黄鹤楼，\n烟花三月下扬州。\n孤帆远影碧空尽，\n唯见长江天际流。",
+        "enText": "My old friend leaves the west by Yellow Crane Tower,\nSailing to Yangzhou through misty blossoms of March.\nHis lone sail fades into the blue distance,\nUntil only the Yangtze flows at the edge of the sky.",
+        "illustrationPrompt": "Misty March morning beside the Yangtze, Li Bai in white-blue Tang robe stands on a high riverside terrace near a period-appropriate wooden Yellow Crane Tower while his older friend Meng Haoran departs in a single-sail wooden boat below, willow green and peach blossoms, vast river and blue sky, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "故人西辞黄鹤楼，\n老朋友从黄鹤楼边登船，向东告别而去。",
+        "enText": "My old friend leaves the west by Yellow Crane Tower.\nThe old friend boards his boat and says goodbye before sailing east.",
+        "illustrationPrompt": "Closer farewell at the riverside steps below the same Tang wooden tower: Li Bai and the older bearded Meng Haoran exchange a respectful two-handed bow, Meng beside the moored sailboat and Li Bai remaining on shore, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "烟花三月下扬州。\n三月草木明丽，朋友顺着春水去往繁花似锦的扬州。",
+        "enText": "Sailing to Yangzhou through misty blossoms of March.\nIn the bright third month, his boat follows the spring river toward flower-filled Yangzhou.",
+        "illustrationPrompt": "The same sailboat begins its eastward journey through soft spring haze, Meng Haoran seated safely beneath a modest canopy, blossoming banks and new willow leaves glowing around the wide river, Li Bai visible on the distant terrace, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "孤帆远影碧空尽，\n诗人望着那一片帆，越来越小，越来越远。",
+        "enText": "His lone sail fades into the blue distance.\nThe poet watches the sail grow smaller and farther away.",
+        "illustrationPrompt": "Over-shoulder view behind the same Li Bai as he watches one tiny pale sail receding toward the blue horizon, large open sky and river emphasizing distance, tower eaves and spring branches framing the scene, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "唯见长江天际流。\n帆影终于看不见了，只有长江还流向天边。",
+        "enText": "Until only the Yangtze flows at the edge of the sky.\nThe sail disappears, and only the great river keeps flowing toward the horizon.",
+        "illustrationPrompt": "Vast minimalist river landscape from Li Bai's viewpoint, the sail now fully gone, only a luminous Yangtze stretching into blue mist beneath an immense sky, the same poet small and still at the terrace rail, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "三月的花很明亮，江水也很开阔。可诗人的目光，只追着朋友的那一片孤帆。",
+        "enText": "March blossoms shine and the river opens wide, yet the poet's eyes follow only his friend's lone sail.",
+        "illustrationPrompt": "Layered scene with bright blossoms and green willow branches close around the same Li Bai, while his focused gaze reaches past all the spring beauty toward a barely visible sail at the far river bend, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "舍不得的时候，我们会多看一会儿。那久久的目光，本身就是一声温柔的再见。",
+        "enText": "When parting is hard, we keep looking a little longer. That lingering gaze becomes a gentle goodbye.",
+        "illustrationPrompt": "Quiet close-medium portrait of the same Li Bai by the terrace, one hand resting on the wooden rail, expression tender and composed as reflected river light moves across his face, no tears or text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "故人西辞黄鹤楼，\n烟花三月下扬州。\n孤帆远影碧空尽，\n唯见长江天际流。\n再轻轻读一遍吧。",
+        "enText": "My old friend leaves the west by Yellow Crane Tower,\nSailing to Yangzhou through misty blossoms of March.\nHis lone sail fades into the blue distance,\nUntil only the Yangtze flows at the edge of the sky.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing serene spring panorama of Yellow Crane Tower, Li Bai on the terrace, blossoms and willows beside the endless Yangtze flowing into radiant sky; no boat visible now, only calm distance and warm memory, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 14,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep Li Bai consistent on shore: young adult, warm oval face, high black hair knot, white robe with pale blue trim and indigo sash. Keep Meng Haoran consistent in the departing boat: older gentle scholar with short dark beard, muted sage robe and brown sash. Same single pale sailboat, March blossoms, willow-lined Yangtze and Tang wooden tower.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern skyline, modern bridge, engine boat, fantasy cranes, crowded armada, storm, falling from terrace, exaggerated crying, photorealism, distorted architecture or anatomy"
+  }
+}

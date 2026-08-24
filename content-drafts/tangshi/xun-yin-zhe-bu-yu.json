@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "xun-yin-zhe-bu-yu",
+    "seriesId": "tangshi",
+    "title": "寻隐者不遇",
+    "subtitle": "云深处，先生在哪里",
+    "poem": {
+      "dynasty": "唐",
+      "author": "贾岛",
+      "originalLines": [
+        "松下问童子，",
+        "言师采药去。",
+        "只在此山中，",
+        "云深不知处。"
+      ],
+      "englishLines": [
+        "Beneath the pine, I ask the young student,",
+        "Who says, ‘My teacher has gone to gather herbs.’",
+        "‘He is somewhere here in these mountains,",
+        "But the clouds are deep—I do not know where.’"
+      ],
+      "appreciation": {
+        "zh": "一问一答把目光从松树下带到云雾深山；人没有找到，山却因此显得更幽深。",
+        "en": "A simple question and answer carries our gaze from beneath a pine into cloud-filled mountains; the missing teacher makes the landscape feel even deeper."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "松下问童子，\n言师采药去。\n只在此山中，\n云深不知处。",
+        "enText": "Beneath the pine, I ask the young student,\nWho says, ‘My teacher has gone to gather herbs.’\n‘He is somewhere here in these mountains,\nBut the clouds are deep—I do not know where.’",
+        "illustrationPrompt": "Quiet Tang mountain morning beneath an ancient pine, traveling poet Jia Dao in a muted blue-gray robe politely speaks with a young student in ochre robe beside a small thatched hermitage, the child holds an empty herb basket, high blue-green mountains vanish into soft white clouds, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "松下问童子，\n诗人来到老松树下，向守在屋边的小童问路。",
+        "enText": "Beneath the pine, I ask the young student.\nThe poet reaches the old tree and asks the child beside the hut.",
+        "illustrationPrompt": "Medium scene under the same broad pine: Jia Dao gives a respectful slight bow while asking the same young student, small thatched hut and stone steps nearby, both faces open and friendly, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "言师采药去。\n小童说，先生背着药篓进山采药了。",
+        "enText": "Who says, ‘My teacher has gone to gather herbs.’\nThe child explains that the teacher took a basket into the mountains.",
+        "illustrationPrompt": "The same child gestures toward the mountain trail and points to a second woven herb basket by the hut, while Jia Dao listens carefully; far up the safe path a tiny older teacher silhouette with basket may be barely visible, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "只在此山中，\n先生没有走远，就在眼前这座山里。",
+        "enText": "‘He is somewhere here in these mountains.’\nThe teacher has not gone beyond the mountain before them.",
+        "illustrationPrompt": "Wide view from behind Jia Dao and the child as they look up at the same immense forested mountain, winding paths weaving among rocks, pines and small herb clearings, the hut safely below, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "云深不知处。\n可白云一层又一层，谁也看不清先生到底在哪里。",
+        "enText": "‘But the clouds are deep—I do not know where.’\nLayer after layer of white cloud hides the teacher's exact path.",
+        "illustrationPrompt": "Vast mountain vista with layered white clouds flowing between mineral blue-green peaks and obscuring the upper trail, Jia Dao and the child tiny under the pine at bottom, no lost child or danger, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "诗人听见小童的回答，也看见松树、山路和深深的云。没遇见的人，仿佛藏进了整座山。",
+        "enText": "The poet hears the answer and sees pine, path, and deep cloud. The person he missed seems hidden inside the whole mountain.",
+        "illustrationPrompt": "Poetic layered composition connecting the pine needles, winding stone path, herb plants and cloud-filled peaks while Jia Dao scans the landscape thoughtfully beside the child, all clues leading upward, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "没有找到，也可以慢慢想象。山里的留白，让一次寻找多了一点神秘和安静。",
+        "enText": "Not finding someone leaves room to imagine. The mountain's open spaces make the search quiet and mysterious.",
+        "illustrationPrompt": "The same Jia Dao sits briefly on a smooth stone beneath the pine, content rather than disappointed, while the child offers a cup of water and clouds drift apart slightly above, generous rice-paper negative space, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "松下问童子，\n言师采药去。\n只在此山中，\n云深不知处。\n再轻轻读一遍吧。",
+        "enText": "Beneath the pine, I ask the young student,\nWho says, ‘My teacher has gone to gather herbs.’\n‘He is somewhere here in these mountains,\nBut the clouds are deep—I do not know where.’\nNow read it softly once more.",
+        "illustrationPrompt": "Closing morning scene as Jia Dao waves goodbye to the same child beneath the pine and begins down the safe stone path, turning once toward the cloud-wrapped mountain, hermitage warm and peaceful, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 17,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep Jia Dao consistent: slim adult traveler with thoughtful oval face, black hair in high knot, muted blue-gray Tang robe, brown sash and small cloth shoulder bag. Keep the young student consistent: about eight years old, round face, two small side buns, ochre cross-collar robe, moss-green trousers. Same ancient pine, thatched hermitage and woven herb baskets.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern hiking gear, medicine labels, eating unknown herbs, child alone in dangerous terrain, sheer cliff edge, scary fog, ghosts, photorealism, distorted anatomy"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "shan-xing",
+    "seriesId": "tangshi",
+    "title": "山行",
+    "subtitle": "霜叶比春花还要红",
+    "poem": {
+      "dynasty": "唐",
+      "author": "杜牧",
+      "originalLines": [
+        "远上寒山石径斜，",
+        "白云生处有人家。",
+        "停车坐爱枫林晚，",
+        "霜叶红于二月花。"
+      ],
+      "englishLines": [
+        "Far up the cold mountain, a stone path climbs,",
+        "Where homes appear among the rising white clouds.",
+        "I stop the carriage, drawn to the evening maple woods,",
+        "For frost-touched leaves glow redder than spring flowers."
+      ],
+      "appreciation": {
+        "zh": "深秋的山并不萧瑟：斜斜石径、云中人家和满林红叶，让诗人停下车来久久欣赏。",
+        "en": "The late-autumn mountain is not bleak: a climbing path, cloud-high homes, and brilliant maples make the poet stop and gaze."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "远上寒山石径斜，\n白云生处有人家。\n停车坐爱枫林晚，\n霜叶红于二月花。",
+        "enText": "Far up the cold mountain, a stone path climbs,\nWhere homes appear among the rising white clouds.\nI stop the carriage, drawn to the evening maple woods,\nFor frost-touched leaves glow redder than spring flowers.",
+        "illustrationPrompt": "Late-autumn Tang mountain at golden evening, poet Du Mu has stopped a small period-appropriate ox-drawn wooden carriage on a broad safe roadside, gazing at a glowing red maple forest; a slanting stone path climbs toward tiny wooden homes among white clouds, no modern vehicle, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "远上寒山石径斜，\n一条弯弯斜斜的石头小路，伸向深秋的山顶。",
+        "enText": "Far up the cold mountain, a stone path climbs.\nA winding stone path reaches toward the late-autumn heights.",
+        "illustrationPrompt": "Upward-looking wide landscape of the same gently winding stone path climbing through cool blue-gray autumn mountains, Du Mu's ox carriage small at the lower bend, sparse golden grasses and safe broad road, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "白云生处有人家。\n高高的白云旁，隐约露出几座安静的屋舍。",
+        "enText": "Where homes appear among the rising white clouds.\nQuiet houses peek out beside the high white clouds.",
+        "illustrationPrompt": "Telephoto-like ink landscape of several small period-appropriate wooden mountain homes nestled safely on a high terrace as white clouds drift below their roofs, stone path connecting them, no smoke danger, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "停车坐爱枫林晚，\n因为太喜欢傍晚的枫林，诗人让牛车停了下来。",
+        "enText": "I stop the carriage, drawn to the evening maple woods.\nThe poet halts his ox cart because the sunset maples are too beautiful to pass.",
+        "illustrationPrompt": "Medium-wide scene of the same brown ox calmly resting while the wooden carriage stands securely off the road, Du Mu in deep teal robe steps down with a delighted expression toward the sunset maple forest, driver holds the reins, no modern car or text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "霜叶红于二月花。\n被秋霜染过的叶子，比二月的春花还要鲜红。",
+        "enText": "For frost-touched leaves glow redder than spring flowers.\nLeaves brushed by frost shine even redder than blossoms in spring.",
+        "illustrationPrompt": "Close-to-wide view inside the same maple grove, brilliant cinnabar and coral leaves edged with delicate pale frost sparkle in low sunlight as Du Mu looks upward, fallen leaves carpeting a safe path, no snowstorm or text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "石径往上，白云在高处；牛车停下，红叶在眼前。一路远望，最后被一片颜色留住。",
+        "enText": "The stone path climbs and clouds float high; the carriage stops before red leaves. A distant gaze is finally held by color close at hand.",
+        "illustrationPrompt": "Layered composition following the stone path from foreground red leaves and stopped ox carriage upward through cool mountains to cloud-high homes, Du Mu's gaze connecting near and far, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "秋天不只有落叶和凉风。只要停下来看看，也会遇见比春花更热烈的颜色。",
+        "enText": "Autumn holds more than falling leaves and cool wind. When we pause, we may find colors even brighter than spring blossoms.",
+        "illustrationPrompt": "Warm close-medium scene of Du Mu holding one naturally fallen red maple leaf in an open palm while standing beside the calm ox and driver, all three surrounded by glowing evening color, no picking live branches, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "远上寒山石径斜，\n白云生处有人家。\n停车坐爱枫林晚，\n霜叶红于二月花。\n再轻轻读一遍吧。",
+        "enText": "Far up the cold mountain, a stone path climbs,\nWhere homes appear among the rising white clouds.\nI stop the carriage, drawn to the evening maple woods,\nFor frost-touched leaves glow redder than spring flowers.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing autumn sunset panorama with the same ox carriage still paused at the maple forest, Du Mu admiring a hillside ablaze in red beneath white clouds and distant homes, balanced cool mountains and warm leaves, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 19,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep Du Mu consistent: refined young adult with warm oval face, black hair in neat high knot, deep teal cross-collar Tang robe, rust sash and black cloth shoes. Same calm brown ox, simple two-wheel wooden carriage with muted canopy, middle-aged driver in ochre work robe, mountain stone path and red maple forest.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, automobile, modern road, rubber tire, modern house, dangerous cliff, frightened ox, snowstorm, spring blossoms mixed into autumn scene, photorealism, distorted carriage or anatomy"
+  }
+}

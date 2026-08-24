@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "xiao-er-chui-diao",
+    "seriesId": "tangshi",
+    "title": "小儿垂钓",
+    "subtitle": "嘘，鱼儿就要上钩啦",
+    "poem": {
+      "dynasty": "唐",
+      "author": "胡令能",
+      "originalLines": [
+        "蓬头稚子学垂纶，",
+        "侧坐莓苔草映身。",
+        "路人借问遥招手，",
+        "怕得鱼惊不应人。"
+      ],
+      "englishLines": [
+        "A tousle-haired child is learning to fish,",
+        "Sitting sideways on moss, half hidden by grass.",
+        "A traveler asks the way, and the child waves from afar,",
+        "Afraid a spoken answer might startle the fish."
+      ],
+      "appreciation": {
+        "zh": "小童想帮路人，却更怕惊跑鱼儿，只好远远招手；认真、紧张和可爱都在一个小动作里。",
+        "en": "The child wants to help a traveler but fears startling the fish, so one distant wave captures concentration, suspense, and charm."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "蓬头稚子学垂纶，\n侧坐莓苔草映身。\n路人借问遥招手，\n怕得鱼惊不应人。",
+        "enText": "A tousle-haired child is learning to fish,\nSitting sideways on moss, half hidden by grass.\nA traveler asks the way, and the child waves from afar,\nAfraid a spoken answer might startle the fish.",
+        "illustrationPrompt": "Sunny Tang countryside beside a shallow calm village pond, a tousle-haired child in ochre short robe and teal trousers sits safely sideways on a broad flat mossy bank well back from the edge, holding a simple bamboo fishing rod over water, tall grass partly hides the child while a traveler on the distant path asks directions, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "蓬头稚子学垂纶，\n头发蓬松的小童握着鱼竿，正在认真学钓鱼。",
+        "enText": "A tousle-haired child is learning to fish.\nThe child grips a bamboo rod and practices with complete attention.",
+        "illustrationPrompt": "Medium view of the same child seated securely on the wide bank, both hands carefully holding the same bamboo fishing rod, round focused face beneath two slightly messy side buns, float resting on still shallow water, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "侧坐莓苔草映身。\n他斜坐在软软的青苔上，长草把小小的身影藏住一半。",
+        "enText": "Sitting sideways on moss, half hidden by grass.\nSoft moss and tall grass hide half of the little figure.",
+        "illustrationPrompt": "Side view emphasizing the same child comfortably perched on a broad mossy patch with wild grass rising around the shoulders, pond edge gentle and clearly safe, bamboo rod extending forward, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "路人借问遥招手，\n远处有人问路，小童赶紧抬手示意。",
+        "enText": "A traveler asks the way, and the child waves from afar.\nSomeone calls from the path, and the child quickly raises a hand.",
+        "illustrationPrompt": "Wide view across the grass: the same child keeps one hand on the rod and raises the other in a small urgent wave toward a friendly adult traveler with walking staff standing safely on the path, no speech bubbles or text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "怕得鱼惊不应人。\n他不敢出声，生怕一句话就把水里的鱼儿吓跑。",
+        "enText": "Afraid a spoken answer might startle the fish.\nThe child stays silent, worried that one word could send the fish away.",
+        "illustrationPrompt": "Humorous close-medium scene of the same child placing one finger gently near closed lips while watching the float, eyes wide with concentration; a small fish shadow remains beneath calm water and the traveler waits kindly, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "路人在等方向，鱼儿也在等动静。小童一边招手，一边守着安安静静的水面。",
+        "enText": "The traveler waits for directions, and the fish waits below. The child waves while guarding the pond's quiet surface.",
+        "illustrationPrompt": "Balanced wide composition linking the traveler on the path, the same waving child among grass and the tiny fishing float on the glassy pond, each subject waiting in a gentle comic pause, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "诗人没有告诉我们鱼儿上钩没有，只留下这个屏住呼吸的小瞬间，让人忍不住微笑。",
+        "enText": "The poem never tells us whether a fish bites. It leaves one breath-holding moment that makes us smile.",
+        "illustrationPrompt": "Quiet close view of the same child and traveler both leaning slightly to watch the unmoving float from their safe places, shared amused suspense, dragonfly above water and no caught or harmed fish, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "蓬头稚子学垂纶，\n侧坐莓苔草映身。\n路人借问遥招手，\n怕得鱼惊不应人。\n再轻轻读一遍吧。",
+        "enText": "A tousle-haired child is learning to fish,\nSitting sideways on moss, half hidden by grass.\nA traveler asks the way, and the child waves from afar,\nAfraid a spoken answer might startle the fish.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing warm afternoon view of the same peaceful pond, child still patiently fishing among glowing grass while the traveler smiles and follows the silently indicated path, long soft shadows and gentle humor, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 18,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same Tang child throughout: about six years old, round expressive face, black hair in two tousled side buns, pale ochre short cross-collar robe, teal trousers, rust sash and straw sandals; same simple bamboo rod, tiny plain float, broad safe mossy bank and shallow village pond. Traveler wears a muted sage robe and carries a wooden staff.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern fishing reel, plastic gear, dangerous deep water, child at cliff-like edge, child falling, hook injury, trapped or suffering fish, scary animals, photorealism, distorted hands or fishing rod"
+  }
+}

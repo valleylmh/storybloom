@@ -79,6 +79,101 @@ const TANGSHI_BOOKS = [
     author: "白居易",
     lines: ["小娃撑小艇，", "偷采白莲回。", "不解藏踪迹，", "浮萍一道开。"],
   },
+  {
+    id: "xiang-si",
+    title: "相思",
+    author: "王维",
+    lines: ["红豆生南国，", "春来发几枝。", "愿君多采撷，", "此物最相思。"],
+  },
+  {
+    id: "zeng-wang-lun",
+    title: "赠汪伦",
+    author: "李白",
+    lines: [
+      "李白乘舟将欲行，",
+      "忽闻岸上踏歌声。",
+      "桃花潭水深千尺，",
+      "不及汪伦送我情。",
+    ],
+  },
+  {
+    id: "zao-fa-bai-di-cheng",
+    title: "早发白帝城",
+    author: "李白",
+    lines: [
+      "朝辞白帝彩云间，",
+      "千里江陵一日还。",
+      "两岸猿声啼不住，",
+      "轻舟已过万重山。",
+    ],
+  },
+  {
+    id: "huang-he-lou-song-meng-hao-ran-zhi-guang-ling",
+    title: "黄鹤楼送孟浩然之广陵",
+    author: "李白",
+    lines: [
+      "故人西辞黄鹤楼，",
+      "烟花三月下扬州。",
+      "孤帆远影碧空尽，",
+      "唯见长江天际流。",
+    ],
+  },
+  {
+    id: "jiu-yue-jiu-ri-yi-shan-dong-xiong-di",
+    title: "九月九日忆山东兄弟",
+    author: "王维",
+    lines: [
+      "独在异乡为异客，",
+      "每逢佳节倍思亲。",
+      "遥知兄弟登高处，",
+      "遍插茱萸少一人。",
+    ],
+  },
+  {
+    id: "zhu-li-guan",
+    title: "竹里馆",
+    author: "王维",
+    lines: ["独坐幽篁里，", "弹琴复长啸。", "深林人不知，", "明月来相照。"],
+  },
+  {
+    id: "xun-yin-zhe-bu-yu",
+    title: "寻隐者不遇",
+    author: "贾岛",
+    lines: ["松下问童子，", "言师采药去。", "只在此山中，", "云深不知处。"],
+  },
+  {
+    id: "xiao-er-chui-diao",
+    title: "小儿垂钓",
+    author: "胡令能",
+    lines: [
+      "蓬头稚子学垂纶，",
+      "侧坐莓苔草映身。",
+      "路人借问遥招手，",
+      "怕得鱼惊不应人。",
+    ],
+  },
+  {
+    id: "shan-xing",
+    title: "山行",
+    author: "杜牧",
+    lines: [
+      "远上寒山石径斜，",
+      "白云生处有人家。",
+      "停车坐爱枫林晚，",
+      "霜叶红于二月花。",
+    ],
+  },
+  {
+    id: "feng-qiao-ye-bo",
+    title: "枫桥夜泊",
+    author: "张继",
+    lines: [
+      "月落乌啼霜满天，",
+      "江枫渔火对愁眠。",
+      "姑苏城外寒山寺，",
+      "夜半钟声到客船。",
+    ],
+  },
 ] as const;
 
 function allSummaries() {
@@ -90,14 +185,14 @@ function allSummaries() {
 }
 
 describe("Tang poetry library series", () => {
-  it("registers the ten-book 唐诗入画 series in the requested order", () => {
+  it("registers the twenty-book 唐诗入画 series in the requested order", () => {
     const series = getSeries("tangshi");
     expect(series).toMatchObject({
       title: "唐诗入画",
       subtitle: "一首诗，一幅会呼吸的画",
       accent: "#47677a",
       ageRange: "4-8 岁",
-      bookCount: 10,
+      bookCount: 20,
     });
     expect(getPublishedBooks("tangshi").map((book) => book.id)).toEqual(
       TANGSHI_BOOKS.map((book) => book.id),
@@ -134,7 +229,7 @@ describe("Tang poetry library series", () => {
     }
   });
 
-  it("publishes eighty optimized square WebP illustrations", async () => {
+  it("publishes one hundred and sixty optimized square WebP illustrations", async () => {
     let imageCount = 0;
     for (const expected of TANGSHI_BOOKS) {
       const book = getBook("tangshi", expected.id);
@@ -155,7 +250,7 @@ describe("Tang poetry library series", () => {
         imageCount += 1;
       }
     }
-    expect(imageCount).toBe(80);
+    expect(imageCount).toBe(160);
   });
 
   it("adds poetry discovery metadata and searches author plus imagery", () => {
@@ -174,6 +269,16 @@ describe("Tang poetry library series", () => {
         (item) => item.contentId,
       ),
     ).toContain("tangshi/jing-ye-si");
+    expect(
+      filterLibraryBooks(allSummaries(), { query: "王维 红豆" }).map(
+        (item) => item.contentId,
+      ),
+    ).toContain("tangshi/xiang-si");
+    expect(
+      filterLibraryBooks(allSummaries(), { query: "张继 钟声" }).map(
+        (item) => item.contentId,
+      ),
+    ).toContain("tangshi/feng-qiao-ye-bo");
     expect(
       filterLibraryBooks(allSummaries(), {
         filters: { category: "poetry", seriesId: "tangshi" },
@@ -198,12 +303,12 @@ describe("Tang poetry library series", () => {
     expect(getLibraryStorySpecByContentId("tangshi/yong-e")).toBeNull();
   });
 
-  it("includes the series and all ten books in the sitemap", () => {
+  it("includes the series and all twenty books in the sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
     expect(urls.some((url) => url.endsWith("/library/tangshi"))).toBe(true);
     expect(
       urls.filter((url) => url.includes("/library/tangshi/")),
-    ).toHaveLength(10);
+    ).toHaveLength(20);
     for (const book of TANGSHI_BOOKS) {
       expect(urls.some((url) => url.endsWith(`/library/tangshi/${book.id}`))).toBe(true);
     }

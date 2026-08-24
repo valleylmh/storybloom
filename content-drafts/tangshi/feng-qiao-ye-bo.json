@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "feng-qiao-ye-bo",
+    "seriesId": "tangshi",
+    "title": "枫桥夜泊",
+    "subtitle": "一声夜半钟，穿过霜天",
+    "poem": {
+      "dynasty": "唐",
+      "author": "张继",
+      "originalLines": [
+        "月落乌啼霜满天，",
+        "江枫渔火对愁眠。",
+        "姑苏城外寒山寺，",
+        "夜半钟声到客船。"
+      ],
+      "englishLines": [
+        "The moon sinks, crows call, and frost fills the sky,",
+        "By riverside maples and fishing lights, I lie awake with sorrow.",
+        "Outside Gusu stands Hanshan Temple,",
+        "Its midnight bell reaches my traveler’s boat."
+      ],
+      "appreciation": {
+        "zh": "月落、乌啼、渔火和钟声，把旅人难眠的秋夜一层层写出来；远处的一声钟，让寂静也有了回响。",
+        "en": "A sinking moon, crow calls, fishing lights, and a distant bell build the traveler's sleepless autumn night, giving the silence an echo."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "月落乌啼霜满天，\n江枫渔火对愁眠。\n姑苏城外寒山寺，\n夜半钟声到客船。",
+        "enText": "The moon sinks, crows call, and frost fills the sky,\nBy riverside maples and fishing lights, I lie awake with sorrow.\nOutside Gusu stands Hanshan Temple,\nIts midnight bell reaches my traveler’s boat.",
+        "illustrationPrompt": "Cold clear late-autumn night near Tang-era Gusu, Zhang Ji's modest wooden traveler boat is safely moored beneath a stone arch bridge beside dark red riverside maples, the moon setting low, a few crows on distant branches, warm fishing lights reflected on calm water, Hanshan Temple faint beyond, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "月落乌啼霜满天，\n月亮慢慢落下，乌鸦的叫声穿过清冷的霜夜。",
+        "enText": "The moon sinks, crows call, and frost fills the sky.\nThe moon lowers as crow calls cross the clear, frosty night.",
+        "illustrationPrompt": "Upward night view from the same moored boat: a pale moon sinks behind the stone bridge and bare-tipped maple branches, two or three calm crows call from far branches, delicate frost glints under a deep indigo sky, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "江枫渔火对愁眠。\n江边枫树黑黑的，几点渔火亮着，旅人却迟迟睡不着。",
+        "enText": "By riverside maples and fishing lights, I lie awake with sorrow.\nDark maples and a few fishing lights keep company with the sleepless traveler.",
+        "illustrationPrompt": "Interior-exterior view under the same boat's small canopy, Zhang Ji in muted blue-gray robe lies awake but composed beside a folded blanket, looking through the opening at red-black maples and two warm fishing lanterns reflected on water, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "姑苏城外寒山寺，\n不远处，寒山寺安静地坐落在姑苏城外。",
+        "enText": "Outside Gusu stands Hanshan Temple.\nNot far away, Hanshan Temple rests quietly beyond the city.",
+        "illustrationPrompt": "Distant view across the calm river toward a period-appropriate Tang Buddhist temple compound among low wooded hills outside Gusu, simple tiled halls and a modest bell pavilion softly lit by moonlight, no statues dominating, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "夜半钟声到客船。\n到了半夜，沉沉的钟声越过河面，传到小船上。",
+        "enText": "Its midnight bell reaches my traveler’s boat.\nAt midnight, a deep bell crosses the water and reaches the little boat.",
+        "illustrationPrompt": "Wide river scene linking the distant temple bell pavilion to the same moored traveler boat through widening moonlit ripples, Zhang Ji sits up listening under the canopy, sound suggested naturally without symbols or writing, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "眼前有落月、枫树和渔火，耳边有乌啼和钟声。清冷的夜，被远远近近的声音照亮。",
+        "enText": "A setting moon, maples, and fishing lights fill the eyes; crows and a bell fill the ears. Near and distant sounds brighten the cold night.",
+        "illustrationPrompt": "Immersive layered night composition showing the same boat, stone bridge, riverside maples, distant crows, warm fishing lights and temple across the water, each element clear within spacious indigo ink wash, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "旅途中睡不着的夜，难免有一点愁。可那一声钟，也像远方送来的一句安静陪伴。",
+        "enText": "A sleepless night on a journey can feel lonely, yet the bell arrives like quiet company from afar.",
+        "illustrationPrompt": "Gentle close-medium view of Zhang Ji seated securely in the boat wrapping a plain blanket around his shoulders, expression easing as he listens toward the temple, warm lantern and cool moonlight balanced, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "月落乌啼霜满天，\n江枫渔火对愁眠。\n姑苏城外寒山寺，\n夜半钟声到客船。\n再轻轻读一遍吧。",
+        "enText": "The moon sinks, crows call, and frost fills the sky,\nBy riverside maples and fishing lights, I lie awake with sorrow.\nOutside Gusu stands Hanshan Temple,\nIts midnight bell reaches my traveler’s boat.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing tranquil pre-dawn view: the same boat remains safely moored under the bridge, fishing lights dimming, temple silhouette and pale horizon beyond, Zhang Ji finally resting under the canopy as frost sparkles softly, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 20,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep Zhang Ji consistent: adult traveler with thoughtful oval face, black hair in neat high knot, muted blue-gray Tang robe, dark rust sash and black cloth shoes; same modest low wooden traveler boat with small curved canopy, folded beige blanket and warm plain lantern; same stone arch bridge, riverside maples and distant Hanshan Temple.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern city lights, electric lamps, modern bridge, motorboat, giant bell floating over water, graphic sound waves, scary crows, storm, dangerous water, exaggerated despair, photorealism, distorted boat or anatomy"
+  }
+}

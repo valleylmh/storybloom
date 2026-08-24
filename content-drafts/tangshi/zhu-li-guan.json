@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "zhu-li-guan",
+    "seriesId": "tangshi",
+    "title": "竹里馆",
+    "subtitle": "竹林深处，月亮来听琴",
+    "poem": {
+      "dynasty": "唐",
+      "author": "王维",
+      "originalLines": [
+        "独坐幽篁里，",
+        "弹琴复长啸。",
+        "深林人不知，",
+        "明月来相照。"
+      ],
+      "englishLines": [
+        "Alone I sit among the quiet bamboo,",
+        "Playing the qin, then singing a long clear note.",
+        "No one knows I am deep in the grove,",
+        "But the bright moon comes to shine on me."
+      ],
+      "appreciation": {
+        "zh": "幽静竹林里没有旁人，琴声、清啸和月光却让独处变成自在又明亮的陪伴。",
+        "en": "With no one else in the quiet bamboo grove, music, a clear call, and moonlight turn solitude into peaceful companionship."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "独坐幽篁里，\n弹琴复长啸。\n深林人不知，\n明月来相照。",
+        "enText": "Alone I sit among the quiet bamboo,\nPlaying the qin, then singing a long clear note.\nNo one knows I am deep in the grove,\nBut the bright moon comes to shine on me.",
+        "illustrationPrompt": "Peaceful night in a deep Tang bamboo grove, Wang Wei in muted celadon scholar robe sits on a low woven mat playing a seven-string guqin placed correctly on a simple low stand, full moonlight pours between tall bamboo stalks, small stone and ferns nearby, spacious and child-friendly, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "独坐幽篁里，\n诗人一个人坐在幽静的竹林深处。",
+        "enText": "Alone I sit among the quiet bamboo.\nThe poet settles by himself deep inside the peaceful grove.",
+        "illustrationPrompt": "Wide dusk-to-night view of the same poet seated calmly on the mat among many tall blue-green bamboo stems, the guqin resting before him and a narrow safe path disappearing behind, elegant negative space, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "弹琴复长啸。\n他轻轻拨动琴弦，又舒展地唱出一声悠长的清音。",
+        "enText": "Playing the qin, then singing a long clear note.\nHe plucks the strings and lets one free, clear note travel through the grove.",
+        "illustrationPrompt": "Medium view of the same poet's hands correctly and gently playing the guqin, then lifting his face to release a calm melodic call, bamboo leaves and a tiny night bird responding to the sound, no musical symbols or text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "深林人不知，\n竹林太深了，外面的人不知道这里藏着琴声。",
+        "enText": "No one knows I am deep in the grove.\nThe bamboo is so deep that people outside do not know where the music begins.",
+        "illustrationPrompt": "Long view through layered bamboo trunks, the same poet and guqin appearing small in a secluded moonlit clearing far from a quiet empty path outside, safe serene solitude, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "明月来相照。\n可月亮找到了他，把清亮的光送进竹林。",
+        "enText": "But the bright moon comes to shine on me.\nThe moon finds him and sends clear light into the bamboo.",
+        "illustrationPrompt": "Upward-angled scene as the full moon appears in an opening between bamboo leaves and a soft silver beam reaches the same poet, guqin and woven mat, his face brightening with quiet delight, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "眼前是竹影和月光，耳边是琴声和清啸。安静的夜里，其实有许多声音在互相回答。",
+        "enText": "Bamboo shadows and moonlight fill the eyes; qin strings and a clear call fill the ears. The quiet night is answering in many ways.",
+        "illustrationPrompt": "Immersive circular composition around the same poet: moonlit bamboo shadows cross the ground, guqin strings vibrate subtly, leaves stir and a small stream glints nearby, natural responses without drawn sound marks, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "一个人也不一定孤单。能听见风、看见月亮，心就可以安安静静地舒展开。",
+        "enText": "Being alone does not always mean being lonely. Wind and moonlight can give the heart room to unfold.",
+        "illustrationPrompt": "The same poet rests his hands on the guqin after playing, shoulders relaxed and gentle smile under moonlight, bamboo canopy opening to a calm starless blue sky, comforting rather than lonely, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "独坐幽篁里，\n弹琴复长啸。\n深林人不知，\n明月来相照。\n再轻轻读一遍吧。",
+        "enText": "Alone I sit among the quiet bamboo,\nPlaying the qin, then singing a long clear note.\nNo one knows I am deep in the grove,\nBut the bright moon comes to shine on me.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing wide moonlit bamboo grove with the same poet and guqin at the center of a soft pool of silver light, tall bamboo forming a natural frame and the full moon above, tranquil balanced composition, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-24",
+    "order": 16,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same adult Wang Wei throughout: calm oval face, black hair in a neat high knot, muted celadon cross-collar scholar robe, deep blue sash and black cloth shoes; same dark brown seven-string guqin on a low plain stand, same woven mat and deep bamboo clearing.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern instrument, piano, guitar, wrong many-string zither, modern objects, scary forest, screaming expression, ghosts, photorealism, distorted hands, extra fingers"
+  }
+}
