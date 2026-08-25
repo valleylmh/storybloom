@@ -21,6 +21,8 @@ const mocks = vi.hoisted(() => ({
   getGenerationJobByIdempotencyKey: vi.fn(),
   reserveGenerationQuota: vi.fn(),
   refundGenerationQuotaReservation: vi.fn(),
+  requireAuthenticatedUser: vi.fn(),
+  listFamilyCharacters: vi.fn(),
   resolveStoryAssetRequestPrincipal: vi.fn(),
   attachStoryAssetSessionCookie: vi.fn((response) => response),
 }));
@@ -48,6 +50,23 @@ vi.mock("@/lib/storage", () => ({
 
 vi.mock("@/lib/story-generator", () => ({
   generateStoryText: mocks.generateStoryText,
+}));
+
+vi.mock("@/lib/supabase/server-auth", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/supabase/server-auth")>()),
+  requireAuthenticatedUser: mocks.requireAuthenticatedUser,
+}));
+
+vi.mock("@/lib/email/supabase-admin", () => ({
+  getSupabaseAdmin: () => ({
+    from: () => ({
+      select: () => ({
+        eq: () => ({
+          in: mocks.listFamilyCharacters,
+        }),
+      }),
+    }),
+  }),
 }));
 
 vi.mock("@/lib/story-visual-bible", () => ({
@@ -191,6 +210,8 @@ describe("generate route reliable task contract", () => {
       outcome: "refunded",
       changed: true,
     });
+    mocks.requireAuthenticatedUser.mockResolvedValue({ id: "user-1" });
+    mocks.listFamilyCharacters.mockResolvedValue({ data: [], error: null });
     mocks.resolveStoryAssetRequestPrincipal.mockResolvedValue({
       principal: { type: "anonymous", id: `v1_${"a".repeat(64)}` },
       anonymousPrincipal: { type: "anonymous", id: `v1_${"a".repeat(64)}` },
@@ -242,6 +263,76 @@ describe("generate route reliable task contract", () => {
       body.storyId,
       expect.objectContaining({ status: "generating_images" }),
     );
+  });
+
+  it("allows an ordinary family protagonist without a personalization Anchor", async () => {
+    const protagonistId = "11111111-1111-4111-8111-111111111111";
+    mocks.listFamilyCharacters.mockResolvedValueOnce({
+      data: [
+        {
+          id: protagonistId,
+          display_name: "童童",
+          relationship: "孩子",
+          description: "短发、蓝色外套",
+          canonical_photo_path: null,
+          source_photo_path: null,
+          cartoonize: true,
+        },
+      ],
+      error: null,
+    });
+
+    const response = await POST(
+      createRequest({
+        protagonistFamilyCharacterId: protagonistId,
+        familyCharacterIds: [protagonistId],
+      }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(mocks.generateStoryText).toHaveBeenCalledWith(
+      expect.objectContaining({
+        protagonistFamilyCharacterId: protagonistId,
+        familyCharacters: [
+          expect.objectContaining({
+            id: protagonistId,
+            isProtagonist: true,
+          }),
+        ],
+      }),
+    );
+    expect(
+      mocks.generateStoryText.mock.calls[0][0].personalizationAnchor,
+    ).toBeUndefined();
+  });
+
+  it("still rejects a personalized Anchor bound to a different protagonist", async () => {
+    const protagonistId = "11111111-1111-4111-8111-111111111111";
+    const anchorCharacterId = "22222222-2222-4222-8222-222222222222";
+
+    const response = await POST(
+      createRequest({
+        protagonistFamilyCharacterId: protagonistId,
+        familyCharacterIds: [protagonistId],
+        sourceLibraryBookId: "xiyouji/shi-hou-chu-shi",
+        personalizationDraftId: "33333333-3333-4333-8333-333333333333",
+        personalizationAnchor: {
+          version: 1,
+          displayName: "童童",
+          relationship: "孩子",
+          appearance: "短发、蓝色外套",
+          referenceType: "canonical",
+          characterId: anchorCharacterId,
+          confirmedAt: "2026-08-25T01:00:00.000Z",
+        },
+      }),
+    );
+
+    expect(response.status).toBe(400);
+    expect(await response.json()).toEqual({
+      error: "确认的角色 Anchor 与故事主角不一致。",
+    });
+    expect(mocks.requireAuthenticatedUser).not.toHaveBeenCalled();
   });
 
   it("returns a persistent task before text generation and completes it in the background", async () => {

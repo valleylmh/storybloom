@@ -706,9 +706,10 @@ export async function POST(req: NextRequest) {
     );
   }
   if (
-    baseInput.personalizationAnchor?.characterId !==
+    baseInput.personalizationAnchor &&
+    baseInput.personalizationAnchor.characterId !==
       protagonistFamilyCharacterId &&
-    (baseInput.personalizationAnchor?.characterId ||
+    (baseInput.personalizationAnchor.characterId ||
       protagonistFamilyCharacterId)
   ) {
     return NextResponse.json(
