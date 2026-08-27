@@ -1,0 +1,96 @@
+{
+  "_draft": "REVIEWED CONTENT — full eight-line poem checked; illustrations required before publication",
+  "book": {
+    "id": "fu-de-gu-yuan-cao-song-bie",
+    "seriesId": "tangshi",
+    "title": "赋得古原草送别",
+    "subtitle": "春风吹绿古原",
+    "poem": {
+      "dynasty": "唐",
+      "author": "白居易",
+      "originalLines": [
+        "离离原上草，",
+        "一岁一枯荣。",
+        "野火烧不尽，",
+        "春风吹又生。",
+        "远芳侵古道，",
+        "晴翠接荒城。",
+        "又送王孙去，",
+        "萋萋满别情。"
+      ],
+      "englishLines": [
+        "Lush grasses cover the ancient plain,",
+        "Withering and flourishing once each year.",
+        "Wildfire cannot burn them all away,",
+        "They rise again when spring winds blow.",
+        "Their distant fragrance reaches the old road,",
+        "Their sunlit green joins the far-off town.",
+        "Once more I see a dear friend leave,",
+        "And thick grass fills the parting with feeling."
+      ],
+      "appreciation": {
+        "zh": "古原上的草年年枯萎，又年年新生，一直铺到古道和远城。到了送别时，连绵的青草也仿佛装满了依依不舍。",
+        "en": "Grass on the ancient plain withers and returns each year, spreading toward the old road and distant town. At farewell, its endless green seems filled with the sadness of parting."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "离离原上草，\n一岁一枯荣。\n野火烧不尽，\n春风吹又生。\n远芳侵古道，\n晴翠接荒城。\n又送王孙去，\n萋萋满别情。",
+        "enText": "Lush grasses cover the ancient plain,\nWithering and flourishing once each year.\nWildfire cannot burn them all away,\nThey rise again when spring winds blow.\nTheir distant fragrance reaches the old road,\nTheir sunlit green joins the far-off town.\nOnce more I see a dear friend leave,\nAnd thick grass fills the parting with feeling.",
+        "illustrationPrompt": "Vast ancient spring plain covered in layered green grasses, an old road curves toward a small weathered Tang frontier town, two gentle Tang friends stand together before parting, one in muted blue and one in warm ochre, soft wind ripples through grass, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "离离原上草，\n一岁一枯荣。\n古原上的草密密长着，一年里会枯黄，也会重新青翠。",
+        "enText": "Lush grasses cover the ancient plain,\nWithering and flourishing once each year.\nAcross the plain, grass turns dry and then grows green again each year.",
+        "illustrationPrompt": "Same broad ancient plain shown as a gentle seasonal sweep from pale dry grasses to fresh green shoots, no hard split, the same two friends walk together on the old road, child-friendly visual cycle of one year, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "野火烧不尽，\n春风吹又生。\n火焰只能烧去地上的枯叶，春风一来，新芽又从土里钻出来。",
+        "enText": "Wildfire cannot burn them all away,\nThey rise again when spring winds blow.\nFire takes the dry blades above, but spring wind wakes new shoots below.",
+        "illustrationPrompt": "Safe symbolic renewal scene on the empty plain with no people near danger: faraway low controlled orange embers fade across a narrow patch of old dry grass while foreground roots and many tender green shoots emerge under a fresh spring breeze, hopeful not frightening, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "远芳侵古道，\n晴翠接荒城。\n清香和绿意沿着古道伸向远方，一直连到旧城边。",
+        "enText": "Their distant fragrance reaches the old road,\nTheir sunlit green joins the far-off town.\nFragrance and green follow the old road all the way to the distant town.",
+        "illustrationPrompt": "Sunlit green grass and tiny wildflowers spill softly along both sides of the same old road toward a small weathered Tang town wall on the horizon, same two friends approaching a farewell place, airy clear sky, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "又送王孙去，\n萋萋满别情。\n朋友就要沿古道远行，茂盛的青草仿佛也舍不得他离开。",
+        "enText": "Once more I see a dear friend leave,\nAnd thick grass fills the parting with feeling.\nA friend sets out along the road, while lush grass seems reluctant to let him go.",
+        "illustrationPrompt": "Gentle Tang-era farewell on the grassy old road, the blue-robed poet and ochre-robed friend clasp hands before separating, a simple cloth travel bundle and walking staff, tall green grass leans toward them in the breeze, warm restrained emotion, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "枯了又荣，烧过又生。青草穿过春风，越过古道，把眼前和远方连在一起。",
+        "enText": "It withers and flourishes, burns and grows again. Grass crosses the old road and joins what is near with what is far.",
+        "illustrationPrompt": "Long panoramic view of resilient grass flowing from tiny fresh shoots in foreground across rolling plain, along the ancient road, toward the far town, the departing ochre-robed friend small in distance and blue-robed poet nearer, no active fire, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "草会再绿，朋友也会被思念记住。送别的路很长，心里的牵挂也长长地延伸。",
+        "enText": "Grass will turn green again, and a friend will remain in memory. The road is long, and so is the feeling that follows.",
+        "illustrationPrompt": "Quiet emotional scene after farewell: blue-robed poet watches the ochre-robed friend recede safely along the winding road, lush grass fills the space between them like a gentle green thread, hopeful spring light, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "离离原上草，\n一岁一枯荣。\n野火烧不尽，\n春风吹又生。\n远芳侵古道，\n晴翠接荒城。\n又送王孙去，\n萋萋满别情。\n再轻轻读一遍吧。",
+        "enText": "Lush grasses cover the ancient plain,\nWithering and flourishing once each year.\nWildfire cannot burn them all away,\nThey rise again when spring winds blow.\nTheir distant fragrance reaches the old road,\nTheir sunlit green joins the far-off town.\nOnce more I see a dear friend leave,\nAnd thick grass fills the parting with feeling.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing high wide view of the whole green plain under clear spring light, old road reaches the weathered distant town, the two friends visible far apart but connected by the flowing grass, peaceful resilient mood, no fire, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-26",
+    "order": 23,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same two Tang friends throughout: a gentle blue-robed poet with dark simple topknot and a warm ochre-robed traveler with small cloth bundle and wooden walking staff; same vast ancient plain, winding pale road and distant weathered Tang town; keep farewell tender and restrained.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern city, battlefield, large flames, people or animals in danger, frightening fire, military weapons, horses in distress, photorealism, extra limbs, distorted anatomy"
+  }
+}

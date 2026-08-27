@@ -1,0 +1,90 @@
+{
+  "_draft": "REVIEWED CONTENT — Tang ci text checked; illustrations required before publication",
+  "book": {
+    "id": "yi-jiang-nan-jiang-nan-hao",
+    "seriesId": "tangshi",
+    "title": "忆江南·江南好",
+    "subtitle": "红花绿水的记忆",
+    "poem": {
+      "dynasty": "唐",
+      "author": "白居易",
+      "originalLines": [
+        "江南好，",
+        "风景旧曾谙。",
+        "日出江花红胜火，",
+        "春来江水绿如蓝。",
+        "能不忆江南？"
+      ],
+      "englishLines": [
+        "How lovely is Jiangnan,",
+        "Its scenery I have known so well.",
+        "At sunrise, riverside flowers glow redder than flame,",
+        "In spring, the river is greener than indigo.",
+        "How could I not remember Jiangnan?"
+      ],
+      "appreciation": {
+        "zh": "这阕小词从记忆里打开江南：晨光照红江花，春色染绿江水。颜色这样鲜明，难怪诗人离开以后，仍一次次想起。",
+        "en": "This short lyric opens Jiangnan from memory: morning light reddens the riverside flowers and spring turns the water blue-green. Such vivid colors make the place impossible to forget."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "江南好，\n风景旧曾谙。\n日出江花红胜火，\n春来江水绿如蓝。\n能不忆江南？",
+        "enText": "How lovely is Jiangnan,\nIts scenery I have known so well.\nAt sunrise, riverside flowers glow redder than flame,\nIn spring, the river is greener than indigo.\nHow could I not remember Jiangnan?",
+        "illustrationPrompt": "Dreamlike Tang-era Jiangnan spring sunrise, calm blue-green river winds past whitewashed timber homes with simple dark tile roofs and a small arched stone bridge, vivid red riverside blossoms glow in first sunlight, a gentle Tang poet in pale cream and teal robe watches from a wooden boat, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "江南好，\n只说三个字，诗人的喜爱就像春风一样迎面而来。",
+        "enText": "How lovely is Jiangnan.\nIn just three words, the poet's delight arrives like a spring breeze.",
+        "illustrationPrompt": "Welcoming wide view entering the same gentle Jiangnan waterways at dawn, willows and low riverside homes reflected in calm water, same poet near the bow of a small wooden boat with an open delighted expression, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "风景旧曾谙。\n这里的桥、流水和花木，他从前都熟悉得很。",
+        "enText": "Its scenery I have known so well.\nHe remembers these bridges, waterways, flowers, and trees from long ago.",
+        "illustrationPrompt": "Memory-like intimate Jiangnan canal scene, same poet recognizes a modest arched stone bridge, willow, flowering bank and familiar wooden landing, soft overlapping ink washes suggest a cherished recollection, Tang-era setting, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "日出江花红胜火，\n春来江水绿如蓝。\n太阳升起，岸花红得明亮，春水绿得清澈。",
+        "enText": "At sunrise, riverside flowers glow redder than flame,\nIn spring, the river is greener than indigo.\nSunrise brightens the red flowers and clears the blue-green spring water.",
+        "illustrationPrompt": "Vivid color-focused sunrise over the same river: clusters of crimson riverside flowers blaze in warm light without literal fire, transparent spring water glows rich mineral blue-green, same boat and poet small and peaceful, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "能不忆江南？\n这样明亮的江南，怎么可能不常常想起呢？",
+        "enText": "How could I not remember Jiangnan?\nHow could anyone forget a place this bright?",
+        "illustrationPrompt": "Gentle portrait of the same poet away from Jiangnan, seated by a simple Tang window and looking into a luminous memory-shaped vista of red blossoms, green river and distant bridge, longing is warm rather than sorrowful, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "小桥安静，船桨轻响。朝阳把花染红，春天把水染绿，一幅江南晨景慢慢醒来。",
+        "enText": "The bridge is still and an oar taps softly. Sunrise colors the flowers red, spring colors the water green, and a Jiangnan morning wakes.",
+        "illustrationPrompt": "Full lively yet calm Jiangnan morning scene: one small wooden boat creates gentle ripples beneath the modest stone bridge, red flowers catch sunrise and blue-green water mirrors willows, same poet listening to the soft oar, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "想念一个地方时，记忆会先点亮它最美的颜色。诗人心里的江南，永远停在春天的晨光里。",
+        "enText": "When we miss a place, memory lights up its loveliest colors. In the poet's heart, Jiangnan stays forever in a spring morning.",
+        "illustrationPrompt": "Poetic remembrance scene where the same poet's quiet silhouette overlooks an expansive glowing spring water-town, red flowers and blue-green river are the clearest colors while edges dissolve into rice-paper mist, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "江南好，\n风景旧曾谙。\n日出江花红胜火，\n春来江水绿如蓝。\n能不忆江南？\n再轻轻读一遍吧。",
+        "enText": "How lovely is Jiangnan,\nIts scenery I have known so well.\nAt sunrise, riverside flowers glow redder than flame,\nIn spring, the river is greener than indigo.\nHow could I not remember Jiangnan?\nNow read it softly once more.",
+        "illustrationPrompt": "Closing panoramic Jiangnan sunrise, same wooden boat glides home across blue-green water between radiant red flower banks, simple Tang riverside homes and small stone bridge recede into soft mist, joyful remembered harmony, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-26",
+    "order": 24,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same gentle Tang poet throughout: kind thoughtful face, black hair in a simple topknot, pale cream cross-collar robe with teal outer layer and soft brown sash; same small wooden boat, modest arched stone bridge, willow-lined blue-green water and low Tang-era riverside homes; preserve red-flower and green-water visual anchors.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, neon lights, modern skyline, Ming or Qing ornamental garden excess, pagoda landmark, literal flames, crowded festival, photorealism, extra limbs, distorted boat or anatomy"
+  }
+}

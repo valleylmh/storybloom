@@ -174,6 +174,165 @@ const TANGSHI_BOOKS = [
       "夜半钟声到客船。",
     ],
   },
+  {
+    id: "mu-jiang-yin",
+    title: "暮江吟",
+    author: "白居易",
+    publishedAt: "2026-08-26",
+    lines: [
+      "一道残阳铺水中，",
+      "半江瑟瑟半江红。",
+      "可怜九月初三夜，",
+      "露似真珠月似弓。",
+    ],
+  },
+  {
+    id: "da-lin-si-tao-hua",
+    title: "大林寺桃花",
+    author: "白居易",
+    publishedAt: "2026-08-26",
+    lines: [
+      "人间四月芳菲尽，",
+      "山寺桃花始盛开。",
+      "长恨春归无觅处，",
+      "不知转入此中来。",
+    ],
+  },
+  {
+    id: "fu-de-gu-yuan-cao-song-bie",
+    title: "赋得古原草送别",
+    author: "白居易",
+    publishedAt: "2026-08-26",
+    lines: [
+      "离离原上草，",
+      "一岁一枯荣。",
+      "野火烧不尽，",
+      "春风吹又生。",
+      "远芳侵古道，",
+      "晴翠接荒城。",
+      "又送王孙去，",
+      "萋萋满别情。",
+    ],
+    pageLineGroups: [
+      ["离离原上草，", "一岁一枯荣。"],
+      ["野火烧不尽，", "春风吹又生。"],
+      ["远芳侵古道，", "晴翠接荒城。"],
+      ["又送王孙去，", "萋萋满别情。"],
+    ],
+  },
+  {
+    id: "yi-jiang-nan-jiang-nan-hao",
+    title: "忆江南·江南好",
+    author: "白居易",
+    publishedAt: "2026-08-26",
+    lines: [
+      "江南好，",
+      "风景旧曾谙。",
+      "日出江花红胜火，",
+      "春来江水绿如蓝。",
+      "能不忆江南？",
+    ],
+    pageLineGroups: [
+      ["江南好，"],
+      ["风景旧曾谙。"],
+      ["日出江花红胜火，", "春来江水绿如蓝。"],
+      ["能不忆江南？"],
+    ],
+  },
+  {
+    id: "shi-zhi-sai-shang",
+    title: "使至塞上",
+    author: "王维",
+    publishedAt: "2026-08-27",
+    lines: [
+      "单车欲问边，", "属国过居延。", "征蓬出汉塞，", "归雁入胡天。",
+      "大漠孤烟直，", "长河落日圆。", "萧关逢候骑，", "都护在燕然。",
+    ],
+    pageLineGroups: [
+      ["单车欲问边，", "属国过居延。"],
+      ["征蓬出汉塞，", "归雁入胡天。"],
+      ["大漠孤烟直，", "长河落日圆。"],
+      ["萧关逢候骑，", "都护在燕然。"],
+    ],
+  },
+  {
+    id: "yong-liu",
+    title: "咏柳",
+    author: "贺知章",
+    publishedAt: "2026-08-27",
+    lines: ["碧玉妆成一树高，", "万条垂下绿丝绦。", "不知细叶谁裁出，", "二月春风似剪刀。"],
+  },
+  {
+    id: "jue-ju-chi-ri-jiang-shan-li",
+    title: "绝句·迟日江山丽",
+    author: "杜甫",
+    publishedAt: "2026-08-27",
+    lines: ["迟日江山丽，", "春风花草香。", "泥融飞燕子，", "沙暖睡鸳鸯。"],
+  },
+  {
+    id: "chun-ye-xi-yu",
+    title: "春夜喜雨",
+    author: "杜甫",
+    publishedAt: "2026-08-27",
+    lines: [
+      "好雨知时节，", "当春乃发生。", "随风潜入夜，", "润物细无声。",
+      "野径云俱黑，", "江船火独明。", "晓看红湿处，", "花重锦官城。",
+    ],
+    pageLineGroups: [
+      ["好雨知时节，", "当春乃发生。"],
+      ["随风潜入夜，", "润物细无声。"],
+      ["野径云俱黑，", "江船火独明。"],
+      ["晓看红湿处，", "花重锦官城。"],
+    ],
+  },
+  {
+    id: "you-zi-yin",
+    title: "游子吟",
+    author: "孟郊",
+    publishedAt: "2026-08-27",
+    lines: ["慈母手中线，", "游子身上衣。", "临行密密缝，", "意恐迟迟归。", "谁言寸草心，", "报得三春晖。"],
+    pageLineGroups: [
+      ["慈母手中线，", "游子身上衣。"],
+      ["临行密密缝，"],
+      ["意恐迟迟归。"],
+      ["谁言寸草心，", "报得三春晖。"],
+    ],
+  },
+  {
+    id: "feng",
+    title: "风",
+    author: "李峤",
+    publishedAt: "2026-08-27",
+    lines: ["解落三秋叶，", "能开二月花。", "过江千尺浪，", "入竹万竿斜。"],
+  },
+  {
+    id: "hui-xiang-ou-shu-qi-yi",
+    title: "回乡偶书·其一",
+    author: "贺知章",
+    publishedAt: "2026-08-27",
+    lines: ["少小离家老大回，", "乡音无改鬓毛衰。", "儿童相见不相识，", "笑问客从何处来。"],
+  },
+  {
+    id: "wang-tian-men-shan",
+    title: "望天门山",
+    author: "李白",
+    publishedAt: "2026-08-27",
+    lines: ["天门中断楚江开，", "碧水东流至此回。", "两岸青山相对出，", "孤帆一片日边来。"],
+  },
+  {
+    id: "feng-xue-su-fu-rong-shan-zhu-ren",
+    title: "逢雪宿芙蓉山主人",
+    author: "刘长卿",
+    publishedAt: "2026-08-27",
+    lines: ["日暮苍山远，", "天寒白屋贫。", "柴门闻犬吠，", "风雪夜归人。"],
+  },
+  {
+    id: "wang-dong-ting",
+    title: "望洞庭",
+    author: "刘禹锡",
+    publishedAt: "2026-08-27",
+    lines: ["湖光秋月两相和，", "潭面无风镜未磨。", "遥望洞庭山水翠，", "白银盘里一青螺。"],
+  },
 ] as const;
 
 function allSummaries() {
@@ -185,14 +344,14 @@ function allSummaries() {
 }
 
 describe("Tang poetry library series", () => {
-  it("registers the twenty-book 唐诗入画 series in the requested order", () => {
+  it("registers the thirty-four-book 唐诗入画 series in the requested order", () => {
     const series = getSeries("tangshi");
     expect(series).toMatchObject({
       title: "唐诗入画",
       subtitle: "一首诗，一幅会呼吸的画",
       accent: "#47677a",
       ageRange: "4-8 岁",
-      bookCount: 20,
+      bookCount: 34,
     });
     expect(getPublishedBooks("tangshi").map((book) => book.id)).toEqual(
       TANGSHI_BOOKS.map((book) => book.id),
@@ -206,7 +365,7 @@ describe("Tang poetry library series", () => {
         title: expected.title,
         seriesId: "tangshi",
         order: index + 1,
-        publishedAt: "2026-08-24",
+        publishedAt: "publishedAt" in expected ? expected.publishedAt : "2026-08-24",
         comingSoon: false,
         poem: {
           dynasty: "唐",
@@ -214,7 +373,7 @@ describe("Tang poetry library series", () => {
           originalLines: expected.lines,
         },
       });
-      expect(book?.poem?.englishLines).toHaveLength(4);
+      expect(book?.poem?.englishLines).toHaveLength(expected.lines.length);
       expect(book?.poem?.appreciation.zh).toBeTruthy();
       expect(book?.poem?.appreciation.en).toBeTruthy();
       expect(book?.pages).toHaveLength(8);
@@ -223,13 +382,17 @@ describe("Tang poetry library series", () => {
       const completePoem = expected.lines.join("\n");
       expect(book?.pages[0].zhText.startsWith(completePoem)).toBe(true);
       expect(book?.pages[7].zhText.startsWith(completePoem)).toBe(true);
-      for (let lineIndex = 0; lineIndex < 4; lineIndex += 1) {
-        expect(book?.pages[lineIndex + 1].zhText.startsWith(expected.lines[lineIndex])).toBe(true);
+      const pageLineGroups =
+        "pageLineGroups" in expected
+          ? expected.pageLineGroups
+          : expected.lines.map((line) => [line]);
+      for (const [pageIndex, lines] of pageLineGroups.entries()) {
+        expect(book?.pages[pageIndex + 1].zhText.startsWith(lines.join("\n"))).toBe(true);
       }
     }
   });
 
-  it("publishes one hundred and sixty optimized square WebP illustrations", async () => {
+  it("publishes two hundred and seventy-two optimized square WebP illustrations", async () => {
     let imageCount = 0;
     for (const expected of TANGSHI_BOOKS) {
       const book = getBook("tangshi", expected.id);
@@ -250,7 +413,7 @@ describe("Tang poetry library series", () => {
         imageCount += 1;
       }
     }
-    expect(imageCount).toBe(160);
+    expect(imageCount).toBe(272);
   });
 
   it("adds poetry discovery metadata and searches author plus imagery", () => {
@@ -303,12 +466,12 @@ describe("Tang poetry library series", () => {
     expect(getLibraryStorySpecByContentId("tangshi/yong-e")).toBeNull();
   });
 
-  it("includes the series and all twenty books in the sitemap", () => {
+  it("includes the series and all thirty-four books in the sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
     expect(urls.some((url) => url.endsWith("/library/tangshi"))).toBe(true);
     expect(
       urls.filter((url) => url.includes("/library/tangshi/")),
-    ).toHaveLength(20);
+    ).toHaveLength(34);
     for (const book of TANGSHI_BOOKS) {
       expect(urls.some((url) => url.endsWith(`/library/tangshi/${book.id}`))).toBe(true);
     }

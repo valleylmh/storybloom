@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "mu-jiang-yin",
+    "seriesId": "tangshi",
+    "title": "暮江吟",
+    "subtitle": "半江碧绿，半江霞红",
+    "poem": {
+      "dynasty": "唐",
+      "author": "白居易",
+      "originalLines": [
+        "一道残阳铺水中，",
+        "半江瑟瑟半江红。",
+        "可怜九月初三夜，",
+        "露似真珠月似弓。"
+      ],
+      "englishLines": [
+        "The setting sun spreads a ribbon across the river,",
+        "Half the water shimmers green, and half glows red.",
+        "How lovely is this third night of the ninth month—",
+        "Dew like pearls, and the moon like a bow."
+      ],
+      "appreciation": {
+        "zh": "诗人从傍晚看到初夜：夕阳把江水染成碧绿和霞红，夜露又像珍珠，弯月又像小弓。同一条江，在光线流转中悄悄换了颜色。",
+        "en": "The poet watches evening turn into night: sunset colors the river green and red, then dew gleams like pearls beneath a bow-shaped moon. One river quietly changes as the light changes."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "一道残阳铺水中，\n半江瑟瑟半江红。\n可怜九月初三夜，\n露似真珠月似弓。",
+        "enText": "The setting sun spreads a ribbon across the river,\nHalf the water shimmers green, and half glows red.\nHow lovely is this third night of the ninth month—\nDew like pearls, and the moon like a bow.",
+        "illustrationPrompt": "Wide autumn river at sunset, the low setting sun spreads a long band of light across calm water, one half shimmering deep mineral blue-green and the other glowing warm cinnabar red, a small Tang-era poet in muted teal robe stands safely on a grassy bank, distant low hills and reeds, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "一道残阳铺水中，\n太阳快要落山了，最后一束光平平地铺在江面上。",
+        "enText": "The setting sun spreads a ribbon across the river.\nIts last low beam lies softly over the water.",
+        "illustrationPrompt": "Low riverside viewpoint in late afternoon, the same poet watches a single broad ribbon of golden-red sunset light lying flat across the calm river, reeds rim-lit, sun just above distant hills, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "半江瑟瑟半江红。\n背着光的一半碧绿清凉，迎着光的一半红得发亮。",
+        "enText": "Half the water shimmers green, and half glows red.\nShade makes one half cool green; sunlight makes the other shine red.",
+        "illustrationPrompt": "High three-quarter view emphasizing the river divided naturally by evening light: half rippling jewel-like blue-green, half luminous coral-cinnabar red, same poet small on shore for scale, believable reflected sky, no hard artificial line, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "可怜九月初三夜，\n诗人舍不得移开眼睛：初秋的夜晚，竟这样可爱。",
+        "enText": "How lovely is this third night of the ninth month.\nThe poet cannot look away from the gentle early-autumn night.",
+        "illustrationPrompt": "Blue hour on the same early-autumn riverbank, last sunset fading while the first slim crescent appears, same poet seated calmly among silver-tipped grasses, cool tranquil air, visual continuity from dusk toward night, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "露似真珠月似弓。\n草尖的露珠亮晶晶，天边的新月弯弯的。",
+        "enText": "Dew like pearls, and the moon like a bow.\nDew sparkles on the grass, and the new moon curves above.",
+        "illustrationPrompt": "Intimate low-angle early-night scene: round dew drops gleam like tiny pearls on autumn grass in foreground, a delicate bow-shaped crescent moon over the quiet river, same poet softly out of focus nearby, no jewelry, no weapon, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "从残阳到新月，江水先披上红绿的彩衣，岸边的草叶又托起一颗颗清亮的露珠。",
+        "enText": "From sunset to moonrise, the river wears red and green, while clear drops of dew gather on the grass.",
+        "illustrationPrompt": "Panoramic poetic transition across the same river landscape from lingering sunset at one side to cool crescent-moon night at the other, red-green water and dew-bright grasses visually connected, same poet walking slowly along bank, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "诗里没有匆忙，只有一双愿意慢慢看的眼睛。你最想把哪一种颜色留在心里？",
+        "enText": "Nothing hurries in the poem; it simply looks with patient eyes. Which color would you keep in your heart?",
+        "illustrationPrompt": "Quiet contemplative night portrait of the same poet beside the river, face warm and delighted rather than sad, crescent moon and pearly dew echoed in soft circular reflections, ample rice-paper negative space, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "一道残阳铺水中，\n半江瑟瑟半江红。\n可怜九月初三夜，\n露似真珠月似弓。\n再轻轻读一遍吧。",
+        "enText": "The setting sun spreads a ribbon across the river,\nHalf the water shimmers green, and half glows red.\nHow lovely is this third night of the ninth month—\nDew like pearls, and the moon like a bow.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing wide view of the same peaceful river under a bow-shaped crescent, faint afterglow still tinting part of the water while dew shines on foreground grass, same poet heading home along a safe path, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-26",
+    "order": 21,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same Tang poet throughout: gentle young adult with calm round face, black hair in a simple topknot, muted teal cross-collar robe, pale ochre sash and cloth shoes; same broad autumn river, low reed bank and distant rounded hills; time progresses continuously from sunset to early night.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern buildings, electric lights, full moon, weapon, literal pearl jewelry, frightening darkness, photorealism, extra limbs, distorted anatomy"
+  }
+}

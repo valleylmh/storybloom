@@ -1,0 +1,88 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "da-lin-si-tao-hua",
+    "seriesId": "tangshi",
+    "title": "大林寺桃花",
+    "subtitle": "春天藏进了山里",
+    "poem": {
+      "dynasty": "唐",
+      "author": "白居易",
+      "originalLines": [
+        "人间四月芳菲尽，",
+        "山寺桃花始盛开。",
+        "长恨春归无觅处，",
+        "不知转入此中来。"
+      ],
+      "englishLines": [
+        "In the world below, April blossoms have all faded,",
+        "But at the mountain temple, peach flowers have just opened.",
+        "I often wondered where spring had gone,",
+        "Never knowing it had found its way up here."
+      ],
+      "appreciation": {
+        "zh": "山下的花已经谢了，高山寺院里的桃花却刚刚盛开。诗人像重新遇见了走远的春天，惊喜地发现：季节也会沿着山路慢慢前行。",
+        "en": "Flowers have faded below, yet peach blossoms are only beginning high at the temple. The poet seems to meet spring again and discovers that seasons travel slowly up the mountain."
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "人间四月芳菲尽，\n山寺桃花始盛开。\n长恨春归无觅处，\n不知转入此中来。",
+        "enText": "In the world below, April blossoms have all faded,\nBut at the mountain temple, peach flowers have just opened.\nI often wondered where spring had gone,\nNever knowing it had found its way up here.",
+        "illustrationPrompt": "Layered spring mountain in one sweeping view: warm valley below with fading blossoms, high Tang-era mountain temple among mist and freshly blooming pink peach trees, a delighted Tang poet in light blue-gray robe reaches the upper stone path, clear altitude contrast, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "人间四月芳菲尽，\n山下已是暮春，花瓣落下，绿叶长得浓浓的。",
+        "enText": "In the world below, April blossoms have all faded.\nLate spring has reached the valley; petals fall and green leaves thicken.",
+        "illustrationPrompt": "Warm late-spring valley at the foot of the mountain, mostly green fruit trees with the last few pale petals drifting down, same poet beginning a safe winding stone path upward, no blooming peach canopy here, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "山寺桃花始盛开。\n走到高高的山寺，粉红的桃花才刚刚开满枝头。",
+        "enText": "But at the mountain temple, peach flowers have just opened.\nHigh by the temple, pink blossoms are only now filling the branches.",
+        "illustrationPrompt": "At a high mountain terrace, the same poet pauses in wonder before abundant newly opened pink peach blossoms surrounding a modest Tang timber temple with tiled roof, cool mist and fresh mountain air, child-friendly and serene, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "长恨春归无觅处，\n他原以为春天已经走远，再也找不到了。",
+        "enText": "I often wondered where spring had gone.\nHe had thought spring was already too far away to find.",
+        "illustrationPrompt": "Memory-like view of the same poet looking gently puzzled among faded valley flowers, a winding mountain trail rises into pale mist in the distance, wistful but not sad or lonely, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "不知转入此中来。\n原来春天没有消失，只是沿着山路，悄悄来到这里。",
+        "enText": "Never knowing it had found its way up here.\nSpring had not vanished—it had quietly climbed the mountain path.",
+        "illustrationPrompt": "Joyful reveal at the mountain temple: the same poet smiles beneath a tunnel of luminous peach blossoms, the winding path visibly connects downward through mist toward the green valley, spring imagined as soft petals traveling uphill, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "山下花谢，山上花开。同一个四月，在高低不同的地方，走出了两种脚步。",
+        "enText": "Flowers fade below and bloom above. The same April moves at two different speeds across the mountain.",
+        "illustrationPrompt": "Clear split-altitude landscape without a hard divider: green petal-strewn valley below and pink blooming temple grove above, connected by one zigzag path with the same poet midway, visually explains two stages of spring, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "诗人的惊喜像一朵桃花突然打开：以为失去的春天，原来正在前面等他。",
+        "enText": "The poet's surprise opens like a peach blossom: the spring he thought was gone has been waiting ahead.",
+        "illustrationPrompt": "Tender close scene of the same poet holding one fallen peach petal on an open palm while looking into a glowing blossom-filled grove, expression of discovery and delight, temple quiet in background, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "人间四月芳菲尽，\n山寺桃花始盛开。\n长恨春归无觅处，\n不知转入此中来。\n再轻轻读一遍吧。",
+        "enText": "In the world below, April blossoms have all faded,\nBut at the mountain temple, peach flowers have just opened.\nI often wondered where spring had gone,\nNever knowing it had found its way up here.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing wide mountain view in soft afternoon light, high temple nestled in a cloud of pink peach blossom while green valley lies far below, same poet resting safely beside the path, petals floating through generous negative space, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-26",
+    "order": 22,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral blue-green with restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same Tang poet throughout: warm curious face, black hair in a simple topknot, light blue-gray cross-collar robe, soft brown sash and cloth shoes; same winding stone path, green lower valley and high misty temple with pink peach trees; preserve the altitude-driven seasonal contrast.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern buildings, Japanese architecture, cherry-blossom festival props, snow, autumn leaves, frightening cliffs, photorealism, extra limbs, distorted anatomy"
+  }
+}
