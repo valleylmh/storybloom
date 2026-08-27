@@ -64,6 +64,7 @@ export default function LibraryBookReader({
   const [internalReaderMode, setInternalReaderMode] =
     useState<ReaderMode>("turn");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const thumbnailsRef = useRef<HTMLDivElement>(null);
   const touchStartXRef = useRef<number | null>(null);
   const touchStartYRef = useRef<number | null>(null);
 
@@ -86,6 +87,18 @@ export default function LibraryBookReader({
       currentIndex === null ? null : pageIndex,
     );
   }, [pageIndex]);
+
+  useEffect(() => {
+    if (readerMode !== "turn") return;
+    const activeThumbnail = thumbnailsRef.current?.querySelector<HTMLElement>(
+      '[role="tab"][aria-selected="true"]',
+    );
+    activeThumbnail?.scrollIntoView({
+      behavior: "auto",
+      block: "nearest",
+      inline: "nearest",
+    });
+  }, [pageIndex, readerMode]);
 
   const goToPage = useCallback(
     (nextIndex: number) => {
@@ -399,7 +412,12 @@ export default function LibraryBookReader({
             </button>
           </div>
 
-          <div className="book-thumbs" role="tablist" aria-label="页面导航">
+          <div
+            ref={thumbnailsRef}
+            className="book-thumbs"
+            role="tablist"
+            aria-label="页面导航"
+          >
             {pages.map((item, index) => (
               <button
                 key={item.page}

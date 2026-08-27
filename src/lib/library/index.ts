@@ -2,6 +2,7 @@ import type { LibraryBook, LibrarySeries } from "@/types/library";
 import { CHENGYU_BOOKS, CHENGYU_SERIES } from "./chengyu";
 import { HAOQI_BOOKS, HAOQI_SERIES } from "./haoqi";
 import { isPublishedLibraryBook } from "./status";
+import { SANZIJING_BOOKS, SANZIJING_SERIES } from "./sanzijing";
 import { TANGSHI_BOOKS, TANGSHI_SERIES } from "./tangshi";
 import { XIYOUJI_BOOKS, XIYOUJI_SERIES } from "./xiyouji";
 
@@ -14,6 +15,7 @@ const BOOKS_BY_SERIES: Record<string, LibraryBook[]> = {
   [XIYOUJI_SERIES.id]: sortBooks(XIYOUJI_BOOKS),
   [HAOQI_SERIES.id]: sortBooks(HAOQI_BOOKS),
   [TANGSHI_SERIES.id]: sortBooks(TANGSHI_BOOKS),
+  [SANZIJING_SERIES.id]: sortBooks(SANZIJING_BOOKS),
 };
 
 const SERIES: LibrarySeries[] = [
@@ -21,6 +23,7 @@ const SERIES: LibrarySeries[] = [
   XIYOUJI_SERIES,
   HAOQI_SERIES,
   TANGSHI_SERIES,
+  SANZIJING_SERIES,
 ].map((series) => ({
   ...series,
   bookCount: (BOOKS_BY_SERIES[series.id] ?? []).filter(isPublishedLibraryBook)

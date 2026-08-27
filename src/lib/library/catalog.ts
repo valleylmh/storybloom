@@ -56,6 +56,11 @@ export function createLibraryBookSummary(
       ...(book.poem?.englishLines ?? []),
       book.poem?.appreciation.zh,
       book.poem?.appreciation.en,
+      book.classic?.workTitle,
+      ...(book.classic?.originalLines ?? []),
+      book.classic?.childExplanation.zh,
+      book.classic?.childExplanation.en,
+      book.parentGuide?.goal,
       ...metadata.tags,
     ]
       .filter(Boolean)

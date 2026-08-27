@@ -13,6 +13,30 @@ export interface LibraryPoemMetadata {
   appreciation: BilingualText;
 }
 
+export interface LibraryClassicMetadata {
+  /** Name of the source classic, e.g. 《三字经》. */
+  workTitle: string;
+  /** Maintains the reviewed punctuation and line breaks used for read-aloud. */
+  originalLines: string[];
+  /** Child-friendly meaning rather than a word-for-word translation. */
+  childExplanation: BilingualText;
+  /** Chinese context for caregivers when an old idea needs modern framing. */
+  historicalContext: string;
+}
+
+export interface LibraryParentGuide {
+  /** The one parenting capability this book is designed to practise. */
+  goal: string;
+  /** A reminder that prevents the classic from becoming pressure or preaching. */
+  reminder: string;
+  questions: string[];
+  activity: string;
+  ageTips: {
+    age4to5: string;
+    age6to8: string;
+  };
+}
+
 /** Reserved for task F (post-reading quiz). Type only for now — no UI. */
 export interface LibraryQuizQuestion {
   question: string;
@@ -73,6 +97,10 @@ export interface LibraryBook {
   idiomMeaning?: BilingualText;
   /** Original poem, authorship, translation, and child-friendly appreciation. */
   poem?: LibraryPoemMetadata;
+  /** Reviewed source excerpt and modern framing for a classical text. */
+  classic?: LibraryClassicMetadata;
+  /** Chinese-only caregiver notes shown after the child-facing story. */
+  parentGuide?: LibraryParentGuide;
   /** Reuses the shared bilingual page structure from @/types */
   pages: StoryPage[];
   ageLabel: string;

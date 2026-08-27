@@ -32,6 +32,11 @@ const SERIES_DEFAULTS: Record<
     tags: ["唐诗", "古诗", "传统文化", "意境启蒙"],
     bedtimeSuitable: true,
   },
+  sanzijing: {
+    category: "classic",
+    tags: ["三字经", "国学启蒙", "亲子共读", "家庭成长"],
+    bedtimeSuitable: false,
+  },
 };
 
 export const LIBRARY_CATEGORY_LABELS: Record<LibraryCategory, string> = {

@@ -45,6 +45,7 @@ export async function generateMetadata({
   const description =
     book.idiomMeaning?.zh ||
     book.poem?.appreciation.zh ||
+    book.classic?.childExplanation.zh ||
     book.moral?.zh ||
     `${book.title} · ${book.subtitle}`;
   const coverPage = book.pages[0];
@@ -59,7 +60,7 @@ export async function generateMetadata({
 
   return {
     title,
-    description: `${description} 免费在线阅读 8 页中英双语儿童绘本，适合 ${book.ageLabel}亲子共读。`,
+    description: `${description} 免费在线阅读 ${book.pages.length} 页中英双语儿童绘本，适合 ${book.ageLabel}亲子共读。`,
     alternates: { canonical: `/library/${series.id}/${book.id}` },
     // 未正式发布的书不进搜索引擎
     robots: book.comingSoon ? { index: false, follow: false } : undefined,
@@ -184,7 +185,16 @@ export default async function LibraryBookPage({
       </header>
 
       {book.idiomMeaning || book.origin ? (
-        <section className="library-meaning-card" aria-label="成语释义">
+        <section
+          className="library-meaning-card"
+          aria-label={
+            book.idiomMeaning
+              ? "成语释义"
+              : book.classic
+                ? "经典出处"
+                : "作品出处"
+          }
+        >
           {book.idiomMeaning ? (
             <>
               <p className="library-meaning-zh">
@@ -196,6 +206,26 @@ export default async function LibraryBookPage({
           {book.origin ? (
             <p className="library-meaning-origin">典出 {book.origin}</p>
           ) : null}
+        </section>
+      ) : null}
+
+      {book.classic ? (
+        <section className="library-classic-card" aria-label="经典原文与现代解释">
+          <p className="library-classic-label">选自 {book.classic.workTitle}</p>
+          <blockquote>
+            {book.classic.originalLines.map((line) => (
+              <span key={line}>{line}</span>
+            ))}
+          </blockquote>
+          <p className="library-classic-explanation-zh">
+            {book.classic.childExplanation.zh}
+          </p>
+          <p className="library-classic-explanation-en">
+            {book.classic.childExplanation.en}
+          </p>
+          <p className="library-classic-context">
+            <strong>放到今天：</strong>{book.classic.historicalContext}
+          </p>
         </section>
       ) : null}
 
@@ -258,6 +288,41 @@ export default async function LibraryBookPage({
           <p className="library-moral-en">
             {book.poem?.appreciation.en ?? book.moral?.en}
           </p>
+        </section>
+      ) : null}
+
+      {book.parentGuide ? (
+        <section className="library-parent-guide" aria-labelledby="library-parent-guide-title">
+          <header>
+            <p>给大人的共读锦囊</p>
+            <h2 id="library-parent-guide-title">这次不考背诵，练一种生活能力</h2>
+          </header>
+          <div className="library-parent-guide-grid">
+            <article>
+              <h3>这本想陪孩子练什么</h3>
+              <p>{book.parentGuide.goal}</p>
+            </article>
+            <article>
+              <h3>共读时别急着说</h3>
+              <p>{book.parentGuide.reminder}</p>
+            </article>
+            <article>
+              <h3>可以这样问</h3>
+              <ul>
+                {book.parentGuide.questions.map((question) => (
+                  <li key={question}>{question}</li>
+                ))}
+              </ul>
+            </article>
+            <article>
+              <h3>今天试试看</h3>
+              <p>{book.parentGuide.activity}</p>
+            </article>
+          </div>
+          <div className="library-parent-guide-age-tips" aria-label="分龄提示">
+            <p><strong>4–5 岁：</strong>{book.parentGuide.ageTips.age4to5}</p>
+            <p><strong>6–8 岁：</strong>{book.parentGuide.ageTips.age6to8}</p>
+          </div>
         </section>
       ) : null}
 
