@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Heart, Play } from "@phosphor-icons/react";
 import type { LibraryBookSummary } from "@/lib/library/catalog";
+import { rememberLibraryReturnPosition } from "@/lib/library/navigation";
 import {
   formatLibraryLanguages,
   LIBRARY_CATEGORY_LABELS,
@@ -46,7 +47,11 @@ export default function LibraryCatalogCard({
         compact ? "library-catalog-card-compact" : ""
       } ${minimal ? "library-catalog-card-minimal" : ""}`}
     >
-      <Link href={book.href} className="library-catalog-card-link">
+      <Link
+        href={book.href}
+        className="library-catalog-card-link"
+        onClick={() => rememberLibraryReturnPosition(book.href)}
+      >
         <div
           className="library-catalog-cover"
           style={{ backgroundColor: `${book.seriesAccent}22` }}

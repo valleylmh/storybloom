@@ -5,12 +5,14 @@ import Link from "next/link";
 import { FormEvent, useEffect, useRef, useState } from "react";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
+  CaretDown,
   DeviceMobile,
   Gift,
   HeartStraight,
   MagicWand,
   Plant,
   ShieldCheck,
+  X,
 } from "@phosphor-icons/react";
 import {
   analyzeStoryProtagonist,
@@ -1647,6 +1649,9 @@ export default function MinimalStoryEntry({
   const analyzedGrowthName = idea.trim()
     ? analyzeStoryProtagonist(idea.trim(), locale).candidateName
     : null;
+  const analyzedIdentityName = pendingIdea.trim()
+    ? analyzeStoryProtagonist(pendingIdea, locale).candidateName
+    : null;
 
   return (
     <section
@@ -2285,7 +2290,7 @@ export default function MinimalStoryEntry({
                 aria-label="关闭"
                 onClick={() => setIdentityOpen(false)}
               >
-                ×
+                <X aria-hidden="true" weight="bold" />
               </button>
             ) : null}
             {identityPhase === "preview" && identityAnchorPreview ? (
@@ -2507,7 +2512,16 @@ export default function MinimalStoryEntry({
 
                 <div className="minimal-identity-fields">
                   <label>
-                    <span>{text.nameLabel}</span>
+                    <span className="minimal-identity-field-heading">
+                      {text.nameLabel}
+                      {analyzedIdentityName &&
+                      normalizeCharacterName(analyzedIdentityName) ===
+                        normalizeCharacterName(identityName) ? (
+                        <small>
+                          {locale === "zh" ? "已从一句话识别" : "Detected from your idea"}
+                        </small>
+                      ) : null}
+                    </span>
                     <input
                       maxLength={40}
                       value={identityName}
@@ -2529,15 +2543,18 @@ export default function MinimalStoryEntry({
                   </label>
                   <label>
                     <span>{text.relationLabel}</span>
-                    <select
-                      value={identityRelationship}
-                      onChange={(event) => setIdentityRelationship(event.target.value)}
-                    >
-                      {(locale === "zh"
-                        ? ["孩子", "我", "爸爸", "妈妈", "其他家人", "宠物"]
-                        : ["Child", "Me", "Parent", "Family", "Pet"]
-                      ).map((relation) => <option key={relation}>{relation}</option>)}
-                    </select>
+                    <span className="minimal-identity-select-wrap">
+                      <select
+                        value={identityRelationship}
+                        onChange={(event) => setIdentityRelationship(event.target.value)}
+                      >
+                        {(locale === "zh"
+                          ? ["孩子", "我", "爸爸", "妈妈", "其他家人", "宠物"]
+                          : ["Child", "Me", "Parent", "Family", "Pet"]
+                        ).map((relation) => <option key={relation}>{relation}</option>)}
+                      </select>
+                      <CaretDown aria-hidden="true" weight="bold" />
+                    </span>
                   </label>
                   {personalizationContext ? (
                     <label className="minimal-identity-appearance-field">

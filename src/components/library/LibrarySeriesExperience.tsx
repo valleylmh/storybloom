@@ -10,6 +10,7 @@ import {
   type ReadingProgressRecord,
 } from "@/lib/reading-progress";
 import LibraryCatalogCard from "@/components/library/LibraryCatalogCard";
+import LibraryScrollRestorer from "@/components/library/LibraryScrollRestorer";
 
 export default function LibrarySeriesExperience({
   books,
@@ -63,6 +64,7 @@ export default function LibrarySeriesExperience({
 
   return (
     <>
+      <LibraryScrollRestorer />
       <section className="library-series-progress" aria-label="系列阅读进度">
         <div>
           <strong>

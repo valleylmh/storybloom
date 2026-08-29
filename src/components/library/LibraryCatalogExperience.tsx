@@ -14,6 +14,8 @@ import {
 } from "@/lib/reading-progress";
 import ReadingSyncControl from "@/components/library/ReadingSyncControl";
 import LibraryCatalogCard from "@/components/library/LibraryCatalogCard";
+import LibraryScrollRestorer from "@/components/library/LibraryScrollRestorer";
+import { rememberLibraryReturnPosition } from "@/lib/library/navigation";
 
 type SeriesSummary = {
   id: string;
@@ -37,6 +39,7 @@ export default function LibraryCatalogExperience({
   const [progressRecords, setProgressRecords] = useState<
     ReadingProgressRecord[]
   >([]);
+  const [activeSeriesId, setActiveSeriesId] = useState(series[0]?.id ?? "");
   const { records: favoriteRecords, keys: favoriteKeys, toggle } =
     useFavorites();
 
@@ -58,6 +61,46 @@ export default function LibraryCatalogExperience({
       window.removeEventListener("focus", refresh);
     };
   }, []);
+
+  useEffect(() => {
+    let frame = 0;
+    const updateActiveSeries = () => {
+      frame = 0;
+      const activationLine = 160;
+      let activeId = series[0]?.id ?? "";
+      series.forEach((item) => {
+        const section = document.getElementById(`library-series-${item.id}`);
+        if (section && section.getBoundingClientRect().top <= activationLine) {
+          activeId = item.id;
+        }
+      });
+      setActiveSeriesId(activeId);
+    };
+    const handleScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateActiveSeries);
+    };
+    updateActiveSeries();
+    const settleTimer = window.setTimeout(updateActiveSeries, 300);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+    return () => {
+      if (frame) window.cancelAnimationFrame(frame);
+      window.clearTimeout(settleTimer);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, [series]);
+
+  useEffect(() => {
+    const activeTab = document.querySelector<HTMLAnchorElement>(
+      `[data-library-series-tab="${activeSeriesId}"]`,
+    );
+    const tabList = activeTab?.closest<HTMLElement>(".library-series-tabs");
+    if (!activeTab || !tabList) return;
+    const centeredLeft =
+      activeTab.offsetLeft - (tabList.clientWidth - activeTab.offsetWidth) / 2;
+    tabList.scrollTo({ left: Math.max(0, centeredLeft), behavior: "auto" });
+  }, [activeSeriesId]);
 
   const publishedBooks = useMemo(
     () => books.filter((book) => !book.comingSoon),
@@ -116,7 +159,10 @@ export default function LibraryCatalogExperience({
 
     return (
       <article key={book.contentId} className="library-quick-list-item">
-        <Link href={book.href}>
+        <Link
+          href={book.href}
+          onClick={() => rememberLibraryReturnPosition(book.href)}
+        >
           <div
             className="library-quick-list-cover"
             style={{ backgroundColor: `${book.seriesAccent}22` }}
@@ -158,6 +204,7 @@ export default function LibraryCatalogExperience({
 
   return (
     <>
+      <LibraryScrollRestorer />
       <ReadingSyncControl />
 
       {quickPanelCount > 0 ? (
@@ -208,7 +255,13 @@ export default function LibraryCatalogExperience({
         <nav className="library-series-tabs" aria-label="系列故事导航">
           <div className="library-series-tabs-track">
             {series.map((item) => (
-              <a key={item.id} href={`#library-series-${item.id}`}>
+              <a
+                key={item.id}
+                href={`#library-series-${item.id}`}
+                data-library-series-tab={item.id}
+                aria-current={activeSeriesId === item.id ? "true" : undefined}
+                onClick={() => setActiveSeriesId(item.id)}
+              >
                 {item.title}
               </a>
             ))}

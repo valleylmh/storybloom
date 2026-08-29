@@ -31,12 +31,16 @@ describe("library series anchor navigation", () => {
     );
   });
 
-  it("keeps the tab row touch-scrollable and the targets comfortably aligned", () => {
+  it("keeps the compact tab row sticky, touch-scrollable and comfortably aligned", () => {
     expect(globalStyles).toContain(".library-series-tabs {");
+    expect(globalStyles).toContain("position: sticky;");
+    expect(globalStyles).toContain("top: 10px;");
     expect(globalStyles).toContain("overflow-x: auto;");
     expect(globalStyles).toContain("-webkit-overflow-scrolling: touch;");
     expect(globalStyles).toContain("min-height: 44px;");
-    expect(globalStyles).toContain("scroll-margin-top: 24px;");
+    expect(globalStyles).toContain("width: fit-content;");
+    expect(globalStyles).toContain('a[aria-current="true"]');
+    expect(globalStyles).toContain("scroll-margin-top: 76px;");
     expect(globalStyles).toContain(
       ".library-series-tabs a:hover {\n    transform: none;",
     );

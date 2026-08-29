@@ -138,6 +138,38 @@ describe("one-sentence story input", () => {
     ).toBe("小满");
   });
 
+  it("infers a protagonist name from natural Chinese descriptions", () => {
+    expect(
+      analyzeStoryProtagonist(
+        "我想给童童讲一个关于第一次独自睡觉的故事",
+        "zh",
+      ),
+    ).toMatchObject({
+      candidateName: "童童",
+      confidence: "high",
+      source: "context-name",
+    });
+    expect(
+      analyzeStoryProtagonist("故事的主角叫小满，她第一次自己骑车", "zh"),
+    ).toMatchObject({
+      candidateName: "小满",
+      confidence: "high",
+      source: "explicit-name",
+    });
+    expect(
+      analyzeStoryProtagonist("妈妈陪女儿童童第一次去上学", "zh"),
+    ).toMatchObject({
+      candidateName: "童童",
+      confidence: "high",
+      source: "relationship-name",
+    });
+  });
+
+  it("does not mistake a generic family role for a child name", () => {
+    expect(analyzeStoryProtagonist("孩子第一次独自睡觉", "zh").candidateName).toBeNull();
+    expect(analyzeStoryProtagonist("妈妈带孩子去公园", "zh").candidateName).toBeNull();
+  });
+
   it("returns structured confidence and only auto-matches one saved character", () => {
     const analysis = analyzeStoryProtagonist(
       "今天童童去小区泳池玩水玩得非常开心",

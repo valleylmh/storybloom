@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import LibraryBookExperience from "@/components/library/LibraryBookExperience";
 import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
+import LibraryDetailBackLink from "@/components/library/LibraryDetailBackLink";
 import {
   getAdjacentBooks,
   getAllSeries,
@@ -140,9 +141,10 @@ export default async function LibraryBookPage({
       />
 
       <nav className="library-topbar" aria-label="页面导航">
-        <Link href={`/library/${series.id}`} className="library-back">
-          ← {series.title}
-        </Link>
+        <LibraryDetailBackLink
+          fallbackHref={`/library/${series.id}`}
+          fallbackLabel={series.title}
+        />
       </nav>
 
       {book.comingSoon ? (
