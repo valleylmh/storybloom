@@ -93,18 +93,20 @@ function mockCpaStory(
   coverTitle: string,
   pages: StoryPage[],
 ) {
-  const fetchMock = vi.fn().mockResolvedValue(
-    new Response(
-      JSON.stringify({
-        choices: [
-          {
-            message: {
-              content: JSON.stringify({ coverTitle, pages }),
+  const fetchMock = vi.fn().mockImplementation(() =>
+    Promise.resolve(
+      new Response(
+        JSON.stringify({
+          choices: [
+            {
+              message: {
+                content: JSON.stringify({ coverTitle, pages }),
+              },
             },
-          },
-        ],
-      }),
-      { status: 200, headers: { "content-type": "application/json" } },
+          ],
+        }),
+        { status: 200, headers: { "content-type": "application/json" } },
+      ),
     ),
   );
   vi.stubGlobal("fetch", fetchMock);
@@ -435,7 +437,7 @@ describe("custom story generation", () => {
     expect(timeoutSpy).toHaveBeenCalledWith(expect.any(Function), 120_000);
   });
 
-  it("repairs a first-person perspective violation before using fallback text", async () => {
+  it("repairs a first-person perspective violation before accepting text", async () => {
     process.env.STORY_TEXT_PROVIDER = "agnes";
     process.env.AGNES_API_KEY = "agnes-key-1";
     process.env.STORY_TEXT_MODEL = "agnes-2.5-flash";
@@ -516,7 +518,7 @@ describe("custom story generation", () => {
     expect(repairPrompt).toContain("I/me/my");
   });
 
-  it("repairs malformed story JSON before using fallback text", async () => {
+  it("repairs malformed story JSON before accepting text", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";
     process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
@@ -570,7 +572,7 @@ describe("custom story generation", () => {
     ).toContain("complete valid JSON object");
   });
 
-  it("uses a concrete kindergarten fallback when both model responses violate the contract", async () => {
+  it("fails instead of substituting a template when both model responses violate the contract", async () => {
     process.env.STORY_TEXT_PROVIDER = "agnes";
     process.env.AGNES_API_KEY = "agnes-key-1";
     process.env.STORY_TEXT_MODEL = "agnes-2.5-flash";
@@ -604,36 +606,36 @@ describe("custom story generation", () => {
       );
     vi.stubGlobal("fetch", fetchMock);
 
-    const story = await generateStoryText({
-      childName: "童童",
-      narrativePerspective: "first-person",
-      ageGroup: "4-5",
-      theme: "custom",
-      customTheme: "童童快开学了，即将是上大班的小哥哥了",
-      style: "watercolor",
-      language: "zh-en",
+    await expect(
+      generateStoryText({
+        childName: "童童",
+        narrativePerspective: "first-person",
+        ageGroup: "4-5",
+        theme: "custom",
+        customTheme: "童童快开学了，即将是上大班的小哥哥了",
+        style: "watercolor",
+        language: "zh-en",
+      }),
+    ).rejects.toMatchObject({
+      errorClass: "invalid_response",
+      message: "故事文本模型连续返回不符合要求的内容，请重试。",
     });
 
-    const chineseStory = story.pages.map((page) => page.zhText).join("\n");
     expect(fetchMock).toHaveBeenCalledTimes(2);
-    expect(story.coverTitle).toBe("童童的大班开学准备");
-    expect(chineseStory).toContain("幼儿园大班");
-    expect(chineseStory).toContain("书包");
-    expect(chineseStory).toContain("大班，我准备好了");
-    expect(chineseStory).not.toContain("这件特别的小事");
   });
 
-  it("falls back to the grounded local story when Agnes has no API key", async () => {
+  it("fails instead of substituting a template when Agnes has no API key", async () => {
     process.env.STORY_TEXT_PROVIDER = "agnes";
     delete process.env.AGNES_API_KEY;
     const fetchMock = vi.fn();
     vi.stubGlobal("fetch", fetchMock);
 
-    const story = await generateStoryText(soloSleepInput);
+    await expect(generateStoryText(soloSleepInput)).rejects.toMatchObject({
+      errorClass: "configuration",
+      message: "故事文本模型未配置，无法生成绘本。",
+    });
 
     expect(fetchMock).not.toHaveBeenCalled();
-    expect(story.pages).toHaveLength(8);
-    expect(story.pages[1].zhText).toContain("第一次一个人在房间睡觉");
   });
 
   it("replaces a generic model title with the concrete custom event", async () => {
@@ -722,9 +724,10 @@ describe("custom story generation", () => {
     const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
     const error = vi.spyOn(console, "error").mockImplementation(() => undefined);
 
-    const story = await generateStoryText(soloSleepInput);
-
-    expect(story.pages).toHaveLength(8);
+    await expect(generateStoryText(soloSleepInput)).rejects.toMatchObject({
+      errorClass: "upstream_5xx",
+      message: "故事文本模型暂时不可用，请稍后重试。",
+    });
     expect(error).toHaveBeenCalledWith(
       expect.objectContaining({
         operation: "text.provider_attempt",
@@ -740,7 +743,7 @@ describe("custom story generation", () => {
     expect(error).toHaveBeenCalledWith(
       expect.objectContaining({
         operation: "text.generate",
-        status: "fallback",
+        status: "failed",
         errorClass: "upstream_5xx",
       }),
     );
@@ -1002,7 +1005,7 @@ describe("custom story generation", () => {
     });
   });
 
-  it("replaces a validly formatted but unrelated model story", async () => {
+  it("rejects a validly formatted but unrelated model story", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";
     process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
@@ -1014,12 +1017,9 @@ describe("custom story generation", () => {
     );
     vi.spyOn(console, "warn").mockImplementation(() => undefined);
 
-    const story = await generateStoryText(soloSleepInput);
-    const chineseStory = story.pages.map((page) => page.zhText).join("\n");
-
-    expect(story.coverTitle).toBe("童童的第一次一个人在一个房间睡觉");
-    expect(chineseStory).toMatch(/一个人|独自/);
-    expect(chineseStory).toMatch(/睡觉|睡着|入睡/);
-    expect(chineseStory).not.toMatch(unrelatedTemplateWords);
+    await expect(generateStoryText(soloSleepInput)).rejects.toMatchObject({
+      errorClass: "invalid_response",
+      message: "故事文本模型连续返回不符合要求的内容，请重试。",
+    });
   });
 });

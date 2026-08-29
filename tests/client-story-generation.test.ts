@@ -4,6 +4,7 @@ import {
   prepareStoryGenerationRequest,
   requestStoryGeneration,
   requestStoryGenerationTask,
+  STORY_GENERATION_TASK_HTTP_TIMEOUT_MS,
 } from "@/lib/client-story-generation";
 
 function createResponse(status: number) {
@@ -149,8 +150,41 @@ describe("story generation authentication retry", () => {
 
     expect(fetcher).toHaveBeenCalledWith(
       "/api/generate?taskId=task_123456789012",
-      { method: "GET", cache: "no-store" },
+      {
+        method: "GET",
+        cache: "no-store",
+        signal: expect.any(AbortSignal),
+      },
     );
+  });
+
+  it("aborts a stalled persisted-task query so recovery can retry", async () => {
+    vi.useFakeTimers();
+    try {
+      const fetcher = vi.fn((_input: RequestInfo | URL, init?: RequestInit) =>
+        new Promise<Response>((_resolve, reject) => {
+          init?.signal?.addEventListener("abort", () => {
+            reject(new DOMException("Aborted", "AbortError"));
+          });
+        }),
+      );
+
+      const request = requestStoryGenerationTask({
+        taskId: "task_123456789012",
+        fetcher,
+      });
+      const rejection = expect(request).rejects.toThrow(
+        "故事任务查询超时，正在重试。",
+      );
+
+      await vi.advanceTimersByTimeAsync(STORY_GENERATION_TASK_HTTP_TIMEOUT_MS);
+
+      await rejection;
+      const signal = fetcher.mock.calls[0]?.[1]?.signal;
+      expect(signal?.aborted).toBe(true);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it("sends only editable page text when confirming an outline", async () => {

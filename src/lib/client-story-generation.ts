@@ -19,6 +19,8 @@ type StoryOutlineConfirmationInput = {
   fetcher?: typeof fetch;
 };
 
+export const STORY_GENERATION_TASK_HTTP_TIMEOUT_MS = 20_000;
+
 export function prepareStoryGenerationRequest(
   formData: Record<string, unknown>,
 ) {
@@ -81,14 +83,30 @@ export async function requestStoryGeneration({
   return response;
 }
 
-export function requestStoryGenerationTask({
+export async function requestStoryGenerationTask({
   taskId,
   fetcher = fetch,
 }: StoryGenerationTaskRequestInput) {
-  return fetcher(`/api/generate?taskId=${encodeURIComponent(taskId)}`, {
-    method: "GET",
-    cache: "no-store",
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(
+    () => controller.abort(),
+    STORY_GENERATION_TASK_HTTP_TIMEOUT_MS,
+  );
+
+  try {
+    return await fetcher(`/api/generate?taskId=${encodeURIComponent(taskId)}`, {
+      method: "GET",
+      cache: "no-store",
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (controller.signal.aborted) {
+      throw new Error("故事任务查询超时，正在重试。");
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeoutId);
+  }
 }
 
 export function confirmStoryOutline({
