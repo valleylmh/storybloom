@@ -1,0 +1,54 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "yu-ge-zi-xi-sai-shan-qian-bai-lu-fei",
+    "seriesId": "tangshi",
+    "title": "渔歌子·西塞山前白鹭飞",
+    "subtitle": "斜风细雨里，春水正温柔",
+    "poem": {
+      "dynasty": "唐",
+      "author": "张志和",
+      "originalLines": ["西塞山前白鹭飞，", "桃花流水鳜鱼肥。", "青箬笠，绿蓑衣，", "斜风细雨不须归。"],
+      "englishLines": ["White egrets fly before Xisai Mountain,", "Peach blossoms drift over water where plump mandarin fish swim.", "A blue-green bamboo hat, a green straw rain cape—", "In slanting wind and fine rain, there is no need to go home yet."],
+      "appreciation": {
+        "zh": "西塞山前，白鹭掠过春水，桃花落在溪流里，鳜鱼游得正欢。渔人戴着箬笠、披着蓑衣，在斜风细雨中不急着回家，因为眼前的春天实在让人留恋。",
+        "en": "Before Xisai Mountain, egrets skim spring water, peach petals drift, and mandarin fish swim below. Protected by a bamboo hat and straw cape, the fisher lingers in fine rain, reluctant to leave the beautiful spring scene."
+      }
+    },
+    "parentGuide": {
+      "goal": "帮助孩子感受轻风细雨中的自在，并练习在喜欢与安全之间做有支持的选择。",
+      "reminder": "“不须归”是诗意留恋，不表示现实中可以忽视天气、水域和家人约定；不鼓励儿童独自靠近水边或在雨中久留。",
+      "questions": [
+        "渔人为什么不急着回去？",
+        "箬笠和蓑衣怎样帮助他照顾自己？",
+        "如果你还想玩、但天气变了，可以怎样和大人商量？"
+      ],
+      "activity": "和孩子查看当天的天气，在安全窗边分辨风向和雨丝，再一起决定适合的衣物与观察时间；所有水边活动由成人近距离陪同。",
+      "ageTips": {
+        "age4to5": "把选择缩小为两项，例如雨停后出去或在窗边看，并由成人负责安全判断。",
+        "age6to8": "让孩子参与查看天气、准备衣物和约定返回信号。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "西塞山前白鹭飞，\n桃花流水鳜鱼肥。\n青箬笠，绿蓑衣，\n斜风细雨不须归。", "enText": "White egrets fly before Xisai Mountain,\nPeach blossoms drift over water where plump mandarin fish swim.\nA blue-green bamboo hat, a green straw rain cape—\nIn slanting wind and fine rain, there is no need to go home yet.", "illustrationPrompt": "Spring river beneath green Xisai Mountain, white egrets fly, peach petals drift and plump mandarin fish swim visibly in clear shallows; a kind adult Tang fisher in blue-green bamboo hat and green straw rain cape sits safely in a small tethered boat during fine rain, no text."},
+      {"page": 2, "zhText": "西塞山前白鹭飞，\n青翠的西塞山下，一只只白鹭贴着春水轻轻飞过。", "enText": "White egrets fly before Xisai Mountain.\nWhite egrets skim the spring water below the green mountain.", "illustrationPrompt": "Wide same mountain and river, three anatomically accurate white egrets glide low above water, same fisher and tethered boat small in distance, soft spring mist, no text."},
+      {"page": 3, "zhText": "桃花流水鳜鱼肥。\n桃花落进溪流，花瓣在水面漂，水下的鳜鱼也长得圆润有力。", "enText": "Peach blossoms drift over water where plump mandarin fish swim.\nPetals float above strong, healthy fish in the clear stream.", "illustrationPrompt": "Split waterline view of same clear river, pink peach petals float on surface while healthy mandarin fish swim freely below among stones, peach trees on bank, no caught fish, no text."},
+      {"page": 4, "zhText": "青箬笠，绿蓑衣，\n渔人戴好箬笠，披上蓑衣，把风雨稳稳挡在外面。", "enText": "A blue-green bamboo hat, a green straw rain cape.\nThe fisher's hat and cape keep out the wind and rain.", "illustrationPrompt": "Friendly medium portrait of same adult fisher adjusting woven bamboo hat and green straw rain cape while seated securely in boat near bank, practical historical clothing shown clearly, no weapons, no text."},
+      {"page": 5, "zhText": "斜风细雨不须归。\n风斜斜地吹，雨细细地落，他还想在这片春水旁多待一会儿。", "enText": "In slanting wind and fine rain, there is no need to go home yet.\nWind and rain are gentle, and he wishes to linger beside the spring water.", "illustrationPrompt": "Fine diagonal rain crosses same calm river, same properly dressed fisher enjoys scene from boat secured close to bank, no storm or danger, egrets settle nearby, no text."},
+      {"page": 6, "zhText": "白鹭在天上，桃花在水面，鳜鱼在水下，渔人正在三层春色之间。风、雨和水流，把整幅画轻轻推向前。", "enText": "Egrets fill the sky, petals float on the surface, and fish move below. Wind, rain, and current carry the whole spring picture forward.", "illustrationPrompt": "Layered panoramic composition of sky with egrets, surface with petals and underwater fish, same fisher centered safely between all three natural layers, flowing but calm movement, no text."},
+      {"page": 7, "zhText": "“不须归”不是忘记回家，而是舍不得马上离开。喜欢一个地方时，我们会想多看一会儿，也需要照顾天气、身体和彼此的约定。", "enText": "“No need to go home yet” means not wanting to leave at once. We can linger while still caring for the weather, our bodies, and family agreements.", "illustrationPrompt": "Same fisher checks darkening sky and touches secure mooring rope while enjoying final view, practical care and contentment together, warm home light faintly visible upriver, no text."},
+      {"page": 8, "zhText": "如果你还想留下，而大人说天气要变了，可以一起想办法：再看五分钟、换上雨衣，或者约好下次再来。", "enText": "If you want to stay but the weather is changing, make a plan together: watch for five more minutes, add rain gear, or return another day.", "illustrationPrompt": "Same fisher and a trusted adult companion on safe river landing compare sky and prepare to leave, one points home while the other secures gear, cooperative choice, no child alone by water, no text."},
+      {"page": 9, "zhText": "和大人从安全的窗边看看雨吧：雨是直直落下，还是斜斜飘过？再一起选一件适合今天的衣物。", "enText": "Watch rain safely from a window with a grown-up. Does it fall straight or slant sideways? Then choose clothing that fits today's weather.", "illustrationPrompt": "Cozy Tang riverside home interior, same fisher and companion look through open lattice window at slanting rain while choosing hat and dry cape from hooks, no modern clothing, no text."},
+      {"page": 10, "zhText": "西塞山前白鹭飞，\n桃花流水鳜鱼肥。\n青箬笠，绿蓑衣，\n斜风细雨不须归。\n再轻轻读一遍吧。", "enText": "White egrets fly before Xisai Mountain,\nPeach blossoms drift over water where plump mandarin fish swim.\nA blue-green bamboo hat, a green straw rain cape—\nIn slanting wind and fine rain, there is no need to go home yet.\nNow read it softly once more.", "illustrationPrompt": "Closing spring-rain panorama, same fisher walks home along safe bank carrying gear while tethered boat rests, egrets cross Xisai Mountain and petals continue downstream, warm peaceful light, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 41,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, luminous mineral green and river blue with peach pink and restrained warm ochre, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same kind adult Tang fisher throughout: weathered friendly face, short dark beard, black hair tied low, blue-green woven bamboo hat, green straw rain cape, muted gray robe and cloth boots; same Xisai Mountain, clear spring river, peach trees, white egrets, free-swimming mandarin fish, small wooden boat and safe landing; trusted adult companion appears on pages 8–10.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern raincoat, alcohol, child alone near water, untethered dangerous boat, storm, lightning, flood, dead or caught fish, fishing hook close-up, photorealism, extra limbs, distorted bird, fish, boat or anatomy"
+  }
+}

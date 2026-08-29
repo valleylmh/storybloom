@@ -1,0 +1,53 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "chu-zhou-xi-jian",
+    "seriesId": "tangshi",
+    "title": "滁州西涧",
+    "subtitle": "春雨里，一叶小舟静静横着",
+    "poem": {
+      "dynasty": "唐",
+      "author": "韦应物",
+      "originalLines": ["独怜幽草涧边生，", "上有黄鹂深树鸣。", "春潮带雨晚来急，", "野渡无人舟自横。"],
+      "englishLines": ["I especially love the quiet grass beside the stream,", "Where orioles sing in the deep trees above.", "Evening rain swells the spring current,", "At the empty ferry, a small boat rests sideways on the water."],
+      "appreciation": {
+        "zh": "诗人喜爱溪边安静的小草，也听见深树里的黄鹂。傍晚春雨落下，溪水渐急，野渡没有行人，只有一只小船随水轻轻横在岸边。",
+        "en": "The poet notices quiet grass by the stream and orioles singing in deep trees. Evening rain quickens the spring water, while an empty ferry boat drifts gently sideways near the bank."
+      }
+    },
+    "parentGuide": {
+      "goal": "帮助孩子注意不起眼的小事物，并体验从热闹切换到安静观察的节奏。",
+      "reminder": "安静不是“乖”的标准，活泼也不是问题；这本书只提供一种可选择的慢下来方式，不要求孩子压住身体和声音。",
+      "questions": [
+        "诗人为什么特别喜欢溪边不起眼的小草？",
+        "画面里哪些东西安静，哪些东西正在动？",
+        "当你想慢下来时，什么声音或动作会帮助你？"
+      ],
+      "activity": "和孩子做一张一分钟“声音地图”：在安全的窗边或户外坐一会儿，把听见的三种声音画成点、线或颜色；想动时可以先走一圈再回来。",
+      "ageTips": {
+        "age4to5": "观察时间保持很短，让孩子用指、画或模仿声音来回答。",
+        "age6to8": "比较远近、轻重和连续变化，并允许孩子选择静坐或慢走观察。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "独怜幽草涧边生，\n上有黄鹂深树鸣。\n春潮带雨晚来急，\n野渡无人舟自横。", "enText": "I especially love the quiet grass beside the stream,\nWhere orioles sing in the deep trees above.\nEvening rain swells the spring current,\nAt the empty ferry, a small boat rests sideways on the water.", "illustrationPrompt": "Quiet spring ravine near Chuzhou at late afternoon, lush streamside grass, two yellow orioles in deep green trees, gentle rain and a small empty wooden ferry boat safely tethered sideways near the bank, a Tang poet watches from a covered path, no text."},
+      {"page": 2, "zhText": "独怜幽草涧边生，\n溪边没有醒目的花，诗人却偏偏喜欢那一片安静生长的小草。", "enText": "I especially love the quiet grass beside the stream.\nThe poet is drawn to the small, peaceful grass by the water.", "illustrationPrompt": "Close low view of tender green grass, moss and tiny plain leaves growing beside the same clear stream, same poet crouches at a safe distance under a simple rain cape, noticing humble plants, no flowers dominating, no text."},
+      {"page": 3, "zhText": "上有黄鹂深树鸣。\n高高的密林里，黄鹂看不真切，清亮的叫声却一声声落下来。", "enText": "Where orioles sing in the deep trees above.\nThe birds hide among leaves, but their bright calls drift down.", "illustrationPrompt": "Upward view into the same layered green canopy, two small golden orioles partly visible among leaves, same poet below listening with gentle smile, sound suggested by alert birds and rustling branches, no music notes, no text."},
+      {"page": 4, "zhText": "春潮带雨晚来急，\n傍晚的春雨落进溪流，水面起了密密的圆点，水流也跑得更快了。", "enText": "Evening rain swells the spring current.\nRaindrops stipple the stream as the water begins to hurry.", "illustrationPrompt": "Same ravine at rainy dusk, many soft raindrop circles texture the stream and current quickens visibly but remains within safe banks, same poet sheltered beneath a small pavilion roof, no flood or danger, no text."},
+      {"page": 5, "zhText": "野渡无人舟自横。\n渡口静悄悄的，一只空船被缆绳牵着，在水面上轻轻转了个方向。", "enText": "At the empty ferry, a small boat rests sideways on the water.\nHeld by its rope, the empty boat turns gently across the stream.", "illustrationPrompt": "Intimate view of the same empty wooden ferry boat floating sideways beside a simple post, rope clearly secured, rain-softened water and empty landing, peaceful solitude, no person aboard, no text."},
+      {"page": 6, "zhText": "先是小草静静长，黄鹂悄悄唱；后来春雨落下，溪水和小船都动了起来。一静一动，都是春天。", "enText": "Grass grows quietly and orioles sing above; then rain falls, and stream and boat begin to move. Stillness and motion both belong to spring.", "illustrationPrompt": "Balanced split-depth panorama of same ravine: still grass and hidden orioles in foreground, flowing rain-fed stream and gently turning tethered boat beyond, same poet quietly connects the scene with his gaze, no panels or text."},
+      {"page": 7, "zhText": "没有人的渡口并不空。那里有草、有鸟鸣、有雨，也有一只自己摇晃的小舟，陪着溪水度过傍晚。", "enText": "The empty ferry is not truly empty. Grass, birdsong, rain, and a rocking boat keep the stream company through evening.", "illustrationPrompt": "Contemplative wide view after poet has stepped back beneath trees, empty ferry remains lively through birds, rain, ripples, grass and tethered boat, warm quiet rather than loneliness, no text."},
+      {"page": 8, "zhText": "和大人一起找三样容易被忽略的小东西：一棵草、一声远远的鸟鸣、一圈雨滴。想坐就坐，想慢慢走着找也可以。", "enText": "With a grown-up, notice three easily missed things: a blade of grass, a distant birdcall, and a ring made by rain. You may sit or look while walking slowly.", "illustrationPrompt": "Same poet and a gentle companion explore the covered streamside path together, one points to tiny grass while the other listens toward orioles and watches raindrop rings, flexible calm movement, no text."},
+      {"page": 9, "zhText": "独怜幽草涧边生，\n上有黄鹂深树鸣。\n春潮带雨晚来急，\n野渡无人舟自横。\n再轻轻读一遍吧。", "enText": "I especially love the quiet grass beside the stream,\nWhere orioles sing in the deep trees above.\nEvening rain swells the spring current,\nAt the empty ferry, a small boat rests sideways on the water.\nNow read it softly once more.", "illustrationPrompt": "Closing misty evening at same ferry after light rain, yellow orioles settle in dark leaves, tethered boat rests across calmer water, same poet walks away along covered path, a faint warm sky opening, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 38,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, moss green and mineral blue with golden-yellow birds and restrained warm gray, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same quiet Tang poet throughout: thoughtful middle-aged face, short dark beard, black hair in a simple topknot, muted sage robe, pale rain cape and cloth shoes; same narrow spring ravine, lush grass, deep trees with two yellow orioles, simple ferry landing and one small tethered wooden boat.",
+    "negative": "written text, calligraphy, captions, music notes, seals, logos, watermark, modern objects, bridge traffic, crowded ferry, loose dangerous boat, flood, storm, lightning, frightening darkness, photorealism, extra limbs, distorted bird, boat or anatomy"
+  }
+}

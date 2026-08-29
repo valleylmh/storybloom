@@ -1,0 +1,53 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "du-zuo-jing-ting-shan",
+    "seriesId": "tangshi",
+    "title": "独坐敬亭山",
+    "subtitle": "一座山，安安静静陪着我",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": ["众鸟高飞尽，", "孤云独去闲。", "相看两不厌，", "只有敬亭山。"],
+      "englishLines": ["All the birds have flown far away,", "A lone cloud drifts off at ease.", "We gaze at each other without growing tired—", "Only Jingting Mountain and I."],
+      "appreciation": {
+        "zh": "鸟儿飞远了，最后一朵云也慢慢飘走。诗人独自坐着看敬亭山，山也仿佛静静看着他。没有热闹的对话，一人一山却成了不会厌倦的朋友。",
+        "en": "Birds fly away and the last cloud drifts on. The poet sits alone with Jingting Mountain, and the mountain seems to look back. Without conversation, the two become quiet companions."
+      }
+    },
+    "parentGuide": {
+      "goal": "让孩子体验安静陪伴和独处的可能，同时分辨“我想自己待会儿”和“我被孤单留下”的不同。",
+      "reminder": "不要把喜欢独处说成更懂事，也不要要求孩子必须安静；如果孩子感到孤单，先提供真实陪伴，而不是只劝他像诗人一样忍耐。",
+      "questions": [
+        "鸟和云走后，什么还陪着诗人？",
+        "你什么时候喜欢自己待一会儿，什么时候更想有人陪？",
+        "安静陪伴一定要说很多话吗？"
+      ],
+      "activity": "亲子并排看同一棵树或一座远山一分钟，可以说话也可以不说；结束后各自分享一个刚才注意到的细节和一种感受。",
+      "ageTips": {
+        "age4to5": "保持时间很短，让孩子随时靠近、离开或说话。",
+        "age6to8": "讨论主动独处、安静陪伴和被排斥三者的区别。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "众鸟高飞尽，\n孤云独去闲。\n相看两不厌，\n只有敬亭山。", "enText": "All the birds have flown far away,\nA lone cloud drifts off at ease.\nWe gaze at each other without growing tired—\nOnly Jingting Mountain and I.", "illustrationPrompt": "Quiet late-afternoon view of green Jingting Mountain, a gentle Tang poet sits safely on a grassy overlook, the last birds fly high away and one white cloud drifts across wide sky, companionship rather than sadness, no text."},
+      {"page": 2, "zhText": "众鸟高飞尽，\n一群鸟越飞越高，越飞越远，最后变成天边的小点。", "enText": "All the birds have flown far away.\nThe flock climbs higher and farther until it becomes tiny dots.", "illustrationPrompt": "Same seated poet watches a small flock of birds recede across an immense pale blue sky above Jingting Mountain, clear progression from near to distant birds, no fallen birds, no text."},
+      {"page": 3, "zhText": "孤云独去闲。\n最后一朵白云也不着急，慢悠悠地向远处飘去。", "enText": "A lone cloud drifts off at ease.\nThe last white cloud takes its time floating away.", "illustrationPrompt": "One soft white cloud drifts calmly over the same rounded mountain while same poet follows it with relaxed gaze, wide rice-paper negative space and gentle breeze in grass, no text."},
+      {"page": 4, "zhText": "相看两不厌，\n热闹都走远了，诗人看着山，山也像在看着诗人，怎么看都不会厌倦。", "enText": "We gaze at each other without growing tired.\nThe poet looks at the mountain, and the mountain seems to look back.", "illustrationPrompt": "Balanced face-to-mountain composition, same poet in calm profile and Jingting's welcoming rounded peak echo each other's shape across open space, natural landscape not a literal face, no text."},
+      {"page": 5, "zhText": "只有敬亭山。\n此刻没有鸟群，也没有云朵，只有敬亭山稳稳地留在眼前。", "enText": "Only Jingting Mountain and I.\nWith birds and cloud gone, the mountain remains steady before him.", "illustrationPrompt": "Clear simple scene of same poet and the solid green mountain under an almost empty sky, warm low sun touches grass, spacious but not lonely, no text."},
+      {"page": 6, "zhText": "鸟有鸟的方向，云有云的旅程，山有山的停留。诗人不追赶谁，只把目光轻轻放在还留着的山上。", "enText": "Birds have their direction, clouds have their journey, and mountains know how to stay. The poet chases no one; he rests his gaze on what remains.", "illustrationPrompt": "Wide continuous landscape showing distant birds and cloud moving toward horizon while same poet remains beside stable Jingting Mountain, visual contrast of motion and stillness, no text."},
+      {"page": 7, "zhText": "一个人安静待着，不一定就是难过；有人默默坐在身边，也是一种陪伴。如果你觉得孤单，也可以开口请喜欢的人靠近一点。", "enText": "Quiet time alone is not always sad, and someone sitting nearby can be a form of company. If you feel lonely, you can ask a trusted person to come closer.", "illustrationPrompt": "Same poet is joined at a respectful distance by a trusted old friend who sits quietly on another flat stone, both face the mountain with relaxed posture, no forced interaction, no text."},
+      {"page": 8, "zhText": "和大人并排看一棵树或一座远山吧。可以说话，也可以安静一分钟；然后告诉彼此，你刚刚看见了什么。", "enText": "Sit beside a grown-up and look at one tree or a distant hill. You may talk or stay quiet for a minute, then share what each of you noticed.", "illustrationPrompt": "Same poet and trusted friend sit side by side at safe overlook, each notices a different detail in mountain, pine and light, open supportive body language, no text."},
+      {"page": 9, "zhText": "众鸟高飞尽，\n孤云独去闲。\n相看两不厌，\n只有敬亭山。\n再轻轻读一遍吧。", "enText": "All the birds have flown far away,\nA lone cloud drifts off at ease.\nWe gaze at each other without growing tired—\nOnly Jingting Mountain and I.\nNow read it softly once more.", "illustrationPrompt": "Closing dusk view of same poet and friend walking down the safe hillside path while Jingting Mountain remains in violet-green evening light, one first star appears, peaceful no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 40,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, mineral green and spacious pale blue with restrained violet and warm amber, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same gentle Tang poet throughout: thoughtful middle-aged face, short dark beard, black hair in a simple topknot, muted blue-gray robe, moss sash and cloth shoes; same safe grassy overlook, rounded green Jingting Mountain, pine, wide sky, receding birds and one drifting cloud; a trusted older friend appears only on pages 7–9.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, literal face on mountain, crying despair, abandonment, cliff edge danger, storm, photorealism, extra limbs, distorted anatomy"
+  }
+}

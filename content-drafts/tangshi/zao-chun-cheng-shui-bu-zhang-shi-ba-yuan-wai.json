@@ -1,0 +1,53 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "zao-chun-cheng-shui-bu-zhang-shi-ba-yuan-wai",
+    "seriesId": "tangshi",
+    "title": "早春呈水部张十八员外",
+    "subtitle": "草色远远看见，走近又不见",
+    "poem": {
+      "dynasty": "唐",
+      "author": "韩愈",
+      "originalLines": ["天街小雨润如酥，", "草色遥看近却无。", "最是一年春好处，", "绝胜烟柳满皇都。"],
+      "englishLines": ["Fine rain softens the capital street like cream,", "Grass looks green from afar, yet vanishes when viewed near.", "This is the loveliest moment of the whole spring,", "More precious than the city filled with misty willows."],
+      "appreciation": {
+        "zh": "早春的小雨轻轻润湿街道，远远看去，地面已经透出一层嫩绿；走近细看，却只找到刚刚探头的小草。诗人最喜欢春天还没完全展开的这一刻。",
+        "en": "Fine early-spring rain moistens the city street. From afar the ground seems green, but up close only tiny new shoots can be found. The poet treasures this moment when spring has only just begun."
+      }
+    },
+    "parentGuide": {
+      "goal": "培养耐心观察和对微小变化的敏感，也帮助成人尊重孩子各自不同的成长节奏。",
+      "reminder": "不要把“早春最好”类比成“越早学会越优秀”；诗人在欣赏一个季节阶段，孩子的发展没有统一的抢跑标准。",
+      "questions": [
+        "为什么草色远看有、近看却像没有？",
+        "早春和盛春各有什么不同的好？",
+        "你最近发现了哪一个很小、但正在发生的变化？"
+      ],
+      "activity": "选一小块安全草地或一盆植物，从远处看一次、走近再看一次；亲子各说一个不同发现，一周后再看，不比较谁发现得多。",
+      "ageTips": {
+        "age4to5": "用远、近和有、没有做身体移动游戏，观察两三分钟即可。",
+        "age6to8": "记录同一地点一周内的细小变化，讨论成长不必每天都明显。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "天街小雨润如酥，\n草色遥看近却无。\n最是一年春好处，\n绝胜烟柳满皇都。", "enText": "Fine rain softens the capital street like cream,\nGrass looks green from afar, yet vanishes when viewed near.\nThis is the loveliest moment of the whole spring,\nMore precious than the city filled with misty willows.", "illustrationPrompt": "Fresh early spring on a broad Tang capital street after fine rain, distant ground carries the faintest pale green haze, bare willows just beginning to bud, a cheerful older Tang poet observes with a younger adult friend, no crowds, no text."},
+      {"page": 2, "zhText": "天街小雨润如酥，\n细细的小雨落在京城街道上，泥土、石板和树枝都被润得柔和明亮。", "enText": "Fine rain softens the capital street like cream.\nLight rain leaves earth, stones, and branches soft and bright.", "illustrationPrompt": "Close atmospheric view of same quiet capital street under very fine rain, wet stone and earth glow softly, same older poet and friend under simple shared oil-paper canopy, no heavy rain, no text."},
+      {"page": 3, "zhText": "草色遥看近却无。\n远远望去，地面像蒙着一层嫩绿；走近一找，原来只是细细的小草刚刚探头。", "enText": "Grass looks green from afar, yet vanishes when viewed near.\nFrom a distance the ground seems green; up close, tiny shoots have only just appeared.", "illustrationPrompt": "Perspective study in one scene: distant verge shows a faint green veil while foreground reveals sparse tiny new grass shoots, same poet crouches without touching them and friend looks from farther back, no text."},
+      {"page": 4, "zhText": "最是一年春好处，\n诗人觉得，一年里最可爱的春光，正是万物刚刚醒来的这一小段时间。", "enText": "This is the loveliest moment of the whole spring.\nThe poet loves the brief time when everything has only just awakened.", "illustrationPrompt": "Warm wide view of same early-spring street with tiny buds, first grass, wet soil and one returning swallow, same poet opens arms slightly in delight while friend smiles, subtle not lush, no text."},
+      {"page": 5, "zhText": "绝胜烟柳满皇都。\n在他眼里，这层若有若无的新绿，比满城柳树都长开时还要珍贵。", "enText": "More precious than the city filled with misty willows.\nTo him, this barely visible green is even more precious than full-grown spring willows.", "illustrationPrompt": "Same poet treasures one tiny green shoot in foreground while a soft imagined later-spring city of full willows appears only as pale distant wash, no competition symbols, no text."},
+      {"page": 6, "zhText": "早春不会一下子变绿。先是一点湿润，一层远远的颜色，再是一根根近看才发现的小芽。春天用很小的脚步走来。", "enText": "Early spring does not turn green all at once. First comes moisture, then distant color, then tiny shoots visible up close. Spring arrives in small steps.", "illustrationPrompt": "Gentle sequence within one continuous streetside landscape: raindrops, faint distant green and tiny foreground buds lead the eye forward, same poet and friend walk slowly between clues, no panels, no text."},
+      {"page": 7, "zhText": "喜欢早春，不代表盛春不好；有人先注意到变化，有人后来才看见。成长也常常很轻，不必每天都证明自己长大了。", "enText": "Loving early spring does not make later spring less lovely. Some notice change sooner than others. Growth can be quiet and does not need to prove itself every day.", "illustrationPrompt": "Same older poet and younger friend compare two nearby plants at different budding stages with equal appreciation, no measuring tools, no ranking, soft rain has stopped, no text."},
+      {"page": 8, "zhText": "和大人从远处看一小片草地，再走近看看。你们发现的东西可以不同，也不用比赛谁看得更多。", "enText": "Look at a small patch of grass from far away with a grown-up, then walk closer. Your discoveries may differ, and no one needs to find the most.", "illustrationPrompt": "Same poet and younger friend observe one safe roadside grass patch from two comfortable distances, then meet to share discoveries with open hands, cooperative no competition, no text."},
+      {"page": 9, "zhText": "天街小雨润如酥，\n草色遥看近却无。\n最是一年春好处，\n绝胜烟柳满皇都。\n再轻轻读一遍吧。", "enText": "Fine rain softens the capital street like cream,\nGrass looks green from afar, yet vanishes when viewed near.\nThis is the loveliest moment of the whole spring,\nMore precious than the city filled with misty willows.\nNow read it softly once more.", "illustrationPrompt": "Closing clear early-spring morning on same Tang street, same poet and friend walk away under folded canopy, tiny green veil grows visible across wet earth while willow buds catch light, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 44,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, pearl gray rain and the palest mineral green with restrained warm ochre and cinnabar, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same cheerful older Tang poet throughout: kind lined face, short gray-streaked beard, black-and-gray hair in a simple topknot, muted teal robe, pale gray sash and cloth shoes; keep the same younger adult friend in sand-colored robe; same broad Tang capital street, wet stone, earthen verge, tiny new grass, barely budding willows and very fine early-spring rain.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern city, lush full summer grass, dense flowers, snow, heavy storm, competition chart, measuring child growth, photorealism, extra limbs, distorted architecture or anatomy"
+  }
+}

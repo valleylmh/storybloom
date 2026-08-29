@@ -1,0 +1,54 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "cai-lian-qu",
+    "seriesId": "tangshi",
+    "title": "采莲曲",
+    "subtitle": "荷叶深处传来歌声",
+    "poem": {
+      "dynasty": "唐",
+      "author": "王昌龄",
+      "originalLines": ["荷叶罗裙一色裁，", "芙蓉向脸两边开。", "乱入池中看不见，", "闻歌始觉有人来。"],
+      "englishLines": ["Lotus leaves and silk skirts share the same green,", "Lotus blossoms open beside smiling faces.", "The pickers blend into the pond and disappear,", "Only their songs reveal that someone is near."],
+      "appreciation": {
+        "zh": "采莲姑娘的绿裙和荷叶连成一片，粉红荷花又在她们脸旁开放。人走进荷塘便藏进了满眼绿色，先听见轻快的歌声，才知道她们正在靠近。",
+        "en": "The lotus pickers' green skirts blend with the leaves while pink blossoms open beside their faces. Hidden among the pond's colors, they are heard singing before they are seen."
+      }
+    },
+    "parentGuide": {
+      "goal": "练习用颜色、声音和遮挡线索观察场景，并体验“先听见、后看见”的共同注意。",
+      "reminder": "不把采莲写成孩子必须模仿的劳动，也不要求孩子表演唱歌；重点是安全地听、看和描述。",
+      "questions": [
+        "为什么荷塘里一时看不见采莲人？",
+        "如果闭上眼睛，你能先听到哪些声音？",
+        "衣服颜色和周围环境相近时，会发生什么有趣的事？"
+      ],
+      "activity": "在家玩一次“先听后找”：大人在安全范围轻轻摇动一个物品，孩子闭眼听方向再寻找；轮换角色，并允许孩子随时睁眼。",
+      "ageTips": {
+        "age4to5": "只比较两三种明显颜色和远近声音，不要求完整复述。",
+        "age6to8": "引导孩子描述遮挡、倒影和声音方向怎样帮助判断位置。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "荷叶罗裙一色裁，\n芙蓉向脸两边开。\n乱入池中看不见，\n闻歌始觉有人来。", "enText": "Lotus leaves and silk skirts share the same green,\nLotus blossoms open beside smiling faces.\nThe pickers blend into the pond and disappear,\nOnly their songs reveal that someone is near.", "illustrationPrompt": "Luminous summer lotus pond in Tang Jiangnan, two cheerful young adult lotus pickers in modest leaf-green cross-collar dresses guide a small wooden boat between broad leaves and pink blossoms, faces friendly and natural, no text."},
+      {"page": 2, "zhText": "荷叶罗裙一色裁，\n碧绿的荷叶挨着碧绿的裙子，远远看去，像是用同一匹颜色裁成的。", "enText": "Lotus leaves and silk skirts share the same green.\nGreen leaves and green skirts seem cut from the same color.", "illustrationPrompt": "Medium view of the same lotus pickers seated safely in their boat, modest green skirts visually blending with overlapping emerald leaves, clear natural fabric and plant distinction, no camouflage trick, no text."},
+      {"page": 3, "zhText": "芙蓉向脸两边开。\n粉红的荷花在脸旁轻轻摇，好像也在和采莲人一起微笑。", "enText": "Lotus blossoms open beside smiling faces.\nPink flowers sway beside the pickers as if smiling too.", "illustrationPrompt": "Warm close scene of one same adult lotus picker smiling between two naturally growing pink lotus blossoms, another picker visible behind, respectful child-friendly portrait, no flowers attached to body, no text."},
+      {"page": 4, "zhText": "乱入池中看不见，\n小船划进密密的荷叶深处，绿裙、绿叶和倒影渐渐分不清了。", "enText": "The pickers blend into the pond and disappear.\nTheir boat slips deep among leaves, skirts, and green reflections.", "illustrationPrompt": "High view of the same small boat winding through dense but safe lotus leaves, green clothing and reflections create a gentle hide-and-seek effect, heads and hands still anatomically clear, no text."},
+      {"page": 5, "zhText": "闻歌始觉有人来。\n还没看见小船，先有一阵清亮的歌声从荷叶后面飘过来。", "enText": "Only their songs reveal that someone is near.\nBefore the boat appears, a bright song floats from behind the leaves.", "illustrationPrompt": "View from quiet pond edge toward rustling lotus leaves, same boat mostly hidden as one picker's joyful face emerges, birds and ripples suggest music without notes or symbols, no written lyrics, no text."},
+      {"page": 6, "zhText": "眼前是绿叶和红花，耳边是船桨划水和远远的歌声。荷塘里，颜色、声音和人轻轻融在一起。", "enText": "Green leaves and pink flowers fill the eyes; oars and distant singing fill the ears. Color, sound, and people mingle softly across the pond.", "illustrationPrompt": "Wide sensory panorama of same lotus pond, boat oar makes circular ripples, two pickers sing naturally while dragonflies and leaves move in breeze, rich green and pink harmony, no music symbols, no text."},
+      {"page": 7, "zhText": "诗人没有急着告诉我们谁来了，而是让一阵歌声先穿过荷叶。藏一藏、听一听，夏日荷塘就有了游戏般的惊喜。", "enText": "The poet lets a song arrive before its singer. A little hiding and listening turns the summer pond into a playful surprise.", "illustrationPrompt": "Playful hide-and-seek composition through layered lotus leaves, glimpses of same boat, green sleeve and smiling face appear at different depths while water remains calm, no text."},
+      {"page": 8, "zhText": "有时眼睛没找到，耳朵已经发现了。把画面轻轻“关掉”，只听船桨、风和歌声，荷塘还会在心里出现。", "enText": "Sometimes our ears discover what our eyes have not. Close the picture for a moment and let oars, wind, and singing rebuild the pond in your mind.", "illustrationPrompt": "Same lotus pond from a low leaf-level viewpoint, boat hidden behind leaves while ripples, moving stems, a distant smiling singer and alert birds provide visual clues to sound, no music symbols, no text."},
+      {"page": 9, "zhText": "和大人玩一次“先听后找”吧：闭上眼睛听一个轻轻的声音，猜猜它从哪里来。想睁眼时，随时都可以睁开。", "enText": "Play “listen, then find” with a grown-up. Close your eyes, hear a gentle sound, and guess where it comes from. Open your eyes whenever you wish.", "illustrationPrompt": "Safe playful scene on the pond landing after work, one same lotus picker gently taps an empty wooden basket while the other listens smiling with eyes softly closed, boat tied nearby, no child alone near water, no text."},
+      {"page": 10, "zhText": "荷叶罗裙一色裁，\n芙蓉向脸两边开。\n乱入池中看不见，\n闻歌始觉有人来。\n再轻轻读一遍吧。", "enText": "Lotus leaves and silk skirts share the same green,\nLotus blossoms open beside smiling faces.\nThe pickers blend into the pond and disappear,\nOnly their songs reveal that someone is near.\nNow read it softly once more.", "illustrationPrompt": "Closing golden-hour lotus pond, same two pickers guide their boat home through opening leaves, pink flowers glow and long ripples trail behind, airy summer calm, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 37,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, luminous lotus green, mineral blue and gentle pink with restrained warm ochre, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same two cheerful young adult Tang lotus pickers throughout: friendly rounded faces, black hair in simple practical buns, modest leaf-green cross-collar dresses with pale sashes; same narrow wooden gathering boat, broad emerald leaves, pink lotus blossoms and calm summer pond.",
+    "negative": "written text, calligraphy, captions, music notes, seals, logos, watermark, modern objects, modern dress, glamorous makeup, revealing clothing, sexualized pose, child labor, crowded festival, dangerous deep-water action, photorealism, extra limbs, distorted boat or anatomy"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "lang-tao-sha-qi-yi",
+    "seriesId": "tangshi",
+    "title": "浪淘沙·其一",
+    "subtitle": "沿着黄河，一直想象到银河",
+    "poem": {
+      "dynasty": "唐",
+      "author": "刘禹锡",
+      "originalLines": ["九曲黄河万里沙，", "浪淘风簸自天涯。", "如今直上银河去，", "同到牵牛织女家。"],
+      "englishLines": ["The winding Yellow River carries sand for thousands of miles,", "Its waves wash and winds toss it from the farthest horizon.", "Now let us ride straight upward to the Silver River,", "And travel together to the home of the Cowherd and Weaver Girl."],
+      "appreciation": {
+        "zh": "黄河弯弯曲曲，带着泥沙和巨浪从遥远的地方奔来。诗人看着大河，忽然展开想象：不如沿着浪花一直向上，去银河边拜访传说中的牵牛和织女。",
+        "en": "The winding Yellow River rushes from far away with sand, wind, and waves. Watching it, the poet imagines riding its current upward to the Milky Way and visiting the legendary Cowherd and Weaver Girl."
+      }
+    },
+    "parentGuide": {
+      "goal": "支持孩子在真实观察与神话想象之间自由往返，练习清楚表达“这是景象”“这是联想”。",
+      "reminder": "不要一开始就用科学事实压住想象，也不要把神话说成已证实的事实；先欣赏诗意，再一起标出真实黄河、银河和传说各属于哪一层。",
+      "questions": [
+        "诗人从黄河想到了天空中的什么？",
+        "哪些画面是真实能看见的，哪些是诗人的想象？",
+        "如果沿着一条河展开想象，你想去哪里？"
+      ],
+      "activity": "把一张纸横放，亲子共同画一条从黄河延伸到星空的长线；用一种颜色画观察到的自然景象，另一种颜色画想象和传说。",
+      "ageTips": {
+        "age4to5": "只用“真的景色”和“想出来的故事”两个篮子分类。",
+        "age6to8": "加入黄河泥沙、银河由星星组成等事实，但保留孩子自己的想象路线。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "九曲黄河万里沙，\n浪淘风簸自天涯。\n如今直上银河去，\n同到牵牛织女家。", "enText": "The winding Yellow River carries sand for thousands of miles,\nIts waves wash and winds toss it from the farthest horizon.\nNow let us ride straight upward to the Silver River,\nAnd travel together to the home of the Cowherd and Weaver Girl.", "illustrationPrompt": "Immense winding Yellow River sweeps through ochre banks under a star-beginning twilight, a spirited adult Tang poet stands safely on a high broad terrace far from water, river's curve visually echoes the Milky Way above, poetic but natural, no text."},
+      {"page": 2, "zhText": "九曲黄河万里沙，\n黄河转过一道又一道大弯，河水带着泥沙，走过看不见尽头的路。", "enText": "The winding Yellow River carries sand for thousands of miles.\nThe river bends again and again, carrying sand along an endless journey.", "illustrationPrompt": "High panoramic view of same Yellow River making several broad natural bends through vast landscape, sediment colors swirl in water, same poet tiny at safe overlook, no impossible loops, no text."},
+      {"page": 3, "zhText": "浪淘风簸自天涯。\n浪花一遍遍淘洗，风又把水面吹得起伏，大河像从天边一路奔来。", "enText": "Its waves wash and winds toss it from the farthest horizon.\nWind lifts the waves as the great river seems to race from the edge of the world.", "illustrationPrompt": "Dynamic but safe close panorama of wind-shaped waves and foamy sediment on same broad river, banks remain stable, same poet sheltered on overlook as robe moves in wind, no flood or danger, no text."},
+      {"page": 4, "zhText": "如今直上银河去，\n看着大河奔腾，诗人的想象也跟着浪花飞起来，一直飞向天上的银河。", "enText": "Now let us ride straight upward to the Silver River.\nThe rushing water lifts the poet's imagination all the way to the Milky Way.", "illustrationPrompt": "Poetic transition at twilight where the real river's luminous curve aligns naturally with a band of stars in the sky, same poet remains grounded at overlook while gaze travels upward, no flying body, no portal, no text."},
+      {"page": 5, "zhText": "同到牵牛织女家。\n他邀请我们一起出发，去拜访星河两岸传说中的牵牛和织女。", "enText": "And travel together to the home of the Cowherd and Weaver Girl.\nHe invites us to visit the legendary figures on opposite sides of the stars.", "illustrationPrompt": "Gentle story-within-the-sky: two tiny distant Tang silhouettes, a herder and a weaver, appear on opposite soft cloud banks beside star river, same poet watches from earth, myth shown as delicate imagination, no ox close-up, no text."},
+      {"page": 6, "zhText": "真实的黄河有泥沙、浪花和大风；真实的银河由无数遥远的星星组成。诗把两条“河”轻轻连在了一起。", "enText": "The Yellow River holds sand, waves, and wind; the Milky Way is made of countless distant stars. The poem gently connects these two rivers.", "illustrationPrompt": "Clear educational-poetic composition with real Yellow River occupying lower half and star-rich Milky Way above, their curves rhyme but remain separate, same poet points between them, no diagram labels or text."},
+      {"page": 7, "zhText": "河流不会真的载人飞上天空，可想象能带着我们越过很远的地方。知道什么是真的，也不会让故事失去光。", "enText": "A river cannot truly carry us into the sky, but imagination can cross great distances. Knowing what is real does not dim a story's light.", "illustrationPrompt": "Same poet seated with a curious child companion safely at overlook, they compare river below and stars above with open gestures, reality and imagination held together warmly, no flying boat, no text."},
+      {"page": 8, "zhText": "大河辽阔，星河也辽阔。诗人面对巨大的天地，没有缩小自己，而是发出邀请：“同到”——我们一起去想象。", "enText": "The river is vast, and so is the Milky Way. Facing such a huge world, the poet offers an invitation: let us imagine together.", "illustrationPrompt": "Expansive night panorama of same poet and child companion small but confident before river and Milky Way, hands not touching water, sense of shared courage and wonder, no text."},
+      {"page": 9, "zhText": "和大人画一条从大河通往星空的路线吧。用一种颜色画真实看到的景物，再用另一种颜色画你想象中的旅程。", "enText": "With a grown-up, draw a route from a great river to the stars. Use one color for things seen in nature and another for the imagined journey.", "illustrationPrompt": "Tang home veranda at night, same poet and child companion draw two flowing colored lines on blank paper using brushes, river and stars visible beyond, paper contains no legible symbols or text, no modern supplies."},
+      {"page": 10, "zhText": "九曲黄河万里沙，\n浪淘风簸自天涯。\n如今直上银河去，\n同到牵牛织女家。\n再轻轻读一遍吧。", "enText": "The winding Yellow River carries sand for thousands of miles,\nIts waves wash and winds toss it from the farthest horizon.\nNow let us ride straight upward to the Silver River,\nAnd travel together to the home of the Cowherd and Weaver Girl.\nNow read it softly once more.", "illustrationPrompt": "Closing night view of same winding river under brilliant Milky Way, poet and child walk home along safe upper path, the two great curves remain visually connected through moonlight, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 42,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, ochre and river blue shifting into deep indigo and silver stars, restrained cinnabar accents, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same spirited adult Tang poet throughout: bright thoughtful face, short dark beard, black hair in a simple topknot, indigo cross-collar robe, ochre cloak and cloth boots; same safe high overlook, vast winding Yellow River, ochre banks and increasingly starry sky; a curious child companion in pale gray-blue appears on pages 7–10.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern bridge, literal river flying into space, person flying, portal, spaceship, flood disaster, dangerous water access, frightening gods, photorealism, extra limbs, distorted anatomy"
+  }
+}

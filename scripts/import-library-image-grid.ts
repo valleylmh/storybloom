@@ -47,12 +47,10 @@ function parseArgs(argv: string[]): Options {
     columns < 1 ||
     rows < 1 ||
     pages.length !== columns * rows ||
-    pages.some(
-      (page) => !Number.isInteger(page) || (page !== 0 && (page < 1 || page > 8)),
-    )
+    pages.some((page) => !Number.isInteger(page) || page < 0)
   ) {
     throw new Error(
-      "--pages must match the --columns × --rows grid using pages 1–8 (or 0 to discard a tile)",
+      "--pages must match the --columns × --rows grid using positive page numbers (or 0 to discard a tile)",
     );
   }
 

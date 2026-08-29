@@ -1,0 +1,54 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "jiang-nan-chun",
+    "seriesId": "tangshi",
+    "title": "江南春",
+    "subtitle": "莺啼绿红，楼台藏进烟雨",
+    "poem": {
+      "dynasty": "唐",
+      "author": "杜牧",
+      "originalLines": ["千里莺啼绿映红，", "水村山郭酒旗风。", "南朝四百八十寺，", "多少楼台烟雨中。"],
+      "englishLines": ["For miles, orioles sing among green leaves and red blossoms,", "Waterside villages and hill towns flutter their inn banners.", "Temples from the Southern Dynasties rise across the land,", "Their many towers fading into mist and rain."],
+      "appreciation": {
+        "zh": "江南很大：有黄莺的歌声，有绿叶红花，有水边村庄和山间城郭。远处古老寺院的楼台藏进烟雨，明亮的春色和朦胧的历史同时出现在一幅画里。",
+        "en": "Jiangnan stretches wide with orioles, green leaves, red blossoms, waterside villages, and hill towns. Ancient temple towers fade into rain, bringing bright spring colors and misty history into one scene."
+      }
+    },
+    "parentGuide": {
+      "goal": "练习把声音、颜色、空间和时间线索拼成完整图景，并接受同一幅风景可以既明亮又朦胧。",
+      "reminder": "“酒旗”是古代店铺标志，不需要把共读带向饮酒；“四百八十”可解释为形容数量很多，不必要求孩子按字面计数。",
+      "questions": [
+        "这首诗里哪些景物能听见，哪些能看见？",
+        "近处的颜色和远处的烟雨有什么不同？",
+        "为什么一幅春景里也能看见很久以前留下的楼台？"
+      ],
+      "activity": "亲子共同画一张三层风景：近处放颜色，中间放房屋和道路，远处用淡色画雾雨；轮流为画面补上一种声音。",
+      "ageTips": {
+        "age4to5": "先找绿、红、白三种颜色和一种鸟叫，不解释复杂历史。",
+        "age6to8": "加入近中远层次和“古迹留在今天”的时间概念。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "千里莺啼绿映红，\n水村山郭酒旗风。\n南朝四百八十寺，\n多少楼台烟雨中。", "enText": "For miles, orioles sing among green leaves and red blossoms,\nWaterside villages and hill towns flutter their inn banners.\nTemples from the Southern Dynasties rise across the land,\nTheir many towers fading into mist and rain.", "illustrationPrompt": "Panoramic Tang Jiangnan spring, green trees and red blossoms, golden orioles, waterside village, distant hill town and old temple towers fading into fine rain; a traveling Tang poet overlooks the layered scene, one plain inn banner without characters, no text."},
+      {"page": 2, "zhText": "千里莺啼绿映红，\n一路都是黄莺的歌声，绿叶衬着红花，春色好像一直铺到很远很远。", "enText": "For miles, orioles sing among green leaves and red blossoms.\nBirdsong, green leaves, and red flowers seem to stretch without end.", "illustrationPrompt": "Same poet walks on a safe raised path through layered green trees and red spring blossoms, several small golden orioles sing at varied distances, landscape extends far, no music notes, no text."},
+      {"page": 3, "zhText": "水村山郭酒旗风。\n水边有村庄，山旁有城郭，古代小店门前的布旗正在风里轻轻飘。", "enText": "Waterside villages and hill towns flutter their inn banners.\nVillages sit by water, towns by hills, and a shop banner moves in the breeze.", "illustrationPrompt": "Layered view of same white-walled waterside village and distant earthen hill town, one simple colored cloth inn marker flutters outside a modest shop with absolutely no writing, same poet crossing stone bridge, no alcohol vessels, no text."},
+      {"page": 4, "zhText": "南朝四百八十寺，\n许多年前修建的寺院还在江南各处，屋檐和塔影一座接着一座。", "enText": "Temples from the Southern Dynasties rise across the land.\nOld temples remain across Jiangnan, with roofs and towers appearing one after another.", "illustrationPrompt": "Respectful wide landscape of several historically plausible old temple roofs and modest pagoda silhouettes distributed naturally across hills, not hundreds crowded together, same poet views from distance, no worship crowd, no text."},
+      {"page": 5, "zhText": "多少楼台烟雨中。\n细雨和薄雾飘过，远处的楼台一会儿清楚，一会儿又藏进白茫茫的水汽里。", "enText": "Their many towers fade into mist and rain.\nFine rain makes distant towers appear, soften, and disappear again.", "illustrationPrompt": "Distant same temple towers and hill pavilions dissolve softly into layered white mist and fine rain, foreground blossoms remain crisp, same poet beneath umbrella-like oil-paper canopy with no decoration, no text."},
+      {"page": 6, "zhText": "近处有鲜亮的绿和红，有清脆的莺啼；远处只剩淡淡的灰蓝和安静的楼台。一幅画里，春天有很多层。", "enText": "Nearby spring is bright green and red with clear birdsong; far away, towers soften into blue-gray silence. One landscape can hold many layers.", "illustrationPrompt": "Strong depth composition: crisp green leaves, red blossoms and oriole in foreground, village midground, pale blue-gray towers in misty background, same poet's gaze links all three layers, no text."},
+      {"page": 7, "zhText": "这些楼台来自很久以前，却还站在诗人的春天里。风景不只属于今天，它也会悄悄保留过去留下的痕迹。", "enText": "The towers come from long ago, yet remain in the poet's spring. A landscape can quietly hold traces of the past.", "illustrationPrompt": "Same poet pauses beside an old weathered stone path marker with no writing, looking toward enduring temple roof among new spring growth, old wood and fresh leaves coexist gently, no text."},
+      {"page": 8, "zhText": "明亮和朦胧可以同时存在，热闹和安静也可以待在同一个春天里。复杂的感受，不必只选一个名字。", "enText": "Brightness and mist can exist together; lively sounds and quiet distance can share one spring. A feeling does not always need just one name.", "illustrationPrompt": "Balanced spring-rain scene where sunny foreground blossoms and misty background towers coexist naturally, same poet smiles thoughtfully between birdsong and quiet rain, no split panel, no text."},
+      {"page": 9, "zhText": "和大人画一张三层风景吧：近处画颜色，中间画村庄，远处用淡淡的笔画烟雨。然后各自给画面加一种声音。", "enText": "Draw a three-layer landscape with a grown-up: colors nearby, a village in the middle, and pale rain in the distance. Then each add one imagined sound.", "illustrationPrompt": "Tang home table scene, same poet and a child companion paint a blank three-depth landscape together with brushes and mineral colors, their paper has only non-legible scenery, open window shows real rain, no text."},
+      {"page": 10, "zhText": "千里莺啼绿映红，\n水村山郭酒旗风。\n南朝四百八十寺，\n多少楼台烟雨中。\n再轻轻读一遍吧。", "enText": "For miles, orioles sing among green leaves and red blossoms,\nWaterside villages and hill towns flutter their inn banners.\nTemples from the Southern Dynasties rise across the land,\nTheir many towers fading into mist and rain.\nNow read it softly once more.", "illustrationPrompt": "Closing broad Jiangnan panorama after rain, same poet and child stand safely on covered balcony, orioles cross fresh green and red foreground while village and temple towers recede into luminous mist, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 43,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, fresh mineral green and restrained cinnabar fading into misty blue-gray, warm ochre details, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same traveling Tang poet throughout: observant middle-aged face, short dark beard, black hair in a simple topknot, pale gray-blue robe, deep green sash and cloth shoes; same layered Jiangnan landscape with green and red spring growth, golden orioles, white-walled waterside village, hill town, one plain character-free inn banner, old temple roofs and fine rain; a child companion appears on pages 9–10.",
+    "negative": "written text, calligraphy, captions, characters on banner, seals, logos, watermark, modern objects, alcohol bottles, drinking scene, modern city, hundreds of crowded pagodas, religious spectacle, storm, frightening fog, photorealism, extra limbs, distorted architecture, bird or anatomy"
+  }
+}

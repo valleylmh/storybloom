@@ -54,9 +54,10 @@ async function loadDrafts(series: string, from: number, to: number) {
 
 async function createContactSheet(draft: GeneratedDraft) {
   const pages = [...draft.book.pages].sort((left, right) => left.page - right.page);
-  if (pages.length !== 8 || pages.some((page, index) => page.page !== index + 1)) {
-    throw new Error(`${draft.book.id} must have pages 1–8`);
+  if (pages.length === 0 || pages.some((page, index) => page.page !== index + 1)) {
+    throw new Error(`${draft.book.id} must have a continuous page sequence starting at 1`);
   }
+  const rows = Math.ceil(pages.length / COLUMNS);
 
   const tiles = await Promise.all(
     pages.map(async (page, index) => {
@@ -93,7 +94,7 @@ async function createContactSheet(draft: GeneratedDraft) {
   await sharp({
     create: {
       width: COLUMNS * TILE_SIZE,
-      height: 2 * TILE_SIZE,
+      height: rows * TILE_SIZE,
       channels: 3,
       background: "#ffffff",
     },

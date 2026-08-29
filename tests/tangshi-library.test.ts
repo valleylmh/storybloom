@@ -333,6 +333,86 @@ const TANGSHI_BOOKS = [
     publishedAt: "2026-08-27",
     lines: ["湖光秋月两相和，", "潭面无风镜未磨。", "遥望洞庭山水翠，", "白银盘里一青螺。"],
   },
+  {
+    id: "gu-lang-yue-xing",
+    title: "古朗月行（节选）",
+    author: "李白",
+    publishedAt: "2026-08-29",
+    pages: 9,
+    lines: ["小时不识月，", "呼作白玉盘。", "又疑瑶台镜，", "飞在青云端。"],
+  },
+  {
+    id: "ye-su-shan-si",
+    title: "夜宿山寺",
+    author: "李白",
+    publishedAt: "2026-08-29",
+    pages: 9,
+    lines: ["危楼高百尺，", "手可摘星辰。", "不敢高声语，", "恐惊天上人。"],
+  },
+  {
+    id: "cai-lian-qu",
+    title: "采莲曲",
+    author: "王昌龄",
+    publishedAt: "2026-08-29",
+    pages: 10,
+    lines: ["荷叶罗裙一色裁，", "芙蓉向脸两边开。", "乱入池中看不见，", "闻歌始觉有人来。"],
+  },
+  {
+    id: "chu-zhou-xi-jian",
+    title: "滁州西涧",
+    author: "韦应物",
+    publishedAt: "2026-08-29",
+    pages: 9,
+    lines: ["独怜幽草涧边生，", "上有黄鹂深树鸣。", "春潮带雨晚来急，", "野渡无人舟自横。"],
+  },
+  {
+    id: "jiang-pan-du-bu-xun-hua-qi-liu",
+    title: "江畔独步寻花·其六",
+    author: "杜甫",
+    publishedAt: "2026-08-29",
+    pages: 9,
+    lines: ["黄四娘家花满蹊，", "千朵万朵压枝低。", "留连戏蝶时时舞，", "自在娇莺恰恰啼。"],
+  },
+  {
+    id: "du-zuo-jing-ting-shan",
+    title: "独坐敬亭山",
+    author: "李白",
+    publishedAt: "2026-08-29",
+    pages: 9,
+    lines: ["众鸟高飞尽，", "孤云独去闲。", "相看两不厌，", "只有敬亭山。"],
+  },
+  {
+    id: "yu-ge-zi-xi-sai-shan-qian-bai-lu-fei",
+    title: "渔歌子·西塞山前白鹭飞",
+    author: "张志和",
+    publishedAt: "2026-08-29",
+    pages: 10,
+    lines: ["西塞山前白鹭飞，", "桃花流水鳜鱼肥。", "青箬笠，绿蓑衣，", "斜风细雨不须归。"],
+  },
+  {
+    id: "lang-tao-sha-qi-yi",
+    title: "浪淘沙·其一",
+    author: "刘禹锡",
+    publishedAt: "2026-08-29",
+    pages: 10,
+    lines: ["九曲黄河万里沙，", "浪淘风簸自天涯。", "如今直上银河去，", "同到牵牛织女家。"],
+  },
+  {
+    id: "jiang-nan-chun",
+    title: "江南春",
+    author: "杜牧",
+    publishedAt: "2026-08-29",
+    pages: 10,
+    lines: ["千里莺啼绿映红，", "水村山郭酒旗风。", "南朝四百八十寺，", "多少楼台烟雨中。"],
+  },
+  {
+    id: "zao-chun-cheng-shui-bu-zhang-shi-ba-yuan-wai",
+    title: "早春呈水部张十八员外",
+    author: "韩愈",
+    publishedAt: "2026-08-29",
+    pages: 9,
+    lines: ["天街小雨润如酥，", "草色遥看近却无。", "最是一年春好处，", "绝胜烟柳满皇都。"],
+  },
 ] as const;
 
 function allSummaries() {
@@ -344,21 +424,21 @@ function allSummaries() {
 }
 
 describe("Tang poetry library series", () => {
-  it("registers the thirty-four-book 唐诗入画 series in the requested order", () => {
+  it("registers the forty-four-book 唐诗入画 series in the requested order", () => {
     const series = getSeries("tangshi");
     expect(series).toMatchObject({
       title: "唐诗入画",
       subtitle: "一首诗，一幅会呼吸的画",
       accent: "#47677a",
       ageRange: "4-8 岁",
-      bookCount: 34,
+      bookCount: 44,
     });
     expect(getPublishedBooks("tangshi").map((book) => book.id)).toEqual(
       TANGSHI_BOOKS.map((book) => book.id),
     );
   });
 
-  it("preserves every original poem and follows the eight-page reading map", () => {
+  it("preserves every original poem and supports a complete variable-length reading map", () => {
     for (const [index, expected] of TANGSHI_BOOKS.entries()) {
       const book = getBook("tangshi", expected.id);
       expect(book).toMatchObject({
@@ -376,12 +456,15 @@ describe("Tang poetry library series", () => {
       expect(book?.poem?.englishLines).toHaveLength(expected.lines.length);
       expect(book?.poem?.appreciation.zh).toBeTruthy();
       expect(book?.poem?.appreciation.en).toBeTruthy();
-      expect(book?.pages).toHaveLength(8);
-      expect(book?.pages.map((page) => page.page)).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
+      const expectedPages = "pages" in expected ? expected.pages : 8;
+      expect(book?.pages).toHaveLength(expectedPages);
+      expect(book?.pages.map((page) => page.page)).toEqual(
+        Array.from({ length: expectedPages }, (_, pageIndex) => pageIndex + 1),
+      );
 
       const completePoem = expected.lines.join("\n");
       expect(book?.pages[0].zhText.startsWith(completePoem)).toBe(true);
-      expect(book?.pages[7].zhText.startsWith(completePoem)).toBe(true);
+      expect(book?.pages[expectedPages - 1].zhText.startsWith(completePoem)).toBe(true);
       const pageLineGroups =
         "pageLineGroups" in expected
           ? expected.pageLineGroups
@@ -392,7 +475,7 @@ describe("Tang poetry library series", () => {
     }
   });
 
-  it("publishes two hundred and seventy-two optimized square WebP illustrations", async () => {
+  it("publishes three hundred and sixty-six optimized square WebP illustrations", async () => {
     let imageCount = 0;
     for (const expected of TANGSHI_BOOKS) {
       const book = getBook("tangshi", expected.id);
@@ -413,7 +496,24 @@ describe("Tang poetry library series", () => {
         imageCount += 1;
       }
     }
-    expect(imageCount).toBe(272);
+    expect(imageCount).toBe(366);
+  });
+
+  it("adds complete non-preachy parent guides to the ten new variable-length books", () => {
+    const newBooks = TANGSHI_BOOKS.slice(34);
+    expect(
+      new Set(newBooks.map((book) => ("pages" in book ? book.pages : 8))),
+    ).toEqual(new Set([9, 10]));
+
+    for (const expected of newBooks) {
+      const guide = getBook("tangshi", expected.id)?.parentGuide;
+      expect(guide?.goal).toBeTruthy();
+      expect(guide?.reminder).toBeTruthy();
+      expect(guide?.questions).toHaveLength(3);
+      expect(guide?.activity).toBeTruthy();
+      expect(guide?.ageTips.age4to5).toBeTruthy();
+      expect(guide?.ageTips.age6to8).toBeTruthy();
+    }
   });
 
   it("adds poetry discovery metadata and searches author plus imagery", () => {
@@ -443,6 +543,16 @@ describe("Tang poetry library series", () => {
       ),
     ).toContain("tangshi/feng-qiao-ye-bo");
     expect(
+      filterLibraryBooks(allSummaries(), { query: "月亮 好奇心" }).map(
+        (item) => item.contentId,
+      ),
+    ).toContain("tangshi/gu-lang-yue-xing");
+    expect(
+      filterLibraryBooks(allSummaries(), { query: "成长 节奏" }).map(
+        (item) => item.contentId,
+      ),
+    ).toContain("tangshi/zao-chun-cheng-shui-bu-zhang-shi-ba-yuan-wai");
+    expect(
       filterLibraryBooks(allSummaries(), {
         filters: { category: "poetry", seriesId: "tangshi" },
       }).map((item) => item.contentId),
@@ -466,12 +576,12 @@ describe("Tang poetry library series", () => {
     expect(getLibraryStorySpecByContentId("tangshi/yong-e")).toBeNull();
   });
 
-  it("includes the series and all thirty-four books in the sitemap", () => {
+  it("includes the series and all forty-four books in the sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
     expect(urls.some((url) => url.endsWith("/library/tangshi"))).toBe(true);
     expect(
       urls.filter((url) => url.includes("/library/tangshi/")),
-    ).toHaveLength(34);
+    ).toHaveLength(44);
     for (const book of TANGSHI_BOOKS) {
       expect(urls.some((url) => url.endsWith(`/library/tangshi/${book.id}`))).toBe(true);
     }

@@ -64,8 +64,8 @@ pnpm library:generate tangshi jing-ye-si \
 
 1. **生成草稿**：运行脚本，得到 `content-drafts/<seriesId>/<bookId>.json`。
 2. **人工审核文字**：直接编辑 JSON——中文节奏/字数、英文自然度、教育性、结局温和化、`idiomMeaning`/`moral` 准确性。唐诗还必须逐字核对 `poem.originalLines`，英文译意应为项目原创表达，不复制现成译本。
-3. **生成插图**：为 8 页分别生成插图。先用第 1 页建立角色、服装和材质锚点，后续页面复用同一参考图或等效的身份约束。每页最终 prompt = `imagePromptKit.globalStyle` + `imagePromptKit.characterConsistency` + 该页 `illustrationPrompt` + `imagePromptKit.negative`（流程同 [docs/sample-book-prompts/README.md](../docs/sample-book-prompts/README.md)）。无论使用哪种工具，都必须人工挑选并复核整本角色一致性。
-4. **放置图片**：webp、单张 ≤ 300KB，放 `public/library/<seriesId>/<bookId>/<page>.webp`（1-8）。
+3. **生成插图**：按草稿中的完整页数逐页生成插图，不要求固定 8 页。先用第 1 页建立角色、服装和材质锚点，后续页面复用同一参考图或等效的身份约束。每页最终 prompt = `imagePromptKit.globalStyle` + `imagePromptKit.characterConsistency` + 该页 `illustrationPrompt` + `imagePromptKit.negative`（流程同 [docs/sample-book-prompts/README.md](../docs/sample-book-prompts/README.md)）。无论使用哪种工具，都必须人工挑选并复核整本角色一致性。
+4. **放置图片**：WebP、单张 ≤ 300KB，按连续页码放 `public/library/<seriesId>/<bookId>/<page>.webp`。
 5. **转正式数据**：把审核后的 `book` 对象搬进 `src/lib/library/<seriesId>.ts`：每页补 `imageUrl: "/library/<seriesId>/<bookId>/<n>.webp"` 与 `imageStatus: "complete"`；确认 `order`；移除 `comingSoon`。
 6. **验证**：`npx tsc --noEmit` + `pnpm test`（`tests/library.test.ts` 会校验页数与双语完整性）。
 
@@ -85,14 +85,14 @@ node --env-file=.env --env-file=.env.local --import tsx \
 
 ## generate-library-contact-sheets.ts — 插图联系表
 
-将指定系列已生成的 8 页插图拼成 4×2、1200×600 的联系表，供发布前逐本视觉验收；`--series` 默认为 `haoqi`：
+将指定系列已生成的全部插图按每行 4 张拼成联系表，供发布前逐本视觉验收；页数与联系表行数从草稿自动读取，`--series` 默认为 `haoqi`：
 
 ```bash
 node --import tsx scripts/generate-library-contact-sheets.ts \
   --series tangshi --from 1 --to 10
 ```
 
-输出为 `content-drafts/<seriesId>/<bookId>/contact-sheet.jpg`。脚本只读取既有 WebP；缺页或不是完整 1–8 页会报错，不会把不完整插图标记为已验收。
+输出为 `content-drafts/<seriesId>/<bookId>/contact-sheet.jpg`。脚本只读取既有 WebP；页码不连续或缺页会报错，不会把不完整插图标记为已验收。
 
 ## import-library-image-grid.ts — 导入经审核的四格重绘图
 

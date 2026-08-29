@@ -1,0 +1,108 @@
+{
+  "_draft": "REVIEWED CONTENT — textbook excerpt checked; illustrations required before publication",
+  "book": {
+    "id": "gu-lang-yue-xing",
+    "seriesId": "tangshi",
+    "title": "古朗月行（节选）",
+    "subtitle": "小时候，月亮像什么？",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": [
+        "小时不识月，",
+        "呼作白玉盘。",
+        "又疑瑶台镜，",
+        "飞在青云端。"
+      ],
+      "englishLines": [
+        "When I was small, I did not know the moon,",
+        "So I called it a white jade plate.",
+        "I also thought it was a mirror from a fairy tower,",
+        "Flying high among the blue clouds."
+      ],
+      "appreciation": {
+        "zh": "小时候的诗人不认识月亮，就把它想成圆圆的白玉盘，又像一面飞在云端的明镜。孩子的眼睛，让熟悉的月亮变成了一个充满惊喜的问题。",
+        "en": "As a child, the poet did not yet know the moon. He imagined it as a round jade plate and then as a bright mirror flying among the clouds. A child's wonder turns the familiar moon into a delightful question."
+      }
+    },
+    "parentGuide": {
+      "goal": "保护孩子先观察、再想象、后求证的好奇心，让不知道成为探索的起点。",
+      "reminder": "不要急着纠正“月亮不像盘子”；先接住孩子看见的形状和联想，再一起补充真实的月亮知识。",
+      "questions": [
+        "小李白为什么会给月亮取两个不同的名字？",
+        "你觉得今天的月亮还像什么？为什么？",
+        "想象和事实可以怎样一起帮助我们认识月亮？"
+      ],
+      "activity": "和孩子在窗边安全看月亮，各自说出一个比喻，再查一张月相图；不评谁更像，只比较今天看见的形状、颜色和位置。",
+      "ageTips": {
+        "age4to5": "先接受任何形状联想，用“你看见了什么”代替知识问答。",
+        "age6to8": "在想象之后加入月相、反光等简单事实，练习区分“我猜”和“我知道”。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "小时不识月，\n呼作白玉盘。\n又疑瑶台镜，\n飞在青云端。",
+        "enText": "When I was small, I did not know the moon,\nSo I called it a white jade plate.\nI also thought it was a mirror from a fairy tower,\nFlying high among the blue clouds.",
+        "illustrationPrompt": "A curious Tang child stands in a quiet courtyard at blue twilight, looking up at a large luminous full moon above layered blue clouds, a low wooden house and one flowering tree nearby, wonder and safety, no literal plate or mirror, no text."
+      },
+      {
+        "page": 2,
+        "zhText": "小时不识月，\n小时候，诗人抬头看见月亮，却还不知道它叫什么。",
+        "enText": "When I was small, I did not know the moon.\nAs a child, the poet looked up without knowing its name.",
+        "illustrationPrompt": "The same Tang child sits on a smooth courtyard step, chin lifted toward the newly risen moon, an elder's empty chair and a small wooden toy rest quietly behind, moonlit face full of questions, no text."
+      },
+      {
+        "page": 3,
+        "zhText": "呼作白玉盘。\n圆圆的、白白的月亮，多像一只温润明亮的白玉盘呀。",
+        "enText": "So I called it a white jade plate.\nRound and pale, the moon looked like a softly glowing jade plate.",
+        "illustrationPrompt": "Close child-eye view of the same round moon glowing creamy white above the courtyard, its simple circular shape resembling polished jade only through color and light, same child frames the circle with open hands, no actual plate, no text."
+      },
+      {
+        "page": 4,
+        "zhText": "又疑瑶台镜，\n再看一会儿，它又像仙境楼台里闪闪发亮的镜子。",
+        "enText": "I also thought it was a mirror from a fairy tower.\nThen it seemed like a shining mirror from a place among the clouds.",
+        "illustrationPrompt": "The same child imagines the moon as a soft silver circle above faint dreamlike cloud terraces, delicate ink-wash architecture barely suggested in mist, child remains safely in real courtyard foreground, no literal handheld mirror, no deities, no text."
+      },
+      {
+        "page": 5,
+        "zhText": "飞在青云端。\n这面明亮的“镜子”高高挂着，好像正跟着云朵在天空旅行。",
+        "enText": "Flying high among the blue clouds.\nThe bright circle seemed to travel across the sky with the clouds.",
+        "illustrationPrompt": "Upward wide view of luminous moon drifting visually among long soft mineral-blue clouds, same child tiny below beside the flowering tree, robe sleeves and leaves moving in a gentle breeze, no mirror object, no text."
+      },
+      {
+        "page": 6,
+        "zhText": "月亮升起来，云朵慢慢走过。孩子一会儿看见白玉盘，一会儿看见明镜，夜空也跟着他的想象变得热闹。",
+        "enText": "The moon rises as clouds drift by. The child sees a jade plate, then a shining mirror, and imagination fills the quiet sky with life.",
+        "illustrationPrompt": "Continuous twilight scene with the moon moving higher above the same courtyard while clouds change shape, same child follows it across the sky, subtle circular reflections in a water basin suggest shifting ideas, no literal objects or text."
+      },
+      {
+        "page": 7,
+        "zhText": "不认识一件事，也可以先大胆想一想。你看见圆圆的月亮时，会给它取什么名字？",
+        "enText": "Before we know what something is, we can still imagine. What name would you give the round moon?",
+        "illustrationPrompt": "Warm contemplative portrait of the same child lying safely on a woven mat in the courtyard, watching the moon through branches, several gentle circular shapes appear only in cloud edges and reflections, playful curiosity, no text."
+      },
+      {
+        "page": 8,
+        "zhText": "和大人一起找一找今晚的月亮吧。先别急着说标准答案，各自说一句：“我觉得月亮像……”再听听彼此为什么这样想。",
+        "enText": "Look for tonight's moon with a grown-up. Before searching for a correct answer, take turns saying, “I think the moon looks like…” and explain why.",
+        "illustrationPrompt": "Same child and a gentle caregiver sit side by side on the safe courtyard step, each tracing a different round shape in the air while observing the real moon, warm shared curiosity, no literal symbols, no text."
+      },
+      {
+        "page": 9,
+        "zhText": "小时不识月，\n呼作白玉盘。\n又疑瑶台镜，\n飞在青云端。\n再轻轻读一遍吧。",
+        "enText": "When I was small, I did not know the moon,\nSo I called it a white jade plate.\nI also thought it was a mirror from a fairy tower,\nFlying high among the blue clouds.\nNow read it softly once more.",
+        "illustrationPrompt": "Closing moonlit courtyard panorama, same child walks indoors with the gentle caregiver while looking back at the high full moon and drifting blue clouds, warm lamplight at doorway, flowering tree in quiet silhouette, no text."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 35,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, luminous moon-white and mineral blue with restrained peach and warm amber, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same curious Tang child throughout: about six years old, round kind face, black hair in two small topknots, pale cream cross-collar robe, muted blue sash and cloth shoes; same modest wooden courtyard, flowering tree, low house, water basin, full moon and drifting blue clouds; time moves continuously from twilight into moonlit night.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, modern clothing, literal plate in sky, literal handheld mirror in sky, palace crowd, gods, frightening darkness, photorealism, extra limbs, distorted anatomy"
+  }
+}

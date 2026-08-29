@@ -1,0 +1,53 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "ye-su-shan-si",
+    "seriesId": "tangshi",
+    "title": "夜宿山寺",
+    "subtitle": "高楼仿佛挨着星星",
+    "poem": {
+      "dynasty": "唐",
+      "author": "李白",
+      "originalLines": ["危楼高百尺，", "手可摘星辰。", "不敢高声语，", "恐惊天上人。"],
+      "englishLines": ["The lofty tower rises a hundred feet high,", "I could almost reach out and pick a star.", "I dare not speak in a loud voice,", "For fear of waking the people in the sky."],
+      "appreciation": {
+        "zh": "诗人夜宿山寺，登上高楼，觉得星星近得仿佛伸手就能摘到。他轻轻说话，生怕惊动天上的人。夸张的想象，让高楼和夜空一下子变得又高又神奇。",
+        "en": "Staying at a mountain temple, the poet climbs a high tower and feels close enough to touch the stars. He whispers so he will not wake the imagined people in the sky. Playful exaggeration makes the tower and night feel wonderfully tall."
+      }
+    },
+    "parentGuide": {
+      "goal": "帮助孩子感受夸张和想象的乐趣，同时理解诗中的“高”不等于现实里要冒险攀爬。",
+      "reminder": "不要把“勇敢”解释成站到危险高处；亲子共读时明确诗人是在用夸张写感受，现实观察要选择安全位置。",
+      "questions": [
+        "诗人为什么觉得星星伸手就能碰到？",
+        "“恐惊天上人”是真的有人，还是诗人的想象？",
+        "我们可以在哪里安全地观察高楼和星空？"
+      ],
+      "activity": "在地面或室内安全位置仰望高处，用积木搭一座稳稳的塔，再轮流说一句夸张的话；不攀爬家具或栏杆。",
+      "ageTips": {
+        "age4to5": "用“像真的一样好玩，但不是真的”解释夸张，并重复安全边界。",
+        "age6to8": "请孩子找出诗中两处夸张，比较诗意感受与现实距离。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "危楼高百尺，\n手可摘星辰。\n不敢高声语，\n恐惊天上人。", "enText": "The lofty tower rises a hundred feet high,\nI could almost reach out and pick a star.\nI dare not speak in a loud voice,\nFor fear of waking the people in the sky.", "illustrationPrompt": "A tall but sturdy Tang mountain-temple tower rises above misty pines under a star-filled night, a cheerful young Tang poet stands safely on a broad enclosed upper terrace, enormous sky and gentle wonder, no text."},
+      {"page": 2, "zhText": "危楼高百尺，\n山寺的高楼一层又一层，仿佛一直长进夜空里。", "enText": "The lofty tower rises a hundred feet high.\nThe temple tower seems to climb straight into the night sky.", "illustrationPrompt": "Low-angle view from the temple courtyard up the same sturdy multi-story wooden tower, rooflines stepping into a deep blue sky, same young poet visible behind a safe solid railing, no danger, no text."},
+      {"page": 3, "zhText": "手可摘星辰。\n站在最高处，星星近得好像一伸手，就能轻轻碰到。", "enText": "I could almost reach out and pick a star.\nAt the top, the stars feel close enough to touch.", "illustrationPrompt": "Same poet on the broad terrace raises one open hand toward a bright nearby-looking star, forced perspective makes stars feel close while he remains well inside the railing, playful wonder, no star held in hand, no text."},
+      {"page": 4, "zhText": "不敢高声语，\n这么安静的夜里，诗人连说话也不敢太大声。", "enText": "I dare not speak in a loud voice.\nIn such a quiet night, the poet speaks only in a whisper.", "illustrationPrompt": "Intimate side view of same poet smiling and placing one finger gently near his lips, quiet terrace lantern nearly covered, still pines and sleeping temple roofs below, no text."},
+      {"page": 5, "zhText": "恐惊天上人。\n他想，也许云和星星之间，正有人在甜甜地睡觉呢。", "enText": "For fear of waking the people in the sky.\nPerhaps someone is sleeping peacefully among the clouds and stars.", "illustrationPrompt": "Poet's gentle imagination shown as soft cloud shapes suggesting distant cozy rooftops among stars, no visible gods or people, same poet gazes upward from safe terrace, dreamy not supernatural, no text."},
+      {"page": 6, "zhText": "高楼托着诗人，群山托着高楼，夜空又托着满天星辰。越往上看，声音越轻，想象却越飞越远。", "enText": "The tower lifts the poet, the mountains lift the tower, and the sky holds all the stars. The higher he looks, the softer his voice and the farther his imagination travels.", "illustrationPrompt": "Layered panoramic composition of dark green mountains, tall temple tower, same tiny poet and immense starry sky stacked upward, soft rice-paper mist links every layer, tranquil scale, no text."},
+      {"page": 7, "zhText": "星星其实还很遥远，可诗人用一句“手可摘星辰”，让我们也站到了高高的夜空旁边。", "enText": "The stars are truly far away, but the poet's words make us feel as if we are standing right beside the night sky.", "illustrationPrompt": "Contemplative rear view of same poet seated safely on terrace floor, one hand resting on knee as he watches a vast river of stars, gentle awe without reaching or danger, no text."},
+      {"page": 8, "zhText": "和大人站在安全的地面上，抬头看看屋顶和星星。试着说一句很夸张、却能让人感到“真高呀”的话。", "enText": "Stand safely on the ground with a grown-up and look at rooftops and stars. Try an exaggerated sentence that makes the height feel enormous.", "illustrationPrompt": "Same young poet and a gentle temple caretaker stand safely in the ground-level courtyard looking up at tower and stars, both feet clear on stone paving, playful conversation through gestures, no climbing, no text."},
+      {"page": 9, "zhText": "危楼高百尺，\n手可摘星辰。\n不敢高声语，\n恐惊天上人。\n再轻轻读一遍吧。", "enText": "The lofty tower rises a hundred feet high,\nI could almost reach out and pick a star.\nI dare not speak in a loud voice,\nFor fear of waking the people in the sky.\nNow read it softly once more.", "illustrationPrompt": "Closing blue-night view, same poet descends the warmly lit interior stairs while the sturdy tower, moonless star field and mountain mist remain outside, peaceful bedtime feeling, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 36,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, deep mineral blue and pine green with restrained amber light, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same young Tang poet throughout: lively gentle face, black hair in a simple topknot, pale blue robe, dark teal sash and cloth boots; same sturdy wooden mountain-temple tower with broad enclosed terrace, layered pine mountains, soft mist and dense friendly stars.",
+    "negative": "written text, calligraphy, captions, seals, logos, watermark, modern objects, unsafe broken railing, falling person, cliff danger, literal giant star in hand, gods, angels, frightening spirits, photorealism, extra limbs, distorted architecture or anatomy"
+  }
+}

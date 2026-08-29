@@ -1,0 +1,53 @@
+{
+  "_draft": "REVIEWED CONTENT — original poem checked; illustrations required before publication",
+  "book": {
+    "id": "jiang-pan-du-bu-xun-hua-qi-liu",
+    "seriesId": "tangshi",
+    "title": "江畔独步寻花·其六",
+    "subtitle": "花枝低低，蝴蝶久久不走",
+    "poem": {
+      "dynasty": "唐",
+      "author": "杜甫",
+      "originalLines": ["黄四娘家花满蹊，", "千朵万朵压枝低。", "留连戏蝶时时舞，", "自在娇莺恰恰啼。"],
+      "englishLines": ["Flowers fill the path beside Lady Huang's home,", "Thousands upon thousands bend the branches low.", "Lingering butterflies dance again and again,", "Carefree orioles sing their lovely songs."],
+      "appreciation": {
+        "zh": "黄四娘家门前的小路开满鲜花，枝条被千万朵花压得低低的。蝴蝶舍不得离开，不停起舞；黄莺也自在地唱着，整个春天又香又热闹。",
+        "en": "The path by Lady Huang's home overflows with blossoms, bending branches beneath their weight. Butterflies linger and dance while orioles sing freely, filling spring with color and sound."
+      }
+    },
+    "parentGuide": {
+      "goal": "练习共同注意和感官表达：成人跟随孩子真正看见的细节，而不是急着考记忆。",
+      "reminder": "不要刚读完就要求背诵或说“中心思想”；允许孩子停在一只蝴蝶、一种颜色或一个声音上，也提醒不采摘、不追赶小动物。",
+      "questions": [
+        "诗人为什么走得很慢？",
+        "你最想停在哪一朵花或哪一种声音旁边？",
+        "喜欢花和蝴蝶时，怎样靠近才不会伤害它们？"
+      ],
+      "activity": "亲子散步时各自选一个想多看十秒的自然细节，用颜色、形状和动作描述它；只观察和拍照，不采摘、不追赶。",
+      "ageTips": {
+        "age4to5": "让孩子用一个颜色词和一个动作词表达，不纠正用词。",
+        "age6to8": "尝试加入气味、声音和变化，比较两个人注意到的不同细节。"
+      }
+    },
+    "pages": [
+      {"page": 1, "zhText": "黄四娘家花满蹊，\n千朵万朵压枝低。\n留连戏蝶时时舞，\n自在娇莺恰恰啼。", "enText": "Flowers fill the path beside Lady Huang's home,\nThousands upon thousands bend the branches low.\nLingering butterflies dance again and again,\nCarefree orioles sing their lovely songs.", "illustrationPrompt": "Joyful spring path beside a modest Tang riverside home, overflowing peach, pear and small wild blossoms bend branches low, a kind middle-aged Tang poet walks slowly among many butterflies while two orioles sing overhead, no text."},
+      {"page": 2, "zhText": "黄四娘家花满蹊，\n黄四娘家门前的小路，左边是花，右边也是花，连脚边都开得热热闹闹。", "enText": "Flowers fill the path beside Lady Huang's home.\nBlossoms crowd both sides of the little path and bloom beside every step.", "illustrationPrompt": "Eye-level view down the same narrow earthen path completely bordered by layered spring flowers, same poet enters carefully without stepping on plants, modest wooden home and river glimpse behind, no text."},
+      {"page": 3, "zhText": "千朵万朵压枝低。\n一朵挨一朵，花枝装得太满，只好沉甸甸地垂到人们面前。", "enText": "Thousands upon thousands bend the branches low.\nSo many blossoms weigh the branches gently downward.", "illustrationPrompt": "Close view of abundant blossom-covered branches bowing naturally low over the same path, same poet ducks slightly with delighted face, petals detailed but airy, branches healthy not broken, no text."},
+      {"page": 4, "zhText": "留连戏蝶时时舞，\n蝴蝶舍不得离开花丛，一会儿停下，一会儿又绕着花枝跳舞。", "enText": "Lingering butterflies dance again and again.\nButterflies pause on flowers, then circle the branches once more.", "illustrationPrompt": "Several accurately shaped swallowtail and white butterflies flutter around same blossoms at different heights, same poet watches quietly from path, lively circular movement without swarm, no text."},
+      {"page": 5, "zhText": "自在娇莺恰恰啼。\n黄莺站在绿叶之间，想唱就唱，清亮的声音正好落进春风里。", "enText": "Carefree orioles sing their lovely songs.\nOrioles perch among green leaves and send bright calls into the spring breeze.", "illustrationPrompt": "Two small golden orioles perch naturally among fresh green leaves above same flower path, beaks open in song, same poet looks up smiling, sound suggested through posture and breeze, no music notes, no text."},
+      {"page": 6, "zhText": "眼睛追着千万朵花和起舞的蝴蝶，耳朵又追着黄莺的歌。诗人走得很慢，因为每一步都有新的春天。", "enText": "The poet's eyes follow blossoms and dancing butterflies while his ears follow the orioles. He walks slowly because every step reveals a new piece of spring.", "illustrationPrompt": "Wide continuous journey along same path, same poet moves slowly through successive clusters of blossoms, butterflies and orioles guide the eye from foreground to distance, bright spring rhythm, no text."},
+      {"page": 7, "zhText": "蝴蝶“留连”，诗人也留连。看到喜欢的景色时，不妨慢一点，让花香、颜色和声音多陪我们一会儿。", "enText": "The butterflies linger, and so does the poet. When a place delights us, we can slow down and let its colors, scents, and sounds stay a little longer.", "illustrationPrompt": "Peaceful portrait of same poet seated on a low safe stone beside path, one butterfly rests on a nearby flower, blossoms and oriole frame him, restful attention rather than posing, no text."},
+      {"page": 8, "zhText": "和大人散步时，各自选一样想多看十秒的东西。可以是一片花瓣、一只停下来的蝴蝶，也可以是一阵鸟鸣；只看一看，不追赶，也不摘走。", "enText": "On a walk with a grown-up, each choose one thing to watch for ten extra seconds—a petal, a resting butterfly, or a birdcall. Observe without chasing or picking.", "illustrationPrompt": "Same poet and a gentle child companion pause at a respectful distance from one butterfly resting on a low blossom, hands kept to themselves, two orioles overhead, nature care and shared attention, no text."},
+      {"page": 9, "zhText": "黄四娘家花满蹊，\n千朵万朵压枝低。\n留连戏蝶时时舞，\n自在娇莺恰恰啼。\n再轻轻读一遍吧。", "enText": "Flowers fill the path beside Lady Huang's home,\nThousands upon thousands bend the branches low.\nLingering butterflies dance again and again,\nCarefree orioles sing their lovely songs.\nNow read it softly once more.", "illustrationPrompt": "Closing warm-afternoon view of same flower-filled path and home, poet looks back before leaving, butterflies still dance and two orioles remain in branches, a few petals drift, no text."}
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-29",
+    "order": 39,
+    "comingSoon": false
+  },
+  "imagePromptKit": {
+    "globalStyle": "Playful contemporary Chinese ink-and-watercolor children's picture-book illustration on warm rice-paper texture, soft layered ink wash, fresh mineral green with peach, warm white, soft yellow and restrained cinnabar, elegant negative space, crisp child-friendly focal shapes, square composition.",
+    "characterConsistency": "Keep the same kind middle-aged Tang poet throughout: warm oval face, short dark beard, black hair in a simple topknot, dusty blue cross-collar robe, brown sash and cloth shoes; same narrow flower-filled path, modest riverside wooden home, low blossom branches, several butterflies and two golden orioles.",
+    "negative": "written text, calligraphy, captions, music notes, seals, logos, watermark, modern objects, manicured modern garden, flower shop, giant insects, insect swarm, broken branches, glamorous portrait, photorealism, extra limbs, distorted bird, butterfly or anatomy"
+  }
+}

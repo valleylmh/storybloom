@@ -37,12 +37,11 @@ function parseArgs(argv: string[]): Options {
     !book ||
     !Number.isInteger(page) ||
     page < 1 ||
-    page > 8 ||
     !Number.isInteger(size) ||
     size < 1
   ) {
     throw new Error(
-      "--source, --series, --book, --page 1-8 and a positive --size are required",
+      "--source, --series, --book, a positive --page and a positive --size are required",
     );
   }
 
