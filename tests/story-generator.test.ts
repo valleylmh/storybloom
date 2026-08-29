@@ -493,10 +493,23 @@ describe("custom story generation", () => {
     expect(story.pages[1].enText).toMatch(/\bI\b/);
     const secondBody = JSON.parse(
       String((fetchMock.mock.calls[1] as [string, RequestInit])[1].body),
-    ) as { messages: Array<{ content: string }> };
+    ) as {
+      temperature: number;
+      top_p: number;
+      messages: Array<{ role: string; content: string }>;
+    };
     const repairPrompt = secondBody.messages
       .map((message) => message.content)
       .join("\n");
+    expect(secondBody.temperature).toBe(0.2);
+    expect(secondBody.top_p).toBe(0.8);
+    expect(secondBody.messages.map((message) => message.role)).toEqual([
+      "system",
+      "user",
+      "assistant",
+      "user",
+    ]);
+    expect(secondBody.messages[2].content).toContain("童童准备上大班");
     expect(repairPrompt).toContain("Correction attempt");
     expect(repairPrompt).toContain("first-person perspective");
     expect(repairPrompt).toContain("我/我的");
@@ -544,10 +557,70 @@ describe("custom story generation", () => {
     expect(story.coverTitle).toBe("童童的安稳小夜晚");
     const secondBody = JSON.parse(
       String((fetchMock.mock.calls[1] as [string, RequestInit])[1].body),
-    ) as { messages: Array<{ content: string }> };
+    ) as { messages: Array<{ role: string; content: string }> };
+    expect(secondBody.messages.map((message) => message.role)).toEqual([
+      "system",
+      "user",
+      "assistant",
+      "user",
+    ]);
+    expect(secondBody.messages[2].content).toBe("not valid story JSON");
     expect(
       secondBody.messages.map((message) => message.content).join("\n"),
     ).toContain("complete valid JSON object");
+  });
+
+  it("uses a concrete kindergarten fallback when both model responses violate the contract", async () => {
+    process.env.STORY_TEXT_PROVIDER = "agnes";
+    process.env.AGNES_API_KEY = "agnes-key-1";
+    process.env.STORY_TEXT_MODEL = "agnes-2.5-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [{ message: { content: "not valid story JSON" } }],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                message: {
+                  content: JSON.stringify({
+                    coverTitle: "童童准备上大班",
+                    pages: createModelPages("aligned"),
+                  }),
+                },
+              },
+            ],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const story = await generateStoryText({
+      childName: "童童",
+      narrativePerspective: "first-person",
+      ageGroup: "4-5",
+      theme: "custom",
+      customTheme: "童童快开学了，即将是上大班的小哥哥了",
+      style: "watercolor",
+      language: "zh-en",
+    });
+
+    const chineseStory = story.pages.map((page) => page.zhText).join("\n");
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(story.coverTitle).toBe("童童的大班开学准备");
+    expect(chineseStory).toContain("幼儿园大班");
+    expect(chineseStory).toContain("书包");
+    expect(chineseStory).toContain("大班，我准备好了");
+    expect(chineseStory).not.toContain("这件特别的小事");
   });
 
   it("falls back to the grounded local story when Agnes has no API key", async () => {

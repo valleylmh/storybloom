@@ -90,6 +90,8 @@ const DEFAULT_STORY_TEXT_TIMEOUT_MS = 120_000;
 const DEFAULT_STORY_TEXT_MAX_TOKENS = 8192;
 const DEFAULT_STORY_TEXT_MAX_ATTEMPTS = 2;
 const MAX_STORY_TEXT_CONTRACT_ATTEMPTS = 2;
+const STORY_TEXT_REPAIR_TEMPERATURE = 0.2;
+const STORY_TEXT_REPAIR_TOP_P = 0.8;
 
 type StoryTextProvider = "cpa" | "agnes" | "mock";
 
@@ -106,6 +108,11 @@ interface ChatCompletionResponse {
     message?: string;
   }>;
 }
+
+type StoryTextRepairContext = {
+  previousResponse: string;
+  instruction: string;
+};
 
 function classifyHttpStatus(status: number): GenerationErrorClass {
   if (status === 429) return "rate_limit";
@@ -562,6 +569,73 @@ function isSevereWeatherHomeTheme(theme: string) {
   );
 }
 
+function isKindergartenStartTheme(theme: string) {
+  return (
+    /(开学|新学期|返园)/.test(theme) &&
+    /(大班|幼儿园)/.test(theme)
+  );
+}
+
+function createKindergartenStartFallbackStory(input: StoryInput): {
+  coverTitle: string;
+  pages: StoryPage[];
+} {
+  const {
+    childName,
+    theme,
+    zhSubject,
+    englishSubject,
+  } = getCustomStoryIdentity(input);
+  const titleOwner = childName === "我" || childName === "I" ? "我" : childName;
+  const storyMoments: CustomFallbackMoment[] = [
+    {
+      zh: `开学的日子越来越近，${zhSubject}知道自己就要升入幼儿园大班，心里又期待又有一点紧张。`,
+      en: `${englishSubject} knew the new school term was near and felt both excited and a little nervous about joining the senior kindergarten class.`,
+      scene: "child looking at a calendar beside a school bag at home, excited and slightly nervous about the approaching senior kindergarten term",
+    },
+    {
+      zh: `${zhSubject}打开书包，把水杯、纸巾和彩笔一样样摆好，再认真检查有没有遗漏。`,
+      en: `${englishSubject} opened the school bag, arranged a water bottle, tissues, and crayons, and checked every item carefully.`,
+      scene: "child packing a kindergarten school bag at a tidy table, water bottle tissues and crayons clearly visible",
+    },
+    {
+      zh: `${zhSubject}练习自己穿好衣服和鞋子，还把第二天要穿的衣服整齐放在床边。`,
+      en: `${englishSubject} practiced getting dressed and putting on shoes, then laid out the next school outfit neatly beside the bed.`,
+      scene: "child independently putting on shoes in a bedroom, neatly folded kindergarten outfit waiting nearby",
+    },
+    {
+      zh: `${zhSubject}想起中班学会的画画、整理和轮流分享，发现自己已经会做很多事了。`,
+      en: `${englishSubject} remembered learning to draw, tidy up, and take turns, and realized how many things were already familiar.`,
+      scene: "warm memory-like kindergarten classroom scene with child drawing tidying supplies and sharing materials with classmates",
+    },
+    {
+      zh: `想到新的教室和许久没见的朋友，${zhSubject}决定先准备一句响亮的“早上好”。`,
+      en: `Thinking about the new classroom and familiar friends, ${englishSubject} practiced a bright morning greeting.`,
+      scene: "child practicing a cheerful greeting in front of a mirror with a school bag ready nearby, no written words",
+    },
+    {
+      zh: `${zhSubject}给自己定了一个大班小目标：管好自己的物品，也愿意在别人需要时搭把手。`,
+      en: `${englishSubject} chose a goal for the senior class: take care of personal belongings and offer help when someone needed it.`,
+      scene: "child placing personal items into a classroom cubby and helping another young classmate pick up crayons",
+    },
+    {
+      zh: `睡觉前，${zhSubject}把书包放到门边，和家人说好明早从容出发，然后安心钻进被窝。`,
+      en: `Before bed, ${englishSubject} placed the school bag by the door, planned a calm morning with family, and settled under the blanket.`,
+      scene: "cozy evening home scene, packed school bag beside the door while child settles into bed calmly",
+    },
+    {
+      zh: `清晨的阳光照进来，${zhSubject}背起准备好的书包，笑着告诉自己：“大班，我准备好了！”`,
+      en: `Morning light arrived, and ${englishSubject} put on the packed school bag, ready to begin the senior kindergarten year.`,
+      scene: "bright morning at the home doorway, child wearing a packed school bag and smiling with confident readiness for kindergarten",
+    },
+  ];
+
+  return {
+    coverTitle: `${titleOwner}的大班开学准备`,
+    pages: createCustomFallbackPages(input, storyMoments, theme),
+  };
+}
+
 function getSevereWeatherEvent(theme: string) {
   const event = theme
     .replace(/(?:，|,).*(?:在家|家里|家中|不出门|不能出门|不敢出门|留在家).*$/u, "")
@@ -842,6 +916,10 @@ function createGroundedCustomFallbackStory(input: StoryInput): {
       coverTitle,
       pages: createCustomFallbackPages(input, storyMoments, theme),
     };
+  }
+
+  if (isKindergartenStartTheme(theme)) {
+    return createKindergartenStartFallbackStory(input);
   }
 
   if (isSoloSleepTheme(theme)) {
@@ -1303,6 +1381,7 @@ async function requestChatCompletionStory({
   topP,
   extraBody,
   extraHeaders,
+  repair,
 }: {
   provider: string;
   endpoint: string;
@@ -1317,6 +1396,7 @@ async function requestChatCompletionStory({
   topP: number;
   extraBody?: Record<string, unknown>;
   extraHeaders?: Record<string, string>;
+  repair?: StoryTextRepairContext;
 }) {
   let lastErrorClass: GenerationErrorClass = "unknown";
 
@@ -1344,6 +1424,12 @@ async function requestChatCompletionStory({
           messages: [
             { role: "system", content: system },
             { role: "user", content: user },
+            ...(repair
+              ? [
+                  { role: "assistant", content: repair.previousResponse },
+                  { role: "user", content: repair.instruction },
+                ]
+              : []),
           ],
           ...extraBody,
         }),
@@ -1413,6 +1499,7 @@ export async function requestCpaStory(
   system: string,
   user: string,
   sampling: { temperature: number; topP: number },
+  repair?: StoryTextRepairContext,
 ) {
   const apiKey = getCpaKey();
   const configuredBaseUrl = process.env.CPA_BASE_URL?.trim();
@@ -1441,6 +1528,7 @@ export async function requestCpaStory(
     ),
     temperature: sampling.temperature,
     topP: sampling.topP,
+    repair,
   });
 }
 
@@ -1448,6 +1536,7 @@ async function requestAgnesStory(
   system: string,
   user: string,
   sampling: { temperature: number; topP: number },
+  repair?: StoryTextRepairContext,
 ) {
   const apiKey = getAgnesTextApiKey();
   if (!apiKey) {
@@ -1473,6 +1562,7 @@ async function requestAgnesStory(
     ),
     temperature: sampling.temperature,
     topP: sampling.topP,
+    repair,
   });
 }
 
@@ -1637,20 +1727,30 @@ Return only valid JSON:
       topP: isCustomTheme ? 0.86 : 0.92,
     };
     let contractFailure: StoryTextContractFailure | null = null;
+    let previousResponse: string | null = null;
 
     for (
       let contractAttempt = 1;
       contractAttempt <= MAX_STORY_TEXT_CONTRACT_ATTEMPTS;
       contractAttempt += 1
     ) {
-      const requestUser = contractFailure
-        ? `${user}\n\n${getStoryTextRepairInstruction(input, contractFailure)}`
-        : user;
-      const raw =
+      const repair: StoryTextRepairContext | undefined = contractFailure && previousResponse
+        ? {
+            previousResponse,
+            instruction: getStoryTextRepairInstruction(input, contractFailure),
+          }
+        : undefined;
+      const requestSampling: { temperature: number; topP: number } = repair
+        ? {
+            temperature: STORY_TEXT_REPAIR_TEMPERATURE,
+            topP: STORY_TEXT_REPAIR_TOP_P,
+          }
+        : sampling;
+      const raw: string | null =
         textProvider === "agnes"
-          ? await requestAgnesStory(system, requestUser, sampling)
+          ? await requestAgnesStory(system, user, requestSampling, repair)
           : textProvider === "cpa"
-            ? await requestCpaStory(system, requestUser, sampling)
+            ? await requestCpaStory(system, user, requestSampling, repair)
             : null;
 
       if (!raw) {
@@ -1673,6 +1773,7 @@ Return only valid JSON:
         pages = normalizeStoryPages(input, parsed.pages as StoryPage[]);
       } catch {
         contractFailure = "json_contract";
+        previousResponse = raw;
         logGenerationEvent(
           {
             operation: "text.contract_attempt",
@@ -1701,6 +1802,7 @@ Return only valid JSON:
           pages,
         };
       }
+      previousResponse = raw;
 
       logGenerationEvent(
         {
