@@ -1864,9 +1864,9 @@ async function generateAgnesIllustration(
           model: process.env.AGNES_IMAGE_MODEL || DEFAULT_AGNES_IMAGE_MODEL,
           prompt: promptText,
           size: process.env.AGNES_IMAGE_SIZE || DEFAULT_AGNES_IMAGE_SIZE,
-          return_base64: true,
           ...(referenceImages.length > 0
             ? {
+                return_base64: true,
                 extra_body: {
                   image: referenceImages.map((reference) => reference.dataUri),
                   response_format: "b64_json",

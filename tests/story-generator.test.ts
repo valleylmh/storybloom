@@ -12,6 +12,8 @@ const envKeys = [
   "TEXT_MODEL_PROVIDER",
   "STORY_TEXT_MODEL",
   "STORY_TEXT_MAX_ATTEMPTS",
+  "STORY_TEXT_TIMEOUT_MS",
+  "CPA_TEXT_TIMEOUT_MS",
   "CPA_API_KEY",
   "CPA_BASE_URL",
   "AGNES_API_KEY",
@@ -66,6 +68,23 @@ function createModelPages(kind: "aligned" | "unrelated"): StoryPage[] {
       kind === "aligned"
         ? "A concrete bedtime scene in the same familiar bedroom, no text in image"
         : "A magical rainbow bridge adventure, no text in image",
+    castIds: [],
+  }));
+}
+
+function createFirstPersonModelPages(): StoryPage[] {
+  return Array.from({ length: 8 }, (_, index) => ({
+    page: index + 1,
+    zhText:
+      index === 0
+        ? "我开始准备迎接大班的新学期。"
+        : `我把第 ${index + 1} 个开学准备小步骤做好了。`,
+    enText:
+      index === 0
+        ? "I started getting ready for my new kindergarten year."
+        : `I completed school preparation step ${index + 1} in my own way.`,
+    illustrationPrompt:
+      "A concrete kindergarten preparation scene with a school bag, classroom props, visible action, and no text in image",
     castIds: [],
   }));
 }
@@ -162,6 +181,16 @@ describe("one-sentence story input", () => {
       candidateName: "童童",
       confidence: "high",
       source: "relationship-name",
+    });
+    expect(
+      analyzeStoryProtagonist(
+        "童童快开学了，即将是上大班的小哥哥了",
+        "zh",
+      ),
+    ).toMatchObject({
+      candidateName: "童童",
+      confidence: "high",
+      source: "leading-name",
     });
   });
 
@@ -389,6 +418,136 @@ describe("custom story generation", () => {
     );
     const body = JSON.parse(String(init.body)) as { model: string };
     expect(body.model).toBe("agnes-2.5-flash");
+  });
+
+  it("does not inherit the legacy CPA timeout for Agnes text generation", async () => {
+    process.env.STORY_TEXT_PROVIDER = "agnes";
+    process.env.AGNES_API_KEY = "agnes-key-1";
+    process.env.STORY_TEXT_MODEL = "agnes-2.5-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    process.env.CPA_TEXT_TIMEOUT_MS = "30000";
+    delete process.env.STORY_TEXT_TIMEOUT_MS;
+    const timeoutSpy = vi.spyOn(globalThis, "setTimeout");
+    mockCpaStory("童童的安稳小夜晚", createModelPages("aligned"));
+
+    await generateStoryText(soloSleepInput);
+
+    expect(timeoutSpy).toHaveBeenCalledWith(expect.any(Function), 120_000);
+  });
+
+  it("repairs a first-person perspective violation before using fallback text", async () => {
+    process.env.STORY_TEXT_PROVIDER = "agnes";
+    process.env.AGNES_API_KEY = "agnes-key-1";
+    process.env.STORY_TEXT_MODEL = "agnes-2.5-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                message: {
+                  content: JSON.stringify({
+                    coverTitle: "童童准备上大班",
+                    pages: createModelPages("aligned"),
+                  }),
+                },
+              },
+            ],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                message: {
+                  content: JSON.stringify({
+                    coverTitle: "童童准备上大班",
+                    pages: createFirstPersonModelPages(),
+                  }),
+                },
+              },
+            ],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const story = await generateStoryText({
+      childName: "童童",
+      narrativePerspective: "first-person",
+      ageGroup: "4-5",
+      theme: "custom",
+      customTheme: "童童快开学了，即将是上大班的小哥哥了",
+      style: "watercolor",
+      language: "zh-en",
+    });
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(story.pages[1].zhText).toContain("我");
+    expect(story.pages[1].enText).toMatch(/\bI\b/);
+    const secondBody = JSON.parse(
+      String((fetchMock.mock.calls[1] as [string, RequestInit])[1].body),
+    ) as { messages: Array<{ content: string }> };
+    const repairPrompt = secondBody.messages
+      .map((message) => message.content)
+      .join("\n");
+    expect(repairPrompt).toContain("Correction attempt");
+    expect(repairPrompt).toContain("first-person perspective");
+    expect(repairPrompt).toContain("我/我的");
+    expect(repairPrompt).toContain("I/me/my");
+  });
+
+  it("repairs malformed story JSON before using fallback text", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "http://relay.local/cpa/v1";
+    process.env.STORY_TEXT_MODEL = "gemini-3-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [{ message: { content: "not valid story JSON" } }],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            choices: [
+              {
+                message: {
+                  content: JSON.stringify({
+                    coverTitle: "童童的安稳小夜晚",
+                    pages: createModelPages("aligned"),
+                  }),
+                },
+              },
+            ],
+          }),
+          { status: 200, headers: { "content-type": "application/json" } },
+        ),
+      );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const story = await generateStoryText(soloSleepInput);
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(story.coverTitle).toBe("童童的安稳小夜晚");
+    const secondBody = JSON.parse(
+      String((fetchMock.mock.calls[1] as [string, RequestInit])[1].body),
+    ) as { messages: Array<{ content: string }> };
+    expect(
+      secondBody.messages.map((message) => message.content).join("\n"),
+    ).toContain("complete valid JSON object");
   });
 
   it("falls back to the grounded local story when Agnes has no API key", async () => {

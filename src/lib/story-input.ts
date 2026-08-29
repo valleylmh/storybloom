@@ -127,7 +127,7 @@ function findChineseProtagonistName(idea: string): ChineseNameMatch | null {
     ) ||
     readChineseNameMatch(
       idea,
-      /^([\u4e00-\u9fff]{1,4})(?=第一次|想要|想|正在|在|和|跟|与|陪|学会|害怕|喜欢|要去|去|参加|开始|发现|遇到|帮助)/,
+      /^([\u4e00-\u9fff]{1,4})(?=第一次|快开学|即将|想要|想|正在|在|和|跟|与|陪|学会|害怕|喜欢|要去|去|参加|开始|发现|遇到|帮助)/,
       "leading-name",
     )
   );

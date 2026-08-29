@@ -89,6 +89,7 @@ const AGNES_TEXT_BASE_URL = "https://apihub.agnes-ai.com/v1";
 const DEFAULT_STORY_TEXT_TIMEOUT_MS = 120_000;
 const DEFAULT_STORY_TEXT_MAX_TOKENS = 8192;
 const DEFAULT_STORY_TEXT_MAX_ATTEMPTS = 2;
+const MAX_STORY_TEXT_CONTRACT_ATTEMPTS = 2;
 
 type StoryTextProvider = "cpa" | "agnes" | "mock";
 
@@ -187,6 +188,14 @@ function getAgnesTextApiKey() {
 function getPositiveIntegerEnv(name: string, fallback: number) {
   const parsed = Number.parseInt(process.env[name] ?? "", 10);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+function getStoryTextTimeoutMs(provider: "cpa" | "agnes") {
+  const providerFallback =
+    provider === "cpa"
+      ? getPositiveIntegerEnv("CPA_TEXT_TIMEOUT_MS", DEFAULT_STORY_TEXT_TIMEOUT_MS)
+      : DEFAULT_STORY_TEXT_TIMEOUT_MS;
+  return getPositiveIntegerEnv("STORY_TEXT_TIMEOUT_MS", providerFallback);
 }
 
 function getThemeLabel(input: StoryInput) {
@@ -1240,6 +1249,34 @@ function isNarrativePerspectiveAligned(input: StoryInput, pages: StoryPage[]) {
   return true;
 }
 
+type StoryTextContractFailure =
+  | "json_contract"
+  | "premise_alignment"
+  | "narrative_perspective";
+
+function getStoryTextRepairInstruction(
+  input: StoryInput,
+  failure: StoryTextContractFailure,
+) {
+  const reason =
+    failure === "json_contract"
+      ? "The previous response was not a complete valid JSON object matching the required schema."
+      : failure === "premise_alignment"
+        ? "The previous story drifted away from the exact binding premise."
+        : usesFirstPerson(input)
+          ? `The previous narration broke the required first-person perspective. Every Chinese page must narrate with “我/我的” and every English page with “I/me/my”. Do not call the protagonist ${JSON.stringify(input.childName)}, “孩子”, “故事里的孩子”, or “the child” in page narration.`
+          : "The previous narration did not follow the required perspective.";
+
+  return [
+    "Correction attempt: the previous response was rejected by StoryBloom.",
+    reason,
+    "Generate the complete story again from scratch.",
+    "Return exactly one valid JSON object with coverTitle and exactly 8 pages.",
+    "Every page must include page, zhText, enText, illustrationPrompt, and castIds.",
+    "Return JSON only, with no markdown fences or commentary.",
+  ].join(" ");
+}
+
 function extractJson(text: string) {
   const cleaned = text.replace(/```json\s*|\s*```/g, "").trim();
   const firstBrace = cleaned.indexOf("{");
@@ -1393,13 +1430,7 @@ export async function requestCpaStory(
       process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_CPA_STORY_MODEL,
     system,
     user,
-    timeoutMs: getPositiveIntegerEnv(
-      "STORY_TEXT_TIMEOUT_MS",
-      getPositiveIntegerEnv(
-        "CPA_TEXT_TIMEOUT_MS",
-        DEFAULT_STORY_TEXT_TIMEOUT_MS,
-      ),
-    ),
+    timeoutMs: getStoryTextTimeoutMs("cpa"),
     maxTokens: getPositiveIntegerEnv(
       "STORY_TEXT_MAX_TOKENS",
       DEFAULT_STORY_TEXT_MAX_TOKENS,
@@ -1431,13 +1462,7 @@ async function requestAgnesStory(
       process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_AGNES_STORY_MODEL,
     system,
     user,
-    timeoutMs: getPositiveIntegerEnv(
-      "STORY_TEXT_TIMEOUT_MS",
-      getPositiveIntegerEnv(
-        "CPA_TEXT_TIMEOUT_MS",
-        DEFAULT_STORY_TEXT_TIMEOUT_MS,
-      ),
-    ),
+    timeoutMs: getStoryTextTimeoutMs("agnes"),
     maxTokens: getPositiveIntegerEnv(
       "STORY_TEXT_MAX_TOKENS",
       DEFAULT_STORY_TEXT_MAX_TOKENS,
@@ -1607,72 +1632,103 @@ Return only valid JSON:
       .filter(Boolean)
       .join(" ");
 
-    const raw =
-      textProvider === "agnes"
-        ? await requestAgnesStory(system, user, {
-            temperature: isCustomTheme ? 0.68 : 0.95,
-            topP: isCustomTheme ? 0.86 : 0.92,
-          })
-        : textProvider === "cpa"
-          ? await requestCpaStory(system, user, {
-              temperature: isCustomTheme ? 0.68 : 0.95,
-              topP: isCustomTheme ? 0.86 : 0.92,
-            })
-          : null;
+    const sampling = {
+      temperature: isCustomTheme ? 0.68 : 0.95,
+      topP: isCustomTheme ? 0.86 : 0.92,
+    };
+    let contractFailure: StoryTextContractFailure | null = null;
 
-    if (!raw) {
-      logGenerationEvent({
+    for (
+      let contractAttempt = 1;
+      contractAttempt <= MAX_STORY_TEXT_CONTRACT_ATTEMPTS;
+      contractAttempt += 1
+    ) {
+      const requestUser = contractFailure
+        ? `${user}\n\n${getStoryTextRepairInstruction(input, contractFailure)}`
+        : user;
+      const raw =
+        textProvider === "agnes"
+          ? await requestAgnesStory(system, requestUser, sampling)
+          : textProvider === "cpa"
+            ? await requestCpaStory(system, requestUser, sampling)
+            : null;
+
+      if (!raw) {
+        logGenerationEvent({
+          operation: "text.generate",
+          provider: textProvider,
+          model: getStoryTextModelLabel(textProvider),
+          status: "fallback",
+          errorClass: textProvider === "mock" ? undefined : "configuration",
+        });
+        return isCustomTheme
+          ? createGroundedCustomFallbackStory(input)
+          : createRandomizedMockStory(input);
+      }
+
+      let parsed: ReturnType<typeof extractJson>;
+      let pages: StoryPage[];
+      try {
+        parsed = extractJson(raw);
+        pages = normalizeStoryPages(input, parsed.pages as StoryPage[]);
+      } catch {
+        contractFailure = "json_contract";
+        logGenerationEvent(
+          {
+            operation: "text.contract_attempt",
+            provider: textProvider,
+            model: getStoryTextModelLabel(textProvider),
+            status: contractFailure,
+            attempt: contractAttempt,
+            retry: contractAttempt > 1,
+            errorClass: "invalid_response",
+          },
+          "warn",
+        );
+        continue;
+      }
+
+      if (!isCustomStoryAligned(input, pages)) {
+        contractFailure = "premise_alignment";
+      } else if (!isNarrativePerspectiveAligned(input, pages)) {
+        contractFailure = "narrative_perspective";
+      } else {
+        return {
+          coverTitle: normalizeCoverTitle(input, parsed.coverTitle, {
+            sourceTitle: sourceStorySpec?.sourceTitle,
+            randomTitle: randomDirection?.titleZh,
+          }),
+          pages,
+        };
+      }
+
+      logGenerationEvent(
+        {
+          operation: "text.contract_attempt",
+          provider: textProvider,
+          model: getStoryTextModelLabel(textProvider),
+          status: contractFailure,
+          attempt: contractAttempt,
+          retry: contractAttempt > 1,
+          errorClass: "invalid_response",
+        },
+        "warn",
+      );
+    }
+
+    logGenerationEvent(
+      {
         operation: "text.generate",
         provider: textProvider,
         model: getStoryTextModelLabel(textProvider),
         status: "fallback",
-        errorClass: textProvider === "mock" ? undefined : "configuration",
-      });
-      return isCustomTheme
-        ? createGroundedCustomFallbackStory(input)
-        : createRandomizedMockStory(input);
-    }
-
-    const parsed = extractJson(raw);
-    const pages = normalizeStoryPages(input, parsed.pages as StoryPage[]);
-
-    if (!isCustomStoryAligned(input, pages)) {
-      logGenerationEvent(
-        {
-          operation: "text.generate",
-          provider: textProvider,
-          model: getStoryTextModelLabel(textProvider),
-          status: "fallback",
-          errorClass: "invalid_response",
-        },
-        "warn",
-      );
-      return createGroundedCustomFallbackStory(input);
-    }
-
-    if (!isNarrativePerspectiveAligned(input, pages)) {
-      logGenerationEvent(
-        {
-          operation: "text.generate",
-          provider: textProvider,
-          model: getStoryTextModelLabel(textProvider),
-          status: "fallback",
-          errorClass: "invalid_response",
-        },
-        "warn",
-      );
-      return isCustomTheme
-        ? createGroundedCustomFallbackStory(input)
-        : createRandomizedMockStory(input);
-    }
-
-    return {
-      coverTitle: normalizeCoverTitle(input, parsed.coverTitle, {
-        sourceTitle: sourceStorySpec?.sourceTitle,
-        randomTitle: randomDirection?.titleZh,
-      }),
-      pages,
-    };
+        errorClass: "invalid_response",
+      },
+      "warn",
+    );
+    return isCustomTheme
+      ? createGroundedCustomFallbackStory(input)
+      : createRandomizedMockStory(input);
   } catch (error) {
     logGenerationEvent(
       {

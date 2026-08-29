@@ -140,6 +140,40 @@ describe("image-to-image provider routing", () => {
     ]);
   });
 
+  it("uses URL response mode for ordinary Agnes text-to-image requests", async () => {
+    process.env.AGNES_API_KEY = "agnes-test";
+    process.env.IMAGE_PROVIDER_ORDER = "agnes:1";
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({ data: [{ url: "https://cdn.example/story.png" }] }),
+          { status: 200, headers: { "Content-Type": "application/json" } },
+        ),
+      )
+      .mockResolvedValueOnce(
+        new Response(new Uint8Array([1, 2, 3]), {
+          status: 200,
+          headers: { "Content-Type": "image/png" },
+        }),
+      );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const result = await generateIllustration("A child packs a school bag", 1, {
+      pageNumber: 1,
+      style: "watercolor",
+      preferredProvider: "agnes",
+    });
+
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    const body = JSON.parse(String(init.body));
+    expect(url).toBe("https://apihub.agnes-ai.com/v1/images/generations");
+    expect(body).not.toHaveProperty("return_base64");
+    expect(body).not.toHaveProperty("extra_body");
+    expect(fetchMock.mock.calls[1]?.[0]).toBe("https://cdn.example/story.png");
+    expect(result.imageUrl).toMatch(/^data:image\/png;base64,/);
+  });
+
   it("does not make pages assigned to different Agnes keys wait on one queue", async () => {
     process.env.AGNES_API_KEY = "agnes-key-one,agnes-key-two";
     process.env.IMAGE_PROVIDER_ORDER = "agnes:1";
@@ -369,6 +403,7 @@ describe("image-to-image provider routing", () => {
     expect(result.provider).toBe("agnes");
     const [, init] = fetchMock.mock.calls[0] as [string, RequestInit];
     const body = JSON.parse(String(init.body));
+    expect(body.return_base64).toBe(true);
     expect(body.extra_body).toEqual({
       image: ["data:image/webp;base64,cmVmZXJlbmNl"],
       response_format: "b64_json",
