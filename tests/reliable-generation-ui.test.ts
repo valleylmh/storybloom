@@ -64,5 +64,6 @@ describe("reliable generation homepage contract", () => {
     expect(bookPreviewSource).toContain(
       "!isDurablePendingIllustration(page)",
     );
+    expect(bookPreviewSource).toContain("fetchIllustrationApi(");
   });
 });

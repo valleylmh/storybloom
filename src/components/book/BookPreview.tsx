@@ -40,6 +40,7 @@ import {
   summarizeIllustrationProgress,
 } from "@/lib/illustration-request-policy";
 import { getLiveIllustrationConcurrency } from "@/lib/illustration-client-concurrency";
+import { fetchIllustrationApi } from "@/lib/illustration-client-request";
 import type {
   GenerateResponse,
   SampleImageAssets,
@@ -325,7 +326,7 @@ export default function BookPreview({
             ),
       );
 
-      const response = await fetch(
+      const response = await fetchIllustrationApi(
         `/api/illustration?storyId=${encodeURIComponent(result.storyId)}&page=${pageNumber}`,
       );
       const data = (await response.json().catch(() => null)) as {
@@ -431,7 +432,7 @@ export default function BookPreview({
     useFreeFallback: boolean,
   ): Promise<{ page: StoryPage; allComplete?: boolean }> {
     const requestStartedAtMs = Date.now();
-    const response = await fetch("/api/illustration", {
+    const response = await fetchIllustrationApi("/api/illustration", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(
