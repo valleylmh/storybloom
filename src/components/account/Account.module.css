@@ -198,6 +198,123 @@
   text-align: right;
 }
 
+.deleteDialogBackdrop {
+  position: fixed;
+  z-index: 180;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(42, 31, 24, 0.52);
+  backdrop-filter: blur(10px);
+}
+
+.deleteDialog {
+  display: grid;
+  width: min(420px, 100%);
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid rgba(120, 79, 47, 0.14);
+  border-radius: 24px;
+  background: #fffdf8;
+  box-shadow: 0 30px 80px rgba(45, 29, 20, 0.24);
+}
+
+.deleteDialogIcon {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff0ea;
+  color: #a8492d;
+}
+
+.deleteDialogIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.deleteDialogKicker {
+  margin: 1px 0 5px;
+  color: #a8492d;
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.deleteDialog h3 {
+  margin: 0;
+  color: #3d332d;
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: 1.35rem;
+}
+
+.deleteDialog div > p:last-child {
+  margin: 9px 0 0;
+  color: #7c6d63;
+  font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.deleteDialogError {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff0eb;
+  color: #9b3c2b;
+  font-size: 0.78rem;
+}
+
+.deleteDialogActions {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.deleteDialogCancel,
+.deleteDialogConfirm {
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 999px;
+  -webkit-appearance: none;
+  appearance: none;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 900;
+  touch-action: manipulation;
+}
+
+.deleteDialogCancel {
+  border: 1px solid rgba(79, 57, 43, 0.14);
+  background: #fff;
+  color: #6f5f54;
+}
+
+.deleteDialogConfirm {
+  border: 0;
+  background: #a8492d;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(168, 73, 45, 0.2);
+}
+
+.deleteDialogCancel:focus-visible,
+.deleteDialogConfirm:focus-visible {
+  outline: 3px solid rgba(168, 73, 45, 0.24);
+  outline-offset: 2px;
+}
+
+.deleteDialogCancel:disabled,
+.deleteDialogConfirm:disabled {
+  cursor: wait;
+  opacity: 0.64;
+}
+
 .content {
   width: min(1120px, calc(100% - 48px));
   margin: 0 auto;
@@ -1038,6 +1155,17 @@
 }
 
 @media (max-width: 620px) {
+  .deleteDialogBackdrop {
+    align-items: end;
+    padding: 0;
+  }
+
+  .deleteDialog {
+    width: 100%;
+    padding: 24px 20px calc(22px + env(safe-area-inset-bottom));
+    border-radius: 24px 24px 0 0;
+  }
+
   .header {
     align-items: flex-start;
     flex-direction: column;

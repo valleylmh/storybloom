@@ -53,6 +53,20 @@ describe("family story platform navigation", () => {
     expect(library).toContain("<BookOpenText");
   });
 
+  it("uses an in-app mobile-safe confirmation before deleting a recent work", () => {
+    const library = source("../src/components/account/LocalStoryLibrary.tsx");
+    const styles = source("../src/components/account/Account.module.css");
+    expect(library).not.toContain("window.confirm");
+    expect(library).toContain('role="alertdialog"');
+    expect(library).toContain('aria-modal="true"');
+    expect(library).toContain("localStoryRepository.remove(storyId)");
+    expect(library).toContain("local-story-delete-not-persisted");
+    expect(library).toContain("setDeleteError(copy.deleteError)");
+    expect(styles).toContain(".deleteDialogBackdrop");
+    expect(styles).toContain("touch-action: manipulation");
+    expect(styles).toContain("env(safe-area-inset-bottom)");
+  });
+
   it("requires an explicit action before account reading sync", () => {
     const sync = source(
       "../src/components/library/ReadingSyncControl.tsx",

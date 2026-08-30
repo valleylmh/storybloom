@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
-import { BookOpenText, ShieldCheck } from "@phosphor-icons/react";
+import { BookOpenText, ShieldCheck, Trash } from "@phosphor-icons/react";
 import clsx from "clsx";
 import type { StoryHistoryRecord } from "@/lib/client-history";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
@@ -68,7 +68,15 @@ export default function LocalStoryLibrary({
   const [internalRecords, setInternalRecords] = useState<StoryHistoryRecord[]>([]);
   const [loading, setLoading] = useState(!controlled);
   const [deletingId, setDeletingId] = useState("");
+  const [pendingDeleteId, setPendingDeleteId] = useState("");
+  const [deleteError, setDeleteError] = useState("");
+  const confirmDeleteButtonRef = useRef<HTMLButtonElement>(null);
+  const deleteDialogTitleId = useId();
+  const deleteDialogDescriptionId = useId();
   const visibleRecords = controlled ? records : internalRecords;
+  const pendingDeleteRecord = visibleRecords.find(
+    (record) => record.storyId === pendingDeleteId,
+  );
   const copy = locale === "zh"
     ? {
         title: "最近作品",
@@ -79,6 +87,12 @@ export default function LocalStoryLibrary({
         emptyHint: "完成第一本绘本后，它会自动出现在这里。",
         create: "创作第一本绘本",
         loading: "正在读取当前浏览器里的绘本",
+        deleteTitle: "删除这本绘本？",
+        deleteHint: (coverTitle: string) =>
+          `只会删除当前浏览器里的《${coverTitle}》，不会影响云端副本或已经公开的分享链接。`,
+        deleteCancel: "取消",
+        deleteConfirm: "确认删除",
+        deleteError: "删除没有完成，请稍后重试。",
       }
     : {
         title: "Recent books",
@@ -89,6 +103,12 @@ export default function LocalStoryLibrary({
         emptyHint: "Your first completed storybook will appear here automatically.",
         create: "Create a storybook",
         loading: "Loading books saved in this browser",
+        deleteTitle: "Delete this storybook?",
+        deleteHint: (coverTitle: string) =>
+          `This removes “${coverTitle}” from this browser only. Cloud copies and published share links are not affected.`,
+        deleteCancel: "Cancel",
+        deleteConfirm: "Delete",
+        deleteError: "The storybook could not be deleted. Please try again.",
       };
 
   useEffect(() => {
@@ -114,23 +134,52 @@ export default function LocalStoryLibrary({
     };
   }, [controlled]);
 
-  async function handleDelete(storyId: string) {
-    const record = visibleRecords.find((item) => item.storyId === storyId);
-    if (
-      !window.confirm(
-        locale === "zh"
-          ? `仅删除当前浏览器里的《${record?.result.coverTitle || "这本绘本"}》吗？`
-          : `Delete “${record?.result.coverTitle || "this storybook"}” from this browser only?`,
-      )
-    ) {
-      return;
-    }
+  useEffect(() => {
+    if (!pendingDeleteRecord) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    confirmDeleteButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && !deletingId) {
+        setPendingDeleteId("");
+        setDeleteError("");
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [deletingId, pendingDeleteRecord]);
+
+  function requestDelete(storyId: string) {
+    setDeleteError("");
+    setPendingDeleteId(storyId);
+  }
+
+  function cancelDelete() {
+    if (deletingId) return;
+    setPendingDeleteId("");
+    setDeleteError("");
+  }
+
+  async function confirmDelete() {
+    if (!pendingDeleteRecord || deletingId) return;
+    const storyId = pendingDeleteRecord.storyId;
     setDeletingId(storyId);
+    setDeleteError("");
     try {
       await localStoryRepository.remove(storyId);
       const next = await localStoryRepository.list();
+      if (next.some((record) => record.storyId === storyId)) {
+        throw new Error("local-story-delete-not-persisted");
+      }
       if (!controlled) setInternalRecords(next);
       onRecordsChange?.(next);
+      setPendingDeleteId("");
+    } catch {
+      setDeleteError(copy.deleteError);
     } finally {
       setDeletingId("");
     }
@@ -224,7 +273,8 @@ export default function LocalStoryLibrary({
                   type="button"
                   className="text-danger-btn"
                   disabled={deletingId === record.storyId}
-                  onClick={() => void handleDelete(record.storyId)}
+                  aria-haspopup="dialog"
+                  onClick={() => requestDelete(record.storyId)}
                 >
                   {deletingId === record.storyId && locale === "zh" ? "删除中" : copy.remove}
                 </button>
@@ -233,6 +283,59 @@ export default function LocalStoryLibrary({
           );
         })}
       </div>
+      {pendingDeleteRecord ? (
+        <div
+          className={styles.deleteDialogBackdrop}
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) cancelDelete();
+          }}
+        >
+          <section
+            className={styles.deleteDialog}
+            role="alertdialog"
+            aria-modal="true"
+            aria-labelledby={deleteDialogTitleId}
+            aria-describedby={deleteDialogDescriptionId}
+          >
+            <span className={styles.deleteDialogIcon} aria-hidden="true">
+              <Trash weight="duotone" />
+            </span>
+            <div>
+              <p className={styles.deleteDialogKicker}>
+                {locale === "zh" ? "当前设备" : "THIS DEVICE"}
+              </p>
+              <h3 id={deleteDialogTitleId}>{copy.deleteTitle}</h3>
+              <p id={deleteDialogDescriptionId}>
+                {copy.deleteHint(pendingDeleteRecord.result.coverTitle)}
+              </p>
+            </div>
+            {deleteError ? (
+              <p className={styles.deleteDialogError} role="alert">
+                {deleteError}
+              </p>
+            ) : null}
+            <div className={styles.deleteDialogActions}>
+              <button
+                type="button"
+                className={styles.deleteDialogCancel}
+                disabled={Boolean(deletingId)}
+                onClick={cancelDelete}
+              >
+                {copy.deleteCancel}
+              </button>
+              <button
+                ref={confirmDeleteButtonRef}
+                type="button"
+                className={styles.deleteDialogConfirm}
+                disabled={Boolean(deletingId)}
+                onClick={() => void confirmDelete()}
+              >
+                {deletingId ? (locale === "zh" ? "删除中…" : "Deleting…") : copy.deleteConfirm}
+              </button>
+            </div>
+          </section>
+        </div>
+      ) : null}
     </section>
   );
 }
