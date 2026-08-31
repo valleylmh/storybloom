@@ -37,6 +37,11 @@ const SERIES_DEFAULTS: Record<
     tags: ["三字经", "国学启蒙", "亲子共读", "家庭成长"],
     bedtimeSuitable: false,
   },
+  qiche: {
+    category: "science",
+    tags: ["城市交通", "汽车科普", "工程启蒙", "安全教育"],
+    bedtimeSuitable: false,
+  },
 };
 
 export const LIBRARY_CATEGORY_LABELS: Record<LibraryCategory, string> = {

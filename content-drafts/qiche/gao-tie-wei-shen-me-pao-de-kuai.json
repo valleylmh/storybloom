@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "gao-tie-wei-shen-me-pao-de-kuai",
+    "seriesId": "qiche",
+    "title": "高铁为什么跑得快",
+    "subtitle": "车头、车轮和电流的合力",
+    "question": "高铁为什么能在城市之间快速行驶？",
+    "moral": {
+      "zh": "高铁的速度来自流线车头、电力驱动、平顺轨道和严密的信号安全；越快越要守规矩、听指引。",
+      "en": "High-speed trains combine a streamlined nose, electric power, smooth tracks, and careful signals. The faster they go, the more important safe rules become."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨，安安和妈妈来到城市车站。银白色的高铁停在站台边，安安问：“它为什么能跑得这么快？”",
+        "enText": "In the morning, An'an and Mom arrived at the city station. A silver high-speed train waited by the platform. An'an asked, “Why can it go so fast?”",
+        "illustrationPrompt": "Use case: illustration-story. Asset type: square children's picture-book page. Primary request: begin a high-speed train science adventure. Scene/backdrop: bright modern Chinese station platform, clean rails, silver-white high-speed train with a smooth blue accent stripe and no logos or readable signs. Subject: An'an and Mom behind the platform safety line, looking at the train's rounded nose. Composition/framing: wide establishing view with the nose and child clearly readable. Lighting/mood: curious, exciting morning. Constraints: no text, brands, logos, readable signs, license plates, or people on the tracks."
+      },
+      {
+        "page": 2,
+        "zhText": "安安先看车头。它像一滴水，前端圆圆的、侧面顺顺的。妈妈说：“这样的形状能让空气更容易绕过去。”",
+        "enText": "An'an studied the nose first. It was rounded like a drop of water, with smooth sides. Mom said, “This shape helps air flow around the train.”",
+        "illustrationPrompt": "Close three-quarter view of the same silver-white high-speed train's rounded streamlined nose at the platform. An'an points from behind the safety line while Mom gestures around the nose with a gentle airflow ribbon. Keep the train realistic, no face, no text, no logos, no readable signs, no people near the tracks."
+      },
+      {
+        "page": 3,
+        "zhText": "列车开动时，空气会从车头、车顶和车尾流过。安安用手在空中画出一条顺滑的弧线，像风在绕开小山丘。",
+        "enText": "When the train moves, air flows over its nose, roof, and tail. An'an drew a smooth curve in the air, like wind moving around a little hill.",
+        "illustrationPrompt": "Playful educational side view of the high-speed train leaving the station slowly, with soft translucent airflow curves gliding over the streamlined nose and roof. An'an makes a curved gesture safely on the platform beside Mom. No arrows with words, no labels, logos, brands, or dangerous proximity to the tracks."
+      },
+      {
+        "page": 4,
+        "zhText": "安安低头看轮子。钢轮在钢轨上滚动，接触的地方很小，滚动阻力也比想象中小。",
+        "enText": "An'an looked down toward the wheels. Steel wheels roll on steel rails, touching in a tiny area, so the rolling resistance can be surprisingly small.",
+        "illustrationPrompt": "Safe cutaway educational close-up of a high-speed train bogie and two steel wheels resting on parallel steel rails, shown below the carriage without exposed danger. Add a tiny highlighted contact point and smooth rolling motion lines, no text or labels. An'an and Mom observe from a protected platform window, never on the tracks."
+      },
+      {
+        "page": 5,
+        "zhText": "车顶的受电弓轻轻贴着上方电线，把电能送进列车。电动机再把电能变成让车轮转动的力量。",
+        "enText": "A pantograph on the roof gently touches the overhead wire and brings electricity into the train. Electric motors turn that energy into wheel-moving power.",
+        "illustrationPrompt": "Clear side cutaway of the same high-speed train under an overhead catenary: a raised pantograph touches the wire, a soft blue energy path travels through the train to several electric motors near the wheels. Keep the system sealed and realistic, with no sparks, text, brands, or readable technical labels."
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈说：“高铁不是只有一个车厢在用力。”安安看见车底好几处都有电动机，力量一起帮列车前进。",
+        "enText": "Mom explained, “A high-speed train does not rely on just one carriage for power.” An'an saw several motors beneath different cars, working together to move the train forward.",
+        "illustrationPrompt": "Wide friendly cutaway showing several connected high-speed train cars, with a few under-floor motor units glowing softly to show distributed power. An'an and Mom watch from a station viewing area. Keep the train long and coherent, no text, logos, anthropomorphic faces, or exposed wires."
+      },
+      {
+        "page": 7,
+        "zhText": "驶出城市后，列车进入专用线路。平整的轨道、平缓的弯道和高高的桥，让列车可以稳定地向前。",
+        "enText": "After leaving the city, the train entered a dedicated line. Smooth tracks, gentle curves, and high bridges helped it move steadily forward.",
+        "illustrationPrompt": "Cinematic wide landscape of the same silver high-speed train traveling on a dedicated, well-maintained line across a green valley and a graceful bridge. Show gentle curves and clear separation from roads, with An'an and Mom visible through a window. No readable signs, logos, or unsafe track access."
+      },
+      {
+        "page": 8,
+        "zhText": "前方的信号灯和控制系统会告诉列车什么时候加速、什么时候保持距离。安安发现，快并不等于乱冲。",
+        "enText": "Signals and control systems ahead tell the train when to speed up and when to keep its distance. An'an discovered that fast does not mean rushing wildly.",
+        "illustrationPrompt": "Safe educational view from inside the train: An'an looks through the window at orderly distant track signals shown only as colored lights without letters, while another train remains far ahead. Mom points calmly; the driver is not distracted. No readable signs, brands, dangerous closeness, or text."
+      },
+      {
+        "page": 9,
+        "zhText": "遇到长隧道和大风天气，系统会持续观察线路。司机和调度员一起判断，让列车按照安全速度行驶。",
+        "enText": "Near a long tunnel or strong wind, systems keep watching the line. The driver and the control center decide together so the train travels at a safe speed.",
+        "illustrationPrompt": "Thoughtful interior scene in the moving high-speed train as it approaches a tunnel under a windy sky. An'an and Mom watch through the window; a calm driver and a distant control-room montage suggest coordinated monitoring. Keep everyone safe and seated, no readable screens, text, logos, or alarm drama."
+      },
+      {
+        "page": 10,
+        "zhText": "快到下一站时，电动机减少力量，制动系统让车轮平稳慢下来。安安感到列车轻轻一稳，站台就到了。",
+        "enText": "Near the next station, the motors eased their power and the braking system slowed the wheels smoothly. An'an felt the train settle gently as the platform came into view.",
+        "illustrationPrompt": "Smooth arrival sequence at a modern station: the same train glides slowly toward the platform, with subtle motion lines fading and a gentle brake-energy glow near the wheel units. An'an and Mom remain seated with belts or handrails as appropriate, no sparks, collisions, text, logos, or readable signs."
+      },
+      {
+        "page": 11,
+        "zhText": "安安和妈妈玩“高铁找秘密”：找车头的流线形、车顶的受电弓和车底的轮子。她发现，速度是许多细节一起努力的结果。",
+        "enText": "An'an and Mom played “Find the train secrets”: spot the streamlined nose, the roof pantograph, and the wheels below. An'an learned that speed comes from many details working together.",
+        "illustrationPrompt": "Playful station-side recap with three visual focus areas on one coherent high-speed train: rounded nose, roof pantograph under the wire, and a safe illustrated wheel cutaway below. An'an points while Mom helps her observe from the platform. Use small picture-like bubbles with no words, no logos, no readable signs, and no track access."
+      },
+      {
+        "page": 12,
+        "zhText": "列车抵达远方城市。安安说：“流线车头、电力、好轨道和安全信号一起帮忙，高铁才跑得快又稳。”",
+        "enText": "The train reached a faraway city. An'an said, “A streamlined nose, electric power, good tracks, and safety signals all help a high-speed train go fast and steady.”",
+        "illustrationPrompt": "Warm closing sunset view of the same silver-white high-speed train arriving at a welcoming city station, nose pointed toward a new skyline. An'an and Mom look out happily from the window while the train remains smooth and grounded. No readable station name, brands, logos, text, or watermark."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-31",
+    "order": 13,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 13,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "高铁", "电力驱动", "空气阻力", "轨道工程", "出行安全"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, bright but gentle Chinese city and high-speed rail scenes, believable silver-white train with a blue accent stripe, varied wide/medium/close camera angles, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers. Keep the same silver-white high-speed train with a smooth rounded nose, blue accent stripe, plain windows, and no logos across the story.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable station signs, watermarks, people on tracks, unsafe platform behavior, exposed electrical conductors, sparks, derailments, collisions, speeding drama, injuries, scary imagery, duplicated characters, distorted anatomy, or anthropomorphic train faces."
+  }
+}

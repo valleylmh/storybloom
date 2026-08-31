@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "chu-zu-che-zen-yang-zhao-dao-mu-de-di",
+    "seriesId": "qiche",
+    "title": "出租车怎样找到目的地",
+    "subtitle": "车轮和地图的城市寻路",
+    "question": "出租车怎样找到乘客要去的地方？",
+    "moral": {
+      "zh": "说清目的地、听从司机的安全安排；地图、路标和实时路况一起帮助出租车找到更合适的路线。",
+      "en": "Say the destination clearly and follow the driver's safety guidance. Maps, signs, and live traffic information help a taxi choose a suitable route."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "午后，安安和妈妈要去城市图书馆。她们在安全的出租车候车点等到一辆黄色出租车，安安问：“它怎样找到目的地呢？”",
+        "enText": "In the afternoon, An'an and Mom wanted to visit the city library. At a safe taxi stand, they found a yellow taxi. An'an asked, “How will it find the destination?”",
+        "illustrationPrompt": "Use case: illustration-story. Asset type: square children's picture-book page. Primary request: begin a city wayfinding adventure. Scene/backdrop: clear afternoon at a Chinese taxi stand beside a library district, broad sidewalk and curb line. Subject: the same warm yellow compact taxi with a plain dark roof lamp, An'an and Mom ready to board safely. Composition/framing: wide establishing shot, taxi and curious child clearly readable. Lighting/mood: bright, adventurous, calm. Constraints: no text, logos, brands, readable plates, or people in the roadway."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈把图书馆的名字和附近的大路口说给司机叔叔听。安安补充：“我们不急，安全到达就好。”",
+        "enText": "Mom told the driver the library's name and the large intersection nearby. An'an added, “We are not in a hurry. Arriving safely is what matters.”",
+        "illustrationPrompt": "Safe curbside boarding scene: An'an and Mom stand beside the fully parked yellow taxi while Mom calmly explains a destination to the driver through the open front window. An'an holds a small blank map card with no writing. Keep the taxi door closed on the traffic side, curb wide, and all people on the sidewalk. No readable text, signs, logos, brands, plates, or watermark."
+      },
+      {
+        "page": 3,
+        "zhText": "司机叔叔在车里的导航屏上输入目的地。屏幕只显示一条没有文字的彩色路线，安安看见小箭头朝向城市图书馆。",
+        "enText": "The driver entered the destination on the navigation screen. The screen showed only a colorful route without words, and An'an saw a little arrow pointing toward the city library.",
+        "illustrationPrompt": "Educational but realistic parked-taxi interior: the driver taps a generic navigation display showing a simple colorful route and arrow shapes with no letters or numbers. An'an looks from the belted rear seat beside Mom; the driver remains focused and the screen is not oversized. No readable text, logos, brands, or exposed wires."
+      },
+      {
+        "page": 4,
+        "zhText": "妈妈说：“定位会告诉系统车子大概在哪里，地图会把街道连起来。”安安想象一颗小小的信号点在城市上方闪烁。",
+        "enText": "Mom said, “Positioning tells the system roughly where the car is, and the map connects the streets.” An'an imagined a tiny signal point blinking above the city.",
+        "illustrationPrompt": "Whimsical but accurate visualization from inside the moving taxi: An'an and Mom look through the window at the city while a gentle translucent map overlay connects streets and a few satellite-like signal dots hover above, without labels or letters. Keep the taxi interior and driver realistic, no magical glowing car, no text, no logos, no watermark."
+      },
+      {
+        "page": 5,
+        "zhText": "导航先画出一条路线：经过公园、跨过小桥，再沿着大路直走。安安数出三个容易认出的地标，地图就像城市的寻宝图。",
+        "enText": "The navigation drew a route past a park, over a small bridge, and along a main road. An'an counted three easy-to-recognize landmarks. The map felt like a city treasure map.",
+        "illustrationPrompt": "Playful three-quarter view from the rear seat: An'an points out a leafy park, a small bridge, and a distinctive round building visible along the route. A generic map glow on the dashboard echoes the three landmarks without any words. Mom smiles; driver stays attentive. No readable signs, logos, brands, or plates."
+      },
+      {
+        "page": 6,
+        "zhText": "前方出现施工围挡，原来的路变窄了。司机叔叔减速停在安全位置，看看路况，再选择另一条街，安安发现路线会改变。",
+        "enText": "A construction barrier narrowed the road ahead. The driver slowed and stopped in a safe place to check the situation, then chose another street. An'an discovered that a route can change.",
+        "illustrationPrompt": "Wide safe city detour scene seen through the taxi windshield: the yellow taxi is stopped well before a construction barrier, driver checking calmly, with a clear alternate street indicated by the road geometry rather than text. An'an watches from her belted rear seat. No rushing, no workers in danger, no collisions, no readable signs or brands."
+      },
+      {
+        "page": 7,
+        "zhText": "安安问：“为什么不一直照着最初的路线走？”妈妈回答：“地图提供建议，司机还要看真实的道路、红绿灯和天气。”",
+        "enText": "An'an asked, “Why not follow the first route all the way?” Mom replied, “The map offers a suggestion, but the driver must also watch the real road, signals, and weather.”",
+        "illustrationPrompt": "Calm educational interior view: the driver keeps both hands ready and looks at the real road while a small generic map display shows two possible route lines with no text. Outside, a traffic light and soft rain cloud are visible. An'an listens from a correctly belted rear seat beside Mom. No readable controls, logos, or watermark."
+      },
+      {
+        "page": 8,
+        "zhText": "到大路口时，导航提示前方车多。司机叔叔提前松油门，和前车保持距离。安安看到，找路也需要耐心。",
+        "enText": "Near a large intersection, the navigation showed heavier traffic ahead. The driver eased off the accelerator and left space from the car in front. An'an saw that finding a way also takes patience.",
+        "illustrationPrompt": "Rain-washed but safe city boulevard viewed from inside the taxi: traffic is orderly with generous gaps, the yellow taxi moving slowly, and the driver attentive. An'an watches the calm flow from her rear seat while Mom points to the space between cars. No speeding, honking drama, readable signs, logos, brands, or plates."
+      },
+      {
+        "page": 9,
+        "zhText": "转过公园，安安先看见图书馆圆顶，再看见门口的树。她把地图上的路线和眼前的城市一一对上了。",
+        "enText": "After the park, An'an spotted the library dome and then the trees by the entrance. She matched the map route to the real city, one clue at a time.",
+        "illustrationPrompt": "Joyful view through the taxi side window: the city library's rounded dome and a row of entrance trees come into view, matching the route. An'an points excitedly while staying belted; Mom smiles. The yellow taxi remains on a calm lane, no readable library name, signs, logos, brands, or plates."
+      },
+      {
+        "page": 10,
+        "zhText": "司机把出租车停在图书馆旁的安全下客区，确认车身不挡路。妈妈先下车，再牵安安走到人行道。",
+        "enText": "The driver parked in the library's safe drop-off area without blocking the lane. Mom got out first, then held An'an's hand to the sidewalk.",
+        "illustrationPrompt": "Wide arrival scene: the yellow taxi is fully stopped in a marked curbside drop-off bay beside a library entrance with no readable name. Mom checks the sidewalk and leads An'an out through the curb-side door. Driver remains seated until they are clear; no traffic conflict, text, logos, brands, or plates."
+      },
+      {
+        "page": 11,
+        "zhText": "安安回头看看来路：公园、小桥和大路口像三颗路标。她和妈妈玩“城市寻路”：每到一个地标，就说出自己看见了什么。",
+        "enText": "An'an looked back at the way they came: the park, small bridge, and big intersection were three landmarks. She and Mom played city wayfinding by naming what they saw at each one.",
+        "illustrationPrompt": "Playful sidewalk recap outside the library: An'an and Mom point toward three distant landmarks—park, bridge, and intersection—shown as small visual bubbles or a folded blank map with no writing. Keep the taxi parked far behind them and all traffic separated. Warm, curious, no text, logos, brands, plates, or watermark."
+      },
+      {
+        "page": 12,
+        "zhText": "借好书，她们走上回家的路。安安说：“出租车用地图找方向，也用眼睛和耐心照顾真实的道路。”她又问：“下一次，我们来比较公交车和出租车的路线吧？”",
+        "enText": "After borrowing books, they started home. An'an said, “A taxi uses a map for direction, and eyes and patience for the real road.” Then she asked, “Next time, shall we compare a bus route with a taxi route?”",
+        "illustrationPrompt": "Hopeful closing late-afternoon city scene: An'an and Mom walk home with library books on a calm sidewalk while the yellow taxi travels away along a clearly safe route. In the distance, a bus follows another lane, inviting a future comparison. Keep the city warm and uncluttered, no readable route signs, logos, brands, license plates, or watermark."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-31",
+    "order": 12,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 12,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "出租车", "地图导航", "路线观察", "出行安全"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, bright but gentle Chinese city streets, believable friendly taxi and navigation scenes, varied wide/medium/close camera angles, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers. The taxi driver is a secondary adult in a navy jacket; adults guide safety and never obscure An'an or become the visual focus. Keep the same warm yellow compact taxi with a plain roof lamp across the story.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable license plates, watermarks, children in the roadway, unbelted passengers, driver distraction, speeding, risky detours, collisions, injuries, scary imagery, duplicated characters, distorted anatomy, or anthropomorphic vehicles."
+  }
+}

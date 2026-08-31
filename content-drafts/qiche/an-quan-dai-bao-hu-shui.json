@@ -1,0 +1,96 @@
+{
+  "book": {
+    "id": "an-quan-dai-bao-hu-shui",
+    "seriesId": "qiche",
+    "title": "安全带保护谁",
+    "subtitle": "车里每个人的安全小约定",
+    "question": "安全带到底保护谁？",
+    "moral": {
+      "zh": "安全带让身体和车辆一起平稳减速；每次出发都要坐好、系好，车辆停稳后再解开。",
+      "en": "A seat belt helps the body slow down with the car. Sit properly and buckle up for every trip, then unbuckle only after the car is parked and still."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "周末，安安和妈妈坐车去城市科学馆。安安摸摸座位旁的安全带，问：“它保护谁呢？”",
+        "enText": "On the weekend, An'an and Mom rode to the city science museum. An'an touched the seat belt and asked, “Who does it protect?”",
+        "illustrationPrompt": "Warm morning establishing shot inside a family car parked in the driveway: An'an sits in the rear seat beside a child-safe window, touching the loose seat belt with curiosity while Mom is in the driver's seat turned toward her. Museum map is only a blank colorful shape with no text. Car is stationary, doors closed, safe domestic setting, An'an is the clear focal child."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈把安全带拉出来：“它保护车里的每一个人。肩带经过胸前，腰带贴在髋部，不能勒住脖子或肚子。”",
+        "enText": "Mom pulled the belt out. “It protects everyone in the car. The shoulder part crosses the chest, and the lap part rests on the hips—not the neck or the belly.”",
+        "illustrationPrompt": "Eye-level close interior view while the car remains parked: Mom gently demonstrates the three-point belt on An'an, with shoulder strap across the middle of the chest and lap strap low across the hips. An'an looks down to inspect both paths; show a small visual magnifier-like inset of the two contact areas without labels. No restraint around the neck, no tension or distress."
+      },
+      {
+        "page": 3,
+        "zhText": "安安找到第一个观察点：肩带和腰带在胸前汇合，再扣进座位旁的扣子。妈妈根据她的身高调好座位和带子。",
+        "enText": "An'an found her first thing to look for: the shoulder and lap parts meet at her chest and click into the buckle beside the seat. Mom adjusted the seat and belt to fit her height.",
+        "illustrationPrompt": "Detailed parked-car medium shot: An'an points to the belt's shoulder-and-lap junction and the buckle as Mom adjusts the child seat or booster to fit. The click is suggested by a tiny sparkle, not text. Keep belt flat and snug, hands gentle, and all hardware realistic but free of logos or readable markings."
+      },
+      {
+        "page": 4,
+        "zhText": "车子慢慢开起来，安安发现自己和车一起向前走。妈妈说：“因为身体有惯性，会想继续原来的运动。”",
+        "enText": "The car began to move gently, and An'an noticed that she moved forward with it. Mom explained, “Because of inertia, a moving body tends to keep moving.”",
+        "illustrationPrompt": "Safe side-view interior of the car traveling slowly on a calm city street: An'an remains seated and belted, with a translucent playful motion trail showing her body and the car moving forward together. Mom keeps both attention and hands safely on driving; city scenery drifts softly outside. No speedometer numbers or unsafe distraction."
+      },
+      {
+        "page": 5,
+        "zhText": "前方红灯亮起，妈妈提前平稳刹车。车子减速时，安安的身体还想向前，安全带把她温柔地留在座位上。",
+        "enText": "A red light appeared, so Mom braked smoothly in advance. As the car slowed, An'an's body tended to move forward, and the belt gently kept her with the seat.",
+        "illustrationPrompt": "Calm interior three-quarter view at a red light: the car is slowing smoothly, An'an's correctly fitted belt visibly sharing the motion with her seat, and a very subtle forward arrow-like motion cue shows inertia without any impact. Mom is attentive and relaxed. No crash, jerk, frightened faces, or loose objects."
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈在停车后用玩具车演示：小车突然停下，玩具小人还会向前。安全带让减速的力量分散到结实的身体部位。",
+        "enText": "After parking, Mom used a toy car to demonstrate: when the little car stops, its toy figure still moves forward. A seat belt spreads the slowing force across strong parts of the body.",
+        "illustrationPrompt": "Educational tabletop scene inside the safely parked car or museum learning corner: Mom rolls a small toy car toward a soft stop, and a tiny toy figure leans forward while a miniature belt holds it safely. An'an watches wide-eyed and points; use a simple translucent diagram-like glow over the toy's chest and hips, no collision imagery, no words."
+      },
+      {
+        "page": 7,
+        "zhText": "安安试着说出规则：“肩带不能从腋下走，腰带不能压在肚子上，也不能松松垮垮。”妈妈点点头。",
+        "enText": "An'an recited the rule: “The shoulder belt never goes under an arm, the lap belt never rests on the belly, and neither part should be loose.” Mom nodded.",
+        "illustrationPrompt": "Friendly instructional split composition in a stationary car: center shows An'an correctly belted; two small ghosted crossed-out examples show a strap under an arm and a loose lap strap, both clearly marked only by gentle visual contrast, not text or scary symbols. Mom praises An'an from beside the seat. Keep the correct example largest and positive."
+      },
+      {
+        "page": 8,
+        "zhText": "妈妈和安安数了数：前排、后排，每个座位都有一位乘客，也都有一条系好的安全带。安安的第二个观察点完成了。",
+        "enText": "Mom and An'an counted: front row, back row—each seat had a passenger and a fastened belt. An'an had completed her second observation.",
+        "illustrationPrompt": "Cheerful wide interior view of the parked family car: Mom in front and An'an in the rear are both clearly buckled, with empty seats showing neatly stored belts. An'an holds up two fingers while counting the safely fastened passengers; keep her prominent, no dashboard text, no extra distracting people."
+      },
+      {
+        "page": 9,
+        "zhText": "到科学馆后，妈妈先把车停进车位，车轮完全不动，才说：“现在可以解开。”安安按下扣子，慢慢下车。",
+        "enText": "At the museum, Mom parked in a space and waited until the wheels were completely still. “Now you may unbuckle,” she said. An'an pressed the buckle and got out calmly.",
+        "illustrationPrompt": "Safe arrival view from outside the parked car: wheels are still inside marked space, Mom checks the surroundings, and An'an unbuckles only after the car stops. Show the belt retracting neatly as An'an holds the door handle; museum entrance is in the background without readable signs. No one steps into moving traffic."
+      },
+      {
+        "page": 10,
+        "zhText": "安安牵着妈妈走进科学馆，记住了这句小口诀：“坐好，系好；车停稳，再解开。”安全带保护的是每一个认真照顾自己的人。",
+        "enText": "An'an held Mom's hand into the museum and remembered: “Sit, buckle, and unbuckle only when the car is still.” A seat belt protects every person who takes care of themselves.",
+        "illustrationPrompt": "Bright closing shot at the museum entrance: An'an and Mom walk hand in hand on the safe sidewalk, with the parked car behind them and its belts neatly retracted. An'an proudly demonstrates the sit-and-buckle gesture; add a small colorful science exhibit silhouette as a visual bridge to the next adventure, no text, logos, or brand marks."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-30",
+    "order": 9,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 7,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 9,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "安全带", "惯性", "乘车安全", "科学启蒙"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, gentle cinematic light, expressive but calm family-car scenes, accurate low-risk science visualization, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is the only accompanying adult, a calm secondary character in a coral cardigan and cream trousers. Mom operates and adjusts the car safely; An'an remains the visual focus and is never distressed.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable license plates or dashboard displays, watermarks, crash scenes, impact injuries, airbags deploying, frightened children, loose dangerous objects, unbelted travel, belt around neck, belt under arm, belt over belly, children touching controls while moving, duplicated characters, distorted anatomy, or anthropomorphic vehicles."
+  }
+}

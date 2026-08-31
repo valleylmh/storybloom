@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "gong-jiao-che-zen-me-zhi-dao-xia-yi-zhan",
+    "seriesId": "qiche",
+    "title": "公交车怎么知道下一站",
+    "subtitle": "一条路线上的城市接力",
+    "question": "公交车怎么知道下一站？",
+    "moral": {
+      "zh": "公交车按规划线路行驶，司机、定位和报站系统一起帮助它到站；乘车要排队、扶稳并等车停稳。",
+      "en": "A bus follows a planned route, while the driver, location system, and announcements help it reach each stop. Queue, hold on, and wait until it stops."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安和妈妈站在“小河站”候车。一辆公交车叮叮靠站，她望着车头问：“它怎么知道下一站？”",
+        "enText": "An'an and Mom waited at Xiaohe Stop. A bus chimed as it pulled in. An'an looked at the front and asked, “How does it know which stop comes next?”",
+        "illustrationPrompt": "Square 3D clay-like animated-film scene: An'an, a six-year-old Chinese girl with a round face, ear-length black bob, yellow star hair clip, teal hoodie, jeans, orange backpack, white sneakers with red trim, looks up at a generic city bus arriving beside her mother in a coral windbreaker and cream trousers. Morning curb, leafy street, gentle arrival chime suggested by tiny musical shapes; no readable text, logos, brands, license plates, watermark, or danger."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈展开路线图：“我们坐到城市图书馆，边走边找答案。”图上串着彩色圆点，像一条小路。",
+        "enText": "Mom unfolded a route map. “We will ride to the city library and look for clues.” Colorful dots on it looked like a tiny road.",
+        "illustrationPrompt": "Medium bus-stop shot: An'an and her mother hold a blank pictorial route map with colored dots and landmark shapes, An'an tracing the path toward a distant library dome. Keep An'an's exact star clip, teal hoodie, orange backpack, and red-trimmed shoes; adult secondary. No letters, readable labels, logos, brands, plates, or watermark."
+      },
+      {
+        "page": 3,
+        "zhText": "公交车停进站台，车门打开。先下后上，安安牵着妈妈的手，等车完全停稳才上车。",
+        "enText": "The bus settled at the stop and opened its doors. People got off before others got on. Holding Mom's hand, An'an waited until it was completely still.",
+        "illustrationPrompt": "Side view of an unbranded bus aligned with the curb: one passenger exits first while An'an and Mom wait behind a subtle line, then approach the handrail after the bus stops. Calm orderly boarding, low step visible, no crowding, text, logos, brands, plates, watermark, or roadway danger."
+      },
+      {
+        "page": 4,
+        "zhText": "妈妈说：“每条线路出发前就排好了顺序：这一站、下一站，再下一站。”安安想象站点在城市里接力。",
+        "enText": "Mom explained, “Before a route begins, its stops are put in order: this stop, the next one, then the next.” An'an imagined the stops passing a baton.",
+        "illustrationPrompt": "Imaginative interior cutaway: seated An'an watches a floating ribbon of blank colored dots connecting home, park, bridge, and library icons in sequence; a tiny glowing baton passes between dots. Mom smiles beside her. Tactile clay forms, no written labels, logos, brands, plates, watermark, or duplicated characters."
+      },
+      {
+        "page": 5,
+        "zhText": "座位上方的路线图把站点排成一列。安安数到四个彩点，图书馆就在第四站。",
+        "enText": "A route map above the seats arranged the stops in a row. An'an counted four colored dots and found the library at the fourth stop.",
+        "illustrationPrompt": "Close bus interior: An'an safely seated beside Mom counts four large blank colored circles on a pictorial route strip; the fourth has only a book-shaped landmark icon. Other passengers sit calmly, handrails visible, no readable text, logos, brands, plates, or watermark."
+      },
+      {
+        "page": 6,
+        "zhText": "车开起来，司机照着道路和线路行驶；定位系统把车辆位置传给报站系统和调度中心。",
+        "enText": "The bus moved as the driver followed the streets and planned line. A location system sent its position to the announcement system and dispatch center.",
+        "illustrationPrompt": "Split-perspective scene: attentive driver follows ordinary lanes while An'an watches from her seat; an abstract glowing location dot travels along a blank route line to a simple dispatch building and speaker icon. No screens with words, no logos, brands, plates, watermark, or unsafe behavior."
+      },
+      {
+        "page": 7,
+        "zhText": "快到第一站，车里响起轻柔提示。安安看见窗外的公园，对照路线图：“原来它知道走到哪儿了！”",
+        "enText": "Near the first stop, a gentle chime sounded. An'an spotted the park and checked the map. “It knows where it is on the journey!”",
+        "illustrationPrompt": "Over-An'an's-shoulder view: she points from a colored route dot to a leafy park outside the slowing bus window; soft bell shown as tiny blank musical shapes. Mom remains secondary, all passengers seated, curb ahead safe. No words, logos, brands, plates, watermark."
+      },
+      {
+        "page": 8,
+        "zhText": "公交车绕着圆环路口转弯，安安数窗外的景色：大树、桥、蓝色屋顶。路线靠地图和站点，不靠记忆。",
+        "enText": "The bus curved around a roundabout. An'an counted a big tree, a bridge, and a blue roof outside. A route uses maps and marked stops, not memory alone.",
+        "illustrationPrompt": "Wide interior-to-exterior view: the bus smoothly follows a roundabout while An'an counts three landmarks—a huge tree, small bridge, blue roof—using three blank colored shapes in her sketchbook. Curved camera line shows lane guidance; no writing, logos, brands, plates, watermark, or risky motion."
+      },
+      {
+        "page": 9,
+        "zhText": "前方道路施工，司机收到调度中心的临时安排，绕过封闭路段。妈妈说：“路线变了，安全和新站点要先确认。”",
+        "enText": "Road work blocked the street ahead. The driver received a temporary plan and went around it. Mom said, “When a route changes, safety and new stops must be checked first.”",
+        "illustrationPrompt": "View from a safely stopped bus: cones and a small fenced work zone close one lane; driver follows a clear blank-color detour arrow after receiving a simple dispatch tablet message turned away from camera. An'an observes seated with Mom. No danger, readable road text, logos, brands, plates, or watermark."
+      },
+      {
+        "page": 10,
+        "zhText": "安安按下下车提示按钮。妈妈提醒：“需要下一站下车时再按，车会在规定站点安全停下。”",
+        "enText": "An'an pressed the stop-request button. Mom reminded her, “Press it when you need the next stop; the bus will stop safely at its designated stop.”",
+        "illustrationPrompt": "Close interior scene: An'an reaches toward one unlettered stop-request button by the window as Mom gently guides her; the driver is visible in a mirror checking ahead. An'an stays seated or braced, rounded handrails clear. No labels, logos, brands, plates, watermark, or aisle-running."
+      },
+      {
+        "page": 11,
+        "zhText": "四站之后，公交车在图书馆站停稳。安安把彩点画成小旗子：“线路、定位、司机和报站，一起帮它找到下一站！”",
+        "enText": "Four stops later, the bus fully stopped at the library. An'an drew flags over the dots. “The route, location, driver, and announcements help it find the next stop together!”",
+        "illustrationPrompt": "Arrival scene: generic bus fully stopped at a library curb, An'an and Mom step down carefully after doors open; An'an holds a blank sketchbook with four flag shapes over colored dots. Driver and orderly passengers remain small, library has no readable sign. No logos, brands, plates, watermark, or traffic danger."
+      },
+      {
+        "page": 12,
+        "zhText": "回家路上，安安看见地铁入口，又问：“没有红绿灯的地铁，为什么跑得快？”妈妈笑着说：“下一次继续观察！”",
+        "enText": "On the way home, An'an saw a subway entrance and asked, “Why can a subway move fast without traffic lights?” Mom smiled. “That is our next adventure!”",
+        "illustrationPrompt": "Sunset closing scene: An'an and Mom walk safely from the library toward a simple subway entrance marked only by an abstract train pictogram, An'an points up with a new question and her orange backpack catches the light; the bus route recedes behind them. No readable signs, logos, brands, plates, watermark, or danger."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-30",
+    "order": 2,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 2,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "公交车", "公共交通", "交通安全", "科普启蒙"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium 3D clay-like animated-film children's picture-book illustration, warm cinematic light, playful but scientifically accurate city setting, tactile rounded materials, varied wide/medium/close camera compositions, square 1:1 frame.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length black bob, yellow star hair clip, teal green hoodie, jeans, orange mini backpack, and white sneakers with red trim. Her mother is a calm Chinese woman with shoulder-length dark hair, coral windbreaker, cream trousers, and white sneakers; Mom supports the observation and never becomes the visual focus.",
+    "negative": "No text, letters, readable labels, captions, logos, watermarks, brands, license plates, crashes, reckless driving, children moving through a bus aisle, or duplicated main characters."
+  }
+}

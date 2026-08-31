@@ -16,11 +16,11 @@ export const metadata: Metadata = HAS_PUBLISHED_BOOKS
   ? {
       title: "绘本馆 | 免费中英双语儿童绘本在线阅读 - StoryBloom",
       description:
-        "StoryBloom 绘本馆：成语故事、唐诗启蒙、经典名著与儿童科普等系列化中英双语绘本，免费在线阅读，适合 4-8 岁亲子共读。",
+        "StoryBloom 绘本馆：成语故事、唐诗启蒙、经典名著、自然科普与城市汽车等系列化中英双语绘本，免费在线阅读，适合 4-8 岁亲子共读。",
       alternates: { canonical: "/library" },
       openGraph: {
         title: "StoryBloom 绘本馆",
-        description: "成语、唐诗、名著与科普系列中英双语儿童绘本，免费在线阅读。",
+        description: "成语、唐诗、名著、自然科普与城市汽车系列中英双语儿童绘本，免费在线阅读。",
         type: "website",
       },
     }

@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "xiao-fang-che-wei-shen-me-yao-ming-di",
+    "seriesId": "qiche",
+    "title": "消防车为什么要鸣笛",
+    "subtitle": "一声警笛，给城市让出安全通道",
+    "question": "消防车为什么要鸣笛？",
+    "moral": {
+      "zh": "警笛是在紧急任务中提醒大家、请求安全让行；冷静观察、遵守信号、交给专业人员，才是最好的帮助。",
+      "en": "A siren warns people and asks for a safe path during an emergency. Staying calm, following signals, and leaving the work to professionals is the best help."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨，安安和爸爸走到街角，忽然听见“呜哇——呜哇——”。她问：“消防车为什么要鸣笛？”",
+        "enText": "One morning, An'an and Dad reached the corner. A wailing sound rose: “Woo-oo, woo-oo!” “Why do fire trucks use sirens?” she asked.",
+        "illustrationPrompt": "Page 1, wide dawn establishing shot of a friendly city neighborhood corner: An'an and Dad hold hands on a broad sidewalk while a generic red fire engine approaches far down the street with soft red warning lights. An'an turns toward the sound with curious wide eyes; Dad stays beside her behind the curb. Show apartment trees, a bakery facade with no readable signs, and plenty of clear space."
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸牵着安安站在安全的人行道上：“我们可以观察，但不追车，也不挡路。”",
+        "enText": "Dad held An'an's hand on the safe sidewalk. “We can watch, but we never chase a truck or block its way.”",
+        "illustrationPrompt": "Page 2, medium eye-level shot from the sidewalk: Dad gently guides An'an behind a low curb line as the fire engine passes in the roadway. An'an points without stepping forward; a few calm pedestrians leave a wide lane. Emphasize safe distance, adult supervision, and the truck moving steadily, with no chase or panic."
+      },
+      {
+        "page": 3,
+        "zhText": "消防站的大门打开，红色消防车亮起警示灯。队员们先听调度，再检查装备。",
+        "enText": "The fire station gate opened and the red fire engine turned on its warning lights. The crew listened to dispatch, then checked their equipment.",
+        "illustrationPrompt": "Page 3, slightly elevated wide shot of a generic fire station bay opening onto the same city route. An'an and Dad observe from a public sidewalk while two firefighters in plain protective gear check a hose compartment and helmets beside the engine. The crew is purposeful and calm; keep An'an the visual focal point, with no logos or station lettering."
+      },
+      {
+        "page": 4,
+        "zhText": "鸣笛声一高一低，能穿过车流和街角，提醒大家：有紧急车辆来了。",
+        "enText": "The siren rises and falls so its sound can travel through traffic and around corners. It tells everyone that an emergency vehicle is coming.",
+        "illustrationPrompt": "Page 4, playful sound-visualization close-up: An'an listens from the sidewalk as gentle translucent wave shapes flow from the fire engine's siren around parked cars and a building corner. Dad points to the safe distance. Keep the sound waves abstract and friendly, never letters or symbols, and keep all traffic calm."
+      },
+      {
+        "page": 5,
+        "zhText": "它不是在催大家慌张。汽车减速靠边，骑车人停在安全处，行人等绿灯。",
+        "enText": "The siren is not a reason to panic. Cars slow and move aside, a cyclist waits safely, and pedestrians wait for the green signal.",
+        "illustrationPrompt": "Page 5, overhead three-quarter view of a signalized intersection on the route: cars slow into a clear side lane, a cyclist stops behind the crossing line, and pedestrians including An'an and Dad wait for a green pedestrian signal. The fire engine has a wide unobstructed path; no one runs into the road. Use colored signal shapes without readable text."
+      },
+      {
+        "page": 6,
+        "zhText": "安安找到了三个小细节：闪烁的灯、宽大的后视镜，还有车顶的警示装置。",
+        "enText": "An'an spotted three little details: flashing lights, broad mirrors, and a warning device on the roof.",
+        "illustrationPrompt": "Page 6, curious child-height detail collage in one coherent square scene: An'an safely peers from behind Dad at the stationary fire engine's front corner, noticing the flashing light bar, broad side mirror, and roof siren. Use three visual zones linked by An'an's pointing gesture, with realistic vehicle proportions and no labels or text."
+      },
+      {
+        "page": 7,
+        "zhText": "驾驶员看地图、听无线电，按道路情况选择路线；鸣笛帮助他人及时发现车辆。",
+        "enText": "The driver checks a map and radio and chooses a route for the road conditions. The siren helps others notice the truck in time.",
+        "illustrationPrompt": "Page 7, safe over-the-shoulder view through the fire engine cab windshield: a generic driver checks a simple unlabeled map display and radio while the road ahead branches around a quiet construction zone. Outside, An'an and Dad are visible far back on the sidewalk as observers. Show decision-making and visibility, not speed or risky maneuvers."
+      },
+      {
+        "page": 8,
+        "zhText": "到了小区，烟雾报警器发出警报。消防员在门外先确认环境，再进入检查。",
+        "enText": "At the apartment block, a smoke alarm sounded. The firefighters checked the surroundings from outside before going in to inspect.",
+        "illustrationPrompt": "Page 8, wide courtyard shot at the same route's apartment building: the fire engine is parked safely, firefighters calmly assess an entryway and speak with a building caretaker, while An'an and Dad remain behind a clear boundary with an adult. Show a small alarm indicator without any readable words, no flames, no frightening smoke, and no injured people."
+      },
+      {
+        "page": 9,
+        "zhText": "原来厨房里锅里的水蒸气触发了报警器，没有人受伤。队员通风并确认设备恢复正常。",
+        "enText": "Steam from a pot in the kitchen had triggered the alarm, and no one was hurt. The crew aired the room and confirmed that the system was working again.",
+        "illustrationPrompt": "Page 9, gentle interior cutaway viewed from the doorway: a firefighter points to harmless steam rising from a covered cooking pot while another opens a window; a calm resident stands well back. An'an and Dad look in only from the supervised hallway. No flames, no heavy smoke, no medical distress, no brand markings, and no readable alarm text."
+      },
+      {
+        "page": 10,
+        "zhText": "安安发现消防车的水带、软管和工具都分区收好；需要时，队员能很快取用。",
+        "enText": "An'an noticed that hoses, nozzles, and tools were stored in separate compartments. The crew can reach them quickly when needed.",
+        "illustrationPrompt": "Page 10, low but safe three-quarter close-up beside the parked engine: a firefighter opens organized side compartments, revealing neatly coiled hose, nozzle, and rescue tools. An'an counts the compartments with her fingers while Dad keeps her behind the safety line. Make the equipment clear and inviting, never show a child touching it."
+      },
+      {
+        "page": 11,
+        "zhText": "警报解除后，消防车关掉鸣笛，按规定慢慢回站。鸣笛只在需要提醒和请求让行时使用。",
+        "enText": "After the alarm was cleared, the fire engine switched off its siren and returned to the station at a careful pace. It uses the siren when people need a warning and a safe path.",
+        "illustrationPrompt": "Page 11, long-lens view down the neighborhood street at late morning: the fire engine leaves quietly with warning lights off, traveling at a careful speed toward the station. An'an and Dad wave from the sidewalk, while ordinary traffic resumes in an orderly way. Keep the mood relieved and peaceful, with no emergency spectacle."
+      },
+      {
+        "page": 12,
+        "zhText": "回到街角，安安画下安全口诀：听到警笛，靠边停看，交给专业的人。她又想：救护车怎样争分夺秒？",
+        "enText": "Back at the corner, An'an drew a safety rule: hear a siren, stop in a safe place, look, and let professionals work. Then she wondered, “How does an ambulance save every minute?”",
+        "illustrationPrompt": "Page 12, warm closing tabletop-and-window scene: An'an draws a simple picture of a siren, a safe sidewalk, and a clear lane in her notebook; Dad smiles beside her. Through the window, a distant generic ambulance is only a small future-story hint, not an active emergency. End with cozy afternoon light, no readable writing in the drawing."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-30",
+    "order": 4,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 4,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "消防车", "安全启蒙", "应急知识"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile clay materials, cinematic soft daylight, gentle urban color palette, friendly rounded forms, realistic vehicle proportions, clear visual storytelling, square 1:1 composition.",
+    "characterConsistency": "Keep the same lead on every page: An'an (安安), a six-year-old Chinese girl with a round face, ear-length straight black hair, a yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Her accompanying adult is Dad, a calm Chinese man in his thirties wearing a navy jacket and beige trousers; he stays beside or just behind her and never becomes the visual focus. Firefighters wear generic protective uniforms without logos.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable license plates, watermarks, scary fire, flames, frightening smoke, injuries, panic, collisions, reckless driving, children in roadways, children touching equipment, or chase scenes; no distorted anatomy, duplicate main characters, or anthropomorphic vehicles."
+  }
+}

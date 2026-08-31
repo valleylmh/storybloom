@@ -1,0 +1,34 @@
+{
+  "_draft": "REVIEWED DRAFT — 城市汽车小队第 3 册",
+  "book": {
+    "id": "di-tie-wei-shen-me-pao-de-kuai",
+    "seriesId": "qiche",
+    "title": "地铁为什么跑得快",
+    "subtitle": "地下隧道里的直达小旅行",
+    "question": "地铁为什么跑得快？",
+    "moral": {
+      "zh": "地铁在专用轨道上行驶，少遇路口和拥堵；平顺的车轮与轨道让它稳定前进。",
+      "en": "A subway travels on its own tracks, away from traffic and crossings. Smooth wheels and rails help it move steadily."
+    },
+    "pages": [
+      {"page":1,"zhText":"安安和妈妈来到地铁站，准备去图书馆借一本车子的书。","enText":"An'an and Mom arrived at the subway station to borrow a book about vehicles from the library.","illustrationPrompt":"Wide bright city station entrance: An'an in her fixed teal jacket and orange backpack points toward a clean subway entrance with Mom beside her, bicycles and trees nearby, no readable signs or logos."},
+      {"page":2,"zhText":"站台边，银色列车安静地等着。安安问：“它怎么不怕堵车？”","enText":"A silver train waited quietly at the platform. An'an asked, “How does it avoid traffic jams?”","illustrationPrompt":"Safe platform view behind a clear safety line: rounded silver subway train waiting, An'an and Mom observe from behind the line, soft station lights, no text, no crowding."},
+      {"page":3,"zhText":"妈妈说：“地铁有自己的轨道，和汽车走的道路分开了。”","enText":"Mom said, “A subway has its own tracks, separate from the roads used by cars.”","illustrationPrompt":"Clear child-friendly cutaway-style scene showing one subway train on two dedicated rails below and quiet cars on a separate road above, An'an and Mom looking at the safe educational view, no labels or words."},
+      {"page":4,"zhText":"车门关好，列车沿着轨道滑进黑亮的隧道。","enText":"The doors closed, and the train glided along its rails into a shining tunnel.","illustrationPrompt":"Interior-to-tunnel transition: doors fully closed, An'an seated holding a strap with Mom, tunnel lights forming a gentle line outside the window, calm motion, no danger or text."},
+      {"page":5,"zhText":"隧道里没有红绿灯和十字路口，列车可以连续向前。","enText":"Inside the tunnel there are no traffic lights or crossroads, so the train can keep moving forward.","illustrationPrompt":"Dreamy but accurate tunnel scene: train follows a single smooth track through a long unobstructed tunnel, tiny traffic lights and crossings absent, An'an watches the receding lights, no text."},
+      {"page":6,"zhText":"轨道像两条平行的路，车轮沿着它们保持方向。","enText":"The rails are like two parallel roads, guiding the wheels in one direction.","illustrationPrompt":"Educational close view of rounded subway wheels meeting two parallel steel rails, with a small inset-like visual of An'an's eye observing from the window; no split panels, no labels, accurate proportions."},
+      {"page":7,"zhText":"车轮转动时，轨道帮它少拐弯、少颠簸，车身便稳稳向前。","enText":"As the wheels turn, the rails reduce sharp turns and bumps, helping the train move steadily.","illustrationPrompt":"Smooth curving track scene viewed from beside the moving train: wheels and rails aligned, gentle suspension, An'an smiling inside, no impossible floating train or text."},
+      {"page":8,"zhText":"列车驶过一站又一站，屏幕上的颜色提示下一次停靠。","enText":"The train passed one station after another, while simple colors on a screen hinted at the next stop.","illustrationPrompt":"Subway interior with a generic glowing color route display containing shapes only, An'an counts stations with fingers while Mom points out the window, no readable letters, numbers, or logos."},
+      {"page":9,"zhText":"快到站时，列车慢下来，停在站台的安全线外。","enText":"Near the station, the train slowed and stopped beside the platform, behind the safety line.","illustrationPrompt":"Train arriving slowly at a well-lit platform, fully stopped with doors aligned, An'an and Mom wait behind a clear line, staff in background, no readable signs, child-safe spacing."},
+      {"page":10,"zhText":"安安发现：快，不只是跑得快，还要准时、平稳、停得住。","enText":"An'an discovered that being fast also means arriving on time, moving smoothly, and stopping safely.","illustrationPrompt":"Warm platform scene: An'an holds a small drawing of rails, wheels, and a stop mark made of colored shapes, Mom smiles, train and station form a coherent background, no text."},
+      {"page":11,"zhText":"她们走出地下站，城市的汽车在地面慢慢排成一队。","enText":"They came back above ground, where city cars moved in a slow, patient line.","illustrationPrompt":"Split-level city exit view: An'an and Mom emerge from subway entrance while cars travel calmly on the surface and the train is hinted below, evening light, no logos or readable plates."},
+      {"page":12,"zhText":"安安抱紧新借的书，又问：“消防车为什么要鸣笛呢？”","enText":"Holding her new book close, An'an asked, “Why do fire trucks sound their sirens?”","illustrationPrompt":"Closing street-corner scene: An'an hugs a plain picture book and points toward a distant red emergency vehicle with lights but no emergency scene; Mom listens, inviting the next story, no text or fear."}
+    ],
+    "ageLabel":"4-8 岁",
+    "publishedAt":"2026-08-30",
+    "order":3,
+    "comingSoon":false,
+    "metadata":{"category":"science","ageRange":{"min":4,"max":8},"estimatedMinutes":9,"languages":["zh","en"],"seriesId":"qiche","seriesOrder":3,"personalizationEnabled":false,"tags":["城市交通","地铁","轨道","工程启蒙"],"featured":false,"bedtimeSuitable":false}
+  },
+  "imagePromptKit":{"globalStyle":"Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, lively but uncluttered modern city, accurate friendly vehicles, varied cinematic camera angles, square composition, coherent visual continuity across every page.","characterConsistency":"Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers; keep An'an as the visual focus.","negative":"No text, letters, captions, labels, logos, brand marks, readable license plates, watermarks, unsafe platform behavior, open train doors while moving, collisions, duplicated characters, distorted anatomy, scary imagery, or anthropomorphic vehicle faces."}
+}

@@ -5,6 +5,7 @@ import { isPublishedLibraryBook } from "./status";
 import { SANZIJING_BOOKS, SANZIJING_SERIES } from "./sanzijing";
 import { TANGSHI_BOOKS, TANGSHI_SERIES } from "./tangshi";
 import { XIYOUJI_BOOKS, XIYOUJI_SERIES } from "./xiyouji";
+import { QICHE_BOOKS, QICHE_SERIES } from "./qiche";
 
 // 预告占位卡（/library 首页展示，不可点击、无路由）。
 // 西游记与「好奇为什么」已建系列（见下），此处留空；后续新系列先在这里预告。
@@ -16,6 +17,7 @@ const BOOKS_BY_SERIES: Record<string, LibraryBook[]> = {
   [HAOQI_SERIES.id]: sortBooks(HAOQI_BOOKS),
   [TANGSHI_SERIES.id]: sortBooks(TANGSHI_BOOKS),
   [SANZIJING_SERIES.id]: sortBooks(SANZIJING_BOOKS),
+  [QICHE_SERIES.id]: sortBooks(QICHE_BOOKS),
 };
 
 const SERIES: LibrarySeries[] = [
@@ -24,6 +26,7 @@ const SERIES: LibrarySeries[] = [
   HAOQI_SERIES,
   TANGSHI_SERIES,
   SANZIJING_SERIES,
+  QICHE_SERIES,
 ].map((series) => ({
   ...series,
   bookCount: (BOOKS_BY_SERIES[series.id] ?? []).filter(isPublishedLibraryBook)

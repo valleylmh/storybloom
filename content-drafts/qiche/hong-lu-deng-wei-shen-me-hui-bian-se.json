@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "hong-lu-deng-wei-shen-me-hui-bian-se",
+    "seriesId": "qiche",
+    "title": "红绿灯为什么会变色",
+    "subtitle": "十字路口的轮流指挥",
+    "question": "红绿灯为什么会变色？",
+    "moral": {
+      "zh": "红绿灯用不同颜色安排轮流通行；看到信号后还要停稳、观察，再安全通过。",
+      "en": "Traffic lights use different colors to take turns. We still stop, look, and cross safely when the signal allows it."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨，安安背着橙色小背包，和妈妈走到路口。红灯、黄灯、绿灯轮流亮起来，她好奇地问：“它们为什么会变色？”",
+        "enText": "One morning, An'an and Mom reached an intersection. The red, yellow, and green lights took turns glowing. “Why do they change colors?” An'an wondered.",
+        "illustrationPrompt": "Square 3D clay-like animated-film picture-book scene. An'an, a six-year-old Chinese girl with a round face, ear-length black bob, yellow star hair clip, teal hoodie, jeans, orange mini backpack, and white sneakers with red trim, walks beside her mother, a calm Chinese woman with shoulder-length dark hair, coral windbreaker, cream trousers, and white sneakers. Wide dawn view of a friendly city intersection, three-color traffic signal visibly changing above the crossing, buses and small cars in the distance, An'an looking up with wonder. Cinematic morning light, clear depth, no readable text, no logos, no brands, no license plates, no watermark, no danger."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈指指前方：“我们去城市图书馆，沿路观察三次信号变化，找出答案。”安安点点头，开始她的颜色侦探任务。",
+        "enText": "Mom pointed ahead. “We are going to the city library. Let’s watch three signal changes along the way and solve the mystery.” An'an began her color-detective mission.",
+        "illustrationPrompt": "Square 3D clay-like animated-film picture-book scene. An'an in her teal hoodie and orange backpack points eagerly toward a leafy city route while her mother in a coral windbreaker kneels to make a gentle plan. In the background, a library dome is visible far down the sidewalk and the first signal hangs over a crosswalk. Show a small sketchbook in An'an's hand without any writing. Warm playful composition, inviting urban details, no readable text, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 3,
+        "zhText": "第一盏红灯亮起，汽车、自行车和公交车都停在停止线后。安安发现，大家像排队等候的小火车。",
+        "enText": "At the first crossing, the red light came on. Cars, bicycles, and a bus stopped behind the line. An'an thought they looked like little trains waiting in a row.",
+        "illustrationPrompt": "Square 3D clay-like animated-film picture-book scene. At a marked city intersection, a red signal glows while a compact bus, two ordinary cars, and a cyclist are all stopped neatly behind the stop line. An'an stands safely on the sidewalk beside Mom and compares the vehicles to a toy train, smiling. Low three-quarter camera angle showing wheels behind the line and generous sidewalk space. No collision, no readable signs, no brands, no license plates, no watermark, no text."
+      },
+      {
+        "page": 4,
+        "zhText": "安安数了数：一辆公交车、两辆小汽车，还有一位骑车人。红灯让不同方向的人先等一等，路口就不会挤成一团。",
+        "enText": "An'an counted one bus, two cars, and one cyclist. A red light lets one direction wait while another takes a turn, so the crossing does not become a tangled crowd.",
+        "illustrationPrompt": "Square 3D clay-like animated-film overhead view of the same intersection. An'an and Mom stand on a safe corner, An'an holding up four fingers as she counts a city bus, two small cars, and a bicycle. Vehicles in the crossing direction are paused while the perpendicular lane has open space, making the idea of turns visible. Colorful road geometry, clean stop lines, soft clay materials, no readable road text, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 5,
+        "zhText": "另一侧的行人信号变成绿色小人，安安等妈妈看清后才走。原来，车辆和行人也有各自的通行时间。",
+        "enText": "The pedestrian signal on the other side changed to a green walking figure. An'an waited for Mom to check, then stepped forward. Vehicles and people each get their own time to move.",
+        "illustrationPrompt": "Square 3D clay-like animated-film scene from sidewalk height. An'an and Mom pause at the curb, looking at an unlettered pedestrian signal showing a simple green walking figure; cars remain stopped beyond the crosswalk. Mom gestures for An'an to wait and look, while An'an leans forward with patient curiosity. The signal's color and icon are clear but contain no words. Safe spacious crossing, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 6,
+        "zhText": "绿灯亮了，妈妈牵着安安走斑马线；她们先看左边、右边，再留意转弯车辆，不在路口奔跑。",
+        "enText": "When the light turned green, Mom held An'an's hand across the zebra crossing. They looked left and right and watched for turning vehicles instead of running.",
+        "illustrationPrompt": "Square 3D clay-like animated-film picture-book scene. An'an, with her orange backpack, walks hand-in-hand with Mom across a broad zebra crossing under a green signal. Both turn their heads left and right; a car waits while making a slow, respectful turn far away. Show calm walking feet, visible curb ramps, and plenty of space. Dynamic diagonal camera but reassuring mood, no speed or danger, no readable text, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 7,
+        "zhText": "第二个路口，黄灯闪起。一辆还没进入路口的车在安全处减速停下。黄灯提醒大家准备停止，不是催人加速。",
+        "enText": "At the second intersection, the yellow light began to flash. A car that had not entered the crossing slowed and stopped where it was safe. Yellow means prepare to stop, never hurry up.",
+        "illustrationPrompt": "Square 3D clay-like animated-film scene at a second intersection after a light rain. A yellow signal glows; a small car outside the intersection gently brakes to a stop, while An'an and Mom observe from the sidewalk. An'an raises one palm in a thoughtful “slow down” gesture. Wet pavement reflects amber light, but all movement is controlled and safe. No skid, no collision, no readable text, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 8,
+        "zhText": "安安抬头看信号灯箱。妈妈说，信号控制器按设定的时序切换；有些路口还会用传感器观察车流，调整等待时间。",
+        "enText": "An'an looked up at the signal cabinet. Mom explained that a controller switches the lights in a planned order. Some intersections use sensors to notice traffic and adjust waiting time.",
+        "illustrationPrompt": "Square 3D clay-like animated-film educational cutaway. Keep An'an and Mom on a safe sidewalk looking at a traffic-signal pole with a small closed control cabinet. Beside it, show a non-textual visual metaphor: softly glowing colored paths and tiny sensor waves noticing a few cars, leading to an orderly sequence of lights. Make the technology friendly and understandable, not magical; no circuit labels, no letters, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 9,
+        "zhText": "第三个路口出现绿色左转箭头，直行车辆仍在等待。安安猜对了：箭头只给指向的车流一个专用通行时段。",
+        "enText": "At the third crossing, a green left-turn arrow appeared while straight-ahead cars still waited. An'an guessed correctly: an arrow gives only the pointed direction its own time to move.",
+        "illustrationPrompt": "Square 3D clay-like animated-film bird's-eye scene of a clean intersection. A bright green left-turn arrow signal is visible without lettering; one car follows the curved arrow lane while straight-lane cars remain stopped behind their line. An'an and Mom watch from a protected corner, An'an pointing excitedly at the matching curved movement. Clear lane separation, no close calls, no readable signs, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 10,
+        "zhText": "她们玩起“颜色侦探”：找出红、黄、绿三种灯，猜下一次谁先走。安安发现，灯变色不是心情变化，而是在轮流发口令。",
+        "enText": "They played “color detective”: find red, yellow, and green, then guess who will move next. An'an discovered that the lights do not change moods—they give turns in an orderly way.",
+        "illustrationPrompt": "Square 3D clay-like animated-film playful montage in one city plaza. An'an uses three colorful paper circles in her sketchbook as a guessing game while Mom smiles nearby; in the background, three separate traffic signals show red, amber, and green in different directions, with vehicles taking turns. Keep the circles blank and unlettered. Bright afternoon palette, visual rhythm, no brands, no license plates, no watermark, no dangerous behavior, no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "到图书馆门口，安安总结：“红灯停，黄灯准备，绿灯在确认安全后走；每个方向轮流，城市才顺畅。”",
+        "enText": "At the library, An'an summed it up: “Red means stop, yellow means prepare, and green means go after checking that it is safe. Taking turns keeps the city moving.”",
+        "illustrationPrompt": "Square 3D clay-like animated-film scene outside a welcoming city library. An'an stands on the pedestrian plaza, holding her blank sketchbook and proudly explaining her three-color discovery to Mom; behind them, a distant intersection flows calmly in separate turns. Show the same yellow star hair clip, teal hoodie, orange backpack, and red-trimmed shoes clearly. Golden light, celebratory but quiet, no readable library sign, no logos, no brands, no license plates, no watermark."
+      },
+      {
+        "page": 12,
+        "zhText": "安安把观察画进小本子，又问：“那公交车沿着路线，怎么知道下一站呢？”妈妈笑了：“下次坐一程就知道啦！”",
+        "enText": "An'an drew the observations in her little notebook, then asked, “How does a bus know which stop comes next?” Mom smiled. “Let’s ride one and find out!”",
+        "illustrationPrompt": "Square 3D clay-like animated-film closing scene. An'an and Mom leave the library toward a friendly city bus waiting at a distant stop, An'an's blank sketchbook tucked under her arm and her orange backpack bouncing. She turns back with a new question, while the traffic lights glow softly far behind them. Gentle sunset, a clear path for the next adventure, no readable route text, no logos, no brands, no license plates, no watermark."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-30",
+    "order": 1,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 1,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "汽车", "红绿灯", "交通安全", "科普启蒙"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium 3D clay-like animated-film children's picture-book illustration, warm cinematic light, playful but scientifically accurate city setting, tactile rounded materials, expressive child discovery, varied wide/medium/close camera compositions, square 1:1 frame.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length black bob, yellow star hair clip, teal green hoodie, jeans, orange mini backpack, and white sneakers with red trim. Her accompanying mother is a calm Chinese woman with shoulder-length dark hair, coral windbreaker, cream trousers, and white sneakers; Mom supports the observation and never becomes the visual focus.",
+    "negative": "No text, letters, readable labels, captions, logos, watermarks, brands, license plates, scary imagery, crashes, near misses, reckless driving, children in the roadway without an adult, or duplicated main characters."
+  }
+}

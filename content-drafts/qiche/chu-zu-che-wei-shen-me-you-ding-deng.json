@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "chu-zu-che-wei-shen-me-you-ding-deng",
+    "seriesId": "qiche",
+    "title": "出租车为什么有顶灯",
+    "subtitle": "一盏小灯告诉城市在等谁",
+    "question": "出租车顶上的灯有什么用？",
+    "moral": {
+      "zh": "出租车顶灯帮助乘客看出车辆是否在等客；乘车要在安全地点等候、上车和下车。",
+      "en": "A taxi roof lamp helps people see whether the car is available. We wait, board, and get out only at a safe place."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "周六早上，安安和妈妈要去城市科学馆。路边一辆出租车停在候车点，车顶的小灯亮着。安安问：“这盏灯有什么用？”",
+        "enText": "On Saturday morning, An'an and Mom were heading to the city science museum. A taxi waited at the taxi stand with a little roof lamp glowing. An'an asked, “What is that lamp for?”",
+        "illustrationPrompt": "Use case: illustration-story. Asset type: square children's picture-book page. Primary request: establish the taxi roof-lamp mystery. Scene/backdrop: bright Chinese city morning, a safe taxi stand beside a broad sidewalk and trees. Subject: the same warm yellow compact taxi with a plain glowing roof lamp, An'an and Mom observing from behind the curb line. Composition/framing: wide eye-level view with the lamp clearly visible and An'an as the focal child. Lighting/mood: cheerful, curious morning light. Constraints: no text, logos, brands, readable license plates, or people in the roadway."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈带安安站到人行道内侧：“我们先看清车子，再靠近。”安安发现第一个观察点：顶灯在车顶最高处，远远就能看见。",
+        "enText": "Mom led An'an to the inside of the sidewalk. “We look carefully before coming closer.” An'an found the first clue: the roof lamp sits high where people can see it from far away.",
+        "illustrationPrompt": "Medium sidewalk view at the same taxi stand. An'an points up at the small roof lamp on the yellow taxi while Mom keeps her behind a painted safety line. Show the lamp's high position and clear sightline above the car roof. Keep the taxi parked, wheels still, and the curb wide. No words, route numbers, logos, brands, license plates, or watermark."
+      },
+      {
+        "page": 3,
+        "zhText": "出租车司机叔叔下车解释：“灯亮着，通常表示我在等乘客；它不是装饰，而是给大家看的小信号。”安安点点头。",
+        "enText": "The taxi driver stepped out and explained, “When the lamp is on, it usually means I am waiting for a passenger. It is a small signal for everyone, not decoration.” An'an nodded.",
+        "illustrationPrompt": "Friendly medium shot at the parked taxi stand: a calm taxi driver in a navy jacket gestures toward the plain glowing roof lamp while An'an and Mom listen from the safe sidewalk. The yellow taxi remains the main vehicle, with the lamp bright and easy to read as a signal but containing no letters. No text, brands, logos, or readable plates."
+      },
+      {
+        "page": 4,
+        "zhText": "旁边另一辆出租车的顶灯没有亮，车里已经坐着乘客。安安猜到：“灯不亮时，它可能正在送客，不能随便拦下。”",
+        "enText": "The roof lamp on another taxi nearby was dark, and a passenger was already seated inside. An'an guessed, “When the lamp is off, it may already be carrying someone, so we should not flag it down.”",
+        "illustrationPrompt": "Clear comparison scene with two ordinary taxis parked in separate spaces: the familiar yellow taxi has a glowing roof lamp and no passenger, while a second taxi has its lamp dark and a passenger silhouette inside. An'an compares them from the sidewalk with one finger raised; Mom gently confirms. No readable signs, labels, brands, plates, or text."
+      },
+      {
+        "page": 5,
+        "zhText": "司机叔叔指指驾驶台：“顶灯由车里的开关控制。司机准备接客时打开，载着乘客时关上。”安安想起了“开”和“关”。",
+        "enText": "The driver pointed toward the dashboard. “A switch inside controls the roof lamp. I turn it on when I am ready for a passenger and off when someone is riding.” An'an remembered the two states: on and off.",
+        "illustrationPrompt": "Safe educational cutaway of the same taxi interior while it is parked: show the driver pointing to a simple non-readable dashboard switch, with a gentle visual line leading to the roof lamp outside. An'an watches from the open passenger doorway while Mom stays beside her; no hands near controls. No letters, numbers, logos, or watermark."
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈和安安在候车点排队。顶灯亮着的出租车慢慢靠到指定上车处，司机先确认车身停稳，才向她们招手。",
+        "enText": "Mom and An'an waited in line at the stand. The taxi with its lamp on moved slowly to the marked pickup spot. The driver checked that the car was fully still before waving to them.",
+        "illustrationPrompt": "Wide safe pickup scene: the yellow taxi with its roof lamp glowing has pulled completely into a marked curbside bay, wheels still. An'an and Mom wait behind a short queue line on the sidewalk; the driver waves only after stopping. Show generous space, calm traffic, and no one stepping into the road. No text, logos, brands, plates, or watermark."
+      },
+      {
+        "page": 7,
+        "zhText": "车门打开后，妈妈先看台阶和路边，再牵着安安上车。安安发现第二个观察点：顶灯、车门和乘客，都要在安全的停靠位置出现。",
+        "enText": "After the door opened, Mom checked the step and the curb before holding An'an's hand into the taxi. An'an found a second clue: the roof lamp, open door, and passenger all belong at a safe stopping place.",
+        "illustrationPrompt": "Eye-level boarding scene at the stationary taxi: Mom checks the curb and step while An'an holds her hand and boards through the curb-side door. The roof lamp remains visible above the yellow car. Keep the driver seated, the door fully open only while parked, and the roadway empty beside them. No text, signs, brands, or plates."
+      },
+      {
+        "page": 8,
+        "zhText": "上车后，妈妈关好车门，安安系上安全带。出租车驶出后，顶灯熄灭，像是在说：“现在有乘客啦。”",
+        "enText": "Inside, Mom closed the door and An'an buckled her seat belt. When the taxi drove away, its roof lamp went dark, as if saying, “A passenger is riding now.”",
+        "illustrationPrompt": "Cozy interior three-quarter view of the moving taxi after a safe departure: An'an sits belted in the rear seat beside Mom, while the plain roof lamp is visibly dark through the rear window reflection. The driver focuses on the road; no device text or readable controls. Calm city motion, no speeding, no logos, no watermark."
+      },
+      {
+        "page": 9,
+        "zhText": "路口红灯亮起，出租车停在停止线后。安安看见远处几盏顶灯：有的亮着在等客，有的熄灭正在载客。",
+        "enText": "At a red light, the taxi stopped behind the line. An'an spotted several roof lamps in the distance: some glowing while waiting, others dark while carrying passengers.",
+        "illustrationPrompt": "Safe city intersection viewed from inside the taxi: the yellow taxi is stopped behind a clear line at a red signal, and several distant taxis show a mix of glowing and dark plain roof lamps. An'an looks out with curiosity while Mom points gently; all vehicles are orderly and far apart. No readable traffic text, brands, plates, or watermark."
+      },
+      {
+        "page": 10,
+        "zhText": "科学馆到了。司机把车停进路边的安全位置，顶灯仍然熄灭。安安下车前先看清人行道，再和妈妈一起走到入口。",
+        "enText": "They reached the museum. The driver parked in a safe curbside spot, and the roof lamp stayed dark. Before getting out, An'an checked the sidewalk and walked with Mom to the entrance.",
+        "illustrationPrompt": "Warm arrival scene outside a city science museum with no readable name: the yellow taxi is fully parked at the curb, roof lamp dark, and the curb-side door open. Mom checks the sidewalk while An'an steps out holding her hand. Keep the museum entrance and traffic separated, with no text, logos, or license plates."
+      },
+      {
+        "page": 11,
+        "zhText": "她们玩起“顶灯观察”：在安全的人行道上找出一盏亮灯和一盏熄灭的灯，不追车、不跑到马路边。",
+        "enText": "They played a roof-lamp spotting game from the safe sidewalk: find one glowing lamp and one dark lamp, without chasing cars or stepping toward traffic.",
+        "illustrationPrompt": "Playful but safe sidewalk observation scene outside the museum: An'an and Mom point toward two distant taxis, one with a small glowing roof lamp and one with a dark lamp. Add a low planter as a boundary and keep every vehicle on the road, far from the child. No text, brands, plates, or watermark."
+      },
+      {
+        "page": 12,
+        "zhText": "回家路上，安安说：“顶灯是出租车给城市的小提示：亮着可能在等客，熄灭可能已经载客。”她又问：“出租车怎样找到目的地呢？”",
+        "enText": "On the way home, An'an said, “A roof lamp is a little clue for the city: a glowing one may be waiting, while a dark one may already have a passenger.” Then she asked, “How does a taxi find its destination?”",
+        "illustrationPrompt": "Gentle closing dusk shot: An'an and Mom walk home on a calm sidewalk, the yellow taxi heading away in the distance with its roof lamp dark. Add one other distant taxi with a glowing lamp as a wordless recap. The city feels safe and unhurried; no one enters the road, and there are no words, brands, plates, or watermark."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-31",
+    "order": 11,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 11,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "出租车", "公共礼仪", "出行安全", "观察游戏"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, bright but gentle Chinese city streets, believable friendly taxi scenes, varied wide/medium/close camera angles, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers. The taxi driver is a secondary adult in a navy jacket; adults guide safety and never obscure An'an or become the visual focus. Keep the same warm yellow compact taxi with a plain roof lamp across the story.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable license plates, watermarks, children in the roadway, unsafe boarding, open-door motion, chasing cars, speeding, collisions, injuries, scary imagery, duplicated characters, distorted anatomy, or anthropomorphic vehicles."
+  }
+}

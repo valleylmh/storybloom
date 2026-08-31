@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "dong-che-zu-zen-yang-yi-qi-pao",
+    "seriesId": "qiche",
+    "title": "动车组怎样一起跑",
+    "subtitle": "一节一节车厢的合作旅行",
+    "question": "动车组怎样让许多节车厢一起前进？",
+    "moral": {
+      "zh": "动车组靠车厢连接、分散动力、统一控制和细心检修一起工作；旅途中每个人也要遵守站台和车厢规则。",
+      "en": "A train set moves through connected cars, distributed power, shared control, and careful checks. Passengers also help the journey by following platform and onboard rules."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安和妈妈要去看望外婆。站台上，一列动车组一节接一节排着，安安问：“这么长的列车怎样一起跑？”",
+        "enText": "An'an and Mom were taking a train to visit Grandma. On the platform, a train set stretched car after car. An'an asked, “How can such a long train move together?”",
+        "illustrationPrompt": "Use case: illustration-story. Asset type: square children's picture-book page. Primary request: begin a train-set teamwork adventure. Scene/backdrop: bright modern Chinese station platform with a long silver-white multiple-unit train, blue accent stripe, rounded nose, and no logos or readable signs. Subject: An'an and Mom safely behind the platform line, looking along the connected cars. Composition/framing: wide perspective emphasizing the train's length and child-scale wonder. Lighting/mood: cheerful travel morning. Constraints: no text, brands, logos, readable signs, people on tracks, or unsafe platform behavior."
+      },
+      {
+        "page": 2,
+        "zhText": "车厢之间有结实的车钩，也有让乘客走过去的连通门。它们把一节节车厢连成一个会旅行的大家庭。",
+        "enText": "Strong couplers join the cars, and passage doors let passengers walk between them. The cars become one traveling family.",
+        "illustrationPrompt": "Educational cutaway close-up between two connected train cars: show a sturdy coupler below and a safe flexible passage with an open inter-car door above, both simplified and realistic. An'an and Mom observe through a protected station viewing window. No exposed hazards, text, logos, or people between moving cars."
+      },
+      {
+        "page": 3,
+        "zhText": "动车组不只靠最前面的车头。几节车厢底下装着电动机，力量分散在列车中间，大家一起推动车轮。",
+        "enText": "A multiple-unit train does not rely only on the front. Motors beneath several cars spread the power through the train and help turn the wheels together.",
+        "illustrationPrompt": "Long side cutaway of the same connected train set, with several under-floor electric motor units highlighted by gentle blue glows beneath different cars. An'an counts the power cars with Mom from a safe platform. Keep the train coherent, no text, exposed wires, brands, anthropomorphic faces, or dangerous track access."
+      },
+      {
+        "page": 4,
+        "zhText": "车顶的受电弓从接触网上取来电能。电能经过设备分配到不同车厢，像一条有秩序的能量小河。",
+        "enText": "Pantographs on the roof collect electricity from the overhead line. Equipment shares it among different cars, like an orderly little river of energy.",
+        "illustrationPrompt": "Clear roof-to-floor cutaway of the train set under an overhead line: two pantographs touch the catenary, and soft blue energy flows through sealed equipment to multiple cars. Use a gentle river-like visual metaphor without arrows or text. An'an and Mom watch from inside, safely seated. No sparks, labels, logos, or readable screens."
+      },
+      {
+        "page": 5,
+        "zhText": "司机发出出发指令，控制系统把速度变化传给整列车。前后车厢像听见同一个节拍，一起平稳加速。",
+        "enText": "When the driver gives the departure command, the control system shares the speed change through the whole train. The cars accelerate smoothly to one common beat.",
+        "illustrationPrompt": "Dynamic but calm departure scene from inside the train: An'an and Mom feel a gentle start while several connected cars move in one smooth line outside the station. A subtle rhythmic glow links the cars without words. Driver stays attentive in a distant cab, no readable controls, logos, or motion danger."
+      },
+      {
+        "page": 6,
+        "zhText": "车厢之间的连通处会轻轻活动，悬挂和空气弹簧帮助车身保持平稳。安安端着水杯，水面几乎没有摇晃。",
+        "enText": "Flexible connections, suspension, and air springs help the cars stay steady. An'an held a cup, and the water barely rippled.",
+        "illustrationPrompt": "Cozy interior demonstration: An'an holds a small cup with a nearly still water surface while Mom points to a simple, non-technical illustration of suspension beneath the carriage. Through the window, connected cars follow a gentle curve. No spills, text, labels, logos, or unsafe standing."
+      },
+      {
+        "page": 7,
+        "zhText": "列车进入弯道，轨道和控制系统让每节车厢沿着同一条路线转弯。安安发现，长长的队伍也能配合得很整齐。",
+        "enText": "As the train entered a curve, the track and control systems guided every car along the same route. An'an saw how a long line can turn together.",
+        "illustrationPrompt": "High three-quarter landscape view of the entire connected train set following a broad, gentle curve on a dedicated line. Show every car aligned and stable, with An'an and Mom visible through one window. Bright countryside and bridge, no text, signs, logos, derailment, or people near tracks."
+      },
+      {
+        "page": 8,
+        "zhText": "进站前，系统先让车速慢下来，车门只有在停稳后才会打开。安安站在黄线后，等妈妈一起上车。",
+        "enText": "Before entering the station, the system slowed the train. Doors opened only after it stopped completely. An'an waited behind the safety line and boarded with Mom.",
+        "illustrationPrompt": "Safe platform arrival: the same train is fully stopped with doors open on the platform side, An'an and Mom waiting behind the yellow safety line before boarding. Show clear spacing, calm staff in the background, no one on tracks, no readable signs, logos, or text."
+      },
+      {
+        "page": 9,
+        "zhText": "维修基地里，工作人员检查车钩、车轮、受电弓和车门。每一处都确认正常，动车组才会再次出发。",
+        "enText": "At the maintenance depot, workers checked the couplers, wheels, pantographs, and doors. The train set would depart again only after every part was confirmed safe.",
+        "illustrationPrompt": "Bright, child-safe maintenance depot scene with the same train set parked and a few uniformed adult technicians inspecting couplers, wheels, a roof pantograph, and a closed passenger door. An'an and Mom observe from a marked visitor walkway. No readable checklists, brands, logos, hazards, or children near equipment."
+      },
+      {
+        "page": 10,
+        "zhText": "在车厢里，大家把行李放稳、坐好或扶好扶手。安安说：“乘客也能帮动车组保持平稳。”",
+        "enText": "Inside the cars, passengers stored bags securely and sat down or held the handrails. An'an said, “Passengers can help the train stay steady too.”",
+        "illustrationPrompt": "Warm onboard cabin scene: An'an places a small backpack under the seat while Mom checks that a suitcase is secured, with other passengers seated calmly and holding handrails. The cabin is clean and text-free, no logos, unsafe standing, blocked aisle, or distracting devices."
+      },
+      {
+        "page": 11,
+        "zhText": "安安玩“动车组数一数”：数车厢、找车钩、看车顶的受电弓，再想想哪些车厢在提供动力。",
+        "enText": "An'an played “Count the train set”: count the cars, find the couplers, spot the roof pantographs, and imagine which cars provide power.",
+        "illustrationPrompt": "Playful observation spread at a safe station overlook: An'an and Mom use fingers to count a long train, with clear visual focus on several cars, the coupler gaps, and pantographs. Add simple blank picture icons with no words. Keep all people behind barriers and no logos or readable signs."
+      },
+      {
+        "page": 12,
+        "zhText": "动车组把许多节车厢的力量和心跳连在一起，带安安到了外婆的城市。安安说：“一起配合，就能走得又稳又远！”",
+        "enText": "The train set joined the strength and rhythm of many cars and carried An'an to Grandma's city. “Working together helps us travel far and steady!” An'an said.",
+        "illustrationPrompt": "Warm sunset closing scene: the same long silver-white train arrives at a welcoming city station, connected cars glowing softly in one continuous line. An'an and Mom wave from a window, and a grandmother waits safely on the platform behind the line. No readable station name, logos, text, or watermark."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-31",
+    "order": 14,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 14,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "动车组", "车厢连接", "分散动力", "铁路安全", "团队合作"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, bright but gentle Chinese city and high-speed rail scenes, believable long silver-white multiple-unit train with a blue accent stripe, varied wide/medium/close camera angles, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers. Keep the same long silver-white train set with rounded nose, connected cars, plain windows, blue accent stripe, and no logos across the story.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable station signs, watermarks, people on tracks, unsafe platform behavior, children near couplers or maintenance equipment, exposed electrical conductors, sparks, derailments, collisions, injuries, scary imagery, duplicated characters, distorted anatomy, or anthropomorphic train faces."
+  }
+}

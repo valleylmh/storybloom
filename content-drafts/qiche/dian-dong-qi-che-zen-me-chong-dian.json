@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "dian-dong-qi-che-zen-me-chong-dian",
+    "seriesId": "qiche",
+    "title": "电动汽车怎么充电",
+    "subtitle": "给电池补充一趟旅程的能量",
+    "question": "电动汽车怎么把电充进去？",
+    "moral": {
+      "zh": "电动汽车在充电站补充电能；成人负责操作，孩子保持距离，并记得电动车并不是对环境完全没有影响。",
+      "en": "An electric car receives energy at a charging station. Adults operate the equipment, children keep a safe distance, and an electric car still has an environmental footprint."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "早晨，安安和妈妈开车去城市图书馆。车里传来轻轻的提示音，安安问：“电动汽车怎么充电？”",
+        "enText": "One morning, An'an and Mom drove to the city library. A gentle chime came from the car, and An'an asked, “How does an electric car get charged?”",
+        "illustrationPrompt": "Warm morning establishing shot inside a family electric car parked at home: An'an sits safely in the rear seat with her orange backpack, looking toward a simple glowing battery symbol on the dashboard that has no letters or numbers. Mom is in the driver's seat preparing a library trip; home driveway and leafy street outside, car stationary, An'an is the focal child."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈说：“电动汽车把电能存进电池里。电池像一座会储存能量的小仓库，但充电要由大人来做。”",
+        "enText": "Mom explained, “An electric car stores electrical energy in its battery. The battery is like a little energy warehouse, but an adult must handle charging.”",
+        "illustrationPrompt": "Friendly educational cutaway view of the parked car: a rounded battery pack beneath the floor glows softly as colored energy dots move toward it from an imagined plug, while Mom explains and An'an listens from her seat. Keep the cutaway simple and non-technical, no wires exposed to the child, no text or labels."
+      },
+      {
+        "page": 3,
+        "zhText": "车子沿城市道路来到充电站。安安找到第一个观察点：这里有四个充电车位，每个车位都有清楚的安全线。",
+        "enText": "The car followed city streets to a charging station. An'an found her first thing to look for: four charging bays, each with a clear safety line.",
+        "illustrationPrompt": "Wide arrival view of a clean urban charging station: the family car turns slowly toward four clearly separated charging bays with painted safety lines. An'an looks out from the rear window and counts on her fingers; Mom drives attentively. Show trees, a small canopy, and other parked cars without logos, readable signs, or license plates."
+      },
+      {
+        "page": 4,
+        "zhText": "妈妈把车停在车位中央，关好电源。安安站在安全线后，只用眼睛观察，不碰充电桩、插头和电缆。",
+        "enText": "Mom centered the car in a bay and switched it off. An'an stayed behind the safety line, watching without touching the charger, plug, or cable.",
+        "illustrationPrompt": "Eye-level safety composition at the charging bay: car fully parked inside the lines, Mom exits and checks the station, while An'an stands behind the marked boundary with hands at her sides. The thick charging cable hangs on its holster; no child reaches for it. Keep the station generic, clean, and free of words or logos."
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈拿起充电连接器，检查外壳和插口没有异常，再把它插进车上的接口。听见“咔哒”，连接器锁住了。",
+        "enText": "Mom checked the connector and socket for anything unusual, then plugged it into the car. A soft click meant the connector had locked in place.",
+        "illustrationPrompt": "Close three-quarter view focused on Mom's gloved hands inserting a clean charging connector into the car's side port; a tiny sparkle suggests the safe locking click. An'an watches from behind the line, clearly not touching. Show a robust cable curve and closed port surround, no exposed electricity, labels, or brand marks."
+      },
+      {
+        "page": 6,
+        "zhText": "充电开始了。安安看到指示灯一格一格亮起，妈妈解释：“电能沿着电缆进入电池，变成可以储存的能量。”",
+        "enText": "Charging began. An'an watched the indicator glow one step at a time. Mom explained, “Electrical energy travels through the cable into the battery, where it becomes stored energy.”",
+        "illustrationPrompt": "Playful side cutaway of the stationary car and charger: soft blue energy dots travel along the connected cable into the sealed under-floor battery, while a row of abstract indicator lights gradually glows. An'an observes from the safe side of the line; Mom points from a distance. No readable numbers, words, sparks, or exposed conductors."
+      },
+      {
+        "page": 7,
+        "zhText": "安安找到第二个观察点：充电桩上有三个小指示灯，颜色和节奏会变化。她坐在休息区数灯光，耐心等候。",
+        "enText": "An'an found a second thing to look for: three little indicator lights on the charger changed color and rhythm. She counted them from the waiting area and practiced patience.",
+        "illustrationPrompt": "Cheerful medium-wide waiting-area scene: An'an sits with Mom on a bench behind the safety boundary, counting three softly glowing, abstract indicator lights on the distant charger. The connected car remains parked; keep lights icon-like but completely text-free. Add a small picture book in An'an's hands, no charging controls within her reach."
+      },
+      {
+        "page": 8,
+        "zhText": "妈妈说，充电快慢会受电池电量、充电设备和天气温度影响。电池需要被细心管理，不能一下子塞满能量。",
+        "enText": "Mom said charging speed depends on the battery level, the equipment, and the temperature. The battery is managed carefully; energy cannot simply be pushed in all at once.",
+        "illustrationPrompt": "Gentle educational composition: a safe translucent battery cutaway shows a calm flow of energy with a small thermometer icon and charger beside it, while Mom explains and An'an listens. Avoid technical readouts or text; use balanced flow arrows and warm colors to show careful management, not danger or overheating."
+      },
+      {
+        "page": 9,
+        "zhText": "安安问：“电动汽车是不是一点影响也没有？”妈妈摇摇头：“行驶时没有尾气排出，但发电、电池材料和轮胎磨损也会用资源。”",
+        "enText": "“Does an electric car have no impact at all?” An'an asked. Mom shook her head. “It has no tailpipe exhaust while driving, but making electricity and batteries, and wearing tires, still uses resources.”",
+        "illustrationPrompt": "Balanced storybook montage beside the charging station: An'an and Mom look at the car with a calm, thoughtful expression. Visualize three gentle, non-scary ideas around them without labels—clean moving air at the tailpipe, a distant mix of sun/wind/grid energy sources, and tiny tire-road dust particles. Keep the car friendly but not magical or perfectly impact-free."
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈说：“所以我们少浪费电，按需要出行，也爱护电池和轮胎。”安安点头，把这句话记在心里。",
+        "enText": "Mom said, “So we avoid wasting electricity, travel when we need to, and take care of the battery and tires.” An'an nodded and remembered.",
+        "illustrationPrompt": "Intimate bench-side scene: Mom and An'an make a simple three-part promise using gestures—turning off an unnecessary light, planning a short route on a blank map, and checking tires with an adult. The charging car remains softly in the background; An'an leads the visual story, no text or logos."
+      },
+      {
+        "page": 11,
+        "zhText": "电量够走到图书馆后，妈妈先停止充电，再拔下连接器、挂回原位。安安仍站在安全线后，等妈妈关好接口。",
+        "enText": "When there was enough energy to reach the library, Mom stopped the session, unplugged the connector, and returned it to its holder. An'an stayed behind the safety line until Mom closed the port.",
+        "illustrationPrompt": "Safe completion close-to-medium shot: Mom presses a generic stop control, unlocks and removes the connector, then hangs the cable neatly before closing the car's port. An'an waits behind the boundary with hands folded; the car stays off and parked. No sparks, wet ground, exposed contacts, words, or readable controls."
+      },
+      {
+        "page": 12,
+        "zhText": "车子安静地驶向图书馆。安安说：“电池装好了能量，安全充电、少浪费，才能走得更远。”她和妈妈开始了阅读之旅。",
+        "enText": "The car quietly drove to the library. “The battery has stored its energy,” An'an said. “Safe charging and less waste help us travel wisely.” She and Mom began their reading adventure.",
+        "illustrationPrompt": "Warm closing city-road shot: An'an and Mom ride safely toward a welcoming library, with the charged car moving calmly and no tailpipe smoke. Show the charging station shrinking in the distance, a leafy route, and a blank library facade with no readable sign. An'an looks out happily, completing the home-to-station-to-library journey."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-30",
+    "order": 10,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 10,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "电动汽车", "充电", "能源", "环保启蒙", "安全操作"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, gentle cinematic city light, believable electric car and charging equipment, playful but accurate science cutaways, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is the only accompanying adult, a calm secondary character in a coral cardigan and cream trousers. Mom drives, checks, plugs, and unplugs equipment; An'an observes from the safe boundary and remains the visual focus.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable license plates or charging displays, watermarks, child touching plugs or controls, child inside a charging bay, exposed wires, sparks, electric shock, wet electrical equipment, damaged cables, traffic collisions, scary pollution imagery, claims of zero environmental impact, duplicated characters, distorted anatomy, or anthropomorphic vehicles."
+  }
+}

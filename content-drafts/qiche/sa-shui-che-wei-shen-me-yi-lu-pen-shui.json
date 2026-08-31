@@ -1,0 +1,96 @@
+{
+  "book": {
+    "id": "sa-shui-che-wei-shen-me-yi-lu-pen-shui",
+    "seriesId": "qiche",
+    "title": "洒水车为什么一路喷水",
+    "subtitle": "给城市街道洗个清爽澡",
+    "question": "洒水车为什么要一路喷水？",
+    "moral": {
+      "zh": "洒水车用恰到好处的水帮助道路降尘、清洁；爱护城市也要珍惜每一滴水。",
+      "en": "A water-sprinkling truck uses just enough water to clean roads and settle dust. Caring for a city also means saving every drop."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨，安安背着橙色小背包走出小区。路边飘着一层灰尘，她问妈妈：“洒水车为什么一路喷水？”",
+        "enText": "One morning, An'an walked out of her neighborhood with her orange backpack. A veil of dust floated by the curb. She asked Mom, “Why does the water truck spray water all along the road?”",
+        "illustrationPrompt": "Wide morning establishing shot of a lively Chinese city neighborhood, An'an in the foreground noticing a light dusty haze near the curb while holding Mom's hand; a friendly green-and-white municipal water-sprinkling truck turns into the street in the distance, no readable markings. Show apartment trees, sidewalk, bicycle lane, and warm sunbeams making the dust visible. An'an is the clear focal child, curious rather than near traffic; Mom stays beside her."
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈指向前方：“我们跟着环卫叔叔走一小段，看看水去了哪里。”安安站在安全的人行道上观察。",
+        "enText": "Mom pointed ahead. “Let’s follow the sanitation team for a little while and see where the water goes.” An'an watched from the safe sidewalk.",
+        "illustrationPrompt": "Medium tracking view from the sidewalk: An'an and Mom stand behind a low safety rail, watching the water truck move slowly ahead. A sanitation driver in a reflective vest gives a friendly wave through the closed cab window, secondary and small. Keep a clear curb gap and visible pedestrian path; the truck's rear tank and spray bar are easy to see without any text or logos."
+      },
+      {
+        "page": 3,
+        "zhText": "出发前，叔叔检查水箱、管道和喷头。安安找到两个小观察点：水箱上的水位表，还有车尾一排整齐的喷头。",
+        "enText": "Before leaving, the driver checked the tank, pipes, and nozzles. An'an found two things to look for: the water-level gauge on the tank and the neat row of nozzles at the back.",
+        "illustrationPrompt": "Safe depot close-to-medium shot: An'an points from behind a marked line toward the truck's rounded water tank with a simple non-readable level indicator and the row of several downward-facing spray nozzles under the rear bumper. The sanitation driver checks a hose connection with gloves while Mom gently keeps An'an back. Make the two observation details visually obvious, but include no letters, numbers, brand marks, or license plates."
+      },
+      {
+        "page": 4,
+        "zhText": "车尾的喷头像一把小小的花洒。水泵把水送进管道，喷头再把水分成均匀的水雾和水流。",
+        "enText": "The nozzles at the back were like a row of little showerheads. A pump sent water through the pipes, and the nozzles spread it into an even mist and stream.",
+        "illustrationPrompt": "Three-quarter rear close-up of the truck beginning to spray: show the pump housing, pipe, and multiple nozzles with a clean fan-shaped mist touching the asphalt. Use a gentle cutaway-style visual hint of water traveling through the pipe, while keeping the truck intact and believable. An'an watches from far behind the rail, small in the background; Mom remains with her."
+      },
+      {
+        "page": 5,
+        "zhText": "到了尘土多的施工路口，车子放慢速度。水珠落在路面上，把轻飘的灰尘压住，空气看起来清亮了。",
+        "enText": "At a dusty construction intersection, the truck slowed down. Droplets settled on the road and held the loose dust down, making the air look clearer.",
+        "illustrationPrompt": "Wide, low-angle city intersection view: the water truck creeps along the edge of a construction detour, its spray fan settling dust on the asphalt rather than splashing high. Show a before-and-after feeling in one composition: a small dusty patch behind the truck and a visibly calmer, darker clean strip beneath the spray. An'an and Mom observe from a distant sidewalk; no workers or children stand in the roadway."
+      },
+      {
+        "page": 6,
+        "zhText": "安安数了数：左边、右边，还有中间，喷头各自照顾一条路面。水不是乱洒的，而是落在需要的地方。",
+        "enText": "An'an counted: left, right, and middle—each nozzle cared for one part of the road. The water was not thrown everywhere; it landed where it was needed.",
+        "illustrationPrompt": "Top-down playful observation shot of three tidy spray fans covering three lanes of asphalt in separate arcs, with small dry sidewalk edges clearly left untouched. An'an counts the three patterns using her fingers from behind the curb while Mom smiles. Keep the truck centered but not oversized; emphasize controlled coverage, distinct droplets, and safe distance."
+      },
+      {
+        "page": 7,
+        "zhText": "学校门口有人等候，叔叔先停下喷水，慢慢通过，再在空旷路段继续。洒水车要清洁道路，也要礼让行人。",
+        "enText": "People were waiting near a school. The driver stopped spraying and passed slowly, then continued on an open stretch. A water truck cleans the road and gives people room, too.",
+        "illustrationPrompt": "Respectful school-front scene viewed from the sidewalk: the water truck has its spray paused while a few adults and children wait safely behind the curb; the driver proceeds at a crawl with a wide buffer. An'an stands beside Mom, pointing to the dry safe crossing area. Show the spray restarting only farther down the open street as a soft visual continuation, with no danger, rushing, or readable school signs."
+      },
+      {
+        "page": 8,
+        "zhText": "午后的雨云飘来，路面已经湿了。叔叔关掉喷头：“这里不需要再用水，省下的水可以留给更干的路。”",
+        "enText": "Afternoon rain clouds drifted in, and the road was already wet. The driver turned off the nozzles. “This road needs no more water. We can save it for a drier one.”",
+        "illustrationPrompt": "Soft overcast street scene with a few raindrops and a naturally wet road: the truck's spray bar is visibly switched off, droplets absent from the nozzles. An'an notices the dark wet asphalt and gives a thoughtful thumbs-up; Mom and the driver discuss saving water with calm gestures. Keep the rain gentle, no puddle hazards, and make conservation the visual focus."
+      },
+      {
+        "page": 9,
+        "zhText": "一圈路线走完，水位表还在合适位置。叔叔把车开回补水点，按规定补充清洁用水，安安没有碰水管和设备。",
+        "enText": "When the route was complete, the gauge still showed a suitable level. The driver returned to the refill point and added approved clean water. An'an did not touch the hose or equipment.",
+        "illustrationPrompt": "Evening depot return: the truck parks inside a marked bay at a refill point, driver handling the hose with gloves while Mom and An'an wait behind a clear boundary. Show the level gauge and a tidy hose reel without readable symbols. An'an observes with her hands at her sides, reinforcing that adults operate equipment. Warm sunset light closes the route."
+      },
+      {
+        "page": 10,
+        "zhText": "安安和妈妈沿着清爽的街道回家。她说：“洒水车用刚刚好的水，让灰尘安静下来，也让城市更舒服！”她又问：“校车为什么要停稳再下车呢？”",
+        "enText": "An'an and Mom walked home along the refreshed street. “The water truck uses just the right amount,” An'an said. “It settles dust and helps the city feel better!” Then she asked, “Why must a school bus stop completely before we get off?”",
+        "illustrationPrompt": "Warm closing wide shot at dusk: An'an and Mom walk home on a clean, calm sidewalk beside the darker dust-settled road, while the water truck heads back to its depot in the distance. Include a tiny puddle reflecting the sky and one curious sparrow near the curb as optional observation details; no one enters the street. The complete city route feels finished, hopeful, and unhurried."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-30",
+    "order": 7,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 7,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 7,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "洒水车", "道路清洁", "节水", "工程启蒙"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, gentle cinematic daylight, lively but uncluttered Chinese city streets, accurate friendly municipal vehicles, square composition, coherent visual continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers; the sanitation driver is a secondary adult in a reflective vest and navy work clothes. Adults never obscure An'an or become the visual focus.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable license plates, watermarks, unsafe child proximity to traffic or equipment, spraying at people, collisions, road injuries, scary imagery, smoking exhaust, duplicated characters, distorted anatomy, or anthropomorphic vehicles."
+  }
+}

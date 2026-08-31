@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "xiao-che-wei-shen-me-yao-ting-wen-zai-xia-che",
+    "seriesId": "qiche",
+    "title": "校车为什么要停稳再下车",
+    "subtitle": "从车门到安全的人行道",
+    "question": "校车为什么一定要停稳再下车？",
+    "moral": {
+      "zh": "下车前先等车辆完全停稳，再听大人指引、看清周围，慢慢走到安全的人行道。",
+      "en": "Before getting off, wait until the bus has fully stopped, follow an adult's guidance, look around, and walk calmly to the safe sidewalk."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "早晨，安安背好橙色小背包，和妈妈来到校车站。她看着黄色校车问：“为什么要停稳再下车？”",
+        "enText": "In the morning, An'an came to the school-bus stop with Mom. Looking at the yellow bus, she asked, “Why must we wait until it stops before getting off?”",
+        "illustrationPrompt": "Bright morning establishing shot of a Chinese neighborhood bus stop: An'an and Mom wait behind a painted sidewalk line while a rounded yellow school bus approaches slowly. Show trees and a clear safe waiting area; no readable signs, logos, or license plates. An'an is the focal child and stays far from the roadway."
+      },
+      {
+        "page": 2,
+        "zhText": "校车靠边，司机叔叔打开警示灯，先把车停住。安安发现第一个观察点：车身旁有一条醒目的安全线。",
+        "enText": "The bus pulled to the curb. The driver turned on its warning lights and stopped completely first. An'an found a bright safety line beside the bus.",
+        "illustrationPrompt": "Side-on medium shot of the fully stopped bus at the curb, wheels still and soft amber warning lights glowing without symbols or words. An'an points from behind the sidewalk safety line as Mom stands beside her; keep the driver small through the windshield and the curb gap clear."
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈说：“等车停稳、车门打开，我们才靠近。”安安听到“咔哒”一声，才走上车，向老师问早。",
+        "enText": "Mom said, “We come closer only after the bus stops and the door opens.” An'an heard a soft click, then boarded and said good morning to the teacher.",
+        "illustrationPrompt": "Safe boarding view from inside the open doorway: the stationary bus has a sturdy handrail and one step; a kind teacher in a lavender cardigan welcomes An'an after Mom gives a calm signal. The driver remains seated in the background; no rushing or crowding and no route text."
+      },
+      {
+        "page": 4,
+        "zhText": "安安坐到座位上，系好肩带和腰带。老师提醒：“开动后要坐稳、面向前，不在车厢里走动。”",
+        "enText": "An'an sat down and fastened both the shoulder and lap belts. The teacher reminded everyone, “When the bus moves, stay seated, face forward, and do not walk around.”",
+        "illustrationPrompt": "Cozy bus interior three-quarter view: An'an is seated in a child-sized seat, correctly fastening a visible lap-and-shoulder belt while the teacher checks from the aisle. Other children sit quietly in soft focus; rounded safe seat edges, calm light, and no text or logos."
+      },
+      {
+        "page": 5,
+        "zhText": "校车沿熟悉路线出发。安安找到第二个观察点：车窗边的黄色反光条；她还数出路上经过了三棵梧桐树。",
+        "enText": "The bus set off along its familiar route. An'an found a yellow reflective strip by the window and counted three plane trees along the way.",
+        "illustrationPrompt": "Playful moving-bus interior looking out the side window: safely belted An'an points toward the bright reflective strip on the bus exterior while three distinctive plane trees pass outside. Use only gentle background motion blur; the teacher is a reassuring secondary figure."
+      },
+      {
+        "page": 6,
+        "zhText": "到路口时，司机叔叔看后视镜，也看车门附近的盲区。安安明白：站在车头或车尾旁，司机可能看不见。",
+        "enText": "At an intersection, the driver checked the mirrors and the blind area near the doors. An'an understood that someone close in front of or behind a bus may be hard for the driver to see.",
+        "illustrationPrompt": "Educational cutaway-style street-corner view: the stopped bus driver checks side mirrors, with translucent shaded blind-zone areas directly at the front and rear corners. An'an observes safely from inside beside the teacher; keep the visual explanation wordless and non-scary."
+      },
+      {
+        "page": 7,
+        "zhText": "红灯亮了，校车停在停止线后。绿灯亮起后，司机确认路况再平稳转弯，安安始终没有离开座位。",
+        "enText": "A red light appeared, and the bus stopped behind the line. When the light changed, the driver checked the road and turned smoothly while An'an stayed seated.",
+        "illustrationPrompt": "Wide view from slightly above the bus at a calm city intersection: the bus is stopped behind a clear line at a red signal, with a gentle visual continuation of its smooth turn after the signal changes. An'an remains belted and seated; signals have no readable text."
+      },
+      {
+        "page": 8,
+        "zhText": "学校到了。司机把校车停进专用车位，拉好驻车制动；车轮和车身都不再晃动。老师说：“现在可以准备下车。”",
+        "enText": "They reached school. The driver parked in the bus bay and set the parking brake. The wheels and bus were completely still. “Now you may get ready to leave,” said the teacher.",
+        "illustrationPrompt": "School arrival wide shot: the bus is neatly parked in a designated bay, wheels still, while the driver sets the brake and the teacher signals calmly from the aisle. An'an waits seated with belt fastened; show trees and a sidewalk but no school name or logo."
+      },
+      {
+        "page": 9,
+        "zhText": "车门打开，老师先看左边、右边和台阶下方，再请安安解开安全带，按顺序走下台阶。",
+        "enText": "The door opened. The teacher checked left, right, and below the step, then invited An'an to unbuckle and walk down in order.",
+        "illustrationPrompt": "Eye-level doorway safety check: the teacher inspects both sides of the empty sidewalk and the step while An'an waits, then holds the handrail as she steps down. The bus remains stationary; Mom waits well away on the sidewalk and nobody enters traffic."
+      },
+      {
+        "page": 10,
+        "zhText": "安安下车后，马上走到老师身边的人行道内侧。她没有从车头绕过去，也没有回头跑向车尾。",
+        "enText": "After getting off, An'an walked to the inside of the sidewalk beside the teacher. She did not walk around the front or run toward the back of the bus.",
+        "illustrationPrompt": "Clear overhead safety composition: An'an and the teacher walk together along the inside edge of the sidewalk, away from the bus's front and rear corners. A low fence separates traffic; Mom waves from the school entrance. No crossing, running, or blind-zone approach."
+      },
+      {
+        "page": 11,
+        "zhText": "校车等所有孩子到安全位置，才慢慢驶走。安安和妈妈一起数：“停稳、看清、再下车！”",
+        "enText": "The bus waited until every child reached a safe place, then drove away slowly. An'an and Mom counted together: “Stop, look, then get off!”",
+        "illustrationPrompt": "Warm farewell view: An'an stands beside Mom and the teacher on the sidewalk, all children safely behind a fence while the bus departs slowly with ample space. An'an holds up three fingers for the sequence; the driver is secondary and the roadway stays calm."
+      },
+      {
+        "page": 12,
+        "zhText": "进校前，安安告诉同学：“车没停稳，谁也不下车；下车后，跟着大人走到安全的地方。”她又问：“那安全带为什么能保护我们呢？”",
+        "enText": "Before class, An'an told her classmates, “No one gets off until the bus is still. After getting off, we walk with an adult to a safe place.” Then she asked, “How can a seat belt protect us?”",
+        "illustrationPrompt": "Gentle closing school-courtyard scene: An'an shares her discovery with classmates near the entrance while Mom and the teacher listen behind her. The quiet parked bus is distant; include three footprints from bus to sidewalk as a wordless recap. Bright hopeful light and a complete journey ending."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-08-30",
+    "order": 8,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 8,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "校车", "乘车安全", "盲区", "公共礼仪"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, gentle cinematic light, lively uncluttered city route, physically believable school bus and safety details, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers. The bus driver wears a navy uniform and the accompanying teacher wears a lavender cardigan; adults guide and check safety but never obscure An'an or become the visual focus.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable route numbers or license plates, watermarks, children in roadway, children near bus blind zones, running, pushing, open-door motion, collisions, injuries, scary imagery, duplicated characters, distorted anatomy, or anthropomorphic vehicles."
+  }
+}
