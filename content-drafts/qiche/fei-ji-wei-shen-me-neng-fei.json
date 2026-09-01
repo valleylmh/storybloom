@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "fei-ji-wei-shen-me-neng-fei",
+    "seriesId": "qiche",
+    "title": "飞机为什么能飞",
+    "subtitle": "翅膀、发动机和空气的合作",
+    "question": "那么重的飞机为什么能飞起来？",
+    "moral": {
+      "zh": "飞机靠机翼产生升力、发动机提供推力，再配合尾翼和驾驶控制；复杂的飞行来自许多部分一起工作。",
+      "en": "Wings create lift, engines provide thrust, and the tail and controls help steer. Flight is a team effort between many parts."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安和妈妈来到机场。停机坪上的白色客机比房子还长，安安抬头问：“这么重的飞机为什么能飞？”",
+        "enText": "An'an and Mom arrived at the airport. A white passenger plane on the apron was longer than a house. An'an looked up and asked, “How can something so heavy fly?”",
+        "illustrationPrompt": "Use case: illustration-story. Asset type: square children's picture-book page. Primary request: begin a child-friendly airplane science adventure. Scene/backdrop: bright modern Chinese airport observation area with a clean apron and distant terminal, no readable signs. Subject: same friendly white passenger airplane with a blue-green stripe, rounded nose, twin engines, and no logos; An'an and Mom watch from behind a safe railing. Composition/framing: wide establishing view showing the plane's full scale and the curious child. Lighting/mood: sunny, spacious, full of wonder. Constraints: no text, brands, logos, readable signs, people on runways, or unsafe airport access."
+      },
+      {
+        "page": 2,
+        "zhText": "安安先看机翼。机翼上面微微弯起，下面比较平，空气流过时会产生向上的力量，叫作升力。",
+        "enText": "An'an studied the wings first. They curve gently on top and are flatter underneath. As air flows around them, an upward force called lift is created.",
+        "illustrationPrompt": "Educational close three-quarter view of the same white passenger plane wing at the observation window. Use a simple translucent airflow ribbon above and below the gently curved wing to suggest lift, with An'an and Mom pointing from a safe distance. No words, labels, logos, brands, readable signs, or exposed hazards."
+      },
+      {
+        "page": 3,
+        "zhText": "飞机往前飞，空气才会持续流过机翼。安安轻轻向后吹气，妈妈说：“发动机提供的推力，让飞机向前走。”",
+        "enText": "The plane must move forward so air keeps flowing over its wings. An'an blew gently backward, and Mom said, “The engines provide thrust that moves the plane ahead.”",
+        "illustrationPrompt": "Playful side view of the same airplane moving slowly on a taxiway, with soft airflow lines over the wings and gentle non-fiery exhaust flow behind the twin engines. An'an makes a blowing gesture beside Mom in the observation area. No smoke, sparks, text, logos, brands, or runway access."
+      },
+      {
+        "page": 4,
+        "zhText": "安安把四个小纸片放在桌上：升力托住飞机，重力向下拉，推力向前走，阻力挡住空气。四种力量要保持平衡。",
+        "enText": "An'an placed four paper shapes on a table: lift holds the plane up, gravity pulls down, thrust moves it forward, and drag pushes against the air. The four forces must balance.",
+        "illustrationPrompt": "Warm indoor airport learning corner: preserve An'an and Mom identity, show a small toy airplane and four simple colored shape cards arranged around it to symbolize lift, gravity, thrust, and drag without any words or letters. Keep the real white-blue airplane visible through the window, no logos or text."
+      },
+      {
+        "page": 5,
+        "zhText": "机翼后缘的襟翼和尾部的方向舵会改变空气流动。飞行员用它们帮助飞机上升、转弯和保持方向。",
+        "enText": "Flaps on the back of the wings and a rudder on the tail change the airflow. Pilots use them to help the plane climb, turn, and keep its direction.",
+        "illustrationPrompt": "Clear educational cutaway of the same parked passenger airplane showing wing flaps and tail rudder highlighted with subtle color accents, no labels. An'an and Mom observe from a protected airport exhibit. Keep aircraft realistic, no text, logos, brands, exposed machinery, or unsafe access."
+      },
+      {
+        "page": 6,
+        "zhText": "飞机里面还有很多电脑和仪表，帮助飞行员观察速度、高度和方向。安安发现，飞行员也需要像司机一样专心看路。",
+        "enText": "Inside the plane, computers and instruments help pilots watch speed, height, and direction. An'an learned that pilots, like drivers, must stay focused on the route.",
+        "illustrationPrompt": "Safe cockpit learning scene viewed from behind a closed visitor partition: calm adult pilots focus on generic instruments with abstract shapes and no readable numbers, while An'an and Mom look through the window. Do not show private controls within reach. No text, logos, brands, alarms, or unsafe behavior."
+      },
+      {
+        "page": 7,
+        "zhText": "飞机沿着跑道加速，轮子还在地面滚动。速度越来越快，机翼获得的升力也越来越大，飞机终于离开地面。",
+        "enText": "The plane accelerated along the runway with its wheels still rolling. As it went faster, the wings made more lift, and the plane finally left the ground.",
+        "illustrationPrompt": "Cinematic but calm takeoff view of the same white-blue passenger plane rolling on a clear runway and gently lifting off. Keep the runway empty of people, engines steady with no flames, and show An'an and Mom watching from a distant terminal window. No text, logos, brands, collisions, or scary motion."
+      },
+      {
+        "page": 8,
+        "zhText": "起飞后，起落架收回机身，飞机在云朵上方平稳前进。安安看见机翼像两只安静伸开的手。",
+        "enText": "After takeoff, the landing gear folded into the body, and the plane traveled smoothly above the clouds. An'an thought the wings looked like two calm, open hands.",
+        "illustrationPrompt": "Peaceful aerial view from inside the same airplane: An'an and Mom safely seated by the window, looking at the wing above a soft sea of clouds; landing gear is visibly retracted and the plane is level. No readable seat signs, logos, text, turbulence drama, or watermark."
+      },
+      {
+        "page": 9,
+        "zhText": "飞行中，飞机会遇到不同方向的风。飞行员和自动控制系统不断做小小调整，让机身保持稳定。",
+        "enText": "In flight, the plane meets winds from different directions. Pilots and automatic controls make tiny adjustments to keep the body steady.",
+        "illustrationPrompt": "Gentle educational cabin scene: preserve An'an and Mom identity as they watch soft wind ribbons outside the window while the same airplane remains level. Add a small abstract control-surface movement on the wing, no labels or text. Everyone seated safely, no panic, logos, brands, or watermark."
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈说：“飞机能飞，不是因为它变轻了，而是升力、推力和控制一起工作。”安安点头，把四种力量再数了一遍。",
+        "enText": "Mom said, “The plane does not become light. Lift, thrust, and control work together.” An'an nodded and counted the four forces once more.",
+        "illustrationPrompt": "Thoughtful onboard scene with An'an and Mom at a tray table, looking at a blank toy-plane diagram made of colored shapes, while the same white-blue airplane wing is visible outside. Keep the visual explanation wordless, no text, logos, brands, or distracting screens."
+      },
+      {
+        "page": 11,
+        "zhText": "安安玩“飞机找秘密”：找机翼、发动机、尾翼和起落架。她发现，每个部件都有自己的工作。",
+        "enText": "An'an played “Find the airplane secrets”: spot the wings, engines, tail, and landing gear. She discovered that each part has its own job.",
+        "illustrationPrompt": "Playful airport museum scene with the same airplane shown in a clear three-quarter view and four visual focus areas—wings, twin engines, tail, and landing gear—without labels. An'an and Mom point from behind a low barrier. No words, logos, brands, or unsafe access."
+      },
+      {
+        "page": 12,
+        "zhText": "飞机飞过远方的城市。安安说：“翅膀托起它，发动机推着它，大家一起工作，飞机就能飞得又高又稳。”",
+        "enText": "The plane flew over a faraway city. An'an said, “Wings lift it, engines push it, and teamwork lets the plane fly high and steady.”",
+        "illustrationPrompt": "Warm sunset closing view from the same airplane window: An'an and Mom look happily over a distant city and coastline, with the white-blue wing steady against a glowing sky. No readable city labels, logos, brands, text, or watermark."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-01",
+    "order": 15,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 15,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "飞机", "升力", "推力", "机翼", "航空启蒙"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, bright but gentle Chinese airport and sky scenes, believable white passenger airplane with a blue-green accent stripe, varied wide/medium/close camera angles, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers. Keep the same white passenger airplane with rounded nose, blue-green stripe, twin engines, plain windows, and no logos across the story.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable airport signs, watermarks, people on runways, unsafe airport access, exposed engines, fire, smoke, sparks, crashes, turbulence panic, injuries, duplicated characters, distorted anatomy, or anthropomorphic airplane faces."
+  }
+}

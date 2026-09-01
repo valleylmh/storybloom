@@ -1,0 +1,108 @@
+{
+  "book": {
+    "id": "fei-ji-zen-yang-an-quan-qi-fei-he-jiang-luo",
+    "seriesId": "qiche",
+    "title": "飞机怎样安全起飞和降落",
+    "subtitle": "从检查表到跑道的一次旅行",
+    "question": "飞机怎样安全地起飞和降落？",
+    "moral": {
+      "zh": "起飞和降落需要检查、沟通、控制和耐心；乘客系好安全带、听从指引，也是飞行安全的一部分。",
+      "en": "Safe takeoffs and landings need checks, communication, control, and patience. Passengers also help by buckling up and following guidance."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安和妈妈准备坐飞机去海边。她看着机场跑道问：“飞机怎样安全地起飞和降落呢？”",
+        "enText": "An'an and Mom were taking a plane to the seaside. Looking toward the airport runway, she asked, “How can a plane take off and land safely?”",
+        "illustrationPrompt": "Use case: illustration-story. Asset type: square children's picture-book page. Primary request: begin a safe takeoff-and-landing adventure. Scene/backdrop: bright modern Chinese airport terminal window overlooking a runway, no readable signs. Subject: same white passenger airplane with blue-green stripe, rounded nose, twin engines, and no logos; An'an and Mom watch from the public area. Composition/framing: wide view linking terminal, runway, and curious child. Lighting/mood: calm travel morning. Constraints: no text, brands, logos, readable signs, people on runways, or unsafe airport access."
+      },
+      {
+        "page": 2,
+        "zhText": "飞机出发前，工作人员绕着机身检查轮子、机翼、发动机和舱门。每一项都要确认正常。",
+        "enText": "Before departure, ground staff walked around the plane to check the wheels, wings, engines, and doors. Every item had to be confirmed ready.",
+        "illustrationPrompt": "Child-safe airport apron inspection scene: preserve An'an and Mom identity behind a viewing barrier while adult ground staff inspect the same white-blue passenger plane's wheels, wing, engine casing, and closed doors with simple non-readable check cards. No people on active runway, text, logos, brands, or hazards."
+      },
+      {
+        "page": 3,
+        "zhText": "乘客坐好并系紧安全带。飞机离开停机位，沿着滑行道慢慢走，像汽车先开上出发的路。",
+        "enText": "Passengers sat down and buckled their seat belts. The plane left its parking spot and moved slowly along the taxiway, like a car taking the road to its starting line.",
+        "illustrationPrompt": "Warm cabin view during taxi: An'an and Mom are seated with belts fastened, looking through the window at the same white-blue airplane wing and airport taxiway. Ground vehicles stay far away, no readable signs, text, logos, brands, or unsafe standing."
+      },
+      {
+        "page": 4,
+        "zhText": "驾驶舱里，飞行员对照检查表，和地面调度员确认跑道情况。大家说清楚、听明白，才会继续。",
+        "enText": "In the cockpit, pilots checked a list and confirmed the runway with ground controllers. Everyone spoke clearly and listened carefully before continuing.",
+        "illustrationPrompt": "Safe cockpit cutaway of the same airplane: calm adult pilots review a blank checklist and communicate through generic equipment, while An'an and Mom are visible as tiny seated silhouettes behind the cockpit door. No readable text or numbers, logos, brands, or distracting devices."
+      },
+      {
+        "page": 5,
+        "zhText": "得到许可后，飞机对准跑道。发动机逐渐加大力量，飞机向前加速，安安感到身体被座椅稳稳托住。",
+        "enText": "After clearance, the plane lined up with the runway. The engines gradually added power, and An'an felt the seat hold her firmly as the plane accelerated.",
+        "illustrationPrompt": "Cinematic interior-to-runway view of the same white-blue passenger airplane aligned on a clear runway and accelerating smoothly. An'an and Mom remain belted; show steady engine airflow without flames or smoke. No text, logos, brands, other aircraft too close, or people on runway."
+      },
+      {
+        "page": 6,
+        "zhText": "机头抬起，轮子离开地面。起落架收好，飞机爬升到云朵上方，跑道慢慢变成一条细线。",
+        "enText": "The nose lifted and the wheels left the ground. The landing gear folded away, and the plane climbed above the clouds while the runway became a thin line below.",
+        "illustrationPrompt": "Peaceful climb view from inside the same airplane: An'an and Mom safely seated, looking down at the runway shrinking below; landing gear visibly retracts and the white-blue wing rises into a bright sky. No text, logos, brands, scary drop, or watermark."
+      },
+      {
+        "page": 7,
+        "zhText": "飞行途中，安安听到提示，和妈妈一起把安全带系好。遇到轻轻的颠簸，飞机会减速或调整高度。",
+        "enText": "During the flight, An'an and Mom buckled their belts when the reminder sounded. If the air bumped gently, the plane could slow down or adjust its height.",
+        "illustrationPrompt": "Calm cabin scene in the same airplane: An'an and Mom click their seat belts while a soft, non-readable indicator glows; outside, gentle cloud ripples show mild movement but no panic. Keep passengers seated, no text, logos, brands, or dangerous turbulence."
+      },
+      {
+        "page": 8,
+        "zhText": "接近目的地时，飞机开始下降。机翼上的襟翼展开一些，帮助飞机在较慢速度下保持稳定。",
+        "enText": "Near the destination, the plane began to descend. Flaps on the wings extended a little to help it stay steady at a slower speed.",
+        "illustrationPrompt": "Educational window view of the same white-blue airplane descending above a coastal city, with wing flaps slightly extended and airflow calm. An'an points from her belted seat while Mom smiles. No readable signs, text, logos, brands, or dramatic motion."
+      },
+      {
+        "page": 9,
+        "zhText": "起落架再次放下，轮子准备接触跑道。飞行员和调度员一起看风向、跑道和周围空间。",
+        "enText": "The landing gear came down again, ready to meet the runway. Pilots and controllers watched the wind, runway, and surrounding space together.",
+        "illustrationPrompt": "Clear side cutaway of the same airplane on final approach: landing gear fully extended, runway aligned below, soft wind ribbons and a distant control tower with no readable text. An'an and Mom watch safely through the window, no other aircraft nearby, logos, brands, or hazards."
+      },
+      {
+        "page": 10,
+        "zhText": "轮子轻轻碰到跑道，刹车和反推让飞机慢下来。飞机离开跑道，沿滑行道回到停机位。",
+        "enText": "The wheels touched the runway gently. Brakes and reverse thrust slowed the plane, which then left the runway and taxied back to its parking spot.",
+        "illustrationPrompt": "Safe landing sequence: the same white-blue passenger airplane touches down smoothly on a clear runway, then taxis calmly toward a gate. Show no smoke, sparks, collisions, or people on the runway; An'an and Mom remain belted inside. No text, logos, brands, or readable signs."
+      },
+      {
+        "page": 11,
+        "zhText": "安安玩“安全飞行顺序”：检查、系带、滑行、起飞、下降、落地、停稳。每一步都不能着急。",
+        "enText": "An'an played “Safe flight order”: check, buckle, taxi, take off, descend, land, and stop. Every step needs patience.",
+        "illustrationPrompt": "Playful airport learning table with An'an and Mom arranging seven blank picture tiles showing inspection, seat belt, taxiway, takeoff, descent, landing, and parked plane. The same white-blue airplane is visible outside. Use icons only, no words, labels, logos, or brands."
+      },
+      {
+        "page": 12,
+        "zhText": "飞机停稳，安安和妈妈先听指引，再走下舷梯。安安说：“安全起飞和降落，是很多人一起认真完成的旅行。”",
+        "enText": "The plane stopped completely. An'an and Mom listened to the guidance before walking down the stairs. An'an said, “A safe flight is a journey many careful people complete together.”",
+        "illustrationPrompt": "Warm arrival closing scene at a seaside airport: the same white-blue airplane fully parked with engines off, An'an and Mom descend the stairs calmly while a friendly adult ground staff member guides from the side. Keep clear apron boundaries, no readable terminal signs, text, logos, brands, or unsafe movement."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-01",
+    "order": 16,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": { "min": 4, "max": 8 },
+      "estimatedMinutes": 8,
+      "languages": ["zh", "en"],
+      "seriesId": "qiche",
+      "seriesOrder": 16,
+      "personalizationEnabled": false,
+      "tags": ["城市交通", "飞机", "起飞", "降落", "机场安全", "旅行准备"],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Premium warm 3D clay-like animated-film children's picture-book illustration, tactile rounded materials, bright but gentle Chinese airport and sky scenes, believable white passenger airplane with a blue-green accent stripe, varied wide/medium/close camera angles, square composition, coherent continuity across every page.",
+    "characterConsistency": "Keep An'an identical on every page: a six-year-old Chinese girl with a round face, ear-length straight black bob, yellow star hair clip, teal-green hooded jacket, blue jeans, orange small backpack, and white sneakers with red trim. Mom is a calm secondary adult in a coral cardigan and cream trousers. Keep the same white passenger airplane with rounded nose, blue-green stripe, twin engines, plain windows, and no logos across the story.",
+    "negative": "No text, letters, captions, labels, logos, brand marks, readable airport signs, watermarks, people on runways, unsafe airport access, exposed engines, fire, smoke, sparks, crashes, open doors while moving, unbuckled passengers, panic, injuries, duplicated characters, distorted anatomy, or anthropomorphic airplane faces."
+  }
+}

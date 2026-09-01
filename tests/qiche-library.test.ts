@@ -27,16 +27,18 @@ const EXPECTED_BOOKS = [
   { id: "chu-zu-che-zen-yang-zhao-dao-mu-de-di", pages: 12 },
   { id: "gao-tie-wei-shen-me-pao-de-kuai", pages: 12 },
   { id: "dong-che-zu-zen-yang-yi-qi-pao", pages: 12 },
+  { id: "fei-ji-wei-shen-me-neng-fei", pages: 12 },
+  { id: "fei-ji-zen-yang-an-quan-qi-fei-he-jiang-luo", pages: 12 },
 ] as const;
 
 describe("Qiche city vehicle library", () => {
-  it("publishes fourteen ordered variable-length bilingual books", () => {
+  it("publishes sixteen ordered variable-length bilingual books", () => {
     const series = getSeries("qiche");
     const books = getPublishedBooks("qiche");
 
     expect(series).toMatchObject({
       title: "城市汽车小队",
-      bookCount: 14,
+      bookCount: 16,
       ageRange: "4–8 岁",
     });
     expect(books.map(({ id, pages }) => ({ id, pages: pages.length }))).toEqual(
@@ -90,6 +92,12 @@ describe("Qiche city vehicle library", () => {
     expect(filterLibraryBooks(summaries, { query: "动车组 车厢连接" }).map((book) => book.id)).toEqual([
       "dong-che-zu-zen-yang-yi-qi-pao",
     ]);
+    expect(filterLibraryBooks(summaries, { query: "飞机 升力" }).map((book) => book.id)).toEqual([
+      "fei-ji-wei-shen-me-neng-fei",
+    ]);
+    expect(filterLibraryBooks(summaries, { query: "飞机 起飞 降落" }).map((book) => book.id)).toEqual([
+      "fei-ji-zen-yang-an-quan-qi-fei-he-jiang-luo",
+    ]);
     const firstPageText = getPublishedBooks("qiche")[0].pages[0].zhText;
     expect(summaries[0].searchText).not.toContain(firstPageText);
   });
@@ -127,7 +135,7 @@ describe("Qiche city vehicle library", () => {
     }
   });
 
-  it("includes the series and all fourteen books in the sitemap", () => {
+  it("includes the series and all sixteen books in the sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
     expect(urls.some((url) => url.endsWith("/library/qiche"))).toBe(true);
     for (const { id } of EXPECTED_BOOKS) {

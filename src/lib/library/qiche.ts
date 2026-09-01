@@ -6,6 +6,8 @@ import chuZuCheMuDiDraft from "../../../content-drafts/qiche/chu-zu-che-zen-yang
 import dianDongQiCheDraft from "../../../content-drafts/qiche/dian-dong-qi-che-zen-me-chong-dian.json";
 import diTieDraft from "../../../content-drafts/qiche/di-tie-wei-shen-me-pao-de-kuai.json";
 import dongCheZuDraft from "../../../content-drafts/qiche/dong-che-zu-zen-yang-yi-qi-pao.json";
+import feiJiAnQuanDraft from "../../../content-drafts/qiche/fei-ji-zen-yang-an-quan-qi-fei-he-jiang-luo.json";
+import feiJiWeiShenMeDraft from "../../../content-drafts/qiche/fei-ji-wei-shen-me-neng-fei.json";
 import gaoTieDraft from "../../../content-drafts/qiche/gao-tie-wei-shen-me-pao-de-kuai.json";
 import gongJiaoCheDraft from "../../../content-drafts/qiche/gong-jiao-che-zen-me-zhi-dao-xia-yi-zhan.json";
 import hongLuDengDraft from "../../../content-drafts/qiche/hong-lu-deng-wei-shen-me-hui-bian-se.json";
@@ -84,6 +86,8 @@ export const QICHE_BOOKS: LibraryBook[] = [
   chuZuCheMuDiDraft,
   gaoTieDraft,
   dongCheZuDraft,
+  feiJiWeiShenMeDraft,
+  feiJiAnQuanDraft,
 ].map((draft) => draftToLibraryBook(draft as QicheDraft));
 
 export const QICHE_SERIES: LibrarySeries = {
@@ -91,7 +95,7 @@ export const QICHE_SERIES: LibrarySeries = {
   title: "城市汽车小队",
   subtitle: "跟着安安逛城市，发现车轮里的小秘密",
   description:
-    "安安带孩子走过街区、车站、医院、出租车候车点、充电站和高铁站，在一段段有趣的城市任务里观察公交车、出租车、消防车、垃圾车、电动汽车和高铁动车怎样工作。每本都是完整的中英双语科普绘本，页数按故事需要展开，简化但不错误。",
+    "安安带孩子走过街区、车站、医院、出租车候车点、充电站、高铁站和机场，在一段段有趣的城市任务里观察公交车、出租车、消防车、垃圾车、电动汽车、高铁动车和飞机怎样工作。每本都是完整的中英双语科普绘本，页数按故事需要展开，简化但不错误。",
   accent: "#2f7180",
   ageRange: "4–8 岁",
   bookCount: QICHE_BOOKS.length,
