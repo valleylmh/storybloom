@@ -49,7 +49,7 @@ import {
 
 beforeEach(() => {
   process.env.GEMINI_API_KEY = "test-key";
-  delete process.env.DASHSCOPE_TOKEN_KEY;
+  delete process.env.BAILIAN_TOKEN_KEY;
   delete process.env.NEXT_PUBLIC_SUPABASE_URL;
   delete process.env.SUPABASE_SERVICE_ROLE_KEY;
   getCachedStoryMock.mockResolvedValue(null);
@@ -68,13 +68,13 @@ beforeEach(() => {
 
 afterEach(() => {
   delete process.env.GEMINI_API_KEY;
-  delete process.env.DASHSCOPE_TOKEN_KEY;
+  delete process.env.BAILIAN_TOKEN_KEY;
   vi.restoreAllMocks();
 });
 
 describe("narration provider fallback", () => {
   it("falls directly back to Edge when Token Plan TTS fails", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
     synthesizeTokenPlanTtsAudioMock.mockRejectedValue(
       new TokenPlanTtsError("Token Plan unavailable", 502),
@@ -100,7 +100,7 @@ describe("narration provider fallback", () => {
   });
 
   it("does not replace a failed family voice with a default provider", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     synthesizeTokenPlanTtsAudioMock.mockRejectedValue(
       new TokenPlanTtsError("family voice unavailable", 502),
     );
@@ -125,7 +125,7 @@ describe("narration provider fallback", () => {
   });
 
   it("returns a safe label for successful family voice audio", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     synthesizeTokenPlanTtsAudioMock.mockResolvedValue({
       bytes: Buffer.from([0x49, 0x44, 0x33, 0x04]),
       contentType: "audio/mpeg",

@@ -25,7 +25,7 @@ describe("private library personalization Anchor", () => {
     expect(source).toContain("createStoryCharacterAnchorToken");
     expect(source).toContain("getCachedCharacterReferenceDataUri");
     expect(source).toContain('"Cache-Control": "private, no-store, max-age=0"');
-    expect(source).not.toContain("DASHSCOPE_TOKEN_KEY");
+    expect(source).not.toContain("BAILIAN_TOKEN_KEY");
     expect(source).not.toContain("CPA_BASE_URL =");
   });
 });

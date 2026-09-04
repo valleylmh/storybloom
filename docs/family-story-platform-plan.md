@@ -505,7 +505,7 @@ interface AudioSource {
 
 数据库变化：无。没有新增 Supabase migration、表、列或 RLS；本地新建独立 IndexedDB `storybloom-reading-state`，并提供 `storybloom.readingProgress.v1` localStorage fallback。
 
-新增接口：没有新增 HTTP API。新增内部 `PlaybackState/PlaybackEvent`、`ReadingProgressRecord`、本地读写/合并函数和音频缓存失效函数；现有 `/api/audio` 请求契约、Provider endpoint、`DASHSCOPE_TOKEN_KEY` 和家庭声音配置均未改变。
+新增接口：没有新增 HTTP API。新增内部 `PlaybackState/PlaybackEvent`、`ReadingProgressRecord`、本地读写/合并函数和音频缓存失效函数；现有 `/api/audio` 请求契约、Provider endpoint、`BAILIAN_TOKEN_KEY` 和家庭声音配置均未改变。
 
 兼容性影响：馆藏与本地用户成品都采用云端 TTS 优先、浏览器语音兜底；匿名用户无需登录即可使用公共音色，并继续受 `/api/audio` 的 IP 限流保护。登录不会自动上传阅读记录；家庭录音、麦克风和声音克隆不进入主流程。既有逐页插图重试、分享、视频和页面管理功能保留。
 
@@ -612,7 +612,7 @@ interface AudioSource {
 - `GET /api/library/personalization` 只返回公开馆藏的结构化 StorySpec，可短时公共缓存。
 - `POST /api/library/personalization/anchor` 必须登录，校验家庭角色 owner 和私有路径，返回 `private, no-store` 的 Anchor 图片与短期 token；匿名请求实测返回 401。
 
-兼容性影响：原有极简创作、成长记录、完整创作和生成任务字段全部保持可选；没有来源 ID 的旧作品继续正常打开。普通创作仍沿用原角色确认逻辑。登录不会自动上传匿名草稿；没有照片的匿名用户可以使用文字 Anchor，且界面明确不承诺还原真实长相。Provider endpoint 和 `DASHSCOPE_TOKEN_KEY` 均未改动。
+兼容性影响：原有极简创作、成长记录、完整创作和生成任务字段全部保持可选；没有来源 ID 的旧作品继续正常打开。普通创作仍沿用原角色确认逻辑。登录不会自动上传匿名草稿；没有照片的匿名用户可以使用文字 Anchor，且界面明确不承诺还原真实长相。Provider endpoint 和 `BAILIAN_TOKEN_KEY` 均未改动。
 
 阶段 3 质量结果：
 
@@ -666,7 +666,7 @@ interface AudioSource {
 - `POST /api/share`：新增 `clientStoryId` 和 `expiry`，默认 `30d`；响应新增实际 `expiresAt`。
 - `DELETE /api/share`：支持 delete token、登录 owner 或登录用户按 `clientStoryId` 批量撤销；公开资源清理未完成时返回可重试状态。
 
-兼容性影响：登录仍不会自动上传本地作品或续作草稿；改标题只修改用户主动选择的本机或云端副本。匿名管理码等同撤销凭据，只在家长主动复制时离开浏览器。确认 Anchor 的临时 `storyReferenceToken` 不写入续作草稿；只继承可长期保存的角色 ID、外观确认和画风。当前私人绘本不持久化独立音频文件，生成临时资产继续由既有 TTL 管理，因此删除生命周期没有新增音频或生成任务表操作。Provider endpoint、`DASHSCOPE_TOKEN_KEY`、录音和声音克隆路径均未改变。
+兼容性影响：登录仍不会自动上传本地作品或续作草稿；改标题只修改用户主动选择的本机或云端副本。匿名管理码等同撤销凭据，只在家长主动复制时离开浏览器。确认 Anchor 的临时 `storyReferenceToken` 不写入续作草稿；只继承可长期保存的角色 ID、外观确认和画风。当前私人绘本不持久化独立音频文件，生成临时资产继续由既有 TTL 管理，因此删除生命周期没有新增音频或生成任务表操作。Provider endpoint、`BAILIAN_TOKEN_KEY`、录音和声音克隆路径均未改变。
 
 阶段 4 质量结果：
 
@@ -710,7 +710,7 @@ interface AudioSource {
 
 新增接口：没有新增 HTTP route。新增内部 `LibraryDiscoveryFilters`、搜索文本标准化、馆藏组合筛选、今晚推荐、私人作品本地匹配和规则推荐函数。云端私人作品继续通过现有 Supabase owner-only RLS 读取；搜索词不会发送给 Supabase、分析服务或生成 Provider。
 
-兼容性影响：100 本馆藏正文、现有路由、音频 Provider 顺序、`/api/audio`、`DASHSCOPE_TOKEN_KEY`、家庭声音和生成器均未改变。私人搜索只在存在非空查询时读取书架；本机作品可直接打开，只有云端副本的作品引导家长前往书架主动保存到本机后打开。睡前模式不会创建第二套播放器，也不会请求麦克风权限；退出后恢复页面滚动，播放设置和进度继续由统一阅读器保存。规则推荐只展示链接，不自动进入或播放下一本。
+兼容性影响：100 本馆藏正文、现有路由、音频 Provider 顺序、`/api/audio`、`BAILIAN_TOKEN_KEY`、家庭声音和生成器均未改变。私人搜索只在存在非空查询时读取书架；本机作品可直接打开，只有云端副本的作品引导家长前往书架主动保存到本机后打开。睡前模式不会创建第二套播放器，也不会请求麦克风权限；退出后恢复页面滚动，播放设置和进度继续由统一阅读器保存。规则推荐只展示链接，不自动进入或播放下一本。
 
 阶段 5 质量结果：
 

@@ -9,14 +9,14 @@ const originalFetch = global.fetch;
 
 afterEach(() => {
   global.fetch = originalFetch;
-  delete process.env.DASHSCOPE_TOKEN_KEY;
+  delete process.env.BAILIAN_TOKEN_KEY;
   delete process.env.TOKEN_PLAN_TTS_ENDPOINT;
   delete process.env.TOKEN_PLAN_TTS_TIMEOUT_MS;
 });
 
 describe("Token Plan TTS server", () => {
   it("treats a blank token as unconfigured", () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "   ";
+    process.env.BAILIAN_TOKEN_KEY = "   ";
     expect(hasTokenPlanTtsConfig()).toBe(false);
   });
 
@@ -30,7 +30,7 @@ describe("Token Plan TTS server", () => {
   });
 
   it("generates and downloads a valid MP3", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     const mp3 = Buffer.from([0x49, 0x44, 0x33, 0x04, 0x00, 0x00]);
     global.fetch = vi
       .fn()
@@ -82,7 +82,7 @@ describe("Token Plan TTS server", () => {
   });
 
   it("rejects an untrusted audio download URL", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({
@@ -102,7 +102,7 @@ describe("Token Plan TTS server", () => {
   });
 
   it("does not expose provider messages that may echo private text or voice IDs", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     global.fetch = vi.fn().mockResolvedValue(
       new Response(
         JSON.stringify({

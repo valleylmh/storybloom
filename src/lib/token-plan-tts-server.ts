@@ -55,14 +55,14 @@ function readPositiveInteger(name: string, fallback: number, maximum: number) {
 }
 
 export function hasTokenPlanTtsConfig() {
-  return Boolean(process.env.DASHSCOPE_TOKEN_KEY?.trim());
+  return Boolean(process.env.BAILIAN_TOKEN_KEY?.trim());
 }
 
 function getTokenPlanApiKey() {
-  const apiKey = process.env.DASHSCOPE_TOKEN_KEY?.trim();
+  const apiKey = process.env.BAILIAN_TOKEN_KEY?.trim();
   if (!apiKey) {
     throw new TokenPlanTtsError(
-      "Token Plan TTS 未配置 DASHSCOPE_TOKEN_KEY。",
+      "Token Plan TTS 未配置 BAILIAN_TOKEN_KEY。",
       503,
     );
   }

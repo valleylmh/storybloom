@@ -22,7 +22,7 @@ function resetTtsEnvironment() {
   delete process.env.GEMINI_TTS_MODEL;
   delete process.env.GEMINI_TTS_VOICE_ZH;
   delete process.env.GEMINI_TTS_VOICE_EN;
-  delete process.env.DASHSCOPE_TOKEN_KEY;
+  delete process.env.BAILIAN_TOKEN_KEY;
   delete process.env.TOKEN_PLAN_TTS_ENABLED;
   delete process.env.TOKEN_PLAN_TTS_VOICE_ZH;
   delete process.env.TOKEN_PLAN_TTS_VOICE_EN;
@@ -78,8 +78,8 @@ describe("narration request resolution", () => {
     expect(request.format).toBe("wav");
   });
 
-  it("prefers Token Plan TTS when DASHSCOPE_TOKEN_KEY is configured", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+  it("prefers Token Plan TTS when BAILIAN_TOKEN_KEY is configured", async () => {
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     process.env.GEMINI_API_KEY = "test-key";
     getCachedStoryMock.mockResolvedValue(null);
 
@@ -91,7 +91,7 @@ describe("narration request resolution", () => {
   });
 
   it("uses a trusted family voice without exposing its provider id", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     getCachedStoryMock.mockResolvedValue(null);
 
     const request = await resolveNarrationRequest(
@@ -131,7 +131,7 @@ describe("narration request resolution", () => {
   });
 
   it("skips Token Plan TTS when the token is blank", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "   ";
+    process.env.BAILIAN_TOKEN_KEY = "   ";
     process.env.GEMINI_API_KEY = "test-key";
     getCachedStoryMock.mockResolvedValue(null);
 
@@ -141,7 +141,7 @@ describe("narration request resolution", () => {
   });
 
   it("can disable Token Plan TTS without removing the token", async () => {
-    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.BAILIAN_TOKEN_KEY = "test-token";
     process.env.TOKEN_PLAN_TTS_ENABLED = "0";
     getCachedStoryMock.mockResolvedValue(null);
 

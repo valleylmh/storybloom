@@ -105,7 +105,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 
 - 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；默认读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。将 `STORY_TEXT_PROVIDER` 设为 `agnes` 时，故事文本、每日灵感邮件和角色识别三个文本调用方统一改用 Agnes 官方端点 `https://apihub.agnes-ai.com/v1`；设为 `bailian` 时改用 Token Plan 百炼兼容端点 `https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`，密钥取 `BAILIAN_TOKEN_KEY`，可用 `BAILIAN_TEXT_BASE_URL` 覆盖，默认模型为 `qwen3.6-flash`。Agnes 密钥取 `AGNES_API_KEY` 的第一把，模型仍由 `STORY_TEXT_MODEL`（或各调用方的专用变量如 `CHARACTER_VISION_MODEL`）指定，未设置时默认 `agnes-2.5-flash`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
 - 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations、Hugging Face，或配置为 GPT Image 时使用 CPA；极简模式中确认并保存的照片角色会先通过 CPA 生成统一设定稿，随后所有实际出现该角色的页面都固定使用 CPA，不回退到其他提供商。CPA 的 Gemini 图片模型继续使用 `chat/completions`；`gpt-image-*` 带参考图时自动使用支持多图的 `images/edits`，无参考图时使用 `images/generations`。可通过 `CPA_IMAGE_SIZE` 设置 GPT Image 输出尺寸，默认 `1024x1024`。临时自定义参考图仍按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 工作。`AGNES_API_KEY` 可配置多个逗号分隔的 key：绘本页面按页号稳定轮转到各 key（第 1 页用第 1 把、第 2 页用第 2 把），且每把 key 独立限流，从而并行提速并让同一页重试保持同一条生成路径。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
-- 音频：普通生成预览使用浏览器内置 `SpeechSynthesis`；绘本馆在用户点击朗读后调用 `src/app/api/audio/route.ts`，配置 `DASHSCOPE_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，失败后直接回退 Edge；未配置 Token Plan 时保留 Gemini 2.5 → Gemini 3.1 → Edge 路由。带旁白视频复用同一音频接口。家庭真人声音默认关闭；显式启用后固定使用百炼 `qwen-audio-3.0-tts-plus`，不会静默替换成其他音色。
+- 音频：普通生成预览使用浏览器内置 `SpeechSynthesis`；绘本馆在用户点击朗读后调用 `src/app/api/audio/route.ts`，配置 `BAILIAN_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，失败后直接回退 Edge；未配置 Token Plan 时保留 Gemini 2.5 → Gemini 3.1 → Edge 路由。带旁白视频复用同一音频接口。家庭真人声音默认关闭；显式启用后固定使用百炼 `qwen-audio-3.0-tts-plus`，不会静默替换成其他音色。
 
 ## 技术栈
 
@@ -171,7 +171,7 @@ pnpm dev
 
 访问 `http://localhost:3000`。
 
-本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，普通生成预览朗读使用当前设备的系统语音；绘本馆朗读和带旁白视频会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key。普通 Token Plan 绘本馆朗读与视频旁白使用独立的 `DASHSCOPE_TOKEN_KEY`；显式启用声音复刻后使用标准 `DASHSCOPE_API_KEY`，也可通过 `BAILIAN_VOICE_CLONING_API_KEY` 单独覆盖。
+本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，普通生成预览朗读使用当前设备的系统语音；绘本馆朗读和带旁白视频会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key。普通 Token Plan 绘本馆朗读与视频旁白使用独立的 `BAILIAN_TOKEN_KEY`；显式启用声音复刻后使用标准 `DASHSCOPE_API_KEY`，也可通过 `BAILIAN_VOICE_CLONING_API_KEY` 单独覆盖。
 
 ## Production Readiness v1
 
@@ -246,7 +246,7 @@ Vercel 需要在 `vercel.json` 中显式配置实际存在且鉴权的 worker/re
 
 带旁白视频需要可解码的真实音频文件，因此仍会逐页调用 `/api/audio`；选择“无旁白”不会调用 TTS。接口只允许已配置的模型与音色，并按客户端 IP 限制请求频率。
 
-配置 `DASHSCOPE_TOKEN_KEY` 时，视频旁白首先使用 Token Plan 的 `qwen-audio-3.0-tts-plus`：中文默认音色 `longanlingxin`，英文默认音色 `longanlufeng`，输出为 24 kHz MP3。未配置、空字符串或设置 `TOKEN_PLAN_TTS_ENABLED=0` 时会完全跳过；普通 Token Plan 请求失败时直接回退 Edge。可通过 `TOKEN_PLAN_TTS_VOICE_ZH`、`TOKEN_PLAN_TTS_VOICE_EN` 和 `TOKEN_PLAN_TTS_TIMEOUT_MS` 调整行为。服务端只接受可信的北京 OSS 音频地址，下载并验证 MP3 后再写入私有缓存，不会向前端暴露临时签名 URL。
+配置 `BAILIAN_TOKEN_KEY` 时，视频旁白首先使用 Token Plan 的 `qwen-audio-3.0-tts-plus`：中文默认音色 `longanlingxin`，英文默认音色 `longanlufeng`，输出为 24 kHz MP3。未配置、空字符串或设置 `TOKEN_PLAN_TTS_ENABLED=0` 时会完全跳过；普通 Token Plan 请求失败时直接回退 Edge。可通过 `TOKEN_PLAN_TTS_VOICE_ZH`、`TOKEN_PLAN_TTS_VOICE_EN` 和 `TOKEN_PLAN_TTS_TIMEOUT_MS` 调整行为。服务端只接受可信的北京 OSS 音频地址，下载并验证 MP3 后再写入私有缓存，不会向前端暴露临时签名 URL。
 
 仅当 `NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED=1` 时，绑定真人声音的家庭角色才会进入专用视频旁白路径。视频逐页请求只提交 `familyCharacterId` 和登录令牌；服务端从私有 `family_character_voices` 表读取 `voice_id`，强制传给 `qwen-audio-3.0-tts-plus`。客户端不能提交任意 `voice_id`，响应也只返回安全标签。没有克隆声音或开关关闭时继续沿用原有视频旁白。家庭真人声音失败时会明确报错，不会回退为其他人物或系统音色；重新录制期间旧的已就绪声音仍可使用，生成结果跳过长期 `story-audio` 持久化缓存。
 
@@ -362,7 +362,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=...
 # 或 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=...
 ```
 
-3. 为声音复刻配置标准百炼 API Key；浏览器不能接触这些服务端密钥。Token Plan 的 `DASHSCOPE_TOKEN_KEY` 不能用于 `voice-enrollment`：
+3. 为声音复刻配置标准百炼 API Key；浏览器不能接触这些服务端密钥。Token Plan 的 `BAILIAN_TOKEN_KEY` 不能用于 `voice-enrollment`：
 
 ```bash
 NEXT_PUBLIC_FAMILY_VOICE_CLONING_ENABLED=1
