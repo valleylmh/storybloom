@@ -35,6 +35,7 @@ const generatedSchema = z.object({
 
 const DEFAULT_CPA_TEXT_MODEL = "gemini-3-flash";
 const DEFAULT_AGNES_TEXT_MODEL = "agnes-2.5-flash";
+const DEFAULT_BAILIAN_TEXT_MODEL = "qwen3.6-flash";
 
 type CpaChatCompletionResponse = {
   choices?: Array<{ message?: { content?: string } }>;
@@ -239,7 +240,9 @@ export async function generateDailyInspiration(
           process.env.STORY_TEXT_MODEL?.trim() ||
           (endpoint.provider === "agnes"
             ? DEFAULT_AGNES_TEXT_MODEL
-            : DEFAULT_CPA_TEXT_MODEL),
+            : endpoint.provider === "bailian"
+              ? DEFAULT_BAILIAN_TEXT_MODEL
+              : DEFAULT_CPA_TEXT_MODEL),
         temperature: 0.9,
         max_tokens: 1400,
         messages: [

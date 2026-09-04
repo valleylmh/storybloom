@@ -17,6 +17,8 @@ const envKeys = [
   "CPA_API_KEY",
   "CPA_BASE_URL",
   "AGNES_API_KEY",
+  "BAILIAN_TOKEN_KEY",
+  "BAILIAN_TEXT_BASE_URL",
 ] as const;
 const originalEnv = Object.fromEntries(
   envKeys.map((key) => [key, process.env[key]]),
@@ -420,6 +422,31 @@ describe("custom story generation", () => {
     );
     const body = JSON.parse(String(init.body)) as { model: string };
     expect(body.model).toBe("agnes-2.5-flash");
+  });
+
+  it("routes story text to Bailian with the configured Qwen model", async () => {
+    process.env.STORY_TEXT_PROVIDER = "bailian";
+    process.env.BAILIAN_TOKEN_KEY = "bailian-key";
+    process.env.STORY_TEXT_MODEL = "qwen3.6-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    const fetchMock = mockCpaStory(
+      "童童的安稳小夜晚",
+      createModelPages("aligned"),
+    );
+
+    const story = await generateStoryText(soloSleepInput);
+
+    expect(story.coverTitle).toBe("童童的安稳小夜晚");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe(
+      "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+    );
+    expect((init.headers as Record<string, string>).Authorization).toBe(
+      "Bearer bailian-key",
+    );
+    const body = JSON.parse(String(init.body)) as { model: string };
+    expect(body.model).toBe("qwen3.6-flash");
   });
 
   it("does not inherit the legacy CPA timeout for Agnes text generation", async () => {

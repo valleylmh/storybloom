@@ -85,7 +85,10 @@ const STORYBOOK_COMPOSITION_RULES =
 
 const DEFAULT_CPA_STORY_MODEL = "gemini-3-flash";
 const DEFAULT_AGNES_STORY_MODEL = "agnes-2.5-flash";
+const DEFAULT_BAILIAN_STORY_MODEL = "qwen3.6-flash";
 const AGNES_TEXT_BASE_URL = "https://apihub.agnes-ai.com/v1";
+const BAILIAN_TEXT_BASE_URL =
+  "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1";
 const DEFAULT_STORY_TEXT_TIMEOUT_MS = 120_000;
 const DEFAULT_STORY_TEXT_MAX_TOKENS = 8192;
 const DEFAULT_STORY_TEXT_MAX_ATTEMPTS = 2;
@@ -93,7 +96,7 @@ const MAX_STORY_TEXT_CONTRACT_ATTEMPTS = 2;
 const STORY_TEXT_REPAIR_TEMPERATURE = 0.2;
 const STORY_TEXT_REPAIR_TOP_P = 0.8;
 
-type StoryTextProvider = "cpa" | "agnes" | "mock";
+type StoryTextProvider = "cpa" | "agnes" | "bailian" | "mock";
 
 interface ChatCompletionResponse {
   choices?: Array<{
@@ -126,7 +129,7 @@ function getCpaKey() {
   return process.env.CPA_API_KEY?.trim() || null;
 }
 
-function getStoryTextProvider(): StoryTextProvider {
+export function getStoryTextProvider(): StoryTextProvider {
   const provider =
     process.env.STORY_TEXT_PROVIDER ||
     process.env.TEXT_MODEL_PROVIDER ||
@@ -134,20 +137,22 @@ function getStoryTextProvider(): StoryTextProvider {
 
   if (provider === "mock") return "mock";
   if (provider === "agnes") return "agnes";
+  if (provider === "bailian") return "bailian";
   return "cpa";
 }
 
 export interface StoryTextEndpoint {
   baseUrl: string;
   apiKey: string;
-  provider: "cpa" | "agnes";
+  provider: "cpa" | "agnes" | "bailian";
 }
 
 /**
  * Resolve the OpenAI-compatible text endpoint shared by story generation,
  * character recognition, and the daily inspiration email.
- * `agnes` targets the official Agnes API hub; anything else (including `mock`
- * deployments that still want remote text features) falls back to the CPA relay.
+ * `agnes` targets the official Agnes API hub and `bailian` targets the Token
+ * Plan OpenAI-compatible endpoint. `mock` deployments that still want remote
+ * text features fall back to the CPA relay.
  */
 export function getStoryTextEndpoint(
   allowed?: Array<Exclude<StoryTextProvider, "mock">>,
@@ -167,6 +172,19 @@ export function getStoryTextEndpoint(
       : null;
   }
 
+  if (provider === "bailian") {
+    const apiKey = process.env.BAILIAN_TOKEN_KEY?.trim() || null;
+    const baseUrl =
+      process.env.BAILIAN_TEXT_BASE_URL?.trim() || BAILIAN_TEXT_BASE_URL;
+    return apiKey
+      ? {
+          provider: "bailian",
+          baseUrl: baseUrl.replace(/\/+$/, ""),
+          apiKey,
+        }
+      : null;
+  }
+
   const apiKey = getCpaKey();
   const baseUrl = process.env.CPA_BASE_URL?.trim();
   if (!apiKey || !baseUrl) {
@@ -179,11 +197,15 @@ export function getStoryTextEndpoint(
   };
 }
 
-function getStoryTextModelLabel(provider: StoryTextProvider) {
+export function getStoryTextModelLabel(provider: StoryTextProvider = getStoryTextProvider()) {
   if (provider === "mock") return "mock";
   return (
     process.env.STORY_TEXT_MODEL?.trim() ||
-    (provider === "agnes" ? DEFAULT_AGNES_STORY_MODEL : DEFAULT_CPA_STORY_MODEL)
+    provider === "agnes"
+      ? DEFAULT_AGNES_STORY_MODEL
+      : provider === "bailian"
+        ? DEFAULT_BAILIAN_STORY_MODEL
+        : DEFAULT_CPA_STORY_MODEL
   );
 }
 
@@ -197,7 +219,7 @@ function getPositiveIntegerEnv(name: string, fallback: number) {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
 }
 
-function getStoryTextTimeoutMs(provider: "cpa" | "agnes") {
+function getStoryTextTimeoutMs(provider: "cpa" | "agnes" | "bailian") {
   const providerFallback =
     provider === "cpa"
       ? getPositiveIntegerEnv("CPA_TEXT_TIMEOUT_MS", DEFAULT_STORY_TEXT_TIMEOUT_MS)
@@ -1495,6 +1517,42 @@ async function requestAgnesStory(
   });
 }
 
+async function requestBailianStory(
+  system: string,
+  user: string,
+  sampling: { temperature: number; topP: number },
+  repair?: StoryTextRepairContext,
+) {
+  const apiKey = process.env.BAILIAN_TOKEN_KEY?.trim();
+  if (!apiKey) {
+    return null;
+  }
+
+  const baseUrl =
+    process.env.BAILIAN_TEXT_BASE_URL?.trim() || BAILIAN_TEXT_BASE_URL;
+  return requestChatCompletionStory({
+    provider: "bailian",
+    endpoint: `${baseUrl.replace(/\/+$/, "")}/chat/completions`,
+    apiKey,
+    model:
+      process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_BAILIAN_STORY_MODEL,
+    system,
+    user,
+    timeoutMs: getStoryTextTimeoutMs("bailian"),
+    maxTokens: getPositiveIntegerEnv(
+      "STORY_TEXT_MAX_TOKENS",
+      DEFAULT_STORY_TEXT_MAX_TOKENS,
+    ),
+    maxAttempts: getPositiveIntegerEnv(
+      "STORY_TEXT_MAX_ATTEMPTS",
+      DEFAULT_STORY_TEXT_MAX_ATTEMPTS,
+    ),
+    temperature: sampling.temperature,
+    topP: sampling.topP,
+    repair,
+  });
+}
+
 function isCustomStoryAligned(input: StoryInput, pages: StoryPage[]) {
   if (
     input.theme !== "custom" ||
@@ -1678,6 +1736,8 @@ Return only valid JSON:
       const raw: string | null =
         textProvider === "agnes"
           ? await requestAgnesStory(system, user, requestSampling, repair)
+          : textProvider === "bailian"
+            ? await requestBailianStory(system, user, requestSampling, repair)
           : textProvider === "cpa"
             ? await requestCpaStory(system, user, requestSampling, repair)
             : null;
