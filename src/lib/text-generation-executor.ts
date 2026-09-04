@@ -7,7 +7,11 @@ import {
   hasFamilyCharacterReference,
 } from "@/lib/family-story-characters";
 import { createStoryCharacterAnchorToken } from "@/lib/story-character-anchor";
-import { generateStoryText } from "@/lib/story-generator";
+import {
+  generateStoryText,
+  getStoryTextModelLabel,
+  getStoryTextProvider,
+} from "@/lib/story-generator";
 import {
   cacheStory,
   cacheTextGenerationTask,
@@ -296,8 +300,8 @@ export async function executeTextGeneration(input: ExecuteTextGenerationInput) {
       operation: "text.task",
       task: input.task.taskId,
       story: input.task.storyId,
-      provider: "cpa",
-      model: process.env.STORY_TEXT_MODEL?.trim() || "gemini-3-flash",
+      provider: getStoryTextProvider(),
+      model: getStoryTextModelLabel(),
       status: generated.status,
       duration: Date.now() - startedAt,
     });
@@ -308,8 +312,8 @@ export async function executeTextGeneration(input: ExecuteTextGenerationInput) {
         operation: "text.task",
         task: input.task.taskId,
         story: input.task.storyId,
-        provider: "cpa",
-        model: process.env.STORY_TEXT_MODEL?.trim() || "gemini-3-flash",
+        provider: getStoryTextProvider(),
+        model: getStoryTextModelLabel(),
         status: error instanceof StaleTextGenerationLeaseError
           ? "stale_ignored"
           : "failed",

@@ -16,6 +16,10 @@ import {
   rateLimiter,
 } from "@/lib/storage";
 import { normalizeCharacterName } from "@/lib/story-input";
+import {
+  getStoryTextModelLabel,
+  getStoryTextProvider,
+} from "@/lib/story-generator";
 import { buildStoryVisualBible } from "@/lib/story-visual-bible";
 import {
   createPublicStoryInput,
@@ -1157,8 +1161,8 @@ export async function POST(req: NextRequest) {
       {
         operation: "text.generate_request",
         story: storyId,
-        provider: "cpa",
-        model: process.env.STORY_TEXT_MODEL?.trim() || "gemini-3-flash",
+        provider: getStoryTextProvider(),
+        model: getStoryTextModelLabel(),
         status: "failed",
         errorClass: classifyGenerationError(error),
       },
