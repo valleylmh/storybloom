@@ -1,0 +1,15 @@
+<view class="screen">
+  <view class="tabs">
+    <button class="{{tab === 'recent' ? 'active' : 'quiet'}}" data-tab="recent" bindtap="changeTab">最近阅读</button>
+    <button class="{{tab === 'favorites' ? 'active' : 'quiet'}}" data-tab="favorites" bindtap="changeTab">我的收藏</button>
+  </view>
+  <view wx:for="{{books}}" wx:key="id" class="row">
+    <view class="entry" data-id="{{item.id}}" bindtap="openBook" role="button" aria-label="继续阅读{{item.title}}">
+      <view class="cover"><media-image src="{{item.cover}}" label="{{item.title}}封面" /></view>
+      <view class="copy"><view class="title">{{item.title}}</view><view class="muted">{{item.seriesTitle}}</view><view class="progress">{{item.pageNumber ? '读到第 ' + item.pageNumber + ' / ' + item.pageCount + ' 页' : '还没开始阅读'}}</view></view>
+    </view>
+    <button class="favorite quiet {{item.favorite ? 'hearted' : ''}}" data-id="{{item.id}}" catchtap="toggle" aria-label="{{item.favorite ? '取消收藏' : '收藏'}}{{item.title}}">{{item.favorite ? '♥' : '♡'}}</button>
+  </view>
+  <view wx:if="{{!books.length}}" class="empty"><view>{{tab === 'recent' ? '还没有阅读记录' : '还没有收藏'}}</view><view class="muted">选一本喜欢的故事，从这里开始。</view><button class="primary" bindtap="browse">去绘本馆看看</button></view>
+  <view class="footnote muted">收藏和阅读记录仅保存在本机</view>
+</view>

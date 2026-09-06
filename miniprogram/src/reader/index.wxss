@@ -1,0 +1,32 @@
+.reader { padding: 0 18px calc(100px + env(safe-area-inset-bottom)); }
+.reader-meta { display: flex; align-items: center; gap: 2px; padding: 8px 0 14px; }
+.series { flex: 1; min-width: 0; color: #9a553b; font-size: 14px; }
+.heart { width: 44px; padding: 0; font-size: 26px; }
+.hearted { color: #bd5734; }
+.reader-meta button:last-child { padding-right: 0; }
+.texts { padding: 14px 0 0; }
+.paragraph { display: block; white-space: pre-wrap; overflow-wrap: break-word; padding: 10px 8px; border-radius: 12px; }
+.zh { font-size: 20px; line-height: 1.85; }
+.en { font-size: 16px; line-height: 1.8; color: #736252; margin-top: 4px; }
+.controls { position: fixed; z-index: 10; bottom: 0; left: 0; right: 0; padding: 12px 18px calc(12px + env(safe-area-inset-bottom)); background: #fffdf8; border-top: 1px solid #e8dfd3; }
+.pagination { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pagination button { flex: 1; max-width: 140px; }
+.page-number { min-width: 58px; text-align: center; font-size: 14px; color: #796b5a; }
+.guide-backdrop { position: fixed; z-index: 30; inset: 0; background: rgba(42,34,28,.45); display: flex; align-items: flex-end; }
+.guide-panel { width: 100%; background: #fffdf8; border-radius: 24px 24px 0 0; padding-bottom: env(safe-area-inset-bottom); }
+.guide-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 18px; font-size: 19px; font-weight: 600; }
+.guide-scroll { height: 64vh; }
+.guide-content { padding: 4px 22px 28px; }
+.guide-section { margin-bottom: 24px; }
+.guide-title { font-weight: 600; color: #a64f30; margin-bottom: 8px; }
+.guide-body { display: block; font-size: 16px; line-height: 1.9; white-space: pre-wrap; }
+
+.with-audio { padding-bottom: calc(210px + env(safe-area-inset-bottom)); }
+.highlight { background: #fbe8d2; color: #563920; }
+.audio-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
+.audio-controls picker { flex: 1; min-width: 0; }
+.language { min-height: 44px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #786b5b; }
+.language text { font-size: 15px; color: #5c4738; }
+.play { min-width: 112px; }
+.audio-error { color: #a0462e; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
+.completed { color: #6a7045; font-size: 13px; margin-bottom: 8px; }

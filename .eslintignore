@@ -6,3 +6,4 @@ content-drafts/
 coverage/
 cloudflare-env.d.ts
 next-env.d.ts
+miniprogram/

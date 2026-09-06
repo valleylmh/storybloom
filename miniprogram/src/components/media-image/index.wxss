@@ -1,0 +1,7 @@
+:host { display: block; width: 100%; }
+.media { width: 100%; padding-top: 100%; position: relative; overflow: hidden; border-radius: 16px; background: #eee5d7; }
+.picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+.placeholder, .retry { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 12px; font-size: 13px; color: #75695c; text-align: center; }
+.placeholder { pointer-events: none; }
+.retry { width: 100%; height: 100%; background: #eee5d7; border-radius: 16px; line-height: 1.6; }
+.retry::after { border: none; }

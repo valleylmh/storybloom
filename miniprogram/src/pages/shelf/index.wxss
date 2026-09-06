@@ -1,0 +1,12 @@
+.tabs { display: flex; gap: 8px; margin-bottom: 22px; background: #eee6da; padding: 4px; border-radius: 18px; }
+.tabs button { flex: 1; }
+.tabs .active { background: #fffdf8; color: #aa4b2b; font-weight: 600; }
+.row { display: flex; align-items: center; padding: 16px 0; border-bottom: 1px solid #e6ddcf; gap: 8px; }
+.entry { display: flex; align-items: center; flex: 1; min-width: 0; gap: 14px; }
+.cover { width: 80px; flex: none; }
+.copy { flex: 1; min-width: 0; }
+.title { font-weight: 600; line-height: 1.5; margin-bottom: 4px; overflow-wrap: break-word; }
+.progress { margin-top: 6px; font-size: 13px; color: #a15337; }
+.favorite { width: 44px; flex: none; font-size: 26px; padding: 0; }
+.hearted { color: #bd5734; }
+.footnote { margin-top: 28px; text-align: center; font-size: 12px; }

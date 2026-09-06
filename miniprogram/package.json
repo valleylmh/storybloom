@@ -1,0 +1,13 @@
+{
+  "name": "storybloom-miniprogram",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "prepare:app": "cd .. && npm run mini:prepare",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "5.2.3",
+    "typescript": "^5.6.0"
+  }
+}

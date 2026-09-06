@@ -1,0 +1,23 @@
+{
+  "pages": ["pages/catalog/index", "pages/shelf/index"],
+  "subPackages": [{ "root": "reader", "pages": ["index"] }],
+  "window": {
+    "navigationBarTitleText": "绘本馆",
+    "navigationBarBackgroundColor": "#f8f3e9",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f3e9",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#756b60",
+    "selectedColor": "#be5530",
+    "backgroundColor": "#fffdf8",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/catalog/index", "text": "绘本馆" },
+      { "pagePath": "pages/shelf/index", "text": "我的书架" }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

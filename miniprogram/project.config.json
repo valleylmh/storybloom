@@ -1,0 +1,9 @@
+{
+  "description": "StoryBloom 静态绘本馆",
+  "miniprogramRoot": "dist/",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "StoryBloom 绘本馆",
+  "setting": { "es6": true, "minified": true, "urlCheck": true },
+  "packOptions": { "ignore": [], "include": [] }
+}

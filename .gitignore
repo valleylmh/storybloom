@@ -38,3 +38,26 @@ tsconfig.tsbuildinfo
 .claude
 storybloom-promo/
 .playwright-cli/
+
+# Mini program: public runtime output only, local settings never uploaded
+miniprogram/dist/
+miniprogram/src/data/
+miniprogram/src/reader/data/
+miniprogram/config.local.json
+miniprogram/project.private.config.json
+miniprogram/project.local.config.json
+miniprogram/assets-manifest.json
+miniprogram/export-report.json
+miniprogram/preview/
+
+miniprogram/release/
+
+miniprogram/web-media-preview/
+
+miniprogram/audio-cache/
+
+miniprogram/audio-preview/
+
+miniprogram/api-audio-preview/
+
+miniprogram/full-library/

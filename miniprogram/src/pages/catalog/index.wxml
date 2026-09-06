@@ -1,0 +1,17 @@
+<view class="screen">
+  <text class="eyebrow">STORYBLOOM · 亲子共读</text>
+  <view class="heading">今晚，先读一本好故事</view>
+  <view class="muted intro">{{count}} 本中英双语绘本，陪孩子慢慢长大</view>
+  <view class="search"><text aria-hidden="true">⌕</text><input value="{{query}}" bindinput="onSearch" placeholder="搜索绘本名称、关键词" confirm-type="search" aria-label="搜索绘本名称、关键词" /></view>
+  <view class="filters-sticky"><scroll-view class="filters" scroll-x="{{true}}" scroll-into-view="{{selectedTab}}" show-scrollbar="{{false}}">
+    <button id="series-all" class="filter {{!seriesId ? 'selected' : ''}}" data-id="" bindtap="selectSeries" aria-label="全部系列">全部</button>
+    <button wx:for="{{series}}" wx:key="id" id="series-{{item.id}}" class="filter {{seriesId === item.id ? 'selected' : ''}}" data-id="{{item.id}}" bindtap="selectSeries">{{item.title}}</button>
+  </scroll-view></view>
+  <view class="books">
+    <view wx:for="{{books}}" wx:key="id" class="book" data-id="{{item.id}}" bindtap="openBook" role="button" aria-label="阅读{{item.title}}">
+      <media-image src="{{item.cover}}" label="{{item.title}}封面" />
+      <view class="title">{{item.title}}</view>
+    </view>
+  </view>
+  <view wx:if="{{!books.length}}" class="empty"><view>没有找到相关绘本</view><view>试试其他关键词或系列</view></view>
+</view>
