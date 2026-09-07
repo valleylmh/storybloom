@@ -99,6 +99,7 @@ describe("mini native page wiring", () => {
     invoke(reader, "onLoad", { id: book.id });
     expect(reader.data.audioEnabled).toBe(true);
     expect(tracks).toHaveLength(0);
+    invoke(reader, "imageLoaded", { detail: { src: (reader.data.current as { image: string }).image } });
     invoke(reader, "toggleAudio"); tracks[0].events.play();
     expect(reader.data.highlight).toBe("zh");
     tracks[0].events.ended(); tracks[1].events.play();
@@ -123,6 +124,7 @@ describe("mini native page wiring", () => {
     const { open, fixture, tracks } = runtime(true, true);
     const reader = open("reader/index");
     invoke(reader, "onLoad", { id: fixture.catalog.books[0].id });
+    invoke(reader, "imageLoaded", { detail: { src: (reader.data.current as { image: string }).image } });
     invoke(reader, "toggleAudio"); tracks[0].events.play();
     expect(reader.data.highlight).toBe("zh");
     expect(reader.changeLanguage).toBeUndefined();
@@ -135,6 +137,7 @@ describe("mini native page wiring", () => {
     invoke(reader, "toggleAudio"); expect(reader.data.active).toBe(false);
     invoke(reader, "next"); manager.currentTime = 30; tracks[0].events.seeked(); invoke(reader, "onShow");
     expect(reader.data.pageIndex).toBe(3); expect(reader.data.active).toBe(false);
+    invoke(reader, "imageLoaded", { detail: { src: (reader.data.current as { image: string }).image } });
     invoke(reader, "toggleAudio"); tracks[0].events.play();
     invoke(reader, "onUnload"); manager.currentTime = 42;
     invoke(reader, "onLoad", { id: fixture.catalog.books[0].id }); invoke(reader, "onShow");
@@ -233,6 +236,48 @@ describe("mini native page wiring", () => {
     component.data.requested = false;
     visible({ intersectionRatio: 1 });
     expect(component.data.requested).toBe(false);
+  });
+  it("offers retry after 15 seconds and accepts a late image success", () => {
+    vi.useFakeTimers();
+    try {
+      const { open } = runtime(); const component = open("components/media-image/index");
+      Object.assign(component, component.methods);
+      component.properties = { src: "/slow.webp", eager: true };
+      component.data.sourceKey = "/slow.webp";
+      component.triggerEvent = vi.fn();
+      const life = component.lifetimes as Record<string, () => void>;
+      life.attached.call(component); vi.advanceTimersByTime(15000);
+      expect(component.data.status).toBe("slow");
+      invoke(component, "loaded", { currentTarget: { dataset: { source: "/slow.webp" } } });
+      expect(component.data.status).toBe("ready");
+      expect(component.triggerEvent).toHaveBeenCalledWith("ready", { src: "/slow.webp" });
+      invoke(component, "retry"); life.detached.call(component); vi.advanceTimersByTime(15000);
+      expect(component.data.status).toBe("loading");
+    } finally { vi.useRealTimers(); }
+  });
+  it("waits for the illustration before starting audio and cancels that intent on hide", () => {
+    const { open, fixture, tracks } = runtime(true, true); const reader = open("reader/index");
+    const book = fixture.books[fixture.catalog.books[0].id];
+    invoke(reader, "onLoad", { id: book.id }); invoke(reader, "toggleAudio");
+    expect(reader.data.waitingForImage).toBe(true); expect(tracks).toHaveLength(0);
+    invoke(reader, "onHide");
+    invoke(reader, "imageLoaded", { detail: { src: book.pages[0].image } });
+    expect(tracks).toHaveLength(0);
+    invoke(reader, "onShow"); invoke(reader, "next"); invoke(reader, "toggleAudio");
+    invoke(reader, "imageLoaded", { detail: { src: book.pages[1].image } });
+    expect(tracks).toHaveLength(1); expect(reader.data.waitingForImage).toBe(false);
+  });
+  it("preloads only the next two pages after the current image is ready", () => {
+    const { open, fixture } = runtime(); const reader = open("reader/index");
+    const book = fixture.books[fixture.catalog.books[0].id];
+    invoke(reader, "onLoad", { id: book.id });
+    expect(reader.data.imageLookahead).toEqual([]);
+    invoke(reader, "imageLoaded", { detail: { src: "/stale.webp" } });
+    expect(reader.data.imageLookahead).toEqual([]);
+    invoke(reader, "imageLoaded", { detail: { src: book.pages[0].image } });
+    expect(reader.data.imageLookahead).toEqual(book.pages.slice(1, 3).map(p => p.image));
+    invoke(reader, "onHide"); expect(reader.data.imageLookahead).toEqual([]);
+    invoke(reader, "onShow"); expect(reader.data.imageLookahead).toHaveLength(2);
   });
   it("loads the current reading illustration immediately and ignores stale image events", () => {
     const { open } = runtime();

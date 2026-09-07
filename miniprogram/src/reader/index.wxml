@@ -1,19 +1,20 @@
 <view wx:if="{{ready}}" class="reader {{audioEnabled ? 'with-audio' : ''}}">
   <view class="reader-meta"><text class="series">{{summary.seriesTitle}}</text><button class="quiet heart {{favorite ? 'hearted' : ''}}" bindtap="favorite" aria-label="{{favorite ? '取消收藏' : '收藏'}}">{{favorite ? '♥' : '♡'}}</button><button class="quiet" bindtap="openGuide">阅读指南</button></view>
   <view class="spread" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
-    <media-image eager="{{true}}" src="{{current.image}}" label="{{summary.title}}第{{pageIndex + 1}}页插图，点击放大" mode="aspectFit" bind:open="preview" />
+    <media-image eager="{{true}}" src="{{current.image}}" label="{{summary.title}}第{{pageIndex + 1}}页插图，点击放大" mode="aspectFit" bind:open="preview" bind:ready="imageLoaded" />
     <view class="texts">
       <text class="paragraph zh {{highlight === 'zh' ? 'highlight' : ''}}" user-select="{{true}}">{{current.zh}}</text>
       <text class="paragraph en {{highlight === 'en' ? 'highlight' : ''}}" user-select="{{true}}">{{current.en}}</text>
     </view>
   </view>
+  <view class="image-lookahead" aria-hidden="{{true}}"><image wx:for="{{imageLookahead}}" wx:key="*this" src="{{item}}" lazy-load="{{false}}" /></view>
   <view class="controls">
     <view wx:if="{{audioEnabled}}">
       <view wx:if="{{audioError}}" class="audio-error" aria-live="polite">{{audioError}}</view>
       <view wx:if="{{status === 'ended'}}" class="completed">这本故事读完啦</view>
       <view class="audio-controls">
         <text class="language">中文朗读</text>
-        <button class="primary play" bindtap="toggleAudio">{{status === 'loading' ? '加载中 · 暂停' : active ? 'Ⅱ 暂停' : '▶ 播放'}}</button>
+        <button class="primary play" bindtap="toggleAudio">{{waitingForImage ? '等插画 · 取消' : status === 'loading' ? '加载中 · 暂停' : active ? 'Ⅱ 暂停' : '▶ 播放'}}</button>
       </view>
     </view>
     <view class="pagination"><button disabled="{{pageIndex === 0}}" bindtap="previous">‹ 上一页</button><text class="page-number">{{pageIndex + 1}} / {{pageCount}}</text><button disabled="{{pageIndex + 1 === pageCount}}" bindtap="next">下一页 ›</button></view>

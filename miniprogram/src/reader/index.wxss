@@ -28,3 +28,7 @@
 .play { min-width: 112px; }
 .audio-error { color: #a0462e; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
 .completed { color: #6a7045; font-size: 13px; margin-bottom: 8px; }
+
+/* Native image requests warm the cache after the visible illustration is ready. */
+.image-lookahead { position: fixed; left: -10px; top: -10px; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+.image-lookahead image { width: 1px; height: 1px; }

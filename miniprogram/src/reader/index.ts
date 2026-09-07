@@ -1,3 +1,4 @@
+import { readerImageLookahead } from "../core/reader-images";
 import { catalog } from "../core/content";
 import { readShelf, saveProgress, toggleFavorite } from "../core/device";
 import type { Book, BookPage, BookSummary, GuideSection } from "../core/types";
@@ -14,11 +15,14 @@ Page({
     current: EMPTY_PAGE, pageIndex: 0, pageCount: 0, favorite: false,
     guide: [] as GuideSection[], guideOpen: false,
     backgroundEnabled: false,
+    imageLookahead: [] as string[], waitingForImage: false,
     audioEnabled: false, active: false, status: "idle", highlight: "", audioError: "",
   },
   _book: undefined as Book | undefined,
   _audio: undefined as NarrationController | undefined,
   _unsubscribeBackground: undefined as (() => void) | undefined,
+  _visible: true,
+  _loadedImage: "",
   _touch: undefined as { x: number; y: number } | undefined,
 
   onLoad(options: Record<string, string | undefined>) {
@@ -39,12 +43,26 @@ Page({
     this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
     if (audioEnabled && !this.data.backgroundEnabled) this._audio = new NarrationController(book.pages, () => wx.createInnerAudioContext(), state => this.syncAudio(state), pageIndex);
   },
-  onHide() { this._audio?.pause(); this._unsubscribeBackground?.(); this._unsubscribeBackground = undefined; },
+  onHide() { this._visible = false; this.setData({ imageLookahead: [], waitingForImage: false }); this._audio?.pause(); this._unsubscribeBackground?.(); this._unsubscribeBackground = undefined; },
   onUnload() { this.onHide(); this._audio?.destroy(); },
   onShow() {
+    this._visible = true;
     backgroundNarration.syncPosition();
     if (!this._unsubscribeBackground) this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
     else this.syncBackground(backgroundNarration.state);
+    this.preloadImages();
+  },
+  imageLoaded(event: WechatMiniprogram.CustomEvent<{ src: string }>) {
+    if (event.detail.src !== this.data.current.image) return;
+    this._loadedImage = event.detail.src;
+    this.preloadImages();
+    if (this.data.waitingForImage && this._visible) {
+      this.setData({ waitingForImage: false }); this.toggleAudio();
+    }
+  },
+  preloadImages() {
+    if (!this._book || !this._visible || this._loadedImage !== this.data.current.image) return;
+    this.setData({ imageLookahead: readerImageLookahead(this._book.pages, this.data.pageIndex) });
   },
   syncBackground(state: BackgroundState) {
     if (!this.data.backgroundEnabled) return;
@@ -74,6 +92,10 @@ Page({
   },
   toggleAudio() {
     if (!this._book || !this.data.summary) return;
+    if (this.data.waitingForImage) { this.setData({ waitingForImage: false }); return; }
+    if (!this.data.active && this._loadedImage !== this.data.current.image) {
+      this.setData({ waitingForImage: true }); return;
+    }
     if (this.data.backgroundEnabled) {
       if (this.data.active) backgroundNarration.pause();
       else void backgroundNarration.start(this._book, this.data.summary, this.data.pageIndex);
@@ -84,6 +106,7 @@ Page({
   },
   selectPage(pageIndex: number) {
     if (!this._book || pageIndex < 0 || pageIndex >= this._book.pages.length || pageIndex === this.data.pageIndex) return;
+    this.setData({ waitingForImage: false });
     if (this._audio) { this._audio.selectPage(pageIndex); return; }
     if (backgroundNarration.state.bookId === this._book.id && backgroundNarration.selectPage(pageIndex)) return;
     const active = this.data.active;

@@ -1,5 +1,6 @@
 <view class="media">
   <image wx:if="{{src && visible && requested}}" class="picture" src="{{src}}" mode="{{mode}}" lazy-load="{{false}}" data-source="{{sourceKey}}" bindload="loaded" binderror="failed" bindtap="preview" aria-label="{{label}}" />
   <view wx:if="{{status === 'loading' && src && requested}}" class="placeholder" aria-live="polite">图片加载中…</view>
+  <button wx:if="{{status === 'slow'}}" class="retry" catchtap="retry" aria-label="重新加载{{label}}">图片加载较慢，点击重试</button>
   <button wx:if="{{status === 'error' || !src}}" class="retry" catchtap="retry" aria-label="重新加载{{label}}">加载失败，点击重试</button>
 </view>
