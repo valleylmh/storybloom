@@ -37,7 +37,7 @@ export class ApiNarrationSource implements NarrationSource {
   private pending?: WechatMiniprogram.RequestTask;
   private reject?: (error: Error) => void;
   private epoch = 0;
-  constructor(private endpoint: string, private pages: BookPage[]) {}
+  constructor(private endpoint: string, private pages: BookPage[], private requestMode?: "zh-en") {}
   cancel() {
     this.epoch++;
     const pending = this.pending;
@@ -50,7 +50,7 @@ export class ApiNarrationSource implements NarrationSource {
     if (!/^https:\/\/[^\s?#@]+\/api\/audio$/.test(this.endpoint)) return Promise.reject(new Error("朗读接口地址无效"));
     const text = this.pages[pageIndex]?.[language];
     if (!text?.trim()) return Promise.reject(new Error("本页没有可朗读文字"));
-    const key = JSON.stringify([this.endpoint, language, text]);
+    const key = JSON.stringify([this.endpoint, this.requestMode || language, text]);
     const cached = cache.get(key);
     if (cached && cached.expires > Date.now()) {
       cache.delete(key); cache.set(key, cached);
@@ -63,7 +63,7 @@ export class ApiNarrationSource implements NarrationSource {
       this.pending = wx.request({
         url: this.endpoint, method: "POST", timeout: 60000,
         header: { "content-type": "application/json" },
-        data: { text, mode: language, sampleRate: 24000 },
+        data: { text, mode: this.requestMode || language, sampleRate: 24000 },
         success: response => {
           if (token !== this.epoch) return;
           this.pending = undefined;

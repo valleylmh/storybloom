@@ -29,6 +29,7 @@ import {
   type PlaybackError,
   type PlaybackState,
 } from "@/lib/reader/playback-machine";
+import { BookAudioTransport, type BookAudio } from "@/lib/reader/book-audio-transport";
 import type { StoryPage } from "@/types";
 
 const NARRATION_OPTIONS: Array<{
@@ -108,6 +109,7 @@ function toPlaybackError(error: unknown): PlaybackError {
 
 export default function LibraryNarrationToolbar({
   pages,
+  chineseAudio,
   storyKey,
   currentPageIndex,
   turnModeActive,
@@ -128,6 +130,7 @@ export default function LibraryNarrationToolbar({
   onEnterBedtimeMode,
 }: {
   pages: StoryPage[];
+  chineseAudio?: BookAudio;
   storyKey: string;
   currentPageIndex: number;
   turnModeActive: boolean;
@@ -159,6 +162,7 @@ export default function LibraryNarrationToolbar({
   const stateRef = useRef(state);
   stateRef.current = state;
   const runRef = useRef(0);
+  const bookTransportRef = useRef<BookAudioTransport | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const browserCancelRef = useRef<(() => void) | null>(null);
   const browserHighlightRef = useRef<BrowserNarrationMode | null>(null);
@@ -184,6 +188,8 @@ export default function LibraryNarrationToolbar({
 
   const clearMedia = useCallback(
     (removeSource = true) => {
+      bookTransportRef.current?.destroy();
+      bookTransportRef.current = null;
       browserCancelRef.current?.();
       browserCancelRef.current = null;
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
@@ -459,6 +465,38 @@ export default function LibraryNarrationToolbar({
         message: `正在准备第 ${pageIndex + 1} 页…`,
       });
 
+      if (preferCloudTts && mode === "zh" && chineseAudio) {
+        const audio = audioRef.current;
+        if (!audio) { failPlayback(new Error("浏览器音频播放器未准备好。")); return; }
+        bookTransportRef.current = new BookAudioTransport(audio, chineseAudio, pageIndex, resumeFromMs, {
+          autoAdvance: () => stateRef.current.autoAdvance,
+          position: (index, positionMs, durationMs) => {
+            if (runRef.current !== runId) return;
+            dispatch({ type: "TIMELINE_POSITION", pageIndex: index, positionMs, durationMs });
+            if (previousPageIndexRef.current !== index) onPageIndexChange(index);
+          },
+          playing: () => {
+            if (runRef.current !== runId) return;
+            dispatch({ type: "PLAY_STARTED", source: "cloud", message: "中文连续朗读 · 已准备好" });
+            setHighlight("zh");
+          },
+          paused: positionMs => {
+            if (runRef.current !== runId) return;
+            dispatch({ type: "PAUSED", positionMs }); setHighlight(null);
+          },
+          ended: index => finishPage(runId, index),
+          error: () => { if (runRef.current === runId) failPlayback(new Error("中文音频加载失败，请检查网络后重试。")); },
+        });
+        try { await audio.play(); }
+        catch {
+          if (runRef.current === runId) {
+            dispatch({ type: "AUTOPLAY_BLOCKED", source: "cloud", message: "音频已准备好，请点击继续播放。" });
+            setHighlight(null);
+          }
+        }
+        return;
+      }
+
       if (!preferCloudTts) {
         try {
           await playBrowserFallback(
@@ -598,6 +636,8 @@ export default function LibraryNarrationToolbar({
     },
     [
       cancelCurrentSession,
+      chineseAudio,
+      onPageIndexChange,
       currentPageIndex,
       failPlayback,
       finishPage,
@@ -718,6 +758,13 @@ export default function LibraryNarrationToolbar({
   );
 
   useEffect(() => {
+    const sync = () => { if (document.visibilityState === "visible") bookTransportRef.current?.sync(); };
+    document.addEventListener("visibilitychange", sync);
+    window.addEventListener("pageshow", sync);
+    return () => { document.removeEventListener("visibilitychange", sync); window.removeEventListener("pageshow", sync); };
+  }, []);
+
+  useEffect(() => {
     onPlaybackStateChange?.(state);
   }, [onPlaybackStateChange, state]);
 
@@ -743,6 +790,10 @@ export default function LibraryNarrationToolbar({
     const previousPageIndex = previousPageIndexRef.current;
     if (previousPageIndex === currentPageIndex) return;
     previousPageIndexRef.current = currentPageIndex;
+    if (languageMode === "zh" && bookTransportRef.current) {
+      if (bookTransportRef.current.pageIndex !== currentPageIndex) bookTransportRef.current.selectPage(currentPageIndex);
+      return;
+    }
     const continuePlayback =
       stateRef.current.status === "playing" ||
       stateRef.current.status === "loading";
@@ -756,7 +807,7 @@ export default function LibraryNarrationToolbar({
       const timer = window.setTimeout(() => void startPagePlayback(0), 0);
       return () => window.clearTimeout(timer);
     }
-  }, [cancelCurrentSession, currentPageIndex, startPagePlayback]);
+  }, [cancelCurrentSession, currentPageIndex, languageMode, startPagePlayback]);
 
   useEffect(() => {
     const previousMode = previousLanguageModeRef.current;

@@ -2,6 +2,9 @@ import { access, mkdir, readFile, readdir, rm, stat, writeFile, copyFile } from 
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
+import { bookAudioHash } from "./lib/miniprogram-book-audio";
+import { validBookAudio } from "../miniprogram/src/core/book-audio";
+import type { BookAudio } from "../miniprogram/src/core/types";
 import { getAllSeries, getSeriesBooks } from "../src/lib/library";
 import { exportMiniContent, type AudioManifest } from "./lib/miniprogram-content";
 
@@ -33,6 +36,15 @@ async function prepare() {
   const audio: AudioManifest = config.audioManifest
     ? JSON.parse(await readFile(path.resolve(project, config.audioManifest), "utf8")) : {};
   const exported = exportMiniContent(getAllSeries(), getSeriesBooks, config.mediaBaseUrl || "", audio);
+  let fullAudio: Record<string, BookAudio> = {};
+  for (const filename of ["chinese-audio-manifest.json", "book-audio-cache/manifest.json"]) {
+    try { Object.assign(fullAudio, JSON.parse(await readFile(path.join(project, filename), "utf8"))); }
+    catch (error) { if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error; }
+  }
+  for (const book of Object.values(exported.books)) {
+    const audio = fullAudio[book.id];
+    if (audio && audio.contentHash === bookAudioHash(book) && validBookAudio(audio, book.pages.length)) book.chineseAudio = audio;
+  }
   for (const image of exported.images) await access(path.join(root, image.source));
   await rm(path.join(source, "data"), { recursive: true, force: true });
   await rm(path.join(source, "reader/data"), { recursive: true, force: true });
@@ -65,12 +77,12 @@ async function prepare() {
   const report = {
     books: exported.catalog.books.length, series: exported.catalog.series.length,
     pages: Object.values(exported.books).reduce((sum, book) => sum + book.pages.length, 0),
-    images: exported.images.length, audioSegments: exported.audioSegments,
+    images: exported.images.length, preparedBooks: Object.values(exported.books).filter(book => book.chineseAudio).length, audioSegments: exported.audioSegments,
     mediaConfigured: Boolean(config.mediaBaseUrl), mainBytes, readerBytes,
   };
   await json(path.join(project, "export-report.json"), report);
   console.log(JSON.stringify(report, null, 2));
   if (!report.mediaConfigured) console.log("尚未配置 OSS 域名：可检查文字和页面，图片暂显示重试提示。");
-  if (!report.audioSegments) console.log("尚未接入预生成音频清单；当前纯图文版不提供朗读入口。");
+  if (!report.audioSegments && !report.preparedBooks) console.log("尚未接入预生成音频清单；当前纯图文版不提供朗读入口。");
 }
 prepare().catch(error => { console.error(error instanceof Error ? error.message : "小程序准备失败"); process.exitCode = 1; });

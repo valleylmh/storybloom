@@ -13,6 +13,7 @@ import {
   type StoryContentType,
 } from "@/lib/reading-progress";
 import type { PlaybackState } from "@/lib/reader/playback-machine";
+import type { BookAudio } from "@/lib/reader/book-audio-transport";
 import type { StoryPage } from "@/types";
 import LibraryBookReader, {
   type ReaderMode,
@@ -21,6 +22,7 @@ import LibraryNarrationToolbar from "@/components/library/LibraryNarrationToolba
 
 export default function LibraryBookExperience({
   title,
+  chineseAudio,
   pages,
   accent,
   storyKey,
@@ -34,6 +36,7 @@ export default function LibraryBookExperience({
   retryingIllustrationPages = [],
   personalizeHref,
 }: {
+  chineseAudio?: BookAudio;
   title: string;
   pages: StoryPage[];
   accent: string;
@@ -293,6 +296,7 @@ export default function LibraryBookExperience({
 
         <section className="library-narration-tools" aria-label="绘本朗读">
           <LibraryNarrationToolbar
+            chineseAudio={chineseAudio}
             pages={pages}
             storyKey={storyKey}
             currentPageIndex={pageIndex}

@@ -12,7 +12,7 @@
       <view wx:if="{{audioError}}" class="audio-error" aria-live="polite">{{audioError}}</view>
       <view wx:if="{{status === 'ended'}}" class="completed">这本故事读完啦</view>
       <view class="audio-controls">
-        <picker range="{{languageLabels}}" value="{{modeIndex}}" bindchange="changeLanguage" aria-label="选择朗读语言"><view class="language">朗读语言 <text>{{languageLabels[modeIndex]}} ▾</text></view></picker>
+        <text class="language">中文朗读</text>
         <button class="primary play" bindtap="toggleAudio">{{status === 'loading' ? '加载中 · 暂停' : active ? 'Ⅱ 暂停' : '▶ 播放'}}</button>
       </view>
     </view>

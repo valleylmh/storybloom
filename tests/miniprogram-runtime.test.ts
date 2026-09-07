@@ -10,13 +10,14 @@ type Definition = Record<string, unknown> & { data: Record<string, unknown> };
 function invoke(target: Definition, method: string, ...args: unknown[]) {
   return (target[method] as (...args: unknown[]) => unknown).apply(target, args);
 }
-function runtime(narrated = false) {
+function runtime(narrated = false, background = false) {
   const series = getAllSeries().slice(0, 1);
   const fixture = exportMiniContent(series, id => getSeriesBooks(id).slice(0, 2), "https://media.example.com");
   if (narrated) {
     for (const summary of fixture.catalog.books) {
       summary.readerPath = "/reader-0/index";
-      fixture.books[summary.id].pages.forEach((page, index) => { page.audio = { zh: `/reader-0/audio/${index}-zh.mp3`, en: `/reader-0/audio/${index}-en.mp3` }; });
+      if (background) fixture.books[summary.id].chineseAudio = { url: "https://example.com/book.mp3", pageStarts: fixture.books[summary.id].pages.map((_, i) => i * 10), duration: fixture.books[summary.id].pages.length * 10, contentHash: "test" };
+      fixture.books[summary.id].pages.forEach((page, index) => { page.audio = { zh: `${background ? "https://example.com" : ""}/reader-0/audio/${index}-zh.mp3`, en: `${background ? "https://example.com" : ""}/reader-0/audio/${index}-en.mp3` }; });
     }
   }
   const tracks: Array<{ src: string; events: Record<string, () => void>; pause: ReturnType<typeof vi.fn>; destroy: ReturnType<typeof vi.fn> }> = [];
@@ -29,6 +30,17 @@ function runtime(narrated = false) {
     setNavigationBarTitle: vi.fn(), previewImage: vi.fn(), setInnerAudioOption: vi.fn(),
     getStorageSync: (key: string) => stored.get(key),
     setStorageSync: (key: string, value: unknown) => stored.set(key, structuredClone(value)),
+    getBackgroundAudioManager: () => {
+      if (tracks.length) return tracks[0];
+      const track = wx.createInnerAudioContext();
+      return Object.assign(track, {
+        onTimeUpdate: (fn: () => void) => { track.events.time = fn; },
+        onSeeked: (fn: () => void) => { track.events.seeked = fn; },
+        currentTime: 0, seek: vi.fn(),
+        onPause: (fn: () => void) => { track.events.pause = fn; },
+        onStop: (fn: () => void) => { track.events.stop = fn; },
+      });
+    },
     createInnerAudioContext: vi.fn(() => {
       if (!narrated) throw new Error("No audio expected in text/image test");
       const events: Record<string, () => void> = {};
@@ -77,7 +89,7 @@ describe("mini native page wiring", () => {
     options.fail();
     expect(wx.showToast).toHaveBeenCalledWith(expect.objectContaining({ title: "声音设置失败，请关闭手机静音后重试" }));
   });
-  it("routes narrated books to their own package and wires bilingual audio, progress and background pause", () => {
+  it("routes packaged Chinese narration and pauses foreground audio when hidden", () => {
     const { open, fixture, tracks, wx } = runtime(true);
     const book = fixture.catalog.books[0];
     const catalogPage = open("pages/catalog/index");
@@ -87,15 +99,14 @@ describe("mini native page wiring", () => {
     invoke(reader, "onLoad", { id: book.id });
     expect(reader.data.audioEnabled).toBe(true);
     expect(tracks).toHaveLength(0);
-    invoke(reader, "changeLanguage", { detail: { value: "2" } });
     invoke(reader, "toggleAudio"); tracks[0].events.play();
     expect(reader.data.highlight).toBe("zh");
     tracks[0].events.ended(); tracks[1].events.play();
-    expect(reader.data.highlight).toBe("en");
-    expect(reader.data.pageIndex).toBe(0);
-    tracks[1].events.ended(); tracks[2].events.play();
+    expect(reader.data.highlight).toBe("zh");
     expect(reader.data.pageIndex).toBe(1);
-    expect(reader.data.current).toEqual(fixture.books[book.id].pages[1]);
+    tracks[1].events.ended(); tracks[2].events.play();
+    expect(reader.data.pageIndex).toBe(2);
+    expect(reader.data.current).toEqual(fixture.books[book.id].pages[2]);
     invoke(reader, "onHide");
     expect(reader.data.active).toBe(false);
     expect(reader.data.highlight).toBe("");
@@ -104,9 +115,31 @@ describe("mini native page wiring", () => {
     expect(tracks).toHaveLength(3);
     invoke(reader, "onUnload");
     const shelf = open("pages/shelf/index"); invoke(shelf, "onShow");
-    expect(shelf.data.books).toEqual(expect.arrayContaining([expect.objectContaining({ id: book.id, pageNumber: 3 })]));
+    expect(shelf.data.books).toEqual(expect.arrayContaining([expect.objectContaining({ id: book.id, pageNumber: 4 })]));
     invoke(shelf, "openBook", { currentTarget: { dataset: { id: book.id } } });
     expect(wx.navigateTo).toHaveBeenLastCalledWith(expect.objectContaining({ url: `/reader-0/index?id=${encodeURIComponent(book.id)}` }));
+  });
+  it("uses one Chinese track for hidden page sync and paused navigation without a language picker", () => {
+    const { open, fixture, tracks } = runtime(true, true);
+    const reader = open("reader/index");
+    invoke(reader, "onLoad", { id: fixture.catalog.books[0].id });
+    invoke(reader, "toggleAudio"); tracks[0].events.play();
+    expect(reader.data.highlight).toBe("zh");
+    expect(reader.changeLanguage).toBeUndefined();
+    const manager = tracks[0] as typeof tracks[0] & { currentTime: number };
+    invoke(reader, "onHide"); expect(reader.data.active).toBe(true);
+    manager.currentTime = 12; tracks[0].events.time(); expect(reader.data.pageIndex).toBe(0);
+    invoke(reader, "onShow"); expect(reader.data.pageIndex).toBe(1);
+    invoke(reader, "next"); manager.currentTime = 20; tracks[0].events.seeked();
+    expect(reader.data.pageIndex).toBe(2); expect(reader.data.active).toBe(true);
+    invoke(reader, "toggleAudio"); expect(reader.data.active).toBe(false);
+    invoke(reader, "next"); manager.currentTime = 30; tracks[0].events.seeked(); invoke(reader, "onShow");
+    expect(reader.data.pageIndex).toBe(3); expect(reader.data.active).toBe(false);
+    invoke(reader, "toggleAudio"); tracks[0].events.play();
+    invoke(reader, "onUnload"); manager.currentTime = 42;
+    invoke(reader, "onLoad", { id: fixture.catalog.books[0].id }); invoke(reader, "onShow");
+    expect(reader.data.pageIndex).toBe(4); expect(reader.data.active).toBe(true);
+    expect(tracks).toHaveLength(1);
   });
   it("loads catalog through native JS module resolution and retains filter state on navigation", () => {
     const { open, fixture, wx } = runtime();

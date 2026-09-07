@@ -1,3 +1,4 @@
+import { getLibraryChineseAudio } from "@/lib/library-book-audio";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -232,6 +233,7 @@ export default async function LibraryBookPage({
       ) : null}
 
       <LibraryBookExperience
+        chineseAudio={getLibraryChineseAudio(series.id, book.id, book.pages)}
         title={book.title}
         pages={book.pages}
         accent={series.accent}

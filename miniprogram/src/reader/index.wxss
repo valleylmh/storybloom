@@ -24,9 +24,7 @@
 .with-audio { padding-bottom: calc(210px + env(safe-area-inset-bottom)); }
 .highlight { background: #fbe8d2; color: #563920; }
 .audio-controls { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; }
-.audio-controls picker { flex: 1; min-width: 0; }
 .language { min-height: 44px; display: flex; align-items: center; gap: 10px; font-size: 13px; color: #786b5b; }
-.language text { font-size: 15px; color: #5c4738; }
 .play { min-width: 112px; }
 .audio-error { color: #a0462e; font-size: 13px; line-height: 1.5; margin-bottom: 8px; }
 .completed { color: #6a7045; font-size: 13px; margin-bottom: 8px; }

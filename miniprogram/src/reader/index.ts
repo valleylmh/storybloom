@@ -2,24 +2,23 @@ import { catalog } from "../core/content";
 import { readShelf, saveProgress, toggleFavorite } from "../core/device";
 import type { Book, BookPage, BookSummary, GuideSection } from "../core/types";
 import content from "./data/books";
-import { ApiNarrationSource } from "../core/api-narration";
+import { backgroundNarration, type BackgroundState } from "../core/background-narration";
 import { NarrationController, type NarrationState } from "../core/narration";
-import type { AudioMode } from "../core/types";
 
 const books = content as unknown as Record<string, Book>;
 const EMPTY_PAGE: BookPage = { zh: "", en: "", image: "", audio: { zh: "", en: "" } };
 
-const MODES: AudioMode[] = ["zh", "en", "both"];
 Page({
   data: {
     ready: false, missing: false, summary: null as BookSummary | null,
     current: EMPTY_PAGE, pageIndex: 0, pageCount: 0, favorite: false,
     guide: [] as GuideSection[], guideOpen: false,
+    backgroundEnabled: false,
     audioEnabled: false, active: false, status: "idle", highlight: "", audioError: "",
-    languageLabels: ["中文", "英文", "中英"], modeIndex: 0,
   },
   _book: undefined as Book | undefined,
   _audio: undefined as NarrationController | undefined,
+  _unsubscribeBackground: undefined as (() => void) | undefined,
   _touch: undefined as { x: number; y: number } | undefined,
 
   onLoad(options: Record<string, string | undefined>) {
@@ -34,20 +33,39 @@ Page({
     this.setData({ ready: true, summary, current: book.pages[pageIndex], pageIndex, pageCount: book.pages.length, guide: book.guide, favorite: Boolean(state.favorites[id]) });
     wx.setNavigationBarTitle({ title: summary.title });
     saveProgress(catalog.books, id, pageIndex);
-    const audioEnabled = Boolean(book.narrationEndpoint) || book.pages.some(page => page.audio.zh || page.audio.en);
-    this.setData({ audioEnabled });
-    if (audioEnabled) this._audio = new NarrationController(book.pages, () => wx.createInnerAudioContext(), state => this.syncAudio(state), pageIndex, book.narrationEndpoint ? new ApiNarrationSource(book.narrationEndpoint, book.pages) : undefined);
+    const audioEnabled = Boolean(book.chineseAudio) || book.pages.some(page => page.audio.zh);
+    this.setData({ audioEnabled, backgroundEnabled: Boolean(book.chineseAudio) });
+    this._unsubscribeBackground?.();
+    this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
+    if (audioEnabled && !this.data.backgroundEnabled) this._audio = new NarrationController(book.pages, () => wx.createInnerAudioContext(), state => this.syncAudio(state), pageIndex);
   },
-  onHide() { this.pauseNarration(); },
-  onUnload() { this.pauseNarration(); this._audio?.destroy(); },
+  onHide() { this._audio?.pause(); this._unsubscribeBackground?.(); this._unsubscribeBackground = undefined; },
+  onUnload() { this.onHide(); this._audio?.destroy(); },
+  onShow() {
+    backgroundNarration.syncPosition();
+    if (!this._unsubscribeBackground) this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
+    else this.syncBackground(backgroundNarration.state);
+  },
+  syncBackground(state: BackgroundState) {
+    if (!this.data.backgroundEnabled) return;
+    if (state.bookId !== this._book?.id) {
+      this.setData({ active: false, status: "idle", highlight: "", audioError: "" }); return;
+    }
+    this.syncAudio({ pageIndex: state.pageIndex, mode: "zh",
+      active: ["buffering", "playing"].includes(state.status),
+      language: state.status === "playing" ? "zh" : null,
+      status: state.status === "buffering" ? "loading" : state.status,
+      error: state.error });
+  },
   pauseNarration() {
     this._audio?.pause();
+    if (backgroundNarration.state.bookId === this._book?.id) backgroundNarration.pause();
   },
   syncAudio(state: NarrationState) {
     if (!this._book) return;
     const moved = state.pageIndex !== this.data.pageIndex;
     this.setData({ ...(moved ? { current: this._book.pages[state.pageIndex] } : {}),
-      pageIndex: state.pageIndex, modeIndex: MODES.indexOf(state.mode), active: state.active,
+      pageIndex: state.pageIndex, active: state.active,
       status: state.status, highlight: state.language || "", audioError: state.error });
     if (moved) {
       saveProgress(catalog.books, this._book.id, state.pageIndex);
@@ -55,15 +73,25 @@ Page({
     }
   },
   toggleAudio() {
-    if (this.data.active) this._audio?.pause(); else this._audio?.play();
+    if (!this._book || !this.data.summary) return;
+    if (this.data.backgroundEnabled) {
+      if (this.data.active) backgroundNarration.pause();
+      else void backgroundNarration.start(this._book, this.data.summary, this.data.pageIndex);
+    } else {
+      backgroundNarration.stop();
+      if (this.data.active) this._audio?.pause(); else this._audio?.play();
+    }
   },
-  changeLanguage(event: WechatMiniprogram.PickerChange) { this._audio?.setMode(MODES[Number(event.detail.value)] || "zh"); },
   selectPage(pageIndex: number) {
-    if (this._audio) { this._audio.selectPage(pageIndex); return; }
     if (!this._book || pageIndex < 0 || pageIndex >= this._book.pages.length || pageIndex === this.data.pageIndex) return;
-    this.setData({ pageIndex, current: this._book.pages[pageIndex] });
+    if (this._audio) { this._audio.selectPage(pageIndex); return; }
+    if (backgroundNarration.state.bookId === this._book.id && backgroundNarration.selectPage(pageIndex)) return;
+    const active = this.data.active;
+    backgroundNarration.stop();
+    this.setData({ pageIndex, current: this._book.pages[pageIndex], active: false, status: "idle", highlight: "" });
     saveProgress(catalog.books, this._book.id, pageIndex);
     wx.pageScrollTo({ scrollTop: 0, duration: 0 });
+    if (active) this.toggleAudio();
   },
   previous() { this.selectPage(this.data.pageIndex - 1); },
   next() { this.selectPage(this.data.pageIndex + 1); },

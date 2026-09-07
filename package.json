@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "mini:audio:books": "node --conditions=react-server --import tsx scripts/generate-miniprogram-book-audio.ts",
     "mini:prepare": "node --import tsx scripts/prepare-miniprogram.ts",
     "mini:preview": "npm run mini:prepare && node --import tsx scripts/preview-miniprogram.ts",
     "mini:check": "tsc --noEmit -p miniprogram/tsconfig.json",
@@ -26,8 +27,9 @@
     "mini:preview:web": "npm run mini:prepare && node --import tsx scripts/preview-miniprogram-web-media.ts",
     "mini:audio": "node --conditions=react-server --import tsx scripts/generate-miniprogram-audio.ts",
     "mini:preview:audio": "npm run mini:prepare && node --import tsx scripts/preview-miniprogram-web-media.ts --audio",
+    "mini:preview:book-audio": "npm run mini:prepare && node --import tsx scripts/preview-miniprogram-web-media.ts --book-audio",
     "mini:preview:api-audio": "npm run mini:prepare && node --import tsx scripts/preview-miniprogram-web-media.ts --api-audio",
-    "mini:full": "npm run mini:prepare && node --import tsx scripts/preview-miniprogram-web-media.ts --api-audio --all"
+    "mini:full": "npm run mini:prepare && node --import tsx scripts/preview-miniprogram-web-media.ts --book-audio --all"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

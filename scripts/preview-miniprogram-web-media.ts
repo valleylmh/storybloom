@@ -8,21 +8,28 @@ import type { Book, Catalog } from "../miniprogram/src/core/types";
 // Independent test artifact: the uploaded offline release is not modified.
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const project = path.join(root, "miniprogram");
-const withApi = process.argv.includes("--api-audio");
+const withBookAudio = process.argv.includes("--book-audio") || process.argv.includes("--api-audio");
 const withAudio = process.argv.includes("--audio");
 const allBooks = process.argv.includes("--all");
-const output = path.join(project, allBooks ? "full-library" : withApi ? "api-audio-preview" : withAudio ? "audio-preview" : "web-media-preview");
+const output = path.join(project, allBooks ? "full-library" : withBookAudio ? "api-audio-preview" : withAudio ? "audio-preview" : "web-media-preview");
 async function main() {
-  if (allBooks && (!withApi || withAudio)) throw new Error("全量书目目前使用 --api-audio 在线朗读模式");
+  if (allBooks && (!withBookAudio || withAudio)) throw new Error("全量书目使用 --book-audio 预生成中文整本音频");
   const base = normalizeMediaBase(process.argv.slice(2).find(arg => !arg.startsWith("--")) || "https://storybloom.valleylmh.vip");
   const require = createRequire(import.meta.url);
   const catalog: Catalog = allBooks ? require(path.join(project, "dist/data/catalog.js")).default : require(path.join(project, "release/dist/data/catalog.js"));
   const books: Record<string, Book> = allBooks ? require(path.join(project, "dist/reader/data/books.js")).default : require(path.join(project, "release/dist/reader/data/books.js"));
+  if (withBookAudio && !allBooks) {
+    const prepared = require(path.join(project, "dist/reader/data/books.js")).default as Record<string, Book>;
+    for (const summary of catalog.books) {
+      if (prepared[summary.id]) books[summary.id] = prepared[summary.id];
+      summary.pageCount = books[summary.id].pages.length;
+    }
+  }
   const manifest: Array<{ source: string; destination: string }> = JSON.parse(await readFile(path.join(project, "assets-manifest.json"), "utf8"));
   const urls: string[] = [];
   for (const summary of catalog.books) {
     const book = books[summary.id];
-    if (withApi) book.narrationEndpoint = `${base}/api/audio`;
+    delete book.narrationEndpoint;
     const images = manifest.filter(image => image.destination.startsWith(`library/${summary.id}/`));
     if (images.length !== book.pages.length) throw new Error(`图片页数不一致: ${summary.id}`);
     book.pages.forEach((page, index) => {
@@ -75,7 +82,7 @@ async function main() {
   const local = JSON.parse(await readFile(path.join(project, "config.local.json"), "utf8"));
   if (!/^wx[0-9a-f]{16}$/.test(local.appid || "")) throw new Error("请配置真实 AppID");
   config.appid = local.appid;
-  const title = allBooks ? "绘本馆" : withApi ? "绘本馆 · 在线朗读测试" : withAudio ? "绘本馆 · 朗读测试" : "绘本馆 · 网站图片测试";
+  const title = allBooks ? "绘本馆" : withBookAudio ? "绘本馆 · 中文整本朗读测试" : withAudio ? "绘本馆 · 朗读测试" : "绘本馆 · 网站图片测试";
   await writeFile(path.join(output, "project.config.json"), JSON.stringify({ ...config, projectname: title, setting: { ...config.setting, urlCheck: true } }, null, 2));
   const page = path.join(output, "dist/pages/catalog/index.json");
   await writeFile(page, JSON.stringify({ ...JSON.parse(await readFile(page, "utf8")), navigationBarTitleText: title }));
@@ -94,7 +101,7 @@ async function main() {
   }
   await measure(path.join(output, "dist"));
   if (Object.values(sizes).some(size => size > 2 * 1024 * 1024)) throw new Error("分包超过 2 MiB");
-  const report = { project: output, base, books: catalog.books.length, series: catalog.series.length, images: urls.length, localImages: 0, urlCheck: true, audioMode: withApi ? "api" : withAudio ? "packaged" : "none", segments, sizes };
+  const report = { project: output, base, books: catalog.books.length, series: catalog.series.length, images: urls.length, localImages: 0, urlCheck: true, audioMode: withBookAudio ? "prepared-chinese-book" : withAudio ? "packaged" : "none", preparedBooks: Object.values(books).filter(book => book.chineseAudio).length, segments, sizes };
   await writeFile(path.join(output, "report.json"), JSON.stringify(report, null, 2));
   console.log(JSON.stringify(report, null, 2));
 }

@@ -47,6 +47,7 @@ export type PlaybackEvent =
   | { type: "LANGUAGE_CHANGED"; languageMode: BrowserNarrationMode; restart: boolean }
   | { type: "AUTO_ADVANCE_CHANGED"; autoAdvance: boolean }
   | { type: "HIGHLIGHT_CHANGED"; highlight: BrowserNarrationMode | null }
+  | { type: "TIMELINE_POSITION"; pageIndex: number; positionMs: number; durationMs: number }
   | { type: "POSITION_CHANGED"; positionMs: number; durationMs?: number }
   | { type: "PAGE_ENDED"; nextPageIndex?: number; message?: string }
   | { type: "BOOK_ENDED"; message?: string }
@@ -164,6 +165,8 @@ export function playbackReducer(
       return { ...state, autoAdvance: event.autoAdvance };
     case "HIGHLIGHT_CHANGED":
       return { ...state, highlight: event.highlight };
+    case "TIMELINE_POSITION":
+      return { ...state, pageIndex: event.pageIndex, positionMs: Math.max(0, event.positionMs), durationMs: event.durationMs };
     case "POSITION_CHANGED":
       return {
         ...state,

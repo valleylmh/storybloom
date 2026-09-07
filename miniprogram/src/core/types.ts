@@ -18,7 +18,8 @@ export interface BookPage {
   audio: { zh: string; en: string };
 }
 export interface GuideSection { title: string; body: string }
-export interface Book { narrationEndpoint?: string; id: string; title: string; pages: BookPage[]; guide: GuideSection[] }
+export interface BookAudio { url: string; pageStarts: number[]; duration: number; contentHash: string }
+export interface Book { chineseAudio?: BookAudio; narrationEndpoint?: string; id: string; title: string; pages: BookPage[]; guide: GuideSection[] }
 export interface Catalog { version: 1; series: Series[]; books: BookSummary[] }
 export type Language = "zh" | "en";
 export type AudioMode = Language | "both";
