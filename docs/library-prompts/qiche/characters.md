@@ -19,7 +19,18 @@ Premium polished 3D clay-like animated-film children's picture-book illustration
 - 高铁/动车组：银白色流线车头、蓝色细条、无品牌标识和可读站牌；受电弓、接触网、连接车钩、车底电动机、站台安全线等关键结构按故事需要清楚可辨。
 - 飞机：白色圆润客机、蓝绿色细条、圆头和双发动机跨页一致；机翼、襟翼、尾翼、起落架、跑道和机场安全线按故事需要清楚可辨，不出现航空品牌或可读机场标牌。
 
-## 负面约束
+## 工程车篇（第 17–26 本）
+
+- 妈妈：齐肩黑发、珊瑚色开衫、米色长裤、棕色肩包；林工程师：扎起的黑发、白色安全帽、橙色反光背心、深蓝长裤和工靴。
+- 挖掘机：黄色机身、黑色履带、动臂、斗杆、带齿铲斗与液压缸；装载机：橙黄色机身、四个黑色轮胎、前置宽铲斗；推土机：黄色履带车、前置宽推土板，不画成铲斗。
+- 自卸车：蓝色驾驶室、灰色车厢、后铰点与液压举升装置，行驶时车厢完全落下；搅拌车：白色驾驶室、薄荷绿白条纹滚筒、后置溜槽。
+- 泵车：白色驾驶室、红色折叠布料臂与连续输送管，作业时支腿放在合适垫板上；起重机：黄色伸缩臂轮式起重机、钢丝绳、吊钩、配重与垫板支腿。
+- 压路机：橙色车身、前钢轮后轮胎；沥青压实时可用橙色双钢轮伙伴。摊铺机：深绿色履带机、前料斗与后熨平板。
+- 活跃工地内只有专业成人；安安和妈妈在隔离参观区。机械特写不强行加入人物；工人不进入回转区、吊物下方或车辆盲区。近看部件时使用停机展品或玩具。
+- 一页一个动作或场景，优先服从逐页镜头，不重复参考图的远景围栏构图。参观、家中实验和完工公园需要清楚区分。
+- 完整逐页中英文本、亲子指南和生图提示词位于 `content-drafts/qiche/*.json`。
+
+## 通用负面约束
 
 No text, letters, captions, speech bubbles, logos, brand marks, readable license plates, scary imagery, collisions, injuries, fire close-ups, reckless driving, child alone near traffic, child touching emergency equipment, exposed electrical hazards, distorted anatomy, duplicate main character, duplicate vehicles, or anthropomorphic car faces.
 

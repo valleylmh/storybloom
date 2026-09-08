@@ -1,0 +1,156 @@
+{
+  "book": {
+    "id": "ya-lu-ji-man-man-zou-lu-mian-bian-jie-shi",
+    "seriesId": "qiche",
+    "title": "压路机慢慢走，路面变结实",
+    "subtitle": "一条小路的隆隆节奏",
+    "question": "压路机为什么要慢慢来回走？",
+    "moral": {
+      "zh": "有些进步看不见，按要求一步步做好，才能走得稳。",
+      "en": "Some progress is hidden. Careful steps make a firm foundation."
+    },
+    "parentGuide": {
+      "goal": "理解隐藏的基础工作也值得认真完成。",
+      "reminder": "来回次数不直接代表质量，遇到不合适的地方先找原因。",
+      "questions": [
+        "看起来平，为什么还需要压实？",
+        "一小块不合适，为什么不一直反复压？"
+      ],
+      "activity": "轻晃装有大颗粒积木的透明盒观察排列；说明实际压实需要专业检测，不能照玩具效果判断。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "步道下面的碎石铺好了。安安隔着围栏问：“看起来平平的，为什么还不能走？”林工程师指指石子间的小空隙：“还需要压实呢。”",
+        "enText": "Gravel had been spread beneath the path. “It looks flat. Why isn't it ready?” An'an asked through the fence. Lin pointed to the gaps. “It still needs compacting.”",
+        "illustrationPrompt": "Wide freshly spread gravel path inside fence, Lin with visitors pointing at safe gravel sample."
+      },
+      {
+        "page": 2,
+        "zhText": "一辆压路机慢慢开来，前面的大钢轮亮亮的。安安说：“它带着一根超级大的擀面杖！”妈妈笑着听她配音：“隆隆隆——”",
+        "enText": "A roller approached slowly with a shiny steel drum in front. “A giant rolling pin!” An'an said. Mom smiled at her rumbling sound effects.",
+        "illustrationPrompt": "Hero orange roller front steel drum rear black tires gently moving on clear path base."
+      },
+      {
+        "page": 3,
+        "zhText": "钢轮把重量压在地面上，帮助松散的颗粒排列得更紧。合适的压路机还会利用振动，让压实达到工程要求。",
+        "enText": "The drum applies weight to help loose particles pack more tightly. A suitable roller can also use vibration to achieve the required compaction.",
+        "illustrationPrompt": "Close drum meeting gravel with realistic tightly settled track behind, no exaggerated ground waves."
+      },
+      {
+        "page": 4,
+        "zhText": "不是所有地方都用同样的机器。有的压路机是钢轮，有的用轮胎；该选哪种，要看材料、位置和施工要求。今天这辆负责这段路基。",
+        "enText": "Not every job uses the same machine. Some rollers have steel drums; others use tires. The choice depends on materials, location and requirements. Today's roller was chosen for this base.",
+        "illustrationPrompt": "Visitor display of two recognizable roller models steel drum and pneumatic tire types, actual orange roller distant."
+      },
+      {
+        "page": 5,
+        "zhText": "开压之前，工作人员确认铺层厚度和材料状态。太厚一层，不是多走一趟就一定能压好。安安说：“还要看看里面呀。”",
+        "enText": "Before rolling, workers checked layer thickness and material condition. An overly thick layer would not necessarily compact with one more pass. “We must think about inside, too,” An'an said.",
+        "illustrationPrompt": "PPE survey worker checking exposed layer edge while roller idle well away."
+      },
+      {
+        "page": 6,
+        "zhText": "有些材料还要把含水情况调到合适范围。太干或太湿，都可能影响效果。妈妈说：“不是水越多越好，要按这里的要求来。”",
+        "enText": "Some materials need a suitable moisture level. Too dry or too wet can affect results. “More water isn't always better,” Mom said. “It must suit this job.”",
+        "illustrationPrompt": "Controlled light watering of gravel by professional crew on separated inactive section, roller waits."
+      },
+      {
+        "page": 7,
+        "zhText": "隆隆，第一趟走过去。司机保持合适的速度和路线，不是越快越厉害。安安在围栏外轻轻踏步，跟着它的慢节奏。",
+        "enText": "Rumble—the first pass began. The driver kept a suitable speed and route; faster was not better. Outside the fence, An'an tapped her feet to its slow rhythm.",
+        "illustrationPrompt": "Long low perspective roller making straight slow pass, child tapping feet outside fence."
+      },
+      {
+        "page": 8,
+        "zhText": "下一趟稍稍接着上一趟的边，避免漏掉一条。路面上留下整齐的工作轨迹。安安说：“像涂颜色，边边也要照顾到。”",
+        "enText": "The next pass overlapped the previous edge so no strip was missed. Neat working tracks appeared. “Like coloring—you must cover the edges, too,” An'an said.",
+        "illustrationPrompt": "High oblique roller adjacent overlapping passes clearly visible without arrows or lettering."
+      },
+      {
+        "page": 9,
+        "zhText": "靠近边缘时，司机格外留意支撑和距离，不能把大钢轮随便开到松软边上。需要小设备的地方，就请合适的伙伴来。",
+        "enText": "Near the edge, the driver watched support and clearance. The drum could not simply roll onto soft margins. Tight places needed suitable smaller equipment.",
+        "illustrationPrompt": "Wide roller kept inward from firm path edge, small plate compactor parked separate safe zone near border."
+      },
+      {
+        "page": 10,
+        "zhText": "咦，一小块地方压后仍然不合适。工作人员做了检查，发现这处材料和水分需要调整。安安问：“不能一直压到它听话吗？”",
+        "enText": "One patch still did not meet requirements. Checks showed its material and moisture needed adjustment. “Can't they keep rolling until it behaves?” An'an asked.",
+        "illustrationPrompt": "Worker inspecting marked deficient patch with safe testing instrument while roller parked away, no text."
+      },
+      {
+        "page": 11,
+        "zhText": "林工程师摇摇头：“先找原因。”处理好那一块，再按要求压实和复查。安安记住了：重复很多次，也不等于办法选对了。",
+        "enText": "“Find the cause first,” Lin said. The patch was corrected, compacted and checked again. An'an learned that repeating something many times does not make it the right method.",
+        "illustrationPrompt": "Professionals replacing small unsuitable patch material roller stopped, distinct corrected patch shape."
+      },
+      {
+        "page": 12,
+        "zhText": "压路机走完，检测还没结束。工作人员确认压实效果，符合要求才进行下一道工序。安安拍拍口袋里的小石头：“里面站紧了吗？”",
+        "enText": "After rolling, testing continued. The team confirmed compaction before the next stage. An'an patted the sample pebble in her pocket. “Are they packed closely enough inside?”",
+        "illustrationPrompt": "PPE worker performing nonnuclear compaction test on finished base with simple testing kit, parked roller background."
+      },
+      {
+        "page": 13,
+        "zhText": "收工后，大钢轮安静下来。它没有跑得最快，却让脚下的基础更可靠。妈妈说：“慢慢做对的事，也很有力量。”",
+        "enText": "At day's end, the drum became quiet. It had not raced, but it had strengthened the foundation. “Taking time to do things properly is powerful, too,” Mom said.",
+        "illustrationPrompt": "Sunset parked orange roller steel drum clean and grounded, quiet graded path stretches away."
+      },
+      {
+        "page": 14,
+        "zhText": "回家后，安安在透明盒里装入大颗粒积木，轻轻摇一摇，看到它们挪了位置。妈妈提醒：“这只是观察排列，真压实还要专业检测。”",
+        "enText": "At home, An'an gently shook large pieces in a clear box and watched them rearrange. Mom reminded her, “This shows packing; real compaction requires professional testing.”",
+        "illustrationPrompt": "Home clear shallow box large wooden pieces settling child gentle hands Mom supervises, no tiny parts."
+      },
+      {
+        "page": 15,
+        "zhText": "你来找：大钢轮、后轮、驾驶室都在哪里？你来听：今天的工作像急急的小跑，还是稳稳的慢拍子？安安又唱起“隆隆隆”。",
+        "enText": "Find the drum, rear wheels and cab. Does the work sound like a hurried sprint or a steady beat? An'an hummed her rumbling tune again.",
+        "illustrationPrompt": "Toy orange single drum roller close tabletop, girl pointing large drum Mom clapping gentle rhythm."
+      },
+      {
+        "page": 16,
+        "zhText": "步道完工开放后，安安踩着小步子走过去。她想起看不见的路基：“谢谢你，慢慢走的大钢轮，让这条路的基础更结实。”",
+        "enText": "When the completed path opened, An'an walked along it. She remembered the hidden base. “Thank you, slow drum, for making this path's foundation firmer.”",
+        "illustrationPrompt": "Finished open park path An'an Mom walking warm greenery, subtle memory toy roller held by child."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 24,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 11,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 24,
+      "personalizationEnabled": false,
+      "tags": [
+        "压路机",
+        "压实",
+        "钢轮",
+        "路基"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same orange single-drum vibratory roller with broad smooth steel front drum, two black rear tires and enclosed cab. Use compacted gravel path base; no bright asphalt unless story requires it.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

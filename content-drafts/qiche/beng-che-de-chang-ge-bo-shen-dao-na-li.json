@@ -1,0 +1,168 @@
+{
+  "book": {
+    "id": "beng-che-de-chang-ge-bo-shen-dao-na-li",
+    "seriesId": "qiche",
+    "title": "泵车的长胳膊伸到哪里",
+    "subtitle": "混凝土沿着管道去旅行",
+    "question": "泵车怎样把混凝土送到远处？",
+    "moral": {
+      "zh": "距离远不要急，安排好路线，让伙伴接力完成。",
+      "en": "When the destination is far away, plan the route and let teammates help."
+    },
+    "parentGuide": {
+      "goal": "通过接力理解不同设备各自的作用。",
+      "reminder": "不尝试拆卸管道或制作高压装置，用简单重力流水观察路线即可。",
+      "questions": [
+        "长臂和泵送系统各做什么？",
+        "输送不顺畅时为什么要停下来？"
+      ],
+      "activity": "成人用小杯通过一段透明软管把少量水倒入水盆，追踪水的转弯路线，及时擦干桌面。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "公园服务小屋要浇筑屋顶平台。搅拌车已经到了，可它的溜槽够不到那么高。安安问：“混凝土要坐电梯上去吗？”",
+        "enText": "The park service building needed its roof slab poured. A mixer arrived, but its chute could not reach that high. “Will the concrete take an elevator?” An'an asked.",
+        "illustrationPrompt": "Small single-story service building concrete frame behind fence, mixer chute far below roof, visitors at safe viewing shelter."
+      },
+      {
+        "page": 2,
+        "zhText": "一辆背着红色折叠长臂的泵车开来了。林工程师说：“今天请它帮忙，把混凝土沿着管道送上去。”安安眼睛亮了：“管道旅行！”",
+        "enText": "A pump truck arrived carrying a folded red boom. “It will send concrete up through pipes,” Lin said. An'an's eyes lit up. “A pipe journey!”",
+        "illustrationPrompt": "Hero white-cab red pump truck boom fully folded traveling slowly inside worksite."
+      },
+      {
+        "page": 3,
+        "zhText": "长臂先不展开。工作人员查看地面和地下情况，确认支撑位置，还检查上方和周围的障碍物。大胳膊也要先找好站立的地方。",
+        "enText": "The boom stayed folded while workers checked the ground, underground conditions, support positions and surrounding obstacles. Even a long arm needed a safe place to stand.",
+        "illustrationPrompt": "Parked folded boom pump truck, Lin and crew assess stabilizer positions from clear side, no overhead lines near setup."
+      },
+      {
+        "page": 4,
+        "zhText": "支腿伸出去，落在合适的垫板上。它们帮助车身稳定，不能随便踩在松软地面或井盖上。安安小声说：“先站稳，再伸手。”",
+        "enText": "Outriggers extended onto suitable pads to help steady the truck. They could not rest on soft ground or drain covers. “Stand securely before reaching,” An'an whispered.",
+        "illustrationPrompt": "Close pump truck outrigger foot centered on large sturdy square pad on firm level surface, all supports correctly deployed."
+      },
+      {
+        "page": 5,
+        "zhText": "司机按规定展开布料臂，一节接着一节。红色长臂像慢慢打开的折纸，却不是随意甩动，每一步都要留足安全空间。",
+        "enText": "The operator unfolded the placing boom section by section. It opened like folded paper, but never swung carelessly. Every movement needed clear space.",
+        "illustrationPrompt": "Wide red multi-section boom unfolding with correct joints in open sky above controlled worksite, supports visible."
+      },
+      {
+        "page": 6,
+        "zhText": "仔细看，长臂旁边贴着一条管道。长臂负责把管道带到合适的位置；真正推动混凝土往前走的，是车上的泵送系统。",
+        "enText": "A pipe ran along the boom. The boom positioned the pipe; the pumping system on the truck pushed the concrete forward.",
+        "illustrationPrompt": "Close correct red boom with securely clamped continuous delivery pipe and elbow at joint, no labels."
+      },
+      {
+        "page": 7,
+        "zhText": "搅拌车倒出的混凝土先进入泵车的料斗。工作人员确认材料合适，设备和接头也检查妥当。两辆车的接力才正式开始。",
+        "enText": "Concrete from the mixer entered the pump's hopper. The team checked that the material was suitable and the equipment and joints ready. Then the two trucks began their relay.",
+        "illustrationPrompt": "Rear mixer chute into guarded pump hopper, workers clear of machinery, truck outriggers deployed."
+      },
+      {
+        "page": 8,
+        "zhText": "咚、咚，泵送系统有节奏地工作。混凝土在封闭的管道里向前移动，再沿长臂去往屋顶。安安说：“像一条看不见里面的运输路。”",
+        "enText": "Thump, thump—the pump worked steadily. Concrete moved through the closed pipe along the boom to the roof. “A delivery road with hidden insides,” An'an said.",
+        "illustrationPrompt": "Wide coherent pump-to-roof delivery route one continuous boom pipe, no transparent floating material."
+      },
+      {
+        "page": 9,
+        "zhText": "屋顶上的施工人员接好工作，控制末端软管的位置。他们穿戴防护用品，也和泵车操作员保持沟通。安安和妈妈在远处的参观区看。",
+        "enText": "Workers on the roof managed the end hose, wore protective equipment and stayed in contact with the pump operator. An'an and Mom watched from the distant visitor area.",
+        "illustrationPrompt": "Protected low roof with guardrails PPE adults handling end hose correctly, pump in foreground and visitors far separated."
+      },
+      {
+        "page": 10,
+        "zhText": "先这一块，再旁边一块，混凝土按安排浇下去。长臂不能把材料随便堆成山，工作人员要控制浇筑顺序和速度。",
+        "enText": "First one section, then the next: concrete was placed in the planned order. It could not simply be piled into a mountain. Workers controlled the sequence and speed.",
+        "illustrationPrompt": "Clearly elevated one-storey building roof with supporting columns, openings and scaffolding visible below. Red pump on ground delivers concrete to roof; PPE crew place controlled strips, complete perimeter guardrails. No visitors on roof."
+      },
+      {
+        "page": 11,
+        "zhText": "忽然，输送不太顺畅。操作员停泵，通知伙伴检查。林工程师说：“管道可能有压力，不能让人随便敲打或拆开。”",
+        "enText": "The flow became uneven. The operator stopped pumping and alerted the team. “The pipe may be pressurized,” Lin explained. “Nobody may simply strike it or open it.”",
+        "illustrationPrompt": "Pump operation paused, crew communicating from safe control station, intact delivery pipe nobody touching joints."
+      },
+      {
+        "page": 12,
+        "zhText": "专业人员按流程排查，确认安全、处理妥当，才恢复工作。安安发现，停一下不是偷懒，是让大家把事情做对。",
+        "enText": "Specialists followed the procedure, made the system safe and resolved the problem before restarting. An'an learned that pausing was part of doing the job correctly.",
+        "illustrationPrompt": "Qualified crew at safely isolated parked pump control area, no depiction of pressurized disassembly, calm assessment."
+      },
+      {
+        "page": 13,
+        "zhText": "风变大时，也要留意设备的使用限制和现场情况。今天工作人员确认可以继续，长臂保持在合适的位置，慢慢完成剩下的部分。",
+        "enText": "Stronger wind meant checking equipment limits and site conditions. Today the team confirmed work could continue and carefully finished the remaining section.",
+        "illustrationPrompt": "Wide stable boom moderate breeze foliage, operator monitoring controls within safe conditions, no storm."
+      },
+      {
+        "page": 14,
+        "zhText": "材料送完啦！工作人员按规定清理设备，收集清洗产生的废料和废水。长臂还没收好，围栏内仍然不能让人随便靠近。",
+        "enText": "Delivery was finished. The team cleaned the equipment and collected waste and wash water. Until the boom was stowed, the work area remained closed to visitors.",
+        "illustrationPrompt": "Controlled cleanup collection bins and contained washout, boom lowering within exclusion area."
+      },
+      {
+        "page": 15,
+        "zhText": "红色长臂一节节折回去，支腿按流程收起。确认全部收妥，泵车才准备离开。安安说：“长胳膊也要整整齐齐回家。”",
+        "enText": "The red boom folded section by section, and the outriggers were retracted in order. Only after everything was stowed did the truck prepare to leave. “Even long arms must pack up neatly,” An'an said.",
+        "illustrationPrompt": "White-red pump truck stationary fully folded boom and fully retracted supports ready departure."
+      },
+      {
+        "page": 16,
+        "zhText": "回家后，妈妈和安安用透明软管给小水盆倒水。她们只观察水的路线，不模仿高压设备。安安用手指追着水走：“转弯，再转弯！”",
+        "enText": "At home, Mom and An'an poured water through a clear tube into a basin. They only explored its route, not high-pressure equipment. An'an traced it. “Around one bend, then another!”",
+        "illustrationPrompt": "Safe gravity-fed small clear tube and basin at home table Mom pouring tiny cup, no powered pressure apparatus."
+      },
+      {
+        "page": 17,
+        "zhText": "想一想：谁把混凝土送到工地？谁把它送到屋顶？谁让屋顶浇筑得合适？安安把两辆玩具车和小人排成接力队。",
+        "enText": "Who brings concrete to the site? Who sends it to the roof? Who places it properly? An'an lined up two toy trucks and figures as a relay team.",
+        "illustrationPrompt": "Tabletop toy mixer feeding toy pump aimed toward toy roof with worker figures, An'an arranging safely."
+      },
+      {
+        "page": 18,
+        "zhText": "小屋完工后，窗边摆上了公园地图。安安走进去歇脚，抬头笑了：“我知道，屋顶里的材料曾经坐过红色长胳膊的管道旅行！”",
+        "enText": "When the building was finished, a park map stood by the window. An'an came inside to rest and looked up. “The roof's material once traveled along that red arm!”",
+        "illustrationPrompt": "Finished cozy park service pavilion interior window greenery wordless pictorial map, An'an Mom resting."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 22,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 22,
+      "personalizationEnabled": false,
+      "tags": [
+        "泵车",
+        "混凝土输送",
+        "支腿",
+        "布料臂"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same white-cab red concrete pump truck, four unfolded stabilizer outriggers on proper pads when pumping, red multi-section placing boom carrying continuous steel delivery pipe, hose at tip. Companion white-cab mint-green-white drum mixer.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

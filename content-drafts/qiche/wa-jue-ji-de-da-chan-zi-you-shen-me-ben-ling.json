@@ -1,0 +1,170 @@
+{
+  "book": {
+    "id": "wa-jue-ji-de-da-chan-zi-you-shen-me-ben-ling",
+    "seriesId": "qiche",
+    "title": "挖掘机的大铲子有什么本领",
+    "subtitle": "一块大石头和一座雨水花园",
+    "question": "挖掘机怎样挖土又做细活？",
+    "moral": {
+      "zh": "先观察、再选择方法，大力气也需要耐心和细心。",
+      "en": "Observe first and choose a suitable method. Great strength needs patience and care."
+    },
+    "parentGuide": {
+      "goal": "发现困难时先观察，再尝试合适的方法。",
+      "reminder": "不要求孩子记住所有部件名字，先听听孩子注意到了什么。",
+      "questions": [
+        "挖掘机遇到石头后为什么停下来？",
+        "雨水花园为什么不一直往深处挖？"
+      ],
+      "activity": "用小勺和浅盘湿沙挖一个浅窝，讨论土堆放在哪里；成人陪同，结束后洗手。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "围栏里面，一辆黄色挖掘机醒来了。安安拉住妈妈的手：“这里真的要变成公园吗？”一只小麻雀落在围栏外，好像也在等答案。",
+        "enText": "A yellow excavator was waking up behind the fence. An'an held Mom's hand. “Will this really become a park?” A sparrow landed outside the fence, as if it wanted to know too.",
+        "illustrationPrompt": "Wide establishing morning scene, parked yellow tracked excavator with bucket grounded inside fence, An'an and Mom holding hands outside, sparrow on visitor fence."
+      },
+      {
+        "page": 2,
+        "zhText": "林工程师在参观区展开图纸：“这里要挖一个浅浅的雨水花园，让雨水有地方慢慢渗下去。”安安指着弯弯的轮廓：“像一片大叶子！”",
+        "enText": "Engineer Lin unfolded a plan in the visitor area. “We will dig a shallow rain garden where rain can soak into the ground.” An'an pointed to its curved outline. “Like a giant leaf!”",
+        "illustrationPrompt": "Visitor shelter table, engineer Lin shows wordless leaf-shaped rain-garden plan to An'an and Mom, excavator distant."
+      },
+      {
+        "page": 3,
+        "zhText": "先别挖！工作人员核对地下管线的位置，再在地面做标记。妈妈说：“看不见的地方，也要先弄清楚。”安安把这句话记进了心里。",
+        "enText": "Not yet! Workers checked where underground pipes and cables ran, then marked the ground. “We must understand the things we cannot see, too,” Mom said. An'an remembered that.",
+        "illustrationPrompt": "High oblique view, qualified workers checking blank plans and colored ground markings beside idle excavator, visitors behind separate fence, no readable text."
+      },
+      {
+        "page": 4,
+        "zhText": "隆隆隆，挖掘机慢慢向前。它没有四个大轮子，而是踩着两条履带。宽宽的履带把重量分散开，帮助它在合适的地面上站稳。",
+        "enText": "Rumble, rumble! The excavator crept forward on two tracks instead of four big wheels. The wide tracks spread its weight and help it stand firmly on suitable ground.",
+        "illustrationPrompt": "Low close view of two continuous black crawler tracks contacting firm compacted soil, yellow excavator slowly moving, no people near tracks."
+      },
+      {
+        "page": 5,
+        "zhText": "大胳膊伸出去，小胳膊弯回来。安安隔着围栏跟着比画：“伸——弯——！”林工程师说：“它们叫动臂和斗杆，前面连着铲斗。”",
+        "enText": "The long arm reached out, then bent back. From behind the fence, An'an copied it. “Reach—and bend!” Lin said, “These are the boom and stick. The bucket is attached at the end.”",
+        "illustrationPrompt": "Medium excavator profile showing distinct boom, stick and bucket joints, An'an mimics with arms OUTSIDE foreground fence."
+      },
+      {
+        "page": 6,
+        "zhText": "铲斗旁边有会伸缩的金属杆。液压油在密闭管路里传递力量，推动液压缸运动，大胳膊就能听司机指挥。不是里面藏着小巨人哦！",
+        "enText": "Metal rods beside the bucket slid in and out. Oil carries force through sealed pipes and moves hydraulic cylinders, letting the driver control the arm. There is no tiny giant hidden inside!",
+        "illustrationPrompt": "Extreme mechanical close-up only: shiny hydraulic piston, yellow cylinder, intact hoses and pinned joint fill the frame. Soft blurred earth background. No people, touching machinery, fence, full vehicle or cutaway fantasy."
+      },
+      {
+        "page": 7,
+        "zhText": "铲斗的牙齿碰到土，慢慢往里切。司机卷起铲斗，兜住一捧泥土。沙沙沙——安安小声配音，怕把围栏上的麻雀吓跑。",
+        "enText": "The bucket teeth cut slowly into the soil. The driver curled the bucket to hold a scoop of earth. “Shhh, shhh,” An'an whispered, making digging sounds without startling the sparrow.",
+        "illustrationPrompt": "Close action bucket teeth slicing soil then curling one scoop, machine working within marked shallow excavation."
+      },
+      {
+        "page": 8,
+        "zhText": "履带没挪窝，上面的车身却转过去了！挖掘机把土放进旁边的指定土堆。安安睁大眼睛：“它会坐着转身！”",
+        "enText": "The tracks stayed still, but the upper body turned! The excavator placed the soil on the assigned pile. An'an's eyes widened. “It can turn while staying in one spot!”",
+        "illustrationPrompt": "Wide overhead three-quarter excavator slewing upper carriage toward designated earth pile well back from excavation edge, stable tracks and clear swing zone."
+      },
+      {
+        "page": 9,
+        "zhText": "挖一斗，转过去，轻轻放。再转回来，挖一斗。司机一边操作，一边观察周围；围栏把参观的人和工作的机器分开。",
+        "enText": "Scoop, turn, and gently empty. Turn back and scoop again. The driver watched the surroundings while working. A fence separated visitors from the working machine.",
+        "illustrationPrompt": "Long view showing rhythmic excavator work, separate spoil pile and continuous fenced public viewing path, clear empty swing radius."
+      },
+      {
+        "page": 10,
+        "zhText": "咦，铲斗停住了。泥土里露出一块大石头，像埋着半个灰色月亮。安安问：“用力敲一敲，就能把它赶走吗？”",
+        "enText": "Oh—the bucket stopped. A large stone showed through the earth like half a gray moon. “Could it knock the stone away?” An'an asked.",
+        "illustrationPrompt": "Ground-level close-up of half-buried rounded gray boulder occupying most of frame. Excavator bucket grounded and blurred several meters behind. No people, impact, sparks or repeated family composition."
+      },
+      {
+        "page": 11,
+        "zhText": "司机没有硬敲。他把铲斗放稳，和林工程师一起商量。先判断石头大小、重量和周围地面，再选合适的办法，比逞力气更重要。",
+        "enText": "The driver did not bang on it. He grounded the bucket and talked with Lin. They checked the stone's size and weight and the ground around it. Choosing a suitable method mattered more than showing strength.",
+        "illustrationPrompt": "Idle grounded excavator, engineer and driver consulting in safe designated area away from bucket, boulder visible in background."
+      },
+      {
+        "page": 12,
+        "zhText": "确认这块石头能安全处理后，司机先挖开周围的土，再用铲斗稳稳托起它。石头落在指定位置，成了以后花坛边的一块景石。",
+        "enText": "After confirming it could be handled safely, the driver loosened the soil around the stone and supported it securely in the bucket. It was placed in a marked spot to become a garden rock.",
+        "illustrationPrompt": "Excavator safely lowering manageable rounded stone fully contained in bucket into designated landscaped rock location, nobody nearby."
+      },
+      {
+        "page": 13,
+        "zhText": "雨水花园不能越挖越深。工作人员测量深度，司机再一点点修整。安安说：“原来大铲子也会做细活，不只是挖得多！”",
+        "enText": "The rain garden could not just get deeper and deeper. Workers measured the depth, then the driver carefully shaped it. “The big bucket can do delicate work, too!” An'an said.",
+        "illustrationPrompt": "Wide side view of shallow graded rain-garden basin. Excavator parked at far left with bucket fully on ground. Survey worker with staff at far right, well away from machine and boom. No children in scene."
+      },
+      {
+        "page": 14,
+        "zhText": "一边平缓，一边稍高，浅浅的凹地露出了叶子形。下雨时，水会从安排好的入口流来；装得太多，还有设计好的溢流去处。",
+        "enText": "One side sloped gently, and the shallow hollow took its leaf shape. Rain would enter through a planned inlet. An overflow route would carry extra water away.",
+        "illustrationPrompt": "High aerial clear shallow leaf-shaped rain garden with gentle slopes, small inlet and overflow swale, excavator standing well back, no arrows or text."
+      },
+      {
+        "page": 15,
+        "zhText": "收工啦。铲斗落地，机器停稳，工作人员清理工具。隔着围栏，安安给挖掘机挥挥手：“你的大胳膊今天辛苦啦！”",
+        "enText": "Work was done. The bucket rested on the ground, the machine stopped, and workers collected their tools. An'an waved from behind the fence. “Your big arm worked hard today!”",
+        "illustrationPrompt": "Warm late afternoon parked excavator bucket grounded, workers tidying designated tools, An'an waving outside fence."
+      },
+      {
+        "page": 16,
+        "zhText": "回家后，安安用小勺和一盘湿沙做游戏。她先画范围，再轻轻挖出浅窝。妈妈问：“我们的土放在哪里，才不会又滑回来？”",
+        "enText": "At home, An'an played with a spoon and a tray of damp sand. She marked a shape and dug a shallow hollow. Mom asked, “Where should the soil go so it will not slide back in?”",
+        "illustrationPrompt": "Cozy home table safe shallow tray damp sand and small rounded spoon, Mom and An'an sculpt miniature leaf basin, no real machinery."
+      },
+      {
+        "page": 17,
+        "zhText": "找一找：哪一部分负责走，哪一部分负责伸，哪一部分负责装土？安安用玩具演给妈妈看：“履带走，胳膊伸，铲斗装！”",
+        "enText": "Can you find the part that travels, the part that reaches, and the part that scoops? An'an showed Mom with a toy. “Tracks travel, the arm reaches, and the bucket scoops!”",
+        "illustrationPrompt": "Home close tabletop recognizable toy yellow tracked excavator with boom stick bucket, An'an pointing to tracks, Mom beside her, no labels."
+      },
+      {
+        "page": 18,
+        "zhText": "过了些日子，雨水花园种上了花草。细雨停后，小水洼慢慢变小。安安说：“挖掘机挖出了一个地方，让雨水也能在公园歇歇脚。”",
+        "enText": "Days later, the rain garden was planted. After a shower, its little puddles slowly shrank. “The excavator made a place where rain can rest in our park,” An'an said.",
+        "illustrationPrompt": "Closing finished planted rain garden after light rain, small shallow puddles and garden rock, An'an and Mom on open public path, sparrow returns."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 17,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 17,
+      "personalizationEnabled": false,
+      "tags": [
+        "工程车",
+        "挖掘机",
+        "液压",
+        "履带",
+        "雨水花园"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same sunny yellow tracked excavator, black crawler tracks, dark glazed cab, articulated boom and stick, metal bucket with teeth and realistic hydraulic cylinders.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics.",
+    "vehicleConsistency": "Same sunny yellow tracked excavator, black crawler tracks, dark glazed cab, articulated boom and stick, metal bucket with teeth and realistic hydraulic cylinders."
+  }
+}

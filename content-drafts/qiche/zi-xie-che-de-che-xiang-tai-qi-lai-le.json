@@ -1,0 +1,168 @@
+{
+  "book": {
+    "id": "zi-xie-che-de-che-xiang-tai-qi-lai-le",
+    "seriesId": "qiche",
+    "title": "自卸车的车厢抬起来了",
+    "subtitle": "一车碎石的安全接力",
+    "question": "自卸车为什么能自己倒出石料？",
+    "moral": {
+      "zh": "装得合适、停得稳当、检查清楚，才能把货物安全送到。",
+      "en": "Load sensibly, stop securely and check carefully to deliver safely."
+    },
+    "parentGuide": {
+      "goal": "观察卸料前后的条件变化。",
+      "reminder": "只在玩具中观察倾斜，实际车辆的举升和卸料均由专业人员完成。",
+      "questions": [
+        "卸料为什么既要看地面，也要看上方？",
+        "为什么车厢还没有放下就不能走？"
+      ],
+      "activity": "成人陪同，把几块大积木放入浅纸盒，轻抬一端观察滑动；不要抬举重物。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "一辆蓝头灰厢的自卸车停在材料场。安安问：“它的车厢为什么像个大盒子？”林工程师笑了：“今天这个盒子要给公园送碎石。”",
+        "enText": "A blue-cab dump truck with a gray bed waited at the depot. “Why is its bed a giant box?” An'an asked. “That box will deliver gravel to the park today,” Lin smiled.",
+        "illustrationPrompt": "Wide gravel depot hero blue-cab gray-bed three-axle dump truck, visitors outside fence."
+      },
+      {
+        "page": 2,
+        "zhText": "碎石要铺在步道下面。工作人员先核对石料大小和需要的数量。安安看着样品：“小石头们也有自己的岗位呀！”",
+        "enText": "The gravel would go beneath a path. Workers checked the stone size and the amount needed. “Even little stones have their own job!” An'an said, looking at a sample.",
+        "illustrationPrompt": "Visitor table sealed clear gravel sample tray and wordless path section model, Lin explains."
+      },
+      {
+        "page": 3,
+        "zhText": "装载机把碎石一斗斗倒进车厢。哗啦，哗啦！自卸车停稳等着，司机待在安排好的安全位置，谁也不在吊起的铲斗下面走。",
+        "enText": "The loader poured gravel into the bed. Rattle, rattle! The truck stood securely, and its driver stayed in the designated safe place. Nobody walked beneath the raised bucket.",
+        "illustrationPrompt": "Loader depositing gravel in stationary dump bed with clear exclusion zone."
+      },
+      {
+        "page": 4,
+        "zhText": "装货不是堆比赛。石料要分布均匀，总重量也要符合要求。车厢看着还有空，司机却说：“够啦，这一趟就装这些。”",
+        "enText": "Loading was not a piling contest. The gravel had to be spread evenly and the weight kept within limits. Though there was space left, the driver said, “That's enough for this trip.”",
+        "illustrationPrompt": "Top oblique evenly distributed moderate gravel load in gray bed, no oversized heap."
+      },
+      {
+        "page": 5,
+        "zhText": "篷布拉好，尾门锁住，车轮附近检查干净。自卸车才慢慢出发。安安拍拍自己的小背包：“东西装好，还要收好！”",
+        "enText": "The tarp was secured, the tailgate locked, and the area around the wheels checked. Then the truck set off slowly. An'an patted her backpack. “Pack it—and secure it!”",
+        "illustrationPrompt": "Parked covered dump truck locked tailgate detail with driver doing safe pre-departure visual check."
+      },
+      {
+        "page": 6,
+        "zhText": "路口亮起红灯，大车停在线后。妈妈说：“车重，停下来需要距离。我们过街也要看信号，不能钻到大车旁边。”",
+        "enText": "At a red light, the truck stopped behind the line. “A heavy truck needs stopping distance,” Mom said. “We follow the crossing signal and never squeeze beside it.”",
+        "illustrationPrompt": "Urban junction covered dump truck stopped well behind crossing, An'an and Mom waiting far back on sidewalk."
+      },
+      {
+        "page": 7,
+        "zhText": "到了工地，原定的卸料点旁边积着水。司机没有直接抬车厢。地面够不够坚实、平不平整，都要先确认。",
+        "enText": "At the site, water lay beside the planned unloading spot. The driver did not raise the bed. First, the ground had to be checked for firmness and levelness.",
+        "illustrationPrompt": "Dump truck bed fully down waiting away from wet soft unloading area, Lin assessing from safe position."
+      },
+      {
+        "page": 8,
+        "zhText": "林工程师安排了另一处合适的位置，还检查上方没有电线或障碍物。安安仰起头：“原来卸货，也要看看天空那一边！”",
+        "enText": "Lin arranged a suitable alternative and checked for overhead wires or obstacles. An'an looked up. “Even unloading means checking above!”",
+        "illustrationPrompt": "Wide level firm designated gravel unloading pad unobstructed overhead, truck approaching bed down, clear barriers."
+      },
+      {
+        "page": 9,
+        "zhText": "工作人员引导大车慢慢到位。车后划出的区域空空的，参观的人都在围栏外。司机停稳，确认可以卸料，才开始下一步。",
+        "enText": "A worker guided the truck into place from a safe position. The area behind it was clear, and visitors stayed outside the fence. The driver stopped and confirmed it was safe to unload.",
+        "illustrationPrompt": "Truck stopped aligned on level pad, spotter visible beside safe standoff area never behind truck."
+      },
+      {
+        "page": 10,
+        "zhText": "咦，车厢前面升起来了！液压装置慢慢顶起车厢，后面留在铰接处。安安轻轻抬起手掌：“像把盒子一头举高。”",
+        "enText": "Look—the front of the bed rose! A hydraulic mechanism lifted it while the rear pivot stayed attached. An'an raised one end of her palm. “Like tilting a box.”",
+        "illustrationPrompt": "Accurate side profile dump bed partially raised by hydraulic ram hinged at rear, all wheels level."
+      },
+      {
+        "page": 11,
+        "zhText": "尾门打开，碎石顺着斜斜的车厢往后滑。哗啦啦，小石头落成一堆。是重力把它们往下拉，不是车厢在偷偷吹气。",
+        "enText": "The tailgate opened, and gravel slid down the tilted bed. Rattle! It formed a pile. Gravity pulled it down; the bed was not secretly blowing it out.",
+        "illustrationPrompt": "Close rear-quarter gravel sliding from tilted bed through open tailgate into clear pile, no nearby people."
+      },
+      {
+        "page": 12,
+        "zhText": "还有一点石料挂在里面。司机没有猛开车去抖，也没有让人钻到举起的车厢下面。遇到卡料，要停下按安全办法处理。",
+        "enText": "Some gravel remained inside. The driver did not jerk the truck or let anyone go beneath the raised bed. A stuck load meant stopping and following a safe procedure.",
+        "illustrationPrompt": "Quiet side view halted raised dump bed small residual gravel, operator in cab, exclusion zone completely empty."
+      },
+      {
+        "page": 13,
+        "zhText": "按规定处理好后，车厢慢慢落回去。尾门重新关好，司机再次检查。林工程师说：“车厢落到底，才准备行驶。”",
+        "enText": "After the issue was handled correctly, the bed lowered. The tailgate closed, and the driver checked again. “The bed must be fully down before traveling,” Lin said.",
+        "illustrationPrompt": "Truck bed fully lowered flush chassis tailgate latched, gravel pile separated behind."
+      },
+      {
+        "page": 14,
+        "zhText": "卸下来的碎石还不能自己变成小路。装载机来整理，后面还有铺筑和压实的工作。安安说：“自卸车完成了接力的这一棒！”",
+        "enText": "The gravel could not turn itself into a path. A loader arranged it, with laying and compacting still to come. “The dump truck finished its part of the relay!” An'an said.",
+        "illustrationPrompt": "Wide gravel pile beside future path, dump truck exiting with bed down, loader waiting separate lane."
+      },
+      {
+        "page": 15,
+        "zhText": "回家后，安安把几块大积木装进纸盒，轻轻抬高一端。积木滑到桌上的垫子里。妈妈问：“如果盒子不斜，它们还会自己滑吗？”",
+        "enText": "At home, An'an put large blocks in a box and gently raised one end. They slid onto a mat. “Would they slide by themselves if the box stayed level?” Mom asked.",
+        "illustrationPrompt": "Home table large blocks sliding from slightly tilted shallow box onto mat, Mom supervising."
+      },
+      {
+        "page": 16,
+        "zhText": "再试试：一边高、一边低时，盒子会歪。安安把垫子放平：“大车卸货，也得先找稳稳的地方。”玩具实验可不能拿真车模仿哦。",
+        "enText": "They tried an uneven support, and the box leaned. An'an flattened the mat. “A big truck needs firm, level ground, too.” Their toy experiment was only for the table.",
+        "illustrationPrompt": "Child levels play mat beneath toy dump truck, uneven block set aside, no real raised truck."
+      },
+      {
+        "page": 17,
+        "zhText": "找一找，出发前该检查哪几样：篷布、尾门，还是举得高高的车厢？安安指着玩具说：“货盖好，门关好，车厢放低再走！”",
+        "enText": "What should be ready before departure: the cover, the tailgate, or a raised bed? An'an pointed to the toy. “Cover secure, gate closed, bed down—then go!”",
+        "illustrationPrompt": "Clean tabletop toy dump truck with covered lowered bed, child pointing tailgate, no labels."
+      },
+      {
+        "page": 18,
+        "zhText": "新步道铺好后，安安踩着平整的路去看花。脚下藏着许多小石头。她说：“谢谢大盒子，把它们平平安安送来了。”",
+        "enText": "When the path was finished, An'an walked along it to see the flowers. Many little stones lay hidden beneath her feet. “Thank you, big box, for bringing them safely,” she said.",
+        "illustrationPrompt": "Finished park path flowers and An'an Mom walking, small distant parked dump truck outside finished park."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 20,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 20,
+      "personalizationEnabled": false,
+      "tags": [
+        "自卸车",
+        "重力",
+        "液压举升",
+        "碎石"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same blue-cab three-axle dump truck with gray open-top tipping bed, rear hinge, hinged tailgate and hydraulic ram; dark cover while traveling. Always bed fully down when driving.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

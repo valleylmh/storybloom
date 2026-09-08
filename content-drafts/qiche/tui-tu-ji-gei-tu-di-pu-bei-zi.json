@@ -1,0 +1,156 @@
+{
+  "book": {
+    "id": "tui-tu-ji-gei-tu-di-pu-bei-zi",
+    "seriesId": "qiche",
+    "title": "推土机给土地铺被子",
+    "subtitle": "把高高低低变成平平整整",
+    "question": "推土机怎样把土地推平？",
+    "moral": {
+      "zh": "看清高低、分次调整，比一股脑儿往前冲更有效。",
+      "en": "Observe the highs and lows and adjust in small steps instead of rushing ahead."
+    },
+    "parentGuide": {
+      "goal": "遇到变化时调整办法，同时照顾需要保护的事物。",
+      "reminder": "不用“听话”评价机器或孩子，讨论地形与树根带来的限制。",
+      "questions": [
+        "发现树根时，为什么不继续推？",
+        "推平之后为什么还需要压实？"
+      ],
+      "activity": "用厚纸板在浅盘湿沙里推一个小坡，让孩子选择一棵积木树并保护它。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安和妈妈又来参观新公园。未来的小操场一边鼓起来，一边凹下去。“在这里踢球，球会不会自己溜走呀？”安安问。",
+        "enText": "An'an and Mom visited again. The future play field had a mound on one side and a hollow on the other. “Would a ball roll away all by itself here?” she asked.",
+        "illustrationPrompt": "Wide uneven fenced future playground with mound and hollow, An'an and Mom observing outside."
+      },
+      {
+        "page": 2,
+        "zhText": "隆隆隆，推土机来了！它前面没有装土的大斗，而是一块宽宽的推土板。安安说：“它带了一把横着走的大尺子！”",
+        "enText": "Rumble! A bulldozer arrived. Instead of a scoop, it had a broad blade in front. “It brought a giant sideways ruler!” An'an said.",
+        "illustrationPrompt": "Hero low three-quarter yellow tracked bulldozer broad steel blade clearly visible."
+      },
+      {
+        "page": 3,
+        "zhText": "林工程师先看测量结果，再指给司机看：哪里高，哪里需要填。土地不是随便推一推，还要照着设计安排好排水方向。",
+        "enText": "Lin checked the survey and showed the driver the high spots and places to fill. The ground needed more than random pushing: its slope also had to guide water as designed.",
+        "illustrationPrompt": "Lin reviewing wordless site contours with operator beside parked bulldozer, drainage swale in distance."
+      },
+      {
+        "page": 4,
+        "zhText": "司机把推土板降下来，朝着土堆慢慢走。松土在板前聚成一道小波浪。沙沙，沙沙，土浪向低处移动了。",
+        "enText": "The driver lowered the blade and moved slowly toward loose soil. Earth gathered in a little wave before it. Shush, shush—the wave moved toward the hollow.",
+        "illustrationPrompt": "Side close bulldozer blade gently pushing shallow wave of loose soil on level ground."
+      },
+      {
+        "page": 5,
+        "zhText": "两条履带一节节向前，稳稳撑住车身。妈妈提醒：“履带能分散重量，可不是有了履带，什么烂泥地都能闯。”",
+        "enText": "The tracks moved link by link and supported the machine. “Tracks spread its weight,” Mom said, “but that does not mean it can cross every patch of mud.”",
+        "illustrationPrompt": "Low track detail firm soil with muddy area fenced off in distance, no machine stuck."
+      },
+      {
+        "page": 6,
+        "zhText": "推到合适的位置，司机稍稍抬起推土板。土一点点留下来，铺成薄薄一层。安安比画着：“像给土地铺被子，不要一团一团的。”",
+        "enText": "At the right spot, the driver raised the blade slightly. Soil spread out in a thin layer. “Like laying a blanket on the ground, without lumpy folds,” An'an said.",
+        "illustrationPrompt": "High view blade spreading thin even layer of soil into low area, smooth passes evident."
+      },
+      {
+        "page": 7,
+        "zhText": "第一趟结束，还有小鼓包。推土机退回去，换个合适的方向再推。安安数：“一趟，两趟……原来平整要慢慢做。”",
+        "enText": "Small bumps remained after the first pass. The bulldozer returned and pushed from a suitable direction. An'an counted. “One pass, two passes…making it even takes time.”",
+        "illustrationPrompt": "Wide curved tracks and parallel graded passes, bulldozer repositioning in clear work zone."
+      },
+      {
+        "page": 8,
+        "zhText": "忽然，前方露出一段树根。司机停住了。那是要保留的大树，根旁边不能想推就推；林工程师请大家重新确认保护范围。",
+        "enText": "A tree root appeared ahead, and the driver stopped. The tree was to be kept, so its roots could not simply be bulldozed. Lin had the team recheck the protection zone.",
+        "illustrationPrompt": "Stopped bulldozer blade grounded well away from mature tree root zone, sturdy protective tree barrier."
+      },
+      {
+        "page": 9,
+        "zhText": "围栏围好，路线改一改。推土机绕开大树，工作人员用合适的方法处理旁边的地面。安安松口气：“以后还能在树荫里休息呢！”",
+        "enText": "With the tree protected, the route changed. The bulldozer went around, and workers used suitable methods near the roots. “We can still rest in its shade someday!” An'an said.",
+        "illustrationPrompt": "Aerial bulldozer route around generous fenced tree protection zone, green canopy prominent."
+      },
+      {
+        "page": 10,
+        "zhText": "中午下了小雨，地面变软。机器先停下来，等工作人员判断什么时候适合继续。安安说：“今天的土被子，也得等一等。”",
+        "enText": "A little rain softened the ground at noon. Work paused until the team judged it suitable to continue. “The earth's blanket needs a little waiting time,” An'an said.",
+        "illustrationPrompt": "Rainy quiet site bulldozer parked blade grounded, visitors dry beneath shelter, puddles away from machine."
+      },
+      {
+        "page": 11,
+        "zhText": "天气转晴，工作人员又量一量。该补的补，该修的修。看上去很平的地方，也可能还藏着一点点高低差。",
+        "enText": "When the weather cleared, workers measured again. They filled and trimmed where needed. Even ground that looked flat might still have small differences in height.",
+        "illustrationPrompt": "Survey workers with tripod on inactive graded field, parked bulldozer in background under clearing sky."
+      },
+      {
+        "page": 12,
+        "zhText": "推平还不等于压结实。林工程师说：“后面要请压实设备来，把松散的土层按要求压好。”安安挥挥手：“下一位伙伴准备！”",
+        "enText": "Leveling did not mean compacting was finished. “Compaction equipment will make the loose layers firm as required,” Lin explained. “Next teammate, get ready!” An'an waved.",
+        "illustrationPrompt": "Yellow bulldozer exiting work area as separate orange roller waits safely, no overlapping paths."
+      },
+      {
+        "page": 13,
+        "zhText": "几天后，小操场的形状清楚了，旁边留下温和的排水坡。安安发现，平整不是每一处都绝对水平，而是符合这里的需要。",
+        "enText": "Days later, the play field had taken shape, with a gentle drainage slope beside it. An'an learned that well-graded ground is shaped for its purpose, not perfectly level everywhere.",
+        "illustrationPrompt": "High aerial finished graded play field gently sloped toward drainage edge, protected mature tree retained."
+      },
+      {
+        "page": 14,
+        "zhText": "回家后，安安用厚纸板推盘里的沙。推太多，沙子从两边逃跑；少推一点，再走一趟，就整齐多了。妈妈笑着给她递来小刷子。",
+        "enText": "At home, An'an pushed sand in a tray with cardboard. Too much escaped around the sides. Smaller pushes made it neater. Mom smiled and passed her a little brush.",
+        "illustrationPrompt": "Home tray sand experiment cardboard broad blade pushing small pile, Mom supervising."
+      },
+      {
+        "page": 15,
+        "zhText": "找找看：推土板在哪里？履带在哪里？如果前面是要保留的大树，应该继续冲，还是停下来请工作人员判断？安安已经有答案了。",
+        "enText": "Find the blade and the tracks. If a tree must be protected, should the machine rush on, or stop for the team to assess? An'an knew the answer.",
+        "illustrationPrompt": "Tabletop toy bulldozer halted before toy tree barrier, child points at blade and protected tree."
+      },
+      {
+        "page": 16,
+        "zhText": "公园开放那天，安安在操场上轻轻踢出一个球。球滚向妈妈。大树摇着叶子，仿佛也在说：“谢谢你们给土地铺好了被子。”",
+        "enText": "On opening day, An'an gently kicked a ball across the play field to Mom. The tree rustled as if to say, “Thank you for smoothing the earth's blanket.”",
+        "illustrationPrompt": "Finished open park gentle ball game between An'an and Mom under preserved tree, no active machines."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 19,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 11,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 19,
+      "personalizationEnabled": false,
+      "tags": [
+        "推土机",
+        "推土板",
+        "履带",
+        "场地平整"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same golden-yellow crawler bulldozer with broad curved front steel blade, two dark tracks and enclosed cab; never an excavator bucket.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

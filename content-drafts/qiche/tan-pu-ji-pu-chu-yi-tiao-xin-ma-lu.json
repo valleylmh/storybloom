@@ -1,0 +1,180 @@
+{
+  "book": {
+    "id": "tan-pu-ji-pu-chu-yi-tiao-xin-ma-lu",
+    "seriesId": "qiche",
+    "title": "摊铺机铺出一条新马路",
+    "subtitle": "公园门口的最后一段接力",
+    "question": "摊铺机怎样把路面铺得平整？",
+    "moral": {
+      "zh": "前一道做好，后一道接稳，合作让长长的路连起来。",
+      "en": "Prepare each stage and support the next so teamwork can connect a long road."
+    },
+    "parentGuide": {
+      "goal": "理解有先后关系的合作。",
+      "reminder": "不把施工流程背诵当作考核，让孩子用自己的话讲接力。",
+      "questions": [
+        "运料、摊铺、压实怎样接上？",
+        "车走了为什么还不能马上踩新路？"
+      ],
+      "activity": "用纸片拼一条路，找空缺和接缝，再用玩具车演一遍运料、摊铺、压实。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "公园快开放了，门口还差一段连接道路。安安从围栏外看见几辆不同的工程车：“今天谁先来，谁最后来呢？”",
+        "enText": "The park was almost ready, but a connecting road was missing. An'an saw several machines beyond the fence. “Who goes first, and who comes last today?”",
+        "illustrationPrompt": "Wide park entrance closed roadworks paver dump truck roller waiting separate areas visitors outside fence."
+      },
+      {
+        "page": 2,
+        "zhText": "林工程师拿出没有字的小图卡：运料、摊铺、压实。“今天是一次接力。”安安把卡片排好：“我来记住顺序！”",
+        "enText": "Lin brought wordless picture cards: deliver, pave, compact. “Today's a relay.” An'an arranged them. “I'll remember the order!”",
+        "illustrationPrompt": "Visitor shelter three distinct picture cards truck paver roller at table An'an Mom Lin."
+      },
+      {
+        "page": 3,
+        "zhText": "先检查路下面的基础。标高、平整、排水和需要的处理都准备好，才能铺上面。妈妈说：“漂亮的路面，也需要可靠的底下。”",
+        "enText": "First came checks of the base: level, shape, drainage and required treatment. “An attractive surface needs sound support underneath,” Mom said.",
+        "illustrationPrompt": "Professional surveying prepared road base with drainage curb, paver parked waiting."
+      },
+      {
+        "page": 4,
+        "zhText": "运料车送来沥青混合料。里面有石料，也有起黏结作用的沥青。它和给平台用的混凝土不同，可不能认成同一种材料。",
+        "enText": "The truck brought asphalt mix: stone bound with bitumen. It was different from the concrete used for the platform; the two were not interchangeable.",
+        "illustrationPrompt": "Visitor safe sealed samples dark asphalt and light concrete alongside, actual covered delivery truck background."
+      },
+      {
+        "page": 5,
+        "zhText": "今天用的是热拌材料，施工区域很烫，必须隔开。安安站在参观区捏捏妈妈的手：“我们只看，不靠近、不伸手。”",
+        "enText": "Today's hot-mix material made the work area hot and off-limits. An'an held Mom's hand in the visitor area. “We look without going close or touching.”",
+        "illustrationPrompt": "Wide protected visitor fence substantial standoff from hot asphalt receiving operation, subtle heat haze only."
+      },
+      {
+        "page": 6,
+        "zhText": "绿色摊铺机张着宽宽的料斗，像在等一份大午饭。运料车按现场指挥慢慢到位，确认配合好，才向料斗卸料。",
+        "enText": "The green paver's broad hopper seemed to await a giant lunch. Under site guidance, the truck approached slowly and unloaded only when everything was aligned.",
+        "illustrationPrompt": "Blue dump truck rear properly aligned to green paver front hopper, coordinated safe feed, workers clear."
+      },
+      {
+        "page": 7,
+        "zhText": "哗啦，材料落进料斗。安安问：“它吃进去以后，从哪里出来？”林工程师让她看看摊铺机身后的方向。",
+        "enText": "The mix poured into the hopper. “Where does it come out after going in?” An'an asked. Lin pointed toward the back of the paver.",
+        "illustrationPrompt": "Close front receiving hopper asphalt arriving, rear screed visible deeper behind coherent machine."
+      },
+      {
+        "page": 8,
+        "zhText": "机器里的输送装置把材料送向后面，再由螺旋分料器向左右分开。这样，宽宽的路面才都有材料铺上。",
+        "enText": "Conveyors carry the mix rearward, and augers distribute it sideways. That supplies material across the full paving width.",
+        "illustrationPrompt": "Educational safe parked museum model paver with small sectional cutaway showing front hopper conveyor rear auger, wordless no people near active mechanisms."
+      },
+      {
+        "page": 9,
+        "zhText": "后面的熨平板像一位细心的整理员，帮助铺出设定的宽度、厚度和平整度。不是安安家里熨衣服的那一块小板子哦。",
+        "enText": "The screed behind carefully shapes the planned width, thickness and evenness. It is not the little iron used for clothes at home!",
+        "illustrationPrompt": "Low rear-quarter green paver screed laying uniform dark asphalt mat, professional operator on safe platform."
+      },
+      {
+        "page": 10,
+        "zhText": "摊铺机保持合适的速度，一条黑亮的新路慢慢伸出来。安安用手指在空气里画长线：“这条线，要一直接得顺顺的。”",
+        "enText": "At a suitable steady speed, the paver left a fresh dark strip. An'an drew a line in the air. “Let's keep it smooth and connected.”",
+        "illustrationPrompt": "Long cinematic paver moving steadily leaving smooth fresh asphalt strip behind toward park gate."
+      },
+      {
+        "page": 11,
+        "zhText": "下一辆运料车还没到，大家先联系确认。材料供应要衔接好，突然断断续续，会给摊铺带来麻烦。安安说：“接力不能只顾自己跑！”",
+        "enText": "The next delivery had not arrived, so the team checked in. Supply needed coordination; interruptions could complicate paving. “A relay isn't just about your own turn!” An'an said.",
+        "illustrationPrompt": "Paver operator communicating by radio, adequate hopper material still present, next truck distant on safe approach."
+      },
+      {
+        "page": 12,
+        "zhText": "现场按照材料状态和施工方案调整安排。需要暂停，就把停工和接缝处理做好；不是随便等一等，再接上就算完成。",
+        "enText": "The team adjusted the work to material condition and the paving plan. Any pause needed proper stopping and joint treatment, not simply waiting and starting again.",
+        "illustrationPrompt": "Controlled paving pause neat transverse stopping edge professional crew working safely PPE, machine stationary."
+      },
+      {
+        "page": 13,
+        "zhText": "运输接上了，摊铺继续向前。接缝处也要认真处理，让新铺的部分和前面的部分按要求连好。安安说：“拼图的边边也很重要。”",
+        "enText": "With delivery restored, paving continued. Joints needed care so sections connected as required. “Puzzle edges matter, too,” An'an said.",
+        "illustrationPrompt": "Close professional screed laying adjoining asphalt section at neat joint, no gaping cracks."
+      },
+      {
+        "page": 14,
+        "zhText": "压路机跟上来，按材料和温度要求压实。摊铺机负责铺，压路机负责压；看着平整，还要把里面做好。",
+        "enText": "The roller followed, compacting according to material and temperature requirements. The paver laid it; the roller compacted it. A smooth look was only part of the job.",
+        "illustrationPrompt": "Wide green paver ahead orange tandem roller behind with safe spacing new asphalt mat no close workers."
+      },
+      {
+        "page": 15,
+        "zhText": "工作人员检测路面的情况，也检查边缘、排水和接缝。安安问：“所以最后一辆车走了，还没到我们上场的时候？”",
+        "enText": "Workers checked the surface, edges, drainage and joints. “So even when the last machine leaves, it isn't our turn yet?” An'an asked.",
+        "illustrationPrompt": "PPE inspector checking finished asphalt edge beside drain after machines parked, fence still closed."
+      },
+      {
+        "page": 16,
+        "zhText": "还要等冷却、检查合格，并由现场确认开放。围栏没有撤，大家就继续从安全的临时通道走。妈妈说：“我们也帮接力守好最后一步。”",
+        "enText": "The road needed cooling, successful checks and approval to open. While barriers remained, everyone used the safe temporary path. “We help by respecting this final step,” Mom said.",
+        "illustrationPrompt": "Family follows fenced pedestrian detour away from new asphalt closed lane, paver parked distant."
+      },
+      {
+        "page": 17,
+        "zhText": "回家后，安安把玩具车排成队：前面送材料，中间铺，后面压。她推到一半停下来：“前面的还没准备好，后面的先等等。”",
+        "enText": "At home, An'an lined up toys: deliver, pave, compact. Halfway through, she paused. “If the first stage isn't ready, the next one waits.”",
+        "illustrationPrompt": "Home toy dump truck paver roller orderly separated sequence An'an narrating Mom listens."
+      },
+      {
+        "page": 18,
+        "zhText": "妈妈用卡纸做一条路，安安一段段拼好。哪条接缝最整齐？哪里漏了一小块？她拿起小纸片：“我来补上这个空缺！”",
+        "enText": "Mom made paper road pieces, and An'an fitted them together. Which joint was neatest? Where was a gap? “I'll fill this space!” she said.",
+        "illustrationPrompt": "Inside cozy living room only, An'an and mother join gray cardstock road segments on low table; child holds matching piece to fill visible gap. No engineer, outdoors or real construction vehicles; no scissors."
+      },
+      {
+        "page": 19,
+        "zhText": "现在请你来当故事里的小调度员：石料刚送到，应该请摊铺机先铺，还是让行人先走？安安把公园门口的小人留在围栏外。",
+        "enText": "Be the story's little planner: when material arrives, should paving happen first, or should people walk on it? An'an kept the toy visitors outside the barrier.",
+        "illustrationPrompt": "Toy roadwork paver and truck with toy visitor figures behind mini fence, sorting game no labels."
+      },
+      {
+        "page": 20,
+        "zhText": "道路开放了，公交车稳稳停在公园站。安安和妈妈从人行道走进公园：“谢谢接力小队，把回家的路和公园连起来啦！”",
+        "enText": "When the road opened, a bus stopped at the park stop. An'an and Mom entered from the sidewalk. “Thank you, relay team, for connecting our neighborhood to the park!”",
+        "illustrationPrompt": "Finished safe park entrance road public bus stopped curb, family walking on separated sidewalk warm welcoming."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 25,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 14,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 25,
+      "personalizationEnabled": false,
+      "tags": [
+        "摊铺机",
+        "沥青",
+        "熨平板",
+        "道路施工"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same deep-green tracked asphalt paver with front receiving hopper, concealed conveyors and rear screed; blue-cab gray dump truck supplies asphalt; orange tandem steel-drum roller compacts. Asphalt dark realistic, only subtle heat haze no smoke clouds.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

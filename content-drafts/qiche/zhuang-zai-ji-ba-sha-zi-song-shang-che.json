@@ -1,0 +1,156 @@
+{
+  "book": {
+    "id": "zhuang-zai-ji-ba-sha-zi-song-shang-che",
+    "seriesId": "qiche",
+    "title": "装载机把沙子送上车",
+    "subtitle": "大铲斗的沙坑补给任务",
+    "question": "装载机怎样把沙子装进车厢？",
+    "moral": {
+      "zh": "合适的工具、适量的装载和清楚的配合，让任务完成得又稳又好。",
+      "en": "Suitable tools, sensible loads and clear teamwork make a job steady and successful."
+    },
+    "parentGuide": {
+      "goal": "用动作顺序理解装载与运输的分工。",
+      "reminder": "不比赛谁装得更多，把注意力放在稳稳完成上。",
+      "questions": [
+        "装载机和自卸车的任务哪里不同？",
+        "为什么铲斗不能一路举得高高的？"
+      ],
+      "activity": "用圆头小铲和大积木给玩具车装货，对比适量装载与堆太高的区别。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "新公园要做一个大沙坑。安安抱着小桶，站在参观区想：“这么多沙，用我的小桶要装到什么时候呀？”远处，一辆装载机开来了。",
+        "enText": "The new park needed a big sandpit. Holding her little pail in the visitor area, An'an wondered, “How long would this take with my bucket?” A wheel loader arrived.",
+        "illustrationPrompt": "Wide sand storage yard, An'an holding small pail outside fence, orange-yellow loader approaches inside yard."
+      },
+      {
+        "page": 2,
+        "zhText": "它的铲斗宽宽的，像一只大簸箕。林工程师说：“今天它要把合适的沙子装上运输车，送去公园。”安安看看小桶，又看看大铲斗，笑了。",
+        "enText": "Its bucket was broad like a giant dustpan. “Today it will load suitable sand onto a truck for the park,” Lin said. An'an looked from her pail to the bucket and smiled.",
+        "illustrationPrompt": "Medium front three-quarter loader broad bucket lowered, tiny pail held by An'an beyond fence for scale."
+      },
+      {
+        "page": 3,
+        "zhText": "沙堆不止一座！有粗石料，也有细沙。工作人员先核对材料，选好要送的那一堆。大铲斗再能干，也不能装错东西。",
+        "enText": "There was more than one pile: coarse stone and fine sand. Workers checked the materials and chose the right pile. Even a clever big bucket must collect the right thing.",
+        "illustrationPrompt": "Separate gravel and clean fine sand stockpiles, Lin checking blank sample trays in safe area, loader stationary."
+      },
+      {
+        "page": 4,
+        "zhText": "开工前，司机检查轮胎和铲斗，还看看有没有人或东西挡路。四个大轮胎准备好了，铲斗慢慢降到合适的位置。",
+        "enText": "Before work, the driver checked the tires and bucket and made sure the route was clear. Four big tires were ready, and the bucket lowered into position.",
+        "illustrationPrompt": "Profile four-tire loader on level clear yard, bucket low ready for work, driver inside cab."
+      },
+      {
+        "page": 5,
+        "zhText": "铲斗贴近地面向前推，沙子涌了进来。安安在围栏外弯弯手掌：“先把沙子请进来！”沙堆留下一个小小的缺口。",
+        "enText": "The bucket pushed forward close to the ground, and sand rolled in. An'an curved her hand outside the fence. “Invite the sand in first!” A little hollow appeared in the pile.",
+        "illustrationPrompt": "Close loader bucket entering base of clean sand pile, sand rolling into bucket, no bystanders."
+      },
+      {
+        "page": 6,
+        "zhText": "接着，铲斗往后收一点，把沙子兜稳。司机没有堆出一座摇摇晃晃的沙山。装得合适，才不容易一路撒落。",
+        "enText": "Next, the bucket tilted back to hold the sand. The driver did not make a tall, wobbling mountain. A sensible load was less likely to spill along the way.",
+        "illustrationPrompt": "Bucket tilted back carrying modest sand load below rim, believable hydraulic linkages."
+      },
+      {
+        "page": 7,
+        "zhText": "装载机倒着退开沙堆。提醒声响起，工作人员早已站到安全位置。妈妈说：“听见提醒，我们也留在围栏外，不往机器后面跑。”",
+        "enText": "The loader reversed away from the pile. A warning sounded, and workers were already in safe positions. “We stay outside the fence, away from the machine's rear,” Mom said.",
+        "illustrationPrompt": "Wide loader reversing on empty marked route with low bucket, visitors behind fence well away."
+      },
+      {
+        "page": 8,
+        "zhText": "转弯时，车身中间好像弯了弯。林工程师说：“这辆装载机用铰接转向，前后两部分改变夹角，帮助它转弯。”",
+        "enText": "As it turned, the middle of the loader seemed to bend. “This loader has articulated steering,” Lin said. “Its front and rear sections change angle to help it turn.”",
+        "illustrationPrompt": "High three-quarter loader showing central articulation joint and aligned front/rear sections gently angled, low bucket."
+      },
+      {
+        "page": 9,
+        "zhText": "运输车已经停稳。司机们确认位置，装载机才慢慢靠近。安安轻声喊：“大铲斗，轮到你抬高啦！”",
+        "enText": "The truck had stopped securely. The drivers confirmed their positions before the loader approached slowly. “Big bucket, time to rise!” An'an whispered.",
+        "illustrationPrompt": "Blue-cab gray-bed dump truck stationary, loader approaching side with safe clearance, enclosed operator cabs."
+      },
+      {
+        "page": 10,
+        "zhText": "长长的举升臂把铲斗抬过车厢边。哗啦啦，沙子倒进去，像一场小小的金色雨。车厢里没有人，附近也没有人伸手去接。",
+        "enText": "The lifting arms raised the bucket above the bed. Whoosh! Sand poured in like a little golden shower. Nobody was in the bed or reaching beneath the bucket.",
+        "illustrationPrompt": "Sand pouring from elevated loader bucket into empty gray truck bed, no people underneath or inside bed."
+      },
+      {
+        "page": 11,
+        "zhText": "第一斗落在前面，下一斗换个位置。沙子分布均匀，不能全挤在一边。安安把两只手摊平：“要让车厢站得稳稳的！”",
+        "enText": "The first scoop went toward the front; the next went elsewhere. The sand needed to be spread evenly, not piled on one side. An'an held out both hands. “Keep it balanced!”",
+        "illustrationPrompt": "Overhead truck bed with sand distributed evenly, loader depositing second modest scoop."
+      },
+      {
+        "page": 12,
+        "zhText": "还差一点，装载机却停下来。原来要先确认重量，不能因为车厢还有空，就一直加。安安点头：“不是装得越满越好。”",
+        "enText": "A little more seemed possible, but the loader stopped. The load had to be checked; empty space did not mean more could be added. “Fuller is not always better,” An'an nodded.",
+        "illustrationPrompt": "Stationary loaded truck on level loading area, workers check blank weigh record from safe station, loader grounded bucket."
+      },
+      {
+        "page": 13,
+        "zhText": "运输车盖好篷布，沿着安排好的路出发。装载机把铲斗放低，继续整理材料区。它们一个装，一个运，各有各的本领。",
+        "enText": "The truck covered its load and followed the planned route. The loader lowered its bucket and tidied the material area. One loaded, the other carried: each had its own skill.",
+        "illustrationPrompt": "Covered blue truck departing yard, loader with low bucket in separate safe lane, wide balanced composition."
+      },
+      {
+        "page": 14,
+        "zhText": "过些日子，公园的沙坑开放了。安安挖了一条小河，还堆了一座小桥：“原来这些沙，是大铲斗一趟趟送来的！”",
+        "enText": "Later, the sandpit opened. An'an dug a tiny river and made a bridge. “These grains came here scoop by scoop in that big bucket!”",
+        "illustrationPrompt": "Completed public park sandpit, An'an with pail and Mom kneeling nearby, safe toy sand bridge."
+      },
+      {
+        "page": 15,
+        "zhText": "在家里，安安用小铲把大积木装进玩具车。你来猜：堆得高高的一铲，还是稳稳的一小铲，更容易不撒出来？妈妈在旁边陪着玩。",
+        "enText": "At home, Mom supervised as An'an scooped large blocks into a toy truck. Which would spill less: a towering scoop or a small, steady one?",
+        "illustrationPrompt": "Supervised tabletop large age-appropriate toy blocks, rounded scoop and toy truck, visual modest versus overloaded scoop comparison."
+      },
+      {
+        "page": 16,
+        "zhText": "安安给今天的动作编了儿歌：“铲进去，收回来；低低走，停稳抬；轻轻倒，慢慢来。”妈妈拍着节奏，大铲斗仿佛又开工啦！",
+        "enText": "An'an made a rhyme: “Scoop it in and tilt it back. Carry low along the track. Stop, lift, tip—and take it slow!” Mom clapped, and their pretend loader went to work again.",
+        "illustrationPrompt": "Warm home pretend play toy loader and truck, An'an and Mom clapping rhythm beside finished sandpit drawing without text."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 18,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 11,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 18,
+      "personalizationEnabled": false,
+      "tags": [
+        "装载机",
+        "铲斗",
+        "装沙",
+        "工程车"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same orange-yellow wheel loader, four large black tires, front lifting arms and broad bucket; companion blue-cab dump truck with gray level bed.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

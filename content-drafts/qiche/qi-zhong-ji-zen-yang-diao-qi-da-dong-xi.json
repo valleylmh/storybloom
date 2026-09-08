@@ -1,0 +1,181 @@
+{
+  "book": {
+    "id": "qi-zhong-ji-zen-yang-diao-qi-da-dong-xi",
+    "seriesId": "qiche",
+    "title": "起重机怎样吊起大东西",
+    "subtitle": "把小河两岸连起来",
+    "question": "起重机怎样又稳又准地吊起桥梁？",
+    "moral": {
+      "zh": "大力气要配上准备、沟通和等待，合作才能稳稳完成。",
+      "en": "Strength needs preparation, communication and patience for steady teamwork."
+    },
+    "parentGuide": {
+      "goal": "欣赏耐心、清楚沟通与稳妥的准备。",
+      "reminder": "不把冒险或吊得更重作为勇敢，只用很轻的玩具和积木探索。",
+      "questions": [
+        "长臂够得到，就一定吊得动吗？",
+        "风变大时为什么可以先等一等？"
+      ],
+      "activity": "用大积木搭小桥，比较宽而稳的支撑和窄支撑，成人陪同并避免压到手。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "公园的小河两岸都修好了路，可中间还缺一座桥。安安站在围栏外问：“那么长的桥梁，谁能把它搬过去？”",
+        "enText": "Paths were ready on both banks of the park stream, but a bridge was missing. “Who can move such a long beam across?” An'an asked outside the fence.",
+        "illustrationPrompt": "Wide stream separated finished banks with prepared abutments, no bridge yet, visitors outside work fence."
+      },
+      {
+        "page": 2,
+        "zhText": "一辆黄色起重机缓缓到场，长臂收在车身上，吊钩安静地垂着。林工程师说：“今天它来帮忙，不过吊之前，要先做很多准备。”",
+        "enText": "A yellow mobile crane arrived with its boom stowed and hook resting quietly. “It will help today,” Lin said, “but lifting takes plenty of preparation.”",
+        "illustrationPrompt": "Hero yellow wheeled mobile telescopic crane arriving boom fully stowed hook secured."
+      },
+      {
+        "page": 3,
+        "zhText": "先看要吊的东西有多重、要送多远，再选设备和吊装办法。不是长臂伸得到，就一定吊得动。安安说：“长和强，不是一回事！”",
+        "enText": "The team checked the load's weight and how far it must reach, then chose equipment and a lifting plan. Reaching a place did not mean the crane could lift a load there. “Long isn't the same as strong!” An'an said.",
+        "illustrationPrompt": "Safe planning shelter scale bridge model and blank crane reach diagram, Lin explaining to An'an Mom."
+      },
+      {
+        "page": 4,
+        "zhText": "桥梁也要先检查，吊点和吊具必须合适。工作人员仔细查看吊带和连接处。安安隔着围栏看到：“它们像给大东西系安全带。”",
+        "enText": "The beam, lifting points and lifting gear were checked. Workers inspected slings and connections carefully. “Like a safety belt for something huge,” An'an said from behind the fence.",
+        "illustrationPrompt": "PPE rigging crew inspecting broad slings and engineered lifting points on beam resting on cribbing, crane inactive."
+      },
+      {
+        "page": 5,
+        "zhText": "起重机停在确认过的坚实地面上。支腿伸开，落到合适的垫板上。妈妈说：“大力士做事前，也要先把脚站稳。”",
+        "enText": "The crane parked on verified firm ground. Outriggers extended onto suitable pads. “Even a strong helper needs secure footing,” Mom said.",
+        "illustrationPrompt": "Low broad view crane four outriggers on proper pads, firm level ground, no drains below feet."
+      },
+      {
+        "page": 6,
+        "zhText": "车身后方的配重帮助起重机保持平衡，但它也有使用范围。配重、支撑、臂长和吊物位置，都要按设备要求安排。",
+        "enText": "Counterweights at the rear help balance the crane, but there are limits. Counterweights, supports, boom length and load position must all follow equipment requirements.",
+        "illustrationPrompt": "Rear three-quarter crane counterweight stack and outriggers visible, mechanically plausible."
+      },
+      {
+        "page": 7,
+        "zhText": "长臂慢慢伸长，钢丝绳垂下来。滑轮引导钢丝绳，吊钩连着检查好的吊具。安安仰起头：“这回真的是往天空伸手啦！”",
+        "enText": "The boom extended, and a wire rope descended. Pulleys guided the rope, and the hook connected to the checked rigging. An'an looked up. “Now it really is reaching skyward!”",
+        "illustrationPrompt": "Crane telescopic boom extending skyward, vertical wire rope through realistic tip sheaves and hook block."
+      },
+      {
+        "page": 8,
+        "zhText": "吊装区域围好了，谁也不能从吊物下面穿过去。参观区离得远远的。妈妈握住安安的手：“这里看得到，也待得安全。”",
+        "enText": "The lifting zone was closed off. Nobody could pass beneath a load, and the visitor area was far away. Mom held An'an's hand. “We can see from here and stay safe.”",
+        "illustrationPrompt": "Wide scene clear exclusion area around beam and crane, An'an Mom far behind sturdy foreground viewing fence."
+      },
+      {
+        "page": 9,
+        "zhText": "现场由安排好的指挥人员发出信号。司机认真确认，再缓缓操作。不是所有人一起喊，越响越好；信号要清楚、统一。",
+        "enText": "An assigned signaler directed the work. The operator confirmed each signal and moved carefully. It was not a shouting contest: signals needed to be clear and consistent.",
+        "illustrationPrompt": "Signal person in designated safe visible location giving clear hand signal, crane operator behind glass."
+      },
+      {
+        "page": 10,
+        "zhText": "吊钩上升一点点，桥梁刚离开支垫就先停住。工作人员检查平衡和连接情况。安安屏住呼吸：“先小小试一下。”",
+        "enText": "The hook rose slightly, lifting the beam just clear of its supports, then paused. The team checked balance and connections. “A tiny test first,” An'an whispered.",
+        "illustrationPrompt": "Low controlled trial lift beam just centimeters clear of cribbing, two-point balanced slings, everyone clear."
+      },
+      {
+        "page": 11,
+        "zhText": "确认正常，桥梁才继续升高。两头差不多平，像一根稳稳的长积木。吊臂转动也很慢，司机一直按指挥配合。",
+        "enText": "Once checks were satisfactory, the beam rose further. Its ends stayed nearly level like a steady long block. The crane slewed slowly under the signaler's guidance.",
+        "illustrationPrompt": "Balanced suspended short pedestrian bridge beam level between two lifting slings, clear ground below, crane stable."
+      },
+      {
+        "page": 12,
+        "zhText": "突然，树叶哗啦啦响起来，风比刚才大了。现场按计划暂停吊装，把吊物安全安置好。安安说：“再等一会儿，桥不会跑掉。”",
+        "enText": "Leaves rustled as the wind picked up. The team paused according to plan and safely set the load down. “The bridge can wait,” An'an said.",
+        "illustrationPrompt": "Beam safely lowered back onto cribbing with sling slack, leaves breezy, crane stationary no hanging load in wind."
+      },
+      {
+        "page": 13,
+        "zhText": "等条件合适，工作人员重新检查，再继续。林工程师说：“安全不是一次检查就够了，天气和现场变化了，也要重新判断。”",
+        "enText": "When conditions were suitable, the team rechecked and resumed. “Safety isn't a one-time check,” Lin said. “Weather and site changes mean reassessing.”",
+        "illustrationPrompt": "Calm clearing sky crew reviewing conditions near grounded beam and crane, visitors sheltered."
+      },
+      {
+        "page": 14,
+        "zhText": "桥梁移到两岸的支座上方，慢慢落下去。不是砰地一放就完事，位置要对准，安装人员按安全流程配合。",
+        "enText": "The beam moved over the bearings and lowered slowly. It was not simply dropped with a thump. It had to align, with installers following the safe procedure.",
+        "illustrationPrompt": "Precision lowering beam over two abutment bearings across narrow stream, nobody beneath or pinching hands at bearings."
+      },
+      {
+        "page": 15,
+        "zhText": "安放稳妥、确认固定后，吊具才按流程松开。吊钩空着升起来，像轻轻松了一口气。安安拍了一下手：“到家啦！”",
+        "enText": "Only after the beam was secure and fixed did the team release the rigging. The empty hook rose as if sighing with relief. “It's home!” An'an clapped.",
+        "illustrationPrompt": "Bridge beam seated securely on abutments, empty hook lifting with slack rigging removed safely by crew."
+      },
+      {
+        "page": 16,
+        "zhText": "桥还没开放呢！桥面、栏杆、连接和检查都要完成。安安把迈出去的小脚收回来：“我等它真正准备好，再去走一走。”",
+        "enText": "The bridge was not open yet! Decking, railings, connections and inspections still needed finishing. An'an stayed back. “I'll cross when it's truly ready.”",
+        "illustrationPrompt": "New bridge still fenced off with guardrails under completion, An'an remains on visitor side fence."
+      },
+      {
+        "page": 17,
+        "zhText": "回家后，妈妈陪安安搭积木桥。底座太窄，桥会晃；底座摆稳，搭起来就安心多了。玩具里的发现，让她想起那几条支腿。",
+        "enText": "At home, Mom helped An'an build a block bridge. Narrow supports wobbled; firm supports made it steadier. The experiment reminded her of the crane's outriggers.",
+        "illustrationPrompt": "Home block bridge with wide stable supports, An'an and Mom arranging large wooden blocks."
+      },
+      {
+        "page": 18,
+        "zhText": "安安用手臂平举一本轻轻的薄书，再稍微收近身体。“距离也会影响用力！”妈妈说。不过真起重机的限制，要看专业计算和设备要求。",
+        "enText": "An'an held a light booklet out, then brought it closer. “Distance changes the effort,” Mom said. Real crane limits, though, require professional calculations and equipment specifications.",
+        "illustrationPrompt": "Home child holding very light thin booklet closer to torso Mom supporting, no heavy loads."
+      },
+      {
+        "page": 19,
+        "zhText": "找找看：哪样帮助站稳，哪样连接吊物，谁负责清楚指挥？安安把玩具支腿、吊钩和小人排好：“大家少一个都不行。”",
+        "enText": "What helps it stand securely? What connects the load? Who gives clear signals? An'an arranged toy outriggers, a hook and a figure. “Every part of the team matters.”",
+        "illustrationPrompt": "Toy mobile crane broad deployed outriggers toy hook and signaler figure on tabletop no text."
+      },
+      {
+        "page": 20,
+        "zhText": "小桥开放那天，安安牵着妈妈慢慢走过去。河水在脚下唱歌。她回头看两岸：“大力气加上细心和等待，才把我们连到了一起。”",
+        "enText": "On opening day, An'an held Mom's hand and crossed slowly. Water sang below. She looked at both banks. “Strength, care and patience brought them together.”",
+        "illustrationPrompt": "Warm completed safe pedestrian bridge with full railings over small stream, An'an Mom crossing, public park opening."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 23,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 14,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 23,
+      "personalizationEnabled": false,
+      "tags": [
+        "起重机",
+        "吊钩",
+        "支腿",
+        "配重",
+        "吊装"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same yellow wheeled mobile telescopic crane, steel wire rope and realistic hook block, rear counterweights, four stabilizer outriggers on square pads. Beam is a modest precast pedestrian-bridge beam carried level by two-point rated slings, never suspended over people.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

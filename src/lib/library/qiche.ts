@@ -16,6 +16,16 @@ import laJiCheDraft from "../../../content-drafts/qiche/la-ji-che-ba-la-ji-song-
 import saShuiCheDraft from "../../../content-drafts/qiche/sa-shui-che-wei-shen-me-yi-lu-pen-shui.json";
 import xiaoFangCheDraft from "../../../content-drafts/qiche/xiao-fang-che-wei-shen-me-yao-ming-di.json";
 import xiaoCheDraft from "../../../content-drafts/qiche/xiao-che-wei-shen-me-yao-ting-wen-zai-xia-che.json";
+import waJueJiDraft from "../../../content-drafts/qiche/wa-jue-ji-de-da-chan-zi-you-shen-me-ben-ling.json";
+import zhuangZaiJiDraft from "../../../content-drafts/qiche/zhuang-zai-ji-ba-sha-zi-song-shang-che.json";
+import tuiTuJiDraft from "../../../content-drafts/qiche/tui-tu-ji-gei-tu-di-pu-bei-zi.json";
+import ziXieCheDraft from "../../../content-drafts/qiche/zi-xie-che-de-che-xiang-tai-qi-lai-le.json";
+import jiaoBanCheDraft from "../../../content-drafts/qiche/jiao-ban-che-de-du-zi-wei-shen-me-yi-zhi-zhuan.json";
+import bengCheDraft from "../../../content-drafts/qiche/beng-che-de-chang-ge-bo-shen-dao-na-li.json";
+import qiZhongJiDraft from "../../../content-drafts/qiche/qi-zhong-ji-zen-yang-diao-qi-da-dong-xi.json";
+import yaLuJiDraft from "../../../content-drafts/qiche/ya-lu-ji-man-man-zou-lu-mian-bian-jie-shi.json";
+import tanPuJiDraft from "../../../content-drafts/qiche/tan-pu-ji-pu-chu-yi-tiao-xin-ma-lu.json";
+import gongChengCheDraft from "../../../content-drafts/qiche/gong-cheng-che-xiao-dui-jian-hao-xin-gong-yuan.json";
 
 type QicheDraft = {
   book: Omit<LibraryBook, "pages"> & {
@@ -88,14 +98,24 @@ export const QICHE_BOOKS: LibraryBook[] = [
   dongCheZuDraft,
   feiJiWeiShenMeDraft,
   feiJiAnQuanDraft,
+  waJueJiDraft,
+  zhuangZaiJiDraft,
+  tuiTuJiDraft,
+  ziXieCheDraft,
+  jiaoBanCheDraft,
+  bengCheDraft,
+  qiZhongJiDraft,
+  yaLuJiDraft,
+  tanPuJiDraft,
+  gongChengCheDraft,
 ].map((draft) => draftToLibraryBook(draft as QicheDraft));
 
 export const QICHE_SERIES: LibrarySeries = {
   id: "qiche",
   title: "城市汽车小队",
-  subtitle: "跟着安安逛城市，发现车轮里的小秘密",
+  subtitle: "跟着安安逛城市、建公园，发现交通与工程的小秘密",
   description:
-    "安安带孩子走过街区、车站、医院、出租车候车点、充电站、高铁站和机场，在一段段有趣的城市任务里观察公交车、出租车、消防车、垃圾车、电动汽车、高铁动车和飞机怎样工作。每本都是完整的中英双语科普绘本，页数按故事需要展开，简化但不错误。",
+    "安安带孩子走过街区、车站和机场，再到安全参观区看工程车建公园。从公交车、出租车、高铁动车和飞机，到挖掘机、装载机、推土机、自卸车、搅拌车、泵车、起重机、压路机和摊铺机，在有任务、有困难、有合作的故事里发现它们的本领。每本都是完整的中英双语科普绘本，工程车篇每本 16–20 页，配有找一找、动作配音与亲子共读提示。",
   accent: "#2f7180",
   ageRange: "4–8 岁",
   bookCount: QICHE_BOOKS.length,

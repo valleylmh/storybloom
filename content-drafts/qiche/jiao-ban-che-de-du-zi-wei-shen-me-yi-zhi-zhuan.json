@@ -1,0 +1,168 @@
+{
+  "book": {
+    "id": "jiao-ban-che-de-du-zi-wei-shen-me-yi-zhi-zhuan",
+    "seriesId": "qiche",
+    "title": "搅拌车的肚子为什么一直转",
+    "subtitle": "绕个弯，也要稳稳送到",
+    "question": "搅拌车的滚筒为什么不停转？",
+    "moral": {
+      "zh": "材料要合适，时间要安排，遇到变化及时沟通。",
+      "en": "Use suitable materials, plan the timing and communicate when plans change."
+    },
+    "parentGuide": {
+      "goal": "理解材料、时间和沟通共同影响结果。",
+      "reminder": "不把搅拌车讲成转着就永远不会硬的魔法车。",
+      "questions": [
+        "混凝土和水泥是一回事吗？",
+        "绕路后为什么要联系工地并再次检查？"
+      ],
+      "activity": "成人封好装有水与干净小石子的透明瓶，轻转再静置看变化；这不是混凝土实验。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清早，一辆圆肚子的搅拌车经过参观区。呼噜噜，肚子还在转！安安问妈妈：“它一边走，一边在做大蛋糕吗？”",
+        "enText": "Early in the morning, a round-bellied mixer truck passed the visitor area. Whirr—its drum was turning! “Is it baking a giant cake as it goes?” An'an asked Mom.",
+        "illustrationPrompt": "Hero white-cab green-white drum mixer passing fenced observation area morning."
+      },
+      {
+        "page": 2,
+        "zhText": "林工程师笑着说：“它送的是混凝土，今天要浇筑小桥旁的平台。”安安指着滚筒：“原来里面装的不是面糊呀！”",
+        "enText": "“It is carrying concrete for a platform beside the little bridge,” Lin smiled. An'an pointed at the drum. “So it isn't cake batter!”",
+        "illustrationPrompt": "Visitor shelter overlooking distant prepared platform and mixer, Lin explains to An'an."
+      },
+      {
+        "page": 3,
+        "zhText": "混凝土和水泥不是同一种东西。水泥像配方里的一个成员，还要按要求配上水、沙子和石子等材料，才能做成需要的混凝土。",
+        "enText": "Concrete and cement are not the same thing. Cement is one ingredient, combined with water, sand, stone and other materials in a specified mix to make concrete.",
+        "illustrationPrompt": "Educational visitor table sealed sample containers of cement powder sand gravel water beside hardened concrete sample, no labels, no dust."
+      },
+      {
+        "page": 4,
+        "zhText": "在搅拌站，材料按配方计量，再搅拌均匀。不是随便多加一桶水，就能变得更好用。安安点头：“做东西也要守配方。”",
+        "enText": "At the mixing plant, ingredients were measured and mixed according to the recipe. Adding extra water at random would not improve it. “A recipe matters,” An'an nodded.",
+        "illustrationPrompt": "Wide clean enclosed batching plant loading mixer drum, workers in protected control room, no exposed dust."
+      },
+      {
+        "page": 5,
+        "zhText": "装好后，大滚筒继续慢慢转。里面的叶片带着混凝土翻动，帮助它保持均匀，减少材料分开沉下去。呼噜噜，是出发前的准备声。",
+        "enText": "After loading, the drum kept turning slowly. Blades inside moved the concrete to help keep it uniform and reduce separation. Whirr—it was ready to leave.",
+        "illustrationPrompt": "Close external striped drum slowly rotating, optional separate small enclosed museum model of internal spiral, no impossible exposed full-size drum."
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈说：“一直转，也不能让混凝土永远不硬。工作人员还要管理时间、温度和材料状态。”安安说：“它是有时间安排的快递！”",
+        "enText": "“Turning cannot stop concrete from hardening forever,” Mom said. “The team must manage time, temperature and its condition.” “A delivery with a schedule!” An'an replied.",
+        "illustrationPrompt": "Visitor area Lin pointing at blank round clock and wordless delivery plan, mixer visible outside."
+      },
+      {
+        "page": 7,
+        "zhText": "司机出发前确认路线，工地也准备好了接货的人和设备。搅拌车不是到哪里随便倒，而是去约定的地方。",
+        "enText": "The driver confirmed the route, and the site prepared people and equipment to receive the load. The truck would not pour just anywhere: it had an agreed destination.",
+        "illustrationPrompt": "Driver in parked cab reviewing generic route map no text, organized site receiving bay beyond."
+      },
+      {
+        "page": 8,
+        "zhText": "半路上，一段道路临时封闭。搅拌车停在允许等待的位置，司机联系调度。安安从人行道远远看见：“大肚子遇到绕路啦！”",
+        "enText": "A road was temporarily closed. The truck stopped where waiting was allowed, and the driver contacted dispatch. Watching from the sidewalk, An'an said, “The big belly needs a detour!”",
+        "illustrationPrompt": "Covered road closure barriers distant, mixer safely parked in designated bay, driver on hands-free radio, visitors on protected sidewalk."
+      },
+      {
+        "page": 9,
+        "zhText": "调度重新安排路线，也把消息告诉工地。大家一起判断这车混凝土能否按要求使用。着急不能代替检查，更不能闯红灯。",
+        "enText": "Dispatch arranged a new route and informed the site. Together they assessed whether the concrete could still meet requirements. Hurrying could not replace checks—or justify running red lights.",
+        "illustrationPrompt": "Parked mixer driver communicating by radio, abstract wordless route alternative on tablet, calm no speeding."
+      },
+      {
+        "page": 10,
+        "zhText": "车到了，工作人员检查这批混凝土的资料和状态。确认符合要求，才安排卸料。安安松口气：“不是赶到就算完成，还要检查好。”",
+        "enText": "At the site, workers checked the batch information and condition. Only after confirming it met requirements did unloading begin. “Arriving isn't enough; it must be checked,” An'an said.",
+        "illustrationPrompt": "Mixer stationary receiving station, PPE worker performing supervised concrete sampling on protected slab, child far behind fence."
+      },
+      {
+        "page": 11,
+        "zhText": "司机让滚筒按卸料需要改变转动方向，里面的叶片把混凝土送向出口。后面的溜槽已经对好位置，工作人员站在安全处配合。",
+        "enText": "The driver changed the drum's direction for unloading. Its blades moved concrete toward the outlet. The rear chute was aligned, and workers assisted from safe positions.",
+        "illustrationPrompt": "Accurate rear mixer discharge chute aligned to receiving hopper, rotating drum intact, workers clear of moving parts."
+      },
+      {
+        "page": 12,
+        "zhText": "哗——湿湿的混凝土沿溜槽流下去。林工程师说：“不能用手摸，更不能赤脚踩。施工人员要穿戴好防护用品。”",
+        "enText": "Whoosh—wet concrete flowed down the chute. “Do not touch it or step in barefoot,” Lin said. “Workers must wear proper protection.”",
+        "illustrationPrompt": "Close concrete flowing chute into designated form, PPE adults rubber boots gloves at safe working position, visitors distant."
+      },
+      {
+        "page": 13,
+        "zhText": "平台的形状靠模板围好，钢筋按设计布置。搅拌车负责送材料，后面还有浇筑、振实和表面处理等工作。",
+        "enText": "Forms defined the platform, and reinforcement followed the design. The mixer delivered material; placing, consolidating and finishing still remained.",
+        "illustrationPrompt": "Wide prepared reinforced platform forms being poured by professional crew with suitable PPE, mixer rear beside zone."
+      },
+      {
+        "page": 14,
+        "zhText": "平台浇好了，也不能马上踩上去。工作人员养护、保护它，等达到要求再开放。安安问：“原来变结实，还需要耐心呀？”",
+        "enText": "Even after pouring, the platform could not be walked on immediately. Workers cured and protected it until it met requirements. “Getting strong takes patience, too?” An'an asked.",
+        "illustrationPrompt": "Fresh concrete platform fenced off with damp curing covering applied, no children inside."
+      },
+      {
+        "page": 15,
+        "zhText": "搅拌车去指定清洗区洗好设备，废水也集中处理。它没有把剩料倒进小河。安安看着河边的树：“公园和河水都要照顾。”",
+        "enText": "The mixer went to a designated washout area, where wastewater was collected. It did not dump leftovers in the stream. “We must care for both the park and the river,” An'an said.",
+        "illustrationPrompt": "Contained lined concrete washout bay truck chute washing into collection basin, stream distant and protected."
+      },
+      {
+        "page": 16,
+        "zhText": "回家后，妈妈拿出密封的小瓶，里面装着水和干净小石子。安安轻轻转一转，再放稳观察：“混在一起和沉下来，样子不一样！”",
+        "enText": "At home, Mom brought a sealed bottle of water and clean pebbles. An'an gently rolled it, then watched it settle. “Mixed and settled look different!”",
+        "illustrationPrompt": "Home Mom supervising sealed clear bottle with water pebbles child gently rolling on padded table, no cement at home."
+      },
+      {
+        "page": 17,
+        "zhText": "猜一猜：滚筒转动，是让材料均匀些，还是保证它永远不会硬？安安把玩具车推过去：“还要看时间和检查结果呢！”",
+        "enText": "Does turning help the mix stay uniform, or guarantee it never hardens? An'an rolled her toy truck. “Timing and checks matter, too!”",
+        "illustrationPrompt": "Toy green-white drum mixer on table beside blank clock face and sealed sample, playful child and Mom."
+      },
+      {
+        "page": 18,
+        "zhText": "平台开放了，安安和妈妈站在上面看小桥。她想起那段绕路：“大肚子送来的，不只是材料，还有大家商量好的每一步。”",
+        "enText": "When the platform opened, An'an and Mom stood on it to admire the bridge. She remembered the detour. “The big belly brought materials—and a plan everyone worked on together.”",
+        "illustrationPrompt": "Completed open riverside platform with safety railing, An'an Mom admiring small bridge in warm afternoon."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 21,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 21,
+      "personalizationEnabled": false,
+      "tags": [
+        "搅拌车",
+        "混凝土",
+        "水泥",
+        "滚筒"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Same white-cab concrete mixer truck with mint-green and white striped rotating drum and rear discharge chute, six black wheels, no open drum or children near chute.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}

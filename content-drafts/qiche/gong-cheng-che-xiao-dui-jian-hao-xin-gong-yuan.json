@@ -1,0 +1,180 @@
+{
+  "book": {
+    "id": "gong-cheng-che-xiao-dui-jian-hao-xin-gong-yuan",
+    "seriesId": "qiche",
+    "title": "工程车小队建好新公园",
+    "subtitle": "九种本领，一场完整的合作",
+    "question": "不同工程车怎样合作建好公园？",
+    "moral": {
+      "zh": "每种本领都有用，每一步都值得认真，合作才能把愿望变成现实。",
+      "en": "Every skill matters and every step deserves care. Teamwork turns a wish into reality."
+    },
+    "parentGuide": {
+      "goal": "看见每种本领和每个人的贡献。",
+      "reminder": "没有最没用的伙伴，不用工种或车辆大小给孩子排高低。",
+      "questions": [
+        "你最想感谢哪一位伙伴，为什么？",
+        "如果下雨或材料没到，队伍可以怎样调整？"
+      ],
+      "activity": "用玩具、积木和纸片摆一个小公园，让孩子挑三步讲给家长听；不必一次复述所有流程。",
+      "ageTips": {
+        "age4to5": "每次听几个动作就好，允许配音、指图和重复最喜欢的一页。",
+        "age6to8": "请孩子解释一次遇到困难后的选择，比较两种车的分工，不要求背术语。"
+      }
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "公园开放前，安安翻开自己的观察本。第一页还是一片空地。她问妈妈：“这么多车，怎么一起把这里变成了公园？”",
+        "enText": "Before the park opened, An'an looked through her observation book. The first page showed an empty field. “How did all those vehicles turn it into a park?” she asked Mom.",
+        "illustrationPrompt": "Cozy home An'an Mom looking wordless scrapbook empty-field sketch with tiny construction vehicle stickers."
+      },
+      {
+        "page": 2,
+        "zhText": "林工程师邀请她们在安全的参观区看回顾图。图上有小河、老树、操场和花园。“我们不是先开车进去，而是先弄清楚要做什么。”",
+        "enText": "Lin invited them to view picture plans from the safe visitor area: stream, old tree, play field and garden. “We began by understanding the job, not by driving machines in.”",
+        "illustrationPrompt": "Visitor shelter Lin displays large wordless park plan stream protected tree play field basin An'an Mom."
+      },
+      {
+        "page": 3,
+        "zhText": "工作人员测量地形、核对地下管线，还划出保护大树的范围。安安指着一圈围栏：“这一块要留下，不能随便挖！”",
+        "enText": "Workers surveyed the ground, checked underground services and marked the tree protection zone. An'an pointed to a ring of fence. “This part stays—we cannot dig wherever we like!”",
+        "illustrationPrompt": "Flashback wide site survey crew with protected mature tree fence and underground service ground marks no letters."
+      },
+      {
+        "page": 4,
+        "zhText": "第一位上场的伙伴是谁？黄色挖掘机伸出铲斗，按设计挖出浅浅的雨水花园。伸、弯、装、转，安安还记得它的节奏。",
+        "enText": "Who worked first? The yellow excavator shaped the shallow rain garden to the design. Reach, bend, scoop, turn—An'an remembered its rhythm.",
+        "illustrationPrompt": "Yellow tracked excavator digging shallow leaf-shaped basin, clear protected swing zone, no other machines."
+      },
+      {
+        "page": 5,
+        "zhText": "遇到大石头，它先停下来判断，再稳妥处理。那块石头后来留在花坛边。安安笑了：“困难没有被乱扔，还变成了风景。”",
+        "enText": "When a stone appeared, the team paused, assessed and handled it safely. It later became a garden rock. “The problem wasn't tossed away—it became scenery,” An'an smiled.",
+        "illustrationPrompt": "Landscape boulder safely placed beside flowerbed, An'an and mother outside site fence. Excavator far away with bucket resting on ground. No people moving boulder or standing beneath bucket."
+      },
+      {
+        "page": 6,
+        "zhText": "接着，推土机推开松土，把高处和低处慢慢调整好。它绕开老树，也照顾排水坡。谁还记得安安给这件事起的名字？铺土被子！",
+        "enText": "Next, the bulldozer spread loose earth and adjusted the highs and lows. It avoided the tree and preserved drainage slopes. What had An'an called it? Laying the earth's blanket!",
+        "illustrationPrompt": "Yellow tracked bulldozer broad blade grading field around generous protected tree zone."
+      },
+      {
+        "page": 7,
+        "zhText": "材料场里，装载机把合适的沙石装进车厢。铲进去，收回来，停稳抬，轻轻倒。安安把这几步拍成了小节奏。",
+        "enText": "At the depot, the loader filled truck beds with the right sand and gravel. Scoop, tilt, stop, lift, tip. An'an clapped the steps into a little rhythm.",
+        "illustrationPrompt": "Yellow wheel loader with four rubber tires and two short parallel lift arms loading blue-cab gray-bed truck. Clear paired lift linkage, no excavator boom or tracks. Fenced material yard, no bystanders."
+      },
+      {
+        "page": 8,
+        "zhText": "自卸车沿安排好的路线送来碎石。先找坚实平整的卸料点，确认上方和周围安全，再抬起车厢。哗啦啦，材料到站啦。",
+        "enText": "The dump truck brought gravel along the planned route. It found firm, level ground and checked overhead and around before raising the bed. Rattle—the material had arrived!",
+        "illustrationPrompt": "Blue-cab gray-bed dump truck safely tipping gravel at level clear unloading bay overhead unobstructed."
+      },
+      {
+        "page": 9,
+        "zhText": "雨下起来时，有些工作暂停了。工程车没有一起往前冲，而是等工作人员判断。安安说：“原来队伍前进，也包括会停下来。”",
+        "enText": "Rain paused some work. The machines did not charge on; they waited for the team to assess conditions. “Moving forward also means knowing when to stop,” An'an said.",
+        "illustrationPrompt": "Rainy worksite parked excavator loader bulldozer with grounded attachments separate secure positions visitors under shelter."
+      },
+      {
+        "page": 10,
+        "zhText": "天气合适后，压路机一趟趟压实路基。看不见的基础也认真检查。安安把这一步画在观察本下面：“藏起来的工作，同样重要。”",
+        "enText": "When conditions improved, the roller compacted the base, pass by pass. Hidden foundations were checked carefully. An'an drew this below her path sketch. “Hidden work matters, too.”",
+        "illustrationPrompt": "Orange roller compacting gravel base parallel passes safe worksite, inset avoided one scene."
+      },
+      {
+        "page": 11,
+        "zhText": "轮到混凝土了。搅拌车按安排送来材料，工作人员先检查。滚筒转着帮它保持均匀，却不能让材料一直等下去。",
+        "enText": "Then came concrete. The mixer delivered on schedule, and the team checked the batch. The turning drum helped keep it uniform, but could not make it wait forever.",
+        "illustrationPrompt": "White-cab green-white drum mixer at controlled receiving bay PPE worker checking suitable sample."
+      },
+      {
+        "page": 12,
+        "zhText": "泵车站稳支腿，展开红色长臂。混凝土沿管道送去需要的地方。安安把两辆车画在一起：“一个负责带来，一个负责送远。”",
+        "enText": "The pump truck set its outriggers and opened its red boom. Concrete traveled through pipes to where it was needed. An'an drew both trucks. “One brings it; one sends it farther.”",
+        "illustrationPrompt": "White-red pump on outriggers fed by green-white mixer continuous pipe to protected small service roof."
+      },
+      {
+        "page": 13,
+        "zhText": "小河上的桥梁由起重机帮忙安装。准备、指挥、试吊、检查，合适了才继续。安安说：“大东西搬家，也有自己的规矩。”",
+        "enText": "The crane helped place the bridge beam. Preparation, signaling, a trial lift and checks came before proceeding. “Big things have moving rules, too,” An'an said.",
+        "illustrationPrompt": "Yellow mobile crane outriggers on pads balanced small bridge beam just above abutments clear exclusion no people under load."
+      },
+      {
+        "page": 14,
+        "zhText": "门口那段路，运料车、摊铺机、压路机接力完成。前面送得上，中间铺得好，后面压得合适，还要一起照顾接缝和排水。",
+        "enText": "At the entrance, trucks, the paver and the roller worked in relay: steady supply, careful laying and suitable compaction, with joints and drainage checked too.",
+        "illustrationPrompt": "Wide separated sequential blue dump truck green paver orange tandem roller on entrance road, safe distances."
+      },
+      {
+        "page": 15,
+        "zhText": "工程车陆续退场，可公园还没有开门。绿化、栏杆、设施和各项检查都要完成。安安把观察本合上：“最后几步也不能省。”",
+        "enText": "The machines left, but the park remained closed. Planting, railings, facilities and inspections still had to be finished. An'an closed her book. “No skipping the last steps.”",
+        "illustrationPrompt": "Near-finished park closed entrance no readable sign professional gardeners inspectors checking railing."
+      },
+      {
+        "page": 16,
+        "zhText": "树种好了，工具收好了，施工废料也送去合适的地方。林工程师和伙伴们逐项确认。老树在风里摇叶子，像在试着说欢迎。",
+        "enText": "Planting was finished, tools put away and construction waste taken to suitable places. Lin and the team checked each item. The old tree rustled as if rehearsing a welcome.",
+        "illustrationPrompt": "Clean completed park professionals inspecting from public path planted rain garden retained tree no machines active."
+      },
+      {
+        "page": 17,
+        "zhText": "开园啦！安安先去沙坑，再走过小桥，最后坐在老树下。每到一个地方，她都想起一位伙伴：“这里有它做过的工作！”",
+        "enText": "Opening day! An'an visited the sandpit, crossed the bridge and rested beneath the old tree. Each place reminded her of a helper. “Its work is here!”",
+        "illustrationPrompt": "Rich wide completed public park showing connected sandpit safe railed bridge old tree, An'an Mom on path one scene."
+      },
+      {
+        "page": 18,
+        "zhText": "妈妈问：“哪辆车最重要？”安安想了想：“少了谁的工作都不行，还要有开车、测量、指挥和检查的人。”她在观察本上画了好多笑脸。",
+        "enText": "“Which machine mattered most?” Mom asked. An'an thought. “We needed every job—and the people who drove, measured, directed and checked.” She drew many smiling faces in her book.",
+        "illustrationPrompt": "Park bench An'an sketching team faces wordlessly Mom nearby engineer and diverse PPE workers waving from finished park."
+      },
+      {
+        "page": 19,
+        "zhText": "现在轮到你：如果要把材料送高处，请谁帮忙？如果要把路基压结实呢？安安把玩具排开：“猜完，还要说说它的本领！”",
+        "enText": "Your turn: who helps send material up high? Who firms the road base? An'an lined up her toys. “Name the helper—and explain its skill!”",
+        "illustrationPrompt": "Home large toy fleet nine distinguishable construction vehicles neatly spaced on play mat child Mom matching tasks wordlessly."
+      },
+      {
+        "page": 20,
+        "zhText": "晚上，安安轻声念：“铲一铲，运一运，铺一铺，压一压；站得稳，慢慢吊，大家一起把公园造。”妈妈合上书，公园的故事安静地睡着了。",
+        "enText": "That evening, An'an whispered, “Scoop and carry, spread and press. Stand securely, lift with care. Many helpers built our park.” Mom closed the book, and the park story settled down to sleep.",
+        "illustrationPrompt": "Warm bedtime closing An'an in bed teal jacket and orange backpack hung on hook star hair clip beside book Mom coral cardigan reads, toy excavator bedside, soft no text."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-08",
+    "order": 26,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 14,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 26,
+      "personalizationEnabled": false,
+      "tags": [
+        "工程车",
+        "建公园",
+        "团队合作",
+        "施工顺序"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. One square full-bleed warm premium children's picture-book illustration, softly textured animated-film realism, rich cinematic natural light, rounded tactile forms, Chinese neighborhood park construction project beside a stream. Vary perspectives and compositions; illustrate the specific story moment rather than a generic parked vehicle.",
+    "characterConsistency": "An'an (安安): six-year-old Chinese girl, ear-length straight black bob, yellow star hair clip, teal hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers, tan shoulder bag. Recurring engineer Lin: Chinese woman with tied-back dark hair, white hard hat, orange reflective vest, navy trousers and work boots. During active construction An'an and Mom stay together OUTSIDE a sturdy fenced visitor area, well away from machinery. Only trained adult workers in hard hats, reflective vests and boots enter work zones. Home scenes have no worksite hazards. Fleet continuity: yellow tracked excavator; orange-yellow four-tire wheel loader; yellow tracked bulldozer; blue-cab gray-bed dump truck; white-cab green-white striped mixer; white-cab red pump truck with outriggers; yellow mobile crane with outriggers; orange steel-drum roller; deep-green tracked asphalt paver. Only depict the specific vehicle(s) required by each page, never random fleet on every page.",
+    "negative": "No text, letters, labels, numbers, logos, brands, watermarks, vehicle faces, injuries, dangerous imitation, children operating machinery or entering active sites, people under suspended loads, workers in vehicle blind spots, duplicated characters, malformed limbs or impossible vehicle mechanics."
+  }
+}
