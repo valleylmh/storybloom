@@ -4,6 +4,8 @@ import { readShelf, toggleFavorite } from "../../core/device";
 import type { BookSummary } from "../../core/types";
 type ShelfRow = BookSummary & { favorite: boolean; pageNumber: number };
 Page({
+  onShareAppMessage() { return { title: "一起听故事 · 绘本馆", path: "/pages/catalog/index" }; },
+
   data: { tab: "recent" as "recent" | "favorites", books: [] as ShelfRow[] },
   onShow() { this.refresh(); },
   refresh() {

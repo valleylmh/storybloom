@@ -26,7 +26,7 @@ function runtime(narrated = false, background = false) {
   const definitions: Definition[] = [];
   const stored = new Map<string, unknown>();
   const wx = {
-    navigateTo: vi.fn(), switchTab: vi.fn(), pageScrollTo: vi.fn(), showToast: vi.fn(),
+    showShareMenu: vi.fn(), navigateTo: vi.fn(), switchTab: vi.fn(), pageScrollTo: vi.fn(), showToast: vi.fn(),
     setNavigationBarTitle: vi.fn(), previewImage: vi.fn(), setInnerAudioOption: vi.fn(),
     getStorageSync: (key: string) => stored.get(key),
     setStorageSync: (key: string, value: unknown) => stored.set(key, structuredClone(value)),
@@ -297,7 +297,7 @@ describe("mini native page wiring", () => {
   });
 });
 
-it("restarts at page one and follows the listening queue", () => {
+it("restarts at page one and follows the listening queue while sharing the current book", () => {
   const { open, fixture, tracks } = runtime(true, true);
   const [first, second] = fixture.catalog.books;
   const reader = open("reader/index");
@@ -316,5 +316,7 @@ it("restarts at page one and follows the listening queue", () => {
   invoke(reader, "onShow");
   expect((reader.data.summary as { id: string }).id).toBe(second.id);
   expect(reader.data.pageIndex).toBe(0);
+  expect(invoke(reader, "onShareAppMessage")).toMatchObject({ path: `/reader-0/index?id=${encodeURIComponent(second.id)}`, title: second.title });
+  expect(invoke(reader, "onShareTimeline")).toMatchObject({ query: `id=${encodeURIComponent(second.id)}` });
   invoke(reader, "onUnload");
 });

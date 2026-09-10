@@ -1,6 +1,9 @@
 import { filterBooks } from "../../core/catalog";
 import { catalog } from "../../core/content";
 Page({
+  onLoad() { wx.showShareMenu({ menus: ["shareAppMessage", "shareTimeline"] }); },
+  onShareAppMessage() { return { title: "今晚，先读一本好故事 · 绘本馆", path: "/pages/catalog/index" }; },
+  onShareTimeline() { return { title: "今晚，先读一本好故事 · 绘本馆" }; },
   data: { series: catalog.series, books: catalog.books, query: "", seriesId: "", selectedTab: "series-all", count: catalog.books.length },
   onSearch(event: WechatMiniprogram.Input) {
     const query = event.detail.value;

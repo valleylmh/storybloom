@@ -30,6 +30,7 @@ Page({
   onLoad(options: Record<string, string | undefined>) {
     backgroundNarration.configureQueue(books);
     this.setData({ autoNext: backgroundNarration.autoNext, nextBookId: backgroundNarration.nextBookId, listeningBooks: catalog.books.filter(item => Boolean(books[item.id]?.chineseAudio)) });
+    wx.showShareMenu({ menus: ["shareAppMessage", "shareTimeline"] });
     this.loadBook(options.id || "");
     this._observedBookId = backgroundNarration.state.bookId;
     this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
@@ -159,6 +160,10 @@ Page({
   nextBook() {
     if (!backgroundNarration.playNext(this._book?.id)) wx.showToast({ title: "已经是最后一本", icon: "none" });
   },
+  onShareAppMessage() {
+    return { title: this.data.summary?.title || "绘本馆", path: `${this.data.summary?.readerPath || "/reader/index"}?id=${encodeURIComponent(this._book?.id || "")}`, imageUrl: this.data.summary?.cover };
+  },
+  onShareTimeline() { return { title: this.data.summary?.title || "绘本馆", query: `id=${encodeURIComponent(this._book?.id || "")}`, imageUrl: this.data.summary?.cover }; },
   previous() { this.selectPage(this.data.pageIndex - 1); },
   next() { this.selectPage(this.data.pageIndex + 1); },
   favorite() {

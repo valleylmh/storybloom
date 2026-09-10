@@ -1,5 +1,5 @@
 <view wx:if="{{ready}}" class="reader {{audioEnabled ? 'with-audio' : ''}}">
-  <view class="reader-meta"><text class="series">{{summary.seriesTitle}}</text><button class="quiet heart {{favorite ? 'hearted' : ''}}" bindtap="favorite" aria-label="{{favorite ? '取消收藏' : '收藏'}}">{{favorite ? '♥' : '♡'}}</button><button class="quiet" bindtap="openGuide">阅读指南</button></view>
+  <view class="reader-meta"><text class="series">{{summary.seriesTitle}}</text><button class="quiet heart {{favorite ? 'hearted' : ''}}" bindtap="favorite" aria-label="{{favorite ? '取消收藏' : '收藏'}}">{{favorite ? '♥' : '♡'}}</button><button class="quiet" open-type="share">分享</button><button class="quiet" bindtap="openGuide">阅读指南</button></view>
   <view class="spread" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
     <media-image eager="{{true}}" src="{{current.image}}" label="{{summary.title}}第{{pageIndex + 1}}页插图，点击放大" mode="aspectFit" bind:open="preview" bind:ready="imageLoaded" />
     <view class="texts">
