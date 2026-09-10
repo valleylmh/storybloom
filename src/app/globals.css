@@ -11862,3 +11862,14 @@ a.library-book-card:hover {
     flex: 1;
   }
 }
+
+/* Installed Web App: retain browser zoom and accommodate display cutouts. */
+.webapp-install{max-width:680px;margin:0 auto;padding:40px 24px 140px;color:#302d28;line-height:1.8}
+.webapp-install>img{display:block;margin:32px 0 20px;border-radius:22px}
+.webapp-install h1{font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.25;margin-bottom:18px}
+.webapp-install h2{font-size:1.15rem;margin-top:28px}
+.webapp-install p{margin:12px 0;color:#74685d}
+.webapp-install button{min-height:48px;padding:12px 22px;background:#bd4d30;color:#fff;border:0;border-radius:16px;cursor:pointer}
+.webapp-install button:disabled{opacity:.6;cursor:wait}
+.webapp-offline{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:1000;padding:8px 16px;background:#fff1dc;color:#65412e;text-align:center;font-size:13px;pointer-events:none}
+@media(display-mode:standalone){body{padding-top:env(safe-area-inset-top);padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}}

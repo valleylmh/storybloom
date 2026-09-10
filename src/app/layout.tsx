@@ -1,13 +1,18 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import AnalyticsConsentManager from "@/components/analytics/AnalyticsConsentManager";
 import TawkToChat from "@/components/analytics/TawkToChat";
 import FamilyPlatformNav from "@/components/layout/FamilyPlatformNav";
 import Footer from "@/components/layout/Footer";
 import { APP_METADATA_BASE } from "@/lib/site-url";
+import WebAppRuntime from "@/components/pwa/WebAppRuntime";
 import Providers from "./providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  manifest: "/manifest.webmanifest",
+  applicationName: "StoryBloom",
+  appleWebApp: { capable: true, statusBarStyle: "default", title: "StoryBloom" },
+  icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
   metadataBase: APP_METADATA_BASE,
   title: "StoryBloom | 把成长时刻留成家庭绘本",
   description:
@@ -17,6 +22,10 @@ export const metadata: Metadata = {
     description: "记录一个真实时刻，确认事实，再把它变成以后还能翻开的家庭绘本。",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#fffdf8",
 };
 
 export default function RootLayout({
@@ -38,6 +47,7 @@ export default function RootLayout({
           <FamilyPlatformNav />
           <Footer />
         </Providers>
+        <WebAppRuntime />
         <AnalyticsConsentManager />
         <TawkToChat />
       </body>

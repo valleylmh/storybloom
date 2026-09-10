@@ -19,6 +19,7 @@ export default function Footer() {
         <Link href="/custom" className="footer-link">
           绘本定制
         </Link>
+        <Link href="/install" className="footer-link">添加到主屏幕</Link>
         <Link href="/privacy" className="footer-link">
           隐私与数据
         </Link>
