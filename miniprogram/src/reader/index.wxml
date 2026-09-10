@@ -1,5 +1,5 @@
 <view wx:if="{{ready}}" class="reader {{audioEnabled ? 'with-audio' : ''}}">
-  <view class="reader-meta"><text class="series">{{summary.seriesTitle}}</text><button class="quiet heart {{favorite ? 'hearted' : ''}}" bindtap="favorite" aria-label="{{favorite ? '取消收藏' : '收藏'}}">{{favorite ? '♥' : '♡'}}</button><button class="quiet" open-type="share">分享</button><button class="quiet" bindtap="openGuide">阅读指南</button></view>
+  <view class="reader-meta"><text class="series">{{summary.seriesTitle}}</text><button wx:if="{{guide.length}}" class="guide-entry" bindtap="openGuide" aria-label="阅读指南"><view class="book-icon"><view/><view/></view></button></view>
   <view class="spread" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtouchcancel="touchCancel">
     <media-image eager="{{true}}" src="{{current.image}}" label="{{summary.title}}第{{pageIndex + 1}}页插图，点击放大" mode="aspectFit" bind:open="preview" bind:ready="imageLoaded" />
     <view class="texts">
@@ -7,28 +7,47 @@
       <text class="paragraph en {{highlight === 'en' ? 'highlight' : ''}}" user-select="{{true}}">{{current.en}}</text>
     </view>
   </view>
+      <view class="pagination">
+        <button class="page-step" disabled="{{pageIndex === 0}}" bindtap="previous" aria-label="上一页">‹</button>
+        <text class="page-number"><text class="current-number">{{pageIndex + 1}}</text> / {{pageCount}}</text>
+        <button class="page-step" disabled="{{pageIndex + 1 === pageCount}}" bindtap="next" aria-label="下一页">›</button>
+      </view>
   <view class="image-lookahead" aria-hidden="{{true}}"><image wx:for="{{imageLookahead}}" wx:key="*this" src="{{item}}" lazy-load="{{false}}" /></view>
   <view class="controls">
-    <view wx:if="{{audioEnabled}}">
-      <view wx:if="{{audioError}}" class="audio-error" aria-live="polite">{{audioError}}</view>
-      <view wx:if="{{status === 'ended'}}" class="completed">这本故事读完啦</view>
-      <view class="audio-controls">
-        <button class="quiet" bindtap="restart">重新听</button><button wx:if="{{backgroundEnabled}}" class="quiet" bindtap="openQueue">听书列表</button>
-        <button class="primary play" bindtap="toggleAudio">{{waitingForImage ? '等插画 · 取消' : status === 'loading' ? '加载中 · 暂停' : active ? 'Ⅱ 暂停' : '▶ 播放'}}</button>
+    <view class="player-main">
+      <button class="favorite-entry {{favorite ? 'hearted' : ''}}" bindtap="favorite" aria-label="{{favorite ? '取消收藏' : '收藏绘本'}}">{{favorite ? '♥' : '♡'}}</button>
+      <button wx:if="{{audioEnabled}}" class="player-secondary" bindtap="restart" aria-label="从头重新听"><text class="restart-icon">↺</text><text>重新听</text></button>
+      <view wx:if="{{audioEnabled}}" class="play-center">
+        <button class="play" bindtap="toggleAudio" aria-label="{{waitingForImage ? '取消等待插画' : active ? '暂停朗读' : '播放朗读'}}">
+          <view wx:if="{{active || waitingForImage}}" class="pause-icon"><view/><view/></view>
+          <view wx:else class="play-icon"/>
+        </button>
+        <text class="play-caption">{{waitingForImage ? '等待插画 · 可取消' : status === 'loading' ? '加载中 · 可暂停' : active ? '正在朗读' : status === 'ended' ? '故事读完啦' : '听听这个故事'}}</text>
       </view>
+      <button wx:if="{{backgroundEnabled}}" class="player-secondary" bindtap="nextBook" aria-label="播放下一本绘本"><view class="skip-icon"><view/><view/></view><text>下一本</text></button>
+      <view wx:elif="{{audioEnabled}}" class="player-secondary"/>
+      <text wx:if="{{!audioEnabled}}" class="reading-caption">把喜欢的故事留在书架</text>
+      <button wx:if="{{backgroundEnabled}}" class="queue-entry" bindtap="openQueue" aria-label="打开听书列表"><view class="list-icon"><view/><view/><view/></view></button>
     </view>
-    <button wx:if="{{backgroundEnabled}}" class="quiet next-book" bindtap="nextBook">下一本 ›</button>
-    <view class="pagination"><button disabled="{{pageIndex === 0}}" bindtap="previous">‹ 上一页</button><text class="page-number">{{pageIndex + 1}} / {{pageCount}}</text><button disabled="{{pageIndex + 1 === pageCount}}" bindtap="next">下一页 ›</button></view>
+    <view wx:if="{{audioError}}" class="audio-error" aria-live="polite">{{audioError}}</view>
   </view>
   <view wx:if="{{queueOpen}}" class="guide-backdrop" bindtap="closeQueue" catchtouchmove="blockMove">
-    <view class="guide-panel" catchtap="blockMove">
-      <view class="guide-header"><text>听书列表</text><button class="quiet" bindtap="closeQueue">关闭</button></view>
-      <view class="queue-setting"><text>播完自动听下一本</text><switch checked="{{autoNext}}" bindchange="changeAutoNext" color="#bd5734" /></view>
-      <scroll-view class="guide-scroll" scroll-y="{{true}}">
-        <view wx:for="{{listeningBooks}}" wx:key="id" class="queue-row">
-          <button class="quiet queue-title" data-id="{{item.id}}" bindtap="playBook">{{item.id === summary.id ? '♫ ' : ''}}{{item.title}}</button>
-          <button class="quiet" data-id="{{item.id}}" bindtap="queueNext">{{nextBookId === item.id ? '已排下一本' : '下一本听'}}</button>
+    <view class="guide-panel listening-panel" catchtap="blockMove">
+      <view class="sheet-handle"/>
+      <view class="listening-header"><view><text class="listening-title">听书列表</text><text class="listening-count">{{listeningBooks.length}} 本好故事，慢慢听</text></view><button class="sheet-close" bindtap="closeQueue" aria-label="关闭听书列表">×</button></view>
+      <view class="queue-search"><text class="search-symbol">⌕</text><input value="{{queueQuery}}" bindinput="searchQueue" placeholder="找一本想听的故事" placeholder-class="queue-placeholder" confirm-type="search" aria-label="搜索听书列表"/><button wx:if="{{queueQuery}}" class="search-clear" bindtap="clearQueueSearch" aria-label="清空搜索">×</button></view>
+      <view class="queue-setting"><view><text class="setting-title">连续听故事</text><text class="setting-caption">{{autoNext ? '听完这本，接着播放下一本' : '听完一本就停下，慢慢回味'}}</text></view><switch checked="{{autoNext}}" bindchange="changeAutoNext" color="#bd5734" /></view>
+      <scroll-view class="listening-scroll" scroll-y="{{true}}" scroll-into-view="{{queueScrollTarget}}">
+        <view class="queue-hint">{{queueQuery ? '找到 ' + queueBooks.length + ' 本故事' : '点封面或书名播放 · 右侧安排下一本'}}</view>
+        <view wx:for="{{queueBooks}}" wx:key="id" id="queue-book-{{index}}" class="queue-row {{item.id === summary.id ? 'queue-current' : ''}}">
+          <button class="queue-book" data-id="{{item.id}}" bindtap="playBook" aria-label="{{'播放' + item.title}}">
+            <image class="queue-cover" src="{{item.cover}}" mode="aspectFill" lazy-load="{{true}}"/>
+            <view class="queue-copy"><text class="queue-title">{{item.title}}</text><view class="queue-subtitle"><text wx:if="{{item.id === playingBookId}}" class="queue-playing">{{active ? '正在播放' : '当前收听'}}</text><text wx:elif="{{item.id === summary.id}}" class="queue-playing">当前阅读</text><text wx:else>{{item.seriesTitle}}</text><text wx:if="{{nextBookId === item.id}}" class="queue-badge">下一本</text></view></view>
+          </button>
+          <button class="queue-action {{nextBookId === item.id ? 'queue-selected' : ''}}" data-id="{{item.id}}" bindtap="queueNext" aria-label="{{nextBookId === item.id ? '取消下一本' : '设为下一本'}}"><text class="queue-action-icon">{{nextBookId === item.id ? '✓' : '+'}}</text><text>{{nextBookId === item.id ? '已安排' : '接着听'}}</text></button>
         </view>
+        <view wx:if="{{!queueBooks.length}}" class="queue-empty">没有找到这本故事<text>换个书名或系列试试</text><button class="quiet" bindtap="clearQueueSearch">查看全部故事</button></view>
+        <view class="queue-end" wx:else>好故事，一本一本听</view>
       </scroll-view>
     </view>
   </view>

@@ -15,7 +15,7 @@ Page({
     current: EMPTY_PAGE, pageIndex: 0, pageCount: 0, favorite: false,
     guide: [] as GuideSection[], guideOpen: false,
     backgroundEnabled: false, queueOpen: false, autoNext: false, nextBookId: "",
-    listeningBooks: [] as BookSummary[],
+    listeningBooks: [] as BookSummary[], queueBooks: [] as BookSummary[], queueQuery: "", queueScrollTarget: "", playingBookId: "",
     imageLookahead: [] as string[], waitingForImage: false,
     audioEnabled: false, active: false, status: "idle", highlight: "", audioError: "",
   },
@@ -75,6 +75,7 @@ Page({
     this.setData({ imageLookahead: readerImageLookahead(this._book.pages, this.data.pageIndex) });
   },
   syncBackground(state: BackgroundState) {
+    this.setData({ playingBookId: state.bookId, nextBookId: backgroundNarration.nextBookId });
     const changedBook = Boolean(state.bookId && state.bookId !== this._observedBookId);
     if (state.bookId) this._observedBookId = state.bookId;
     if (changedBook && state.bookId !== this._book?.id && state.status !== "idle" && books[state.bookId]) {
@@ -139,16 +140,34 @@ Page({
     this.setData({ active: false, waitingForImage: false });
     this.toggleAudio();
   },
-  openQueue() { this.setData({ queueOpen: true, nextBookId: backgroundNarration.nextBookId }); },
+  openQueue() {
+    this.setData({ queueOpen: true, nextBookId: backgroundNarration.nextBookId, playingBookId: backgroundNarration.state.bookId });
+    this.filterQueue("");
+  },
+  searchQueue(event: WechatMiniprogram.Input) { this.filterQueue(event.detail.value); },
+  clearQueueSearch() { this.filterQueue(""); },
+  filterQueue(query: string) {
+    const text = query.trim().toLowerCase();
+    const queueBooks = this.data.listeningBooks.filter(book =>
+      `${book.title} ${book.seriesTitle} ${book.searchText}`.toLowerCase().includes(text));
+    const index = text ? 0 : Math.max(0, queueBooks.findIndex(book => book.id === this._book?.id));
+    // Clear the previous anchor and wait for the filtered rows to render before scrolling.
+    this.setData({ queueQuery: query, queueBooks, queueScrollTarget: "" }, () => {
+      if (this.data.queueOpen && this.data.queueQuery === query) {
+        this.setData({ queueScrollTarget: queueBooks.length ? `queue-book-${index}` : "" });
+      }
+    });
+  },
   closeQueue() { this.setData({ queueOpen: false }); },
   changeAutoNext(event: WechatMiniprogram.CustomEvent<{ value: boolean }>) {
     backgroundNarration.autoNext = event.detail.value;
     this.setData({ autoNext: event.detail.value });
   },
   queueNext(event: WechatMiniprogram.TouchEvent) {
-    backgroundNarration.nextBookId = String(event.currentTarget.dataset.id);
+    const id = String(event.currentTarget.dataset.id);
+    backgroundNarration.nextBookId = backgroundNarration.nextBookId === id ? "" : id;
     this.setData({ nextBookId: backgroundNarration.nextBookId });
-    wx.showToast({ title: "已设为下一本", icon: "none" });
+    wx.showToast({ title: backgroundNarration.nextBookId ? "已设为下一本" : "已取消下一本", icon: "none" });
   },
   playBook(event: WechatMiniprogram.TouchEvent) {
     const id = String(event.currentTarget.dataset.id);
