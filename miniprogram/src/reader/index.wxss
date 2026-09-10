@@ -32,3 +32,8 @@
 /* Native image requests warm the cache after the visible illustration is ready. */
 .image-lookahead { position: fixed; left: -10px; top: -10px; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
 .image-lookahead image { width: 1px; height: 1px; }
+
+.queue-row, .queue-setting { display: flex; align-items: center; justify-content: space-between; padding: 8px 18px; gap: 8px; }
+.queue-title { flex: 1; text-align: left; }
+.next-book { margin-bottom: 6px; }
+.with-audio { padding-bottom: calc(265px + env(safe-area-inset-bottom)); }

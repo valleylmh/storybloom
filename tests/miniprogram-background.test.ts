@@ -3,6 +3,7 @@ vi.mock("../miniprogram/src/core/device", () => ({ saveProgress: vi.fn() }));
 vi.mock("../miniprogram/src/core/content", () => ({ catalog: { books: [] } }));
 import { BackgroundNarration } from "../miniprogram/src/core/background-narration";
 import { pageAtTime, validBookAudio } from "../miniprogram/src/core/book-audio";
+import { catalog } from "../miniprogram/src/core/content";
 import { saveProgress } from "../miniprogram/src/core/device";
 import type { Book, BookSummary } from "../miniprogram/src/core/types";
 const book: Book = { id: "test/book", title: "测试", guide: [], pages: [0, 1, 2].map(i => ({
@@ -13,6 +14,7 @@ afterEach(() => { vi.unstubAllGlobals(); vi.clearAllMocks(); });
 function setup() {
   const events: Record<string, () => void> = {};
   const manager = { src: "", title: "", currentTime: 0, startTime: 0, play: vi.fn(), pause: vi.fn(), stop: vi.fn(), seek: vi.fn(),
+    onNext: (fn: () => void) => { events.next = fn; },
     onPlay: (fn: () => void) => { events.play = fn; }, onPause: (fn: () => void) => { events.pause = fn; },
     onStop: (fn: () => void) => { events.stop = fn; }, onEnded: (fn: () => void) => { events.ended = fn; },
     onWaiting: (fn: () => void) => { events.waiting = fn; }, onError: (fn: () => void) => { events.error = fn; },
@@ -86,4 +88,26 @@ describe("single Chinese book track with sample-based timeline", () => {
     narration.start({ ...book, chineseAudio: undefined }, summary, 0);
     expect(narration.state.error).toContain("尚未准备好"); expect(request).not.toHaveBeenCalled();
   });
+});
+
+it("restarts a finished book, advances a chosen next book, and stops at queue end", () => {
+  const { narration, manager, events } = setup();
+  const second = { ...book, id: "second", chineseAudio: { ...book.chineseAudio!, url: "https://media.example.com/second.mp3" } };
+  const third = { ...book, id: "third", chineseAudio: { ...book.chineseAudio!, url: "https://media.example.com/third.mp3" } };
+  catalog.books.push(summary, { ...summary, id: second.id }, { ...summary, id: third.id });
+  narration.configureQueue({ [book.id]: book, second, third });
+  narration.start(book, summary, 2); events.ended();
+  narration.start(book, summary, 0);
+  expect(manager.startTime).toBe(0);
+  narration.autoNext = true; narration.nextBookId = third.id;
+  events.ended();
+  expect(narration.state.bookId).toBe(third.id);
+  expect(narration.state.pageIndex).toBe(0);
+  expect(narration.nextBookId).toBe("");
+  events.ended();
+  expect(narration.state.status).toBe("ended");
+  expect(narration.playNext()).toBe(false);
+  narration.start(book, summary, 0); events.next();
+  expect(narration.state.bookId).toBe(second.id);
+  catalog.books.splice(0);
 });

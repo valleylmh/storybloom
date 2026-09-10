@@ -34,6 +34,7 @@ function runtime(narrated = false, background = false) {
       if (tracks.length) return tracks[0];
       const track = wx.createInnerAudioContext();
       return Object.assign(track, {
+        onNext: (fn: () => void) => { track.events.next = fn; },
         onTimeUpdate: (fn: () => void) => { track.events.time = fn; },
         onSeeked: (fn: () => void) => { track.events.seeked = fn; },
         currentTime: 0, seek: vi.fn(),
@@ -294,4 +295,26 @@ describe("mini native page wiring", () => {
     invoke(component, "loaded", { currentTarget: { dataset: { source: "/page-2.webp" } } });
     expect(component.data.status).toBe("ready");
   });
+});
+
+it("restarts at page one and follows the listening queue", () => {
+  const { open, fixture, tracks } = runtime(true, true);
+  const [first, second] = fixture.catalog.books;
+  const reader = open("reader/index");
+  invoke(reader, "onLoad", { id: first.id });
+  invoke(reader, "selectPage", first.pageCount - 1);
+  invoke(reader, "imageLoaded", { detail: { src: (reader.data.current as { image: string }).image } });
+  invoke(reader, "restart");
+  expect(reader.data.pageIndex).toBe(0);
+  invoke(reader, "imageLoaded", { detail: { src: (reader.data.current as { image: string }).image } });
+  tracks[0].events.play();
+  invoke(reader, "changeAutoNext", { detail: { value: true } });
+  invoke(reader, "queueNext", { currentTarget: { dataset: { id: second.id } } });
+  invoke(reader, "onHide");
+  tracks[0].events.ended();
+  tracks[0].events.pause();
+  invoke(reader, "onShow");
+  expect((reader.data.summary as { id: string }).id).toBe(second.id);
+  expect(reader.data.pageIndex).toBe(0);
+  invoke(reader, "onUnload");
 });

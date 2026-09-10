@@ -14,7 +14,8 @@ Page({
     ready: false, missing: false, summary: null as BookSummary | null,
     current: EMPTY_PAGE, pageIndex: 0, pageCount: 0, favorite: false,
     guide: [] as GuideSection[], guideOpen: false,
-    backgroundEnabled: false,
+    backgroundEnabled: false, queueOpen: false, autoNext: false, nextBookId: "",
+    listeningBooks: [] as BookSummary[],
     imageLookahead: [] as string[], waitingForImage: false,
     audioEnabled: false, active: false, status: "idle", highlight: "", audioError: "",
   },
@@ -22,25 +23,33 @@ Page({
   _audio: undefined as NarrationController | undefined,
   _unsubscribeBackground: undefined as (() => void) | undefined,
   _visible: true,
+  _observedBookId: "",
   _loadedImage: "",
   _touch: undefined as { x: number; y: number } | undefined,
 
   onLoad(options: Record<string, string | undefined>) {
-    let id = options.id || "";
+    backgroundNarration.configureQueue(books);
+    this.setData({ autoNext: backgroundNarration.autoNext, nextBookId: backgroundNarration.nextBookId, listeningBooks: catalog.books.filter(item => Boolean(books[item.id]?.chineseAudio)) });
+    this.loadBook(options.id || "");
+    this._observedBookId = backgroundNarration.state.bookId;
+    this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
+  },
+  loadBook(rawId: string) {
+    let id = rawId;
     try { id = decodeURIComponent(id); } catch { /* invalid link uses the empty state */ }
     const summary = catalog.books.find(book => book.id === id);
     const book = books[id];
     if (!summary || !book?.pages.length) { this.setData({ missing: true }); return; }
+    this._audio?.destroy(); this._audio = undefined;
+    this._loadedImage = "";
     this._book = book;
     const state = readShelf(catalog.books);
     const pageIndex = state.progress[id]?.pageIndex ?? 0;
-    this.setData({ ready: true, summary, current: book.pages[pageIndex], pageIndex, pageCount: book.pages.length, guide: book.guide, favorite: Boolean(state.favorites[id]) });
+    this.setData({ ready: true, missing: false, waitingForImage: false, imageLookahead: [], summary, current: book.pages[pageIndex], pageIndex, pageCount: book.pages.length, guide: book.guide, favorite: Boolean(state.favorites[id]) });
     wx.setNavigationBarTitle({ title: summary.title });
     saveProgress(catalog.books, id, pageIndex);
     const audioEnabled = Boolean(book.chineseAudio) || book.pages.some(page => page.audio.zh);
     this.setData({ audioEnabled, backgroundEnabled: Boolean(book.chineseAudio) });
-    this._unsubscribeBackground?.();
-    this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
     if (audioEnabled && !this.data.backgroundEnabled) this._audio = new NarrationController(book.pages, () => wx.createInnerAudioContext(), state => this.syncAudio(state), pageIndex);
   },
   onHide() { this._visible = false; this.setData({ imageLookahead: [], waitingForImage: false }); this._audio?.pause(); this._unsubscribeBackground?.(); this._unsubscribeBackground = undefined; },
@@ -65,6 +74,12 @@ Page({
     this.setData({ imageLookahead: readerImageLookahead(this._book.pages, this.data.pageIndex) });
   },
   syncBackground(state: BackgroundState) {
+    const changedBook = Boolean(state.bookId && state.bookId !== this._observedBookId);
+    if (state.bookId) this._observedBookId = state.bookId;
+    if (changedBook && state.bookId !== this._book?.id && state.status !== "idle" && books[state.bookId]) {
+      this.loadBook(state.bookId);
+      wx.pageScrollTo({ scrollTop: 0, duration: 0 });
+    }
     if (!this.data.backgroundEnabled) return;
     if (state.bookId !== this._book?.id) {
       this.setData({ active: false, status: "idle", highlight: "", audioError: "" }); return;
@@ -116,6 +131,34 @@ Page({
     wx.pageScrollTo({ scrollTop: 0, duration: 0 });
     if (active) this.toggleAudio();
   },
+  restart() {
+    this.pauseNarration();
+    if (this.data.backgroundEnabled) backgroundNarration.stop();
+    this.selectPage(0);
+    this.setData({ active: false, waitingForImage: false });
+    this.toggleAudio();
+  },
+  openQueue() { this.setData({ queueOpen: true, nextBookId: backgroundNarration.nextBookId }); },
+  closeQueue() { this.setData({ queueOpen: false }); },
+  changeAutoNext(event: WechatMiniprogram.CustomEvent<{ value: boolean }>) {
+    backgroundNarration.autoNext = event.detail.value;
+    this.setData({ autoNext: event.detail.value });
+  },
+  queueNext(event: WechatMiniprogram.TouchEvent) {
+    backgroundNarration.nextBookId = String(event.currentTarget.dataset.id);
+    this.setData({ nextBookId: backgroundNarration.nextBookId });
+    wx.showToast({ title: "已设为下一本", icon: "none" });
+  },
+  playBook(event: WechatMiniprogram.TouchEvent) {
+    const id = String(event.currentTarget.dataset.id);
+    const summary = catalog.books.find(item => item.id === id);
+    if (!summary || !books[id]) return;
+    this.setData({ queueOpen: false });
+    backgroundNarration.start(books[id], summary, 0);
+  },
+  nextBook() {
+    if (!backgroundNarration.playNext(this._book?.id)) wx.showToast({ title: "已经是最后一本", icon: "none" });
+  },
   previous() { this.selectPage(this.data.pageIndex - 1); },
   next() { this.selectPage(this.data.pageIndex + 1); },
   favorite() {
@@ -129,7 +172,7 @@ Page({
     const start = this._touch;
     this._touch = undefined;
     const end = event.changedTouches[0];
-    if (!start || !end || this.data.guideOpen) return;
+    if (!start || !end || this.data.guideOpen || this.data.queueOpen) return;
     const dx = end.clientX - start.x, dy = end.clientY - start.y;
     if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 1.8) {
       if (dx < 0) this.next(); else this.previous();

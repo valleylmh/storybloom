@@ -13,11 +13,24 @@
       <view wx:if="{{audioError}}" class="audio-error" aria-live="polite">{{audioError}}</view>
       <view wx:if="{{status === 'ended'}}" class="completed">这本故事读完啦</view>
       <view class="audio-controls">
-        <text class="language">中文朗读</text>
+        <button class="quiet" bindtap="restart">重新听</button><button wx:if="{{backgroundEnabled}}" class="quiet" bindtap="openQueue">听书列表</button>
         <button class="primary play" bindtap="toggleAudio">{{waitingForImage ? '等插画 · 取消' : status === 'loading' ? '加载中 · 暂停' : active ? 'Ⅱ 暂停' : '▶ 播放'}}</button>
       </view>
     </view>
+    <button wx:if="{{backgroundEnabled}}" class="quiet next-book" bindtap="nextBook">下一本 ›</button>
     <view class="pagination"><button disabled="{{pageIndex === 0}}" bindtap="previous">‹ 上一页</button><text class="page-number">{{pageIndex + 1}} / {{pageCount}}</text><button disabled="{{pageIndex + 1 === pageCount}}" bindtap="next">下一页 ›</button></view>
+  </view>
+  <view wx:if="{{queueOpen}}" class="guide-backdrop" bindtap="closeQueue" catchtouchmove="blockMove">
+    <view class="guide-panel" catchtap="blockMove">
+      <view class="guide-header"><text>听书列表</text><button class="quiet" bindtap="closeQueue">关闭</button></view>
+      <view class="queue-setting"><text>播完自动听下一本</text><switch checked="{{autoNext}}" bindchange="changeAutoNext" color="#bd5734" /></view>
+      <scroll-view class="guide-scroll" scroll-y="{{true}}">
+        <view wx:for="{{listeningBooks}}" wx:key="id" class="queue-row">
+          <button class="quiet queue-title" data-id="{{item.id}}" bindtap="playBook">{{item.id === summary.id ? '♫ ' : ''}}{{item.title}}</button>
+          <button class="quiet" data-id="{{item.id}}" bindtap="queueNext">{{nextBookId === item.id ? '已排下一本' : '下一本听'}}</button>
+        </view>
+      </scroll-view>
+    </view>
   </view>
   <view wx:if="{{guideOpen}}" class="guide-backdrop" bindtap="closeGuide" catchtouchmove="blockMove">
     <view class="guide-panel" catchtap="blockMove">
