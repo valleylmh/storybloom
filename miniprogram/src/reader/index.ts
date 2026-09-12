@@ -14,8 +14,7 @@ Page({
     ready: false, missing: false, summary: null as BookSummary | null,
     current: EMPTY_PAGE, pageIndex: 0, pageCount: 0, favorite: false,
     guide: [] as GuideSection[], guideOpen: false,
-    backgroundEnabled: false, queueOpen: false, autoNext: false, nextBookId: "",
-    listeningBooks: [] as BookSummary[], queueBooks: [] as BookSummary[], queueQuery: "", queueScrollTarget: "", playingBookId: "",
+    backgroundEnabled: false,
     imageLookahead: [] as string[], waitingForImage: false,
     audioEnabled: false, active: false, status: "idle", highlight: "", audioError: "",
   },
@@ -23,16 +22,12 @@ Page({
   _audio: undefined as NarrationController | undefined,
   _unsubscribeBackground: undefined as (() => void) | undefined,
   _visible: true,
-  _observedBookId: "",
   _loadedImage: "",
   _touch: undefined as { x: number; y: number } | undefined,
 
   onLoad(options: Record<string, string | undefined>) {
-    backgroundNarration.configureQueue(books);
-    this.setData({ autoNext: backgroundNarration.autoNext, nextBookId: backgroundNarration.nextBookId, listeningBooks: catalog.books.filter(item => Boolean(books[item.id]?.chineseAudio)) });
     wx.showShareMenu({ menus: ["shareAppMessage", "shareTimeline"] });
     this.loadBook(options.id || "");
-    this._observedBookId = backgroundNarration.state.bookId;
     this._unsubscribeBackground = backgroundNarration.subscribe(state => this.syncBackground(state));
   },
   loadBook(rawId: string) {
@@ -75,13 +70,6 @@ Page({
     this.setData({ imageLookahead: readerImageLookahead(this._book.pages, this.data.pageIndex) });
   },
   syncBackground(state: BackgroundState) {
-    this.setData({ playingBookId: state.bookId, nextBookId: backgroundNarration.nextBookId });
-    const changedBook = Boolean(state.bookId && state.bookId !== this._observedBookId);
-    if (state.bookId) this._observedBookId = state.bookId;
-    if (changedBook && state.bookId !== this._book?.id && state.status !== "idle" && books[state.bookId]) {
-      this.loadBook(state.bookId);
-      wx.pageScrollTo({ scrollTop: 0, duration: 0 });
-    }
     if (!this.data.backgroundEnabled) return;
     if (state.bookId !== this._book?.id) {
       this.setData({ active: false, status: "idle", highlight: "", audioError: "" }); return;
@@ -137,47 +125,12 @@ Page({
     this.pauseNarration();
     if (this.data.backgroundEnabled) backgroundNarration.stop();
     this.selectPage(0);
+    if (this._audio && this._book) {
+      this._audio.destroy();
+      this._audio = new NarrationController(this._book.pages, () => wx.createInnerAudioContext(), state => this.syncAudio(state), 0);
+    }
     this.setData({ active: false, waitingForImage: false });
     this.toggleAudio();
-  },
-  openQueue() {
-    this.setData({ queueOpen: true, nextBookId: backgroundNarration.nextBookId, playingBookId: backgroundNarration.state.bookId });
-    this.filterQueue("");
-  },
-  searchQueue(event: WechatMiniprogram.Input) { this.filterQueue(event.detail.value); },
-  clearQueueSearch() { this.filterQueue(""); },
-  filterQueue(query: string) {
-    const text = query.trim().toLowerCase();
-    const queueBooks = this.data.listeningBooks.filter(book =>
-      `${book.title} ${book.seriesTitle} ${book.searchText}`.toLowerCase().includes(text));
-    const index = text ? 0 : Math.max(0, queueBooks.findIndex(book => book.id === this._book?.id));
-    // Clear the previous anchor and wait for the filtered rows to render before scrolling.
-    this.setData({ queueQuery: query, queueBooks, queueScrollTarget: "" }, () => {
-      if (this.data.queueOpen && this.data.queueQuery === query) {
-        this.setData({ queueScrollTarget: queueBooks.length ? `queue-book-${index}` : "" });
-      }
-    });
-  },
-  closeQueue() { this.setData({ queueOpen: false }); },
-  changeAutoNext(event: WechatMiniprogram.CustomEvent<{ value: boolean }>) {
-    backgroundNarration.autoNext = event.detail.value;
-    this.setData({ autoNext: event.detail.value });
-  },
-  queueNext(event: WechatMiniprogram.TouchEvent) {
-    const id = String(event.currentTarget.dataset.id);
-    backgroundNarration.nextBookId = backgroundNarration.nextBookId === id ? "" : id;
-    this.setData({ nextBookId: backgroundNarration.nextBookId });
-    wx.showToast({ title: backgroundNarration.nextBookId ? "已设为下一本" : "已取消下一本", icon: "none" });
-  },
-  playBook(event: WechatMiniprogram.TouchEvent) {
-    const id = String(event.currentTarget.dataset.id);
-    const summary = catalog.books.find(item => item.id === id);
-    if (!summary || !books[id]) return;
-    this.setData({ queueOpen: false });
-    backgroundNarration.start(books[id], summary, 0);
-  },
-  nextBook() {
-    if (!backgroundNarration.playNext(this._book?.id)) wx.showToast({ title: "已经是最后一本", icon: "none" });
   },
   onShareAppMessage() {
     return { title: this.data.summary?.title || "绘本馆", path: `${this.data.summary?.readerPath || "/reader/index"}?id=${encodeURIComponent(this._book?.id || "")}`, imageUrl: this.data.summary?.cover };
@@ -196,7 +149,7 @@ Page({
     const start = this._touch;
     this._touch = undefined;
     const end = event.changedTouches[0];
-    if (!start || !end || this.data.guideOpen || this.data.queueOpen) return;
+    if (!start || !end || this.data.guideOpen) return;
     const dx = end.clientX - start.x, dy = end.clientY - start.y;
     if (Math.abs(dx) >= 60 && Math.abs(dx) > Math.abs(dy) * 1.8) {
       if (dx < 0) this.next(); else this.previous();

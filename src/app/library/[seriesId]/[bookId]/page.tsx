@@ -233,6 +233,13 @@ export default async function LibraryBookPage({
       ) : null}
 
       <LibraryBookExperience
+        key={`${series.id}/${book.id}`}
+        playlist={seriesBooks.filter((item) => !item.comingSoon).map((item) => ({
+          id: `${series.id}/${item.id}`,
+          title: item.title,
+          cover: item.pages[0]?.imageStatus === "complete" ? item.pages[0].imageUrl : undefined,
+          href: `/library/${series.id}/${item.id}`,
+        }))}
         chineseAudio={getLibraryChineseAudio(series.id, book.id, book.pages)}
         title={book.title}
         pages={book.pages}

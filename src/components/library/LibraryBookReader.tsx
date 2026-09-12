@@ -32,6 +32,7 @@ export default function LibraryBookReader({
   pageIndex: controlledPageIndex,
   readerMode: controlledReaderMode,
   narrationHighlight = null,
+  playbackActive = false,
   playbackPositionMs = 0,
   playbackDurationMs = 0,
   showToolbar = true,
@@ -48,6 +49,7 @@ export default function LibraryBookReader({
   pageIndex?: number;
   readerMode?: ReaderMode;
   narrationHighlight?: BrowserNarrationMode | null;
+  playbackActive?: boolean;
   playbackPositionMs?: number;
   playbackDurationMs?: number;
   showToolbar?: boolean;
@@ -272,7 +274,7 @@ export default function LibraryBookReader({
             <strong>阅读方式</strong>
             <span>
               {readerMode === "turn"
-                ? "左右箭头、键盘或滑动翻页；点击插图可放大。"
+                ? "点击下方缩略图、使用键盘方向键或滑动翻页；点击插图可放大。"
                 : "平铺查看全部页面；点击任意插图可放大轮播。"}
             </span>
           </div>
@@ -319,6 +321,7 @@ export default function LibraryBookReader({
             <button
               type="button"
               className="book-nav-btn book-nav-prev"
+              hidden={playbackActive}
               onClick={() => goToPage(pageIndex - 1)}
               disabled={pageIndex === 0}
               aria-label="上一页"
@@ -404,6 +407,7 @@ export default function LibraryBookReader({
             <button
               type="button"
               className="book-nav-btn book-nav-next"
+              hidden={playbackActive}
               onClick={() => goToPage(pageIndex + 1)}
               disabled={pageIndex === total - 1}
               aria-label="下一页"
@@ -519,6 +523,7 @@ export default function LibraryBookReader({
                   <button
                     type="button"
                     className="lightbox-nav lightbox-nav-prev"
+              hidden={playbackActive}
                     aria-label="上一张"
                     onClick={() => goToLightbox((lightboxIndex ?? 0) - 1)}
                   >
@@ -546,6 +551,7 @@ export default function LibraryBookReader({
                   <button
                     type="button"
                     className="lightbox-nav lightbox-nav-next"
+              hidden={playbackActive}
                     aria-label="下一张"
                     onClick={() => goToLightbox((lightboxIndex ?? 0) + 1)}
                   >

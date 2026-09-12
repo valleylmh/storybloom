@@ -18,6 +18,8 @@ import type { StoryPage } from "@/types";
 import LibraryBookReader, {
   type ReaderMode,
 } from "@/components/library/LibraryBookReader";
+import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
+import LibraryPlaylist from "@/components/library/LibraryPlaylist";
 import LibraryNarrationToolbar from "@/components/library/LibraryNarrationToolbar";
 
 export default function LibraryBookExperience({
@@ -35,6 +37,7 @@ export default function LibraryBookExperience({
   getIllustrationStatusDetail,
   retryingIllustrationPages = [],
   personalizeHref,
+  playlist = [],
 }: {
   chineseAudio?: BookAudio;
   title: string;
@@ -50,6 +53,7 @@ export default function LibraryBookExperience({
   getIllustrationStatusDetail?: (page: StoryPage) => string | undefined;
   retryingIllustrationPages?: readonly number[];
   personalizeHref?: string;
+  playlist?: Array<{ id: string; title: string; href: string; cover?: string }>;
 }) {
   const [pageIndex, setPageIndex] = useState(0);
   const [readerMode, setReaderMode] =
@@ -296,6 +300,8 @@ export default function LibraryBookExperience({
 
         <section className="library-narration-tools" aria-label="绘本朗读">
           <LibraryNarrationToolbar
+            favoriteControl={contentType === "library" ? <LibraryFavoriteButton contentId={contentId} compact toolbar /> : undefined}
+            playlistControl={playlist.length ? <LibraryPlaylist books={playlist} currentId={contentId} /> : undefined}
             chineseAudio={chineseAudio}
             pages={pages}
             storyKey={storyKey}
@@ -325,6 +331,7 @@ export default function LibraryBookExperience({
           accent={accent}
           pageIndex={pageIndex}
           readerMode={readerMode}
+          playbackActive={playbackStatus === "playing" || playbackStatus === "loading"}
           narrationHighlight={narrationHighlight}
           playbackPositionMs={playbackPositionMs}
           playbackDurationMs={playbackDurationMs}

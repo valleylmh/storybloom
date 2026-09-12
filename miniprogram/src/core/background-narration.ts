@@ -11,20 +11,6 @@ export interface BackgroundState {
 }
 export class BackgroundNarration {
   state: BackgroundState = { bookId: "", pageIndex: 0, status: "idle", error: "" };
-  autoNext = false;
-  nextBookId = "";
-  private queue: Array<{ book: Book; summary: BookSummary }> = [];
-  configureQueue(books: Record<string, Book>) {
-    this.queue = catalog.books.filter(summary => validBookAudio(books[summary.id]?.chineseAudio, books[summary.id]?.pages.length || 0)).map(summary => ({ summary, book: books[summary.id] }));
-  }
-  playNext(currentId = this.state.bookId) {
-    const index = this.queue.findIndex(item => item.book.id === currentId);
-    const next = this.nextBookId ? this.queue.find(item => item.book.id === this.nextBookId) : this.queue[index + 1];
-    this.nextBookId = "";
-    if (!next || index < 0) return false;
-    this.start(next.book, next.summary, 0);
-    return true;
-  }
   private manager?: WechatMiniprogram.BackgroundAudioManager;
   private audio?: BookAudio;
   private url = "";
@@ -54,9 +40,7 @@ export class BackgroundNarration {
       this.seeking = undefined;
       this.setPage((this.audio?.pageStarts.length || 1) - 1);
       this.url = ""; this.emit("ended");
-      if (this.autoNext) this.playNext();
     });
-    manager.onNext(() => this.playNext());
     manager.onError(() => { if (this.current()) this.fail("音频播放失败，请点击播放重试"); });
     return manager;
   }

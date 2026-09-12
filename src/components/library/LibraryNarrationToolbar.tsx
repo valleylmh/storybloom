@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useReducer, useRef } from "react";
+import { useCallback, useEffect, useReducer, useRef, type ReactNode } from "react";
 import {
   ArrowClockwise,
   GearSix,
@@ -114,6 +114,8 @@ export default function LibraryNarrationToolbar({
   currentPageIndex,
   turnModeActive,
   compactControls = false,
+  playlistControl,
+  favoriteControl,
   readerMode = "turn",
   languageMode,
   autoAdvance,
@@ -135,6 +137,8 @@ export default function LibraryNarrationToolbar({
   currentPageIndex: number;
   turnModeActive: boolean;
   compactControls?: boolean;
+  playlistControl?: ReactNode;
+  favoriteControl?: ReactNode;
   readerMode?: ReaderMode;
   languageMode: BrowserNarrationMode;
   autoAdvance: boolean;
@@ -162,6 +166,7 @@ export default function LibraryNarrationToolbar({
   const stateRef = useRef(state);
   stateRef.current = state;
   const runRef = useRef(0);
+  const restartBookPendingRef = useRef(false);
   const bookTransportRef = useRef<BookAudioTransport | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const browserCancelRef = useRef<(() => void) | null>(null);
@@ -711,6 +716,15 @@ export default function LibraryNarrationToolbar({
     void startPagePlayback(0);
   }, [startPagePlayback]);
 
+  const restartBook = useCallback(() => {
+    cancelCurrentSession();
+    initialPositionConsumedRef.current = true;
+    restartBookPendingRef.current = true;
+    dispatch({ type: "PAGE_SELECTED", pageIndex: 0, continuePlayback: false });
+    onRequestTurnMode();
+    onPageIndexChange(0);
+  }, [cancelCurrentSession, onPageIndexChange, onRequestTurnMode]);
+
   const handlePrimaryAction = useCallback(() => {
     if (!turnModeActive) onRequestTurnMode();
     switch (stateRef.current.status) {
@@ -723,6 +737,8 @@ export default function LibraryNarrationToolbar({
         void resumePlayback();
         return;
       case "ended":
+        restartBook();
+        return;
       case "error":
         replayCurrentPage();
         return;
@@ -740,6 +756,7 @@ export default function LibraryNarrationToolbar({
     onRequestTurnMode,
     pausePlayback,
     replayCurrentPage,
+    restartBook,
     resumePlayback,
     startPagePlayback,
     turnModeActive,
@@ -841,6 +858,13 @@ export default function LibraryNarrationToolbar({
     };
   }, [clearMedia, onHighlightChange]);
 
+  // Wait for the controlled page and reading mode before starting page one.
+  useEffect(() => {
+    if (!restartBookPendingRef.current || currentPageIndex !== 0 || !turnModeActive) return;
+    restartBookPendingRef.current = false;
+    void startPagePlayback(0);
+  });
+
   const primaryLabel =
     state.status === "loading"
       ? "正在准备…"
@@ -849,7 +873,7 @@ export default function LibraryNarrationToolbar({
         : state.status === "paused"
           ? "继续播放"
           : state.status === "ended"
-            ? "重新播放"
+            ? "重新听"
             : state.status === "error"
               ? "重试播放"
               : resumeLabel || "播放故事";
@@ -916,6 +940,10 @@ export default function LibraryNarrationToolbar({
         </div>
 
         <div className="library-reader-control-actions">
+          {favoriteControl}
+          <button type="button" className="library-reader-icon-btn" onClick={restartBook} aria-label="重新听" title="重新听">
+            <ArrowClockwise aria-hidden="true" />
+          </button>
           <span className="library-reader-control-status" aria-live="polite">
             {playbackStatusLabel}
           </span>
@@ -938,6 +966,8 @@ export default function LibraryNarrationToolbar({
               <Play aria-hidden="true" weight="fill" />
             )}
           </button>
+
+          {playlistControl}
 
           <details className="library-reader-settings-menu">
             <summary
@@ -1029,6 +1059,11 @@ export default function LibraryNarrationToolbar({
         </span>
       </div>
 
+      <div className="library-playback-main-actions">
+      {favoriteControl}
+      <button type="button" className="library-reader-icon-btn" onClick={restartBook} aria-label="重新听" title="重新听">
+        <ArrowClockwise aria-hidden="true" />
+      </button>
       <button
         type="button"
         className="library-playback-primary"
@@ -1042,6 +1077,8 @@ export default function LibraryNarrationToolbar({
         )}
         {primaryLabel}
       </button>
+      {playlistControl}
+      </div>
 
       <div className="library-playback-secondary-actions">
         <button

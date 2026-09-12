@@ -7,9 +7,11 @@ import { useFavorites } from "@/hooks/useFavorites";
 export default function LibraryFavoriteButton({
   contentId,
   compact = false,
+  toolbar = false,
 }: {
   contentId: string;
   compact?: boolean;
+  toolbar?: boolean;
 }) {
   const { keys, toggle } = useFavorites();
   const active = keys.has(createFavoriteKey("library", contentId));
@@ -17,9 +19,9 @@ export default function LibraryFavoriteButton({
   return (
     <button
       type="button"
-      className={`library-favorite-button ${
+      className={`${toolbar ? "library-reader-icon-btn" : "library-favorite-button"} ${
         active ? "library-favorite-button-active" : ""
-      } ${compact ? "library-favorite-button-compact" : ""}`}
+      } ${compact && !toolbar ? "library-favorite-button-compact" : ""}`}
       aria-pressed={active}
       aria-label={active ? "取消收藏这本绘本" : "收藏这本绘本"}
       title={compact ? (active ? "取消收藏" : "收藏") : undefined}

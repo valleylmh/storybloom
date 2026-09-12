@@ -297,64 +297,23 @@ describe("mini native page wiring", () => {
   });
 });
 
-it("restarts at page one and follows the listening queue while sharing the current book", () => {
+it("restarts a completed book without advancing to another and keeps sharing", () => {
   const { open, fixture, tracks } = runtime(true, true);
-  const [first, second] = fixture.catalog.books;
+  const first = fixture.catalog.books[0];
   const reader = open("reader/index");
   invoke(reader, "onLoad", { id: first.id });
   invoke(reader, "selectPage", first.pageCount - 1);
   invoke(reader, "imageLoaded", { detail: { src: (reader.data.current as { image: string }).image } });
+  invoke(reader, "toggleAudio"); tracks[0].events.play(); tracks[0].events.ended();
+  expect(reader.data.status).toBe("ended");
+  expect((reader.data.summary as { id: string }).id).toBe(first.id);
   invoke(reader, "restart");
   expect(reader.data.pageIndex).toBe(0);
   invoke(reader, "imageLoaded", { detail: { src: (reader.data.current as { image: string }).image } });
   tracks[0].events.play();
-  invoke(reader, "changeAutoNext", { detail: { value: true } });
-  invoke(reader, "queueNext", { currentTarget: { dataset: { id: second.id } } });
-  invoke(reader, "onHide");
-  tracks[0].events.ended();
-  tracks[0].events.pause();
-  invoke(reader, "onShow");
-  expect((reader.data.summary as { id: string }).id).toBe(second.id);
-  expect(reader.data.pageIndex).toBe(0);
-  expect(invoke(reader, "onShareAppMessage")).toMatchObject({ path: `/reader-0/index?id=${encodeURIComponent(second.id)}`, title: second.title });
-  expect(invoke(reader, "onShareTimeline")).toMatchObject({ query: `id=${encodeURIComponent(second.id)}` });
-  invoke(reader, "onUnload");
-});
-
-it("filters the listening list and lets a scheduled next book be cancelled", () => {
-  const { open, fixture } = runtime(true, true);
-  const reader = open("reader/index");
-  invoke(reader, "onLoad", { id: fixture.catalog.books[0].id });
-  invoke(reader, "openQueue");
-  expect(reader.data.queueBooks).toHaveLength(2);
-  invoke(reader, "searchQueue", { detail: { value: "不存在的绘本xyz" } });
-  expect(reader.data.queueBooks).toHaveLength(0);
-  invoke(reader, "clearQueueSearch");
-  expect(reader.data.queueBooks).toHaveLength(2);
-  const event = { currentTarget: { dataset: { id: fixture.catalog.books[1].id } } };
-  invoke(reader, "queueNext", event);
-  expect(reader.data.nextBookId).toBe(fixture.catalog.books[1].id);
-  invoke(reader, "queueNext", event);
-  expect(reader.data.nextBookId).toBe("");
-  invoke(reader, "onUnload");
-});
-
-it("opens the listening list at the current unread book and resets a previous search", () => {
-  const { open, fixture } = runtime(true, true);
-  const reader = open("reader/index");
-  invoke(reader, "onLoad", { id: fixture.catalog.books[1].id });
-  invoke(reader, "openQueue");
-  expect(reader.data.queueScrollTarget).toBe("queue-book-1");
-  expect(reader.data.playingBookId).toBe("");
-  invoke(reader, "searchQueue", { detail: { value: "不存在的绘本xyz" } });
-  expect(reader.data.queueScrollTarget).toBe("");
-  invoke(reader, "clearQueueSearch");
-  expect(reader.data.queueScrollTarget).toBe("queue-book-1");
-  invoke(reader, "searchQueue", { detail: { value: "不存在的绘本xyz" } });
-  invoke(reader, "closeQueue");
-  invoke(reader, "openQueue");
-  expect(reader.data.queueQuery).toBe("");
-  expect(reader.data.queueBooks).toHaveLength(2);
-  expect(reader.data.queueScrollTarget).toBe("queue-book-1");
+  expect(reader.data.active).toBe(true);
+  expect(reader.openQueue).toBeUndefined();
+  expect(reader.nextBook).toBeUndefined();
+  expect(invoke(reader, "onShareAppMessage")).toMatchObject({ title: first.title });
   invoke(reader, "onUnload");
 });
