@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft, CheckCircle, SpinnerGap } from "@phosphor-icons/react";
 import { useAuth } from "@/hooks/useAuth";
 import { sanitizeReturnTo } from "@/lib/auth/return-to";
@@ -15,24 +16,63 @@ export default function LoginPanel({
   next?: string;
   variant?: LoginPanelVariant;
 }) {
-  const { session, loading, error: authError, signInWithMagicLink } = useAuth();
+  const { session, loading, error: authError, sendEmailCode, verifyEmailCode } = useAuth();
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
+  const [code, setCode] = useState("");
+  const [retryAt, setRetryAt] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+  const pending = useRef(false);
+  const router = useRouter();
+  useEffect(() => {
+    const update = () => setSeconds(Math.max(0, Math.ceil((retryAt - Date.now()) / 1000)));
+    update();
+    const timer = window.setInterval(update, 1000);
+    return () => window.clearInterval(timer);
+  }, [retryAt]);
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState("");
   const returnTo = sanitizeReturnTo(next);
   const family = variant === "family";
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function sendCode() {
+    if (pending.current || Date.now() < retryAt) return;
+    pending.current = true;
     setBusy(true);
     setNotice("");
     try {
-      await signInWithMagicLink(email, returnTo);
+      await sendEmailCode(email);
+      setEmail(email.trim());
       setSent(true);
-    } catch (cause) {
-      setNotice(cause instanceof Error ? cause.message : "登录链接发送失败");
+      setCode("");
+      setRetryAt(Date.now() + 60_000);
+    } catch {
+      setNotice("验证码发送失败，请检查邮箱；若操作频繁，请稍后重试。");
+      setRetryAt(Date.now() + 60_000);
     } finally {
+      pending.current = false;
+      setBusy(false);
+    }
+  }
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    await sendCode();
+  }
+
+  async function handleVerify(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (pending.current) return;
+    pending.current = true;
+    setBusy(true);
+    setNotice("");
+    try {
+      await verifyEmailCode(email, code);
+      router.replace(returnTo);
+    } catch {
+      setNotice("验证码无效或已过期，请检查邮件中的最新验证码，或重新发送。");
+    } finally {
+      pending.current = false;
       setBusy(false);
     }
   }
@@ -78,19 +118,32 @@ export default function LoginPanel({
             </small>
           </div>
         ) : sent ? (
-          <div className="family-mail-sent">
-            <CheckCircle size={24} />
-            <span>
-              登录链接已发送至<br />
-              <strong>{email}</strong>
-            </span>
-            <small>请打开邮件完成登录，完成后会自动返回原页面。</small>
+          <div>
+            <p role="status">验证码已发送至 <strong>{email}</strong>，请输入邮件中的数字验证码。</p>
+            <form onSubmit={handleVerify}>
+              <label>
+                <span>邮箱验证码</span>
+                <input type="text" inputMode="numeric" autoComplete="one-time-code" autoFocus required
+                  pattern="[0-9]{6,10}" minLength={6} maxLength={10} value={code}
+                  onChange={(event) => setCode(event.target.value.replace(/\D/g, ""))}
+                  placeholder="输入验证码" disabled={busy} />
+              </label>
+              <button disabled={busy || loading}>{busy ? "正在验证…" : "验证并登录"}</button>
+            </form>
+            <div className="email-code-actions">
+              <button type="button" disabled={busy || seconds > 0} onClick={() => void sendCode()}>
+                {seconds > 0 ? `${seconds} 秒后可重发` : "重新发送"}
+              </button>
+              <button type="button" disabled={busy} onClick={() => { setSent(false); setCode(""); setNotice(""); }}>更换邮箱</button>
+            </div>
+            <p>没有收到？请检查垃圾邮件。新邮箱验证后将自动注册。</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
             <label>
               <span>家长邮箱</span>
               <input
+                disabled={busy}
                 type="email"
                 required
                 value={email}
@@ -99,17 +152,17 @@ export default function LoginPanel({
                 autoComplete="email"
               />
             </label>
-            <button disabled={busy || loading}>
-              {busy || loading ? <SpinnerGap className="spin" /> : "发送登录链接"}
+            <button disabled={busy || loading || seconds > 0}>
+              {busy || loading ? <SpinnerGap className="spin" /> : seconds > 0 ? `${seconds} 秒后可重发` : "发送验证码"}
             </button>
           </form>
         )}
 
         {notice || authError ? (
-          <p className="family-error">{notice || authError}</p>
+          <p className="family-error" role="alert">{notice || authError}</p>
         ) : null}
         <small className="family-privacy">
-          <span>私</span>无需密码，仅家长可以管理账户与家庭资料
+          <span>私</span>无需密码，新邮箱验证后自动注册；仅家长可以管理账户与家庭资料
         </small>
       </div>
       <aside className="family-login-visual" aria-hidden="true">

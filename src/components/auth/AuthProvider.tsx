@@ -9,7 +9,7 @@ import {
   type ReactNode,
 } from "react";
 import type { Session, SupabaseClient, User } from "@supabase/supabase-js";
-import { buildAuthCallbackUrl, sanitizeReturnTo } from "@/lib/auth/return-to";
+
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 
 export type AuthContextValue = {
@@ -18,7 +18,8 @@ export type AuthContextValue = {
   user: User | null;
   loading: boolean;
   error: string | null;
-  signInWithMagicLink: (email: string, returnTo?: string) => Promise<void>;
+  sendEmailCode: (email: string) => Promise<void>;
+  verifyEmailCode: (email: string, token: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
 
@@ -65,22 +66,23 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const signInWithMagicLink = useCallback(
-    async (email: string, returnTo = "/") => {
-      if (!supabase) throw new Error(error || "账户服务尚未准备好，请稍后再试");
+  const sendEmailCode = useCallback(async (email: string) => {
+    if (!supabase) throw new Error(error || "账户服务尚未准备好，请稍后再试");
+    const { error: sendError } = await supabase.auth.signInWithOtp({
+      email: email.trim(), options: { shouldCreateUser: true },
+    });
+    if (sendError) throw sendError;
+  }, [error, supabase]);
 
-      const callbackUrl = buildAuthCallbackUrl(
-        window.location.origin,
-        sanitizeReturnTo(returnTo),
-      );
-      const { error: signInError } = await supabase.auth.signInWithOtp({
-        email: email.trim(),
-        options: { emailRedirectTo: callbackUrl },
-      });
-      if (signInError) throw signInError;
-    },
-    [error, supabase],
-  );
+  const verifyEmailCode = useCallback(async (email: string, token: string) => {
+    if (!supabase) throw new Error(error || "账户服务尚未准备好，请稍后再试");
+    const { data, error: verifyError } = await supabase.auth.verifyOtp({
+      email: email.trim(), token: token.trim(), type: "email",
+    });
+    if (verifyError) throw verifyError;
+    if (!data.session) throw new Error("登录未完成，请重新验证");
+    setSession(data.session);
+  }, [error, supabase]);
 
   const signOut = useCallback(async () => {
     if (!supabase) return;
@@ -96,10 +98,11 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       user: session?.user || null,
       loading,
       error,
-      signInWithMagicLink,
+      sendEmailCode,
+      verifyEmailCode,
       signOut,
     }),
-    [error, loading, session, signInWithMagicLink, signOut, supabase],
+    [error, loading, session, sendEmailCode, verifyEmailCode, signOut, supabase],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

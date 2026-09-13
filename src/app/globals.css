@@ -11950,3 +11950,6 @@ body:has([data-gift-module]) .family-platform-nav, body:has([data-gift-module]) 
 /* Keep the gift navigation entry on desktop; mobile uses the home showcase. */
 @media (max-width: 720px) { .home-primary-nav > a.home-gifts-nav { display: none; } }
 
+.email-code-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+.email-code-actions button { min-height: 44px; padding: 8px 14px; border: 1px solid #dcd1c1; border-radius: 12px; color: #635448; background: #fffdf8; cursor: pointer; }
+.email-code-actions button:disabled { opacity: .55; cursor: not-allowed; }
