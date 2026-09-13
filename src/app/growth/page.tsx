@@ -1,8 +1,8 @@
-import GrowthLibrary from "@/components/growth/GrowthLibrary";
+import GrowthLibrary from "@/components/growth/AccountGrowthLibrary";
 
 export const metadata = {
   title: "成长书架 | StoryBloom",
-  description: "查看保存在本机的孩子成长记录与专属绘本。",
+  description: "查看孩子的成长记录与专属绘本，登录后跨设备同步。",
 };
 
 export default function GrowthPage() {

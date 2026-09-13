@@ -24,13 +24,13 @@ const FEATURE_ITEMS = [
   {
     href: "/me/books",
     title: "我的绘本",
-    description: "并列查看当前设备与主动导入云端的绘本副本。",
+    description: "查看同一账号的绘本，电脑和手机自动同步。",
     icon: Books,
   },
   {
     href: "/me/growth",
     title: "成长记录",
-    description: "切换查看当前设备或私有云端的照片、备注和绘本场景。",
+    description: "把照片、备注和绘本场景留在同一份成长记录里。",
     icon: TreeStructure,
   },
   {
@@ -91,20 +91,20 @@ export default function AccountOverview() {
           <ShieldCheck size={23} weight="duotone" />
         </span>
         <div>
-          <h2 id="account-data-boundary-title">本机与私有云分开管理</h2>
+          <h2 id="account-data-boundary-title">一个账号，一份家庭记录</h2>
           <p>
-            登录不会自动上传。本机资料会继续留在当前设备，只有你主动选择导入的内容，才会保存到家庭私有云。
+            登录后自动同步绘本与成长记录；本机缓存用于离线查看。含现场照片的旧记录会在首次授权后同步。
           </p>
         </div>
       </section>
 
       {!loading && userId && localImportController ? (
-        <div id="local-data-import">
+        <details id="local-data-import"><summary>同步详情与版本冲突</summary>
           <LocalImportCard
             controller={localImportController}
             userId={userId}
           />
-        </div>
+        </details>
       ) : null}
 
       <div className={styles.actions}>

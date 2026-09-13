@@ -93,7 +93,7 @@ export default function ChildFamilyDataPage() {
                 <strong>家庭声音：</strong>需要单独录音、授权和上传；当前流程把样本交给阿里云百炼创建私有声音标识。
               </li>
               <li>
-                <strong>私有云档案：</strong>需要登录后逐项选择导入或保存，本机副本与云端副本保持分离。
+                <strong>私有云档案：</strong>登录后自动同步绘本与成长记录，在统一列表中查看；现场照片首次同步需监护人授权。
               </li>
             </ol>
             <p>
@@ -138,11 +138,10 @@ export default function ChildFamilyDataPage() {
           </section>
 
           <section className={styles.section} id="cloud">
-            <h2>私有云不是默认目的地</h2>
+            <h2>同一账号跨设备同步</h2>
             <p>
-              当前设备和私有云是两个明确的数据源。登录后发现本机资料时，导入界面默认不勾选任何项目；
-              家长可以只选择希望跨设备查看的绘本或成长记录。导入完成后，本机副本仍会保留，
-              一侧删除不会被描述为另一侧也已删除。
+              未登录时可以在本机创作。登录后，绘本和成长记录归入当前账号并自动同步；现场照片首次上传需明确授权。
+              账号列表统一显示记录，本机保留离线缓存。账号中的删除在其他设备同步后生效，设备缓存清理不会删除账号档案。
             </p>
             <div className={styles.warning}>
               <strong>基础验收已完成，仍保留两设备终验</strong>

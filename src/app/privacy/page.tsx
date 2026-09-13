@@ -159,7 +159,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className={styles.section} id="storage">
-            <h2>本机资料与私有云是两份副本</h2>
+            <h2>账号记录与设备缓存</h2>
             <h3>当前设备</h3>
             <p>
               最近绘本、成长记录和成长照片可以保存在当前浏览器中。清理浏览器、切换设备、无痕模式或浏览器存储失败，
@@ -167,8 +167,8 @@ export default function PrivacyPage() {
             </p>
             <h3>私有云档案</h3>
             <p>
-              登录后，系统仍不会自动上传既有本机内容。导入界面默认不选中任何项目，用户可以逐项选择；
-              导入后本机副本继续保留，本机和云端也可以分别删除。
+              登录后，绘本和成长记录会自动同步到同一账号，并在统一列表中显示。设备保留缓存用于离线查看；
+              从账号列表删除会在其他设备同步后移除，本地缓存清理则不会删除账号档案。首次同步现场照片仍需监护人明确授权。
             </p>
             <div className={styles.callout}>
               <strong>照片有更严格的门槛</strong>

@@ -1,3 +1,4 @@
+import { canSaveRecord, signalAccountChange } from "@/lib/sync/account-ownership";
 import {
   deleteHistory,
   listHistory,
@@ -23,12 +24,14 @@ function fromHistory(record: StoryHistoryRecord): SavedStory {
 async function save(input: StorySaveInput) {
   // Temporary server assets expire. A local save must own its image bytes so
   // reopening a device story never depends on the 24-hour generation cache.
+  if (!canSaveRecord("story", input.result.storyId)) throw new Error("record-owned-by-another-account");
   const durableResult = await materializeTemporaryStoryImages(input.result);
   const records = await upsertHistory(durableResult);
   const saved = records.find(
     (record) => record.storyId === input.result.storyId,
   );
   if (!saved) throw new Error("local-story-save-failed");
+  signalAccountChange();
   return fromHistory(saved);
 }
 

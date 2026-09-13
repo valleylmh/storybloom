@@ -12,11 +12,11 @@ import {
   WarningCircle,
 } from "@phosphor-icons/react";
 import { useCallback, useEffect, useState, type FormEvent } from "react";
+import { useAccountSync } from "@/components/sync/AccountSyncProvider";
 import { useAuth } from "@/hooks/useAuth";
 import { buildLoginPath } from "@/lib/auth/return-to";
 import {
   loadCloudAccountSummary,
-  updateCloudSyncPreference,
   type CloudAccountSummary,
 } from "@/lib/account/client-account-data";
 import { clearCurrentDeviceData } from "@/lib/account/local-device-data";
@@ -161,11 +161,12 @@ async function deleteRememberedShares() {
 
 export default function AccountSettingsPanel() {
   const { supabase, session, loading, signOut } = useAuth();
+  const sync = useAccountSync();
+  const runAccountChange = (operation: () => Promise<void>) => sync.mutate(operation).catch(() => setNotice({ tone: "error", message: "请联网后重试账号操作。" }));
   const [localCounts, setLocalCounts] = useState<LocalCounts>();
   const [cloudSummary, setCloudSummary] = useState<CloudAccountSummary>();
   const [cloudLoading, setCloudLoading] = useState(false);
   const [cloudError, setCloudError] = useState("");
-  const [syncBusy, setSyncBusy] = useState(false);
   const [exportBusy, setExportBusy] = useState(false);
   const [deletionBusy, setDeletionBusy] = useState(false);
   const [signOutBusy, setSignOutBusy] = useState(false);
@@ -266,32 +267,6 @@ export default function AccountSettingsPanel() {
       });
     } finally {
       setNewsletterBusy(false);
-    }
-  }
-
-  async function handleSyncToggle() {
-    if (!supabase || !session || !cloudSummary) return;
-    const enabled = !cloudSummary.cloudSyncEnabled;
-    setSyncBusy(true);
-    setNotice(undefined);
-    try {
-      await updateCloudSyncPreference(supabase, session.user.id, enabled);
-      setCloudSummary((current) =>
-        current ? { ...current, cloudSyncEnabled: enabled } : current,
-      );
-      setNotice({
-        tone: "success",
-        message: enabled
-          ? "云同步偏好已开启。登录仍不会自动上传，请继续逐项选择要导入的内容。"
-          : "云同步偏好已关闭。云端已有资料不会自动删除。",
-      });
-    } catch (cause) {
-      setNotice({
-        tone: "error",
-        message: cause instanceof Error ? cause.message : "同步设置保存失败。",
-      });
-    } finally {
-      setSyncBusy(false);
     }
   }
 
@@ -464,7 +439,7 @@ export default function AccountSettingsPanel() {
         <p className={styles.eyebrow}>DATA & PRIVACY</p>
         <h2>知道资料保存在哪里，也能随时带走或删除</h2>
         <p className={styles.lead}>
-          当前设备内容与云端档案分开管理。登录不会自动上传；每日灵感邮件也必须单独订阅并完成邮箱确认。
+          登录后绘本和成长记录自动同步到账号；本地清理用于移除设备缓存。每日灵感邮件仍需单独订阅。
         </p>
         <div className={styles.identityRow}>
           <span>
@@ -559,21 +534,7 @@ export default function AccountSettingsPanel() {
           <p className={styles.error}>{cloudError}</p>
         ) : cloudSummary ? (
           <>
-            <div className={styles.toggleRow}>
-              <span className={styles.toggleCopy}>
-                <strong>云同步开关</strong>
-                <span>保存账户偏好。开启后仍由你逐项选择要导入的本地内容，不会因登录自动上传。</span>
-              </span>
-              <button
-                aria-checked={cloudSummary.cloudSyncEnabled}
-                aria-label="云同步开关"
-                className={`${styles.switch} ${cloudSummary.cloudSyncEnabled ? styles.switchOn : ""}`}
-                disabled={syncBusy}
-                onClick={() => void handleSyncToggle()}
-                role="switch"
-                type="button"
-              />
-            </div>
+            <p>绘本和成长记录登录后自动同步，首次上传现场照片需要监护人授权。</p>
             <div className={styles.stats}>
               <div className={styles.stat}><span>孩子档案</span><strong>{countLabel(cloudCounts?.children, "个")}</strong></div>
               <div className={styles.stat}><span>家庭角色</span><strong>{countLabel(cloudCounts?.characters, "个")}</strong></div>
@@ -604,7 +565,7 @@ export default function AccountSettingsPanel() {
                 <span className={styles.childName}>{child.displayName}</span>
                 {pendingChildId === child.id ? (
                   <div className={styles.confirmActions}>
-                    <button className={styles.buttonDanger} disabled={deletionBusy} onClick={() => void handleDeleteChild(child.id)} type="button">确认删除</button>
+                    <button className={styles.buttonDanger} disabled={deletionBusy} onClick={() => void runAccountChange(() => handleDeleteChild(child.id))} type="button">确认删除</button>
                     <button className={styles.buttonText} disabled={deletionBusy} onClick={() => setPendingChildId(undefined)} type="button">取消</button>
                   </div>
                 ) : (
@@ -646,7 +607,7 @@ export default function AccountSettingsPanel() {
               <span>同时永久删除 StoryBloom 登录账户。勾选后完成删除会退出登录。</span>
             </label>
             <div className={styles.confirmActions}>
-              <button className={styles.buttonDanger} disabled={deletionBusy} onClick={() => void handleDeleteAllCloudData()} type="button">
+              <button className={styles.buttonDanger} disabled={deletionBusy} onClick={() => void runAccountChange(handleDeleteAllCloudData)} type="button">
                 {deleteAuthUser ? "确认删除档案和账户" : "确认删除全部云端档案"}
               </button>
               <button className={styles.buttonText} disabled={deletionBusy} onClick={() => { setConfirmCloudDelete(false); setDeleteAuthUser(false); }} type="button">取消</button>

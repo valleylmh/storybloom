@@ -179,6 +179,8 @@ export interface LocalDataImportDependencies {
 }
 
 export interface LocalDataImportControllerOptions {
+  localStories?: StoryRepository;
+  localGrowthRecords?: GrowthRepository;
   supabase: SupabaseClient;
   userId: string;
   syncMeta?: SyncMetaStore;
@@ -1167,8 +1169,8 @@ export function createLocalDataImportController(
   const cloudStories = createCloudStoryRepository(options.supabase, options.userId);
   return createLocalDataImportEngine({
     userId: options.userId,
-    localStories: localStoryRepository,
-    localGrowthRecords: localGrowthRepository,
+    localStories: options.localStories || localStoryRepository,
+    localGrowthRecords: options.localGrowthRecords || localGrowthRepository,
     cloudStories,
     cloudGrowthRecords: createCloudGrowthRepository(
       options.supabase,

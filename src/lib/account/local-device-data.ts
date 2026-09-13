@@ -6,6 +6,7 @@
  * server-side generation allowance.
  */
 const KNOWN_CONTENT_DATABASES = [
+  ["storybloom-account-cache", "accounts"],
   ["storybloom-client-history", "stories"],
   ["storybloom-growth-records", "records"],
   ["storybloom-audio-cache", "narrations"],

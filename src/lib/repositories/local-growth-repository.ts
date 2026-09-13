@@ -1,3 +1,4 @@
+import { canSaveRecord, signalAccountChange } from "@/lib/sync/account-ownership";
 import {
   addLocalStorybookVersion,
   clearLocalGrowthArchive,
@@ -28,17 +29,22 @@ export const localGrowthRepository: GrowthRepository = {
     if (input.clientRecordId !== input.story.storyId) {
       throw new Error("local-growth-client-id-mismatch");
     }
-    return upsertGrowthRecord(input.story, input.draft);
+    if (!canSaveRecord("growth", input.clientRecordId)) throw new Error("record-owned-by-another-account");
+    const saved = await upsertGrowthRecord(input.story, input.draft);
+    signalAccountChange();
+    return saved;
   },
 
   async update(id, patch) {
-    return patchGrowthRecord(id, {
+    const updated = await patchGrowthRecord(id, {
       occurredOn: patch.occurredOn,
       note: patch.note,
       idea: patch.idea,
       story: patch.story,
       photos: patch.photos,
     });
+    signalAccountChange();
+    return updated;
   },
 
   async remove(id) {

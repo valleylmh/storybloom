@@ -1,4 +1,5 @@
 "use client";
+import UnifiedStoryLibrary from "./UnifiedStoryLibrary";
 
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
@@ -236,7 +237,7 @@ function MissingCopy({
   );
 }
 
-export default function DeviceCloudStoryLibrary() {
+function LegacyDeviceCloudStoryLibrary() {
   const { supabase, session, loading: authLoading } = useAuth();
   const userId = session?.user.id;
   const requestIdRef = useRef(0);
@@ -644,4 +645,10 @@ export default function DeviceCloudStoryLibrary() {
       </section>
     </main>
   );
+}
+
+export default function DeviceCloudStoryLibrary() {
+  const { session, loading } = useAuth();
+  if (loading) return <p role="status">正在读取账号…</p>;
+  return session ? <UnifiedStoryLibrary /> : <LegacyDeviceCloudStoryLibrary />;
 }

@@ -10,6 +10,7 @@ import {
 } from "react";
 import type { Session, SupabaseClient, User } from "@supabase/supabase-js";
 
+import { setActiveRecordOwner } from "@/lib/sync/account-ownership";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 
 export type AuthContextValue = {
@@ -41,12 +42,14 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
       void client.auth.getSession().then(({ data, error: sessionError }) => {
         if (!active) return;
         if (sessionError) setError(sessionError.message);
+        setActiveRecordOwner(data.session?.user.id || null);
         setSession(data.session);
         setLoading(false);
       });
 
       const { data } = client.auth.onAuthStateChange((_event, nextSession) => {
         if (!active) return;
+        setActiveRecordOwner(nextSession?.user.id || null);
         setSession(nextSession);
         setError(null);
         setLoading(false);
@@ -81,6 +84,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     });
     if (verifyError) throw verifyError;
     if (!data.session) throw new Error("登录未完成，请重新验证");
+    setActiveRecordOwner(data.session?.user.id || null);
     setSession(data.session);
   }, [error, supabase]);
 
@@ -88,6 +92,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     if (!supabase) return;
     const { error: signOutError } = await supabase.auth.signOut();
     if (signOutError) throw signOutError;
+    setActiveRecordOwner(null);
     setSession(null);
   }, [supabase]);
 

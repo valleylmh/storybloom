@@ -11953,3 +11953,15 @@ body:has([data-gift-module]) .family-platform-nav, body:has([data-gift-module]) 
 .email-code-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
 .email-code-actions button { min-height: 44px; padding: 8px 14px; border: 1px solid #dcd1c1; border-radius: 12px; color: #635448; background: #fffdf8; cursor: pointer; }
 .email-code-actions button:disabled { opacity: .55; cursor: not-allowed; }
+
+.account-sync-status { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 16px; margin: 16px 0; border: 1px solid #e4d9cc; border-radius: 16px; background: #fffdf8; color: #635448; }
+.account-sync-status p { flex: 1; margin: 0; min-width: 180px; line-height: 1.6; }
+.account-sync-status label { flex-basis: 100%; line-height: 1.7; }
+.account-sync-status button, .unified-story-grid button { min-height: 44px; padding: 8px 14px; border: 1px solid #dcd1c1; border-radius: 12px; background: #fffdf8; cursor: pointer; }
+.account-sync-status button:disabled, .unified-story-grid button:disabled { opacity: .55; cursor: wait; }
+.unified-account-library { padding: 16px 0; }
+.unified-story-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.unified-story-grid article { min-width: 0; padding: 16px; border-radius: 20px; border: 1px solid #e4d9cc; background: #fffdf8; }
+.unified-story-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; }
+.unified-story-grid h3 { margin: 12px 0; }
+.unified-story-grid article > div { display: flex; flex-wrap: wrap; gap: 8px; }

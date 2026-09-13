@@ -1,6 +1,6 @@
 import type { GrowthRecord } from "@/lib/growth-records";
 
-export type GrowthDataSource = "local" | "cloud";
+export type GrowthDataSource = "local" | "cloud" | "account";
 
 export interface GrowthCopyRow {
   clientRecordId: string;

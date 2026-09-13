@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { useAccountSync } from "@/components/sync/AccountSyncProvider";
 import { DeviceMobile, ShieldCheck } from "@phosphor-icons/react";
 import { localGrowthRepository } from "@/lib/repositories/local-growth-repository";
 import { localStoryRepository } from "@/lib/repositories/local-story-repository";
@@ -20,6 +22,8 @@ export default function LocalDataSummary({
   cloudCharacterCount?: number | null;
   showCloudCharacters?: boolean;
 }) {
+  const { session } = useAuth();
+  const account = useAccountSync();
   const [counts, setCounts] = useState<Counts | null>(null);
 
   useEffect(() => {
@@ -52,22 +56,23 @@ export default function LocalDataSummary({
     };
   }, []);
 
+  const visibleCounts = session ? { books: account.stories.length, growthRecords: account.growth.length, photos: account.growth.reduce((sum, row) => sum + row.photos.length, 0), children: new Set(account.growth.map(row => row.childKey)).size } : counts;
   const localStats = [
-    { label: "最近绘本", value: counts?.books },
-    { label: "成长记录", value: counts?.growthRecords },
-    { label: "成长照片", value: counts?.photos },
-    { label: "孩子档案", value: counts?.children },
+    { label: "最近绘本", value: visibleCounts?.books },
+    { label: "成长记录", value: visibleCounts?.growthRecords },
+    { label: "成长照片", value: visibleCounts?.photos },
+    { label: "孩子档案", value: visibleCounts?.children },
   ];
 
   return (
-    <section className={styles.summaryCard} aria-label="当前设备的数据摘要">
+    <section className={styles.summaryCard} aria-label={session ? "账号数据摘要" : "当前设备的数据摘要"}>
       <div className={styles.summaryHeader}>
         <div>
-          <p className={styles.sectionKicker}>LOCAL FAMILY DATA</p>
-          <h2>当前设备</h2>
+          <p className={styles.sectionKicker}>{session ? "FAMILY ACCOUNT" : "LOCAL FAMILY DATA"}</p>
+          <h2>{session ? "我的家庭记录" : "当前设备"}</h2>
         </div>
         <span className={styles.summaryBadge}>
-          <ShieldCheck /> 仅保存在当前浏览器
+          <ShieldCheck /> {session ? "账号私有 · 自动同步" : "仅保存在当前浏览器"}
         </span>
       </div>
       <div className={styles.summaryGrid}>

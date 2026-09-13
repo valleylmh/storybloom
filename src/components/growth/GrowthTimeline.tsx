@@ -309,11 +309,11 @@ export default function GrowthTimeline({
       setEditingId(null);
       setSelectedYear(updated.occurredOn.slice(0, 4));
       setNotice(
-        source === "cloud" ? "已仅更新私有云端记录。" : "已仅更新当前设备记录。",
+        source === "account" ? "已更新账号记录，其他设备同步后可见。" : source === "cloud" ? "已仅更新私有云端记录。" : "已仅更新当前设备记录。",
       );
     } catch (error) {
       setNotice(
-        source === "cloud"
+        source === "account" ? "修改尚未完成，请联网后重试。" : source === "cloud"
           ? "私有云端记录暂时无法更新；当前设备副本没有被修改。"
           : getLocalStorageFailureNotice(
               error,
@@ -324,7 +324,7 @@ export default function GrowthTimeline({
   }
 
   async function removeRecord(record: GrowthRecord) {
-    const sourceLabel = source === "cloud" ? "私有云端" : "当前设备";
+    const sourceLabel = source === "account" ? "账号" : source === "cloud" ? "私有云端" : "当前设备";
     const bundle = getMomentBundle(record);
     const localDeleteDetail = bundle
       ? `现场照片及 ${bundle.storybookVersions.length} 个绘本版本会从成长档案移除；绘本馆中的独立副本不会自动删除。`
@@ -343,7 +343,7 @@ export default function GrowthTimeline({
       await activeRepository.remove(record.id);
     } catch (error) {
       setNotice(
-        source === "cloud"
+        source === "account" ? "删除尚未完成，请联网后重试。" : source === "cloud"
           ? "云端记录删除失败；当前设备副本没有被修改。"
           : getLocalStorageFailureNotice(
               error,
@@ -364,7 +364,7 @@ export default function GrowthTimeline({
     setEditingId(null);
     setBusyAction("");
     setNotice(
-      source === "cloud"
+      source === "account" ? "已从账号删除成长记录，其他设备同步后移除；关联绘本仍保留。" : source === "cloud"
         ? "已仅删除私有云端记录。关联绘本仍保留。"
         : "已删除当前设备中的成长时刻；绘本馆中的独立副本未被修改。",
     );
@@ -632,7 +632,7 @@ export default function GrowthTimeline({
           <div className={styles.navActions}>
             <span className={styles.privacyLabel}>
               {source === "cloud" ? <Cloud /> : <ShieldCheck />}
-              {source === "cloud" ? "账户私有 · 跨设备可见" : "仅保存在当前浏览器"}
+              {source !== "local" ? "账户私有 · 跨设备同步" : "仅保存在当前浏览器"}
             </span>
             <Link href={basePath} className={styles.navLink}>
               <ArrowLeft /> 成长书架
@@ -646,7 +646,7 @@ export default function GrowthTimeline({
           <div className={styles.embeddedToolbar}>
             <span className={styles.privacyLabel}>
               {source === "cloud" ? <Cloud /> : <ShieldCheck />}
-              {source === "cloud" ? "私有云端记录" : "当前设备记录"}
+              {source === "account" ? "账号成长记录" : source === "cloud" ? "私有云端记录" : "当前设备记录"}
             </span>
             <Link href={basePath} className={styles.navLink}>
               <ArrowLeft /> 返回成长书架
@@ -887,7 +887,7 @@ export default function GrowthTimeline({
                               <BookOpenText />
                               {busyAction === `open:${record.id}`
                                 ? "正在保存图片…"
-                                : source === "cloud"
+                                : source === "account" ? "阅读绘本" : source === "cloud"
                                   ? "保存到本机并阅读"
                                   : "阅读本机绘本"}
                             </button>
@@ -897,7 +897,7 @@ export default function GrowthTimeline({
                               onClick={() => startEditing(record)}
                             >
                               <PencilSimpleLine />
-                              {source === "cloud" ? "仅编辑云端" : "仅编辑本机"}
+                              {source === "account" ? "编辑" : source === "cloud" ? "仅编辑云端" : "仅编辑本机"}
                             </button>
                             {bundle && record.photos.length > 0 ? (
                               <button
@@ -917,7 +917,7 @@ export default function GrowthTimeline({
                               <Trash />
                               {busyAction === `delete:${record.id}`
                                 ? "删除中…"
-                                : source === "cloud"
+                                : source === "account" ? "删除" : source === "cloud"
                                   ? "仅删除云端"
                                   : "仅删除本机"}
                             </button>

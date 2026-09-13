@@ -363,7 +363,7 @@ export default function LocalImportCard({
         <div className={styles.importStatusCopy}>
           <h2>本地内容可选择同步</h2>
           <p>
-            仍有 {counts.stories} 本绘本、{counts.growthRecords} 条成长记录保存在当前设备；不会自动上传。
+            仍有 {counts.stories} 本绘本、{counts.growthRecords} 条成长记录保留设备副本，可在这里查看同步详情。
           </p>
         </div>
         <button className={styles.importTextButton} onClick={openSelection} type="button">
@@ -385,7 +385,7 @@ export default function LocalImportCard({
             <h2 id="local-import-title">发现当前设备中的家庭内容</h2>
           </div>
         </div>
-        <p className={styles.importLead}>这些内容目前只保存在本设备。是否导入云端，由你决定。</p>
+        <p className={styles.importLead}>这里提供手动补传和冲突处理；日常记录会在登录后自动同步。</p>
         <div className={styles.importCountGrid}>
           <div>
             <BookOpen />
@@ -404,7 +404,7 @@ export default function LocalImportCard({
           </div>
         </div>
         <p className={styles.importPrivacyNote}>
-          登录不会自动上传。导入完成后，本地副本仍会保留；同步失败也不影响创作和阅读。
+          日常记录自动同步；此处用于手动补传与处理版本冲突。同步失败会保留已有内容。
         </p>
         <div className={styles.importActions}>
           <button className={styles.importSecondaryButton} onClick={dismiss} type="button">
