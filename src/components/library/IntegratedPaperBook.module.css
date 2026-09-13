@@ -1,0 +1,50 @@
+.reader { max-width: 1040px; margin: auto; }
+.toolbar { display: flex; align-items: center; justify-content: space-between; margin: 0 0 22px; color: #8a7962; font-size: 12px; }
+.toolbar > div { display: flex; gap: 8px; }
+.toolbar button, .navigation button { border: 1px solid #d8c8ae; background: #fffaf0; color: #65503c; border-radius: 24px; min-height: 44px; padding: 8px 16px; cursor: pointer; }
+.toolbar button:disabled, .navigation button:disabled { opacity: .4; cursor: default; }
+.book { position: relative; perspective: 2400px; isolation: isolate; touch-action: pan-y; filter: drop-shadow(0 24px 22px #59452c30); }
+.book:focus-visible { outline: 2px solid #a87542; outline-offset: 12px; }
+.book::before { content: ""; position: absolute; inset: 6px -7px -10px; border-radius: 5px 10px 10px 5px; background: repeating-linear-gradient(0deg,#d1c5b0 0 1px,#f7eddb 1px 3px); border-bottom: 6px solid #375746; z-index: -1; }
+.base { display: grid; grid-template-columns: 1fr 1fr; }
+.page { position: relative; aspect-ratio: .76; overflow: hidden; background: #f5ebd6; container-type: inline-size; }
+.left { border-radius: 5px 0 0 5px; }
+.right { border-radius: 0 5px 5px 0; }
+.page::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.left::after { background: linear-gradient(90deg,#61482a10,transparent 5%,transparent 88%,#5c40291a 97%,#39271550); }
+.right::after { background: linear-gradient(90deg,#39271550,#5c402918 3%,transparent 12%,transparent 95%,#61482a10); }
+.art { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center top; user-select: none; }
+.words { position: absolute; inset: auto 0 0; padding: 28% 9% 12%; background: linear-gradient(0deg,#fff3dc 0%,#fff3dcf5 46%,#fff3dcc9 67%,#fff3dc00 100%); }
+.words p { position: relative; margin: 0; font-family: "Songti SC", "Noto Serif SC", Georgia, serif; color: #423721; font-size: clamp(11px,4.1cqw,22px); line-height: 1.9; text-wrap: pretty; }
+.words p[lang="en"] { font-size: clamp(10px,3.5cqw,19px); line-height: 1.6; }
+.pageNumber { position: absolute; bottom: 3%; color: #907d5c; font-size: clamp(9px,2.5cqw,12px); }
+.left .pageNumber { left: 9%; }
+.right .pageNumber { right: 9%; }
+.turning { position: absolute; top: 0; bottom: 0; width: 50%; transform-style: preserve-3d; z-index: 5; pointer-events: none; }
+.next { left: 50%; transform-origin: left center; animation: next .82s cubic-bezier(.35,.05,.25,1) both; }
+.prev { left: 0; transform-origin: right center; animation: prev .82s cubic-bezier(.35,.05,.25,1) both; }
+.front, .back { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.front { transform: rotateY(0deg); }
+.back { transform: rotateY(180deg); }
+.front .page, .back .page { width: 100%; height: 100%; }
+.turning::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg,#382b230a,#382b233d); backface-visibility: hidden; animation: shade .82s ease both; }
+.navigation { display: flex; align-items: center; justify-content: center; gap: 24px; margin: 34px 0 0; }
+.navigation span { color: #8a765c; font-size: 12px; min-width: 65px; text-align: center; }
+.hint { color: #9a8972; font-size: 11px; text-align: center; letter-spacing: .15em; margin: 18px 0 0; }
+.ending { display: flex; height: 100%; flex-direction: column; align-items: center; justify-content: center; gap: 20px; color: #756147; font-family: "Songti SC",serif; }
+.large { max-width: 600px; margin: auto; }
+.large .base { grid-template-columns: 1fr; gap: 24px; }
+.large .page { border-radius: 6px; }
+.large .page::after { background: none; }
+@keyframes next { from { transform: rotateY(0deg); } to { transform: rotateY(-180deg); } }
+@keyframes prev { from { transform: rotateY(0deg); } to { transform: rotateY(180deg); } }
+@keyframes shade { 0%,100% { opacity: 0; } 50% { opacity: 1; } }
+@media(max-width:600px) {
+  .navigation { gap: 10px; }
+  .navigation button { padding-inline: 12px; }
+  .words { padding-inline: 10%; padding-bottom: 14%; }
+  .page { aspect-ratio: .62; }
+  .large .page { aspect-ratio: .76; }
+  .toolbar { margin-bottom: 18px; }
+}
+@media(prefers-reduced-motion:reduce) { .turning { animation: none; } }

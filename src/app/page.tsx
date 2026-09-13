@@ -8,8 +8,10 @@ import {
   BookOpenText,
   CalendarDots,
   GithubLogo,
+  Gift,
   Plant,
 } from "@phosphor-icons/react";
+import HomeGiftShowcase from "@/components/gifts/HomeGiftShowcase";
 import BookPreview from "@/components/book/BookPreview";
 import MinimalStoryEntry from "@/components/book/MinimalStoryEntry";
 import StoryForm from "@/components/book/StoryForm";
@@ -1362,6 +1364,10 @@ export default function Home() {
                 <BookOpenText aria-hidden="true" />
                 <span>{locale === "zh" ? "绘本馆" : "Library"}</span>
               </Link>
+              <Link href="/gifts" className="home-gifts-nav">
+                <Gift aria-hidden="true" />
+                <span>{locale === "zh" ? "精品绘本" : "Keepsakes"}</span>
+              </Link>
               <Link href="/growth">
                 <CalendarDots aria-hidden="true" />
                 <span>{locale === "zh" ? "成长记录" : "Moments"}</span>
@@ -1516,6 +1522,7 @@ export default function Home() {
                   {growthVersionIntentError} <Link href="/growth">返回成长书架</Link>
                 </div>
               ) : null}
+              {!personalizationEntry && !growthVersionPreset && !growthVersionIntentLoading ? <HomeGiftShowcase locale={locale} /> : null}
               {historyPanel}
             </>
           ) : (

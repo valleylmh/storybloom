@@ -11905,3 +11905,48 @@ a.library-book-card:hover {
   .library-reader .book-stage { grid-template-columns: minmax(0, 1fr); }
   .library-reader .book-nav-btn { display: none; }
 }
+
+/* Independent paper-book preview shell. */
+.paper-preview-page { min-height: 100svh; background: radial-gradient(ellipse at 50% 22%, #fffdf7, #eee5d6); color: #493b2c; padding: 24px clamp(16px, 4vw, 64px) 64px; }
+.paper-preview-nav { max-width: 1120px; margin: auto; display: flex; justify-content: space-between; gap: 16px; font-size: 12px; color: #80715e; }
+.paper-preview-nav a { color: inherit; text-decoration: none; padding: 12px 0; }
+.paper-preview-nav > span { padding: 12px 0; }
+.paper-cover-stage { display: flex; align-items: center; flex-direction: column; padding: 42px 0 20px; perspective: 1600px; }
+.paper-eyebrow { font-size: 10px; letter-spacing: .22em; color: #8f7353; }
+.paper-cover { position: relative; display: flex; flex-direction: column; width: min(340px, 78vw); aspect-ratio: 3 / 4; margin: 28px 0 38px; padding: 20px 22px 18px 30px; color: #fff4d7; background: #375746; border: 1px solid #294334; border-radius: 4px 13px 13px 4px; transform: rotateY(-16deg) rotateZ(-3deg); transform-style: preserve-3d; box-shadow: 18px 24px 32px #45392438, inset 9px 0 10px #0e231e88, inset 12px 0 1px #d7c59e55; cursor: pointer; transition: transform .6s ease, box-shadow .6s ease; text-align: center; }
+.paper-cover::before { content: ""; position: absolute; inset: 5px -10px 5px auto; width: 10px; background: repeating-linear-gradient(90deg, #dbcfb6 0 1px, #fff5dc 1px 3px); transform: rotateY(70deg); transform-origin: left; border-radius: 0 5px 5px 0; }
+.paper-cover::after { content: ""; position: absolute; inset: 0 auto 0 10px; width: 2px; background: #172e2880; box-shadow: 2px 0 1px #dfd1ac33; }
+.paper-cover:hover { transform: rotateY(-7deg) rotateZ(-1deg) translateY(-4px); box-shadow: 14px 30px 40px #45392440; }
+.paper-cover:focus-visible, .paper-close:focus-visible { outline: 3px solid #af713b; outline-offset: 8px; }
+.paper-cover-art { display: block; aspect-ratio: 1.5; overflow: hidden; border: 1px solid #d7c59e77; border-radius: 50% 50% 3px 3px; margin: 10px 0 20px; }
+.paper-cover-art img { width: 100%; height: 100%; object-fit: cover; }
+.paper-cover-type { display: flex; flex-direction: column; gap: 12px; }
+.paper-cover-type > span { font-size: 11px; letter-spacing: .15em; color: #e0d5b9; }
+.paper-cover-type strong { font-family: "Songti SC", "Noto Serif SC", serif; font-size: clamp(30px, 7vw, 42px); font-weight: 600; letter-spacing: .12em; }
+.paper-cover-footer { display: flex; justify-content: space-between; margin-top: auto; padding-top: 26px; font-size: 9px; letter-spacing: .08em; }
+.paper-cover-caption { font-family: "Songti SC", serif; font-size: 18px; letter-spacing: .08em; margin: 4px 0 12px; }
+.paper-cover-meta { font-size: 11px; color: #96846e; }
+.paper-open-content { max-width: 1120px; margin: 32px auto 0; animation: paper-open .65s ease both; }
+.paper-edition-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; gap: 16px; }
+.paper-edition-heading h1 { margin: 6px 0 0; font-family: "Songti SC", serif; font-size: 28px; }
+.paper-close { min-height: 44px; padding: 10px 18px; background: #fffaf1; color: #67503c; border: 1px solid #d3c3aa; border-radius: 24px; cursor: pointer; }
+@keyframes paper-open { from { opacity: 0; transform: perspective(1600px) rotateY(-8deg) translateY(12px); } to { opacity: 1; transform: none; } }
+@media (max-width: 720px) {
+  .paper-cover-stage { padding-top: 24px; }
+  .paper-preview-page { overflow-x: clip; padding-inline: 16px; }
+  .paper-open-content { margin-top: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paper-cover, .paper-cover:hover { transform: none; transition: none; }
+  .paper-open-content { animation: none; }
+}
+.paper-cover-opening { pointer-events: none; transform-origin: left center; animation: paper-cover-open .6s ease-in both; }
+@keyframes paper-cover-open { from { transform: rotateY(-16deg) rotateZ(-3deg); opacity: 1; } to { transform: rotateY(-100deg) rotateZ(-3deg); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .paper-cover-opening { animation: none; } }
+
+/* Gift books have their own focused presentation and footer. */
+body:has([data-gift-module]) .family-platform-nav, body:has([data-gift-module]) .site-footer { display: none; }
+
+/* Keep the gift navigation entry on desktop; mobile uses the home showcase. */
+@media (max-width: 720px) { .home-primary-nav > a.home-gifts-nav { display: none; } }
+

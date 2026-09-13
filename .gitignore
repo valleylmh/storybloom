@@ -4,6 +4,9 @@ node_modules/
 .pnp.js
 .pnpm-store/
 
+# original artwork archives kept outside git
+public/gift-books/**/*.zip
+
 # next
 .next/
 out/
