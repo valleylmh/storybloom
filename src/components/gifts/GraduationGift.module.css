@@ -48,3 +48,5 @@
 .cityCoverTitle small,.cityCoverTitle > span { font-size:10px; letter-spacing:.13em; }
 .cityCover img { width:calc(100% - 32px); margin:0 16px; border-radius:3px; }
 .cityImprint { display:block; padding:16px; font-size:10px; letter-spacing:.16em; }
+.journeyCover { background:#803e32; color:#f8df9f; border:1px solid #b89455; }
+.journeyCover .cityCoverTitle strong { font-size:clamp(38px,5vw,62px); letter-spacing:.25em; padding-left:.25em; }

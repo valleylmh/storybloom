@@ -1,0 +1,62 @@
+.page { min-height:100svh; padding:0 clamp(16px,5vw,72px); background:#f7f5ed; color:#354737; }
+.nav,.header,.page > section,.footer { max-width:1160px; margin-inline:auto; }
+.nav { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; border-bottom:1px solid #dfe1d3; }
+.nav a { min-height:44px; display:inline-flex; align-items:center; color:inherit; text-decoration:none; font-size:12px; }
+.brand { letter-spacing:.16em; }
+.brand span { margin-left:16px; padding-left:16px; border-left:1px solid #bac3ae; letter-spacing:0; }
+.header { padding:48px 0 42px; }
+.header > p { margin:0 0 16px; font-size:10px; letter-spacing:.22em; color:#8a977d; }
+.header h1 { font-family:"Songti SC",Georgia,serif; font-size:clamp(28px,3.5vw,42px); line-height:1.4; font-weight:500; margin:0 0 14px; }
+.header > span { color:#7a8571; font-size:14px; line-height:1.7; }
+.collectionHeading { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+.collectionHeading h2 { font-size:14px; font-weight:500; margin:0; }
+.collectionHeading > span { font-size:11px; color:#8d9781; }
+.grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+.card { min-width:0; }
+.bookLink { display:block; color:inherit; text-decoration:none; height:100%; }
+.coverStage { display:flex; justify-content:center; padding:24px 30px 30px; border-radius:16px; background:#efeee2; }
+.cover { position:relative; width:100%; max-width:240px; aspect-ratio:3 / 4; border-radius:3px 7px 7px 3px; box-shadow:5px 5px 0 -1px #d7cdb7,10px 14px 20px #3b492d1a; overflow:hidden; }
+.cover > img { display:block; width:100%; height:100%; object-fit:cover; }
+.cityCover { background:#224f58; display:flex; flex-direction:column; box-sizing:border-box; padding:7% 6% 4%; color:#f4e4b7; }
+.cityTitle { display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; margin-bottom:auto; }
+.cityTitle small { font-size:8px; letter-spacing:.15em; }
+.cityTitle strong { font-family:"Songti SC",serif; font-size:clamp(14px,1.7vw,23px); font-weight:600; }
+.cityTitle > span { font-size:8px; }
+.cityCover > img { width:100%; height:auto; aspect-ratio:1; border-radius:2px; margin-top:10px; }
+.imprint { text-align:center; font-size:7px; padding-top:8px; }
+.copy { padding:20px 2px 8px; }
+.theme { font-size:10px; letter-spacing:.08em; color:#8b7954; }
+.copy h3 { margin:8px 0; font-family:"Songti SC",Georgia,serif; font-weight:600; font-size:21px; line-height:1.4; }
+.detail { color:#8a927f; font-size:11px; line-height:1.5; }
+.copy p { margin:12px 0; color:#76826e; font-size:13px; line-height:1.8; min-height:3.6em; }
+.read { display:inline-flex; align-items:center; justify-content:space-between; gap:24px; min-height:44px; color:#405f40; font-size:13px; }
+.bookLink:hover .read { text-decoration:underline; }
+.page a:focus-visible { outline:3px solid #ad9557; outline-offset:6px; border-radius:4px; }
+.custom { display:flex; align-items:center; justify-content:space-between; gap:24px; border-top:1px solid #dce0cf; padding:32px 0; margin-top:42px; }
+.custom h2 { font-family:"Songti SC",serif; font-size:24px; font-weight:500; margin:0 0 10px; }
+.custom p { font-size:13px; line-height:1.8; color:#7b8772; margin:0; }
+.custom > a { display:inline-flex; align-items:center; flex-shrink:0; min-height:44px; padding:4px 20px; border-radius:7px; background:#405b43; color:#fff7de; text-decoration:none; font-size:13px; }
+.footer { display:flex; justify-content:space-between; gap:14px; border-top:1px solid #dfe1d3; padding:22px 0; color:#939c89; font-size:10px; line-height:1.6; }
+.footer a { color:inherit; }
+@media(max-width:720px) {
+  .header { padding:30px 0; }
+  .nav { padding:12px 0; }
+  .brand span { padding-left:8px; margin-left:8px; font-size:10px; }
+  .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .coverStage { padding:16px 12px 20px; border-radius:12px; }
+  .cityTitle { gap:4px; }
+  .cityTitle small { font-size:6px; }
+  .cityTitle strong { font-size:13px; }
+  .cityTitle > span { font-size:6px; }
+  .cityCover > img { margin-top:6px; }
+  .imprint { font-size:5px; padding-top:5px; }
+  .copy { padding-top:15px; }
+  .copy h3 { font-size:17px; }
+  .copy p { font-size:12px; min-height:7.2em; }
+  .detail { font-size:10px; }
+  .custom { margin-top:28px; padding:26px 0; flex-direction:column; align-items:flex-start; gap:16px; }
+  .footer { flex-wrap:wrap; }
+}
+@media(max-width:360px) { .grid { gap:12px; } .coverStage { padding:12px 8px 16px; } .cityTitle strong { font-size:11px; } }
+.journeyCover { background:#803e32; border:1px solid #b89455; }
+.journeyCover .cityTitle strong { font-size:clamp(22px,3vw,36px); letter-spacing:.2em; padding-left:.2em; }

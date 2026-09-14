@@ -14,6 +14,13 @@
   <a href="ROADMAP.md"><strong>查看路线图</strong></a>
 </p>
 
+## 文档导航
+
+- [快速启动](#快速启动) · [当前能力](#当前能力) · [使用入口与实现边界](#使用入口与实现边界)
+- [模型调用说明](#模型调用说明) · [生产部署检查](#production-readiness-v1)
+- [贡献指南](CONTRIBUTING.md) · [安全报告](SECURITY.md) · [路线图](ROADMAP.md)
+- [手机 Web App](docs/webapp.md) · [微信小程序](miniprogram/README.md) · [账号同步](docs/account-sync.md)
+
 ## 产品愿景
 
 StoryBloom 正从“一句话生成一本绘本”，逐步走向一个由孩子、家长与 AI 共同创造的长期故事世界。现在，它把孩子的兴趣、家人和日常想象变成可阅读、可朗读、可分享的专属绘本；未来，每一本故事可以在家长的选择和确认下，延续熟悉的角色、地点和共同阅读的记忆。
@@ -79,12 +86,30 @@ StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双
 - 支持网页阅读、中文／英文／双语系统朗读、PNG 长图、图片 ZIP 和公开阅读链接。
 - 在浏览器本地生成带字幕和可选旁白的竖屏绘本视频。
 - 提供家庭角色库、最近作品、公开绘本馆和每日绘本灵感。
+- 绘本馆支持收藏、阅读进度、续读与同系列连续播放。
+- 提供本机成长时刻与绘本版本管理，以及登录后的账号记录同步；含现场照片的记录需当前账号的监护人授权。
+- 提供手机 Web App 安装入口、原生微信小程序工程，以及精品绘本与立体翻页体验样板。
+
+## 使用入口与实现边界
+
+以下描述仓库当前实现，不代表所有能力均已部署或完成真机验收。路径可在本地启动后访问。
+
+| 入口 | 用途与边界 |
+|------|------------|
+| `/` | 创建绘本；支持异步文本任务恢复，以及按创作流程审阅大纲后生成插图 |
+| `/library` | 公开绘本馆、系列阅读、收藏、续读与朗读 |
+| `/family` | 登录后的家庭角色库；需要 Supabase，真人声音默认关闭 |
+| `/me/books`、`/me/growth` | 账号绘本与成长记录；同步条件及多版本限制见 [账号同步](docs/account-sync.md) |
+| `/gifts` | 精品绘本展示与阅读入口 |
+| `/library/paper-preview` | 《守株待兔》立体翻页体验样板 |
+| `/install` | 手机添加到主屏幕指引；Service Worker 仅生产模式注册，完整离线阅读尚未实现，见 [Web App 说明](docs/webapp.md) |
+| `miniprogram/` | 独立微信小程序工程；纯图文发布工程与朗读测试工程的能力不同，见 [小程序说明](miniprogram/README.md) |
 
 ## 工程亮点
 
 - **故事结构不是自由续写**：生成器使用年龄规则、固定 8 页 story beat 和镜头规划，要求每页推进情节并对应具体可视动作。
 - **角色一致性贯穿文本与图片**：家庭角色先生成统一绘本形象；每页只传入实际出场人物的私有参考图，并锁定脸型、发型、年龄、服装主色和视觉风格。
-- **图片生成与文本生成解耦**：`/api/generate` 先返回故事和待生成页面；前端再逐页启动 `/api/illustration`，轮询页面结果，单页失败不会丢失整本书。
+- **图片生成与文本生成解耦**：`/api/generate` 支持创建异步文本任务并轮询恢复；需要大纲审阅的流程在确认后才逐页启动 `/api/illustration`。单页失败可独立重试，不会丢失整本书。
 - **按需使用音频成本**：绘本馆朗读由用户点击后逐页请求云端音频，优先使用 Token Plan 百炼 TTS；翻页模式会高亮当前文字并在读完后自动翻页。普通生成预览仍使用浏览器 `SpeechSynthesis`。
 - **隐私默认收敛**：上传照片先在浏览器重编码并移除 EXIF；家庭照片进入私有 Storage；公开分享只保留阅读所需字段并提供删除令牌。
 - **无 Key 也能本地体验**：文本、本地图像占位和浏览器朗读都有安全兜底，部署者可以按需接入自己的模型与基础设施。
@@ -128,6 +153,9 @@ storybloom/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx                         # 首页：极简/完整表单、最近作品、生成入口
+│   │   ├── me/                              # 账号绘本、成长记录与设置
+│   │   ├── gifts/                           # 精品绘本
+│   │   ├── install/page.tsx                 # 手机 Web App 安装指引
 │   │   ├── family/page.tsx                  # 家庭角色库
 │   │   ├── library/                         # 静态绘本馆、系列页与阅读页
 │   │   ├── s/[shareId]/page.tsx             # 用户绘本公开阅读页
@@ -152,6 +180,8 @@ storybloom/
 │   │   ├── share-store.ts                   # 分享图片与快照持久化
 │   │   └── library/                         # 馆藏系列与书籍数据
 │   └── types/index.ts
+├── miniprogram/                              # 微信小程序，独立准备与验收
+├── docs/                                     # 部署、同步、Web App 与内容说明
 ├── public/library/                           # 已审核馆藏插图
 ├── public/sample-books/                      # 首页公开样例与静态音频
 ├── supabase/migrations/                      # 家庭角色、分享、音频与订阅数据层
@@ -163,6 +193,8 @@ storybloom/
 
 ## 快速启动
 
+准备 Node.js 20 或更新版本和 pnpm，在仓库根目录执行（依赖锁文件为 `pnpm-lock.yaml`）：
+
 ```bash
 pnpm install
 cp .env.example .env.local
@@ -171,7 +203,21 @@ pnpm dev
 
 访问 `http://localhost:3000`。
 
-本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图会先展示 demo SVG，普通生成预览朗读使用当前设备的系统语音；绘本馆朗读和带旁白视频会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key。普通 Token Plan 绘本馆朗读与视频旁白使用独立的 `BAILIAN_TOKEN_KEY`；显式启用声音复刻后使用标准 `DASHSCOPE_API_KEY`，也可通过 `BAILIAN_VOICE_CLONING_API_KEY` 单独覆盖。
+本地不配置 API key 也能跑通基础流程：文本会使用与主题相关的本地 fallback，插图在没有可用提供商时使用 demo SVG，普通生成预览朗读使用当前设备的系统语音；绘本馆朗读和带旁白视频会按需使用无需 key 的 Edge TTS。要看真实文本或图片，需要配置相应 provider key。普通 Token Plan 绘本馆朗读与视频旁白使用独立的 `BAILIAN_TOKEN_KEY`；显式启用声音复刻后使用标准 `DASHSCOPE_API_KEY`，也可通过 `BAILIAN_VOICE_CLONING_API_KEY` 单独覆盖。
+
+无 Key 不等于完全离线：公开图片和 Edge TTS 等仍可能需要网络，真实 AI 插图需要可用的图片服务。Supabase 登录、私有云同步、持久分享和邮件订阅需分别配置对应服务。完整变量说明见 [.env.example](.env.example)，仅在本机 `.env.local` 中填写凭据。
+
+### 常用开发命令
+
+| 命令 | 用途 |
+|------|------|
+| `pnpm dev` | 启动本地开发服务 |
+| `npx tsc --noEmit` | TypeScript 检查 |
+| `pnpm test` | 运行 Vitest 测试；可附加测试文件路径缩小范围 |
+| `pnpm check:production` | 只检查生产配置，不证明线上服务可用 |
+| `pnpm build` / `pnpm start` | 生产构建 / 启动已构建产物；不执行部署 |
+
+日常修改优先运行类型检查和相关测试。默认开发与生产构建共用 `.next`，不要同时运行，以免出现旧 chunk 错误。提交 PR 前的要求见 [贡献指南](CONTRIBUTING.md)。
 
 ## Production Readiness v1
 
@@ -391,9 +437,9 @@ Vercel 的 `NEXT_PUBLIC_APP_URL` 也必须设置为正式域名（不要保留 `
 
 ## 本地成长时刻与绘本版本
 
-本地成长档案已将家长确认的真实时刻、备注和现场照片保存为 `GrowthMoment`，把每次 AI 绘本结果保存为独立 `StorybookVersion`。同一个时刻可以从时间轴再次发起创作，复用只读事实与现场照片，并为新版本单独选择阅读阶段、故事处理方式、插画风格和角色引用；生成任务恢复后仍会幂等归属原 Moment。同一个时刻的版本可分别切换或删除，也可单独清除现场照片；删除最后一个版本不会删除真实时刻。现场照片在浏览器重编码为 WebP 后记录 MIME、压缩后字节数和 SHA-256，同一 Moment 内按实际内容去重；界面使用当前站点的 `navigator.storage.estimate()` 显示容量快照和预警，不申请 persistent storage 权限。成长书架提供浏览器端 ZIP 导出、保存字段与用途说明、保留期限偏好及到期预览；保留期限不会自动删除内容，删除到期时刻或全部本机档案都需要家长再次确认。既有 IndexedDB `GrowthRecord` 会在本机幂等迁移、按需补齐照片元数据并保留兼容投影，登录不会触发上传。
+本地成长档案已将家长确认的真实时刻、备注和现场照片保存为 `GrowthMoment`，把每次 AI 绘本结果保存为独立 `StorybookVersion`。同一个时刻可以从时间轴再次发起创作，复用只读事实与现场照片，并为新版本单独选择阅读阶段、故事处理方式、插画风格和角色引用；生成任务恢复后仍会幂等归属原 Moment。同一个时刻的版本可分别切换或删除，也可单独清除现场照片；删除最后一个版本不会删除真实时刻。现场照片在浏览器重编码为 WebP 后记录 MIME、压缩后字节数和 SHA-256，同一 Moment 内按实际内容去重；界面使用当前站点的 `navigator.storage.estimate()` 显示容量快照和预警，不申请 persistent storage 权限。成长书架提供浏览器端 ZIP 导出、保存字段与用途说明、保留期限偏好及到期预览；保留期限不会自动删除内容，删除到期时刻或全部本机档案都需要家长再次确认。既有 IndexedDB `GrowthRecord` 会在本机幂等迁移、按需补齐照片元数据并保留兼容投影，本机高级档案与账号同步的范围不同，具体同步行为见下文。
 
-私有云成长档案提供独立治理代码路径：登录后可读取摘要、生成成长档案专用 ZIP、保存不自动执行的保留期限偏好，并在二次确认后只删除私有云成长档案。真实项目已经部署 GrowthMoment schema，并完成 RLS、私有 Storage、双账户隔离和合成数据双写验收；家长主动导入时仍保存兼容 `growth_records`，同时镜像到 `growth_moments`、`growth_moment_assets` 与 `storybook_versions`。登录、扫描和查看不会触发本机上传，删除成长档案也不会删除普通绘本馆、家庭角色、真实声音或公开分享。同一账户两台真实设备的最终 UI 闭环仍待确认，数据边界、部署顺序和验收记录见 [docs/growth-moments-v1.md](docs/growth-moments-v1.md) 与 [部署验收清单](docs/cloud-growth-archive-deployment-checklist.md)。
+私有云成长档案提供独立治理代码路径：登录后可读取摘要、生成成长档案专用 ZIP、保存不自动执行的保留期限偏好，并在二次确认后只删除私有云成长档案。真实项目已经部署 GrowthMoment schema，并完成 RLS、私有 Storage、双账户隔离和合成数据双写验收；家长主动导入时仍保存兼容 `growth_records`，同时镜像到 `growth_moments`、`growth_moment_assets` 与 `storybook_versions`。当前账号同步会在登录后及联网、窗口恢复等时机同步符合条件的本机绘本与成长记录；含现场照片的记录须先获得当前账号的监护人授权。无绘本时刻和多版本高级档案尚未完整接入云端同步，详见 [账号同步说明](docs/account-sync.md)。删除成长档案不会删除普通绘本馆、家庭角色、真实声音或公开分享。同一账户两台真实设备的最终 UI 闭环仍待确认，数据边界、部署顺序和验收记录见 [docs/growth-moments-v1.md](docs/growth-moments-v1.md) 与 [部署验收清单](docs/cloud-growth-archive-deployment-checklist.md)。
 
 定制入口默认展示“链接即将上线”。拿到平台链接后，在 `.env.local` 中配置：
 
@@ -411,15 +457,15 @@ NEXT_PUBLIC_XIANYU_ORDER_URL=https://...
 POST /api/generate
      │
      ├─ 校验参数、Turnstile 与每日免费额度
-     ├─ 文本模型或本地 fallback → 生成 8 页故事 JSON
-     ├─ 写入故事缓存，页面先返回 demo / pending 状态
-     └─ 返回 storyId、正文与待生成页面
+     ├─ 异步模式返回 taskId / storyId，前端轮询文本任务并支持刷新恢复
+     ├─ 文本模型或本地 fallback → 生成并缓存 8 页故事 JSON
+     └─ 需要大纲审阅时，等待用户确认后进入插图阶段
           │
           ▼
-BookPreview 逐页启动插图（最多 4 个并发）
+BookPreview 逐页启动插图
           │
           ├─ POST /api/illustration → 202 Accepted
-          │        └─ Next.js after() 后台调用图片 Provider
+          │        └─ 默认由 Next.js after() 后台调用图片 Provider
           └─ GET /api/illustration → 轮询单页状态并更新最近作品
                    │
                    ▼
@@ -448,7 +494,7 @@ BookPreview 逐页启动插图（最多 4 个并发）
 ## 下一阶段
 
 - **近期**：自助 PDF / 家庭打印版、亲子共读小问题、结构化 Character Bible 和独立安全检查。
-- **中期**：阅读进度、收藏与家长可控的成长档案；只记录客观事实和家长确认的信息。
+- **继续完善**：已有阅读进度、收藏与成长档案的跨设备体验，以及无绘本时刻、多版本档案的云端同步；完成手机 Web App 和小程序的相应真机验收。
 - **长期**：让熟悉的角色、地点和故事线跨多本绘本延续，并支持安全、有限的共同创作选择。
 
 完整路线、验收边界和儿童隐私原则见 [ROADMAP.md](ROADMAP.md) 与 [docs/feature-roadmap-tasks.md](docs/feature-roadmap-tasks.md)。
