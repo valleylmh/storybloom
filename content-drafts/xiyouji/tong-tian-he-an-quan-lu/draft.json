@@ -2,7 +2,7 @@
   "id": "tong-tian-he-an-quan-lu",
   "title": "通天河安全路",
   "subtitle": "看起来结实，也要先认真确认",
-  "origin": "《西游记》第四十八回（低龄温和改编）",
+  "origin": "《西游记》第四十七至四十九回背景延伸（过河后的安全小故事，非原著独立事件）",
   "moral": {
     "zh": "面对陌生的冰面、水路或捷径，不能只看表面；请熟悉环境的大人检查，并选择有保护的路线。",
     "en": "On unfamiliar ice, water, or shortcuts, appearances are not enough. Ask knowledgeable adults to check and choose a protected route."
@@ -13,8 +13,8 @@
   "episodeNumber": 56,
   "pages": [
     {
-      "zh": "冬天来到通天河，宽宽的河面结了一层亮晶晶的冰。",
-      "en": "Winter came to the River of Heaven, covering the wide surface with sparkling ice.",
+      "zh": "过了通天河，大家在岸边村落歇脚。村旁的一条小支流结了冰，八戒想从这里走近路。",
+      "en": "After crossing the Tongtian River, they rested in a village. A small nearby tributary had frozen, and Bajie wanted to take a shortcut across it.",
       "prompt": "Full Journey to the West team stands on a dry protected riverbank looking across a broad sparkling frozen river in gentle winter sunlight; wooden railings and village houses nearby, no one on ice, no text."
     },
     {
@@ -48,8 +48,8 @@
       "prompt": "Full team crosses the sturdy railed wooden bridge in single file with generous spacing, White Dragon Horse walking calmly, village guide leading; safe winter scene, no text."
     },
     {
-      "zh": "到了对岸，八戒回头说：“真正的近路，是能让所有人平安到达的路。”",
-      "en": "On the far bank, Bajie looked back. “The best shortcut is the path that gets everyone there safely.”",
+      "zh": "越过小支流，师徒向金兜山走去。八戒说：“真正的近路，是能让大家平安到达的路。”",
+      "en": "Beyond the tributary, they walked toward Jindou Mountain. “The best shortcut brings everyone there safely,” said Bajie.",
       "prompt": "Team gathers on dry far bank beside green circle marker, looking back at safe bridge and sparkling closed ice route; warm winter sunset, no text."
     }
   ]

@@ -1,7 +1,7 @@
 {
   "id": "chang-an-gong-de-yuan-man",
-  "title": "长安功德圆满",
-  "subtitle": "把一路所得分享给更多人",
+  "title": "大结局：取经归来·五圣成真",
+  "subtitle": "真经传东土，五位伙伴各得正果",
   "origin": "《西游记》第一百回（低龄温和改编）",
   "moral": {
     "zh": "真正的圆满不是被赞美，而是把学到的智慧继续分享、继续实践。",
@@ -13,44 +13,74 @@
   "episodeNumber": 40,
   "pages": [
     {
-      "zh": "长安城门打开时，晨钟响起。人们认出取经队伍，惊喜地从街边挥手。",
-      "en": "As Chang'an's gates opened, morning bells rang. People recognized the pilgrims and waved in delight.",
-      "prompt": "The established five travelers enter ancient Chang'an through broad sunlit gates carrying balanced scripture cases; families wave from safe street edges, celebratory but uncrowded, no banners with text."
+      "zh": "长安城门打开了！离乡十四年，唐僧和四位伙伴终于带着真经回来了。街边的人们欢喜地挥手。",
+      "en": "The gates of Chang’an opened! After fourteen years away, Tang Seng and his four companions returned with the scriptures. People waved with joy.",
+      "prompt": "Five pilgrims walk into Chang’an sunrise gates carrying neat scripture cases; welcoming people stand at the sides. [[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]]"
     },
     {
-      "zh": "唐王在大殿外迎接他们，却没有先问经历多危险，而是问：“一路学会了什么？”",
-      "en": "The Tang emperor welcomed them outside the hall. Instead of asking how dangerous the journey was, he asked, \"What did you learn?\"",
-      "prompt": "Create the Tang Emperor anchor: a dignified middle-aged Chinese ruler with warm tan skin, a kind square face, calm dark eyes, a neat black beard, layered deep-red and muted-gold dragon-free court robes, and a simple black-and-gold ceremonial cap. He welcomes the established team outdoors at equal ground level; no throne or grandeur."
+      "zh": "唐王走下台阶，迎接远行的朋友。唐僧双手呈上通关文牒：一路经过的山河与国度，都留下了印记。",
+      "en": "The Tang emperor came down the steps to welcome his friends. Tang Seng presented the travel document, bearing marks of the lands they had crossed.",
+      "prompt": "Tang emperor warm tan square face neat black beard deep red gold robes black gold cap welcomes Tang Seng presenting a folded document with only abstract unreadable seals. Other four pilgrims nearby. [[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]]"
     },
     {
-      "zh": "悟空说要先看清再行动，八戒说要懂得分享，沙僧说承诺要记牢，白龙马轻轻点头。",
-      "en": "Wukong spoke of observing before acting, Bajie of sharing, and Sha of remembering promises. White Dragon Horse nodded gently.",
-      "prompt": "The established team speaks in turn before the kind Tang Emperor: Wukong gestures thoughtfully, Bajie holds a shared fruit basket, Sha holds the small promise notebook, White Dragon Horse nods; no text."
+      "zh": "经卷一箱箱安放好：三十五部，五千零四十八卷。大家轻轻放下行囊，终于完成了把真经带回东土的约定。",
+      "en": "The scriptures were carefully set down: 5,048 scrolls from 35 collections. They had fulfilled their promise to bring them to the East.",
+      "prompt": "Five pilgrims carefully place bound scripture cases on long low tables in a bright ancient palace hall; clear cooperation, no readable writing. [[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]]"
     },
     {
-      "zh": "唐僧把经卷交给译经院，请学者先核对、誊写，再用大家听得懂的话慢慢讲解。",
-      "en": "Tang Seng delivered the scrolls to the translation hall, asking scholars to verify, copy, and explain them in words everyone could understand.",
-      "prompt": "Tang Seng and scholars in simple cream-and-blue robes jointly receive sealed scripture cases in a bright translation hall; blank paper, brushes, and colored counters, no readable text."
+      "zh": "唐王问起沿途的经历。唐僧讲起高山、大河和伙伴们的帮助；八戒听见自己的名字，笑得眯起了眼。",
+      "en": "The emperor asked about the journey. Tang Seng told of mountains, rivers, and his companions’ help. Bajie beamed when he heard his name.",
+      "prompt": "Tang Seng narrates seated in palace courtyard before same emperor; four companions listen, Bajie beams, soft background memory motifs of mountains rivers. [[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]]"
     },
     {
-      "zh": "城里没有只办盛大的庆典。大家还设了安静读书处、问答桌和给远行人的热粥棚。",
-      "en": "The city held more than a grand celebration. It opened quiet reading corners, question tables, and a porridge stall for travelers.",
-      "prompt": "A welcoming Chang'an community courtyard includes a quiet reading mat, an open question table, and a modest porridge stall; families, elders, and travelers participate, no readable signs."
+      "zh": "长安的僧人接过经卷，准备誊写、传讲。悟空看着展开的书页：千里万里的辛苦，终于能让更多人读到这些经书。",
+      "en": "The monks of Chang’an received the scriptures to copy and teach. Wukong watched the pages unfold: their long journey would let many others read them.",
+      "prompt": "Chang’an monks in simple cream robes receive scrolls from Tang Seng at low tables; Wukong watches happily, other companions present, no legible script. [[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]]"
     },
     {
-      "zh": "寇员外托人送来一封信，说救济物资已经按新办法送到；老鼋的托付也被认真登记。",
-      "en": "A letter arrived from Elder Kou: the aid had been delivered under the new plan, and Old Turtle's request had been properly recorded.",
-      "prompt": "The established team receives a sealed blank letter beside a small clay model of shared supplies and a green turtle token; Elder Kou and Old Turtle appear as warm vignette memories, no readable text."
+      "zh": "交经的事办妥了，八大金刚来到空中，接引师徒重返灵山。长安的人们抬头相送，五位伙伴一起踏上祥云。",
+      "en": "With the scriptures delivered, the Eight Vajra Guardians came to escort them back to Spirit Mountain. The people looked up as the five companions rose on clouds.",
+      "prompt": "Five pilgrims safely stand together on broad soft cloud rising above Chang’an, eight small distant benevolent guardian figures in gold ochre robes guide them, no scary armor. [[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]]"
     },
     {
-      "zh": "夜里，师徒登上城楼。一路遇见的人和事像星光一样，在他们心里一一亮起。",
-      "en": "That night, the travelers climbed the city wall. Every person and lesson from the road lit their hearts like stars.",
-      "prompt": "The established five travelers stand together on a safe broad Chang'an wall at night; soft star-like memory lights suggest peach mountain, rivers, villages, and Spirit Mountain without literal portraits; serene reunion."
+      "zh": "唐僧受封“旃檀功德佛”。他从长安出发时许下的心愿，如今终于完成：真经已送回故土。",
+      "en": "Tang Seng was honored as the Buddha of Sandalwood Merit. The vow he had made in Chang’an was fulfilled: the scriptures had reached his homeland.",
+      "prompt": "Focus Tang Seng hands together smiling before Buddha, same young face same crown same russet gold cream robes, warm lotus light, unchanged outfit. [[TANG_SENG]] The Buddha is a serene warmly smiling figure with dark tightly curled hair, gentle brown eyes, golden ochre robes and a soft light halo, seated on a broad lotus pedestal, kind and never intimidating."
     },
     {
-      "zh": "第二天，他们又各自忙起来：守护、讲述、整理、帮助。故事结束了，善意还在继续。",
-      "en": "The next day, they returned to useful work—protecting, teaching, organizing, and helping. The story ended, but kindness continued.",
-      "prompt": "Final warm sunrise tableau in Chang'an: Wukong helps children observe a puzzle beside caregivers, Bajie shares food, Sha organizes scroll cases, Tang Seng tells a story, White Dragon Horse carries books; hopeful ongoing service, no text."
+      "zh": "悟空成为“斗战胜佛”。当年闯进天宫的小猴王，如今一路护着师父走到了终点。本领之外，他也学会了承担。",
+      "en": "Wukong became the Victorious Fighting Buddha. The monkey king who once stormed Heaven had protected his master to the end, learning responsibility along the way.",
+      "prompt": "Focus Wukong smiling proudly palms together before Buddha, STILL wearing narrow smooth gold headband, reference exact golden fur sleeveless outfit red staff safely behind ear, no new crown or armor. [[WUKONG_STAFF_HEADBAND]] The Buddha is a serene warmly smiling figure with dark tightly curled hair, gentle brown eyes, golden ochre robes and a soft light halo, seated on a broad lotus pedestal, kind and never intimidating."
+    },
+    {
+      "zh": "八戒受封“净坛使者”。他挠挠耳朵问：“我也有份呀？”一路挑担、出力的八戒，也得到了属于自己的认可。",
+      "en": "Bajie became the Altar-Cleansing Envoy. “There is a place for me too?” he asked. His hard work carrying and helping had earned recognition.",
+      "prompt": "Focus cheerful Bajie scratching one floppy ear before Buddha, fully closed dark teal cross collar tunic cream collar mustard sash charcoal trousers tiny black topknot, no headband or bare belly, warm humorous expression. [[BAJIE]] The Buddha is a serene warmly smiling figure with dark tightly curled hair, gentle brown eyes, golden ochre robes and a soft light halo, seated on a broad lotus pedestal, kind and never intimidating."
+    },
+    {
+      "zh": "沙僧受封“金身罗汉”。他话不多，却总把行李照看好，把同伴放在心上。这一路安安稳稳的守护，同样珍贵。",
+      "en": "Sha Wujing became a Golden-Bodied Arhat. Quietly caring for the luggage and his friends, he had offered steady, precious protection.",
+      "prompt": "Focus Sha Wujing modest smile hands together before Buddha, dark RED beard shaved head no headband slate blue robes wooden beads, calm steady warmth. Skin remains bronze not literal metal. [[SHA_WUJING]] The Buddha is a serene warmly smiling figure with dark tightly curled hair, gentle brown eyes, golden ochre robes and a soft light halo, seated on a broad lotus pedestal, kind and never intimidating."
+    },
+    {
+      "zh": "如来又唤白龙马近前，封他为“八部天龙马”。去时驮着师父，回来驮着经书，这位不多说话的伙伴，从没有被忘记。",
+      "en": "The Buddha called White Dragon Horse forward and honored him as the Eightfold Heavenly Dragon Horse. He had carried the master west and the scriptures east; he was not forgotten.",
+      "prompt": "Focus White Dragon Horse bows its head gently before Buddha, blue forehead diamond plainly visible, pale sky-blue mane teal eyes simple bridle russet blanket, four pilgrims watch in background. [[WUKONG_STAFF_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]] [[WHITE_DRAGON_HORSE]] The Buddha is a serene warmly smiling figure with dark tightly curled hair, gentle brown eyes, golden ochre robes and a soft light halo, seated on a broad lotus pedestal, kind and never intimidating."
+    },
+    {
+      "zh": "白龙马来到化龙池，轻轻舒展身体。马形退去，金鳞银须的龙身腾起，祥云托住了他的四爪。",
+      "en": "At the Dragon Transformation Pool, White Dragon Horse stretched. His horse form gave way to a dragon with golden scales and silver whiskers, rising on gentle clouds.",
+      "prompt": "One single friendly youthful slender Chinese dragon rising gracefully from clear lotus pool; golden scales SILVER whiskers pale SKY BLUE mane teal eyes BLUE DIAMOND forehead same identity as horse; short smooth gold horns four tucked cloud supported claws, no horse no extra dragon, no violence. Sunlit Spirit Mountain."
+    },
+    {
+      "zh": "悟空忽然想起头上的金箍，问师父：“它还在吗？”唐僧微笑着说：“如今已成正果，你摸摸看。”",
+      "en": "Wukong suddenly remembered his headband. “Is it still there?” he asked. Tang Seng smiled. “Your journey is fulfilled. Feel for yourself.”",
+      "prompt": "Wukong touches bare forehead surprised and happy beside smiling Tang Seng in lotus courtyard. NO headband on Wukong, no floating removed band. [[WUKONG_STAFF_NO_HEADBAND]] [[TANG_SENG]]"
+    },
+    {
+      "zh": "悟空伸手一摸，金箍果然不见了！五位伙伴笑起来。走过八十一难，真经传回东土，师徒各得正果。从石猴出世到取经归来，《西游记》到这里圆满结束。",
+      "en": "Wukong felt his forehead—the headband was gone! All five friends laughed. Eighty-one trials were complete, the scriptures had reached the East, and each companion was honored. From the stone monkey’s birth to the return with the scriptures, Journey to the West ends here.",
+      "prompt": "Wukong laughs touching his BARE forehead with Tang Seng Bajie Sha smiling together in lotus courtyard; same friendly golden dragon blue diamond teal eyes pale blue mane silver whiskers coils behind them, NO horse, NO headbands on any of these three disciples. [[WUKONG_STAFF_NO_HEADBAND]] [[TANG_SENG]] [[BAJIE]] [[SHA_WUJING]]"
     }
   ]
 }

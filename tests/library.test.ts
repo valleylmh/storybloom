@@ -73,24 +73,42 @@ const XIYOUJI_BOOK_IDS = [
   "qi-shi-er-bian-lian-xi",
   "long-gong-shi-san-bao",
   "ding-hai-shen-zhen-ren-zhu",
+  "tian-ma-yuan-zhi-ban-biao",
+  "pan-tao-yuan-de-qing-tie",
   "da-nao-tian-gong",
   "wu-xing-shan-xia",
+  "shuang-cha-ling-ren-lu",
   "shi-tu-xiang-yu",
   "bai-long-ma",
+  "hei-feng-shan-hu-jia-sha",
   "gao-lao-zhuang-yu-ba-jie",
   "gao-lao-zhuang-fen-xing-li",
+  "huang-feng-ling-ding-feng-zhu",
   "liu-sha-he-shou-sha-seng",
+  "si-sheng-shi-chan-xin",
+  "wu-zhuang-guan-ren-shen-guo",
   "san-da-bai-gu-jing",
+  "hua-guo-shan-qing-shi-xiong",
   "bao-xiang-guo-jiu-gong-zhu",
   "zhi-dou-jin-jiao-yin-jiao",
+  "bao-lin-si-jie-ye-xin",
   "wu-ji-guo-bian-zhen-wang",
   "huo-yun-dong-shou-hong-hai-er",
+  "hei-shui-he-bian-tuo-long",
   "che-chi-guo-san-chang-bi-shi",
   "tong-tian-he-jiu-tong-zi",
+  "tong-tian-he-an-quan-lu",
+  "jin-dou-dong-shou-qing-niu",
   "nu-er-guo-ci-bie",
   "zhen-jia-mei-hou-wang",
   "san-jie-ba-jiao-shan",
+  "ji-sai-guo-sao-bao-ta",
+  "jing-ji-ling-kai-lu",
+  "mu-xian-an-shi-hui",
   "xiao-lei-yin-si-shi-jia-fo",
+  "qi-jue-shan-qing-guo-xiang",
+  "zhu-zi-guo-wen-wen-zhen",
+  "zhu-zi-guo-jie-xin-jie",
   "pan-si-dong-qiao-tuo-xian",
   "huang-hua-guan-jie-cai-cha",
   "shi-tuo-ling-san-guan",
@@ -100,6 +118,8 @@ const XIYOUJI_BOOK_IDS = [
   "yin-wu-shan-bian-zhen-ying",
   "feng-xian-jun-qiu-gan-yu",
   "yu-hua-zhou-shou-xin-tu",
+  "yu-hua-zhou-zhao-gong-ju",
+  "jin-ping-fu-shou-hua-deng",
   "tian-zhu-guo-bian-yu-tu",
   "tong-tai-fu-jie-shan-yuan",
   "kou-fu-ci-bie",
@@ -110,34 +130,9 @@ const XIYOUJI_BOOK_IDS = [
   "zhen-jing-dao-shou",
   "lao-yuan-wen-jiu-nuo",
   "shai-jing-shi-liu-hen",
-  "chang-an-gong-de-yuan-man",
-  "hei-feng-shan-hu-jia-sha",
-  "huang-feng-ling-ding-feng-zhu",
-  "si-sheng-shi-chan-xin",
-  "wu-zhuang-guan-ren-shen-guo",
-  "hei-shui-he-bian-tuo-long",
-  "jin-dou-dong-shou-qing-niu",
-  "ji-sai-guo-sao-bao-ta",
-  "mu-xian-an-shi-hui",
-  "zhu-zi-guo-jie-xin-jie",
-  "jin-ping-fu-shou-hua-deng",
-  "tian-ma-yuan-zhi-ban-biao",
-  "pan-tao-yuan-de-qing-tie",
-  "shuang-cha-ling-ren-lu",
-  "bao-lin-si-jie-ye-xin",
-  "hua-guo-shan-qing-shi-xiong",
-  "tong-tian-he-an-quan-lu",
-  "jing-ji-ling-kai-lu",
-  "qi-jue-shan-qing-guo-xiang",
-  "zhu-zi-guo-wen-wen-zhen",
-  "yu-hua-zhou-zhao-gong-ju",
+  "chang-an-gong-de-yuan-man"
 ];
-const XIYOUJI_EPISODE_NUMBERS = [
-  1, 2, 2, 2, 3, 3, 4, 5, 6, 7, 8, 8, 9, 10, 11, 12, 13, 14, 15, 16,
-  17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
-  34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
-  52, 53, 54, 55, 56, 57, 58, 59, 60,
-];
+const XIYOUJI_EPISODE_NUMBERS = [1, 2, 2, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
 const HAOQI_BOOK_IDS = [
   "tian-kong-wei-shen-me-shi-lan-se",
   "yue-liang-wei-shen-me-gen-zhe-wo-zou",
@@ -355,7 +350,7 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
       expect(book.order).toBe(index + 1);
       expect(book.episodeNumber).toBe(XIYOUJI_EPISODE_NUMBERS[index]);
       expect(book.comingSoon).not.toBe(true);
-      expect(book.pages).toHaveLength(8);
+      expect(book.pages).toHaveLength(book.id === "chang-an-gong-de-yuan-man" ? 14 : 8);
       expect(book.pages.every((page) => page.imageStatus === "complete")).toBe(
         true,
       );
@@ -395,7 +390,7 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
       }
     }
 
-    expect(verifiedImageCount).toBe(XIYOUJI_BOOK_IDS.length * 8);
+    expect(verifiedImageCount).toBe((XIYOUJI_BOOK_IDS.length - 1) * 8 + 14);
   });
 
   it("keeps multipart books under one episode number and withdraws duplicate storylines", () => {
@@ -431,8 +426,8 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
     expect(episodeById.get("qi-shi-er-bian-lian-xi")).toBe(2);
     expect(episodeById.get("long-gong-shi-san-bao")).toBe(3);
     expect(episodeById.get("ding-hai-shen-zhen-ren-zhu")).toBe(3);
-    expect(episodeById.get("gao-lao-zhuang-yu-ba-jie")).toBe(8);
-    expect(episodeById.get("gao-lao-zhuang-fen-xing-li")).toBe(8);
+    expect(episodeById.get("gao-lao-zhuang-yu-ba-jie")).toBe(12);
+    expect(episodeById.get("gao-lao-zhuang-fen-xing-li")).toBe(12);
 
     for (const withdrawnId of [
       "bai-shi-xue-yi",
