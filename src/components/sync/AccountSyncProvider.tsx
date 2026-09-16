@@ -43,6 +43,7 @@ export default function AccountSyncProvider({ children }: { children: ReactNode 
     let active = true;
     let running: Promise<void> = Promise.resolve();
     let refreshQueued: Promise<void> | null = null;
+    let lastAutomaticRefresh = 0;
     function enqueue(operation: () => Promise<void>) {
       const next = running.then(operation, operation);
       running = next.catch(() => {});
@@ -54,6 +55,7 @@ export default function AccountSyncProvider({ children }: { children: ReactNode 
     const engine = createLocalDataImportController({ supabase, userId, localStories, localGrowthRecords: localGrowth });
     async function sync() {
       if (!current()) return;
+      lastAutomaticRefresh = Date.now();
       setLoading(true); setMessage("正在同步账号记录…");
       try {
         const [stories, growth, cached] = await Promise.all([localStories.list(), localGrowth.list(), accountCache(userId!).catch(() => undefined)]);
@@ -110,14 +112,17 @@ export default function AccountSyncProvider({ children }: { children: ReactNode 
     }
     function refresh() {
       if (refreshQueued) return refreshQueued;
-      refreshQueued = enqueue(async () => {
-        refreshQueued = null;
-        await sync();
-      });
+      refreshQueued = enqueue(sync).finally(() => { refreshQueued = null; });
       return refreshQueued;
     }
     return {
       refresh,
+      refreshAfterChange() { return enqueue(sync); },
+      refreshIfStale() {
+        if (Date.now() - lastAutomaticRefresh < 5 * 60_000) return;
+        lastAutomaticRefresh = Date.now();
+        void refresh();
+      },
       mutate(operation: () => Promise<void>) {
         return enqueue(async () => {
           if (!current() || !navigator.onLine) throw new Error("请联网后重试，账号修改需要同步到其他设备。");
@@ -136,16 +141,17 @@ export default function AccountSyncProvider({ children }: { children: ReactNode 
     if (!controller || authLoading) return;
     controller.activate();
     let timer: ReturnType<typeof setTimeout>;
-    const refresh = () => { if (document.visibilityState === "visible") void controller.refresh(); };
-    const dirty = () => { clearTimeout(timer); timer = setTimeout(refresh, 1000); };
+    const refresh = () => { if (document.visibilityState === "visible") controller.refreshIfStale(); };
+    const forceRefresh = () => { if (document.visibilityState === "visible") void controller.refresh(); };
+    const dirty = () => { clearTimeout(timer); timer = setTimeout(() => { void controller.refreshAfterChange(); }, 1500); };
     refresh();
-    window.addEventListener("online", refresh); window.addEventListener("focus", refresh);
+    window.addEventListener("online", forceRefresh); window.addEventListener("focus", refresh);
     document.addEventListener("visibilitychange", refresh);
     window.addEventListener("storybloom:account-data-dirty", dirty);
-    const interval = setInterval(refresh, 30_000);
+    const interval = setInterval(refresh, 5 * 60_000);
     return () => {
       controller.stop(); clearTimeout(timer); clearInterval(interval);
-      window.removeEventListener("online", refresh); window.removeEventListener("focus", refresh);
+      window.removeEventListener("online", forceRefresh); window.removeEventListener("focus", refresh);
       document.removeEventListener("visibilitychange", refresh);
       window.removeEventListener("storybloom:account-data-dirty", dirty);
     };

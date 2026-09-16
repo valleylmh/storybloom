@@ -13,7 +13,8 @@ function getPageTitle(pathname: string) {
   if (pathname.startsWith("/me/growth")) return "成长记录";
   if (pathname.startsWith("/me/characters")) return "家庭角色";
   if (pathname.startsWith("/me/settings")) return "数据与隐私";
-  return "我的家庭";
+  if (pathname.startsWith("/me/inspiration")) return "今日灵感";
+  return "成长记录";
 }
 
 export default function AccountHeader() {

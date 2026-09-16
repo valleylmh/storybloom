@@ -1,4 +1,5 @@
-import GrowthTimeline from "@/components/growth/AccountGrowthTimeline";
+import { redirect } from "next/navigation";
+import { getGrowthTimelineHref } from "@/lib/growth-timeline-route";
 import { normalizeGrowthTimelineId } from "@/lib/growth-timeline-route";
 
 interface Props {
@@ -18,5 +19,5 @@ export default async function GrowthTimelinePage({ params, searchParams }: Props
     ? query.moment[0]
     : query.moment;
   const momentId = normalizeGrowthTimelineId(rawMomentId);
-  return <GrowthTimeline childKey={childKey} source="account" momentId={momentId} />;
+  redirect(getGrowthTimelineHref({ childKey, momentId }));
 }

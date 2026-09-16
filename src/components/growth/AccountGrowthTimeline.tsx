@@ -11,5 +11,5 @@ export default function AccountGrowthTimeline(props: {
 }) {
   const { session, loading } = useAuth();
   if (loading) return <p role="status">正在读取账号…</p>;
-  return session ? <UnifiedGrowthTimeline childKey={props.childKey} /> : <GrowthTimeline childKey={props.childKey} momentId={props.momentId} />;
+  return session ? <UnifiedGrowthTimeline childKey={props.childKey} /> : <GrowthTimeline childKey={props.childKey} momentId={props.momentId} embedded basePath="/me" />;
 }

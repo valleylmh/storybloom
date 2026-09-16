@@ -85,6 +85,16 @@ export function createCloudChildRepository(
     },
 
     async save(input) {
+      const nameKey = (name: string) => name.trim().toLocaleLowerCase().replace(/\s+/g, "");
+      const findByName = async () => {
+        const { data, error } = await supabase.from("child_profiles")
+          .select("*").eq("user_id", userId).order("created_at", { ascending: true });
+        if (error) throw error;
+        return (data as ChildProfileRow[] | null)?.find(row => nameKey(row.display_name) === nameKey(input.displayName));
+      };
+      const existing = await findByName();
+      if (existing) return fromRow(existing);
+
       const payload: Record<string, string | null> = {
         user_id: userId,
         family_profile_id: input.familyProfileId,
@@ -99,7 +109,14 @@ export function createCloudChildRepository(
             .upsert(payload, { onConflict: "user_id,client_child_id" })
         : supabase.from("child_profiles").insert(payload);
       const { data, error } = await query.select("*").single();
-      if (error) throw error;
+      if (error) {
+        // Another device may have created the same name after our read.
+        if (error.code === "23505") {
+          const concurrent = await findByName();
+          if (concurrent) return fromRow(concurrent);
+        }
+        throw error;
+      }
       return fromRow(data as ChildProfileRow);
     },
 

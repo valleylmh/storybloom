@@ -2198,7 +2198,7 @@ export default function MinimalStoryEntry({
                 ) : null}
                 <div className="minimal-growth-footer">
                   <span>{text.growthPrivacy}</span>
-                  <Link href="/growth">{text.growthLibrary}</Link>
+                  <Link href="/me">{text.growthLibrary}</Link>
                 </div>
               </>
             ) : null}

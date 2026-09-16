@@ -1,0 +1,229 @@
+{
+  "version": 1,
+  "renderingMode": "integrated",
+  "title": "雨后的小小花园",
+  "subtitle": "把温柔种进每一天",
+  "author": "StoryBloom",
+  "theme": "关爱自然",
+  "age": "4–5 岁",
+  "language": "中文",
+  "pageCount": 4,
+  "story": "雨停了，小禾推开花园的门。她扶起一朵低着头的小花。一只蝴蝶，轻轻落在她身旁。原来，温柔也会开出小小的花。",
+  "characters": [
+    {
+      "id": "hero",
+      "name": "小禾",
+      "role": "爱观察花草的小女孩",
+      "appearance": "Fictional six-year-old girl, short black bob hair, rosy cheeks",
+      "personality": "",
+      "outfit": "Mustard yellow overalls and white tee"
+    }
+  ],
+  "pages": [
+    {
+      "text": "雨停了，小禾推开花园的门。",
+      "scene": "Girl opens a leafy garden gate after rain, luminous droplets on flowers.",
+      "characters": [
+        "hero"
+      ],
+      "artDirection": "Exact text in two or three lines on lower-right sunlit path, naturally integrated; no box.",
+      "asset": {
+        "id": "integrated-garden-page-1",
+        "name": "精品样书 page-1",
+        "src": "/sample-books/integrated-garden/page-1.jpg",
+        "purpose": "page",
+        "crop": {
+          "x": 50,
+          "y": 50,
+          "zoom": 1
+        },
+        "ratio": "page",
+        "appearance": "original",
+        "anthropomorphic": false,
+        "retouch": [],
+        "instructions": "",
+        "origin": "sample",
+        "embeddedText": [
+          "雨停了，小禾推开花园的门。"
+        ]
+      }
+    },
+    {
+      "text": "她扶起一朵低着头的小花。",
+      "scene": "Girl tenderly supports a rain-bent daisy on the left half of a garden.",
+      "characters": [
+        "hero"
+      ],
+      "artDirection": "Exact text in three balanced lines in upper-left pale sky, surrounded by foliage; do not duplicate.",
+      "asset": {
+        "id": "integrated-garden-page-2",
+        "name": "精品样书 page-2",
+        "src": "/sample-books/integrated-garden/page-2.jpg",
+        "purpose": "page",
+        "crop": {
+          "x": 50,
+          "y": 50,
+          "zoom": 1
+        },
+        "ratio": "page",
+        "appearance": "original",
+        "anthropomorphic": false,
+        "retouch": [],
+        "instructions": "",
+        "origin": "sample",
+        "embeddedText": [
+          "她扶起一朵低着头的小花。",
+          "一只蝴蝶，轻轻落在她身旁。"
+        ]
+      }
+    },
+    {
+      "text": "一只蝴蝶，轻轻落在她身旁。",
+      "scene": "Same girl smiles at a butterfly landing near her hand on the right half, same continuous garden.",
+      "characters": [
+        "hero"
+      ],
+      "artDirection": "Exact text in two or three lines on lower-right sunlit path, naturally integrated; no box.",
+      "asset": {
+        "id": "integrated-garden-page-2",
+        "name": "精品样书 page-2",
+        "src": "/sample-books/integrated-garden/page-2.jpg",
+        "purpose": "page",
+        "crop": {
+          "x": 50,
+          "y": 50,
+          "zoom": 1
+        },
+        "ratio": "page",
+        "appearance": "original",
+        "anthropomorphic": false,
+        "retouch": [],
+        "instructions": "",
+        "origin": "sample",
+        "embeddedText": [
+          "她扶起一朵低着头的小花。",
+          "一只蝴蝶，轻轻落在她身旁。"
+        ]
+      }
+    },
+    {
+      "text": "原来，温柔也会开出小小的花。",
+      "scene": "Girl leaves the glowing garden at sunset with a tiny flower, hopeful quiet ending.",
+      "characters": [
+        "hero"
+      ],
+      "artDirection": "Exact text in three balanced lines in upper-left pale sky, surrounded by foliage; do not duplicate.",
+      "asset": {
+        "id": "integrated-garden-page-4",
+        "name": "精品样书 page-4",
+        "src": "/sample-books/integrated-garden/page-4.jpg",
+        "purpose": "page",
+        "crop": {
+          "x": 50,
+          "y": 50,
+          "zoom": 1
+        },
+        "ratio": "page",
+        "appearance": "original",
+        "anthropomorphic": false,
+        "retouch": [],
+        "instructions": "",
+        "origin": "sample",
+        "embeddedText": [
+          "原来，温柔也会开出小小的花。"
+        ]
+      }
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    },
+    {
+      "text": "",
+      "scene": "",
+      "characters": [
+        "hero"
+      ]
+    }
+  ],
+  "spreads": [
+    2
+  ],
+  "style": "watercolor",
+  "format": "portrait",
+  "typography": {
+    "size": 28,
+    "position": "bottom",
+    "color": "#343b32",
+    "align": "left",
+    "backing": true,
+    "background": "#f7f0df"
+  },
+  "cover": {
+    "id": "integrated-garden-cover",
+    "name": "精品样书 cover",
+    "src": "/sample-books/integrated-garden/cover.jpg",
+    "purpose": "cover",
+    "crop": {
+      "x": 50,
+      "y": 50,
+      "zoom": 1
+    },
+    "ratio": "page",
+    "appearance": "original",
+    "anthropomorphic": false,
+    "retouch": [],
+    "instructions": "",
+    "origin": "sample",
+    "embeddedText": [
+      "雨后的小小花园",
+      "把温柔种进每一天",
+      "StoryBloom"
+    ]
+  }
+}

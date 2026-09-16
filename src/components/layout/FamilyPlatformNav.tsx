@@ -23,7 +23,7 @@ export default function FamilyPlatformNav() {
   const items = [
     { href: "/library", label: "绘本馆", icon: Books, active: pathname.startsWith("/library") },
     { href: "/#story-creation", label: "创作", icon: MagicWand, active: pathname === "/" },
-    { href: "/growth", label: "成长", icon: CalendarDots, active: pathname.startsWith("/growth") },
+    { href: "/me", label: "成长", icon: CalendarDots, active: pathname === "/me" || pathname.startsWith("/me/growth") },
     { href: "/me/books", label: "书架", icon: House, active: pathname.startsWith("/me/books") },
   ];
 

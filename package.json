@@ -43,6 +43,7 @@
     "music-metadata": "^11.14.0",
     "nanoid": "^5.1.9",
     "next": "15.5.15",
+    "pdf-lib": "1.17.1",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
     "remotion": "4.0.490",
@@ -53,6 +54,7 @@
     "zod": "^3.23.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.3.14",
     "@opennextjs/cloudflare": "1.19.6",
     "@types/node": "^22.0.0",
     "@types/react": "^18.3.0",

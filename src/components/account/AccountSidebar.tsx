@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import {
   Books,
   GearSix,
-  House,
   Lightbulb,
   TreeStructure,
   UsersThree,
@@ -13,11 +12,10 @@ import {
 import styles from "./Account.module.css";
 
 const NAV_ITEMS = [
-  { href: "/me", label: "概览", icon: House, exact: true },
+  { href: "/me", label: "成长记录", icon: TreeStructure, exact: true },
   { href: "/me/books", label: "我的绘本", icon: Books },
-  { href: "/me/growth", label: "成长记录", icon: TreeStructure },
   { href: "/me/characters", label: "家庭角色", icon: UsersThree },
-  { href: "/inspiration", label: "今日灵感", icon: Lightbulb, exact: true },
+  { href: "/me/inspiration", label: "今日灵感", icon: Lightbulb, exact: true },
   { href: "/me/settings", label: "数据与隐私", icon: GearSix },
 ];
 
@@ -33,7 +31,7 @@ export default function AccountSidebar() {
       <nav className={styles.nav} aria-label="个人中心导航">
         {NAV_ITEMS.map((item) => {
           const active = item.exact
-            ? pathname === item.href
+            ? pathname === item.href || (item.href === "/me" && pathname.startsWith("/me/growth"))
             : pathname === item.href || pathname.startsWith(`${item.href}/`);
           const Icon = item.icon;
           return (
@@ -50,8 +48,8 @@ export default function AccountSidebar() {
         })}
       </nav>
       <div className={styles.sidebarNote}>
-        <strong>当前阶段</strong>
-        <span>本地副本会一直保留；只有你主动选择的内容才会导入私有云端。</span>
+        <strong>家庭记录</strong>
+        <span>登录后自动同步，离线时可查看设备缓存。同步与数据管理请前往“数据与隐私”。</span>
       </div>
     </aside>
   );

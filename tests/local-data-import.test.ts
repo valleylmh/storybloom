@@ -330,6 +330,18 @@ function createEngine(options: {
 }
 
 describe("local data import", () => {
+  it("reuses a same-name child from another device without replacing its identity", async () => {
+    const growth = createGrowthRecord();
+    const setup = createEngine({ localGrowth: [growth] });
+    setup.children.records.push({ id: "existing-child", familyProfileId: "family-1", userId: USER_ID,
+      clientChildId: "another-device-child", displayName: " 安安 ", createdAt: NOW, updatedAt: NOW });
+    const result = await setup.engine.startImport({ storyIds: [], growthRecordIds: [growth.clientRecordId!] });
+    expect(result.failedCount).toBe(0);
+    expect(setup.children.records).toHaveLength(1);
+    expect(setup.children.records[0].clientChildId).toBe("another-device-child");
+    expect(setup.cloudGrowth.saveInputs[0].childProfileId).toBe("existing-child");
+  });
+
   it("scans local counts without creating pending sync metadata", async () => {
     const sync = trackSyncMeta();
     const story = createSavedStory("story-1");

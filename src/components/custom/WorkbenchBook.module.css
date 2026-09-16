@@ -1,0 +1,356 @@
+.reader {
+  width: 100%;
+  margin: auto;
+  max-width: 1100px;
+  color: #71614d;
+}
+.book {
+  position: relative;
+  perspective: 2400px;
+  isolation: isolate;
+  touch-action: pan-y;
+  filter: drop-shadow(0 22px 18px #34251640);
+  outline-offset: 8px;
+}
+.base {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  aspect-ratio: var(--ratio);
+}
+.paper {
+  position: relative;
+  min-width: 0;
+  background: #f5ebd6;
+  aspect-ratio: var(--leaf-ratio);
+}
+.paper:before {
+  content: "";
+  position: absolute;
+  inset: 3px 0 -7px;
+  background: repeating-linear-gradient(0deg, #c7bda8 0 1px, #f7efdd 1px 3px);
+  border-bottom: 4px solid #385746;
+  z-index: -1;
+}
+.left {
+  border-radius: 5px 0 0 5px;
+}
+.right {
+  border-radius: 0 5px 5px 0;
+}
+.paper:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.left:after {
+  background: linear-gradient(
+    90deg,
+    #61482a10,
+    transparent 6%,
+    transparent 90%,
+    #39271545
+  );
+}
+.right:after {
+  background: linear-gradient(
+    90deg,
+    #39271545,
+    transparent 10%,
+    transparent 94%,
+    #61482a10
+  );
+}
+.invisible {
+  visibility: hidden;
+}
+.leaf {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.leaf canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.endpaper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse, #f7efdc, #e5d9bc);
+  color: #a79878;
+}
+.endpaper span {
+  font-size: 40px;
+}
+.endpaper small {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+}
+.error {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff3dc;
+  color: #993c22;
+  font-size: 12px;
+  padding: 5px;
+}
+.turning {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  transform-style: preserve-3d;
+  z-index: 5;
+  pointer-events: none;
+}
+.next {
+  left: 50%;
+  transform-origin: left center;
+  animation: next 0.82s cubic-bezier(0.35, 0.05, 0.25, 1) both;
+}
+.prev {
+  left: 0;
+  transform-origin: right center;
+  animation: prev 0.82s cubic-bezier(0.35, 0.05, 0.25, 1) both;
+}
+.front,
+.back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.front {
+  transform: rotateY(0);
+}
+.back {
+  transform: rotateY(180deg);
+}
+.turning .paper {
+  height: 100%;
+}
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-top: 30px;
+}
+.navigation button,
+.header button {
+  border: 1px solid #b7a48766;
+  border-radius: 30px;
+  background: #fff8ea;
+  color: inherit;
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+}
+.navigation button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.navigation span {
+  min-width: 135px;
+  text-align: center;
+  font-size: 13px;
+}
+.navigation small {
+  display: block;
+  font-size: 10px;
+  margin-top: 4px;
+}
+.progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.progress button {
+  width: 18px;
+  height: 18px;
+  padding: 6px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.progress button:after {
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 5px;
+  background: #b9ad97;
+}
+.progress button[aria-current]:after {
+  background: #50745e;
+  transform: scale(1.4);
+}
+.hint {
+  text-align: center;
+  font-size: 11px;
+  opacity: 0.7;
+  margin: 10px 0 0;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow: auto;
+  color: #f2e7d4;
+  background: radial-gradient(
+    ellipse at 50% 42%,
+    #4a5146 0%,
+    #232c28 56%,
+    #151e1b 100%
+  );
+  display: flex;
+  flex-direction: column;
+  padding: 24px max(24px, env(safe-area-inset-right))
+    max(20px, env(safe-area-inset-bottom));
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.header small {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  opacity: 0.65;
+}
+.header h2 {
+  font-size: 20px;
+  font-family: "Songti SC", serif;
+  font-weight: 500;
+  margin: 7px 0;
+}
+.header button {
+  padding: 0 18px;
+  background: #ffffff0b;
+  color: #f2e7d4;
+  white-space: nowrap;
+}
+.readingStage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 14px;
+}
+.immersiveBook {
+  color: #e4d8c3;
+  max-width: min(1200px, calc((100dvh - 260px) * var(--ratio)));
+}
+.immersiveBook .navigation button {
+  background: #ffffff0b;
+}
+.immersiveBook .progress button[aria-current]:after {
+  background: #e4d8c3;
+}
+@keyframes next {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-180deg);
+  }
+}
+@keyframes prev {
+  from {
+    transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
+@media (max-width: 760px) {
+  .overlay {
+    padding: 18px 14px;
+  }
+  .header h2 {
+    font-size: 17px;
+  }
+  .header small {
+    font-size: 8px;
+  }
+  .header button {
+    font-size: 12px;
+    padding: 0 12px;
+  }
+  .readingStage {
+    padding: 20px 0;
+  }
+  .navigation {
+    gap: 14px;
+    margin-top: 25px;
+  }
+  .immersiveBook {
+    max-width: 100%;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .overlay {
+    padding: 10px 20px;
+  }
+  .header h2 {
+    font-size: 14px;
+    margin: 0;
+  }
+  .header small,
+  .hint {
+    display: none;
+  }
+  .readingStage {
+    padding: 10px 0;
+  }
+  .immersiveBook {
+    max-width: calc((100dvh - 150px) * var(--ratio));
+  }
+  .navigation {
+    margin-top: 15px;
+  }
+  .progress {
+    margin-top: 3px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .turning {
+    animation-duration: 0s;
+  }
+}
+.overlay {
+  box-sizing: border-box;
+}
+.readingStage {
+  min-height: 0;
+}
+.immersiveBook {
+  max-width: min(1200px, calc((100dvh - 260px) * var(--ratio)));
+}
+@media (max-width: 760px) {
+  .immersiveBook {
+    max-width: 100%;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .immersiveBook {
+    max-width: calc((100dvh - 150px) * var(--ratio));
+  }
+}
+/* A closed book occupies one leaf, centered within the open-book stage. */
+.closed { transform: translateX(-25%); }
+.opening { animation: openBook .82s cubic-bezier(.35,.05,.25,1) both; }
+.closing { animation: closeBook .82s cubic-bezier(.35,.05,.25,1) both; }
+@keyframes openBook { from { transform: translateX(-25%); } to { transform: translateX(0); } }
+@keyframes closeBook { from { transform: translateX(0); } to { transform: translateX(-25%); } }
+.reader .progress button { min-width:18px; min-height:18px; width:18px; height:18px; border:0; box-shadow:none; border-radius:0; background:transparent; padding:6px; }
+@media(prefers-reduced-motion:reduce) { .opening,.closing { animation-duration:0s; } }
+.hardcover{border:5px solid #345447;border-radius:5px 12px 12px 5px;box-shadow:inset 10px 0 10px #122a2d55,4px 5px 0 #cfbf9e,7px 9px 0 #345447;box-sizing:border-box}.hardcover:after{background:linear-gradient(90deg,#102c3866,transparent 4%,#ffffff50 5%,transparent 7%,transparent 96%,#17302933);border:1px solid #d8c89a88;border-radius:inherit}.coverLabel{position:absolute;top:0;left:0;right:0;padding:10px 5px;z-index:3;text-align:center;letter-spacing:.15em;font-size:9px;background:#345447;color:#f7e7bd}.backCover{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10%;box-sizing:border-box;background:radial-gradient(ellipse at top,#577667,#29493e);color:#ead8ab;font-family:"Songti SC",serif}.backCover span{font-size:40px;margin:15px}.backCover h3{font-size:clamp(14px,2vw,25px);font-weight:500}.backCover p{font-size:clamp(10px,1.4vw,16px);line-height:2}.backCover small{font-size:8px;letter-spacing:.15em}.backClosed{transform:translateX(25%)}.finishClosing{animation:finishClose .82s cubic-bezier(.35,.05,.25,1) both}.finishOpening{animation:finishOpen .82s cubic-bezier(.35,.05,.25,1) both}@keyframes finishClose{from{transform:translateX(0)}to{transform:translateX(25%)}}@keyframes finishOpen{from{transform:translateX(25%)}to{transform:translateX(0)}}.reader .navigation button{padding-inline:12px;white-space:nowrap}@media(prefers-reduced-motion:reduce){.finishClosing,.finishOpening{animation-duration:0s}}

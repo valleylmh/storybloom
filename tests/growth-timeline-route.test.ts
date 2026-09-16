@@ -36,7 +36,7 @@ describe("growth timeline result links", () => {
         momentId: "moment_story-1",
       }),
     ).toBe(
-      `/growth/${encodeURIComponent("name:安安")}?moment=moment_story-1`,
+      `/me/growth/${encodeURIComponent("name:安安")}?moment=moment_story-1`,
     );
   });
 

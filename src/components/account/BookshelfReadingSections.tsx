@@ -54,7 +54,9 @@ export default function BookshelfReadingSections({
     .map((record) => bookMap.get(record.contentId))
     .filter((book): book is LibraryBookSummary => Boolean(book))
     .slice(0, 4);
+  const continuingIds = new Set(continueBooks.map(book => book.contentId));
   const recentBooks = progressRecords
+    .filter(record => !continuingIds.has(record.contentId))
     .map((record) => bookMap.get(record.contentId))
     .filter((book): book is LibraryBookSummary => Boolean(book))
     .slice(0, 4);

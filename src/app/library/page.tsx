@@ -51,6 +51,7 @@ export default function LibraryPage() {
         <Link href="/" className="library-back">
           ← 返回首页
         </Link>
+        <Link href="/library/reading" className="library-back">阅读记录与收藏 →</Link>
       </nav>
 
       <header className="library-hero">

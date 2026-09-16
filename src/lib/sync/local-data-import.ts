@@ -677,31 +677,19 @@ export function createLocalDataImportEngine(
     if (cached) return cached;
     const profiles = await getChildProfiles();
     const normalizedName = normalizeName(identity.childName);
-    const matchingLegacyNames = profiles.filter(
-      (profile) =>
-        !profile.clientChildId &&
-        normalizeName(profile.displayName) === normalizedName,
+    // Device-local identifiers are aliases, not separate children. Within an
+    // account a normalized name identifies one child, even on another device.
+    const existing = profiles.find(
+      profile => normalizeName(profile.displayName) === normalizedName,
+    ) || profiles.find(
+      profile => profile.clientChildId === identity.childKey,
+    ) || profiles.find(
+      profile => Boolean(identity.childCharacterId) &&
+        profile.primaryCharacterId === identity.childCharacterId,
     );
-    const existing =
-      profiles.find(
-        (profile) =>
-          (profile as ChildProfile & { clientChildId?: string }).clientChildId ===
-          identity.childKey,
-      ) ||
-      profiles.find(
-        (profile) =>
-          Boolean(identity.childCharacterId) &&
-          profile.primaryCharacterId === identity.childCharacterId,
-      ) ||
-      profiles.find(
-        (profile) =>
-          !profile.clientChildId &&
-          matchingLegacyNames.length === 1 &&
-          profile.id === matchingLegacyNames[0]?.id,
-      );
     if (existing) {
       let matched = existing;
-      if (existing.clientChildId !== identity.childKey) {
+      if (!existing.clientChildId) {
         matched = await retry(() =>
           dependencies.cloudChildren.update(existing.id, {
             clientChildId: identity.childKey,
@@ -715,7 +703,7 @@ export function createLocalDataImportEngine(
     }
 
     const preferredCloudId = await deriveCloudId(
-      `${dependencies.userId}:child:${identity.childKey}`,
+      `${dependencies.userId}:child-name:${normalizedName}`,
     );
     const baseInput = {
       familyProfileId: await getFamilyProfileId(),

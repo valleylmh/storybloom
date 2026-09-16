@@ -28,7 +28,7 @@ export function getGrowthTimelineHref({
 }: GrowthTimelineTarget) {
   const normalizedChildKey = normalizeGrowthTimelineId(childKey);
   const normalizedMomentId = normalizeGrowthTimelineId(momentId);
-  const pathname = `/growth/${encodeURIComponent(normalizedChildKey || childKey)}`;
+  const pathname = `/me/growth/${encodeURIComponent(normalizedChildKey || childKey)}`;
 
   return normalizedMomentId
     ? `${pathname}?moment=${encodeURIComponent(normalizedMomentId)}`

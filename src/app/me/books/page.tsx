@@ -1,34 +1,6 @@
-import BookshelfReadingSections from "@/components/account/BookshelfReadingSections";
 import BookshelfShareManager from "@/components/account/BookshelfShareManager";
-import DeviceCloudStoryLibrary from "@/components/account/DeviceCloudStoryLibrary";
-import ReadingSyncControl from "@/components/library/ReadingSyncControl";
-import { getAllSeries, getSeriesBooks } from "@/lib/library";
-import { createLibraryBookSummary } from "@/lib/library/catalog";
-
-export const metadata = {
-  title: "我的绘本 | StoryBloom",
-};
-
+import UnifiedStoryLibrary from "@/components/account/UnifiedStoryLibrary";
+export const metadata = { title: "我的绘本 | StoryBloom" };
 export default function MyBooksPage() {
-  const series = getAllSeries();
-  const books = series.flatMap((item) =>
-    getSeriesBooks(item.id)
-      .filter((book) => !book.comingSoon)
-      .map((book) => createLibraryBookSummary(item, book)),
-  );
-
-  return (
-    <>
-      <ReadingSyncControl />
-      <BookshelfReadingSections books={books} />
-      <BookshelfShareManager />
-      <section className="bookshelf-created-section" aria-label="我创作的绘本">
-        <header>
-          <p>家庭专属内容</p>
-          <h2>我创作的</h2>
-        </header>
-        <DeviceCloudStoryLibrary />
-      </section>
-    </>
-  );
+  return <><UnifiedStoryLibrary /><details className="growth-sync-details"><summary>管理已分享的链接</summary><BookshelfShareManager /></details></>;
 }

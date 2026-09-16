@@ -276,7 +276,7 @@ export default function PrivacyPage() {
               也不能删除分享接收者自行保存的副本。家庭声音等外部服务资源的清理还可能需要异步完成。
             </p>
             <div className={styles.actions}>
-              <Link className={styles.primaryAction} href="/growth">
+              <Link className={styles.primaryAction} href="/me">
                 管理本机成长档案
               </Link>
               <Link className={styles.secondaryAction} href="/me/settings">

@@ -1388,6 +1388,21 @@ async function executeCloudDeletion(
     userId,
     report.requestId,
   );
+  const customBooks = await selectRows<{ id: string; quota_state: string }>(
+    client, "custom_book_jobs", "id,quota_state", [["eq", "user_id", userId]],
+    { optionalTable: true },
+  );
+  if (customBooks.rows.some((job) => job.quota_state === "reserved")) {
+    report.steps.push({
+      ...createStep("database.custom_book_jobs", "database", customBooks.rows.length),
+      status: "failed",
+      error: { code: "custom-book-in-progress", message: "请先完成或取消定制工作台中进行的绘本，再删除云端数据。", retryable: true },
+    });
+    if (voiceDeletionLockAcquired) {
+      await releaseAccountVoiceDeletionLock(client, userId, report.requestId);
+    }
+    return;
+  }
   const snapshot = await discoverCloudSnapshot(client, userId);
   report.steps.push({
     ...createStep("discover.cloud", "discovery"),
@@ -1469,6 +1484,7 @@ async function executeCloudDeletion(
   }
 
   const storageSucceeded = [
+    await executeStorageStep(report, client, {key:"storage.custom-books",bucket:"custom-books",paths:()=>cloudBucketPaths(client,"custom-books",userId),optionalBucket:true}),
     await executeStorageStep(report, client, {
       key: "storage.story-archive",
       bucket: "story-archive",
@@ -1498,6 +1514,7 @@ async function executeCloudDeletion(
   ].every(Boolean);
 
   const databasePlan = [
+    {key:"database.custom_book_jobs",table:"custom_book_jobs",discovered:customBooks.rows.length,ids:customBooks.rows.map(job=>job.id),filters:[["eq","user_id",userId]] as Array<["eq"|"in",string,unknown]>,optionalTable:true},
     {
       key: "database.shared_stories",
       table: "shared_stories",

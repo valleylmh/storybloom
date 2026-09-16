@@ -20,7 +20,8 @@ import {
   type ReliableGenerationStage,
 } from "@/components/book/story-outline-controller";
 import AccountEntryButton from "@/components/auth/AccountEntryButton";
-import LocalStoryLibrary from "@/components/account/LocalStoryLibrary";
+import HomeGrowthRecords from "@/components/growth/HomeGrowthRecords";
+import HomeStoryShelf from "@/components/account/HomeStoryShelf";
 import type { StoryHistoryRecord } from "@/lib/client-history";
 import {
   isGrowthRecordDraft,
@@ -1286,13 +1287,14 @@ export default function Home() {
     FREE_GENERATION_DAILY_LIMIT - localFreeUsage
   );
   const historyPanel = (
-    <LocalStoryLibrary
+    <div className="home-record-sections">
+    <HomeStoryShelf
       locale={locale}
       records={historyRecords}
-      minimal={entryMode !== "full"}
       onOpen={handleHistoryContinue}
-      onRecordsChange={setHistoryRecords}
     />
+    <HomeGrowthRecords locale={locale} />
+    </div>
   );
 
   return (
@@ -1368,7 +1370,7 @@ export default function Home() {
                 <Gift aria-hidden="true" />
                 <span>{locale === "zh" ? "精品绘本" : "Keepsakes"}</span>
               </Link>
-              <Link href="/growth">
+              <Link href="/me">
                 <CalendarDots aria-hidden="true" />
                 <span>{locale === "zh" ? "成长记录" : "Moments"}</span>
               </Link>
@@ -1519,7 +1521,7 @@ export default function Home() {
               )}
               {growthVersionIntentError ? (
                 <div className="error-banner" role="alert">
-                  {growthVersionIntentError} <Link href="/growth">返回成长书架</Link>
+                  {growthVersionIntentError} <Link href="/me">返回成长书架</Link>
                 </div>
               ) : null}
               {!personalizationEntry && !growthVersionPreset && !growthVersionIntentLoading ? <HomeGiftShowcase locale={locale} /> : null}
