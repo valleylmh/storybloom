@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { nextSeriesBook, parsePlaybackHandoff } from "@/lib/reader/continuous-playback";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MoonStars, X } from "@phosphor-icons/react";
 import { useReadingProgressCloudSync } from "@/hooks/useReadingProgressCloudSync";
@@ -55,6 +57,10 @@ export default function LibraryBookExperience({
   personalizeHref?: string;
   playlist?: Array<{ id: string; title: string; href: string; cover?: string }>;
 }) {
+  const router = useRouter();
+  const [continuousPlayback, setContinuousPlayback] = useState(false);
+  const [autoStart, setAutoStart] = useState(false);
+  const advancedBookRef = useRef(false);
   const [pageIndex, setPageIndex] = useState(0);
   const [readerMode, setReaderMode] =
     useState<ReaderMode>(initialReaderMode);
@@ -78,6 +84,16 @@ export default function LibraryBookExperience({
 
   useEffect(() => {
     let active = true;
+    let handoff: { id: string; language: BrowserNarrationMode } | null = null;
+    try {
+      setContinuousPlayback(localStorage.getItem("storybloom.continuous-playback") === "true");
+      const saved = sessionStorage.getItem("storybloom.next-book");
+      if (saved) {
+        handoff = parsePlaybackHandoff(saved, contentId);
+      }
+    } catch { /* Reading remains available without browser storage. */ }
+    setAutoStart(false);
+    advancedBookRef.current = false;
     setPageIndex(0);
     setReaderMode(initialReaderMode);
     setLanguageMode("zh");
@@ -95,8 +111,14 @@ export default function LibraryBookExperience({
 
     void getReadingProgress(contentType, contentId).then((progress) => {
       if (!active) return;
-      if (progress) {
-        const restoredPageIndex = Math.min(
+      if (handoff) {
+        try { sessionStorage.removeItem("storybloom.next-book"); } catch { /* Optional storage. */ }
+        setLanguageMode(handoff.language);
+        setAutoAdvance(true);
+        setReaderMode("turn");
+        setAutoStart(true);
+      } else if (progress) {
+        const restoredPageIndex = progress.completedAt && progress.pageIndex === pages.length - 1 && !progress.positionMs ? 0 : Math.min(
           Math.max(0, progress.pageIndex),
           Math.max(0, pages.length - 1),
         );
@@ -207,6 +229,7 @@ export default function LibraryBookExperience({
   const handlePageIndexChange = useCallback(
     (nextPageIndex: number) => {
       setPlaybackStatus("idle");
+      advancedBookRef.current = false;
       setPlaybackPositionMs(0);
       setPlaybackDurationMs(0);
       setInitialPositionMs(0);
@@ -264,6 +287,23 @@ export default function LibraryBookExperience({
     }, [persistProgress],
   );
 
+  useEffect(() => {
+    if (!progressReady || bedtimeMode || !continuousPlayback || playbackStatus !== "ended" || pageIndex !== pages.length - 1 || advancedBookRef.current) return;
+    const next = nextSeriesBook(playlist, contentId);
+    if (!next) return;
+    advancedBookRef.current = true;
+    try {
+      sessionStorage.setItem("storybloom.next-book", JSON.stringify({ id: next.id, language: languageMode, at: Date.now() }));
+    } catch { return; }
+    router.push(next.href);
+  }, [bedtimeMode, contentId, continuousPlayback, languageMode, pageIndex, pages.length, playbackStatus, playlist, progressReady, router]);
+
+  const handleContinuousPlaybackChange = (enabled: boolean) => {
+    setContinuousPlayback(enabled);
+    try { localStorage.setItem("storybloom.continuous-playback", String(enabled)); } catch { /* Session preference still works. */ }
+    if (enabled) handleAutoAdvanceChange(true);
+  };
+
   const enterBedtimeMode = useCallback(() => {
     setReaderMode("turn");
     handleAutoAdvanceChange(true);
@@ -302,6 +342,10 @@ export default function LibraryBookExperience({
           <LibraryNarrationToolbar
             favoriteControl={contentType === "library" ? <LibraryFavoriteButton contentId={contentId} compact toolbar /> : undefined}
             playlistControl={playlist.length ? <LibraryPlaylist books={playlist} currentId={contentId} /> : undefined}
+            key={storyKey}
+            autoStart={autoStart && progressReady}
+            continuousPlayback={continuousPlayback}
+            onContinuousPlaybackChange={playlist.length > 1 && !bedtimeMode ? handleContinuousPlaybackChange : undefined}
             chineseAudio={chineseAudio}
             pages={pages}
             storyKey={storyKey}

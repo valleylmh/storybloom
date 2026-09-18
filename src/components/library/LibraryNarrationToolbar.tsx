@@ -109,6 +109,9 @@ function toPlaybackError(error: unknown): PlaybackError {
 
 export default function LibraryNarrationToolbar({
   pages,
+  autoStart = false,
+  continuousPlayback = false,
+  onContinuousPlaybackChange,
   chineseAudio,
   storyKey,
   currentPageIndex,
@@ -131,6 +134,9 @@ export default function LibraryNarrationToolbar({
   onReaderModeChange,
   onEnterBedtimeMode,
 }: {
+  autoStart?: boolean;
+  continuousPlayback?: boolean;
+  onContinuousPlaybackChange?: (enabled: boolean) => void;
   pages: StoryPage[];
   chineseAudio?: BookAudio;
   storyKey: string;
@@ -166,6 +172,7 @@ export default function LibraryNarrationToolbar({
   const stateRef = useRef(state);
   stateRef.current = state;
   const runRef = useRef(0);
+  const autoStartedRef = useRef(false);
   const restartBookPendingRef = useRef(false);
   const bookTransportRef = useRef<BookAudioTransport | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -865,6 +872,20 @@ export default function LibraryNarrationToolbar({
     void startPagePlayback(0);
   });
 
+  useEffect(() => {
+    if (!autoStart || autoStartedRef.current || currentPageIndex !== 0 || !turnModeActive) return;
+    autoStartedRef.current = true;
+    initialPositionConsumedRef.current = true;
+    void startPagePlayback(0);
+  }, [autoStart, currentPageIndex, startPagePlayback, turnModeActive]);
+
+  const continuousControl = onContinuousPlaybackChange ? (
+    <label className="library-auto-advance-toggle">
+      <input type="checkbox" checked={continuousPlayback} onChange={event => onContinuousPlaybackChange(event.target.checked)} />
+      <span>连续播放：听完后从第一页播放同系列下一本</span>
+    </label>
+  ) : null;
+
   const primaryLabel =
     state.status === "loading"
       ? "正在准备…"
@@ -1022,7 +1043,8 @@ export default function LibraryNarrationToolbar({
                   停止
                 </button>
               </div>
-              <p>最后一页播放结束后会停止，不会自动打开下一本绘本。</p>
+              {continuousControl}
+              <p>{continuousPlayback && onContinuousPlaybackChange ? "按播放列表顺序播放，到系列最后一本停止。" : "听完当前绘本后停止。"}</p>
               {state.message ? <p aria-live="polite">{state.message}</p> : null}
             </div>
           </details>
@@ -1126,7 +1148,8 @@ export default function LibraryNarrationToolbar({
           />
           <span>当前页播放完成后自动翻到下一页</span>
         </label>
-        <p>最后一页播放结束后会停止，不会自动打开下一本绘本。</p>
+        {continuousControl}
+              <p>{continuousPlayback && onContinuousPlaybackChange ? "按播放列表顺序播放，到系列最后一本停止。" : "听完当前绘本后停止。"}</p>
       </details>
 
       <audio ref={audioRef} preload="metadata" hidden />
