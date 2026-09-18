@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { illustratedGifts } from "@/components/gifts/illustrated-gifts";
 import styles from "./page.module.css";
 
 export const metadata = {
   title: "精品绘本 | StoryBloom",
-  description: "探索可以翻阅、赠送与珍藏的精品电子绘本：毕业纪念、城市汽车与成长故事。",
+  description: "探索可以翻阅、赠送与珍藏的精品电子绘本：毕业纪念、六一礼物、生日礼物、城市汽车与经典故事。",
 };
 
 const books = [
@@ -15,6 +16,14 @@ const books = [
     description: "把第一次勇敢、最好的朋友和舍不得的告别，留成一份毕业礼物。",
     image: "/gift-books/summer-pocket/cover.png",
   },
+  ...illustratedGifts.map((book) => ({
+    id: book.slug,
+    title: book.title,
+    theme: book.theme,
+    detail: "10 页 · 图文一体",
+    description: book.description.replaceAll("\n", ""),
+    image: `/gift-books/${book.slug}/cover.webp`,
+  })),
   {
     id: "city-motors",
     title: "城市汽车小队",
@@ -53,10 +62,10 @@ export default function Gifts() {
               <article key={book.id} className={styles.card}>
                 <Link href={`/gifts/${book.id}`} className={styles.bookLink} aria-label={`打开绘本《${book.title}》`}>
                   <div className={styles.coverStage}>
-                    <div className={`${styles.cover} ${book.id !== "summer-pocket" ? `${styles.cityCover} ${book.id === "journey-to-the-west" ? styles.journeyCover : ""}` : ""}`}>
-                      {book.id !== "summer-pocket" ? <div className={styles.cityTitle}><small>STORYBLOOM</small><strong>{book.title}</strong><span>{book.detail}</span></div> : null}
+                    <div className={`${styles.cover} ${(book.id === "city-motors" || book.id === "journey-to-the-west") ? `${styles.cityCover} ${book.id === "journey-to-the-west" ? styles.journeyCover : ""}` : ""}`}>
+                      {(book.id === "city-motors" || book.id === "journey-to-the-west") ? <div className={styles.cityTitle}><small>STORYBLOOM</small><strong>{book.title}</strong><span>{book.detail}</span></div> : null}
                       <img src={book.image} alt={`${book.title}封面`} width={book.id === "city-motors" ? 1200 : 1086} height={book.id === "city-motors" ? 1200 : 1448} />
-                      {book.id !== "summer-pocket" ? <span className={styles.imprint}>{book.id === "journey-to-the-west" ? "从石猴出世，到五圣成真" : "给小小探索家的城市发现之旅"}</span> : null}
+                      {(book.id === "city-motors" || book.id === "journey-to-the-west") ? <span className={styles.imprint}>{book.id === "journey-to-the-west" ? "从石猴出世，到五圣成真" : "给小小探索家的城市发现之旅"}</span> : null}
                     </div>
                   </div>
                   <div className={styles.copy}>
