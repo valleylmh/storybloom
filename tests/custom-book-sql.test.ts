@@ -25,6 +25,7 @@ beforeAll(async () => {
       "utf8",
     ),
   );
+  await db.exec(readFileSync("supabase/migrations/202609170001_custom_book_code_security.sql", "utf8"));
   await db.query("insert into auth.users(id) values($1),($2)", [user, other]);
 }, 20000);
 afterAll(async () => {
@@ -183,4 +184,39 @@ describe("workbench production SQL", () => {
       ).rows[0].allowed,
     ).toBe(false);
   });
+});
+
+describe("redemption code hardening", () => {
+  it("blocks stolen targeted codes and revoked or expired codes", async () => {
+    await db.exec("delete from custom_book_code_attempts");
+    await db.query("insert into custom_book_codes(code_hash,expires_at,intended_user) values('target',now()+interval '1 day',$1)",[user]);
+    expect(await rpc('custom_book_redeem',[other,'target'],['uuid','text'])).toMatchObject({error:'INVALID_CODE'});
+    expect(await rpc('custom_book_redeem',[user,'target'],['uuid','text'])).toMatchObject({ok:true,alreadyRedeemed:false});
+    await db.exec("insert into custom_book_codes(code_hash,expires_at,revoked_at) values('revoked',now()+interval '1 day',now()),('expired',now()-interval '1 day',null)");
+    for(const code of ['revoked','expired']) expect(await rpc('custom_book_redeem',[user,code],['uuid','text'])).toMatchObject({error:'INVALID_CODE'});
+  });
+  it("does not turn a targeted code into a public code after account deletion",async()=>{
+    const target='33333333-3333-4333-8333-333333333333';
+    await db.query('insert into auth.users(id) values($1)',[target]);
+    await db.query("insert into custom_book_codes(code_hash,expires_at,intended_user) values('deleted-owner',now()+interval '1 day',$1)",[target]);
+    await db.query('delete from auth.users where id=$1',[target]);
+    expect((await db.query("select * from custom_book_codes where code_hash='deleted-owner'")).rows).toHaveLength(0);
+  });
+});
+
+describe("code administration permissions",()=>{
+ it("keeps code tables and redemption RPC inaccessible to public client roles",async()=>{
+  for(const role of ['anon','authenticated']) {
+   const r=await db.query<{allowed:boolean}>("select has_function_privilege($1,'custom_book_redeem(uuid,text)','EXECUTE') as allowed",[role]);
+   expect(r.rows[0].allowed).toBe(false);
+   const t=await db.query<{allowed:boolean}>("select has_table_privilege($1,'custom_book_codes','SELECT,INSERT,UPDATE,DELETE') as allowed",[role]);
+   expect(t.rows[0].allowed).toBe(false);
+  }
+ });
+ it("batch revocation only changes unused codes",async()=>{
+  const batch='44444444-4444-4444-8444-444444444444';
+  await db.query("insert into custom_book_codes(code_hash,expires_at,batch_id,redeemed_at) values('batch-used',now()+interval '1 day',$1,now()),('batch-unused',now()+interval '1 day',$1,null)",[batch]);
+  const r=await db.query("update custom_book_codes set revoked_at=now() where batch_id=$1 and redeemed_at is null and revoked_at is null returning code_hash",[batch]);
+  expect(r.rows).toEqual([{code_hash:'batch-unused'}]);
+ });
 });

@@ -66,3 +66,6 @@ miniprogram/api-audio-preview/
 miniprogram/full-library/
 
 miniprogram/book-audio-cache/
+
+# Local redemption-code plaintext and issuance records (never commit)
+.private/

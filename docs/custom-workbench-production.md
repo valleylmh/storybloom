@@ -22,10 +22,10 @@
 管理端生成兑换码：
 
 ```sh
-node --env-file=.env scripts/create-custom-book-codes.mjs --count 10
+node --env-file=.env --env-file=.env.local scripts/create-custom-book-codes.mjs --count 10
 ```
 
-兑换码有效期 90 天，一码增加一本。命令成功后仅输出一次明文，需安全保存，不应写入 Git、日志平台或截图。脚本需要服务端 Supabase 凭据；这些凭据不会发送到浏览器。
+兑换码默认有效期 90 天，一码增加一本。明文仅写入 `.private/custom-book-codes/<批次UUID>.json`（目录权限 0700、文件权限 0600），终端只输出批次、路径和登记结果。该目录已加入 Git 忽略；仍应避免云同步、日志采集、截图及公开分发。脚本需要服务端 Supabase 凭据，这些凭据不会发送到浏览器。文件先保存、再登记数据库，因此文件存在不等于兑换码可用；网络结果不确定时必须按批次核查，不能盲目重跑生成。
 
 ## 接口
 
@@ -65,3 +65,27 @@ node --env-file=.env scripts/create-custom-book-codes.mjs --count 10
 样书使用仓库已有 summer-pocket 公开虚构人物封面作为初始视觉参考；后续三张内页以新生成封面为参考，通过项目 `imagePrompt` / `requestCustomImage` 实际调用生成。文案和分镜是固定测试输入，本次未绕过账号接口宣称账号全流程通过。跨页请求曾返回500，保留已成功图片后仅恢复缺失输出，最终完成。四张原图逐张目视核对文字、人物和构图；PDF四张页面经Poppler渲染检查，跨页为一张宽页，无重复叠字。桌面工作台已实测样书载入、模式切换和跨页阅读。
 
 尚未应用生产数据库迁移，未验证登录账号任务、额度扣退与兑换码的真实端到端运行；本次实图结果不代表生产服务已部署。
+
+
+## 兑换码安全上线步骤（2026-09-17）
+
+按顺序执行工作台迁移 `202609150001_custom_book_workbench.sql` 和 `202609170001_custom_book_code_security.sql`。第二份新增批次、指定账号和撤销字段，并更新兑换函数；现有已发行码仍可兑换。删除指定账号会连带删除其定向码，避免退化为任何人都可兑换的码。
+
+定向发行（用真实账号 UUID 替换 ACCOUNT_UUID，不使用邮箱，不在命令行传明文兑换码）：
+
+```sh
+node --env-file=.env --env-file=.env.local scripts/create-custom-book-codes.mjs --count 1 --days 30 --user ACCOUNT_UUID
+```
+
+核查批次、撤销尚未使用的码（用生成时输出的批次 UUID 替换 BATCH_UUID）：
+
+```sh
+node --env-file=.env --env-file=.env.local scripts/create-custom-book-codes.mjs --status-batch BATCH_UUID
+node --env-file=.env --env-file=.env.local scripts/create-custom-book-codes.mjs --revoke-batch BATCH_UUID
+```
+
+不传 `--user` 是任何登录用户可先到先得的通用码。撤销仅影响未使用码，不追回已兑换的机会。批次状态只输出数量，不显示明文或哈希。请确认批次 total 与私密文件中的数量一致、available 状态符合预期后再发放。
+
+本地验证覆盖定向码跨账号拒绝、撤销、过期、账号删除、重复入账、限速和权限。真实上线仍需迁移后用两个测试账号验证兑换、重复兑换及生成扣退；不把本地 PGlite 测试当作线上验收。
+
+2026-09-17 最新只读核验：`custom_book_codes` 与 `custom_book_jobs` 基础字段查询均返回 200（limit=0，未读取业务记录）；查询新安全字段返回 400 / PostgreSQL 42703。说明此前基础表已建立，但本次安全升级未执行。该观察取代上文“基础表尚不存在”的旧快照；无需重复执行基础建表迁移。当前环境无 DATABASE_URL / SUPABASE_DB_URL / SUPABASE_ACCESS_TOKEN，升级 SQL 需经数据库管理通道执行。未发行真实兑换码、未运行生产兑换或撤销操作。
