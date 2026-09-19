@@ -341,7 +341,7 @@ export default function LibraryBookExperience({
         <section className="library-narration-tools" aria-label="绘本朗读">
           <LibraryNarrationToolbar
             favoriteControl={contentType === "library" ? <LibraryFavoriteButton contentId={contentId} compact toolbar /> : undefined}
-            playlistControl={playlist.length ? <LibraryPlaylist books={playlist} currentId={contentId} /> : undefined}
+            playlistControl={playlist.length ? <LibraryPlaylist books={playlist} currentId={contentId} playing={playbackStatus === "playing"} /> : undefined}
             key={storyKey}
             autoStart={autoStart && progressReady}
             continuousPlayback={continuousPlayback}

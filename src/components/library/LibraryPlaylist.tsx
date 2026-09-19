@@ -4,9 +4,10 @@ import Link from "next/link";
 import { ListBullets } from "@phosphor-icons/react";
 import { useEffect, useRef } from "react";
 
-export default function LibraryPlaylist({ books, currentId }: {
+export default function LibraryPlaylist({ books, currentId, playing = false }: {
   books: Array<{ id: string; title: string; href: string; cover?: string }>;
   currentId: string;
+  playing?: boolean;
 }) {
   const ref = useRef<HTMLDetailsElement>(null);
   useEffect(() => {
@@ -39,8 +40,13 @@ export default function LibraryPlaylist({ books, currentId }: {
                 </span>
                 <span className="library-playlist-copy">
                   <span>{item.title}</span>
-                  {item.id === currentId ? <small>当前绘本</small> : null}
+                  {item.id === currentId ? <small>{playing ? "正在播放" : "当前绘本"}</small> : null}
                 </span>
+                {item.id === currentId ? (
+                  <span className={`library-playlist-equalizer${playing ? " is-playing" : ""}`} aria-hidden="true">
+                    <i /><i /><i /><i />
+                  </span>
+                ) : null}
               </Link>
             </li>
           ))}
