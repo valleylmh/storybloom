@@ -3496,5 +3496,97 @@
     ],
     "duration": 239.544,
     "contentHash": "e800865d19e0c6e15e60e104253a7fd4754facc6da7ce9141b561832d8876360"
+  },
+  "qiche/shan-dian-chu-zu-che-he-yu-tian-de-xiao-cheng-ke": {
+    "url": "https://ojsocxadsulxdhxndivp.supabase.co/storage/v1/object/public/library-audio-public/v1/efada29905bce8497fe3283588664503fec64ffc9540e8e7b9e3fdb988a98c9e/a04bfbe5875c8ce538d35c6cf590eaf653f2dd2de6a2516d46b64ad5ec7db01f.mp3",
+    "pageStarts": [
+      0,
+      12.144,
+      23.088,
+      32.352,
+      41.76,
+      55.008,
+      66.192,
+      76.968,
+      87.816,
+      98.28,
+      109.464,
+      121.272,
+      132.6,
+      143.544,
+      155.592,
+      165.48
+    ],
+    "duration": 176.976,
+    "contentHash": "efada29905bce8497fe3283588664503fec64ffc9540e8e7b9e3fdb988a98c9e"
+  },
+  "qiche/shan-dian-chu-zu-che-song-xiao-xiong-hui-jia": {
+    "url": "https://ojsocxadsulxdhxndivp.supabase.co/storage/v1/object/public/library-audio-public/v1/2560772107b59f556ec2e21ee0f282bfd34926d8e7ea5f653d54833a63625ed5/c7f96d2f6a41a62cd60af2be52b02c85fd1d366519374b2d003a495d47831ff7.mp3",
+    "pageStarts": [
+      0,
+      11.184,
+      22.512,
+      34.32,
+      45.024,
+      56.352,
+      65.448,
+      75.024,
+      85.728,
+      95.712,
+      106.32,
+      116.856,
+      127.8,
+      138.264,
+      147.192,
+      159.168
+    ],
+    "duration": 170.424,
+    "contentHash": "2560772107b59f556ec2e21ee0f282bfd34926d8e7ea5f653d54833a63625ed5"
+  },
+  "qiche/da-zhong-pi-ka-song-xiao-shu-miao": {
+    "url": "https://ojsocxadsulxdhxndivp.supabase.co/storage/v1/object/public/library-audio-public/v1/db0509ad29b555dab6922f6f96900ec3f0e0152e19fe5049f7701424426967ab/623a7c609b0f4011420a9275aba91d799e6781f89cfbea136199a0ea77edfd33.mp3",
+    "pageStarts": [
+      0,
+      11.736,
+      23.064,
+      34.08,
+      44.136,
+      53.784,
+      64.008,
+      74.784,
+      83.568,
+      95.064,
+      106.008,
+      116.304,
+      127.248,
+      138.504,
+      148.728,
+      158.784
+    ],
+    "duration": 169.488,
+    "contentHash": "db0509ad29b555dab6922f6f96900ec3f0e0152e19fe5049f7701424426967ab"
+  },
+  "qiche/da-zhong-pi-ka-he-mu-ou-xi-de-da-ban-jia": {
+    "url": "https://ojsocxadsulxdhxndivp.supabase.co/storage/v1/object/public/library-audio-public/v1/a085f1f4365d25e6d539bf185ab6aa0631061f8832ce7daa258630e14a7c2f35/0718da698da6a6f1528c713aa9cc91709de3bdc749826cb7ac52faaf8c742e1b.mp3",
+    "pageStarts": [
+      0,
+      9.816,
+      21.792,
+      31.536,
+      41.52,
+      52.704,
+      62.832,
+      73.2,
+      83.016,
+      94.032,
+      104.088,
+      115.344,
+      125.952,
+      137.04,
+      147.816,
+      158.352
+    ],
+    "duration": 170.64,
+    "contentHash": "a085f1f4365d25e6d539bf185ab6aa0631061f8832ce7daa258630e14a7c2f35"
   }
 }

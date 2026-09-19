@@ -5,20 +5,40 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { getSupabaseAdmin } from "../src/lib/email/supabase-admin";
-import { prepareNarrationAudio, resolveNarrationRequest } from "../src/lib/narration-audio-server";
+import { resolveNarrationRequest } from "../src/lib/narration-audio-server";
+import { synthesizeTokenPlanTtsAudio } from "../src/lib/token-plan-tts-server";
 import { validBookAudio } from "../miniprogram/src/core/book-audio";
 import { bookAudioHash } from "./lib/miniprogram-book-audio";
 import type { Book, BookAudio } from "../miniprogram/src/core/types";
 const require = createRequire(import.meta.url);
 createRequire(require.resolve("next/package.json"))("@next/env").loadEnvConfig(process.cwd(), true, { info() {}, error() {} });
+// Existing project environments use this name for the Token Plan credential.
+process.env.BAILIAN_TOKEN_KEY ||= process.env.DASHSCOPE_TOKEN_KEY;
+process.env.TOKEN_PLAN_TTS_TIMEOUT_MS ||= "60000";
 const root = path.resolve("miniprogram/book-audio-cache");
 const bucket = "library-audio-public";
 const manifestFile = path.join(root, "manifest.json");
 const upload = process.argv.includes("--upload");
 const concurrency = Math.max(1, Math.min(8, Number(process.argv.find(a => a.startsWith("--workers="))?.split("=")[1] || 4)));
 const limit = Number(process.argv.find(a => a.startsWith("--limit="))?.split("=")[1] || Infinity);
-const all = require(path.resolve("miniprogram/dist/reader/data/books.js")).default as Record<string, Book>;
+const selectedIds = process.argv.find(a => a.startsWith("--qiche-books="))?.slice("--qiche-books=".length).split(",");
 async function main() {
+  let all: Record<string, Book>;
+  if (selectedIds) {
+    all = {};
+    for (const id of selectedIds) {
+      if (!/^[a-z0-9-]+$/.test(id)) throw new Error("Invalid book ID");
+      const { book } = JSON.parse(await readFile(path.resolve("content-drafts/qiche", `${id}.json`), "utf8"));
+      if (book.id !== id || !book.pages?.length) throw new Error("Invalid book draft");
+      const key = `qiche/${id}`;
+      all[key] = { id: key, title: book.title, guide: [], pages: book.pages.map((p: { zhText: string; enText: string }) => {
+        if (!p.zhText?.trim()) throw new Error("Missing Chinese text");
+        return { zh: p.zhText, en: p.enText, image: "", audio: { zh: "", en: "" } };
+      }) };
+    }
+  } else {
+    all = require(path.resolve("miniprogram/dist/reader/data/books.js")).default as Record<string, Book>;
+  }
   await mkdir(root, { recursive: true });
   const admin = getSupabaseAdmin();
   if (upload) {
@@ -39,23 +59,18 @@ async function main() {
       const book = books[cursor++];
       try {
         const contentHash = bookAudioHash(book);
-        if (manifest[book.id]?.contentHash === contentHash) { completed++; continue; }
+        if (!selectedIds && manifest[book.id]?.contentHash === contentHash) { completed++; continue; }
         const chunks: Buffer[] = [], pageStarts: number[] = [];
         let samples = 0;
         for (const page of book.pages) {
-          const request = await resolveNarrationRequest({ text: page.zh, mode: "zh", model: "edge-tts", voice: "zh-CN-XiaoxiaoNeural" });
+          const request = await resolveNarrationRequest({ text: page.zh, mode: "zh", model: "qwen-audio-3.0-tts-plus", voice: "longanlingxin" });
           const pcmFile = path.join(root, `${request.cacheKey}.pcm`);
           let pcm: Buffer;
           try { pcm = await readFile(pcmFile); if (!pcm.length || pcm.length % 2) throw new Error("invalid PCM"); }
           catch {
-            const result = await prepareNarrationAudio(request);
-            let bytes: Buffer;
-            if (result.audioUrl.startsWith("data:audio/")) bytes = Buffer.from(result.audioUrl.split(",")[1], "base64");
-            else {
-              const response = await fetch(result.audioUrl, { signal: AbortSignal.timeout(60000) });
-              if (!response.ok) throw new Error("Audio download failed");
-              bytes = Buffer.from(await response.arrayBuffer());
-            }
+            // Explicit provider: never silently substitute Edge for this publishing job.
+            const generated = await synthesizeTokenPlanTtsAudio({ text: request.text, model: request.model, voice: request.voice });
+            const bytes = generated.bytes;
             const source = path.join(root, `${request.cacheKey}.source.mp3`);
             await writeFile(source, bytes);
             execFileSync("ffmpeg", ["-v", "error", "-y", "-i", source, "-ac", "1", "-ar", "24000", "-f", "s16le", pcmFile], { stdio: "pipe" });
@@ -89,13 +104,20 @@ async function main() {
         }
         completed++;
         console.log(JSON.stringify({ completed, total: books.length, book: book.id, seconds: Math.round(duration), uploaded: upload }));
-      } catch { failures.push(book.id); console.error(`Failed: ${book.id}; cached pages retained for retry`); }
+      } catch (error) {
+        failures.push(book.id);
+        const message = error instanceof Error ? error.message : "";
+        const safeCode = message.match(/Token Plan TTS 请求失败：(\w[\w.:-]*|HTTP \d+)/)?.[0];
+        console.error(`Failed: ${book.id}; ${safeCode || "generation or verification failed"}; cached pages retained for retry`);
+      }
     }
   }
   await Promise.all(Array.from({ length: concurrency }, () => worker()));
   await writeFile(manifestFile, JSON.stringify(manifest, null, 2));
   if (upload && Object.values(all).every(book => manifest[book.id]?.contentHash === bookAudioHash(book) && validBookAudio(manifest[book.id], book.pages.length))) {
-    const publicManifest = Object.fromEntries(Object.keys(all).map(id => [id, manifest[id]]));
+    // A scoped update preserves all previously published books.
+    const existing = selectedIds ? JSON.parse(await readFile(path.resolve("miniprogram/chinese-audio-manifest.json"), "utf8")) : {};
+    const publicManifest = { ...existing, ...Object.fromEntries(Object.keys(all).map(id => [id, manifest[id]])) };
     await writeFile(path.resolve("miniprogram/chinese-audio-manifest.json"), JSON.stringify(publicManifest, null, 2) + "\n");
   }
   console.log(JSON.stringify({ completed, total: books.length, failures }));
