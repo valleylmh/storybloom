@@ -32,6 +32,14 @@ Premium polished 3D clay-like animated-film children's picture-book illustration
 
 ## 通用负面约束
 
+### 绿色闪电出租车（2026-09-19）
+
+- 两本故事连续放在原出租车两本之后（第 13、14 本），原有黄色出租车形象不改。
+- 闪电出租车：翠绿色四门轿车、米白车顶与无字顶灯、黄色闪电形车门图案；无拟人脸，不是赛车。
+- 陈叔叔：短黑发、圆眼镜、深蓝外套；安安与妈妈沿用现有身份。
+- 小熊：棕色毛绒、蓝围巾、耳后黄色小月亮；不可跨页换色。
+- 雨天篇从图书馆到住宅，晴天小熊篇在公园交接；不能把参考图的雨景和图书馆复制到每一页。孩子乘车时在后排适龄增高座椅上系安全带。
+
 No text, letters, captions, speech bubbles, logos, brand marks, readable license plates, scary imagery, collisions, injuries, fire close-ups, reckless driving, child alone near traffic, child touching emergency equipment, exposed electrical hazards, distorted anatomy, duplicate main character, duplicate vehicles, or anthropomorphic car faces.
 
 ## 连续性验收

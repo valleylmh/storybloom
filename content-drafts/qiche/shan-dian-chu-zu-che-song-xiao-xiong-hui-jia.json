@@ -1,0 +1,157 @@
+{
+  "book": {
+    "id": "shan-dian-chu-zu-che-song-xiao-xiong-hui-jia",
+    "seriesId": "qiche",
+    "title": "闪电出租车送小熊回家",
+    "subtitle": "一位落在后排的小乘客",
+    "question": "小熊落在出租车里，怎样和大人一起找回来？",
+    "moral": {
+      "zh": "细心检查，向可信的大人求助，让关心接力传下去。",
+      "en": "Check carefully and ask trusted adults for help, passing care along."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "阳光照着出租车候车点，绿色闪电又来了。今天，安安和妈妈要去公园看木偶戏，她怀里抱着一只系蓝围巾的小棕熊。",
+        "enText": "Sunshine warmed the taxi stand, and Green Lightning arrived again. An'an and Mom were going to a puppet show in the park. She held a little brown bear with a blue scarf.",
+        "illustrationPrompt": "Sunny taxi stand green taxi yellow bolt, girl mother sidewalk, girl holds small brown plush bear blue scarf."
+      },
+      {
+        "page": 2,
+        "zhText": "“小熊也买票了吗？”陈叔叔打趣。安安笑起来：“它坐在我的小包里！”妈妈帮她系好安全带，小熊从包口探出圆圆的耳朵。",
+        "enText": "“Does Bear have a ticket too?” joked Uncle Chen. “It rides in my little bag!” laughed An'an. Mom checked her belt, while two round ears peeked out.",
+        "illustrationPrompt": "Rear car interior child on belted booster mother belted, brown bear blue scarf peeks from small bag secured on lap, driver facing forward."
+      },
+      {
+        "page": 3,
+        "zhText": "一路上，小熊跟着安安看城市：花店的花、桥下的水，还有停在站台的公交车。安安轻声配音：“小熊第一次坐闪电出租车！”",
+        "enText": "Along the way, Bear saw flowers, water under a bridge, and a bus at its stop. An'an whispered a narration: “Bear's first ride in Lightning Taxi!”",
+        "illustrationPrompt": "View through side car window colorful flower stall and distant bridge bus stop, belted girl holds bear inside car, city focus."
+      },
+      {
+        "page": 4,
+        "zhText": "公园到了，远处传来咚咚的鼓声。车停稳后，安安跟妈妈下车，心里装满了木偶戏，没发现小熊滑到了后排座椅角落。",
+        "enText": "At the park, drums sounded in the distance. After the car stopped, An'an got out with Mom, thinking about the show. She didn't notice Bear slip into a corner of the rear seat.",
+        "illustrationPrompt": "View into parked rear seat brown bear blue scarf alone at seat corner foreground, mother child already safely on park sidewalk outside curbside door."
+      },
+      {
+        "page": 5,
+        "zhText": "走到花坛边，安安摸摸小包——空的！她的笑脸一下缩小了：“妈妈，小熊没有跟上来。”妈妈蹲下来：“别急，我们一起找。”",
+        "enText": "By the flowerbed, An'an felt inside her bag. Empty! Her smile faded. “Mom, Bear didn't come with us.” Mom knelt. “Let's work it out together.”",
+        "illustrationPrompt": "Park flowerbed child looks in empty small bag mother kneels gently, no taxi nearby, mild worry not extreme distress."
+      },
+      {
+        "page": 6,
+        "zhText": "她们先停在安全的长椅旁，检查背包和刚走过的地方。安安想起来：“上车时它还在，后来我让它看花店。”",
+        "enText": "They stopped beside a safe bench and checked their bags and the nearby path. An'an remembered, “Bear was there when we got in. Then I showed it the flower shop.”",
+        "illustrationPrompt": "Park bench mother checks bag girl recalls with hands, background flowerbed walkway, no roadway search."
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈找到这次乘车的记录，联系出租车服务人员，说明上车、下车的地点。她没有拉着安安去马路上追车。",
+        "enText": "Mom found the trip record and contacted the taxi service, explaining where they had boarded and left. She did not take An'an into the road to chase the car.",
+        "illustrationPrompt": "Mother seated park bench using phone generic blank screen, child beside holding empty bag, safe park separated road."
+      },
+      {
+        "page": 8,
+        "zhText": "另一边，陈叔叔在规定的停车区停好车，检查后排。咦？一双小耳朵！他拿起小熊：“你是不是落下的小乘客？”",
+        "enText": "Meanwhile, Uncle Chen parked in a designated bay and checked the rear seat. Two little ears! He picked up Bear. “Are you the passenger who stayed behind?”",
+        "illustrationPrompt": "Parked green taxi curbside rear door open driver navy jacket round glasses finds brown bear blue scarf, no other people, safe bay."
+      },
+      {
+        "page": 9,
+        "zhText": "陈叔叔把小熊妥善放好，停车时向服务人员报告。安安这边也传来消息：“找到一只玩具熊，还需要核对特征。”",
+        "enText": "Uncle Chen put Bear somewhere safe and reported it while parked. A message reached Mom: “A toy bear has been found. We need to check its details.”",
+        "illustrationPrompt": "Driver in stationary green taxi using phone parked, brown bear blue scarf safely in clean basket front passenger seat, no driving motion."
+      },
+      {
+        "page": 10,
+        "zhText": "“棕色的，蓝围巾，一只耳朵后面有妈妈缝的小月亮！”安安一口气说完。妈妈把这些特征告诉服务人员，大家核对上了。",
+        "enText": "“Brown, with a blue scarf and a tiny moon Mom stitched behind one ear!” said An'an. Mom passed on the details, and they matched.",
+        "illustrationPrompt": "Closeup memory vignette of brown plush bear BACK of ear with tiny yellow crescent stitch and blue scarf, plain soft background, no text."
+      },
+      {
+        "page": 11,
+        "zhText": "陈叔叔还有原来安排的工作，不能立刻飞过来。妈妈约好交接地点和时间，安安坐在长椅上：“小熊回来，也要慢慢走对路。”",
+        "enText": "Uncle Chen still had scheduled work and couldn't arrive instantly. Mom agreed on a meeting place and time. “Bear must take the right route back too,” An'an said.",
+        "illustrationPrompt": "Mother child waiting on park bench watching pond ducks, calm anticipation, no bear yet, sunny afternoon."
+      },
+      {
+        "page": 12,
+        "zhText": "等候时，妈妈和她玩“回想路线”：上车点、花店、小桥、公园。安安用四片落叶排好顺序，小心不让风吹走。",
+        "enText": "While they waited, Mom played “Remember the Route.” Taxi stand, flower shop, bridge, park. An'an arranged four fallen leaves in order, shielding them from the breeze.",
+        "illustrationPrompt": "Close tabletop park bench exactly four leaves in row child and mother play recall, no text cards, no bear."
+      },
+      {
+        "page": 13,
+        "zhText": "到了约定时间，绿色闪电稳稳停在公园的出租车上客区。陈叔叔没有按着喇叭催，妈妈牵安安从人行道走过去。",
+        "enText": "At the agreed time, Green Lightning stopped in the park's taxi bay. Uncle Chen didn't honk to hurry them. Mom led An'an over along the sidewalk.",
+        "illustrationPrompt": "Green taxi stationary park taxi bay, mother child approach along sidewalk, driver waits beside curbside car holding bear blue scarf."
+      },
+      {
+        "page": 14,
+        "zhText": "妈妈再次核对后，陈叔叔把小熊交给她。安安接过来，摸摸蓝围巾和小月亮：“谢谢！你们让小熊回家啦。”",
+        "enText": "After Mom checked again, Uncle Chen handed Bear to her. An'an took it and touched its blue scarf and little moon. “Thank you for bringing Bear home!”",
+        "illustrationPrompt": "Warm curbside handover driver gives brown bear blue scarf to mother child smiles, green taxi bolt visible, all on sidewalk."
+      },
+      {
+        "page": 15,
+        "zhText": "小熊回到包里，这回安安记住了：每次下车前，和大人一起看看座位，检查随身物品。她念道：“人坐稳，东西带齐，不着急。”",
+        "enText": "Bear went back in the bag. An'an had a new habit: check the seat and belongings with an adult before leaving. “Sit safely, take our things, and don't rush.”",
+        "illustrationPrompt": "HOME ONLY child packs brown bear blue scarf into small bag beside green toy taxi, mother helps practice checking toy seat, cozy table."
+      },
+      {
+        "page": 16,
+        "zhText": "晚上，小熊靠在枕边。安安告诉它：“绿色闪电不只送我们去公园，还载着大家的细心。”她闭上眼，小熊的蓝围巾也安静下来。",
+        "enText": "That night, Bear rested by the pillow. “Green Lightning carried us to the park—and carried everyone's care,” An'an whispered. She closed her eyes, and Bear's blue scarf lay still.",
+        "illustrationPrompt": "Bedroom nighttime child sleeping bear blue scarf on pillow, green toy taxi yellow bolt on bedside shelf, mom tucking blanket, warm quiet ending."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-19",
+    "order": 14,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 11,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 14,
+      "personalizationEnabled": false,
+      "tags": [
+        "出租车",
+        "闪电出租车",
+        "绿色出租车",
+        "失物归还",
+        "细心互助"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "parentGuide": {
+      "goal": "练习回想线索、向大人求助和检查物品。",
+      "reminder": "不责备孩子，也不把故事当作背诵测试。",
+      "questions": [
+        "安安怎样回想起小熊在哪里？",
+        "为什么不去马路上追车？"
+      ],
+      "activity": "用玩具车演一遍下车前检查座位和随身物品。",
+      "ageTips": {
+        "age4to5": "找一找绿色车和黄色闪电，模仿故事的动作和声音。",
+        "age6to8": "请孩子讲讲遇到困难时有哪些安全的选择。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium warm 3D clay-like animated children's picture-book illustration, rounded tactile materials, gentle Chinese city scenery, cinematic varied compositions, square image.",
+    "characterConsistency": "An'an 安安 is six, black bob hair, yellow star clip, teal hoodie, blue jeans, orange backpack, white shoes with red trim. Mom wears coral cardigan and cream trousers. Driver Uncle Chen has short black hair, round glasses, navy jacket. Lightning Taxi is always the same emerald GREEN compact four-door taxi, cream roof, small plain cream roof lamp, yellow lightning-bolt decal on front doors, black tires. It is a real car with no face, not a racing car. Interior passengers wear belts; An'an uses an age-appropriate rear booster. References lock style and identity only, never override the scene.",
+    "negative": "No text, captions, brands, readable plates, watermarks, vehicle faces, speeding, dangerous driving, unbelted riders, children alone in road, driver phone use while moving, distorted anatomy."
+  }
+}

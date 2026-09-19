@@ -3,6 +3,8 @@ import type { LibraryBook, LibrarySeries } from "@/types/library";
 import anQuanDaiDraft from "../../../content-drafts/qiche/an-quan-dai-bao-hu-shui.json";
 import chuZuCheDingDengDraft from "../../../content-drafts/qiche/chu-zu-che-wei-shen-me-you-ding-deng.json";
 import chuZuCheMuDiDraft from "../../../content-drafts/qiche/chu-zu-che-zen-yang-zhao-dao-mu-de-di.json";
+import shanDianYuTianDraft from "../../../content-drafts/qiche/shan-dian-chu-zu-che-he-yu-tian-de-xiao-cheng-ke.json";
+import shanDianXiaoXiongDraft from "../../../content-drafts/qiche/shan-dian-chu-zu-che-song-xiao-xiong-hui-jia.json";
 import dianDongQiCheDraft from "../../../content-drafts/qiche/dian-dong-qi-che-zen-me-chong-dian.json";
 import diTieDraft from "../../../content-drafts/qiche/di-tie-wei-shen-me-pao-de-kuai.json";
 import dongCheZuDraft from "../../../content-drafts/qiche/dong-che-zu-zen-yang-yi-qi-pao.json";
@@ -94,6 +96,8 @@ export const QICHE_BOOKS: LibraryBook[] = [
   dianDongQiCheDraft,
   chuZuCheDingDengDraft,
   chuZuCheMuDiDraft,
+  shanDianYuTianDraft,
+  shanDianXiaoXiongDraft,
   gaoTieDraft,
   dongCheZuDraft,
   feiJiWeiShenMeDraft,

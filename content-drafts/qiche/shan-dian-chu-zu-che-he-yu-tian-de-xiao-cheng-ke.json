@@ -1,0 +1,157 @@
+{
+  "book": {
+    "id": "shan-dian-chu-zu-che-he-yu-tian-de-xiao-cheng-ke",
+    "seriesId": "qiche",
+    "title": "闪电出租车和雨天的小乘客",
+    "subtitle": "不抢第一，也能完成最棒的任务",
+    "question": "绿色闪电怎样在雨天把乘客安全送回家？",
+    "moral": {
+      "zh": "真正可靠的速度，是不着急地把安全放在前面。",
+      "en": "A reliable ride puts safety before rushing."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "滴答，滴答！安安和妈妈走出绘本馆，雨点忽然跳起舞。屋檐外，一辆绿色出租车稳稳停进候车位，车门上有一道黄色闪电。",
+        "enText": "Drip, drop! As An'an and Mom left the picture-book library, rain began to dance. A green taxi stopped neatly in the taxi bay, a yellow lightning bolt on its door.",
+        "illustrationPrompt": "Wide rainy library canopy, green taxi fully parked in bay, child and mother under shelter, yellow bolt clearly visible."
+      },
+      {
+        "page": 2,
+        "zhText": "“闪电出租车！”安安念出妈妈给它起的名字。陈叔叔笑着说：“名字很快，开车可不能乱快。今天，我送你们稳稳回家。”",
+        "enText": "“Lightning Taxi!” said An'an, using Mom's nickname for the car. Uncle Chen smiled. “A quick name doesn't mean rushing. Today I'll take you safely home.”",
+        "illustrationPrompt": "Parked taxi close side view, driver speaks through window to mother and child on sidewalk under umbrella; focus green paint and bolt."
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈确认好车和目的地，才牵安安从靠人行道的一侧上车。雨伞收拢，滴下的小水珠像排队的小豆子。",
+        "enText": "Mom checked the car and destination, then helped An'an in from the sidewalk side. Their folded umbrella dripped a little row of beads.",
+        "illustrationPrompt": "Taxi curbside rear door open, mother helping child enter stationary car from sidewalk, folded umbrella, rain beads close foreground."
+      },
+      {
+        "page": 4,
+        "zhText": "咔哒！安安在后排合适的增高座椅上坐好，妈妈帮她检查安全带。她拍拍小背包：“我们也准备好出发啦！”",
+        "enText": "Click! An'an sat on her rear-seat booster, and Mom checked her belt. She patted her backpack. “We're ready too!”",
+        "illustrationPrompt": "Interior closeup mother checking correctly routed shoulder and lap belt on child booster, parked car, orange backpack secured beside feet."
+      },
+      {
+        "page": 5,
+        "zhText": "刷——刷——雨刷在前窗来回摆动。安安跟着轻轻摇手指：“左边一下，右边一下！”陈叔叔看着前方，雨里的路慢慢清楚起来。",
+        "enText": "Swish, swish! The wipers swept across the windshield. An'an moved one finger to their rhythm. Uncle Chen watched the road as it came into view.",
+        "illustrationPrompt": "View from rear seat toward windshield with working wipers and rainy street; driver eyes road, belted passengers, no child in front."
+      },
+      {
+        "page": 6,
+        "zhText": "车窗边的小雨珠比赛往下滑，一颗大，一颗小。安安刚想猜谁先到，前面的红灯亮了。绿色闪电安安静静停在线后。",
+        "enText": "Raindrops raced down the side window, one large and one small. Before An'an could guess the winner, the light turned red. Lightning Taxi stopped quietly behind the line.",
+        "illustrationPrompt": "Exterior three-quarter green taxi stopped behind crosswalk stop line at red traffic light, raindrops, no pedestrians in vehicle path."
+      },
+      {
+        "page": 7,
+        "zhText": "“闪电也要等红灯呀？”安安问。妈妈点头：“当然。车门上的闪电是图案，不是可以抢先走的通行证。”安安把手指也停住了。",
+        "enText": "“Even Lightning waits at red lights?” asked An'an. “Of course,” Mom said. “That bolt is a picture, not permission to go first.” An'an made her finger wait too.",
+        "illustrationPrompt": "Rear seat intimate conversation mother and belted girl holding still finger, soft red light outside, green door trim."
+      },
+      {
+        "page": 8,
+        "zhText": "绿灯亮了，陈叔叔确认路口安全，才平稳往前开。湿路面上，他留出更多距离。安安发现：慢一点，也能把事情做好。",
+        "enText": "The light turned green. Uncle Chen checked the crossing and moved off gently, leaving extra space on the wet road. An'an discovered that slower could be better.",
+        "illustrationPrompt": "Elevated wide wet boulevard green taxi leaving generous gap from preceding car, normal gentle speed, clear lane geometry."
+      },
+      {
+        "page": 9,
+        "zhText": "前面的小街积了水，看不清有多深。陈叔叔没有开进去，而是在允许停车的地方联系调度，确认另一条可以通行的路。",
+        "enText": "Water covered the little street ahead, hiding its depth. Uncle Chen did not drive in. He parked where it was allowed and contacted dispatch about another open route.",
+        "illustrationPrompt": "Green taxi parked in safe dry layby BEFORE flooded closed side street, driver using mounted communication while stationary, alternate dry street visible."
+      },
+      {
+        "page": 10,
+        "zhText": "“我们是不是走错啦？”安安抱紧背包。妈妈指指窗外的钟楼：“绕路不是迷路。我们知道要去哪里，也会避开不安全的地方。”",
+        "enText": "“Are we lost?” An'an hugged her backpack. Mom pointed to the clock tower. “A detour isn't getting lost. We know where we're going and we're avoiding danger.”",
+        "illustrationPrompt": "Belted child and mother watching distinctive round clock tower from side window, reassuring expressions, rainy but calm."
+      },
+      {
+        "page": 11,
+        "zhText": "新路经过面包店。暖黄的窗子像一块烤面包，门口的人都在屋檐下躲雨。安安数了数：“红伞、蓝伞，还有一把小花伞！”",
+        "enText": "The new route passed a bakery. Its warm window looked like toast, and people sheltered beneath the awning. “A red umbrella, a blue one, and a flowery one!” counted An'an.",
+        "illustrationPrompt": "City street exterior green taxi passing cozy bakery, exactly red blue floral umbrellas under awning, pedestrians safely on sidewalk."
+      },
+      {
+        "page": 12,
+        "zhText": "转弯处，一位爷爷正从斑马线上慢慢走过。闪电出租车停下来等。安安悄悄对车门上的闪电说：“这次，我们不比赛。”",
+        "enText": "At the crossing, an older man was walking slowly across. Lightning Taxi stopped to wait. An'an whispered to the little bolt, “This time, it isn't a race.”",
+        "illustrationPrompt": "Wide crossing green taxi stopped well before zebra, elderly pedestrian using cane crossing with ample clearance, rain easing."
+      },
+      {
+        "page": 13,
+        "zhText": "到家门口了！陈叔叔停进安全下客位。妈妈先看清周围，再带安安从靠人行道的一侧下车，小鞋子没有踩进大水洼。",
+        "enText": "Home at last! Uncle Chen parked in a safe drop-off bay. Mom checked around them, then helped An'an out on the sidewalk side, away from the big puddle.",
+        "illustrationPrompt": "Green taxi fully parked curbside at apartment canopy, mother holds child hand stepping onto dry sidewalk, umbrella."
+      },
+      {
+        "page": 14,
+        "zhText": "“背包、雨伞、借来的书，都齐啦！”妈妈和安安检查一遍，再向陈叔叔道谢。绿色车门关好，黄色闪电被雨水洗得亮亮的。",
+        "enText": "“Backpack, umbrella, library books—all here!” Mom and An'an checked their things and thanked Uncle Chen. Rain had washed the yellow bolt bright on the closed green door.",
+        "illustrationPrompt": "Under home canopy child holds library books mother folded umbrella, green taxi closed doors, smiling goodbye driver, close bolt with rain beads."
+      },
+      {
+        "page": 15,
+        "zhText": "回家后，安安用积木搭路口，推着绿色玩具出租车停在红色圆片前。她给妈妈当小司机：“雨天任务，第一条是什么？”",
+        "enText": "At home, An'an built a block crossing and stopped a green toy taxi at a red disc. “What's the first rule of our rainy-day mission?” she asked Mom.",
+        "illustrationPrompt": "HOME ONLY mother child tabletop block intersection green toy taxi yellow bolt red disc, cozy dry room no fullsize vehicles."
+      },
+      {
+        "page": 16,
+        "zhText": "妈妈说：“把乘客安全送到。”窗外的雨停了，安安把玩具车轻轻停好：“今天的绿色闪电没有抢第一，却完成了最棒的任务。”",
+        "enText": "“Bring everyone safely home,” Mom said. The rain had stopped. An'an parked the toy gently. “Green Lightning didn't come first, but it completed the best mission.”",
+        "illustrationPrompt": "HOME window clearing rain rainbow subtle, girl parks green toy beside books mother smiles, warm intimate ending."
+      }
+    ],
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-19",
+    "order": 13,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 11,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 13,
+      "personalizationEnabled": false,
+      "tags": [
+        "出租车",
+        "闪电出租车",
+        "绿色出租车",
+        "雨天接送",
+        "安全等待"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "parentGuide": {
+      "goal": "理解等待、绕路和安全到达。",
+      "reminder": "不责备孩子，也不把故事当作背诵测试。",
+      "questions": [
+        "叫闪电为什么也要等？",
+        "绕路和迷路有什么不同？"
+      ],
+      "activity": "用积木搭路口，让玩具出租车练习等待和安全绕行。",
+      "ageTips": {
+        "age4to5": "找一找绿色车和黄色闪电，模仿故事的动作和声音。",
+        "age6to8": "请孩子讲讲遇到困难时有哪些安全的选择。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium warm 3D clay-like animated children's picture-book illustration, rounded tactile materials, gentle Chinese city scenery, cinematic varied compositions, square image.",
+    "characterConsistency": "An'an 安安 is six, black bob hair, yellow star clip, teal hoodie, blue jeans, orange backpack, white shoes with red trim. Mom wears coral cardigan and cream trousers. Driver Uncle Chen has short black hair, round glasses, navy jacket. Lightning Taxi is always the same emerald GREEN compact four-door taxi, cream roof, small plain cream roof lamp, yellow lightning-bolt decal on front doors, black tires. It is a real car with no face, not a racing car. Interior passengers wear belts; An'an uses an age-appropriate rear booster. References lock style and identity only, never override the scene.",
+    "negative": "No text, captions, brands, readable plates, watermarks, vehicle faces, speeding, dangerous driving, unbelted riders, children alone in road, driver phone use while moving, distorted anatomy."
+  }
+}
