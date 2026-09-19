@@ -1,5 +1,7 @@
 import type { StoryPage } from "@/types";
 import type { LibraryBook, LibrarySeries } from "@/types/library";
+import piKaShuMiaoDraft from "../../../content-drafts/qiche/da-zhong-pi-ka-song-xiao-shu-miao.json";
+import piKaMuOuDraft from "../../../content-drafts/qiche/da-zhong-pi-ka-he-mu-ou-xi-de-da-ban-jia.json";
 import anQuanDaiDraft from "../../../content-drafts/qiche/an-quan-dai-bao-hu-shui.json";
 import chuZuCheDingDengDraft from "../../../content-drafts/qiche/chu-zu-che-wei-shen-me-you-ding-deng.json";
 import chuZuCheMuDiDraft from "../../../content-drafts/qiche/chu-zu-che-zen-yang-zhao-dao-mu-de-di.json";
@@ -98,6 +100,8 @@ export const QICHE_BOOKS: LibraryBook[] = [
   chuZuCheMuDiDraft,
   shanDianYuTianDraft,
   shanDianXiaoXiongDraft,
+  piKaShuMiaoDraft,
+  piKaMuOuDraft,
   gaoTieDraft,
   dongCheZuDraft,
   feiJiWeiShenMeDraft,

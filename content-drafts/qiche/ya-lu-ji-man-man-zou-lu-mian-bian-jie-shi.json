@@ -122,7 +122,7 @@
     ],
     "ageLabel": "4–8 岁",
     "publishedAt": "2026-09-08",
-    "order": 26,
+    "order": 28,
     "comingSoon": false,
     "metadata": {
       "category": "science",
@@ -136,7 +136,7 @@
         "en"
       ],
       "seriesId": "qiche",
-      "seriesOrder": 26,
+      "seriesOrder": 28,
       "personalizationEnabled": false,
       "tags": [
         "压路机",

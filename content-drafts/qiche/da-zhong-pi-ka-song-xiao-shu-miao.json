@@ -1,0 +1,158 @@
+{
+  "book": {
+    "id": "da-zhong-pi-ka-song-xiao-shu-miao",
+    "seriesId": "qiche",
+    "title": "大众皮卡送小树苗",
+    "subtitle": "三棵小树的搬家任务",
+    "question": "皮卡怎样稳稳送来小树苗？",
+    "moral": {
+      "zh": "人和货物各有位置，认真准备才能稳稳到达。",
+      "en": "People and cargo have different places; careful preparation makes a safe trip."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "周六，社区花园要种小树。安安和妈妈来到苗圃，一辆红色大众皮卡停在装货区。它前面像小汽车，后面却有一个敞开的黑色货斗。",
+        "enText": "On Saturday, the community garden needed young trees. At the nursery, An'an and Mom found a red Volkswagen pickup. Its front looked like a car, but behind it was an open black cargo bed.",
+        "illustrationPrompt": "Nursery wide establishing parked RED pickup side rear three-quarter, clearly four-door cab and empty open black bed silver bar, mother child in separate visitor area."
+      },
+      {
+        "page": 2,
+        "zhText": "“它也是出租车吗？”安安问。林阿姨摇摇头：“今天它帮我们运树苗。前面的驾驶室有座位，后面的货斗用来装东西，不能坐人。”",
+        "enText": "“Is it a taxi too?” asked An'an. “Today it carries our trees,” Aunt Lin said. “The cab has seats. The bed is for cargo, never for people.”",
+        "illustrationPrompt": "Side profile stationary pickup empty cab and empty black bed clearly distinct, Aunt Lin explaining from ground mother girl safely beside cab, no taxi."
+      },
+      {
+        "page": 3,
+        "zhText": "一盆、两盆、三盆小树苗，叶子像小手一样招招摇摇。安安站在等候线外数：“它们要搬进同一个花园啦！”",
+        "enText": "One, two, three young trees waved their leafy little hands. An'an counted from the waiting area. “They're moving into the same garden!”",
+        "illustrationPrompt": "Exactly THREE small potted saplings in nursery on ground, girl counts from safe waiting area mother beside, pickup distant."
+      },
+      {
+        "page": 4,
+        "zhText": "先不装车。林阿姨检查车况，再确认树苗和工具的重量、尺寸都合适。“能放进去，不代表就可以随便装满。”她说。",
+        "enText": "Not yet. Aunt Lin checked the vehicle and the cargo's weight and size. “Fitting inside doesn't mean we can fill it without a limit,” she explained.",
+        "illustrationPrompt": "Adult checks parked pickup tires and blank checklist, modest three saplings and small tool crate on ground, no children near work."
+      },
+      {
+        "page": 5,
+        "zhText": "尾门放下来，装货口变低了。两位大人把花盆平稳搬进货斗，安安和妈妈留在一旁，不站在尾门后面凑热闹。",
+        "enText": "The tailgate lowered to open the bed. Two adults lifted the pots carefully, while An'an and Mom waited well away from the loading area.",
+        "illustrationPrompt": "Rear pickup view tailgate down ONLY two adult workers load SMALL pots, mother child distant behind barrier, no children touching tailgate."
+      },
+      {
+        "page": 6,
+        "zhText": "花盆放在防滑垫上，重的东西低低放，左右安排得均匀。安安看见花盆之间留着合适的空隙：“它们不是挤地铁呀！”",
+        "enText": "The pots rested on a non-slip mat, with heavier items low and the load balanced. “They're not squeezing onto a subway!” An'an said.",
+        "illustrationPrompt": "Overhead CLOSEUP cargo bed three modest pots on rubber mat low evenly placed, no people, silver bar cab edge, no tall cargo."
+      },
+      {
+        "page": 7,
+        "zhText": "一条固定带松了些，花盆轻轻晃了一下。林阿姨发现后重新调整，保护好盆和枝叶，再检查固定点。小树还没出发，就先站稳了。",
+        "enText": "One strap was loose, and a pot wobbled slightly. Aunt Lin adjusted it, protected the pots and branches, and checked the anchor points. The trees stood securely before setting off.",
+        "illustrationPrompt": "Adult hands tightening protective strap around pot bases to BED tie-down eyes, padded edges, branches free, no straps tied to branches, closeup."
+      },
+      {
+        "page": 8,
+        "zhText": "尾门关好，工具也收进固定的箱子里。林阿姨绕车看一圈：“没有松动，没有挡住需要的视线，可以准备走了。”",
+        "enText": "The tailgate closed, and the tools went into a secured box. Aunt Lin walked around the pickup. “Nothing loose, no important view blocked. We're ready.”",
+        "illustrationPrompt": "Rear three-quarter red pickup tailgate CLOSED all three small saplings strapped low crate secured, driver does walkaround, no one in bed."
+      },
+      {
+        "page": 9,
+        "zhText": "安安从靠安全一侧的车门上车，坐到驾驶室后排的增高座椅上。妈妈检查好安全带。她回头问：“小树有固定带，我们有安全带！”",
+        "enText": "An'an climbed into the rear cab and sat on her booster. Mom checked her belt. “The trees have cargo straps, and we have seat belts!” she said.",
+        "illustrationPrompt": "Inside REAR cab girl booster with shoulder and lap belt mom next to her belted, through rear glass trees separate outside bed, no children outside."
+      },
+      {
+        "page": 10,
+        "zhText": "皮卡慢慢经过社区路口。林阿姨提前减速，转弯也很平稳。花盆没有东倒西歪，安安轻轻说：“今天开的是小树专车。”",
+        "enText": "The pickup slowed before the neighborhood junction and turned gently. The pots stayed steady. “Today it's a little-tree delivery,” An'an whispered.",
+        "illustrationPrompt": "Wide street red pickup moving slowly gentle corner, three low secured saplings in open bed, occupants obscured by reflections no exterior people."
+      },
+      {
+        "page": 11,
+        "zhText": "前面的近路正在维修，不能通过。林阿姨按实际道路选择可通行的路线，没有因为皮卡看起来结实，就跨过围挡往里闯。",
+        "enText": "The shortcut was closed for repairs. Aunt Lin chose an open route. A sturdy-looking pickup was no reason to cross a barrier.",
+        "illustrationPrompt": "Red pickup stopped well BEFORE construction barrier at blocked side street, alternate paved road visible, no offroad driving."
+      },
+      {
+        "page": 12,
+        "zhText": "多绕了一小段，花园还是到了。车停稳、安排好卸货区域后，大人才打开尾门。安安握着妈妈的手，等大家把树苗搬下来。",
+        "enText": "The short detour still brought them to the garden. Once parked in the unloading area, the adults opened the tailgate. An'an waited with Mom as they lifted the trees down.",
+        "illustrationPrompt": "Community garden parked red pickup adult unloads small saplings tailgate open, child mother well away safe path."
+      },
+      {
+        "page": 13,
+        "zhText": "园艺阿姨把树苗种进准备好的地方。安安在大人陪同下，拿小水壶慢慢浇水。三棵树排成一小排，像新认识的朋友。",
+        "enText": "The gardener planted the trees in prepared spots. With an adult beside her, An'an watered gently. The three trees stood like new friends.",
+        "illustrationPrompt": "Exactly three planted saplings girl watering small can mother supervises garden, truck parked far away no tools hazard."
+      },
+      {
+        "page": 14,
+        "zhText": "“谁把小树带来的？”妈妈问。安安指指红皮卡，又指指忙碌的大人：“车负责运，大家负责检查、搬运和照顾。”",
+        "enText": "“Who brought the trees?” Mom asked. An'an pointed to the pickup and then the helpers. “The truck carried them. People checked, lifted, and cared for them.”",
+        "illustrationPrompt": "Wide finished garden three trees foreground group thanks Aunt Lin parked empty red pickup in background, sunny celebration calm."
+      },
+      {
+        "page": 15,
+        "zhText": "回家后，安安给红色玩具皮卡装上三块小积木。她没把玩具小人放进货斗：“小人坐车里，货物放后面。”",
+        "enText": "At home, An'an loaded three small blocks into a red toy pickup. “People sit in the cab. Cargo goes in the back,” she said, keeping the toy people out of the bed.",
+        "illustrationPrompt": "HOME ONLY tabletop toy red double cab pickup three wooden blocks in bed tiny figures beside cab mother girl playing, no fullsize truck."
+      },
+      {
+        "page": 16,
+        "zhText": "傍晚，她把小树画进观察本。红皮卡没有变成出租车，也没有变成挖掘机；它用自己的货斗，帮花园添了三片未来的绿荫。",
+        "enText": "That evening, she drew the trees. The red pickup had not become a taxi or an excavator. With its own cargo bed, it had helped bring three future patches of shade.",
+        "illustrationPrompt": "HOME evening girl drawing three trees wordless sketch mother looks on red toy pickup nearby, warm ending."
+      }
+    ],
+    "parentGuide": {
+      "goal": "分辨乘员空间与货物空间，理解安全装载。",
+      "reminder": "不用背部件名称，不在真实车辆附近模仿装卸。",
+      "questions": [
+        "人应该坐在哪里？",
+        "小树为什么也要固定好？"
+      ],
+      "activity": "在家用玩具皮卡和大块积木模拟装货，人物放驾驶室，货物放货斗；成人陪同。",
+      "ageTips": {
+        "age4to5": "指一指驾驶室和货斗，数一数要运的物品。",
+        "age6to8": "比较出租车和皮卡的任务，讲讲一次遇到困难后的选择。"
+      }
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-19",
+    "order": 15,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 11,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 15,
+      "personalizationEnabled": false,
+      "tags": [
+        "大众皮卡",
+        "皮卡",
+        "社区帮忙",
+        "安全装载",
+        "树苗运输",
+        "装载固定"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square warm premium 3D clay animated children's book, tactile rounded materials, gentle Chinese neighborhood, varied shot sizes.",
+    "characterConsistency": "Vehicle: same RED Volkswagen double-cab four-door pickup based on supplied model photo: red hood and cab, BLACK OPEN cargo bed separate behind cab, silver tubular sports bar behind rear window, silver wheels, black tires. Real-size vehicle, no taxi roof lamp, no lightning decal, no face. A small standard VW grille badge may appear naturally; no advertising. An'an 安安: six-year-old Chinese girl, black bob, yellow star hairclip, teal hoodie, jeans, orange backpack. Mom coral cardigan cream trousers. Driver Aunt Lin: short black hair, sage green work jacket, beige trousers. Any child passenger in REAR CAB booster with correctly fitted seat belt; nobody ever rides in cargo bed. Only include people required by scene.",
+    "negative": "No packaging, product labels, authorization seals, promotional claims, captions, watermarks, readable plates, oversized logos, people in cargo bed, overloaded cargo, unsecured loads, child near moving vehicle, dangerous driving, taxi lamp, yellow lightning mark."
+  }
+}

@@ -85,7 +85,7 @@
     ],
     "ageLabel": "4-8 岁",
     "publishedAt": "2026-09-01",
-    "order": 17,
+    "order": 19,
     "comingSoon": false,
     "metadata": {
       "category": "science",
@@ -93,7 +93,7 @@
       "estimatedMinutes": 8,
       "languages": ["zh", "en"],
       "seriesId": "qiche",
-      "seriesOrder": 17,
+      "seriesOrder": 19,
       "personalizationEnabled": false,
       "tags": ["城市交通", "飞机", "升力", "推力", "机翼", "航空启蒙"],
       "featured": false,

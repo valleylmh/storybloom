@@ -1,0 +1,158 @@
+{
+  "book": {
+    "id": "da-zhong-pi-ka-he-mu-ou-xi-de-da-ban-jia",
+    "seriesId": "qiche",
+    "title": "大众皮卡和木偶戏的大搬家",
+    "subtitle": "道具、清单和一场合作演出",
+    "question": "皮卡怎样帮木偶戏搬家？",
+    "moral": {
+      "zh": "把准备、运输和收尾都做好，合作才能顺利完成。",
+      "en": "Good teamwork includes preparation, transport, and a careful finish."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "社区广场要演木偶戏，舞台上的小狐狸却还在活动室的箱子里。安安问：“这么多道具，怎么一起到广场去？”",
+        "enText": "A puppet show was planned for the square, but the little fox puppet was still boxed at the community room. “How will all these props get there?” asked An'an.",
+        "illustrationPrompt": "Community room girl mom beside TWO CLOSED prop cases one long narrow rolled backdrop, fox puppet in adult hand, no truck inside."
+      },
+      {
+        "page": 2,
+        "zhText": "红色大众皮卡来帮忙啦！林阿姨把车停在装货区。绿色闪电出租车从街上经过，安安挥挥手：“你送乘客，我们送道具！”",
+        "enText": "The red Volkswagen pickup arrived to help. Aunt Lin parked in the loading bay. Green Lightning Taxi passed on the street. “You carry passengers; we carry props!” An'an waved.",
+        "illustrationPrompt": "Wide street red four-door pickup black bed silver bar PARKED loading bay foreground, GREEN taxi cream roof yellow bolt passes distant lane, girl mother safe sidewalk, two distinct vehicles."
+      },
+      {
+        "page": 3,
+        "zhText": "木偶、布景、折叠支架，各有各的位置。负责演出的周叔叔先核对清单：“少一件，到了广场也可能没法开演。”",
+        "enText": "Puppets, scenery, and a folding stand each had a place. Mr. Zhou checked the list. “One missing part could stop the show even after we arrive.”",
+        "illustrationPrompt": "Adult orange sweater checks wordless picture checklist beside two prop cases compact folded stand, child mother observe community porch."
+      },
+      {
+        "page": 4,
+        "zhText": "最长的布景杆放不下！安安刚说“伸出去一点”，周叔叔就停下了：“先别试着凑合，我们看看它能不能按设计拆开。”",
+        "enText": "The longest scenery pole would not fit. “Let it stick out,” An'an began. Mr. Zhou paused. “Let's not improvise. We'll check whether it's designed to come apart.”",
+        "illustrationPrompt": "Adult holds two-piece scenery pole NEXT TO parked empty pickup measuring without loading or protruding into road, girl at safe distance."
+      },
+      {
+        "page": 5,
+        "zhText": "原来连接处能拆开。周叔叔把杆分成两段，装进合适的保护袋，连接件放进小盒子。安安拍手：“变短了，零件也没丢！”",
+        "enText": "Its joint could be opened. Mr. Zhou packed the two sections in a protective bag and the connector in a small box. “Shorter—and no missing parts!” An'an clapped.",
+        "illustrationPrompt": "Closeup adult hands two short pole sections protective bag small connector box on worktable, no car necessary no child tools."
+      },
+      {
+        "page": 6,
+        "zhText": "装车前，林阿姨确认总重量和摆放方式。结实的箱子放低，容易压坏的道具得到保护，不把货物堆得高高的挡住视线。",
+        "enText": "Before loading, Aunt Lin checked the total weight and layout. Strong cases stayed low, delicate props were protected, and nothing was piled high enough to block the view.",
+        "illustrationPrompt": "Overhead cargo bed two low closed padded cases short rolled backdrop and folded stand all below cab rear window, neat balanced placement."
+      },
+      {
+        "page": 7,
+        "zhText": "固定带穿过货斗里的固定点，拉紧后再检查。安安站在旁边的安全区域，模仿系好玩具的小动作：“东西坐稳了吗？”",
+        "enText": "The straps ran through the bed's tie-down points and were checked after tightening. From the safe waiting area, An'an mimed securing a toy. “Is everything steady?”",
+        "illustrationPrompt": "Closeup adult hands secure cargo straps to bed floor anchors two cases, girl only far background with mother, no one in bed."
+      },
+      {
+        "page": 8,
+        "zhText": "天空飘来一朵灰云。周叔叔拿来合适的防雨罩，把怕湿的道具盖好并固定，不能让布边在路上呼啦啦乱飞。",
+        "enText": "A gray cloud drifted over. Mr. Zhou covered the weather-sensitive props and secured the rain cover, leaving no loose edges to flap on the road.",
+        "illustrationPrompt": "Adult secures taut dark blue rain cover over LOW cargo in parked red pickup open bed, tied properly all edges contained tailgate closed, overcast."
+      },
+      {
+        "page": 9,
+        "zhText": "安安和妈妈在驾驶室后排坐好、系好安全带。货斗里只有固定好的物品。她听见小雨敲车顶：“嗒嗒嗒，像开场的小鼓！”",
+        "enText": "An'an and Mom buckled into the rear cab. Only secured cargo rode in the bed. Rain tapped the roof. “Tap, tap, like the opening drum!” she said.",
+        "illustrationPrompt": "REAR cab interior belted girl booster mom belted side by side looking rain on side window, driver not foreground no one in bed."
+      },
+      {
+        "page": 10,
+        "zhText": "广场入口有不少行人，皮卡不能直接开进人群。林阿姨按现场安排，停到旁边的卸货区。最后一小段，要靠手推车接力。",
+        "enText": "People filled the square entrance, so the pickup could not drive into the crowd. Aunt Lin used the assigned unloading bay. A handcart would carry the props the last stretch.",
+        "illustrationPrompt": "Wide community square pedestrians behind bollards pickup parked separate unloading bay EMPTY handcart nearby, never truck in crowd."
+      },
+      {
+        "page": 11,
+        "zhText": "车停稳后，大人解开固定带，把箱子一件件搬上手推车。安安和妈妈站在安全的地方数：“一箱、两箱，保护袋也到了！”",
+        "enText": "Once parked, the adults unfastened the straps and loaded the handcart. An'an counted from a safe place with Mom. “One case, two cases, and the bag!”",
+        "illustrationPrompt": "Parked red pickup tailgate open adults transfer two closed cases to handcart child mother well clear, tarp folded on ground tidy."
+      },
+      {
+        "page": 12,
+        "zhText": "到了后台，支架却少了一个连接件。大家没有急着开演。周叔叔想起那个小盒子：“先按清单找，不用把所有东西乱翻一遍。”",
+        "enText": "Backstage, a connector seemed to be missing. Nobody rushed to begin. Mr. Zhou remembered the small box. “Let's follow the list instead of scattering everything.”",
+        "illustrationPrompt": "Backstage adult and child mother look at small closed parts box beside protective bag on table, unassembled low stand safe, truck absent."
+      },
+      {
+        "page": 13,
+        "zhText": "找到了！连接件躺在小盒子里。大人按要求组好并检查支架，道具各就各位。安安松口气：“原来装得有条理，找起来也容易。”",
+        "enText": "There it was, safe in the box. Adults assembled and checked the stand, then placed the props. “Packing carefully makes finding things easier,” An'an sighed with relief.",
+        "illustrationPrompt": "Adult assembles compact puppet stage safely backstage, connector box open, child mother at distance not handling tools, fox puppet resting."
+      },
+      {
+        "page": 14,
+        "zhText": "幕布拉开，小狐狸向观众鞠躬。安安坐在妈妈身边，笑得眼睛弯弯。红皮卡停在广场外，安静地等着演出结束。",
+        "enText": "The curtain opened, and Fox bowed. An'an laughed beside Mom. Outside the square, the red pickup waited quietly for the show to finish.",
+        "illustrationPrompt": "Puppet theatre fox bowing children seated audience girl mother foreground red pickup very distant outside bollards, no truck on stage."
+      },
+      {
+        "page": 15,
+        "zhText": "散场后，道具又按清单收好，固定好才运回活动室。林阿姨检查货斗，没有留下散落的小零件。任务结束，也要认真收尾。",
+        "enText": "Afterward, the props were checked, packed, and secured for the return trip. Aunt Lin checked the bed for loose parts. A finished mission still needed a careful ending.",
+        "illustrationPrompt": "Dusk community room returned red pickup EMPTY bed adult inspecting bed from ground, two closed prop cases safely on trolley porch, no loading chaos."
+      },
+      {
+        "page": 16,
+        "zhText": "晚上，安安把绿色出租车和红色皮卡排在玩具城里：“你送人，你运货；本领不一样，都能帮大家。”两辆小车一起停进了她的车库。",
+        "enText": "That night, An'an parked a green toy taxi and a red toy pickup in her little town. “You carry people, you carry cargo. Different jobs, both helpful.” Both rested in her toy garage.",
+        "illustrationPrompt": "HOME ONLY girl mom tabletop toy city GREEN taxi yellow bolt cream roof next to RED doublecab pickup black open bed silver bar, clearly different silhouettes, cozy ending."
+      }
+    ],
+    "parentGuide": {
+      "goal": "练习按顺序准备、核对和合作。",
+      "reminder": "不用背部件名称，不在真实车辆附近模仿装卸。",
+      "questions": [
+        "长杆放不下时，大家怎样解决？",
+        "为什么最后还要用手推车？"
+      ],
+      "activity": "在家用玩具皮卡和大块积木模拟装货，人物放驾驶室，货物放货斗；成人陪同。",
+      "ageTips": {
+        "age4to5": "指一指驾驶室和货斗，数一数要运的物品。",
+        "age6to8": "比较出租车和皮卡的任务，讲讲一次遇到困难后的选择。"
+      }
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-19",
+    "order": 16,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 11,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 16,
+      "personalizationEnabled": false,
+      "tags": [
+        "大众皮卡",
+        "皮卡",
+        "社区帮忙",
+        "安全装载",
+        "道具运输",
+        "社区合作"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square warm premium 3D clay animated children's book, tactile rounded materials, gentle Chinese neighborhood, varied shot sizes.",
+    "characterConsistency": "Vehicle: same RED Volkswagen double-cab four-door pickup based on supplied model photo: red hood and cab, BLACK OPEN cargo bed separate behind cab, silver tubular sports bar behind rear window, silver wheels, black tires. Real-size vehicle, no taxi roof lamp, no lightning decal, no face. A small standard VW grille badge may appear naturally; no advertising. An'an 安安: six-year-old Chinese girl, black bob, yellow star hairclip, teal hoodie, jeans, orange backpack. Mom coral cardigan cream trousers. Driver Aunt Lin: short black hair, sage green work jacket, beige trousers. Any child passenger in REAR CAB booster with correctly fitted seat belt; nobody ever rides in cargo bed. Only include people required by scene.",
+    "negative": "No packaging, product labels, authorization seals, promotional claims, captions, watermarks, readable plates, oversized logos, people in cargo bed, overloaded cargo, unsecured loads, child near moving vehicle, dangerous driving, taxi lamp, yellow lightning mark."
+  }
+}

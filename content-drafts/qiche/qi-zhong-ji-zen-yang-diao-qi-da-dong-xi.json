@@ -146,7 +146,7 @@
     ],
     "ageLabel": "4–8 岁",
     "publishedAt": "2026-09-08",
-    "order": 25,
+    "order": 27,
     "comingSoon": false,
     "metadata": {
       "category": "science",
@@ -160,7 +160,7 @@
         "en"
       ],
       "seriesId": "qiche",
-      "seriesOrder": 25,
+      "seriesOrder": 27,
       "personalizationEnabled": false,
       "tags": [
         "起重机",
