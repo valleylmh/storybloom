@@ -1,0 +1,181 @@
+{
+  "book": {
+    "id": "da-zhong-pi-ka-zuo-lun-chuan-mu-ou-xi-qu-xiao-dao",
+    "seriesId": "qiche",
+    "title": "大众皮卡坐轮船，木偶戏去小岛",
+    "subtitle": "红皮卡和绿色出租车的跨海接力",
+    "question": "汽车怎样安全坐渡船？",
+    "moral": {
+      "zh": "不同的交通工具各有本领，遵守规则才能一起平安到达。",
+      "en": "Different vehicles work together; following safety rules helps everyone arrive safely."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "同一个早晨，社区木偶剧团也忙起来了。小岛故事节在等他们，周叔叔却望着道具箱发愁：“这些东西，怎么一起过水面呢？”",
+        "enText": "That same morning, the puppet troupe was busy too. “How can we take all these props across the water?” Mr. Zhou wondered.",
+        "illustrationPrompt": "Community puppet theatre orange sweater Mr Zhou beside cases, Aunt Lin nearby."
+      },
+      {
+        "page": 2,
+        "zhText": "林阿姨拍拍红色大众皮卡：“先让我送到码头，再请车客渡船帮忙。”这种船能按规定运送车辆和乘客，但不是每艘轮船都能装汽车。",
+        "enText": "“The pickup takes us to the dock, then a vehicle ferry helps,” Aunt Lin said. These ferries carry vehicles and passengers. Not every boat carries cars.",
+        "illustrationPrompt": "Parked RED Volkswagen pickup four doors black bed silver bar Aunt Lin explains to Mr Zhou."
+      },
+      {
+        "page": 3,
+        "zhText": "两只道具箱、一袋折叠支架，还有装连接件的小盒子。周叔叔对照清单检查，把小盒子收进道具箱。少一件，舞台都可能搭不起来。",
+        "enText": "Two prop cases, a folding stand bag and a small connector box. Mr. Zhou checked the list and packed the small box inside a case.",
+        "illustrationPrompt": "Adult orange sweater packs small box into prop case fox puppet visible safe workshop."
+      },
+      {
+        "page": 4,
+        "zhText": "大人把货物稳稳装好，用固定带绑在货斗固定点上，再检查尾门。货斗只装东西，人要坐驾驶室；木偶狐狸也藏进自己的保护箱。",
+        "enText": "Adults secured the cargo to the bed's anchor points and checked the tailgate. People ride in the cab; cargo rides in the bed. Fox had a protective case.",
+        "illustrationPrompt": "Pickup cargo bed two cases long bag strapped securely low, adult checks strap."
+      },
+      {
+        "page": 5,
+        "zhText": "出发前，林阿姨核对船班和车辆预约信息，也确认车和货物符合这班渡船的要求。“不能到了码头，才发现上不了船呀。”",
+        "enText": "Aunt Lin checked the sailing, vehicle booking and cargo requirements. “Let's make sure this ferry can take us before we leave.”",
+        "illustrationPrompt": "Aunt Lin phone blank screen next to loaded stationary pickup, no child."
+      },
+      {
+        "page": 6,
+        "zhText": "路口，她遇见送安安去码头的绿色闪电出租车。两辆车没有追着跑，只在停车时打个招呼：“小岛故事节见！”",
+        "enText": "At a junction, she saw the green Lightning Taxi taking An'an to the terminal. Nobody raced. They greeted each other while stopped.",
+        "illustrationPrompt": "Green taxi and red loaded pickup stationary red light separate lanes, wave behind windows."
+      },
+      {
+        "page": 7,
+        "zhText": "到了港口，出租车去落客区，皮卡去车辆候渡区。路分开了，目的地却相同。林阿姨按指引排队，不占人行通道。",
+        "enText": "At the port, the taxi went to the drop-off bay and the pickup to the vehicle queue. Different paths, the same destination.",
+        "illustrationPrompt": "Wide overhead harbor separate taxi dropoff protected pedestrian route and pickup vehicle queue."
+      },
+      {
+        "page": 8,
+        "zhText": "队伍暂时没有动。工作人员说，要等前一批车辆离船。周叔叔看看时间，林阿姨说：“慢慢等，比挤过去更能帮上忙。”",
+        "enText": "The queue waited while vehicles left the arriving ferry. “Waiting patiently helps more than pushing ahead,” Aunt Lin said.",
+        "illustrationPrompt": "Loaded pickup waiting well back from ferry ramp other cars exiting controlled lanes."
+      },
+      {
+        "page": 9,
+        "zhText": "终于轮到皮卡了。工作人员检查后挥手示意，林阿姨才缓缓向前。宽宽的坡道像一座短桥，把岸和船连起来。",
+        "enText": "At last, staff signaled them forward. Aunt Lin drove slowly toward the broad ramp linking shore and ferry.",
+        "illustrationPrompt": "Red loaded pickup approaches broad vehicle ferry ramp crew side protected station no pedestrians."
+      },
+      {
+        "page": 10,
+        "zhText": "轮胎咕噜咕噜滚上坡道。林阿姨看着指挥，保持距离，没有突然加速。船不是停车场里的玩具，登船也要认真开。",
+        "enText": "The tires rolled onto the ramp. Aunt Lin followed the signals and kept her distance, driving smoothly and carefully.",
+        "illustrationPrompt": "Rear threequarter loaded pickup slowly on ferry vehicle ramp high sides no child."
+      },
+      {
+        "page": 11,
+        "zhText": "进了车辆甲板，皮卡停进指定位置。林阿姨按要求停车、熄火，工作人员再检查安排。两只箱子安安稳稳，没有滑来滑去。",
+        "enText": "On the vehicle deck, Aunt Lin parked as directed and switched off the engine. Crew checked the arrangement. Both cases stayed secure.",
+        "illustrationPrompt": "Pickup parked marked lane inside ferry vehicle deck low secured cases, crew inspecting at distance."
+      },
+      {
+        "page": 12,
+        "zhText": "这班船要求乘客离开车辆甲板。林阿姨和周叔叔带好随身物品，沿指定楼梯去客舱，不留在车里看风景，也不在汽车之间玩耍。",
+        "enText": "This ferry required passengers to leave the vehicle deck. Aunt Lin and Mr. Zhou took their belongings upstairs, instead of remaining in the car.",
+        "illustrationPrompt": "Two adults leaving parked pickup toward designated enclosed stairwell, no children vehicle deck."
+      },
+      {
+        "page": 13,
+        "zhText": "客舱里，有人看书，有人望海。周叔叔抱着随身的小狐狸手偶，轻轻动动它的耳朵：“今天连我也有船票啦！”旁边的小朋友笑了。",
+        "enText": "In the cabin, people read and watched the sea. Mr. Zhou wiggled his small fox hand puppet. “Even I have a boat trip today!” Children smiled.",
+        "illustrationPrompt": "Passenger cabin orange sweater man small fox hand puppet Aunt Lin seated families smile."
+      },
+      {
+        "page": 14,
+        "zhText": "开船后，林阿姨从客舱窗户看见白白的浪花。红皮卡待在下面的指定位置，这一段不用转车轮，也能往小岛前进。",
+        "enText": "Once underway, Aunt Lin watched the white wake through a cabin window. Below, the parked pickup traveled toward the island without turning its wheels.",
+        "illustrationPrompt": "Aunt Lin cabin window view white wake island distant, no cutaway or floating car."
+      },
+      {
+        "page": 15,
+        "zhText": "风渐渐大了，船员暂时关闭露天区域。周叔叔收好手偶，和大家留在室内。“想看海，也要听船员安排。”",
+        "enText": "The wind rose, and crew temporarily closed the outdoor area. Mr. Zhou put his puppet away. Everyone stayed inside as instructed.",
+        "illustrationPrompt": "Crew closes exterior deck door guests safely indoors, wind visible outside no storm panic."
+      },
+      {
+        "page": 16,
+        "zhText": "靠近小岛时，大家仍然耐心等候。直到工作人员通知，林阿姨才和周叔叔回到车辆甲板，检查周围，按安排准备下船。",
+        "enText": "Near the island, they waited for the crew's announcement before returning to the vehicle deck and preparing to leave.",
+        "illustrationPrompt": "Adults return designated stair to stationary red pickup ferry docked ramp not yet moving."
+      },
+      {
+        "page": 17,
+        "zhText": "皮卡缓缓驶下坡道，来到岸上的指定卸货区。接下来去广场的小路只让行人走，不能因为演出快开始，就把车开进人群。",
+        "enText": "The pickup rolled ashore into the unloading bay. The path to the square was for pedestrians. A coming performance was no reason to drive into a crowd.",
+        "illustrationPrompt": "Red pickup parked island unloading bay handcart beside, bollards separate crowded distant plaza."
+      },
+      {
+        "page": 18,
+        "zhText": "手推车接过两只箱子和保护袋。安安和妈妈刚好来到广场：“原来你的皮卡也坐船啦！”林阿姨笑了：“车客渡船送它来的。”",
+        "enText": "A handcart took the cases and bag. An'an and Mom arrived. “Your pickup rode a boat too!” “A vehicle ferry brought it,” Aunt Lin smiled.",
+        "illustrationPrompt": "Aunt Lin loaded handcart two cases long bag greets same mom girl on island walkway pickup far parked."
+      },
+      {
+        "page": 19,
+        "zhText": "周叔叔找出连接件，大家把舞台稳稳搭好。狐狸一探头，孩子们就笑了。绿色出租车没来岛上，却帮安安赶上了这场好故事。",
+        "enText": "They found the connectors and assembled the stage securely. Fox peeked out, and children laughed. The taxi had stayed ashore, but helped An'an get here.",
+        "illustrationPrompt": "Island puppet performance fox stage orange sweater puppeteer behind, mom girl seated audience."
+      },
+      {
+        "page": 20,
+        "zhText": "回程也按同样的规矩来。傍晚，安安在约好的岸边接车点又见到闪电出租车。她说：“你们本领不一样，接在一起，就能把快乐送得更远！”",
+        "enText": "They followed the same rules going home. That evening, the Lightning Taxi met An'an at the agreed pickup point. “Different jobs together take happiness farther!”",
+        "illustrationPrompt": "Sunset mainland terminal green lightning taxi parked pickup bay mom girl safe pavement distant ferry, warm ending."
+      }
+    ],
+    "parentGuide": {
+      "goal": "理解水陆交通接力，认识候船、登船与乘船规则。",
+      "reminder": "不同船型规定不同，以船方指引为准；不在真实码头模仿游戏。",
+      "questions": [
+        "出租车、皮卡和渡船各完成了什么任务？",
+        "为什么行人和车辆要走不同的通道？"
+      ],
+      "activity": "在家用积木搭码头，用纸盒当渡船，分别画出行人和车辆路线；成人陪同，不在水边游戏。",
+      "ageTips": {
+        "age4to5": "找交通工具的颜色，按顺序讲述登船过程。",
+        "age6to8": "比较客运船和车客渡船，说明等待和分流的原因。"
+      }
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-20",
+    "order": 32,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 32,
+      "personalizationEnabled": false,
+      "tags": [
+        "轮船",
+        "水上出行",
+        "车客渡船",
+        "小岛故事节",
+        "交通接力"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square warm premium 3D clay animated children's book, tactile rounded materials, gentle daylight, cinematic varied compositions.",
+    "characterConsistency": "安安 An'an six-year-old Chinese girl black bob yellow star clip teal hoodie jeans orange backpack. Mom coral cardigan cream trousers. Aunt Lin short black hair sage green jacket beige trousers. Mr Zhou orange sweater. GREEN Lightning Taxi yellow lightning door decal white roof small taxi lamp. RED Volkswagen double cab four door pickup black cargo bed silver tubular sports bar silver wheels. Blue white realistic ferry. Vehicles never have faces. Include only characters and vehicles required in each scene. Match reference people and vehicles.",
+    "negative": "No captions, readable text, watermarks, packaging, dangerous driving, unbelted car passengers, children on vehicle deck, people riding cargo bed, climbing rails, child alone near water, cars among pedestrian queues."
+  }
+}

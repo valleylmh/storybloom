@@ -1,5 +1,7 @@
 import type { StoryPage } from "@/types";
 import type { LibraryBook, LibrarySeries } from "@/types/library";
+import ferryTaxiDraft from "../../../content-drafts/qiche/shan-dian-chu-zu-che-song-wo-men-qu-zuo-chuan.json";
+import ferryPickupDraft from "../../../content-drafts/qiche/da-zhong-pi-ka-zuo-lun-chuan-mu-ou-xi-qu-xiao-dao.json";
 import piKaShuMiaoDraft from "../../../content-drafts/qiche/da-zhong-pi-ka-song-xiao-shu-miao.json";
 import piKaMuOuDraft from "../../../content-drafts/qiche/da-zhong-pi-ka-he-mu-ou-xi-de-da-ban-jia.json";
 import anQuanDaiDraft from "../../../content-drafts/qiche/an-quan-dai-bao-hu-shui.json";
@@ -116,12 +118,14 @@ export const QICHE_BOOKS: LibraryBook[] = [
   yaLuJiDraft,
   tanPuJiDraft,
   gongChengCheDraft,
+  ferryTaxiDraft,
+  ferryPickupDraft,
 ].map((draft) => draftToLibraryBook(draft as QicheDraft));
 
 export const QICHE_SERIES: LibrarySeries = {
   id: "qiche",
   title: "城市汽车小队",
-  subtitle: "跟着安安逛城市、建公园，发现交通与工程的小秘密",
+  subtitle: "跟着交通工具伙伴，探索城市与远方",
   description:
     "安安带孩子走过街区、车站和机场，再到安全参观区看工程车建公园。从公交车、出租车、高铁动车和飞机，到挖掘机、装载机、推土机、自卸车、搅拌车、泵车、起重机、压路机和摊铺机，在有任务、有困难、有合作的故事里发现它们的本领。每本都是完整的中英双语科普绘本，工程车篇每本 16–20 页，配有找一找、动作配音与亲子共读提示。",
   accent: "#2f7180",

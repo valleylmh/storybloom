@@ -3588,5 +3588,59 @@
     ],
     "duration": 170.64,
     "contentHash": "a085f1f4365d25e6d539bf185ab6aa0631061f8832ce7daa258630e14a7c2f35"
+  },
+  "qiche/shan-dian-chu-zu-che-song-wo-men-qu-zuo-chuan": {
+    "url": "https://ojsocxadsulxdhxndivp.supabase.co/storage/v1/object/public/library-audio-public/v1/fd341e7489fe60d2ea0e5447c6d4b590176e62ff59800905373430488da66ac4/83159c155b331208b0de3f62e8065cf9f186a38af6b4c923b6792e0e66c2dbc5.mp3",
+    "pageStarts": [
+      0,
+      12.216,
+      24.912,
+      35.376,
+      45.024,
+      55.08,
+      64.584,
+      76.392,
+      86.616,
+      98.424,
+      109.368,
+      120.144,
+      130.992,
+      141.456,
+      152.064,
+      163.08,
+      174.816,
+      185.184,
+      196.368,
+      207.864
+    ],
+    "duration": 220.08,
+    "contentHash": "fd341e7489fe60d2ea0e5447c6d4b590176e62ff59800905373430488da66ac4"
+  },
+  "qiche/da-zhong-pi-ka-zuo-lun-chuan-mu-ou-xi-qu-xiao-dao": {
+    "url": "https://ojsocxadsulxdhxndivp.supabase.co/storage/v1/object/public/library-audio-public/v1/3349f7ae8973959924ef932f12ba4c0edfda9a0c5c7be90e5c962facf8600717/b0543ebb98ada79feaa58bc7d5f9b915b6d613a0305b63d5392aaecddcbd9bad.mp3",
+    "pageStarts": [
+      0,
+      10.704,
+      22.848,
+      34.512,
+      46.728,
+      56.784,
+      66.672,
+      77.376,
+      87.6,
+      97.656,
+      107.4,
+      118.824,
+      129.84,
+      142.296,
+      152.52,
+      161.928,
+      172.464,
+      183.168,
+      194.184,
+      205.2
+    ],
+    "duration": 217.488,
+    "contentHash": "3349f7ae8973959924ef932f12ba4c0edfda9a0c5c7be90e5c962facf8600717"
   }
 }

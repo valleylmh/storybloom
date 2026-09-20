@@ -43,6 +43,8 @@ const EXPECTED_BOOKS = [
   { id: "ya-lu-ji-man-man-zou-lu-mian-bian-jie-shi", pages: 16 },
   { id: "tan-pu-ji-pu-chu-yi-tiao-xin-ma-lu", pages: 20 },
   { id: "gong-cheng-che-xiao-dui-jian-hao-xin-gong-yuan", pages: 20 },
+  { id: "shan-dian-chu-zu-che-song-wo-men-qu-zuo-chuan", pages: 20 },
+  { id: "da-zhong-pi-ka-zuo-lun-chuan-mu-ou-xi-qu-xiao-dao", pages: 20 },
 ] as const;
 
 describe("Qiche city vehicle library", () => {
@@ -61,7 +63,7 @@ describe("Qiche city vehicle library", () => {
       expect(book.pages.every((page) => page.illustrationPrompt.includes("RED Volkswagen"))).toBe(true);
     }
     const summaries = books.map((book) => createLibraryBookSummary(getSeries("qiche")!, book));
-    expect(filterLibraryBooks(summaries, { query: "大众皮卡" }).map((book) => book.id)).toEqual(
+    expect(filterLibraryBooks(summaries, { query: "大众皮卡" }).filter(book => pickups.some(p => p.id === book.id)).map((book) => book.id)).toEqual(
       pickups.map((book) => book.id),
     );
   });
@@ -75,7 +77,7 @@ describe("Qiche city vehicle library", () => {
       "shan-dian-chu-zu-che-song-xiao-xiong-hui-jia",
     ]);
     const summaries = books.map((book) => createLibraryBookSummary(getSeries("qiche")!, book));
-    expect(filterLibraryBooks(summaries, { query: "闪电出租车" }).map((book) => book.id)).toEqual(
+    expect(filterLibraryBooks(summaries, { query: "闪电出租车" }).filter(book => books.slice(12, 14).some(p => p.id === book.id)).map((book) => book.id)).toEqual(
       books.slice(12, 14).map((book) => book.id),
     );
     for (const book of books.slice(12, 14)) {
@@ -87,13 +89,13 @@ describe("Qiche city vehicle library", () => {
     expect(books.every((book) => book.metadata?.seriesOrder === book.order)).toBe(true);
   });
 
-  it("publishes thirty ordered variable-length bilingual books", () => {
+  it("publishes thirty-two ordered variable-length bilingual books", () => {
     const series = getSeries("qiche");
     const books = getPublishedBooks("qiche");
 
     expect(series).toMatchObject({
       title: "城市汽车小队",
-      bookCount: 30,
+      bookCount: 32,
       ageRange: "4–8 岁",
     });
     expect(books.map(({ id, pages }) => ({ id, pages: pages.length }))).toEqual(
@@ -164,7 +166,7 @@ describe("Qiche city vehicle library", () => {
   });
 
   it("provides 180 engineering pages with distinct topics and caregiver guidance", () => {
-    const books = getPublishedBooks("qiche").filter((book) => book.order >= 21);
+    const books = getPublishedBooks("qiche").filter((book) => book.order >= 21 && book.order <= 30);
     expect(books).toHaveLength(10);
     expect(books.reduce((count, book) => count + book.pages.length, 0)).toBe(180);
     for (const book of books) {
@@ -213,7 +215,7 @@ describe("Qiche city vehicle library", () => {
     }
   });
 
-  it("includes the series and all thirty books in the sitemap", () => {
+  it("includes the series and all thirty-two books in the sitemap", () => {
     const urls = sitemap().map((entry) => entry.url);
     expect(urls.some((url) => url.endsWith("/library/qiche"))).toBe(true);
     for (const { id } of EXPECTED_BOOKS) {

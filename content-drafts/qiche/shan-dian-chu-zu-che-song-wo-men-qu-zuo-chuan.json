@@ -1,0 +1,181 @@
+{
+  "book": {
+    "id": "shan-dian-chu-zu-che-song-wo-men-qu-zuo-chuan",
+    "seriesId": "qiche",
+    "title": "闪电出租车，送我们去坐船！",
+    "subtitle": "小岛故事节的第一次航行",
+    "question": "第一次坐船要经过哪些步骤？",
+    "moral": {
+      "zh": "不同的交通工具各有本领，遵守规则才能一起平安到达。",
+      "en": "Different vehicles work together; following safety rules helps everyone arrive safely."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "今天，小岛要办故事节！安安把小熊放进背包，妈妈收好船票和证件。去小岛没有一路通到底的公路，她们要先坐车，再坐船。",
+        "enText": "Today was the island story festival! An'an packed her bear, and Mom checked their tickets. They would travel by car, then by boat.",
+        "illustrationPrompt": "Home packing bear and tickets, no readable text."
+      },
+      {
+        "page": 2,
+        "zhText": "楼下，绿色闪电出租车已经停稳。车门上的黄色闪电亮亮的。安安从安全的一侧上车，坐进预约好的儿童座椅，妈妈帮她扣好安全带。",
+        "enText": "Their green Lightning Taxi waited downstairs. An'an boarded from the safe side and buckled into the child seat arranged for the trip.",
+        "illustrationPrompt": "Parked GREEN taxi yellow lightning door decal, rear child seat mom buckling girl."
+      },
+      {
+        "page": 3,
+        "zhText": "“去客运码头，不是汽车站哦。”妈妈告诉司机。安安想了想：“汽车送我们到水边，轮船再接着送！”司机笑着点点头。",
+        "enText": "“The passenger terminal, please,” Mom said. “The car takes us to the water, then the boat takes over!” An'an smiled.",
+        "illustrationPrompt": "Taxi rear cabin belted mother girl, driver front facing forward."
+      },
+      {
+        "page": 4,
+        "zhText": "路口红灯亮了，出租车稳稳停下。旁边的装货区里，红色大众皮卡也准备出发，黑色货斗里的道具箱已经固定好。",
+        "enText": "The taxi stopped at a red light. Nearby, the red Volkswagen pickup was ready too, with prop cases secured in its black cargo bed.",
+        "illustrationPrompt": "Stationary green taxi at red light, red pickup in separate loading bay secured cases."
+      },
+      {
+        "page": 5,
+        "zhText": "林阿姨在车旁挥挥手：“木偶戏也要去小岛！”安安隔着关好的车窗挥手回应。原来，今天大家都有同一个目的地。",
+        "enText": "Aunt Lin waved beside the pickup. “Our puppet show is going to the island!” An'an waved through the closed window. They shared a destination.",
+        "illustrationPrompt": "Girl waving through closed taxi window to Aunt Lin safely beside parked pickup."
+      },
+      {
+        "page": 6,
+        "zhText": "车窗外，高楼慢慢变矮，海面露出一条蓝边。安安发现远处的大船：“快看，水上也有交通工具排队！”",
+        "enText": "Buildings grew lower, and a blue strip of sea appeared. “Look! Vehicles queue on the water too!” An'an spotted distant boats.",
+        "illustrationPrompt": "View past belted girl through taxi window toward harbor boats."
+      },
+      {
+        "page": 7,
+        "zhText": "到了码头，出租车在指定落客区停好。妈妈先看清车外情况，再带安安下车。她们和司机约好返程接车地点，没有站在车道里聊天。",
+        "enText": "At the terminal, the taxi stopped in the drop-off bay. Mom checked outside before they got out. They agreed where to meet on their return.",
+        "illustrationPrompt": "Parked taxi terminal dropoff girl mom on protected pavement."
+      },
+      {
+        "page": 8,
+        "zhText": "“谢谢你，闪电出租车！”安安挥挥手。绿色小车留在岸上继续工作，她和妈妈沿着人行指引走进候船大厅。",
+        "enText": "“Thank you, Lightning Taxi!” The green car stayed ashore to keep working. An'an and Mom followed the pedestrian route into the terminal.",
+        "illustrationPrompt": "Wide terminal taxi departing separate lane mom girl walking protected path."
+      },
+      {
+        "page": 9,
+        "zhText": "大厅里有人拖箱子，有人抱宝宝。妈妈核对目的地、船班和登船口。安安紧紧牵着妈妈：“这么多船，不能跟着别人随便走。”",
+        "enText": "Families filled the hall. Mom checked the destination, sailing and gate. “We must find our own boat,” An'an said, holding her hand.",
+        "illustrationPrompt": "Terminal hall adult checks ticket girl holds hand, pictogram signs only."
+      },
+      {
+        "page": 10,
+        "zhText": "安安摸摸背包，忽然着急了：“小熊呢？”妈妈陪她停在一旁找。拉链一开，小熊正躺在水壶旁，像在等着出发。",
+        "enText": "“Where's Bear?” An'an worried. They stepped aside to check. Inside her bag, Bear lay beside the water bottle, ready for the trip.",
+        "illustrationPrompt": "Quiet waiting bench mother girl finding bear inside orange backpack."
+      },
+      {
+        "page": 11,
+        "zhText": "广播通知登船了。她们排队检票，不推也不跑。安安看见蓝白色的船，船边的工作人员正指引大家走专用通道。",
+        "enText": "Boarding began. They queued without pushing. Beside the blue-and-white ferry, staff guided passengers along their own walkway.",
+        "illustrationPrompt": "Passenger boarding queue blue white ferry enclosed walkway crew, no cars near pedestrians."
+      },
+      {
+        "page": 12,
+        "zhText": "登船通道有一点坡度。安安牵着妈妈，慢慢跨过接缝，另一只手扶着栏杆。“一步一步来，轮船不会因为我慢一点就生气。”",
+        "enText": "The gangway sloped gently. Holding Mom's hand and the rail, An'an stepped over a joint. “One careful step at a time.”",
+        "illustrationPrompt": "Close walking gangway handrail mom holding child hand, high safe rails."
+      },
+      {
+        "page": 13,
+        "zhText": "进了客舱，妈妈把背包放稳，不挡过道。安安坐在窗边，看见远处另一条通道上，有汽车正按顺序登上车客渡船。",
+        "enText": "In the cabin, Mom stowed the bag clear of the aisle. Through the window, An'an saw cars boarding a vehicle ferry along a different route.",
+        "illustrationPrompt": "Interior blue white passenger cabin girl seated window distant vehicle ferry ramp."
+      },
+      {
+        "page": 14,
+        "zhText": "船员介绍救生衣的位置和使用方法。安安认真听，记住紧急时要听指挥。她没有把救生衣当玩具，也不随便打开应急设备。",
+        "enText": "A crew member explained the life jackets and emergency instructions. An'an listened carefully. Safety equipment was not a toy.",
+        "illustrationPrompt": "Crew demonstrates orange lifejacket to seated families in bright cabin."
+      },
+      {
+        "page": 15,
+        "zhText": "呜——船笛响了，岸边慢慢向后退。其实，是船离开了码头。安安把小熊抱好：“现在轮到轮船接力啦！”",
+        "enText": "The horn sounded, and the shore seemed to slide backward. Their boat was leaving! “Now it's the ferry's turn,” An'an told Bear.",
+        "illustrationPrompt": "Girl mom seated cabin watching dock recede through large window."
+      },
+      {
+        "page": 16,
+        "zhText": "窗外，一艘小拖船正在帮助大船移动。还有一座浮标随着水面轻轻起伏。妈妈说：“它们各有任务，船长会按航行规则走。”",
+        "enText": "A tug helped a large ship nearby. A buoy bobbed on the water. “They each have a job. Captains follow navigation rules,” Mom explained.",
+        "illustrationPrompt": "Window view tug beside large vessel distant buoy, girl watching from inside."
+      },
+      {
+        "page": 17,
+        "zhText": "遇到一点波浪，安安觉得肚子怪怪的。妈妈陪她坐稳，看向远处，并告诉船员她有些不舒服。休息一会儿，她感觉好多了。",
+        "enText": "Small waves made An'an feel queasy. Mom helped her sit still and look into the distance, then told the crew. After a rest, she felt better.",
+        "illustrationPrompt": "Calm seated girl mom supportive crew nearby inside cabin, horizon visible."
+      },
+      {
+        "page": 18,
+        "zhText": "小岛越来越近，船速慢下来。安安没有急着站起来：“要等船停稳，还要等工作人员说可以下船。”小熊也乖乖坐着。",
+        "enText": "The island drew closer as the ferry slowed. “We wait until it is secured and the crew says to leave,” An'an said. Bear waited too.",
+        "illustrationPrompt": "Cabin seated family island harbor approaching outside."
+      },
+      {
+        "page": 19,
+        "zhText": "上岸后，她们沿人行通道来到广场。咦，林阿姨正推着道具箱过来！远处卸货区里，红皮卡也到了。它怎么跨过水面的呢？",
+        "enText": "Ashore, they followed the walkway to the square. Aunt Lin arrived with the prop cases! The red pickup stood in the unloading bay. How had it crossed the water?",
+        "illustrationPrompt": "Island pedestrian plaza Aunt Lin handcart cases red pickup parked distant mother girl greet."
+      },
+      {
+        "page": 20,
+        "zhText": "木偶狐狸探出小脑袋，故事节开始啦。安安轻轻拍手：“出租车送人到码头，轮船送我们过水面。红皮卡的坐船故事，我也想听！”",
+        "enText": "The fox puppet appeared, and the festival began. “The taxi took us to the dock, and the ferry brought us here. Now I want to hear the pickup's boat story!”",
+        "illustrationPrompt": "Island puppet stage fox puppet seated mother girl audience red pickup far unloading bay."
+      }
+    ],
+    "parentGuide": {
+      "goal": "理解水陆交通接力，认识候船、登船与乘船规则。",
+      "reminder": "不同船型规定不同，以船方指引为准；不在真实码头模仿游戏。",
+      "questions": [
+        "出租车、皮卡和渡船各完成了什么任务？",
+        "为什么行人和车辆要走不同的通道？"
+      ],
+      "activity": "在家用积木搭码头，用纸盒当渡船，分别画出行人和车辆路线；成人陪同，不在水边游戏。",
+      "ageTips": {
+        "age4to5": "找交通工具的颜色，按顺序讲述登船过程。",
+        "age6to8": "比较客运船和车客渡船，说明等待和分流的原因。"
+      }
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-09-20",
+    "order": 31,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 31,
+      "personalizationEnabled": false,
+      "tags": [
+        "轮船",
+        "水上出行",
+        "车客渡船",
+        "小岛故事节",
+        "交通接力"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square warm premium 3D clay animated children's book, tactile rounded materials, gentle daylight, cinematic varied compositions.",
+    "characterConsistency": "安安 An'an six-year-old Chinese girl black bob yellow star clip teal hoodie jeans orange backpack. Mom coral cardigan cream trousers. Aunt Lin short black hair sage green jacket beige trousers. Mr Zhou orange sweater. GREEN Lightning Taxi yellow lightning door decal white roof small taxi lamp. RED Volkswagen double cab four door pickup black cargo bed silver tubular sports bar silver wheels. Blue white realistic ferry. Vehicles never have faces. Include only characters and vehicles required in each scene. Match reference people and vehicles.",
+    "negative": "No captions, readable text, watermarks, packaging, dangerous driving, unbelted car passengers, children on vehicle deck, people riding cargo bed, climbing rails, child alone near water, cars among pedestrian queues."
+  }
+}
