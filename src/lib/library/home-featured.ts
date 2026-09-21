@@ -15,7 +15,7 @@ export const HOME_FEATURED_LIBRARY_BOOKS: HomeFeaturedLibraryBook[] = [
   {
     id: "shou-zhu-dai-tu",
     seriesId: "chengyu",
-    seriesTitle: "成语故事",
+    seriesTitle: "成语与谚语",
     title: "守株待兔",
     subtitle: "等来等去的农夫",
     href: "/library/chengyu/shou-zhu-dai-tu",

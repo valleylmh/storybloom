@@ -1,0 +1,112 @@
+[
+  {
+    "id": "zhong-ren-shi-chai",
+    "title": "众人拾柴火焰高",
+    "pages": 20,
+    "images": 20,
+    "missing": [],
+    "imageBytes": 3369078,
+    "audioBytes": 967341,
+    "audioSeconds": 120.828,
+    "audioVerified": true
+  },
+  {
+    "id": "xin-ji-chi-bu-liao-re-dou-fu",
+    "title": "心急吃不了热豆腐",
+    "pages": 18,
+    "images": 18,
+    "missing": [],
+    "imageBytes": 2677560,
+    "audioBytes": 783597,
+    "audioSeconds": 97.86,
+    "audioVerified": true
+  },
+  {
+    "id": "yi-fen-geng-yun",
+    "title": "一分耕耘，一分收获",
+    "pages": 20,
+    "images": 20,
+    "missing": [],
+    "imageBytes": 3723138,
+    "audioBytes": 939885,
+    "audioSeconds": 117.396,
+    "audioVerified": true
+  },
+  {
+    "id": "yuan-qin-bu-ru-jin-lin",
+    "title": "远亲不如近邻",
+    "pages": 18,
+    "images": 18,
+    "missing": [],
+    "imageBytes": 2923276,
+    "audioBytes": 886509,
+    "audioSeconds": 110.724,
+    "audioVerified": true
+  },
+  {
+    "id": "zeng-ren-mei-gui",
+    "title": "赠人玫瑰，手有余香",
+    "pages": 18,
+    "images": 18,
+    "missing": [],
+    "imageBytes": 2944864,
+    "audioBytes": 825837,
+    "audioSeconds": 103.14,
+    "audioVerified": true
+  },
+  {
+    "id": "chi-yi-qian-zhang-yi-zhi",
+    "title": "吃一堑，长一智",
+    "pages": 20,
+    "images": 20,
+    "missing": [],
+    "imageBytes": 3409812,
+    "audioBytes": 942381,
+    "audioSeconds": 117.708,
+    "audioVerified": true
+  },
+  {
+    "id": "qian-li-zhi-xing",
+    "title": "千里之行，始于足下",
+    "pages": 22,
+    "images": 22,
+    "missing": [],
+    "imageBytes": 3237964,
+    "audioBytes": 1134957,
+    "audioSeconds": 141.78,
+    "audioVerified": true
+  },
+  {
+    "id": "chi-you-suo-duan",
+    "title": "尺有所短，寸有所长",
+    "pages": 18,
+    "images": 18,
+    "missing": [],
+    "imageBytes": 2704608,
+    "audioBytes": 821613,
+    "audioSeconds": 102.612,
+    "audioVerified": true
+  },
+  {
+    "id": "yi-ye-zhang-mu",
+    "title": "一叶障目，不见泰山",
+    "pages": 18,
+    "images": 18,
+    "missing": [],
+    "imageBytes": 3181348,
+    "audioBytes": 897261,
+    "audioSeconds": 112.068,
+    "audioVerified": true
+  },
+  {
+    "id": "ba-xian-guo-hai",
+    "title": "八仙过海，各显神通",
+    "pages": 20,
+    "images": 20,
+    "missing": [],
+    "imageBytes": 3360238,
+    "audioBytes": 1088877,
+    "audioSeconds": 136.02,
+    "audioVerified": true
+  }
+]

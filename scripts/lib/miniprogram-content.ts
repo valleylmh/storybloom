@@ -33,7 +33,7 @@ function guideFor(book: LibraryBook): GuideSection[] {
   const add = (title: string, body?: string) => { if (body?.trim()) guide.push({ title, body }); };
   add("关于这本书", book.subtitle);
   add("故事出处", book.origin);
-  add("成语释义", book.idiomMeaning && `${book.idiomMeaning.zh}\n\n${book.idiomMeaning.en}`);
+  add(book.metadata?.tags?.includes("谚语故事") ? "谚语释义" : "成语释义", book.idiomMeaning && `${book.idiomMeaning.zh}\n\n${book.idiomMeaning.en}`);
   add("故事里的小启发", book.moral && `${book.moral.zh}\n\n${book.moral.en}`);
   if (book.poem) {
     add("原诗", `${book.poem.dynasty} · ${book.poem.author}\n\n${book.poem.originalLines.join("\n")}\n\n${book.poem.englishLines.join("\n")}`);

@@ -66,6 +66,12 @@ const CHENGYU_BOOK_IDS = [
   "da-gong-wu-si",
   "an-tu-suo-ji",
 ];
+const PROVERB_BOOK_IDS = [
+  "zhong-ren-shi-chai", "xin-ji-chi-bu-liao-re-dou-fu", "yi-fen-geng-yun",
+  "yuan-qin-bu-ru-jin-lin", "zeng-ren-mei-gui", "chi-yi-qian-zhang-yi-zhi",
+  "qian-li-zhi-xing", "chi-you-suo-duan", "yi-ye-zhang-mu", "ba-xian-guo-hai",
+];
+const ALL_CHENGYU_BOOK_IDS = [...CHENGYU_BOOK_IDS, ...PROVERB_BOOK_IDS];
 const XIYOUJI_BOOK_IDS = [
   "shi-hou-chu-shi",
   "mu-fa-du-dong-hai",
@@ -177,9 +183,9 @@ describe("library access functions", () => {
     expect(chengyu).toBeDefined();
     expect(chengyu?.bookCount).toBe(getPublishedBookCount("chengyu"));
     expect(getPublishedBooks("chengyu")).toEqual(publishedBooks);
-    expect(getPublishedBookCount("chengyu")).toBe(CHENGYU_BOOK_IDS.length);
+    expect(getPublishedBookCount("chengyu")).toBe(ALL_CHENGYU_BOOK_IDS.length);
     expect(getPublishedBooks("chengyu").map((book) => book.id)).toEqual(
-      CHENGYU_BOOK_IDS,
+      ALL_CHENGYU_BOOK_IDS,
     );
     expect(getPublishedBookCount()).toBe(
       getAllSeries().reduce(
@@ -210,7 +216,7 @@ describe("library access functions", () => {
     const bookUrls = entries
       .map((entry) => entry.url)
       .filter((url) => url.startsWith(bookUrlPrefix));
-    const expectedBookUrls = CHENGYU_BOOK_IDS.map(
+    const expectedBookUrls = ALL_CHENGYU_BOOK_IDS.map(
       (bookId) => `${bookUrlPrefix}${bookId}`,
     );
 
@@ -291,11 +297,11 @@ describe("library access functions", () => {
   });
 
   it("computes adjacent books by series order", () => {
-    for (const [index, bookId] of CHENGYU_BOOK_IDS.entries()) {
+    for (const [index, bookId] of ALL_CHENGYU_BOOK_IDS.entries()) {
       const { previous, next } = getAdjacentBooks("chengyu", bookId);
 
-      expect(previous?.id ?? null).toBe(CHENGYU_BOOK_IDS[index - 1] ?? null);
-      expect(next?.id ?? null).toBe(CHENGYU_BOOK_IDS[index + 1] ?? null);
+      expect(previous?.id ?? null).toBe(ALL_CHENGYU_BOOK_IDS[index - 1] ?? null);
+      expect(next?.id ?? null).toBe(ALL_CHENGYU_BOOK_IDS[index + 1] ?? null);
     }
 
     expect(getAdjacentBooks("chengyu", "unknown")).toEqual({

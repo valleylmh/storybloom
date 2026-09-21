@@ -23,7 +23,9 @@ describe("reused library Chinese audio", () => {
       const pages = book.pages.map((p, i) => i ? p : { ...p, zhText: p.zhText + "修改" });
       expect(getLibraryChineseAudio(series.id, book.id, pages)).toBeUndefined();
     }
-    expect(matched).toBe(210);
+    // 205 existing text-matched assets plus the ten bundled proverb books.
+    // Existing revised Xiyouji texts intentionally reject their old audio hashes.
+    expect(matched).toBe(215);
   });
   it("continues through variable page boundaries with one source and page-relative progress", () => {
     const { audio, callbacks, transport, fire } = setup();

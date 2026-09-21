@@ -10,6 +10,7 @@ import newChengyuDrafts from "../../../content-drafts/chengyu/chengyu-11-20.json
 import newestChengyuDrafts from "../../../content-drafts/chengyu/chengyu-21-30.json";
 import latestChengyuDrafts from "../../../content-drafts/chengyu/chengyu-31-40.json";
 import nextChengyuDrafts from "../../../content-drafts/chengyu/chengyu-41-50.json";
+import proverbDrafts from "../../../content-drafts/chengyu/chengyu-51-60.json";
 
 // 首批 50 本均已完成文字、插图验收并正式发布。
 
@@ -282,6 +283,7 @@ function anchoredDraftToBook(draft: AnchoredBookDraft): LibraryBook {
     ageLabel: draft.ageLabel,
     publishedAt: draft.publishedAt,
     order: draft.order,
+    metadata: draft.metadata,
     pages,
   });
 }
@@ -379,14 +381,15 @@ export const CHENGYU_BOOKS: LibraryBook[] = [
   ...(newestChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
   ...(latestChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
   ...(nextChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
+  ...(proverbDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
 ];
 
 export const CHENGYU_SERIES: LibrarySeries = {
   id: "chengyu",
-  title: "成语故事",
-  subtitle: "经典成语，讲给孩子听",
+  title: "成语与谚语",
+  subtitle: "经典成语与生活谚语，讲给孩子听",
   description:
-    "把经典成语变成 8 页中英双语绘本：温和的改编、贴近孩子的语言，每本讲清一个成语的来历和道理。",
+    "用中英双语绘本读懂经典成语、八字成语和日常谚语。既有温和的典故改编，也有贴近孩子生活的原创故事，在完整的故事里体会语言与生活的智慧。",
   accent: "#b04a2f",
   ageRange: "4-8 岁",
   bookCount: CHENGYU_BOOKS.length,

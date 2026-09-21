@@ -15,7 +15,7 @@ import {
 } from "@/lib/library";
 import {
   formatLibraryLanguages,
-  LIBRARY_CATEGORY_LABELS,
+  getLibraryBookCategoryLabel,
   resolveLibraryBookMetadata,
 } from "@/lib/library/metadata";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
@@ -172,7 +172,7 @@ export default async function LibraryBookPage({
         <p className="library-lead">{book.subtitle}</p>
         <div className="library-book-detail-actions">
           <div className="library-book-facts" aria-label="绘本信息">
-            <span>{LIBRARY_CATEGORY_LABELS[bookMetadata.category]}</span>
+            <span>{getLibraryBookCategoryLabel(bookMetadata)}</span>
             {book.poem ? (
               <span>
                 {book.poem.dynasty} · {book.poem.author}
@@ -192,7 +192,9 @@ export default async function LibraryBookPage({
           className="library-meaning-card"
           aria-label={
             book.idiomMeaning
-              ? "成语释义"
+              ? bookMetadata.tags.includes("谚语故事")
+                ? "谚语释义"
+                : "成语释义"
               : book.classic
                 ? "经典出处"
                 : "作品出处"
@@ -207,7 +209,7 @@ export default async function LibraryBookPage({
             </>
           ) : null}
           {book.origin ? (
-            <p className="library-meaning-origin">典出 {book.origin}</p>
+            <p className="library-meaning-origin">来源：{book.origin}</p>
           ) : null}
         </section>
       ) : null}

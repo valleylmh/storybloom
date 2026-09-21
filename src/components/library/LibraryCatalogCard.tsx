@@ -7,7 +7,7 @@ import type { LibraryBookSummary } from "@/lib/library/catalog";
 import { rememberLibraryReturnPosition } from "@/lib/library/navigation";
 import {
   formatLibraryLanguages,
-  LIBRARY_CATEGORY_LABELS,
+  getLibraryBookCategoryLabel,
 } from "@/lib/library/metadata";
 import type { ReadingProgressRecord } from "@/lib/reading-progress";
 
@@ -70,9 +70,9 @@ export default function LibraryCatalogCard({
           )}
         </div>
         <div className="library-catalog-card-copy">
-          {!minimal ? (
+          {!minimal || metadata.tags.some(tag => tag === "谚语故事" || tag === "八字成语") ? (
             <span className="library-catalog-category">
-              {LIBRARY_CATEGORY_LABELS[metadata.category]}
+              {getLibraryBookCategoryLabel(metadata)}
             </span>
           ) : null}
           <h3>{minimal ? seriesTitle : book.title}</h3>

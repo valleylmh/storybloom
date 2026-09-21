@@ -45,13 +45,22 @@ const SERIES_DEFAULTS: Record<
 };
 
 export const LIBRARY_CATEGORY_LABELS: Record<LibraryCategory, string> = {
-  idiom: "成语故事",
+  idiom: "成语与谚语",
   classic: "经典故事",
   science: "科普启蒙",
   poetry: "古诗启蒙",
   bedtime: "睡前故事",
   "family-growth": "家庭成长",
 };
+
+export function getLibraryBookCategoryLabel(metadata: LibraryBookMetadata) {
+  if (metadata.category === "idiom") {
+    if (metadata.tags.includes("谚语故事")) return "谚语故事";
+    if (metadata.tags.includes("八字成语")) return "八字成语";
+    return "成语故事";
+  }
+  return LIBRARY_CATEGORY_LABELS[metadata.category];
+}
 
 function parseAgeRange(ageLabel: string) {
   const values = ageLabel.match(/\d+/g)?.map(Number).filter(Number.isFinite);
