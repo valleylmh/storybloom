@@ -1,0 +1,30 @@
+# Documentation and local planning assets
+docs/
+StoryBloom_PRD_v1.0.docx
+
+# Tests
+tests/
+vitest.config.ts
+
+# Local scripts and database migrations
+scripts/
+supabase/
+
+# Large artwork archives (local only)
+public/gift-books/**/*.zip
+
+# Local caches and scratch directories
+.storybloom-cache/
+.private/
+output/
+
+# Miniprogram local caches and export output (core sources & manifests are kept for web imports)
+miniprogram/dist/
+miniprogram/preview/
+miniprogram/release/
+miniprogram/audio-cache/
+miniprogram/audio-preview/
+miniprogram/api-audio-preview/
+miniprogram/full-library/
+miniprogram/book-audio-cache/
+miniprogram/web-media-preview/
