@@ -1,0 +1,662 @@
+[
+  {
+    "id": "san-ge-chou-pi-jiang",
+    "title": "三个臭皮匠，顶个诸葛亮",
+    "subtitle": "会转弯的小花车",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "好点子不只来自一个人。愿意倾听、一起试验，能把不同的想法变成共同的办法。",
+      "en": "Listen to one another, test ideas, and build a solution together."
+    },
+    "idiomMeaning": {
+      "zh": "比喻普通人共同商量、集思广益，也能想出高明的办法；“臭皮匠”在这里是旧时的自谦说法。",
+      "en": "Ordinary people can find wise solutions by thinking together."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-22",
+    "order": 61,
+    "visualAnchor": "Handcrafted woodland village in spring. Piglet: pink pig, blue overalls, cream shirt. Duckling: yellow duck, green vest, orange feet. Hedgehog: small brown hedgehog, burgundy scarf. Their LOW wooden flower wagon has FOUR solid wooden wheels, a flat rectangular deck, pink and yellow paper flowers, no roof; front two wheels share a pivoting axle only AFTER the redesign. Cobbled lane has a sharp bend between two low stone walls. Keep these designs identical across the book.",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "村里的花车游行快到了，小猪、小鸭和小刺猬决定一起造辆小花车。",
+        "en": "The village parade was coming. Piglet, Duckling, and Hedgehog decided to build a flower wagon together.",
+        "prompt": "Wide village workshop; all three gather around a simple wagon sketch and loose wooden parts; no completed wagon."
+      },
+      {
+        "zh": "小猪搬来木板，小鸭画好花样，小刺猬把零件摆得整整齐齐。",
+        "en": "Piglet brought the boards, Duckling drew the flowers, and Hedgehog arranged the parts in neat rows.",
+        "prompt": "Workshop overhead view; three friends sort boards, paper flower designs, four solid wheels."
+      },
+      {
+        "zh": "他们请木匠伯伯帮忙，装好车板和轮子，再系上漂亮的纸花。",
+        "en": "With the carpenter’s help, they fitted the deck and wheels, then tied on bright paper flowers.",
+        "prompt": "Adult beaver carpenter assembles the simple wagon; three children attach paper flowers; tools with adult only."
+      },
+      {
+        "zh": "“出发！”小猪轻轻推车，纸花在阳光下晃呀晃。",
+        "en": "“Here we go!” Piglet pushed gently, and the paper flowers bobbed in the sunshine.",
+        "prompt": "Finished low four-wheel wagon rolls straight along wide cobbled lane; three friends happy."
+      },
+      {
+        "zh": "到了石墙边的窄弯，车头过去了，长长的车身却转不过去。",
+        "en": "At a tight bend between stone walls, the front slipped through, but the long deck could not turn.",
+        "prompt": "Wide overhead view of wagon stuck diagonally at sharp stone-wall corner; intact wagon and walls; no collision damage."
+      },
+      {
+        "zh": "小猪又推了一下，车轮还是不动。“先停停！”小刺猬喊道。",
+        "en": "Piglet pushed once more, but the wheels stayed still. “Let’s stop!” called Hedgehog.",
+        "prompt": "Piglet stops behind wagon; Hedgehog raises one paw; Duckling looks at narrow corner."
+      },
+      {
+        "zh": "小鸭说：“换条宽路吧！”可那条路正挖沟，今天不能走。",
+        "en": "“Let’s take the wider road,” said Duckling. But that road was being repaired and was closed for the day.",
+        "prompt": "Three friends observe safely from behind a simple wooden barrier; wide alternate lane under repair, wagon parked away."
+      },
+      {
+        "zh": "小刺猬提议把车做短一些。小猪却舍不得拆掉刚装好的车板。",
+        "en": "Hedgehog suggested a shorter wagon. Piglet did not want to take apart the deck they had just finished.",
+        "prompt": "Workshop; Hedgehog gestures along long deck; Piglet rests paw protectively on it; Duckling listens."
+      },
+      {
+        "zh": "“我的办法最好！”“我的也有用！”三个人越说越急。",
+        "en": "“My idea is best!” “Mine could work too!” Their voices grew louder and louder.",
+        "prompt": "Three friends talking animatedly around parked wagon, mild frustration not aggression."
+      },
+      {
+        "zh": "小鸭垂下翅膀：“我们都在说，可谁也没听清。”",
+        "en": "Duckling lowered her wings. “We’re all talking, but none of us is really listening.”",
+        "prompt": "Close Duckling lowering wings; Piglet and Hedgehog fall quiet in workshop."
+      },
+      {
+        "zh": "他们坐到树下，约定轮流说：想改什么，为什么，又担心什么。",
+        "en": "They sat beneath a tree and took turns explaining their ideas, reasons, and worries.",
+        "prompt": "Three friends sit in circle under tree, each listening; blank sketch sheets on ground."
+      },
+      {
+        "zh": "小猪说：“我希望车结实。”小刺猬说：“我希望它转得过弯。”",
+        "en": "“I want it to be strong,” said Piglet. “I want it to get around the corner,” said Hedgehog.",
+        "prompt": "Piglet gestures to sturdy wood sample; Hedgehog gestures to simple curved path sketch; Duckling attentive."
+      },
+      {
+        "zh": "小鸭在地上画出弯道：“先做一辆小小的，试试看吧。”",
+        "en": "Duckling drew the bend on the ground. “Let’s try a tiny model first.”",
+        "prompt": "Duckling traces L-shaped corner in sandy ground with stick; others gather small blocks."
+      },
+      {
+        "zh": "他们用积木搭石墙，用小纸盒当花车。纸盒果然也卡住了。",
+        "en": "They made walls from blocks and used a small cardboard box as the wagon. It got stuck too.",
+        "prompt": "Overhead tabletop; miniature long cardboard wagon jammed at L-shaped block walls; three friends' paws nearby."
+      },
+      {
+        "zh": "小刺猬换上短一点的纸盒。车身能挪动了，可轮子还不肯转弯。",
+        "en": "Hedgehog tried a shorter box. There was more room now, but the wheels still would not steer.",
+        "prompt": "Small shorter cardboard model between block walls; front wheels still straight, Hedgehog studying."
+      },
+      {
+        "zh": "小鸭拨动前轮：“要是这两个轮子能一起转向呢？”",
+        "en": "Duckling nudged the front wheels. “What if these two wheels could turn together?”",
+        "prompt": "Close miniature wagon; Duckling rotates shared front axle left with wingtip, clear mechanical pivot."
+      },
+      {
+        "zh": "小猪找来小圆片和木棒。他们做出能转向的前轴，再试了一遍。",
+        "en": "Piglet found a small disc and a wooden rod. Together they made a turning front axle and tried again.",
+        "prompt": "Three friends test miniature wagon with clearly pivoted front axle at block corner."
+      },
+      {
+        "zh": "小模型顺利绕过弯道！三个脑袋挤在一起，笑出了声。",
+        "en": "The tiny wagon went around the bend! Three heads leaned close, and three happy laughs rang out.",
+        "prompt": "Overhead miniature wagon has cleared block corner, friends laugh with relief."
+      },
+      {
+        "zh": "木匠伯伯照着模型帮忙改车：车板短一些，前轮也能转向了。",
+        "en": "The carpenter helped them follow the model: a shorter deck and front wheels that could steer.",
+        "prompt": "Adult beaver adjusts full-size wagon at workshop; shorter deck, pivoting front axle; children observe safely."
+      },
+      {
+        "zh": "这回到了窄弯，小猪慢推，小鸭引路，小刺猬留意车轮。",
+        "en": "This time Piglet pushed slowly, Duckling guided the way, and Hedgehog watched the wheels.",
+        "prompt": "Wide overhead narrow stone corner; shorter flower wagon turning successfully, each friend has clear role."
+      },
+      {
+        "zh": "花车稳稳地转了过去，大家一起欢呼：“我们做到啦！”",
+        "en": "The wagon rolled smoothly around the bend. “We did it!” they cheered together.",
+        "prompt": "Wagon fully beyond stone-wall bend, all three cheering; colorful paper flowers intact."
+      },
+      {
+        "zh": "游行中，三位朋友并肩走着。小花车上，装着他们一起想出的好办法。",
+        "en": "In the parade, the three friends walked side by side. Their little wagon carried an idea they had made together.",
+        "prompt": "Celebratory village parade; three friends together beside small low flower wagon with pivoting front wheels."
+      }
+    ]
+  },
+  {
+    "id": "mo-dao-bu-wu-kan-chai-gong",
+    "title": "磨刀不误砍柴工",
+    "subtitle": "小兔的剪纸灯会",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "准备、练习和检查工具都值得花时间。找到合适的方法，再耐心动手，事情会更顺利。",
+      "en": "Good preparation and suitable tools help us work with care."
+    },
+    "idiomMeaning": {
+      "zh": "比喻先做好准备、改进工具或方法，可以让后面的工作更顺利。故事借剪纸说明寓意，不涉及孩子磨刀。",
+      "en": "Time spent preparing well can make the work go more smoothly."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-22",
+    "order": 62,
+    "visualAnchor": "Warm cottage craft room and village courtyard at dusk. Rabbit: small white rabbit with peach inner ears, teal pinafore over cream shirt. Mother Rabbit: taller white rabbit, lavender apron. Mouse friend: tiny gray mouse, yellow sweater. Thick ochre wooden craft table; red, gold and blue craft paper, blunt rounded-tip child scissors, five-point star cardboard template, pencil; lanterns are safe enclosed electric lights, no flames.",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "今晚村里要办灯会，小兔想剪一百颗纸星星，把院子装扮得亮亮的。",
+        "en": "The village lantern evening was coming. Rabbit wanted to cut one hundred paper stars to brighten the courtyard.",
+        "prompt": "Morning craft room; Rabbit imagines paper-star garlands while looking out at undecorated courtyard."
+      },
+      {
+        "zh": "她抱来一大摞彩纸，刚坐稳，就拿起剪刀咔嚓咔嚓剪起来。",
+        "en": "She brought a tall stack of colored paper and began snipping as soon as she sat down.",
+        "prompt": "Rabbit seated safely cutting single paper sheet with rounded-tip scissors at table; uncut stack beside."
+      },
+      {
+        "zh": "第一颗星星少了一个角，第二颗又瘦又歪，第三颗一打开就散了。",
+        "en": "The first star lost a point. The second was thin and crooked. The third fell apart when she unfolded it.",
+        "prompt": "Close tabletop with three visibly flawed paper-star attempts; Rabbit puzzled."
+      },
+      {
+        "zh": "地上的碎纸越来越多，桌上的好星星却只有两颗。",
+        "en": "More and more scraps covered the floor, but only two good stars lay on the table.",
+        "prompt": "Wide room, scattered paper scraps, exactly two completed five-point stars on table, Rabbit concerned."
+      },
+      {
+        "zh": "小老鼠来帮忙，看见小兔皱着眉，便轻声问：“哪里不顺手呀？”",
+        "en": "Mouse came to help. Seeing Rabbit frown, he gently asked, “Which part is giving you trouble?”",
+        "prompt": "Mouse arrives beside seated Rabbit, looks at paper scraps and scissors."
+      },
+      {
+        "zh": "“剪刀总夹纸！”小兔使劲捏了一下，纸边又被扯破了。",
+        "en": "“The scissors keep catching!” Rabbit squeezed harder, and the edge of the paper tore again.",
+        "prompt": "Close rounded-tip scissors catching wrinkled paper; Rabbit hands safely positioned."
+      },
+      {
+        "zh": "妈妈走过来：“先把剪刀放下，我们一起看看。”",
+        "en": "Mother came over. “Put the scissors down first. Let’s take a look together.”",
+        "prompt": "Mother Rabbit calmly joins craft table; Rabbit places closed scissors flat on table."
+      },
+      {
+        "zh": "原来刀口粘着干胶。妈妈清理、检查后，又试剪了一小条纸。",
+        "en": "Dried glue had stuck to the blades. Mother cleaned and checked them, then tested them on a strip of paper.",
+        "prompt": "Mother alone handles scissors and cleaning cloth, children observe; small test strip on table, no sharpening."
+      },
+      {
+        "zh": "小兔望着窗外：“准备这么久，星星会不会来不及呀？”",
+        "en": "Rabbit looked out of the window. “If we spend so long getting ready, will we finish in time?”",
+        "prompt": "Rabbit glances at bright afternoon window, craft supplies neatly waiting."
+      },
+      {
+        "zh": "“先试出一个好办法。”妈妈递来纸板，让小兔画一颗满意的星星。",
+        "en": "“Let’s find a method that works.” Mother offered cardboard for Rabbit to draw a star she liked.",
+        "prompt": "Rabbit draws five-point star outline on cardboard; Mother encourages; Mouse watches."
+      },
+      {
+        "zh": "小兔改了两次，终于画好。妈妈帮她把硬纸板剪成了样板。",
+        "en": "Rabbit tried twice until she liked the shape. Mother helped cut the stiff cardboard into a template.",
+        "prompt": "Mother cuts cardboard template; Rabbit displays pencil drafts, Mouse sorts colored sheets."
+      },
+      {
+        "zh": "小老鼠扶住样板，小兔沿着边描，一颗清楚的星星出现在彩纸上。",
+        "en": "Mouse held the template still while Rabbit traced around it. A clear star appeared on the colored paper.",
+        "prompt": "Overhead Mouse holds five-point template flat, Rabbit traces with pencil, scissors closed aside."
+      },
+      {
+        "zh": "这一次，小兔慢慢剪，转动纸张，一颗完整的星星落在手心里。",
+        "en": "This time Rabbit cut slowly and turned the paper. A whole star settled into her palm.",
+        "prompt": "Rabbit holds one clean gold five-point paper star; rounded scissors safely resting on table."
+      },
+      {
+        "zh": "“成啦！”她没有马上抢着多剪，而是先把纸、样板和小筐摆好。",
+        "en": "“It worked!” Instead of rushing ahead, she arranged the paper, template, and small baskets first.",
+        "prompt": "Rabbit organizes table into colored paper stack, template, finished-star basket and scrap basket."
+      },
+      {
+        "zh": "小老鼠描线，小兔剪纸，妈妈把剪好的星星穿在棉线上。",
+        "en": "Mouse traced, Rabbit cut, and Mother threaded the finished stars onto cotton string.",
+        "prompt": "Three work calmly at table with distinct tasks; completed star garland growing, no extra characters."
+      },
+      {
+        "zh": "剪到手酸时，他们停下来伸伸胳膊，喝口水，再接着做。",
+        "en": "When their hands grew tired, they stretched, drank some water, and then carried on.",
+        "prompt": "All three pause with water cups and stretching; closed scissors on table, stars in basket."
+      },
+      {
+        "zh": "小兔发现，不用一百颗也很好看。她把星星疏疏地排开，留下灯光的位置。",
+        "en": "Rabbit discovered that fewer than one hundred looked lovely too. She spaced the stars apart, leaving room for the lights.",
+        "prompt": "Rabbit and Mouse arrange spaced paper stars along garland; Mother holds enclosed electric lantern nearby, unlit."
+      },
+      {
+        "zh": "太阳快落山时，星星挂好了。微风一吹，金的、红的、蓝的轻轻摇晃。",
+        "en": "By sunset the stars were hanging. Gold, red, and blue shapes swayed gently in the breeze.",
+        "prompt": "Wide courtyard sunset; Mother on ground attaches reachable garland, children admire; safe electric lanterns."
+      },
+      {
+        "zh": "灯亮起来，小兔拉着小老鼠钻进星光下面：“这里还有你画的那颗！”",
+        "en": "The lights came on. Rabbit led Mouse beneath the stars. “There’s the one you traced!”",
+        "prompt": "Dusk courtyard glowing electric lanterns, Rabbit and Mouse point to five-point paper star overhead."
+      },
+      {
+        "zh": "妈妈说：“磨刀不误砍柴工。”小兔笑了：“原来准备好，也是往前走。”",
+        "en": "“Good preparation helps the work along,” said Mother. Rabbit smiled. “Getting ready is a way of moving forward too.”",
+        "prompt": "Warm final wide courtyard, Mother Rabbit and two friends sit together beneath spaced star garland and electric lights."
+      }
+    ]
+  },
+  {
+    "id": "yuan-shui-jiu-bu-liao-jin-huo",
+    "title": "远水救不了近火",
+    "subtitle": "小兔花园里的急事",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "遇到急事，先寻找安全、及时、能解决眼前问题的办法，再为以后做好准备。",
+      "en": "Choose help that can arrive in time, then prepare for the future."
+    },
+    "idiomMeaning": {
+      "zh": "比喻距离太远、来不及到达的帮助，不能解决眼前的急难；这里用花苗缺水来说明。",
+      "en": "Distant help cannot solve an urgent problem if it arrives too late."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-22",
+    "order": 63,
+    "visualAnchor": "Sunny summer cottage garden with rectangular raised bed of newly transplanted small cosmos seedlings. Garden Rabbit: white rabbit with floppy left ear, green dungarees and straw sunhat. Squirrel friend: russet squirrel, blue waistcoat. Goat neighbor: adult cream goat, terracotta apron. Gray watering can, small blue household water jug, pale beige shade cloth on four simple wooden stakes. Distant hills contain spring; no fire in this story. Leaves wilt mildly without dying; flowers only appear in final later scene.",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "小兔把花苗移进了新花坛，盼着夏天开出一片粉红色的小花。",
+        "en": "Rabbit moved young plants into a new garden bed, hoping for a summer full of pink flowers.",
+        "prompt": "Early morning Rabbit plants small green seedlings in rectangular raised bed; no flowers yet."
+      },
+      {
+        "zh": "第二天下午，太阳火辣辣的。花苗低着头，叶子软软地垂下来。",
+        "en": "The next afternoon was very hot. The seedlings bowed their heads, their soft leaves drooping.",
+        "prompt": "Afternoon overhead bed, mildly wilted green seedlings under bright sunshine, Rabbit notices."
+      },
+      {
+        "zh": "小兔摸摸泥土：“干了，得给它们浇水！”",
+        "en": "Rabbit touched the soil. “It’s dry. They need water!”",
+        "prompt": "Close Rabbit checks dry soil gently with paw, drooping seedlings visible."
+      },
+      {
+        "zh": "可花园里的水缸见了底，水龙头也因为修管子暂时停水。",
+        "en": "But the garden water jar was empty, and the tap was off while the village pipes were being repaired.",
+        "prompt": "Rabbit peers into empty clay garden jar beside closed tap; distant adult repair worker outside garden."
+      },
+      {
+        "zh": "“山上的泉水最清！”小兔提起水壶，“我去打一壶回来。”",
+        "en": "“The spring in the hills has the clearest water!” Rabbit lifted the watering can. “I’ll fetch some.”",
+        "prompt": "Rabbit picks up gray empty watering can, looks toward far hills beyond gate."
+      },
+      {
+        "zh": "小松鼠拦在门边：“那里很远呀，走过去再回来，要好久呢。”",
+        "en": "Squirrel paused at the gate. “That’s a long way. It will take ages to go there and back.”",
+        "prompt": "Squirrel beside garden gate gently speaks to Rabbit; distant hills across broad valley."
+      },
+      {
+        "zh": "小兔看看山，又看看垂着头的花苗，脚步慢了下来。",
+        "en": "Rabbit looked at the hills, then at the drooping plants, and slowed to a stop.",
+        "prompt": "Rabbit between gate and garden bed, concerned gaze returns to plants; no journey underway."
+      },
+      {
+        "zh": "“先找附近能用的水吧。”小松鼠说，“还可以想办法遮遮太阳。”",
+        "en": "“Let’s look for water nearby first,” said Squirrel. “And find some shade for them.”",
+        "prompt": "Two friends discuss beside bed, Squirrel gestures toward cottage and strong sunlight."
+      },
+      {
+        "zh": "他们请山羊阿姨帮忙。阿姨先看了看花苗，又摸了摸土。",
+        "en": "They asked Goat for help. She checked the seedlings and gently felt the soil.",
+        "prompt": "Adult Goat kneels inspecting bed with Rabbit and Squirrel listening."
+      },
+      {
+        "zh": "“先搭个遮阳棚，让它们少晒一会儿。”阿姨从屋里取来浅色布。",
+        "en": "“Let’s give them shade first.” Goat brought a pale cloth from her house.",
+        "prompt": "Goat carries folded beige cloth and wooden stakes toward raised bed; friends help carry cloth only."
+      },
+      {
+        "zh": "木杆插稳了，布棚撑起来了。棚顶高高的，四周都能透风。",
+        "en": "The stakes stood firmly, and the cloth went up. It was high enough for air to flow beneath it.",
+        "prompt": "Complete simple shade cloth above bed on four stable wooden stakes; open sides, all three checking."
+      },
+      {
+        "zh": "小兔想起厨房里还有一小壶干净的存水，赶紧和妈妈说了花园的事。",
+        "en": "Rabbit remembered a small jug of clean stored water in the kitchen and told Mother about the garden.",
+        "prompt": "Rabbit talks to taller white mother rabbit in cream apron beside blue jug on cottage kitchen counter."
+      },
+      {
+        "zh": "妈妈留好家里要喝的水，把能分出来的那一点倒进小水壶。",
+        "en": "Mother set aside the water the family needed to drink and poured a little extra into the watering can.",
+        "prompt": "Mother pours blue jug's spare clean water into gray can; separate covered drinking water bottle safely reserved."
+      },
+      {
+        "zh": "山羊阿姨扶着壶嘴，小兔慢慢浇，让水落在根边的泥土上。",
+        "en": "Goat guided the spout as Rabbit watered slowly, letting the water soak into the soil around the roots.",
+        "prompt": "Close Goat guides gray can held by Rabbit; thin stream lands on soil near stems under shade, not leaves."
+      },
+      {
+        "zh": "水不多，他们先照顾最缺水的几株，再把剩下的分给其他花苗。",
+        "en": "There was not much water. They tended the driest plants first, then shared the rest among the others.",
+        "prompt": "Rabbit and Goat carefully water successive small seedlings; dark moist root circles; Squirrel watches."
+      },
+      {
+        "zh": "“还没有抬头呢。”小兔蹲着等。阿姨说：“先让它们缓一缓。”",
+        "en": "“They’re still drooping,” said Rabbit, waiting beside them. “Give them time to recover,” said Goat.",
+        "prompt": "Rabbit sits beside shaded bed, plants still gently drooping despite moist soil, Goat reassuring."
+      },
+      {
+        "zh": "傍晚凉快了，有几片叶子慢慢挺起来。小兔终于松了一口气。",
+        "en": "As the evening cooled, a few leaves began to lift. Rabbit finally let out a relieved breath.",
+        "prompt": "Evening shaded garden, some leaves visibly perk up, Rabbit smiles softly; no flowers yet."
+      },
+      {
+        "zh": "“远水救不了近火。”阿姨说，“今天先用上了来得及的办法。”",
+        "en": "“Distant water cannot put out a nearby fire,” said Goat. “Today we found help that could arrive in time.”",
+        "prompt": "Goat and Rabbit at gate look back at recovering bed, distant hills hazy; absolutely no fire imagery."
+      },
+      {
+        "zh": "水管修好后，小兔请妈妈准备了带盖的储水桶，还画了一张浇水提醒图。",
+        "en": "When the pipes were fixed, Rabbit and Mother set up a covered water barrel and made a watering reminder picture.",
+        "prompt": "Mother secures lid on rain barrel; Rabbit draws simple sun-and-watering-can icon card without lettering; healthy green plants."
+      },
+      {
+        "zh": "过了些日子，小花终于开了。花坛旁的小水壶，已经装好了明早要用的水。",
+        "en": "Some days later, the flowers finally bloomed. Beside the bed, the little can was ready for the next morning.",
+        "prompt": "Final later-day garden with modest pink cosmos blooms; Rabbit and Squirrel admire, gray can ready and covered barrel nearby."
+      }
+    ]
+  },
+  {
+    "id": "lu-yao-zhi-ma-li",
+    "title": "路遥知马力，日久见人心",
+    "subtitle": "一路上的好朋友",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "了解朋友需要时间。热情的话语和安静的行动都可能表达关心，也要学习主动关心别人。",
+      "en": "Friendship becomes clearer through time and shared experiences."
+    },
+    "idiomMeaning": {
+      "zh": "走远路才知道马的耐力，相处久了才能更了解一个人的品性；不能只凭第一印象判断朋友。",
+      "en": "A long journey shows a horse’s strength; time reveals a person’s character."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-22",
+    "order": 64,
+    "visualAnchor": "Gentle woodland hill trail in late spring over several weeks; safe broad path, small puddles, no cliffs. Deer: young tan deer with white spots, blue satchel, no antlers. Fox: small russet fox with cream muzzle and green scarf. Badger: small gray badger with black-and-white facial stripes, ochre vest. Small boxes of colorful books secured by red cotton cord. Destination is a low tree library on a broad stump with three short steps, circular window and leafy canopy; not a high dangerous treehouse.",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "山上的小树屋要变成图书角了，小鹿报名帮忙，每周送一箱书上去。",
+        "en": "The little treehouse on the hill was becoming a library. Deer volunteered to carry up a box of books each week.",
+        "prompt": "Deer at village book table beside small box, distant low hill tree library visible."
+      },
+      {
+        "zh": "小狐狸和小獾也来了。小狐狸笑着说：“一路有我，肯定不闷！”",
+        "en": "Fox and Badger joined him. “With me along, the journey won’t be dull!” said Fox with a grin.",
+        "prompt": "Three friends meet at trailhead with small book boxes; Fox gestures warmly, Badger reserved."
+      },
+      {
+        "zh": "小獾只点点头，蹲下来，把箱子上的绳结重新系紧。",
+        "en": "Badger simply nodded, crouched down, and tightened the knot around a box.",
+        "prompt": "Close Badger ties red cord securely around book box, Deer watches, Fox waits."
+      },
+      {
+        "zh": "小鹿心想：小狐狸真热情，小獾是不是不太愿意和我玩呢？",
+        "en": "Deer thought Fox seemed friendly. He wondered whether quiet Badger wanted to be friends at all.",
+        "prompt": "Deer glances between animated Fox and quiet Badger, gentle uncertainty, boxes ready."
+      },
+      {
+        "zh": "第一次上山，小狐狸讲起蘑菇伞的笑话，小鹿笑得差点忘了脚下的坡。",
+        "en": "On their first climb, Fox told a joke about a mushroom umbrella. Deer laughed and nearly forgot the uphill path.",
+        "prompt": "Three friends walking broad gentle slope holding small boxes; Fox tells story, Deer smiling."
+      },
+      {
+        "zh": "小獾走在后面，不时提醒：“前面有树根，慢一点。”",
+        "en": "Badger followed behind, occasionally saying, “There’s a root ahead. Take it slowly.”",
+        "prompt": "Badger points out small root across safe broad path; Deer and Fox step carefully, boxes secure."
+      },
+      {
+        "zh": "到了树屋，他们把书摆上架。小鹿忙着说笑，没看见小獾把空箱折好了。",
+        "en": "At the treehouse they shelved the books. Busy chatting, Deer did not notice Badger folding the empty boxes.",
+        "prompt": "Low cozy tree library interior; Deer and Fox shelving books chatting, Badger folds empty cardboard boxes."
+      },
+      {
+        "zh": "第二周，箱子装得多了一点。走到半路，小鹿的绳结突然松开了。",
+        "en": "The next week their boxes were a little fuller. Halfway up, the cord around Deer’s box suddenly slipped loose.",
+        "prompt": "Broad trail, Deer holds box with loosening red cord and opening bottom, friends nearby."
+      },
+      {
+        "zh": "几本书滑到草地上。小鹿红着脸：“糟了，都怪我没系好。”",
+        "en": "A few books slid onto the grass. Deer blushed. “Oh no. I didn’t tie it properly.”",
+        "prompt": "Books scattered on dry grass beside safe trail, Deer embarrassed, no books ruined."
+      },
+      {
+        "zh": "小狐狸先蹲下捡书：“别急，书都在，我们一起收。”",
+        "en": "Fox knelt to gather the books. “Don’t worry. They’re all here. Let’s pick them up together.”",
+        "prompt": "Fox and Deer kneel retrieving colorful books from grass, reassuring expression."
+      },
+      {
+        "zh": "小獾拿出备用绳，把箱底托牢，还教小鹿试着打了一个结。",
+        "en": "Badger took out spare cord, supported the box, and helped Deer practice a secure knot.",
+        "prompt": "Badger demonstrates knot on repaired box while Deer tries, Fox stacks retrieved books."
+      },
+      {
+        "zh": "重新出发时，小鹿主动等了等：“小獾，走到我旁边来吧。”",
+        "en": "When they set off again, Deer waited. “Badger, come and walk beside me.”",
+        "prompt": "Three friends now walking abreast on broad trail, repaired small box secure."
+      },
+      {
+        "zh": "第三周下过雨，路边多了几个水洼。小狐狸的话比平时少了。",
+        "en": "Rain had fallen before their third trip, leaving puddles beside the path. Fox was quieter than usual.",
+        "prompt": "Overcast woodland path dotted shallow puddles, Fox quiet behind Deer and Badger, no active storm."
+      },
+      {
+        "zh": "小鹿回过头，发现小狐狸的鞋带松了，一只鞋还进了小石子。",
+        "en": "Deer looked back and saw Fox’s loose shoelace. A tiny stone had slipped into one shoe too.",
+        "prompt": "Fox seated on low log safely checking small boot, visible loose lace and tiny pebble; Deer notices."
+      },
+      {
+        "zh": "“先歇一会儿。”小鹿接过他的箱子，小獾找了一块干燥的地方。",
+        "en": "“Let’s rest.” Deer took Fox’s box, and Badger found a dry place to sit.",
+        "prompt": "All three at dry log beside trail; Deer sets Fox box safely down, Badger points to comfortable seat."
+      },
+      {
+        "zh": "小狐狸倒出石子，重新系好鞋带。三个人坐着分吃带来的小饼。",
+        "en": "Fox shook out the stone and retied his shoe. The three friends sat and shared their little biscuits.",
+        "prompt": "Three friends sit on dry log sharing biscuits, tied boots, secure book boxes on dry ground."
+      },
+      {
+        "zh": "小鹿这才发现，爱说笑的朋友也会累，安静的朋友也有好多话想说。",
+        "en": "Deer began to see that a cheerful friend could get tired, and a quiet friend could have plenty to say.",
+        "prompt": "Intimate three-friend conversation at log, Badger speaking with gentle animation, others listen."
+      },
+      {
+        "zh": "小獾说，他最喜欢讲星星的书。小狐狸立刻说：“下次你讲给我们听！”",
+        "en": "Badger said he loved books about stars. “Tell us about them next time!” said Fox.",
+        "prompt": "Badger opens illustrated star book with pictorial constellations no text, Fox and Deer interested."
+      },
+      {
+        "zh": "一周又一周，树屋的书架渐渐满了。他们也越来越懂得照顾彼此。",
+        "en": "Week after week, the shelves filled up. The friends grew better at looking after one another too.",
+        "prompt": "One later afternoon in low tree library, much fuller bookshelves, three friends arrange books together; single scene not montage."
+      },
+      {
+        "zh": "有时小狐狸带路，有时小獾讲故事，有时小鹿提醒大家停下来喝水。",
+        "en": "Sometimes Fox led, sometimes Badger told stories, and sometimes Deer reminded everyone to stop for water.",
+        "prompt": "Three friends on trail water break; Deer offers water flask, Badger mid-story, Fox listens; boxes resting."
+      },
+      {
+        "zh": "图书角开放那天，三位朋友坐在一起。小鹿说：“幸好这一路有你们。”",
+        "en": "On opening day, the three sat together in the library. “I’m glad you were with me all the way,” said Deer.",
+        "prompt": "Cozy completed tree library, three friends sit together on low cushions surrounded by books, warm sunlight."
+      },
+      {
+        "zh": "回家的路还很长，小鹿却不着急。他知道，好朋友是在日子里慢慢认识的。",
+        "en": "The walk home was still long, but Deer was in no hurry. Good friends, he knew, were discovered over time.",
+        "prompt": "Final wide sunset trail, Deer Fox Badger walking home side by side, empty folded boxes carried, gentle safe hill."
+      }
+    ]
+  },
+  {
+    "id": "yi-cun-guang-yin",
+    "title": "一寸光阴一寸金，寸金难买寸光阴",
+    "subtitle": "小猴的日落约定",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "时间珍贵，尤其是与人相处的时光。给重要的约定留出时间，也能安心享受玩耍。",
+      "en": "Make time for the people and promises that matter."
+    },
+    "idiomMeaning": {
+      "zh": "形容时间十分宝贵，过去的时间无法用金钱买回来，提醒人珍惜光阴。",
+      "en": "Time is as precious as gold, but gold cannot buy back time that has passed."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-22",
+    "order": 65,
+    "visualAnchor": "Warm leafy village near a pond, one day from morning to sunset. Monkey: small golden-brown monkey with cream face, coral-red vest, long curled tail. Turtle: small green turtle with olive segmented shell, blue scarf. Turtle Mother: larger green turtle, plum shawl. Monkey drawing supplies: cream drawing paper, short colored pencils in wooden box, simple low table. Turtle family moving with small wooden handcart carrying tied bundles. Portrait only shows turtle by pond with a green reed, and is created after page 12. No written text or clocks with numerals.",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "清早，小乌龟告诉小猴：“我们今天搬家，太阳落山前就出发。”",
+        "en": "That morning Turtle told Monkey, “We’re moving today. We’ll leave before sunset.”",
+        "prompt": "Morning outside Turtle cottage; Turtle speaks to Monkey, Mother sorts modest bundles by handcart."
+      },
+      {
+        "zh": "小猴有点舍不得：“我给你画张像吧，把咱们的小池塘也画进去！”",
+        "en": "Monkey felt sad to say goodbye. “I’ll draw your portrait, with our little pond in it!”",
+        "prompt": "Monkey and Turtle beside pond smiling tenderly, reeds and lily pads visible."
+      },
+      {
+        "zh": "小乌龟笑了：“那我们下午一起画，我还能帮你挑颜色。”",
+        "en": "Turtle smiled. “Let’s draw together this afternoon. I can help you choose the colors.”",
+        "prompt": "Two friends agree by low outdoor drawing table, closed pencil box and blank paper waiting."
+      },
+      {
+        "zh": "小猴把纸和画笔摆好，抬头看看太阳：“还早着呢，先玩一会儿。”",
+        "en": "Monkey set out paper and pencils, then looked up at the sun. “There’s lots of time. I’ll play a little first.”",
+        "prompt": "Late morning Monkey sets fresh blank cream paper and colored pencils on low table, looks toward sunny garden."
+      },
+      {
+        "zh": "一只蓝蝴蝶飞过篱笆，小猴跟着跑到草地上，看它停在花瓣间。",
+        "en": "A blue butterfly flew over the fence. Monkey followed it to the meadow and watched it settle on a flower.",
+        "prompt": "Monkey watching blue butterfly on meadow flower, curious joyful calm; no drawing supplies here."
+      },
+      {
+        "zh": "草地真好玩。他滚了两圈，又捡了一颗圆圆的小石子。",
+        "en": "The meadow was fun. He rolled twice in the grass and found a little round pebble.",
+        "prompt": "Monkey playfully rolls on soft meadow grass, small smooth pebble nearby, no danger."
+      },
+      {
+        "zh": "吃过午饭，小猴想起画像，刚走到桌边，又听见池塘边的水声。",
+        "en": "After lunch Monkey remembered the portrait. He reached the table, then heard splashing by the pond.",
+        "prompt": "Monkey at low table with still-blank paper, turns toward pond in background."
+      },
+      {
+        "zh": "他坐在浅浅的岸边，用叶子做小船，一放就是好几只。",
+        "en": "He sat safely at the shallow edge and floated leaf boats, one after another.",
+        "prompt": "Monkey seated on dry grassy bank, floats small leaf boats in very shallow pond margin, no swimming."
+      },
+      {
+        "zh": "小乌龟来找他：“现在画吗？”小猴说：“等这只船漂到那边就来。”",
+        "en": "“Shall we draw now?” asked Turtle. “As soon as this boat reaches the other side,” said Monkey.",
+        "prompt": "Turtle arrives beside Monkey on bank, gestures toward distant table; Monkey watches one leaf boat."
+      },
+      {
+        "zh": "可小船绕着水草打转。等小猴抬起头，小乌龟已经回去帮妈妈了。",
+        "en": "But the boat circled around the reeds. When Monkey looked up, Turtle had gone home to help Mother.",
+        "prompt": "Monkey looks up alone from circling leaf boat; Turtle visible farther away walking toward Mother and handcart."
+      },
+      {
+        "zh": "树影越来越长。村口传来收拾行李的声音，小猴一下子站起来。",
+        "en": "The tree shadows grew longer. Monkey heard bundles being packed near the gate and suddenly stood up.",
+        "prompt": "Late-afternoon Monkey rises on dry bank, long shadows, distant family packs wooden handcart."
+      },
+      {
+        "zh": "桌上的画纸还是空白的。小猴握住画笔，心里又急又难过。",
+        "en": "The paper on the table was still blank. Monkey held a pencil, feeling hurried and sad.",
+        "prompt": "Close Monkey at table facing completely blank cream paper, pencil poised, remorse not panic."
+      },
+      {
+        "zh": "他跑到小乌龟家：“对不起，我让你等了。我们现在还能一起画吗？”",
+        "en": "He ran to Turtle’s house. “I’m sorry I kept you waiting. Can we still draw together?”",
+        "prompt": "Monkey speaks apologetically to Turtle beside packed cart, holds blank paper and pencil box."
+      },
+      {
+        "zh": "小乌龟摇摇头：“我得帮妈妈检查东西了，不过，我还是想收到你的画。”",
+        "en": "Turtle shook his head. “I have to help Mother check our things. But I’d still love your drawing.”",
+        "prompt": "Turtle kindly but firmly replies, Mother checks bundles; Monkey listens holding drawing supplies."
+      },
+      {
+        "zh": "小猴回到桌前，没有再想着画满整张纸。他先画朋友弯弯的笑眼。",
+        "en": "Monkey returned to the table. He stopped trying to fill the whole page and began with his friend’s smiling eyes.",
+        "prompt": "Close paper on table with only simple turtle face sketch beginning, Monkey draws attentively."
+      },
+      {
+        "zh": "接着是圆圆的龟壳、小池塘，还有他们常坐的那片绿草地。",
+        "en": "Next came the round shell, the pond, and the grassy spot where they often sat together.",
+        "prompt": "Overhead drawing progresses into simple childlike Turtle portrait by blue pond and green bank, colored pencils around."
+      },
+      {
+        "zh": "画好了。小猴仔细夹好画纸，赶在出发前送到小乌龟手里。",
+        "en": "The picture was finished. Monkey protected it between two boards and brought it to Turtle before they left.",
+        "prompt": "Monkey presents simple finished Turtle-and-pond portrait safely to Turtle beside ready handcart, sunset approaching."
+      },
+      {
+        "zh": "“这里少了一根芦苇。”小乌龟笑着指出来。小猴递过绿笔，让他添上。",
+        "en": "“It needs one reed here,” Turtle said with a smile. Monkey offered a green pencil so he could add it.",
+        "prompt": "Close Turtle adds single green reed to finished pond portrait resting on flat board, Monkey holds green-pencil box."
+      },
+      {
+        "zh": "小猴陪他们走到村口。这一次，他认真听朋友说新家的模样。",
+        "en": "Monkey walked with the family to the village gate. This time he listened carefully as Turtle described their new home.",
+        "prompt": "Monkey and Turtle walk beside Mother pulling small handcart toward village gate, Turtle holds protected drawing, warm sunset."
+      },
+      {
+        "zh": "夕阳照着画像，小猴轻轻挥手。他记住了：重要的约定，要留出真正相处的时间。",
+        "en": "Sunset warmed the picture as Monkey waved goodbye. He would remember to leave real time for the promises and people he cared about.",
+        "prompt": "Final Monkey waves from village gate as Turtle family departs slowly on safe path; Turtle waves holding portrait, tender hopeful sunset."
+      }
+    ]
+  }
+]

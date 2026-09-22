@@ -1,4 +1,4 @@
-/** Prepare the approved 51–60 batch locally; does not upload or publish. */
+/** Prepare an approved proverb batch locally; does not upload or publish. */
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
@@ -12,8 +12,10 @@ createRequire(require.resolve("next/package.json"))("@next/env").loadEnvConfig(p
 process.env.BAILIAN_TOKEN_KEY ||= process.env.DASHSCOPE_TOKEN_KEY;
 process.env.TOKEN_PLAN_TTS_TIMEOUT_MS = "8000";
 const model = "qwen-audio-3.0-tts-plus", voice = "longanlingxin";
+const batch = process.argv.find(arg => arg.startsWith("--batch="))?.slice(8) ?? "51-60";
+if (!/^[0-9]+-[0-9]+$/.test(batch)) throw new Error("Invalid batch");
 const root = path.resolve(".storybloom-cache/proverb-audio");
-const manifestPath = path.resolve("content-drafts/chengyu/chengyu-51-60-audio.json");
+const manifestPath = path.resolve(`content-drafts/chengyu/chengyu-${batch}-audio.json`);
 const probe = process.argv.includes("--probe");
 type Draft = { id: string; pages: { zh: string }[] };
 const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
@@ -43,7 +45,7 @@ async function pagePcm(text: string): Promise<Buffer> {
 
 async function main() {
   await mkdir(root, { recursive: true });
-  const books: Draft[] = JSON.parse(await readFile(path.resolve("content-drafts/chengyu/chengyu-51-60.json"), "utf8"));
+  const books: Draft[] = JSON.parse(await readFile(path.resolve(`content-drafts/chengyu/chengyu-${batch}.json`), "utf8"));
   let manifest: Record<string, BookAudio> = {};
   try { manifest = JSON.parse(await readFile(manifestPath, "utf8")); } catch { /* New batch. */ }
   if (probe) {

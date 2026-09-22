@@ -71,7 +71,8 @@ const PROVERB_BOOK_IDS = [
   "yuan-qin-bu-ru-jin-lin", "zeng-ren-mei-gui", "chi-yi-qian-zhang-yi-zhi",
   "qian-li-zhi-xing", "chi-you-suo-duan", "yi-ye-zhang-mu", "ba-xian-guo-hai",
 ];
-const ALL_CHENGYU_BOOK_IDS = [...CHENGYU_BOOK_IDS, ...PROVERB_BOOK_IDS];
+const MORE_PROVERB_BOOK_IDS = ["san-ge-chou-pi-jiang", "mo-dao-bu-wu-kan-chai-gong", "yuan-shui-jiu-bu-liao-jin-huo", "lu-yao-zhi-ma-li", "yi-cun-guang-yin"];
+const ALL_CHENGYU_BOOK_IDS = [...CHENGYU_BOOK_IDS, ...PROVERB_BOOK_IDS, ...MORE_PROVERB_BOOK_IDS];
 const XIYOUJI_BOOK_IDS = [
   "shi-hou-chu-shi",
   "mu-fa-du-dong-hai",

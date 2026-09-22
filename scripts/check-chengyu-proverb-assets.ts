@@ -5,10 +5,13 @@ import { createHash } from "node:crypto";
 import path from "node:path";
 import sharp from "sharp";
 
+const batch = process.argv.find(arg => arg.startsWith("--batch="))?.slice(8) ?? "51-60";
+if (!/^[0-9]+-[0-9]+$/.test(batch)) throw new Error("Invalid batch");
+
 async function main() {
   const root = process.cwd();
-  const drafts = JSON.parse(await readFile(path.join(root, "content-drafts/chengyu/chengyu-51-60.json"), "utf8"));
-  const audio = JSON.parse(await readFile(path.join(root, "content-drafts/chengyu/chengyu-51-60-audio.json"), "utf8"));
+  const drafts = JSON.parse(await readFile(path.join(root, `content-drafts/chengyu/chengyu-${batch}.json`), "utf8"));
+  const audio = JSON.parse(await readFile(path.join(root, `content-drafts/chengyu/chengyu-${batch}-audio.json`), "utf8"));
   const output = path.join(root, "content-drafts/chengyu/proverb-contact-sheets");
   await mkdir(output, { recursive: true });
   const report = [];
@@ -47,7 +50,7 @@ async function main() {
     }
     report.push({ id: book.id, title: book.title, pages: book.pages.length, images: book.pages.length - missing.length, missing, imageBytes, audioBytes: (await stat(mp3)).size, audioSeconds: asset.duration, audioVerified: true });
   }
-  await writeFile(path.join(root, "content-drafts/chengyu/chengyu-51-60-assets-report.json"), JSON.stringify(report, null, 2) + "\n");
+  await writeFile(path.join(root, `content-drafts/chengyu/chengyu-${batch}-assets-report.json`), JSON.stringify(report, null, 2) + "\n");
   console.log(JSON.stringify({ books: report.length, images: report.reduce((n, b) => n + b.images, 0), pages: report.reduce((n, b) => n + b.pages, 0), missing: report.filter(b => b.missing.length).map(b => ({ id: b.id, pages: b.missing })), audioSeconds: report.reduce((n, b) => n + b.audioSeconds, 0) }));
   if (report.some(b => b.missing.length)) process.exitCode = 1;
 }

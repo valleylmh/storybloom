@@ -1,0 +1,57 @@
+[
+  {
+    "id": "san-ge-chou-pi-jiang",
+    "title": "三个臭皮匠，顶个诸葛亮",
+    "pages": 22,
+    "images": 22,
+    "missing": [],
+    "imageBytes": 5253886,
+    "audioBytes": 1012077,
+    "audioSeconds": 126.42,
+    "audioVerified": true
+  },
+  {
+    "id": "mo-dao-bu-wu-kan-chai-gong",
+    "title": "磨刀不误砍柴工",
+    "pages": 20,
+    "images": 20,
+    "missing": [],
+    "imageBytes": 3596722,
+    "audioBytes": 977325,
+    "audioSeconds": 122.076,
+    "audioVerified": true
+  },
+  {
+    "id": "yuan-shui-jiu-bu-liao-jin-huo",
+    "title": "远水救不了近火",
+    "pages": 20,
+    "images": 20,
+    "missing": [],
+    "imageBytes": 4809634,
+    "audioBytes": 931821,
+    "audioSeconds": 116.388,
+    "audioVerified": true
+  },
+  {
+    "id": "lu-yao-zhi-ma-li",
+    "title": "路遥知马力，日久见人心",
+    "pages": 22,
+    "images": 22,
+    "missing": [],
+    "imageBytes": 6033348,
+    "audioBytes": 1088493,
+    "audioSeconds": 135.972,
+    "audioVerified": true
+  },
+  {
+    "id": "yi-cun-guang-yin",
+    "title": "一寸光阴一寸金，寸金难买寸光阴",
+    "pages": 20,
+    "images": 20,
+    "missing": [],
+    "imageBytes": 4641312,
+    "audioBytes": 1004013,
+    "audioSeconds": 125.412,
+    "audioVerified": true
+  }
+]

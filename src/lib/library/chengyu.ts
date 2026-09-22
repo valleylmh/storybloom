@@ -10,6 +10,7 @@ import newChengyuDrafts from "../../../content-drafts/chengyu/chengyu-11-20.json
 import newestChengyuDrafts from "../../../content-drafts/chengyu/chengyu-21-30.json";
 import latestChengyuDrafts from "../../../content-drafts/chengyu/chengyu-31-40.json";
 import nextChengyuDrafts from "../../../content-drafts/chengyu/chengyu-41-50.json";
+import moreProverbDrafts from "../../../content-drafts/chengyu/chengyu-61-65.json";
 import proverbDrafts from "../../../content-drafts/chengyu/chengyu-51-60.json";
 
 // 首批 50 本均已完成文字、插图验收并正式发布。
@@ -382,6 +383,7 @@ export const CHENGYU_BOOKS: LibraryBook[] = [
   ...(latestChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
   ...(nextChengyuDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
   ...(proverbDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
+  ...(moreProverbDrafts as AnchoredBookDraft[]).map(anchoredDraftToBook),
 ];
 
 export const CHENGYU_SERIES: LibrarySeries = {

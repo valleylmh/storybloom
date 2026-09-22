@@ -1,13 +1,14 @@
 import { existsSync, statSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import nextDrafts from "../content-drafts/chengyu/chengyu-61-65.json";
 import drafts from "../content-drafts/chengyu/chengyu-51-60.json";
 import { getLibraryChineseAudio } from "../src/lib/library-book-audio";
 import { getLibraryBookCategoryLabel, resolveLibraryBookMetadata } from "../src/lib/library/metadata";
 import type { LibraryBook } from "../src/types/library";
 import { getBook, getSeries } from "../src/lib/library";
 
-const books: LibraryBook[] = drafts.map(draft => ({
+const asBooks = (items: typeof drafts): LibraryBook[] => items.map(draft => ({
   ...draft,
   seriesId: "chengyu",
   pages: draft.pages.map((page, index) => ({
@@ -20,11 +21,14 @@ const books: LibraryBook[] = drafts.map(draft => ({
   })),
 }));
 
+const books = asBooks(drafts);
+const nextBooks = asBooks(nextDrafts);
+
 describe("approved proverb and eight-character idiom books", () => {
   it("adds the new books to the existing series with their own complete artwork", () => {
     expect(getSeries("chengyu")?.title).toBe("成语与谚语");
-    expect(getSeries("chengyu")?.bookCount).toBe(60);
-    for (const draft of books) {
+    expect(getSeries("chengyu")?.bookCount).toBe(65);
+    for (const draft of [...books, ...nextBooks]) {
       const book = getBook("chengyu", draft.id);
       expect(book?.pages).toHaveLength(draft.pages.length);
       expect(book?.metadata?.tags).toEqual(draft.metadata?.tags);
@@ -59,8 +63,27 @@ describe("approved proverb and eight-character idiom books", () => {
     });
   });
 
-  it("resolves all ten bundled MP3s with page-aligned timing and rejects stale narration", () => {
-    for (const book of books) {
+  it("preserves the five confirmed follow-up stories with 104 bilingual pages", () => {
+    expect(nextBooks.map(book => book.title)).toEqual([
+      "三个臭皮匠，顶个诸葛亮", "磨刀不误砍柴工", "远水救不了近火",
+      "路遥知马力，日久见人心", "一寸光阴一寸金，寸金难买寸光阴",
+    ]);
+    expect(nextBooks.map(book => book.pages.length)).toEqual([22, 20, 20, 22, 20]);
+    expect(nextBooks.reduce((total, book) => total + book.pages.length, 0)).toBe(104);
+    for (const [index, book] of nextBooks.entries()) {
+      expect(book.order).toBe(61 + index);
+      expect(book.origin).toContain("原创童话");
+      expect(getLibraryBookCategoryLabel(resolveLibraryBookMetadata(book))).toBe("谚语故事");
+      for (const page of book.pages) {
+        expect(page.zhText.trim().length).toBeGreaterThan(10);
+        expect(page.enText.trim().length).toBeGreaterThan(20);
+        expect(page.illustrationPrompt.trim().length).toBeGreaterThan(30);
+      }
+    }
+  });
+
+  it("resolves all fifteen bundled MP3s with page-aligned timing and rejects stale narration", () => {
+    for (const book of [...books, ...nextBooks]) {
       const audio = getLibraryChineseAudio(book.seriesId, book.id, book.pages);
       expect(audio, book.id).toBeDefined();
       if (!audio) continue;
