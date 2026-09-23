@@ -265,7 +265,15 @@ export default function LibraryCatalogExperience({
                   if (!target) return;
                   event.preventDefault();
                   window.history.pushState(window.history.state, "", `#library-series-${item.id}`);
-                  target.scrollIntoView({ behavior: "instant", block: "start" });
+                  const root = document.documentElement;
+                  const previousScrollBehavior = root.style.scrollBehavior;
+                  root.style.scrollBehavior = "auto";
+                  const tabBar = document.querySelector<HTMLElement>(".library-series-tabs");
+                  const offset = (tabBar?.getBoundingClientRect().height ?? 56) + 20;
+                  window.scrollTo(0, window.scrollY + target.getBoundingClientRect().top - offset);
+                  window.requestAnimationFrame(() => {
+                    root.style.scrollBehavior = previousScrollBehavior;
+                  });
                   setActiveSeriesId(item.id);
                 }}
               >
