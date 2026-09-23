@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import manifest from "../../miniprogram/chinese-audio-manifest.json";
 import nextLocalManifest from "../../content-drafts/chengyu/chengyu-61-65-audio.json";
 import localManifest from "../../content-drafts/chengyu/chengyu-51-60-audio.json";
+import qicheLocalManifest from "../../content-drafts/qiche/local-audio.json";
 import { validBookAudio } from "../../miniprogram/src/core/book-audio";
 import type { BookAudio } from "../../miniprogram/src/core/types";
 import type { StoryPage } from "@/types";
@@ -11,7 +12,7 @@ import type { StoryPage } from "@/types";
 export function getLibraryChineseAudio(seriesId: string, bookId: string, pages: StoryPage[]): BookAudio | undefined {
   const hash = createHash("sha256").update(JSON.stringify({ version: 1, texts: pages.map(page => page.zhText.trim()) })).digest("hex");
   const key = `${seriesId}/${bookId}`;
-  const local = (nextLocalManifest as Record<string, BookAudio>)[key] ?? (localManifest as Record<string, BookAudio>)[key];
+  const local = (qicheLocalManifest as Record<string, BookAudio>)[key] ?? (nextLocalManifest as Record<string, BookAudio>)[key] ?? (localManifest as Record<string, BookAudio>)[key];
   // Bundled files are served by the current site, including localhost previews.
   // Validate their exact content-addressed path before reusing the timing validator.
   if (local?.contentHash === hash &&
