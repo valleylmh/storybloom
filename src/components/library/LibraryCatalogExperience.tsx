@@ -260,7 +260,14 @@ export default function LibraryCatalogExperience({
                 href={`#library-series-${item.id}`}
                 data-library-series-tab={item.id}
                 aria-current={activeSeriesId === item.id ? "true" : undefined}
-                onClick={() => setActiveSeriesId(item.id)}
+                onClick={(event) => {
+                  const target = document.getElementById(`library-series-${item.id}`);
+                  if (!target) return;
+                  event.preventDefault();
+                  window.history.pushState(window.history.state, "", `#library-series-${item.id}`);
+                  target.scrollIntoView({ behavior: "instant", block: "start" });
+                  setActiveSeriesId(item.id);
+                }}
               >
                 {item.title}
               </a>
