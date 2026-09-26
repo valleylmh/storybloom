@@ -50,6 +50,7 @@ import {
 beforeEach(() => {
   process.env.GEMINI_API_KEY = "test-key";
   delete process.env.BAILIAN_TOKEN_KEY;
+  delete process.env.DASHSCOPE_TOKEN_KEY;
   delete process.env.NEXT_PUBLIC_SUPABASE_URL;
   delete process.env.SUPABASE_SERVICE_ROLE_KEY;
   getCachedStoryMock.mockResolvedValue(null);
@@ -69,34 +70,22 @@ beforeEach(() => {
 afterEach(() => {
   delete process.env.GEMINI_API_KEY;
   delete process.env.BAILIAN_TOKEN_KEY;
+  delete process.env.DASHSCOPE_TOKEN_KEY;
   vi.restoreAllMocks();
 });
 
 describe("narration provider fallback", () => {
-  it("falls directly back to Edge when Token Plan TTS fails", async () => {
-    process.env.BAILIAN_TOKEN_KEY = "test-token";
-    const warn = vi.spyOn(console, "warn").mockImplementation(() => undefined);
+  it("reports Bailian failure without substituting Edge or Gemini", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
     synthesizeTokenPlanTtsAudioMock.mockRejectedValue(
       new TokenPlanTtsError("Token Plan unavailable", 502),
     );
     const request = await resolveNarrationRequest({ text: "你好", mode: "zh" });
-    const result = await prepareNarrationAudio(request);
-
     expect(request.model).toBe("qwen-audio-3.0-tts-plus");
+    await expect(prepareNarrationAudio(request)).rejects.toThrow("Token Plan unavailable");
     expect(synthesizeTokenPlanTtsAudioMock).toHaveBeenCalledOnce();
     expect(synthesizeGeminiTtsAudioMock).not.toHaveBeenCalled();
-    expect(synthesizeEdgeTtsAudioMock).toHaveBeenCalledWith(
-      expect.objectContaining({ maxAttempts: 1 }),
-    );
-    expect(result.model).toBe("edge-tts");
-    expect(result.format).toBe("mp3");
-    expect(warn).toHaveBeenCalledWith(
-      "[audio] TTS provider failed; using fallback",
-      expect.objectContaining({
-        model: "qwen-audio-3.0-tts-plus",
-        fallbackModel: "edge-tts",
-      }),
-    );
+    expect(synthesizeEdgeTtsAudioMock).not.toHaveBeenCalled();
   });
 
   it("does not replace a failed family voice with a default provider", async () => {

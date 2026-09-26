@@ -23,6 +23,7 @@ function resetTtsEnvironment() {
   delete process.env.GEMINI_TTS_VOICE_ZH;
   delete process.env.GEMINI_TTS_VOICE_EN;
   delete process.env.BAILIAN_TOKEN_KEY;
+  delete process.env.DASHSCOPE_TOKEN_KEY;
   delete process.env.TOKEN_PLAN_TTS_ENABLED;
   delete process.env.TOKEN_PLAN_TTS_VOICE_ZH;
   delete process.env.TOKEN_PLAN_TTS_VOICE_EN;
@@ -88,6 +89,14 @@ describe("narration request resolution", () => {
     expect(request.model).toBe("qwen-audio-3.0-tts-plus");
     expect(request.voice).toBe("longanlingxin");
     expect(request.format).toBe("mp3");
+  });
+
+  it("selects Bailian with the existing DASHSCOPE credential", async () => {
+    process.env.DASHSCOPE_TOKEN_KEY = "test-token";
+    process.env.GEMINI_API_KEY = "test-key";
+    const request = await resolveNarrationRequest({ text: "测试", mode: "zh" });
+    expect(request.model).toBe("qwen-audio-3.0-tts-plus");
+    expect(request.voice).toBe("longanlingxin");
   });
 
   it("uses a trusted family voice without exposing its provider id", async () => {

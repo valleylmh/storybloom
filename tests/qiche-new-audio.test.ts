@@ -16,14 +16,15 @@ it.each(ids)("serves every prepared Chinese page for %s", id => {
   expect(getLibraryChineseAudio("qiche", id, book.pages)).toEqual(audio);
 });
 
-it("serves the traffic-light book from a valid bundled MP3 with unchanged page timing", async () => {
+it("prefers the public traffic-light MP3 and retains the matching bundled backup", async () => {
   const id = "hong-lu-deng-wei-shen-me-hui-bian-se";
   const { book } = JSON.parse(readFileSync(`content-drafts/qiche/${id}.json`, "utf8"));
   const manifest = JSON.parse(readFileSync("miniprogram/chinese-audio-manifest.json", "utf8"));
   const original = manifest[`qiche/${id}`];
   const audio = getLibraryChineseAudio("qiche", id, book.pages)!;
-  expect(audio).toEqual({ ...original, url: `/library/qiche/${id}/zh-${original.contentHash.slice(0, 16)}.mp3` });
-  const bytes = readFileSync(`public${audio.url}`);
+  expect(audio).toEqual(original);
+  expect(audio.url).toContain("/object/public/library-audio-public/");
+  const bytes = readFileSync(`public/library/qiche/${id}/zh-${original.contentHash.slice(0, 16)}.mp3`);
   const { format } = await parseBuffer(bytes);
   expect(format.codec).toBe("MPEG 2 Layer 3");
   expect(Math.abs(format.duration! - audio.duration)).toBeLessThan(0.1);

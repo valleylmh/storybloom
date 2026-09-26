@@ -255,11 +255,11 @@ export default function LibraryNarrationToolbar({
         const { key, textHash } = await createNarrationCacheKey(
           pageStoryId,
           mode,
-          "configured",
+          "qwen-audio-3.0-tts-plus",
           text,
         );
         const cached = await getCachedNarrationAudio(key);
-        if (cached && cachedAudioIsUsable(cached)) {
+        if (cached?.model === "qwen-audio-3.0-tts-plus" && cachedAudioIsUsable(cached)) {
           return {
             audioUrl: cached.audioUrl,
             cacheKey: key,
@@ -285,7 +285,7 @@ export default function LibraryNarrationToolbar({
           const response = await fetch("/api/audio", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text, mode, sampleRate: 24000 }),
+            body: JSON.stringify({ text, mode, model: "qwen-audio-3.0-tts-plus", sampleRate: 24000 }),
             signal: requestController.signal,
           });
           const result = (await response.json().catch(() => null)) as {
@@ -300,6 +300,9 @@ export default function LibraryNarrationToolbar({
           } | null;
           if (!response.ok || !result?.audioUrl) {
             throw new Error(result?.error || "云端朗读暂时不可用。");
+          }
+          if (result.model !== "qwen-audio-3.0-tts-plus") {
+            throw new Error("百炼朗读返回异常，请重试。");
           }
           const normalized = {
             audioUrl: result.audioUrl,
@@ -597,13 +600,7 @@ export default function LibraryNarrationToolbar({
           audio.removeAttribute("src");
           cloudAudioCacheRef.current.delete(`${storyKey}:${pageIndex}:${mode}`);
           void deleteCachedNarrationAudio(result.cacheKey);
-          void playBrowserFallback(
-            runId,
-            pageIndex,
-            mode,
-            segments,
-            "云端音频加载失败",
-          ).catch(failPlayback);
+          failPlayback(new Error("百炼音频加载失败，请重试。"));
         };
         audio.load();
 
@@ -633,17 +630,7 @@ export default function LibraryNarrationToolbar({
           error instanceof AudioRequestTimeoutError
             ? "云端朗读准备超时"
             : "云端朗读暂不可用";
-        try {
-          await playBrowserFallback(
-            runId,
-            pageIndex,
-            mode,
-            segments,
-            reason,
-          );
-        } catch (fallbackError) {
-          if (runRef.current === runId) failPlayback(fallbackError);
-        }
+        failPlayback(new Error(`${reason}，请重试。`));
       }
     },
     [

@@ -17,15 +17,15 @@ describe("reused library Chinese audio", () => {
     let matched = 0;
     for (const series of getAllSeries()) for (const book of getSeriesBooks(series.id)) {
       const audio = getLibraryChineseAudio(series.id, book.id, book.pages);
+      expect(audio, `${series.id}/${book.id}`).toBeDefined();
       if (!audio) continue;
+      expect(audio.url).toContain("/storage/v1/object/public/library-audio-public/");
       matched++;
       expect(audio.pageStarts).toHaveLength(book.pages.length);
       const pages = book.pages.map((p, i) => i ? p : { ...p, zhText: p.zhText + "修改" });
       expect(getLibraryChineseAudio(series.id, book.id, pages)).toBeUndefined();
     }
-    // 205 existing text-matched assets plus the fifteen bundled proverb books.
-    // Existing revised Xiyouji texts intentionally reject their old audio hashes.
-    expect(matched).toBe(220);
+    expect(matched).toBe(getAllSeries().reduce((total, series) => total + getSeriesBooks(series.id).length, 0));
   });
   it("continues through variable page boundaries with one source and page-relative progress", () => {
     const { audio, callbacks, transport, fire } = setup();

@@ -10,6 +10,7 @@ const originalFetch = global.fetch;
 afterEach(() => {
   global.fetch = originalFetch;
   delete process.env.BAILIAN_TOKEN_KEY;
+  delete process.env.DASHSCOPE_TOKEN_KEY;
   delete process.env.TOKEN_PLAN_TTS_ENDPOINT;
   delete process.env.TOKEN_PLAN_TTS_TIMEOUT_MS;
 });
@@ -29,8 +30,8 @@ describe("Token Plan TTS server", () => {
     expect(isTrustedTokenPlanAudioUrl("https://example.com/audio/test.mp3")).toBe(false);
   });
 
-  it("generates and downloads a valid MP3", async () => {
-    process.env.BAILIAN_TOKEN_KEY = "test-token";
+  it.each(["BAILIAN_TOKEN_KEY", "DASHSCOPE_TOKEN_KEY"])("generates a valid MP3 using %s", async (key) => {
+    process.env[key] = "test-token";
     const mp3 = Buffer.from([0x49, 0x44, 0x33, 0x04, 0x00, 0x00]);
     global.fetch = vi
       .fn()

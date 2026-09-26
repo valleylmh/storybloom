@@ -55,14 +55,18 @@ function readPositiveInteger(name: string, fallback: number, maximum: number) {
 }
 
 export function hasTokenPlanTtsConfig() {
-  return Boolean(process.env.BAILIAN_TOKEN_KEY?.trim());
+  return Boolean(configuredApiKey());
+}
+
+function configuredApiKey() {
+  return process.env.BAILIAN_TOKEN_KEY?.trim() || process.env.DASHSCOPE_TOKEN_KEY?.trim();
 }
 
 function getTokenPlanApiKey() {
-  const apiKey = process.env.BAILIAN_TOKEN_KEY?.trim();
+  const apiKey = configuredApiKey();
   if (!apiKey) {
     throw new TokenPlanTtsError(
-      "Token Plan TTS 未配置 BAILIAN_TOKEN_KEY。",
+      "百炼 TTS 未配置 BAILIAN_TOKEN_KEY 或 DASHSCOPE_TOKEN_KEY。",
       503,
     );
   }
@@ -120,7 +124,7 @@ export async function synthesizeTokenPlanTtsAudio(input: TokenPlanTtsInput) {
   const controller = new AbortController();
   const timeout = setTimeout(
     () => controller.abort(),
-    readPositiveInteger("TOKEN_PLAN_TTS_TIMEOUT_MS", DEFAULT_TIMEOUT_MS, 8_000),
+    readPositiveInteger("TOKEN_PLAN_TTS_TIMEOUT_MS", DEFAULT_TIMEOUT_MS, 120_000),
   );
 
   try {

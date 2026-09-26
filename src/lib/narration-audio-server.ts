@@ -597,12 +597,6 @@ function createGeminiFallbackRequest(
   };
 }
 
-function createTokenPlanFallbackRequest(
-  request: ResolvedNarrationRequest,
-): ResolvedNarrationRequest {
-  return createEdgeFallbackRequest(request);
-}
-
 async function prepareNarrationAudioUncached(
   request: ResolvedNarrationRequest,
   options: PrepareNarrationOptions,
@@ -636,12 +630,11 @@ async function prepareNarrationAudioUncached(
   try {
     generated = await synthesizeNarration(request, options.onProgress);
   } catch (error) {
-    if (request.model === EDGE_TTS_MODEL || request.familyCharacterId) throw error;
+    // A Bailian request must never silently change provider or voice.
+    if (request.model === TOKEN_PLAN_TTS_MODEL || request.model === EDGE_TTS_MODEL || request.familyCharacterId) throw error;
 
     const nextRequest =
-      request.model === TOKEN_PLAN_TTS_MODEL
-        ? createTokenPlanFallbackRequest(request)
-        : request.model === GEMINI_TTS_MODEL_PRIMARY
+      request.model === GEMINI_TTS_MODEL_PRIMARY
           ? createGeminiFallbackRequest(request)
           : createEdgeFallbackRequest(request);
 

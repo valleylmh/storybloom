@@ -12,12 +12,13 @@ import type { StoryPage } from "@/types";
 export function getLibraryChineseAudio(seriesId: string, bookId: string, pages: StoryPage[]): BookAudio | undefined {
   const hash = createHash("sha256").update(JSON.stringify({ version: 1, texts: pages.map(page => page.zhText.trim()) })).digest("hex");
   const key = `${seriesId}/${bookId}`;
+  const audio = (manifest as Record<string, BookAudio>)[key];
+  if (audio?.contentHash === hash && validBookAudio(audio, pages.length)) return audio;
   const local = (qicheLocalManifest as Record<string, BookAudio>)[key] ?? (nextLocalManifest as Record<string, BookAudio>)[key] ?? (localManifest as Record<string, BookAudio>)[key];
   // Bundled files are served by the current site, including localhost previews.
   // Validate their exact content-addressed path before reusing the timing validator.
   if (local?.contentHash === hash &&
       local.url === `/library/${seriesId}/${bookId}/zh-${hash.slice(0, 16)}.mp3` &&
       validBookAudio({ ...local, url: `https://local.invalid${local.url}` }, pages.length)) return local;
-  const audio = (manifest as Record<string, BookAudio>)[`${seriesId}/${bookId}`];
-  return audio?.contentHash === hash && validBookAudio(audio, pages.length) ? audio : undefined;
+  return undefined;
 }
