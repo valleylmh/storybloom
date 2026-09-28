@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "zhong-qiu-wei-shen-me-shang-yue-chi-yue-bing",
+    "seriesId": "haoqi",
+    "title": "中秋节为什么赏月、吃月饼",
+    "subtitle": "秋夜里圆圆的月亮与甜甜的团圆",
+    "question": "中秋节为什么赏月、吃月饼？",
+    "moral": {
+      "zh": "中秋节在秋收时节，人们借圆圆的明月与月饼寄托丰收的喜悦和对亲人团圆的盼望，无论相隔多远都能共享同一片月光。",
+      "en": "During the autumn harvest, people look at the round moon and share round mooncakes to celebrate abundance and cherish family reunion, united under the same moonlight."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "推开阳台的门，空气里飘着清甜的桂花香。小树看见厨房桌上摆着好几个精致的铁盒子，里面装着圆滚滚的各色月饼，圆盘里还放着金黄的柚子。",
+        "enText": "Sweet osmanthus scent drifted in from the balcony. Xiao Shu saw pretty metal tins on the kitchen table, filled with round mooncakes, alongside golden pomelos on a plate.",
+        "illustrationPrompt": "Xiao Shu stands by a wooden dining table looking at embossed metal tins filled with round pastry mooncakes and whole golden pomelos on a ceramic plate. An open balcony window shows flowering golden osmanthus tree branches outside in soft afternoon sunlight. no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "奶奶指着农历日历：“今天八月十五。农历七、八、九月算秋季，八月在中间，十五又在月中，所以人们把这个节日叫中秋。”",
+        "enText": "Grandma pointed to the calendar. “Today is the fifteenth of month eight. Traditional autumn includes months seven, eight, and nine. Month eight is in the middle, with day fifteen near its middle: Mid-Autumn!”",
+        "illustrationPrompt": "Grandma points toward an open scroll painting on the table displaying three progressive autumn landscapes with turning maple foliage, highlighting the middle panel bathed in luminous moonlight. Xiao Shu watches attentively beside her in a warm indoor room. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "小树好奇地问：“为什么偏偏要在这一天庆祝呢？”爷爷拿出一本画册，上面画着很久很久以前的古人，正忙着收割金黄的稻谷和沉甸甸的水果。",
+        "enText": "Xiao Shu asked curiously, 'Why do we celebrate on this exact day?' Grandpa opened an illustrated book showing ancient farmers happily harvesting golden grain and ripe fruits.",
+        "illustrationPrompt": "Grandpa opens a large illustrated picture book showing farmers harvesting golden rice stalks with sickles and gathering baskets of ripe persimmons in a sunny terrace field. Xiao Shu leans in to examine the colorful harvest scenes. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "爷爷说：“秋天常让人想到丰收。古人有祭月的礼俗，后来赏月、庆丰收、家人团聚的习惯逐渐汇在中秋。不是所有庄稼都在这一天收好哦。”",
+        "enText": "“Autumn often brings harvests to mind,” Grandpa said. “Moon offerings, moon watching, harvest celebrations, and family gatherings gradually came together at this festival. Crops are not all harvested on this exact day.”",
+        "illustrationPrompt": "A bountiful harvest display spread across a wooden courtyard porch, including tied bundles of ripe golden rice, bunches of dark purple grapes, plump pomelos, and baskets of sweet potatoes under gentle autumn daylight. no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "“那为什么月饼要先做成圆圆的呢？”小树拿出一块月饼，在掌心转了转。爸爸笑着解释：“在大家心里，没有缺口的圆形代表着‘圆满’与‘完整’。”",
+        "enText": "'Why are mooncakes made in round shapes?' Xiao Shu rolled a small pastry in his palm. Dad explained gently, 'To us, a complete circle stands for wholeness, harmony, and togetherness.'",
+        "illustrationPrompt": "Close-up of Xiao Shu holding a golden-brown round mooncake embossed with floral relief in his palm. Dad sits beside him, smiling warmly, holding a small round clay saucer on the dining table. no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "圆月和圆月饼，让人想到团圆与圆满。大家分着吃，也向没能回来的亲人送去问候。坐在一起很好，相隔两地也一样可以彼此关心。",
+        "enText": "Round moons and mooncakes suggest togetherness. Families share treats and send wishes to those far away. Being together is lovely, and caring can reach across distance too.",
+        "illustrationPrompt": "A side-by-side view through a dark nighttime window: outside, a luminous full moon hangs in the clear sky; inside on the sill, a matching circular mooncake rests on a smooth porcelain plate. no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "吃月饼还有特别的讲究。奶奶拿出一把小木刀，把一个大月饼切成好几瓣。“月饼要分着吃才甜，每一块都代表着一份关心和分享。”小树先递给了爷爷一块。",
+        "enText": "There is a sweet tradition to eating mooncakes. Grandma used a little wooden knife to slice a large mooncake into neat pieces, saying, 'Sharing makes it sweeter!' Xiao Shu gladly handed the first piece to Grandpa.",
+        "illustrationPrompt": "Grandma cuts a large circular mooncake into neat triangular wedges with a small wooden knife on a bamboo board. Xiao Shu smiles and offers a cut piece on a small ceramic saucer to Grandpa, who reaches out happily. no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "爷爷咬了一口月饼，讲起古老的传说：“古人看着月亮上的阴影，编织了嫦娥奔月和玉兔捣药的美丽故事，寄托对月亮神奇天地的无尽想象。”",
+        "enText": "Grandpa took a bite and shared an ancient folktale: 'Looking at the shadows on the moon, ancient storytellers imagined Chang'e flying to the lunar palace with a gentle jade rabbit making medicine.'",
+        "illustrationPrompt": "Grandpa and Xiao Shu read a picture-book together at a table. The open page contains ONLY a gentle illustration of Chang’e in flowing robes and a white rabbit beside an imaginary moon palace, clearly a picture within a book. No additional people, no writing, no calligraphy, no letters, no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "小树扶着小天文望远镜看过去：“那月亮上真的有小白兔吗？”爸爸摇摇头：“神话是美好的故事，月球其实是一个布满岩石和环形山的天体，并没有小兔子哦。”",
+        "enText": "Xiao Shu peered through a small backyard telescope: 'Is there really a bunny up there?' Dad shook his head gently: 'That is a lovely legend! The moon is made of rocks and craters, with no real rabbits.'",
+        "illustrationPrompt": "Xiao Shu peers into the eyepiece of an optical telescope on a balcony tripod. A circular inset shows the telescope view: realistic grey rocky lunar surface covered in detailed impact craters and dark volcanic basalt maria. Dad stands nearby guiding him. no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "“十五的月亮一定最圆吗？”爷爷说：“农历每月从新月开始，但到满月的时间并非每次都一样。满月可能在十五，也可能在十六等前后几天。”",
+        "enText": "“Is the Moon always fullest on the fifteenth?” “Months begin at new moon,” Grandpa said, “but the time to full moon varies. It may fall on the fifteenth, sixteenth, or another nearby day.”",
+        "illustrationPrompt": "A clean educational clay model shows Earth in the center with a spherical Moon orbiting on an elliptical wire track. Directional light illuminates exactly half of each sphere, illustrating orbital positions without any people. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "“中秋月一定全年最大最亮吗？”爸爸摇头：“不一定。月球离地球时近时远，天空状况也会影响亮度。满月碰巧接近地球时，人们常叫它超级月亮。”",
+        "enText": "“Is it the year’s biggest, brightest moon?” Dad shook his head. “No. Its distance changes, and sky conditions matter. A full moon near Earth is often called a supermoon.”",
+        "illustrationPrompt": "Educational side-by-side clay cutaway model of Earth and the Moon at closest approach versus furthest point along an elliptical wire orbit, showing the slight change in apparent visual diameter. No humans present. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "爷爷说：“有些地方秋夜清爽、天空清朗，适合赏月。但各地天气不同，有时中秋也会阴天或下雨。美好的节日，不保证总有晴朗的天空。”",
+        "enText": "“Some places have clear autumn nights that are good for moon watching,” Grandpa said. “But weather differs. A special festival cannot guarantee a cloudless sky.”",
+        "illustrationPrompt": "A split panoramic view of autumn skies: one side shows clear, crisp dark blue night air revealing sharp stars and bright moon, while the other side shows moist low-hanging grey rain clouds diffusing the lunar glow. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "忽然，天边飘来一朵调皮的云彩，把月亮遮住了一半。小树有点担心：“要是晚上下雨，看不见月亮，中秋节就不能过了吗？”",
+        "enText": "Suddenly, a wandering cloud drifted across, covering half the moon. Xiao Shu grew a little worried: 'What if it rains tonight and hides the moon? Does Mid-Autumn get cancelled?'",
+        "illustrationPrompt": "Xiao Shu stands on the balcony with furrowed brows, looking up at the night sky where drifting translucent clouds partially obscure the glowing white moon. Soft city lights twinkle below. no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "奶奶微笑着摸摸小树的头：“只要心里想着挂念的人，不管能不能看到月亮，节日的温暖都在。而且不同地方的人，庆祝中秋的方式也很不一样呢！”",
+        "enText": "Grandma gently patted Xiao Shu's shoulder: 'Even if clouds hide the moon, the holiday's warmth remains in our hearts. Besides, different hometowns celebrate in many wonderful ways!'",
+        "illustrationPrompt": "Grandma gently places her hand on Xiao Shu's shoulder by the balcony railing, comforting him with a warm smile. A small ceramic pot of steaming tea rests on a nearby wooden stool beneath the dimming evening sky. no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "小树在平板电脑里看到，有的南方城市会舞动闪闪发光的火龙；有的地方会把柚子皮雕成小灯笼；还有的地方吃咸香的鲜肉月饼，或者甜甜的豆沙月饼。",
+        "enText": "Xiao Shu saw on a tablet screen that some southern towns dance with sparkling fire dragons, some carve pomelo rinds into glowing lanterns, and people enjoy both sweet red bean and savory pork mooncakes.",
+        "illustrationPrompt": "Close-up tablet display showing Mid-Autumn cultural images: traditional dragon dance on street, a hollow POMELO PEEL LANTERN with electric light and round cutout windows, and two flat round mooncakes with pastry crust. No dumplings, no steaming buns, no text or interface labels, warm clay aesthetic, no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "这时，爸爸的手机响了，屏幕上出现了远在另一个城市的姑姑和表妹。表妹也在阳台上，手里拿着一小块月饼，开心地向小树挥手打招呼。",
+        "enText": "Just then, Dad's phone chimed. It was Xiao Shu's aunt and little cousin calling from another distant city. His cousin was also standing on a balcony, waving a mooncake with a big smile.",
+        "illustrationPrompt": "Dad holds a smartphone showing a video call screen with a bright balcony scene of an aunt and smiling young cousin waving a pastry mooncake against a distant city skyline at night. Xiao Shu looks at the screen delighted. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "爸爸举起手机，对着天上的月亮。表妹兴奋地喊：“小树哥哥，快看！我们头顶上照着的是同一个圆月亮呢！”虽然相隔很远，大家的心却紧紧挨在一起。",
+        "enText": "Dad tilted the phone toward the sky. His cousin cheered, 'Look, Xiao Shu! We are looking at the exact same moon!' Though miles apart, their hearts felt warm and close.",
+        "illustrationPrompt": "Dad angles the smartphone upward toward the silvery moon hanging high in the sky. The phone screen simultaneously shows the exact same full moon viewed from another balcony cityscape miles away. Xiao Shu beams with wonder. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "夜深了，风吹散了云雾。爷爷在小茶几上摆好热茶，一家人整整齐齐地坐在阳台的藤椅上。一轮明净温润的圆月高高挂起，洒下一地银白色的光亮。",
+        "enText": "Night deepened, and breezes brushed the clouds away. Grandpa poured warm tea onto a small rattan table. The family sat closely together as a clean silver moon rose high in the tranquil sky.",
+        "illustrationPrompt": "On an open veranda, Grandpa pours steaming tea from a clay teapot into tiny cups on a low rattan table. Xiao Shu, Dad, and Grandma sit close together enjoying the cool breeze under a completely clear sky and brilliant full moon. no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "小树咬下一口甜甜的豆沙月饼，心里亮堂堂的。他找来一张彩色画纸，用蜡笔画下圆圆的月亮、美味的月饼，还有紧紧挨在一起的一家人。",
+        "enText": "Taking a sweet bite of red bean mooncake, Xiao Shu felt cozy and cheerful. He drew a bright round moon, tasty mooncakes, and his smiling family gathered closely on a sheet of colorful paper.",
+        "illustrationPrompt": "Xiao Shu takes a bite of a dark red-bean-filled pastry while sitting at an indoor craft desk. On a sheet of drawing paper, his crayon drawing shows his four family members smiling beneath a large yellow circle and tiny pastry sketches. no text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "小树终于懂了：中秋节赏月、吃月饼，是对大自然的感谢，也是大家借着圆圆的月光，把爱和思念送给身边的亲人和远方的朋友。",
+        "enText": "Now Xiao Shu understood: watching the moon and sharing mooncakes celebrates nature's gifts, while the round moonlight carries love and longing across any distance to family and dear friends.",
+        "illustrationPrompt": "A wide nighttime view of urban balconies and countryside rooftops bathed in the same peaceful, silvery lunar light from a round high moon, with small family gatherings enjoying tea outside. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 43,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

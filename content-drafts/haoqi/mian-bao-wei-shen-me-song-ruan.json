@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "mian-bao-wei-shen-me-song-ruan",
+    "seriesId": "haoqi",
+    "title": "面包为什么会变得松松软软",
+    "subtitle": "藏在面团里的小气球魔法",
+    "question": "面包为什么会变得松松软软？",
+    "moral": {
+      "zh": "酵母吃掉糖分吐出二氧化碳气泡，被有弹性的面筋网牢牢兜住，烘烤受热定型后就留下了松软的小孔洞。",
+      "en": "Yeast turns sugar into carbon dioxide bubbles that get trapped in a stretchy gluten net, baking into a soft and airy sponge."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "早餐桌上，小树轻轻捏了捏刚切开的厚吐司。面包含在嘴里软绵绵的，像咬了一朵香喷喷的云朵。可面粉明明是干干细细的粉末，它是怎么变松软的呢？",
+        "enText": "At the breakfast table, Xiao Shu gently squeezed a slice of thick toast. It was as fluffy as a cloud, yet flour was just dry powder. How did bread become so soft?",
+        "illustrationPrompt": "Xiao Shu at a sunny breakfast table, gently squeezing a thick slice of golden toast between fingers to reveal the soft, porous, spongy crumb inside, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸系上围裙，在木桌上摆好高筋面粉、温水、少许白糖，还有一小罐褐色的小颗粒。爸爸笑着说：“今天我们一起来做面包，揭开松软的秘密。”",
+        "enText": "Dad put on an apron and laid out flour, warm water, a little sugar, and a small jar of tiny brown granules. 'Let's bake bread together and find the secret!' Dad smiled.",
+        "illustrationPrompt": "Dad in an apron lays out baking supplies on the kitchen counter: a bowl of white flour, a glass jar of dry brown yeast granules, a measuring cup of warm water, and sugar, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "小树凑近看那些小颗粒。爸爸解释说，这叫酵母，它们是一种单细胞真菌，是微小的生命，而不是细菌。它们在干燥的罐子里正呼呼大睡呢。",
+        "enText": "Xiao Shu leaned in close. Dad explained that these granules were yeast—a friendly microscopic fungus, not bacteria. They were quietly sleeping in the dry jar.",
+        "illustrationPrompt": "Macro closeup of tiny dry brown yeast pellets spilled on a wooden spoon, alongside a clean clay model showing an oval single-cell yeast organism, no humans, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "小树把一勺酵母倒进温水里，加入一小勺白糖。爸爸叮嘱：“水温要像洗澡水一样温和。如果水太烫，就会把娇嫩的酵母烫坏，它们就没法工作啦。”",
+        "enText": "Xiao Shu stirred yeast and a pinch of sugar into warm water. 'The water should be cozy like a warm bath,' Dad said. 'Hot boiling water would hurt the living yeast.'",
+        "illustrationPrompt": "Xiao Shu carefully stirs tiny yeast granules and sugar into a clear glass bowl of warm water using a spoon, as gentle warmth activates the mixture on the counter, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "过了一会儿，水面泛起细小的泡沫。酵母利用糖获取能量，产生了二氧化碳。看不见的气体聚成小泡泡，被小树发现了。",
+        "enText": "After a while, tiny bubbles appeared. The yeast used sugar for energy and produced carbon dioxide. The invisible gas gathered into bubbles Xiao Shu could see.",
+        "illustrationPrompt": "Close-up of the clear glass bowl: a thick layer of frothy foam and tiny gas bubbles rapidly rising and gathering on the surface of the beige liquid yeast mixture, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "爸爸把酵母水倒进面粉盆里。小树卷起袖子用力搅拌，面粉和水抱成了一团。起初的面团又黏又粗糙，轻轻一扯就断成了好几截，摸起来硬邦邦的。",
+        "enText": "Dad poured the bubbly yeast mixture into the bowl of flour. Xiao Shu rolled up his sleeves to knead. At first, the dough was sticky, lumpy, and tore apart easily.",
+        "illustrationPrompt": "Xiao Shu STANDS on the floor at a low child-height kitchen table, hands kneading sticky dough inside a mixing bowl. Dad stands beside him pouring a little flour. Both wear aprons, clothing stays away from food. Warm clay animation, nobody sits or kneels on the table, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "“别着急，我们要帮面粉织一张大网！”爸爸和小树一起推、拉、揉、按。面粉里的蛋白质在反复揉搓下互相勾连，慢慢织成了一张充满弹性的“面筋网络”。",
+        "enText": "'Keep kneading! We are weaving a stretchy net,' Dad said. As they pushed and folded the dough, proteins in the flour locked together, forming an elastic gluten network.",
+        "illustrationPrompt": "Clean clay cutaway model of dough interior, showing long elastic gluten protein strands weaving together into a dense interlocking net, no humans, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "十几分钟后，面团变得像剥了壳的煮鸡蛋一样光滑。爸爸揪下一小块面团慢慢拉开，面团竟拉出了一层薄薄的、透光的膜，怎么扯都不容易破。",
+        "enText": "Soon, the dough turned silky smooth. Dad gently stretched a small piece between his fingers, pulling it into a thin, translucent membrane without tearing.",
+        "illustrationPrompt": "Close-up of adult hands stretching a small piece of silky dough between fingers, demonstrating the translucent, paper-thin gluten windowpane without tearing, no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "小树闻到淡淡的面香，忍不住想尝一口生面团。爸爸赶紧轻轻拦住他：“生面团还没烤熟，吃了小肚子会不舒服哦。现在，是面团的休息时间。”",
+        "enText": "Smelling the fresh dough, Xiao Shu leaned forward for a taste. Dad gently held his hand back. 'Raw dough isn't safe to eat yet. It needs to rest and grow first.'",
+        "illustrationPrompt": "Dad gently holds up an OPEN EMPTY PALM to stop Xiao Shu reaching for raw dough lying in its bowl on the table. Child mouth CLOSED, no dough near mouth, nobody offers food. Warm clay kitchen scene, no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "爸爸把光滑的面团放进大碗，盖上一块微湿的棉布，放在温暖的阳光边。发酵需要耐心等待，温暖的环境能让酵母舒服地伸展手脚，努力干活。",
+        "enText": "Dad placed the smooth dough in a bowl, covered it with a damp cloth, and set it in a cozy warm spot. Yeast needed quiet time and comfortable warmth to do its work.",
+        "illustrationPrompt": "A smooth round ball of dough rests inside a clear glass bowl, covered with a damp cloth, sitting in a warm, draft-free kitchen corner, no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "盖布下方，正发生着神奇的反应！无数小酵母在面团里大口吃糖，吐出一串串二氧化碳。富有弹性的面筋网就像气球皮一样，把每一个小气泡紧紧兜住。",
+        "enText": "Under the cloth, millions of yeast cells were busy eating sugar and releasing gas. The stretchy gluten nets acted like little balloons, holding every single bubble tight.",
+        "illustrationPrompt": "Clean clay cutaway cross-section of resting dough, showing microscopic oval yeast cells beside growing gas bubbles enclosed by stretchy gluten sheets, no humans, no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "一个小时后，小树轻轻掀开棉布——哇！面团像吹了气一样，变成了原来的两倍大！小树用手指在中间戳了个小洞，面团软软弹弹的，留下了一个圆圆的肚脐眼。",
+        "enText": "An hour later, Xiao Shu lifted the cloth—wow! The dough had puffed up to twice its size! He gently poked it with a floured finger, leaving a soft, bouncy dimple.",
+        "illustrationPrompt": "Xiao Shu lifts the damp cloth to reveal dough puffed to double its original volume, pressing a floured fingertip to leave a soft indented dimple in the top, no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "爸爸把面团整理好，放进模具再等一会儿。小树发现，同样一团面现在占了更大地方，因为里面多了许多气泡，并不是重量突然消失了。",
+        "enText": "Dad shaped the dough, placed it in a tin, and let it rise again. The same dough now took up more space because of its gas pockets, not because its weight had vanished.",
+        "illustrationPrompt": "Only Dad, adult Chinese man with short black hair and green sweater, stylized rounded 3D clay cartoon not photograph, places smooth unbaked bread dough into a rectangular loaf tin. Tiny bubbles visible on dough, kitchen counter, no baked cut loaf, no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "烤箱预热好了，里面热烘烘的。爸爸让小树后退两步站安全，戴上厚厚的防烫手套，把烤盘稳稳送进烤箱，关上透明的玻璃门。",
+        "enText": "The oven was hot. Dad told Xiao Shu to take two steps back for safety. Wearing thick oven mitts, Dad safely slipped the baking pan inside and shut the glass door.",
+        "illustrationPrompt": "Dad wearing thick oven mitts places a bread tin into oven. Xiao Shu stands TWO METERS BACK near opposite wall watching. No child next to oven or touching it. Soft 3D clay animation, full room wide view, no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "小树站在安全距离外看烤箱。面团受热后，里面的气体膨胀，还有水变成水蒸气，气泡继续长大，面包渐渐鼓起来。",
+        "enText": "Xiao Shu watched from a safe distance. As the dough warmed, its gases expanded and some water became vapor. The growing pockets helped the loaf rise.",
+        "illustrationPrompt": "Side view looking through the oven glass door as the bread loaf undergoes oven spring, rising high above the metal pan rim as trapped gases expand in heat, no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "继续加热，淀粉吸水变化，蛋白质也发生变化，柔软的面团逐渐定型。酵母在高温下停止活动，面包外皮慢慢变得金黄。",
+        "enText": "With more heat, starch absorbed water and changed, and proteins changed too, setting the dough’s structure. Yeast stopped working at high temperatures, and the crust turned golden.",
+        "illustrationPrompt": "Close-up inside the hot oven of the baking bread loaf, its top crust turning a rich golden-brown, starch and proteins firming into a crisp outer shell, no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "面包出炉放凉后，爸爸拿起面包刀，“沙卡”一声切开脆皮。小树凑过去看，面包心里密密麻麻全是小孔洞！这正是当年那些小气泡住过的地方。",
+        "enText": "Once the loaf cooled, Dad sliced through the crunchy crust. Xiao Shu looked inside: the crumb was full of tiny, airy holes where all the gas bubbles had lived!",
+        "illustrationPrompt": "Dad slices the cooled golden bread on a wooden board with a serrated knife, showing Xiao Shu the cross-section packed with soft, airy micro-pockets, no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "小树咬下一大口刚做好的面包，又松又软，带着阳光般的甜麦香。原来，是勤劳的小酵母和有弹性的面筋网，在面团里造出了无数透气的小气球！",
+        "enText": "Xiao Shu took a big, happy bite. It was pillow-soft and sweet. Now he knew: hardworking yeast and stretchy gluten nets had built millions of tiny airy balloons inside!",
+        "illustrationPrompt": "Xiao Shu happily takes a big bite of the warm, fluffy bread slice at the sunny dining table, savoring the soft, airy texture of the homemade slice, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 37,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

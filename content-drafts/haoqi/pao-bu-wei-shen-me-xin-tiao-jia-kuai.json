@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "pao-bu-wei-shen-me-xin-tiao-jia-kuai",
+    "seriesId": "haoqi",
+    "title": "跑起来以后，为什么心跳会变快",
+    "subtitle": "胸膛里加速敲响的勤劳小鼓",
+    "question": "跑起来以后，为什么心跳会变快？",
+    "moral": {
+      "zh": "跑起来时肌肉需要更多氧气和能量，心脏加速泵血输送氧气并带走废物，心跳就跟着变快了。",
+      "en": "Running makes muscles work hard and demand more oxygen, so the heart pumps faster to deliver fresh energy and carry away waste."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "晨光照在公园草地上，小树和爷爷并排慢步走。小树把手轻轻贴在胸口，里面像有一只安静的小时钟，不慌不忙地“咚……咚……咚……”跳着。",
+        "enText": "Morning sunlight bathed the park lawn as Xiao Shu walked slowly with Grandpa. Xiao Shu gently placed a hand on his chest, feeling a calm little clock ticking softly inside: thump... thump... thump.",
+        "illustrationPrompt": "Xiao Shu walks slowly along a sunny park pathway beside Grandpa. Morning light warms the lawn and flowering bushes. Xiao Shu gently presses a hand against his chest, feeling his steady, calm heartbeat with a quiet, curious smile, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸举着风车在不远处招手。小树沿着平坦的草地跑过去，风儿轻轻吹过耳边。他跑了一小段，就停下来和爸爸一起看看风车。",
+        "enText": "Dad waved a pinwheel nearby. Xiao Shu ran across the level grass, feeling the breeze. After a short run, he stopped beside Dad to look at the spinning colors.",
+        "illustrationPrompt": "Xiao Shu dashes energetically across the green lawn toward Dad, who kneels holding a multicolored toy pinwheel spinning in the wind. Morning breeze ruffles Xiao Shu's hair and clothes as he runs happily, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "停下脚步时，小树大口喘着气。他惊讶地摸摸胸膛，刚才慢悠悠的小时钟不见了，现在像装了一面小红鼓，“咚咚咚咚”敲得又快又响！",
+        "enText": "When he stopped, Xiao Shu was panting for breath. He touched his chest in surprise. The slow little clock was gone, replaced by a lively drum pounding fast and loud: thump-thump-thump-thump!",
+        "illustrationPrompt": "Xiao Shu stands beside Dad on the lawn, cheeks slightly flushed, chest rising and falling as he pants lightly. He places his hand over his chest with wide, surprised eyes, feeling his rapid heartbeat after running, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "小树好奇地拉住爸爸的衣角：“爸爸，刚才慢步走时心跳明明很轻，为什么一跑起来，小心脏就咚咚敲得这么急呢？”",
+        "enText": "Xiao Shu tugged at Dad's sweater curiously: \"Dad, my heart was so quiet when I was walking with Grandpa. Why does it drum so fast the moment I run?\"",
+        "illustrationPrompt": "Xiao Shu gently tugs on Dad's knitted sweater on the grass, looking up inquisitively while pointing one index finger toward his own chest. Dad smiles warmly down at him under the bright park trees, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "爸爸笑着蹲下身，轻轻捏了捏小树结实的小腿：“跑起来的时候，腿上的肌肉正使劲干活呢。肌肉想有力气奔跑，必须要有满满的能量。”",
+        "enText": "Dad knelt down and gently tapped Xiao Shu's sturdy calves: \"When you run, the muscles in your legs work extra hard. And muscles need plenty of energy to keep you moving!\"",
+        "illustrationPrompt": "Dad kneels on the grass and gently taps Xiao Shu's sturdy calf. Xiao Shu balances on one foot, looking down with interest at his lower leg muscles against the backdrop of park greenery, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "当小树坐着看书或者慢慢散步时，肌肉只要消耗一点点力气。就像小手电筒用微弱的亮光工作，不需要很多燃料，身体非常放松。",
+        "enText": "When sitting down with a book or taking a slow walk, our muscles only need a tiny bit of power—just like a soft nightlight glowing peacefully without using much fuel.",
+        "illustrationPrompt": "Xiao Shu sits quietly on a park bench reading an open picture book, resting his legs comfortably on the ground. Soft dappled sunlight filters through the canopy, showing peaceful, relaxed posture, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "可一旦奔跑起来，腿部肌肉必须连续用力蹬地。短短几秒钟里，肌肉消耗的能量像小火箭升空一样，一下子翻了好几倍！",
+        "enText": "But the moment you start sprinting, leg muscles push against the ground with great force. Within seconds, their need for energy shoots up like a soaring toy rocket!",
+        "illustrationPrompt": "Low-angle closeup of running sneakers pushing firmly off green turf, showing taut calf muscles in dynamic forward motion. Blades of grass bend under the athletic sprint in bright daylight, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "肌肉里的细胞要不断释放食物中储存的能量。这个过程通常需要氧气。跑步时工作加快，肌肉需要的氧气和营养也增多了。",
+        "enText": "Muscle cells release energy stored in food, usually with the help of oxygen. When running makes them work harder, they need more oxygen and nutrients.",
+        "illustrationPrompt": "A clean, friendly clay cutaway model of muscle tissue bundles without humans. Striated muscle fibers are surrounded by fine red capillary vessels, illuminated by warm, clear scientific studio lighting, no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "小树深深吸了一口气。新鲜空气顺着呼吸道滑进肺里，肺部像两棵神奇的分叉树，树枝末端布满了微小的气泡和细细的血管。",
+        "enText": "Xiao Shu took a deep breath. Fresh air rushed down into his lungs, which branched out like two wondrous upside-down trees filled with tiny air sacs and delicate blood vessels.",
+        "illustrationPrompt": "Clean clay anatomical model of the human respiratory system without humans. Trachea branches into two lungs displaying bronchial trees ending in detailed clusters of spherical alveoli air sacs, no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "爸爸说：“可以把红细胞想成小运输船。肺里的氧气进入血液，大部分由红细胞携带，送往身体各处。氧气可不是真的金色包裹哦！”",
+        "enText": "“Imagine red blood cells as tiny delivery boats,” Dad said. “Oxygen enters the blood in the lungs, and red blood cells carry most of it around the body. It isn’t really a golden parcel!”",
+        "illustrationPrompt": "Scientific clay model closeup inside a microscopic blood vessel without humans. Smooth, rounded biconcave red blood cells drift through a clear capillary tube, showing realistic biological disc shapes, no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "血液自己可不会飞快奔跑，它需要一台强大的增压水泵。我们胸膛里握紧拳头大小的心脏，就是日夜不停工作的中枢泵站。",
+        "enText": "Blood cannot rush on its own; it relies on a mighty pump. Tucked right inside your chest, your fist-sized heart is that tireless, powerful pump station.",
+        "illustrationPrompt": "Clean, simplified clay cutaway model of the human heart without humans. Displays thick muscular chambers, internal valves, and curved aortic arch under soft studio light against a neutral backdrop, no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "心脏用力收缩一下，就把装满氧气的血液猛地推进血管，顺着宽宽窄窄的管道，一路飞速送到急需氧气的大腿和小腿肌肉里。",
+        "enText": "With each strong squeeze, the heart pushes oxygen-rich blood into blood vessels, sending it racing down branching pathways straight to the working leg muscles.",
+        "illustrationPrompt": "Clay cutaway explainer model showing a muscular heart connecting to branching red arteries that lead downward into dense muscle fibers without humans, demonstrating the vascular network clearly, no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "肌肉细胞利用营养和氧气释放能量，同时产生二氧化碳。血液既送来需要的东西，也帮助把二氧化碳运走，不能只送不收。",
+        "enText": "Muscle cells use nutrients and oxygen to release energy and produce carbon dioxide. Blood brings supplies and carries carbon dioxide away too.",
+        "illustrationPrompt": "Detailed clay cutaway model of muscle cells intertwined with microscopic capillary loops without humans. Oxygenated red vessels transition into bluish returning veins across striated muscle fibers, no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "血液把二氧化碳运回心脏和肺部，随着小树呼出的“呼——”一口气，把废气吐到体外。呼吸和血液循环配合得严丝合缝。",
+        "enText": "The blood carries carbon dioxide back to the lungs, and Xiao Shu breathes it out with a gentle \"whoosh—\" into the breeze. Heart and lungs work together in perfect harmony.",
+        "illustrationPrompt": "Xiao Shu stands on the park path beside Dad, taking a deep, relaxed exhale. The gentle breath rustles nearby leaves as Grandpa walks slowly behind them under the calm sky, no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "运动时，身体会调节心跳和呼吸。心脏加快泵血，呼吸也常变快、变深，帮助肌肉得到更多氧气，并排出更多二氧化碳。",
+        "enText": "During exercise, the body adjusts the heart and breathing. Faster pumping and often deeper, quicker breaths help supply more oxygen and remove more carbon dioxide.",
+        "illustrationPrompt": "Clean stylized clay cutaway model showing the dual circulatory loop without humans. The heart and twin lungs are interconnected with clean red and blue vascular pathways on a neutral scientific studio background, no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "跑步结束了，小树坐在长椅上，奶奶递来温开水。小树小口喝着水，安静地靠在椅背上，肌肉慢慢放松下来。",
+        "enText": "The run was over. Xiao Shu sat comfortably on the park bench while Grandma handed him a cup of warm water. He took quiet sips, letting his muscles relax.",
+        "illustrationPrompt": "Xiao Shu rests comfortably on a wooden park bench, taking a ceramic cup of warm water handed to him by Grandma. Dad and Grandpa stand nearby smiling, with leafy park trees in the background, no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "随着肌肉不再需要大量氧气，呼吸慢慢变平缓。胸膛里的小红鼓也慢了下来，“咚……咚……咚”，重新变回平稳的节拍。",
+        "enText": "Because his resting muscles no longer needed extra oxygen, his breathing softened. The energetic drum in his chest slowed down: thump... thump... thump, back to its steady rhythm.",
+        "illustrationPrompt": "Xiao Shu sits serenely on the bench with hands resting in his lap, eyes softly closed as his chest rises and falls at a calm, slow pace. Sunlight filters gently through the park leaves, no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "小树轻轻摸着心口笑了：“谢谢你呀，勤劳的小水泵！”他知道，每一声心跳，都是身体为了守护奔跑的自己，在认真歌唱呢。",
+        "enText": "Xiao Shu patted his chest and whispered with a grin, \"Thank you, my hardworking little pump!\" He knew every heartbeat was his body singing to keep him running strong.",
+        "illustrationPrompt": "Xiao Shu stands happily on the park lawn with a broad smile, patting his chest with one hand. Grandpa and Dad walk alongside him under golden afternoon sunlight, enjoying the peaceful park stroll, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 36,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

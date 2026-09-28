@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "wei-shen-me-hui-huan-ya",
+    "seriesId": "haoqi",
+    "title": "我们为什么会掉牙、长新牙",
+    "subtitle": "颌骨里悄悄长大的换牙小秘密",
+    "question": "我们为什么会掉牙、长新牙？",
+    "moral": {
+      "zh": "换牙时乳牙牙根逐渐被吸收，乳牙松动脱落，发育中的恒牙逐渐萌出；乳牙和恒牙都需要好好保护。",
+      "en": "During tooth replacement, baby-tooth roots are gradually resorbed, the teeth loosen and fall out, and developing permanent teeth emerge. Both sets need good care."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "午后，小树咬了一大口脆甜的红苹果，突然停住了动作。他用小手指轻轻碰了碰下门牙，咦？牙齿竟然微微晃动了一下！",
+        "enText": "One afternoon, Xiao Shu took a crunchy bite of a red apple and suddenly froze. He touched his bottom front tooth with his finger—wait, was it gently wiggling?",
+        "illustrationPrompt": "Xiao Shu sits at a kitchen table, holding a shiny red apple with a single bite mark, touching his lower front tooth with an index finger in curious surprise. Warm afternoon sunlight indoors. no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "小树跑到卫生间的大镜子前，张大嘴巴，小心地用舌尖推了推那颗门牙。牙齿真的在摇晃，他有点担心：“我的牙齿生病要掉了吗？”",
+        "enText": "Xiao Shu rushed to the bathroom mirror, opened wide, and gently nudged the tooth with the tip of his tongue. It really wobbled! Worried, he wondered if his tooth was sick.",
+        "illustrationPrompt": "Close-up reflection in a bathroom mirror: Xiao Shu tilts his head back with mouth open, gently nudging a loose lower front incisor with the tip of his tongue. Bright clean indoor lighting. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "爸爸蹲下来听小树说完：“你可能开始换乳牙了。我们请牙医检查一下，确认牙齿健康，也学学这时候该怎么照顾它。”",
+        "enText": "Dad listened carefully. “You may be starting to lose your baby teeth. Let’s ask the dentist to check that everything is healthy and show us how to care for them.”",
+        "illustrationPrompt": "In a well-lit living room, Dad kneels beside Xiao Shu seated on a chair, gently examining Xiao Shu's mouth with a tiny soft penlight to check his gums and teeth. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "爸爸拿出一岁时的相册。小树婴儿时只有光溜溜的牙龈，六个月左右才长出小白牙，慢慢凑齐了上下共二十颗小巧的乳牙。",
+        "enText": "Dad opened a baby photo album. As an infant, Xiao Shu had smooth toothless gums. Tiny white teeth began peeking out around six months, eventually forming twenty baby teeth.",
+        "illustrationPrompt": "On a cozy sofa, Dad points to a photo album on his lap showing pictures of an infant with smooth pink gums and a toddler with twenty neat baby teeth, while Xiao Shu leans in to look. no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "“看，小树长高了，下巴和颌骨也在悄悄变大。”爸爸拿积木比划着，“小小的乳牙已经不够填满越来越宽阔的嘴巴了。”",
+        "enText": "\"You've grown taller, and your jawbone is expanding too,\" Dad explained, holding two small wooden blocks next to a larger base. \"Tiny baby teeth can no longer fill a wider mouth.\"",
+        "illustrationPrompt": "At a wooden table, Dad arranges small building blocks along a wider curved wooden block base, demonstrating how an expanding jaw creates space, as Xiao Shu watches attentively. no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "牙医拿出模型。原来在颌骨里，替换乳牙的恒牙早就在慢慢发育了！等到合适的时候，它们会逐渐萌出，接着帮我们咬东西。",
+        "enText": "The dentist showed a model. Replacement teeth were already developing inside the jaw! In time, they would emerge and take over the job of biting and chewing.",
+        "illustrationPrompt": "Warm toy-like clay dental teaching model on a tabletop, just a small section of PINK gum containing two tiny baby teeth above and two larger permanent tooth buds safely nestled below. Show only teeth and gum, no skull, no face, no bone skeleton, no scary anatomy, no human, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "恒牙慢慢向上冒，上面的乳牙牙根受到信号，像小冰棍融化一样逐渐被身体吸收。牙根变短了，乳牙自然就会摇摇晃晃。",
+        "enText": "As the permanent tooth pushes upward, the root of the baby tooth receives a signal and slowly dissolves away like a melting popsicle. With its root shrinking, the tooth wobbles!",
+        "illustrationPrompt": "A friendly simplified clay tooth-replacement model: pink gum cross-section containing a small white baby tooth with very short resorbed roots, below it a larger new permanent tooth rising. Two separate crowns, accurate child-safe educational model, no face on teeth, no blood, no skull, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "爸爸提醒小树：“牙根吸收需要时间，千万不能用手生拉硬拽，更不要用线硬拔。等它自己完全松动，就会轻松脱落。”",
+        "enText": "Dad reminded Xiao Shu, \"Root resorption takes time. Never yank or pull it with strings! When it is completely ready, it will drop out easily on its own.\"",
+        "illustrationPrompt": "Dad sits beside Xiao Shu on a living room rug, gently patting Xiao Shu's shoulder while motioning with calm open hands, reassuring him to let the tooth fall out naturally on its own. no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "“壮壮六岁了还没掉牙呢？”小树问。牙医说：“通常六岁左右开始，有人早些，有人晚些。按时检查，有疼痛、受伤或担心时就告诉大人。”",
+        "enText": "“Zhuangzhuang is six and hasn’t lost any teeth!” said Xiao Shu. “It often starts around six, but timing varies,” said the dentist. “Keep your checkups, and tell an adult about pain, injury, or worries.”",
+        "illustrationPrompt": "Xiao Shu sits at a desk beside Dad, looking at a small sand hourglass next to an open calendar, learning about patience and different growth times for teeth. Warm domestic lighting. no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "爸爸张开嘴给小树看：“长大后，恒牙通常比乳牙更大。多数成年人有二十八到三十二颗恒牙，但并不是人人都会长齐智齿。”",
+        "enText": "Dad opened his mouth. “Permanent teeth are usually larger. Most adults have twenty-eight to thirty-two, but not everyone grows all their wisdom teeth.”",
+        "illustrationPrompt": "A clean clay anatomical model comparing two dental arches side by side: a smaller arch with twenty primary teeth next to a larger adult arch with thirty-two broader permanent teeth. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "“在乳牙的最里侧，还会悄悄长出第一颗大牙——六龄齿。”爸爸指了指后方，“它不替换任何乳牙，自己直接萌出，要特别保护它！”",
+        "enText": "\"Right behind your baby teeth, a big new molar called the 'six-year molar' emerges on its own,\" Dad explained. \"It never replaces any baby tooth, so keep it extra clean!\"",
+        "illustrationPrompt": "A clean clay model closeup of a child's lower jaw arch, showing a new large first permanent molar emerging directly through pink gum tissue right behind the last baby molar. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "小树好奇地问：“如果恒牙掉了，还会长新牙吗？”爸爸摇摇头：“鲨鱼能长很多次牙，但人类一生只有这一副恒牙，掉落后不会再长。”",
+        "enText": "\"If permanent teeth fall out, do we get more?\" Xiao Shu asked. Dad shook his head, \"Sharks can grow endless rows of teeth, but humans only get this one set for our whole life.\"",
+        "illustrationPrompt": "Xiao Shu and Dad sit on a rug discussing a small CLOSED-mouth smiling shark plush and a clean pink-and-white dental teaching model on the table. Gentle clay family scene, no real animal jaws or skeletons, no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "正在喝茶的爷爷点点头说：“正是因为恒牙要陪伴我们几十年，从现在开始，我们就得像爱护珍宝一样保护牙齿健康。”",
+        "enText": "Grandpa, sipping warm tea, nodded in agreement. \"Because adult teeth stay with us for decades, we must treat them like treasured little gems right from today.\"",
+        "illustrationPrompt": "Grandpa sits in a cozy armchair holding a ceramic teacup, smiling warmly with neat healthy teeth, talking affectionately to Xiao Shu who stands attentively by his side. no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "“那反正要换牙，乳牙蛀了也没关系吗？”小树问。爷爷认真地说：“乳牙如果坏了，不仅会牙疼，还会影响下面恒牙的健康发育呢。”",
+        "enText": "\"If baby teeth fall out anyway, does getting cavities matter?\" Xiao Shu asked. Grandpa said, \"Decayed baby teeth hurt, and they can harm the adult teeth growing beneath them!\"",
+        "illustrationPrompt": "Grandpa and Xiao Shu look at a small plastic dental model with a tiny dark cavity mark in ONE baby tooth. Friendly non-scary classroom dental prop, NO eyes or face on the tooth, no skull, gentle clay illustration, no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "过了几天，小树吃软软的蒸玉米时，那颗晃荡了许久的小乳牙轻轻脱落在了纸巾上，一点也不痛，小树惊喜地叫了起来。",
+        "enText": "A few days later, while nibbling soft steamed corn, the wobbly baby tooth popped right out onto a clean napkin. It didn't hurt at all! Xiao Shu gasped in delight.",
+        "illustrationPrompt": "Xiao Shu sits at the dining table holding a steamed yellow corn cob, looking down in surprised delight at a tiny white baby tooth that just popped out onto a clean cloth napkin. no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "小树捏起小牙齿，底下平平的，果然没有长长的牙根！镜子里，粉红色的牙龈缝隙间，已经隐隐探出一抹白白的新牙尖尖。",
+        "enText": "Xiao Shu held the tiny tooth—its bottom was completely flat, with no long root left! Looking in the mirror, a white permanent tooth tip was already peeking out.",
+        "illustrationPrompt": "Close-up in the bathroom mirror: Xiao Shu holds a tiny rootless baby tooth flat in his open palm, grinning to reveal the shiny white tip of an adult tooth already emerging in the gum gap. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "奶奶拿来小木盒：“有些地方有把掉牙扔到屋顶的习俗。不过，新牙怎么长不由这个决定。我们把它放进盒里，留下成长的纪念吧。”",
+        "enText": "Grandma brought a keepsake box. “Some places have a custom of throwing lost teeth onto a roof. That does not decide how new teeth grow. Let’s save this one as a memory.”",
+        "illustrationPrompt": "Grandma sits beside Xiao Shu at a wooden desk, gently placing the tiny lost tooth into a small velvet-lined wooden keepsake box to preserve it as a cherished memory. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "睡觉前，小树用豌豆大小的含氟牙膏认真刷牙，爸爸帮他检查有没有漏刷。刷完吐掉泡沫，他对着镜子一笑，露出可爱的小缺口。",
+        "enText": "Before bed, Xiao Shu brushed with a pea-sized dab of fluoride toothpaste. Dad helped check every surface. He spat out the foam and smiled at his little gap in the mirror.",
+        "illustrationPrompt": "In the bathroom before bed, Xiao Shu smiles at the mirror showing his tiny lower gap, holding a soft child toothbrush with a pea-sized dot of toothpaste while Dad watches smiling. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 35,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

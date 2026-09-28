@@ -1,0 +1,11 @@
+{
+  "provider": "cpa",
+  "model": "gpt-image-2.5-flare",
+  "source": "output/imagegen/steel-ship/9-v2.png",
+  "target": "public/library/haoqi/gang-tie-lun-chuan-wei-shen-me-bu-chen/9.webp",
+  "backup": ".storybloom-cache/haoqi-before-cpa/gang-tie-lun-chuan-wei-shen-me-bu-chen/9.webp",
+  "page": 9,
+  "promptFile": "output/imagegen/steel-ship/9-prompt-v2.txt",
+  "sha256": "628685acf978bbc2afeec984f56cff5632a6e846dec85d164f07b7da68df29c3",
+  "importedAt": "2026-09-27T09:52:20.625Z"
+}

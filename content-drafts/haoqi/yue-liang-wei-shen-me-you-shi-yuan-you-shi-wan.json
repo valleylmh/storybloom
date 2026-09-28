@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "yue-liang-wei-shen-me-you-shi-yuan-you-shi-wan",
+    "seriesId": "haoqi",
+    "title": "月亮为什么有时圆，有时弯",
+    "subtitle": "藏在夜空里的光影游戏",
+    "question": "月亮为什么有时圆，有时弯？",
+    "moral": {
+      "zh": "月球本身不发光，总是只有半面被太阳照亮；它绕着地球公转，让我们看到的亮面角度不断变化，所以月亮看起来有时圆、有时弯。",
+      "en": "The Moon does not shine on its own and always has half its surface lit by the Sun; as it orbits Earth, the angle of the sunlit side we see changes, making the Moon appear round or curved."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "吃完晚饭，小树和爷爷站在阳台内侧往夜空看。天边的月亮细细窄窄，两头尖尖，像一只漂浮在蓝紫色夜空里的小香蕉船。",
+        "enText": "After dinner, Xiao Shu and Grandpa stood safely inside the balcony, looking up. The slender crescent moon floated like a little banana boat in the blue-purple sky.",
+        "illustrationPrompt": "Xiao Shu and Grandpa stand on a balcony at twilight, looking up at a slender waxing crescent moon in a deep violet-blue sky. The thin sliver of illuminated rock glows gently above city silhouettes, with the unlit part faintly visible as earthshine. no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "小树跑回书桌，拿出画本，用亮黄色油画棒把细细的月牙画了下来。“今晚的月亮真像一片弯弯的苹果干呀！”他心满意足地写上了日期。",
+        "enText": "Xiao Shu ran to his desk, grabbed his sketchbook, and drew the slim crescent with a bright yellow crayon. 'Tonight's moon looks just like a curved apple chip!' he murmured happily.",
+        "illustrationPrompt": "At a wooden desk under a warm lamp, Xiao Shu draws a smooth, curved yellow crescent on an open sketchbook using a crayon. Beside him lies an eraser and a reference photograph of the night sky showing the real crescent moon. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "过了几天，小树推开阳台门。咦，夜空里的月亮变胖了！尖尖的月牙不见了，变成了一半亮、一半暗的半圆形，像切开的小烧饼。",
+        "enText": "A few nights later, Xiao Shu stepped out onto the balcony again. Look! The moon had grown plumper! The sharp tips were gone, replaced by a neat glowing semicircle like half a pancake.",
+        "illustrationPrompt": "Xiao Shu stands on the dark balcony gazing up at a first-quarter moon. In the night sky, exactly half of the lunar sphere is illuminated while the other half rests in subtle shadow, forming a clean semicircle of light against the stars. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "又过了一个星期，爷爷陪小树一起看夜空。天上的月亮又大又圆，亮堂堂地挂在枝头，把屋顶和树梢都染上了一层银白色的柔光。",
+        "enText": "A week later, Grandpa joined Xiao Shu on the balcony. High above the treetops, the moon was now magnificent, big, and perfectly round, bathing the rooftops in soft silvery light.",
+        "illustrationPrompt": "Grandpa and Xiao Shu stand together on the balcony. High above dark green treetops and residential rooftops, a luminous full moon shines as a complete, glowing silver circle, casting soft highlights across the floor. no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "小树摸摸小肚皮，好奇地问爷爷：“月亮是在天上吃饱了饭慢慢变胖，然后又被人悄悄咬掉一块吗？”爷爷笑着摇了摇头。",
+        "enText": "Xiao Shu patted his tummy and asked Grandpa with wonder, 'Did the moon eat a huge feast and grow chubby, and then someone took big bites out of it?' Grandpa chuckled softly.",
+        "illustrationPrompt": "Xiao Shu smiles and touches his tummy while talking to Grandpa by the large living room window. Outside in the deep night sky, the bright spherical full moon shines warmly into the room. no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "“天上的月亮是一颗巨大的大石球，它的身体可不会真的变大变小。”爷爷拉着小树的手走进客厅，“而且，月亮自己是不会发光的哦。”",
+        "enText": "'The moon is actually a giant ball of rock; its real body never shrinks or expands,' said Grandpa, leading Xiao Shu inside. 'And what's more, the moon cannot glow on its own!'",
+        "illustrationPrompt": "Grandpa and Xiao Shu sit by a table indoors. Grandpa shows Xiao Shu a realistic textured grey spherical moon globe, pointing out its bumpy craters and rocky surface under the warm room light. no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "爸爸正好在书桌旁看书。他打开小台灯：“月亮自己不发光。太阳照亮它的一半，月面把一部分阳光反射出来，我们才能看到它。”",
+        "enText": "Dad switched on a small lamp. “The Moon makes no light of its own. The Sun lights half of it, and the surface reflects some sunlight toward us.”",
+        "illustrationPrompt": "In a dim room, Dad switches on a bare, round glowing desk lamp on a low table. The light shines across the dark room, illuminating only one hemisphere of a grey sphere placed nearby while leaving its back half in deep shadow. no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "爸爸拿出一个雪白的小泡沫球插在铅笔上，递给小树当“小月亮”，又把台灯放在房间中央当“太阳”。小树一下子兴奋起来了。",
+        "enText": "Dad took a smooth white foam ball mounted on a pencil and handed it to Xiao Shu as the 'Little Moon,' placing the lamp in the middle of the room as the 'Sun.' Xiao Shu beamed with excitement.",
+        "illustrationPrompt": "Dad hands Xiao Shu a smooth white polystyrene foam ball mounted firmly on a wooden pencil. A bright round lamp sits in the middle of the dim room, acting as a light source. Xiao Shu holds the pencil stick with curious eyes. no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "爸爸提醒小树：“真实的太阳、月亮和地球比这个大得多、远得多。现在，你的小脑袋就是地球，你的眼睛就是站在地球上看月亮的人！”",
+        "enText": "Dad reminded him, 'The real Sun, Moon, and Earth are vastly larger and further apart, but in this model, your head is Earth, and your eyes are our viewpoint watching the sky!'",
+        "illustrationPrompt": "Wide shot of the dimly lit room. The glowing lamp stands on a central pedestal. Dad stands beside Xiao Shu, gently positioning Xiao Shu's hands so the white ball on the pencil stays at eye level. Xiao Shu looks steadily at the sphere. no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "小树把小球举在自己和台灯之间，避开直视灯光。面对他的球面暗暗的，亮着的那一半在另一侧。这就像新月时，我们很难看见月亮。",
+        "enText": "Xiao Shu held the ball between himself and the lamp without looking into the light. His side was dark; the lit half faced away. This was like a new moon, which is hard to see.",
+        "illustrationPrompt": "Xiao Shu holds the white foam ball directly between his eyes and the glowing table lamp. From his viewpoint, the side of the sphere facing him is completely in dark shadow, with only a bright rim of backlight around its edge. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "“现在，小月亮开始绕着你转圈啦！”小树举着球，身体向左侧转过四分之一圈。奇妙的事情发生了：他正好看到了半个亮圆和半个暗圆！",
+        "enText": "'Now, let the little moon orbit around you!' Xiao Shu turned his body ninety degrees to the left. Amazingly, from his eyes' view, exactly half of the ball appeared bright and half dark!",
+        "illustrationPrompt": "Xiao Shu turns his body ninety degrees sideways relative to the central lamp. Holding the white foam ball at arm's length, exactly half of the spherical ball appears brilliantly illuminated by the lamp while the opposite half is in dark shadow. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "小树继续转，把后背对着台灯，把小球举高一点点躲开脑袋的影子。哇！整整一个明亮雪白的正圆形小球，完完整整地映入他的眼帘。",
+        "enText": "Xiao Shu kept turning until his back faced the lamp, holding the ball slightly raised so his head didn't cast a shadow. Wow! A perfectly round, glowing white circle shone right before his eyes.",
+        "illustrationPrompt": "Xiao Shu stands with his back to the glowing lamp, holding the white foam ball slightly above his head. The lamp behind him fully illuminates the entire visible face of the ball, creating a bright, completely lit white circle before his eyes. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "小树放下胳膊，摸了摸小球：“小球根本没有被切开，太阳也一直照亮着它的一半。是我站的角度变了，看到的亮面大小就不一样了！”",
+        "enText": "Xiao Shu lowered his arm and touched the smooth ball. 'The ball never got chopped, and the lamp always lit half of it. It is my viewing angle that changed what I could see!'",
+        "illustrationPrompt": "Closeup of Xiao Shu's hands holding the white foam ball under soft lamplight. His fingers touch the sharp line separating the bright sunlit side from the shadowed side on the smooth curved surface. no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "爸爸赞许地点头：“太空里的月球，正是这样不停地绕着地球公转。从细细月牙到圆圆满月，再变回细月牙，整个周期大约需要一个月呢。”",
+        "enText": "Dad nodded with pride. 'In outer space, the Moon continually orbits Earth just like that. From a tiny sliver to a full moon and back again, one complete cycle takes about a month.'",
+        "illustrationPrompt": "Simple accurate clay astronomy model on dark blue tabletop, no humans. A single blue-green Earth at center. Four separate small gray Moon balls placed at cardinal positions on a circular orbit. Sunlight comes ONLY from far LEFT as parallel rays: LEFT hemisphere of every ball is bright and RIGHT hemisphere dark. No faces, no labels, no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "“月牙弯弯，是地球的影子挡住了吗？”爸爸摇头：“不是。我们看见的月面，一部分被太阳照亮，另一部分没被太阳照亮。”",
+        "enText": "“Does Earth’s shadow make the crescent?” Dad shook his head. “No. Part of the Moon’s face we see is sunlit, and the rest is not.”",
+        "illustrationPrompt": "Clean educational clay model closeup without humans: Light shines from the right onto a clay Moon sphere, creating a distinct terminator line between its bright day side and dark night side, while Earth rests far to the side casting no shadow on it. no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "“只有在很少见的‘月食’时，地球才会正好挡在中间投下影子。”爸爸补充说，“平时的月亮圆缺，全是因为我们换了个角度看它的白天和黑夜。”",
+        "enText": "'Only during a rare lunar eclipse does Earth pass directly between them to cast a shadow,' Dad added. 'Everyday moon shapes are just our changing view of its day and night sides.'",
+        "illustrationPrompt": "Clean comparative clay cutaway model: On one side, Earth's cone of shadow directly covers a reddish eclipsed Moon; on the other side, an ordinary crescent moon is illuminated naturally by directional light without any planetary shadow. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "“月亮每天都在同一个时间出现吗？”爷爷说：“不是。月球绕地球移动，升起落下的时间也在变化，有时白天也能看见它。”",
+        "enText": "“Does the Moon appear at the same time each day?” asked Xiao Shu. “No,” said Grandpa. “As it orbits Earth, its rising and setting times change. Sometimes we see it in daylight.”",
+        "illustrationPrompt": "Grandpa and Xiao Shu stand on the balcony under a clear pale-blue afternoon sky. A crisp white first-quarter moon is clearly visible high in the daytime sky alongside soft wispy clouds and flying birds. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "小树翻开自己的画本，把这几天记录的月亮排成一排：细弯弯的蛾眉月、半边亮的弦月、圆滚滚的满月。原来这些图案连起来，就是月球散步的脚印！",
+        "enText": "Xiao Shu opened his sketchbook, lining up his drawings: the slender crescent, the bright half moon, and the glorious round full moon. Together, they formed the Moon's orbital footprints!",
+        "illustrationPrompt": "Overhead view of an open sketchbook on a wooden desk. Xiao Shu looks down at his neat, sequential hand-drawn illustrations of moon phases: waxing crescent, half moon, and full circular moon, arranged in an orderly curved progression. no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "夜色渐深，小树又一次来到阳台。夜空中的月亮依然静静悬挂。小树凝视着它，脑海里不再觉得它是一片单薄的小饼，而是一颗真实圆润的大星球。",
+        "enText": "As the night deepened, Xiao Shu returned to the balcony. The glowing moon hung quietly in the sky. To Xiao Shu, it was no longer a flat slice of cookie, but a magnificent, solid spherical world.",
+        "illustrationPrompt": "Night balcony scene. Xiao Shu leans against the railing, gazing through small binoculars at the glowing, cratered three-dimensional sphere of the moon hanging majestically in a dark, star-filled expanse. no text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "小树拿起铅笔，在画纸上先轻轻画出一个完整的大圆球，再给发光的部分涂上明亮的金黄。他心满意足地笑了：“晚安，大石球！明天我再来看你的新舞步。”",
+        "enText": "Xiao Shu picked up his pencil, drew a faint, perfect circle on the paper first, and then colored the lit crescent in bright golden yellow. 'Goodnight, giant rock ball! I'll watch your next dance step tomorrow.'",
+        "illustrationPrompt": "Overhead closeup of Xiao Shu's desk. Xiao Shu's hand uses a yellow pencil to fill in a bright crescent along the edge of a faint circular outline, rendering the realistic spherical day-night division on paper. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 31,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

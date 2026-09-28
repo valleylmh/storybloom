@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "duan-wu-wei-shen-me-chi-zong-zi-hua-long-zhou",
+    "seriesId": "haoqi",
+    "title": "端午节为什么吃粽子、划龙舟",
+    "subtitle": "夏日里的清香与龙舟的秘密",
+    "question": "端午节为什么吃粽子、划龙舟？",
+    "moral": {
+      "zh": "端午融合了夏季祈安、纪念人物等多种传统；吃粽子、赛龙舟承载着地方习俗和共同的节日情感。",
+      "en": "Dragon Boat Festival brings together summer wishes for health and traditions honoring important people. Rice dumplings and boat races carry local customs and shared celebration."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨，小树被一股清甜的草木香气唤醒。他揉揉眼睛走到门前，发现奶奶正把一束长长的绿草系在木门把手上。",
+        "enText": "Xiao Shu woke up to a fresh, grassy scent. Rubbing his eyes, he saw Grandma tying a bundle of long green leaves to the wooden front door.",
+        "illustrationPrompt": "Xiao Shu watches from the hallway as Grandma ties a bundled cluster of sword-shaped calamus and silvery mugwort leaves to the wooden front door with red twine in warm morning light. no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "“奶奶，这是什么草呀？”小树问。奶奶笑着摸摸他的头：“今天是农历五月初五端午节，这是艾草和菖蒲，我们要迎接初夏啦。”",
+        "enText": "\"What are these leaves, Grandma?\" asked Xiao Shu. Grandma smiled, \"Today is the Dragon Boat Festival, the fifth day of the fifth lunar month. These are mugwort and calamus to welcome summer!\"",
+        "illustrationPrompt": "Botanical close-up of fresh plant sprigs: serrated, silvery-backed Artemisia mugwort leaves and long, rigid, sword-like green calamus leaves resting on a rustic wooden board with dewdrops. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "夏天渐渐热起来，有些地方雨水增多。食物容易变坏，蚊虫也活跃起来。过去的人们会在这个时节留心清洁，并用各种习俗寄托安康的心愿。",
+        "enText": "As summer warmed, some places grew rainier. Food could spoil more easily, and insects became active. People paid attention to cleanliness and expressed wishes for health through seasonal customs.",
+        "illustrationPrompt": "Clay model cutaway of summer conditions: raindrops falling against a glass window pane, fruit spoiling under a glass dome, and tiny houseflies hovering near a compost bin. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "艾草有特别的香味。奶奶说：“有些地方端午会挂艾草、菖蒲，表达避害祈安的愿望。挂一束植物，可不代表就不会被蚊虫叮咬或生病。”",
+        "enText": "Mugwort smelled distinctive. “Some places hang mugwort and calamus as wishes for protection,” Grandma said. “Hanging plants does not guarantee freedom from insect bites or illness.”",
+        "illustrationPrompt": "Grandma hangs a bundle of fragrant leafy mugwort and slender calamus on an open wooden window frame, while Xiao Shu observes the distinct leaf shapes from a wooden step stool. no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "爸爸把五彩香囊挂在小树的小背包上。香囊里装着干香草，也装着家人的祝福。爸爸提醒：“香囊不能代替洗手、防蚊和需要时看医生。”",
+        "enText": "Dad fastened a colorful sachet to Xiao Shu’s backpack. Its dried herbs carried the family’s wishes. “It does not replace handwashing, insect protection, or medical care,” he said.",
+        "illustrationPrompt": "In the entryway, Dad attaches a vibrant silk embroidered sachet with long colorful tassels onto Xiao Shu's canvas backpack strap, showing the woven fabric and herbal contents inside. no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "画册里还提到雄黄酒。爸爸说：“雄黄有毒，不能喝，也不要往皮肤上涂。认识老习俗，不等于照着做；我们可以用安全的方式祝福彼此。”",
+        "enText": "A picture book mentioned realgar wine. “Realgar is toxic,” Dad said. “Do not drink it or put it on skin. Learning an old custom does not mean copying it. We can share wishes safely.”",
+        "illustrationPrompt": "Dad and Xiao Shu sit at a table looking at an OPEN PICTURE BOOK showing a tiny old sealed wine jar illustration with a clear red cross over it. The real tabletop contains ONLY the book. No real powder, no real bottles, no cups, no chemicals, no tasting. Warm clay animation, no words or text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "厨房的大桌上放着一盆盆泡好的翠绿箬叶和雪白的糯米。小树好奇地问：“为什么要把米包进叶子里呢？”",
+        "enText": "In the kitchen, large bowls held soaked emerald-green leaves and glistening white sticky rice. Xiao Shu asked, \"Why do we wrap rice in leaves?\"",
+        "illustrationPrompt": "Overhead view of kitchen counter with large ceramic bowls: wide green bamboo leaves submerged in clear water, alongside translucent white glutinous rice soaking in a matching bowl, as Xiao Shu watches. no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "奶奶把叶子卷成小兜：“叶子能包住米，帮助粽子成形，煮熟还带着清香。但包了叶子也会变质，做好后仍要及时吃，剩下的妥善冷藏。”",
+        "enText": "Grandma folded a leaf into a pouch. “Leaves hold the rice in shape and add fragrance when cooked. But wrapped food can still spoil. Eat it promptly and refrigerate leftovers properly.”",
+        "illustrationPrompt": "Close-up of Grandma's hands folding two broad, oiled green bamboo leaves into a neat conical pocket, spooning glistening soaked rice inside beside an open, clean modern refrigerator. no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "爷爷讲起屈原：“他是一位关心家国的诗人。关于他离世后的故事，传说百姓划船寻找他、把食物投入江中。后来，许多人在端午纪念他。”",
+        "enText": "Grandpa told him about Qu Yuan, a poet who cared deeply for his homeland. “Stories say people searched by boat and placed food in the river after his death. Many now honor him at this festival.”",
+        "illustrationPrompt": "Grandpa and Xiao Shu look at a historical landscape painting on the table showing an ancient wooden skiff being rowed across a wide, misty river framed by reeds and distant mountains. no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "“端午的来历不只有一个故事。”爷爷说，“夏季祈安、与水有关的信仰和纪念人物的传统，慢慢汇在一起。有些地方还会讲其他人物的故事。”",
+        "enText": "“There is more than one story behind the festival,” Grandpa said. “Summer wishes for health, traditions connected with water, and memories of important people came together. Other places tell other stories too.”",
+        "illustrationPrompt": "Grandpa points out small wooden boat models, woven grass bundles, and traditional stone river artifacts arranged on a study shelf, illuminated by warm study lamp glow. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "桌上准备了不同的馅料。爷爷喜欢吃北方传统的甜红枣粽，而爸爸正在准备南方风味的咸蛋黄和五花肉呢！",
+        "enText": "Different fillings rested on the table. Grandpa favored Northern sweet red date dumplings, while Dad prepared Southern savory salted egg yolk and seasoned pork!",
+        "illustrationPrompt": "Arrangement of dumpling ingredients on a marble table: a bowl of glossy dried red dates and red beans on one side, and bowls of bright salted egg yolks and marinated pork slices on the other. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "奶奶拉起小树的小手，把两片箬叶叠在一起卷成小漏斗，填入一勺糯米，再用棉线扎紧。“小树也包了一个神气的小粽子！”",
+        "enText": "Grandma held Xiao Shu's little hands, folding two leaves into a cone, spooning in rice, and tying it with string. \"Xiao Shu made a cute little dumpling!\"",
+        "illustrationPrompt": "Grandma gently guides Xiao Shu's hands as they fold green leaves into a tight tetrahedral dumpling and wrap cotton twine around the packet on the floured kitchen tabletop. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "下锅煮粽子需要滚烫的开水，必须由大人来操作。爸爸把大锅盖好，厨房里很快升腾起暖暖的竹叶香气。",
+        "enText": "Boiling dumplings requires piping hot water, a job strictly for grown-ups. Dad carefully covered the large pot, and the kitchen filled with soothing bamboo aromas.",
+        "illustrationPrompt": "Dad places a stainless steel lid onto a large stockpot of boiling water on the kitchen stove, with fragrant steam rising around submerged leaf-wrapped dumplings. no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "爷爷牵着小树来到有护栏的观赛区。他们站在护栏后，看江上长长的龙舟排好队。小树踮起脚，听见岸边响起了欢呼声。",
+        "enText": "Grandpa took Xiao Shu to the fenced viewing area. Safely behind the railing, they watched long dragon boats line up as cheers rose along the bank.",
+        "illustrationPrompt": "Grandpa and Xiao Shu stand behind a sturdy metal safety railing along a crowded riverbank, looking out at colorful wooden dragon boats moored in parallel lanes along the water. no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "船头装着威风的龙头。爷爷说：“龙在传统文化里常和水、雨、祥瑞联系在一起。赛龙舟有悠久的历史，不同地方讲述的来历也不完全一样。”",
+        "enText": "A proud dragon head decorated the bow. “Dragons are often linked with water, rain, and good fortune in traditional culture,” Grandpa said. “Dragon-boat racing has a long history, with different local stories.”",
+        "illustrationPrompt": "Macro view of the ornate carved wooden dragon head at the boat's bow, displaying carved scales, vibrant red and gold paint, and long decorative whiskers touching rippling water. no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "爷爷告诉小树，龙舟又长又窄，两头翘起，这种“流线型”的身材能大大减小水的阻力，让船像飞箭一样在水面上飞快划过。",
+        "enText": "Grandpa explained that dragon boats are long and narrow with upturned ends. This streamlined shape minimizes water resistance, letting the boat glide like an arrow.",
+        "illustrationPrompt": "Clean 3D cross-section model of a dragon boat's narrow hull cutting through water, illustrating smooth hydrodynamic streamlines flowing cleanly around its sharp prow and shallow keel. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "“咚！咚！咚！”船头的鼓手奋力敲鼓。划手们听着统一的节奏同时用力向后划水。大家节奏一致，龙舟才能像一条神龙般向前冲刺！",
+        "enText": "\"Boom! Boom! Boom!\" The drummer beat a steady rhythm. The paddlers pulled backward in perfect harmony. Only with shared tempo could the boat surge forward like a dragon!",
+        "illustrationPrompt": "Three-quarter view of a long Chinese dragon boat FLOATING upright on river. Adult paddlers with life jackets sit in two rows paddling together. At the front one adult drummer sits on a DRY raised platform beating a drum FIXED INSIDE boat above water. No loose drum in river, no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "回到家，锅里的粽子已经煮好晾凉。小树迫不及待地剪开棉线，剥开层层青绿的粽叶，露出了晶莹剔透、软软糯糯的米糕。",
+        "enText": "Back home, the cooked dumplings had cooled down. Xiao Shu gently cut the string and unwrapped the green leaves, revealing a glistening, sticky rice delicacy.",
+        "illustrationPrompt": "At the dining table, Xiao Shu carefully cuts the twine binding a cooked leaf packet with child-safe scissors, revealing the glossy, compact pyramid of sticky rice inside. no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "小树咬了一口甜枣粽，又尝了一小口咸肉粽。不论甜还是咸，包裹的都是大自然的馈赠和家人团聚的甜蜜滋味。",
+        "enText": "Xiao Shu tasted a sweet date dumpling, then a savory meat one. Whether sweet or savory, both wrapped nature's gifts and the sweetness of family togetherness.",
+        "illustrationPrompt": "Close-up of two sliced rice dumplings on ceramic plates: one showing sweet dark red dates embedded in translucent rice, the other showing a golden salted egg yolk and braised meat filling. no text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "小树摸着胸前香喷喷的香囊，在画纸上画下了一艘奔跑的七彩龙舟。端午节不仅有美味和故事，更藏着古人爱护生命、团结向前的智慧！",
+        "enText": "Touching his fragrant sachet, Xiao Shu drew a colorful racing dragon boat with crayons. Dragon Boat Festival is not just about stories, but ancient wisdom of health and unity!",
+        "illustrationPrompt": "Xiao Shu sits at a sunlit wooden table drawing a racing dragon boat with bright crayons, his colorful herbal sachet and loose crayons resting neatly beside the sketchpad. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 42,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

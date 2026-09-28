@@ -58,7 +58,7 @@ describe("好奇为什么新增 20 本", () => {
     expect(newBooks.map((book) => book?.order)).toEqual(
       NEW_HAOQI_BOOK_IDS.map((_, index) => index + 11),
     );
-    expect(published.filter((book) => book.order >= 11)).toHaveLength(20);
+    expect(published.filter((book) => book.order >= 11 && book.order <= 30)).toHaveLength(20);
 
     for (const book of newBooks) {
       expect(book).not.toBeNull();

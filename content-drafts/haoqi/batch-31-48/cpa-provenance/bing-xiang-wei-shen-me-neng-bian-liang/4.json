@@ -1,0 +1,11 @@
+{
+  "provider": "cpa",
+  "model": "gpt-image-2.5-flare",
+  "source": "output/imagegen/fridge/4.png",
+  "target": "public/library/haoqi/bing-xiang-wei-shen-me-neng-bian-liang/4.webp",
+  "backup": ".storybloom-cache/haoqi-before-cpa/bing-xiang-wei-shen-me-neng-bian-liang/4.webp",
+  "page": 4,
+  "promptFile": "output/imagegen/fridge/4-prompt.txt",
+  "sha256": "485b2dd0c773db2cb2286eb0adabe8c8a7dbba3ddc408df9d16c6b3c7ced5f4f",
+  "importedAt": "2026-09-27T12:32:06.814Z"
+}

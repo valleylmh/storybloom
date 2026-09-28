@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "chun-jie-wei-shen-me-yao-guo-nian",
+    "seriesId": "haoqi",
+    "title": "春节为什么要过年",
+    "subtitle": "跟着月亮与太阳，迎接春天的新起点",
+    "question": "春节为什么要过年？",
+    "moral": {
+      "zh": "春节是农历新年的开始，人们用各地不同的习俗辞旧迎新、表达牵挂，寄托对新一年的美好愿望。",
+      "en": "Spring Festival begins the traditional Chinese New Year. Different customs help people say goodbye to the old year, care for one another, and share hopes for the next."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "街上的红灯笼全挂起来了，窗花贴得红艳艳。小树拉着爸爸的衣角问：“上个月公历元旦刚过，为什么现在我们又要过年呢？”",
+        "enText": "Red lanterns were hung everywhere, and paper-cuts brightened the windows. Xiao Shu tugged Dad's sweater and asked, 'We just had New Year's Day last month, so why are we celebrating New Year again?'",
+        "illustrationPrompt": "In a cozy living room, Xiao Shu tugs Dad's red sweater sleeve, pointing toward bright red paper-cuts on a sunlit window and round red lanterns hanging from the ceiling. no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸拿出一本传统日历，笑着指给小树看：“我们平时看的公历跟着太阳走；而中国的农历，是一边看着太阳，一边数着月亮来计算日子的。”",
+        "enText": "Dad opened a traditional tear-off calendar with a smile. 'Our everyday calendar follows the sun, but China's traditional calendar watches both the sun and the moon.'",
+        "illustrationPrompt": "Dad holds a thick block tear-off paper calendar with blank red edging on a wooden table, gesturing toward the round window where the bright sun and faint daytime moon both appear in the pale sky. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "爸爸拿出一个橙子当太阳，小球当地球：“地球绕着太阳转一大圈，春、夏、秋、冬各来一次，这就是一整年，庄稼也跟着四季生长。”",
+        "enText": "Using an orange as the sun and a small wooden ball as Earth, Dad explained, 'Earth loops around the sun once, bringing four seasons. That makes a whole year for crops to grow.'",
+        "illustrationPrompt": "On a dark wooden tabletop, Dad rotates a small wooden ball on a tilted stick around a bright central orange, casting a clear shadow, while Xiao Shu observes the orbit closely. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "“那月亮呢？”小树问。爸爸抬起手指：“月亮从细细的弯牙，变成圆圆的银盘，再慢慢变细，刚好大约一个月，古代人用它来数日子。”",
+        "enText": "'What about the moon?' Xiao Shu asked. Dad raised a finger. 'The moon grows from a thin crescent to a full bright disk, then shrinks back. That takes about one month, which helped ancient people count time.'",
+        "illustrationPrompt": "An open picture-book on a wooden table displaying seven separate simple Moon circles in sequence: thin waxing crescent, right half lit, waxing gibbous, full bright disk, waning gibbous, left half lit, thin waning crescent. Dark unlit parts subtle gray. Clay craft aesthetic, no Earth, no letters, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "农历用月亮圆缺安排月份，也照顾一年四季的节奏，有时还要加一个闰月。农历正月初一，就是新年的第一天，我们叫它春节。",
+        "enText": "The traditional calendar follows Moon cycles for months and keeps pace with the seasons, sometimes adding a leap month. The first day of its first month is Chinese New Year: Spring Festival.",
+        "illustrationPrompt": "Scientific tabletop model display: a central glowing lamp illuminating a tilted blue Earth globe orbiting on an oval track, accompanied by a smaller white moon sphere circling it. no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "爷爷说：“‘年’这个字的早期字形和收获谷物有关。农耕生活里，收成和岁时很重要。迎接新年的习俗经过漫长岁月，慢慢变成今天的样子。”",
+        "enText": "Grandpa said, “Early forms of the character nian were connected with harvesting grain. Harvests and seasonal cycles mattered in farming life. New Year customs gradually changed over many generations.”",
+        "illustrationPrompt": "In the study, Grandpa shows Xiao Shu a bunch of dried golden wheat stalks tied with twine, pointing at the plump grains resting in a shallow ceramic dish on the wooden table. no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "“那年兽是真的吗？”小树问。爸爸说：“年兽是流传的民间故事，不是真实动物，也不能用它解释所有习俗的历史。不过故事里有大家盼平安的心愿。”",
+        "enText": "“Is the Nian monster real?” Xiao Shu asked. “It is a folk tale,” Dad said, “not a real animal or the history of every custom. But it carries people’s hopes for safety.”",
+        "illustrationPrompt": "Xiao Shu and Dad sit on the rug holding a traditional red lion dance puppet head with golden fringe and soft fabric horns, inspecting its painted paper-mache craft. no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "过年前要“扫尘”。奶奶拿着柔软的小鸡毛掸子，小树帮着擦桌子。扫去屋里的积灰，就像把过去一年的烦恼和旧泥土统统扫出门外。",
+        "enText": "Before New Year comes house cleaning. Grandma held a soft feather duster while Xiao Shu wiped the wooden table, sweeping away old dust just like clearing away past worries.",
+        "illustrationPrompt": "In the bright dining room, Grandma dusts a high wooden shelf with a fluffy feather duster while Xiao Shu wipes the polished surface of a dining table with a damp blue cloth. no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "爷爷在书桌前铺开红纸，毛笔蘸上浓浓的墨汁。小树帮爷爷按着纸角。红彤彤的春联写满美好的心愿，贴在门上，给冬天添了浓浓的暖意。",
+        "enText": "Grandpa rolled out bright red paper and dipped his brush in dark ink. Xiao Shu held down the paper corners. The couplets carried warm wishes, bringing vivid cheer to the winter doorway.",
+        "illustrationPrompt": "Grandpa dips a bamboo calligraphy brush into an inkstone of dark black ink over a long strip of blank red paper on the table, while Xiao Shu holds the paper flat at the corners. no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "厨房里香气扑鼻。小树学着包饺子，爸爸告诉他：“北方常吃外形像元宝的饺子，南方很多地方吃年糕或汤圆，无论吃什么，都代表着甜蜜与步步高升。”",
+        "enText": "Sweet aromas filled the kitchen. As Xiao Shu shaped a dumpling, Dad explained, 'In the north, many eat dumplings, while in the south, friends enjoy sticky rice cakes or sweet rice balls—all wishing for sweetness and growth.'",
+        "illustrationPrompt": "In the kitchen, Xiao Shu pinches the folded edges of a raw flour dumpling on a wooden board, beside Dad who rolls round white glutinous rice balls in a wide bamboo tray. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "门铃响了，亲人提着行李进门。有的家人这次不能回来，就打来电话。大家约好一起聊聊天，隔着远路也把新年的祝福送到。",
+        "enText": "The doorbell rang and relatives arrived with bags. Others who could not travel called instead. Near or far, they made time to talk and share New Year wishes.",
+        "illustrationPrompt": "At the open front doorway decorated with hanging red ornaments, Dad and Xiao Shu welcome smiling relatives carrying fabric gift bags and festive fruit boxes into the warm foyer. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "热气腾腾的年夜饭摆满了大圆桌。大家碰一碰杯子，说说这一年的高兴事，也给遇到困难的家人打气。团圆让冬天的寒夜变得格外温暖。",
+        "enText": "A steaming reunion feast filled the round table. Everyone clinked glasses, sharing happy moments from the past year and encouraging one another. Being together made the cold night feel cozy.",
+        "illustrationPrompt": "Xiao Shu, Dad, Grandpa, and Grandma sit around a large round dining table laden with steaming whole fish, dumplings, and braised vegetables, raising clear juice glasses together in a toast. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "吃完饭，小树摇响手里的木拨浪鼓，打开闪烁的电子小灯笼。古人用声响与亮光驱散冬夜的冷清与恐惧，现在我们用安全的方式传递欢庆。",
+        "enText": "After dinner, Xiao Shu spun a wooden rattle-drum and switched on a glowing electronic lantern. Long ago, sounds and lights pushed away cold darkness; today, we celebrate joyfully and safely.",
+        "illustrationPrompt": "Xiao Shu twirls a small red wooden pellet drum in one hand, making the beads strike its drumhead, while holding a glowing plastic lantern shaped like a flower in the other hand. no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "吃完饭，大家聊天、下棋，珍惜旧年的最后时光，这叫守岁。小树困了，奶奶说：“小朋友可以先睡觉，休息好了，明早一样能迎接新年。”",
+        "enText": "After dinner, the family talked and played games to see the old year out—a custom called shousui. When Xiao Shu grew sleepy, Grandma said, “Children can go to bed and welcome the year in the morning.”",
+        "illustrationPrompt": "In the soft lamplight of the living room, a sleepy Xiao Shu rubs eyes while snuggled under a red quilt on the sofa beside Grandma, who gently pats his shoulder with a warm smile. no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "睡前，奶奶递给小树一个红信封：“这是压岁钱，装着长辈祝你平安健康的心意。带来祝福的是我们的爱，钱可不会真的施魔法。”",
+        "enText": "Before bed, Grandma gave Xiao Shu a red envelope. “This lucky money carries our wishes for your health and safety. The love is real; the money does not work magic.”",
+        "illustrationPrompt": "Beside a wooden bedside lamp, Grandma hands a smooth decorative red envelope with gold foil floral patterns into Xiao Shu's hands as he sits tucked in bed. no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "大年初一早晨，小树换上整洁的新衣服，给爷爷奶奶作揖拜年：“祝爷爷奶奶身体硬朗，天天开心！”爷爷奶奶乐得合不拢嘴，连声夸他懂礼貌。",
+        "enText": "On New Year's morning, Xiao Shu put on neat clothes and gave a polite traditional bow with clasped hands to his grandparents: 'Wishing you strong health and joy every day!' Grandpa and Grandma laughed happily.",
+        "illustrationPrompt": "Dressed in a neat red padded jacket, Xiao Shu stands with clasped hands in a traditional greeting bow before Grandpa and Grandma, who sit happily in armchairs smiling warmly. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "小树去看窗边的盆栽，发现一枚新芽。爸爸说：“春节常在冬末春初，各地冷暖不同。过年不是春天统一开花的开关，却让大家对新一年充满期待。”",
+        "enText": "Xiao Shu spotted a new bud by the window. “The festival falls around late winter or early spring, but weather varies,” Dad said. “It does not switch all flowers on; it gives us hopes for a new year.”",
+        "illustrationPrompt": "Macro closeup of a fresh green plant bud swelling on a potted woody branch by the glass window, with pale winter sunlight warming its tiny leaf scales. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "小树跟着爸爸出门散步，楼道里的邻居们互相抱拳道喜：“新年好！步步高！”过年不仅让一家人团聚，也把整个社区的朋友们紧紧连在一起。",
+        "enText": "Walking outside with Dad, Xiao Shu met neighbors greeting each other with warm smiles: 'Happy New Year!' Celebrating brings not only families together, but connects whole neighborhoods in goodwill.",
+        "illustrationPrompt": "Walking down a festive street lined with potted kumquat trees, Xiao Shu and Dad wave their hands in greeting to a passing neighbor dressed in a warm winter coat. no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "小树终于全明白了：过年，是用农历的智慧记录太阳和月亮的脚步；是感谢过去一年里大家的努力；也是在新春的第一天，带上爱意重新出发！",
+        "enText": "Xiao Shu finally understood: Celebrating the New Year honors the sun and moon's rhythm, thanks everyone for their hard work, and steps into spring filled with love and fresh hope!",
+        "illustrationPrompt": "Outside in a sunny courtyard, Xiao Shu and Dad gaze up at the clear sky where a soft white daytime moon hangs opposite the bright sun above blooming plum blossom trees. no text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "小树拿起小水壶，轻轻给金桔盆栽浇上清水。金黄的小果子在阳光下亮闪闪的。小树挺起胸膛对爸爸说：“新的一年，我也要像小树一样快快长大！”",
+        "enText": "Xiao Shu picked up a little watering can to water the potted kumquat plant. Golden fruits sparkled in the sunlight. Xiao Shu smiled at Dad: 'In this new year, I will grow strong just like a sturdy tree!'",
+        "illustrationPrompt": "Xiao Shu tilts a small green watering can, pouring water over the soil of a potted kumquat tree loaded with shiny round orange fruits, smiling beside Dad in the bright morning sun. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 41,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

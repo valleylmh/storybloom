@@ -136,3 +136,15 @@ pnpm wechat:library-picture -- chengyu dui-niu-tan-qin \
 - WebP 会转换为高质量 JPEG，第一张图作为微信图片消息封面。
 - 永久素材 `media_id` 按图片内容哈希缓存在 `.wechat_picture_media.json`，避免重复上传；需要重新上传时使用 `--force-upload`。
 - 密钥只从 `WECHAT_APPID`、`WECHAT_APPSECRET` 或 `--env-file` 读取，不写入仓库。
+
+### 好奇为什么第 31–48 本（18–20 页）
+
+`generate-library-book.ts` 支持 `--pages N`（8–64，默认仍为 8）。本批批准选题与科学边界在 `content-drafts/haoqi/batch-31-48/plan.json`。
+
+中文音频沿用现有 Token Plan TTS、内容哈希缓存和逐页时间轴：
+
+```bash
+node --conditions=react-server --import tsx scripts/generate-haoqi-batch-audio.ts
+```
+
+只读取本批 18 本当前正文，写入各书本地 MP3 和 `content-drafts/haoqi/local-audio.json`，不上传、不部署。重复执行复用逐页缓存；正文变化会生成新的内容寻址文件。图片生成仍使用已有 `generate-library-draft-images.ts --from 31 --to 48`；本批优先保留逐页场景，避免供应商提示词截断丢失科学内容。

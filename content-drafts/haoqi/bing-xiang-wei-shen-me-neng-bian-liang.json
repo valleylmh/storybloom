@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "bing-xiang-wei-shen-me-neng-bian-liang",
+    "seriesId": "haoqi",
+    "title": "冰箱为什么能把食物变凉",
+    "subtitle": "把热量悄悄搬出家门的冷气小秘密",
+    "question": "冰箱为什么能把食物变凉？",
+    "moral": {
+      "zh": "冰箱不是消灭热量，而是用制冷剂和压缩机把食物的热量搬到了箱子外面。",
+      "en": "A refrigerator doesn't destroy heat; it uses refrigerant and a compressor to carry heat from inside to the outside."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "刚煮好的甜牛奶热气腾腾，小树轻轻吹着气，等得有些着急。爸爸把温温的奶瓶放进白色的双门冰箱里，笑着说：“让冰箱帮它快点变凉吧！”",
+        "enText": "The freshly warmed milk was steaming hot, and Xiao Shu blew gently on it, waiting impatiently. Dad placed the warm bottle into the white refrigerator with a smile: \"Let's let the fridge help it cool down!\"",
+        "illustrationPrompt": "In a kitchen, Dad places a glass bottle of warm milk, wisps of faint steam rising from its rim, onto the middle shelf of an open white refrigerator. Xiao Shu stands beside him watching eagerly. Bright cozy lighting. no text in image"
+      },
+      {
+        "page": 2,
+        "zhText": "过了二十分钟，小树轻轻拉开冰箱门。一股凉丝丝的微风拂过脸颊，好舒服呀！小树探头向里看：“爸爸，冰箱里面藏着一座会吐冷气的小冰山吗？”",
+        "enText": "Twenty minutes later, Xiao Shu gently pulled the fridge door open. A soft, cool breeze brushed against his cheeks. Peeking inside, he wondered: \"Dad, is there a tiny ice mountain inside blowing cold air?\"",
+        "illustrationPrompt": "Xiao Shu gently pulls open the white refrigerator door, peering inside with curious eyes. A light, soft haze of cool air drifts across his face from the neatly organized shelves lined with fresh apples and jars. no text in image"
+      },
+      {
+        "page": 3,
+        "zhText": "爸爸蹲下身，拉着小树的手轻轻贴在冰箱的外侧侧壁上。“哇，这里怎么暖烘烘的？”小树惊讶地眨眨眼。里面冷冰冰，外面却热乎乎，真奇怪！",
+        "enText": "Dad knelt down and guided Xiao Shu's palm gently against the outer side of the refrigerator. \"Whoa, why is it so warm here?\" Xiao Shu blinked in surprise. Cold inside, but warm outside—how strange!",
+        "illustrationPrompt": "Dad kneels beside Xiao Shu in the kitchen, gently guiding the boy's open palm against the smooth outer side panel of the refrigerator. Xiao Shu looks surprised as he feels the warm metallic exterior wall. no text in image"
+      },
+      {
+        "page": 4,
+        "zhText": "“冰箱可不会凭空制造冷气，”爸爸解释道，“它其实是一位勤劳的‘搬运工’。它把牛奶和食物里的热量，悄悄抓起来，搬到了冰箱外面！”",
+        "enText": "\"The fridge doesn't make cold out of nowhere,\" Dad explained. \"It's actually a hard-working mover. It scoops up the heat from inside the food and carries it out into the room!\"",
+        "illustrationPrompt": "Cross-section view of a refrigerator in a kitchen. Inside the chilled compartment, fresh groceries sit quietly, while warm air naturally radiates outward from the metal coils along the lower back into the room. no text in image"
+      },
+      {
+        "page": 5,
+        "zhText": "热量总喜欢从较热的地方，跑向较冷的地方。温牛奶待在清凉的冰箱里，身上的热量就会慢慢溜出来，跑进周围冰凉的空气中，牛奶就变凉了。",
+        "enText": "Heat naturally loves to flow from warmer spots to cooler ones. Resting inside the cool fridge, the warm milk slowly shares its heat with the colder air around it, cooling down sip by sip.",
+        "illustrationPrompt": "Close-up inside the chilled refrigerator. The glass bottle of warm milk sits on a clear shelf beside chilled oranges. Faint air convection currents swirl around the cooling bottle in the cold interior. no text in image"
+      },
+      {
+        "page": 6,
+        "zhText": "可是，热量跑进冰箱里的空气后，要是排不出去，里面不就变热了吗？别担心，冰箱身体里藏着一圈圈密封的管子，里面住着神奇的“制冷剂”。",
+        "enText": "But if that heat stayed inside the fridge air, wouldn't it warm up again? Don't worry! Hidden inside the fridge walls are closed metal loops carrying a clever helper called refrigerant.",
+        "illustrationPrompt": "Clean cutaway model of a refrigerator cabinet, showing the winding copper and aluminum tubing embedded within the insulated back and inner walls without any human figures. Sleek metallic cross-section. no text in image"
+      },
+      {
+        "page": 7,
+        "zhText": "爸爸拿小水滴滴在小树手背上，轻轻吹一口气：“凉不凉？”小树咯咯笑起来：“好凉爽！”水蒸发变成气体时会带走热量，冰箱里的制冷剂也是这样吸热的。",
+        "enText": "Dad put a tiny drop of water on the back of Xiao Shu's hand and blew gently: \"Feel cool?\" Xiao Shu giggled: \"So cool!\" When liquid turns into vapor, it carries heat away, just like the refrigerant inside!",
+        "illustrationPrompt": "Dad gently blows on a single clear droplet of water resting on the back of Xiao Shu's hand. Xiao Shu giggles as the water slowly evaporates, leaving his skin noticeably cool. Warm kitchen tabletop setting. no text in image"
+      },
+      {
+        "page": 8,
+        "zhText": "在冰箱内部的管道里，冰凉的液体吸收了箱子里的热量，咕嘟咕嘟变成了气体。食物的热，就这样被制冷剂牢牢抱在怀里，带进了管道深处。",
+        "enText": "Inside the inner pipes, the cold liquid absorbs heat from the shelves and turns into vapor. Just like that, the food's heat is locked inside the refrigerant and swept away through the hidden coils.",
+        "illustrationPrompt": "Detailed cutaway model of an evaporator coil unit inside an inner refrigerator compartment. Frosty metal fins surround a looped pipe where cold liquid refrigerant transitions into vapor without any people. no text in image"
+      },
+      {
+        "page": 9,
+        "zhText": "“嗡——”冰箱底部传来了低沉而有节奏的运转声。那是压缩机在工作！它就像一颗有力的小心脏，把装满热量的气体用力挤压，推向冰箱外侧。",
+        "enText": "\"Hummm...\" A gentle, steady hum comes from the bottom of the fridge. That's the compressor at work! Like a strong little heart, it squeezes the warm vapor tightly and pumps it toward the outside coils.",
+        "illustrationPrompt": "Close-up technical view of a black cylindrical compressor motor mounted inside the lower rear compartment of a refrigerator, connected to copper inlet and outlet refrigerant pipes. no text in image"
+      },
+      {
+        "page": 10,
+        "zhText": "压缩后的气体温度升高，比厨房空气更热。它流经外侧管道，向房间放热，逐渐变成液体。这时的液体还不够冷，不能马上去吸箱里的热。",
+        "enText": "Compression makes the vapor hotter than the kitchen air. In the outer coils, it releases heat and turns into liquid. That liquid is not yet cold enough for the next cooling step.",
+        "illustrationPrompt": "Close-up view of the black serpentine condenser coils along the back exterior of a refrigerator, releasing warmth into the kitchen air as high-pressure vapor condenses into liquid within the tubes. no text in image"
+      },
+      {
+        "page": 11,
+        "zhText": "液体接着经过细管等节流部件，压力降低，一部分汽化，温度随之降低。它再流到内部吸热：吸热、压缩、放热、降压，循环往复。",
+        "enText": "Next, the liquid passes through a narrow flow restriction. Its pressure drops, some evaporates, and its temperature falls. It returns inside to absorb heat, repeating the cycle.",
+        "illustrationPrompt": "Clean cutaway diagram view of a narrow copper capillary tube joining a wider pipe. Liquid enters under pressure, drops in pressure, and chills dramatically as it enters the wider line without people. no text in image"
+      },
+      {
+        "page": 12,
+        "zhText": "“外面的空气那么热，热气不会偷偷跑回冰箱里吗？”小树问。爸爸敲了敲厚厚的冰箱门：“冰箱穿着厚厚的泡沫保温衣，还有一圈紧紧的磁性密封条呢！”",
+        "enText": "\"Doesn't room heat sneak right back in?\" Xiao Shu asked. Dad tapped the thick fridge door: \"The fridge wears a thick insulated winter coat, sealed with a snug magnetic rubber band!\"",
+        "illustrationPrompt": "Dad points to the thick insulated edge of the open refrigerator door, showing Xiao Shu the flexible dark rubber magnetic gasket strip running along the border that seals against the metal frame. no text in image"
+      },
+      {
+        "page": 13,
+        "zhText": "小树灵机一动，眼睛亮闪闪的：“那夏天要是很热，我们把冰箱门一直敞开，整个客厅不就能变成清凉的冰雪世界了吗？”",
+        "enText": "Xiao Shu had a bright idea, his eyes sparkling: \"If summer gets super hot, could we leave the fridge door wide open to turn the entire living room into a chilly wonderland?\"",
+        "illustrationPrompt": "Xiao Shu stands in the bright living room, holding the refrigerator door swung wide open, looking inside with an imaginative grin on his face, kitchen tiles underfoot. no text in image"
+      },
+      {
+        "page": 14,
+        "zhText": "爸爸笑着摇头：“那可不行。冰箱敞开门，前面虽然吹出冷风，后面却在拼命散发热量。而且压缩机一直用力工作，散出的热反而会让房间更闷热呢！”",
+        "enText": "Dad chuckled: \"That won't work! With the door open, cold air spills out front, but the back pumps out even more heat. The hard-working motor will actually make the whole room warmer!\"",
+        "illustrationPrompt": "Wide view of the kitchen with the refrigerator door left open. The compressor hums continuously at the base, and shimmering warm convection air rises from the rear coils into the closed kitchen space. no text in image"
+      },
+      {
+        "page": 15,
+        "zhText": "“食物放凉有什么用？”小树问。爸爸说：“冷藏能让许多使食物变坏的微生物繁殖得更慢，也能减慢一些变化，所以食物能保存久一些。”",
+        "enText": "“Why keep food cool?” asked Xiao Shu. “Refrigeration slows the growth of many microbes that spoil food, and slows other changes too,” Dad said. “Food can last longer.”",
+        "illustrationPrompt": "Split composition of two halves of a fresh strawberry: one half stays firm and bright red on a cold refrigerator shelf; the other sits in a warm room slowly dulling. Clean scientific comparison, no people. no text in image"
+      },
+      {
+        "page": 16,
+        "zhText": "不过，低温只是按下了“慢放键”，并没有彻底消灭细菌。如果食物在冰箱里放了太久，依然会悄悄变质。所以，食物还是要尽快趁新鲜吃完哦！",
+        "enText": "Still, the cold only presses the \"slow-motion\" button; it doesn't get rid of bacteria completely. If food stays in the fridge too long, it can still spoil. Fresh food is always best enjoyed soon!",
+        "illustrationPrompt": "Inside an open refrigerator shelf, a glass container holds soup kept fresh, while beside it a forgotten slice of bread in an old plastic tub shows tiny spots of green mold forming. no text in image"
+      },
+      {
+        "page": 17,
+        "zhText": "爸爸打开冰箱，取出了刚才放进去的牛奶。小树双手接过奶瓶，瓶身已经变得恰到好处的凉爽。他大口喝了一口，香甜又解渴：“哇，温度刚刚好！”",
+        "enText": "Dad opened the fridge and took out the bottle. Xiao Shu held it in both hands—it was now pleasantly, wonderfully cool. He took a delicious sip: \"Mmm, the temperature is just perfect!\"",
+        "illustrationPrompt": "Dad retrieves the cooled glass bottle from the refrigerator shelf and hands it to Xiao Shu. Xiao Shu holds the cool bottle with both hands, taking a refreshing sip with a happy smile. no text in image"
+      },
+      {
+        "page": 18,
+        "zhText": "小树走上前，轻轻推上冰箱门，“咔嗒”一声，门上的密封条严严实实地合上了。“谢谢你，了不起的热量搬运工！”小树小声对冰箱说。",
+        "enText": "Xiao Shu walked over and nudged the fridge door shut. With a gentle *click*, the magnetic seal snapped tight. \"Thank you, amazing heat mover!\" Xiao Shu whispered softly to the fridge.",
+        "illustrationPrompt": "Xiao Shu gently pushes the refrigerator door closed until the rubber magnetic seal snaps securely against the white metal frame. He rests a satisfied hand on the front handle. no text in image"
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 39,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

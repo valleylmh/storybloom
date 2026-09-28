@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "wei-shen-me-you-chun-xia-qiu-dong",
+    "seriesId": "haoqi",
+    "title": "为什么会有春夏秋冬",
+    "subtitle": "斜着身子旅行的地球与一棵树的一年",
+    "question": "为什么会有春夏秋冬？",
+    "moral": {
+      "zh": "地球斜着身子绕太阳公转，让不同地方在一年中得到的阳光角度和日照时间发生变化，才形成了四季。",
+      "en": "Because Earth is tilted as it orbits the Sun, sunlight strikes at different angles and lengths of day, creating the four seasons."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "院子里的大银杏树冒出了嫩绿的新芽。小树踮起脚尖轻触柔嫩的叶尖，春风柔柔地吹在脸上，暖洋洋的。",
+        "enText": "Tender green buds sprouted on the big ginkgo tree in the yard. Xiao Shu stood on tiptoe to touch them as a gentle spring breeze brushed his cheeks.",
+        "illustrationPrompt": "In a bright yard, Xiao Shu stands on tiptoe reaching toward tender green folded buds on a young ginkgo tree branch. Gentle spring sunlight illuminates fresh grass and soft flowerbeds around the garden. no text in image"
+      },
+      {
+        "page": 2,
+        "zhText": "到了盛夏，树叶变得又密又绿，在院子里撑起一大片清凉的树荫。太阳很早升起、很晚落下，知了在枝头叫个不停。",
+        "enText": "In midsummer, the leaves grew thick and deep green, casting a cool canopy. The sun rose early and set late, while cicadas chirped merrily in the branches.",
+        "illustrationPrompt": "High angle closeup of deep green, fan-shaped ginkgo leaves dense with lush summer foliage. A brown cicada clings to a sturdy branch in bright midday sunshine with dappled shadows on the ground below. no text in image"
+      },
+      {
+        "page": 3,
+        "zhText": "秋天悄悄来了，满树的叶子变成了金黄色，像一把把小扇子随风飘落。小树踩在落叶上沙沙作响，天黑得越来越早了。",
+        "enText": "Autumn arrived quietly. The leaves turned bright golden yellow and drifted down like tiny fans. Xiao Shu kicked through the crunchy leaves as days grew shorter.",
+        "illustrationPrompt": "In an autumn courtyard, Xiao Shu happily kicks through a thick carpet of golden yellow fan-shaped ginkgo leaves. Brilliant yellow leaves flutter down from the tree branches in the crisp afternoon light. no text in image"
+      },
+      {
+        "page": 4,
+        "zhText": "寒冬飘起了白雪，光秃秃的树枝披上了晶莹的冰花。小树呼出一团团白气，天空中太阳低低的，风吹在脸上冰凉刺骨。",
+        "enText": "Winter brought soft snow, dusting the bare branches with silvery frost. Xiao Shu blew puffs of white mist; the sun sat low and the air felt freezing cold.",
+        "illustrationPrompt": "Xiao Shu in a thick winter coat stands beneath bare, frost-dusted ginkgo branches, blowing a soft cloud of white breath into the cold air. A pale winter sun sits low along the horizon over snowy ground. no text in image"
+      },
+      {
+        "page": 5,
+        "zhText": "“为什么大树每年都要换一套衣服？是谁把一年分成了春夏秋冬呢？”小树仰起红扑扑的小脸，好奇地问正在给树干缠草绳防冻的爸爸。",
+        "enText": "\"Why does our tree change clothes every year? Who divides the year into four seasons?\" Xiao Shu asked Dad, who was wrapping straw rope around the trunk.",
+        "illustrationPrompt": "In the garden, Dad kneels beside the bare ginkgo tree, wrapping thick golden straw rope around the lower trunk for winter protection. Xiao Shu stands beside him, curiously pointing at the tree trunk. no text in image"
+      },
+      {
+        "page": 6,
+        "zhText": "小树认真地猜想：“夏天那么热，是不是因为地球跑到了离太阳最近的地方？而冬天太冷，是因为我们离太阳特别远？”",
+        "enText": "Xiao Shu guessed: \"Is summer so hot because Earth travels closer to the Sun? And is winter cold because we are much farther away?\"",
+        "illustrationPrompt": "Xiao Shu sits at a low wooden table holding a small blue model sphere very close to a glowing bulb, then holding it far away, pondering with a thoughtful expression under soft warm room light. no text in image"
+      },
+      {
+        "page": 7,
+        "zhText": "爸爸笑了：“距离不是四季的主要原因。我们住在北半球，一月天气冷的时候，地球反而离太阳稍近。我们得找找别的线索。”",
+        "enText": "Dad smiled. “Distance is not the main cause of seasons. Here in the Northern Hemisphere, Earth is slightly closer to the Sun during chilly January. Let’s find another clue.”",
+        "illustrationPrompt": "Dad sits beside Xiao Shu at the table, pointing to an elliptical wire track with a small model Sun and Earth, showing the slight variation in orbital distance with gentle clarifying gestures. no text in image"
+      },
+      {
+        "page": 8,
+        "zhText": "为了解开谜团，爸爸把客厅大灯关上，在圆桌正中间放了一盏暖黄色的球形小台灯，又抱来了书房里的地球仪。",
+        "enText": "To solve the mystery, Dad dimmed the room lights, placed a glowing spherical lamp in the center of a round table, and brought over the desk globe.",
+        "illustrationPrompt": "In a darkened living room, Dad and Xiao Shu set up an experiment on a round wooden table, placing a bright glowing spherical lamp in the center and a desktop world globe next to it. no text in image"
+      },
+      {
+        "page": 9,
+        "zhText": "爸爸轻轻拨动地球仪：“它自己骨碌碌转一圈，叫做自转，需要一天，带来了白天和黑夜。而它绕着这盏灯走一整圈，叫做公转，需要整整一年。”",
+        "enText": "Dad spun the globe gently: \"Spinning on its own takes one day—that's rotation, making day and night. Traveling all the way around the lamp is revolution, taking a full year.\"",
+        "illustrationPrompt": "Dad gently spins the globe on its tilted axis beside the central glowing lamp. Xiao Shu watches the illuminated half and shadowed half of the spinning sphere demonstrate day and night. no text in image"
+      },
+      {
+        "page": 10,
+        "zhText": "小树凑近仔细看，发现地球仪不是直挺挺站立的，而是斜着身子。爸爸说：“对！地轴是歪着的，而且无论公转到哪里，歪着的方向都基本不变。”",
+        "enText": "Xiao Shu leaned close and noticed the globe wasn't standing upright—it was tilted! \"Exactly! Earth's axis tilts, and it stays pointed in the same direction.\"",
+        "illustrationPrompt": "Close-up side view of the desk globe on its brass stand, clearly showing the distinct tilted metal spindle holding the sphere. Xiao Shu leans in close with wide eyes to observe the slant. no text in image"
+      },
+      {
+        "page": 11,
+        "zhText": "爸爸让地球仪的北端斜向台灯：“北半球偏向太阳时，我们这里的阳光照得更直，白天也更长。大地得到更多太阳能量，迎来了夏天。”",
+        "enText": "Dad tilted the globe’s north toward the lamp. “When our hemisphere leans toward the Sun, sunlight arrives more directly and days are longer. The ground receives more solar energy: summer!”",
+        "illustrationPrompt": "Dad positions the globe so its northern hemisphere leans directly toward the glowing central lamp. Bright, direct light concentrates over the top half of the tilted globe while Xiao Shu looks on. no text in image"
+      },
+      {
+        "page": 12,
+        "zhText": "爸爸把地球仪移到灯的另一侧，地轴方向保持不变：“现在北半球偏离太阳，我们这里阳光照得更斜、白天更短，得到的能量减少，进入冬天。”",
+        "enText": "Dad moved the globe to the other side, keeping its axis pointing the same way. “Now the north leans away. Sunlight is less direct and days are shorter, bringing winter.”",
+        "illustrationPrompt": "Dad moves the globe to the opposite side of the table, keeping its metal axis pointing in the exact same direction, so the northern hemisphere now leans away from the glowing lamp into shadow. no text in image"
+      },
+      {
+        "page": 13,
+        "zhText": "小树把手电光照在纸上：正着照，光集中在较小的地方；斜着照，同一束光铺得更开。爸爸说：“阳光也一样，铺开后每小块地面分到的能量就少了。”",
+        "enText": "Xiao Shu aimed a flashlight at paper. Straight on, the beam covered a small area; tilted, it spread wider. “Sunlight works like that,” Dad said. “When spread out, less energy reaches each small patch.”",
+        "illustrationPrompt": "Xiao Shu shines a small flashlight straight down onto white paper, forming a tight bright circle, then tilts the flashlight to show an elongated, spread-out oval of dimmer light across the surface. no text in image"
+      },
+      {
+        "page": 14,
+        "zhText": "爸爸把地球仪移到两者之间的位置：“这时南北半球都没有明显偏向太阳。我们这里的日照和白天长短逐渐改变，从冬到夏经过春天，从夏到冬经过秋天。”",
+        "enText": "Dad moved the globe between those positions. “Neither hemisphere now leans toward the Sun. Daylight changes gradually. Spring leads us from winter to summer, and autumn leads back.”",
+        "illustrationPrompt": "Dad places the globe halfway along the orbit between summer and winter positions, keeping the tilt parallel to the table edge, so the lamp illuminates both north and south poles equally. no text in image"
+      },
+      {
+        "page": 15,
+        "zhText": "爸爸指了指地球仪下方的澳大利亚：“发现了吗？当我们的北半球偏向太阳过夏天时，南半球正背对着太阳呢！那里的小朋友正在过冬天。”",
+        "enText": "Dad pointed to Australia on the lower half: \"Notice this? When our north leans into summer, the south leans away! Children there are bundled up in winter!\"",
+        "illustrationPrompt": "Dad points toward Australia on the southern half of the globe, which slants away into shadow while the northern hemisphere leans into the glowing lamp light. Xiao Shu examines the lower hemisphere. no text in image"
+      },
+      {
+        "page": 16,
+        "zhText": "爷爷指着赤道附近说：“这里一年里太阳通常都升得比较高，白天长短变化也较小。有些地方更常用雨季和旱季描述季节。”",
+        "enText": "Grandpa pointed near the Equator. “The Sun usually climbs high here, and day length changes less. Some places describe their seasons as rainy and dry.”",
+        "illustrationPrompt": "Grandpa leans over the table and points his finger directly at the glowing equator of the globe, where direct light from the lamp shines steadily regardless of the orbital angle. no text in image"
+      },
+      {
+        "page": 17,
+        "zhText": "小树望向窗外安静沉睡的大银杏树，终于全明白了：原来地球一直斜着身子，带着我们绕着太阳不停地跑，大自然的舞台才换上了不同的布景。",
+        "enText": "Looking out at the sleeping ginkgo tree, Xiao Shu finally understood: Earth travels tilted through space, bringing a grand changing show of sunlight and warmth.",
+        "illustrationPrompt": "Xiao Shu stands by a wide window looking out at the snow-covered garden ginkgo tree, a small tilted desktop globe illuminated by warm interior light resting on the wooden windowsill beside him. no text in image"
+      },
+      {
+        "page": 18,
+        "zhText": "大树最懂大自然的节奏。日照变长变暖，它就发芽；阳光充足，它就拼命生长；秋天阳光减弱，它落叶保存水分；冬天太冷，它便安心入睡。",
+        "enText": "The tree listens to nature's rhythm. It buds as daylight lengthens, flourishes in full sun, drops leaves to save water in autumn, and rests through winter cold.",
+        "illustrationPrompt": "Split-panel botanical display showing one ginkgo branch across four stages: swelling green spring buds, dense fan-shaped summer leaves, bright golden autumn leaves, and bare winter twigs with snow. no text in image"
+      },
+      {
+        "page": 19,
+        "zhText": "几个月后，冰雪融化，小草探头，银杏的新芽又鼓了起来。从上一个春天到现在，地球绕太阳走了一圈，小树又等到了春天。",
+        "enText": "Months later, snow melted and fresh buds swelled. Since the previous spring, Earth had made one full trip around the Sun. Spring was here again!",
+        "illustrationPrompt": "Melting patches of snow uncover damp brown soil in the yard as fresh lime-green buds swell on the ginkgo branches. Xiao Shu smiles up at the warm spring sun shining overhead. no text in image"
+      },
+      {
+        "page": 20,
+        "zhText": "小树在树干上系了一个小小的木头画板，上面画着倾斜的地球和太阳。“大树大树，新的公转旅行开始啦！今年我们继续一起看四季吧！”",
+        "enText": "Xiao Shu tied a small wooden board to the trunk, painted with a tilted Earth and Sun. \"Dear tree, a new orbit begins! Let's watch the four seasons together again!\"",
+        "illustrationPrompt": "Xiao Shu ties a small wooden plaque painted with a golden sun and tilted blue sphere to the ginkgo trunk with hemp twine. Dad stands nearby watching, surrounded by fresh spring grass. no text in image"
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 32,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

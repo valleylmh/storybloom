@@ -66,6 +66,21 @@ async function loadDrafts(from: number, to: number) {
 
 function buildPrompt(draft: GeneratedDraft, pageIndex: number) {
   const page = draft.book.pages[pageIndex];
+  // Providers cap prompts: preserve the actual scene before reusable style.
+  if (draft.book.order >= 31) {
+    const cast = [
+      [/Xiao Shu/i, "Xiao Shu: five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers."],
+      [/\bDad\b/i, "Dad: adult Chinese man, short black hair, green sweater, navy trousers."],
+      [/\bGrandpa\b/i, "Grandpa: elderly Chinese man, short gray hair, blue shirt, brown trousers."],
+      [/\bGrandma\b/i, "Grandma: elderly Chinese woman, short silver hair, lilac top, navy trousers."],
+    ] as const;
+    const people = cast.filter(([pattern]) => pattern.test(page.illustrationPrompt)).map(([, description]) => description);
+    const castLock = people.length
+      ? `Exactly ${people.length} people, each appears ONCE. ${people.join(" ")}`
+      : "OBJECT-ONLY SCIENCE CLOSEUP. Zero humans, zero children. Override any generic instruction to include a child.";
+    return [page.illustrationPrompt, castLock,
+      draft.imagePromptKit.globalStyle, `Avoid: ${draft.imagePromptKit.negative}`].join(" ");
+  }
   return [
     draft.imagePromptKit.globalStyle,
     draft.imagePromptKit.characterConsistency,

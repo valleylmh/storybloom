@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "mao-mao-chong-wei-shen-me-bian-hu-die",
+    "seriesId": "haoqi",
+    "title": "毛毛虫为什么会变成蝴蝶",
+    "subtitle": "菜园里的小小重组奇迹",
+    "question": "毛毛虫为什么会变成蝴蝶？",
+    "moral": {
+      "zh": "毛毛虫变成蝴蝶是昆虫的完全变态发育，幼虫负责吃东西积攒营养，成蝶负责飞行寻找花蜜和繁殖后代。",
+      "en": "Metamorphosis is a life cycle where the caterpillar eats to store energy, and the butterfly flies to feed on nectar and lay eggs."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨的小菜园里，小树蹲在甘蓝菜旁。一只圆滚滚的小青虫正抱着菜叶大口嚼着。小树好奇地问：“奶奶，它以后真的能长出翅膀飞上天吗？”",
+        "enText": "In the morning garden, Xiao Shu crouched beside a cabbage. A chubby green caterpillar was munching on a leaf. \"Grandma, will it really grow wings and fly?\" he asked.",
+        "illustrationPrompt": "Xiao Shu crouching in a sunlit vegetable patch, peering closely at a plump green cabbage caterpillar chewing a ragged hole in a broad cabbage leaf. No text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "奶奶轻轻翻开一片菜叶，指着背面几个金黄色的小圆粒说：“看，这是菜粉蝶妈妈留下的卵。毛毛虫不是突然冒出来的，它也是从小小的卵里孵化出来的。”",
+        "enText": "Grandma gently turned over a leaf, pointing to tiny golden specks. \"Look, these are eggs laid by a white butterfly. Caterpillars hatch from these tiny beginnings.\"",
+        "illustrationPrompt": "Grandma with short gray hair lilac shirt carefully holds ONE cabbage leaf. Extreme closeup of leaf underside showing only three tiny pale yellow elongated ridged Pieris rapae eggs spaced separately, NOT a cluster, with no larvae. Square warm clay illustration, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "小毛毛虫一破壳，就会把有营养的卵壳吃掉，接着不停吃菜叶。幼虫阶段最重要的任务就是多吃食物，把充足的营养和能量都存在胖嘟嘟的身体里。",
+        "enText": "Once hatched, the baby caterpillar eats its nutritious eggshell, then munches leaves. Its main mission as a larva is to eat and store lots of energy inside its chubby body.",
+        "illustrationPrompt": "Extreme closeup macro shot. A tiny, translucent yellowish newly-hatched caterpillar munching on its empty ribbed eggshell resting on a dewy green leaf surface. No text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "可是，毛毛虫的外皮不像我们的皮肤那样有弹性。身体越长越大，外皮就紧得要裂开了。毛毛虫会静静停下，从头部脱掉旧皮，换上一身更宽松的新皮。",
+        "enText": "A caterpillar's skin doesn't stretch like ours. As it grows, the outer skin becomes too tight. It pauses, sheds the old tight skin from its head, and steps out in a looser new coat.",
+        "illustrationPrompt": "Macro nature illustration of a slender plain velvety green cabbage white caterpillar (Pieris rapae), tiny natural dark eyes, no horns, no eye spots, no stripes. It crawls out of a small wrinkled old skin on a cabbage leaf. Anatomically natural insect, warm clay picture-book texture. No text."
+      },
+      {
+        "page": 5,
+        "zhText": "经过几次蜕皮，小小的幼虫越长越大。它吃下的食物，一部分帮助身体生长，一部分储存起来，供接下来化蛹、变成蝴蝶时使用。",
+        "enText": "After several molts, the tiny caterpillar grows larger. Some of its food builds its body, and some is stored for becoming a chrysalis and then a butterfly.",
+        "illustrationPrompt": "A large, velvet-green cabbage white caterpillar covered in fine fuzz and tiny yellow dots along its side, voraciously chewing the scalloped edge of a cabbage leaf. No text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "小树托着腮帮子问：“毛毛虫是因为特别想飞，才自己决定变蝴蝶的吗？”奶奶笑着摇摇头：“不是呀，这是藏在它身体里的成长信号在按时启动呢。”",
+        "enText": "\"Does the caterpillar turn into a butterfly just because it really wants to fly?\" Xiao Shu wondered. Grandma smiled, \"No, special chemical growth signals inside its body tell it when it's time.\"",
+        "illustrationPrompt": "Xiao Shu and Grandma crouch in a cabbage garden looking at a small slender plain velvety green cabbage white caterpillar on a leaf. Natural tiny eyes, no horns, no stripes or eye spots. Warm clay picture-book style. No text."
+      },
+      {
+        "page": 7,
+        "zhText": "成熟的菜粉蝶幼虫停止进食，找到稳固的枝条。它用丝垫固定尾端，再用一道细丝带扶住身体，安静地准备化蛹。",
+        "enText": "The mature cabbage white caterpillar stops eating and finds a firm twig. A silk pad anchors its tail, and a thin silk belt supports its body as it prepares to pupate.",
+        "illustrationPrompt": "Macro nature study: small slender plain velvety green Pieris rapae caterpillar upright on a twig, tail attached by a tiny silk pad and a fine silk girdle across its middle. No horns, no big spots, no human face, no people. Warm clay illustration, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "毛毛虫褪去最后一次皮，露出的不是毛毛虫，而是一个硬硬的浅绿色蛹。奶奶提醒小树：“菜粉蝶直接变成坚硬的蛹，并不像蚕蛾那样给自己织一个毛线球般的茧哦。”",
+        "enText": "Shedding its skin one last time, it reveals a smooth, firm chrysalis, not another caterpillar. Grandma noted, \"Butterflies form a hard chrysalis directly, unlike silk moths that spin fluffy cocoons.\"",
+        "illustrationPrompt": "Accurate macro view of ONE angular green Pieris rapae chrysalis attached UPRIGHT along a twig with a fine silk belt at middle and tail silk pad below. No leaves covering it, no cocoon, no head-down hanging. Warm clay science picture-book, no people, no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "“它在蛹里面睡大觉吗？”小树问。其实蛹里面忙极了！它并没有完全化成一滩水，而是像拆积木一样，把幼虫的多余结构拆解，用来搭建全新的器官。",
+        "enText": "\"Is it sleeping inside?\" Xiao Shu asked. Inside, it's super busy! It doesn't melt into plain water; instead, like sorting building blocks, it breaks down old parts to build brand-new ones.",
+        "illustrationPrompt": "Macro side view: a green angular cabbage white butterfly chrysalis stands upright alongside a vertical twig, tail attached below and fine silk girdle around its middle connecting to twig. Head points UP. Closed opaque green shell, no face, no human, no cutaway. Warm clay picture-book texture. No text."
+      },
+      {
+        "page": 10,
+        "zhText": "幼虫身体里早已有一些细胞，准备长成蝴蝶的身体部分。到了蛹期，它们继续生长、变化，翅膀、触角等结构逐渐形成。",
+        "enText": "Some cells in the caterpillar are already prepared to form adult body parts. During the pupal stage, they grow and change as wings, antennae, and other structures develop.",
+        "illustrationPrompt": "Gentle educational clay model: three separate small closed chrysalis models in a row on cream background, progressively revealing only faint pale folded wing outlines through translucent outer shells. Cabbage white butterfly wings, no eyes enlarged, no frightening anatomy, no legs exposed, no people, no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "吃叶子的大颚逐渐被适合吸花蜜的口器取代。腹部的小肉足消失了，原有的三对胸足也发生变化，成为成蝶的六条腿。",
+        "enText": "Chewing mouthparts are replaced by a nectar-sipping tube. The soft abdominal prolegs disappear, while the three pairs of true legs change into the butterfly’s six legs.",
+        "illustrationPrompt": "Side view macro of a small cabbage white butterfly, white wings with black tips, SIX slender legs resting on a purple flower and a thin curled proboscis reaching nectar. Slender natural body, normal small eyes and clubbed antennae. Not monarch, not bee, no enlarged scary head, no humans, no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "大约过了十天，绿色的蛹壳慢慢变薄，甚至变得半透明了。透过清晨的阳光，小树惊喜地喊：“奶奶快看！我看到里面黑白相间的翅膀花纹了！”",
+        "enText": "After about ten days, the chrysalis turns thin and translucent. In the morning light, Xiao Shu gasps, \"Grandma, look! I can see the wings with their black and white patterns inside!\"",
+        "illustrationPrompt": "Xiao Shu and Grandma watch quietly from a distance outdoors. Foreground macro view of a closed cabbage-white chrysalis on a twig, faint folded WHITE wings and a small dark wingtip visible through shell. No glass enclosure, no touching, no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "咔嗒，蛹壳从背部裂开了一条缝。一只湿漉漉的菜粉蝶抓着空壳慢慢爬了出来。它的肚子鼓鼓的，可背后的翅膀却皱巴巴、软塌塌的，像一团没揉开的面团。",
+        "enText": "Crack! The chrysalis splits open. A damp cabbage white butterfly crawls out onto the twig. Its belly is plump, but its wings are tiny, soft, and crumpled like wet paper.",
+        "illustrationPrompt": "Macro shot of the chrysalis split open at the top. A newly emerged cabbage white butterfly clings to the twig with a plump, swollen abdomen and small, crumpled damp wings. No text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "小树有些担心：“它的翅膀这么小，怎么飞得起来呀？”奶奶拉住小树的小手说：“别着急，它正在给自己做一件非常神奇的事呢。”",
+        "enText": "Xiao Shu worried, \"Its wings are so small, how can it fly?\" Grandma gently held his hand. \"Don't worry, watch closely. It is doing something truly wonderful right now.\"",
+        "illustrationPrompt": "Xiao Shu and Grandma stay at a respectful distance from a small newly emerged white butterfly on a twig. Its wings are still folded and wrinkled. Child hands down, grandmother gently holds his hand. Only white butterfly, no orange butterfly, no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "只见蝴蝶用力收缩鼓鼓的腹部，把身体里的体液顺着翅脉像吹气球一样泵进翅膀。原本褶皱的翅膀一点点被撑开、变大、舒展，变得又平整又轻盈。",
+        "enText": "The butterfly pumps body fluid from its abdomen into the veins of its wings, just like blowing air into flat balloons. Slowly, the crumpled wings stretch, flatten, and expand.",
+        "illustrationPrompt": "Macro nature closeup of a newly emerged cabbage white butterfly gripping its empty chrysalis on a twig. Its pale WHITE wings with dark tips are partly unfolded, delicate thin veins visible, abdomen plump. Natural garden soft green background, no people, no food props, no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "翅膀展开后，蝴蝶还要静静等待，让翅膀逐渐干燥、变得结实。奶奶说：“我们远远看着就好，千万别用手替它展开翅膀。”",
+        "enText": "Once its wings expand, the butterfly waits for them to dry and firm up. “Let’s watch from a distance,” Grandma said. “We must never pull its wings open.”",
+        "illustrationPrompt": "The cabbage white butterfly perched still on a vertical garden stick, its fully expanded creamy-white wings with black spots held open in the warm breeze to dry. No text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "两个小时后，蝴蝶轻轻扇动翅膀，优雅地飞向了盛开的野花。小树拍手欢呼起来！它不再需要大口嚼菜叶了，伸出长长的吸管，甜甜地吸食花蜜。",
+        "enText": "Two hours later, the butterfly gently flapped its wings and fluttered toward blooming flowers. Xiao Shu cheered! It uncoiled its straw-like proboscis to sip sweet nectar.",
+        "illustrationPrompt": "A cabbage white butterfly resting on a purple garden flower, its long, slender proboscis uncoiled deep into the blossom center to sip sweet nectar under sunlight. No text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "奶奶说：“卵、幼虫、蛹、成蝶，是它一生的四个阶段，这叫完全变态。幼虫吃叶子长身体；成蝶能飞到别处寻找花蜜和伴侣，繁育下一代。”",
+        "enText": "“Egg, larva, pupa, and adult are its four life stages,” Grandma said. “This is complete metamorphosis. Larvae eat leaves and grow; adults fly to find nectar and mates, starting the next generation.”",
+        "illustrationPrompt": "Four separate small accurate clay life stages on plain cream surface: one tiny elongated pale yellow egg; slender plain green cabbage white caterpillar; angular green chrysalis with silk belt on twig; white butterfly with black wingtips. No monarch orange wings, no beetle, no faces, no people, no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "菜粉蝶妈妈会把新的卵产在健康嫩绿的菜叶上。不久之后，新的小毛毛虫又会孵化出来。这就是大自然奇妙的生命循环，一遍又一遍，生生不息。",
+        "enText": "The butterfly lays tiny eggs on fresh green cabbage leaves. Soon, brand-new little caterpillars will hatch. This is nature's cycle of life, repeating again and again.",
+        "illustrationPrompt": "Macro shot of an adult cabbage white butterfly curling its abdomen under a cabbage leaf, depositing a single tiny, upright yellowish egg on the leaf surface. No text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "小树在自然笔记上认真画下了毛毛虫、蛹和美丽的蝴蝶。他提着小水壶给甘蓝浇水，微笑着向空中的白蝴蝶挥手：“谢谢你，小菜园里的飞行魔法师！”",
+        "enText": "In his nature journal, Xiao Shu drew the caterpillar, chrysalis, and butterfly. Holding his little watering can, he waved at the flying butterfly: \"Thank you, little garden magician!\"",
+        "illustrationPrompt": "Xiao Shu holding a watering can and open sketchbook in a cabbage garden watches a SMALL WHITE cabbage butterfly with dark wingtips flying nearby. Boy short black hair yellow hoodie teal overalls. Notebook only simple insect drawings no letters. No orange butterfly, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 34,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

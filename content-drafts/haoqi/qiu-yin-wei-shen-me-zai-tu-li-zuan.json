@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "qiu-yin-wei-shen-me-zai-tu-li-zuan",
+    "seriesId": "haoqi",
+    "title": "蚯蚓为什么总在土里钻",
+    "subtitle": "泥土里的小小松土建筑师",
+    "question": "蚯蚓为什么总在土里钻？",
+    "moral": {
+      "zh": "蚯蚓依靠湿润的皮肤呼吸，靠肌肉和刚毛钻土，在地下吃落叶碎屑、松软土壤，既保护了自己，又让植物长得更好。",
+      "en": "Earthworms breathe through their moist skin and burrow with muscles and bristles, eating decaying leaves and loosening the earth to help plants grow."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨的小菜园里，泥土散发着青草的湿气。小树蹲在生菜畦边，看见一条粉褐色的小蚯蚓，正慢悠悠地把尖尖的脑袋往泥土缝隙里挤。",
+        "enText": "In the morning garden, the soil smelled sweet and damp. Xiao Shu crouched beside the lettuce patch and watched a pinkish-brown earthworm gently nudge its pointed head into a crack in the dirt.",
+        "illustrationPrompt": "Xiao Shu crouches in lettuce garden observing a normal small pink-brown earthworm entering damp soil. His hands rest on his knees, NOT touching worm. Earthworm has smooth segmented body, no legs, no eyes, warm clay illustration, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "“外面暖洋洋的，它为什么总要钻进黑漆漆的地下呢？”小树伸出小手指想轻轻碰它。奶奶走过来，轻轻拉住小树的手，微笑着蹲在他身边。",
+        "enText": "\"It's so sunny out here. Why does it always burrow into the dark ground?\" Xiao Shu asked, reaching out a finger. Grandma walked over, gently held his hand, and crouched beside him with a warm smile.",
+        "illustrationPrompt": "Grandma crouches down beside Xiao Shu in the sunny garden, gently holding his outstretched hand as he points toward the earthworm sliding into cool shaded dirt beneath broad leaves. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "“蚯蚓身上滑溜溜的，那层薄薄的黏液是它的救命衣。”奶奶轻声解释。原来，蚯蚓既没有鼻子也没有肺，它必须靠湿润的皮肤来呼吸空气中的氧气。",
+        "enText": "\"See how glossy its body is? That thin layer of moisture keeps it alive,\" Grandma explained softly. Earthworms have neither noses nor lungs; they breathe oxygen right through their damp skin.",
+        "illustrationPrompt": "Extreme macro closeup of an earthworm's glistening segmented body, showing a delicate sheen of water moisture and fine surface capillary networks beneath translucent skin on damp soil. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "如果蚯蚓留在太阳晒着的干地面上，皮肤一旦风干变硬，氧气就进不去体内，它就会窒息。潮湿又阴凉的泥土，正是保护它不被晒干的天然小家。",
+        "enText": "If an earthworm stays on dry, sunlit pavement, its skin quickly dries out, making it impossible to breathe. The cool, damp soil is a natural shelter that keeps it from drying up.",
+        "illustrationPrompt": "Nature closeup of a small ordinary earthworm partly inside a cool moist soil crevice beneath a leafy lettuce plant. Nearby dry ground is sunlit, but worm remains in damp shade. No objects, no jars, no fantasy forms. Warm clay, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "“下雨泡在水里呢？”小树问。奶奶说：“它仍需要氧气。积水缺氧会有危险，但含氧足够时可以在水里待一段时间。雨后地面湿润，也方便有些蚯蚓出来移动。”",
+        "enText": "“What about rainwater?” asked Xiao Shu. “It still needs oxygen,” Grandma said. “Low-oxygen water is dangerous, though it can stay in oxygen-rich water for a time. Wet surfaces also let some worms travel after rain.”",
+        "illustrationPrompt": "Ground-level view after gentle rain, showing glistening wet flagstones and puddles beside garden soil, where an earthworm glides smoothly over the damp stone surface. no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "小树更好奇了：“泥土压得那么紧，蚯蚓没有爪子也没有铲子，怎么能钻得这么快？”他凑近仔细观察，发现蚯蚓的身子像一串紧密相连的小圆环。",
+        "enText": "\"The dirt is packed so tight, and it has no claws or shovels! How does it burrow so fast?\" Xiao Shu leaned in closer. He noticed the earthworm's body was made of many tightly linked rings.",
+        "illustrationPrompt": "Xiao Shu leans in close with curiosity, watching the detailed segmented rings of an earthworm's flexible body rippling over dark crumbly garden loam. no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "奶奶拿起一根弹性皮筋比划着：“蚯蚓身上有两组肌肉。一组肌肉收缩，身体就变得又细又长，往前探路；另一组收缩，身体就变粗变短，把泥土向外撑开。”",
+        "enText": "Grandma demonstrated with a soft stretchy band: \"Its body has two kinds of muscles. One squeezes it long and thin to reach ahead; the other pulls it thick and short to push the dirt aside.\"",
+        "illustrationPrompt": "Grandma stretches a flexible soft band between her hands, demonstrating expansion and contraction to Xiao Shu as they kneel beside the garden bed. no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "蚯蚓许多体节上有细小的刚毛，像小小的抓地工具。肌肉伸缩时，一部分刚毛抓住土壁，帮助身体固定和移动，而不是一直往后滑。",
+        "enText": "Many body segments have tiny bristles that grip the soil. As muscles stretch and shorten the body, some bristles anchor it so it can move without slipping backward.",
+        "illustrationPrompt": "Scientific macro side view of the MIDDLE body segments of a natural pink brown earthworm against moist soil. Several extremely short fine bristles grip soil beneath its body. Both head and tail are OUTSIDE the frame. No mouth, no hollow tube, no legs. Warm clay picture-book texture. No text."
+      },
+      {
+        "page": 9,
+        "zhText": "遇到特别密实的泥土时，蚯蚓还有一个绝招——张开小嘴，直接把泥土吞进肚子里！一边吃，一边把通道“咬”开，为自己开辟一条地下走廊。",
+        "enText": "When the soil gets too dense to push through, the earthworm uses another trick: it opens its mouth and eats the dirt! Swallowing its way forward, it carves out its very own underground hallway.",
+        "illustrationPrompt": "Clay cutaway cross-section of underground soil, showing an earthworm's open mouth ingesting dense dirt particles to carve out a smooth burrowing tunnel. no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "“它在偷吃菜根吗？”小树问。奶奶说：“这里常见的蚯蚓主要利用腐烂的植物残体和微生物等食物，并不是专门来咬健康菜根的。”",
+        "enText": "“Is it stealing our roots?” Xiao Shu asked. “These garden worms mainly feed on decaying plant matter and microbes,” Grandma said. “They are not here to chew healthy vegetable roots.”",
+        "illustrationPrompt": "Underground soil cutaway showing an earthworm consuming decaying brown leaves and decomposed mulch, leaving healthy white vegetable roots undisturbed alongside it. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "吞下的土和食物经过肠道，有机物被消化利用，剩下的排成蚯蚓粪。它们参与养分循环，能帮助改变土壤。奶奶提醒，看过泥土和粪粒要洗手。",
+        "enText": "Inside the gut, organic food is digested and the remaining material passes out as castings. Worms help cycle nutrients and change soil. Grandma reminded Xiao Shu to wash his hands afterward.",
+        "illustrationPrompt": "Clay cutaway model of an earthworm's digestive tract in soil, showing ingested organic matter passing through and leaving rich, rounded pellet castings in the tunnel. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "蚯蚓钻过的地方，留下了无数条弯弯曲曲的微型隧道。这些地下小地道让新鲜空气和雨水能顺畅流到深处，蔬菜的小细根也能顺着管道轻松舒展。",
+        "enText": "Wherever the earthworm tunnels, it leaves behind winding miniature passages. These underground hallways let fresh air and rain flow deep down, so tender vegetable roots can stretch out with ease.",
+        "illustrationPrompt": "Underground cutaway of garden soil showing branching worm tunnels, allowing rainwater droplets and air pockets to penetrate deeply around spreading white vegetable roots. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "小树想起幼儿园小朋友说的话，好奇地问：“奶奶，如果蚯蚓被切成两段，真的会变成两条活着的好朋友吗？”",
+        "enText": "Xiao Shu remembered a playground rumor and asked curiously, \"Grandma, if a worm gets cut in half, will it really become two living best friends?\"",
+        "illustrationPrompt": "Xiao Shu kneels in vegetable garden asking Grandma a question, both his EMPTY hands resting on his knees. Grandma listens gently. A whole healthy small earthworm rests undisturbed on moist soil in foreground. No tools, no scissors, no sticks, no cutting. Warm clay picture-book style. No text."
+      },
+      {
+        "page": 14,
+        "zhText": "奶奶说：“不能这样做。被切断会严重伤害蚯蚓，不会简单变成两条完整的蚯蚓。即使有些能修复部分损伤，也不是可以拿来试验的理由。”",
+        "enText": "“Never try that,” Grandma said. “Cutting badly injures a worm; it does not simply make two complete worms. Some can repair certain injuries, but that is no reason to hurt one.”",
+        "illustrationPrompt": "Grandma gently explains while Xiao Shu watches one WHOLE healthy small earthworm on moist soil. Hands away from worm. Earthworm is an ordinary smooth segmented pink-brown tube with NO LEGS, NO ANTENNAE, NO MANDIBLES. No cutaway, no injury, no exposed organs, no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "“那我们去花鸟市场买不认识的大蚯蚓放进山里，好不好？”小树又问。奶奶摇摇头：“外地来的陌生蚯蚓可能会抢走本地虫儿的食物，破坏森林原有的泥土，不能随便乱放哦。”",
+        "enText": "\"Can we buy foreign worms from the pet shop and set them free in the wild forest?\" Xiao Shu asked. Grandma shook her head, \"No, outside worms can steal food from native ones and harm the forest soil.\"",
+        "illustrationPrompt": "Grandma and Xiao Shu stand near the garden fence looking toward a wild forest edge covered in thick natural leaf litter and mossy ground. no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "那只粉褐色的小蚯蚓已经把大半个身子钻进了土里，只剩短短的小尾巴在外面摆了摆。小树用小手捧起一小把湿润松软的腐殖土，轻轻盖在小尾巴上。",
+        "enText": "The pinkish-brown earthworm had burrowed most of its body into the earth, with only its tiny tail wiggling outside. Xiao Shu scooped up a handful of moist soil and gently covered its tail.",
+        "illustrationPrompt": "Xiao Shu gently sifts a handful of dark, crumbly moist compost over the remaining tail segment of an earthworm vanishing into a garden tunnel. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "站起身来，小树看着菜园里红彤彤的番茄和翠绿的青菜，心里全明白了：原来茂盛的植物下面，藏着一支看不见的勤劳建筑队，日夜不停地耕耘着大地。",
+        "enText": "Standing up, Xiao Shu looked at the bright red tomatoes and crisp green cabbages. He understood now: beneath this thriving garden worked a quiet, tireless underground crew.",
+        "illustrationPrompt": "Cutaway view showing ripe red tomatoes and green cabbages above ground, with a subterranean network of active worm burrows aerating the soil beneath. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "阴凉湿润的土里有食物，也帮助蚯蚓保持皮肤湿润。小树向菜畦说了声谢谢，再和奶奶认真洗手。地下的小邻居，已经悄悄回到自己的家。",
+        "enText": "Cool, moist soil offers food and keeps the worm’s skin damp. Xiao Shu thanked his underground neighbor, then washed his hands with Grandma. The worm was already safely home.",
+        "illustrationPrompt": "Grandma and Xiao Shu wash their hands under a stream of clean water from an outdoor garden brass faucet, with lush garden vegetables in the soft background. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 47,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

@@ -117,8 +117,14 @@ const poemSchema = z.object({
   appreciation: bilingualSchema,
 });
 
+const pageArgIndex = process.argv.indexOf("--pages");
+const requestedPages = pageArgIndex < 0 ? 8 : Number(process.argv[pageArgIndex + 1]);
+if (!Number.isInteger(requestedPages) || requestedPages < 8 || requestedPages > 64) {
+  throw new Error("--pages must be an integer between 8 and 64");
+}
+
 const draftPageSchema = z.object({
-  page: z.number().int().min(1).max(8),
+  page: z.number().int().min(1).max(requestedPages),
   zhText: z.string().trim().min(1),
   enText: z.string().trim().min(1),
   illustrationPrompt: z.string().trim().min(1),
@@ -140,10 +146,10 @@ const modelOutputSchema = z.object({
   }),
   pages: z
     .array(draftPageSchema)
-    .length(8)
+    .length(requestedPages)
     .refine(
       (pages) => pages.every((page, index) => page.page === index + 1),
-      "pages must be numbered 1..8 in order",
+      "pages must be numbered consecutively in order",
     ),
 });
 
@@ -158,7 +164,7 @@ const libraryBookSchema = z.object({
   moral: bilingualSchema.optional(),
   idiomMeaning: bilingualSchema.optional(),
   poem: poemSchema.optional(),
-  pages: z.array(draftPageSchema).length(8),
+  pages: z.array(draftPageSchema).length(requestedPages),
   ageLabel: z.string().trim().min(1),
   publishedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   order: z.number().int().min(0),
@@ -346,6 +352,8 @@ function parseArgs(argv: string[]) {
     const arg = argv[i];
     if (arg === "--dry-run") {
       dryRun = true;
+    } else if (arg === "--pages") {
+      i += 1; // Validated above before constructing the schemas.
     } else if (arg === "--order") {
       order = Number.parseInt(argv[++i] ?? "", 10);
       if (!Number.isInteger(order) || order < 0) {
@@ -383,11 +391,20 @@ async function main() {
     );
   }
 
-  const user = template.buildUser(brief);
+  if (requestedPages !== 8 && seriesId !== "haoqi") {
+    fail("Variable page counts currently support haoqi only; other series retain their editorial beat maps.");
+  }
+  const system = requestedPages === 8 ? template.system : template.system
+    .replaceAll("8-page", `${requestedPages}-page`)
+    .replace(/- Follow this .*?beat map:.*\n/, `- Structure the ${requestedPages} pages as a complete narrative: an everyday puzzle, observations, several causal steps, a comparison or counterexample, return to daily life, and a satisfying ending. Every page adds new information or meaningful action.\n`)
+    .replace("at most 45 characters", "typically 35-75 Chinese characters");
+  const user = template.buildUser(brief).replaceAll("8-page", `${requestedPages}-page`)
+    + ` Return exactly ${requestedPages} pages numbered 1 through ${requestedPages}.`;
+
 
   if (dryRun) {
     console.log("--- system prompt ---\n");
-    console.log(template.system);
+    console.log(system);
     console.log("\n--- user prompt ---\n");
     console.log(user);
     console.log("\n[generate-library-book] dry run: no API call made.");
@@ -403,7 +420,7 @@ async function main() {
   try {
     // Lower temperature than the personalized flow: fidelity to the classic
     // tale matters more than novelty.
-    raw = await requestCpaStory(template.system, user, {
+    raw = await requestCpaStory(system, user, {
       temperature: 0.6,
       topP: 0.85,
     });
@@ -428,7 +445,7 @@ async function main() {
   }
 
   for (const page of modelOutput.pages) {
-    const targetLength = seriesId === "tangshi" ? 100 : 40;
+    const targetLength = seriesId === "tangshi" ? 100 : requestedPages > 8 ? 85 : 40;
     if (page.zhText.length > targetLength) {
       console.warn(
         `[generate-library-book] warning: page ${page.page} zhText is ${page.zhText.length} chars (target ≤ ${targetLength}) — trim during review.`,

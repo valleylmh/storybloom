@@ -1,4 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
+import { statSync } from "node:fs";
+import path from "node:path";
 import { BookAudioTransport, type BookAudio } from "../src/lib/reader/book-audio-transport";
 import { getLibraryChineseAudio } from "../src/lib/library-book-audio";
 import { getAllSeries, getSeriesBooks } from "../src/lib/library";
@@ -19,7 +21,12 @@ describe("reused library Chinese audio", () => {
       const audio = getLibraryChineseAudio(series.id, book.id, book.pages);
       expect(audio, `${series.id}/${book.id}`).toBeDefined();
       if (!audio) continue;
-      expect(audio.url).toContain("/storage/v1/object/public/library-audio-public/");
+      if (audio.url.startsWith("/library/")) {
+        expect(audio.url).toBe(`/library/${series.id}/${book.id}/zh-${audio.contentHash.slice(0, 16)}.mp3`);
+        expect(statSync(path.resolve(`public${audio.url}`)).size).toBeGreaterThan(1000);
+      } else {
+        expect(audio.url).toContain("/storage/v1/object/public/library-audio-public/");
+      }
       matched++;
       expect(audio.pageStarts).toHaveLength(book.pages.length);
       const pages = book.pages.map((p, i) => i ? p : { ...p, zhText: p.zhText + "修改" });

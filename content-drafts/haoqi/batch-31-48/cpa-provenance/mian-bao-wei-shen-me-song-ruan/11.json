@@ -1,0 +1,12 @@
+{
+  "provider": "cpa",
+  "model": "gpt-image-2.5-flare",
+  "source": "output/imagegen/bread-page-11-cpa.png",
+  "target": "public/library/haoqi/mian-bao-wei-shen-me-song-ruan/11.webp",
+  "backup": ".storybloom-cache/haoqi-before-cpa/mian-bao-wei-shen-me-song-ruan/11.webp",
+  "page": 11,
+  "promptFile": "output/imagegen/bread-page-11-cpa-prompt.txt",
+  "sha256": "f8bf82ef5d8944023a6a16a5790adb53691190731e9e277b4634765ef320d236",
+  "importedAt": "2026-09-27T07:30:24.140Z",
+  "reviewNote": "User requested replacement for preview; yeast is anthropomorphized in this image."
+}

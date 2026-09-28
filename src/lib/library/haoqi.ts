@@ -1,3 +1,21 @@
+import batchBook31 from "../../../content-drafts/haoqi/yue-liang-wei-shen-me-you-shi-yuan-you-shi-wan.json";
+import batchBook32 from "../../../content-drafts/haoqi/wei-shen-me-you-chun-xia-qiu-dong.json";
+import batchBook33 from "../../../content-drafts/haoqi/zhong-zi-wei-shen-me-neng-zhang-cheng-da-shu.json";
+import batchBook34 from "../../../content-drafts/haoqi/mao-mao-chong-wei-shen-me-bian-hu-die.json";
+import batchBook35 from "../../../content-drafts/haoqi/wei-shen-me-hui-huan-ya.json";
+import batchBook36 from "../../../content-drafts/haoqi/pao-bu-wei-shen-me-xin-tiao-jia-kuai.json";
+import batchBook37 from "../../../content-drafts/haoqi/mian-bao-wei-shen-me-song-ruan.json";
+import batchBook38 from "../../../content-drafts/haoqi/gang-tie-lun-chuan-wei-shen-me-bu-chen.json";
+import batchBook39 from "../../../content-drafts/haoqi/bing-xiang-wei-shen-me-neng-bian-liang.json";
+import batchBook40 from "../../../content-drafts/haoqi/sheng-yin-wei-shen-me-chuan-dao-er-duo.json";
+import batchBook41 from "../../../content-drafts/haoqi/chun-jie-wei-shen-me-yao-guo-nian.json";
+import batchBook42 from "../../../content-drafts/haoqi/duan-wu-wei-shen-me-chi-zong-zi-hua-long-zhou.json";
+import batchBook43 from "../../../content-drafts/haoqi/zhong-qiu-wei-shen-me-shang-yue-chi-yue-bing.json";
+import batchBook44 from "../../../content-drafts/haoqi/gong-ji-wei-shen-me-da-ming.json";
+import batchBook45 from "../../../content-drafts/haoqi/mu-ji-wei-shen-me-pa-zai-ji-dan-shang.json";
+import batchBook46 from "../../../content-drafts/haoqi/shui-dao-wei-shen-me-zhang-zai-shui-tian.json";
+import batchBook47 from "../../../content-drafts/haoqi/qiu-yin-wei-shen-me-zai-tu-li-zuan.json";
+import batchBook48 from "../../../content-drafts/haoqi/cai-yuan-de-hua-wei-shen-me-bian-cheng-gua.json";
 import type { StoryPage } from "@/types";
 import type { LibraryBook, LibrarySeries } from "@/types/library";
 import caiHongDraft from "../../../content-drafts/haoqi/cai-hong-shi-zen-me-lai-de/draft.json";
@@ -64,6 +82,25 @@ interface GeneratedHaoqiDraft {
 }
 
 const NEW_HAOQI_DRAFTS: GeneratedHaoqiDraft[] = [
+  batchBook31,
+  batchBook32,
+  batchBook33,
+  batchBook34,
+  batchBook35,
+  batchBook36,
+  batchBook37,
+  batchBook38,
+  batchBook39,
+  batchBook40,
+  batchBook41,
+  batchBook42,
+  batchBook43,
+  batchBook44,
+  batchBook45,
+  batchBook46,
+  batchBook47,
+  batchBook48,
+
   haiLangDraft,
   chaoXiDraft,
   baiTianXingXingDraft,
@@ -228,7 +265,7 @@ function generatedDraftToLibraryBook(draft: GeneratedHaoqiDraft): LibraryBook {
   return {
     ...book,
     seriesId: "haoqi",
-    publishedAt: "2026-08-23",
+    publishedAt: book.order >= 31 ? book.publishedAt : "2026-08-23",
     comingSoon: false,
     pages: book.pages.map((page) => ({
       ...page,
@@ -280,7 +317,7 @@ export const HAOQI_BOOKS: LibraryBook[] = [
   ...EXPANDED_HAOQI_DRAFTS.map((draft) =>
     draftToLibraryBook(draft, "complete", false),
   ),
-  ...NEW_HAOQI_DRAFTS.map(generatedDraftToLibraryBook),
+  ...NEW_HAOQI_DRAFTS.sort((a, b) => a.book.order - b.book.order).map(generatedDraftToLibraryBook),
 ];
 
 export const HAOQI_SERIES: LibrarySeries = {
@@ -288,7 +325,7 @@ export const HAOQI_SERIES: LibrarySeries = {
   title: "好奇为什么",
   subtitle: "孩子的每一个为什么",
   description:
-    "把孩子最爱问的问题讲成温柔的科学小故事：每本回答一个「为什么」，8 页中英双语，简化但不错误，读完还会带出下一个好奇。",
+    "把孩子最爱问的问题讲成温柔的中英双语绘本：从自然科学到传统节日、乡村生活，每本回答一个「为什么」。按内容展开篇幅，简化但不错误，陪孩子一步步弄懂原因。",
   accent: "#b98346",
   ageRange: "4-8 岁",
   bookCount: HAOQI_BOOKS.length,

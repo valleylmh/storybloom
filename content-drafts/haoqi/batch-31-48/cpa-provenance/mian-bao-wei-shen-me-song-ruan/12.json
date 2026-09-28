@@ -1,0 +1,12 @@
+{
+  "provider": "cpa",
+  "model": "gpt-image-2.5-flare",
+  "source": "output/imagegen/bread-page-12-cpa.png",
+  "target": "public/library/haoqi/mian-bao-wei-shen-me-song-ruan/12.webp",
+  "backup": ".storybloom-cache/haoqi-before-cpa/mian-bao-wei-shen-me-song-ruan/12.webp",
+  "page": 12,
+  "promptFile": "output/imagegen/bread-page-12-cpa-prompt.txt",
+  "sha256": "c31c9bdb741f1c2cef812356dce09358a81811b8a2a92d3a3bb363495096c835",
+  "importedAt": "2026-09-27T08:06:13.020Z",
+  "reviewNote": "Visually checked for scene, cast, text absence and kitchen safety; minor variation in loaf shape and character details remains."
+}

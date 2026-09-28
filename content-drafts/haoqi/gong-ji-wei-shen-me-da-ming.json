@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "gong-ji-wei-shen-me-da-ming",
+    "seriesId": "haoqi",
+    "title": "公鸡为什么会打鸣",
+    "subtitle": "藏在羽毛里的小闹钟",
+    "question": "公鸡为什么会打鸣？",
+    "moral": {
+      "zh": "生物钟影响公鸡打鸣的时间，光照帮助校准节律；打鸣也是宣示活动范围、回应其他公鸡的一种交流。",
+      "en": "An internal clock influences crowing times, while light helps align the rhythm. Crowing also announces territory and responds to other roosters."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "天色还是一片墨蓝，窗外的群山像裹着厚厚的睡袍。突然，一声清脆洪亮的啼鸣穿透晨雾，把睡梦中的小树唤醒了。",
+        "enText": "The sky outside was still deep inky blue, and the distant hills were wrapped in sleepy mist. Suddenly, a bright, ringing call cut through the dawn, waking Xiao Shu up.",
+        "illustrationPrompt": "Farmhouse under an inky blue dawn sky, distant misty hills glowing with a faint orange streak on the horizon. Warm soft light glows from a bedroom window as morning dew glistens on grass. no text in image"
+      },
+      {
+        "page": 2,
+        "zhText": "小树趴在窗台前揉揉眼睛。木栅栏上，一只大公鸡高高昂起金红色的头冠，正挺着脖子对着泛白的天边大声叫喊。",
+        "enText": "Xiao Shu leaned against the windowsill and rubbed his eyes. Perched high on the wooden fence was a big rooster with a golden-red comb, proudly stretching its neck toward the pale horizon.",
+        "illustrationPrompt": "Xiao Shu stands safely on bedroom FLOOR beside a closed low window, rubbing his sleepy eyes. Outside beyond glass, a red-combed golden-neck black-tailed rooster stands on wooden farm fence at dawn. Boy not on windowsill, both shoes on floor. Warm clay illustration, no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "小树穿上背带裤跑下楼。爷爷正在院子里给花浇水。小树好奇地问：“爷爷，大公鸡是在把太阳公公叫醒，还是在叫我们起床呢？”",
+        "enText": "Xiao Shu slipped into his overalls and ran downstairs. Grandpa was watering flowers in the courtyard. Xiao Shu asked, \"Grandpa, is the rooster waking up the sun, or is he calling us to wake up?\"",
+        "illustrationPrompt": "Xiao Shu in denim overalls runs across a stone courtyard toward Grandpa, who is pouring water from a green watering can onto blooming marigolds. A wooden chicken coop stands in the background. no text in image"
+      },
+      {
+        "page": 4,
+        "zhText": "爷爷笑着蹲下身：“古老故事里总说公鸡唤出红日，但太阳升起是因为地球自己不停转动。公鸡可不是专门给人类当小闹钟的呀！”",
+        "enText": "Grandpa knelt down with a warm smile: \"Old tales say roosters call up the sunrise, but the sun rises because Earth keeps spinning. Roosters don't crow just to wake humans up!\"",
+        "illustrationPrompt": "Grandpa kneels beside Xiao Shu in the courtyard, holding a small smooth clay sphere illuminated on one side by the morning sun, visually demonstrating how planetary rotation brings sunrise. no text in image"
+      },
+      {
+        "page": 5,
+        "zhText": "爷爷领着小树来到鸡舍旁：“你看，天光才刚透出一点点，大公鸡怎么就知道该打鸣了呢？其实，它的脑子里藏着秘密呢。”",
+        "enText": "Grandpa led Xiao Shu toward the chicken coop. \"Look, the dawn has only barely started. How does the rooster know it is morning? It actually holds a secret inside its brain.\"",
+        "illustrationPrompt": "Grandpa and Xiao Shu walk side by side along a dirt path toward a wooden chicken coop as morning mist drifts across the farmyard. The rooster sits alert on a fence post nearby. no text in image"
+      },
+      {
+        "page": 6,
+        "zhText": "每只动物身体里都有一套看不见的生物节律，就像一台准时的小闹钟。到了夜里小树会犯困，到了黎明，公鸡的生物钟就提醒它行动。",
+        "enText": "Every animal carries an invisible rhythm inside its body, just like a tiny internal clock. Xiao Shu grows sleepy at night, and the rooster's inner clock tells it dawn has arrived.",
+        "illustrationPrompt": "Same farm ROOSTER with bright red comb, golden neck, dark green tail: calm split composition of rooster resting on wooden perch at night and same rooster awake at dawn. This illustrates daily rhythm. No clocks, no numbers, no songbird, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "科学家观察发现，在持续的微弱光照下，公鸡仍会按接近一天的节律打鸣。没有每天的明暗变化，它的时间可能慢慢偏移，说明身体里确实有自己的节拍。",
+        "enText": "Scientists found that under constant dim light, roosters still crow with a rhythm close to a day. Without daily light changes, the timing can drift, showing that they have an inner rhythm.",
+        "illustrationPrompt": "A scientific enclosure with gentle, constant dim lighting. A rooster perches on a clean wooden bar, alert and active at an internal rhythmic interval, with water and grain bowls nearby. no text in image"
+      },
+      {
+        "page": 8,
+        "zhText": "“那阳光有什么用？”小树问。爷爷说：“每天的明暗变化像校表信号，帮助身体里的节拍跟外面的昼夜合上。生物钟可不是一只真正的钟。”",
+        "enText": "“Then what does sunlight do?” Xiao Shu asked. “Daily light and darkness help the inner rhythm match day and night,” Grandpa said. “A body clock is not a real little clock.”",
+        "illustrationPrompt": "Bright morning sun rays beam through a chicken coop window, striking the rooster's head and feathers, synchronizing its natural biological rhythm with the day-night cycle. no text in image"
+      },
+      {
+        "page": 9,
+        "zhText": "大公鸡扑棱扑棱拍打翅膀，仰起头又大叫了一声。小树捂着耳朵跳起来：“天都大亮了，太阳已经老高，它怎么还在打鸣呀？”",
+        "enText": "The rooster flapped its wings briskly, stretched tall, and crowed once more. Xiao Shu covered his ears and giggled, \"The sun is already high, why is he still crowing?\"",
+        "illustrationPrompt": "Under a bright morning sky, the rooster flaps broad wings, chest puffed high with beak open in a loud crow. Beside the fence, Xiao Shu covers his ears with a happy grin. no text in image"
+      },
+      {
+        "page": 10,
+        "zhText": "爷爷说：“打鸣还是一种交流，能告诉其他公鸡：我在这里，这里有我的活动范围。它不是专门报时，所以白天也会叫。”",
+        "enText": "“Crowing is communication too,” Grandpa said. “It tells other roosters: I am here, in my territory. It is not just a time signal, so roosters crow in daylight too.”",
+        "illustrationPrompt": "The rooster struts proudly along the top beam of a wooden paddock fence, chest puffed, watching over his territory while hens forage in the lush green grass below. no text in image"
+      },
+      {
+        "page": 11,
+        "zhText": "响亮的叫声能传得比较远，让别的公鸡注意到自己。小树说：“原来这是它的声音告示牌！”爷爷点头：“不过它们还有别的叫声，各有不同用处。”",
+        "enText": "A loud crow can reach other roosters far away. “A voice announcement!” said Xiao Shu. Grandpa nodded. “And chickens use other calls for different purposes too.”",
+        "illustrationPrompt": "Wide landscape view from a hillside farm showing the yard rooster crowing on a stone post, facing across an open green valley toward a distant farmhouse nestled among rolling trees. no text in image"
+      },
+      {
+        "page": 12,
+        "zhText": "在有几只公鸡的鸡群里，社会地位也会影响谁先叫。有时地位较高的先打鸣，别的再跟着叫，并不是每只鸡都在同一刻开口。",
+        "enText": "In flocks with several roosters, social rank can affect the order. A higher-ranking bird may crow first, followed by others; they do not all start at the same moment.",
+        "illustrationPrompt": "Inside a farm run, a dominant rooster with a tall red comb crows from the highest wooden perch, while two smaller roosters watch quietly from lower perches, demonstrating flock hierarchy. no text in image"
+      },
+      {
+        "page": 13,
+        "zhText": "“喔——喔喔！”远远的山坡上传来另一声啼叫。院里的大公鸡立刻挺胸回应。它们像是在隔空喊话：“我在这里！”“我也在！”",
+        "enText": "\"Cock-a-doodle-doo!\" came a faint call from across the hillside. The yard rooster immediately puffed his chest to answer back, chatting across the distance!",
+        "illustrationPrompt": "Xiao Shu and Grandpa pause near the coop, looking toward distant hills. In the foreground, the farm rooster stands on tiptoe, arching his neck to respond with a powerful call. no text in image"
+      },
+      {
+        "page": 14,
+        "zhText": "一阵翅膀扑动声传来，鸡群里响起几声短促的叫声。小树发现，那和长长的打鸣不一样。爷爷说：“对，鸡还会用其他声音提醒同伴注意周围。”",
+        "enText": "Wings fluttered nearby, and short calls came from the flock. They sounded different from a long crow. “Yes,” Grandpa said. “Chickens also use other sounds to alert companions.”",
+        "illustrationPrompt": "A group of hens clucks with heads raised in alert postures beneath a leafy shrub, while the rooster gives a low warning call, scanning the sky where a hawk silhouette glides far above. no text in image"
+      },
+      {
+        "page": 15,
+        "zhText": "小树看着安静吃米的母鸡问：“母鸡也会打鸣吗？”爷爷说：“极少数母鸡身体发生变化时也能啼叫，但守卫领地和常规打鸣大多由公鸡负责。”",
+        "enText": "Xiao Shu watched the hens quietly peck at seeds. \"Can hens crow too?\" Grandpa said: \"Very rarely, if their hormones shift, but daily territory crowing belongs to roosters.\"",
+        "illustrationPrompt": "Close-up view of brown and speckled hens peacefully pecking scattered seeds on the dirt ground, contrasting with the rooster's larger comb and iridescent tail feathers standing nearby. no text in image"
+      },
+      {
+        "page": 16,
+        "zhText": "奶奶端着一盘热气腾腾的玉米饼走来。小树学着大公鸡的样子，挺起胸脯张开双臂：“喔喔喔，小树的肚子里也响起了早餐小闹钟！”",
+        "enText": "Grandma arrived carrying a plate of steaming corn cakes. Xiao Shu puffed out his chest, flapped his elbows like wings, and crowed, \"Cock-a-doodle-doo! My belly clock says breakfast time!\"",
+        "illustrationPrompt": "Grandma steps into the courtyard carrying a wooden plate of steaming yellow corn cakes. Xiao Shu playfully puffs his chest, flaps his elbows like wings, and opens his mouth in a mock crow. no text in image"
+      },
+      {
+        "page": 17,
+        "zhText": "太阳慢慢滑向西山，院子披上金红色的晚霞。大公鸡带着鸡群一步一摇地回到栖架上。生物钟告诉它们：白昼结束了，该好好睡觉啦。",
+        "enText": "The sun dipped toward the western hills, bathing the farm in golden-orange sunset. Guided by its inner clock, the rooster led the flock onto wooden perches to rest.",
+        "illustrationPrompt": "Warm golden sunset light streams through the door of the wooden coop, where the rooster and hens settle shoulder to shoulder along horizontal timber perches for the night. no text in image"
+      },
+      {
+        "page": 18,
+        "zhText": "夜晚又安静下来，星星在天上眨着眼睛。小树躺在床上安然入眠。他知道，明天天不亮，那位装着神奇生物钟的邻居又会准时啼鸣。",
+        "enText": "Night grew quiet again as stars twinkled across the dark sky. Xiao Shu tucked himself into bed, smiling peacefully knowing his feathered neighbor's clock would tick until dawn.",
+        "illustrationPrompt": "Through a bedroom window, bright stars twinkle in a dark indigo sky. Xiao Shu sleeps peacefully tucked under a soft quilt, hands relaxed, while outside the silent chicken coop rests in moonlight. no text in image"
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 44,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

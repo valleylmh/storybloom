@@ -1,3 +1,4 @@
+import haoqiBatchPlan from "../content-drafts/haoqi/batch-31-48/plan.json";
 import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -448,22 +449,23 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
     }
   });
 
-  it("publishes all thirty haoqi books with scientifically reviewed optimized images", () => {
+  it("publishes all forty-eight haoqi books with scientifically reviewed optimized images", () => {
     const books = getSeriesBooks("haoqi");
-    expect(books).toHaveLength(HAOQI_BOOK_IDS.length);
-    expect(getSeries("haoqi")?.bookCount).toBe(HAOQI_BOOK_IDS.length);
-    expect(getPublishedBookCount("haoqi")).toBe(HAOQI_BOOK_IDS.length);
+    const expectedIds = [...HAOQI_BOOK_IDS, ...haoqiBatchPlan.map(row => row[0])];
+    expect(books).toHaveLength(expectedIds.length);
+    expect(getSeries("haoqi")?.bookCount).toBe(expectedIds.length);
+    expect(getPublishedBookCount("haoqi")).toBe(expectedIds.length);
     expect(getPublishedBooks("haoqi").map((book) => book.id)).toEqual(
-      HAOQI_BOOK_IDS,
+      expectedIds,
     );
 
     let verifiedImageCount = 0;
 
     for (const [index, book] of books.entries()) {
-      expect(book.id).toBe(HAOQI_BOOK_IDS[index]);
+      expect(book.id).toBe(expectedIds[index]);
       expect(book.comingSoon).not.toBe(true);
       expect(book.question).toMatch(/？$/);
-      expect(book.pages).toHaveLength(8);
+      expect(book.pages).toHaveLength(index < 30 ? 8 : Number(haoqiBatchPlan[index - 30][2]));
       expect(book.pages.every((page) => page.imageStatus === "complete")).toBe(true);
 
       for (const page of book.pages) {
@@ -498,7 +500,7 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
       }
     }
 
-    expect(verifiedImageCount).toBe(HAOQI_BOOK_IDS.length * 8);
+    expect(verifiedImageCount).toBe(30 * 8 + 344);
   });
 
   it("includes every published xiyouji and haoqi route in the sitemap", () => {
@@ -512,7 +514,7 @@ describe("xiyouji and haoqi published series (tasks B/C)", () => {
       XIYOUJI_BOOK_IDS.map((bookId) => `${xiyoujiUrlPrefix}${bookId}`),
     );
     expect(haoqiUrls).toEqual(
-      HAOQI_BOOK_IDS.map((bookId) => `${haoqiUrlPrefix}${bookId}`),
+      [...HAOQI_BOOK_IDS, ...haoqiBatchPlan.map(row => row[0])].map((bookId) => `${haoqiUrlPrefix}${bookId}`),
     );
     expect(urls.some((url) => url.endsWith("/library/xiyouji"))).toBe(true);
     expect(urls.some((url) => url.endsWith("/library/haoqi"))).toBe(true);

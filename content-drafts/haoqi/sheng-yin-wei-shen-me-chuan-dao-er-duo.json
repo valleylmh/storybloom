@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "sheng-yin-wei-shen-me-chuan-dao-er-duo",
+    "seriesId": "haoqi",
+    "title": "声音为什么能传到耳朵里",
+    "subtitle": "看不见的能量接力赛",
+    "question": "声音为什么能传到耳朵里？",
+    "moral": {
+      "zh": "声音是由物体振动产生的，它推挤身边的物质把能量像波纹一样传进耳朵，带动鼓膜振动，大脑就听到了声音。",
+      "en": "Sound is born from vibration, passing energy forward through air and other materials until it vibrates our eardrums and reaches our brain."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "小树正坐在地毯上搭积木。厨房里，爸爸轻轻敲了敲小铜钟说：“小树，洗手吃饭啦！”隔着整间屋子，声音是怎么飞过来的呢？",
+        "enText": "Xiao Shu was building blocks on the rug. From the kitchen across the room, Dad tapped a small chime: 'Dinner time!' How did that sound travel all the way across the house?",
+        "illustrationPrompt": "Xiao Shu sits on a living room rug stacking wooden blocks, head turned toward the open kitchen doorway where Dad strikes a small metal chime with a mallet. Warm natural light fills the bright open-plan room. no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸拿出一面红色玩具小鼓，让小树摸着鼓面。小树用鼓槌轻轻一敲，“咚！”指尖麻酥酥的。爸爸说：“听，声音出生的时候，物体正在发抖呢，这叫振动。”",
+        "enText": "Dad brought out a red toy drum and asked Xiao Shu to rest a finger on it. Xiao Shu tapped the drumstick—thump! His fingertip tickled. 'Listen,' Dad said, 'whenever sound is born, things are shaking. That's called vibration.'",
+        "illustrationPrompt": "Xiao Shu sits with Dad at a low wooden table. Xiao Shu rests one index finger gently on the surface of a red toy drum while tapping the edge with a small wooden mallet, watching his fingertip vibrate. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "爸爸又拉开一根彩色橡皮筋，拨弄一下，“嗡——”橡皮筋变成了模糊的虚影。小树用手一捏，橡皮筋停下不晃了，嗡嗡声也立刻消失了！",
+        "enText": "Dad stretched a colorful rubber band and plucked it—twang! It blurred back and forth. Xiao Shu pinched it with his fingers; as soon as it stopped shaking, the hum vanished completely!",
+        "illustrationPrompt": "Macro view of Dad's hands stretching a thick yellow rubber band taut over a wooden table. Xiao Shu's small fingertips pinch the center of the band, halting its rapid blurring oscillation instantly. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "小树在鼓面上撒了几粒彩色纸屑，再次敲响小鼓。纸屑欢快地跳起舞来！爸爸提醒他：“跳动的是纸屑，这证明鼓皮在颤动，但纸屑并不是声音本身哦。”",
+        "enText": "Xiao Shu sprinkled tiny paper confetti onto the drum and hit it again. The confetti bounced like dancers! Dad gently explained: 'The bouncing paper shows the drum skin is shaking, but the paper bits aren't the sound itself.'",
+        "illustrationPrompt": "Close-up high-angle view of the red toy drum skin covered in colorful tiny paper confetti. A wooden mallet strikes the drumhead, making the bright paper flakes bounce upward in midair. no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "鼓皮猛地向外鼓起时，就把身边的空气狠狠往前推挤；鼓皮缩回来时，周围的空气又变稀疏了。看不见的空气被推挤得一挤一松，变成了波纹。",
+        "enText": "When the drum surface bulges outward, it shoves the surrounding air forward. When it snaps back, the air spreads out. Invisible air gets squeezed and stretched, forming invisible ripples.",
+        "illustrationPrompt": "A clean educational cross-section diagram style without words: a vibrating drum skin pushing air, visualized by alternating bands of tightly clustered blue particles and widely spaced blue particles rippling outward. no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "爸爸排好骨牌，推倒第一块，变化一路传到末端。“这只是传递的比方。”爸爸说，“空气微粒会来回振动，可不会像骨牌一样倒下就不动了。”",
+        "enText": "Dad tipped a row of dominoes. “This is just a model of passing something along,” he said. “Air particles move back and forth; they do not fall over and stay down like tiles.”",
+        "illustrationPrompt": "On the wooden floor, Dad tips the first piece in a long line of bright blue dominoes, demonstrating a continuous wave motion as Xiao Shu watches closely from the side, hands resting on his knees. no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "小树懂了：“所以不是鼓旁边的空气一路飞进我耳朵，而是空气像排队拍肩膀一样，把推挤的能量送过来了！”爸爸笑着摸了摸他的头。",
+        "enText": "'So the air beside the drum doesn't fly into my ear!' Xiao Shu realized. 'It's like a line of kids gently tapping each other's shoulders, passing the push along!' Dad smiled and ruffled his hair.",
+        "illustrationPrompt": "In the bright living room, Xiao Shu smiles brightly, demonstrating a tapping motion with his hand, while Dad kneels beside him, smiling and affectionately ruffling Xiao Shu's hair. no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "小树摸摸自己的耳朵。耳郭就像两只小喇叭，聚拢身旁空气送来的微小推挤，把这些能量顺着弯弯的耳道滑梯一直送往里面。",
+        "enText": "Xiao Shu touched his ears. His outer ears shaped like little cups gathered the gentle air nudges and guided them deep down the curving ear canal.",
+        "illustrationPrompt": "Medium shot of Xiao Shu gently cupping his hands behind his ears, tilting his head with an intrigued expression, feeling the shape of his outer ear curves in the sunlit room. no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "耳道尽头，藏着一张极薄极软的薄膜，叫做“鼓膜”。空气的波纹撞在上面，鼓膜也跟着轻轻晃动起来，就像耳朵里藏着一面感应小鼓！",
+        "enText": "Deep at the end of the ear canal lies a delicate, paper-thin membrane called the eardrum. When air ripples tap it, the eardrum trembles in sync, like a secret drum inside the ear!",
+        "illustrationPrompt": "A clean clay cutaway model closeup without humans, displaying the cylindrical ear canal leading directly to a delicate, semi-translucent, taut eardrum membrane, shown in soft neutral studio lighting. no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "鼓膜后面有三块很小的听小骨，把振动传向内耳。耳蜗里的感受细胞把振动变成神经信号，大脑收到信号，才认出了爸爸的声音。",
+        "enText": "Three tiny bones behind the eardrum carry vibrations into the inner ear. Sensory cells in the cochlea turn them into nerve signals, and the brain recognizes Dad’s voice.",
+        "illustrationPrompt": "A clean clay cutaway model closeup without humans, showing the three tiny auditory ossicles linked together, contacting the delicate spiral snail shell of the inner ear cochlea in clear detail. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "爷爷坐在书桌旁，招呼小树：“快来，把耳朵贴在木桌上。”爷爷在桌子另一头轻轻用指甲划了一下，小树惊呼：“哇，声音好响亮、好清脆呀！”",
+        "enText": "Grandpa, wearing his light blue shirt and brown trousers, called Xiao Shu to the wooden desk. 'Press your ear flat on the wood.' Grandpa scratched the far end softly. Xiao Shu gasped, 'Wow, it's so loud and crisp!'",
+        "illustrationPrompt": "Grandpa, wearing a light blue shirt and brown trousers, gently scratches the far corner of a long polished oak desk with his fingernail. Xiao Shu presses his ear flat against the wood surface, listening intently. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "爷爷说：“声音也能靠固体传递振动。在木头、钢铁等材料里，通常比在空气里传播得快。材料的弹性和密度，都会影响速度。”",
+        "enText": "“Solids carry vibrations too,” said Grandpa. “Sound usually travels faster through wood and steel than air. A material’s stiffness and density both affect the speed.”",
+        "illustrationPrompt": "On the study table, Grandpa holds a vibrating metal tuning fork, pressing its stem against the end of a solid steel rod resting on the desk, while Xiao Shu watches closely. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "奶奶找来两个纸杯和一根长长的棉线，做成了土电话。奶奶走到走廊另一头，拉直细线轻轻说话。声音顺着紧绷的棉线，清晰地钻进了小树的杯子里！",
+        "enText": "Grandma made a string telephone with two paper cups and a taut cotton string. She walked to the end of the hallway and whispered softly. The sound traveled along the tight string straight into Xiao Shu's cup!",
+        "illustrationPrompt": "Wide warm clay scene: Grandma and Xiao Shu stand three meters apart in a hallway. Grandma holds one RED PAPER CUP against her mouth. Xiao Shu holds a SECOND RED PAPER CUP to his ear. A single visibly taut white COTTON STRING connects the bottoms of the cups across the empty gap. No drinking, no liquids, no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "爸爸指着鲸鱼的图画说：“液体也能传声。鲸鱼在水里发出的声音，可以传给远处的同伴。声音并不只会走空气这条路。”",
+        "enText": "Dad pointed to a picture of a whale. “Liquids carry sound too. Whale calls can reach distant companions through water. Air is not sound’s only pathway.”",
+        "illustrationPrompt": "Dad and Xiao Shu sit on the rug examining an open hardcover nature book featuring a large humpback whale swimming through deep clear blue water, illustrating acoustic transmission in the ocean. no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "小树举起太空人玩具。爸爸说：“声音需要物质来传递。接近真空的太空不能像空气一样传声，所以宇航员用无线电通话；飞船里有空气，仍能听见声音。”",
+        "enText": "Xiao Shu held up an astronaut toy. “Sound needs matter to travel,” Dad said. “Near-vacuum space cannot carry it like air, so astronauts use radios. Inside an air-filled spacecraft, they can hear sounds.”",
+        "illustrationPrompt": "Xiao Shu holds a white plastic astronaut toy figurine near a model spacecraft on the table, while Dad sits beside him, gesturing to illustrate the quiet vacuum of outer space. no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "周末，爸爸带小树来到安全的空旷院子。面对远处大墙，小树喊了一声，稍后听见了回应。爸爸说：“声音遇到墙反射回来，这就是回声。”",
+        "enText": "At the weekend, Dad took Xiao Shu to a safe open courtyard. He called toward a distant wall and heard a reply a moment later. “The wall reflected the sound back,” Dad said. “That is an echo.”",
+        "illustrationPrompt": "Dad and Xiao Shu stand in a wide, empty paved courtyard. Dad cups his hands around his mouth, shouting toward a tall brick wall in the distance, both pausing to listen for the reflected sound. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "爸爸提醒：“声音太大会伤害听力。远离鞭炮、音箱等强声源，必要时用合适的护耳用品。也不要把手指、棉签或小棒伸进耳道。”",
+        "enText": "Dad reminded him, “Very loud sounds can harm hearing. Stay away from fireworks and loudspeakers, and use suitable hearing protection when needed. Never put fingers, cotton swabs, or sticks into the ear canal.”",
+        "illustrationPrompt": "In a bright room, Xiao Shu wears protective yellow over-ear earmuffs, smiling comfortably. On the table beside him rests a second pair of hearing protectors, demonstrating ear safety. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "回到餐桌前，小树凑到爸爸耳边，温热的气流伴着极轻的振动：“爸爸，我爱你。”不需要多大声，最温柔的空气波纹，就已经稳稳落进心里啦。",
+        "enText": "Back at the dinner table, Xiao Shu leaned close to Dad's ear, letting the softest vibration carry his voice: 'Dad, I love you.' Even the gentlest ripple of air lands safely right in the heart.",
+        "illustrationPrompt": "At the warm dinner table filled with bowls and chopsticks, Xiao Shu leans close to whisper softly into Dad's ear. Dad closes his eyes and smiles with deep warmth and happiness. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 40,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

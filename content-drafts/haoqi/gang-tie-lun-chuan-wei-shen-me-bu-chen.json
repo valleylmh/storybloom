@@ -1,0 +1,133 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "gang-tie-lun-chuan-wei-shen-me-bu-chen",
+    "seriesId": "haoqi",
+    "title": "大大的钢铁轮船，为什么不会沉",
+    "subtitle": "推开水的魔法大肚子",
+    "question": "大大的钢铁轮船，为什么不会沉？",
+    "moral": {
+      "zh": "钢铁做成空心船身，能排开足够多的水；稳稳漂浮时，水的浮力与船和所载物品的总重量相等。",
+      "en": "A hollow steel hull displaces enough water so that, when floating steadily, buoyancy balances the total weight of the ship and its load."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "码头边，五岁的小树拉着爷爷的手。江面上驶过一艘巨大的钢铁货船，像一座漂浮在水上的黑色城堡。小树仰着头，看呆了。",
+        "enText": "By the harbor, five-year-old Xiao Shu held Grandpa's hand. A massive steel cargo ship glided across the river like a floating fortress. Xiao Shu looked up in total wonder.",
+        "illustrationPrompt": "Xiao Shu and Grandpa stand safely BEHIND a tall metal guardrail on a harbor observation platform, watching a large steel container ship afloat on calm water. Warm 3D clay storybook, no sitting at water edge, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "小树低头捡起一颗掉在地上的小铁螺丝，丢进身旁的洗手小桶里，“咚”的一声，螺丝一下子沉到底。小铁块那么轻会下沉，大铁船重几万吨，为什么不会沉呢？",
+        "enText": "Xiao Shu picked up a tiny metal bolt from the ground and dropped it into a small rinse bucket. Plink! It sank straight to the bottom. If a tiny iron bolt sinks, why doesn't a giant steel ship weighing thousands of tons sink too?",
+        "illustrationPrompt": "Xiao Shu crouches beside a clear bucket of water on the dock, watching a small dark iron bolt rest at the bucket's bottom with tiny settling bubbles. No text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "回到家，爸爸陪小树在洗手盆边做实验。爸爸拿出一块沉甸甸的蓝色橡皮泥：“我们把它当作造船的材料吧。”小树把它揉成一个圆滚滚、实心的小泥球。",
+        "enText": "Back home, Dad joined Xiao Shu at the bathroom sink for an experiment. Dad brought out a heavy lump of blue clay: 'Let's pretend this is our shipbuilding material.' Xiao Shu rolled it into a dense, solid little ball.",
+        "illustrationPrompt": "In a bright bathroom, Dad and Xiao Shu stand by a white sink filled with water. Xiao Shu rolls a dense, solid sphere of bright blue modeling clay between two hands. No text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "小树把实心小球放进水盆里。“咕咚！”小泥球像小铁螺丝一样，飞快地沉到了盆底。哪怕橡皮泥一点也不大，它还是浮不起来。",
+        "enText": "Xiao Shu gently dropped the solid clay ball into the basin. Plop! Just like the little bolt, it zoomed straight down to the ceramic bottom. Even though it was small, it couldn't float at all.",
+        "illustrationPrompt": "Inside a water-filled white ceramic sink, a dense blue clay ball rests firmly on the bottom beneath clear water, leaving slight ripples on the surface above. No text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "爸爸笑着说：“材料没有变，我们换个形状试试。”小树把小泥球捞出来，捏一捏、压一压，把它捏成了一只肚子大大、中间空心的碗状小船。",
+        "enText": "Dad smiled gently: 'The clay hasn't changed, but let's change its shape.' Xiao Shu fished out the ball, pinching and pressing the very same clay into a wide, hollow bowl-shaped boat.",
+        "illustrationPrompt": "At the bathroom counter, Xiao Shu uses small thumbs and fingers to pinch and stretch the blue clay ball into a wide, hollow bowl-shaped boat beside smiling Dad. No text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "小树小心地把橡皮泥小船放进水里。奇迹发生了！小船稳稳地漂在水面上，没有沉下去！明明是一模一样重的橡皮泥，为什么变成小船就能浮起来？",
+        "enText": "Xiao Shu placed the clay boat gently onto the water. What a surprise! The boat floated steadily on the surface without sinking! It was the exact same heavy clay—why could it float now?",
+        "illustrationPrompt": "Close-up of the wide blue clay boat resting smoothly on the calm water surface inside the white sink, floating buoyantly with its rim dry above the waterline. No text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "爸爸指着水面让小树仔细看：“小船钻进水里时，把肚子周围的水挤开了。你看，空心的小船排开的水，比刚才那颗实心小球多得多呢！”",
+        "enText": "Dad pointed at the waterline: 'Look closely. When the hollow boat sits in the water, its big belly pushes water out of the way. It displaces much more water than that little solid ball did!'",
+        "illustrationPrompt": "Closeup of adult hands pointing from OUTSIDE a small clear tabletop bowl at a palm-sized blue clay boat floating inside. Only hands, no body inside bowl, no people miniaturized. Waterline visible around boat, warm clay science model, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "爸爸说：“水会从各个方向挤压船身，越深的地方压力越大。合起来，水给小船一个向上的托力，这就是浮力。”",
+        "enText": "“Water presses on the boat from all sides,” Dad said. “Pressure is greater deeper down. Together, these pushes give the boat an upward force called buoyancy.”",
+        "illustrationPrompt": "Close-up cutaway view of the hollow blue clay boat in clear water, showing water pressing smoothly against the submerged curved hull and lifting it upward from below. No text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "“浮力有多大呢？它等于物体排开的水的重量。”空心小船能排开足够多的水，当向上的浮力与总重量平衡，小船就稳稳浮着。",
+        "enText": "“How strong is buoyancy? It equals the weight of the displaced water.” The hollow boat can displace enough water for the upward force to balance its total weight.",
+        "illustrationPrompt": "In a clear glass tank, a hollow blue boat rests on water, showing the submerged volume of the hull equal to the displaced water level risen along the transparent glass wall. No text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "真实的钢铁大船也是这个道理。钢铁虽然很重，但造船工程师把它做成了巨大的空心结构。大船肚子里装着大量的空气，肚皮占了很大很大的空间。",
+        "enText": "Giant steel ships work in the very same way! Steel is heavy, but shipbuilders shape it into an enormous hollow hull. The ship's belly holds gigantic rooms filled with light, empty air.",
+        "illustrationPrompt": "Realistic cross-section model of a steel cargo ship floating on water, displaying huge hollow internal rooms and cargo bays mostly filled with air beneath the deck. No text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "爸爸拿两个同样大的盒子打比方：“一个装满铁，一个大半是空气，重量可差远了。轮船连同里面的空处一起算，平均密度能比水小。”",
+        "enText": "Dad compared two equal-sized boxes. “One full of iron weighs much more than one mostly filled with air. A ship, including its hollow spaces, can have a lower average density than water.”",
+        "illustrationPrompt": "Side-by-side comparison in a water tank: a solid gray iron block rests on the bottom, while an identical-sized hollow iron box filled with air floats on the surface. No text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "小树想试试小船的力气，往小船肚子里放进一颗小玻璃珠。小船稍微往下沉了一点点，推开了更多的水，浮力变大，稳稳托住了玻璃珠。",
+        "enText": "Xiao Shu wanted to test his little boat's strength. He dropped a shiny glass marble inside. The boat sank just a tiny bit deeper, pushing away even more water to stay floating!",
+        "illustrationPrompt": "Xiao Shu STANDS beside a bathroom sink, one hand placing ONE glass marble into a palm-sized blue clay toy boat floating in the basin. Boat smaller than his hand, boy completely outside sink on dry floor. Dad beside him. Warm clay animation, no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "可是，当小树一口气放进十多颗玻璃珠时，小船太重了，水漫过了船舷，“咕咚”一声沉了下去。原来，大船如果装得太满超载，也是会沉没的。",
+        "enText": "But when Xiao Shu piled in a whole handful of marbles, the boat grew far too heavy. Water spilled over the edges, and down it went! Even huge ships can sink if they carry too much weight.",
+        "illustrationPrompt": "Closeup ONLY of a palm-sized blue clay toy boat in a clear tabletop basin. Many glass marbles overweigh the boat; water spills over its low rim and it begins sinking. No human, no child, no person in water. Clay science illustration, no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "爷爷说：“船舱如果进了很多水，原本空着的地方被水占了，船就可能越沉越深。严重时，水漫过更多开口，船就会下沉。”",
+        "enText": "“If much water floods the hull,” Grandpa said, “it fills spaces that held air. The ship may sink lower, letting water enter more openings, and could go down.”",
+        "illustrationPrompt": "Detailed cutaway illustration of a damaged ship hull in dark ocean water, with seawater rushing into open lower compartments, replacing air and weighing the hull down. No text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "工程师会把船舱分成水密隔舱，帮助限制进水范围。不过隔舱不能应对一切危险，还要控制载重、检查船体，并遵守乘船安全规则。",
+        "enText": "Engineers use watertight compartments to limit flooding. They cannot protect against every danger, so ships also need load limits, inspections, and safe travel rules.",
+        "illustrationPrompt": "Clean cutaway model of a ship's hull divided into multiple vertical watertight bulkheads, confining incoming water to one sealed compartment while other dry rooms keep it afloat. No text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "从古代的空心木舟，到今天的万吨钢铁巨轮，人类不是用魔法对抗重力，而是用智慧把沉重的材料塑造成能排开更多水的形状。",
+        "enText": "From ancient hollow wooden canoes to modern steel giants, people never relied on magic. Instead, clever thinkers learned to shape heavy materials so they displace plenty of water.",
+        "illustrationPrompt": "Split historical perspective across open water: a wide hollow carved wooden canoe in the foreground and a massive modern steel freighter in the distance, both floating by displacement. No text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "小树用小毛巾擦干手，笑着对爸爸说：“我知道了！钢铁轮船不沉，不是因为它轻，而是因为空心大肚子推开了足够多的水，水在托着它呢！”",
+        "enText": "Xiao Shu dried his hands with a soft towel and beamed at Dad: 'I get it now! Steel ships float not because they're light, but because their big hollow bellies push enough water aside so the water lifts them up!'",
+        "illustrationPrompt": "Xiao Shu dries hands with a yellow towel, smiling up at Dad next to the bathroom sink where the successful blue clay boat sits safely on the counter. No text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "夜晚，小树趴在窗台前，望着远处港湾里灯火辉煌的巨轮。科学的秘密就像小船肚子里的空气一样，看不见，却托起了整个奇妙的世界。",
+        "enText": "At bedtime, Xiao Shu leaned on his bedroom windowsill, watching the gleaming harbor lights and the proud steel ships resting securely on the dark blue sea. Science, like air inside a ship, holds up our wonderful world.",
+        "illustrationPrompt": "Xiao Shu stands safely on the floor one step back from a closed bedroom window, looking at distant ships and harbor lights outside. Both feet on floor, not sitting on sill, warm clay animation, no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 38,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

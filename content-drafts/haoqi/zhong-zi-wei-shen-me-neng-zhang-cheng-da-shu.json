@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "zhong-zi-wei-shen-me-neng-zhang-cheng-da-shu",
+    "seriesId": "haoqi",
+    "title": "种子为什么能长成大树",
+    "subtitle": "一颗小种子的阳光与时光奇迹",
+    "question": "种子为什么能长成大树？",
+    "moral": {
+      "zh": "种子里的胚先利用储存的养分萌发，长出绿叶后利用阳光的能量、水和二氧化碳制造养分，经过多年生长成为大树。",
+      "en": "The embryo starts with stored nutrients; green leaves then use sunlight’s energy, water, and carbon dioxide to make sugars, helping a tree grow over many years."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "公园的大橡树下，小树捡起一枚圆溜溜的小橡果。大树高得能摸到白云，可它手里的种子，比他的大拇指还要小呢。",
+        "enText": "Under a giant oak tree in the park, Xiao Shu picked up a round little acorn. The tree reached high into the clouds, yet the seed in his hand was smaller than his thumb.",
+        "illustrationPrompt": "Xiao Shu stands beneath a massive ancient oak tree in a sunny park, looking down at a small brown acorn resting in his open palm. Golden sunlight filters through the wide leafy canopy above. No text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "回到家，爷爷找来放大镜。小树凑近一瞧，种子的外壳又硬又光，像穿了一身结实的棕色小盔甲，一动也不动。",
+        "enText": "Back home, Grandpa brought out a magnifying glass. Xiao Shu peeked through. The acorn’s shell was hard and smooth, just like a sturdy little suit of brown armor.",
+        "illustrationPrompt": "Xiao Shu and Grandpa sit together at a wooden table. Xiao Shu looks through a round magnifying glass held over a smooth brown acorn with its rough textured cap resting on the wood. No text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "爷爷剥开一颗泡软的蚕豆：“我们借这颗大种子看里面。这层叫种皮，能保护内部。橡果最外面还有果皮，里面才是种子。”",
+        "enText": "Grandpa opened a soaked broad bean. “Let’s use this large seed to look inside. Its seed coat protects what is within. An acorn has a fruit wall outside its seed too.”",
+        "illustrationPrompt": "Clean clay cutaway model closeup of a soaked broad bean seed split open, revealing the thin outer seed coat peeling away from the pale inner bean, set on a plain surface. No humans, no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "拨开豆瓣，里面藏着小小的胚。“这是幼小的植物，能长出根、茎和叶。”爷爷说，“蚕豆会长成豆苗，橡果里的胚会长成橡树。”",
+        "enText": "Inside was a tiny embryo. “This young plant can grow roots, a stem, and leaves,” Grandpa said. “A bean grows into a bean plant; an acorn grows into an oak.”",
+        "illustrationPrompt": "Clean clay cutaway model closeup of an opened seed, highlighting the tiny delicate plant embryo with miniature embryonic root and tiny folded shoot resting between two halves. No humans, no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "小树问：“还没有叶子，它吃什么呢？”爷爷指着豆瓣：“种子储存着养分，像出发前装好的便当，帮助小苗开始生长。”",
+        "enText": "“What can it eat without leaves?” Xiao Shu asked. Grandpa pointed to the bean halves. “Seeds store nutrients like a packed lunch to help the young plant start growing.”",
+        "illustrationPrompt": "Clean clay cutaway model closeup of the two fleshy cotyledon halves of a seed, showing their thick nutrient-rich storage tissue cradling the tiny embryo inside. No humans, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "小树找来小花盆，把小橡果轻轻按进蓬松的黑土里。泥土松软得像一床羽绒被，将安睡的种子温柔地盖好。",
+        "enText": "Xiao Shu brought a small clay pot and gently tucked the acorn into soft, dark soil. The loose earth covered the sleeping seed like a cozy down blanket.",
+        "illustrationPrompt": "Xiao Shu gently presses an acorn into soft, dark loam soil inside a small terracotta pot on a wooden garden workbench. His hands carefully smooth the loose earth over the seed. No text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "小树端起小水壶洒水。泥土吸饱了水分，种子也大口喝水。硬壳被泡得软软的，沉睡的小生命终于被水滴叫醒了！",
+        "enText": "Xiao Shu tipped his little watering can. The soil drank up the water, and so did the seed. Its hard shell softened, and the sleeping baby plant woke up!",
+        "illustrationPrompt": "Xiao Shu tilts a small green watering can, sprinkling a gentle shower of water droplets onto the dark soil of the terracotta pot, moistening the earth where the acorn is buried. No text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "种子还需要空气里的氧气和合适的温度。土不能一直泡得透不过气。爷爷说：“许多种子能在暗处萌发，也有些种子对光和冷热另有要求。”",
+        "enText": "Seeds also need oxygen and a suitable temperature. Soil must not stay waterlogged. “Many seeds sprout in darkness,” Grandpa said, “but some need particular light or temperature conditions.”",
+        "illustrationPrompt": "Cross-section cutaway view of aerated brown garden soil inside a pot, showing moist soil crumbs, tiny pockets of air, and a resting acorn seed in balanced damp earth. No humans, no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "瞧，第一根白色的小嫩根顶破种皮，顺着泥土拼命往下钻！有了坚实的根抓紧大地，小苗才能站得稳稳当当。",
+        "enText": "Look! The first white root broke through the shell and pushed deep into the dirt. With strong roots gripping the earth, the little seedling would stand steady.",
+        "illustrationPrompt": "Clean cutaway closeup of moist soil where a cracked acorn shell reveals a thick white primary root pushing downwards, sprouting fine root hairs that grip the earth particles. No humans, no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "又等了一些日子，嫩茎钻出了土，叶子渐渐展开。种子储存的养分帮助小苗起步；接下来，绿叶也要开始工作了。",
+        "enText": "After more waiting, a shoot rose above the soil and leaves unfolded. Stored nutrients helped it get started. Now its green leaves could begin to work too.",
+        "illustrationPrompt": "Eye-level view of a terracotta pot where a fresh green oak shoot rises above the dark soil, unfurling its first delicate lobed leaves in soft morning light. No humans, no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "小树看看越长越高的苗，又看看花盆：“小苗以后靠吃土长大吗？要是把土吃光，花盆不就空了吗？”",
+        "enText": "Xiao Shu looked from the growing seedling to its pot. “Does it grow by eating dirt? Wouldn’t the pot become empty?”",
+        "illustrationPrompt": "Xiao Shu kneels on the floor beside the terracotta pot, resting his chin on his hands as he curiously inspects the growing green seedling and the dark soil around its stem. No text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "爷爷说：“根从土里吸收水和矿物质。不过，树长大的材料并不主要来自泥土。还有一种看不见的原料，藏在空气里。”",
+        "enText": "“Roots take in water and minerals,” said Grandpa. “But most of a tree’s new material does not come from soil. Another invisible ingredient is in the air.”",
+        "illustrationPrompt": "Clean cutaway model of a potted seedling showing the underground root network absorbing water droplets between soil grains, while the leafy green shoot reaches up into open air. No humans, no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "那大树庞大的身躯是从哪里来的？小树走到窗前。阳光暖洋洋地洒在绿叶上，周围有看不见却摸得到的轻柔空气。",
+        "enText": "Where does a giant tree's heavy trunk come from, then? Xiao Shu walked to the window. Golden sunlight poured over the green leaves, and fresh air swirled around.",
+        "illustrationPrompt": "Xiao Shu stands beside a bright sunlit window, admiring the potted oak seedling resting on the sill bathed in warm golden sunbeams and fresh air flowing from the open frame. No text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "绿叶像小厨房：利用阳光的能量，把水和空气里的二氧化碳变成糖。植物再用糖制造身体需要的材料，慢慢长出新根、新叶和木头。",
+        "enText": "Leaves are like kitchens. Using sunlight’s energy, they turn water and carbon dioxide into sugars. The plant uses these to build new roots, leaves, and wood.",
+        "illustrationPrompt": "Clean botanical clay cutaway closeup of a green oak leaf, showing internal cellular layers with green chloroplasts, tiny vein tubes, and sunlight striking the surface. No humans, no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "大树不是一天长大的。春天抽出新枝，夏天晒着阳光做木头，秋天树叶金黄，冬天安静蓄力。小树长高了一点，树苗也长高了一截。",
+        "enText": "A big tree doesn't grow in a single day. It shoots in spring, builds wood in summer sun, glows golden in autumn, and rests in winter. Xiao Shu grew, and so did the tree.",
+        "illustrationPrompt": "Four distinct vertical panels showing an oak sapling in four seasons: tender spring shoots, lush deep green summer foliage, golden-orange autumn leaves, and bare winter branches. No humans, no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "花盆装不下长大的树苗了。爸爸拿着铁锹，和小树一起在院子里挖出一个宽宽的坑，把树苗稳稳地移栽进宽广的大地里。",
+        "enText": "The pot became too snug. Dad brought a spade, and together they dug a roomy hole in the garden yard, safely moving the young tree into the open ground.",
+        "illustrationPrompt": "In a grassy yard, Dad digs a deep round planting hole with a spade while Xiao Shu carefully supports the young oak sapling with its exposed root ball ready to be planted. No text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "爷爷指着院角的老木桩，上面有一圈圈清晰的年轮：“每一圈年轮，都是一整年的阳光、雨水和风。大树用了几十年，才长得这么粗。”",
+        "enText": "Grandpa pointed to tree rings on an old stump. 'Each ring is a full year of sunshine, rain, and breeze. It takes decades of patient seasons to grow this wide.'",
+        "illustrationPrompt": "Grandpa and Xiao Shu kneel beside a flat tree stump in the garden. Grandpa points with his finger to the clear concentric circular growth rings etched across the smooth cut wood. No text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "地底下的根像大网一样越扎越深，伸向四面八方喝水；天上的树冠像大伞一样越撑越开，大口大口捕捉着阳光和空气。",
+        "enText": "Deep underground, roots spread out like a vast net drinking water. High above, the leafy canopy opened wide like an umbrella, catching boundless sunlight and air.",
+        "illustrationPrompt": "Cross-section landscape view showing a thriving young oak tree: wide underground net of roots drinking water from deep soil, and a broad green leafy canopy catching sunlight above. No humans, no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "小树在小树苗旁立了一根小木桩，用彩笔画下一道小刻度。他和它站在一起比了比高：“我们都在慢慢长大，谁也不着急。”",
+        "enText": "Xiao Shu put a wooden stake beside his young tree and marked a line with a crayon. Standing side by side, he smiled, 'We are both growing tall, one day at a time.'",
+        "illustrationPrompt": "Xiao Shu stands smiling in the garden beside his young oak tree, holding a colored crayon against an upright wooden support stake stuck in the soil next to the sapling. No text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "再看公园的大橡树，小树明白了：种子里的胚先靠储存的养分起步，再利用水、空气里的二氧化碳和阳光的能量，经过许多年长成大树。",
+        "enText": "Looking at the great oak again, Xiao Shu understood. Its embryo began with stored nutrients, then used water, carbon dioxide, and sunlight’s energy to grow over many years.",
+        "illustrationPrompt": "Xiao Shu stands beneath the towering, magnificent park oak tree, looking up in awe at its sprawling branches and lush green crown glowing brilliantly in the midday sun. No text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 33,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

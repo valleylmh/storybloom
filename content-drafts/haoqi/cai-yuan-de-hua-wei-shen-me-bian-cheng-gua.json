@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "cai-yuan-de-hua-wei-shen-me-bian-cheng-gua",
+    "seriesId": "haoqi",
+    "title": "菜园里的花为什么会变成瓜",
+    "subtitle": "蜜蜂带给小花的一场奇妙魔法",
+    "question": "菜园里的花为什么会变成瓜？",
+    "moral": {
+      "zh": "这类黄瓜授粉后还需完成受精，子房发育成果实、胚珠发育成种子；有些黄瓜品种也能不经受精结果。",
+      "en": "In this cucumber variety, pollination is followed by fertilization; the ovary becomes fruit and ovules become seeds. Some varieties can form fruit without fertilization."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨的菜园里，叶片上滚着晶莹的露珠。小树蹲在黄瓜架下，好奇地指着一朵金黄色的小花。花朵旁边，正挂着一根顶花带刺的嫩黄瓜。",
+        "enText": "In the morning garden, dewdrops rolled on broad green leaves. Xiao Shu crouched beneath the cucumber trellis, pointing curiously at a bright yellow flower next to a crisp, prickly cucumber.",
+        "illustrationPrompt": "Morning garden trellis. Xiao Shu crouches on moist soil, pointing at a bright yellow flower growing next to a green prickly cucumber on the vine, dewdrops resting on large leaves. Sunlight filters through the foliage. no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "“奶奶，柔软轻薄的花瓣，怎么会变成硬邦邦、脆生生的长黄瓜呢？”小树仰起小脸问。难道小花喝足了水，就会像气球一样吹大吗？",
+        "enText": "\"Grandma, how can soft, tender petals turn into a long, crunchy cucumber?\" Xiao Shu asked, tilting his head. Did the blossoms puff up like balloons after drinking water?",
+        "illustrationPrompt": "Xiao Shu stands by the cucumber trellis, tilting his head thoughtfully with one hand on his chin, looking closely at delicate yellow petals right beside a firm, ribbed cucumber. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "奶奶笑着摘下一副放大镜递给小树：“仔细看看同一根藤上的黄瓜花，它们长得可不是一模一样哦。”小树贴近花丛，睁大了好奇的眼睛。",
+        "enText": "Grandma smiled and handed Xiao Shu a magnifying glass. \"Look closely at the yellow blossoms along the vine. They are not all the same!\" Xiao Shu leaned in with eager eyes.",
+        "illustrationPrompt": "Grandma smiles as she passes a wooden magnifying glass to Xiao Shu among the lush cucumber vines. Several yellow blossoms peek out from behind rough green leaves. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "第一朵花连着一根细细长长的花梗，花心中央立着几个小柱子，上面沾满了黄色的小粉末。奶奶说：“这是雄花，它负责准备神奇的花粉。”",
+        "enText": "The first flower grew on a slender, straight green stalk. Inside its cup sat tiny stamens dusted with golden powder. \"This is a male flower,\" Grandma said. \"It prepares pollen!\"",
+        "illustrationPrompt": "Macro botanical closeup of a male cucumber flower on a slender green stalk, its five yellow petals opened wide to reveal central stamens heavily dusted with powdery golden pollen. no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "小树又看另一朵花，忍不住叫起来：“哇！这朵花底下藏着一根带毛的小黄瓜！”奶奶点头笑道：“这是雌花，底下的小瓜就是植物的‘子房’。”",
+        "enText": "Xiao Shu inspected another flower and gasped, \"Look! Under this blossom sits a tiny, fuzzy baby cucumber!\" Grandma nodded. \"That's a female flower. The tiny green pod below is called an ovary.\"",
+        "illustrationPrompt": "Scientific botanical side view closeup of one FEMALE cucumber flower on vine: yellow five-petaled blossom at TIP of a miniature fuzzy green cucumber-shaped OVARY directly behind its petals, ovary attaches by thin stalk to vine. Entire tiny cucumber ovary plainly visible. No full fruit, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "子房里有小小的胚珠。奶奶说：“咱们种的这种黄瓜，通常要经过授粉、受精，小瓜才能继续长好。我们等一等，看看谁来帮忙。”",
+        "enText": "The ovary holds tiny ovules. “This cucumber variety usually needs pollination and fertilization for fruit to grow well,” Grandma said. “Let’s watch for a helper.”",
+        "illustrationPrompt": "Enlarged simplified CLAY CUTAWAY of a tiny cucumber ovary under its attached yellow flower. Inside small ovary are rows of minute pale OVULES, not fully formed seeds. Exterior fuzzy green, cream internal tissue. Clear educational model on plain background, no humans, no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "雄花准备了金黄的花粉，雌花张开了黏糊糊的柱头。可是，花朵没有脚，也不会走动，雄花的花粉怎么才能送进雌花的摇篮里呢？",
+        "enText": "The male flower carried golden pollen, while the female flower opened a sticky stigma in its center. But flowers have no feet! How could pollen travel over to the female blossom?",
+        "illustrationPrompt": "Macro side-by-side botanical view of two cucumber blossoms: a male flower with pollen-dusted stamens and a female flower with a sticky, three-lobed stigma at its center. no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "嗡嗡嗡，一只蜜蜂落进雄花，寻找花蜜和花粉。它身体上的细毛蹭到了花粉，飞走时，也把一些花粉带走了。",
+        "enText": "A honeybee buzzed into a male flower, gathering nectar and pollen. Some pollen brushed onto its body hairs and traveled away with it.",
+        "illustrationPrompt": "Extreme macro closeup of a striped honeybee climbing inside a yellow male cucumber flower, yellow pollen grains clinging visibly to its fuzzy black and amber thorax and legs. no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "蜜蜂喝饱了，又欢快地飞向雌花。它在雌花的花心里蹭来蹭去，身上带的花粉，不知不觉就粘在了雌花黏黏的柱头上。授粉成功啦！",
+        "enText": "Buzzing cheerfully, the bee flew over to the female flower. As it wiggled inside, golden pollen brushed off onto the sticky stigma. Pollination was complete!",
+        "illustrationPrompt": "Close macro view of a honeybee visiting a bright YELLOW FEMALE CUCUMBER FLOWER, five yellow petals, lobed stigma center touched by pollen on bee body. Small fuzzy cucumber ovary behind flower visible in side angle. NO white lily, no red flower, no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "花粉落在合适的柱头上，会长出花粉管，向胚珠伸去。雄性生殖细胞沿着管子到达，与卵细胞结合，这一步才叫受精。授粉和受精可不是同一件事。",
+        "enText": "On a suitable stigma, pollen grows a tube toward an ovule. A male reproductive cell travels down the tube and joins an egg cell: fertilization. Pollination and fertilization are different steps.",
+        "illustrationPrompt": "Simple clearly enlarged clay educational cutaway of cucumber pistil: a tiny yellow pollen grain rests on stigma at TOP of flower, one thin pollen tube travels downward through style into green ovary BELOW yellow petals, ends near ONE tiny pale ovule among rows. No letters or labels. Correct inferior ovary, no red lily, no humans, no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "完成了神圣的任务，黄色的花瓣开始失去光彩。几天后，花瓣慢慢缩紧、变褐，干枯地贴在瓜尖上。变成果实的不是花瓣，而是底部的子房！",
+        "enText": "With its mission accomplished, the yellow petals slowly lost their bright sheen. Days later, they wrinkled and dried into a little brown cap. It wasn't the petals turning into the cucumber—it was the ovary beneath!",
+        "illustrationPrompt": "Macro view of a young cucumber developing on the vine, its yellow flower petals now withered, wrinkled, and brown at the tip of the expanding green cylindrical ovary. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "得到受精信号的小摇篮，像吹起的小哨子一样苏醒了！子房里的细胞不停地分裂、长大，小瓜以肉眼可见的速度一天天变粗、变长。",
+        "enText": "Having received the spark of life, the little cradle awakened! Its tiny cells divided and expanded, puffing the baby cucumber thicker and longer with every passing day.",
+        "illustrationPrompt": "Botanical closeup of a rapidly growing green baby cucumber hanging from a twisting tendril, covered in tiny soft prickles as it thickens in the sunlight. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "小树在泥土里捡起一朵掉落的花：“那雄花为什么不长瓜呢？”奶奶摸摸他的头：“雄花送出花粉后，使命就完成啦，它没有子房，只能落回泥土。”",
+        "enText": "Xiao Shu picked up a fallen yellow blossom from the dirt. \"Why didn't this male flower grow a cucumber?\" Grandma patted his shoulder. \"Once it shares its pollen, its work is done. It has no ovary to grow fruit!\"",
+        "illustrationPrompt": "Xiao Shu holds a fallen yellow blossom gently in his open palm, looking at it with curious eyes, while Grandma smiles softly beside him in the sunny garden patch. no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "小树指着一根发黄的小瓜：“它为什么没长好？”爷爷说：“可能没能顺利授粉受精，也可能是水分、温度或营养等不合适，要仔细观察才能判断。”",
+        "enText": "Xiao Shu pointed to a yellowing baby cucumber. “Why did it stop?” “Pollination or fertilization may have failed,” Grandpa said. “Water, temperature, or nutrients might also be unsuitable. We need to look carefully.”",
+        "illustrationPrompt": "Grandpa and Xiao Shu crouch beside the garden trellis, inspecting a stunted, pale yellowish baby cucumber that has shriveled and ceased growing on the vine. no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "“那世界上所有瓜都要蜜蜂帮忙吗？”小树眨着眼问。爷爷笑着补充：“有些大棚里的黄瓜品种很特殊，即使没有授粉也能自己结果，这叫‘单性结实’呢！”",
+        "enText": "\"Do all cucumbers in the world need bees?\" Xiao Shu blinked. Grandpa smiled, \"Some special greenhouse cucumber varieties can grow fruit even without pollination—scientists call it parthenocarpy!\"",
+        "illustrationPrompt": "Wide view inside a clean glass greenhouse, showing tall trellis rows of vibrant parthenocarpic cucumber plants bearing straight, abundant green fruit without bees. no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "“不过，咱家菜园里的黄瓜，光有蜜蜂可不够！”小树提起小水桶。宽宽的绿叶要晒大太阳制造糖分，根系要在大地里喝饱水、吸足肥料，瓜才能脆甜多汁。",
+        "enText": "\"In our garden, bees aren't the only helpers!\" Xiao Shu said, lifting his small watering can. Broad leaves soaked up sunshine to make plant food, while roots drank water and soil nutrients to make crisp, juicy cucumbers.",
+        "illustrationPrompt": "Xiao Shu tilts a small blue watering can, pouring water over the soil at the base of leafy cucumber vines bathed in warm, bright sunlight. no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "一天，两天，三天……小黄瓜一天一个样！细软的小绒毛变成了结实的小毛刺，翠绿的身躯越来越沉，笔直地垂在青翠的瓜棚下。",
+        "enText": "One day, two days, three days passed... The baby cucumber transformed! Soft fuzz turned into tiny firm prickles, and the plump, emerald body grew heavy, hanging straight from the vine.",
+        "illustrationPrompt": "Closeup of a long, dark green cucumber hanging heavily from the vine, adorned with distinct white-tipped prickles and a dry, shriveled blossom remaining at its tip. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "终于到了采摘的时刻！小树小心翼翼地托住大黄瓜，奶奶用剪刀“咔嚓”一剪。在顶端，那朵干枯的小黄花还像顶遮阳帽一样，顽皮地戴在瓜尖上。",
+        "enText": "Harvest time at last! Xiao Shu cupped a big, cool cucumber in both hands while Grandma snipped the stem with garden shears. At the tip, the dried little flower still clung like a miniature sunhat.",
+        "illustrationPrompt": "Grandma carefully snips the thick vine stem with garden shears while Xiao Shu happily cradles a large, freshly harvested green cucumber in both hands. no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "爸爸切开采下的嫩黄瓜。小树看到里面软软的小籽。奶奶说：“胚珠会发育成种子，但咱们吃的嫩黄瓜还没熟透，这些小籽通常还不能拿来播种。”",
+        "enText": "Dad sliced the young cucumber. Xiao Shu saw soft seeds inside. “Ovules develop into seeds,” Grandma said, “but cucumbers picked for eating are still immature. These soft seeds usually are not ready for sowing.”",
+        "illustrationPrompt": "On a wooden cutting board, Dad uses a kitchen knife to slice a crisp green cucumber into rounds, revealing pale green flesh and soft, immature seeds in the center. no text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "爷爷指着藤上另留的一根瓜：“留种的要继续长，等瓜和种子充分成熟再处理。”小树点头：黄花、瓜、种子、新藤，菜园的故事还能接着讲下去。",
+        "enText": "Grandpa pointed to another cucumber left on the vine. “For seed, we let this one and its seeds mature fully before preparing them.” Xiao Shu smiled: flower, fruit, seed, vine—the garden story could begin again.",
+        "illustrationPrompt": "Grandpa and Xiao Shu stand beside the trellis, observing a large, golden-yellow, fully mature seed cucumber preserved on the drying vine under the afternoon sun. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 48,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

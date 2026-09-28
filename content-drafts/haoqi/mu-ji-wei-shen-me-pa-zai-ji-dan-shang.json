@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "mu-ji-wei-shen-me-pa-zai-ji-dan-shang",
+    "seriesId": "haoqi",
+    "title": "母鸡为什么要趴在鸡蛋上",
+    "subtitle": "用温热羽翼唤醒生命奇迹",
+    "question": "母鸡为什么要趴在鸡蛋上？",
+    "moral": {
+      "zh": "抱窝母鸡用身体给鸡蛋保温并适当翻蛋；受精蛋在温度、湿度和通气等条件适宜时，通常约二十一天孵出小鸡。",
+      "en": "A brooding hen warms and turns eggs. With suitable warmth, humidity, and gas exchange, fertilized chicken eggs usually hatch in about twenty-one days."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "乡下小院的阳光暖洋洋的。小树拉着奶奶的手来到鸡舍旁，发现平时爱啄青草的花母鸡一动不动地蹲在草窝里，蓬着羽毛像个毛茸茸的大面包。",
+        "enText": "Sunlight bathed the quiet farmyard. Xiao Shu walked to the chicken coop with Grandma and spotted a speckled hen sitting completely still in a straw nest, looking like a puffy loaf of bread.",
+        "illustrationPrompt": "Xiao Shu and Grandma quietly watch a normal speckled brown hen sitting low in a STRAW NEST covering real small eggs inside a wooden coop. Hen fluffy but natural. No bread, no loaf, no food under hen, no giant egg. Warm clay picture-book, no text in image."
+      },
+      {
+        "page": 2,
+        "zhText": "小树想走过去看个究竟，奶奶轻轻拉住他的衣角摆了摆手：“嘘，花母鸡正在‘抱窝’呢。它趴在鸡蛋上面，我们远远看着，千万别惊动它。”",
+        "enText": "Xiao Shu took a step forward, but Grandma gently held his hand. 'Shh, she is brooding,' Grandma whispered. 'She is sitting on her eggs. Let's watch quietly from here so we don't frighten her.'",
+        "illustrationPrompt": "Xiao Shu takes a curious step toward the nesting box, but Grandma gently holds his hand back. Both stand quietly on the earthen coop floor, watching the brooding hen from several paces away. no text in image."
+      },
+      {
+        "page": 3,
+        "zhText": "“所有鸡蛋都能孵出小鸡吗？”小树小声问。奶奶拿起厨房竹篮里的鸡蛋解释：“母鸡没找公鸡当爸爸也能生蛋，但只有受精蛋才有小生命的小种子。”",
+        "enText": "'Can every egg hatch into a chick?' asked Xiao Shu. Grandma held an egg from her basket and explained, 'Hens lay eggs on their own, but only fertilized eggs have the tiny seed of life.'",
+        "illustrationPrompt": "Grandma holds a smooth brown egg from a woven basket, tilting it gently toward Xiao Shu to inspect the clean shell in bright daylight outside the chicken coop. no text in image."
+      },
+      {
+        "page": 4,
+        "zhText": "受精蛋里的胚胎要继续发育，需要合适的温度等条件。奶奶说：“太冷、太热或保存不当，都可能让它停止发育，不是每一枚受精蛋都能孵出小鸡。”",
+        "enText": "A fertilized egg needs suitable conditions to keep developing. “Too cold, too hot, or poor storage can stop development,” Grandma said. “Not every fertilized egg will hatch.”",
+        "illustrationPrompt": "Clean clay cutaway model of a fertilized bird egg resting on straw: cross-section shows bright yellow yolk, translucent albumen, and a distinct tiny white blastoderm disc on the yolk surface. no text in image."
+      },
+      {
+        "page": 5,
+        "zhText": "母鸡抱窝时，腹部会褪下厚厚的羽毛，露出热乎乎的皮肤。它把这片天然的“暖宝宝”紧紧贴在蛋壳上，将自己的体温毫无保留地传给蛋宝宝。",
+        "enText": "When brooding, a hen sheds some feathers on her belly, revealing bare, warm skin. She presses this natural heating pad against the eggs, sharing all her body warmth.",
+        "illustrationPrompt": "Closeup of speckled hen settled comfortably over several small oval pale-brown eggs in straw nest. Feathers gently touch eggs. Only hen and eggs, no hands, no people, no lifting hen, no exposed anatomy, clay children’s illustration, no text in image."
+      },
+      {
+        "page": 6,
+        "zhText": "“它会不会闷坏？”小树问。奶奶拿出蛋壳的放大图：“蛋壳看起来密实，其实有许多微小气孔，能让气体通过。普通放大镜可不一定看得清。”",
+        "enText": "“Will it run out of air?” asked Xiao Shu. Grandma showed an enlarged diagram. “The shell has tiny pores that let gases pass through. An ordinary magnifying glass may not show them clearly.”",
+        "illustrationPrompt": "Macro photographic closeup of an eggshell's outer calcium surface, revealing microscopic natural pores peppered across the textured curved shell under sharp sidelight. no text in image."
+      },
+      {
+        "page": 7,
+        "zhText": "蛋壳上有成千上万个呼吸小孔！新鲜的氧气从小孔溜进蛋壳，二氧化碳从小孔排出来。即使母鸡趴在上面，小蛋宝宝依然能在被窝里自由呼吸。",
+        "enText": "Thousands of breathing pores cover the eggshell! Fresh oxygen slips in while carbon dioxide drifts out, letting the egg breathe easily beneath its mother's warm coat.",
+        "illustrationPrompt": "Educational macro clay model of a small curved EGGSHELL FRAGMENT seen in cross-section: very thin pale mineral shell, tiny narrow pores pass through it, thin membrane just beneath. White cream background. No yolk, no cooked egg, no cheese holes, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "忽然，母鸡微微站起身，用尖嘴和爪子小心翼翼地把几个蛋拨动了一圈。小树好奇地问：“它是在草窝里搅鸡蛋，想做蒸蛋吃吗？”",
+        "enText": "Suddenly, the hen rose slightly and used her beak and feet to gently roll each egg. 'Is she stirring them like scrambled eggs?' Xiao Shu asked, puzzled.",
+        "illustrationPrompt": "Inside the straw nest, the speckled hen rises slightly, carefully nudging a speckled egg with the curve of her beak and foot to rotate it. Xiao Shu watches through coop rails. no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "奶奶说：“它在翻蛋。适当转动能帮助胚胎正常发育，减少粘连蛋膜等问题，也有利于受热。可不是把蛋里的东西搅匀，我们不要随便帮它翻。”",
+        "enText": "“She is turning them,” Grandma said. “Gentle turning helps embryos develop and reduces problems such as sticking to membranes. It also helps distribute warmth. It is not stirring, and we should not interfere.”",
+        "illustrationPrompt": "A speckled hen in a clean straw nest gently uses her beak to ROLL one intact small pale egg. Several other eggs beneath her. Natural animal behavior, no hands, no cracked egg, no fried egg, no text in image."
+      },
+      {
+        "page": 10,
+        "zhText": "湿度也很重要。孵化时，蛋里的水分会慢慢通过蛋壳散失；周围太干或太湿，都可能影响发育。鸡窝需要适宜环境，不能随便往蛋上洒水。",
+        "enText": "Humidity matters too. Eggs gradually lose water through their shells. Air that is too dry or too damp can affect development. The nest needs suitable conditions; we should not sprinkle eggs with water.",
+        "illustrationPrompt": "A clean nesting box lined with dry golden straw in the wooden coop, maintaining optimal humidity around warm eggs sheltered from drafts and direct water splashes. no text in image."
+      },
+      {
+        "page": 11,
+        "zhText": "咕咕咕，母鸡跳出了草窝！小树以为它要离开，奶奶指了指水盆。母鸡飞快地喝水、啄食、排便，短短几分钟后，就急匆匆跑回草窝重新趴下。",
+        "enText": "Cluck, cluck! The hen hopped off her nest. Xiao Shu gasped, but Grandma pointed to the bowl. The hen took quick sips of water, pecked grain, and hurried straight back to her eggs.",
+        "illustrationPrompt": "The speckled hen quickly pecks scattered grains and sips water from a shallow red ceramic dish on the dirt floor, while Xiao Shu and Grandma observe quietly from the coop doorway. no text in image."
+      },
+      {
+        "page": 12,
+        "zhText": "“明天就能看见小鸡吗？”小树问。奶奶指着日历：“鸡蛋通常要孵二十一天左右。我们记录开始孵化的日子，耐心等，别每天去动鸡蛋。”",
+        "enText": "“Will chicks hatch tomorrow?” Xiao Shu asked. Grandma pointed to the calendar. “Chicken eggs usually take about twenty-one days. Let’s note the start date and wait without disturbing them.”",
+        "illustrationPrompt": "Inside the rustic room, Grandma points to a blank grid chart on a wooden board, while Xiao Shu eagerly counts along on his fingers to mark incubation days. no text in image."
+      },
+      {
+        "page": 13,
+        "zhText": "一天又一天，草窝里的蛋有了奇妙的变化。蛋黄像微型太阳提供营养，红色的血管像树枝一样慢慢蔓延，小心呵护着小心脏有节奏地跳动。",
+        "enText": "Day after day, magic unfolded inside the egg. The yolk provided rich nourishment, while tiny red blood vessels spread like branches around a beating heart.",
+        "illustrationPrompt": "A gentle illustrated nature-book page showing three intact pale chicken eggs on straw, beside a small simple side view drawing of an unhatched CHICK shape curled within an egg outline. Recognizably bird with beak and folded wings, no human fetus, no blood vessels or exposed organs, warm clay style, no text in image."
+      },
+      {
+        "page": 14,
+        "zhText": "到了第二十天，小树跟着奶奶轻手轻脚走近鸡窝。屋里格外安静，仔细听，母鸡的羽毛下面居然传来了极其微弱的“唧唧”轻叫声！",
+        "enText": "On the twentieth day, Xiao Shu tiptoed to the coop with Grandma. In the quiet room, a faint 'peep-peep' whispered from beneath the hen's warm feathers!",
+        "illustrationPrompt": "Xiao Shu and Grandma tiptoe quietly inside the dimly lit coop, crouching close to the straw nest with ears tilted, listening as the brooding hen rustles her feathers. no text in image."
+      },
+      {
+        "page": 15,
+        "zhText": "第二十一天清晨，一枚鸡蛋表面裂开了一道小缝！仔细看，小鸡嘴尖上长着一颗白色的坚硬“卵齿”，像一把神奇的小锥子，正在内部用力啄击蛋壳。",
+        "enText": "On the twenty-first morning, an egg cracked! On the chick's beak was a tiny hard 'egg tooth'—a natural little chisel used to chip open the shell from inside.",
+        "illustrationPrompt": "Macro closeup of a tiny newborn CHICK beak making a small star-shaped crack in a real-sized eggshell. A tiny white bump (egg tooth) sits on TOP of the upper beak, not inside mouth. Beak mostly closed, no teeth, no human lips, no face painted on egg. Soft clay nature study, no text in image."
+      },
+      {
+        "page": 16,
+        "zhText": "小树想帮它剥壳，奶奶轻轻拦住：“它需要时间。强行剥开可能撕伤还连着血管的蛋膜，也可能伤到小鸡。有问题要请有经验的大人判断。”",
+        "enText": "Xiao Shu wanted to peel the shell, but Grandma stopped him. “It needs time. Pulling the shell away can tear membranes with blood vessels and injure the chick. An experienced adult should handle concerns.”",
+        "illustrationPrompt": "Grandma gently holds Xiao Shu’s hands at his waist while both watch a hatching egg from behind a low coop fence. Hands clearly away from eggs and chicks. A speckled hen rests in straw nest, only one small crack on an egg. Warm clay, no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "小雏鸡歇一歇、啄一下，两脚使劲一蹬，“啪嗒”一声，蛋壳终于彻底分成了两半！一只湿漉漉的小家伙滚了出来，勇敢地完成了自己的诞生旅程。",
+        "enText": "The chick rested, pecked, and pushed with all its might! With a soft snap, the shell split apart, and a damp, brave baby rolled out into the world.",
+        "illustrationPrompt": "Closeup of a newly emerged damp chick rolling onto golden straw next to broken eggshell halves, feathers wet and spiky, resting after pushing out from its shell. no text in image."
+      },
+      {
+        "page": 18,
+        "zhText": "母鸡将湿漉漉的宝宝拢在翅膀下烘干。过了一会儿，探出来的是一个个毛茸茸的金色小绒球，圆滚滚地围在母鸡妈妈脚边，欢快地啄着草屑。",
+        "enText": "The hen sheltered her baby beneath her wing to dry. Soon, fluffy golden puffballs emerged, chirping happily around their mother's feet.",
+        "illustrationPrompt": "The speckled hen fluffs out her protective wings in the straw nest, while three dry, fluffy yellow chicks poke their heads out from beneath her feathers. no text in image."
+      },
+      {
+        "page": 19,
+        "zhText": "小树恍然大悟：母鸡趴在蛋上面，不是因为偷懒睡大觉，而是在用身体的温度、细心的翻动和耐心的等待，守护每一个微小生命的奇迹！",
+        "enText": "Xiao Shu finally understood: the mother hen was not being lazy. With warm feathers, gentle turning, and twenty-one days of patient love, she nurtured the miracle of life.",
+        "illustrationPrompt": "Xiao Shu sits on a low wooden stool in the coop, smiling warmly at the speckled hen surrounded by energetic fluffy yellow chicks exploring the straw bedding. no text in image."
+      },
+      {
+        "page": 20,
+        "zhText": "小树帮奶奶准备了合适的饲料，奶奶摆好适合雏鸡的饮水器。他们洗净双手，远远看着鸡窝：“鸡妈妈辛苦啦，小鸡慢慢长大吧！”",
+        "enText": "Xiao Shu helped Grandma prepare suitable feed, and she set out a chick-safe drinker. After washing their hands, they watched from a distance. “Thank you, Mama Hen. Grow well, little chicks!”",
+        "illustrationPrompt": "Xiao Shu scatters fine chick starter feed into a low flat tray while Grandma sets down a shallow chick drinker ringed with pebbles, as chicks gather to eat and drink. no text in image."
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 45,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}

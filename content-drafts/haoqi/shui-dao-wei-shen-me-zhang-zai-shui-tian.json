@@ -1,0 +1,145 @@
+{
+  "_draft": "Text and illustrations reviewed 2026-09-26; Chinese narration prepared and locally integrated. Not deployed.",
+  "book": {
+    "id": "shui-dao-wei-shen-me-zhang-zai-shui-tian",
+    "seriesId": "haoqi",
+    "title": "水稻为什么长在水田里",
+    "subtitle": "泥巴水塘里的呼吸小吸管",
+    "question": "水稻为什么长在水田里？",
+    "moral": {
+      "zh": "水稻的通气组织帮助氧气到达湿土里的根，浅水可抑制部分杂草；农民需要按品种和生长阶段管理水分。",
+      "en": "Rice air spaces help oxygen reach roots in wet soil, and shallow water suppresses some weeds. Farmers manage water according to variety and growth stage."
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "开饭啦！小树捧着小瓷碗，大口嚼着软糯香甜的白米饭。他忽然停下筷子问：“爷爷，白白胖胖的米饭，小时候住在哪里呢？”爷爷笑着说：“走，明天带你去水田看小秧苗！”",
+        "enText": "Dinner time! Xiao Shu munched on his soft, sweet white rice. Suddenly, he held up his bowl and asked, \"Grandpa, where did this rice live when it was little?\" Grandpa smiled, \"Tomorrow, let's visit the muddy water fields!\"",
+        "illustrationPrompt": "At a wooden dining table, Xiao Shu holds up a small porcelain bowl piled with fluffy white rice, looking up curiously at Grandpa who sits opposite with a warm smile. Steaming dishes rest nearby under warm indoor lighting. no text in image"
+      },
+      {
+        "page": 2,
+        "zhText": "清晨的乡村泛着薄雾。爷爷牵着小树走在田埂上。眼前是一大片明晃晃的水田，像一面面大镜子倒映着蓝天白云。一排排翠绿的小嫩芽，正整整齐齐地泡在浅水里。",
+        "enText": "Morning mist floated over the countryside. Walking along the narrow ridge, Xiao Shu gasped. The flooded fields looked like shiny mirrors reflecting the sky, with neat rows of bright green baby sprouts standing right in the shallow water.",
+        "illustrationPrompt": "Morning mist hovers over terraced rice paddies filled with calm, mirror-like shallow water reflecting the pale blue sky. Xiao Shu and Grandpa walk along an earthen path, viewing neat straight rows of vibrant green seedlings emerging from the water. no text in image"
+      },
+      {
+        "page": 3,
+        "zhText": "小树蹲下身子，好奇地挠挠头：“爷爷，家里的花盆要是积水，小花就会淹死。为什么水稻不怕淹，它们难道像小鱼一样可以用腮在水里呼吸吗？”",
+        "enText": "Xiao Shu squatted down, scratching his head. \"Grandpa, house plants drown if we give them too much water! Can rice breathe under water like little fish with gills?\"",
+        "illustrationPrompt": "Xiao Shu squats beside the shallow flooded paddy, gazing closely at a young green rice shoot standing submerged in several inches of still, clear water over dark mud, leaning forward with curiosity. Grandpa stands safely nearby watching. no text in image"
+      },
+      {
+        "page": 4,
+        "zhText": "爷爷穿着胶靴，站在田边指给小树看：“水稻没有鳃，根也需要氧气。它有适应湿地的本领。”小树留在宽稳的田埂上，仔细听。",
+        "enText": "Wearing rubber boots, Grandpa pointed from the field edge. “Rice has no gills, and its roots need oxygen. It has adaptations for wet soil.” Xiao Shu listened from a broad, steady path.",
+        "illustrationPrompt": "Wearing tall rubber boots, Grandpa stands on the wide grassy ridge and points down toward the flooded field bed. Beside him on the dry path, Xiao Shu listens attentively, observing the water-soaked mud around the sturdy green seedlings. no text in image"
+      },
+      {
+        "page": 5,
+        "zhText": "爷爷拿出一小株刚从育苗田拔起的嫩绿秧苗。爷爷解释说：“很多地方会先在小苗床里育苗，等长结实了再插到大水田里，这样它们能长得更齐整。”",
+        "enText": "Grandpa held up a tender green rice seedling taken from the nursery bed. \"Farmers often raise tiny seeds in cozy nursery beds first, then transplant strong little shoots into the paddy field so they grow straight and tall!\"",
+        "illustrationPrompt": "Grandpa holds a single young rice seedling gently between his fingers. The vibrant green shoot branches upward, while below, a compact cluster of delicate white roots clings to a small clump of wet nursery soil. Xiao Shu watches closely. no text in image"
+      },
+      {
+        "page": 6,
+        "zhText": "小树凑近看，细细白白的根须上沾着稀泥。小树想：“既然根也需要吸气，泥巴被水闷得紧紧的，空气到底是怎么跑进泥巴底下的根里的呢？”",
+        "enText": "Xiao Shu inspected the tiny white root threads covered in moist mud. \"If roots must breathe air, and the mud is buried under water, how does fresh air ever reach all the way down there?\"",
+        "illustrationPrompt": "Closeup view: Xiao Shu gently examines the fine, branching pale roots of a rice seedling held over moist dark mud. Tiny root hairs spread out through the damp earth, visible against wet soil grains. no text in image"
+      },
+      {
+        "page": 7,
+        "zhText": "爷爷拿出一根干净的空心管，比划着通道：“有了连通的空隙，气体就能通过。我们看看水稻身体里，有没有类似的通路。”",
+        "enText": "Grandpa held up a clean hollow tube. “Connected spaces let gases pass through. Let’s look for similar pathways inside a rice plant.”",
+        "illustrationPrompt": "Grandpa holds a clean hollow bamboo tube sideways well away from Xiao Shu’s face, showing its open ends as a model of an air passage. Boy watches, neither puts tube in mouth. Both on a safe dry broad path beside rice field. Warm clay, no text in image."
+      },
+      {
+        "page": 8,
+        "zhText": "爷爷翻开一本植物画册。放大的稻株剖面里，有连通的空隙，这叫通气组织。它帮助氧气从地上部分传到根部，让根在湿泥里也能得到一些氧气。",
+        "enText": "Grandpa opened a plant book. The enlarged cutaway showed connected air spaces called aerenchyma. These help oxygen travel from above-ground parts to the roots in wet soil.",
+        "illustrationPrompt": "A nature book opened on wooden table, showing a clearly enlarged microscope-style cutaway of rice ROOT: a circular outer layer around irregular air spaces in the cortex, a central vascular cylinder, all cream and pale green. Slim rice seedling drawing beside it establishes scale. No lotus root vegetable, no people, no text in image."
+      },
+      {
+        "page": 9,
+        "zhText": "“像通气的小走廊！”小树说。爷爷点头：“但它不是永远淹不死。不同品种本领不同，要是淹得太深、太久，水稻也可能受伤。”",
+        "enText": "“Little air corridors!” said Xiao Shu. Grandpa nodded. “But rice cannot survive every flood. Varieties differ, and water that is too deep for too long can harm the plants.”",
+        "illustrationPrompt": "Realistic botanical model comparing two rice plants: one comfortably half-submerged in shallow water with green leaves in open air, and another completely submerged under deep cloudy floodwater, showing limp yellowing tips deprived of air. no text in image"
+      },
+      {
+        "page": 10,
+        "zhText": "小树又有了新问题：“既然它自带吸管，为什么不直接种在干旱的大土坑里，像小麦那样呢？水田泡着多麻烦呀！”爷爷拉着小树走到田边观察。",
+        "enText": "Xiao Shu asked another clever question, \"If it has air straws, why not plant it on dry dirt like wheat? Why go through all the trouble of filling fields with water?\" Grandpa led him to examine the water.",
+        "illustrationPrompt": "Grandpa leads Xiao Shu along the edge of the shallow flooded paddy. Xiao Shu looks down at the smooth water surface covering the soil bed, pointing toward a dry dirt path nearby to compare the two environments. no text in image"
+      },
+      {
+        "page": 11,
+        "zhText": "爷爷说：“浅水能抑制一些不耐淹的杂草，减少它们与秧苗争光、争养分。不过还有适应水田的杂草，农民仍要仔细管理。”",
+        "enText": "“Shallow water suppresses some weeds that cannot tolerate flooding,” Grandpa said. “That reduces competition for light and nutrients. Other weeds like wet fields, so farmers still manage them.”",
+        "illustrationPrompt": "Closeup cross-section of paddy water: tall green rice seedlings rise proudly above the water surface, while small terrestrial weed sprouts remain trapped underwater beneath the surface, yellowed and unable to grow in oxygen-poor soil. no text in image"
+      },
+      {
+        "page": 12,
+        "zhText": "“而且呀，水还是个天然小空调！”爷爷抚摸着嫩绿的叶子说。春天早晨凉风吹，水温降得慢；到了中午太阳晒，水又吸走多余热量，水稻就像盖了保温水毯。",
+        "enText": "\"And water works like a natural air conditioner!\" Grandpa added. On chilly spring mornings, water stays cozy and warm; during hot sunny noons, it cools the plants down like a soft liquid blanket.",
+        "illustrationPrompt": "Golden sunlight illuminates a calm rice paddy, where clear water blankets the soil around bright green stems. Morning condensation beads on leaf blades, showing a temperate microclimate around the thriving young plants. no text in image"
+      },
+      {
+        "page": 13,
+        "zhText": "小树发现，水田的水其实只没过了脚踝：“水稻喜欢水，但不是越深越好，对不对？”爷爷竖起大拇指：“聪明！水太深叶子没法吸气，所以农民伯伯要精细控制水位。”",
+        "enText": "Xiao Shu noticed the water only reached his ankles. \"Rice likes water, but not too deep, right?\" Grandpa gave a big thumbs up: \"Spot on! If water is too deep, leaves can't grab sunlight or air. Farmers keep it just right!\"",
+        "illustrationPrompt": "Xiao Shu stands on a wooden plank at the field edge, holding a measuring stick dipped into the clear paddy water, showing the water depth reaches only a few inches around the healthy upright rice stems. Grandpa smiles beside him. no text in image"
+      },
+      {
+        "page": 14,
+        "zhText": "邻田暂时排了水。爷爷说：“这是按生长情况进行的晒田，帮助改善土壤通气、控制过多分蘖等。什么时候排、排多久，要看苗情和天气，不能一直晾干。”",
+        "enText": "A nearby field had been drained. “Farmers sometimes drain fields to improve aeration and control excess shoots,” Grandpa explained. “Timing depends on the plants and weather. They must not leave them dry indefinitely.”",
+        "illustrationPrompt": "A drained rice paddy field displays damp, dark soil with surface drying and tiny drying cracks. Healthy green rice clumps stand firmly rooted in the moist aerated earth under an open sky without standing water. no text in image"
+      },
+      {
+        "page": 15,
+        "zhText": "爷爷说：“也有旱稻，不靠长期灌水生长；还有节水种植方法。水稻不一定都先育苗再插秧。人们根据品种、土地和水源，选择合适办法。”",
+        "enText": "“There is upland rice grown without continuous flooding, and water-saving methods too,” Grandpa said. “Not all rice is transplanted. Farmers choose methods suited to the variety, land, and water supply.”",
+        "illustrationPrompt": "Split landscape showing upland rice growing in dry furrowed soil without standing water on one terrace, alongside traditional flooded paddy fields shimmering in the distance under a sunny sky. no text in image"
+      },
+      {
+        "page": 16,
+        "zhText": "日子过去，稻株抽出穗子。爷爷让小树看放大照片：开花时，小穗张开，细小的花药露在外面。花朵不起眼，受精后里面的谷粒会慢慢长大。",
+        "enText": "As weeks passed, panicles emerged. Grandpa showed a close-up: at flowering, spikelets opened and small anthers appeared. The flowers were modest; after fertilization, grains would develop inside.",
+        "illustrationPrompt": "Macro botanical illustration of a REAL RICE PANICLE, branching fine stalks with small green rice spikelets. One spikelet opens slightly, exposing six tiny pale-yellow hanging ANTHERS on fine filaments. Rice flowers have NO showy white petals, no lily shape. Accurate gentle clay nature illustration, no text in image."
+      },
+      {
+        "page": 17,
+        "zhText": "秋天到了，水田变成了一片翻滚的金黄色海洋。爷爷带着小树在田头收割。稻穗沉甸甸地弯下了腰，上面挂满了一粒粒裹着金黄硬壳的“稻谷”。",
+        "enText": "Autumn arrived, and the paddy turned into a rolling golden ocean! Heavy rice panicles bent low under the weight of plump grains. Grandpa and Xiao Shu stood among golden waves admiring the golden paddy grain.",
+        "illustrationPrompt": "An expansive golden autumn paddy field filled with heavy, drooping rice panicles laden with ripe golden grains. Xiao Shu and Grandpa stand on the ridge, looking out over the glowing amber field bathed in late afternoon warmth. no text in image"
+      },
+      {
+        "page": 18,
+        "zhText": "爷爷摆出稻谷、糙米和白米：“去掉谷壳，先得到糙米。再碾去外面的糠层等部分，才成了常吃的白米。”小树发现，原来脱壳不等于立刻变雪白。",
+        "enText": "Grandpa showed paddy grain, brown rice, and white rice. “Removing the husk gives brown rice. Milling away the bran and other outer parts produces white rice.” One husk did not hide a polished white grain!",
+        "illustrationPrompt": "Clean studio closeup on three small wooden spoons: one holding unhulled golden paddy seeds, the second holding tan brown rice with intact bran, and the third holding smooth, polished translucent white rice grains. no text in image"
+      },
+      {
+        "page": 19,
+        "zhText": "回家后，小树帮奶奶淘米：“水田里的稻株靠通气组织适应湿泥，人们还得认真管水。后来开花结谷，再经过加工，才成了锅里的米！”",
+        "enText": "At home, Xiao Shu helped Grandma rinse rice. “Air spaces help paddy plants live in wet soil, and farmers manage the water. Then flowers, grains, and milling bring rice to our pot!”",
+        "illustrationPrompt": "In a bright cozy kitchen, Xiao Shu gently swirls uncooked white rice grains in a large ceramic bowl filled with clean water beside Grandma. Translucent droplets splash softly as Grandma smiles, guiding his hands over the counter. no text in image"
+      },
+      {
+        "page": 20,
+        "zhText": "一家人围坐在餐桌旁。小树大口吃着香喷喷的白米饭，一粒米也没有剩下。他知道，这碗饭里藏着泥土的养分、清澈的水波，还有水稻勇敢呼吸的秘密。",
+        "enText": "The family gathered around the dinner table. Xiao Shu ate every single grain in his bowl until it was squeaky clean! He knew each bite held the magic of rich mud, cool water blankets, and the clever little snorkels inside.",
+        "illustrationPrompt": "Around the warm dinner table, Xiao Shu proudly holds up his completely empty, gleaming white ceramic bowl. Grandpa, Grandma, and Dad smile approvingly, surrounded by evening dishes and a steaming rice cooker. no text in image"
+      }
+    ],
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-26",
+    "order": 46,
+    "comingSoon": true
+  },
+  "imagePromptKit": {
+    "globalStyle": "Square polished 3D clay children’s science picture-book, warm soft light, tactile rounded forms, clear accurate props. Important content inside central square.",
+    "characterConsistency": "Only people required by scene: Xiao Shu, five-year-old Chinese boy, short black hair, yellow hoodie, teal overalls, white sneakers. Dad: black hair, green sweater. Grandpa: gray hair, blue shirt, brown pants. Grandma: short silver hair, lilac top. No extra people.",
+    "negative": "text, labels, logos, extra limbs, magical objects, anthropomorphic science, incorrect anatomy."
+  }
+}
