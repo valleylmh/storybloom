@@ -1,6 +1,7 @@
 import "server-only";
 import { createHash } from "node:crypto";
 import manifest from "../../miniprogram/chinese-audio-manifest.json";
+import latestProverbManifest from "../../content-drafts/chengyu/chengyu-66-70-audio.json";
 import nextLocalManifest from "../../content-drafts/chengyu/chengyu-61-65-audio.json";
 import localManifest from "../../content-drafts/chengyu/chengyu-51-60-audio.json";
 import haoqiLocalManifest from "../../content-drafts/haoqi/local-audio.json";
@@ -15,7 +16,7 @@ export function getLibraryChineseAudio(seriesId: string, bookId: string, pages: 
   const key = `${seriesId}/${bookId}`;
   const audio = (manifest as Record<string, BookAudio>)[key];
   if (audio?.contentHash === hash && validBookAudio(audio, pages.length)) return audio;
-  const local = (haoqiLocalManifest as Record<string, BookAudio>)[key] ?? (qicheLocalManifest as Record<string, BookAudio>)[key] ?? (nextLocalManifest as Record<string, BookAudio>)[key] ?? (localManifest as Record<string, BookAudio>)[key];
+  const local = (latestProverbManifest as Record<string, BookAudio>)[key] ?? (haoqiLocalManifest as Record<string, BookAudio>)[key] ?? (qicheLocalManifest as Record<string, BookAudio>)[key] ?? (nextLocalManifest as Record<string, BookAudio>)[key] ?? (localManifest as Record<string, BookAudio>)[key];
   // Bundled files are served by the current site, including localhost previews.
   // Validate their exact content-addressed path before reusing the timing validator.
   if (local?.contentHash === hash &&

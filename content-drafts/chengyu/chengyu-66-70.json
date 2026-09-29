@@ -1,0 +1,662 @@
+[
+  {
+    "id": "san-tian-da-yu",
+    "title": "三天打鱼，两天晒网",
+    "subtitle": "小猴的口琴音乐会",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "把目标分成小步，规律练习，也安排休息，进步就会慢慢积累。",
+      "en": "Small steps and regular practice, with time to rest, help us improve."
+    },
+    "idiomMeaning": {
+      "zh": "比喻做事时常中断，缺乏坚持；合理休息与总把事情拖到以后不同。",
+      "en": "To work in fits and starts rather than keep up steady effort; planned rest is different from repeatedly putting work off."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-29",
+    "order": 66,
+    "visualAnchor": "young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; adult brown Bear music teacher in green cardigan; russet Squirrel in yellow shirt holding two wooden rhythm sticks",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "森林音乐会开始报名，小猴听见排练室里的旋律，忍不住跟着哼起来。",
+        "en": "Sign-ups for the forest concert had begun. Hearing music from the practice room, Monkey hummed along.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; adult brown Bear music teacher in green cardigan. Scene: Morning woodland music cottage, Monkey at open door listens to Bear teacher humming; harmonica in blue case on table, no audience or stage performance. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“我想吹口琴！”小猴举起手。熊老师给了他一首短短的合奏曲。",
+        "en": "“I want to play the harmonica!” Monkey raised his hand. Bear gave him a short piece to learn for the group.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; adult brown Bear music teacher in green cardigan. Scene: Teacher offers a picture cue card with simple sun moon leaf icons and NO lettering, Monkey holds silver harmonica with blue ends. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "第一天，小猴练得格外起劲。吹错了，他就笑着重新来一遍。",
+        "en": "On the first day, Monkey practiced eagerly. Whenever he made a mistake, he laughed and tried again.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Monkey alone at sunny cottage table playing harmonica, blue case open, playful concentration. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "第二天，朋友们去放风筝。小猴把口琴放进盒子：“回来再练吧。”",
+        "en": "The next day his friends went kite flying. Monkey put his harmonica away. “I’ll practice when I get back.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Monkey alone closes blue harmonica case at home while looking at distant colorful kite through window; no other animals. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "回来时，他又忙着找风筝线。等想起口琴，已经该睡觉了。",
+        "en": "When he returned, he searched for missing kite string. By the time he remembered the harmonica, it was bedtime.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Night bedroom Monkey holds spool of kite string, closed blue harmonica case on shelf, moon outside. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "第三天，小猴说：“昨天没练，今天多吹一会儿就行。”可玩着玩着，他又忘了。",
+        "en": "On the third day Monkey said, “I’ll play longer today.” But he became busy playing and forgot again.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Afternoon Monkey absorbed building toy blocks on rug, closed blue harmonica case untouched on shelf. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "周末合奏时，小兔摇起铃鼓，小松鼠敲起木棒，小猴赶紧把口琴举到嘴边。",
+        "en": "At the weekend rehearsal, Rabbit shook her tambourine and Squirrel tapped his sticks. Monkey quickly lifted his harmonica.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; russet Squirrel in yellow shirt holding two wooden rhythm sticks. Scene: Music cottage rehearsal three friends seated in semicircle with instruments ready, no audience. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "刚吹了几句，小猴就跟不上了。他越着急，声音越乱。",
+        "en": "After a few phrases, Monkey lost his place. The more he hurried, the more jumbled the music became.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; russet Squirrel in yellow shirt holding two wooden rhythm sticks. Scene: Monkey confused mid-play, Rabbit and Squirrel pause kindly, no written musical symbols. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“先停一停。”熊老师轻轻拍手，让大家一起歇口气。",
+        "en": "“Let’s pause,” said Bear gently, inviting everyone to take a breath.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; russet Squirrel in yellow shirt holding two wooden rhythm sticks; adult brown Bear music teacher in green cardigan. Scene: Bear calmly gestures pause in music room, children lower instruments. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小猴低着头：“我不是不喜欢，可我总想着明天再练。”",
+        "en": "Monkey looked down. “I do like playing. I just keep thinking I’ll practice tomorrow.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; adult brown Bear music teacher in green cardigan. Scene: Quiet reassuring conversation Monkey on low stool holds harmonica in lap, Bear listens at eye level. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "熊老师问：“这首曲子里，哪一小段最让你犯难？”小猴指了指中间。",
+        "en": "“Which little part is hardest?” Bear asked. Monkey pointed to the middle of the piece.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; adult brown Bear music teacher in green cardigan. Scene: Both look at picture cue card with sun leaf moon symbols only, Monkey points at central leaf. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "他们把曲子分成三小段。今天先练第一段，不急着从头吹到尾。",
+        "en": "They divided the piece into three short parts. Today they would practice just the first one.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; adult brown Bear music teacher in green cardigan. Scene: Bear places three separate illustrated cue cards on table, Monkey starts first phrase, no alphabet or notes. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小猴挑了一个固定时间：每天吃完点心，先吹一小会儿，再出去玩。",
+        "en": "Monkey chose a regular time: after his daily snack, he would play a little before going outside.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Home table empty snack plate beside harmonica case, afternoon sunlight, Monkey ready to practice. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "第一天，他慢慢吹了几遍，终于听清哪里该停、哪里该接上。",
+        "en": "On the first day he played slowly several times, learning where to pause and where to continue.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Monkey calmly plays at table with first picture cue card, close hands and harmonica. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "第二天，窗外传来玩耍声。小猴心里痒痒的，却先把约好的小段练完。",
+        "en": "The next day he heard play outside. He wanted to join in, but first finished the small part he had planned.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Monkey focused on harmonica despite colorful ball visible outside empty window view. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "有一天他很累，只练了一小段就停了。休息好后，第二天又接着来。",
+        "en": "One day he was tired and stopped after a short section. After resting, he returned to it the next day.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Single evening scene tired Monkey gently closes blue case and stretches, no montage. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔来找他玩，听见熟悉的旋律：“这次顺多了！”小猴笑得眼睛弯弯。",
+        "en": "Rabbit came to play and heard the familiar tune. “That sounds much smoother!” Monkey beamed.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine. Scene: Rabbit at cottage doorway listening as Monkey plays, warm afternoon, tambourine tucked at Rabbit side. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "三小段都熟悉了，小猴再把它们连起来。卡住的地方，就单独慢慢练。",
+        "en": "Once he knew the three sections, Monkey joined them together and practiced the tricky parts slowly.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends. Scene: Three picture cue cards in a row on table, Monkey practices with calm concentration. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "下一次合奏，小猴先听清伙伴的节奏，再轻轻吹出自己的旋律。",
+        "en": "At the next rehearsal, Monkey listened to his friends’ rhythm before gently adding his melody.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; russet Squirrel in yellow shirt holding two wooden rhythm sticks. Scene: Three friends play together in cottage, attentive eye contact and relaxed expressions. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "音乐会那天，他还是有一点紧张。小兔朝他点点头，小猴稳稳地吸了口气。",
+        "en": "On concert day he still felt nervous. Rabbit nodded to him, and Monkey took a steady breath.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; russet Squirrel in yellow shirt holding two wooden rhythm sticks. Scene: Small low wooden stage under trees, friends preparing instruments, no extra visible animals or text. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "口琴声、铃鼓声和木棒声合在一起，像一条轻快的小溪流过林间。",
+        "en": "Harmonica, tambourine, and rhythm sticks blended like a lively stream flowing through the woods.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; russet Squirrel in yellow shirt holding two wooden rhythm sticks. Scene: Wide low stage performance beneath trees, three friends happily playing, glowing gentle light. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "收好口琴，小猴约伙伴们去玩。他知道，每天一点点，也能走到想去的地方。",
+        "en": "After putting his harmonica away, Monkey invited his friends to play. A little effort each day could take him a long way.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young golden-brown Monkey with cream muzzle, teal vest, small SILVER harmonica with BLUE ends; white Rabbit in peach dress holding a small wooden tambourine; russet Squirrel in yellow shirt holding two wooden rhythm sticks. Scene: After concert Monkey closes blue case on bench, friends walk toward sunny lawn for play. Do not add unlisted characters or later events."
+      }
+    ]
+  },
+  {
+    "id": "luo-bo-qing-cai",
+    "title": "萝卜青菜，各有所爱",
+    "subtitle": "森林里的小饭馆",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "每个人的喜好可以不同。愿意倾听、尊重选择，大家就能自在地相处。",
+      "en": "People can like different things. Listening and respecting choices help everyone feel welcome."
+    },
+    "idiomMeaning": {
+      "zh": "比喻各人有各人的喜好，不必强求一致。",
+      "en": "Different people have different tastes, and everyone need not prefer the same things."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-29",
+    "order": 67,
+    "visualAnchor": "young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "小兔把窗台擦得亮亮的，在森林小路边开了一家小饭馆。",
+        "en": "Rabbit polished the windows and opened a tiny restaurant beside the forest path.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Rabbit alone cleaning window of cozy timber cafe, empty tables, morning, no diners or finished food. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "她最喜欢胡萝卜汤，觉得那香甜的味道，谁尝了都会喜欢。",
+        "en": "She loved carrot soup and felt sure everyone would enjoy its sweet, gentle taste.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Rabbit proudly smells steaming orange soup in pot on safe kitchen counter, no stove flames. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "开门前，小兔摆好碗和勺子，每个座位上都放了一张胡萝卜小画。",
+        "en": "Before opening, Rabbit set out bowls and spoons, with a little carrot picture at each seat.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Empty cafe dining room, Rabbit places carrot picture cards without words at four settings. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鸭、小松鼠和小山羊来了。小兔高兴地招呼：“今天喝我最拿手的汤！”",
+        "en": "Duck, Squirrel, and Goat arrived. “Today you can try my special soup!” Rabbit said happily.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: Three guests arriving at cafe door, Rabbit welcoming, tables empty bowls ready. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "四碗橙黄的汤端上桌，热气轻轻往上冒，小兔期待地看着大家。",
+        "en": "Four orange bowls of soup reached the table. Rabbit watched eagerly as little curls of steam rose.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: Four friends at round table each with orange carrot soup bowl, Rabbit expectant. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小山羊尝了一口：“很香，不过，我更喜欢清清爽爽的青菜汤。”",
+        "en": "Goat tried a spoonful. “It smells lovely, but I prefer a light green vegetable soup.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small cream Goat with short horns, lavender shirt. Scene: Close Goat gently comments holding spoon over orange soup, Rabbit listens, no green soup yet. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鸭小声说：“我喜欢软软的玉米饭，吃起来一粒一粒的。”",
+        "en": "“I like soft corn rice,” Duck said quietly. “I enjoy all the little grains.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief. Scene: Duck speaks kindly to Rabbit at table with orange soup, no corn rice yet. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小松鼠也说：“我最想吃的是烤得香香的南瓜。”",
+        "en": "Squirrel added, “What I’d really like is some sweet roasted pumpkin.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; brown Squirrel with cream belly, rust-red waistcoat. Scene: Squirrel talks to Rabbit at table with orange soup, no pumpkin dish yet. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔的耳朵垂下来：“可是，胡萝卜汤明明这么好喝呀。”",
+        "en": "Rabbit’s ears drooped. “But carrot soup is so delicious.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Rabbit alone at kitchen doorway looks disappointed, soup ladle resting safely on counter. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“你喜欢它没有错。”小鸭说，“我们喜欢别的，也没有错呀。”",
+        "en": "“It’s fine that you love it,” said Duck. “And it’s fine that we love other things too.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief. Scene: Duck beside Rabbit offers kind reassurance, soup bowl on table behind. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔想起自己不爱吃太酸的果子，慢慢明白了朋友的意思。",
+        "en": "Rabbit remembered that she did not enjoy very sour fruit. She began to understand.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Rabbit thoughtful beside small bowl of green sour plums on kitchen shelf, no thought bubble. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "她拿来纸和笔：“那你们说说，自己最喜欢什么味道吧！”",
+        "en": "She brought paper and pencils. “Tell me which flavors you like best!”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: All four gather at table, blank paper and colored pencils ready, attentive faces. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鸭画了玉米，小山羊画了青菜，小松鼠画了圆圆的南瓜。",
+        "en": "Duck drew corn, Goat drew leafy greens, and Squirrel drew a round pumpkin.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: Overhead three guests draw simple corn leafy-green and pumpkin icons on separate cards, no words. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔也画下一根胡萝卜，把四张小画排在一起，成了一份新菜单。",
+        "en": "Rabbit added a carrot drawing and arranged the four pictures into a new menu.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Rabbit holds menu board with exactly four icons carrot corn greens pumpkin, no letters. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“今天先做两样，明天再添。”她请大家选好，把需要的食材准备齐。",
+        "en": "“We’ll make two choices today and add more tomorrow.” She took their choices and prepared the ingredients.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: Four friends select between carrot-soup and corn-rice picture cards, kitchen ingredients carrots corn rice neatly arranged. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔忙不过来时，朋友们帮着摆桌子、递餐巾，等香喷喷的饭菜上桌。",
+        "en": "While Rabbit cooked, her friends set the table and passed out napkins, waiting for their meals.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: Guests arrange clean bowls spoons and cloth napkins at table, no sharp tools or cooking fire. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "这回，有的碗里是胡萝卜汤，有的是玉米饭。大家吃得津津有味。",
+        "en": "This time some bowls held carrot soup and others corn rice. Everyone enjoyed their meal.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: Four friends dining: Rabbit orange carrot soup, Duck corn rice, Goat corn rice, Squirrel carrot soup; no greens pumpkin served today. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "过了几天，青菜汤和烤南瓜也上了菜单，小饭馆里飘着不同的香味。",
+        "en": "A few days later, vegetable soup and roasted pumpkin joined the menu, filling the cafe with new aromas.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Rabbit presents four finished dishes on counter: carrot soup corn rice green soup roasted pumpkin, cheerful daylight. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "朋友们有时尝一小口新菜，有时点自己最爱的，小兔都笑着答应。",
+        "en": "Sometimes her friends tried a little new dish, and sometimes they chose an old favorite. Rabbit welcomed every choice.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress; small yellow Duck, sky-blue neckerchief; brown Squirrel with cream belly, rust-red waistcoat; small cream Goat with short horns, lavender shirt. Scene: Cafe table friends happily choose different dishes, Rabbit listens, no forced feeding. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "关门时，小兔望着四张小画笑了：口味不一样，也能坐在同一张桌旁。",
+        "en": "At closing time Rabbit smiled at the four pictures. Different tastes could still share the same table.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit, pale yellow apron over mint dress. Scene: Evening empty cafe Rabbit rests by round table beneath four-icon menu, warm peaceful closing scene. Do not add unlisted characters or later events."
+      }
+    ]
+  },
+  {
+    "id": "you-jie-you-huan",
+    "title": "有借有还，再借不难",
+    "subtitle": "小熊借来的红雨伞",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "借东西要先征得同意，爱惜使用、按时归还；忘记了就主动道歉并补救。",
+      "en": "Ask before borrowing, take care of what you borrow, return it on time, and put things right if you forget."
+    },
+    "idiomMeaning": {
+      "zh": "借来的东西按约归还，才能维护信任；别人仍有权决定是否再借。",
+      "en": "Returning borrowed things as agreed helps maintain trust; the owner can still choose whether to lend again."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-29",
+    "order": 68,
+    "visualAnchor": "young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket; adult brown Mother Bear in plum cardigan",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "放学时下起雨，小熊站在屋檐下，望着湿漉漉的小路发愁。",
+        "en": "Rain began after school. Bear stood under the eaves, looking worriedly at the wet path.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Bear alone under woodland school porch, rainy path, empty paws, no umbrella. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔正好带着两把伞。小熊问：“那把红雨伞，可以借我用一下吗？”",
+        "en": "Rabbit happened to have two umbrellas. “May I borrow the red one?” Bear asked.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket. Scene: Rabbit under porch holds folded plain RED umbrella curved dark handle and open yellow umbrella, Bear politely asks. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“可以，明天放学还给我。”小兔递过伞，小熊认真点点头。",
+        "en": "“Yes. Please return it after school tomorrow,” said Rabbit. Bear nodded carefully.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket. Scene: Rabbit hands closed red umbrella to Bear under porch, yellow umbrella remains Rabbit's. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "红雨伞撑开了，雨点在伞面上跳。小熊走得慢慢的，避开路边的树枝。",
+        "en": "The red umbrella opened, and raindrops danced on top. Bear walked slowly, keeping clear of branches.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Bear alone walking rain path under open plain red umbrella, careful distance from branches. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "回到家，他把伞放在门边的接水盘里，等雨水滴干。",
+        "en": "At home he placed the umbrella in a drip tray by the door so the water could drain away.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Cottage entry Bear sets partly opened red umbrella into drip tray, wet droplets. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "第二天太阳出来了。小熊出门时看见小鸟，一高兴就忘了拿伞。",
+        "en": "The next morning was sunny. Bear spotted a bird as he left and forgot to take the umbrella.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Bear exits sunny door looking at tiny distant bird; red umbrella closed in tray behind door clearly left at home. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "放学后，小熊急着去玩积木，把答应小兔的事忘到了脑后。",
+        "en": "After school Bear hurried off to play with blocks, forgetting his promise to Rabbit.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Bear alone playing blocks on home rug, closed red umbrella visible far away at entry. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔等了一会儿，没有见到小熊，便决定第二天去问问。",
+        "en": "Rabbit waited for a while, but Bear did not come. She decided to ask him the next day.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit in teal jacket. Scene: Rabbit alone waiting by school gate in afternoon, holding only her own yellow umbrella folded, no red umbrella. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "第三天，小兔准备和妈妈出门，来敲小熊家的门：“我的红雨伞呢？”",
+        "en": "On the third day Rabbit came to Bear’s door before an outing. “Where is my red umbrella?”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit in teal jacket; young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Rabbit at Bear doorway asks, Bear surprised; red umbrella rests behind Bear inside. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小熊愣了一下，连忙跑到门后。伞还在那里，他的脸却热起来了。",
+        "en": "Bear froze, then hurried behind the door. The umbrella was still there, and his cheeks felt hot.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Bear retrieves closed red umbrella from tray behind door, sheepish expression. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“对不起，我答应昨天还，却忘了。”小熊抱着伞，认真地说。",
+        "en": "“I’m sorry. I promised to return it yesterday, but I forgot,” Bear said sincerely, holding it close.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket. Scene: Bear sincerely apologizes holding red umbrella, Rabbit listens with mild disappointment, no anger. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔说：“我今天想用它，下次不能让我一直等呀。”",
+        "en": "“I wanted to use it today,” Rabbit said. “Please don’t leave me waiting next time.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit in teal jacket; young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Rabbit calmly explains needs at doorway, Bear attentive holding borrowed umbrella. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小熊打开伞检查，发现伞边沾了一点泥：“我擦干净，马上送到你家。”",
+        "en": "Bear opened it to check and saw a little mud along the edge. “I’ll clean it and bring it straight to your house.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket. Scene: Bear inspects small mud spot on red canopy under covered porch, Rabbit sees, umbrella intact. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小兔看看天：“我们晚一点出门，你午饭前送来就好。”两人重新约定了时间。",
+        "en": "Rabbit looked at the sky. “We’re leaving later. Please bring it before lunch.” They agreed on a new time.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young white Rabbit in teal jacket; young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Two friends agree at bright morning doorway, Bear holds red umbrella, no clocks or writing. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "妈妈拿来软布，小熊轻轻擦掉泥点，再把伞撑在通风的地方晾干。",
+        "en": "Mother brought a soft cloth. Bear gently wiped off the mud and left the umbrella open in an airy spot to dry.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; adult brown Mother Bear in plum cardigan. Scene: Bear wipes red umbrella with cloth, Mother supervises on shaded airy veranda, no rain. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "等伞干了，他收拢伞面、扣好伞带，检查伞柄有没有松动。",
+        "en": "Once it was dry, he folded it, fastened the strap, and checked the handle.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Close Bear neatly fastens strap on clean folded red umbrella curved dark handle, late morning. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "午饭前，小熊把红雨伞送回小兔手里：“谢谢你借给我，也对不起让你等了。”",
+        "en": "Before lunch Bear returned the umbrella. “Thank you for lending it to me, and I’m sorry I kept you waiting.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket. Scene: Bear hands clean folded red umbrella to Rabbit outside her cottage, bright late morning. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "回家后，他画了一张借物提醒卡：借了什么，答应什么时候还。",
+        "en": "At home he made a borrowing reminder card: what he had borrowed and when he had promised to return it.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat. Scene: Bear draws picture reminder with umbrella icon and sun icon on small card, no text or numerals. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "后来，小熊想借小兔的放大镜。他先问用途和归还时间，听清楚才拿走。",
+        "en": "Later Bear asked to borrow Rabbit’s magnifying glass, explaining his plan and agreeing on a return time before taking it.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket. Scene: Rabbit offers simple magnifying glass to Bear, two calmly discuss on sunny porch; red umbrella safely on Rabbit hook. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "那天傍晚，放大镜准时回到原处。小熊明白，信任要靠一次次守约来照顾。",
+        "en": "That evening the magnifying glass was back where it belonged. Bear understood that trust grows through keeping promises.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young cinnamon-brown Bear with cream muzzle, mustard raincoat; young white Rabbit in teal jacket. Scene: Sunset Rabbit receives clean magnifying glass from Bear, both smile, red umbrella hangs inside Rabbit home. Do not add unlisted characters or later events."
+      }
+    ]
+  },
+  {
+    "id": "san-bai-liu-shi-hang",
+    "title": "三百六十行，行行出状元",
+    "subtitle": "小鹿想当谁",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "各种职业都有值得学习的本领。认真做好自己的工作，也看见别人付出的价值。",
+      "en": "Every kind of work has skills worth learning. Do your work with care and appreciate what others contribute."
+    },
+    "idiomMeaning": {
+      "zh": "各行各业都能做出出色的成绩；“三百六十行”泛指各种行业，并非固定数量。",
+      "en": "People can excel in every trade; “three hundred and sixty trades” means all kinds of work, not an exact count."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-29",
+    "order": 69,
+    "visualAnchor": "young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult peacock with blue neck and green tail, cream stage sash; adult brown Beaver carpenter in rust apron; adult white Rabbit tailor in lavender dress; adult cream Goat baker in pale blue apron; young russet Fox in green shirt",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "孔雀的演出结束了，小鹿还站在台下，眼睛亮晶晶的：“我也想像他一样厉害！”",
+        "en": "Peacock’s show was over, but Deer still gazed at the stage. “I want to be as wonderful as him!”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult peacock with blue neck and green tail, cream stage sash. Scene: Small woodland stage after performance, Peacock bows gracefully, Deer watches from safe ground, no audience needed. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "他回家试着跳舞，一转身就踩乱了脚步，垂头丧气地坐下来。",
+        "en": "At home he tried dancing, but tangled his steps as he turned and sat down in disappointment.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag. Scene: Deer alone on cottage rug recovering from clumsy dance step, seated safely not injured. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "森林庆典又要开始了，小鹿报名帮忙，却偷偷盼着能站上舞台。",
+        "en": "A forest celebration was coming. Deer volunteered to help, secretly hoping for a place onstage.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; young russet Fox in green shirt. Scene: Deer and Fox at village planning table with blank picture cards, distant unfinished low stage. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "清早，他看见河狸叔叔蹲在台阶旁，一遍遍检查松动的木板。",
+        "en": "Early one morning he saw Beaver checking a loose board on the stage steps again and again.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult brown Beaver carpenter in rust apron. Scene: Adult Beaver kneels inspecting loose step on low stage, Deer observes at safe distance, no power tools. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“这里只差一点，也得修好。”河狸叔叔扶正木板，让台阶稳稳当当。",
+        "en": "“Even a little wobble needs fixing,” said Beaver, setting the board firmly in place.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult brown Beaver carpenter in rust apron. Scene: Beaver secures wooden step using hand tool, Deer safely beside holding no tools, solid low stage. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鹿试着走上去，脚下一点也不晃：“原来稳稳的台阶，是这样来的。”",
+        "en": "Deer tried the steps. They did not wobble at all. “So that’s how safe steps are made.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult brown Beaver carpenter in rust apron. Scene: Deer carefully walks completed three low steps, Beaver smiles nearby. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "午后，兔阿姨的桌上铺满布料。孔雀的戏服袖口不合适，正等着修改。",
+        "en": "That afternoon Rabbit’s table was covered with fabric. Peacock’s costume needed its cuffs adjusted.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult white Rabbit tailor in lavender dress; adult peacock with blue neck and green tail, cream stage sash. Scene: Tailor cottage table cloth and cream costume sleeves, Peacock wearing blue natural plumage waits beside Deer, Rabbit measures fabric. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "兔阿姨量了又量，先用线轻轻固定，再请孔雀试着抬抬翅膀。",
+        "en": "Rabbit measured carefully, temporarily stitched the fabric, and asked Peacock to lift his wings.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult white Rabbit tailor in lavender dress; adult peacock with blue neck and green tail, cream stage sash. Scene: Rabbit tailor fits cream stage garment to Peacock lifting wings, Deer watches, pins not in mouth, no children sewing. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "衣服合身了，孔雀转了一圈：“现在活动舒服多了，谢谢！”",
+        "en": "The costume fitted. Peacock turned around. “That feels much better. Thank you!”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult white Rabbit tailor in lavender dress; adult peacock with blue neck and green tail, cream stage sash. Scene: Peacock comfortably turns in fitted cream costume, Rabbit and Deer pleased in tailoring room. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鹿低头看看自己的口袋，也发现一条整齐的缝线，藏着耐心和手艺。",
+        "en": "Deer looked at his own pocket and noticed its neat stitching, made with patience and skill.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag. Scene: Close Deer studies neat seam on blue waistcoat pocket, cottage window soft light. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "面包房里，山羊叔叔正在揉面。小鹿忍不住问：“做点心也有诀窍吗？”",
+        "en": "In the bakery Goat was kneading dough. “Does baking need special skills too?” Deer asked.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult cream Goat baker in pale blue apron. Scene: Bakery adult Goat kneads dough at flour-dusted counter, Deer watches from visitor side, oven closed far behind. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“当然。”山羊叔叔让他看看两团面：“水多一点、少一点，手感就不同。”",
+        "en": "“Of course.” Goat showed him two pieces of dough. “A little more or less water changes how they feel.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult cream Goat baker in pale blue apron. Scene: Goat demonstrates two dough textures on counter, Deer gently touches small sample with clean hoof, no heat nearby. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "出炉的面包先放凉，再装进干净的篮子，给忙碌的人们留作点心。",
+        "en": "The baked bread cooled before being packed into clean baskets for everyone helping with the celebration.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult cream Goat baker in pale blue apron. Scene: Goat places cooled small rolls in clean cloth-lined baskets, Deer holds empty basket, closed oven no handling hot trays. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鹿走过广场，第一次发现：舞台之外，也有许多值得认真做的事。",
+        "en": "Crossing the square, Deer began to notice how much important work happened away from the stage.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag. Scene: Deer alone crosses square observing finished sturdy steps, folded costume basket and bread baskets set safely on preparation table, no montage. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "这时，小狐狸急得团团转：“餐巾在哪儿？彩带怎么也找不到了？”",
+        "en": "Then Fox hurried over. “Where are the napkins? And where did the ribbons go?”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; young russet Fox in green shirt. Scene: Fox worried beside several plain supply baskets and folded decorations, Deer listens, no mess catastrophe. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鹿想起刚才一路看到的东西：“我陪你找，我们先看看都需要什么。”",
+        "en": "Deer remembered the things he had seen. “I’ll help. Let’s work out what we need first.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; young russet Fox in green shirt. Scene: Deer and Fox calmly sort picture cards depicting napkins ribbons cups, blank check boxes no letters. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "他们把物品画成小图，找齐一件，就把小图放进对应的篮子。",
+        "en": "They drew little pictures of the supplies, placing each picture in the matching basket once they found it.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; young russet Fox in green shirt. Scene: Two friends label baskets with simple object icons only, neatly sorted ribbons napkins cups. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鹿发现自己很喜欢整理。他还记下哪些东西缺了，及时去告诉大人。",
+        "en": "Deer discovered he enjoyed organizing. He noticed what was missing and told an adult in time.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult brown Beaver carpenter in rust apron. Scene: Deer shows icon checklist with missing cup slot to Beaver adult, baskets neatly arranged. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "庆典开始前，台阶修好了，戏服送到了，点心和餐具也各就各位。",
+        "en": "Before the celebration, the steps were ready, the costume had arrived, and the food and tableware were in place.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; young russet Fox in green shirt. Scene: Wide prepared woodland square low stage, neat food table and supply baskets; Deer Fox check final arrangement. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "孔雀朝小鹿挥挥翅膀：“谢谢你，大家找东西方便多了！”",
+        "en": "Peacock waved to Deer. “Thank you. You made it much easier for everyone to find things!”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult peacock with blue neck and green tail, cream stage sash. Scene: Peacock in fitted cream costume thanks Deer beside organized supplies near stage. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鹿依旧喜欢舞台，也想继续学跳舞。不过，他不再觉得只有表演才算本领。",
+        "en": "Deer still loved the stage and wanted to keep learning to dance. But he no longer thought performing was the only skill that mattered.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; young russet Fox in green shirt. Scene: Deer and Fox enjoy music from lawn, Deer tries a small happy dance, organized baskets nearby. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "晚风里，他和忙完的伙伴们坐在一起。每一份认真，都让庆典更美好。",
+        "en": "In the evening breeze he sat with the others after their work. Everyone’s care had helped make the celebration special.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young tan Deer with white spots, no antlers, blue waistcoat and small canvas shoulder bag; adult peacock with blue neck and green tail, cream stage sash; adult brown Beaver carpenter in rust apron; adult white Rabbit tailor in lavender dress; adult cream Goat baker in pale blue apron; young russet Fox in green shirt. Scene: Final cozy outdoor table six specified characters sharing cooled bread after celebration, each distinct, warm dusk. Do not add unlisted characters or later events."
+      }
+    ]
+  },
+  {
+    "id": "chi-shui-bu-wang-wa-jing-ren",
+    "title": "吃水不忘挖井人",
+    "subtitle": "老井旁的新木牌",
+    "origin": "常用谚语；依据谚语寓意创作的原创童话，并非历史典故。",
+    "moral": {
+      "zh": "记得帮助过我们的人，珍惜他人的劳动，也用力所能及的行动表达感谢。",
+      "en": "Remember those who help us, value their work, and show thanks through small actions of our own."
+    },
+    "idiomMeaning": {
+      "zh": "比喻得到帮助或享受成果时，不忘付出劳动、带来帮助的人。",
+      "en": "When receiving help or enjoying its results, remember the people whose work made it possible."
+    },
+    "ageLabel": "4-8 岁",
+    "publishedAt": "2026-09-29",
+    "order": 70,
+    "visualAnchor": "young yellow Duck in sky-blue vest with small brown satchel; elder green Tortoise in plum shawl and round spectacles; adult brown Beaver in rust work apron; adult white Goose in pale green apron; young white Rabbit in coral jacket",
+    "metadata": {
+      "tags": [
+        "谚语故事",
+        "生活智慧",
+        "亲子共读"
+      ],
+      "personalizationEnabled": false
+    },
+    "pages": [
+      {
+        "zh": "村里的老井修好了，井边又响起熟悉的声音：吱呀，吱呀，水桶慢慢升上来。",
+        "en": "The village well had been repaired. Its familiar creak returned as a bucket slowly rose.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult white Goose in pale green apron. Scene: Village stone well with high waist-height rim and timber pulley roof, adult Goose operates bucket while Duck stands back behind low protective rail, no child near opening. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鸭跟着鹅阿姨来取水，看着满满一桶清水，好奇地问：“这口井是谁挖的呀？”",
+        "en": "Duck came with Goose to collect water. Looking at the full bucket, he asked, “Who dug this well?”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult white Goose in pale green apron. Scene: Adult Goose sets full bucket on safe ground away from high-rim well, Duck asks curiously, well lid closed behind. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "鹅阿姨想了想：“那是很久以前的事，去问问龟爷爷吧。”",
+        "en": "Goose thought for a moment. “That was long ago. Tortoise may remember.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult white Goose in pale green apron. Scene: Goose points along village lane, Duck listens beside filled water container, closed well safely behind. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "龟爷爷从柜子里取出旧相册，轻轻翻到一张发黄的照片。",
+        "en": "Tortoise fetched an old album and carefully turned to a yellowing photograph.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; elder green Tortoise in plum shawl and round spectacles. Scene: Cozy cottage Tortoise opens old photo album at low table, Duck beside him, warm daylight. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "照片上的广场还没有井，村民们提着桶，沿着长长的小路去远处取水。",
+        "en": "In the photograph the square had no well. Villagers carried buckets along a long path to fetch water.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; elder green Tortoise in plum shawl and round spectacles. Scene: Over-shoulder Duck Tortoise viewing sepia photo of adult woodland villagers carrying buckets on long path, no well in PHOTO, no text. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“后来，大家请懂行的师傅选地方，一起商量怎么把井修好。”龟爷爷说。",
+        "en": "“Later, everyone asked experienced workers to choose a site and plan the well,” Tortoise explained.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; elder green Tortoise in plum shawl and round spectacles. Scene: Tortoise points at next sepia photo showing adult workers examining ground and drawings in empty square, no open shaft or dangerous construction. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "下一张照片里，有人运石头，有人准备饭菜，还有人照顾干活人的孩子。",
+        "en": "Another photo showed people carrying stones, preparing meals, and looking after the workers’ children.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; elder green Tortoise in plum shawl and round spectacles. Scene: Album close-up one sepia village work scene: adults carry stones and food while adult caretaker watches children far from fenced worksite, Duck wing at page edge. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鸭数了又数：“原来不是一个人，是好多人出了力！”",
+        "en": "Duck counted the helpers. “It wasn’t just one person. So many people helped!”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; elder green Tortoise in plum shawl and round spectacles. Scene: Duck delighted at open album, Tortoise nods, tiny sepia group photo visible without lettering. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "龟爷爷点头：“挖井的辛苦，运石头的辛苦，帮忙的人也都值得记得。”",
+        "en": "Tortoise nodded. “Digging was hard, carrying stones was hard, and every helper deserves to be remembered.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; elder green Tortoise in plum shawl and round spectacles. Scene: Gentle close conversation at cottage table with album, no thought bubbles. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "离开时，小鸭又想到：老井用了这么久，是谁一直照顾它呢？",
+        "en": "As Duck left, he wondered who had cared for the well through all those years.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel. Scene: Duck walks village lane thinking, closed high-rim well and intact protective rail ahead, no other characters. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "河狸叔叔正在收好修井工具。他告诉小鸭，松动的井沿和旧绳子都要及时检查。",
+        "en": "Beaver was putting away repair tools. He explained that loose stones and worn rope needed regular checks.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult brown Beaver in rust work apron. Scene: Adult Beaver stores hand tools and old coiled rope in box beside fully CLOSED well, Duck stands behind rail, replacement rope neatly secured. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "鹅阿姨说，她和邻居轮流清扫井边，还会提醒大家别把脏东西带到水边。",
+        "en": "Goose said she and her neighbors took turns cleaning around the well and keeping dirt away from the water.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult white Goose in pale green apron. Scene: Goose sweeps outer paved area away from CLOSED high-rim well, Duck watches beyond rail, no debris entering water. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“水送回家，也要按大人的办法烧开了再喝。”鹅阿姨补充说。",
+        "en": "“At home, an adult boils the water before we drink it,” Goose added.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult white Goose in pale green apron. Scene: Inside kitchen Goose adult beside closed electric kettle safely on back counter, Duck sits at table with covered cup, no child handling hot water. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "小鸭回家画了一口井，又在旁边画下运石头、修绳子和扫地的人。",
+        "en": "At home Duck drew the well and the people who carried stones, repaired rope, and swept the paving.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel. Scene: Duck draws simple pictorial well and three adult helpers on paper at home table, no text. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "他请小兔一起做块感谢牌。两人把每位帮忙的人，都画进小小的画里。",
+        "en": "He invited Rabbit to make a thank-you sign. Together they drew the people who had helped.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; young white Rabbit in coral jacket. Scene: Two children paint picture of well and adult helpers on smooth wooden plaque, washable paints, no letters, no tools. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "“还有做饭和照看小朋友的人！”小兔提醒。小鸭赶紧给他们留出位置。",
+        "en": "“What about the people who cooked and cared for the children?” Rabbit asked. Duck made room for them too.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; young white Rabbit in coral jacket. Scene: Children add cook with basket and caretaker with children to wooden pictorial plaque, unfinished blank space being filled, no writing. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "河狸叔叔帮忙，把新木牌稳稳装在井边的栏杆外侧，大家一眼就能看见。",
+        "en": "Beaver helped fix the new sign securely to the outside of the well’s railing, where everyone could see it.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; young white Rabbit in coral jacket; adult brown Beaver in rust work apron. Scene: Adult Beaver mounts painted pictorial plaque OUTSIDE protective rail, children stand several steps back, well closed. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "龟爷爷来看木牌，笑着说：“吃水不忘挖井人，你们把这份心意画出来了。”",
+        "en": "Tortoise smiled at the sign. “Remember those who dug the well. You’ve put that gratitude into a picture.”",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; young white Rabbit in coral jacket; elder green Tortoise in plum shawl and round spectacles. Scene: Three admire mounted helper-illustration plaque on outer rail, closed high-rim well behind, warm afternoon. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "从那以后，小鸭用水不再随手洒掉。看见井边有落叶，也会请大人一起清扫。",
+        "en": "After that, Duck took care not to waste water. When leaves gathered near the well, he asked an adult to help clean up.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult white Goose in pale green apron. Scene: Duck and adult Goose sweep fallen leaves on safe outer village path away from closed well, small hand broom, no child drawing water. Do not add unlisted characters or later events."
+      },
+      {
+        "zh": "清水带回了家，感谢也留在心里。老井旁的新木牌，在阳光下轻轻发亮。",
+        "en": "The water came home, and gratitude stayed in their hearts. The new sign shone gently beside the old well.",
+        "prompt": "Use case: illustration-story. ONE square 1024x1024 full-bleed picture-book illustration, soft handcrafted clay and felt, warm natural light, readable expressive faces. No text, letters, captions, speech bubbles, watermark or collage. EXACT cast for this page ONLY: young yellow Duck in sky-blue vest with small brown satchel; adult white Goose in pale green apron; elder green Tortoise in plum shawl and round spectacles; young white Rabbit in coral jacket; adult brown Beaver in rust work apron. Scene: Final village square specified five characters near outer rail admiring illustrated thank-you plaque, Goose holds covered water container, closed well peaceful sunlight. Do not add unlisted characters or later events."
+      }
+    ]
+  }
+]
