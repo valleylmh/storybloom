@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { getLibraryContentId } from "../src/lib/library/content-id";
 import { getAllSeries, getSeriesBooks } from "../src/lib/library";
 import { exportMiniContent, normalizeMediaBase, publicMediaPath } from "../scripts/lib/miniprogram-content";
 import type { LibraryBook } from "../src/types/library";
@@ -16,7 +17,7 @@ describe("mini program public content boundary", () => {
     expect(output.catalog.books).toHaveLength(expected.length);
     expect(output.catalog.series.map(item => item.id)).toEqual(series.map(item => item.id));
     for (const book of expected) {
-      const id = `${book.seriesId}/${book.id}`;
+      const id = getLibraryContentId(book);
       expect(output.books[id].pages).toHaveLength(book.pages.length);
       expect(output.books[id].pages[0].zh).toBe(book.pages[0].zhText);
       expect(output.books[id].pages[0].en).toBe(book.pages[0].enText);

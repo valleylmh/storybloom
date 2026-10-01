@@ -23,6 +23,7 @@ import LibraryBookReader, {
 import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryPlaylist from "@/components/library/LibraryPlaylist";
 import LibraryNarrationToolbar from "@/components/library/LibraryNarrationToolbar";
+import LibraryNextBookCountdown from "@/components/library/LibraryNextBookCountdown";
 
 export default function LibraryBookExperience({
   title,
@@ -61,6 +62,7 @@ export default function LibraryBookExperience({
   const [continuousPlayback, setContinuousPlayback] = useState(false);
   const [autoStart, setAutoStart] = useState(false);
   const advancedBookRef = useRef(false);
+  const [pendingNextBook, setPendingNextBook] = useState<{ id: string; title: string; href: string } | null>(null);
   const [pageIndex, setPageIndex] = useState(0);
   const [readerMode, setReaderMode] =
     useState<ReaderMode>(initialReaderMode);
@@ -94,6 +96,7 @@ export default function LibraryBookExperience({
     } catch { /* Reading remains available without browser storage. */ }
     setAutoStart(false);
     advancedBookRef.current = false;
+    setPendingNextBook(null);
     setPageIndex(0);
     setReaderMode(initialReaderMode);
     setLanguageMode("zh");
@@ -230,6 +233,7 @@ export default function LibraryBookExperience({
     (nextPageIndex: number) => {
       setPlaybackStatus("idle");
       advancedBookRef.current = false;
+      setPendingNextBook(null);
       setPlaybackPositionMs(0);
       setPlaybackDurationMs(0);
       setInitialPositionMs(0);
@@ -288,15 +292,26 @@ export default function LibraryBookExperience({
   );
 
   useEffect(() => {
-    if (!progressReady || bedtimeMode || !continuousPlayback || playbackStatus !== "ended" || pageIndex !== pages.length - 1 || advancedBookRef.current) return;
+    if (playbackStatus !== "ended") advancedBookRef.current = false;
+    if (!progressReady || bedtimeMode || !continuousPlayback || playbackStatus !== "ended" || pageIndex !== pages.length - 1) {
+      setPendingNextBook(null);
+      return;
+    }
+    if (advancedBookRef.current) return;
     const next = nextSeriesBook(playlist, contentId);
     if (!next) return;
     advancedBookRef.current = true;
+    setPendingNextBook(next);
+  }, [bedtimeMode, contentId, continuousPlayback, pageIndex, pages.length, playbackStatus, playlist, progressReady]);
+
+  const playPendingNextBook = useCallback(() => {
+    if (!pendingNextBook) return;
+    setPendingNextBook(null);
     try {
-      sessionStorage.setItem("storybloom.next-book", JSON.stringify({ id: next.id, language: languageMode, at: Date.now() }));
+      sessionStorage.setItem("storybloom.next-book", JSON.stringify({ id: pendingNextBook.id, language: languageMode, at: Date.now() }));
     } catch { return; }
-    router.push(next.href);
-  }, [bedtimeMode, contentId, continuousPlayback, languageMode, pageIndex, pages.length, playbackStatus, playlist, progressReady, router]);
+    router.push(pendingNextBook.href);
+  }, [languageMode, pendingNextBook, router]);
 
   const handleContinuousPlaybackChange = (enabled: boolean) => {
     setContinuousPlayback(enabled);
@@ -317,6 +332,17 @@ export default function LibraryBookExperience({
       }`}
       aria-label={bedtimeMode ? `${title}睡前阅读` : undefined}
     >
+      {pendingNextBook ? (
+        <LibraryNextBookCountdown
+          key={pendingNextBook.id}
+          title={pendingNextBook.title}
+          onComplete={playPendingNextBook}
+          onCancel={() => {
+            setPendingNextBook(null);
+            handleContinuousPlaybackChange(false);
+          }}
+        />
+      ) : null}
       <div className="library-bedtime-stage">
         {bedtimeMode ? (
           <header className="library-bedtime-header">

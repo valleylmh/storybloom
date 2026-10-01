@@ -17,6 +17,11 @@ const SERIES_DEFAULTS: Record<
     tags: ["成语", "经典故事", "品格启蒙"],
     bedtimeSuitable: true,
   },
+  yanyu: {
+    category: "proverb",
+    tags: ["谚语故事", "生活智慧", "亲子共读"],
+    bedtimeSuitable: true,
+  },
   xiyouji: {
     category: "classic",
     tags: ["西游记", "经典名著", "连续故事"],
@@ -45,7 +50,8 @@ const SERIES_DEFAULTS: Record<
 };
 
 export const LIBRARY_CATEGORY_LABELS: Record<LibraryCategory, string> = {
-  idiom: "成语与谚语",
+  idiom: "成语故事",
+  proverb: "谚语故事",
   classic: "经典故事",
   science: "科普启蒙",
   poetry: "古诗启蒙",

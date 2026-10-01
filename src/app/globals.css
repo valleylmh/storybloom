@@ -7546,6 +7546,128 @@ img {
   color: var(--accent-dark);
 }
 
+.library-next-book-dialog {
+  width: min(420px, calc(100% - 32px));
+  max-height: calc(100dvh - 48px);
+  padding: 28px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #fffdf8;
+  color: var(--text);
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(65, 51, 35, 0.2);
+}
+
+.library-next-book-dialog::backdrop {
+  background: rgba(37, 31, 25, 0.42);
+  backdrop-filter: blur(4px);
+}
+
+.library-next-book-kicker {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.library-next-book-dialog h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-family: Georgia, "Songti SC", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.library-next-book-countdown {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.library-next-book-countdown strong {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 2.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.library-next-book-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.library-next-book-actions button {
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.library-next-book-actions .library-next-book-play {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.library-next-book-actions button:focus-visible {
+  outline: 3px solid var(--accent-dark);
+  outline-offset: 3px;
+}
+
+.library-book-sticky-title {
+  position: fixed;
+  z-index: 40;
+  inset: 0 0 auto;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 253, 248, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(102, 73, 54, 0.06);
+}
+
+.library-book-sticky-title-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(1080px, calc(100% - 32px));
+  min-height: 56px;
+  margin: 0 auto;
+}
+
+.library-book-sticky-title-inner .library-back {
+  flex-shrink: 0;
+  padding-block: 12px;
+}
+
+.library-book-sticky-title-inner p {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
+  font-family: Georgia, "Songti SC", serif;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+}
+
 .library-hero {
   margin-bottom: 32px;
 }

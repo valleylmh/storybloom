@@ -5,6 +5,7 @@ import { isPublishedLibraryBook } from "./status";
 import { SANZIJING_BOOKS, SANZIJING_SERIES } from "./sanzijing";
 import { TANGSHI_BOOKS, TANGSHI_SERIES } from "./tangshi";
 import { XIYOUJI_BOOKS, XIYOUJI_SERIES } from "./xiyouji";
+import { YANYU_BOOKS, YANYU_SERIES } from "./yanyu";
 import { QICHE_BOOKS, QICHE_SERIES } from "./qiche";
 
 // 预告占位卡（/library 首页展示，不可点击、无路由）。
@@ -12,6 +13,7 @@ import { QICHE_BOOKS, QICHE_SERIES } from "./qiche";
 const UPCOMING_SERIES: LibrarySeries[] = [];
 
 const BOOKS_BY_SERIES: Record<string, LibraryBook[]> = {
+  [YANYU_SERIES.id]: sortBooks(YANYU_BOOKS),
   [CHENGYU_SERIES.id]: sortBooks(CHENGYU_BOOKS),
   [XIYOUJI_SERIES.id]: sortBooks(XIYOUJI_BOOKS),
   [HAOQI_SERIES.id]: sortBooks(HAOQI_BOOKS),
@@ -22,6 +24,7 @@ const BOOKS_BY_SERIES: Record<string, LibraryBook[]> = {
 
 const SERIES: LibrarySeries[] = [
   CHENGYU_SERIES,
+  YANYU_SERIES,
   XIYOUJI_SERIES,
   HAOQI_SERIES,
   TANGSHI_SERIES,
@@ -69,7 +72,9 @@ export function getPublishedBookCount(seriesId?: string): number {
 }
 
 export function getBook(seriesId: string, bookId: string): LibraryBook | null {
-  return getSeriesBooks(seriesId).find((book) => book.id === bookId) ?? null;
+  return getSeriesBooks(seriesId).find((book) => book.id === bookId)
+    ?? (seriesId === "chengyu" ? YANYU_BOOKS.find(book => book.id === bookId) : null)
+    ?? null;
 }
 
 export function findAdjacentPublishedBooks(

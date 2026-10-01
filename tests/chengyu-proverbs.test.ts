@@ -7,8 +7,9 @@ import nextDrafts from "../content-drafts/chengyu/chengyu-61-65.json";
 import drafts from "../content-drafts/chengyu/chengyu-51-60.json";
 import { getLibraryChineseAudio } from "../src/lib/library-book-audio";
 import { getLibraryBookCategoryLabel, resolveLibraryBookMetadata } from "../src/lib/library/metadata";
+import { createLibraryBookSummary } from "../src/lib/library/catalog";
 import type { LibraryBook } from "../src/types/library";
-import { getBook, getSeries } from "../src/lib/library";
+import { getBook, getSeries, getSeriesBooks, getAdjacentBooks } from "../src/lib/library";
 
 const asBooks = (items: typeof drafts): LibraryBook[] => items.map(draft => ({
   ...draft,
@@ -28,11 +29,16 @@ const nextBooks = asBooks(nextDrafts);
 const latestBooks = asBooks(latestDrafts);
 
 describe("approved proverb and eight-character idiom books", () => {
-  it("adds the new books to the existing series with their own complete artwork", () => {
-    expect(getSeries("chengyu")?.title).toBe("成语与谚语");
-    expect(getSeries("chengyu")?.bookCount).toBe(70);
+  it("separates proverbs from idioms while preserving complete artwork", () => {
+    expect(getSeries("chengyu")?.title).toBe("成语故事");
+    expect(getSeries("chengyu")?.bookCount).toBe(54);
+    expect(getSeries("yanyu")?.title).toBe("谚语故事");
+    expect(getSeries("yanyu")?.bookCount).toBe(16);
     for (const draft of [...books, ...nextBooks, ...latestBooks]) {
-      const book = getBook("chengyu", draft.id);
+      const targetSeries = draft.metadata?.tags?.includes("谚语故事") ? "yanyu" : "chengyu";
+      const book = getBook(targetSeries, draft.id);
+      expect(book?.seriesId).toBe(targetSeries);
+      expect(getBook("chengyu", draft.id)).toBe(book);
       expect(book?.pages).toHaveLength(draft.pages.length);
       expect(book?.metadata?.tags).toEqual(draft.metadata?.tags);
       for (const page of book?.pages ?? []) {
@@ -43,6 +49,22 @@ describe("approved proverb and eight-character idiom books", () => {
         expect(statSync(file).size).toBeLessThanOrEqual(300 * 1024);
       }
     }
+  });
+
+  it("orders the independent proverb playlist without including eight-character idioms", () => {
+    const proverbs = getSeriesBooks("yanyu");
+    expect(proverbs).toHaveLength(16);
+    proverbs.forEach((book, index) => {
+      expect(book.order).toBe(index + 1);
+      const summary = createLibraryBookSummary(getSeries("yanyu")!, book);
+      expect(summary.contentId).toBe(`chengyu/${book.id}`);
+      expect(summary.href).toBe(`/library/yanyu/${book.id}`);
+      expect(resolveLibraryBookMetadata(book).category).toBe("proverb");
+      expect(resolveLibraryBookMetadata(book).seriesId).toBe("yanyu");
+      expect(getAdjacentBooks("yanyu", book.id).next?.id ?? null).toBe(proverbs[index + 1]?.id ?? null);
+    });
+    expect(getBook("yanyu", "ba-xian-guo-hai")).toBeNull();
+    expect(getSeriesBooks("chengyu").some(book => book.metadata?.tags?.includes("谚语故事"))).toBe(false);
   });
 
   it("keeps the ten approved selections, complete bilingual pages and honest source labels", () => {
@@ -106,7 +128,8 @@ describe("approved proverb and eight-character idiom books", () => {
 
   it("resolves all twenty proverb audio assets with page-aligned timing and rejects stale narration", () => {
     for (const book of [...books, ...nextBooks, ...latestBooks]) {
-      const audio = getLibraryChineseAudio(book.seriesId, book.id, book.pages);
+      const seriesId = book.metadata?.tags?.includes("谚语故事") ? "yanyu" : "chengyu";
+      const audio = getLibraryChineseAudio(seriesId, book.id, book.pages);
       expect(audio, book.id).toBeDefined();
       if (!audio) continue;
       if (audio.url.startsWith("/library/")) {
@@ -131,8 +154,8 @@ describe("approved proverb and eight-character idiom books", () => {
         expect(audio.url).toBe(`/library/chengyu/${book.id}/zh-${audio.contentHash.slice(0, 16)}.mp3`);
       }
       const changed = book.pages.map((p, i) => i ? p : { ...p, zhText: p.zhText + "新正文" });
-      expect(getLibraryChineseAudio(book.seriesId, book.id, changed)).toBeUndefined();
-      expect(getLibraryChineseAudio(book.seriesId, book.id, book.pages.slice(1))).toBeUndefined();
+      expect(getLibraryChineseAudio(seriesId, book.id, changed)).toBeUndefined();
+      expect(getLibraryChineseAudio(seriesId, book.id, book.pages.slice(1))).toBeUndefined();
       expect(getLibraryChineseAudio("another-series", book.id, book.pages)).toBeUndefined();
     }
   });

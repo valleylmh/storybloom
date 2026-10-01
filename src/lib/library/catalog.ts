@@ -1,4 +1,5 @@
 import type { LibraryBook, LibraryBookMetadata, LibrarySeries } from "@/types/library";
+import { getLibraryContentId } from "./content-id";
 import { resolveLibraryBookMetadata } from "./metadata";
 
 export type LibraryBookSummary = {
@@ -26,7 +27,7 @@ export function createLibraryBookSummary(
   const metadata = resolveLibraryBookMetadata(book);
   return {
     id: book.id,
-    contentId: `${series.id}/${book.id}`,
+    contentId: getLibraryContentId(book),
     seriesId: series.id,
     seriesTitle: series.title,
     seriesAccent: series.accent,

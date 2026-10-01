@@ -74,7 +74,7 @@ const PROVERB_BOOK_IDS = [
 ];
 const MORE_PROVERB_BOOK_IDS = ["san-ge-chou-pi-jiang", "mo-dao-bu-wu-kan-chai-gong", "yuan-shui-jiu-bu-liao-jin-huo", "lu-yao-zhi-ma-li", "yi-cun-guang-yin"];
 const LATEST_PROVERB_BOOK_IDS = ["san-tian-da-yu", "luo-bo-qing-cai", "you-jie-you-huan", "san-bai-liu-shi-hang", "chi-shui-bu-wang-wa-jing-ren"];
-const ALL_CHENGYU_BOOK_IDS = [...CHENGYU_BOOK_IDS, ...PROVERB_BOOK_IDS, ...MORE_PROVERB_BOOK_IDS, ...LATEST_PROVERB_BOOK_IDS];
+const ALL_CHENGYU_BOOK_IDS = [...CHENGYU_BOOK_IDS, ...PROVERB_BOOK_IDS.slice(6)];
 const XIYOUJI_BOOK_IDS = [
   "shi-hou-chu-shi",
   "mu-fa-du-dong-hai",

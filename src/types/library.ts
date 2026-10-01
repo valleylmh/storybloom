@@ -63,6 +63,7 @@ export interface LibrarySeries {
 
 export type LibraryCategory =
   | "idiom"
+  | "proverb"
   | "classic"
   | "science"
   | "poetry"

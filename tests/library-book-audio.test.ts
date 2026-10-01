@@ -22,7 +22,7 @@ describe("reused library Chinese audio", () => {
       expect(audio, `${series.id}/${book.id}`).toBeDefined();
       if (!audio) continue;
       if (audio.url.startsWith("/library/")) {
-        expect(audio.url).toBe(`/library/${series.id}/${book.id}/zh-${audio.contentHash.slice(0, 16)}.mp3`);
+        expect(audio.url).toBe(`/library/${series.id === "yanyu" ? "chengyu" : series.id}/${book.id}/zh-${audio.contentHash.slice(0, 16)}.mp3`);
         expect(statSync(path.resolve(`public${audio.url}`)).size).toBeGreaterThan(1000);
       } else {
         expect(audio.url).toContain("/storage/v1/object/public/library-audio-public/");

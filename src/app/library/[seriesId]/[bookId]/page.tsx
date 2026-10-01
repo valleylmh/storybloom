@@ -1,11 +1,13 @@
+import { getLibraryContentId } from "@/lib/library/content-id";
 import { getLibraryChineseAudio } from "@/lib/library-book-audio";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import LibraryBookExperience from "@/components/library/LibraryBookExperience";
 import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
 import LibraryDetailBackLink from "@/components/library/LibraryDetailBackLink";
+import LibraryBookStickyTitle from "@/components/library/LibraryBookStickyTitle";
 import {
   getAdjacentBooks,
   getAllSeries,
@@ -37,8 +39,8 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { seriesId, bookId } = await params;
-  const series = getSeries(seriesId);
   const book = getBook(seriesId, bookId);
+  const series = getSeries(book?.seriesId ?? seriesId);
 
   if (!series || !book) {
     return {};
@@ -81,11 +83,15 @@ export default async function LibraryBookPage({
   params: Promise<Params>;
 }) {
   const { seriesId, bookId } = await params;
-  const series = getSeries(seriesId);
   const book = getBook(seriesId, bookId);
+  const series = getSeries(book?.seriesId ?? seriesId);
 
   if (!series || !book) {
     notFound();
+  }
+
+  if (book.seriesId !== seriesId) {
+    permanentRedirect(`/library/${book.seriesId}/${book.id}`);
   }
 
   const { previous, next } = getAdjacentBooks(seriesId, bookId);
@@ -148,6 +154,14 @@ export default async function LibraryBookPage({
         />
       </nav>
 
+      <LibraryBookStickyTitle
+        key={`sticky-title-${series.id}/${book.id}`}
+        title={book.title}
+        titleId="library-book-title"
+        fallbackHref={`/library/${series.id}`}
+        fallbackLabel={series.title}
+      />
+
       {book.comingSoon ? (
         <div className="library-preview-banner" role="status">
           {previewReadyForReview
@@ -163,9 +177,9 @@ export default async function LibraryBookPage({
           {book.ageLabel}
         </p>
         <div className="library-book-title-row">
-          <h1>{book.title}</h1>
+          <h1 id="library-book-title">{book.title}</h1>
           <LibraryFavoriteButton
-            contentId={`${series.id}/${book.id}`}
+            contentId={getLibraryContentId(book)}
             compact
           />
         </div>
@@ -237,7 +251,7 @@ export default async function LibraryBookPage({
       <LibraryBookExperience
         key={`${series.id}/${book.id}`}
         playlist={seriesBooks.filter((item) => !item.comingSoon).map((item) => ({
-          id: `${series.id}/${item.id}`,
+          id: getLibraryContentId(item),
           title: item.title,
           cover: item.pages[0]?.imageStatus === "complete" ? item.pages[0].imageUrl : undefined,
           href: `/library/${series.id}/${item.id}`,
@@ -246,9 +260,9 @@ export default async function LibraryBookPage({
         title={book.title}
         pages={book.pages}
         accent={series.accent}
-        storyKey={`library-${series.id}-${book.id}`}
+        storyKey={`library-${getLibraryContentId(book).replace("/", "-")}`}
         contentType="library"
-        contentId={`${series.id}/${book.id}`}
+        contentId={getLibraryContentId(book)}
         personalizeHref={
           bookMetadata.personalizationEnabled ? personalizeHref : undefined
         }
