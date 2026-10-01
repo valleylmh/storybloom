@@ -1,0 +1,190 @@
+{
+  "book": {
+    "id": "yi-bei-da-fan-de-niu-nai",
+    "seriesId": "richang",
+    "title": "一杯打翻的牛奶",
+    "subtitle": "先说出来，再一起擦干净",
+    "moral": {
+      "zh": "犯错以后，及时说出来、一起补救，事情就能慢慢变好。",
+      "en": "When something goes wrong, speaking up and making repairs can help."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 7,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安正在画一座彩虹桥，手边放着一杯牛奶。她伸手拿蓝色笔，袖子碰到了杯子。",
+        "enText": "An'an was drawing a rainbow bridge with a cup of milk nearby. When she reached for a blue crayon, her sleeve bumped the cup.",
+        "illustrationPrompt": "Home drawing desk: An'an reaches for blue crayon, teal sleeve touches a plain milk cup beginning to tip, blank abstract rainbow bridge drawing, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Home drawing desk: An'an reaches for blue crayon, teal sleeve touches a plain milk cup beginning to tip, blank abstract rainbow bridge drawing, no text.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-cdb90cf4-3733-4429-9f96-99e58a42fe1c.png"
+      },
+      {
+        "page": 2,
+        "zhText": "蓝色笔滚到一边，安安的手停在半空。她很想让杯子自己站起来，让桌子变回刚才的样子。",
+        "enText": "The blue crayon rolled away. An'an's hand froze in the air. She wished the cup could stand up by itself and the table could go back to how it was.",
+        "illustrationPrompt": "Close drawing desk: blue crayon rolled safely to desk edge, An'an frozen hand above small milk spill, tipped intact plastic cup, no glass.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-367abf7d-be68-4933-b8f9-4ab98922360a.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-89b8b489-f8e1-4a69-bf54-cfe2798487d4.png"
+      },
+      {
+        "page": 3,
+        "zhText": "哗！牛奶流过桌面，碰到了画纸边。安安愣住了：“妈妈会不会生气？”",
+        "enText": "Splash! Milk ran across the table and reached the edge of her drawing. An'an froze. “Will Mom be angry?”",
+        "illustrationPrompt": "Close desk scene immediately after spill: intact plastic cup lies on side, small milk puddle touches edge of rainbow drawing, An'an startled, no broken glass.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-56c71c5b-9163-4cf4-8492-20b00eafdd53.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-9783e73b-7fd6-474c-8dcf-859b49c6001d.png"
+      },
+      {
+        "page": 4,
+        "zhText": "她拿另一张纸盖上去，想把牛奶藏住。纸湿了，下面的书角也湿了。安安越弄越慌。",
+        "enText": "She covered the milk with another sheet of paper, hoping to hide it. The paper got wet, and so did the corner of a book underneath. An'an grew more worried.",
+        "illustrationPrompt": "Detailed tabletop view: An'an's hands lay a blank paper onto milk puddle, paper visibly soaked, corner of plain book nearby damp, anxious child expression.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-2ed464e0-14e7-41b9-80c8-c71d490a2de3.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-fb255529-4576-4fc0-8b48-fa6b71611c91.png"
+      },
+      {
+        "page": 5,
+        "zhText": "湿纸粘住了手指。安安越想快点遮住，越不知道该怎么办。她听见妈妈的脚步，心跳得更快了。",
+        "enText": "Wet paper stuck to her fingers. The harder she tried to hide the spill, the less she knew what to do. Mom's footsteps made her heart race.",
+        "illustrationPrompt": "Child eye-level desk shot: An'an lifts damp paper stuck lightly to fingertips, worried face, Mom entering background calmly, contained milk puddle.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-16e4b8ae-7662-456c-8ebe-d56a91524127.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-4440a75f-ae38-42df-bcd2-2fc2c43c5e1b.png"
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈听见动静，走了过来。安安攥着湿纸，小声说：“是我碰倒的。我想藏起来，可是越弄越糟了。”",
+        "enText": "Mom came over when she heard the noise. Holding the wet paper, An'an whispered, “I knocked it over. I tried to hide it, but I made it worse.”",
+        "illustrationPrompt": "Medium eye-level desk scene: Mom approaches calmly, An'an holds damp paper and admits spill with worried face, no angry expressions, milk mess contained.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-77b37e68-c1c4-415f-8201-ae83bd8cb71a.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-02efafee-0e3e-479a-9ba4-71b715ef88b9.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈先把杯子扶好：“谢谢你告诉我。我们先把干的东西挪开，再拿抹布。”安安呼出一口气。",
+        "enText": "Mom stood the cup upright. “Thank you for telling me. Let's move the dry things away and get a cloth.” An'an let out a breath.",
+        "illustrationPrompt": "Mom sets intact plastic cup upright while An'an moves dry crayons into a safe tray, cloth in Mom's other hand, cooperative reassuring composition.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-06b36710-d546-462e-8a77-a95f04feac90.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-cc837254-4a00-480f-9f90-a6e6fed94ccf.png"
+      },
+      {
+        "page": 8,
+        "zhText": "妈妈问：“有没有碰疼？杯子有没有破？”安安摇头。妈妈说：“好，人没受伤，我们就慢慢处理。”",
+        "enText": "Mom asked, “Did you get hurt? Did the cup break?” An'an shook her head. “Good. You're safe, so we can handle this step by step.”",
+        "illustrationPrompt": "Mom checks An'an gently beside drawing desk and examines intact plastic cup, child calms, no injuries or broken glass.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bc3e07e9-7b9a-4a19-ad7d-5a14a5e599c8.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-dc0acc58-d7fe-4890-9437-5ef63d00d953.png"
+      },
+      {
+        "page": 9,
+        "zhText": "她擦桌子，妈妈擦书角。湿画纸摊开放好，等它慢慢干。那座彩虹桥有一点花了，但还看得见。",
+        "enText": "An'an wiped the table while Mom dried the book's corner. They laid the wet drawing flat to dry. The rainbow bridge was a little blurred, but still visible.",
+        "illustrationPrompt": "Wide desk cleanup: An'an wipes tabletop with small cloth, Mom carefully blots plain book corner, slightly smudged rainbow drawing laid flat on separate dry tray.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Wide desk cleanup: An'an wipes tabletop with small cloth, Mom carefully blots plain book corner, slightly smudged rainbow drawing laid flat on separate dry tray.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-3dbfbf4d-a72b-45ae-b5e8-f09819629583.png"
+      },
+      {
+        "page": 10,
+        "zhText": "安安想了想，把牛奶杯移到旁边的小桌上：“这里离画纸远一点。”妈妈点头：“这个办法可以试试。”",
+        "enText": "An'an moved her milk to a small side table. “This is farther from my drawing.” Mom nodded. “That's a good idea to try.”",
+        "illustrationPrompt": "An'an puts upright plastic milk cup on sturdy side table away from drawing supplies, Mom observes encouragingly, dry main desk ready for painting.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): An'an puts upright plastic milk cup on sturdy side table away from drawing supplies, Mom observes encouragingly, dry main desk ready for painting.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-b78b6b8c-7c7f-4e28-8953-533162441860.png"
+      },
+      {
+        "page": 11,
+        "zhText": "擦干净后，安安看看那张画：“它和原来不一样了。”妈妈说：“是呀。有些东西能补，有些会留下痕迹，我们再想想。”",
+        "enText": "After cleaning, An'an looked at her drawing. “It's different now.” Mom said, “Yes. Some things can be repaired, and some leave a mark. Let's think about what to do.”",
+        "illustrationPrompt": "Quiet desk conversation: An'an and Mom look at dried smudged rainbow drawing laid flat, clear dry surface and cup safely on side table, no fresh spill.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c1db079b-5866-4126-b694-9de4c5538ca4.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-7b566177-aab9-4336-93f5-6c81da5fdb76.png"
+      },
+      {
+        "page": 12,
+        "zhText": "画纸干了，安安给花掉的地方添了几朵云。她看看妈妈：“下次出了事，我先告诉你。”妈妈说：“我们一起想办法。”",
+        "enText": "When the paper dried, An'an added clouds to the blurry parts. “Next time, I'll tell you first,” she said. Mom smiled. “We'll work it out together.”",
+        "illustrationPrompt": "Warm close closing shot: An'an adds simple cloud shapes with crayon to dried rainbow drawing, Mom sits beside her, milk cup safely on separate side table, trusting smiles.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct ONLY the MILK DRINKING CUP in this existing picture-book illustration. Keep the exact characters, faces, expressions, hair, yellow star hairclip, clothes, poses, hands, milk spill, papers, drawings, desk, framing, light and all other objects unchanged. The milk drinking cup must be one smooth plain OPAQUE WHITE cylindrical unbreakable plastic cup with NO handle, no pattern, no lettering, consistent with the first page. Replace its transparent glass appearance or decorative pattern with this plain white cup, preserving its exact position, size and tilt and any milk it contains. DO NOT change the separate colorful crayon/pen holder or any other container. NO other changes, no new people, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-582e6d9a-a4b8-45dd-8721-807a7814757d.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-ce4f7c3c-2c81-4ad4-b378-f56a85b8b1dd.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 7,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "诚实",
+        "补救",
+        "情绪"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "建立犯错后可以求助和补救的安全感。",
+      "reminder": "先平静处理，再讨论原因；不要因孩子坦白而追加羞辱或惩罚。",
+      "questions": [
+        "安安为什么想把牛奶藏起来？",
+        "我们可以先做哪一步，让事情好一点？"
+      ],
+      "activity": "用少量清水练习擦拭和移动物品，再一起选一个离画纸远的杯子位置。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

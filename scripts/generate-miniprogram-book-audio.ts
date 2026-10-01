@@ -25,15 +25,24 @@ const concurrency = Math.max(1, Math.min(8, Number(process.argv.find(a => a.star
 const limit = Number(process.argv.find(a => a.startsWith("--limit="))?.split("=")[1] || Infinity);
 const selectedBooks = process.argv.find(a => a.startsWith("--books="))?.slice("--books=".length).split(",");
 const selectedIds = process.argv.find(a => a.startsWith("--qiche-books="))?.slice("--qiche-books=".length).split(",");
+const draftIds = process.argv.find(a => a.startsWith("--draft-books="))?.slice("--draft-books=".length).split(",");
+const draftSeries = process.argv.find(a => a.startsWith("--draft-series="))?.slice("--draft-series=".length);
+const bundledOutput = process.argv.includes("--bundled");
 async function main() {
+  if (bundledOutput && upload) throw new Error("Choose bundled output or upload");
+  if (draftIds && (!draftSeries || !/^[a-z0-9-]+$/.test(draftSeries))) throw new Error("Invalid draft series");
+  if (draftSeries && !draftIds) throw new Error("Draft series requires explicit book IDs");
+  if (selectedIds && draftIds) throw new Error("Choose one draft selector");
+  if (bundledOutput && !draftIds && !selectedIds) throw new Error("Bundled output requires explicit drafts");
+  const targetDraftSeries = draftIds ? draftSeries! : "qiche";
   let all: Record<string, Book>;
-  if (selectedIds) {
+  if (selectedIds || draftIds) {
     all = {};
-    for (const id of selectedIds) {
+    for (const id of (draftIds ?? selectedIds!)) {
       if (!/^[a-z0-9-]+$/.test(id)) throw new Error("Invalid book ID");
-      const { book } = JSON.parse(await readFile(path.resolve("content-drafts/qiche", `${id}.json`), "utf8"));
-      if (book.id !== id || !book.pages?.length) throw new Error("Invalid book draft");
-      const key = `qiche/${id}`;
+      const { book } = JSON.parse(await readFile(path.resolve("content-drafts", targetDraftSeries, `${id}.json`), "utf8"));
+      if (book.id !== id || book.seriesId !== targetDraftSeries || !book.pages?.length) throw new Error("Invalid book draft");
+      const key = `${targetDraftSeries}/${id}`;
       all[key] = { id: key, title: book.title, guide: [], pages: book.pages.map((p: { zhText: string; enText: string }) => {
         if (!p.zhText?.trim()) throw new Error("Missing Chinese text");
         return { zh: p.zhText, en: p.enText, image: "", audio: { zh: "", en: "" } };
@@ -48,12 +57,12 @@ async function main() {
     }
   }
   await mkdir(root, { recursive: true });
-  const admin = getSupabaseAdmin();
+  const admin = bundledOutput ? undefined : getSupabaseAdmin();
   if (upload) {
-    const { data, error } = await admin.storage.getBucket(bucket);
+    const { data, error } = await admin!.storage.getBucket(bucket);
     if (error) {
       if (!/not found/i.test(error.message)) throw new Error("Cannot inspect public library audio bucket");
-      const created = await admin.storage.createBucket(bucket, { public: true, allowedMimeTypes: ["audio/mpeg", "application/json"], fileSizeLimit: 52428800 });
+      const created = await admin!.storage.createBucket(bucket, { public: true, allowedMimeTypes: ["audio/mpeg", "application/json"], fileSizeLimit: 52428800 });
       if (created.error) throw new Error("Cannot create dedicated library audio bucket");
     } else if (!data.public) throw new Error("Dedicated library bucket is private; refusing to change existing permissions");
   }
@@ -65,6 +74,13 @@ async function main() {
   const local: Record<string, BookAudio> = {};
   for (const file of ["content-drafts/chengyu/chengyu-51-60-audio.json", "content-drafts/chengyu/chengyu-61-65-audio.json", "content-drafts/qiche/local-audio.json"]) {
     Object.assign(local, JSON.parse(await readFile(file, "utf8")));
+  }
+  const bundledManifestFile = path.resolve("content-drafts", targetDraftSeries, "local-audio.json");
+  let bundledManifest: Record<string, BookAudio> = {};
+  if (bundledOutput || draftIds) {
+    try { bundledManifest = JSON.parse(await readFile(bundledManifestFile, "utf8")); }
+    catch (error) { if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error; }
+    Object.assign(local, bundledManifest);
   }
   const verifyRemote = async (asset: BookAudio, bytes?: number) => {
     const check = await fetch(asset.url, { method: "HEAD", signal: AbortSignal.timeout(30000) });
@@ -84,6 +100,14 @@ async function main() {
     });
     return checkpoint;
   };
+  const saveBundled = (id: string, asset: BookAudio) => {
+    bundledManifest[id] = asset;
+    checkpoint = checkpoint.then(async () => {
+      await writeFile(`${bundledManifestFile}.tmp`, JSON.stringify(bundledManifest, null, 2) + "\n");
+      await rename(`${bundledManifestFile}.tmp`, bundledManifestFile);
+    });
+    return checkpoint;
+  };
   const books = Object.values(all).slice(0, limit);
   let cursor = 0, completed = 0;
   const failures: string[] = [];
@@ -92,7 +116,7 @@ async function main() {
       const book = books[cursor++];
       try {
         const contentHash = bookAudioHash(book);
-        if (publicManifest[book.id]?.contentHash === contentHash && validBookAudio(publicManifest[book.id], book.pages.length)) {
+        if (!bundledOutput && publicManifest[book.id]?.contentHash === contentHash && validBookAudio(publicManifest[book.id], book.pages.length)) {
           if (upload) await verifyRemote(publicManifest[book.id]);
           completed++;
           console.log(JSON.stringify({ completed, total: books.length, book: book.id, status: "reused-public" }));
@@ -107,7 +131,7 @@ async function main() {
           const decoded = execFileSync("ffmpeg", ["-v", "error", "-i", mp3, "-f", "s16le", "-ac", "1", "-ar", "24000", "pipe:1"], { maxBuffer: 64 * 1024 * 1024 });
           if (Math.abs(decoded.length / 48000 - bundled.duration) > 0.05) throw new Error("Bundled duration drift");
           const fileHash = createHash("sha256").update(bytes).digest("hex");
-          asset = { ...bundled, url: admin.storage.from(bucket).getPublicUrl(`v1/${contentHash}/${fileHash}.mp3`).data.publicUrl };
+          asset = bundledOutput ? bundled : { ...bundled, url: admin!.storage.from(bucket).getPublicUrl(`v1/${contentHash}/${fileHash}.mp3`).data.publicUrl };
         } else {
           const chunks: Buffer[] = [], pageStarts: number[] = [];
           let samples = 0;
@@ -149,13 +173,23 @@ async function main() {
           const decoded = execFileSync("ffmpeg", ["-v", "error", "-i", mp3, "-f", "s16le", "-ac", "1", "-ar", "24000", "pipe:1"], { maxBuffer: 64 * 1024 * 1024 });
           if (Math.abs(decoded.length / 48000 - duration) > 0.05) throw new Error("Encoded duration drift");
           const object = `v1/${contentHash}/${audioHash}.mp3`;
-          asset = { url: admin.storage.from(bucket).getPublicUrl(object).data.publicUrl, pageStarts, duration, contentHash };
+          asset = { url: bundledOutput ? `/library/${book.id}/zh-${contentHash.slice(0, 16)}.mp3` : admin!.storage.from(bucket).getPublicUrl(object).data.publicUrl, pageStarts, duration, contentHash };
+        }
+        if (bundledOutput) {
+          if (!validBookAudio({ ...asset, url: `https://local.invalid${asset.url}` }, book.pages.length)) throw new Error("Invalid bundled asset");
+          const destination = path.resolve(`public${asset.url}`);
+          await mkdir(path.dirname(destination), { recursive: true });
+          if (mp3 !== destination) await writeFile(destination, await readFile(mp3));
+          await saveBundled(book.id, asset);
+          completed++;
+          console.log(JSON.stringify({ completed, total: books.length, book: book.id, seconds: Math.round(asset.duration), bundled: true }));
+          continue;
         }
         const object = new URL(asset.url).pathname.split(`/object/public/${bucket}/`)[1];
         if (!object || !validBookAudio(asset, book.pages.length)) throw new Error("Invalid published asset");
         if (upload) {
           for (const [name, bytes, contentType] of [[object, await readFile(mp3), "audio/mpeg"], [object.replace(/\.mp3$/, ".json"), Buffer.from(JSON.stringify(asset)), "application/json"]] as const) {
-            const result = await admin.storage.from(bucket).upload(name, bytes, { contentType, cacheControl: "31536000", upsert: false });
+            const result = await admin!.storage.from(bucket).upload(name, bytes, { contentType, cacheControl: "31536000", upsert: false });
             if (result.error && !/already exists|duplicate/i.test(result.error.message)) throw new Error("Audio upload failed");
           }
           await verifyRemote(asset, (await stat(mp3)).size);

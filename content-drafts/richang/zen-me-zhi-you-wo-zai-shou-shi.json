@@ -1,0 +1,183 @@
+{
+  "book": {
+    "id": "zen-me-zhi-you-wo-zai-shou-shi",
+    "seriesId": "richang",
+    "title": "怎么只有我在收拾",
+    "subtitle": "家里的事，大家一起商量",
+    "moral": {
+      "zh": "看见别人做的事，也让自己的付出被看见。",
+      "en": "Notice what others do, and let your own efforts be seen too."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 9,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "周六，安安刚玩完积木，妈妈提醒她收好。她抱着盒子嘟囔：“怎么又是我？家里只有我在收拾吗？”",
+        "enText": "On Saturday, Mom reminded An'an to put away her blocks. Holding the box, she grumbled, “Me again? Am I the only one tidying up?”",
+        "illustrationPrompt": "Living room: An'an holds an empty block box looking frustrated at scattered blocks, Mom gently asks from nearby, family home weekend light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room: An'an holds an empty block box looking frustrated at scattered blocks, Mom gently asks from nearby, family home weekend light.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-9ebd770a-329a-4254-ae81-14a1978e08d7.png"
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈没有急着反驳：“你觉得累了？那我们先歇一会儿，也看看今天家里有哪些事要做。”",
+        "enText": "Mom did not argue. “Are you feeling tired? Let's rest a little and see what needs doing at home today.”",
+        "illustrationPrompt": "Sofa close conversation: Mom and An'an sit briefly to rest, block box on floor, mother empathetically acknowledges feeling, no scolding gesture.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Sofa close conversation: Mom and An'an sit briefly to rest, block box on floor, mother empathetically acknowledges feeling, no scolding gesture.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-39450b62-5c6a-4481-a943-027af7b5fe16.png"
+      },
+      {
+        "page": 3,
+        "zhText": "安安说：“刚搭好就要收，真的不想动。”妈妈帮她拍下作品：“想留住它的样子，我们也可以想办法。”",
+        "enText": "An'an said, “I just finished it, and now I don't want to put it away.” Mom photographed her work. “We can find a way to keep the memory.”",
+        "illustrationPrompt": "Living room block table: Mom photographs An'an's completed block building with plain phone, child appreciates preservation, empty storage bin beside, no visible text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room block table: Mom photographs An'an's completed block building with plain phone, child appreciates preservation, empty storage bin beside, no visible text.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bc842719-d002-451d-a512-5a1eb19c427b.png"
+      },
+      {
+        "page": 4,
+        "zhText": "阳台上，爸爸正在晾衣服。他把湿衣服一件件抖开，挂上衣架。安安帮他递了一只衣夹。",
+        "enText": "On the balcony, Dad was hanging laundry. He shook out each wet item and hung it up. An'an passed him a clothespin.",
+        "illustrationPrompt": "Safe enclosed balcony: Dad hangs laundry on low indoor rack while An'an passes a clothespin, protective closed window panels, child away from height hazards.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Safe enclosed balcony: Dad hangs laundry on low indoor rack while An'an passes a clothespin, protective closed window panels, child away from height hazards.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-e34e9be1-0bf3-405a-ab7d-5bcf27508028.png"
+      },
+      {
+        "page": 5,
+        "zhText": "厨房里，奶奶在洗菜，妈妈在擦桌子。还有倒垃圾、买东西、记住明天要带的水壶。原来，有些事不容易被看见。",
+        "enText": "In the kitchen, Grandma washed vegetables and Mom wiped the table. There was rubbish to take out, shopping to do, and tomorrow's water bottle to remember. Some jobs were easy to miss.",
+        "illustrationPrompt": "Wide kitchen establishing scene: Grandma washes vegetables at sink, Mom wipes dining table, Dad carries small tied trash bag toward door, An'an observes; each person distinct, no montage.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Wide kitchen establishing scene: Grandma washes vegetables at sink, Mom wipes dining table, Dad carries small tied trash bag toward door, An'an observes; each person distinct, no montage.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-6e1eccfc-076c-4ddf-bb56-fe9bb870d164.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安摸摸一只干毛巾，才发现晾衣服也要花时间。爸爸说：“这些事天天都有，不过我们可以一起分着做。”",
+        "enText": "An'an touched a dry towel and realized laundry took time too. Dad said, “These jobs come every day, but we can share them.”",
+        "illustrationPrompt": "Safe enclosed balcony: An'an touches dry towel on low indoor rack while Dad talks beside her, closed protective window, no outdoor ledge.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Safe enclosed balcony: An'an touches dry towel on low indoor rack while Dad talks beside her, closed protective window, no outdoor ledge.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bd9dd512-d8f8-4f17-bf08-00d9aa47293a.png"
+      },
+      {
+        "page": 7,
+        "zhText": "安安说：“我看见了。可是有时候，我还是觉得自己收得太多。”妈妈点头：“那也可以说，我们一起商量。”",
+        "enText": "An'an said, “I see it now. But sometimes I still feel I tidy too much.” Mom nodded. “You can say that too. Let's talk about it together.”",
+        "illustrationPrompt": "Family dining table conversation: An'an speaks assertively but calmly, Mom listens attentively, Dad and Grandma seated too, plain paper in center, no guilt or scolding.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Family dining table conversation: An'an speaks assertively but calmly, Mom listens attentively, Dad and Grandma seated too, plain paper in center, no guilt or scolding.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bc7955b5-fd49-4f87-aa12-27b1c3b855e4.png"
+      },
+      {
+        "page": 8,
+        "zhText": "他们把家务画在纸上：积木、衣架、菜篮、抹布。安安选了收自己的玩具和摆餐巾，重的、危险的事交给大人。",
+        "enText": "They drew the jobs on paper: blocks, hangers, a vegetable basket, and a cloth. An'an chose her toys and the napkins. Adults kept the heavy and unsafe jobs.",
+        "illustrationPrompt": "Overhead family planning table: simple hand-drawn pictograms of blocks hanger vegetable basket and cloth on blank paper, An'an points to toy and napkin pictograms, family hands around paper, no writing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct one continuity detail in this existing square 3D cartoon picture-book illustration. Change ONLY Mom's cream/white cardigan to the SAME CORAL SALMON cardigan worn by Mom on all other pages. Mom is the adult woman with shoulder-length black hair to the right of An'an. Preserve her cream trousers and every other person's clothing, faces, hair, poses, hands, paper pictograms, lighting and background. Do not add or remove people or props. No text, lettering, watermark or other changes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-416ad822-f13f-48f4-9c3f-5db81fc34ae0.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-1a6fcfb8-73e5-4370-9ba7-f3121147e6eb.png"
+      },
+      {
+        "page": 9,
+        "zhText": "爸爸说，他有时也会累。奶奶说，可以把不急的事留到明天。安安听见，大人也需要歇一歇。",
+        "enText": "Dad said he sometimes felt tired too. Grandma said some jobs could wait until tomorrow. An'an realized adults needed rest as well.",
+        "illustrationPrompt": "Family planning table: Dad speaks honestly, Grandma nods, Mom and An'an listen, job pictogram paper lies between them, relaxed family discussion.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Family planning table: Dad speaks honestly, Grandma nods, Mom and An'an listen, job pictogram paper lies between them, relaxed family discussion.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-2d525908-05b2-4afb-8580-828471a0ad7e.png"
+      },
+      {
+        "page": 10,
+        "zhText": "下午，大家各做一小会儿。爸爸帮安安托住盒子，她把最后几块积木放进去：“这样容易多了！”",
+        "enText": "That afternoon, everyone worked for a little while. Dad steadied An'an's box as she put in the last blocks. “This is much easier!”",
+        "illustrationPrompt": "Living room cooperative cleanup: Dad holds light block box steady at child's height while An'an puts final blocks inside, Mom places cushions nearby, teamwork.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room cooperative cleanup: Dad holds light block box steady at child's height while An'an puts final blocks inside, Mom places cushions nearby, teamwork.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-2da6b6c3-3356-472a-8b6d-b831edad70e4.png"
+      },
+      {
+        "page": 11,
+        "zhText": "他们约好：一个人忙不过来，可以说需要帮忙；分工不合适，也可以再改。安安觉得这张小图不是命令，而是商量。",
+        "enText": "They agreed that anyone could ask for help, and the plan could change if it did not work. To An'an, the little picture was an agreement, not an order.",
+        "illustrationPrompt": "Close family dining table: An'an points to hand-drawn job pictograms while family discusses together, supportive expressions, no writing or printed chart.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct one continuity detail in this existing square 3D cartoon picture-book illustration. Change ONLY Mom's cream/white cardigan to the SAME CORAL SALMON cardigan worn by Mom on all other pages. Mom is the adult woman with shoulder-length black hair beside An'an. Preserve her cream trousers and every other person's clothing, faces, hair, poses, hands, paper pictograms, lighting and background. Do not add or remove people or props. No text, lettering, watermark or other changes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-fbba8337-c6b0-43aa-86e9-b5809bc73312.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-9cdb0c16-6d3c-4ec3-9d78-70a79b1454e7.png"
+      },
+      {
+        "page": 12,
+        "zhText": "晚上，一家人坐在干净的桌边。安安说：“谢谢你们今天做的事。”奶奶笑着回答：“也谢谢你的小餐巾。”",
+        "enText": "That evening, the family sat around the clean table. “Thank you for what you did today,” An'an said. Grandma smiled. “And thank you for the little napkins.”",
+        "illustrationPrompt": "Warm evening closing family dining scene: An'an Mom Dad Grandma seated at tidy oak table with neatly laid napkins, affectionate appreciation, ordinary food no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm evening closing family dining scene: An'an Mom Dad Grandma seated at tidy oak table with neatly laid napkins, affectionate appreciation, ordinary food no text.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-2882edb4-a490-42fb-a84d-2fd849b7ad89.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 9,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "家务",
+        "家庭合作",
+        "公平"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "建立可讨论的家务分工，看见劳动并尊重疲劳。",
+      "reminder": "不以别人更辛苦否定孩子感受；不按性别分家务，只安排适龄安全任务。",
+      "questions": [
+        "有哪些家务平时不容易被看见？",
+        "哪一件事你愿意做，哪一件需要帮忙？"
+      ],
+      "activity": "画出三四项家务，让家人共同选择分工，过几天再一起调整。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

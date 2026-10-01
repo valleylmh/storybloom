@@ -1,0 +1,185 @@
+{
+  "book": {
+    "id": "wo-de-bing-gan-zen-me-geng-xiao",
+    "seriesId": "richang",
+    "title": "我的饼干怎么更小",
+    "subtitle": "小熊耳朵的秘密",
+    "moral": {
+      "zh": "看见自己拥有的快乐，也可以说出自己的需要。",
+      "en": "Notice what you enjoy, and feel free to speak about what you need."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 6,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "点心时间，安安和乐乐各拿到一块饼干。乐乐的是圆圆的大饼干，安安的是一只小熊。",
+        "enText": "At snack time, An'an and Lele each got a cookie. Lele's was large and round. An'an's was shaped like a little bear.",
+        "illustrationPrompt": "Bright kitchen snack table: Mom places separate plates before An'an and Lele, child has small bear-shaped cookie, boy larger round cookie, equal cups of water, cookies clearly distinct.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Bright kitchen snack table: Mom places separate plates before An'an and Lele, child has small bear-shaped cookie, boy larger round cookie, equal cups of water, cookies clearly distinct.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bfb25a6e-0f15-47ac-a37e-c7ed651e2372.png"
+      },
+      {
+        "page": 2,
+        "zhText": "她把两只盘子排在眼前，心里越比越不舒服。饼干还是那块饼干，她却一点也不想尝。",
+        "enText": "She lined up the plates and compared them. The more she looked, the worse she felt. Her cookie had not changed, but she no longer wanted to taste it.",
+        "illustrationPrompt": "Detailed snack tabletop: separate bear-cookie and larger round-cookie plates aligned, An'an compares sizes unhappily, Lele seated opposite, Mom nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, rounded human cartoon faces and soft clay-like textures, warm realistic Chinese urban home, square 1:1 framing. Same characters as city vehicle series. No text, captions, speech bubbles, logos, watermarks or anthropomorphic animal characters.\nTHIS PAGE'S SCENE: Exactly THREE humans only: An'an (six-year-old Chinese GIRL, black bob, yellow star hairclip, TEAL hoodie), Lele (six-year-old Chinese BOY, short black hair, MUSTARD sweatshirt), Mom (shoulder-length black hair, CORAL cardigan). Warm kitchen snack table. An'an unhappily looks at Lele's larger cookie while pushing her own plate a little away. EXACTLY TWO cookies in the entire image: one SMALL BEAR-SHAPED oat cookie on An'an's plate and one larger ROUND chocolate-chip cookie on Lele's plate. Each child has their own separate plate and water cup. BOTH cookies intact. No extra cookies, no serving platter, no duplicated food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c0b4363f-8b95-449b-919a-e1a66ddd2e68.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-a2c729cc-785b-479c-ba77-4a1f13038974.png"
+      },
+      {
+        "page": 3,
+        "zhText": "安安看看自己的，又看看乐乐的：“为什么我的更小？”她把盘子往前推了一点，心里不太开心。",
+        "enText": "An'an looked from her cookie to Lele's. “Why is mine smaller?” She pushed her plate away a little and felt unhappy.",
+        "illustrationPrompt": "Close table view: An'an looks wistfully at Lele's large round cookie while pushing her own bear-cookie plate slightly away, Lele unaware, Mom listens nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Close table view: An'an looks wistfully at Lele's large round cookie while pushing her own bear-cookie plate slightly away, Lele unaware, Mom listens nearby.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-b0e9578b-554c-4460-a9c0-339f09fe3f4d.png"
+      },
+      {
+        "page": 4,
+        "zhText": "妈妈说：“你也想要大一点的，对吗？可以告诉我。”安安点点头，眼睛还是追着乐乐的饼干。",
+        "enText": "Mom said, “You'd like a bigger one too, right? You can tell me.” An'an nodded, still watching Lele's cookie.",
+        "illustrationPrompt": "Mom kneels beside seated An'an at snack table, acknowledges child's feeling warmly, both distinct cookies still intact on their plates, no moralizing gesture.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Mom kneels beside seated An'an at snack table, acknowledges child's feeling warmly, both distinct cookies still intact on their plates, no moralizing gesture.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c6a3fefb-bbef-461d-9959-58c9f700dc9d.png"
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈没有说她不知足，只是陪她坐了一会儿。安安说：“我也想吃到够多的。”妈妈记住了这句话。",
+        "enText": "Mom did not call her ungrateful. She sat with her. “I want enough to eat too,” An'an said. Mom listened.",
+        "illustrationPrompt": "Warm close table scene: Mom sits at An'an's level listening to child's concern, bear cookie remains untouched on own plate, Lele quietly nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm close table scene: Mom sits at An'an's level listening to child's concern, bear cookie remains untouched on own plate, Lele quietly nearby.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-73354481-a2d1-468d-82fa-c9857403cc3c.png"
+      },
+      {
+        "page": 6,
+        "zhText": "乐乐忽然凑过来：“你的小熊有耳朵！我的圆饼干都没有。”安安低头，才看见两只小小的圆耳朵。",
+        "enText": "Lele leaned closer. “Your bear has ears! My round cookie doesn't.” An'an looked down and noticed its two little round ears.",
+        "illustrationPrompt": "Detailed child-eye table shot: Lele points with delight toward bear cookie's two round ears without touching it, An'an notices and begins smiling, plain round cookie on boy's own plate.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Detailed child-eye table shot: Lele points with delight toward bear cookie's two round ears without touching it, An'an notices and begins smiling, plain round cookie on boy's own plate.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-d914f449-67ad-4a9b-a7d5-23db9a8319ab.png"
+      },
+      {
+        "page": 7,
+        "zhText": "她轻轻咬下一只耳朵。咔嚓，里面还有一点燕麦香。“真的挺好吃。”安安又看了看小熊的脸。",
+        "enText": "She took a little bite of one ear. Crunch! It had a gentle oat flavor. “It really is tasty.” An'an looked at the bear's face again.",
+        "illustrationPrompt": "Close expressive scene: An'an bites one ear of bear-shaped cookie with pleasure, remaining cookie has one clearly missing ear, Lele sits nearby with round cookie.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, rounded human cartoon faces and soft clay-like textures, warm realistic Chinese urban home, square 1:1 framing. Same characters as city vehicle series. No text, captions, speech bubbles, logos, watermarks or anthropomorphic animal characters.\nTHIS PAGE'S SCENE: Exactly THREE humans only: An'an (six-year-old Chinese GIRL, black bob, yellow star hairclip, TEAL hoodie), Lele (six-year-old Chinese BOY, short black hair, MUSTARD sweatshirt), Mom (black shoulder-length hair, CORAL cardigan). Close kitchen snack table. An'an joyfully bites ONE ear of her SMALL BEAR-SHAPED oat cookie; Lele looks at her with his larger ROUND chocolate-chip cookie in his hands. EXACTLY TWO cookies in the entire image, one held by each child. The bear cookie has only one remaining intact round ear, the bitten ear has a clean small bite mark. Both children's plates are empty beneath their hands. No extra cookies, no serving platter, no duplicated food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-59a235ce-8839-4252-9666-d122d67a1b24.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bba69de3-fbb4-4021-8057-f3ebcfd39d92.png"
+      },
+      {
+        "page": 8,
+        "zhText": "乐乐咬了一口自己的圆饼干：“我的中间软一点。”安安说：“我的耳朵脆一点。”他们开始聊起味道。",
+        "enText": "Lele tasted his round cookie. “Mine is softer in the middle.” An'an said, “Mine has crunchy ears.” They began talking about flavors.",
+        "illustrationPrompt": "Children at snack table discussing cookies happily: Lele holds round cookie with small bite, An'an holds bear cookie with one missing ear, plates separate, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, rounded human cartoon faces and soft clay-like textures, warm realistic Chinese urban home, square 1:1 framing. Same characters as city vehicle series. No text, captions, speech bubbles, logos, watermarks or anthropomorphic animal characters.\nTHIS PAGE'S SCENE: Exactly TWO humans: An'an (six-year-old Chinese GIRL, black bob, yellow star hairclip, TEAL hoodie) and Lele (six-year-old Chinese BOY, short black hair, MUSTARD sweatshirt). Warm kitchen snack table. Children happily discuss taste: Lele takes a bite from his larger ROUND chocolate-chip cookie, An'an points to her smaller BEAR-SHAPED oat cookie with ONE remaining round ear, the other ear bitten off. EXACTLY TWO cookies total, each held by its owner. Both individual plates beneath their hands have only crumbs, no additional cookies. No serving platter, no duplicated food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-645b95ed-4306-4510-be3d-63f587ce93d5.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-a586074a-91cf-4637-aaa8-7024e17faf90.png"
+      },
+      {
+        "page": 9,
+        "zhText": "乐乐想尝尝小熊饼干，安安也想尝尝圆饼干。他们商量好，各分出一小块，放进对方的盘子。",
+        "enText": "Lele wanted to try the bear cookie, and An'an wanted to try the round one. They agreed to share a small piece with each other.",
+        "illustrationPrompt": "Overhead snack tabletop: children use clean hands to place small pieces of their own cookies onto each other's separate plates, bear cookie still recognizable, round cookie with a small piece missing, Mom present.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, rounded human cartoon faces and soft clay-like textures, warm realistic Chinese urban home, square 1:1 framing. Same characters as city vehicle series. No text, captions, speech bubbles, logos, watermarks or anthropomorphic animal characters.\nTHIS PAGE'S SCENE: Exactly THREE humans: An'an (six-year-old Chinese GIRL, ear-length black bob, yellow star hairclip, TEAL hoodie) seated on LEFT; Lele (six-year-old Chinese BOY, short black hair, MUSTARD sweatshirt) seated on RIGHT; Mom (shoulder-length black hair, CORAL cardigan) watches nearby. Overhead three-quarter view of same warm kitchen table. Children voluntarily exchange only a SMALL BROKEN PIECE from their respective cookies into each other's separate plates using clean hands. An'an's remaining small BEAR-SHAPED cookie has one bitten ear; Lele's remaining larger ROUND chocolate-chip cookie has one small broken segment. Exactly TWO original cookies broken into portions, no extra whole cookies or communal platter. Both children wear their locked correct outfits. No letters or text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-d18d3a18-9eaa-4f0a-8885-616171f038f8.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-f03dd970-ab94-4308-bc7c-e55a2d7c97c3.png"
+      },
+      {
+        "page": 10,
+        "zhText": "安安还没吃饱，便告诉妈妈。妈妈又拿来一些点心：“想吃多少可以商量，不用只盯着别人的盘子。”",
+        "enText": "An'an was still hungry and told Mom. Mom brought more snacks. “We can talk about how much you'd like. You don't have to only watch someone else's plate.”",
+        "illustrationPrompt": "Warm kitchen medium shot: An'an asks Mom directly, Mom offers a small communal plate of extra plain snacks, Lele content beside her, relaxed noncompetitive atmosphere.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm kitchen medium shot: An'an asks Mom directly, Mom offers a small communal plate of extra plain snacks, Lele content beside her, relaxed noncompetitive atmosphere.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-f58a5a22-07b5-49f4-bc4c-14ecb31cf837.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安把自己的感受说清楚以后，心里松快了。她不用假装不饿，也不用靠抢别人盘里的来解决。",
+        "enText": "After An'an explained how she felt, she relaxed. She did not have to pretend she was full or take food from someone else's plate.",
+        "illustrationPrompt": "Calm closing snack-table scene before leaving: An'an contentedly chooses one extra snack from communal plate offered by Mom, Lele relaxed, own plates distinct.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Calm closing snack-table scene before leaving: An'an contentedly chooses one extra snack from communal plate offered by Mom, Lele relaxed, own plates distinct.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-b20eef26-3cfe-44cd-9f46-99911e4a7b42.png"
+      },
+      {
+        "page": 12,
+        "zhText": "回家路上，安安记得小熊耳朵的脆，也记得圆饼干的香。原来，吃点心还有比比较大小更有趣的事。",
+        "enText": "On the way home, An'an remembered the crunchy bear ear and the tasty round cookie. Snack time had more to offer than comparing sizes.",
+        "illustrationPrompt": "Closing neighborhood pedestrian path: An'an walks hand in hand with Mom smiling reflectively, Lele waves from safe doorway, leafy city setting, no literal floating cookie graphics.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Closing neighborhood pedestrian path: An'an walks hand in hand with Mom smiling reflectively, Lele waves from safe doorway, leafy city setting, no literal floating cookie graphics.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-07e1fe3c-fe83-4e23-bbda-535293c0edc4.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 6,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "比较",
+        "感受",
+        "分享"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "接纳比较带来的感受，同时练习欣赏和表达需要。",
+      "reminder": "不要求孩子以知足压下饥饿或公平诉求；分享出于自愿，不比较食量。",
+      "questions": [
+        "安安一开始为什么不开心？",
+        "如果还没吃饱，可以怎么说？"
+      ],
+      "activity": "用两种不同形状的点心观察特点，由孩子决定是否分享，并表达是否吃饱。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

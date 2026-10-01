@@ -1,0 +1,182 @@
+{
+  "book": {
+    "id": "wan-ju-shan-li-zhao-xiao-che",
+    "seriesId": "richang",
+    "title": "玩具山里找小车",
+    "subtitle": "给快乐留一条小路",
+    "moral": {
+      "zh": "给物品留好位置，也给喜欢的事情留出空间。",
+      "en": "Give things a place, and leave space for the things you enjoy."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 4,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安想铺一条小公路，让红色小车从沙发开到窗边。可是，小车不见了。她翻开一只盒子，又翻开另一只。",
+        "enText": "An'an wanted to build a little road for her red toy car, from the sofa to the window. But the car was missing. She searched one box, then another.",
+        "illustrationPrompt": "Wide urban living room: An'an searches two overflowing toy bins beside sofa, clear floor route to window blocked by toys; treasured small red car absent from view.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Wide urban living room: An'an searches two overflowing toy bins beside sofa, clear floor route to window blocked by toys; treasured small red car absent from view.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-eaf5025c-a064-4f0b-96a4-f3f613170cee.png"
+      },
+      {
+        "page": 2,
+        "zhText": "她记得上次玩完，小车停在一座积木桥旁。可是今天，连那座桥也被盒子挡住了。",
+        "enText": "Last time, the car had stopped beside a block bridge. Today even the bridge was hidden behind boxes.",
+        "illustrationPrompt": "Living room floor: An'an looks behind tall toy bin toward partially hidden wooden bridge, red car absent, no new characters.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room floor: An'an looks behind tall toy bin toward partially hidden wooden bridge, red car absent, no new characters.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-1e7e1d9d-9c89-48ae-9714-26323fc78186.png"
+      },
+      {
+        "page": 3,
+        "zhText": "机器人、积木、拼图，一件压着一件。安安越找越急：“我有这么多玩具，怎么连最喜欢的都找不到？”",
+        "enText": "Robots, blocks, and puzzles piled on top of one another. An'an grew frustrated. “I have so many toys. Why can't I find my favorite?”",
+        "illustrationPrompt": "Low floor-level close shot: An'an surrounded by scattered colorful toy robot blocks and puzzles, puzzled frustrated face, no toy car visible. Keep believable uncluttered focal composition.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Low floor-level close shot: An'an surrounded by scattered colorful toy robot blocks and puzzles, puzzled frustrated face, no toy car visible. Keep believable uncluttered focal composition.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-579b8409-56ef-499e-a564-855782eaee09.png"
+      },
+      {
+        "page": 4,
+        "zhText": "爸爸走过来，没有马上替她收拾：“我们先找出你最近最想玩的，好不好？”安安把常玩的积木放到一边。",
+        "enText": "Dad came over without taking over. “Shall we start with the things you most want to play with?” An'an put her favorite blocks aside.",
+        "illustrationPrompt": "Dad in navy sweater kneels beside An'an, child chooses favorite wooden blocks into a small open basket, calm cooperative living room scene.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Dad in navy sweater kneels beside An'an, child chooses favorite wooden blocks into a small open basket, calm cooperative living room scene.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-aa8eb74f-bdbf-4de0-83af-960ac07dc492.png"
+      },
+      {
+        "page": 5,
+        "zhText": "安安抱住一只旧布偶：“这个我虽然不常玩，可是还想留着。”爸爸说：“好，它也可以有自己的位置。”",
+        "enText": "An'an held an old soft toy. “I don't play with this much, but I still want to keep it.” Dad said, “Of course. It can have a place too.”",
+        "illustrationPrompt": "Eye-level floor scene: An'an hugs ordinary inanimate plush keepsake, Dad kneels beside her acknowledging choice, organized bins in progress.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Eye-level floor scene: An'an hugs ordinary inanimate plush keepsake, Dad kneels beside her acknowledging choice, organized bins in progress.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-ff7be932-1d3a-471e-b0f9-d51199dc5536.png"
+      },
+      {
+        "page": 6,
+        "zhText": "有些玩具她已经很久没碰了，有些还想留下。爸爸说：“你来决定，我们慢慢分。”安安给它们找了不同的盒子。",
+        "enText": "Some toys had not been touched for a long time. Others she wanted to keep. “You decide,” Dad said. “We'll sort them slowly.” An'an chose different boxes.",
+        "illustrationPrompt": "Overhead sorting scene: An'an and Dad arrange three plain open boxes with distinct favorite toys, stored toys and optional giveaway toys, no labels, child clearly directs choices.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Overhead sorting scene: An'an and Dad arrange three plain open boxes with distinct favorite toys, stored toys and optional giveaway toys, no labels, child clearly directs choices.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-a49b3a11-6b71-49e6-af19-1689009777a5.png"
+      },
+      {
+        "page": 7,
+        "zhText": "在一堆布偶下面，一点红色露了出来。“找到啦！”安安举起小车，车轮上还缠着一根毛线。",
+        "enText": "A flash of red appeared beneath some soft toys. “Found it!” An'an lifted her car. A piece of yarn was caught around a wheel.",
+        "illustrationPrompt": "Close joyful discovery: An'an lifts small red toy car from underneath ordinary inanimate plush toys, tiny loose yarn at one wheel, Dad smiles nearby. Plush toys remain toys, not animal people.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Close joyful discovery: An'an lifts small red toy car from underneath ordinary inanimate plush toys, tiny loose yarn at one wheel, Dad smiles nearby. Plush toys remain toys, not animal people.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-64cff4d5-072b-44af-8ecb-68492809934a.png"
+      },
+      {
+        "page": 8,
+        "zhText": "小车找到了，公路却还铺不开。安安看看地板：“原来，我还需要一块可以玩的地方。”",
+        "enText": "She had found the car, but there was no room for the road. An'an looked at the floor. “I need a place to play too.”",
+        "illustrationPrompt": "Wide living room: An'an holds red toy car while looking at floor blocked by bins, Dad helps think, toy bridge on small clear area.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Wide living room: An'an holds red toy car while looking at floor blocked by bins, Dad helps think, toy bridge on small clear area.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-78c2fc8b-0adc-4990-a9f6-1831ff504700.png"
+      },
+      {
+        "page": 9,
+        "zhText": "爸爸帮她取下毛线。安安给小车留了一个容易拿到的位置，又空出一块地板：“这里就是我的公路。”",
+        "enText": "Dad removed the yarn. An'an gave the car an easy-to-reach home and cleared a patch of floor. “This is my road.”",
+        "illustrationPrompt": "Side living room view: Dad gently untangles yarn from red car while An'an clears a strip of floor, low open shelf with car-sized parking space visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Image 1 is the edit target; image 2 is a reference ONLY for the red toy car and its thin red yarn. Keep image 1's exact human characters, poses, expressions, clothing, framing, living room, lighting, rug and shelves. Correct ONLY the yarn on the toy car in Dad's hands. Remove the excessive blue/gray yarn wrapped around the entire car. The same red compact toy car from image 2 must be clearly visible; only ONE thin RED yarn strand is caught loosely around ONE wheel, and Dad gently untangles it with his fingers. Remove the loose blue yarn on the floor and the yarn basket, leaving a clear floor. Remove the duplicate red car on the shelf, retaining other differently colored toys. No text, no other changes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-d68f8f73-11d8-4fb0-9b3f-2c552dd30b2f.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c9f66025-ee44-4f81-b213-2f6af2001be2.png"
+      },
+      {
+        "page": 10,
+        "zhText": "她决定把几件完好的玩具送给需要的小朋友。剩下的各有位置，拿出来容易，放回去也容易。",
+        "enText": "She chose a few good toys to give to other children who needed them. The rest had their own places, easy to take out and put away.",
+        "illustrationPrompt": "An'an willingly places a good toy robot into plain donation bag while Dad holds it, orderly toy baskets and low shelf behind, no recipient invented, no writing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): An'an willingly places a good toy robot into plain donation bag while Dad holds it, orderly toy baskets and low shelf behind, no recipient invented, no writing.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-a3e9712b-4cd6-41d5-9e53-17d95187d937.png"
+      },
+      {
+        "page": 11,
+        "zhText": "收好以后，安安试着拿出积木，再放回去。盒子没有装得太满，她自己就能完成。",
+        "enText": "After tidying, An'an tried taking out her blocks and putting them back. The box was not too full, so she could do it herself.",
+        "illustrationPrompt": "Close low shelf: An'an independently takes a few wooden blocks from manageable open basket, red car parked in its own adjacent spot, Dad watches supportively.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Close low shelf: An'an independently takes a few wooden blocks from manageable open basket, red car parked in its own adjacent spot, Dad watches supportively.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-f22704c1-ce77-48b8-885d-96b98a86f644.png"
+      },
+      {
+        "page": 12,
+        "zhText": "红色小车终于开到了窗边。安安趴在地上，搭起一座小桥。房间里的玩具少了一点，她玩的时间却长了好多。",
+        "enText": "At last, the red car reached the window. An'an lay on the floor and built a little bridge. There were fewer toys in the room, but more room to play.",
+        "illustrationPrompt": "Warm wide closing living room shot: An'an builds wooden block bridge on a clear floor road from sofa toward window, small red car underneath bridge, Dad relaxed nearby, organized baskets.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm wide closing living room shot: An'an builds wooden block bridge on a clear floor road from sofa toward window, small red car underneath bridge, Dad relaxed nearby, organized baskets.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-7bccfade-8068-4cd1-9261-ab8091c6c46c.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 4,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "整理",
+        "物品使用",
+        "自主选择"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "让孩子参与整理和物品取舍，建立易取易放的位置。",
+      "reminder": "不擅自丢弃或赠送孩子的东西；数量多少不是衡量整洁或快乐的标准。",
+      "questions": [
+        "小车为什么难找？",
+        "你最常玩的东西，放在哪里最方便？"
+      ],
+      "activity": "由孩子选择一个小区域整理，给常用物品安排容易拿到的位置。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

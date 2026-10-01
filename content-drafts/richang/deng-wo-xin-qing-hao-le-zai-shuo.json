@@ -1,0 +1,181 @@
+{
+  "book": {
+    "id": "deng-wo-xin-qing-hao-le-zai-shuo",
+    "seriesId": "richang",
+    "title": "等我心情好了再说",
+    "subtitle": "一句有点磕巴的对不起",
+    "moral": {
+      "zh": "重要的话，可以带着紧张说出来，也可以给彼此一点时间。",
+      "en": "You can say something important even while nervous, and give each other time."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 8,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安和乐乐搭一座桥。乐乐刚摆好一块积木，安安就伸手拿走：“我要放在这里！”乐乐的桥倒了。",
+        "enText": "An'an and Lele were building a bridge. Just as Lele placed a block, An'an took it. “I need it here!” His bridge fell.",
+        "illustrationPrompt": "Community indoor play table: An'an removes one supporting wooden block, Lele's small block bridge collapses harmlessly on table, both children surprised, no aggression.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Community indoor play table: An'an removes one supporting wooden block, Lele's small block bridge collapses harmlessly on table, both children surprised, no aggression.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-f550ce6f-e803-4ae5-b32a-9ca0384ef9ca.png"
+      },
+      {
+        "page": 2,
+        "zhText": "安安本来想搭得更快，却让乐乐忙了半天的桥倒下了。她听见积木落在桌上的声音，也看见乐乐的脸变了。",
+        "enText": "An'an had wanted to build faster, but she knocked down the bridge Lele had worked hard on. She heard the falling blocks and saw his face change.",
+        "illustrationPrompt": "Close play-table: fallen wooden blocks, An'an realizes impact with surprised regret, Lele visibly disappointed, no repeated taking action.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Close play-table: fallen wooden blocks, An'an realizes impact with surprised regret, Lele visibly disappointed, no repeated taking action.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-2bacc38b-6e2c-4550-8fc4-15d454eda96f.png"
+      },
+      {
+        "page": 3,
+        "zhText": "乐乐皱起眉：“你都没有问我。”安安也有点生气，转过身去。两个人各坐在桌子一边。",
+        "enText": "Lele frowned. “You didn't ask me.” An'an felt upset too and turned away. They sat on opposite sides of the table.",
+        "illustrationPrompt": "Wide playroom: An'an and Lele sit apart at two ends of same low table, fallen bridge blocks between them, hurt expressions, adult visible at a distance.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Wide playroom: An'an and Lele sit apart at two ends of same low table, fallen bridge blocks between them, hurt expressions, adult visible at a distance.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bef584f6-57c9-4dbc-8c83-ebaeea745765.png"
+      },
+      {
+        "page": 4,
+        "zhText": "回家后，安安想起那座倒掉的桥。她知道自己该道歉，却把话咽回去：“等我心情好了再说吧。”",
+        "enText": "At home, An'an thought about the fallen bridge. She knew she should apologize, but swallowed the words. “I'll say it when I feel better.”",
+        "illustrationPrompt": "Reflective bedroom scene: An'an sits beside a few wooden blocks looking down with regret, Mom listens from nearby, soft dusk lighting.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Reflective bedroom scene: An'an sits beside a few wooden blocks looking down with regret, Mom listens from nearby, soft dusk lighting.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-ed82e20e-3e38-4b3a-bfd0-eed3e287d3be.png"
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈问她要不要先喝口水。安安慢慢不那么生气了，可是想到开口，肚子还是像打了个小结。",
+        "enText": "Mom offered her some water. An'an slowly felt less angry, but the thought of speaking still made her stomach feel knotted.",
+        "illustrationPrompt": "Home sofa: An'an drinks water from plain cup to settle, Mom sits quietly beside her, child's expression nervous reflective, no literal stomach graphic.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Home sofa: An'an drinks water from plain cup to settle, Mom sits quietly beside her, child's expression nervous reflective, no literal stomach graphic.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-3174603f-03f6-46de-8fdd-e3c377c3d0c2.png"
+      },
+      {
+        "page": 6,
+        "zhText": "第二天，安安在小区遇见乐乐。她想开口，又低下头。乐乐走远了，她心里更难受了。",
+        "enText": "The next day, An'an saw Lele in the neighborhood. She wanted to speak but looked down. As he walked away, she felt worse.",
+        "illustrationPrompt": "Safe residential courtyard: An'an stands beside Mom hesitant, Lele walks away with his father along pedestrian path, visible emotional distance, no road traffic.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Safe residential courtyard: An'an stands beside Mom hesitant, Lele walks away with his father along pedestrian path, visible emotional distance, no road traffic.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-984a98a8-213a-4067-8a9b-8cfa5440156e.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈听她说完，问：“你想让乐乐知道什么？”安安说：“我不是不想和他玩。我知道，拿积木前应该问他。”",
+        "enText": "After listening, Mom asked, “What would you like Lele to know?” An'an said, “I do want to play with him. I know I should have asked before taking his block.”",
+        "illustrationPrompt": "Home sofa intimate conversation: An'an explains with earnest hands, Mom sits beside her attentive, a single wooden block on table as reminder.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Home sofa intimate conversation: An'an explains with earnest hands, Mom sits beside her attentive, a single wooden block on table as reminder.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-0b1e0373-a66f-44ba-ae87-93c3fe0fc5d1.png"
+      },
+      {
+        "page": 8,
+        "zhText": "安安问：“他说不想马上和好怎么办？”妈妈说：“他可以需要时间。你先把自己的话说清楚，不用替他决定。”",
+        "enText": "An'an asked, “What if he doesn't want to make up right away?” Mom replied, “He may need time. You can say what you mean without deciding for him.”",
+        "illustrationPrompt": "Warm home conversation: Mom and An'an seated eye-to-eye, mother explains patiently, child listens with serious hopeful expression, no friend in scene.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm home conversation: Mom and An'an seated eye-to-eye, mother explains patiently, child listens with serious hopeful expression, no friend in scene.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-97a42abb-cf1c-414c-9143-fb9a3d47b776.png"
+      },
+      {
+        "page": 9,
+        "zhText": "她们一起练了练。安安发现，紧张还在，话却已经能说出来：“对不起，我没问你就拿走了积木。”",
+        "enText": "They practiced together. An'an was still nervous, but the words came out. “I'm sorry I took your block without asking.”",
+        "illustrationPrompt": "Medium living room: An'an practices apology aloud facing supportive Mom, holds hands together nervously but determined, calm warm light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Medium living room: An'an practices apology aloud facing supportive Mom, holds hands together nervously but determined, calm warm light.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-724f6618-98d7-4d09-93a2-5f9feb947166.png"
+      },
+      {
+        "page": 10,
+        "zhText": "再见面时，安安有点磕巴地说完，又问：“下次我想用你的积木，先问你，好吗？”乐乐想了想：“好。我刚才也需要一点时间。”",
+        "enText": "When they met again, An'an stumbled through her apology. “Next time I'll ask before using your blocks. Is that okay?” Lele thought for a moment. “Okay. I needed some time too.”",
+        "illustrationPrompt": "Community playroom face-to-face scene: An'an apologizes sincerely to Lele at same block table, boy considers calmly, Mom present unobtrusively, no forced hug.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Community playroom face-to-face scene: An'an apologizes sincerely to Lele at same block table, boy considers calmly, Mom present unobtrusively, no forced hug.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-ebd5d2b5-410e-4623-945a-c29ec3ee7328.png"
+      },
+      {
+        "page": 11,
+        "zhText": "乐乐说，桥倒的时候他很难过。安安没有抢着解释，只点点头：“我听见了。我们可以重新搭，也可以晚一点。”",
+        "enText": "Lele said he had felt sad when the bridge fell. An'an listened without rushing to explain. “I hear you. We can rebuild now, or later.”",
+        "illustrationPrompt": "Playroom: Lele explains feelings across low block table, An'an listens attentively with hands resting, Mom gives space in background, calm sincere interaction.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Playroom: Lele explains feelings across low block table, An'an listens attentively with hands resting, Mom gives space in background, calm sincere interaction.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-e5d29620-6240-4cc4-a707-6d1a5685bfad.png"
+      },
+      {
+        "page": 12,
+        "zhText": "他们重新搭桥。安安伸手前先问了一句，乐乐把积木递给她。桥慢慢变长，那句难说的话也没有那么重了。",
+        "enText": "They built the bridge again. An'an asked before reaching, and Lele passed her a block. As the bridge grew, the difficult words felt lighter.",
+        "illustrationPrompt": "Joyful closing play-table scene: Lele willingly hands An'an a wooden block, both build a longer sturdy bridge together, warm human cartoon expressions, Mom in background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Joyful closing play-table scene: Lele willingly hands An'an a wooden block, both build a longer sturdy bridge together, warm human cartoon expressions, Mom in background.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-e36399f4-cd0b-4e32-9914-e51c53de1b2e.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 8,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "朋友",
+        "道歉",
+        "情绪"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "练习具体道歉和行为补救，理解对方可以暂时不接受。",
+      "reminder": "不强迫立刻道歉或和好；等待是调节情绪的需要时应得到尊重。",
+      "questions": [
+        "安安想让乐乐知道什么？",
+        "除了说对不起，她还改变了什么？"
+      ],
+      "activity": "用玩具演练借用前询问，以及说清具体行为、提出补救的道歉。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "book": {
+    "id": "she-bu-de-chuan-de-xin-xie",
+    "seriesId": "richang",
+    "title": "舍不得穿的新鞋",
+    "subtitle": "鞋盒里的春天",
+    "moral": {
+      "zh": "喜欢的东西，在合适的时候使用，才能陪我们走过生活。",
+      "en": "Use the things you love at the right time so they can be part of your life."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 2,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安有了一双新鞋：白鞋面，红鞋边，走起路来轻轻的。她在镜子前转了一圈，又小心地放回鞋盒。",
+        "enText": "An'an got new shoes with white tops and red trim. They felt light on her feet. She turned in front of the mirror, then carefully put them back in the box.",
+        "illustrationPrompt": "An'an in her home entryway admiring new white sneakers with red trim in a low mirror, open plain shoebox nearby. Mom beside her, delighted. The new pair is the only pair worn.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): An'an in her home entryway admiring new white sneakers with red trim in a low mirror, open plain shoebox nearby. Mom beside her, delighted. The new pair is the only pair worn.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-645c5a75-50f6-4a8a-afcc-fb2d7927410f.png"
+      },
+      {
+        "page": 2,
+        "zhText": "安安把鞋带摆得整整齐齐，还在鞋盒下面垫了一张软纸。妈妈说：“你真的很喜欢它们。”",
+        "enText": "An'an neatly arranged the laces and put soft paper in the box. Mom said, “You really love these shoes.”",
+        "illustrationPrompt": "Entry bench close scene: An'an in socks carefully arranges white-red sneakers inside plain shoebox with tissue, Mom appreciates beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Entry bench close scene: An'an in socks carefully arranges white-red sneakers inside plain shoebox with tissue, Mom appreciates beside her.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-80f0db04-50c1-4bb7-ab16-e930eaf9427c.png"
+      },
+      {
+        "page": 3,
+        "zhText": "晴天，妈妈说：“穿新鞋去公园吧。”安安摇头：“沙子会把它们弄脏的。”她穿上旧鞋，出了门。",
+        "enText": "On a sunny day, Mom said, “Wear your new shoes to the park.” An'an shook her head. “The sand might get them dirty.” She went out in her old shoes.",
+        "illustrationPrompt": "Home entryway medium shot: An'an closes the plain shoebox containing pristine white-red shoes and instead wears clearly faded gray old sneakers, Mom holds a park tote by door.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Home entryway medium shot: An'an closes the plain shoebox containing pristine white-red shoes and instead wears clearly faded gray old sneakers, Mom holds a park tote by door.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c3262a45-ca2a-4e0b-b2f0-7c545a255566.png"
+      },
+      {
+        "page": 4,
+        "zhText": "旧鞋踩过草地，也走过小水坑。回家时，安安把旧鞋放在门口，新鞋仍然干干净净地待在盒里。",
+        "enText": "Her old shoes crossed grass and little puddles. Back home, she left them by the door. The new pair stayed perfectly clean in its box.",
+        "illustrationPrompt": "Entryway: An'an removes faded gray shoes with a few dirt marks onto mat, pristine white-red new shoes visible inside opened box on bench, Mom nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Entryway: An'an removes faded gray shoes with a few dirt marks onto mat, pristine white-red new shoes visible inside opened box on bench, Mom nearby.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-7e9bb5cd-cfd5-414f-a00e-f062ebeb7151.png"
+      },
+      {
+        "page": 5,
+        "zhText": "雨天，窗上挂着小水珠。“今天更不能穿啦！”安安摸摸鞋盒，觉得里面的新鞋像一件宝贝。",
+        "enText": "Raindrops covered the window. “I definitely can't wear them today!” An'an touched the box. The shoes inside felt like treasure.",
+        "illustrationPrompt": "Cozy rainy-day bedroom: An'an in socks crouches beside a closed shoebox, stroking lid, rain beads on window. Quiet reflective mood; no shoes on feet.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Cozy rainy-day bedroom: An'an in socks crouches beside a closed shoebox, stroking lid, rain beads on window. Quiet reflective mood; no shoes on feet.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-7a1ec751-5343-4559-9be6-6e8840ab068a.png"
+      },
+      {
+        "page": 6,
+        "zhText": "春天过去，夏天来了。安安长高了一点。学校要去郊游，她终于把新鞋拿出来：“这次一定穿！”",
+        "enText": "Spring passed, and summer arrived. An'an had grown a little taller. Her class was going on an outing. She finally opened the box. “This time I'll wear them!”",
+        "illustrationPrompt": "Sunny home entryway months later: An'an opens same shoebox excitedly, Mom holds a small orange backpack for a school outing, green summer trees outside. New shoes still white with red trim.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Sunny home entryway months later: An'an opens same shoebox excitedly, Mom holds a small orange backpack for a school outing, green summer trees outside. New shoes still white with red trim.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c08f8598-26bb-406d-bb74-dafe533564c4.png"
+      },
+      {
+        "page": 7,
+        "zhText": "她试着松开鞋带，再把脚伸进去。还是太紧了。妈妈说：“不舒服就不穿，我们先脱下来。”",
+        "enText": "She loosened the laces and tried again. Still too tight. Mom said, “You don't have to wear shoes that hurt. Let's take them off.”",
+        "illustrationPrompt": "Entry bench: Mom gently helps An'an remove too-small white-red sneaker, child relieved, other shoe already off, no painful injury.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Entry bench: Mom gently helps An'an remove too-small white-red sneaker, child relieved, other shoe already off, no painful injury.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-16340e37-6d31-4b6c-9830-81a73ba53fa8.png"
+      },
+      {
+        "page": 8,
+        "zhText": "可是，脚尖挤在一起，怎么也不舒服。安安低下头：“它们一次都没陪我出门，就小了。”",
+        "enText": "But her toes felt squeezed, and the shoes were uncomfortable. An'an looked down. “They got too small before we even went out together.”",
+        "illustrationPrompt": "Low intimate shot: An'an sits on entry bench trying on the now too-small new shoes, toes pressing subtly at fronts, disappointed expression; Mom sits beside her listening. No exaggerated deformity.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct this single existing picture-book illustration. Preserve exactly the human characters, their faces, body poses, expressions, teal hoodie, coral cardigan, yellow star clip, setting, framing, lighting and square composition. Change ONLY An'an's pink shoes: both shoes on her feet must be clean WHITE low-top lace-up sneakers with RED thin trim and red heel tabs, matching the white/red shoes in this book. These shoes are too small for her, and she looks down sadly. No pink shoes, glitter, velcro, or decorative patterns. Remove the duplicate white/red shoe pair on the shelf behind her; the shelf may contain only neutral gray old footwear. Do not add text or people.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-61f9f57f-8620-44e9-8b6c-cd9687c29ee5.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-94cb44c6-4f0e-4c5f-9023-de27fc9d7b29.png"
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈抱抱她：“你长大了，鞋子没有长大。珍惜它，也可以是穿着它走路，再把它擦干净。”",
+        "enText": "Mom hugged her. “You grew, but the shoes didn't. Taking care of them can mean wearing them, then cleaning them afterward.”",
+        "illustrationPrompt": "Tender eye-level entryway shot: Mom embraces seated An'an, plain shoebox and removed white-red sneakers at their feet, a soft cleaning cloth on bench.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Tender eye-level entryway shot: Mom embraces seated An'an, plain shoebox and removed white-red sneakers at their feet, a soft cleaning cloth on bench.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-ed320971-0f6d-41a4-bd67-616d4f745595.png"
+      },
+      {
+        "page": 10,
+        "zhText": "安安和妈妈把新鞋送给了正好穿得下的表妹。表妹穿着它，在屋里轻轻走了两圈，笑得像一朵花。",
+        "enText": "An'an and Mom gave the shoes to her younger cousin, whose feet fit just right. Her cousin walked around the room, beaming.",
+        "illustrationPrompt": "Living room: younger Chinese cousin with black pigtails and pink dress wears donated white-red sneakers, walking delightedly; An'an in gray old sneakers and Mom watch smiling. Only cousin wears new pair.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room: younger Chinese cousin with black pigtails and pink dress wears donated white-red sneakers, walking delightedly; An'an in gray old sneakers and Mom watch smiling. Only cousin wears new pair.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-10501db8-8e40-47b6-a1d6-fc4a161dc7db.png"
+      },
+      {
+        "page": 11,
+        "zhText": "送鞋前，安安摸摸红色鞋边：“希望它们能陪你出去玩。”表妹认真点头，把鞋穿得稳稳的。",
+        "enText": "Before giving them away, An'an touched the red trim. “I hope they can go on adventures with you.” Her cousin nodded and put them on securely.",
+        "illustrationPrompt": "Living room: An'an in gray old sneakers gives white-red shoes to younger cousin with pigtails pink dress, Mom accompanies, clear affectionate transfer.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room: An'an in gray old sneakers gives white-red shoes to younger cousin with pigtails pink dress, Mom accompanies, clear affectionate transfer.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-b861daba-e108-4cc1-ab07-5322f6980c90.png"
+      },
+      {
+        "page": 12,
+        "zhText": "郊游那天，安安穿着合脚的鞋，跑过草地。回家后，她擦掉鞋边的泥：“今天，你陪我去了好多地方。”",
+        "enText": "On the outing, An'an wore shoes that fit and ran across the grass. Back home, she wiped off the mud. “You came to so many places with me today.”",
+        "illustrationPrompt": "Closing home entryway scene: An'an seated in socks gently wipes small mud marks from her comfortably fitting gray sneakers with a cloth, orange outing backpack nearby, sunset window.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Closing home entryway scene: An'an seated in socks gently wipes small mud marks from her comfortably fitting gray sneakers with a cloth, orange outing backpack nearby, sunset window.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-8226cc74-7454-4940-91c8-49f3b32e2e25.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 2,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "珍惜当下",
+        "成长",
+        "物品使用"
+      ],
+      "featured": true,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "用实际使用和照顾，代替过度保护物品。",
+      "reminder": "尊重孩子爱惜新物品的心情，不催促消费；不合脚的鞋及时更换或转赠。",
+      "questions": [
+        "安安在担心什么？",
+        "东西用过以后，我们怎样照顾它？"
+      ],
+      "activity": "选一件舍不得使用的小物品，安排一次合适的使用，再一起清洁和收好。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "book": {
+    "id": "lan-ping-guo",
+    "seriesId": "richang",
+    "title": "烂苹果",
+    "subtitle": "好苹果，要留到哪一天",
+    "moral": {
+      "zh": "珍惜好东西，也要及时享用，别让每一天都变成将就。",
+      "en": "Enjoy good things in good time instead of always saving them for later."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 1,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "周日，妈妈买回一篮苹果。安安挑出一个红亮亮的，闻了闻：“这个一定很甜！”",
+        "enText": "On Sunday, Mom brought home a basket of apples. An'an picked a shiny red one and sniffed it. “This one must be sweet!”",
+        "illustrationPrompt": "Wide sunny kitchen establishing shot: Mom sets a wicker basket of fresh red apples on an oak table; An'an holds one shiny red apple near her nose with delight. Pale green cabinets, cream curtains.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Wide sunny kitchen establishing shot: Mom sets a wicker basket of fresh red apples on an oak table; An'an holds one shiny red apple near her nose with delight. Pale green cabinets, cream curtains.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-3280ef28-63fa-4d7d-a35f-2784806c0ccc.png"
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈把苹果一颗颗排开。安安发现，有的光滑饱满，有的已经皱了皮：“它们能等一样久吗？”",
+        "enText": "Mom lined up the apples. Some were smooth and firm; others were wrinkled. “Can they all wait just as long?” An'an asked.",
+        "illustrationPrompt": "Overhead kitchen table: Mom and An'an examine a row of pristine and wrinkled apples, curious child touches only a fresh apple, no eating.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Overhead kitchen table: Mom and An'an examine a row of pristine and wrinkled apples, curious child touches only a fresh apple, no eating.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-41440519-8786-45a0-a6d1-5c3fdb96b26e.png"
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈把它放回篮子：“先把这几个不新鲜的处理掉，好的留着明天吃。”安安点点头，把红苹果放在最上面。",
+        "enText": "Mom put it back. “Let's deal with the less fresh ones first and save the good ones for tomorrow.” An'an nodded and placed the red apple on top.",
+        "illustrationPrompt": "Medium tabletop view in the same kitchen: Mom sorts a few wrinkled apples from the fresh ones; An'an carefully places her shiny apple on top. Nobody eats; a separate discard bowl sits nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Medium tabletop view in the same kitchen: Mom sorts a few wrinkled apples from the fresh ones; An'an carefully places her shiny apple on top. Nobody eats; a separate discard bowl sits nearby.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-7b0fe4f2-8670-4ec8-8ca8-1f9f616cb8d7.png"
+      },
+      {
+        "page": 4,
+        "zhText": "安安又指了指最红的那颗：“今天吃它不好吗？”妈妈说：“它看起来还好，先等等吧。”",
+        "enText": "An'an pointed to the reddest one again. “Couldn't we eat it today?” Mom replied, “It still looks good. Let's wait a little.”",
+        "illustrationPrompt": "Kitchen close conversation: An'an points at shiny red apple atop wicker basket, Mom thoughtfully postpones, a separate discard bowl holds bad fruit, no eating.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Kitchen close conversation: An'an points at shiny red apple atop wicker basket, Mom thoughtfully postpones, a separate discard bowl holds bad fruit, no eating.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-989ae355-949b-4183-9ed4-cc339e9d633b.png"
+      },
+      {
+        "page": 5,
+        "zhText": "第二天，篮里又有苹果变坏了。妈妈叹口气：“唉，今天又得先处理这些。”那颗红苹果还是留了下来。",
+        "enText": "The next day, more apples had gone bad. Mom sighed. “We have these to deal with again.” The shiny red apple stayed in the basket.",
+        "illustrationPrompt": "Close view the following morning: several apples have clearly brown spoiled patches, separated into a discard bowl by Mom; the shiny red apple remains in the wicker basket, An'an watches with a puzzled brow. No knife or eating.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Close view the following morning: several apples have clearly brown spoiled patches, separated into a discard bowl by Mom; the shiny red apple remains in the wicker basket, An'an watches with a puzzled brow. No knife or eating.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-86f92f55-3669-4375-bca0-cf3816d3df2d.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安在篮子旁放了一张自己画的苹果。她想，明天吃到甜苹果，一定会很开心。",
+        "enText": "An'an placed her own apple drawing beside the basket. She imagined how happy she would feel eating a sweet apple tomorrow.",
+        "illustrationPrompt": "An'an sets a plain paper bearing a simple drawing of one red apple beside kitchen basket, hopeful smile, no writing, only child and Mom.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): An'an sets a plain paper bearing a simple drawing of one red apple beside kitchen basket, hopeful smile, no writing, only child and Mom.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-54ecb744-e447-459d-972c-d0b77c900c51.png"
+      },
+      {
+        "page": 7,
+        "zhText": "又过了一天，那颗红苹果有了一点软。安安把它翻过来看看：“明天，它会变回新鲜的吗？”",
+        "enText": "Another day passed, and the red apple softened. An'an turned it over. “Will it become fresh again tomorrow?”",
+        "illustrationPrompt": "Close kitchen tabletop: An'an gently examines wrinkled red apple without tasting, Mom stands beside her, thoughtful worried expression, no knife.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Close kitchen tabletop: An'an gently examines wrinkled red apple without tasting, Mom stands beside her, thoughtful worried expression, no knife.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-dd7a395a-fcde-423a-9e21-2848a623f964.png"
+      },
+      {
+        "page": 8,
+        "zhText": "一天，又一天。安安盼着的红苹果也皱了皮。她问：“我们每天都在挑烂苹果，那什么时候才能吃到好的呢？”",
+        "enText": "Day after day passed. The red apple An'an had hoped for grew wrinkled too. “We keep picking out bad apples,” she asked. “When do we get to enjoy the good ones?”",
+        "illustrationPrompt": "Eye-level emotional close scene: An'an points gently to her now wrinkled red apple in the basket and asks Mom with earnest expression. Mom pauses, thoughtful. No one eats any spoiled apple.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Eye-level emotional close scene: An'an points gently to her now wrinkled red apple in the basket and asks Mom with earnest expression. Mom pauses, thoughtful. No one eats any spoiled apple.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-869508a5-1c23-42c3-b722-34969cc87c0b.png"
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈没有马上回答。她想起上周的梨，也是一直放着，最后没能好好吃完。",
+        "enText": "Mom paused. She remembered last week's pears, saved for so long that they were never properly enjoyed.",
+        "illustrationPrompt": "Quiet kitchen medium shot: Mom looks thoughtfully at current wicker apple basket, An'an listens beside her, no imagined flashback or collage, subdued warm light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Quiet kitchen medium shot: Mom looks thoughtfully at current wicker apple basket, An'an listens beside her, no imagined flashback or collage, subdued warm light.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-193bcb69-8526-499f-90b9-c9f05c58250d.png"
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈看了看篮子，蹲下来：“我总怕浪费，想把好的留住，结果反而让它们放坏了。”安安轻轻拉住她的手。",
+        "enText": "Mom looked at the basket and knelt beside her. “I was afraid of wasting them, so I saved the good ones. But that let them go bad.” An'an held her hand.",
+        "illustrationPrompt": "Intimate medium shot in the same kitchen: Mom kneels to meet An'an's eyes, both thoughtful and affectionate, child holds her hand; wicker basket visible behind them without dominating frame.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Intimate medium shot in the same kitchen: Mom kneels to meet An'an's eyes, both thoughtful and affectionate, child holds her hand; wicker basket visible behind them without dominating frame.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-621347c4-11c8-4ff4-ae49-7734140e082c.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安说：“要是我们先吃好的，少买一点，是不是就不用天天挑烂的？”妈妈慢慢点了点头。",
+        "enText": "An'an asked, “If we enjoy the good ones and buy fewer, would we stop picking through bad ones every day?” Mom nodded slowly.",
+        "illustrationPrompt": "Eye-level kitchen conversation: An'an proposes idea with small open-hand gesture, Mom nods with realization, fresh fruit separated clearly from discard bowl.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Eye-level kitchen conversation: An'an proposes idea with small open-hand gesture, Mom nods with realization, fresh fruit separated clearly from discard bowl.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-31cf85dd-c8cb-4939-a8a7-30e8d60a9ad7.png"
+      },
+      {
+        "page": 12,
+        "zhText": "她们把腐烂的苹果丢掉，检查剩下的新鲜苹果。妈妈洗好一个，切开给安安。咔嚓！这次，安安终于尝到了甜甜的苹果。",
+        "enText": "They threw away the rotten apples and checked the fresh ones. Mom washed a good apple and sliced it for An'an. Crunch! At last, An'an tasted a sweet apple.",
+        "illustrationPrompt": "Bright close tabletop scene: An'an happily bites a visibly pristine fresh apple slice while Mom offers a clean plate of fresh slices. Spoiled fruit is already disposed of and entirely absent; no knife within child's reach.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Bright close tabletop scene: An'an happily bites a visibly pristine fresh apple slice while Mom offers a clean plate of fresh slices. Spoiled fruit is already disposed of and entirely absent; no knife within child's reach.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-080aa998-3ca6-4a7e-a583-5fe2021dba08.png"
+      },
+      {
+        "page": 13,
+        "zhText": "她们把新鲜苹果放到眼前。安安数了数：“今天我们吃一些，还有一些可以分享。”",
+        "enText": "They put the fresh apples where they could see them. An'an counted. “We can eat some today and share some too.”",
+        "illustrationPrompt": "Kitchen tabletop overhead: An'an and Mom divide shiny fresh apples between a small plate and small paper gift bag, no spoiled fruit, no labels.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Kitchen tabletop overhead: An'an and Mom divide shiny fresh apples between a small plate and small paper gift bag, no spoiled fruit, no labels.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-9f8e7a21-a08e-4594-8402-e51fefd0d86b.png"
+      },
+      {
+        "page": 14,
+        "zhText": "还有几个新鲜的，安安送给了隔壁的乐乐。妈妈把剩下的放进冰箱：“下次少买一点，也能吃得刚刚好。”",
+        "enText": "An'an shared a few fresh apples with Lele next door. Mom put the rest in the fridge. “Next time we'll buy fewer, just enough to enjoy.”",
+        "illustrationPrompt": "Safe apartment doorway scene: An'an hands Lele a small paper bag with two shiny fresh apples, Mom accompanies her smiling; welcoming urban corridor, no labels.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Safe apartment doorway scene: An'an hands Lele a small paper bag with two shiny fresh apples, Mom accompanies her smiling; welcoming urban corridor, no labels.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers. Lele is a six-year-old Chinese BOY with short black hair, mustard sweatshirt and navy trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-32cb6116-a1dc-48b6-8238-b33f73ba0540.png"
+      },
+      {
+        "page": 15,
+        "zhText": "回到家，妈妈说：“省下来的，不只是苹果，也有少一点担心。”安安把空篮子收好，心里轻轻的。",
+        "enText": "Back home, Mom said, “We're saving more than apples. We're saving some worry too.” An'an put away the empty basket and felt lighter.",
+        "illustrationPrompt": "Warm kitchen medium scene: An'an stores empty wicker basket on a low safe shelf while Mom smiles nearby, small fresh-apple plate on oak table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm kitchen medium scene: An'an stores empty wicker basket on a low safe shelf while Mom smiles nearby, small fresh-apple plate on oak table.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-5e83a19a-c636-43ca-b787-137fc4501265.png"
+      },
+      {
+        "page": 16,
+        "zhText": "晚饭后，桌上是一小盘新鲜苹果。安安笑着说：“今天的好苹果，今天就很好吃。”妈妈也拿起一片，和她一起咬了一口。",
+        "enText": "After dinner, a small plate of fresh apples sat on the table. An'an smiled. “Today's good apples taste good today.” Mom took a slice, and they enjoyed them together.",
+        "illustrationPrompt": "Warm evening closing shot at the same oak dining table: An'an and Mom share a small plate of pristine apple slices, smiling at each other, cozy lamp and city windows, basket nearly empty.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm evening closing shot at the same oak dining table: An'an and Mom share a small plate of pristine apple slices, smiling at each other, cozy lamp and city windows, basket nearly empty.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-de0310b5-f8ee-4724-8134-d949cb0bc0c5.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 1,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "珍惜当下",
+        "分享",
+        "生活智慧"
+      ],
+      "featured": true,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "及时享用与合理保存，理解节省和将就的区别。",
+      "reminder": "不要用浪费羞辱孩子；腐烂、发霉的苹果丢弃，不以削掉坏处作为食用示范。",
+      "questions": [
+        "妈妈为什么一直把好苹果留下？",
+        "有什么喜欢的东西，我们可以在今天好好使用？"
+      ],
+      "activity": "一起检查家里的水果，由成人判断新鲜程度，选一份新鲜水果分享，商量下次适量购买。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

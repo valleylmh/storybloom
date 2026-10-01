@@ -1,0 +1,181 @@
+{
+  "book": {
+    "id": "te-bie-de-ri-zi-shi-na-tian",
+    "seriesId": "richang",
+    "title": "特别的日子是哪天",
+    "subtitle": "一个普通下午的礼物",
+    "moral": {
+      "zh": "愿意用心的今天，也可以成为特别的一天。",
+      "en": "An ordinary day can become special when we give it care."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 3,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安有一盒漂亮贴纸：星星、花朵，还有一颗小太阳。她打开看一看，又合上：“要留给特别的日子。”",
+        "enText": "An'an had a box of lovely stickers: stars, flowers, and a little sun. She peeked inside and closed it. “I'll save them for a special day.”",
+        "illustrationPrompt": "Bedroom desk close scene: An'an examines a box of colorful star, flower and sun stickers, blank sheets nearby, then protects them carefully. No text on stickers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Bedroom desk close scene: An'an examines a box of colorful star, flower and sun stickers, blank sheets nearby, then protects them carefully. No text on stickers.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-14cffba4-07e6-40b0-b681-11c1671b7e04.png"
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈问：“你觉得什么日子算特别？”安安想了想：“生日，过年，还有很大很大的好事。”",
+        "enText": "Mom asked, “What makes a day special?” An'an thought. “Birthdays, New Year, and really big happy things.”",
+        "illustrationPrompt": "Bedroom desk conversation: An'an considers question beside closed sticker box, Mom listens, no birthday montage or writing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Bedroom desk conversation: An'an considers question beside closed sticker box, Mom listens, no birthday montage or writing.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-6f408d64-1a5f-4f3f-a929-11aa8ea819ae.png"
+      },
+      {
+        "page": 3,
+        "zhText": "星期一很普通，星期二也很普通。安安每天都问：“特别的日子，怎么还没来呀？”",
+        "enText": "Monday felt ordinary, and so did Tuesday. Each day, An'an wondered, “Why hasn't the special day come yet?”",
+        "illustrationPrompt": "Quiet window scene: An'an sits at her desk gazing out at everyday city courtyard, unopened sticker box in foreground, softly expectant expression. No calendar text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Quiet window scene: An'an sits at her desk gazing out at everyday city courtyard, unopened sticker box in foreground, softly expectant expression. No calendar text.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-879dbf9c-a7c2-4a43-a37d-3471e497fb05.png"
+      },
+      {
+        "page": 4,
+        "zhText": "星期三下午，奶奶来做客。她带来一小袋橘子，笑着说：“今天想来看看你。”",
+        "enText": "On Wednesday afternoon, Grandma visited with a small bag of oranges. “I wanted to see you today,” she said with a smile.",
+        "illustrationPrompt": "Apartment doorway: Grandma with silver bob and lavender cardigan carries oranges in a cloth bag; An'an greets her joyfully, Mom welcomes them from entryway.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Apartment doorway: Grandma with silver bob and lavender cardigan carries oranges in a cloth bag; An'an greets her joyfully, Mom welcomes them from entryway.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers. Grandma has a short silver bob and lavender cardigan.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-8a4fa9ca-b887-4e49-9af8-1c60a4332244.png"
+      },
+      {
+        "page": 5,
+        "zhText": "奶奶坐下来，听安安讲学校里的事。她没有带大礼物，却记得安安昨天搭好了一个小桥。",
+        "enText": "Grandma sat down to hear about school. She had no big present, but she remembered the little bridge An'an had built yesterday.",
+        "illustrationPrompt": "Living room sofa: Grandma attentively listens to animated An'an describing her day, small toy bridge visible on table, Mom nearby, oranges in bowl.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room sofa: Grandma attentively listens to animated An'an describing her day, small toy bridge visible on table, Mom nearby, oranges in bowl.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers. Grandma has a short silver bob and lavender cardigan.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-1eff74e1-79ee-485b-824c-2c5722fb3aa9.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安想送奶奶一张卡片。她拿出白纸，又停在贴纸盒前：“可是，今天只是星期三。”",
+        "enText": "An'an wanted to make Grandma a card. She took out some paper, then paused at the sticker box. “But it's only Wednesday.”",
+        "illustrationPrompt": "Desk medium shot: An'an holds a blank folded paper and looks hesitantly at sticker box, Mom sits beside desk gently listening, no writing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Desk medium shot: An'an holds a blank folded paper and looks hesitantly at sticker box, Mom sits beside desk gently listening, no writing.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-dee32dd7-f844-4b51-adf5-c83b59af71ac.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈问：“你现在想让奶奶开心吗？”安安点头。妈妈笑了：“那今天就有一件特别的事了。”",
+        "enText": "Mom asked, “Would you like to make Grandma happy today?” An'an nodded. Mom smiled. “Then today already has something special in it.”",
+        "illustrationPrompt": "Close warm conversation at desk: Mom meets An'an's eyes, child brightens with realization, blank folded card and sticker box between them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Close warm conversation at desk: Mom meets An'an's eyes, child brightens with realization, blank folded card and sticker box between them.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-88786b6b-1969-4e64-b837-91ff96e4e1d9.png"
+      },
+      {
+        "page": 8,
+        "zhText": "安安先把卡片折好，画了两个人手牵手。她画得有点歪，却越画越想笑。",
+        "enText": "An'an folded the card and drew two people holding hands. The drawing was a little crooked, but it made her smile.",
+        "illustrationPrompt": "Overhead desk crafting shot: child's drawing of two human stick figures holding hands on blank folded card, crayons nearby, An'an and Mom seated together, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Overhead desk crafting shot: child's drawing of two human stick figures holding hands on blank folded card, crayons nearby, An'an and Mom seated together, no text.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-fd780b4c-ba71-486d-b845-34027669068d.png"
+      },
+      {
+        "page": 9,
+        "zhText": "安安贴上一颗星星，又贴一朵花。小太阳贴歪了，她笑起来：“像奶奶笑着歪了歪头。”",
+        "enText": "An'an added a star and a flower. The little sun went on crooked. She laughed. “It looks like Grandma tilting her head when she smiles.”",
+        "illustrationPrompt": "Overhead detailed crafting view: child's hands place sun slightly tilted alongside one star and one flower on blank folded card, An'an's happy face at frame edge, Mom nearby. No writing or scissors.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Overhead detailed crafting view: child's hands place sun slightly tilted alongside one star and one flower on blank folded card, An'an's happy face at frame edge, Mom nearby. No writing or scissors.\nONLY these named people are allowed in frame. Never add relatives or background people: 安安 (An'an) is a six-year-old Chinese GIRL with round face, ear-length straight black bob, a yellow star clip on her left, teal hoodie, blue jeans. Her default shoes are white sneakers with red trim, BUT obey scene shoe descriptions strictly. Mom has shoulder-length black hair, coral cardigan and cream trousers.\nCharacter count and action must match the page scene. Preserve An'an's female identity, black bob and yellow star clip. No extra people. Never carry forward people from earlier scenes.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-95cbcd07-5e31-47cc-b934-1f17fbf21ce1.png"
+      },
+      {
+        "page": 10,
+        "zhText": "奶奶把卡片捧在手里：“这张卡片，是今天才有的呀。”她把安安抱进怀里，橘子的香味轻轻飘过来。",
+        "enText": "Grandma held the card. “This card could only happen today.” She hugged An'an, and the sweet smell of oranges drifted around them.",
+        "illustrationPrompt": "Living room close emotional scene: Grandma hugs An'an while holding handcrafted card with star flower crooked sun, plain plate of peeled oranges on low table, Mom smiles in background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room close emotional scene: Grandma hugs An'an while holding handcrafted card with star flower crooked sun, plain plate of peeled oranges on low table, Mom smiles in background.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Grandma: short silver bob, lavender cardigan.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-7d41d2c1-0c90-463d-94af-b0b3bff12392.png"
+      },
+      {
+        "page": 11,
+        "zhText": "她们一起剥橘子，奶奶听安安讲那颗歪太阳。安安忽然觉得，今天已经有很多可以记住的小事。",
+        "enText": "They peeled oranges together while An'an told Grandma about the crooked sun. Suddenly, the day had many little things worth remembering.",
+        "illustrationPrompt": "Living room table: An'an and Grandma peel oranges together, handmade card with crooked sun star flower visible, Mom shares quiet happy afternoon.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room table: An'an and Grandma peel oranges together, handmade card with crooked sun star flower visible, Mom shares quiet happy afternoon.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Grandma: short silver bob, lavender cardigan.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-2b050d4f-af02-4851-b189-ac80e6cf78e1.png"
+      },
+      {
+        "page": 12,
+        "zhText": "晚上，安安又打开贴纸盒。她没有等节日，而是给明天要看的书贴上一朵花。原来，普通的日子也可以亮起来。",
+        "enText": "That evening, An'an opened the sticker box again. Without waiting for a holiday, she put a flower on the notebook she would use tomorrow. Ordinary days could shine too.",
+        "illustrationPrompt": "Peaceful bedroom closing scene: An'an places a flower sticker on cover of her own blank notebook under a warm desk lamp, sticker box open, night city window. No lettering.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Peaceful bedroom closing scene: An'an places a flower sticker on cover of her own blank notebook under a warm desk lamp, sticker box open, night city window. No lettering.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-bc61aaca-3ea3-4823-aaae-309e878ad2e0.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 3,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "珍惜当下",
+        "创造",
+        "家人陪伴"
+      ],
+      "featured": true,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "主动创造日常仪式，表达心意。",
+      "reminder": "贴纸等个人物品由孩子决定使用；不以送礼作为表达爱的唯一方式。",
+      "questions": [
+        "星期三为什么变特别了？",
+        "不用买东西，我们可以做什么让今天值得记住？"
+      ],
+      "activity": "一起为今天留下一张画、一段话或一个拥抱，由孩子选择表达方式。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

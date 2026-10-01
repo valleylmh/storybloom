@@ -47,6 +47,11 @@ const SERIES_DEFAULTS: Record<
     tags: ["城市交通", "汽车科普", "工程启蒙", "安全教育"],
     bedtimeSuitable: false,
   },
+  richang: {
+    category: "family-growth",
+    tags: ["日常系列", "生活智慧", "亲子共读"],
+    bedtimeSuitable: true,
+  },
 };
 
 export const LIBRARY_CATEGORY_LABELS: Record<LibraryCategory, string> = {

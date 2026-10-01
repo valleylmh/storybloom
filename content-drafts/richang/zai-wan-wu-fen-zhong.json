@@ -1,0 +1,181 @@
+{
+  "book": {
+    "id": "zai-wan-wu-fen-zhong",
+    "seriesId": "richang",
+    "title": "再玩五分钟",
+    "subtitle": "最后一局，也要留出时间",
+    "moral": {
+      "zh": "照顾自己的兴致，也认真照顾与别人的约定。",
+      "en": "Make room for your own fun and for the promises you make to others."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 5,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "下午三点，安安约好和乐乐在小区公园玩。出门前，她还想把桌上的积木房子搭完。",
+        "enText": "An'an had agreed to meet Lele in the neighborhood park at three. Before leaving, she wanted to finish the block house on her table.",
+        "illustrationPrompt": "Home play table: An'an builds wooden block house, orange backpack ready by door, Mom nearby, afternoon sunshine. No readable clock or numbers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Home play table: An'an builds wooden block house, orange backpack ready by door, Mom nearby, afternoon sunshine. No readable clock or numbers.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c8b88b74-566a-4bf7-9026-ec028136d582.png"
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈提醒：“我们该准备了。”安安说：“再玩五分钟！”房子还缺一个屋顶，她又找来一块积木。",
+        "enText": "Mom said, “It's time to get ready.” “Five more minutes!” An'an replied. The house still needed a roof, so she searched for another block.",
+        "illustrationPrompt": "Medium scene: Mom points gently toward prepared shoes at door, An'an concentrates on unfinished block roof and reaches for one more block, no screens.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Medium scene: Mom points gently toward prepared shoes at door, An'an concentrates on unfinished block roof and reaches for one more block, no screens.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-7817a2bc-6ad3-48a1-bc66-60145a345002.png"
+      },
+      {
+        "page": 3,
+        "zhText": "安安觉得，添花园只要一下下。妈妈提醒她：“你还要穿鞋、拿水壶，走到公园也要一会儿。”",
+        "enText": "An'an thought adding a garden would be quick. Mom reminded her, “You still need shoes, water, and time to walk to the park.”",
+        "illustrationPrompt": "Play table: An'an adds green blocks beside house while Mom points to ready backpack and water bottle near entry, child absorbed, no numbers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Play table: An'an adds green blocks beside house while Mom points to ready backpack and water bottle near entry, child absorbed, no numbers.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-1f72ff83-2bf1-45ed-9d1f-cd3b4daf4fe1.png"
+      },
+      {
+        "page": 4,
+        "zhText": "屋顶搭好了，她又想添一个花园。等安安终于穿好鞋，公园里的影子已经长了。",
+        "enText": "The roof was finished, but then she wanted a garden. By the time An'an had her shoes on, the shadows in the park had grown long.",
+        "illustrationPrompt": "Late afternoon entryway: An'an hastily but safely puts on white-red sneakers while Mom waits calmly, elaborate block house visible deeper inside, long sun shadows.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Late afternoon entryway: An'an hastily but safely puts on white-red sneakers while Mom waits calmly, elaborate block house visible deeper inside, long sun shadows.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-ebf11445-c5e1-4882-804a-b2623855affd.png"
+      },
+      {
+        "page": 5,
+        "zhText": "乐乐已经跟爸爸回家了。安安站在空空的滑梯旁，轻声说：“我还以为，一小会儿不会有关系。”",
+        "enText": "Lele had already gone home with his dad. Beside the empty slide, An'an whispered, “I thought a little longer wouldn't matter.”",
+        "illustrationPrompt": "Quiet neighborhood park: An'an stands beside empty slide holding Mom's hand, disappointed, sunset warm long shadows, no friend present.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Quiet neighborhood park: An'an stands beside empty slide holding Mom's hand, disappointed, sunset warm long shadows, no friend present.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-b13143f0-4a16-4eaf-8b67-d014e9910746.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安低头踢踢地上的小石子：“他会不会不想和我玩了？”妈妈说：“我们可以告诉他发生了什么，也听听他的感受。”",
+        "enText": "An'an nudged a tiny stone. “Will he still want to play with me?” Mom said, “We can explain what happened and listen to how he felt.”",
+        "illustrationPrompt": "Safe park bench: An'an seated looks down at small pebble by her shoe, Mom listens empathetically, empty slide behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Safe park bench: An'an seated looks down at small pebble by her shoe, Mom listens empathetically, empty slide behind.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-b967a667-1727-4e92-af07-b782e93fa05e.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈坐到她身边：“你很想搭完房子，我知道。乐乐也在等你。准备出门，同样需要时间。”",
+        "enText": "Mom sat beside her. “I know you wanted to finish your house. Lele was waiting too. Getting ready takes time as well.”",
+        "illustrationPrompt": "Park bench close scene: Mom and An'an sit side by side at child's eye level, listening empathetically, empty slide softly blurred behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Park bench close scene: Mom and An'an sit side by side at child's eye level, listening empathetically, empty slide softly blurred behind.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c3fec102-d03d-4517-8432-9de4cb7b6355.png"
+      },
+      {
+        "page": 8,
+        "zhText": "回家后，安安请妈妈帮忙联系乐乐。她说：“今天让你等了，对不起。下次我会早点准备。”",
+        "enText": "At home, An'an asked Mom to help her contact Lele. “I'm sorry I kept you waiting today. Next time I'll get ready earlier.”",
+        "illustrationPrompt": "Living room: Mom holds a plain phone on speaker with blank unlit screen, An'an speaks earnestly beside her, block house on table. No visible interface text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Living room: Mom holds a plain phone on speaker with blank unlit screen, An'an speaks earnestly beside her, block house on table. No visible interface text.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-dfb24c5a-496e-495e-837d-cf2c188d4c5b.png"
+      },
+      {
+        "page": 9,
+        "zhText": "乐乐说：“我等了一会儿，以为你忘了。”安安认真听完，和他重新约了一个时间。",
+        "enText": "Lele said, “I waited for a while and thought you'd forgotten.” An'an listened, and they made a new plan.",
+        "illustrationPrompt": "Home living room: An'an and Mom talk via plain phone on speaker, An'an listening thoughtfully, blank screen no call text, block house in background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Home living room: An'an and Mom talk via plain phone on speaker, An'an listening thoughtfully, blank screen no call text, block house in background.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-db6b0d89-50cc-49c0-b508-4372bf69b67d.png"
+      },
+      {
+        "page": 10,
+        "zhText": "第二次约好时，安安先和妈妈商量：积木玩到沙漏漏完，拍张照片，明天接着搭，再留时间穿鞋、拿水壶。",
+        "enText": "For their next meeting, An'an and Mom made a plan: stop when the sand timer finished, take a photo, continue tomorrow, and leave time for shoes and a water bottle.",
+        "illustrationPrompt": "Play table side view: An'an and Mom set a small sand timer next to unfinished wooden block house, plain water bottle and orange backpack ready, warm cooperative mood.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Play table side view: An'an and Mom set a small sand timer next to unfinished wooden block house, plain water bottle and orange backpack ready, warm cooperative mood.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c296ee9b-fb95-4555-9461-9b7dd03c7502.png"
+      },
+      {
+        "page": 11,
+        "zhText": "这一次，屋顶还差一块，沙漏就漏完了。安安有点着急。妈妈帮她拍好照片：“回来的时候，还能从这里接着搭。”",
+        "enText": "This time, the timer finished before the roof did. An'an felt reluctant. Mom photographed it. “You can carry on right here when we get back.”",
+        "illustrationPrompt": "Play table: completed sand timer beside unfinished block roof, Mom photographs house with plain phone, An'an begins stepping away, no screen text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Play table: completed sand timer beside unfinished block roof, Mom photographs house with plain phone, An'an begins stepping away, no screen text.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-4b7d15a7-dcb4-4b2c-879b-7681405af370.png"
+      },
+      {
+        "page": 12,
+        "zhText": "沙漏空了，安安有点舍不得，还是站起身。公园里，乐乐向她挥手。她笑着跑过去：“今天，我们有好多时间一起玩！”",
+        "enText": "When the timer emptied, An'an wished she could keep building, but she stood up. In the park, Lele waved. She smiled. “Today we have plenty of time to play together!”",
+        "illustrationPrompt": "Bright afternoon closing park scene: An'an joins Lele near safe grassy play area, both excited, Mom and Lele's dad nearby supervising, playful meeting before sunset.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Bright afternoon closing park scene: An'an joins Lele near safe grassy play area, both excited, Mom and Lele's dad nearby supervising, playful meeting before sunset.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Lele: six-year-old Chinese BOY, short black hair, mustard sweatshirt, navy trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-56c0a9bb-451b-4d9e-9a07-035e5b243798.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 5,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "时间安排",
+        "约定",
+        "朋友"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "共同安排过渡时间，练习遵守约定和补救。",
+      "reminder": "不把难以停下游戏说成故意不听话；用预告、保留作品和成人协助帮助转换。",
+      "questions": [
+        "除了玩五分钟，出门还需要做哪些事？",
+        "有什么办法让没玩完的东西等我们回来？"
+      ],
+      "activity": "一起安排下一次出门前的结束提醒，给收尾和准备留出时间。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

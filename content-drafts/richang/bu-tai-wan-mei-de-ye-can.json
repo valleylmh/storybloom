@@ -1,0 +1,185 @@
+{
+  "book": {
+    "id": "bu-tai-wan-mei-de-ye-can",
+    "seriesId": "richang",
+    "title": "不太完美的野餐",
+    "subtitle": "屋檐下的三明治",
+    "moral": {
+      "zh": "计划有变化时，照顾失望，再找一种可以享受的方式。",
+      "en": "When plans change, make room for disappointment and look for another way to enjoy the day."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-01",
+    "order": 10,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安盼了一星期的野餐终于到了。她和爸爸装好三明治，妈妈带上毯子。安安想：“今天一定特别棒！”",
+        "enText": "The picnic An'an had waited for all week was finally here. She and Dad packed sandwiches, and Mom brought a blanket. “Today will be wonderful!” she thought.",
+        "illustrationPrompt": "Sunny home kitchen preparation: An'an and Dad pack sandwiches into plain lunchbox, Mom folds picnic blanket beside basket, orange backpack ready, cheerful anticipation.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Sunny home kitchen preparation: An'an and Dad pack sandwiches into plain lunchbox, Mom folds picnic blanket beside basket, orange backpack ready, cheerful anticipation.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-04fb6dff-7ab0-4f34-a75f-a76477b73499.png"
+      },
+      {
+        "page": 2,
+        "zhText": "安安给餐盒留了一个位置，又挑了最喜欢的水壶。她已经想好，要坐在大树下，边吃边看云。",
+        "enText": "An'an made space for the lunchbox and chose her favorite water bottle. She imagined eating beneath a big tree and watching clouds.",
+        "illustrationPrompt": "Home kitchen: An'an arranges plain lunchbox and favorite water bottle in picnic basket, Mom beside her holds folded blanket, sunny window, no imagination bubble.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct one continuity detail in this existing square 3D cartoon picture-book illustration. Change ONLY the picnic blanket's blue/white checks to RED/WHITE gingham checks, matching the blanket at the beginning and end of this book. Preserve its exact fabric folds, shape and placement and all characters, poses, expressions, kitchen, basket, food containers and light. Do not add or remove people or props. No text, lettering, watermark or other changes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-18ea2620-8d23-454d-84a8-6657affa4716.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-c8999c1f-448f-42cb-8459-a442708c176f.png"
+      },
+      {
+        "page": 3,
+        "zhText": "到了公园，刚铺好毯子，雨点就落了下来。安安伸出手：“不是说今天晴天吗？”",
+        "enText": "At the park, raindrops fell just as they spread the blanket. An'an held out her hand. “Wasn't it supposed to be sunny?”",
+        "illustrationPrompt": "Park lawn: family begins spreading blanket, a few gentle rain droplets appear, An'an looks at open palm puzzled, Mom and Dad gather things promptly; no storm or lightning.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct one continuity detail in this existing square 3D cartoon picture-book illustration. Change ONLY the picnic blanket spread on the lawn from yellow/white checks to RED/WHITE gingham checks, matching the blanket at the beginning and end of this book. Preserve its exact folds, shape, placement, gentle rain, park, all characters, poses, expressions and light. Do not add or remove people or props. No text, lettering, watermark or other changes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-8a067b62-d3e2-480c-b29c-b82f65b165df.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-5f9f9b89-1d5e-4dd5-b984-1539cbe09d54.png"
+      },
+      {
+        "page": 4,
+        "zhText": "爸爸和妈妈带她走到附近的亭子里。打开餐盒，三明治还被水壶压扁了。安安的嘴角一点点垂下来。",
+        "enText": "Mom and Dad took her to a nearby pavilion. When they opened the lunchbox, the sandwiches had been squashed by the water bottle. An'an's smile faded.",
+        "illustrationPrompt": "Dry sheltered open park pavilion: family sits safely at table, opened lunchbox shows clean squashed sandwiches, water bottle beside it, An'an disappointed, soft rain outside.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Dry sheltered open park pavilion: family sits safely at table, opened lunchbox shows clean squashed sandwiches, water bottle beside it, An'an disappointed, soft rain outside.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-a37c2cf8-9351-43cf-89bd-11d94fbbfc9e.png"
+      },
+      {
+        "page": 5,
+        "zhText": "亭子里干干的，外面的草地却湿了。爸爸先确认没有雷声，也没有积水，再把毯子和食物放好。",
+        "enText": "The pavilion was dry, but the grass outside was wet. Dad checked that there was no thunder or flooding before setting out the blanket and food.",
+        "illustrationPrompt": "Safe dry park pavilion wide scene: Dad surveys gentle rain outside and lays dry blanket on bench, Mom and An'an seated protected, no lightning or flooding.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct one continuity detail in this existing square 3D cartoon picture-book illustration. Change ONLY the picnic blanket's blue/gray checks to RED/WHITE gingham checks, matching the blanket at the beginning and end of this book. Preserve its exact folds, shape and placement and all characters, poses, expressions, shelter, rain, picnic basket and light. Do not add or remove people or props. No text, lettering, watermark or other changes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-3a0e11ce-3fb1-4f94-b6be-0e1cea703a7f.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-d302f5cd-dde4-42ed-bade-2a55bdab7084.png"
+      },
+      {
+        "page": 6,
+        "zhText": "“这不是我想要的野餐。”安安抱住膝盖。妈妈坐在她旁边：“你期待了很久，现在失望也很正常。”",
+        "enText": "“This isn't the picnic I wanted.” An'an hugged her knees. Mom sat beside her. “You waited a long time. It's okay to feel disappointed.”",
+        "illustrationPrompt": "Close pavilion bench scene: An'an seated hugging knees upset, Mom beside her listening softly, Dad keeps picnic things dry, rain blurred in background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "THIS PAGE'S SCENE: Use case: precise-object-edit. Correct one continuity detail in this existing square 3D cartoon picture-book illustration. Change ONLY any visible folded picnic blanket in the basket from blue/gray checks to RED/WHITE gingham checks, matching the blanket at the beginning and end of this book. Keep Mom, Dad, An'an, their exact faces, poses, expressions, clothing, shelter, rain, basket, lunchbox and lighting unchanged. Do not add or remove people or props. No text, lettering, watermark or other changes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-15bb5287-1b6c-45fc-9160-604415ac20dd.png",
+        "previousGeneratedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-e14fe667-068b-4887-b497-8ccb632b32c4.png"
+      },
+      {
+        "page": 7,
+        "zhText": "他们安静地听了一会儿雨。嗒，嗒，屋檐滴下水珠。安安抬起头：“像有人在敲一个小鼓。”",
+        "enText": "They listened to the rain for a while. Tap, tap, drops fell from the roof. An'an looked up. “It sounds like someone playing a tiny drum.”",
+        "illustrationPrompt": "Atmospheric medium pavilion view: An'an looks toward droplets falling outside roof edge, family seated dry under shelter, soft ripples in outdoor puddle, contemplative wonder.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Atmospheric medium pavilion view: An'an looks toward droplets falling outside roof edge, family seated dry under shelter, soft ripples in outdoor puddle, contemplative wonder.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-cdab9d04-78eb-4dcb-9695-709fc89a17eb.png"
+      },
+      {
+        "page": 8,
+        "zhText": "妈妈问：“你想先安静一会儿，还是吃点东西？”安安想了想：“先听听雨吧。”大家就陪她坐了一会儿。",
+        "enText": "Mom asked, “Would you like a quiet moment or something to eat?” An'an thought. “Let's listen to the rain first.” The family sat with her.",
+        "illustrationPrompt": "Peaceful pavilion bench: An'an Mom Dad sit quietly together looking at gentle rain beyond shelter, picnic basket closed nearby, empathetic calm mood.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Peaceful pavilion bench: An'an Mom Dad sit quietly together looking at gentle rain beyond shelter, picnic basket closed nearby, empathetic calm mood.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-19f22865-a746-4842-a73d-f7acc1afc270.png"
+      },
+      {
+        "page": 9,
+        "zhText": "爸爸举起扁三明治：“欢迎来到扁扁餐厅。”安安忍不住笑了。她咬了一口：“形状变了，味道还在。”",
+        "enText": "Dad held up a squashed sandwich. “Welcome to the Flat Sandwich Café.” An'an couldn't help laughing. She took a bite. “Its shape changed, but it still tastes good.”",
+        "illustrationPrompt": "Playful eye-level pavilion table shot: Dad presents a clean flattened sandwich on plate with humorous expression, An'an laughs and tastes another, Mom smiles; food dry and safe.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Playful eye-level pavilion table shot: Dad presents a clean flattened sandwich on plate with humorous expression, An'an laughs and tastes another, Mom smiles; food dry and safe.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-01ba12f3-2715-430d-a616-3be0c55511ce.png"
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈提议编一个雨点故事，安安接着讲。雨小了以后，他们沿着干爽的小路走了一会儿，看叶尖上的水珠。",
+        "enText": "Mom began a raindrop story, and An'an added to it. When the rain eased, they took a short walk along a dry path and looked at drops on the leaves.",
+        "illustrationPrompt": "Park pedestrian path after light rain: An'an holds Mom's hand observing water droplets on nearby leaf, Dad alongside carrying picnic basket, path safe and not flooded, no storm.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Park pedestrian path after light rain: An'an holds Mom's hand observing water droplets on nearby leaf, Dad alongside carrying picnic basket, path safe and not flooded, no storm.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-2e01f314-1430-4aa5-abb1-50366b89be98.png"
+      },
+      {
+        "page": 11,
+        "zhText": "爸爸问：“还想在这里待一会儿吗？也可以回家。”安安看看雨后亮亮的树叶：“我想再走一小段。”",
+        "enText": "Dad asked, “Would you like to stay a little longer? We can go home too.” An'an looked at the shiny wet leaves. “I'd like a short walk.”",
+        "illustrationPrompt": "Pavilion edge after rain eases: Dad asks An'an, she points toward safe dry pedestrian path with sparkling wet leaves, Mom holds her hand, no storm.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Pavilion edge after rain eases: Dad asks An'an, she points toward safe dry pedestrian path with sparkling wet leaves, Mom holds her hand, no storm.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-928a534c-542c-4648-ac62-c00b4988a0a9.png"
+      },
+      {
+        "page": 12,
+        "zhText": "回家时，安安说：“今天和我想的不一样。不过，扁扁三明治和小鼓雨，我都会记得。”她把野餐毯折好，等下一次出发。",
+        "enText": "On the way home, An'an said, “Today wasn't what I expected. But I'll remember the flat sandwiches and the little rain drums.” She folded the blanket, ready for another outing.",
+        "illustrationPrompt": "Warm closing home entryway shot: An'an and Mom fold dry picnic blanket together, Dad sets basket down, late afternoon sun returns through city window, happy reflective family.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nTHIS PAGE'S SCENE (follow literally): Warm closing home entryway shot: An'an and Mom fold dry picnic blanket together, Dad sets basket down, late afternoon sun returns through city window, happy reflective family.\nONLY these named people are allowed in frame; never add relatives or background people: 安安 (An'an): six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans. Default white sneakers with red trim; follow scene footwear descriptions. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers.\nMatch this scene's character count and action exactly. Keep female An'an's bob and yellow star clip. No people or objects copied from previous generations.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f759-9740-7c23-876c-2d4bdedefb48/exec-3fc89e9e-73c2-4445-a80a-bda4ed92b31a.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 5,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 10,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "适应变化",
+        "家庭陪伴",
+        "情绪"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "先接纳失望，再共同寻找可行的新安排。",
+      "reminder": "不强迫孩子立刻乐观；遇到雷暴、积水或其他危险应及时离开。",
+      "questions": [
+        "妈妈怎样回应安安的失望？",
+        "计划变了，我们还可以选择哪些事情？"
+      ],
+      "activity": "为下一次出游一起准备一个室内备选活动，让孩子也参与选择。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，说一说主人公的感受，再选一个小行动试试。",
+        "age6to8": "讨论选择的原因和结果，也允许提出不同办法；联系自己经历过的一件小事。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}
