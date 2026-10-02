@@ -1,0 +1,220 @@
+{
+  "book": {
+    "id": "wo-de-mi-mi-shei-neng-ting",
+    "seriesId": "richang",
+    "title": "我的秘密谁能听",
+    "subtitle": "分享之前，先问问我",
+    "moral": {
+      "zh": "亲近也需要尊重；孩子的感受和隐私值得被认真对待。",
+      "en": "Being close also means being respectful. A child’s feelings and privacy matter."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 16,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "明天，班里要轮流讲一个小故事。安安把书包放好，悄悄拉着妈妈进了房间。",
+        "enText": "Tomorrow, everyone in class would tell a short story. An'an put away her bag and quietly took Mom into her room.",
+        "illustrationPrompt": "Bedroom doorway wide shot: An'an gently leads Mom inside, school bag on low hook, cozy home.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Bedroom doorway wide shot: An'an gently leads Mom inside, school bag on low hook, cozy home.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReference images are for human identity and rendering style only. Do not include apples, baskets, watches, drawings or paper folders from references unless this page explicitly requests them.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-61abf9a1-73c9-488c-b511-45c23a18c41c.png"
+      },
+      {
+        "page": 2,
+        "zhText": "“我有点怕上台。”安安说，“一想到大家看着我，肚子就像装了几只小蝴蝶。”",
+        "enText": "“I'm a little scared of standing in front of everyone,” An'an said. “Thinking about them looking at me makes my tummy flutter.”",
+        "illustrationPrompt": "Close bedside conversation: An'an touches tummy nervously, Mom listens at eye level, no literal butterflies.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close bedside conversation: An'an touches tummy nervously, Mom listens at eye level, no literal butterflies.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-68f3545f-3c7f-47c2-ae25-546943cb7208.png"
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈点头：“谢谢你告诉我。我们可以试着讲给一只小熊听，再讲给我听。”安安松了口气。",
+        "enText": "Mom nodded. “Thank you for telling me. You could try telling your story to a teddy bear, then to me.” An'an felt relieved.",
+        "illustrationPrompt": "Bedroom medium scene: Mom and An'an sit beside plush teddy bear placed as pretend audience, no words.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Bedroom medium scene: Mom and An'an sit beside plush teddy bear placed as pretend audience, no words.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-fb8eb0a9-3a3b-47e9-9345-3342318ce259.png"
+      },
+      {
+        "page": 4,
+        "zhText": "晚饭后，奶奶来做客。妈妈聊天时随口说：“安安明天要讲故事，紧张得像肚子里有小蝴蝶呢。”",
+        "enText": "After dinner, Grandma visited. While chatting, Mom casually mentioned An'an's story and the fluttering feeling in her tummy.",
+        "illustrationPrompt": "Living room three-person scene: Mom talks to Grandma in lavender cardigan; An'an nearby looks startled, no speech bubbles.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room three-person scene: Mom talks to Grandma in lavender cardigan; An'an nearby looks startled, no speech bubbles.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Grandma has a short silver bob and lavender cardigan.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-841ac21b-06c4-488e-b432-2fb6be90e44f.png"
+      },
+      {
+        "page": 5,
+        "zhText": "奶奶关心地看过来。安安却一下热了脸。她抱起小熊，躲到了沙发另一边。",
+        "enText": "Grandma looked over kindly, but An'an's face grew hot. She picked up her teddy bear and moved to the far side of the sofa.",
+        "illustrationPrompt": "Sofa medium shot: embarrassed An'an hugs teddy and moves away; Mom and Grandma notice gently.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sofa medium shot: embarrassed An'an hugs teddy and moves away; Mom and Grandma notice gently.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Grandma has a short silver bob and lavender cardigan.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-4551e50d-2754-4205-b174-5b3bed06732b.png"
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈问：“怎么了？”安安摇头。等奶奶去厨房倒水，她才小声说：“我只想告诉你。”",
+        "enText": "“What's wrong?” Mom asked. An'an shook her head. When Grandma went for water, she whispered, “I only wanted to tell you.”",
+        "illustrationPrompt": "Two-person sofa close-up: An'an whispers to Mom holding teddy, Grandma absent.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-person sofa close-up: An'an whispers to Mom holding teddy, Grandma absent.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Grandma has a short silver bob and lavender cardigan.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-0b194f64-7b1f-42b3-9c42-0a2a46bf80db.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈先说：“奶奶是关心你呀。”安安捏着小熊的耳朵：“可是我还没有想让她知道。”",
+        "enText": "“Grandma cares about you,” Mom said at first. An'an held the teddy's ear. “But I wasn't ready for her to know.”",
+        "illustrationPrompt": "Close emotional conversation: An'an sad and firm with teddy, Mom realizes child's discomfort, no angry face.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close emotional conversation: An'an sad and firm with teddy, Mom realizes child's discomfort, no angry face.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-c268b3fb-8890-4b65-8b9b-82141023f1ce.png"
+      },
+      {
+        "page": 8,
+        "zhText": "妈妈安静下来，重新听她说。原来自己觉得只是聊天，安安却觉得心里的小抽屉被别人打开了。",
+        "enText": "Mom grew quiet and listened again. What felt like casual conversation to her felt like someone opening An'an's private little drawer.",
+        "illustrationPrompt": "Sofa two-person medium shot: Mom attentive and reflective, An'an confiding with teddy, no literal drawer metaphor.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sofa two-person medium shot: Mom attentive and reflective, An'an confiding with teddy, no literal drawer metaphor.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-26474de3-3528-4927-8e2b-d2c022b20b8b.png"
+      },
+      {
+        "page": 9,
+        "zhText": "“是我没有先问你。”妈妈说，“对不起。你愿意告诉我，不等于你愿意让我告诉所有人。”",
+        "enText": "“I didn't ask you first,” Mom said. “I'm sorry. Telling me doesn't mean you wanted me to tell everyone.”",
+        "illustrationPrompt": "Eye-level close shot: Mom sincerely apologizes, An'an listening, teddy in lap.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Eye-level close shot: Mom sincerely apologizes, An'an listening, teddy in lap.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-c5ceeecc-e3eb-448b-a81f-3b8c75d11c8d.png"
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈走到奶奶身边，说明自己刚才没有问安安。奶奶轻声说：“我知道了，今天不追问她。”",
+        "enText": "Mom explained to Grandma that she had not asked An'an first. Grandma said softly, “I understand. I won't ask her about it today.”",
+        "illustrationPrompt": "Kitchen medium scene: Mom quietly speaks with Grandma holding water glass; An'an absent, pale green cabinets.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Kitchen medium scene: Mom quietly speaks with Grandma holding water glass; An'an absent, pale green cabinets.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Grandma has a short silver bob and lavender cardigan.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-eb5cf2e6-518d-448a-b53f-67cc0a7f5fb2.png"
+      },
+      {
+        "page": 11,
+        "zhText": "回来后，妈妈和安安约好：关于她的感受、照片和个人小事，想分享前，先问她一声。",
+        "enText": "When Mom returned, they agreed she would ask before sharing An'an's feelings, photos, or personal stories.",
+        "illustrationPrompt": "Sofa medium conversation: Mom and An'an establish agreement calmly, teddy between them, no contracts or text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sofa medium conversation: Mom and An'an establish agreement calmly, teddy between them, no contracts or text.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-f0c14bb2-45f1-4ddf-bf0c-588759e99429.png"
+      },
+      {
+        "page": 12,
+        "zhText": "“那什么秘密都可以不说吗？”安安问。妈妈说：“有些事，如果让你害怕、受伤，或者不安全，要找可靠的大人帮忙。”",
+        "enText": "“Can every secret stay private?” An'an asked. Mom replied, “If something makes you scared, hurt, or unsafe, ask a trusted grown-up for help.”",
+        "illustrationPrompt": "Close reassuring conversation: Mom explains calmly, An'an thoughtful, safe warm living room, no scary imagery.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close reassuring conversation: Mom explains calmly, An'an thoughtful, safe warm living room, no scary imagery.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-dd5c06af-ea96-47f8-9b95-17ce0baaa596.png"
+      },
+      {
+        "page": 13,
+        "zhText": "“就算有人要求你不许说，也可以来找我。”妈妈说，“需要别人一起保护你时，我会尽量先告诉你，要找谁、为什么。”",
+        "enText": "“Even if someone tells you not to tell, you can come to me,” Mom said. “If we need help keeping you safe, I'll explain who we need and why whenever I can.”",
+        "illustrationPrompt": "Medium two-person sofa scene: Mom offers open hand, An'an visibly reassured, teddy tucked beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Medium two-person sofa scene: Mom offers open hand, An'an visibly reassured, teddy tucked beside her.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-855bc905-8b44-4860-9baf-33af364478eb.png"
+      },
+      {
+        "page": 14,
+        "zhText": "第二天，安安讲完了故事。放学时，她对妈妈说：“我还是紧张，不过我讲到最后一句啦！”",
+        "enText": "The next day, An'an finished her story. After school, she told Mom, “I was still nervous, but I reached the last sentence!”",
+        "illustrationPrompt": "School gate sidewalk: An'an excitedly reports to Mom, backpack on child, school facade without signs.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): School gate sidewalk: An'an excitedly reports to Mom, backpack on child, school facade without signs.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-194725c4-8697-4d30-a0a2-d927ffaac0fa.png"
+      },
+      {
+        "page": 15,
+        "zhText": "妈妈问：“这件开心的事，可以告诉奶奶吗？”安安想了想：“可以。不过小蝴蝶那句，就先留给我们。”",
+        "enText": "Mom asked, “May I tell Grandma this happy news?” An'an thought. “Yes. But let's keep the butterfly part between us for now.”",
+        "illustrationPrompt": "Close school-gate conversation: Mom asks gently, An'an thoughtfully nods with one hand on tummy, no butterflies.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close school-gate conversation: Mom asks gently, An'an thoughtfully nods with one hand on tummy, no butterflies.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-acc66026-310c-4e6e-9874-c812e937f416.png"
+      },
+      {
+        "page": 16,
+        "zhText": "晚上，奶奶祝贺安安，没问她不想说的部分。安安又抱着小熊坐到妈妈身边。小抽屉的钥匙，好好地留在她手里。",
+        "enText": "That evening, Grandma congratulated her without asking about the part she wanted private. An'an sat beside Mom with her teddy. Her private little drawer felt safely her own again.",
+        "illustrationPrompt": "Warm living room ending: Grandma smiles to An'an seated beside Mom with teddy, peaceful trusting family scene, no literal key or drawer.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Warm living room ending: Grandma smiles to An'an seated beside Mom with teddy, peaceful trusting family scene, no literal key or drawer.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Grandma has a short silver bob and lavender cardigan.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: teddy is small honey-BROWN plush bear with round dark brown nose, no clothes, no bow or text; it is an inert toy. Beige sofa, sage and cream striped cushions. An'an's school backpack is plain soft BLUE, no text. Grandma is elderly Chinese woman, short silver-gray hair, lavender cardigan over cream shirt, cream trousers. Only stated characters, NO literal butterflies, keys, drawers or symbolic thought bubbles.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-75c337fe-d172-4c98-9bf8-169e461e6007.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 16,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "隐私",
+        "信任"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "让孩子知道个人事情可以提出分享边界，涉及安全的事情应寻求可靠帮助。",
+      "reminder": "不承诺绝对保密；清楚区分普通隐私与让人害怕、受伤或被要求隐瞒的危险事情。",
+      "questions": [
+        "妈妈没有先问就分享时，安安为什么难过？",
+        "如果一件事让你害怕或不安全，你可以向哪些可靠大人求助？"
+      ],
+      "activity": "一起列出两个可以求助的可靠大人，练习分享前问“这件事可以告诉别人吗”。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

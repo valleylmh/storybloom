@@ -1,0 +1,244 @@
+{
+  "book": {
+    "id": "da-jia-dou-you-de-xiao-shou-biao",
+    "seriesId": "richang",
+    "title": "大家都有的小手表",
+    "subtitle": "我喜欢，还是大家喜欢",
+    "moral": {
+      "zh": "别人的喜欢，可以参考；自己的需要，也值得认真听。",
+      "en": "Other people can inspire us, but our own needs deserve a careful listen too."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 11,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "课间，乐乐把手腕举起来：“看，我的新手表！”蓝色表带在阳光下亮亮的。安安凑近了一点。",
+        "enText": "At break time, Lele held up his wrist. “Look, my new watch!” Its blue strap shone in the sun. An'an leaned closer.",
+        "illustrationPrompt": "Sunny school courtyard medium shot: Lele raises his blue-strapped plain round watch; An'an admires it, only these two children.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, warm daylight, rounded human cartoon characters, soft clay materials, expressive faces, square 1:1, single scene. Match reference for An'an identity and art style only; do not copy kitchen or apples.\nTHIS PAGE'S SCENE: Sunny primary school courtyard medium shot. An'an admires a simple blue-strapped wristwatch worn by her friend Lele. He holds his wrist up happily; An'an leans forward with curious sparkling eyes. Only these two children in frame.\nAn'an: six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele: same-age Chinese BOY, short black hair, mustard yellow sweater, navy trousers. Watch blue strap and plain round pale dial, no numbers or letters.\nNo text, captions, letters, numbers, speech bubbles, logos, watermarks, animals, duplicate characters or extra people.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-d4d44880-c6dc-4d0d-9d8d-f09265da3145.png"
+      },
+      {
+        "page": 2,
+        "zhText": "另一个朋友也有手表。大家低头比颜色，安安把空空的手腕藏进袖子里。",
+        "enText": "Another friend had a watch too. As they compared colors, An'an tucked her bare wrist inside her sleeve.",
+        "illustrationPrompt": "School courtyard close shot: An'an hides her bare wrist in teal sleeve; Lele and one girl in pink sweater compare blue and pink plain watches.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): School courtyard close shot: An'an hides her bare wrist in teal sleeve; Lele and one girl in pink sweater compare blue and pink plain watches.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.\nAn'an has a BARE wrist, NO watch or bracelet at this point. Lele alone wears a blue-strapped round watch. The school girl, when required, wears a PINK-strapped round watch.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-c971cc3d-6105-4607-8d4f-6b1f89a5040d.png"
+      },
+      {
+        "page": 3,
+        "zhText": "放学路上，安安拉住妈妈：“我也想要一块。好像大家都有，只有我没有。”",
+        "enText": "On the way home, An'an tugged Mom's hand. “I want one too. It feels like everyone has one except me.”",
+        "illustrationPrompt": "Tree-lined city sidewalk wide shot: An'an looks at her bare wrist while speaking to Mom, walking home together.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Tree-lined city sidewalk wide shot: An'an looks at her bare wrist while speaking to Mom, walking home together.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-e0aeb859-fb4c-47b4-af3e-6c2e8966a355.png"
+      },
+      {
+        "page": 4,
+        "zhText": "妈妈没有马上说买，也没有说不买。她问：“你最喜欢它的哪一点？”安安张了张嘴，又停住了。",
+        "enText": "Mom did not say yes or no right away. “What do you like most about it?” she asked. An'an opened her mouth, then paused.",
+        "illustrationPrompt": "Sidewalk bench medium conversation: Mom at child's eye level listens; An'an pauses thoughtfully, bare wrist.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sidewalk bench medium conversation: Mom at child's eye level listens; An'an pauses thoughtfully, bare wrist.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-903b4fb4-df7d-40e6-97d3-b2c0b56d1eab.png"
+      },
+      {
+        "page": 5,
+        "zhText": "“蓝色很好看。还有……我们就能一起玩了。”安安轻轻碰着自己的手腕。",
+        "enText": "“The blue is pretty. And... then we could play together.” An'an lightly touched her wrist.",
+        "illustrationPrompt": "Close view of An'an touching bare wrist, thoughtful eyes; Mom listening at park bench.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close view of An'an touching bare wrist, thoughtful eyes; Mom listening at park bench.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-7ffe91db-0496-4fd2-b3ec-586eb27cbd98.png"
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈问：“今天没戴手表，你们一起玩了吗？”安安想起，他们还一起追过影子呢。",
+        "enText": "“Did you play together today without a watch?” Mom asked. An'an remembered chasing shadows with them.",
+        "illustrationPrompt": "Single courtyard recollection scene: An'an and Lele joyfully chase their own shadows, watch small on his wrist, no Mom.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Single courtyard recollection scene: An'an and Lele joyfully chase their own shadows, watch small on his wrist, no Mom.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nAn'an has a BARE wrist, NO watch or bracelet at this point. Lele alone wears a blue-strapped round watch. The school girl, when required, wears a PINK-strapped round watch.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-d27be8ec-6f39-45fe-8adc-3d8bf0926c1e.png"
+      },
+      {
+        "page": 7,
+        "zhText": "回家后，妈妈拿来一个小闹钟：“手表可以帮人看时间。你现在最想用它做什么？”",
+        "enText": "At home, Mom brought over a small clock. “A watch can help us tell time. What would you most like to use it for?”",
+        "illustrationPrompt": "Oak table medium shot: Mom sets a simple unnumbered clock before An'an; pale green kitchen cabinets, no watches.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Oak table medium shot: Mom sets a simple unnumbered clock before An'an; pale green kitchen cabinets, no watches.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-ad18036b-6d7b-42e5-9243-394bc1b13405.png"
+      },
+      {
+        "page": 8,
+        "zhText": "安安盯着钟面：“我还不太会看。”妈妈笑了：“可以慢慢学。不会看，也能先说说喜欢的原因。”",
+        "enText": "An'an studied the clock. “I'm not very good at reading it yet.” Mom smiled. “You can learn. You can still tell me what you like about it.”",
+        "illustrationPrompt": "Clock and child's face close-up: An'an studies simple clock hands, Mom smiles gently, no visible numbers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Clock and child's face close-up: An'an studies simple clock hands, Mom smiles gently, no visible numbers.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: same small ROUND OAK alarm clock with ivory face, BLACK slim hands and BLACK hour ticks, small wooden feet. NOT red or blue hands. Tight close-up on clock and child, different camera from reference.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-066c05f0-7831-4ef7-8c6f-d93080a8e559.png"
+      },
+      {
+        "page": 9,
+        "zhText": "第二天，安安问乐乐：“你为什么喜欢手表？”乐乐说：“爷爷教我看长针短针，我想试试自己看。”",
+        "enText": "The next day, An'an asked Lele why he liked his watch. “Grandpa taught me about the hands. I want to try reading it myself,” he said.",
+        "illustrationPrompt": "School courtyard two-child conversation: Lele points at blue watch's two plain hands, An'an listens.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): School courtyard two-child conversation: Lele points at blue watch's two plain hands, An'an listens.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nAn'an has a BARE wrist, NO watch or bracelet at this point. Lele alone wears a blue-strapped round watch. The school girl, when required, wears a PINK-strapped round watch.\nNEW COMPOSITION, not a duplicate of reference: over-the-shoulder view FROM BEHIND An'an toward Lele. He rests elbow on courtyard bench and points closely at watch hands, An'an's bob and star clip visible from back. Their poses and framing must differ completely from reference.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-d37e8295-2ee3-4993-a275-4fd4b095568a.png"
+      },
+      {
+        "page": 10,
+        "zhText": "那个朋友说：“我喜欢粉色表带。不过跑步时，我觉得戴着有点碍事。”同样的东西，喜欢的理由也不一样。",
+        "enText": "Their friend said, “I like my pink strap, though it gets in the way when I run.” Even with the same thing, people liked different parts.",
+        "illustrationPrompt": "School courtyard medium shot: girl in pink sweater adjusts pink strap; An'an and Lele listen, three children only.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): School courtyard medium shot: girl in pink sweater adjusts pink strap; An'an and Lele listen, three children only.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.\nAn'an has a BARE wrist, NO watch or bracelet at this point. Lele alone wears a blue-strapped round watch. The school girl, when required, wears a PINK-strapped round watch.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-967dad1f-ec2a-4941-96bf-2ca5bbde3b22.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安试着说：“我觉得蓝色漂亮，也有点怕自己不一样。”说完，她的心里好像松了一点。",
+        "enText": "An'an tried saying, “I like the blue, and I'm a little afraid of being different.” Saying it made her feel a little lighter.",
+        "illustrationPrompt": "After-school kitchen conversation: An'an speaks openly to Mom at oak table, relaxed shoulders, no watches on child.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): After-school kitchen conversation: An'an speaks openly to Mom at oak table, relaxed shoulders, no watches on child.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-425a85e5-a9f8-4981-88b2-20656b42922e.png"
+      },
+      {
+        "page": 12,
+        "zhText": "妈妈点点头：“想和朋友亲近，很正常。我们也可以一起想，除了买一样的东西，还有什么办法。”",
+        "enText": "Mom nodded. “It's natural to want to feel close to friends. We can think of ways besides buying the same things.”",
+        "illustrationPrompt": "Warm kitchen medium shot: Mom listens warmly to An'an, hands open, no scolding.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Warm kitchen medium shot: Mom listens warmly to An'an, hands open, no scolding.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-1b2e7bd5-320b-47d6-8521-0d9cbfdd1052.png"
+      },
+      {
+        "page": 13,
+        "zhText": "周末，安安用蓝色纸条做了一条手环。没有钟面，只有她画的小星星。她喜欢的蓝色，已经戴在手上了。",
+        "enText": "On the weekend, An'an made a bracelet from blue paper and drew a little star. It had no clock face, but the blue she liked was on her wrist.",
+        "illustrationPrompt": "Overhead craft table: An'an wraps a blue paper bracelet with one drawn star around wrist; Mom nearby, no text, no watch dial.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Overhead craft table: An'an wraps a blue paper bracelet with one drawn star around wrist; Mom nearby, no text, no watch dial.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nAn'an wears a BLUE PAPER BRACELET with one hand-drawn star, NOT a wristwatch. Never put a clock face on her paper bracelet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-25845c31-b56d-4ae6-8f72-022fe3684e61.png"
+      },
+      {
+        "page": 14,
+        "zhText": "她把手环给乐乐看。乐乐说：“像一条小小的天空！”他们又去搭积木，并没有先检查谁戴了手表。",
+        "enText": "She showed Lele the bracelet. “It's like a tiny sky!” he said. Then they built with blocks without checking anyone's watch.",
+        "illustrationPrompt": "Living room floor wide shot: An'an with blue paper star bracelet and Lele with blue watch build blocks together, no other people.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room floor wide shot: An'an with blue paper star bracelet and Lele with blue watch build blocks together, no other people.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nAn'an wears a BLUE PAPER BRACELET with one hand-drawn star, NOT a wristwatch. Never put a clock face on her paper bracelet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-80a542cc-a7fd-42cd-8553-608a5597bbba.png"
+      },
+      {
+        "page": 15,
+        "zhText": "晚上，妈妈问：“你还想要手表吗？”安安说：“还想。不过我想先学看时间，也想知道戴着舒不舒服。”",
+        "enText": "That evening, Mom asked if she still wanted a watch. “I do. But first I'd like to learn to tell time and see whether it feels comfortable,” An'an said.",
+        "illustrationPrompt": "Kitchen evening conversation: An'an holds small unnumbered clock, blue paper bracelet visible; Mom listens.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Kitchen evening conversation: An'an holds small unnumbered clock, blue paper bracelet visible; Mom listens.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nAn'an wears a BLUE PAPER BRACELET with one hand-drawn star, NOT a wristwatch. Never put a clock face on her paper bracelet.\nClock is same round oak wooden clock with ivory dial, BLACK hands and black tick marks and wooden feet. An'an also wears blue paper star bracelet, no watch.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-541fd602-3c89-4517-a3e7-48db4616b20d.png"
+      },
+      {
+        "page": 16,
+        "zhText": "他们约好先看看不同的手表，试戴后再商量，选适合自己的，也看看家里的预算。安安的愿望没有被丢掉。",
+        "enText": "They agreed to look at different watches, try them on, and discuss what suited her and their budget. Her wish had not been thrown away.",
+        "illustrationPrompt": "Shop counter medium shot: Mom and An'an examine plain round watches on padded tray, no brands, signs or readable text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Shop counter medium shot: Mom and An'an examine plain round watches on padded tray, no brands, signs or readable text.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nAn'an wears a BLUE PAPER BRACELET with one hand-drawn star, NOT a wristwatch. Never put a clock face on her paper bracelet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-46cfb000-8a02-48c6-8cf3-c8f8cc1cce58.png"
+      },
+      {
+        "page": 17,
+        "zhText": "安安试戴了一块表，发现表带太硬。她摘下来：“漂亮是一件事，舒服又是另一件事。”",
+        "enText": "An'an tried one on and found the strap too stiff. She took it off. “Looking pretty and feeling comfortable are two different things.”",
+        "illustrationPrompt": "Close shop counter: An'an carefully removes a stiff blue watch, Mom observes; plain tray and no labels.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close shop counter: An'an carefully removes a stiff blue watch, Mom observes; plain tray and no labels.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nShop watch she is removing is a real stiff blue strap watch, not her homemade paper bracelet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-e66233f5-058d-4929-b31f-b55ff30fb9a9.png"
+      },
+      {
+        "page": 18,
+        "zhText": "回家路上，安安摇摇蓝色手环：“今天不急着买。我想要什么，可以慢慢想清楚。”妈妈牵着她，一起走进晚霞里。",
+        "enText": "On the way home, An'an waved her blue bracelet. “We don't have to buy one today. I can take time to figure out what I want.” Mom held her hand as they walked into the sunset.",
+        "illustrationPrompt": "Wide sunset city sidewalk: An'an and Mom hand in hand, blue paper star bracelet visible, peaceful hopeful ending.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Wide sunset city sidewalk: An'an and Mom hand in hand, blue paper star bracelet visible, peaceful hopeful ending.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nAn'an wears a BLUE PAPER BRACELET with one hand-drawn star, NOT a wristwatch. Never put a clock face on her paper bracelet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-f57fa716-539e-4a30-98c2-1b33ca59e306.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 11,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "选择",
+        "需要与愿望"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "帮助孩子辨认喜欢、需要和想融入朋友的感受。",
+      "reminder": "不把想买东西说成虚荣，也不以买或不买奖励孩子；允许孩子保留愿望。",
+      "questions": [
+        "安安想要手表时，心里有哪些不同的想法？",
+        "你有没有喜欢过别人拥有的东西？喜欢它的什么？"
+      ],
+      "activity": "挑一件想要的物品，分别画出它吸引你的地方和你会怎样使用它，过几天再聊聊。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  },
+  "review": {
+    "visualChecked": true,
+    "notes": "Checked 18-page contact sheet, named characters, watches versus paper bracelet, oak clock continuity and story sequence."
+  }
+}

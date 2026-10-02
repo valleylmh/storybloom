@@ -9,6 +9,16 @@ import milk from "../../../content-drafts/richang/yi-bei-da-fan-de-niu-nai.json"
 import apology from "../../../content-drafts/richang/deng-wo-xin-qing-hao-le-zai-shuo.json";
 import chores from "../../../content-drafts/richang/zen-me-zhi-you-wo-zai-shou-shi.json";
 import picnic from "../../../content-drafts/richang/bu-tai-wan-mei-de-ye-can.json";
+import watch from "../../../content-drafts/richang/da-jia-dou-you-de-xiao-shou-biao.json";
+import joke from "../../../content-drafts/richang/wo-zhi-shi-kai-ge-wan-xiao.json";
+import drawing from "../../../content-drafts/richang/na-zhang-bu-gan-hua-de-bai-zhi.json";
+import tiredMom from "../../../content-drafts/richang/ma-ma-jin-tian-you-dian-lei.json";
+import boundaries from "../../../content-drafts/richang/xiao-xiao-de-bu-yuan-yi.json";
+import privacy from "../../../content-drafts/richang/wo-de-mi-mi-shei-neng-ting.json";
+import alone from "../../../content-drafts/richang/yi-ge-ren-wan-de-xia-wu.json";
+import cake from "../../../content-drafts/richang/zui-hou-yi-kuai-dan-gao.json";
+import queue from "../../../content-drafts/richang/pai-dui-shi-de-na-yi-fen-zhong.json";
+import badminton from "../../../content-drafts/richang/ba-ba-mei-you-ying.json";
 
 type EverydayDraft = {
   book: Omit<LibraryBook, "pages"> & {
@@ -19,7 +29,8 @@ type EverydayDraft = {
 
 export const RICHANG_BOOKS: LibraryBook[] = [
   apple, shoes, special, toys, time, cookie, milk, apology, chores, picnic,
-].map((source) => {
+  watch, joke, drawing, tiredMom, boundaries, privacy, alone, cake, queue, badminton,
+].filter((source) => !source.book.comingSoon).map((source) => {
   const draft = source as EverydayDraft;
   return {
     ...draft.book,
@@ -39,7 +50,7 @@ export const RICHANG_SERIES: LibrarySeries = {
   id: "richang",
   title: "日常系列",
   subtitle: "小日子里的大发现",
-  description: "跟着安安和家人、朋友，走进餐桌、玩具角、小区和公园。从一篮苹果到一次不太完美的野餐，在熟悉的生活小事里感受分享、约定、补救与陪伴。每本 12–20 页中英双语故事，配有中文旁白和亲子共读提示。",
+  description: "跟着安安和家人、朋友，走进餐桌、玩具角、小区和公园。从一篮苹果到生活中的选择、关系与感受，在熟悉的小事里感受分享、约定、边界与陪伴。每本 12–20 页中英双语故事，配有中文旁白和亲子共读提示。",
   coverImage: "/library/richang/lan-ping-guo/1.webp",
   accent: "#cc7a45",
   ageRange: "4–8 岁",

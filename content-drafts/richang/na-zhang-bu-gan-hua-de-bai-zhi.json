@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "na-zhang-bu-gan-hua-de-bai-zhi",
+    "seriesId": "richang",
+    "title": "那张不敢画的白纸",
+    "subtitle": "先让一条线出发",
+    "moral": {
+      "zh": "不必先做得完美，才允许自己开始。",
+      "en": "You do not have to be perfect before you are allowed to begin."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 13,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "周六，安安铺开一张白纸。她想画一幅最好看的画，放进自己的小画夹里。",
+        "enText": "On Saturday, An'an laid out a sheet of white paper. She wanted to make her very best picture for her little art folder.",
+        "illustrationPrompt": "Sunlit home desk wide shot: An'an lays blank white paper beside turquoise folder and colored pencils, alone.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sunlit home desk wide shot: An'an lays blank white paper beside turquoise folder and colored pencils, alone.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: art folder TURQUOISE, An'an uses RED pencil, her paper has no written words. The drawing develops from barely visible erased line to curving red road, crooked plump house with round window, narrow bridge and leaning green tree. Only show the stage requested by this page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-cd5c34d5-a4bd-4e42-a898-396ec57e10d2.png"
+      },
+      {
+        "page": 2,
+        "zhText": "红色铅笔拿起来，又放下。她想画房子，可是屋顶要是画歪了怎么办？",
+        "enText": "She picked up a red pencil, then put it down. She wanted to draw a house, but what if the roof came out crooked?",
+        "illustrationPrompt": "Close desk shot: An'an hesitates with red pencil above untouched blank paper, worried eyes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close desk shot: An'an hesitates with red pencil above untouched blank paper, worried eyes.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: art folder TURQUOISE, An'an uses RED pencil, her paper has no written words. The drawing develops from barely visible erased line to curving red road, crooked plump house with round window, narrow bridge and leaning green tree. Only show the stage requested by this page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-de9bba5f-1974-4fe3-aab1-9439e581d091.png"
+      },
+      {
+        "page": 3,
+        "zhText": "她轻轻画了一小段线，觉得太斜，立刻用橡皮擦掉。白纸上只留下淡淡的印子。",
+        "enText": "She drew a short line, thought it too slanted, and erased it right away. A faint mark was all that remained.",
+        "illustrationPrompt": "Overhead desk view: An'an erases one small slanted pencil line, pale eraser dust, mostly blank paper.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Overhead desk view: An'an erases one small slanted pencil line, pale eraser dust, mostly blank paper.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: art folder TURQUOISE, An'an uses RED pencil, her paper has no written words. The drawing develops from barely visible erased line to curving red road, crooked plump house with round window, narrow bridge and leaning green tree. Only show the stage requested by this page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-8f958fe2-3392-4785-b491-bd664856774b.png"
+      },
+      {
+        "page": 4,
+        "zhText": "窗边，乐乐的画已经有了树和小车。安安看一眼，又看一眼，握铅笔的手更紧了。",
+        "enText": "By the window, Lele's picture already had a tree and a car. An'an kept glancing at it and gripping her pencil tighter.",
+        "illustrationPrompt": "Two-child desk scene: Lele draws simple tree and red car; An'an tense over nearly blank page, no writing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child desk scene: Lele draws simple tree and red car; An'an tense over nearly blank page, no writing.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: art folder TURQUOISE, An'an uses RED pencil, her paper has no written words. The drawing develops from barely visible erased line to curving red road, crooked plump house with round window, narrow bridge and leaning green tree. Only show the stage requested by this page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-2b286afb-c8e5-496b-bd5c-fdf96769d63a.png"
+      },
+      {
+        "page": 5,
+        "zhText": "“你怎么还没有画？”乐乐问。安安把纸往自己这边拉了拉：“我在想。”",
+        "enText": "“Why haven't you started?” Lele asked. An'an pulled her paper closer. “I'm thinking.”",
+        "illustrationPrompt": "Desk medium conversation: Lele curious without mocking; An'an protects mostly blank page, turquoise folder beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Desk medium conversation: Lele curious without mocking; An'an protects mostly blank page, turquoise folder beside her.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: art folder TURQUOISE, An'an uses RED pencil, her paper has no written words. The drawing develops from barely visible erased line to curving red road, crooked plump house with round window, narrow bridge and leaning green tree. Only show the stage requested by this page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-746e7a60-27e1-4db9-8d6d-a75eb05d2dba.png"
+      },
+      {
+        "page": 6,
+        "zhText": "爸爸走过来，没有拿起安安的铅笔。他问：“这张纸让你有点为难吗？”",
+        "enText": "Dad came over without picking up her pencil. “Is this paper making things a little difficult?” he asked.",
+        "illustrationPrompt": "Home desk medium shot: Dad gently kneels beside An'an, hands away from drawing tools; Lele absent.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Home desk medium shot: Dad gently kneels beside An'an, hands away from drawing tools; Lele absent.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nCRITICAL: An'an's paper is COMPLETELY BLANK except at most one barely visible erased mark. NO road, house, trees, bridge or completed picture. Child is still anxious, closed mouth or hesitant worried expression, NOT drawing or cheerful. Dad listens without touching child's pencil.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-6afba1db-a45d-4a73-afcc-47d6ae3cbb80.png"
+      },
+      {
+        "page": 7,
+        "zhText": "安安点头：“我怕画不好，就连第一条线都不敢画。”爸爸坐下来，陪她看了一会儿白纸。",
+        "enText": "An'an nodded. “I'm afraid it won't be good. I can't even draw the first line.” Dad sat with her and looked at the paper for a while.",
+        "illustrationPrompt": "Quiet two-person desk scene: An'an confides, Dad sits beside her facing blank sheet, warm patient mood.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Quiet two-person desk scene: An'an confides, Dad sits beside her facing blank sheet, warm patient mood.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nCRITICAL: An'an's paper is COMPLETELY BLANK except at most one barely visible erased mark. NO road, house, trees, bridge or completed picture. Child is still anxious, closed mouth or hesitant worried expression, NOT drawing or cheerful. Dad listens without touching child's pencil.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-b3721b5a-a116-4702-a88f-ff1b16a03918.png"
+      },
+      {
+        "page": 8,
+        "zhText": "爸爸拿出自己的草图。那是一把歪歪的椅子，一条腿还比别的长。安安忍不住凑近看。",
+        "enText": "Dad took out one of his sketches. It showed a crooked chair with one leg longer than the others. An'an leaned closer.",
+        "illustrationPrompt": "Close desk view: Dad shows separate pencil sketch of awkward uneven chair, An'an curious, no labels.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close desk view: Dad shows separate pencil sketch of awkward uneven chair, An'an curious, no labels.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: art folder TURQUOISE, An'an uses RED pencil, her paper has no written words. The drawing develops from barely visible erased line to curving red road, crooked plump house with round window, narrow bridge and leaning green tree. Only show the stage requested by this page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-519ee879-6008-496a-9545-cff9f6bea5b9.png"
+      },
+      {
+        "page": 9,
+        "zhText": "“这是我试着画的第一遍。”爸爸说，“我可以再改，也可以先放着。它不必一开始就像真的。”",
+        "enText": "“This was my first try,” Dad said. “I can change it or leave it for now. It doesn't have to look real from the start.”",
+        "illustrationPrompt": "Two-person conversation at desk: Dad holds imperfect chair sketch, An'an loosens grip on red pencil.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-person conversation at desk: Dad holds imperfect chair sketch, An'an loosens grip on red pencil.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nCRITICAL: An'an's paper is COMPLETELY BLANK except at most one barely visible erased mark. NO road, house, trees, bridge or completed picture. Child is still anxious, closed mouth or hesitant worried expression, NOT drawing or cheerful. Dad listens without touching child's pencil.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-49b3e6ca-f2b2-4c15-8105-6dd909c11ad9.png"
+      },
+      {
+        "page": 10,
+        "zhText": "爸爸把另一张纸推到自己面前：“要不要各画一条线，看看它会带我们去哪儿？”",
+        "enText": "Dad put another sheet in front of himself. “Shall we each draw a line and see where it takes us?”",
+        "illustrationPrompt": "Overhead desk: two separate blank sheets, Dad and An'an each hold a pencil above own paper, turquoise folder at side.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Overhead desk: two separate blank sheets, Dad and An'an each hold a pencil above own paper, turquoise folder at side.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nCRITICAL: An'an's paper is COMPLETELY BLANK except at most one barely visible erased mark. NO road, house, trees, bridge or completed picture. Child is still anxious, closed mouth or hesitant worried expression, NOT drawing or cheerful. Dad listens without touching child's pencil.\nDad's new separate sheet also BLANK, chair sketch is set aside, only two blank sheets in foreground.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-6803e267-5a5e-4491-a9b5-adc4f3837277.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安画了一条弯弯的线。它不像屋顶，却像一条绕过小山的路。她先没有擦掉。",
+        "enText": "An'an drew a curvy line. It did not look like a roof, but it could be a road around a hill. She left it on the page.",
+        "illustrationPrompt": "Close overhead drawing: one winding line on An'an's sheet, red pencil held lightly, eraser untouched.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close overhead drawing: one winding line on An'an's sheet, red pencil held lightly, eraser untouched.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nONLY ONE SINGLE CURVING RED LINE on otherwise blank white paper. NO houses, trees, bridge or any other shapes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-147f1136-2cf8-4499-9ef4-b29a6053aecd.png"
+      },
+      {
+        "page": 12,
+        "zhText": "路旁，她添了一间胖胖的小屋。屋顶还是歪的，安安这次给它画了一扇圆窗。",
+        "enText": "Beside the road, she added a plump little house. The roof was still crooked, so this time she gave it a round window.",
+        "illustrationPrompt": "Drawing close-up: child's curving road and plump crooked-roof house with round window, An'an drawing, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Drawing close-up: child's curving road and plump crooked-roof house with round window, An'an drawing, no text.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nONLY curvy RED line and ONE crooked plump house with red slanted roof and round window. NO trees, bridge or any other shapes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-7452fb09-6e1a-40a4-84d4-166f9c1d8673.png"
+      },
+      {
+        "page": 13,
+        "zhText": "“这间屋子里住谁？”爸爸问。安安想了想：“住一个喜欢看雨的人，圆窗正好看雨点。”",
+        "enText": "“Who lives there?” Dad asked. An'an thought. “Someone who likes watching rain. The round window is perfect for raindrops.”",
+        "illustrationPrompt": "Desk medium shot: An'an explains drawing with growing delight, Dad listens, rainy-window drawing visible on sheet.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Desk medium shot: An'an explains drawing with growing delight, Dad listens, rainy-window drawing visible on sheet.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nONLY curvy RED line and ONE crooked plump house with red slanted roof and round window. NO trees, bridge or any other shapes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-652602cc-5549-4b01-93ed-be7260122485.png"
+      },
+      {
+        "page": 14,
+        "zhText": "她又画了一座很窄的桥、一棵弯腰的树。原来不一样的线，也能找到自己的地方。",
+        "enText": "She added a narrow bridge and a leaning tree. Different lines could each find a place in her picture.",
+        "illustrationPrompt": "Overhead evolving picture: crooked house, winding road, narrow bridge, leaning green tree, child's hand adding detail.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Overhead evolving picture: crooked house, winding road, narrow bridge, leaning green tree, child's hand adding detail.\nONLY the people explicitly required by this scene may appear. Character identities: \nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nFolder is TURQUOISE, child uses RED pencil; ordinary loose sheet, no written words. ONLY requested drawing stage, no premature completed art.\nChildlike simple crayon drawing: curving red road, ONE plump yellow crooked-roof house with round window, ONE narrow brown bridge, ONE leaning GREEN tree. Most of white sheet still empty. No text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-e2cc2806-0b2c-4688-b284-545dd117cc6f.png"
+      },
+      {
+        "page": 15,
+        "zhText": "乐乐来看：“这条街真奇怪！我的小车能开过去吗？”安安笑着在路旁加了一个停车的空地。",
+        "enText": "Lele came to look. “What a funny street! Can my car drive through it?” An'an smiled and added a little parking space.",
+        "illustrationPrompt": "Two children at desk: Lele points curiously to child's imaginary street, An'an adds parking patch, Dad absent.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two children at desk: Lele points curiously to child's imaginary street, An'an adds parking patch, Dad absent.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nKeep the first reference's drawing: curving RED road, crooked YELLOW house with round window and red roof, narrow BROWN bridge and leaning GREEN tree. An'an uses RED pencil and adds a small parking patch beside road. TURQUOISE art folder on oak desk. ONLY An'an and Lele, no father. The second reference shows only identities of the two children: do not copy watches; neither child wears a watch.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-9cac0242-4205-4d9c-9cee-00789ae17654.png"
+      },
+      {
+        "page": 16,
+        "zhText": "她画累了，把铅笔放下。白纸上还有一大片空着，她说：“这里，下次再想也可以。”",
+        "enText": "When she grew tired, she put down her pencil. A large part of the paper was still empty. “I can think about this part another time,” she said.",
+        "illustrationPrompt": "An'an relaxes at desk, red pencil set down, drawing half-filled and half-blank, calm satisfied expression.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): An'an relaxes at desk, red pencil set down, drawing half-filled and half-blank, calm satisfied expression.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nReference 1 shows the illustration style, child identity and completed drawing ONLY. Use RED pencil and TURQUOISE folder. If a drawing is visible it has curving RED road, crooked YELLOW house with round window and red roof, narrow BROWN bridge, leaning GREEN tree and small parking patch; at least half the sheet remains empty. ONLY An'an appears, no father or other children.\nCRITICAL drawing continuity: preserve the small GRAY PARKING PATCH with three white divider lines LEFT OF THE RED CURVING ROAD as visible in reference. All five drawn features must persist: parking patch, road, yellow house, brown bridge, green tree. Only girl, no boy.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-10c02b2f-3d5c-449f-851d-c2ad001c3ca5.png"
+      },
+      {
+        "page": 17,
+        "zhText": "安安把这张画放进小画夹。它不是她想象中最完美的画，却是一张她愿意留下的画。",
+        "enText": "An'an put the picture in her art folder. It was not the perfect picture she had imagined, but it was one she wanted to keep.",
+        "illustrationPrompt": "Close shot: An'an gently slides crooked little street drawing into turquoise art folder, happy face.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close shot: An'an gently slides crooked little street drawing into turquoise art folder, happy face.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nReference 1 shows the illustration style, child identity and completed drawing ONLY. Use RED pencil and TURQUOISE folder. If a drawing is visible it has curving RED road, crooked YELLOW house with round window and red roof, narrow BROWN bridge, leaning GREEN tree and small parking patch; at least half the sheet remains empty. ONLY An'an appears, no father or other children.\nCRITICAL drawing continuity: preserve the small GRAY PARKING PATCH with three white divider lines LEFT OF THE RED CURVING ROAD as visible in reference. All five drawn features must persist: parking patch, road, yellow house, brown bridge, green tree. Only girl, no boy.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-dfb9a807-a9e3-4576-81c0-695e7eaf7fbd.png"
+      },
+      {
+        "page": 18,
+        "zhText": "第二天，她又铺开一张白纸。这次，铅笔没有等很久。一条小小的线，已经出发了。",
+        "enText": "The next day, she laid out a new sheet. This time, the pencil did not wait long. A little line was already on its way.",
+        "illustrationPrompt": "Sunlit desk ending: An'an confidently draws first fresh line on new blank sheet, turquoise folder beside her, alone.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sunlit desk ending: An'an confidently draws first fresh line on new blank sheet, turquoise folder beside her, alone.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nReference 1 shows the illustration style, child identity and completed drawing ONLY. Use RED pencil and TURQUOISE folder. If a drawing is visible it has curving RED road, crooked YELLOW house with round window and red roof, narrow BROWN bridge, leaning GREEN tree and small parking patch; at least half the sheet remains empty. ONLY An'an appears, no father or other children.\nNEW sheet is completely BLANK apart from ONE fresh single RED line. Finished drawing stays INSIDE closed turquoise folder, never on the new sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-5560c5cf-3798-48a6-bf92-9b88a61e4a57.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 13,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "尝试",
+        "完美压力"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "允许试画和修改，帮助孩子把开始变成一件小事。",
+      "reminder": "不把乱画变成必须画出优秀作品的另一种要求；孩子可以画、停下或保留空白。",
+      "questions": [
+        "安安迟迟不敢下笔，是在担心什么？",
+        "如果只先做一个小动作，你愿意从哪里开始？"
+      ],
+      "activity": "每人随手画一条线，轮流说它让自己想起什么，没有标准答案。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

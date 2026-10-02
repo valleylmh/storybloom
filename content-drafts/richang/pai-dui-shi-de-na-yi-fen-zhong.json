@@ -1,0 +1,220 @@
+{
+  "book": {
+    "id": "pai-dui-shi-de-na-yi-fen-zhong",
+    "seriesId": "richang",
+    "title": "排队时的那一分钟",
+    "subtitle": "给慢一点，留个位置",
+    "moral": {
+      "zh": "给别人一点时间，也是在给每个人安心尝试的机会。",
+      "en": "Giving others time gives everyone room to try with confidence."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 19,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "周末的公园很热闹。安安一眼看见滑梯，拉着妈妈快步走过去，队伍已经排到了树影下。",
+        "enText": "The park was lively on the weekend. An'an spotted the slide and hurried over with Mom. The line stretched into the tree's shade.",
+        "illustrationPrompt": "Park wide establishing shot: An'an and Mom join short orderly line at safe low children's slide, bright trees.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Park wide establishing shot: An'an and Mom join short orderly line at safe low children's slide, bright trees.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReference images are for human identity and rendering style only. Do not include apples, baskets, watches, drawings or paper folders from references unless this page explicitly requests them.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-73e68bd7-6194-41ac-ac4b-4fdc03298b62.png"
+      },
+      {
+        "page": 2,
+        "zhText": "她站到队伍最后，踮着脚看前面：“怎么还没有轮到我？”前面的孩子才刚走到台阶边。",
+        "enText": "She joined the end of the line and stood on tiptoe. “Why isn't it my turn yet?” The child ahead had only just reached the steps.",
+        "illustrationPrompt": "Queue medium shot: An'an impatient at end with Mom beside her; small child ahead approaching slide steps.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Queue medium shot: An'an impatient at end with Mom beside her; small child ahead approaching slide steps.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-735a15a6-d8ad-4ffe-a070-361d0fedff43.png"
+      },
+      {
+        "page": 3,
+        "zhText": "那个小朋友穿着紫色外套，抓紧扶手，一阶一阶慢慢爬。安安觉得每一步都过了好久。",
+        "enText": "The child in a purple jacket gripped the rail and climbed slowly, one step at a time. Each step seemed very long to An'an.",
+        "illustrationPrompt": "Side view of low slide: small purple-jacket child climbs carefully holding rails; An'an waits below with Mom.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Side view of low slide: small purple-jacket child climbs carefully holding rails; An'an waits below with Mom.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-4c5308ef-c871-46e9-8118-83900b572f66.png"
+      },
+      {
+        "page": 4,
+        "zhText": "“他太慢啦。”安安小声说。妈妈问：“你能看见他的脸吗？”安安抬头，只看见他紧紧抓着的手。",
+        "enText": "“He's too slow,” An'an whispered. Mom asked, “Can you see his face?” An'an looked up but could only see his tightly gripping hand.",
+        "illustrationPrompt": "Close queue view: An'an looks upward thoughtfully; small child's hands grip safe rail in foreground, Mom nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nUse case illustration-story. THIS PAGE'S SCENE: An'an waits with BOTH FEET ON THE RUBBER GROUND beside Mom, looking upward towards the SMALL PURPLE-JACKET CHILD's hands gripping RED slide rail. The purple child alone is on blue steps near protected platform. An'an is impatient then curious, mouth closed, NOT climbing or touching the steps or slide railing; she is still waiting her turn. Yellow chute, red rails, blue stairs, safe ground and tree-lined park. Only Mom, An'an and purple child. Reference1 identifies An'an/Mom and slide, reference2 shows the purple toddler on stairs. Same character clothes. Square polished 3D picture book. NO text or letters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-e5396c9e-0cbf-46ca-8c11-3a1134a865c9.png"
+      },
+      {
+        "page": 5,
+        "zhText": "安安往旁边挪了一步，想从另一侧先上去。妈妈轻轻提醒：“台阶要一个一个走，我们等这里。”",
+        "enText": "An'an moved aside, hoping to climb first from the other side. Mom gently reminded her, “One at a time on the steps. We wait here.”",
+        "illustrationPrompt": "Medium scene: An'an stops short of stepping toward occupied slide steps, Mom guides to waiting area without grabbing roughly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Medium scene: An'an stops short of stepping toward occupied slide steps, Mom guides to waiting area without grabbing roughly.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-9a248547-584e-47a2-b66a-d2abe6c99c3e.png"
+      },
+      {
+        "page": 6,
+        "zhText": "小朋友在顶上停了一下。他的爸爸站在旁边问：“要我扶你一下，还是想先下来？”",
+        "enText": "The child paused at the top. His dad stood nearby and asked, “Would you like a hand, or would you rather come down?”",
+        "illustrationPrompt": "Safe low slide side view: purple-jacket child paused on protected platform; his dad in olive jacket offers support from beside rail.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Safe low slide side view: purple-jacket child paused on protected platform; his dad in olive jacket offers support from beside rail.\nONLY the people explicitly required by this scene may appear. Character identities: Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-2bc3a522-8ed5-41fa-afb3-4f1202a3a70b.png"
+      },
+      {
+        "page": 7,
+        "zhText": "小朋友想了一会儿，坐好，慢慢滑下来。落地时，他笑了，爸爸在出口旁接住他的手。",
+        "enText": "The child thought, sat down, and slid slowly. He smiled at the bottom, where his dad offered a hand.",
+        "illustrationPrompt": "Slide bottom action: purple-jacket child reaches safe landing smiling, olive-jacket dad holds out hand, An'an waits clear of exit.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Slide bottom action: purple-jacket child reaches safe landing smiling, olive-jacket dad holds out hand, An'an waits clear of exit.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-dccd90ef-5177-4fbd-aabe-e88e78284c03.png"
+      },
+      {
+        "page": 8,
+        "zhText": "终于轮到安安。她一下爬了两阶，又停下来。原来站在台阶上，看到的地面比刚才远多了。",
+        "enText": "At last, it was An'an's turn. She climbed two steps and stopped. From the steps, the ground looked farther away than before.",
+        "illustrationPrompt": "Side close shot: An'an pauses on low slide steps gripping rails, Mom supervises nearby, no other child on equipment.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Side close shot: An'an pauses on low slide steps gripping rails, Mom supervises nearby, no other child on equipment.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-b741b707-6dfb-4d5c-9618-7fa052454069.png"
+      },
+      {
+        "page": 9,
+        "zhText": "她也抓紧扶手，心里冒出一点点怕。刚才在下面等的时候，她没有想到这里会是这样的感觉。",
+        "enText": "She gripped the rail too and felt a little fear. While waiting below, she had not imagined it would feel this way.",
+        "illustrationPrompt": "Close view of An'an's face and hands gripping slide rail, apprehensive but safe on protected steps.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close view of An'an's face and hands gripping slide rail, apprehensive but safe on protected steps.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-6b8d3d35-0cab-4166-92c7-7dc1f4b112c2.png"
+      },
+      {
+        "page": 10,
+        "zhText": "身后的孩子没有催。安安回头看了一眼，听见妈妈说：“你可以慢慢来，也可以下来。”",
+        "enText": "The child behind did not hurry her. An'an looked back and heard Mom say, “You can take your time, or come back down.”",
+        "illustrationPrompt": "Medium slide view: An'an on steps, patient boy in green waits well back on ground; Mom reassures from nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Medium slide view: An'an on steps, patient boy in green waits well back on ground; Mom reassures from nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-bdb836e2-2a40-410e-8e49-52294e2a29cd.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安站稳，再往上走一阶。她终于明白，那一分钟不是空着的，有人正在认真试一件难的事。",
+        "enText": "An'an steadied herself and took one more step. She understood that the waiting minute was not empty. Someone was trying something difficult.",
+        "illustrationPrompt": "Side scene: An'an carefully takes one step holding rail, determined expression, Mom near low slide.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Side scene: An'an carefully takes one step holding rail, determined expression, Mom near low slide.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-ae133953-25cc-4121-9362-07b10f81b239.png"
+      },
+      {
+        "page": 12,
+        "zhText": "妈妈在旁边陪着。安安慢慢坐好，脚伸到前面，轻轻往下一滑，风从耳边跑过去。",
+        "enText": "Mom stayed nearby. An'an sat carefully, stretched her feet forward, and gently slid down. The breeze rushed past her ears.",
+        "illustrationPrompt": "Slide action shot: An'an correctly seated feet first on low slide, happy cautious face, Mom by landing outside path.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Slide action shot: An'an correctly seated feet first on low slide, happy cautious face, Mom by landing outside path.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-30e9c226-1236-4db1-84e0-91663b9e36c8.png"
+      },
+      {
+        "page": 13,
+        "zhText": "滑到下面，安安赶紧走开，让出出口。她摸摸自己的心口：“我刚才也要等一会儿，才准备好。”",
+        "enText": "At the bottom, An'an moved away to clear the exit. She touched her chest. “I needed a moment to be ready too.”",
+        "illustrationPrompt": "Landing medium shot: An'an safely moves to side clearing exit, Mom smiles, green-shirt boy starts only after path clear.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Landing medium shot: An'an safely moves to side clearing exit, Mom smiles, green-shirt boy starts only after path clear.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-4510cf12-8ed0-441b-8462-ee8c593fbcb6.png"
+      },
+      {
+        "page": 14,
+        "zhText": "再排队时，安安站得松快多了。前面有人系鞋带，她没有挤过去，留出了小小的一段距离。",
+        "enText": "When she lined up again, An'an felt more relaxed. A child ahead tied a shoe. She left a little space instead of squeezing past.",
+        "illustrationPrompt": "Park queue scene: An'an waits with clear gap behind child kneeling to tie sneaker away from steps, Mom nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Park queue scene: An'an waits with clear gap behind child kneeling to tie sneaker away from steps, Mom nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-ad5134b5-0932-4d89-a57d-dbc05a225b2d.png"
+      },
+      {
+        "page": 15,
+        "zhText": "“要帮忙吗？”妈妈问那个孩子的家长。安安看着树叶晃来晃去，发现等待时，也有东西可以看。",
+        "enText": "Mom asked the child's parent whether they needed help. An'an watched the leaves swaying and found there were things to notice while waiting.",
+        "illustrationPrompt": "Queue medium shot: Mom speaks kindly to other parent beside shoelace child; An'an watches sunlit leaves, calm.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Queue medium shot: Mom speaks kindly to other parent beside shoelace child; An'an watches sunlit leaves, calm.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-0cc6fb90-84eb-42a8-8106-eddbee460203.png"
+      },
+      {
+        "page": 16,
+        "zhText": "回家时，安安说：“排队的一分钟，对每个人可能不一样。”妈妈牵着她。慢一点的人，也好好地留在队伍里。",
+        "enText": "On the way home, An'an said, “A minute in line can feel different for everyone.” Mom held her hand. There was room in the line for people who needed more time too.",
+        "illustrationPrompt": "Wide park exit ending: An'an and Mom walk hand in hand through trees, low slide peacefully distant, warm afternoon.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Wide park exit ending: An'an and Mom walk hand in hand through trees, low slide peacefully distant, warm afternoon.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: low children's slide with smooth YELLOW chute, RED protective side rails, BLUE steps, safe rubber ground and green trees; ONE younger child with black hair and PURPLE jacket and cream trousers pages2-7, his father OLIVE jacket and dark trousers only where requested, patient black-haired schoolboy GREEN shirt and navy trousers pages10,13-15. An'an and Mom keep teal/coral clothing. Do not force all people into every frame. Rail and safe waiting gap visibly consistent. No watch, boat, cake.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-e3e7cf83-beaa-44a9-929c-87545acdc5b6.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 19,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "耐心",
+        "换位思考"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "理解排队与安全距离，接纳每个人尝试时速度不同。",
+      "reminder": "不把害怕或动作慢的孩子当作麻烦；大人负责确认设施安全、提供帮助并允许放弃。",
+      "questions": [
+        "安安在下面等和爬到上面时，感觉哪里不同？",
+        "有人需要慢一点时，我们可以怎样等、怎样帮？"
+      ],
+      "activity": "玩轮流完成简单动作的游戏，提前约好等候位置，允许每个人选择尝试或跳过。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

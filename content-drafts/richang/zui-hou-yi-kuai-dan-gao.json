@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "zui-hou-yi-kuai-dan-gao",
+    "seriesId": "richang",
+    "title": "最后一块蛋糕",
+    "subtitle": "把想要，好好说出来",
+    "moral": {
+      "zh": "公平需要把需要说出来，一起商量；不必总由一个人退让。",
+      "en": "Fairness starts with sharing our needs and deciding together. One person need not always give in."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 18,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "午后，妈妈把蛋糕盘放在桌上。安安和乐乐吃完自己的那一份，盘子里还剩最后一块。",
+        "enText": "One afternoon, Mom put a cake plate on the table. After An'an and Lele ate their portions, one last slice remained.",
+        "illustrationPrompt": "Kitchen wide shot: Mom places plate with exactly one triangular strawberry cake slice, two children with empty small plates.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Kitchen wide shot: Mom places plate with exactly one triangular strawberry cake slice, two children with empty small plates.\nONLY the people explicitly required by this scene may appear. Character identities: Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReference images are for human identity and rendering style only. Do not include apples, baskets, watches, drawings or paper folders from references unless this page explicitly requests them.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-a2a545ad-3741-495a-a290-0ddb8b5d4c60.png"
+      },
+      {
+        "page": 2,
+        "zhText": "最后一块顶上有一颗红草莓。安安看过去，乐乐也看过去，两人的手都动了一下。",
+        "enText": "A red strawberry sat on the last slice. An'an looked at it, and so did Lele. Both moved a hand a little.",
+        "illustrationPrompt": "Close tabletop scene: one intact triangular cake slice with single whole strawberry, An'an and Lele hands hesitate, no extra cake.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close tabletop scene: one intact triangular cake slice with single whole strawberry, An'an and Lele hands hesitate, no extra cake.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-ce6eaa00-fad0-4887-af3f-0d90cfa98c60.png"
+      },
+      {
+        "page": 3,
+        "zhText": "安安想到乐乐是客人，先说：“你吃吧。”可是话一出口，她又忍不住看了看草莓。",
+        "enText": "Thinking of Lele as her guest, An'an said, “You can have it.” Yet she could not help looking at the strawberry again.",
+        "illustrationPrompt": "Two-child medium table view: An'an offers reluctantly, Lele listens; exactly one strawberry-topped cake slice.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child medium table view: An'an offers reluctantly, Lele listens; exactly one strawberry-topped cake slice.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-e82f7a2b-d120-4e54-91e5-572ec9dede1f.png"
+      },
+      {
+        "page": 4,
+        "zhText": "乐乐问：“你不喜欢这个味道吗？”安安没有回答，慢慢拿小勺碰着自己的空盘子。",
+        "enText": "“Don't you like this flavor?” Lele asked. An'an did not answer and tapped her spoon gently against her empty plate.",
+        "illustrationPrompt": "Close view: An'an downcast with spoon and empty plate; Lele curious, shared last slice untouched.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close view: An'an downcast with spoon and empty plate; Lele curious, shared last slice untouched.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-c62056e5-007c-4763-b65c-7171b5ae036f.png"
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈看见了，轻声问：“你们两个，是不是都还想吃一点？”两人一起点了点头。",
+        "enText": "Mom noticed and asked softly, “Would both of you like some more?” They both nodded.",
+        "illustrationPrompt": "Three-person kitchen medium scene: Mom gently asks two children, single cake slice between two empty child plates.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Three-person kitchen medium scene: Mom gently asks two children, single cake slice between two empty child plates.\nONLY the people explicitly required by this scene may appear. Character identities: Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-4dde1135-e4d9-42e5-bd75-4787af12eaad.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安说：“我想让乐乐开心，可我也想吃。”乐乐说：“我以为你不想要，才准备拿。”",
+        "enText": "An'an said, “I want Lele to be happy, but I want some too.” Lele replied, “I thought you didn't want it. That's why I was going to take it.”",
+        "illustrationPrompt": "Close honest two-child conversation at table, untouched slice center, attentive faces.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit this illustration: REMOVE Mom entirely, replacing her with the existing softly lit kitchen background. ONLY the TWO children appear in this close honest conversation at oak table. Preserve An'an teal hoodie, Lele mustard sweater, exactly ONE untouched triangular strawberry cake slice on shared white plate, two empty small child plates, expressions and render style. No adult, no additional cake or berries, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-00185d26-1326-44e5-84d0-b52967293f6e.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈说：“两个想要都可以说出来。说清楚，我们才知道要商量什么。”蛋糕还在盘子里，谁也不用急着拿。",
+        "enText": "Mom said, “You can both say what you want. Then we know what to work out.” The cake stayed on the plate. No one had to grab it.",
+        "illustrationPrompt": "Medium scene: Mom with open hands listens to An'an and Lele, hands resting away from single cake slice.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Medium scene: Mom with open hands listens to An'an and Lele, hands resting away from single cake slice.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-e60b8ef2-9bfc-402d-bb88-ee8a425faabc.png"
+      },
+      {
+        "page": 8,
+        "zhText": "“分成两份吧！”安安提议。乐乐看看草莓：“那草莓也能分吗？”妈妈说：“可以，我来切。”",
+        "enText": "“Let's split it!” An'an suggested. Lele looked at the strawberry. “Can we split that too?” Mom said, “Yes. I'll cut it.”",
+        "illustrationPrompt": "Table conversation: children point thoughtfully toward whole strawberry on single slice; Mom prepares to help, knife not in child hands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Table conversation: children point thoughtfully toward whole strawberry on single slice; Mom prepares to help, knife not in child hands.\nONLY the people explicitly required by this scene may appear. Character identities: Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-058ecc30-823d-4a7c-b665-b419417e9393.png"
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈把蛋糕和草莓都切成两份，放进两个小盘子。两块看起来差不多大，草莓也各有半颗。",
+        "enText": "Mom cut the cake and strawberry in half and put them on two small plates. The pieces looked about the same size, each with half a strawberry.",
+        "illustrationPrompt": "Overhead table: adult Mom carefully cuts one cake slice and one strawberry into exactly two equal portions; children's hands safely away.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nUse case illustration-story. THIS PAGE'S SCENE: overhead close tabletop showing the RESULT of Mom dividing the last triangular cake slice. Exactly TWO small white plates, each with ONE SMALL HALF of the SAME cake slice, visibly half-sized triangular narrow wedge each; each topped with exactly HALF a strawberry with CUT white-red INTERIOR visible. The two half strawberry pieces together make ONE berry. Mom's hands gently place the plates, knife already set aside out of frame. Children's hands safely away at table edges. NO central intact cake, NO whole cake, NO whole strawberries, NO additional portions or plates. Reference only identifies cake texture (yellow sponge with white cream and pink filling), oak table and Mom coral sleeves. Square polished warm 3D picture-book illustration, no letters, text, logos.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-88dacd1b-89ed-407c-9cfd-5090006d3399.png"
+      },
+      {
+        "page": 10,
+        "zhText": "安安看看自己的，又看看乐乐的。她笑起来：“原来不用一个人全让掉。”乐乐也笑了。",
+        "enText": "An'an looked at her piece and Lele's, then smiled. “One of us doesn't have to give up all of it.” Lele smiled too.",
+        "illustrationPrompt": "Two children eating scene: exactly two small cake portions each topped with half strawberry on separate plates, both pleased.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two children eating scene: exactly two small cake portions each topped with half strawberry on separate plates, both pleased.\nONLY the people explicitly required by this scene may appear. Character identities: \nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-3e2a983a-9ea7-4a7c-bbcf-0d662fdf2293.png"
+      },
+      {
+        "page": 11,
+        "zhText": "吃完蛋糕，两人去玩小车。只有一辆红色小车，安安拿起来：“这个可不能切成两半。”",
+        "enText": "After the cake, they went to play with a toy car. There was only one red car. An'an picked it up. “We can't cut this in half.”",
+        "illustrationPrompt": "Living room floor medium shot: An'an holds one intact red toy car, Lele beside wooden block road, no cake or knives.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room floor medium shot: An'an holds one intact red toy car, Lele beside wooden block road, no cake or knives.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-2d4e5413-1847-4a1a-a48c-5a8a3eefd4e8.png"
+      },
+      {
+        "page": 12,
+        "zhText": "乐乐想让它过桥，安安想让它进车站。两人停下来，先把各自想怎么玩说了一遍。",
+        "enText": "Lele wanted it to cross a bridge. An'an wanted it to enter a station. They paused and explained their ideas.",
+        "illustrationPrompt": "Two-child floor conversation: Lele points to block bridge, An'an points to station, one red toy car between them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child floor conversation: Lele points to block bridge, An'an points to station, one red toy car between them.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-9d575ea3-46fd-4ffd-abf1-22b5fe7e623a.png"
+      },
+      {
+        "page": 13,
+        "zhText": "“先过桥，再进车站，好不好？”乐乐问。安安点头：“下一圈，我们换着开。”",
+        "enText": "“Could it cross the bridge and then enter the station?” Lele asked. An'an nodded. “We can swap drivers on the next trip.”",
+        "illustrationPrompt": "Floor planning shot: An'an and Lele connect wooden bridge and station with simple road, single red toy car.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Floor planning shot: An'an and Lele connect wooden bridge and station with simple road, single red toy car.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-a11c822b-b207-4d41-adbc-11af4b809a37.png"
+      },
+      {
+        "page": 14,
+        "zhText": "小车跑完一圈，乐乐把它递给安安。轮到她了。两人的办法，让游戏也变成了两个人的。",
+        "enText": "After one trip, Lele handed the car to An'an. It was her turn. Their plan made the game belong to both of them.",
+        "illustrationPrompt": "Close exchange: Lele willingly hands intact red toy car to An'an beside wooden bridge and station.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close exchange: Lele willingly hands intact red toy car to An'an beside wooden bridge and station.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-459e2786-e495-4969-a798-3a02c13607eb.png"
+      },
+      {
+        "page": 15,
+        "zhText": "第二天，他们在公园都想先荡秋千。安安看着一张空座位：“这次轮流，等前一个人停稳再换。”",
+        "enText": "The next day, they both wanted the same swing. An'an looked at the empty seat. “Let's take turns and wait for it to stop before switching.”",
+        "illustrationPrompt": "Park medium shot: two children stand beside one empty low swing, Mom supervises nearby, swing fully still.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Park medium shot: two children stand beside one empty low swing, Mom supervises nearby, swing fully still.\nONLY the people explicitly required by this scene may appear. Character identities: Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-d69114c6-0055-4a9a-a4dd-30a86feb3338.png"
+      },
+      {
+        "page": 16,
+        "zhText": "他们约好一人先玩一小会儿，由妈妈提醒交换。乐乐等待时，就去旁边看看叶子。",
+        "enText": "They agreed each would have a short turn, with Mom reminding them to swap. While waiting, Lele looked at leaves nearby.",
+        "illustrationPrompt": "Safe park wide shot: An'an seated on gently moving low swing, Mom nearby; Lele examining leaves well outside swing path.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Safe park wide shot: An'an seated on gently moving low swing, Mom nearby; Lele examining leaves well outside swing path.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-dac4ca56-4c67-42b6-b156-f7de3bf093fb.png"
+      },
+      {
+        "page": 17,
+        "zhText": "安安发现，不是每样东西都要分成一样的两份。蛋糕能平分，小车和秋千可以轮流，办法要一起想。",
+        "enText": "An'an realized that not everything had to be divided in half. Cake could be shared, while cars and swings could take turns. They could decide together.",
+        "illustrationPrompt": "Park medium conversation after swing stops: An'an and Lele discuss with Mom beside still swing, no collage.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Park medium conversation after swing stops: An'an and Lele discuss with Mom beside still swing, no collage.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-210377ad-11aa-40eb-9bd5-1a93bc43b38a.png"
+      },
+      {
+        "page": 18,
+        "zhText": "回家时，她对妈妈说：“下次我想要，就先好好说。也听听别人想要什么。”这次，心里没有藏着一块没吃到的蛋糕。",
+        "enText": "On the way home, she told Mom, “Next time I'll say what I want and listen to what others want.” This time, no uneaten piece of cake was hiding in her heart.",
+        "illustrationPrompt": "Warm sunset sidewalk ending: An'an walks happily with Mom and Lele, relaxed expression, no imagined cake or symbols.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Warm sunset sidewalk ending: An'an walks happily with Mom and Lele, relaxed expression, no imagined cake or symbols.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: EXACTLY ONE triangular cake slice, pale yellow sponge, white cream and EXACTLY ONE red strawberry on a plain white shared plate on pages1-8; page9 divides it into EXACTLY TWO equal cake portions, each with HALF of that same strawberry; page10 children have one equal half each. NO extra cake, whole cake or duplicate berries. Only Mom holds knife at page9; children's hands remain away. Plain RED toy car pages11-14, natural wood bridge and station. Same single swing blue seat on red frame pages15-17. No watches. Scene and mood must match.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-87911d35-62b5-4a71-8654-1f4b8e64d2f0.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 18,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "公平",
+        "协商"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "练习表达自己的需要，并理解平分、轮流等方法适用于不同事情。",
+      "reminder": "不夸奖固定某个孩子总是让步，也不以年龄或性别规定谁该让；食物切分由成人操作。",
+      "questions": [
+        "安安说“你吃吧”时，真的不想吃吗？",
+        "遇到不能分成两份的东西，还可以商量哪些办法？"
+      ],
+      "activity": "拿一个能分的物品和一个不能分的玩具，讨论平分、轮流、一起玩各自适合什么情况。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

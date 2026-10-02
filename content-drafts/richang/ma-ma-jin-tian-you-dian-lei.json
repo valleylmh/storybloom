@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "ma-ma-jin-tian-you-dian-lei",
+    "seriesId": "richang",
+    "title": "妈妈今天有点累",
+    "subtitle": "休息一会儿，爱还在",
+    "moral": {
+      "zh": "家人也需要休息；暂时没有回应，不代表爱变少了。",
+      "en": "Family members need rest too. A quiet moment does not mean there is less love."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 14,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "放学回家，安安举起一只纸做的小船：“妈妈，我们让它出海吧！”往常妈妈总会接一句船长的话。",
+        "enText": "After school, An'an held up a paper boat. “Mom, let's send it to sea!” Usually, Mom would answer like a ship's captain.",
+        "illustrationPrompt": "Warm living room wide shot: An'an eagerly holds folded blue paper boat, Mom just home near sofa with work bag.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Warm living room wide shot: An'an eagerly holds folded blue paper boat, Mom just home near sofa with work bag.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nKeep Mom gently tired, subdued expression, NOT excited. Simple bright BLUE folded origami boat, beige sofa and oak coffee table, warm modern urban apartment. Reference is identity/style ONLY, NO apples or fruit baskets.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-cf7c71ba-02f4-492e-8c81-83843313357d.png"
+      },
+      {
+        "page": 2,
+        "zhText": "今天，妈妈放下包，慢慢坐到沙发上。她笑了一下，声音很轻：“让我先坐一会儿。”",
+        "enText": "Today, Mom put down her bag and slowly sat on the sofa. She smiled a little. “Let me sit for a moment.”",
+        "illustrationPrompt": "Living room medium shot: tired Mom seated on beige sofa, work bag set aside; An'an holds blue paper boat nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room medium shot: tired Mom seated on beige sofa, work bag set aside; An'an holds blue paper boat nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-d254dc35-24a9-4c09-82a0-5215d539a215.png"
+      },
+      {
+        "page": 3,
+        "zhText": "安安把小船转了个方向：“那我来当船长，你当乘客。”妈妈却揉了揉额头，没有马上接话。",
+        "enText": "An'an turned the boat around. “I'll be the captain, and you can be the passenger.” Mom rubbed her forehead and did not answer right away.",
+        "illustrationPrompt": "Closer sofa scene: An'an offers paper boat; Mom gently rubs forehead, fatigued rather than angry.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Closer sofa scene: An'an offers paper boat; Mom gently rubs forehead, fatigued rather than angry.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-6fd59f71-9809-4682-9d73-428060051240.png"
+      },
+      {
+        "page": 4,
+        "zhText": "屋子忽然安静了。安安低头看看船角，想起早上自己磨蹭着不肯穿鞋。",
+        "enText": "The room suddenly felt quiet. An'an looked at the boat's corners and remembered how slowly she had put on her shoes that morning.",
+        "illustrationPrompt": "Close view of worried An'an looking down at blue boat, tired Mom softly visible on sofa behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close view of worried An'an looking down at blue boat, tired Mom softly visible on sofa behind.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-09639ea9-e05d-496f-82bb-f52f8383d5ba.png"
+      },
+      {
+        "page": 5,
+        "zhText": "“是不是因为我早上不听话，你才不想陪我？”安安小声问。小船被她捏得皱了一点。",
+        "enText": "“Do you not want to play because I was difficult this morning?” An'an asked softly, squeezing a wrinkle into the boat.",
+        "illustrationPrompt": "Two-person medium shot: An'an anxiously holds wrinkled paper boat; Mom turns attentively toward her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-person medium shot: An'an anxiously holds wrinkled paper boat; Mom turns attentively toward her.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-70a03521-2d5c-418b-8ad5-06768685d26d.png"
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈抬起头，认真看着她：“不是。今天工作很忙，我有点累。不是你做错了什么。”",
+        "enText": "Mom looked up at her carefully. “No. Work was busy today, and I'm tired. You haven't done something wrong.”",
+        "illustrationPrompt": "Eye-level close conversation: Mom reassuring An'an warmly, blue paper boat in child's hands, no angry gestures.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Eye-level close conversation: Mom reassuring An'an warmly, blue paper boat in child's hands, no angry gestures.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-fb46cabe-7cf8-404b-b2fc-82f4ef0d5906.png"
+      },
+      {
+        "page": 7,
+        "zhText": "“可是你今天没有大声笑。”安安说。妈妈点头：“我累的时候，笑声也会小一点。爱你没有变少。”",
+        "enText": "“But you aren't laughing loudly today,” An'an said. Mom nodded. “My laugh gets quieter when I'm tired. My love for you hasn't become smaller.”",
+        "illustrationPrompt": "Sofa conversation medium shot: Mom smiles softly and meets An'an's eyes, child beginning to relax.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sofa conversation medium shot: Mom smiles softly and meets An'an's eyes, child beginning to relax.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-e3fefdaf-bf83-41b0-8b05-7c901104962f.png"
+      },
+      {
+        "page": 8,
+        "zhText": "安安还是有点失望：“我很想现在玩。”妈妈说：“我知道。等人陪的时候，确实不容易。”",
+        "enText": "An'an still felt disappointed. “I really want to play now.” Mom said, “I know. Waiting for company can be hard.”",
+        "illustrationPrompt": "Close child expression: An'an disappointed holding boat in lap; Mom listens without dismissing feelings.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close child expression: An'an disappointed holding boat in lap; Mom listens without dismissing feelings.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-b8088ce4-df12-4a8c-86ef-80755be4b2a8.png"
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈和爸爸商量好，先在卧室安静休息二十分钟。爸爸在客厅陪安安，厨房的小计时器也定好了。",
+        "enText": "Mom and Dad agreed she would rest quietly in the bedroom for twenty minutes. Dad would stay with An'an, and they set the kitchen timer.",
+        "illustrationPrompt": "Living room wide scene: Mom, Dad and An'an discuss rest; Dad sets simple unnumbered timer, blue boat on table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit. THIS PAGE'S SCENE: Mom and Dad arrange her rest time while An'an listens. Edit target is the supplied illustration. REMOVE ONLY the flat blue craft paper sea underneath the blue origami boat on the oak table. Leave the boat directly on bare oak table. Preserve exactly one blue boat, white timer with red pointer, all three characters, poses, expressions, clothes, beige sofa, brown bag on floor, light and framing. There is NO paper ocean or wave drawing yet at this moment in the story. No added props, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fc93-cd1e-7073-8aec-0b5cacaa4afd/exec-cb26370f-5bac-4a04-988c-3bc08fcb9667.png"
+      },
+      {
+        "page": 10,
+        "zhText": "“计时器响了，我就出来，先读你选的书。”妈妈说，“你不需要守着我，也不用让我马上开心起来。”",
+        "enText": "“When the timer rings, I'll come out and read the book you choose,” Mom said. “You don't need to watch over me or make me cheerful right away.”",
+        "illustrationPrompt": "Bedroom doorway medium shot: Mom explains calmly to An'an; Dad nearby in living room, blue boat in child's hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit this illustration only: REMOVE the blue paper ocean sheets and any wave shapes from the floor, leaving the existing pale rug entirely empty. REMOVE Mom's brown tote bag and its shoulder strap (it was already set aside). Preserve the doorway, Mom crouching kindly, child holding exactly ONE blue origami boat, Dad seated in background, timer, identities, clothes, light and composition. No new objects or text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-1cae86c4-b1c7-42e0-9aec-f44554f48fe9.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安问：“那小船怎么办？”爸爸指指地毯：“我们先搭一片不怕弄湿的纸上大海，好不好？”",
+        "enText": "“What about the boat?” An'an asked. Dad pointed to the rug. “Shall we first make a paper sea that won't get anything wet?”",
+        "illustrationPrompt": "Living room floor wide shot: Dad and An'an lay blue paper sheets on rug, folded blue paper boat, dry pretend ocean.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room floor wide shot: Dad and An'an lay blue paper sheets on rug, folded blue paper boat, dry pretend ocean.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.\nTimer is plain white round mechanical kitchen timer with a simple RED pointer, NO digits or lettering. Blue paper ocean is a DRY flat craft on rug, no actual water indoors.\nCRITICAL first craft stage: all blue paper sheets are PLAIN solid blue, NO wave lines or markings drawn yet. Dad and child are laying paper on rug. EXACTLY ONE blue origami boat, no duplicate.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-9e8022df-b608-4041-a63c-64498a388514.png"
+      },
+      {
+        "page": 12,
+        "zhText": "安安画了几条弯弯的浪。她玩得开心了一点，也还想妈妈。两种感觉一起待在心里。",
+        "enText": "An'an drew a few curvy waves. She felt a little happier playing, and still missed Mom. Both feelings could stay together.",
+        "illustrationPrompt": "Overhead floor craft view: An'an draws abstract waves on blue paper, Dad nearby, folded blue boat, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Overhead floor craft view: An'an draws abstract waves on blue paper, Dad nearby, folded blue boat, no text.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Dad has short black hair, navy sweater and cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.\nTimer is plain white round mechanical kitchen timer with a simple RED pointer, NO digits or lettering. Blue paper ocean is a DRY flat craft on rug, no actual water indoors.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-70762d2a-c467-49b5-97f7-66d907aa61bb.png"
+      },
+      {
+        "page": 13,
+        "zhText": "计时器响了。妈妈走出来，喝了一口水：“谢谢你们。我还没有完全不累，不过可以陪你读一会儿了。”",
+        "enText": "The timer rang. Mom came out and took a sip of water. “Thank you. I'm still a little tired, but I can read with you now.”",
+        "illustrationPrompt": "Kitchen-living-room medium shot: Mom returns with water glass; An'an and Dad by paper ocean, simple timer nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit this illustration only: keep ONLY the largest BLUE origami paper boat in the foreground. REMOVE the two smaller blue boats at center back and bottom right completely. REMOVE all miniature island objects, leaving just flat BLUE paper sheets with a few simple drawn curved waves. REMOVE Mom's brown tote bag and strap. Preserve Mom holding water glass, child and Dad identities/clothing, white timer, beige sofa, oak table, style and light. Child has a gently relieved neutral face, not grieving. Exactly ONE boat remains. No extra craft props.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-5c6e01e0-c18a-40ac-8e8e-bb16ac57b44f.png"
+      },
+      {
+        "page": 14,
+        "zhText": "安安跑去拿书：“你说回来，真的回来了。”妈妈拍拍身旁的位置：“来，船长坐这里。”",
+        "enText": "An'an ran for a book. “You said you'd come back, and you did.” Mom patted the seat beside her. “Sit here, Captain.”",
+        "illustrationPrompt": "Sofa medium shot: Mom pats cushion, An'an approaches with blank-cover picture book, blue boat on coffee table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sofa medium shot: Mom pats cushion, An'an approaches with blank-cover picture book, blue boat on coffee table.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.\nPicture-book cover is solid BLUE with a small white ship icon, no writing. Interior shows a ship illustration without letters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-c2efa797-9ff5-4ef1-858e-88757a523685.png"
+      },
+      {
+        "page": 15,
+        "zhText": "他们读到一艘大船。安安把纸船停在书边，妈妈的声音慢慢暖起来，不需要很大声。",
+        "enText": "They read about a big ship. An'an parked her paper boat beside the book. Mom's voice grew warm without needing to be loud.",
+        "illustrationPrompt": "Close cozy reading scene: Mom and An'an share illustrated ship book without text, blue paper boat beside it.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close cozy reading scene: Mom and An'an share illustrated ship book without text, blue paper boat beside it.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.\nPicture-book cover is solid BLUE with a small white ship icon, no writing. Interior shows a ship illustration without letters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-09ee16b7-f770-440c-a22d-20ef1201d30e.png"
+      },
+      {
+        "page": 16,
+        "zhText": "晚上，安安也累了，不想再拼最后一块积木。妈妈说：“可以明天再拼。你也能听听身体的话。”",
+        "enText": "That evening, An'an felt tired and did not want to place the last block. Mom said, “You can finish tomorrow. You can listen to your body too.”",
+        "illustrationPrompt": "Evening living room floor scene: sleepy An'an sets block down beside unfinished structure; Mom sits nearby gently.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Evening living room floor scene: sleepy An'an sets block down beside unfinished structure; Mom sits nearby gently.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-8f43fcc6-2f4f-46ee-ac75-d5827191214b.png"
+      },
+      {
+        "page": 17,
+        "zhText": "安安把小船放好：“妈妈有妈妈的心情，我有我的心情。”妈妈点点头：“需要帮助时，我们可以说出来。”",
+        "enText": "An'an put her boat away. “Mom has Mom's feelings, and I have mine.” Mom nodded. “When we need help, we can say so.”",
+        "illustrationPrompt": "Medium tidy shelf scene: An'an places blue paper boat on low shelf; Mom listens, warm evening light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Medium tidy shelf scene: An'an places blue paper boat on low shelf; Mom listens, warm evening light.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-c303d813-cce8-4a54-8854-89126114c5ff.png"
+      },
+      {
+        "page": 18,
+        "zhText": "睡前，妈妈亲了亲她。今天的笑声小一点，拥抱慢一点，可安安知道，爱还在这里。",
+        "enText": "At bedtime, Mom kissed her. Today's laughter was quieter and the hug was slower, but An'an knew the love was still there.",
+        "illustrationPrompt": "Tender bedtime scene: Mom kisses An'an's forehead by bed, child relaxed, teal hoodie folded on chair, warm lamp.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Tender bedtime scene: Mom kisses An'an's forehead by bed, child relaxed, teal hoodie folded on chair, warm lamp.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, plain cream pajamas, no shoes. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nBOOK CONTINUITY: bright BLUE origami paper boat, beige sofa, solid olive cushion and striped cream cushion, oak coffee table, brown work tote bag, pale patterned rug, warm modern apartment. References are identity and style only; do not copy drawing props or paper from Dad's reference. Mom is tired but kind, not angry. Before she rests, An'an feels disappointed and worried: follow exact scene mood.\nAn'an wears PLAIN CREAM pajamas under cream blanket; teal hoodie is folded separately on chair, NOT worn in bed. Mom's coral cardigan stays consistent.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-4905e209-41d6-40cc-9855-62542fa72ac1.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 14,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "家人情绪",
+        "安心"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "区分大人的疲惫和孩子的责任，学习清楚地表达休息与陪伴安排。",
+      "reminder": "不让孩子承担照顾大人情绪的任务。疲惫时由大人说明、安排可靠照料并履行约定。",
+      "questions": [
+        "妈妈累了，是安安做错了什么吗？",
+        "想陪伴又需要休息时，可以怎样把安排说清楚？"
+      ],
+      "activity": "一起选一个休息信号和一个重新见面的具体安排，由大人负责回来回应孩子。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

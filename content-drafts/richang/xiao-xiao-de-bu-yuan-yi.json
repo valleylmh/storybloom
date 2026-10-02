@@ -1,0 +1,260 @@
+{
+  "book": {
+    "id": "xiao-xiao-de-bu-yuan-yi",
+    "seriesId": "richang",
+    "title": "小小的不愿意",
+    "subtitle": "温柔，也可以有边界",
+    "moral": {
+      "zh": "善良可以有边界；照顾朋友，也可以照顾自己。",
+      "en": "Kindness can have boundaries. You can care about your friends and yourself."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 15,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安搭了一座积木车站。最后一根横梁放上去时，她屏住呼吸，车站终于稳稳地站住了。",
+        "enText": "An'an built a block station. She held her breath as she placed the final beam. At last, the station stood firmly.",
+        "illustrationPrompt": "Living room floor wide shot: An'an carefully completes wooden block station with red roof beam, proud focused face.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room floor wide shot: An'an carefully completes wooden block station with red roof beam, proud focused face.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReference images are for human identity and rendering style only. Do not include apples, baskets, watches, drawings or paper folders from references unless this page explicitly requests them.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-50097d54-674e-4c9f-b184-dfbe2d75b12d.png"
+      },
+      {
+        "page": 2,
+        "zhText": "她把小车开进去，又开出来。这是她搭了很久的车站，她想让它留到明天。",
+        "enText": "She drove a toy car in and out. The station had taken a long time to build, and she wanted to keep it until tomorrow.",
+        "illustrationPrompt": "Ground-level view: An'an rolls red toy car through intact wooden station with red roof beam, alone.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Ground-level view: An'an rolls red toy car through intact wooden station with red roof beam, alone.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-c7053c39-9b16-4e02-a88c-2cd072a3f7fa.png"
+      },
+      {
+        "page": 3,
+        "zhText": "乐乐来了：“我能拿这些积木搭一架飞机吗？”他指着车站最上面的横梁。",
+        "enText": "Lele arrived. “Can I use these blocks to build an airplane?” He pointed to the beam at the top of the station.",
+        "illustrationPrompt": "Two-child medium floor scene: Lele points to red roof beam of intact block station; An'an hesitates.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child medium floor scene: Lele points to red roof beam of intact block station; An'an hesitates.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-b5471f3d-fc89-4423-9ed6-573bfd7f178f.png"
+      },
+      {
+        "page": 4,
+        "zhText": "安安想说“不”，嘴巴却没有动。她怕乐乐觉得她小气，以后不来找她玩了。",
+        "enText": "An'an wanted to say no, but the word did not come out. She worried Lele would think she was selfish and stop visiting.",
+        "illustrationPrompt": "Close view of anxious An'an beside intact station, Lele awaiting answer, red car nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close view of anxious An'an beside intact station, Lele awaiting answer, red car nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-94b3ff08-69a2-4641-8314-b9d54efef31d.png"
+      },
+      {
+        "page": 5,
+        "zhText": "“好……吧。”她慢慢说。乐乐以为她同意了，拿下横梁，又搬走了两块支柱。",
+        "enText": "“I... guess so,” she said slowly. Lele thought she agreed and removed the beam and two supports.",
+        "illustrationPrompt": "Floor action scene: Lele removes red roof beam and two supports from station; An'an watches unhappily, no collapse danger.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Floor action scene: Lele removes red roof beam and two supports from station; An'an watches unhappily, no collapse danger.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-aa29f170-be82-4440-905f-7ec6ff1adba1.png"
+      },
+      {
+        "page": 6,
+        "zhText": "车站变成了一堆积木。安安坐在旁边，手里紧紧握着小车，心里越来越委屈。",
+        "enText": "The station became a pile of blocks. An'an sat beside it, gripping her toy car and feeling more and more upset.",
+        "illustrationPrompt": "Close floor scene: dismantled wooden blocks, An'an grips red car sadly, Lele builds small block airplane nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close floor scene: dismantled wooden blocks, An'an grips red car sadly, Lele builds small block airplane nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-50c09f25-03b3-4e97-b8bf-c8df6a2b8e20.png"
+      },
+      {
+        "page": 7,
+        "zhText": "乐乐问她飞机好不好看。安安只说：“随便。”乐乐也有点不知所措。",
+        "enText": "Lele asked whether she liked the airplane. “Whatever,” An'an said. Lele did not know what to do.",
+        "illustrationPrompt": "Two-child floor medium shot: Lele shows wooden block airplane with red wing beam, An'an turns away upset.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child floor medium shot: Lele shows wooden block airplane with red wing beam, An'an turns away upset.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-af8a5196-c293-4cf6-aeb4-e3f99880eed1.png"
+      },
+      {
+        "page": 8,
+        "zhText": "妈妈来送水，看见安安的表情。她轻声问：“你愿意告诉我，刚才发生了什么吗？”",
+        "enText": "Mom brought water and noticed An'an's expression. “Would you like to tell me what happened?” she asked softly.",
+        "illustrationPrompt": "Living room medium scene: Mom places two water cups safely on table and kneels near upset An'an; Lele nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit this illustration only: the block station has ALREADY BEEN DISMANTLED. REMOVE the upright station (both pillars and red roof) entirely and replace it with a low SCATTERED pile of loose plain wood blocks on the rug and ONE detached red beam lying FLAT. Preserve the three characters, Mom arriving with two water glasses safely on table, child upset, Lele beside them, ONE red toy car. No intact arch, no joined pillar towers, no bridge. Keep identities, clothes, room and render style.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-99d93740-0f17-4499-a273-1246eaa253ab.png"
+      },
+      {
+        "page": 9,
+        "zhText": "安安说：“我其实不想拆车站，可我又不想让乐乐不高兴。”她终于把心里那句不愿意说了出来。",
+        "enText": "“I didn't want to take the station apart, but I didn't want Lele to be unhappy,” An'an said. At last, she voiced the no inside her.",
+        "illustrationPrompt": "Close conversation: An'an explains to Mom, Lele listening quietly at respectful distance, scattered blocks.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close conversation: An'an explains to Mom, Lele listening quietly at respectful distance, scattered blocks.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-b29a4c05-b56c-4a7e-95d2-ab9b19156d56.png"
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈说：“你可以喜欢朋友，也可以想保留自己的作品。说不愿意，不会把你变成坏朋友。”",
+        "enText": "Mom said, “You can like your friend and want to keep your work. Saying no doesn't make you a bad friend.”",
+        "illustrationPrompt": "Gentle eye-level two-person shot: Mom reassures An'an beside scattered wooden station blocks.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit this illustration only: REMOVE the intact block station from the foreground. Replace with a SCATTERED pile of loose plain wooden cuboids and ONE detached RED beam lying FLAT, separate and not attached to supports. Keep ONLY Mom and An'an in gentle eye-level conversation, same identities and clothes, one red toy car, pale rug, beige sofa and light. Child is reassured but still a little hurt. No assembled station, arch or bridge.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-64cca3e7-a921-480b-8709-663ab10abe81.png"
+      },
+      {
+        "page": 11,
+        "zhText": "“可是我已经答应了。”安安低下头。妈妈说：“可以把现在的想法说清楚，我们一起处理已经发生的事。”",
+        "enText": "“But I already said yes,” An'an said, looking down. Mom replied, “You can explain how you feel now, and we can work out what to do.”",
+        "illustrationPrompt": "Medium floor discussion: An'an thoughtful, Mom patient with open hands, unfinished airplane on rug.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit. THIS PAGE'S SCENE: Mom reassures An'an after her block station was dismantled. Edit target is the supplied illustration. Change ONLY the assembled pile in foreground: remove all stacked/joined blocks and replace with loose wooden cuboids lying separately FLAT and scattered on rug. Exactly ONE long RED beam lying FLAT DIRECTLY ON RUG, not resting on any block or support. No arch, bridge, upright towers or rebuilt structure. Preserve Mom and An'an faces, clothing, expressions, light, room and camera framing. No additional characters, text, objects.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fc93-cd1e-7073-8aec-0b5cacaa4afd/exec-108701d6-98d5-4fcf-a6be-4b7215ad1ee4.png"
+      },
+      {
+        "page": 12,
+        "zhText": "安安对乐乐说：“我刚才没说清楚。我还想留着车站，看到它拆了，我很难过。”",
+        "enText": "An'an told Lele, “I wasn't clear before. I wanted to keep the station, and I felt sad seeing it taken apart.”",
+        "illustrationPrompt": "Two-child face-to-face floor conversation: An'an speaks honestly, Lele attentive, Mom out of frame.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit this illustration only: REMOVE the intact block station completely. Replace it with a SCATTERED pile of loose unpainted wooden blocks and ONE detached RED beam lying FLAT on rug. Keep ONLY An'an and Lele speaking face-to-face, An'an honest slightly sad serious face, Lele attentive not celebrating, one red toy car. No Mom, no intact station, no arch, no joined pillars. Preserve character identities, clothing, room and light.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-35e4f9ea-9024-4663-b27c-01336fedc886.png"
+      },
+      {
+        "page": 13,
+        "zhText": "乐乐看看积木：“我以为你愿意。对不起。我们一起搭回去吧？”安安点点头，眼睛亮了一点。",
+        "enText": "Lele looked at the blocks. “I thought you wanted to. I'm sorry. Shall we rebuild it together?” An'an nodded, her eyes a little brighter.",
+        "illustrationPrompt": "Two-child medium shot: Lele offers red beam back to An'an, scattered blocks ready for rebuilding.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child medium shot: Lele offers red beam back to An'an, scattered blocks ready for rebuilding.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-47889e68-8607-4792-858d-9aafd37444b8.png"
+      },
+      {
+        "page": 14,
+        "zhText": "他们把柱子一块块找出来。有一处安安也忘了怎么搭，两人试了几次，才把横梁放稳。",
+        "enText": "They found the supports one by one. An'an had forgotten one part too. They tried several times before the beam sat firmly.",
+        "illustrationPrompt": "Floor construction action: An'an and Lele collaborate rebuilding wooden station, carefully settling red roof beam.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Floor construction action: An'an and Lele collaborate rebuilding wooden station, carefully settling red roof beam.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-2db6ff4e-5261-40f6-9110-58afc314c9af.png"
+      },
+      {
+        "page": 15,
+        "zhText": "安安把车站挪到墙边：“这个我今天还想留着。旁边这些积木，你可以拿去搭飞机。”",
+        "enText": "An'an moved the station by the wall. “I want to keep this today. You can use these other blocks for an airplane.”",
+        "illustrationPrompt": "Wide living room floor: intact station safely by wall, separate pile of spare blocks; An'an indicates spare pile to Lele.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Wide living room floor: intact station safely by wall, separate pile of spare blocks; An'an indicates spare pile to Lele.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-c1ef067e-5a7e-444e-806a-056f5ea26a2d.png"
+      },
+      {
+        "page": 16,
+        "zhText": "乐乐问：“那小车能借我一会儿吗？”安安想了想：“现在可以，等我再玩车站时，请还给我。”",
+        "enText": "“Can I borrow the car for a while?” Lele asked. An'an thought. “Yes, for now. Please give it back when I want to play with the station.”",
+        "illustrationPrompt": "Close exchange: An'an willingly hands red car to Lele, intact station and spare blocks background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close exchange: An'an willingly hands red car to Lele, intact station and spare blocks background.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-75aeb9d2-28ce-4754-8ed5-fa1b985c0ef6.png"
+      },
+      {
+        "page": 17,
+        "zhText": "后来，安安想坐在乐乐刚搭的飞机旁。乐乐说：“先别碰，我还没搭稳。”安安停住手：“好。”",
+        "enText": "Later, An'an reached toward Lele's new airplane. “Please don't touch yet. It isn't steady,” he said. She stopped her hand. “Okay.”",
+        "illustrationPrompt": "Floor medium shot: Lele builds spare-block airplane, An'an withdraws reaching hand respectfully, station intact by wall.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Floor medium shot: Lele builds spare-block airplane, An'an withdraws reaching hand respectfully, station intact by wall.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-405200f1-8c46-448e-80a5-536e71a15a7e.png"
+      },
+      {
+        "page": 18,
+        "zhText": "两人照样玩得很热闹。一句不愿意，没有把朋友推远，倒让他们更知道彼此在想什么。",
+        "enText": "They still had a lively time together. A no had not pushed them apart. It helped them understand each other better.",
+        "illustrationPrompt": "Wide playful scene: An'an plays station, Lele plays separate block airplane with red car, both relaxed and happy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit only Lele's block airplane: its wing is PLAIN NATURAL WOOD beige, NOT red. The RED beam belongs to the intact station An'an is playing with and MUST remain red. Keep the children, station, car, scene, faces and light unchanged. Exactly ONE red beam in the entire image, on the station. Airplane consists entirely of unpainted beige wooden blocks.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-93c5de4c-b9c0-4496-aa8c-fc2d4ed8b09f.png"
+      },
+      {
+        "page": 19,
+        "zhText": "睡前，安安练习了一遍：“这个我想留着。这个现在可以借。”说清楚，比把委屈藏起来舒服多了。",
+        "enText": "Before bed, An'an practiced. “I want to keep this. You can borrow this one now.” Being clear felt better than hiding her hurt.",
+        "illustrationPrompt": "Evening shelf scene: An'an points to preserved station and red car, Mom listens encouragingly, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Evening shelf scene: An'an points to preserved station and red car, Mom listens encouragingly, no text.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-d1644442-943b-4c84-9d29-3b774b7a604a.png"
+      },
+      {
+        "page": 20,
+        "zhText": "第二天，乐乐一来就问：“今天车站可以改建吗？”安安笑着说：“可以，我们先一起想想！”",
+        "enText": "The next day, Lele arrived and asked, “Can we change the station today?” An'an smiled. “Yes! Let's plan it together first!”",
+        "illustrationPrompt": "Sunny living room floor ending: An'an and Lele discuss intact station, both pointing thoughtfully, spare blocks ready.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sunny living room floor ending: An'an and Lele discuss intact station, both pointing thoughtfully, spare blocks ready.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige living-room sofa, pale rug, wooden block station of two unpainted wooden pillar towers and ONE long RED rectangular roof beam; ONE solid RED toy car. Station intact on pages 1-4; being dismantled page 5; dismantled pages 6-13; rebuild page14; intact thereafter. Lele's wooden block airplane uses the red beam as wing only pages 6-13, thereafter spare plain wooden blocks. Respect scene-specific state. No watches or origami boats.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-a6b3f654-d1cf-4fae-b4f7-416f1ece98d3.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 15,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "边界",
+        "表达"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "练习说清楚自己的意愿，也学习听见朋友的拒绝。",
+      "reminder": "不要求孩子为拒绝找足够好的理由；同意可以改变，但要清楚告知并商量处理。",
+      "questions": [
+        "安安嘴上答应时，心里是什么感觉？",
+        "别人说不愿意时，我们能怎样继续做朋友？"
+      ],
+      "activity": "用玩具演练“这个我想留着”“我现在不愿意”，再练习回应“好，我听见了”。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

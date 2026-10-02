@@ -10,16 +10,20 @@ import { filterLibraryBooks } from "@/lib/library/discovery";
 import { getLibraryChineseAudio } from "@/lib/library-book-audio";
 import { getLibraryStorySpecByContentId } from "@/lib/library/personalization";
 import sitemap from "@/app/sitemap";
+import batch2Plan from "../content-drafts/richang/batch-11-20/plan.json";
 
-const IDS = ["lan-ping-guo", "she-bu-de-chuan-de-xin-xie", "te-bie-de-ri-zi-shi-na-tian", "wan-ju-shan-li-zhao-xiao-che", "zai-wan-wu-fen-zhong", "wo-de-bing-gan-zen-me-geng-xiao", "yi-bei-da-fan-de-niu-nai", "deng-wo-xin-qing-hao-le-zai-shuo", "zen-me-zhi-you-wo-zai-shou-shi", "bu-tai-wan-mei-de-ye-can"];
+const FIRST_IDS = ["lan-ping-guo", "she-bu-de-chuan-de-xin-xie", "te-bie-de-ri-zi-shi-na-tian", "wan-ju-shan-li-zhao-xiao-che", "zai-wan-wu-fen-zhong", "wo-de-bing-gan-zen-me-geng-xiao", "yi-bei-da-fan-de-niu-nai", "deng-wo-xin-qing-hao-le-zai-shuo", "zen-me-zhi-you-wo-zai-shou-shi", "bu-tai-wan-mei-de-ye-can"];
+const publishedBatch2 = batch2Plan.books;
+const IDS = [...FIRST_IDS, ...publishedBatch2.map(({ id }) => id)];
+const PAGE_COUNTS = [16, 12, 12, 12, 12, 12, 12, 12, 12, 12, ...publishedBatch2.map(({ pages }) => pages)];
 
 describe("Everyday human-character library", () => {
-  it("exposes ten ordered bilingual books of 12–20 pages with caregiver guidance", () => {
+  it("exposes only completed ordered bilingual books of 12–20 pages with caregiver guidance", () => {
     expect(getAllSeries().some((series) => series.id === "richang")).toBe(true);
-    expect(getSeries("richang")).toMatchObject({ title: "日常系列", bookCount: 10, ageRange: "4–8 岁" });
+    expect(getSeries("richang")).toMatchObject({ title: "日常系列", bookCount: IDS.length, ageRange: "4–8 岁" });
     const books = getPublishedBooks("richang");
     expect(books.map((book) => book.id)).toEqual(IDS);
-    expect(books.map((book) => book.pages.length)).toEqual([16, 12, 12, 12, 12, 12, 12, 12, 12, 12]);
+    expect(books.map((book) => book.pages.length)).toEqual(PAGE_COUNTS);
     for (const [index, book] of books.entries()) {
       expect(book.order).toBe(index + 1);
       expect(book.pages.map((page) => page.page)).toEqual(Array.from({ length: book.pages.length }, (_, i) => i + 1));
@@ -33,7 +37,7 @@ describe("Everyday human-character library", () => {
     }
   });
 
-  it("serves 124 distinct builtin illustrations as bounded square WebP files", async () => {
+  it("serves distinct builtin illustrations as bounded square WebP files", async () => {
     const hashes = new Set<string>();
     for (const book of getPublishedBooks("richang")) {
       const draft = JSON.parse(readFileSync(path.resolve("content-drafts/richang", `${book.id}.json`), "utf8"));
@@ -50,7 +54,7 @@ describe("Everyday human-character library", () => {
         hashes.add(createHash("sha256").update(readFileSync(file)).digest("hex"));
       }
     }
-    expect(hashes.size).toBe(124);
+    expect(hashes.size).toBe(PAGE_COUNTS.reduce((total, pages) => total + pages, 0));
   });
 
   it("resolves current bundled Bailian narration with complete timing and rejects stale text", () => {

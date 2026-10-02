@@ -1,0 +1,264 @@
+{
+  "book": {
+    "id": "wo-zhi-shi-kai-ge-wan-xiao",
+    "seriesId": "richang",
+    "title": "我只是开个玩笑",
+    "subtitle": "笑声里，也要听见你",
+    "moral": {
+      "zh": "好玩的玩笑，需要彼此都觉得好玩；伤到了别人，就要停下来。",
+      "en": "A joke is fun when everyone enjoys it. If it hurts someone, stop."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 12,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "午后，大家在院子里玩接球。乐乐没接稳，球轻轻滚到了花盆旁。安安忍不住笑了一声。",
+        "enText": "One afternoon, the children played catch in the courtyard. Lele missed, and the ball rolled gently beside a flowerpot. An'an gave a little laugh.",
+        "illustrationPrompt": "Courtyard wide shot: An'an and Lele playing with orange ball rolling beside planter, one girl in pink nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Courtyard wide shot: An'an and Lele playing with orange ball rolling beside planter, one girl in pink nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-25ff7cd4-0b67-4ef9-ac1d-4999d6d6897e.png"
+      },
+      {
+        "page": 2,
+        "zhText": "安安给乐乐起了个和动作有关的外号。旁边的朋友笑起来，她以为大家都觉得有趣。",
+        "enText": "An'an made up a nickname about how Lele moved. A friend laughed, so she thought everyone found it funny.",
+        "illustrationPrompt": "Three-child courtyard medium shot: An'an joking with smiling pink-sweater friend; Lele uneasy, orange ball by feet, no words or bubbles.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Three-child courtyard medium shot: An'an joking with smiling pink-sweater friend; Lele uneasy, orange ball by feet, no words or bubbles.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-ec9da8c8-3a79-4f3e-b680-3bc1db15cfc5.png"
+      },
+      {
+        "page": 3,
+        "zhText": "乐乐弯腰捡起球，没有笑。他小声说：“还是叫我乐乐吧。”声音比院子里的风还轻。",
+        "enText": "Lele picked up the ball without smiling. “Please call me Lele,” he said softly, almost quieter than the breeze.",
+        "illustrationPrompt": "Close view: Lele holds orange ball, troubled face; An'an just behind listening distractedly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close view: Lele holds orange ball, troubled face; An'an just behind listening distractedly.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-e9d1a265-1969-4d9a-a7e9-a1ccb909fc4e.png"
+      },
+      {
+        "page": 4,
+        "zhText": "安安没有听清。第二次传球时，她又喊了那个外号。乐乐抱住球，眼睛看着地面。",
+        "enText": "An'an did not catch what he said. The next time she passed the ball, she used the nickname again. Lele held the ball and looked down.",
+        "illustrationPrompt": "Medium courtyard shot: An'an calls to Lele; boy hugs orange ball, gaze down, pink-sweater friend off to side.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Medium courtyard shot: An'an calls to Lele; boy hugs orange ball, gaze down, pink-sweater friend off to side.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-4f9aa733-813d-4bd5-99a5-7a014957344f.png"
+      },
+      {
+        "page": 5,
+        "zhText": "傍晚，乐乐说要回家。安安觉得奇怪：“以前他总想再玩一会儿，今天怎么这么早？”",
+        "enText": "At dusk, Lele said he was going home. An'an wondered why. He usually wanted to play a little longer.",
+        "illustrationPrompt": "Wide courtyard exit: Lele walks away holding orange ball, An'an watches puzzled, no other people.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Wide courtyard exit: Lele walks away holding orange ball, An'an watches puzzled, no other people.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nLele is UPSET and quiet, closed mouth, downcast eyes, walking away sadly. He must NOT smile. An'an remains puzzled and concerned.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-5343dd59-8590-41b8-8beb-eaa550934c0b.png"
+      },
+      {
+        "page": 6,
+        "zhText": "第二天，安安招手叫他一起玩。乐乐摇摇头，坐在长椅上，把小车推来推去。",
+        "enText": "The next day, An'an waved for him to join the game. Lele shook his head and rolled a toy car along a bench.",
+        "illustrationPrompt": "Courtyard bench scene: Lele alone on bench with small red toy car, An'an stands nearby inviting him.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Courtyard bench scene: Lele alone on bench with small red toy car, An'an stands nearby inviting him.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nLele REFUSES to join play: closed mouth, downcast sad gaze, head gently turned away, NO smile. He rolls small toy alone. An'an inviting at respectful distance.\nContinuity: ONE tiny palm-sized red hatchback toy car, approximately 10 centimetres long, simple black wheels, no logos or markings. NOT a ride-on car, NOT larger than a child's hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-0012c50d-e2e6-4f36-b0d8-f6996561f78e.png"
+      },
+      {
+        "page": 7,
+        "zhText": "“你是不是生气了？”安安问。乐乐停下小车：“我不喜欢你那样叫我。”",
+        "enText": "“Are you upset?” An'an asked. Lele stopped the car. “I don't like it when you call me that.”",
+        "illustrationPrompt": "Two-child bench conversation: Lele stops red toy car with one hand and speaks seriously; An'an listens.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child bench conversation: Lele stops red toy car with one hand and speaks seriously; An'an listens.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-c7c426fa-817b-4c81-9ec9-9295b67ee02e.png"
+      },
+      {
+        "page": 8,
+        "zhText": "“我只是开个玩笑呀。”安安脱口而出。乐乐把手放在车上：“可是我没有觉得好玩。”",
+        "enText": "“I was only joking,” An'an blurted out. Lele rested his hand on the car. “But it wasn't fun for me.”",
+        "illustrationPrompt": "Close conversation: An'an defensive and surprised, Lele quietly serious, red car between them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close conversation: An'an defensive and surprised, Lele quietly serious, red car between them.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: ONE tiny palm-sized red hatchback toy car, approximately 10 centimetres long, simple black wheels, no logos or markings. NOT a ride-on car, NOT larger than a child's hand.\nLele remains hurt: closed mouth, mildly sad eyebrows. Two children seated on same wooden bench, tiny car rests BETWEEN their hands on BENCH, never on ground, close intimate conversation.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-b647c430-c54f-4e2e-84d5-c50afbb861a6.png"
+      },
+      {
+        "page": 9,
+        "zhText": "回家时，安安把这件事告诉妈妈：“我没有想让他难过。”妈妈先听她说完。",
+        "enText": "On the way home, An'an told Mom what happened. “I didn't mean to make him sad.” Mom listened until she finished.",
+        "illustrationPrompt": "City sidewalk medium shot: An'an talks to Mom, Mom listening attentively, no friends.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): City sidewalk medium shot: An'an talks to Mom, Mom listening attentively, no friends.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-e827d5f3-2dde-444d-a914-1c564a8d154d.png"
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈说：“你没有想伤害他，和他确实难过了，这两件事可以同时发生。现在你已经知道他的感受了。”",
+        "enText": "Mom said, “You didn't mean to hurt him, and he did feel hurt. Both can be true. Now you know how he feels.”",
+        "illustrationPrompt": "Park bench gentle conversation: Mom at An'an's eye level, thoughtful child, no scolding gesture.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Park bench gentle conversation: Mom at An'an's eye level, thoughtful child, no scolding gesture.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-074f59f2-7f5e-4051-b418-8011a0713cc3.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安想起乐乐低着头的样子。原来大家的笑声很响，也会把一个人的不愿意盖住。",
+        "enText": "An'an remembered Lele looking down. Everyone's laughter had been loud enough to cover one person's discomfort.",
+        "illustrationPrompt": "Single recollection courtyard scene: Lele stands downcast holding orange ball; blurred An'an and pink-sweater friend smiling behind, no Mom.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Single recollection courtyard scene: Lele stands downcast holding orange ball; blurred An'an and pink-sweater friend smiling behind, no Mom.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-54b63bd5-5cdc-4eef-9a02-95596925cbcd.png"
+      },
+      {
+        "page": 12,
+        "zhText": "第二天，她走到乐乐面前：“我听见你说不喜欢了。我会停下来，以后叫你的名字。”",
+        "enText": "The next day, she went to Lele. “I heard that you don't like it. I'll stop and use your name.”",
+        "illustrationPrompt": "Courtyard morning medium shot: An'an speaks earnestly to Lele by bench, red toy car beside him.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Courtyard morning medium shot: An'an speaks earnestly to Lele by bench, red toy car beside him.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-a701651a-d030-4430-a4bc-13c42c411cd3.png"
+      },
+      {
+        "page": 13,
+        "zhText": "“昨天我说只是玩笑，好像你的难过不算数。对不起。”安安没有伸手拉他，等着他说话。",
+        "enText": "“When I said it was just a joke, it sounded like your feelings didn't matter. I'm sorry.” An'an waited without pulling him closer.",
+        "illustrationPrompt": "Two-child close view: An'an apologizes with respectful distance and open hands; Lele listens, no forced hug.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-child close view: An'an apologizes with respectful distance and open hands; Lele listens, no forced hug.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: ONE tiny palm-sized red hatchback toy car, approximately 10 centimetres long, simple black wheels, no logos or markings. NOT a ride-on car, NOT larger than a child's hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-cd81b059-9f55-4606-a967-60fb1a77d70f.png"
+      },
+      {
+        "page": 14,
+        "zhText": "乐乐说：“我现在还不想玩球。”安安点点头：“好。你想自己待一会儿也可以。”",
+        "enText": "“I don't want to play ball yet,” Lele said. An'an nodded. “Okay. You can have some time to yourself.”",
+        "illustrationPrompt": "Bench medium scene: Lele seated, An'an gives space and calmly nods, orange ball resting away from him.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Bench medium scene: Lele seated, An'an gives space and calmly nods, orange ball resting away from him.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nContinuity: ONE tiny palm-sized red hatchback toy car, approximately 10 centimetres long, simple black wheels, no logos or markings. NOT a ride-on car, NOT larger than a child's hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-fe081b02-7695-4760-9d73-8264ab3b411d.png"
+      },
+      {
+        "page": 15,
+        "zhText": "过了一会儿，另一个朋友又喊出那个外号。安安马上说：“他不喜欢这样叫。我们叫他乐乐吧。”",
+        "enText": "A little later, their friend used the nickname again. An'an said at once, “He doesn't like that. Let's call him Lele.”",
+        "illustrationPrompt": "Courtyard three-child scene: An'an gently addresses pink-sweater friend; Lele nearby with toy car, no speech bubbles.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Courtyard three-child scene: An'an gently addresses pink-sweater friend; Lele nearby with toy car, no speech bubbles.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.\nContinuity: ONE tiny palm-sized red hatchback toy car, approximately 10 centimetres long, simple black wheels, no logos or markings. NOT a ride-on car, NOT larger than a child's hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-91f9b926-aecb-43fb-8fad-01f1a2f0b420.png"
+      },
+      {
+        "page": 16,
+        "zhText": "朋友愣了一下，改口喊：“乐乐，你的小车能过这座桥吗？”安安心里还有点紧张，却松了一口气。",
+        "enText": "Their friend paused, then asked, “Lele, can your car cross this bridge?” An'an still felt nervous, but also relieved.",
+        "illustrationPrompt": "Ground-level scene: girl in pink points to block bridge; Lele holds red car; An'an relieved, three children.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Ground-level scene: girl in pink points to block bridge; Lele holds red car; An'an relieved, three children.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nThe girl in pink is a SIX-YEAR-OLD school child, the same height and age as An'an and Lele, two black braids, solid PINK PULLOVER and gray skirt. She is NOT Mom and does NOT wear a coral cardigan or cream trousers. If scene is children-only, no adults may appear.\nContinuity: ONE tiny palm-sized red hatchback toy car, approximately 10 centimetres long, simple black wheels, no logos or markings. NOT a ride-on car, NOT larger than a child's hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-b87e752a-8194-43df-b117-a5272c7b0fc6.png"
+      },
+      {
+        "page": 17,
+        "zhText": "乐乐把小车推过积木桥，嘴角慢慢翘起来。安安没有催他原谅，也没有再拿那件事逗他。",
+        "enText": "Lele rolled his car over the block bridge, and slowly smiled. An'an did not hurry him to forgive her or tease him about it again.",
+        "illustrationPrompt": "Close toy bridge scene: Lele rolls red car across wood blocks, faint smile; An'an watches quietly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close toy bridge scene: Lele rolls red car across wood blocks, faint smile; An'an watches quietly.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nOUTDOOR courtyard ground, NOT living room. Same block bridge as reference: tan flat deck, green and yellow small blocks above blue supports, red triangular ramps. ONE palm-sized red hatchback toy driven across bridge by Lele. An'an watches peacefully. No pink girl needed here.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-b016db9c-d7be-4106-9ba8-a31422aecd06.png"
+      },
+      {
+        "page": 18,
+        "zhText": "几天后，他们又玩接球。安安先问：“我能说你像一阵快快的风吗？”乐乐笑了：“这个我喜欢！”",
+        "enText": "A few days later, they played catch again. An'an asked, “Can I say you're as fast as the wind?” Lele smiled. “I like that one!”",
+        "illustrationPrompt": "Sunny courtyard action shot: Lele running to catch orange ball, An'an joyful, only two children.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sunny courtyard action shot: Lele running to catch orange ball, An'an joyful, only two children.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCHANGE composition: two children STANDING STILL face to face in courtyard. An'an holds orange ball at waist and asks permission warmly; Lele smiles answering. NOT running or chasing, NOT a duplicate of another action page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-db5d3e5d-1969-4f4e-b1ea-d3ea7187f57f.png"
+      },
+      {
+        "page": 19,
+        "zhText": "球又滚偏了一次，两人一起追过去。这回，乐乐和安安都笑了，笑声一样轻快。",
+        "enText": "The ball rolled off course again, and both ran after it. This time, Lele and An'an were both laughing freely.",
+        "illustrationPrompt": "Wide action shot: An'an and Lele run together after orange ball, both visibly happy, courtyard plants.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Wide action shot: An'an and Lele run together after orange ball, both visibly happy, courtyard plants.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Lele is a six-year-old Chinese BOY, short black hair, mustard yellow sweater and navy trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-a70db538-f2e7-4e01-8181-c0cd08af2e46.png"
+      },
+      {
+        "page": 20,
+        "zhText": "晚上，安安告诉妈妈：“我以后不只听谁笑得大声，还会看看，有没有人没有笑。”",
+        "enText": "That evening, An'an told Mom, “Next time, I won't only listen to the loudest laughter. I'll notice if someone isn't smiling.”",
+        "illustrationPrompt": "Warm evening kitchen conversation: An'an thoughtful but content beside Mom, oak table, pale green cabinets.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Warm evening kitchen conversation: An'an thoughtful but content beside Mom, oak table, pale green cabinets.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0f9ce-a12e-7bd0-9255-2feb7a9b30ab/exec-0640d5ab-ceae-4875-8cae-829fec54c284.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 12,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "尊重",
+        "同伴关系"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "辨认同伴的反应，练习停止伤人的叫法并修复关系。",
+      "reminder": "不要求受伤的孩子笑着接受道歉，也不把外号重复给孩子听来示范。",
+      "questions": [
+        "乐乐没有笑的时候，安安可以怎样做？",
+        "道歉以后，还能用什么行动让朋友安心？"
+      ],
+      "activity": "轮流说喜欢别人怎样称呼自己，练习一句“我不喜欢这个叫法，请叫我的名字”。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  },
+  "review": {
+    "visualChecked": true,
+    "notes": "Checked 20-page contact sheet: Lele discomfort, apology with space, corrected palm-sized red car and outdoor block bridge continuity."
+  }
+}

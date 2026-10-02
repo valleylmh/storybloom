@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "yi-ge-ren-wan-de-xia-wu",
+    "seriesId": "richang",
+    "title": "一个人玩的下午",
+    "subtitle": "无聊里，长出一条小街",
+    "moral": {
+      "zh": "有人陪伴很快乐，独处也可以慢慢找到乐趣。",
+      "en": "Company is wonderful, and time alone can slowly grow its own joys."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 17,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安把两把小椅子排好，等乐乐来玩。今天，她想和他搭一座大大的车站。",
+        "enText": "An'an lined up two small chairs and waited for Lele. Today, she wanted them to build a big station together.",
+        "illustrationPrompt": "Sunny living room wide shot: An'an prepares two low child chairs and block basket for friend, alone.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Sunny living room wide shot: An'an prepares two low child chairs and block basket for friend, alone.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCRITICAL: early preparation scene ONLY An'an, TWO small wooden chairs, ONE round wicker basket holding loose wooden blocks. NO cardboard box, NO road, NO town, NO plush teddy or toy car. These are discovered LATER. Warm beige sofa and pale rug, child expectant.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-b88eb219-c819-413b-a469-d7086863499d.png"
+      },
+      {
+        "page": 2,
+        "zhText": "门铃没有响，妈妈却接到电话。乐乐家临时有事，今天不能来了。",
+        "enText": "The doorbell did not ring. Instead, Mom got a call. Something had come up in Lele's family, and he could not come today.",
+        "illustrationPrompt": "Living room medium shot: Mom finishes phone call with screen hidden, An'an beside two prepared chairs looks disappointed.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room medium shot: Mom finishes phone call with screen hidden, An'an beside two prepared chairs looks disappointed.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nCRITICAL EARLY STORY: only TWO small wooden chairs and a round wicker basket of loose wooden blocks are prepared; NO cardboard box or station, NO toy town, NO blue paper road or paper strips yet. Child feels disappointed on pages2-6.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-493b3b4a-2e44-4209-84d9-60c9d68774f6.png"
+      },
+      {
+        "page": 3,
+        "zhText": "安安把一把椅子往旁边推了推：“那这个下午还有什么好玩的？”窗外的云也像走得很慢。",
+        "enText": "An'an pushed one chair aside. “What is there to enjoy this afternoon now?” Even the clouds outside seemed to move slowly.",
+        "illustrationPrompt": "Wide quiet living room: disappointed An'an moves one low child chair, soft clouds through window, toy basket untouched.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Wide quiet living room: disappointed An'an moves one low child chair, soft clouds through window, toy basket untouched.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nCRITICAL EARLY STORY: only TWO small wooden chairs and a round wicker basket of loose wooden blocks are prepared; NO cardboard box or station, NO toy town, NO blue paper road or paper strips yet. Child feels disappointed on pages2-6.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-e59ae33e-7900-4693-89bd-a73c55f0763f.png"
+      },
+      {
+        "page": 4,
+        "zhText": "她去找妈妈：“你陪我搭吧。”妈妈说：“我还要把手里的事情做完，大约半小时。我在餐桌这里，你需要帮助可以叫我。”",
+        "enText": "She asked Mom to build with her. “I need about half an hour to finish this,” Mom said. “I'll be at the table. Call me if you need help.”",
+        "illustrationPrompt": "Medium shot: Mom at oak dining table with closed-back laptop screen not visible, An'an nearby seeking company.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Medium shot: Mom at oak dining table with closed-back laptop screen not visible, An'an nearby seeking company.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nCRITICAL EARLY STORY: only TWO small wooden chairs and a round wicker basket of loose wooden blocks are prepared; NO cardboard box or station, NO toy town, NO blue paper road or paper strips yet. Child feels disappointed on pages2-6.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-332fba70-e975-41e1-9050-453bdd1ab39e.png"
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈陪她找了纸和积木，又约好忙完来看她的车站。安安点点头，可心里还是空了一小块。",
+        "enText": "Mom helped her find paper and blocks and promised to see her station afterward. An'an nodded, though something still felt missing.",
+        "illustrationPrompt": "Floor scene: Mom sets paper and blocks near An'an and low chairs, then listens, no abandonment.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Floor scene: Mom sets paper and blocks near An'an and low chairs, then listens, no abandonment.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nCRITICAL EARLY STORY: only TWO small wooden chairs and a round wicker basket of loose wooden blocks are prepared; NO cardboard box or station, NO toy town, NO blue paper road or paper strips yet. Child feels disappointed on pages2-6.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-a448f712-cd8d-4158-a1da-745b8e1f802b.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安在地毯上躺了一会儿，数窗帘上的光斑。一个人玩，好像还不知道从哪里开始。",
+        "enText": "An'an lay on the rug for a while, looking at spots of light on the curtain. She did not yet know how to begin playing alone.",
+        "illustrationPrompt": "Quiet floor-level shot: An'an resting on rug watching dappled curtain light; Mom visible at table in background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Quiet floor-level shot: An'an resting on rug watching dappled curtain light; Mom visible at table in background.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nCRITICAL EARLY STORY: only TWO small wooden chairs and a round wicker basket of loose wooden blocks are prepared; NO cardboard box or station, NO toy town, NO blue paper road or paper strips yet. Child feels disappointed on pages2-6.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-53505356-017c-442e-8bd7-4d1e845c479d.png"
+      },
+      {
+        "page": 7,
+        "zhText": "她翻出一个空纸盒。盒子侧面有个小洞，看起来像一扇圆圆的窗。",
+        "enText": "She found an empty cardboard box. A little hole in the side looked like a round window.",
+        "illustrationPrompt": "Close object discovery: An'an turns plain small cardboard box with existing round opening, curious face, no labels.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nUse case illustration-story. THIS PAGE'S SCENE: curious An'an discovers a plain EMPTY kraft cardboard box with ONE round side window; she kneels and turns it on pale living-room rug. Box is medium sized about 30 cm wide, same size/shape as second reference's box. Reference1 identifies girl and framing; reference2 identifies box only. No paper lining yet, no teddy, no road, no station doorway, no town. Two low wooden chairs and loose-block basket may be background only. Teal hoodie, blue jeans, black bob, yellow star clip. Warm polished 3D animated-film illustration, square 1:1, no text or letters.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-0a8d3e52-d25d-4ea4-b524-d4d67883595f.png"
+      },
+      {
+        "page": 8,
+        "zhText": "“乘客可以从这里看风景。”安安小声说。她把盒子放在椅子旁，里面铺上一张软纸。",
+        "enText": "“Passengers could look out here,” she whispered. She put the box beside a chair and lined it with soft paper.",
+        "illustrationPrompt": "Overhead floor: An'an lines plain cardboard box with soft paper beside low chair, block pile nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Overhead floor: An'an lines plain cardboard box with soft paper beside low chair, block pile nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nFIRST discovery stage: cardboard box is EMPTY apart from soft paper lining only at page8, NO teddy inside yet, NO blue road, NO doorway cut, NO toy town.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-eb13a0fd-d6fa-4f25-a9bd-f0646dd260ce.png"
+      },
+      {
+        "page": 9,
+        "zhText": "一只小熊坐进去，正好露出脑袋。安安把一条蓝色纸带铺在地上，当作通往车站的路。",
+        "enText": "A teddy bear fit inside with its head peeking out. An'an laid a blue strip of paper on the floor as a road to the station.",
+        "illustrationPrompt": "Ground-level scene: teddy sits in box beside child chair, An'an lays blue paper strip across rug, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Ground-level scene: teddy sits in box beside child chair, An'an lays blue paper strip across rug, no text.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nNO doorway cut yet: the box only has its single round side window; teddy sits inside open top. NO bridge or completed wooden town yet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-332317f7-ab1b-4a41-9e61-49bd7ac16399.png"
+      },
+      {
+        "page": 10,
+        "zhText": "路太短了。她又添一段，让它绕过椅子脚，转到窗边。车站旁，慢慢有了一条小街。",
+        "enText": "The road was too short, so she added another piece around a chair leg and toward the window. A little street began growing beside the station.",
+        "illustrationPrompt": "Overhead widening layout: An'an extends blue paper road around low chair legs toward safe window area, box station and teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. THIS PAGE'S SCENE / continuity correction:\nEdit this illustration: the BLUE paper-strip road follows the rug and curves AROUND the small wooden chair legs towards the window; it NEVER enters or passes through the cardboard box's circular window. Move the paper road endpoint to just OUTSIDE the plain box. The plain box has ONE round side window and NO cut doorway yet, teddy sits in its open top. Keep An'an extending the road, two chairs, pale rug, warm room and light. No station doorway, no bridge or block-town yet, no extra cardboard box.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-383167cd-b06b-4fee-92e0-da5904bb32aa.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安想给车站开个门，拿着纸盒去问妈妈。妈妈帮她剪好，再把剪刀收回高处。",
+        "enText": "An'an wanted a doorway in the station and asked Mom. Mom cut one safely, then put the scissors away out of reach.",
+        "illustrationPrompt": "Oak table medium scene: Mom alone operates scissors on cardboard box while An'an watches from safe distance; no scissors in child hands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Oak table medium scene: Mom alone operates scissors on cardboard box while An'an watches from safe distance; no scissors in child hands.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nMother CUTS doorway; child observes from safe distance. Show cutting before moving to finished play, not child cutting.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-08426ee2-ac3a-4840-a11b-25c7a56d648f.png"
+      },
+      {
+        "page": 12,
+        "zhText": "小车从门口开进去，停在小熊身边。安安换成低低的声音：“下一站，窗边小城！”",
+        "enText": "The car drove through the doorway and parked beside the bear. An'an used a low voice. “Next stop, Window Town!”",
+        "illustrationPrompt": "Close floor pretend-play scene: An'an rolls red toy car through cut doorway of plain cardboard station, teddy inside.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close floor pretend-play scene: An'an rolls red toy car through cut doorway of plain cardboard station, teddy inside.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.\nOnly newly cut doorway and blue road, NO elaborate wooden town/bridge yet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-342f3a65-6c19-4c2a-b2f3-62f6fb01233f.png"
+      },
+      {
+        "page": 13,
+        "zhText": "她给积木房子排了不同的队伍，假装有人买面包，有人等朋友。她不用一直问别人接下来怎么玩。",
+        "enText": "She arranged block houses and imagined people buying bread or waiting for friends. She did not need to keep asking someone what to play next.",
+        "illustrationPrompt": "Wide play layout: An'an arranges wooden block buildings along blue paper road, cardboard station, teddy, no actual extra people.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Wide play layout: An'an arranges wooden block buildings along blue paper road, cardboard station, teddy, no actual extra people.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-f7231b5f-2e2b-4c62-bcaa-f3177e178785.png"
+      },
+      {
+        "page": 14,
+        "zhText": "小街的桥倒了。安安噘了噘嘴，把桥墩挪近一点。这次，小车慢慢开过去，没有掉下来。",
+        "enText": "The little bridge fell. An'an frowned and moved the supports closer. This time, the car crossed slowly without falling.",
+        "illustrationPrompt": "Close floor construction: An'an rebuilds short block bridge over blue paper road and tests red car, focused face.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Close floor construction: An'an rebuilds short block bridge over blue paper road and tests red car, focused face.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-6cafce97-2772-485a-8949-6c9ab4208271.png"
+      },
+      {
+        "page": 15,
+        "zhText": "妈妈忙完了，按约定走过来：“我可以参观你的小街吗？”安安一下坐直了：“请从这边进！”",
+        "enText": "Mom finished and came over as promised. “May I visit your little street?” An'an sat up. “Please enter this way!”",
+        "illustrationPrompt": "Living room wide scene: Mom approaches An'an's finished pretend street, child proudly gestures to cardboard station.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Living room wide scene: Mom approaches An'an's finished pretend street, child proudly gestures to cardboard station.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-2ffad194-75e1-4779-8702-89f5f58ad20a.png"
+      },
+      {
+        "page": 16,
+        "zhText": "安安介绍车站、面包店和那座修好的桥。妈妈听得很认真，没有急着把小街变成自己的样子。",
+        "enText": "An'an introduced the station, bakery, and repaired bridge. Mom listened carefully without changing the street into her own design.",
+        "illustrationPrompt": "Two-person floor medium shot: An'an guides Mom through blue paper road and wooden block town, both interested.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Two-person floor medium shot: An'an guides Mom through blue paper road and wooden block town, both interested.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-4aa6a7f0-e32a-468c-be3c-d400c51e13a2.png"
+      },
+      {
+        "page": 17,
+        "zhText": "晚上，乐乐问她下午做了什么。安安说：“开始有点无聊，后来我的小街越来越忙了。下次请你来参观。”",
+        "enText": "That evening, Lele asked what she had done. “I was bored at first, then my little street got busy,” she said. “Come visit next time.”",
+        "illustrationPrompt": "Evening living room: An'an talks through Mom's phone held safely with screen turned away, pretend street still on rug, Mom nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Evening living room: An'an talks through Mom's phone held safely with screen turned away, pretend street still on rug, Mom nearby.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-319cce6d-048c-4186-bfa2-87943df6c043.png"
+      },
+      {
+        "page": 18,
+        "zhText": "安安把小熊送回车站。一个人的下午，没有一下子变热闹，却一点一点长出了自己的故事。",
+        "enText": "An'an returned the bear to the station. Her afternoon alone had not become lively all at once. Little by little, it had grown a story of its own.",
+        "illustrationPrompt": "Tender floor ending: An'an places teddy in cardboard station beside completed little street, warm sunset, Mom at table background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration. Rounded human cartoon characters, soft clay-like materials, expressive faces, cinematic warm natural light, detailed urban home or city setting, square 1:1 composition. One coherent scene. Reference images are for character identities and rendering style ONLY; do not copy their props or scene.\nTHIS PAGE'S SCENE (follow literally): Tender floor ending: An'an places teddy in cardboard station beside completed little street, warm sunset, Mom at table background.\nONLY the people explicitly required by this scene may appear. Character identities: An'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star clip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers.\nScene actions, object states and number of people must match exactly. No extra people. No text, captions, letters, numbers, speech bubbles, logos, watermark, anthropomorphic animals, animal protagonists, distorted hands or duplicate characters. Children's drawings contain pictures only. Paper boats, teddy bears and toy cars are objects, not living characters.\nCONTINUITY: beige sofa and pale rug, two small natural wooden chairs, plain kraft CARDBOARD box with ONE round side window, honey-BROWN plush teddy, solid BLUE flat paper strip road, one RED toy car. Mom's computer is silver with screen away from viewer. No scissors in child's hands. Scissors only appear under adult control on page11. Lele is absent throughout, only phone call implied. No actual people inside miniature town.\nReferences are for character and scene/prop identity ONLY. Do not copy their actions, composition, moods or state. Follow THIS PAGE'S SCENE literally; OMIT people and props not required by this page. NO watches.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fbb2-f51d-78e3-854f-90b0693ed11c/exec-77aadb7d-07ba-4ad1-85fd-ad5588a6dd2f.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 7,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 17,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "独处",
+        "想象力"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "接纳无聊和失望，在安全、有大人可求助的环境中尝试自主游戏。",
+      "reminder": "不把独自玩作为不回应孩子的理由；说明大人在哪里、忙多久，危险工具由大人操作。",
+      "questions": [
+        "乐乐不能来时，安安心里是什么感觉？",
+        "家里有什么普通东西，可以变成游戏的一部分？"
+      ],
+      "activity": "提供纸盒、纸和积木，先让孩子决定想做什么，成人只协助需要帮助的部分。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}
