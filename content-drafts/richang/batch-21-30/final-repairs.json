@@ -1,0 +1,65 @@
+[
+  {
+    "id": "tong-yi-duo-yun-liang-zhong-yang-zi",
+    "page": 4,
+    "issue": "Remove drawings that appear before the drawing activity.",
+    "source": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-5b8f988f-002a-46f0-87b3-2217eee6935f.png",
+    "editPrompt": "Use case: precise-object-edit. Asset: individual square children's picture-book illustration, story illustration in the existing polished 3D animated-film style. Image 1 is the EDIT TARGET. This scene is page 4 of a story: the two children are disagreeing over what a natural cloud resembles, before any drawing activity has happened. CHANGE ONLY THE OBJECTS: completely remove both sheets of paper and the whale and shoe drawings from the children's hands and laps. Leave the children's now-empty free hands resting naturally on their laps, while each keeps the existing raised index-finger pointing gesture and mildly insistent facial expression. Preserve exactly the same three characters, identities, ages, hairstyles, yellow star clip, teal hoodie, mustard sweatshirt, mother in coral cardigan and cream trousers, park bench, city park backdrop, camera framing, square composition and lighting. No sketchbooks, pencils, paper, drawings, icons, captions, text, letters, watermark, extra people or extra fingers. One coherent full-bleed square image.",
+    "tool": "builtin-imagegen",
+    "savedPath": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tong-yi-duo-yun-liang-zhong-yang-zi/4.webp"
+  },
+  {
+    "id": "tong-yi-duo-yun-liang-zhong-yang-zi",
+    "page": 7,
+    "issue": "Replace home porch with the established public park setting.",
+    "source": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-410099ae-4f2e-46ce-8950-4fcb18d7efdc.png",
+    "editPrompt": "Use case: precise-object-edit. Asset: individual full-bleed square children's story illustration, existing polished cinematic 3D animated-film style. Image 1 is the EDIT TARGET. CHANGE ONLY THE BACKGROUND from the house porch to an OPEN PUBLIC CITY PARK. Remove every building wall, doorway, porch roof, attached wall lamp, balcony railing, plant pots and home architecture. Replace them with open landscaped park grass, leafy trees, flowers and the distant modern city skyline, consistent with the adjoining park scenes. Keep the EXACT two children, the girl pointing upward, boy's attentive pose, faces, clothing, hairstyles, yellow star hair clip, camera angle from behind the wooden public park bench, warm daylight and natural rounded white cloud with a trailing wisp. The children remain seated on the SAME wooden park bench. Keep the cloud as a soft natural cloud, never a literal whale, shoe, boat or recognizable object. No drawings, papers, sketchbooks, text, symbols, added people, walls, buildings close to the bench, or home architecture. One coherent scene.",
+    "tool": "builtin-imagegen",
+    "savedPath": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tong-yi-duo-yun-liang-zhong-yang-zi/7.webp"
+  },
+  {
+    "id": "xiao-che-zen-me-dao-le-ni-jia",
+    "page": 17,
+    "issue": "Attach blue circle and green triangle to the two cars instead of placing loose shapes on the table.",
+    "source": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-012ea7d7-50e0-48da-bab1-3df584431791.png",
+    "editPrompt": "Use case: precise-object-edit. Asset: one square full-bleed children's picture-book illustration in the target image's polished 3D animated-film style. Image 1 is the EDIT TARGET. CHANGE ONLY THE IDENTIFICATION MARKERS: remove the two large loose shape blocks from the wooden table completely. Attach a SMALL FLAT BLUE CIRCULAR STICKER directly at the center of the black underside of the red toy car on the LEFT side of the image. Attach a SMALL FLAT GREEN TRIANGULAR STICKER directly at the center of the black underside of the red toy car on the RIGHT side of the image. Exactly one marker per car, both markers plainly visible, modest scale like toy identification stickers, completely adhered to each car's underside between the wheels. This story moment proves these are two different otherwise identical red toy cars. Preserve exactly the boy, his face, mustard sweatshirt, hands, the two identical red toy cars turned upside-down toward the viewer, four wheels per car, wooden table, living-room background, lighting and square camera framing. No loose marker shapes on the table, no extra markers, no letters, text, numbers, watermark, additional cars or people. One coherent illustration.",
+    "tool": "builtin-imagegen",
+    "savedPath": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-che-zen-me-dao-le-ni-jia/17.webp"
+  },
+  {
+    "id": "le-le-you-le-xin-peng-you",
+    "page": 2,
+    "issue": "Keep the introduction in the courtyard instead of a living room.",
+    "source": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-316137c1-0732-4878-8f39-bf20a16c8fdf.png",
+    "editPrompt": "Use case: precise-object-edit. Asset: one individual square children's picture-book illustration in the target's premium polished 3D animated-film style. Image 1 is the EDIT TARGET. CHANGE ONLY THE SETTING: this story scene occurs outdoors in a sunny residential courtyard while Lele introduces his new friend Xiaoyu to An'an. Replace the indoor living room, sofa, coffee table, kitchen and house interior with an open stone-paved courtyard, leafy trees and softly blurred building façades, like the neighboring outdoor scenes. Keep EXACTLY these same three children, faces, hairstyles, clothing, bodies and gestures: Lele on image left in plain mustard sweatshirt and navy trousers gestures toward Xiaoyu in the center in forest-green sweatshirt and charcoal trousers; An'an on image right in teal hoodie, jeans and yellow star hair clip holds her little red sedan toy behind her back. Preserve the same framing, warm soft daylight and original visual style. No additional people, no Mom, no Dad, no indoor walls, no sofas, no furniture, no text, captions, speech bubbles, symbols or watermark. One coherent full-bleed square story illustration.",
+    "tool": "builtin-imagegen",
+    "savedPath": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/le-le-you-le-xin-peng-you/2.webp"
+  },
+  {
+    "id": "le-le-you-le-xin-peng-you",
+    "page": 9,
+    "issue": "Keep the mother-child conversation on the park bench instead of the kitchen.",
+    "source": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-2448d9d6-fa58-4ade-b322-1548374d735d.png",
+    "editPrompt": "Use case: precise-object-edit. Asset: one individual full-bleed square children's picture-book scene in the existing premium polished 3D animated-film style. Image 1 is the EDIT TARGET. This gentle mother-child conversation is on an outdoor park bench on the way home at dusk, between the matching preceding and following park-bench pages. CHANGE ONLY THE SETTING AND FOREGROUND FURNITURE: remove the kitchen, cabinets, domestic table, mug, fruit bowl and table runner. Seat these EXACT same two characters side-by-side on a brown slatted public park bench. Replace the backdrop with softly blurred leafy park trees and a distant city skyline in warm late-afternoon light. Keep the close composition, faces, hair, teal zip hoodie, girl's yellow star hairclip, mother's coral cardigan and cream trousers, natural hands and attentive conversation. Let the girl's familiar SMALL RED SEDAN TOY rest naturally on her lap, subtly visible near the lower edge. No extra people, no Dad, no indoor walls, no mugs, fruit or dining furniture, no literal thought symbols, no words, captions, numbers or watermark. One coherent park scene.",
+    "tool": "builtin-imagegen",
+    "savedPath": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/le-le-you-le-xin-peng-you/9.webp"
+  },
+  {
+    "id": "le-le-you-le-xin-peng-you",
+    "page": 12,
+    "issue": "Keep the next-day conversation in the school courtyard.",
+    "source": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-1b292a17-c50b-437c-842a-936e814c5231.png",
+    "editPrompt": "Use case: precise-object-edit. Asset: one full-bleed square children's picture-book illustration, premium polished 3D animated-film style matching the target. Image 1 is the EDIT TARGET. CHANGE ONLY THE SETTING: this conversation takes place the next day outside in a sunny school courtyard, before the children visit the home. Remove the indoor sofa, cushions, living-room rug, kitchen cabinets, dining chairs and domestic interior. Keep EXACTLY the same two children and expressive faces, the surprised boy Lele in mustard-yellow sweatshirt and navy trousers, An'an in teal zip-front hoodie with black bob and yellow star hairclip, and the SAME small RED SEDAN TOY she holds openly between them. Have them seated naturally on a simple brown public courtyard bench or beside it on a clean courtyard step. Show open stone paving, green trees, blurred school-building façades and warm outdoor daylight in the background. Preserve the close two-person composition and gentle conversation, clothing and natural hands. No Mom, no Dad, no third child, no indoor walls, no home furniture, no words, lettering, labels, captions, watermark or extra toy cars. One coherent outdoor scene.",
+    "tool": "builtin-imagegen",
+    "savedPath": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/le-le-you-le-xin-peng-you/12.webp"
+  },
+  {
+    "id": "le-le-you-le-xin-peng-you",
+    "page": 15,
+    "issue": "Preserve the familiar red sedan toy during the bridge-building visit.",
+    "source": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-dcfa9795-4daf-423d-93da-7a52d036fe33.png",
+    "editPrompt": "Use case: precise-object-edit. Asset: one individual full-bleed square children's picture-book illustration in the target image's premium polished 3D animated-film style. Image 1 is the EDIT TARGET. Image 2 is a REFERENCE for the familiar red sedan toy only. CHANGE ONLY THE RED TOY CAR under An'an's hands in Image 1: replace the large chunky wooden-looking red vehicle with a SMALL realistic red four-door SEDAN TOY matching the red sedan in Image 2, with black tires and silver wheel hubs, at the same small hand-sized scale as the car she carries throughout this story. Keep the toy on the rug beside her hands, and preserve natural contact of her hands with it. Preserve EVERYTHING ELSE from Image 1: both children, their faces, poses, clothes, girl's yellow star hairclip, mustard-shirted boy holding exactly two long wooden beams, loose colored wooden blocks on the rug, home living room, framing, soft cinematic light and square composition. No pickup truck, no SUV, no huge wooden car, no extra cars, people, text, letters, captions or watermark. One coherent illustration.",
+    "tool": "builtin-imagegen",
+    "savedPath": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/le-le-you-le-xin-peng-you/15.webp"
+  }
+]

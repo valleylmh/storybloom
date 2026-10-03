@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "xiao-che-zen-me-dao-le-ni-jia",
+    "seriesId": "richang",
+    "title": "小车怎么到了你家",
+    "subtitle": "先问一问，再找一找",
+    "moral": {
+      "zh": "看起来很像，不一定就是同一件事；先了解，再判断。",
+      "en": "Things that look alike are not always the same. Find out more before deciding."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 25,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安去乐乐家玩，一进门就看见一辆红色小车。圆圆的车灯，黑黑的车轮，和她那辆几乎一样。",
+        "enText": "An'an went to play at Lele's home. Just inside, she saw a red toy car with round lights and black wheels, almost exactly like hers.",
+        "illustrationPrompt": "Lele home wide entry: An'an sees one red toy car with round headlights and black wheels on low gray shelf; Lele beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele home wide entry: An'an sees one red toy car with round headlights and black wheels on low gray shelf; Lele beside her.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-aa44943f-d38e-488c-9040-660468cde4e7.png"
+      },
+      {
+        "page": 2,
+        "zhText": "她停住了。今天早上，她正好没找到自己的小车。“我的车怎么到了这里？”这个念头一下跳了出来。",
+        "enText": "She stopped. That very morning, she had not found her own car. “How did my car get here?” The thought sprang into her mind.",
+        "illustrationPrompt": "Close An'an surprised face looking toward red car on gray shelf in Lele home, no second car.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an surprised face looking toward red car on gray shelf in Lele home, no second car.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-39673ddb-1e73-40cd-a93d-5bc8abaef6cb.png"
+      },
+      {
+        "page": 3,
+        "zhText": "乐乐拿起小车：“我们让它走新修的路吧！”安安没有伸手，心里像打了一个紧紧的结。",
+        "enText": "Lele picked up the car. “Let's drive it on the new road!” An'an did not reach for it. Her feelings seemed tied in a tight knot.",
+        "illustrationPrompt": "Lele home medium shot: Lele holds red toy car inviting play, An'an tense with hands still at sides.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele home medium shot: Lele holds red toy car inviting play, An'an tense with hands still at sides.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-df6dbbcb-4ce5-4a5c-9c79-f1ce5aa442a0.png"
+      },
+      {
+        "page": 4,
+        "zhText": "她问：“这是从哪里来的？”声音比平时硬了一点。乐乐愣了愣：“爷爷昨天送给我的。”",
+        "enText": "She asked, “Where did this come from?” Her voice sounded sharper than usual. Lele paused. “Grandpa gave it to me yesterday.”",
+        "illustrationPrompt": "Two-child conversation in Lele living room: An'an asks seriously, Lele surprised holding one red car; no Grandpa depicted.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-child conversation in Lele living room: An'an asks seriously, Lele surprised holding one red car; no Grandpa depicted.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-eabef52c-9059-4dfa-ba73-5bf0bc95730f.png"
+      },
+      {
+        "page": 5,
+        "zhText": "“可是它跟我的一样，我的又不见了。”安安说。乐乐抱着小车：“这辆是我的呀。”",
+        "enText": "“But it looks like mine, and mine is missing,” An'an said. Lele held the car. “This one is mine.”",
+        "illustrationPrompt": "Medium view: Lele holds red car close calmly but worried; An'an explains with open hand; Mom enters doorway behind her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Medium view: Lele holds red car close calmly but worried; An'an explains with open hand; Mom enters doorway behind her.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nTHIS PAGE'S SCENE, clarified: A gentle ordinary conversation in Lele's living room. Fully clothed An'an in teal explains that her toy car is missing. Fully clothed Lele in mustard holds his small plain red toy car, while Mom in coral cardigan enters and listens calmly. Three people only. No threatening gestures, no text.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-07164564-ef5d-4783-a558-3e692dd58f8c.png"
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈听见了，先问安安：“你很担心自己的车，对吗？”安安点头，眼睛还盯着红色车顶。",
+        "enText": "Mom heard and first asked An'an, “You're worried about your own car, aren't you?” An'an nodded, still watching the red roof.",
+        "illustrationPrompt": "Lele living room three-person shot: Mom crouches beside An'an, Lele with car opposite, gray shelf background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele living room three-person shot: Mom crouches beside An'an, Lele with car opposite, gray shelf background.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-87a425b5-d0d5-454a-a9f2-79f61f5b1fbd.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈说：“现在我们知道，这里有辆很像的小车。它是不是你的，还需要再了解一点。”",
+        "enText": "Mom said, “We know there's a car here that looks like yours. We still need to find out whether it's the same one.”",
+        "illustrationPrompt": "Close Mom and An'an calm conversation while Lele holds red car nearby, no accusing gestures.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close Mom and An'an calm conversation while Lele holds red car nearby, no accusing gestures.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-419bda29-d0c6-4c77-a8df-74b8f5a2f168.png"
+      },
+      {
+        "page": 8,
+        "zhText": "安安想起，自己的车底贴过一个蓝色小圆点。她问乐乐：“可以看看车底吗？我们一起看。”",
+        "enText": "An'an remembered a little blue dot on the bottom of hers. She asked Lele, “May we look underneath? We can look together.”",
+        "illustrationPrompt": "Two-child medium shot: An'an asks permission pointing gently toward underside of Lele's car; Lele listens, Mom nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-child medium shot: An'an asks permission pointing gently toward underside of Lele's car; Lele listens, Mom nearby.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-124a6dde-4618-46da-80af-fb0c80720fc7.png"
+      },
+      {
+        "page": 9,
+        "zhText": "乐乐把小车翻过来。车底没有蓝圆点，只有他昨天贴的一枚绿色小三角。",
+        "enText": "Lele turned his car over. There was no blue dot underneath, only a little green triangle he had added yesterday.",
+        "illustrationPrompt": "Close-up of single upside-down red toy car in Lele's hands showing exactly one solid green triangle underneath, no blue dot or text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close-up of single upside-down red toy car in Lele's hands showing exactly one solid green triangle underneath, no blue dot or text.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-2ba08923-9433-424a-9491-617bc7a7a3e3.png"
+      },
+      {
+        "page": 10,
+        "zhText": "安安摸摸自己的口袋。原来，颜色一样、车轮一样，也可能是两辆不同的小车。",
+        "enText": "An'an touched her pocket. The same color and the same wheels could still belong to two different cars.",
+        "illustrationPrompt": "Lele home medium shot: An'an thoughtful beside Lele holding red car upright, Mom listens, no second car yet.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele home medium shot: An'an thoughtful beside Lele holding red car upright, Mom listens, no second car yet.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-4ae88117-58d4-48df-acca-c98526cb21c2.png"
+      },
+      {
+        "page": 11,
+        "zhText": "她对乐乐说：“我刚才太着急，差点认定你拿了我的。这样问，让你不舒服了吧？”",
+        "enText": "She told Lele, “I was so worried that I almost decided you'd taken mine. Did the way I asked make you uncomfortable?”",
+        "illustrationPrompt": "Two-child close conversation: An'an speaks earnestly at respectful distance, Lele listens holding car; Mom stays quietly in background.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-child close conversation: An'an speaks earnestly at respectful distance, Lele listens holding car; Mom stays quietly in background.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-ed94527a-1238-4a9b-aba6-6019b516b9fd.png"
+      },
+      {
+        "page": 12,
+        "zhText": "乐乐点点头：“我想给你看看新车，不想被当成拿东西的人。”安安轻声说：“对不起。”",
+        "enText": "Lele nodded. “I wanted to show you my new car. I didn't want you to think I'd taken yours.” An'an softly said, “I'm sorry.”",
+        "illustrationPrompt": "Lele living room medium shot: Lele explains feelings calmly, An'an listens and apologizes gently, car between them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele living room medium shot: Lele explains feelings calmly, An'an listens and apologizes gently, car between them.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nTHIS PAGE'S SCENE, clarified: A calm conversation between fully clothed An'an in teal and Lele in mustard in Lele's living room. Lele holds his plain red toy car and explains his feelings; An'an listens kindly. Mom is not visible. Gentle child-friendly picture-book mood, no threat or violence, no text.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-2fd7d9a0-5abc-4066-b2d0-77e5bc818539.png"
+      },
+      {
+        "page": 13,
+        "zhText": "他们先把乐乐的小车放回架子。妈妈陪安安回家，找一找她最后玩过小车的地方。",
+        "enText": "They put Lele's car back on its shelf. Mom went home with An'an to look where she had last played with hers.",
+        "illustrationPrompt": "Lele entry scene: Lele returns his red car to low gray shelf; Mom and An'an prepare to leave together, no second car.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele entry scene: Lele returns his red car to low gray shelf; Mom and An'an prepare to leave together, no second car.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-6244ef0d-2b8e-4f8d-b733-8938072312f6.png"
+      },
+      {
+        "page": 14,
+        "zhText": "沙发前有一座旧积木桥。安安蹲下来，往桥后看，又趴低一点，看看沙发下面。",
+        "enText": "An old block bridge stood before the sofa. An'an crouched to look behind it, then lowered herself to see under the sofa.",
+        "illustrationPrompt": "An'an home living room low wide shot: An'an peers under sofa near old wooden block bridge, Mom kneels beside her, car not yet visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: An'an home living room low wide shot: An'an peers under sofa near old wooden block bridge, Mom kneels beside her, car not yet visible.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-9780ad79-5328-4f50-a55a-cdca32cc23fe.png"
+      },
+      {
+        "page": 15,
+        "zhText": "一只黑车轮露了出来。妈妈帮她把小车够出来，安安翻到车底：蓝色小圆点，好好地贴在那里。",
+        "enText": "A black wheel appeared. Mom helped reach the car, and An'an turned it over. The little blue dot was still there underneath.",
+        "illustrationPrompt": "Close An'an hands holding upside-down recovered red car with exactly one solid blue circle underneath; Mom nearby, sofa behind, no green triangle.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an hands holding upside-down recovered red car with exactly one solid blue circle underneath; Mom nearby, sofa behind, no green triangle.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-76e4b90c-b75f-437a-8594-7dcced6cecb9.png"
+      },
+      {
+        "page": 16,
+        "zhText": "“它根本没有去乐乐家。”安安说，“是我先把看见的，和猜到的，放在一起了。”",
+        "enText": "“It never went to Lele's home,” An'an said. “I put what I saw and what I guessed together too quickly.”",
+        "illustrationPrompt": "Home living room conversation: An'an holds recovered red car and talks thoughtfully to Mom, block bridge and sofa nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home living room conversation: An'an holds recovered red car and talks thoughtfully to Mom, block bridge and sofa nearby.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-26c8745b-be42-428d-a99e-6b1a81470d5f.png"
+      },
+      {
+        "page": 17,
+        "zhText": "下午，她带着自己的小车再去找乐乐。两辆红车并排停着，一辆有蓝圆点，一辆有绿三角。",
+        "enText": "That afternoon, she brought her car back to Lele. The two red cars parked side by side, one with a blue dot and one with a green triangle.",
+        "illustrationPrompt": "Lele home overhead scene: two otherwise identical red cars held upside down side by side, one blue circle and one green triangle, children's hands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele home overhead scene: two otherwise identical red cars held upside down side by side, one blue circle and one green triangle, children's hands.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nFINAL REVIEW EDIT:\nUse case: precise-object-edit. Asset: one square full-bleed children's picture-book illustration in the target image's polished 3D animated-film style. Image 1 is the EDIT TARGET. CHANGE ONLY THE IDENTIFICATION MARKERS: remove the two large loose shape blocks from the wooden table completely. Attach a SMALL FLAT BLUE CIRCULAR STICKER directly at the center of the black underside of the red toy car on the LEFT side of the image. Attach a SMALL FLAT GREEN TRIANGULAR STICKER directly at the center of the black underside of the red toy car on the RIGHT side of the image. Exactly one marker per car, both markers plainly visible, modest scale like toy identification stickers, completely adhered to each car's underside between the wheels. This story moment proves these are two different otherwise identical red toy cars. Preserve exactly the boy, his face, mustard sweatshirt, hands, the two identical red toy cars turned upside-down toward the viewer, four wheels per car, wooden table, living-room background, lighting and square camera framing. No loose marker shapes on the table, no extra markers, no letters, text, numbers, watermark, additional cars or people. One coherent illustration.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0feca-5f1b-7c30-84b5-99df85d33358/exec-012ea7d7-50e0-48da-bab1-3df584431791.png"
+      },
+      {
+        "page": 18,
+        "zhText": "安安笑了：“这次，我们真的有两辆车了。”小车一前一后过桥，她也记住了，着急时先问一问。",
+        "enText": "An'an smiled. “This time, we really do have two cars.” They crossed the bridge one after the other, and she remembered to ask before deciding when worried.",
+        "illustrationPrompt": "Warm Lele living room ending: An'an and Lele drive two identical red cars in single file over plain block bridge, happy calm play.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Warm Lele living room ending: An'an and Lele drive two identical red cars in single file over plain block bridge, happy calm play.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-97615907-c012-4dce-a82e-4c903c3a8ef6.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 25,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "了解事实",
+        "判断"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "帮助孩子区分看见的事实、心里的猜测和需要核对的信息。",
+      "reminder": "不把弄错当作撒谎，也不让孩子独自调查可能的危险；认真回应物品丢失的担心，成人协助了解情况。",
+      "questions": [
+        "安安一开始看见了什么，又猜了什么？",
+        "如果发现自己的东西不见了，你可以先问谁、找哪里？"
+      ],
+      "activity": "选两件相似的小物品，一起找相同和不同的地方，练习说“我看见……”和“我还需要问问……”。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, short dark hair, forest-green sweatshirt, charcoal trousers. Teacher: adult Chinese woman, tied-back black hair, sage cardigan. Park attendant: middle-aged Chinese woman, plain blue polo. Bedtime An’an wears plain pale-yellow pajamas, with her star hair clip on a bedside dish.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

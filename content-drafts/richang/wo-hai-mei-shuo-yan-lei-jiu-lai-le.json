@@ -1,0 +1,346 @@
+{
+  "book": {
+    "id": "wo-hai-mei-shuo-yan-lei-jiu-lai-le",
+    "seriesId": "richang",
+    "title": "我还没说，眼泪就来了",
+    "subtitle": "眼泪旁边，也可以有一句话",
+    "moral": {
+      "zh": "难过时可以哭；被提醒的一件事，可以等心情缓下来再一起处理。",
+      "en": "It is all right to cry when upset, and one thing that needs fixing can be handled together after a pause."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-03",
+    "order": 32,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安画了一条蓝蓝的小河，又在岸边添上几朵花。她举起画纸，想给妈妈看。",
+        "enText": "An'an painted a blue river and added flowers along its bank. She lifted the paper to show Mom.",
+        "illustrationPrompt": "Wide oak art table: An'an proudly lifts painting of blue river and red flowers; Mom comes beside table; used blue-tipped brush lies on bare table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Wide oak art table: An'an proudly lifts painting of blue river and red flowers; Mom comes beside table; used blue-tipped brush lies on bare table.\nStory evidence in Chinese (DO NOT put text in image): 安安画了一条蓝蓝的小河，又在岸边添上几朵花。她举起画纸，想给妈妈看。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-5ebd76c1-6e38-42ac-87da-162201aa77de.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-0d0be180-7d09-446b-9e34-495a7fb6ab23.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Wide oak art table: An'an proudly lifts painting of blue river and red flowers; Mom comes beside table; used blue-tipped brush lies on bare table.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/1-abc3c1a9073a.webp"
+          }
+        ]
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈看见桌上的画笔：“画笔用完，要先洗一洗，再放回笔筒。”",
+        "enText": "Mom noticed the brush on the table. “When we finish painting, we wash the brush before putting it away.”",
+        "illustrationPrompt": "Medium tabletop conversation: Mom gently indicates used blue-tipped brush and plain yellow brush cup; An'an holds river painting.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Medium tabletop conversation: Mom gently indicates used blue-tipped brush and plain yellow brush cup; An'an holds river painting.\nStory evidence in Chinese (DO NOT put text in image): 妈妈看见桌上的画笔：“画笔用完，要先洗一洗，再放回笔筒。”\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-12fdb158-cf08-42f8-bb83-ae8e628e17aa.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-5db976bc-eda5-44de-a612-c023ab756e7b.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium tabletop conversation: Mom gently indicates used blue-tipped brush and plain yellow brush cup; An'an holds river painting.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/2-0c2015e8bd9b.webp"
+          }
+        ]
+      },
+      {
+        "page": 3,
+        "zhText": "安安的嘴角慢慢往下掉。她把画纸放回桌上，低下了头。",
+        "enText": "An'an's smile slowly faded. She put the painting down and lowered her head.",
+        "illustrationPrompt": "Close portrait: An'an lowers gaze with trembling mouth; blue river painting lies on oak table, yellow brush cup nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Close portrait: An'an lowers gaze with trembling mouth; blue river painting lies on oak table, yellow brush cup nearby.\nStory evidence in Chinese (DO NOT put text in image): 安安的嘴角慢慢往下掉。她把画纸放回桌上，低下了头。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-34954f9f-cbd8-4694-926d-2c5f4163d014.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-31126bb0-3472-472d-aa73-8dbeb22523e2.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close portrait: An'an lowers gaze with trembling mouth; blue river painting lies on oak table, yellow brush cup nearby.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/3-992fe9517e4f.webp"
+          }
+        ]
+      },
+      {
+        "page": 4,
+        "zhText": "她还没想好怎么说，眼泪就先出来了。一滴，落在画纸空白的角上。",
+        "enText": "Before she knew what to say, the tears came first. One drop landed on a blank corner of the paper.",
+        "illustrationPrompt": "Close view: single tear falls onto blank corner of river painting beneath An'an's face, flowers and river remain intact.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing. An'an is crying quietly; her hands are empty. Show one tear falling onto the BLANK paper corner. She is not drawing with a brush at this moment.\nTHIS PAGE'S SCENE: Close view: single tear falls onto blank corner of river painting beneath An'an's face, flowers and river remain intact.\nStory evidence in Chinese (DO NOT put text in image): 她还没想好怎么说，眼泪就先出来了。一滴，落在画纸空白的角上。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-047813e5-0a6d-47af-997c-293f05734ed0.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-c6800998-fc5d-46ef-be07-734a1dc5be89.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close view: single tear falls onto blank corner of river painting beneath An'an's face, flowers and river remain intact.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/4-2988094bda2d.webp"
+          }
+        ]
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈把想继续说的话停了下来，轻轻把纸巾放在她伸手够得到的地方。",
+        "enText": "Mom stopped what she was about to say and placed a tissue within easy reach.",
+        "illustrationPrompt": "Medium art table: Mom quietly places tissue beside An'an, child remains tearful; yellow brush cup and river painting visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Medium art table: Mom quietly places tissue beside An'an, child remains tearful; yellow brush cup and river painting visible.\nStory evidence in Chinese (DO NOT put text in image): 妈妈把想继续说的话停了下来，轻轻把纸巾放在她伸手够得到的地方。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-fcb84fe9-8350-4fb9-8a67-0d5246b3ec3b.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-8262a4aa-6fd2-4880-b24e-e0268a510a00.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium art table: Mom quietly places tissue beside An'an, child remains tearful; yellow brush cup and river painting visible.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/5-c6c06c7177b7.webp"
+          }
+        ]
+      },
+      {
+        "page": 6,
+        "zhText": "“眼泪来了。”妈妈说，“你可以先哭一会儿，我坐在这里。”",
+        "enText": "“The tears have come,” Mom said. “You can cry for a while. I'll sit here with you.”",
+        "illustrationPrompt": "Two-person seated side view: Mom sits calmly beside crying An'an without touching or demanding eye contact, warm indoor light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing. Mom sits quietly beside crying An'an at the ART TABLE, not on a sofa.\nTHIS PAGE'S SCENE: Two-person seated side view: Mom sits calmly beside crying An'an without touching or demanding eye contact, warm indoor light.\nStory evidence in Chinese (DO NOT put text in image): “眼泪来了。”妈妈说，“你可以先哭一会儿，我坐在这里。”\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-bf0448ea-4708-43a3-8610-e2c05b6d2c84.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-3adc2bb1-d304-4d9e-a99f-c806b69ab374.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Two-person seated side view: Mom sits calmly beside crying An'an without touching or demanding eye contact, warm indoor light.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/6-b8df2f979401.webp"
+          }
+        ]
+      },
+      {
+        "page": 7,
+        "zhText": "安安用纸巾擦了擦脸。妈妈没有催她解释，画笔也暂时留在桌上。",
+        "enText": "An'an wiped her face. Mom did not hurry her to explain, and the brush stayed on the table for now.",
+        "illustrationPrompt": "Close hands: An'an holds tissue to cheek; Mom's relaxed hands rest on lap, used brush still on table beside painting.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Close hands: An'an holds tissue to cheek; Mom's relaxed hands rest on lap, used brush still on table beside painting.\nStory evidence in Chinese (DO NOT put text in image): 安安用纸巾擦了擦脸。妈妈没有催她解释，画笔也暂时留在桌上。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-9dda789e-cbf4-4dab-9e67-b4e44dc24f12.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-f0ac6647-fb22-496f-ab2e-79ae6cff7a9d.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close hands: An'an holds tissue to cheek; Mom's relaxed hands rest on lap, used brush still on table beside painting.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/7-7aa4093fb763.webp"
+          }
+        ]
+      },
+      {
+        "page": 8,
+        "zhText": "过了一会儿，安安说：“你是不是觉得，我什么都做不好？”",
+        "enText": "After a while, An'an said, “Do you think I can't do anything right?”",
+        "illustrationPrompt": "Medium child-eye-level view: An'an speaks hesitantly to attentive seated Mom, tissue in hand, river painting between them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Medium child-eye-level view: An'an speaks hesitantly to attentive seated Mom, tissue in hand, river painting between them.\nStory evidence in Chinese (DO NOT put text in image): 过了一会儿，安安说：“你是不是觉得，我什么都做不好？”\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-a9bc6198-8e38-4421-81b5-b8e5c11f51ec.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-6e838c85-5e1e-416a-90fd-230e04f67bc4.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium child-eye-level view: An'an speaks hesitantly to attentive seated Mom, tissue in hand, river painting between them.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/8-b32d48c233d5.webp"
+          }
+        ]
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈摇摇头：“我说的是这支画笔需要洗，不是你这个人不好。”",
+        "enText": "Mom shook her head. “I meant this brush needs washing. I didn't mean there is anything wrong with you.”",
+        "illustrationPrompt": "Close two-person conversation: Mom gently points to used brush, not at child; An'an listens with moist eyes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Close two-person conversation: Mom gently points to used brush, not at child; An'an listens with moist eyes.\nStory evidence in Chinese (DO NOT put text in image): 妈妈摇摇头：“我说的是这支画笔需要洗，不是你这个人不好。”\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-722941ad-3b61-4eb1-9c1c-f58d61452e5e.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-9cf8e212-d7f1-48ad-8a97-0fbf34a174f0.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close two-person conversation: Mom gently points to used brush, not at child; An'an listens with moist eyes.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/9-70a2361aca87.webp"
+          }
+        ]
+      },
+      {
+        "page": 10,
+        "zhText": "“可是，我还想让你看看小河。”安安指了指蓝色的弯弯。",
+        "enText": "“But I wanted you to look at my river too,” An'an said, pointing to its blue bends.",
+        "illustrationPrompt": "Overhead tabletop: An'an's finger indicates winding blue river painting, Mom's hand rests beside blank corner, no words on paper.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Overhead tabletop: An'an's finger indicates winding blue river painting, Mom's hand rests beside blank corner, no words on paper.\nStory evidence in Chinese (DO NOT put text in image): “可是，我还想让你看看小河。”安安指了指蓝色的弯弯。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-30f23428-928c-4838-94c1-1db70d7b6f99.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-02a42765-9dc1-4986-bf83-d9b8ac2b226a.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Overhead tabletop: An'an's finger indicates winding blue river painting, Mom's hand rests beside blank corner, no words on paper.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/10-e8f06be88c03.webp"
+          }
+        ]
+      },
+      {
+        "page": 11,
+        "zhText": "妈妈把画放在眼前：“这里像绕过了一块小石头。你给它安排了什么地方？”",
+        "enText": "Mom brought the painting closer. “It looks as if the river goes around a little stone here. Where is it flowing?”",
+        "illustrationPrompt": "Medium art table: Mom studies river painting closely with curious face; An'an points toward one bend, used brush remains aside.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Medium art table: Mom studies river painting closely with curious face; An'an points toward one bend, used brush remains aside.\nStory evidence in Chinese (DO NOT put text in image): 妈妈把画放在眼前：“这里像绕过了一块小石头。你给它安排了什么地方？”\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-171b79a2-16c5-4f4c-a70c-b68111f1f926.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-cb0e5dbc-6e7f-4eeb-bc4a-e6e3a30a334f.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium art table: Mom studies river painting closely with curious face; An'an points toward one bend, used brush remains aside.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/11-26180e9a0341.webp"
+          }
+        ]
+      },
+      {
+        "page": 12,
+        "zhText": "安安说起了小河、花和一条没画出来的小鱼。说着说着，她的呼吸慢了下来。",
+        "enText": "An'an told her about the river, flowers, and a fish she had not painted yet. As she spoke, her breathing grew calmer.",
+        "illustrationPrompt": "Close An'an telling painting story, cheeks still damp but shoulders relaxed; Mom listens, no imaginary live fish in frame.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Close An'an telling painting story, cheeks still damp but shoulders relaxed; Mom listens, no imaginary live fish in frame.\nStory evidence in Chinese (DO NOT put text in image): 安安说起了小河、花和一条没画出来的小鱼。说着说着，她的呼吸慢了下来。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-b0a71b01-5596-4f5b-a2de-94fbabab2756.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-73447019-73b0-461b-a353-8388bf0d2d6f.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close An'an telling painting story, cheeks still damp but shoulders relaxed; Mom listens, no imaginary live fish in frame.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/12-ea4f567915c6.webp"
+          }
+        ]
+      },
+      {
+        "page": 13,
+        "zhText": "“画笔还要洗。”妈妈轻声提醒。“我知道。”安安说，“你陪我一起去吗？”",
+        "enText": "“The brush still needs washing,” Mom reminded her softly. “I know,” An'an said. “Will you come with me?”",
+        "illustrationPrompt": "Medium table: An'an picks up used blue-tipped brush and looks toward Mom for help; Mom nods gently.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Medium table: An'an picks up used blue-tipped brush and looks toward Mom for help; Mom nods gently.\nStory evidence in Chinese (DO NOT put text in image): “画笔还要洗。”妈妈轻声提醒。“我知道。”安安说，“你陪我一起去吗？”\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-52070032-2817-4539-a3d6-e338ff52ae83.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-84b7c517-d8fe-466b-9c8e-a228005692aa.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium table: An'an picks up used blue-tipped brush and looks toward Mom for help; Mom nods gently.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/13-f796c20ec6b4.webp"
+          }
+        ]
+      },
+      {
+        "page": 14,
+        "zhText": "她们走到水池边。安安把笔尖放进水里，蓝色慢慢散开了。",
+        "enText": "They went to the sink. An'an dipped the brush into the water, and the blue color slowly spread.",
+        "illustrationPrompt": "Close safe sink: An'an rinses blue-tipped brush in shallow basin while Mom stands beside her, low water flow, no drinking.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close safe sink: An'an rinses blue-tipped brush in shallow basin while Mom stands beside her, low water flow, no drinking.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-c8d1d1ee-c1df-4e38-a94d-4341b3b7f124.png"
+      },
+      {
+        "page": 15,
+        "zhText": "洗干净的画笔回到笔筒里。画纸放在窗边，空白角上的水痕也快干了。",
+        "enText": "The clean brush went back into its cup. The painting rested by the window, and the water mark on its blank corner was nearly dry.",
+        "illustrationPrompt": "Still life close view: clean brush in plain yellow cup beside blue-river painting by window, faint damp mark only on blank corner; no people.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Still life close view: clean brush in plain yellow cup beside blue-river painting by window, faint damp mark only on blank corner; no people.\nStory evidence in Chinese (DO NOT put text in image): 洗干净的画笔回到笔筒里。画纸放在窗边，空白角上的水痕也快干了。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-bafac196-ead0-4110-95b7-c5301b454c24.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-63fdd3dc-da6a-49c2-98f8-785aa0e6f63a.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Still life close view: clean brush in plain yellow cup beside blue-river painting by window, faint damp mark only on blank corner; no people.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/15-824d60f87728.webp"
+          }
+        ]
+      },
+      {
+        "page": 16,
+        "zhText": "第二天，爸爸提醒桌边的杯子要挪远一点。安安又觉得鼻子有点酸。",
+        "enText": "The next day, Dad reminded her to move a cup away from the edge. An'an felt the tears coming again.",
+        "illustrationPrompt": "Medium breakfast table: Dad gently gestures toward small unmarked cup near edge; An'an looks emotional, safe seated setting.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium breakfast table: Dad gently gestures toward small unmarked cup near edge; An'an looks emotional, safe seated setting.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-b710019d-084c-44b2-b11c-5e17f763d862.png"
+      },
+      {
+        "page": 17,
+        "zhText": "这一次，她说：“我有点难过，等我一下。”爸爸点点头，先把杯子放稳。",
+        "enText": "This time, she said, “I'm feeling upset. Give me a moment.” Dad nodded and made sure the cup was safe.",
+        "illustrationPrompt": "Two-person close view: An'an quietly expresses feelings while Dad moves cup inward, no spilled liquid, attentive expression.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Two-person close view: An'an quietly expresses feelings while Dad moves cup inward, no spilled liquid, attentive expression.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-8da2daab-b9b2-492c-be29-6b01c88f4384.png"
+      },
+      {
+        "page": 18,
+        "zhText": "眼泪有时候还会先来。安安发现，眼泪旁边，也能慢慢长出一句自己的话。",
+        "enText": "Sometimes the tears still came first. An'an discovered that her own words could slowly appear beside them.",
+        "illustrationPrompt": "Warm ending portrait: An'an holds dry river painting and speaks to Mom, slight watery eyes and small steady smile, yellow brush cup behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Keep the same child-made drawing in all visible pages: one simple winding blue river on white paper, three red flowers on the riverbank, a broad blank white bottom-right corner. The brush cup is plain yellow. The used blue-tipped brush stays on the table until washing. Do not substitute a complex landscape, pink flowers, a house, or another drawing.\nTHIS PAGE'S SCENE: Warm ending portrait: An'an holds dry river painting and speaks to Mom, slight watery eyes and small steady smile, yellow brush cup behind.\nStory evidence in Chinese (DO NOT put text in image): 眼泪有时候还会先来。安安发现，眼泪旁边，也能慢慢长出一句自己的话。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-d5f30689-cf43-4e36-9a3a-746b0ddc8698.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-5c326a59-46d0-4f8f-ac3e-072ea99f9a7a.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Warm ending portrait: An'an holds dry river painting and speaks to Mom, slight watery eyes and small steady smile, yellow brush cup behind.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le/iterations/18-2686de6ac140.webp"
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 32,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "委屈与眼泪",
+        "接纳提醒",
+        "自我感受"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "允许孩子流泪和停顿，把具体行为与孩子的自我价值分开。",
+      "reminder": "不把哭称作玻璃心、撒娇或故意逃避；不以停止哭泣为获得陪伴的条件。成人只谈具体事情，避免追问和人格评价。",
+      "questions": [
+        "妈妈提醒画笔时，安安心里听成了什么？",
+        "眼泪来的时候，你希望身边的人怎样陪你？"
+      ],
+      "activity": "用玩偶练习一次温和提醒，并尝试“我有点难过”“等我一下”或指一指；孩子愿意时再共同完成一件小事。",
+      "ageTips": {
+        "age4to5": "允许孩子用指画面、点头、挥手或简单词语表达；共读可以暂停，不要求当场完成故事里的练习。",
+        "age6to8": "讨论感受、事实和可选择的小行动，允许不同意见；由成人承担支持、约定和安全的责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, forest-green sweatshirt, charcoal trousers. Familiar neighbor Aunt: short chestnut hair, sky-blue cardigan, charcoal trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

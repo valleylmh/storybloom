@@ -1,0 +1,228 @@
+{
+  "book": {
+    "id": "wo-zhi-xiang-chi-zhe-yi-zhong",
+    "seriesId": "richang",
+    "title": "我只想吃这一种",
+    "subtitle": "喜欢的味道，也可以慢慢选",
+    "moral": {
+      "zh": "可以有喜欢的口味，也可以在清楚的安排里选择和收尾。",
+      "en": "We can have favorite flavors and make choices within clear, caring plans."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-03",
+    "order": 34,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "下午点心时间，妈妈摆出两种小饼干：紫薯的，和原味的。安安先看见了紫色那一盘。",
+        "enText": "At snack time, Mom put out sweet-potato crackers and plain ones. An'an noticed the purple plate first.",
+        "illustrationPrompt": "Wide kitchen oak table: Mom sets purple sweet-potato crackers on small white plate and beige plain crackers on another; An'an sits nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Wide kitchen oak table: Mom sets purple sweet-potato crackers on small white plate and beige plain crackers on another; An'an sits nearby.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-8f359ada-1637-4a22-8930-13f47642a69d.png"
+      },
+      {
+        "page": 2,
+        "zhText": "“我只想吃这一种！”她把小碗推到紫薯饼干旁边。",
+        "enText": "“I only want these!” she said, pushing her bowl beside the sweet-potato crackers.",
+        "illustrationPrompt": "Close tabletop: An'an slides plain teal bowl beside plate of purple crackers, beige crackers remain on separate white plate.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close tabletop: An'an slides plain teal bowl beside plate of purple crackers, beige crackers remain on separate white plate.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-7456bf35-d481-4013-af65-0f14d03d49b9.png"
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈问：“是喜欢它的味道，还是喜欢脆脆的声音？”",
+        "enText": "Mom asked, “Do you like their taste, or the crunchy sound?”",
+        "illustrationPrompt": "Medium conversation: Mom leans beside seated An'an, child looks at purple crackers and teal bowl, both calm.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium conversation: Mom leans beside seated An'an, child looks at purple crackers and teal bowl, both calm.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-a5b0b8c3-6604-4209-a1d0-586819eac77b.png"
+      },
+      {
+        "page": 4,
+        "zhText": "“都有。”安安咬了一小口，“还甜甜的。”",
+        "enText": "“Both,” An'an said, taking a small bite. “And they're sweet.”",
+        "illustrationPrompt": "Close An'an seated safely taking small bite of purple cracker, teal bowl on table, no running or full mouth.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close An'an seated safely taking small bite of purple cracker, teal bowl on table, no running or full mouth.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-4a9deade-bfba-4b95-8872-089dd7d723da.png"
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈点点头：“可以选你喜欢的。我们先盛一小碗，看看吃得怎样。”",
+        "enText": "Mom nodded. “You can choose what you like. Let's start with a small bowl and see how you feel.”",
+        "illustrationPrompt": "Overhead table: Mom and An'an put small serving of purple crackers into teal bowl, remaining crackers on white plate, no exact number.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Overhead table: Mom and An'an put small serving of purple crackers into teal bowl, remaining crackers on white plate, no exact number.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-c9a41f2d-140e-496a-a1bd-6559310830f5.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安吃着吃着，碗空了。盘子里的紫薯饼干，也没有了。",
+        "enText": "An'an ate until the bowl was empty. The sweet-potato plate was empty too.",
+        "illustrationPrompt": "Close tabletop: empty teal bowl and empty white purple-cracker plate; beige plain crackers still on separate plate, An'an's hands nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close tabletop: empty teal bowl and empty white purple-cracker plate; beige plain crackers still on separate plate, An'an's hands nearby.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-dd1410dc-eb72-4f54-8757-9c04d9b6c125.png"
+      },
+      {
+        "page": 7,
+        "zhText": "“再打开一包吧。”安安说。妈妈看看柜子：“这一种今天没有了。”",
+        "enText": "“Let's open another packet,” An'an said. Mom checked the cupboard. “There aren't any more of this kind today.”",
+        "illustrationPrompt": "Medium kitchen: Mom checks pale green cupboard with no purple crackers remaining; An'an looks toward empty teal bowl, no branded packages.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium kitchen: Mom checks pale green cupboard with no purple crackers remaining; An'an looks toward empty teal bowl, no branded packages.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-0b7569f5-c941-4707-9e78-9c3759b0e3a7.png"
+      },
+      {
+        "page": 8,
+        "zhText": "安安把原味饼干推远：“可是，我不想吃这个。”她的眉毛皱成了小结。",
+        "enText": "An'an pushed the plain crackers away. “But I don't want these.” Her eyebrows tied themselves into a little knot.",
+        "illustrationPrompt": "Close child at table: An'an gently pushes plate of beige crackers away, disappointed brow, empty teal bowl beside plate.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close child at table: An'an gently pushes plate of beige crackers away, disappointed brow, empty teal bowl beside plate.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-32e6069c-f3f0-48d9-8883-47ccd1f2c3c7.png"
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈把盘子留在桌上：“你可以不选它。喜欢的吃完了，确实会失望。”",
+        "enText": "Mom left the plate on the table. “You don't have to choose those. It's disappointing when your favorites run out.”",
+        "illustrationPrompt": "Two-person eye-level shot: Mom calmly acknowledges disappointed An'an, beige crackers remain at respectful distance on table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Two-person eye-level shot: Mom calmly acknowledges disappointed An'an, beige crackers remain at respectful distance on table.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-f39bcee5-15eb-42aa-b8cf-201fe6d94692.png"
+      },
+      {
+        "page": 10,
+        "zhText": "她们坐了一会儿。妈妈问：“你的肚子还饿吗？我们还有面包和香蕉。”",
+        "enText": "They sat for a while. Mom asked, “Is your tummy still hungry? We have bread and a banana too.”",
+        "illustrationPrompt": "Medium table: Mom shows small bread plate and whole peeled-ready banana beside her, An'an considers, no pressure to eat.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium table: Mom shows small bread plate and whole peeled-ready banana beside her, An'an considers, no pressure to eat.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-2bac286d-39f3-4c13-9481-51bdbde5aa1c.png"
+      },
+      {
+        "page": 11,
+        "zhText": "安安摸摸肚子：“还有一点饿。我想吃半根香蕉。”",
+        "enText": "An'an touched her tummy. “A little. I'd like half a banana.”",
+        "illustrationPrompt": "Close An'an gestures lightly toward tummy then banana, Mom attentive, empty teal bowl still visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close An'an gestures lightly toward tummy then banana, Mom attentive, empty teal bowl still visible.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-bb0c0421-ae9c-458d-8653-efeec278a59d.png"
+      },
+      {
+        "page": 12,
+        "zhText": "妈妈帮她分好。安安慢慢吃，还是觉得紫薯饼干最好吃。",
+        "enText": "Mom helped portion it. An'an ate slowly and still thought the sweet-potato crackers tasted best.",
+        "illustrationPrompt": "Medium seated snack: An'an eats small banana piece from teal bowl, Mom sets remaining banana aside, no knife in child hands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium seated snack: An'an eats small banana piece from teal bowl, Mom sets remaining banana aside, no knife in child hands.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-c49b78eb-5a1f-4704-9433-c7180be1ebde.png"
+      },
+      {
+        "page": 13,
+        "zhText": "“下次可以买这一种吗？”她问。“我们把想买的画下来，再一起看安排。”妈妈说。",
+        "enText": "“Can we get that kind next time?” she asked. “Let's draw what we'd like and look at our plans together,” Mom said.",
+        "illustrationPrompt": "Two-person table: An'an draws small purple cracker shape on plain shopping paper; Mom watches, no letters or product brands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Two-person table: An'an draws small purple cracker shape on plain shopping paper; Mom watches, no letters or product brands.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-ffccf741-b03e-4256-bbd5-af0ef26d5a6d.png"
+      },
+      {
+        "page": 14,
+        "zhText": "纸上多了一个紫色的小圆片。安安还画了一根香蕉，放在它旁边。",
+        "enText": "A little purple circle appeared on the paper. An'an drew a banana beside it too.",
+        "illustrationPrompt": "Overhead drawing close-up: child's purple cracker circle and yellow banana picture on plain paper, colored pencils nearby, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: Only An'an, the same six-year-old girl with short black bob, left yellow star clip, teal hoodie and blue jeans. Use a close overhead view of her hands and paper: one child-drawn purple circle and a yellow banana beside it. No other child, purple shirt, apron or ponytail.\nTHIS PAGE'S SCENE: Overhead drawing close-up: child's purple cracker circle and yellow banana picture on plain paper, colored pencils nearby, no text.\nStory evidence in Chinese (DO NOT put text in image): 纸上多了一个紫色的小圆片。安安还画了一根香蕉，放在它旁边。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-7477f712-4d55-4cf9-a044-5455da6532d6.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-5ff851c1-718a-47c4-b186-41f0e969b27c.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Overhead drawing close-up: child's purple cracker circle and yellow banana picture on plain paper, colored pencils nearby, no text.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-zhi-xiang-chi-zhe-yi-zhong/iterations/14-d88c34bea5c4.webp"
+          }
+        ]
+      },
+      {
+        "page": 15,
+        "zhText": "几天后，她们一起准备点心。安安选了喜欢的那一份，把剩下的收好。",
+        "enText": "A few days later, they prepared snacks together. An'an chose a portion she liked and helped put the rest away.",
+        "illustrationPrompt": "Medium kitchen: Mom and An'an serve purple crackers into small teal bowl, close plain food container with remaining crackers, no brands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium kitchen: Mom and An'an serve purple crackers into small teal bowl, close plain food container with remaining crackers, no brands.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-624b02bb-04bd-4bff-9f55-a9918d6c1c07.png"
+      },
+      {
+        "page": 16,
+        "zhText": "“我还是最喜欢这个。”她说。妈妈笑着点头。喜欢可以说清楚，点心也有了舒服的安排。",
+        "enText": "“These are still my favorite,” she said. Mom smiled and nodded. Her preference was heard, and snack time had a comfortable plan.",
+        "illustrationPrompt": "Warm ending: seated An'an enjoys small purple cracker while talking to Mom at oak table, closed container on shelf, relaxed mood.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Warm ending: seated An'an enjoys small purple cracker while talking to Mom at oak table, closed container on shelf, relaxed mood.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-4b7ae55e-2787-44a3-9880-68550aba5d10.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 34,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "零食选择",
+        "口味偏好",
+        "生活约定"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "尊重口味偏好，帮助孩子参与零食安排并应对最喜欢的食物暂时吃完。",
+      "reminder": "不把挑口味说成贪心或不懂珍惜；不强迫尝新，不以正餐或零食惩罚、奖励行为。根据孩子需要灵活安排，成人确认食物安全。",
+      "questions": [
+        "安安最想要的是哪一种味道？",
+        "喜欢的零食今天吃完了，你希望怎样商量下一次？"
+      ],
+      "activity": "让孩子参与一次点心安排，选择喜欢的食物和合适的份量；新口味可自愿少量尝试，也可以暂时不选。",
+      "ageTips": {
+        "age4to5": "允许孩子用指画面、点头、挥手或简单词语表达；共读可以暂停，不要求当场完成故事里的练习。",
+        "age6to8": "讨论感受、事实和可选择的小行动，允许不同意见；由成人承担支持、约定和安全的责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, forest-green sweatshirt, charcoal trousers. Familiar neighbor Aunt: short chestnut hair, sky-blue cardigan, charcoal trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

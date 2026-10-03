@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "ni-zen-me-mei-dai-wo-de-mao-zi",
+    "seriesId": "richang",
+    "title": "你怎么没戴我的帽子",
+    "subtitle": "礼物里的小小期待",
+    "moral": {
+      "zh": "送出心意，也给对方选择怎样喜欢和使用礼物的空间。",
+      "en": "Give your kindness, and leave the other person room to enjoy and use the gift in their own way."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 27,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安用一张蓝色纸做了小帽子。她画上黄星星，想送给乐乐：“他戴着，一定很好看。”",
+        "enText": "An'an made a little hat from blue paper and drew yellow stars on it. She wanted to give it to Lele. “It would look lovely on him.”",
+        "illustrationPrompt": "Overhead craft table: An'an makes one blue paper cone hat decorated with simple yellow star shapes, scissors safely put aside, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Overhead craft table: An'an makes one blue paper cone hat decorated with simple yellow star shapes, scissors safely put aside, no text.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-ae740270-fc99-4464-81c4-ab3593302555.png"
+      },
+      {
+        "page": 2,
+        "zhText": "帽边有点歪，她又压了压。忙了一个下午，安安把帽子托在手里，心里藏着亮亮的期待。",
+        "enText": "The edge was a little crooked, so she pressed it again. After a whole afternoon, she held the hat with a bright little hope inside.",
+        "illustrationPrompt": "Close An'an proudly holding completed blue paper cone hat with yellow stars at oak table, no Lele yet.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an proudly holding completed blue paper cone hat with yellow stars at oak table, no Lele yet.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-d189a320-32bf-4bc1-99e6-a8b3c6f55ffd.png"
+      },
+      {
+        "page": 3,
+        "zhText": "“送给你！”她把帽子交给乐乐。乐乐接过来，认真看了看：“谢谢，你画了好多小星星。”",
+        "enText": "“For you!” She handed the hat to Lele. He looked at it carefully. “Thank you. You drew so many little stars.”",
+        "illustrationPrompt": "Courtyard two-child medium shot: An'an hands single blue yellow-star paper hat to Lele, who accepts appreciatively.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Courtyard two-child medium shot: An'an hands single blue yellow-star paper hat to Lele, who accepts appreciatively.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-b1144e07-a5bb-427e-9bed-cd9008e25cef.png"
+      },
+      {
+        "page": 4,
+        "zhText": "乐乐试戴了一下，安安开心地拍手。她想，下次见面，朋友一定还会戴着自己的帽子。",
+        "enText": "Lele tried it on, and An'an clapped happily. She imagined her friend would still be wearing her hat the next time they met.",
+        "illustrationPrompt": "Courtyard medium shot: Lele briefly wears blue paper star hat, An'an claps happily; simple cone proportion fits child head.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Courtyard medium shot: Lele briefly wears blue paper star hat, An'an claps happily; simple cone proportion fits child head.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-56de345c-12f2-4dac-904d-cfdbbf22451e.png"
+      },
+      {
+        "page": 5,
+        "zhText": "第二天，乐乐来玩，头上没有帽子。安安看了又看：“你怎么没戴我送的帽子？”",
+        "enText": "The next day, Lele came to play without the hat. An'an looked twice. “Why aren't you wearing the hat I gave you?”",
+        "illustrationPrompt": "An'an home doorway scene: Lele arrives bareheaded, An'an looks at his head with disappointed surprise; no hat visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: An'an home doorway scene: Lele arrives bareheaded, An'an looks at his head with disappointed surprise; no hat visible.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-f5bdac62-f4b2-456d-9e54-d7d867accb1b.png"
+      },
+      {
+        "page": 6,
+        "zhText": "乐乐说：“我给我的小熊戴上了。它坐在窗边，像个小小的国王。”安安却没有笑。",
+        "enText": "Lele said, “I put it on my teddy. He sits by the window like a little king.” But An'an did not smile.",
+        "illustrationPrompt": "Two-child living room conversation: Lele explains with cheerful gesture, An'an subdued; no actual teddy or hat in this scene.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-child living room conversation: Lele explains with cheerful gesture, An'an subdued; no actual teddy or hat in this scene.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-3909fa17-cac0-4c70-9642-9e2cdf33a463.png"
+      },
+      {
+        "page": 7,
+        "zhText": "“那是我做给你的，又不是给小熊的。”安安低着头，“你是不是不喜欢？”",
+        "enText": "“I made it for you, not your teddy,” An'an said, looking down. “Don't you like it?”",
+        "illustrationPrompt": "Close An'an disappointed face beside Lele, plain living room rug and blocks, no hat visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an disappointed face beside Lele, plain living room rug and blocks, no hat visible.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-1c47d53f-2233-4c1d-b37b-4478f9a505a0.png"
+      },
+      {
+        "page": 8,
+        "zhText": "乐乐想了想：“我喜欢星星，也喜欢你想到我。可是，我不想一直把纸帽戴在头上。”",
+        "enText": "Lele thought. “I like the stars, and I like that you thought of me. But I don't want to wear a paper hat all the time.”",
+        "illustrationPrompt": "Two-child medium shot: Lele speaks gently with open hands, An'an listens, no forced hat wearing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-child medium shot: Lele speaks gently with open hands, An'an listens, no forced hat wearing.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-fdb33293-9e70-49d9-9148-4818f8d34e1a.png"
+      },
+      {
+        "page": 9,
+        "zhText": "安安没有马上接话。她花了好多时间，原来还盼着，乐乐每天都让她看见这份喜欢。",
+        "enText": "An'an did not answer right away. She had spent so much time on it and had hoped Lele would show her every day how much he liked it.",
+        "illustrationPrompt": "Close thoughtful An'an sitting on rug with hands in lap, Lele beside her at respectful distance.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close thoughtful An'an sitting on rug with hands in lap, Lele beside her at respectful distance.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-b0976259-1035-4877-bb7e-fae24813712b.png"
+      },
+      {
+        "page": 10,
+        "zhText": "乐乐问：“你要不要去看看？我给小熊搭了王座。”安安犹豫一下，还是跟他去了。",
+        "enText": "Lele asked, “Would you like to see? I built Teddy a throne.” An'an hesitated, then went with him.",
+        "illustrationPrompt": "Courtyard wide walking scene: An'an and Lele walk together toward his home, calm conversation, no hat yet.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Courtyard wide walking scene: An'an and Lele walk together toward his home, calm conversation, no hat yet.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c9a1ce5c-e3d9-4220-a589-d358e790c901.png"
+      },
+      {
+        "page": 11,
+        "zhText": "窗边，小熊坐在积木椅子上。蓝帽子的黄星星正对着阳光，安安轻轻摸了摸帽边。",
+        "enText": "By the window, Teddy sat on a block chair. The blue hat's yellow stars faced the sunlight. An'an gently touched its edge.",
+        "illustrationPrompt": "Lele home window scene: plain tan toy teddy with red neck ribbon sits on simple block chair wearing blue paper cone hat with yellow stars; An'an and Lele inspect.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele home window scene: plain tan toy teddy with red neck ribbon sits on simple block chair wearing blue paper cone hat with yellow stars; An'an and Lele inspect.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-bcefe3c5-0c8e-4683-bec3-6c7325fddb3f.png"
+      },
+      {
+        "page": 12,
+        "zhText": "帽子没有被丢开，它有了安安没想到的用法。可是她的那一点失落，也没有马上消失。",
+        "enText": "The hat had not been thrown aside. It had found a use An'an had not imagined. Still, her little sadness did not disappear at once.",
+        "illustrationPrompt": "Close An'an thoughtfully touches star hat edge on toy teddy; Lele beside her, soft sunlight, no forced big smile.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an thoughtfully touches star hat edge on toy teddy; Lele beside her, soft sunlight, no forced big smile.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Change the teddy bear's neck ribbon from blue to RED so this is Lele's teddy, distinct from An'an's missing blue-ribbon teddy. The hat must be a stiff BLUE PAPER CONE with simple YELLOW STAR shapes, exactly like the earlier gift, not a floppy cap. Keep both children, poses and background.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-01700f16-9017-4938-80fb-2b8cd7fc020f.png"
+      },
+      {
+        "page": 13,
+        "zhText": "回家后，她告诉妈妈：“我送帽子的时候，好像还送了一个要求：你要一直戴给我看。”",
+        "enText": "At home, she told Mom, “When I gave the hat, I think I gave a little demand too: you must keep wearing it for me to see.”",
+        "illustrationPrompt": "Home oak table medium conversation: An'an talks thoughtfully to Mom with empty hands, no hat or teddy present.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home oak table medium conversation: An'an talks thoughtfully to Mom with empty hands, no hat or teddy present.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-9ed9656a-8f9e-4620-b85e-904350fde03c.png"
+      },
+      {
+        "page": 14,
+        "zhText": "妈妈说：“有期待很正常，可以说出来。礼物送给他以后，也要听听他自己的想法。”",
+        "enText": "Mom said, “It's natural to have hopes. You can talk about them. And after giving a gift, you need to hear his ideas too.”",
+        "illustrationPrompt": "Close Mom listening warmly at table, An'an thoughtful, pale green cabinets behind, no scolding gestures.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close Mom listening warmly at table, An'an thoughtful, pale green cabinets behind, no scolding gestures.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c9d13c77-510f-4703-9ef2-37ff35dc2a3d.png"
+      },
+      {
+        "page": 15,
+        "zhText": "第二天，安安对乐乐说：“我昨天有点失落。现在我知道，你喜欢帽子，也可以用自己的办法。”",
+        "enText": "The next day, An'an told Lele, “I felt a little sad yesterday. Now I know you can like the hat and use it in your own way.”",
+        "illustrationPrompt": "Courtyard two-child conversation: An'an speaks openly to bareheaded Lele, calm warm faces, no hat prop.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Courtyard two-child conversation: An'an speaks openly to bareheaded Lele, calm warm faces, no hat prop.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-16dd8bcf-37cc-4a37-999c-66ecf6986399.png"
+      },
+      {
+        "page": 16,
+        "zhText": "乐乐笑了：“你做的星星，让我的小熊有了一座夜空王国。”安安听见这句话，心里暖了一点。",
+        "enText": "Lele smiled. “Your stars gave my teddy a kingdom of night skies.” Hearing that, An'an felt a little warmer inside.",
+        "illustrationPrompt": "Lele home medium shot: Lele shows An'an toy teddy on block chair wearing blue yellow-star hat by window, both smile softly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Lele home medium shot: Lele shows An'an toy teddy on block chair wearing blue yellow-star hat by window, both smile softly.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Change the teddy bear's neck ribbon from blue to RED so this is Lele's teddy, distinct from An'an's missing blue-ribbon teddy. The hat must be a stiff BLUE PAPER CONE with simple YELLOW STAR shapes, exactly like the earlier gift, not a floppy cap. Keep both children, poses and background.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-aec0200d-ac5d-4145-82ca-3d99325456eb.png"
+      },
+      {
+        "page": 17,
+        "zhText": "他们又用纸做了小旗子。安安先问：“你想放在哪里？”乐乐说：“放在王座两边，好吗？”",
+        "enText": "They made little paper flags together. An'an asked first, “Where would you like them?” Lele said, “Beside the throne, shall we?”",
+        "illustrationPrompt": "Overhead Lele craft table: An'an and Lele make two small plain yellow paper flags on short craft sticks beside teddy throne and blue star hat; no lettering.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Overhead Lele craft table: An'an and Lele make two small plain yellow paper flags on short craft sticks beside teddy throne and blue star hat; no lettering.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Remove the red or purple crown from the teddy's head. Put the original stiff BLUE PAPER CONE HAT with YELLOW STAR shapes on the teddy's head instead. Teddy wears a RED neck ribbon. Keep the throne, plain yellow flags, An'an in teal, Lele in mustard, poses and background. No extra crown.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-ddd70e2f-d9cf-44c2-ac21-e242bce4fff9.png"
+      },
+      {
+        "page": 18,
+        "zhText": "安安把小旗递过去。这一次，她送出自己的心意，也给朋友留了一点选择的地方。",
+        "enText": "An'an handed him the flags. This time, she gave her kindness and left her friend a little room to choose too.",
+        "illustrationPrompt": "Warm window ending: Lele places two yellow paper flags beside block throne with teddy wearing blue star hat; An'an watches comfortably, two children.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Warm window ending: Lele places two yellow paper flags beside block throne with teddy wearing blue star hat; An'an watches comfortably, two children.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Remove the red or purple crown from the teddy's head. Put the original stiff BLUE PAPER CONE HAT with YELLOW STAR shapes on the teddy's head instead. Teddy wears a RED neck ribbon. Keep the throne, plain yellow flags, An'an in teal, Lele in mustard, poses and background. No extra crown.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-2462636f-9d84-4a3f-bc37-3a3c9e3f98d6.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 27,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "送礼心意",
+        "期待与选择"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "帮助孩子表达送礼后的期待，也理解收礼者有自己的意愿。",
+      "reminder": "不要求收礼者必须喜欢、收下或按赠送者的方式使用；允许送礼者失落，避免把礼物变成关系交换条件。",
+      "questions": [
+        "安安除了送帽子，还悄悄期待了什么？",
+        "如果朋友使用礼物的方式和你想的不一样，你会想说什么？"
+      ],
+      "activity": "用玩偶练习送礼前询问喜欢什么，以及收礼时真诚表达感谢和自己的想法，允许拒绝。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, short dark hair, forest-green sweatshirt, charcoal trousers. Teacher: adult Chinese woman, tied-back black hair, sage cardigan. Park attendant: middle-aged Chinese woman, plain blue polo. Bedtime An’an wears plain pale-yellow pajamas, with her star hair clip on a bedside dish.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

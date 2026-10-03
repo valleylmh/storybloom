@@ -19,6 +19,26 @@ import alone from "../../../content-drafts/richang/yi-ge-ren-wan-de-xia-wu.json"
 import cake from "../../../content-drafts/richang/zui-hou-yi-kuai-dan-gao.json";
 import queue from "../../../content-drafts/richang/pai-dui-shi-de-na-yi-fen-zhong.json";
 import badminton from "../../../content-drafts/richang/ba-ba-mei-you-ying.json";
+import independence from "../../../content-drafts/richang/wo-xiang-zi-ji-shi-yi-shi.json";
+import leafReminder from "../../../content-drafts/richang/ming-tian-yao-dai-de-na-pian-ye-zi.json";
+import newFriend from "../../../content-drafts/richang/le-le-you-le-xin-peng-you.json";
+import listening from "../../../content-drafts/richang/wo-ye-xiang-ba-hua-shuo-wan.json";
+import similarCars from "../../../content-drafts/richang/xiao-che-zen-me-dao-le-ni-jia.json";
+import lostTeddy from "../../../content-drafts/richang/zhao-bu-dao-de-xiao-xiong.json";
+import giftHat from "../../../content-drafts/richang/ni-zen-me-mei-dai-wo-de-mao-zi.json";
+import caregiverAgreement from "../../../content-drafts/richang/ma-ma-shuo-ke-yi-ba-ba-shuo-bu-xing.json";
+import nightLight from "../../../content-drafts/richang/jin-wan-de-xiao-deng-ke-yi-liang-zhe-ma.json";
+import cloudViews from "../../../content-drafts/richang/tong-yi-duo-yun-liang-zhong-yang-zi.json";
+import loudVoice from "../../../content-drafts/richang/ma-ma-ni-shi-zai-xiong-wo-ma.json";
+import tearsFirst from "../../../content-drafts/richang/wo-hai-mei-shuo-yan-lei-jiu-lai-le.json";
+import stuckWords from "../../../content-drafts/richang/na-ju-hua-ka-zai-zui-ba-li.json";
+import favoriteFlavor from "../../../content-drafts/richang/wo-zhi-xiang-chi-zhe-yi-zhong.json";
+import sharedSnack from "../../../content-drafts/richang/ni-yi-chi-wo-ye-xiang-chi.json";
+import wantToyNow from "../../../content-drafts/richang/na-liang-xiao-che-wo-jin-tian-jiu-xiang-yao.json";
+import angryHands from "../../../content-drafts/richang/sheng-qi-de-xiao-shou-fang-na-li.json";
+import nextEpisode from "../../../content-drafts/richang/zhe-yi-ji-wo-hai-xiang-kan.json";
+import misunderstood from "../../../content-drafts/richang/zhe-ci-zhen-de-bu-shi-wo.json";
+import shyHello from "../../../content-drafts/richang/na-sheng-ni-hao-cang-zai-bei-hou.json";
 
 type EverydayDraft = {
   book: Omit<LibraryBook, "pages"> & {
@@ -30,6 +50,10 @@ type EverydayDraft = {
 export const RICHANG_BOOKS: LibraryBook[] = [
   apple, shoes, special, toys, time, cookie, milk, apology, chores, picnic,
   watch, joke, drawing, tiredMom, boundaries, privacy, alone, cake, queue, badminton,
+  independence, leafReminder, newFriend, listening, similarCars, lostTeddy, giftHat,
+  caregiverAgreement, nightLight, cloudViews,
+  loudVoice, tearsFirst, stuckWords, favoriteFlavor, sharedSnack, wantToyNow,
+  angryHands, nextEpisode, misunderstood, shyHello,
 ].filter((source) => !source.book.comingSoon).map((source) => {
   const draft = source as EverydayDraft;
   return {

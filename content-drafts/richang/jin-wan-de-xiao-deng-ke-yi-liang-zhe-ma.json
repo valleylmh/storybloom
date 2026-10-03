@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "jin-wan-de-xiao-deng-ke-yi-liang-zhe-ma",
+    "seriesId": "richang",
+    "title": "今晚的小灯可以亮着吗",
+    "subtitle": "害怕的时候，也能安心",
+    "moral": {
+      "zh": "害怕可以说出来，也可以借助陪伴和合适的办法获得安心。",
+      "en": "You can talk about fear and find comfort through company and practical help."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 29,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "睡前，安安穿好软软的睡衣，听爸爸讲完故事。房间里的灯一暗，窗帘边就出现了一团长长的影子。",
+        "enText": "At bedtime, An'an put on her soft pajamas and listened to Dad's story. When the light dimmed, a long shadow appeared beside the curtain.",
+        "illustrationPrompt": "Bedroom wide bedtime shot: An'an in pale-yellow pajamas in bed, Dad beside bedside lamp; soft coat shadow near curtain, no monster, hairclip on dish.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom wide bedtime shot: An'an in pale-yellow pajamas in bed, Dad beside bedside lamp; soft coat shadow near curtain, no monster, hairclip on dish.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-10db1ff1-012f-45d3-aec5-2592cc2b2b42.png"
+      },
+      {
+        "page": 2,
+        "zhText": "她盯着影子，越看越像一只伸出手的大东西。安安把被子拉高，只露出两只眼睛。",
+        "enText": "She stared at the shadow. The longer she looked, the more it seemed like something large reaching out. She pulled up her quilt, leaving only her eyes showing.",
+        "illustrationPrompt": "Close bedtime An'an under cream quilt watching a vague harmless coat shadow by curtain; gentle dim room, no actual creature.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close bedtime An'an under cream quilt watching a vague harmless coat shadow by curtain; gentle dim room, no actual creature.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-170fd21e-00a9-4c22-b0f1-64622fb5788d.png"
+      },
+      {
+        "page": 3,
+        "zhText": "“我要关大灯了。”爸爸说。安安想开口，又把话咽回去：“说害怕，会不会被笑？”",
+        "enText": "“I'm going to turn off the main light,” Dad said. An'an wanted to speak but swallowed the words. “Would he laugh if I said I was scared?”",
+        "illustrationPrompt": "Bedroom medium shot: Dad near wall light switch, An'an in pale-yellow pajamas hesitant under quilt; only mild shadow, no text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom medium shot: Dad near wall light switch, An'an in pale-yellow pajamas hesitant under quilt; only mild shadow, no text.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-034def37-976b-4cff-9f14-63551e74b4b7.png"
+      },
+      {
+        "page": 4,
+        "zhText": "灯还没关，她就轻轻叫了一声：“爸爸。”爸爸转过身：“怎么了？”",
+        "enText": "Before the light went off, she softly called, “Dad.” He turned. “What is it?”",
+        "illustrationPrompt": "Bedroom medium conversation: Dad turns from switch toward An'an sitting slightly up in bed, soft light still on.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl with round face, ear-length black bob, wearing plain pale-yellow pajamas. Her yellow star clip rests on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom medium conversation: Dad turns from switch toward An'an sitting slightly up in bed, soft light still on.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Change only An'an's clothing to plain PALE-YELLOW PAJAMAS matching the adjacent bedtime pages, no hoodie, no pink floral pajamas. Remove the star clip from her hair and place one yellow star clip on the small bedside dish. Keep her six-year-old round face, ear-length black bob, all poses, Dad's navy sweater, coat or bed props and lighting.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-a7fa22ca-24de-43eb-8914-e239bf9d66c5.png"
+      },
+      {
+        "page": 5,
+        "zhText": "“今晚的小灯，可以亮着吗？”安安问，“窗边有个影子，我看着有点害怕。”",
+        "enText": "“Could the little light stay on tonight?” An'an asked. “There's a shadow by the window, and it scares me a little.”",
+        "illustrationPrompt": "Close An'an in pale-yellow pajamas asks Dad with vulnerable expression and points toward curtain, bedside dish with star clip.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an in pale-yellow pajamas asks Dad with vulnerable expression and points toward curtain, bedside dish with star clip.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-e14ac64c-1d31-4e2d-92f7-f0c12a7bad7d.png"
+      },
+      {
+        "page": 6,
+        "zhText": "爸爸没有笑。他坐回床边：“谢谢你告诉我。我们一起看看它从哪里来，好吗？”",
+        "enText": "Dad did not laugh. He sat by the bed again. “Thank you for telling me. Shall we look together and see where it comes from?”",
+        "illustrationPrompt": "Tender bedside medium shot: Dad sits at An'an's eye level, child comforted but still cautious, cream bedding and safe lamp.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl with round face, ear-length black bob, wearing plain pale-yellow pajamas. Her yellow star clip rests on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Tender bedside medium shot: Dad sits at An'an's eye level, child comforted but still cautious, cream bedding and safe lamp.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Change only An'an's clothing to plain PALE-YELLOW PAJAMAS matching the adjacent bedtime pages, no hoodie, no pink floral pajamas. Remove the star clip from her hair and place one yellow star clip on the small bedside dish. Keep her six-year-old round face, ear-length black bob, all poses, Dad's navy sweater, coat or bed props and lighting.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-38a48428-b8fd-4bca-b6f8-9ef6c3b6ca54.png"
+      },
+      {
+        "page": 7,
+        "zhText": "大灯亮了一点，安安才看见，椅背上搭着爸爸的外套，一只袖子垂到了窗帘旁。",
+        "enText": "With the light a little brighter, An'an saw Dad's coat over a chair. One sleeve hung down beside the curtain.",
+        "illustrationPrompt": "Bedroom object-focused medium shot: plain navy coat draped on oak chair near cream curtain, sleeve casting soft ordinary shadow; Dad and pajama-clad An'an inspect.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl with round face, ear-length black bob, wearing plain pale-yellow pajamas. Her yellow star clip rests on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom object-focused medium shot: plain navy coat draped on oak chair near cream curtain, sleeve casting soft ordinary shadow; Dad and pajama-clad An'an inspect.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Change only An'an's clothing to plain PALE-YELLOW PAJAMAS matching the adjacent bedtime pages, no hoodie, no pink floral pajamas. Remove the star clip from her hair and place one yellow star clip on the small bedside dish. Keep her six-year-old round face, ear-length black bob, all poses, Dad's navy sweater, coat or bed props and lighting.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-0f8befe0-5770-41de-9f7b-b4b06b0f2ec4.png"
+      },
+      {
+        "page": 8,
+        "zhText": "爸爸拿起外套，那团长影子也跟着动了。原来，伸出来的那只“手”，是一条空空的袖子。",
+        "enText": "Dad lifted the coat, and the long shadow moved too. The reaching “hand” was an empty sleeve.",
+        "illustrationPrompt": "Bedroom wide shot: Dad lifts plain navy coat off chair, soft sleeve shadow shifts on curtain; An'an in pale-yellow pajamas watches from bed, no creature.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom wide shot: Dad lifts plain navy coat off chair, soft sleeve shadow shifts on curtain; An'an in pale-yellow pajamas watches from bed, no creature.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-adc7bf26-4eb8-4ff3-8526-badccdfeba40.png"
+      },
+      {
+        "page": 9,
+        "zhText": "安安呼了口气，又说：“我知道是外套了，可灯一暗，心里还是有一点怕。”",
+        "enText": "An'an breathed out, then said, “I know it's a coat now. But when it gets dark, I still feel a little scared inside.”",
+        "illustrationPrompt": "Close An'an in pale-yellow pajamas talks honestly to Dad holding coat, gentle expression, room moderately lit.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an in pale-yellow pajamas talks honestly to Dad holding coat, gentle expression, room moderately lit.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-21cb905d-729d-4250-936d-5c28644abdda.png"
+      },
+      {
+        "page": 10,
+        "zhText": "爸爸点头：“知道原因，和马上不害怕，不一定一起发生。我们可以再找一个舒服的办法。”",
+        "enText": "Dad nodded. “Knowing the reason doesn't always make the fear disappear right away. We can find another way to feel comfortable.”",
+        "illustrationPrompt": "Bedside two-person close conversation: Dad listens calmly to pajama-clad An'an, coat now folded on chair away from curtain.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl with round face, ear-length black bob, wearing plain pale-yellow pajamas. Her yellow star clip rests on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedside two-person close conversation: Dad listens calmly to pajama-clad An'an, coat now folded on chair away from curtain.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Change only An'an's clothing to plain PALE-YELLOW PAJAMAS matching the adjacent bedtime pages, no hoodie, no pink floral pajamas. Remove the star clip from her hair and place one yellow star clip on the small bedside dish. Keep her six-year-old round face, ear-length black bob, all poses, Dad's navy sweater, coat or bed props and lighting.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-7a0b78a8-4683-4408-a0a0-e1e0f0d8fb2f.png"
+      },
+      {
+        "page": 11,
+        "zhText": "他们把外套收好，挪开椅子。安安躺回去试了试，窗边没有那只长袖子了。",
+        "enText": "They put the coat away and moved the chair. An'an lay down to try again. The long sleeve was no longer beside the window.",
+        "illustrationPrompt": "Bedroom wide shot: Dad moves bare oak chair away from curtain, An'an in pale-yellow pajamas lies in bed looking toward now-clear curtain, no coat shadow.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom wide shot: Dad moves bare oak chair away from curtain, An'an in pale-yellow pajamas lies in bed looking toward now-clear curtain, no coat shadow.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-4b24ca78-44e3-49f3-a9b1-5bc2513ebc47.png"
+      },
+      {
+        "page": 12,
+        "zhText": "床边有一盏暖暖的小夜灯。爸爸把它放稳，远离被子和窗帘，房间留下一小片柔和的光。",
+        "enText": "There was a warm little night-light. Dad placed it securely away from bedding and curtains, leaving a soft pool of light in the room.",
+        "illustrationPrompt": "Bedroom object close shot: Dad places small enclosed warm amber night-light on stable shelf well away from curtain and cream bedding, no exposed wiring.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom object close shot: Dad places small enclosed warm amber night-light on stable shelf well away from curtain and cream bedding, no exposed wiring.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c7f7d34e-7cb0-4198-a75c-72ff672694ab.png"
+      },
+      {
+        "page": 13,
+        "zhText": "安安问：“我还想你再坐一会儿。”爸爸说：“好，我们一起听听窗外的声音。”",
+        "enText": "An'an asked, “Could you stay a little longer too?” Dad said, “Yes. Let's listen to the sounds outside together.”",
+        "illustrationPrompt": "Bedside medium shot: Dad sits quietly beside An'an in pale-yellow pajamas under quilt, warm night-light on distant safe shelf.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedside medium shot: Dad sits quietly beside An'an in pale-yellow pajamas under quilt, warm night-light on distant safe shelf.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-3db6edde-bfc5-45e8-830b-93007df1aa78.png"
+      },
+      {
+        "page": 14,
+        "zhText": "远处有车轻轻开过，风碰了碰树叶。安安握着被角，呼吸一点一点慢下来。",
+        "enText": "A car passed softly in the distance, and wind rustled the leaves. Holding her quilt, An'an's breathing slowly settled.",
+        "illustrationPrompt": "Close calm An'an in pale-yellow pajamas tucked under cream quilt, Dad's reassuring presence beside bed, soft night window tree shapes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close calm An'an in pale-yellow pajamas tucked under cream quilt, Dad's reassuring presence beside bed, soft night window tree shapes.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-2052d84e-d974-45ec-ace7-b56b543ad4dd.png"
+      },
+      {
+        "page": 15,
+        "zhText": "爸爸告诉她：“我在隔壁，需要我就叫一声，我会来。”安安点头，知道门外有人可以找到。",
+        "enText": "Dad told her, “I'll be in the next room. Call me if you need me, and I'll come.” An'an nodded, knowing someone was nearby.",
+        "illustrationPrompt": "Bedroom doorway medium shot: Dad points gently toward adjoining hallway, An'an in pale-yellow pajamas listens from bed, door remains slightly open, warm night-light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom doorway medium shot: Dad points gently toward adjoining hallway, An'an in pale-yellow pajamas listens from bed, door remains slightly open, warm night-light.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-b9f749ab-2c2a-42f7-adb6-9b00d24aecae.png"
+      },
+      {
+        "page": 16,
+        "zhText": "过了一会儿，她还是叫了爸爸。爸爸走回来，听她说完，又陪她坐了一小会儿。",
+        "enText": "A little later, she still called Dad. He came back, listened to what she needed, and sat beside her a little longer.",
+        "illustrationPrompt": "Tender bedside scene: Dad returns to sit by An'an in pale-yellow pajamas, she speaks quietly, safe amber night-light remains on.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Tender bedside scene: Dad returns to sit by An'an in pale-yellow pajamas, she speaks quietly, safe amber night-light remains on.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-631cafd3-1287-4ebd-915d-0b65b57570c3.png"
+      },
+      {
+        "page": 17,
+        "zhText": "第二个晚上，安安还想留着小灯。爸爸和她一起安排好，没有催她立刻变得勇敢。",
+        "enText": "The next evening, An'an still wanted the little light. Dad helped arrange things again without rushing her to become brave at once.",
+        "illustrationPrompt": "Next bedtime wide bedroom: An'an in pale-yellow pajamas and Dad calmly prepare bed, coat and chair clear of curtain, safe warm night-light on shelf.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Next bedtime wide bedroom: An'an in pale-yellow pajamas and Dad calmly prepare bed, coat and chair clear of curtain, safe warm night-light on shelf.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-136d3d47-c15a-4cc6-b374-090e7999d7dc.png"
+      },
+      {
+        "page": 18,
+        "zhText": "小灯亮着，安安闭上眼睛。今天的害怕已经说出来，安心也一点一点，走到了枕边。",
+        "enText": "The little light glowed as An'an closed her eyes. She had spoken about her fear, and comfort had slowly found its way to her pillow.",
+        "illustrationPrompt": "Peaceful bedtime ending: An'an in pale-yellow pajamas sleeping under cream quilt, empty pillow space and safe warm night-light on shelf, door slightly open, Dad absent.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Peaceful bedtime ending: An'an in pale-yellow pajamas sleeping under cream quilt, empty pillow space and safe warm night-light on shelf, door slightly open, Dad absent.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-d169eef9-0bd1-42d3-8dcb-d6c74752e53d.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 29,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "害怕",
+        "睡前安心"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "接纳孩子对黑暗和影子的害怕，共同选择舒适的睡前支持。",
+      "reminder": "不嘲笑害怕，也不以独自关灯入睡证明勇敢；夜灯安全放置，成人说明在哪里、如何求助并及时回应。",
+      "questions": [
+        "安安为什么一开始不敢说自己害怕？",
+        "什么能让你睡前更安心？你想怎样告诉家人？"
+      ],
+      "activity": "在成人陪伴下，用手或普通玩具做柔和的影子游戏，孩子随时可以停，再一起选择舒服的睡前安排。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, short dark hair, forest-green sweatshirt, charcoal trousers. Teacher: adult Chinese woman, tied-back black hair, sage cardigan. Park attendant: middle-aged Chinese woman, plain blue polo. Bedtime An’an wears plain pale-yellow pajamas, with her star hair clip on a bedside dish.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

@@ -1,0 +1,616 @@
+{
+  "status": "complete",
+  "completedAt": "2026-10-03T00:56:10.062Z",
+  "booksVerified": 10,
+  "naturalFullPlaybackBooks": [
+    "我想自己试一试",
+    "明天要带的那片叶子",
+    "乐乐有了新朋友",
+    "我也想把话说完",
+    "小车怎么到了你家",
+    "找不到的小熊",
+    "妈妈说可以，爸爸说不行",
+    "今晚的小灯可以亮着吗",
+    "同一朵云，两种样子"
+  ],
+  "seekAndAutomaticPlaybackBooks": [
+    "你怎么没戴我的帽子"
+  ],
+  "consoleErrors": [],
+  "rows": [
+    {
+      "kind": "natural-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 140.556,
+          "duration": 140.556,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/wo-xiang-zi-ji-shi-yi-shi/zh-9367acdfb31f9681.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "我想自己试一试 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "我想自己试一试",
+      "verifiedAt": "2026-10-02T22:52:59.868Z"
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 140.196,
+          "duration": 140.196,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/ming-tian-yao-dai-de-na-pian-ye-zi/zh-96c9f0b586a6dbfa.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "明天要带的那片叶子 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "明天要带的那片叶子",
+      "verifiedAt": "2026-10-02T23:08:22.520Z"
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 20 页，共 20 页，第 20 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 153.924,
+          "duration": 153.924,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/le-le-you-le-xin-peng-you/zh-c4a55cf576754335.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "乐乐有了新朋友 第 20 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 20 页，第 20 页插图已完成",
+      "status": "ended",
+      "title": "乐乐有了新朋友",
+      "verifiedAt": "2026-10-02T23:24:25.195Z"
+    },
+    {
+      "kind": "pause-resume",
+      "start": {
+        "article": "第 1 页，共 18 页，第 1 页插图已完成",
+        "audio": [
+          {
+            "currentTime": 0,
+            "duration": 144.228,
+            "ended": false,
+            "error": null,
+            "paused": false,
+            "src": "http://localhost:3000/library/richang/wo-ye-xiang-ba-hua-shuo-wan/zh-1447ed289593f488.mp3"
+          }
+        ],
+        "images": [
+          {
+            "alt": "我也想把话说完 第 1 页插图",
+            "complete": true,
+            "width": 1200
+          }
+        ],
+        "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+        "status": "playing",
+        "title": "我也想把话说完"
+      },
+      "paused": {
+        "article": "第 1 页，共 18 页，第 1 页插图已完成",
+        "audio": [
+          {
+            "currentTime": 0.126091,
+            "duration": 144.228,
+            "ended": false,
+            "error": null,
+            "paused": true,
+            "src": "http://localhost:3000/library/richang/wo-ye-xiang-ba-hua-shuo-wan/zh-1447ed289593f488.mp3"
+          }
+        ],
+        "images": [
+          {
+            "alt": "我也想把话说完 第 1 页插图",
+            "complete": true,
+            "width": 1200
+          }
+        ],
+        "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+        "status": "paused",
+        "title": "我也想把话说完"
+      },
+      "resumed": {
+        "article": "第 1 页，共 18 页，第 1 页插图已完成",
+        "audio": [
+          {
+            "currentTime": 0.387948,
+            "duration": 144.228,
+            "ended": false,
+            "error": null,
+            "paused": false,
+            "src": "http://localhost:3000/library/richang/wo-ye-xiang-ba-hua-shuo-wan/zh-1447ed289593f488.mp3"
+          }
+        ],
+        "images": [
+          {
+            "alt": "我也想把话说完 第 1 页插图",
+            "complete": true,
+            "width": 1200
+          }
+        ],
+        "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+        "status": "playing",
+        "title": "我也想把话说完"
+      }
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 144.228,
+          "duration": 144.228,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/wo-ye-xiang-ba-hua-shuo-wan/zh-1447ed289593f488.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "我也想把话说完 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "我也想把话说完",
+      "verifiedAt": "2026-10-02T23:32:29.195Z"
+    },
+    {
+      "kind": "auto-advance-off-start",
+      "article": "第 1 页，共 18 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 0.103741,
+          "duration": 143.7,
+          "ended": false,
+          "error": null,
+          "paused": false,
+          "src": "http://localhost:3000/library/richang/xiao-che-zen-me-dao-le-ni-jia/zh-4654c8a713a2a2db.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "小车怎么到了你家 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "playing",
+      "title": "小车怎么到了你家"
+    },
+    {
+      "kind": "auto-advance-off-end",
+      "article": "第 1 页，共 18 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 9.204893,
+          "duration": 143.7,
+          "ended": false,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/xiao-che-zen-me-dao-le-ni-jia/zh-4654c8a713a2a2db.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "小车怎么到了你家 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "ended",
+      "title": "小车怎么到了你家"
+    },
+    {
+      "kind": "restart-after-auto-advance-toggle",
+      "article": "第 1 页，共 18 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 0.397206,
+          "duration": 143.7,
+          "ended": false,
+          "error": null,
+          "paused": false,
+          "src": "http://localhost:3000/library/richang/xiao-che-zen-me-dao-le-ni-jia/zh-4654c8a713a2a2db.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "小车怎么到了你家 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "playing",
+      "title": "小车怎么到了你家"
+    },
+    {
+      "kind": "natural-playback-sample",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 143.7,
+          "duration": 143.7,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/xiao-che-zen-me-dao-le-ni-jia/zh-4654c8a713a2a2db.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "小车怎么到了你家 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "小车怎么到了你家",
+      "expectedPage": 18
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 143.7,
+          "duration": 143.7,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/xiao-che-zen-me-dao-le-ni-jia/zh-4654c8a713a2a2db.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "小车怎么到了你家 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "小车怎么到了你家",
+      "verifiedAt": "2026-10-02T23:58:03.915Z"
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 148.404,
+          "duration": 148.404,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/zhao-bu-dao-de-xiao-xiong/zh-cfea525987e301b6.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "找不到的小熊 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "找不到的小熊",
+      "verifiedAt": "2026-10-03T00:10:00.262Z"
+    },
+    {
+      "kind": "playback-start",
+      "article": "第 1 页，共 18 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 0.09323,
+          "duration": 140.652,
+          "ended": false,
+          "error": null,
+          "paused": false,
+          "src": "http://localhost:3000/library/richang/ni-zen-me-mei-dai-wo-de-mao-zi/zh-962211e9ca513d67.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "你怎么没戴我的帽子 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "playing",
+      "title": "你怎么没戴我的帽子"
+    },
+    {
+      "kind": "pause",
+      "article": "第 1 页，共 18 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 0.149377,
+          "duration": 140.652,
+          "ended": false,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/ni-zen-me-mei-dai-wo-de-mao-zi/zh-962211e9ca513d67.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "你怎么没戴我的帽子 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "paused",
+      "title": "你怎么没戴我的帽子"
+    },
+    {
+      "kind": "middle-page-seek",
+      "article": "第 9 页，共 18 页，第 9 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 63.129276,
+          "duration": 140.652,
+          "ended": false,
+          "error": null,
+          "paused": false,
+          "src": "http://localhost:3000/library/richang/ni-zen-me-mei-dai-wo-de-mao-zi/zh-962211e9ca513d67.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "你怎么没戴我的帽子 第 9 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 9 页，第 9 页插图已完成",
+      "status": "playing",
+      "title": "你怎么没戴我的帽子"
+    },
+    {
+      "kind": "seek-playback-sample",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 140.652,
+          "duration": 140.652,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/ni-zen-me-mei-dai-wo-de-mao-zi/zh-962211e9ca513d67.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "你怎么没戴我的帽子 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "你怎么没戴我的帽子",
+      "expectedPage": 18
+    },
+    {
+      "kind": "seek-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 140.652,
+          "duration": 140.652,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/ni-zen-me-mei-dai-wo-de-mao-zi/zh-962211e9ca513d67.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "你怎么没戴我的帽子 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "你怎么没戴我的帽子"
+    },
+    {
+      "kind": "playback-start",
+      "article": "第 1 页，共 18 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 0.114772,
+          "duration": 139.572,
+          "ended": false,
+          "error": null,
+          "paused": false,
+          "src": "http://localhost:3000/library/richang/ma-ma-shuo-ke-yi-ba-ba-shuo-bu-xing/zh-b2a40bda68b928b1.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "妈妈说可以，爸爸说不行 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "playing",
+      "title": "妈妈说可以，爸爸说不行"
+    },
+    {
+      "kind": "lightbox-sync",
+      "dialog": "第 18 页插图放大预览",
+      "dialogText": "18 / 18下次遇到不一样的回答，安安说：“请你们先商量，再一起告诉我。”爸爸妈妈认真点了点头。",
+      "selectedPage": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended"
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 139.572,
+          "duration": 139.572,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/ma-ma-shuo-ke-yi-ba-ba-shuo-bu-xing/zh-b2a40bda68b928b1.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "妈妈说可以，爸爸说不行 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "妈妈说可以，爸爸说不行",
+      "verifiedAt": "2026-10-03T00:27:20.492Z"
+    },
+    {
+      "kind": "playback-start",
+      "article": "第 1 页，共 18 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 0.127408,
+          "duration": 137.94,
+          "ended": false,
+          "error": null,
+          "paused": false,
+          "src": "http://localhost:3000/library/richang/jin-wan-de-xiao-deng-ke-yi-liang-zhe-ma/zh-01ec01e19b98c1c9.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "今晚的小灯可以亮着吗 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "playing",
+      "title": "今晚的小灯可以亮着吗"
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 18 页，共 18 页，第 18 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 137.94,
+          "duration": 137.94,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/jin-wan-de-xiao-deng-ke-yi-liang-zhe-ma/zh-01ec01e19b98c1c9.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "今晚的小灯可以亮着吗 第 18 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 18 页，第 18 页插图已完成",
+      "status": "ended",
+      "title": "今晚的小灯可以亮着吗",
+      "verifiedAt": "2026-10-03T00:36:53.469Z"
+    },
+    {
+      "kind": "playback-start",
+      "article": "第 1 页，共 16 页，第 1 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 0.118048,
+          "duration": 133.092,
+          "ended": false,
+          "error": null,
+          "paused": false,
+          "src": "http://localhost:3000/library/richang/tong-yi-duo-yun-liang-zhong-yang-zi/zh-adb5aba3847f8097.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "同一朵云，两种样子 第 1 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 1 页，第 1 页插图已完成",
+      "status": "playing",
+      "title": "同一朵云，两种样子"
+    },
+    {
+      "kind": "natural-complete",
+      "article": "第 16 页，共 16 页，第 16 页插图已完成",
+      "audio": [
+        {
+          "currentTime": 133.092,
+          "duration": 133.092,
+          "ended": true,
+          "error": null,
+          "paused": true,
+          "src": "http://localhost:3000/library/richang/tong-yi-duo-yun-liang-zhong-yang-zi/zh-adb5aba3847f8097.mp3"
+        }
+      ],
+      "images": [
+        {
+          "alt": "同一朵云，两种样子 第 16 页插图",
+          "complete": true,
+          "width": 1200
+        }
+      ],
+      "selectedTab": "跳到第 16 页，第 16 页插图已完成",
+      "status": "ended",
+      "title": "同一朵云，两种样子",
+      "verifiedAt": "2026-10-03T00:56:10.056Z"
+    }
+  ]
+}

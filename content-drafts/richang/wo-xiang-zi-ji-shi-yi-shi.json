@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "wo-xiang-zi-ji-shi-yi-shi",
+    "seriesId": "richang",
+    "title": "我想自己试一试",
+    "subtitle": "这根鞋带，让我来",
+    "moral": {
+      "zh": "自己的事情可以慢慢尝试，需要帮助时也可以说出来。",
+      "en": "You can take time to try things yourself and ask for help when you need it."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 21,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "出门前，安安坐在门边的小凳上。左脚的鞋带已经系好，右脚的两根白鞋带还松松地躺着。",
+        "enText": "Before going out, An'an sat on the little bench by the door. Her left shoe was tied, but two white laces lay loose on her right shoe.",
+        "illustrationPrompt": "Wide home entry: An'an sits on oak bench studying loose right white sneaker laces; Dad stands beside her with canvas outing bag; left sneaker tied.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset type: one square full-bleed picture-book page, no panels. High quality warm stylized 3D animated-film illustration, rounded human cartoon characters, soft realistic fabric and wood, warm morning window light, inviting contemporary Chinese family home. An'an is a six-year-old Chinese girl with a round face, chin-length straight black bob, one yellow star hair clip on her left side, teal jacket, blue jeans, white sneakers with red edging and white laces. Dad is a Chinese adult with short black hair, navy sweater and beige trousers. Only An'an and Dad appear. THIS PAGE'S SCENE: Wide eye-level view of the home entryway: An'an sits on a low oak bench looking curiously at the two untied white laces of her right sneaker. Dad stands beside her holding a canvas outing bag and smiles gently. Her left sneaker is already tied; right shoe laces visibly loose. Contemporary cozy entry, pale green cabinet, no danger. The illustration begins her wish to learn tying her own shoes. No words, letters, numbers, captions, speech bubbles, logos, watermarks, animal people, collage or extra characters. Single coherent square composition.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-0210a762-e8ef-491a-9a69-2ddf86dddad4.png"
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸蹲下来，手指轻轻一绕，就要替她系好。安安把手伸过来：“这一次，我想自己试试。”",
+        "enText": "Dad crouched down and began looping the laces for her. An'an reached out. “This time, I'd like to try myself.”",
+        "illustrationPrompt": "Entry medium shot: Dad pauses with hands near untied right shoe; An'an reaches toward her own laces, eager expression.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Entry medium shot: Dad pauses with hands near untied right shoe; An'an reaches toward her own laces, eager expression.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT THE REFERENCE IMAGE: Correct the shoe action. An'an sits on the low oak bench, and Dad crouches beside her. Dad has paused with his hands near the loose white laces of An'an's small right sneaker, worn on HER foot, as she reaches to try. Dad is NEVER tying his own shoe. His own dark slip-on shoes have no visible laces. Keep both character identities, faces, teal hoodie, navy sweater and beige trousers.\nAn'an is always the six-year-old Chinese girl with black bob, yellow star clip, plain teal hoodie and blue jeans. Single square scene, no text. Preserve existing non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-561fa727-2955-4748-98e9-8c7697aee0de.png"
+      },
+      {
+        "page": 3,
+        "zhText": "“好呀。”爸爸松开手。安安拿起两根鞋带，一根往左，一根往右，又一起缠到了手指上。",
+        "enText": "“Sure,” Dad said, letting go. An'an picked up both laces. One went left, one went right, and both wound around her fingers.",
+        "illustrationPrompt": "Close-up of An'an's hands awkwardly holding two white laces above right sneaker; Dad's hands withdrawn, no finished knot.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close-up of An'an's hands awkwardly holding two white laces above right sneaker; Dad's hands withdrawn, no finished knot.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-6e2335be-2b16-4326-a86b-1c0e60f1fb7d.png"
+      },
+      {
+        "page": 4,
+        "zhText": "她拉了拉，鞋带没有变成蝴蝶结，反倒越挤越紧。“它们怎么不听我的话？”安安皱起了眉。",
+        "enText": "She tugged, but the laces did not become a bow. They only bunched up. “Why won't they do what I want?” An'an frowned.",
+        "illustrationPrompt": "Child face and shoe close-up: An'an frowns at loose tangled laces, no elaborate knot; Dad calmly beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Child face and shoe close-up: An'an frowns at loose tangled laces, no elaborate knot; Dad calmly beside her.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-126af6d3-da42-49cf-8ca9-84da12ddc9f8.png"
+      },
+      {
+        "page": 5,
+        "zhText": "爸爸的手又动了一下。安安急忙说：“你先别全帮我做完。我还想再看看。”",
+        "enText": "Dad's hand moved again. An'an quickly said, “Please don't do the whole thing yet. I still want to work it out.”",
+        "illustrationPrompt": "Two-person entry medium shot: An'an holds up an open hand to pause Dad; right shoe remains untied, Dad listens.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-person entry medium shot: An'an holds up an open hand to pause Dad; right shoe remains untied, Dad listens.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-190d4ef2-8c61-48e9-a6d5-fc8a495eb324.png"
+      },
+      {
+        "page": 6,
+        "zhText": "爸爸把手放在膝盖上：“你希望我怎么帮？”安安想了想：“先帮我把这团松开。”",
+        "enText": "Dad rested his hands on his knees. “How would you like me to help?” An'an thought. “First, help me loosen this tangle.”",
+        "illustrationPrompt": "Entry close conversation: Dad and An'an at eye level, her two lace ends visible; gentle open questioning posture.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Entry close conversation: Dad and An'an at eye level, her two lace ends visible; gentle open questioning posture.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT THE REFERENCE IMAGE: Keep the warm close conversation but seat An'an on the low oak bench. Her right white red-trimmed sneaker is still untied, with exactly two loose lace ends, while her left sneaker is already tied. Dad rests his hands on his knees and listens; she asks him for help untangling. Do not show both shoes already tied. Keep faces, bob, star clip and clothing.\nAn'an is always the six-year-old Chinese girl with black bob, yellow star clip, plain teal hoodie and blue jeans. Single square scene, no text. Preserve existing non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-0412afdc-175d-4c13-942e-e817e543d44d.png"
+      },
+      {
+        "page": 7,
+        "zhText": "他们一起把鞋带理直。爸爸只演示交叉的第一步，又把两根鞋带交回安安手里。",
+        "enText": "Together, they straightened the laces. Dad showed only the first crossing, then put both ends back in An'an's hands.",
+        "illustrationPrompt": "Hands detail: Dad demonstrates two straight white laces crossed once above right shoe; An'an's hands ready to take them, no bow.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Hands detail: Dad demonstrates two straight white laces crossed once above right shoe; An'an's hands ready to take them, no bow.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT THE REFERENCE IMAGE: Correct the demonstration object. Dad shows one simple crossing of two white laces on An'an's SMALL right sneaker attached to HER jean-clad leg as she sits on the low oak bench. Her hands are ready to take the two lace ends. Do not depict Dad tying a large sneaker on his own foot. Dad's adult feet in plain dark slip-on shoes rest out of the focal area. No completed bow yet.\nAn'an is always the six-year-old Chinese girl with black bob, yellow star clip, plain teal hoodie and blue jeans. Single square scene, no text. Preserve existing non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-854a392b-387c-4978-910a-7e72c1a7d4e2.png"
+      },
+      {
+        "page": 8,
+        "zhText": "安安照着试了一次。两根鞋带终于交叉在一起，她的肩膀也慢慢放松了。",
+        "enText": "An'an tried it once. At last, the two laces crossed, and her shoulders slowly relaxed.",
+        "illustrationPrompt": "Medium entry shot: An'an looks pleased at a simple first lace crossing on right sneaker; Dad waits without touching.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Medium entry shot: An'an looks pleased at a simple first lace crossing on right sneaker; Dad waits without touching.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-64cd356a-ea34-437f-ab94-c8eae3eba559.png"
+      },
+      {
+        "page": 9,
+        "zhText": "可到了绕圈的时候，小圈又跑散了。安安抬头：“你能帮我扶住鞋子吗？别帮我绕。”",
+        "enText": "But when she tried making a loop, it slipped apart. An'an looked up. “Could you hold the shoe still? Please let me make the loop.”",
+        "illustrationPrompt": "Close practical scene: Dad steadies right shoe at heel while An'an forms one small loop with white lace, other lace loose.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close practical scene: Dad steadies right shoe at heel while An'an forms one small loop with white lace, other lace loose.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-5346fb3b-ae60-469f-bd6c-e25abc533e56.png"
+      },
+      {
+        "page": 10,
+        "zhText": "爸爸扶着鞋后跟。安安的手空出来一点，终于做出一个小小的圈，像一只软软的兔耳朵。",
+        "enText": "Dad held the heel. With a little more room for her hands, An'an made a small loop like a soft bunny ear.",
+        "illustrationPrompt": "Detailed child's hands: one white lace loop held above right sneaker, Dad supports only heel, no second completed loop.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Detailed child's hands: one white lace loop held above right sneaker, Dad supports only heel, no second completed loop.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT THE REFERENCE IMAGE: Change only the girl's identity and clothing. Replace her bun hairstyle, red hair tie and cream patterned sweater with An'an's ear-length straight black bob, one yellow star hair clip on the left, and plain teal zip-front hoodie. Keep her round face and six-year-old proportions, blue jeans, white red-edged sneakers, one white lace loop, Dad supporting only the shoe heel, all other poses, objects, background and lighting.\nAn'an is always the six-year-old Chinese girl with black bob, yellow star clip, plain teal hoodie and blue jeans. Single square scene, no text. Preserve existing non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-75a4b8dc-1f82-4d0f-b087-ba4843b5597a.png"
+      },
+      {
+        "page": 11,
+        "zhText": "小圈还是松了。安安把鞋放下：“我的手有点累。”爸爸点点头：“可以停一会儿。”",
+        "enText": "The loop still came loose. An'an put her foot down. “My hands feel tired.” Dad nodded. “We can take a break.”",
+        "illustrationPrompt": "Entry medium shot: An'an rests hands on lap, untied right shoe on mat, Dad nods gently beside bench.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Entry medium shot: An'an rests hands on lap, untied right shoe on mat, Dad nods gently beside bench.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-7a664967-73ed-47f5-9446-42c5ea755bd0.png"
+      },
+      {
+        "page": 12,
+        "zhText": "他们今天要赶上公园的活动。爸爸说清楚时间，又问：“这一只，现在要我帮忙系好吗？”",
+        "enText": "They needed to reach an activity at the park on time. Dad explained, then asked, “Would you like me to tie this one for now?”",
+        "illustrationPrompt": "Entry conversation: Dad holds outing bag beside seated An'an and gestures gently toward untied right shoe; no clock or text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Entry conversation: Dad holds outing bag beside seated An'an and gestures gently toward untied right shoe; no clock or text.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-11b5fe03-6052-44e6-9a2a-e44ace43cf5b.png"
+      },
+      {
+        "page": 13,
+        "zhText": "安安点点头：“今天先帮我。周末，我还想慢慢试。”爸爸系好鞋带，又检查了一下两只鞋。",
+        "enText": "An'an nodded. “Help me today. I'd like another slow try this weekend.” Dad tied the lace and checked both shoes.",
+        "illustrationPrompt": "Low entry view: Dad checks securely tied bows on both white red-edged sneakers while An'an sits ready to leave.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Low entry view: Dad checks securely tied bows on both white red-edged sneakers while An'an sits ready to leave.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-38501ea0-927e-4739-9c6b-71c9a587a103.png"
+      },
+      {
+        "page": 14,
+        "zhText": "周末的早晨，他们没有急着出门。安安坐回小凳，爸爸坐在旁边，等她先伸出手。",
+        "enText": "On the weekend morning, they were in no rush. An'an returned to the little bench. Dad sat beside her and waited for her to begin.",
+        "illustrationPrompt": "Wide quiet entry weekend: An'an and Dad seated side by side; her right sneaker laces untied for practice, left tied; no outing bag.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Wide quiet entry weekend: An'an and Dad seated side by side; her right sneaker laces untied for practice, left tied; no outing bag.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-78948e58-0143-4542-a209-c23a24c4f69b.png"
+      },
+      {
+        "page": 15,
+        "zhText": "这次，她记得先交叉，再拉紧。到了小圈，她说：“这一步，你再做慢一点给我看。”",
+        "enText": "This time, she remembered to cross and pull first. At the loop, she said, “Please show me that part again, more slowly.”",
+        "illustrationPrompt": "Close side view: An'an holds crossed laces, Dad slowly demonstrates a loop with loose separate practice lace in hands, no extra shoes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close side view: An'an holds crossed laces, Dad slowly demonstrates a loop with loose separate practice lace in hands, no extra shoes.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-83c5f37c-b1cf-4e08-a48b-01837a9aa737.png"
+      },
+      {
+        "page": 16,
+        "zhText": "爸爸做一小步，安安跟一小步。一个歪歪的蝴蝶结终于留在鞋面上，安安盯着它笑了。",
+        "enText": "Dad showed a small step, and An'an tried a small step. At last, a crooked bow stayed on the shoe. An'an smiled at it.",
+        "illustrationPrompt": "Child face and sneaker detail: An'an smiles at one slightly uneven but secure white bow on right shoe; Dad's hands away.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Child face and sneaker detail: An'an smiles at one slightly uneven but secure white bow on right shoe; Dad's hands away.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-f6fa7a88-e05c-4eff-997b-bdf49041ee44.png"
+      },
+      {
+        "page": 17,
+        "zhText": "“我自己做了好多，还有一点是你帮的。”安安说。爸爸回答：“对，我们照着你需要的办法来。”",
+        "enText": "“I did lots of it myself, and you helped with a little,” An'an said. Dad replied, “Yes. We found the kind of help you needed.”",
+        "illustrationPrompt": "Warm entry two-person conversation: An'an points at tied right shoe, Dad smiles; both shoes tied, no magical glow.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Warm entry two-person conversation: An'an points at tied right shoe, Dad smiles; both shoes tied, no magical glow.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-54316a87-e85e-4959-ae57-a325254e9860.png"
+      },
+      {
+        "page": 18,
+        "zhText": "出门前，爸爸再检查一遍。安安站起来，踩了踩鞋：“下次这根鞋带，也先让我试试。”",
+        "enText": "Dad checked again before they went out. An'an stood and tapped her shoes. “Next time, please let me try this lace first too.”",
+        "illustrationPrompt": "Wide doorway ending: An'an stands confidently in safely tied sneakers beside Dad, morning courtyard visible beyond open door.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Wide doorway ending: An'an stands confidently in safely tied sneakers beside Dad, morning courtyard visible beyond open door.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nCRITICAL SHOE ACTION: Dad wears plain dark slip-on shoes without visible laces. The white red-edged sneaker being practiced belongs to An'an and is on her small foot, never Dad's foot. Before the final leaving scene An'an remains seated on the low oak entry bench; Dad supports or demonstrates only as the scene specifies. Her other shoe is already tied. Do not change her seated position into standing during practice.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c45a3542-0b05-4812-83ab-6bf51d6ac94e.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 21,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "自主尝试",
+        "适当支持"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "让孩子参与决定尝试的方式、时间和需要的帮助。",
+      "reminder": "不把独立当作必须马上完成的考验；赶时间时说明原因，约好再试，穿鞋出门前由成人检查鞋带。",
+      "questions": [
+        "安安希望爸爸帮哪一部分，哪一部分想自己来？",
+        "什么事情你想试试？希望身边的人怎样帮助你？"
+      ],
+      "activity": "选一件安全的小事，先问孩子想自己做什么、需要怎样的协助，再留出不赶时间的尝试机会。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, short dark hair, forest-green sweatshirt, charcoal trousers. Teacher: adult Chinese woman, tied-back black hair, sage cardigan. Park attendant: middle-aged Chinese woman, plain blue polo. Bedtime An’an wears plain pale-yellow pajamas, with her star hair clip on a bedside dish.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

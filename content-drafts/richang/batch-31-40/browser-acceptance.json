@@ -1,0 +1,102 @@
+{
+  "checkedOn": "2026-10-04",
+  "books": [
+    {
+      "id": "ma-ma-ni-shi-zai-xiong-wo-ma",
+      "page": "第 18 页，共 18 页，第 18 页插图已完成",
+      "started": true,
+      "autoAdvance": true
+    },
+    {
+      "id": "wo-hai-mei-shuo-yan-lei-jiu-lai-le",
+      "started": true,
+      "autoAdvance": true,
+      "page": "第 18 页，共 18 页，第 18 页插图已完成"
+    },
+    {
+      "id": "na-ju-hua-ka-zai-zui-ba-li",
+      "autoAdvance": true,
+      "page": "第 2 页，共 20 页，第 2 页插图已完成",
+      "pageTabs": 20,
+      "imageLoaded": true,
+      "paused": true
+    },
+    {
+      "id": "wo-zhi-xiang-chi-zhe-yi-zhong",
+      "autoAdvance": true,
+      "page": "第 2 页，共 16 页，第 2 页插图已完成",
+      "pageTabs": 16,
+      "imageLoaded": true,
+      "paused": true
+    },
+    {
+      "id": "ni-yi-chi-wo-ye-xiang-chi",
+      "autoAdvance": true,
+      "page": "第 2 页，共 16 页，第 2 页插图已完成",
+      "pageTabs": 16,
+      "imageLoaded": true,
+      "paused": true
+    },
+    {
+      "id": "na-liang-xiao-che-wo-jin-tian-jiu-xiang-yao",
+      "autoAdvance": true,
+      "page": "第 2 页，共 20 页，第 2 页插图已完成",
+      "pageTabs": 20,
+      "imageLoaded": true,
+      "paused": true
+    },
+    {
+      "id": "sheng-qi-de-xiao-shou-fang-na-li",
+      "autoAdvance": true,
+      "page": "第 2 页，共 20 页，第 2 页插图已完成",
+      "pageTabs": 20,
+      "imageLoaded": true,
+      "paused": true
+    },
+    {
+      "id": "zhe-yi-ji-wo-hai-xiang-kan",
+      "autoAdvance": true,
+      "page": "第 2 页，共 18 页，第 2 页插图已完成",
+      "pageTabs": 18,
+      "imageLoaded": true,
+      "paused": true
+    },
+    {
+      "id": "zhe-ci-zhen-de-bu-shi-wo",
+      "autoAdvance": true,
+      "page": "第 2 页，共 18 页，第 2 页插图已完成",
+      "pageTabs": 18,
+      "imageLoaded": true,
+      "paused": true
+    },
+    {
+      "id": "na-sheng-ni-hao-cang-zai-bei-hou",
+      "autoAdvance": true,
+      "page": "第 2 页，共 16 页，第 2 页插图已完成",
+      "pageTabs": 16,
+      "imageLoaded": true,
+      "paused": true
+    }
+  ],
+  "fullPlaybackReachedEnd": [
+    "ma-ma-ni-shi-zai-xiong-wo-ma",
+    "wo-hai-mei-shuo-yan-lei-jiu-lai-le"
+  ],
+  "lastPageEndCheck": {
+    "id": "na-sheng-ni-hao-cang-zai-bei-hou",
+    "passed": true,
+    "method": "Manually selected final page then resumed playback and observed stop on page 16."
+  },
+  "mobileViewport": {
+    "width": 390,
+    "height": 844,
+    "documentWidth": 390,
+    "gridPages": 16,
+    "passed": true
+  },
+  "consoleErrors": [],
+  "screenshots": {
+    "mobile": ".storybloom-cache/richang-batch4-acceptance/mobile.png",
+    "desktop": ".storybloom-cache/richang-batch4-acceptance/desktop.png"
+  }
+}

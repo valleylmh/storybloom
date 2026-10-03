@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "wo-ye-xiang-ba-hua-shuo-wan",
+    "seriesId": "richang",
+    "title": "我也想把话说完",
+    "subtitle": "餐桌边，留一个听的位置",
+    "moral": {
+      "zh": "每个人的话都值得被听见，也需要给别人说完的时间。",
+      "en": "Everyone deserves to be heard, and everyone needs time to finish speaking."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 24,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "晚饭时，安安想讲学校里的一件事：“今天，我们发现了一片像小手掌的叶子……”",
+        "enText": "At dinner, An'an wanted to tell a story from school. “Today, we found a leaf shaped like a little hand...”",
+        "illustrationPrompt": "Warm oak dinner table wide shot: An'an begins telling story to Mom and Dad over simple meal, pale green kitchen cabinets.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Warm oak dinner table wide shot: An'an begins telling story to Mom and Dad over simple meal, pale green kitchen cabinets.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-71752b55-8188-4bb4-a847-008b7de05306.png"
+      },
+      {
+        "page": 2,
+        "zhText": "爸爸刚想到明天的安排，转头对妈妈说：“早上出门的时间，要不要改一下？”安安的话停住了。",
+        "enText": "Dad remembered tomorrow's plans and turned to Mom. “Should we change the time we leave in the morning?” An'an's words stopped.",
+        "illustrationPrompt": "Dinner medium shot: Dad turns toward Mom mid-conversation; An'an sits with mouth just closing and hand raised slightly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner medium shot: Dad turns toward Mom mid-conversation; An'an sits with mouth just closing and hand raised slightly.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-3ccd8672-967d-445d-806c-260a7823ff35.png"
+      },
+      {
+        "page": 3,
+        "zhText": "妈妈接着说起要带的东西。安安等了等，又开口：“那片叶子的背面……”",
+        "enText": "Mom started talking about what they needed to bring. An'an waited, then tried again. “On the back of that leaf...”",
+        "illustrationPrompt": "Dinner medium shot: Mom talking to Dad, An'an leans forward trying to continue; no leaf or paper props on table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner medium shot: Mom talking to Dad, An'an leans forward trying to continue; no leaf or paper props on table.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-55db152e-93fe-450c-af7a-d7122261ee92.png"
+      },
+      {
+        "page": 4,
+        "zhText": "爸爸没听见，继续说了下去。安安低头拨了拨餐巾，刚才那件有趣的事，好像越来越小。",
+        "enText": "Dad did not hear and kept talking. An'an looked down and fiddled with her napkin. The interesting thing she had wanted to tell felt smaller and smaller.",
+        "illustrationPrompt": "Close An'an at table looking down at cream napkin, parents softly out of focus talking behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close An'an at table looking down at cream napkin, parents softly out of focus talking behind.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT TARGET IMAGE: Keep sad An'an fiddling with her napkin at the dinner table and all foreground details. Correct her blurred parents in the background: Mom has shoulder-length black hair and coral cardigan; Dad has short black hair, navy sweater and beige trousers with NO glasses. They remain at the dinner table, not a separate counter.\nMaintain a single square polished 3D story illustration with no text. Change the requested details while preserving non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-29829d0d-4614-417e-8b85-28a17c43653d.png"
+      },
+      {
+        "page": 5,
+        "zhText": "她吸了一口气：“我还没有讲完。我也想把话说完。”这一次，爸爸妈妈都停了下来。",
+        "enText": "She took a breath. “I haven't finished yet. I would like to finish my story too.” This time, both Mom and Dad stopped.",
+        "illustrationPrompt": "Dinner three-person medium shot: An'an speaks earnestly, both parents turn attentively toward her with still hands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner three-person medium shot: An'an speaks earnestly, both parents turn attentively toward her with still hands.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT TARGET IMAGE: Change only Mom's pale cream cardigan to coral red. Keep her shoulder-length black hair and cream trousers, An'an's black bob and yellow star clip, teal hoodie, Dad's navy sweater, their paused listening poses, dinner food and room.\nMaintain a single square polished 3D story illustration with no text. Change the requested details while preserving non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c690946d-b3f8-4f53-9acd-e3b5749693de.png"
+      },
+      {
+        "page": 6,
+        "zhText": "妈妈把筷子放稳：“对不起，我刚才接着说自己的事了。你讲到叶子的背面，对吗？”",
+        "enText": "Mom put down her chopsticks. “I'm sorry. I went on with my own thoughts. You were telling us about the back of the leaf, right?”",
+        "illustrationPrompt": "Close Mom listening kindly across oak table, chopsticks resting on ceramic holder; An'an looks up.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close Mom listening kindly across oak table, chopsticks resting on ceramic holder; An'an looks up.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-1d1c28f3-ea4a-4760-9c31-72456a42f656.png"
+      },
+      {
+        "page": 7,
+        "zhText": "安安点头：“背面的纹路凸起来，摸着像小路。正面颜色深，背面却浅一点。”",
+        "enText": "An'an nodded. “Its veins stood out on the back, like little roads. The front was darker, and the back was a little lighter.”",
+        "illustrationPrompt": "Dinner medium shot: An'an gestures a leaf shape and fine paths with hands, parents watch, no imaginary diagrams or text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner medium shot: An'an gestures a leaf shape and fine paths with hands, parents watch, no imaginary diagrams or text.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT TARGET IMAGE: Correct the parents' identities and clothes: Mom has shoulder-length black hair and CORAL cardigan, cream trousers. Dad has short black hair, NAVY sweater, beige trousers and NO glasses. Preserve An'an's black bob and yellow star clip, teal hoodie, her hand gestures describing leaf veins, food and table setting.\nMaintain a single square polished 3D story illustration with no text. Change the requested details while preserving non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-37be7ec8-1ba3-4534-a092-2da57244f13b.png"
+      },
+      {
+        "page": 8,
+        "zhText": "爸爸问：“你用手指摸过了吗？”安安笑了：“摸过，很轻很轻地摸。”那件事又变得亮亮的。",
+        "enText": "Dad asked, “Did you feel it with your fingers?” An'an smiled. “I did, very, very gently.” The story felt bright again.",
+        "illustrationPrompt": "Warm close conversation: Dad asks An'an with interested face, child lightly taps her fingertips together, Mom listens.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Warm close conversation: Dad asks An'an with interested face, child lightly taps her fingertips together, Mom listens.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-eb3b54a1-f0f8-41e6-8bbe-d52bfccab4e3.png"
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈说：“我们刚才一忙，就忘了你也在说话。”爸爸点头：“明天的安排，可以等你讲完再说。”",
+        "enText": "Mom said, “We got busy and forgot you were speaking too.” Dad nodded. “Our plans can wait until you finish.”",
+        "illustrationPrompt": "Three-person dinner table medium shot: parents acknowledge mistake calmly to relaxed child, simple meal unchanged.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Three-person dinner table medium shot: parents acknowledge mistake calmly to relaxed child, simple meal unchanged.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT TARGET IMAGE: Correct ALL THREE characters to the established family: replace the little boy in striped shirt with six-year-old Chinese girl An'an, round face, ear-length straight black bob, one yellow star hair clip on left, plain teal hoodie and blue jeans. Dad wears a NAVY sweater, beige trousers and NO glasses. Mom wears CORAL cardigan and cream trousers, shoulder-length black hair. Keep table, food, attentive conversation and lighting.\nMaintain a single square polished 3D story illustration with no text. Change the requested details while preserving non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-e4a8dcca-3a75-42fb-ad6d-707b8318588f.png"
+      },
+      {
+        "page": 10,
+        "zhText": "他们商量，谁正在讲，别人就先听一小会儿。想接话时，可以让对方知道，不急着抢过去。",
+        "enText": "They agreed to give the person speaking a little time. If someone wanted to add something, they could let that person know without rushing in.",
+        "illustrationPrompt": "Wide dinner table: An'an Mom Dad discuss with relaxed open hands, no written rules, no token object.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Wide dinner table: An'an Mom Dad discuss with relaxed open hands, no written rules, no token object.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c0e30491-f041-4db1-80f5-7866f6003c2a.png"
+      },
+      {
+        "page": 11,
+        "zhText": "轮到爸爸讲时，安安又想起叶子上的一只小虫。话跑到嘴边，她先把手轻轻抬了一下。",
+        "enText": "When Dad began his story, An'an remembered a tiny insect on the leaf. The words reached her lips, but she gently raised a hand first.",
+        "illustrationPrompt": "Dinner medium shot: Dad speaking, An'an raises one hand slightly with eager expression, Mom watches both attentively.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner medium shot: Dad speaking, An'an raises one hand slightly with eager expression, Mom watches both attentively.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-57c805f8-8a7f-48e8-b952-1a289df910cb.png"
+      },
+      {
+        "page": 12,
+        "zhText": "爸爸看见了：“我把这一小段讲完，就听你说。”安安点点头，先听见爸爸今天走错了一条路。",
+        "enText": "Dad noticed. “I'll finish this little part, then listen to you.” An'an nodded and heard how Dad had taken a wrong turn that day.",
+        "illustrationPrompt": "Two-person close shot: Dad talks gently to An'an, her raised hand lowers, child attentive; no imagined street scene.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-person close shot: Dad talks gently to An'an, her raised hand lowers, child attentive; no imagined street scene.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-4faa3532-5441-4d44-972e-0753489b2dbf.png"
+      },
+      {
+        "page": 13,
+        "zhText": "“后来呢？”安安问。爸爸笑着告诉她，他问了路，又绕回熟悉的街口。听着听着，她也想知道结尾。",
+        "enText": "“What happened next?” An'an asked. Dad smiled and explained how he asked for directions and returned to a familiar corner. She wanted to hear the ending too.",
+        "illustrationPrompt": "Dinner medium shot: An'an leans in interested, Dad smiles as he tells story, Mom quietly listening.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner medium shot: An'an leans in interested, Dad smiles as he tells story, Mom quietly listening.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c6d3d4b0-ea25-46ff-839d-3b3f088c2986.png"
+      },
+      {
+        "page": 14,
+        "zhText": "爸爸讲完，转向她：“你刚才想补充什么？”安安这才说起那只停在叶子边上的小虫。",
+        "enText": "Dad finished and turned to her. “What did you want to add?” Only then did An'an tell them about the little insect at the edge of the leaf.",
+        "illustrationPrompt": "Dinner close An'an animatedly describing tiny insect with fingers, Dad and Mom looking at her; no actual insect at food table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner close An'an animatedly describing tiny insect with fingers, Dad and Mom looking at her; no actual insect at food table.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-e2bb4893-ad3a-49dd-a0e7-aaf05711159a.png"
+      },
+      {
+        "page": 15,
+        "zhText": "第二天，妈妈说到一半，安安忽然插进了自己的话。妈妈提醒：“我也还没有说完。”",
+        "enText": "The next day, An'an suddenly jumped in while Mom was talking. Mom reminded her, “I haven't finished my story either.”",
+        "illustrationPrompt": "Next evening same table: Mom speaking kindly with one open palm, An'an pauses mid-sentence, Dad listens.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Next evening same table: Mom speaking kindly with one open palm, An'an pauses mid-sentence, Dad listens.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-43d31c96-ce7e-47e2-88b5-f009b49c4396.png"
+      },
+      {
+        "page": 16,
+        "zhText": "安安停住：“好，你先讲。我怕忘记，等会儿你提醒我好吗？”妈妈答应，把话讲得短一点。",
+        "enText": "An'an stopped. “Okay, you go first. I'm afraid I'll forget. Could you remind me afterward?” Mom agreed and kept her story a little shorter.",
+        "illustrationPrompt": "Two-person dinner conversation: An'an asks for help remembering, Mom nods warmly; relaxed meal, no written notes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Two-person dinner conversation: An'an asks for help remembering, Mom nods warmly; relaxed meal, no written notes.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c1ec626e-1ea4-45ac-b97d-3b0abcfdf255.png"
+      },
+      {
+        "page": 17,
+        "zhText": "有时他们还是会忘记，话撞到一起。有人提醒，就停一下、让一下，再把没说完的部分接回来。",
+        "enText": "Sometimes they still forgot, and their words collided. When someone reminded them, they paused, made room, and returned to the unfinished part.",
+        "illustrationPrompt": "Dinner three-person scene: all share gentle amused expressions after accidental overlap, An'an gestures to let Dad continue.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Dinner three-person scene: all share gentle amused expressions after accidental overlap, An'an gestures to let Dad continue.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-21cb1ae6-1db4-4d84-b932-9359c3a4ebce.png"
+      },
+      {
+        "page": 18,
+        "zhText": "安安发现，餐桌边不只要留坐下的位置，也要留一个好好听的位置。她的小故事，终于能讲到结尾了。",
+        "enText": "An'an found that a table needed more than room to sit. It needed room to listen too. Her little stories could finally reach their endings.",
+        "illustrationPrompt": "Wide cozy dinner ending: An'an finishes a story smiling, Mom and Dad listen with full attention, warm kitchen light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Wide cozy dinner ending: An'an finishes a story smiling, Mom and Dad listen with full attention, warm kitchen light.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-5f268fdc-ac17-4692-9710-91fe8ea012d5.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 24,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "表达",
+        "倾听"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "让孩子知道可以提出被听见的需要，成人示范轮流说话和修复打断。",
+      "reminder": "不要求孩子靠足够响亮或足够有趣换取倾听；紧急求助可以立即打断，注意力困难时缩短谈话并提供支持。",
+      "questions": [
+        "安安被打断时，身体和心情有什么变化？",
+        "别人说话时，你可以怎样让他知道自己在听？"
+      ],
+      "activity": "选一个短短的共聊时间，每人讲一件小事，听的人回应一个听见的细节，不把活动变成表达比赛。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, short dark hair, forest-green sweatshirt, charcoal trousers. Teacher: adult Chinese woman, tied-back black hair, sage cardigan. Park attendant: middle-aged Chinese woman, plain blue polo. Bedtime An’an wears plain pale-yellow pajamas, with her star hair clip on a bedside dish.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

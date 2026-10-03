@@ -1,0 +1,67 @@
+{
+  "approved": true,
+  "approvedAt": "2026-10-02",
+  "totalPages": 180,
+  "books": [
+    {
+      "id": "wo-xiang-zi-ji-shi-yi-shi",
+      "title": "我想自己试一试",
+      "pages": 18,
+      "order": 21
+    },
+    {
+      "id": "ming-tian-yao-dai-de-na-pian-ye-zi",
+      "title": "明天要带的那片叶子",
+      "pages": 18,
+      "order": 22
+    },
+    {
+      "id": "le-le-you-le-xin-peng-you",
+      "title": "乐乐有了新朋友",
+      "pages": 20,
+      "order": 23
+    },
+    {
+      "id": "wo-ye-xiang-ba-hua-shuo-wan",
+      "title": "我也想把话说完",
+      "pages": 18,
+      "order": 24
+    },
+    {
+      "id": "xiao-che-zen-me-dao-le-ni-jia",
+      "title": "小车怎么到了你家",
+      "pages": 18,
+      "order": 25
+    },
+    {
+      "id": "zhao-bu-dao-de-xiao-xiong",
+      "title": "找不到的小熊",
+      "pages": 18,
+      "order": 26
+    },
+    {
+      "id": "ni-zen-me-mei-dai-wo-de-mao-zi",
+      "title": "你怎么没戴我的帽子",
+      "pages": 18,
+      "order": 27
+    },
+    {
+      "id": "ma-ma-shuo-ke-yi-ba-ba-shuo-bu-xing",
+      "title": "妈妈说可以，爸爸说不行",
+      "pages": 18,
+      "order": 28
+    },
+    {
+      "id": "jin-wan-de-xiao-deng-ke-yi-liang-zhe-ma",
+      "title": "今晚的小灯可以亮着吗",
+      "pages": 18,
+      "order": 29
+    },
+    {
+      "id": "tong-yi-duo-yun-liang-zhong-yang-zi",
+      "title": "同一朵云，两种样子",
+      "pages": 16,
+      "order": 30
+    }
+  ]
+}

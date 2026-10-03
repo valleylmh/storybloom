@@ -1,0 +1,49 @@
+{
+  "status": "complete-locally",
+  "completedAt": "2026-10-03T00:56:10.062Z",
+  "seriesId": "richang",
+  "batch": 3,
+  "orders": [
+    21,
+    30
+  ],
+  "books": 10,
+  "pages": 180,
+  "narrations": 10,
+  "catalogBookCount": 30,
+  "illustrationRepairs": 7,
+  "repairTool": "builtin-imagegen",
+  "repairRecord": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/batch-21-30/final-repairs.json",
+  "readingPreview": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/batch-21-30/reading-preview.png",
+  "checks": {
+    "typescript": "npx tsc --noEmit passed",
+    "diff": "git diff --check passed",
+    "relatedTests": {
+      "passed": 17,
+      "failed": 0
+    },
+    "finalAssetRegression": {
+      "passed": 4,
+      "failed": 0
+    },
+    "http": {
+      "readingRoutes": 10,
+      "images": 180,
+      "narrationsWithRange": 10,
+      "failures": 0
+    },
+    "browser": {
+      "booksVerified": 10,
+      "naturalFullPlayback": 9,
+      "seekAndAutomaticPlayback": 1,
+      "consoleErrors": 0
+    }
+  },
+  "delivery": {
+    "saved": true,
+    "committed": false,
+    "pushed": false,
+    "deployed": false
+  },
+  "localUrl": "http://localhost:3000/library/richang"
+}

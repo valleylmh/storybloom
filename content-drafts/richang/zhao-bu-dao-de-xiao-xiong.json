@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "zhao-bu-dao-de-xiao-xiong",
+    "seriesId": "richang",
+    "title": "找不到的小熊",
+    "subtitle": "想念，也有一个位置",
+    "moral": {
+      "zh": "心爱的东西丢了，难过可以被陪伴，想念也可以慢慢安放。",
+      "en": "When something you love is lost, you deserve company in your sadness and room for your memories."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 26,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "安安的小熊有软软的棕色耳朵，脖子上系着蓝丝带。去公园时，她把它放进自己的小布袋。",
+        "enText": "An'an's teddy had soft brown ears and a blue ribbon around its neck. She put it in her little cloth bag for a trip to the park.",
+        "illustrationPrompt": "Home entry medium shot: An'an gently puts one small tan teddy bear with blue neck ribbon into plain cream cloth bag; Mom beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home entry medium shot: An'an gently puts one small tan teddy bear with blue neck ribbon into plain cream cloth bag; Mom beside her.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-76007bf9-54f6-4857-a239-e29c1e83585a.png"
+      },
+      {
+        "page": 2,
+        "zhText": "他们在长椅上吃点心，安安让小熊坐在身边。风吹动蓝丝带，她还帮小熊理了理。",
+        "enText": "They had a snack on a bench, and An'an sat her teddy beside her. The wind stirred its blue ribbon, and she straightened it.",
+        "illustrationPrompt": "Park bench wide shot: An'an and Mom seated having small snack; tan teddy with blue ribbon sits directly beside An'an, cream cloth bag open.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Park bench wide shot: An'an and Mom seated having small snack; tan teddy with blue ribbon sits directly beside An'an, cream cloth bag open.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-6d552984-675a-4569-9fef-2a3d7e43cef6.png"
+      },
+      {
+        "page": 3,
+        "zhText": "回到家，安安伸手摸布袋，里面却空空的。她又摸了一遍：“小熊呢？”",
+        "enText": "At home, An'an reached into the cloth bag, but it was empty. She felt inside again. “Where's Teddy?”",
+        "illustrationPrompt": "Home entry close shot: An'an opens empty cream cloth bag with startled expression; Mom nearby, absolutely no teddy visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home entry close shot: An'an opens empty cream cloth bag with startled expression; Mom nearby, absolutely no teddy visible.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-5aa0509f-3357-4be6-bcec-158923eb35ae.png"
+      },
+      {
+        "page": 4,
+        "zhText": "她翻过书包，又看过鞋柜。小熊没有躲在任何一个熟悉的角落，安安的眼睛慢慢红了。",
+        "enText": "She checked her schoolbag and the shoe cabinet. Teddy was not in any familiar corner, and her eyes slowly grew red.",
+        "illustrationPrompt": "Entry wide shot: An'an checks open low shoe cabinet beside teal schoolbag and empty cream bag; Mom watches, no teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Entry wide shot: An'an checks open low shoe cabinet beside teal schoolbag and empty cream bag; Mom watches, no teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-4bdffa3d-28fc-41f1-bb2d-aa59dce28e1c.png"
+      },
+      {
+        "page": 5,
+        "zhText": "“可能还在公园。”妈妈说，“我们一起回去找。我陪着你。”安安抓紧了她的手。",
+        "enText": "“It may still be in the park,” Mom said. “Let's go back together. I'll stay with you.” An'an held her hand tightly.",
+        "illustrationPrompt": "Home doorway medium shot: Mom holds worried An'an's hand ready to retrace route; empty cream bag in Mom's other hand, no teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home doorway medium shot: Mom holds worried An'an's hand ready to retrace route; empty cream bag in Mom's other hand, no teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-eecbf776-4743-4c72-933a-e4e53736cf71.png"
+      },
+      {
+        "page": 6,
+        "zhText": "长椅上没有小熊，树旁也没有。安安看了很久，仿佛多看一会儿，蓝丝带就会露出来。",
+        "enText": "Teddy was not on the bench or beside the tree. An'an looked for a long time, as though another look might reveal its blue ribbon.",
+        "illustrationPrompt": "Park bench wide shot: An'an and Mom search around clearly empty bench and nearby tree, soft afternoon light, no teddy or blue ribbon.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Park bench wide shot: An'an and Mom search around clearly empty bench and nearby tree, soft afternoon light, no teddy or blue ribbon.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-2ec0542f-b845-4cd4-aec3-82f210535ff4.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈向公园工作人员说明小熊的样子，留下联系方式。安安站在她身边，等着听有没有消息。",
+        "enText": "Mom described Teddy to a park attendant and left contact details. An'an stood beside her, waiting to hear whether there was news.",
+        "illustrationPrompt": "Park service desk medium shot: Mom talks to middle-aged Chinese woman attendant in plain blue polo; An'an beside Mom, no readable signs or teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nPark attendant is a middle-aged Chinese woman in a plain blue polo shirt.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Park service desk medium shot: Mom talks to middle-aged Chinese woman attendant in plain blue polo; An'an beside Mom, no readable signs or teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c6de8e44-0773-47ee-8f48-90edea94d0a6.png"
+      },
+      {
+        "page": 8,
+        "zhText": "他们沿着来时的小路再找了一遍，还是没有。妈妈轻声说：“今天暂时没找到，我们先回家休息。”",
+        "enText": "They searched the path once more, but found nothing. Mom softly said, “We haven't found him today. Let's go home and rest for now.”",
+        "illustrationPrompt": "Park path dusk wide shot: Mom and sad An'an walk hand in hand, empty cream bag, tired gentle posture, no teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Park path dusk wide shot: Mom and sad An'an walk hand in hand, empty cream bag, tired gentle posture, no teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-9a1881da-37e8-470b-906e-5e026fa9133e.png"
+      },
+      {
+        "page": 9,
+        "zhText": "安安摇头：“我不想回去。小熊晚上会不会也找不到家？”她的眼泪终于掉了下来。",
+        "enText": "An'an shook her head. “I don't want to go. What if Teddy can't find home tonight either?” At last, her tears fell.",
+        "illustrationPrompt": "Close park path scene: An'an crying while holding Mom's hand, Mom bends to listen, no imagined lost living bear.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close park path scene: An'an crying while holding Mom's hand, Mom bends to listen, no imagined lost living bear.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-1642e5c2-78c4-4b84-bd10-b89070f2029f.png"
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈抱住她：“你很想它。没找到很难受，我知道。我们会继续问消息，但现在还不能保证找回来。”",
+        "enText": "Mom hugged her. “You miss him. Not finding him hurts, I know. We'll keep asking, but we can't promise we'll find him yet.”",
+        "illustrationPrompt": "Medium tender park embrace: Mom comforts crying An'an at eye level, cream bag hanging from Mom's arm, no teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Medium tender park embrace: Mom comforts crying An'an at eye level, cream bag hanging from Mom's arm, no teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-7f550caa-257f-4728-aa3d-d07286a9144a.png"
+      },
+      {
+        "page": 11,
+        "zhText": "回家后，安安没有马上想玩别的。妈妈坐在旁边，陪她安静了一会儿，没有催她快点高兴。",
+        "enText": "At home, An'an did not want another game right away. Mom sat beside her quietly without urging her to cheer up.",
+        "illustrationPrompt": "Living room sofa medium shot: sad An'an and Mom sit quietly close together, empty bag nearby, no new toy or teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Living room sofa medium shot: sad An'an and Mom sit quietly close together, empty bag nearby, no new toy or teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-8062834d-715e-44cb-bb02-16318b828c6c.png"
+      },
+      {
+        "page": 12,
+        "zhText": "睡前，小熊常躺的位置空了。安安摸摸那一小块枕头：“我记得它的耳朵，有一点卷。”",
+        "enText": "At bedtime, Teddy's usual place was empty. An'an touched that little part of the pillow. “I remember one of his ears curled a bit.”",
+        "illustrationPrompt": "Bedtime bedroom close shot: An'an in pale-yellow pajamas touches an empty spot on cream pillow; Mom beside bed, no teddy, hairclip on bedside dish.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedtime bedroom close shot: An'an in pale-yellow pajamas touches an empty spot on cream pillow; Mom beside bed, no teddy, hairclip on bedside dish.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-ae2a6a2d-30cf-4ffc-bb1d-06cb55ffb6ee.png"
+      },
+      {
+        "page": 13,
+        "zhText": "妈妈拿来纸和笔：“想把记得的样子画下来吗？”安安点头，画了一对圆耳朵和一条蓝丝带。",
+        "enText": "Mom brought paper and pencils. “Would you like to draw what you remember?” An'an nodded and drew round ears and a blue ribbon.",
+        "illustrationPrompt": "Bedroom desk overhead: An'an in pale-yellow pajamas draws simple tan teddy with blue ribbon on paper, Mom nearby; drawn teddy only, no real teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bedroom desk overhead: An'an in pale-yellow pajamas draws simple tan teddy with blue ribbon on paper, Mom nearby; drawn teddy only, no real teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-9c7d1ac6-f0a2-4047-8cbe-25903a8d7084.png"
+      },
+      {
+        "page": 14,
+        "zhText": "她又画了小熊坐过的长椅。纸上有一段他们一起去公园的下午，也有她现在的想念。",
+        "enText": "She also drew the bench Teddy had sat on. The paper held part of their afternoon in the park and the missing she felt now.",
+        "illustrationPrompt": "Close paper drawing scene: child's illustration of tan teddy with blue ribbon on bench, An'an's pencil adding tree; no real teddy or words.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Close paper drawing scene: child's illustration of tan teddy with blue ribbon on bench, An'an's pencil adding tree; no real teddy or words.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-650f0e33-2f87-459a-ad67-b4cf4c74a1ac.png"
+      },
+      {
+        "page": 15,
+        "zhText": "第二天，妈妈继续问消息。小熊还没找到，安安把小画夹放在床边，想看时就打开一下。",
+        "enText": "The next day, Mom asked for news again. Teddy was still missing. An'an kept the drawing folder by her bed and opened it when she wanted.",
+        "illustrationPrompt": "Daytime bedroom medium shot: An'an in teal jacket opens plain folder showing teddy drawing beside bed; Mom nearby, no real teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Daytime bedroom medium shot: An'an in teal jacket opens plain folder showing teddy drawing beside bed; Mom nearby, no real teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-64b689ec-1411-4a10-ae28-f3353bba7cba.png"
+      },
+      {
+        "page": 16,
+        "zhText": "有时候，她玩着积木又想起小熊，就停下来告诉爸爸。爸爸听完，坐在她身边陪了一会儿。",
+        "enText": "Sometimes she remembered Teddy while playing with blocks. She paused and told Dad, who listened and sat beside her for a while.",
+        "illustrationPrompt": "Living room floor: An'an pauses by wooden blocks to speak to Dad in navy sweater seated beside her; no teddy or replacement toy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDad is a Chinese adult with short black hair, navy sweater and beige trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Living room floor: An'an pauses by wooden blocks to speak to Dad in navy sweater seated beside her; no teddy or replacement toy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-79e5fc67-42cf-483e-a0c0-6fb58672edd6.png"
+      },
+      {
+        "page": 17,
+        "zhText": "后来，安安又能和乐乐玩一会儿，也还是会想念小熊。两种感觉，一起留在她的小日子里。",
+        "enText": "Later, An'an could enjoy playing with Lele again and still miss Teddy. Both feelings had a place in her days.",
+        "illustrationPrompt": "Courtyard gentle scene: An'an and Lele roll red toy car along bench with faint warm smiles, no teddy, comfortable shared play.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nLele is a six-year-old Chinese boy with short black hair, mustard sweatshirt and navy trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Courtyard gentle scene: An'an and Lele roll red toy car along bench with faint warm smiles, no teddy, comfortable shared play.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-b779042f-2f5d-4422-86b9-d9d5faf38bed.png"
+      },
+      {
+        "page": 18,
+        "zhText": "夜里，妈妈抱了抱安安。枕边的小画夹还在，小熊的位置也留着。没找到的难过，有人陪她慢慢走。",
+        "enText": "That night, Mom hugged An'an. The drawing folder stayed by the pillow, and Teddy's place remained. She had someone beside her through the sadness of not finding him.",
+        "illustrationPrompt": "Warm bedtime ending: An'an in pale-yellow pajamas hugs Mom, plain closed drawing folder beside cream pillow with clearly empty space, no teddy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Warm bedtime ending: An'an in pale-yellow pajamas hugs Mom, plain closed drawing folder beside cream pillow with clearly empty space, no teddy.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-c6343ef7-81b8-466f-b218-0fc414203db5.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 26,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "物品丢失",
+        "情绪陪伴"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "承认依恋物品丢失带来的难过，提供实际寻找和持续陪伴。",
+      "reminder": "不保证一定找回，也不急着用新玩具替代；成人负责联络可靠的工作人员和照看孩子，允许反复想念。",
+      "questions": [
+        "小熊不见时，安安最想念它的什么？",
+        "难过的时候，你希望别人陪你做什么，或者先不做什么？"
+      ],
+      "activity": "为一件有感情的物品画一页小故事；孩子不愿意画时，可以只说说、抱一抱，或安静待在一起。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, short dark hair, forest-green sweatshirt, charcoal trousers. Teacher: adult Chinese woman, tied-back black hair, sage cardigan. Park attendant: middle-aged Chinese woman, plain blue polo. Bedtime An’an wears plain pale-yellow pajamas, with her star hair clip on a bedside dish.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

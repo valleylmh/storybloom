@@ -11,11 +11,13 @@ import { getLibraryChineseAudio } from "@/lib/library-book-audio";
 import { getLibraryStorySpecByContentId } from "@/lib/library/personalization";
 import sitemap from "@/app/sitemap";
 import batch2Plan from "../content-drafts/richang/batch-11-20/plan.json";
+import batch3Plan from "../content-drafts/richang/batch-21-30/plan.json";
+import batch4Plan from "../content-drafts/richang/batch-31-40/plan.json";
 
 const FIRST_IDS = ["lan-ping-guo", "she-bu-de-chuan-de-xin-xie", "te-bie-de-ri-zi-shi-na-tian", "wan-ju-shan-li-zhao-xiao-che", "zai-wan-wu-fen-zhong", "wo-de-bing-gan-zen-me-geng-xiao", "yi-bei-da-fan-de-niu-nai", "deng-wo-xin-qing-hao-le-zai-shuo", "zen-me-zhi-you-wo-zai-shou-shi", "bu-tai-wan-mei-de-ye-can"];
-const publishedBatch2 = batch2Plan.books;
-const IDS = [...FIRST_IDS, ...publishedBatch2.map(({ id }) => id)];
-const PAGE_COUNTS = [16, 12, 12, 12, 12, 12, 12, 12, 12, 12, ...publishedBatch2.map(({ pages }) => pages)];
+const expandedBooks = [...batch2Plan.books, ...batch3Plan.books, ...batch4Plan.books];
+const IDS = [...FIRST_IDS, ...expandedBooks.map(({ id }) => id)];
+const PAGE_COUNTS = [16, 12, 12, 12, 12, 12, 12, 12, 12, 12, ...expandedBooks.map(({ pages }) => pages)];
 
 describe("Everyday human-character library", () => {
   it("exposes only completed ordered bilingual books of 12–20 pages with caregiver guidance", () => {
@@ -50,7 +52,7 @@ describe("Everyday human-character library", () => {
         expect(await sharp(file).metadata()).toMatchObject({ width: 1200, height: 1200, format: "webp" });
         const source = draft.book.pages[page.page - 1];
         expect(source.generatedWith).toBe("builtin-imagegen");
-        expect(source.generationPrompt).toContain("THIS PAGE'S SCENE");
+        expect(source.generationPrompt).toMatch(/THIS PAGE'S SCENE|Image 1 is the EDIT TARGET/);
         hashes.add(createHash("sha256").update(readFileSync(file)).digest("hex"));
       }
     }

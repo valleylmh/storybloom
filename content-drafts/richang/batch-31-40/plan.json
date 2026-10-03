@@ -1,0 +1,67 @@
+{
+  "approved": true,
+  "approvedAt": "2026-10-03",
+  "totalPages": 180,
+  "books": [
+    {
+      "id": "ma-ma-ni-shi-zai-xiong-wo-ma",
+      "title": "妈妈，你是在凶我吗",
+      "pages": 18,
+      "order": 31
+    },
+    {
+      "id": "wo-hai-mei-shuo-yan-lei-jiu-lai-le",
+      "title": "我还没说，眼泪就来了",
+      "pages": 18,
+      "order": 32
+    },
+    {
+      "id": "na-ju-hua-ka-zai-zui-ba-li",
+      "title": "那句话卡在嘴巴里",
+      "pages": 20,
+      "order": 33
+    },
+    {
+      "id": "wo-zhi-xiang-chi-zhe-yi-zhong",
+      "title": "我只想吃这一种",
+      "pages": 16,
+      "order": 34
+    },
+    {
+      "id": "ni-yi-chi-wo-ye-xiang-chi",
+      "title": "你一吃，我也想吃",
+      "pages": 16,
+      "order": 35
+    },
+    {
+      "id": "na-liang-xiao-che-wo-jin-tian-jiu-xiang-yao",
+      "title": "那辆小车，我今天就想要",
+      "pages": 20,
+      "order": 36
+    },
+    {
+      "id": "sheng-qi-de-xiao-shou-fang-na-li",
+      "title": "生气的小手放哪里",
+      "pages": 20,
+      "order": 37
+    },
+    {
+      "id": "zhe-yi-ji-wo-hai-xiang-kan",
+      "title": "这一集，我还想看",
+      "pages": 18,
+      "order": 38
+    },
+    {
+      "id": "zhe-ci-zhen-de-bu-shi-wo",
+      "title": "这次真的不是我",
+      "pages": 18,
+      "order": 39
+    },
+    {
+      "id": "na-sheng-ni-hao-cang-zai-bei-hou",
+      "title": "那声你好，藏在背后",
+      "pages": 16,
+      "order": 40
+    }
+  ]
+}

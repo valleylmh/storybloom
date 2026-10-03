@@ -1,0 +1,256 @@
+{
+  "book": {
+    "id": "na-sheng-ni-hao-cang-zai-bei-hou",
+    "seriesId": "richang",
+    "title": "那声你好，藏在背后",
+    "subtitle": "慢一点，也可以找到自己的招呼",
+    "moral": {
+      "zh": "和不熟悉的人打招呼，可以慢慢来，选择让自己舒服的方式。",
+      "en": "Greeting someone less familiar can take time, and we can choose a way that feels comfortable."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-03",
+    "order": 40,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "爸爸牵着安安下楼，遇见了他熟悉的邻居阿姨。阿姨正在给花浇水。",
+        "enText": "Dad took An'an downstairs and met a neighbor he knew. She was watering her flowers.",
+        "illustrationPrompt": "Wide safe apartment courtyard: Dad holds An'an's hand near familiar neighbor Aunt watering potted flowers with small plain can.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Wide safe apartment courtyard: Dad holds An'an's hand near familiar neighbor Aunt watering potted flowers with small plain can.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-7c4eca0e-e94e-4e6e-96e2-5729a2ab7414.png"
+      },
+      {
+        "page": 2,
+        "zhText": "“早上好呀。”阿姨笑着说。安安一下躲到爸爸身后，只露出半只鞋。",
+        "enText": "“Good morning,” the neighbor said with a smile. An'an slipped behind Dad, leaving only part of one shoe showing.",
+        "illustrationPrompt": "Medium courtyard: friendly Aunt greets from respectful distance; An'an hides behind Dad with one white red-trim sneaker visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium courtyard: friendly Aunt greets from respectful distance; An'an hides behind Dad with one white red-trim sneaker visible.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-c918884a-e7a9-43f7-8429-1e52e13a5eed.png"
+      },
+      {
+        "page": 3,
+        "zhText": "那声“你好”已经到了嘴边，却又缩了回去。她把爸爸的手攥得更紧。",
+        "enText": "“Hello” was almost at An'an's lips, then retreated. She held Dad's hand more tightly.",
+        "illustrationPrompt": "Close An'an partly hidden behind Dad's navy sweater, hand gripping his gently, shy uncertain eyes, no extra people.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: This scene is OUTDOORS in the same safe apartment COURTYARD with potted flowers, shrubs, sunlit paving and exterior apartment walls. No home hallway, kitchen cabinets, indoor dining furniture or sofa. Dad navy sweater and beige trousers; neighbor Aunt short chestnut hair, sky-blue cardigan, charcoal trousers; An'an teal hoodie and left yellow star clip. Preserve comfortable distance; Dad never pulls child forward.\nTHIS PAGE'S SCENE: Close An'an partly hidden behind Dad's navy sweater, hand gripping his gently, shy uncertain eyes, no extra people.\nStory evidence in Chinese (DO NOT put text in image): 那声“你好”已经到了嘴边，却又缩了回去。她把爸爸的手攥得更紧。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-d65d97e7-5dc6-4175-8c78-96a5861f7507.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-1b26f93f-aaf0-4aff-b51b-6862f9184a1a.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close An'an partly hidden behind Dad's navy sweater, hand gripping his gently, shy uncertain eyes, no extra people.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/na-sheng-ni-hao-cang-zai-bei-hou/iterations/3-f4f1ab795085.webp"
+          }
+        ]
+      },
+      {
+        "page": 4,
+        "zhText": "爸爸没有把她拉出来。他说：“安安想先在我旁边待一会儿。”",
+        "enText": "Dad did not pull her forward. “An'an would like to stay beside me for a little while,” he said.",
+        "illustrationPrompt": "Medium Dad calmly speaks to Aunt while An'an stays behind his leg, no pulling or pushing child forward.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: This scene is OUTDOORS in the same safe apartment COURTYARD with potted flowers, shrubs, sunlit paving and exterior apartment walls. No home hallway, kitchen cabinets, indoor dining furniture or sofa. Dad navy sweater and beige trousers; neighbor Aunt short chestnut hair, sky-blue cardigan, charcoal trousers; An'an teal hoodie and left yellow star clip. Preserve comfortable distance; Dad never pulls child forward.\nTHIS PAGE'S SCENE: Medium Dad calmly speaks to Aunt while An'an stays behind his leg, no pulling or pushing child forward.\nStory evidence in Chinese (DO NOT put text in image): 爸爸没有把她拉出来。他说：“安安想先在我旁边待一会儿。”\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-358aa826-1e70-461d-b1e6-f077e670eb66.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-6be19eae-97af-41c9-8b5b-7fcc035c23a4.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium Dad calmly speaks to Aunt while An'an stays behind his leg, no pulling or pushing child forward.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/na-sheng-ni-hao-cang-zai-bei-hou/iterations/4-169300a8c7d0.webp"
+          }
+        ]
+      },
+      {
+        "page": 5,
+        "zhText": "阿姨点点头，继续浇花。水落在叶子上，亮晶晶的。",
+        "enText": "The neighbor nodded and went on watering. Drops sparkled on the leaves.",
+        "illustrationPrompt": "Close Aunt gently waters green potted leaves, sparkling water droplets, Dad and An'an at a respectful distance softly blurred.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: This scene is OUTDOORS in the same safe apartment COURTYARD with potted flowers, shrubs, sunlit paving and exterior apartment walls. No home hallway, kitchen cabinets, indoor dining furniture or sofa. Dad navy sweater and beige trousers; neighbor Aunt short chestnut hair, sky-blue cardigan, charcoal trousers; An'an teal hoodie and left yellow star clip. Preserve comfortable distance; Dad never pulls child forward.\nTHIS PAGE'S SCENE: Close Aunt gently waters green potted leaves, sparkling water droplets, Dad and An'an at a respectful distance softly blurred.\nStory evidence in Chinese (DO NOT put text in image): 阿姨点点头，继续浇花。水落在叶子上，亮晶晶的。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-e3d915aa-09ed-4b39-b5e3-8070b51d4f3f.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-39fb1874-e3fe-411b-89d1-0b3d957b391b.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close Aunt gently waters green potted leaves, sparkling water droplets, Dad and An'an at a respectful distance softly blurred.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/na-sheng-ni-hao-cang-zai-bei-hou/iterations/5-ef2ea3145f5c.webp"
+          }
+        ]
+      },
+      {
+        "page": 6,
+        "zhText": "回家路上，爸爸问：“刚才你是有点紧张，还是还不想说话？”",
+        "enText": "On the way home, Dad asked, “Were you feeling nervous, or did you simply not want to speak yet?”",
+        "illustrationPrompt": "Two-person medium apartment path: Dad and An'an walk holding hands, Dad asks gently, no Aunt in frame.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Two-person medium apartment path: Dad and An'an walk holding hands, Dad asks gently, no Aunt in frame.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-cb588a79-1fd9-4852-914d-c5edfb1bd90d.png"
+      },
+      {
+        "page": 7,
+        "zhText": "安安说：“她看着我，我就忘了怎么说。”爸爸点头：“原来是这样。”",
+        "enText": "An'an said, “When she looked at me, I forgot what to say.” Dad nodded. “I see.”",
+        "illustrationPrompt": "Close An'an quietly explains to Dad while walking, Dad listens without teasing, safe indoor hallway.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close An'an quietly explains to Dad while walking, Dad listens without teasing, safe indoor hallway.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-419fe3ff-d257-48da-bfc6-8d6f50f36771.png"
+      },
+      {
+        "page": 8,
+        "zhText": "“你可以先点头，或者挥挥手。”爸爸说，“也可以今天先不试。”",
+        "enText": "“You could start with a nod or a wave,” Dad said. “And you can choose not to try today.”",
+        "illustrationPrompt": "Home sofa medium conversation: Dad demonstrates small gentle wave; An'an considers, no forced practice.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Home sofa medium conversation: Dad demonstrates small gentle wave; An'an considers, no forced practice.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-3b0c5f50-fbfe-453b-b26c-2bebc18574e0.png"
+      },
+      {
+        "page": 9,
+        "zhText": "安安举起手，试着晃了一下：“这样，也算打招呼吗？”",
+        "enText": "An'an lifted her hand and gave a tiny wave. “Does this count as saying hello too?”",
+        "illustrationPrompt": "Close calm home scene: An'an gives tentative small wave, Dad smiles attentively, natural fingers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close calm home scene: An'an gives tentative small wave, Dad smiles attentively, natural fingers.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-2485d8d5-7141-4a26-a11e-829ede35106a.png"
+      },
+      {
+        "page": 10,
+        "zhText": "“当然。”爸爸说。他们没有安排比赛，也没有要求声音一定要大。",
+        "enText": "“Of course,” Dad said. They made no contest of it and did not require a loud voice.",
+        "illustrationPrompt": "Medium home sofa: Dad and An'an relax after tiny wave practice, no chart, prizes or audience.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium home sofa: Dad and An'an relax after tiny wave practice, no chart, prizes or audience.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-7d021a50-42d9-49f3-9813-2cb20a43355d.png"
+      },
+      {
+        "page": 11,
+        "zhText": "几天后，他们又遇见阿姨。这一次，安安站在爸爸旁边，轻轻挥了挥手。",
+        "enText": "A few days later, they met the neighbor again. This time, An'an stood beside Dad and gave a little wave.",
+        "illustrationPrompt": "Wide courtyard: An'an stands beside Dad and gives small wave to familiar Aunt near potted flowers, comfortable distance.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Wide courtyard: An'an stands beside Dad and gives small wave to familiar Aunt near potted flowers, comfortable distance.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-51765923-c4bb-411e-859d-383b5e581ef8.png"
+      },
+      {
+        "page": 12,
+        "zhText": "阿姨也挥挥手：“我看见啦。”说完，她又去照顾窗边的小花。",
+        "enText": "The neighbor waved back. “I saw that.” Then she returned to the flowers by her window.",
+        "illustrationPrompt": "Medium Aunt returns small wave without approaching or touching child; An'an and Dad remain beside courtyard path.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium Aunt returns small wave without approaching or touching child; An'an and Dad remain beside courtyard path.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-d76e8cc8-c759-4839-a986-bd5495f1752b.png"
+      },
+      {
+        "page": 13,
+        "zhText": "后来的一天，安安看见花盆里开了一朵小黄花。她停下来，多看了一会儿。",
+        "enText": "One day later, An'an noticed a little yellow flower in the pot. She stopped to look at it a while longer.",
+        "illustrationPrompt": "Close An'an observes small yellow flower in green potted plant, Dad beside her, Aunt farther away tending leaves.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: This scene is OUTDOORS in the same safe apartment COURTYARD with potted flowers, shrubs, sunlit paving and exterior apartment walls. No home hallway, kitchen cabinets, indoor dining furniture or sofa. Dad navy sweater and beige trousers; neighbor Aunt short chestnut hair, sky-blue cardigan, charcoal trousers; An'an teal hoodie and left yellow star clip. Preserve comfortable distance; Dad never pulls child forward.\nTHIS PAGE'S SCENE: Close An'an observes small yellow flower in green potted plant, Dad beside her, Aunt farther away tending leaves.\nStory evidence in Chinese (DO NOT put text in image): 后来的一天，安安看见花盆里开了一朵小黄花。她停下来，多看了一会儿。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet. Match the SECOND reference's exterior apartment courtyard. Replace indoor kitchen/cabinets with courtyard shrubs, sunlit paving and exterior apartment walls. Preserve all people, outfits, comfortable distance and flower pot.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-651f7fbb-b6c0-4705-8b20-966b14eae9bc.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-1ff48f50-6acb-4a41-bc4e-fce4ad214854.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Close An'an observes small yellow flower in green potted plant, Dad beside her, Aunt farther away tending leaves.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/na-sheng-ni-hao-cang-zai-bei-hou/iterations/13-e7f68658fe53.webp"
+          }
+        ]
+      },
+      {
+        "page": 14,
+        "zhText": "“这是什么花？”她小声问。阿姨听见了，蹲下来，隔着花盆告诉她。",
+        "enText": "“What flower is that?” she asked softly. The neighbor heard and crouched on the other side of the pot to answer.",
+        "illustrationPrompt": "Medium courtyard: Aunt crouches across flower pot at respectful distance and answers softly; An'an beside Dad asks about yellow bloom.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: precise-object-edit; illustration-story. Asset: one square 1:1 premium 3D children's picture-book illustration. Image 1 is the EDIT TARGET. Other supplied images are continuity references only. Repair the target while preserving its 3D animated-film style, character identities, camera framing, lighting, emotions and all story elements not named for change.\nREPAIR: This scene is OUTDOORS in the same safe apartment COURTYARD with potted flowers, shrubs, sunlit paving and exterior apartment walls. No home hallway, kitchen cabinets, indoor dining furniture or sofa. Dad navy sweater and beige trousers; neighbor Aunt short chestnut hair, sky-blue cardigan, charcoal trousers; An'an teal hoodie and left yellow star clip. Preserve comfortable distance; Dad never pulls child forward.\nTHIS PAGE'S SCENE: Medium courtyard: Aunt crouches across flower pot at respectful distance and answers softly; An'an beside Dad asks about yellow bloom.\nStory evidence in Chinese (DO NOT put text in image): “这是什么花？”她小声问。阿姨听见了，蹲下来，隔着花盆告诉她。\nNo captions, letters, numbers, labels, speech balloons, logos, watermark, duplicate characters or collage. Produce ONE finished illustration, not a contact sheet. Match the SECOND reference's exterior apartment courtyard. Replace indoor kitchen/cabinets with courtyard shrubs, sunlit paving and exterior apartment walls. Preserve all people, outfits, comfortable distance and flower pot.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a10171-dc93-7363-952c-91e1b89b9602/exec-fa101b08-6a6d-4a78-9df8-a579ba0eaa71.png",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-40fe28d6-56da-48dd-a8a3-08a168386cee.png",
+            "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Medium courtyard: Aunt crouches across flower pot at respectful distance and answers softly; An'an beside Dad asks about yellow bloom.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/na-sheng-ni-hao-cang-zai-bei-hou/iterations/14-fd5dcdfef94d.webp"
+          }
+        ]
+      },
+      {
+        "page": 15,
+        "zhText": "走的时候，安安轻轻说：“阿姨，再见。”声音不大，却是她自己想说的。",
+        "enText": "When they left, An'an said softly, “Goodbye.” Her voice was quiet, and the words were her own choice.",
+        "illustrationPrompt": "Three-person courtyard farewell: An'an gives voluntary soft goodbye and wave beside Dad; Aunt smiles from flower pots.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Three-person courtyard farewell: An'an gives voluntary soft goodbye and wave beside Dad; Aunt smiles from flower pots.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-6fe96e90-1a02-4b00-be10-c6c2859d2d1d.png"
+      },
+      {
+        "page": 16,
+        "zhText": "那声你好有时还会藏在背后。有爸爸陪着，安安可以慢慢找到自己的方式。",
+        "enText": "Sometimes hello would still hide behind her. With Dad beside her, An'an could find her own way in her own time.",
+        "illustrationPrompt": "Warm ending safe courtyard: An'an walks beside Dad with relaxed hand in his, looks back with small wave, Aunt distant near flowers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces. Preserve her female identity.\nDad is an adult Chinese man, short black hair, navy sweater and beige trousers.\nAunt is a familiar middle-aged Chinese female neighbor, short chestnut-brown hair, sky-blue cardigan, charcoal trousers; distinct from Mom and Grandma.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Oak furniture, pale green cabinets, warm contemporary Chinese home details indoors.\nTHIS PAGE'S SCENE: Warm ending safe courtyard: An'an walks beside Dad with relaxed hand in his, looks back with small wave, Aunt distant near flowers.\nFollow current object state literally. Do not anticipate later events. Match the requested camera view, natural hands and subtle readable feelings. Distressed, frozen, angry or disappointed children must not smile. Empty cups and bowls stay empty; drawings remain drawings. Scene-specific socks and shoe actions override default footwear.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0ff39-ffe1-7011-a033-1d3c70a321dd/exec-02a6d531-2592-4512-8e06-778cd80638c0.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 40,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "见人害羞",
+        "社交节奏",
+        "自己的表达"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "尊重孩子面对不熟悉的人时的节奏，在可靠成人陪伴下尝试自己的问候方式。",
+      "reminder": "不以没礼貌、胆小评价孩子，不强迫说话、身体接触或接受陌生人的礼物；问候不代表同意跟随，安全边界仍由成人负责。",
+      "questions": [
+        "安安躲到爸爸身后时，心里可能有什么感觉？",
+        "除了说你好，还可以怎样向熟悉的人打招呼？"
+      ],
+      "activity": "和孩子选择点头、挥手或一句问候，在家自愿用玩偶练习；外出由孩子决定是否尝试，不把打招呼变成表演考核。",
+      "ageTips": {
+        "age4to5": "允许孩子用指画面、点头、挥手或简单词语表达；共读可以暂停，不要求当场完成故事里的练习。",
+        "age6to8": "讨论感受、事实和可选择的小行动，允许不同意见；由成人承担支持、约定和安全的责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, forest-green sweatshirt, charcoal trousers. Familiar neighbor Aunt: short chestnut hair, sky-blue cardigan, charcoal trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

@@ -1,0 +1,240 @@
+{
+  "book": {
+    "id": "ming-tian-yao-dai-de-na-pian-ye-zi",
+    "seriesId": "richang",
+    "title": "明天要带的那片叶子",
+    "subtitle": "给明天的自己留个提醒",
+    "moral": {
+      "zh": "忘记了可以一起补救，也可以找到适合自己的提醒办法。",
+      "en": "When you forget, you can make a repair together and find reminders that work for you."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-02",
+    "order": 22,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "老师说，明天可以带一片落叶来，看看叶子的纹路。安安马上想到公园里那片像小手掌的叶子。",
+        "enText": "The teacher said they could bring a fallen leaf tomorrow to study its patterns. An'an immediately thought of a leaf in the park shaped like a little hand.",
+        "illustrationPrompt": "School classroom medium shot: An'an listens to female Chinese teacher with tied black hair and sage cardigan holding a single dry maple leaf; no other children.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nTeacher is a Chinese adult woman with tied-back black hair and sage-green cardigan.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: School classroom medium shot: An'an listens to female Chinese teacher with tied black hair and sage cardigan holding a single dry maple leaf; no other children.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-717ce3f1-4d5a-4990-925f-15560e675a99.png"
+      },
+      {
+        "page": 2,
+        "zhText": "放学路上，她对妈妈说：“我记住啦，明天带叶子！”一片小叶子在她脑子里摇啊摇。",
+        "enText": "On the way home, she told Mom, “I remember! A leaf for tomorrow!” A little leaf seemed to wave in her mind.",
+        "illustrationPrompt": "City sidewalk wide shot: An'an enthusiastically gestures a leaf shape to Mom while walking home, no imaginary floating leaves.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: City sidewalk wide shot: An'an enthusiastically gestures a leaf shape to Mom while walking home, no imaginary floating leaves.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-9508793e-9d58-4d3a-ae1a-ad7367cf7314.png"
+      },
+      {
+        "page": 3,
+        "zhText": "回到家，小车的桥还没搭完。安安放下书包，先给桥加了两根长长的横梁。",
+        "enText": "At home, the bridge for her toy car was unfinished. An'an put down her bag and added two long beams to it first.",
+        "illustrationPrompt": "Living room floor: An'an adds two wooden beams to block bridge with red toy car; schoolbag rests beside sofa, Mom absent.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Living room floor: An'an adds two wooden beams to block bridge with red toy car; schoolbag rests beside sofa, Mom absent.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT REFERENCE IMAGE: Change only the visible purple schoolbag by the sofa into plain teal blue-green. Keep An'an, wooden block bridge, red toy car, two wooden beams, pose, living room and lighting.\nKeep a single coherent square polished 3D story illustration, no text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-43f51f72-a227-42bc-a4e7-47fea7c728fb.png"
+      },
+      {
+        "page": 4,
+        "zhText": "晚饭、洗澡、听故事，一件事接着一件事。那片叶子还没有装进书包，安安就睡着了。",
+        "enText": "Dinner, a bath, and a story came one after another. Before a leaf reached her schoolbag, An'an had fallen asleep.",
+        "illustrationPrompt": "Quiet bedroom wide shot: An'an asleep under cream quilt with yellow star clip on bedside dish; closed teal schoolbag by door, no leaf.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face and ear-length straight black bob, wearing plain pale-yellow pajamas. Her yellow star hair clip is on a bedside dish.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Quiet bedroom wide shot: An'an asleep under cream quilt with yellow star clip on bedside dish; closed teal schoolbag by door, no leaf.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-716bd239-33b3-4438-a654-42a3ccc0db1f.png"
+      },
+      {
+        "page": 5,
+        "zhText": "第二天早晨，她拉好书包拉链，忽然停住：“叶子！我没有准备叶子！”",
+        "enText": "The next morning, she zipped her bag, then stopped. “The leaf! I haven't got a leaf!”",
+        "illustrationPrompt": "Home entry medium shot: An'an freezes while closing teal schoolbag, surprised face; Mom nearby ready to leave, no leaf.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home entry medium shot: An'an freezes while closing teal schoolbag, surprised face; Mom nearby ready to leave, no leaf.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-5429f3ef-4385-4018-811f-dbd5c696b817.png"
+      },
+      {
+        "page": 6,
+        "zhText": "安安伸手翻口袋，里面只有一张纸巾。“明明昨天还记得，怎么就忘了呢？”",
+        "enText": "An'an searched a pocket and found only a tissue. “I remembered yesterday. How did I forget?”",
+        "illustrationPrompt": "Bag close-up: An'an's hands lift a plain white tissue from empty side pocket; worried face visible, no text or leaf.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Bag close-up: An'an's hands lift a plain white tissue from empty side pocket; worried face visible, no text or leaf.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT TARGET IMAGE: Change only the visible purple schoolbag into the same plain teal blue-green schoolbag used elsewhere. Keep An'an's black bob, yellow star clip, teal hoodie, worried expression, white tissue, hands, position and home entry background.\nMaintain a single square polished 3D story illustration with no text. Change the requested details while preserving non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-75666d37-5695-4607-b15d-747ff49285e4.png"
+      },
+      {
+        "page": 7,
+        "zhText": "妈妈没有催着责怪她。她蹲下来：“先看看时间，我们一起想想现在能做什么。”",
+        "enText": "Mom did not rush to blame her. She crouched down. “Let's check the time and think about what we can do now.”",
+        "illustrationPrompt": "Entry two-person conversation: Mom at An'an's eye level, calm expression; open bag and plain tissue nearby, no written clock.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Entry two-person conversation: Mom at An'an's eye level, calm expression; open bag and plain tissue nearby, no written clock.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-4614e156-2124-4b8c-8ed0-8dbb0d46f91d.png"
+      },
+      {
+        "page": 8,
+        "zhText": "家门口没有合适的落叶，绕去公园又会迟到。安安想了想：“我能先画一片带去吗？”",
+        "enText": "There was no suitable fallen leaf near home, and a park detour would make them late. An'an thought. “Could I draw one to take?”",
+        "illustrationPrompt": "Entry medium shot: An'an holds a blank small paper and pencil while discussing a possible leaf drawing with Mom.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Entry medium shot: An'an holds a blank small paper and pencil while discussing a possible leaf drawing with Mom.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-e03159ba-a66a-400d-acca-6455555ff4eb.png"
+      },
+      {
+        "page": 9,
+        "zhText": "她画了小手掌一样的叶子，又画出几条细细的纹路。妈妈陪着看，没有替她画完。",
+        "enText": "She drew a leaf like a little hand and added fine lines. Mom watched beside her without finishing it for her.",
+        "illustrationPrompt": "Overhead oak table: An'an draws one simple maple leaf outline with veins on plain paper; Mom's hands remain away from drawing, no words.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Overhead oak table: An'an draws one simple maple leaf outline with veins on plain paper; Mom's hands remain away from drawing, no words.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-a865ddd7-1743-412a-a18b-d17da6160d5a.png"
+      },
+      {
+        "page": 10,
+        "zhText": "到了学校，安安告诉老师：“我忘了准备，这是我画的。今天这样可以吗？”",
+        "enText": "At school, An'an told her teacher, “I forgot to get a leaf. I drew this one. Would this be okay for today?”",
+        "illustrationPrompt": "Classroom doorway medium shot: An'an presents single paper leaf drawing to same sage-cardigan teacher; teal schoolbag on back.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nTeacher is a Chinese adult woman with tied-back black hair and sage-green cardigan.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Classroom doorway medium shot: An'an presents single paper leaf drawing to same sage-cardigan teacher; teal schoolbag on back.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.\nEDIT TARGET IMAGE: Change only the child's paper drawing into a hand-shaped five-lobed MAPLE leaf outline with branching veins, like the maple leaf she drew on the previous page. Do not draw an oval leaf. Preserve An'an, her clothes, schoolbag, pose and the tied-back-haired teacher wearing sage-green cardigan.\nMaintain a single square polished 3D story illustration with no text. Change the requested details while preserving non-target details.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-ba760c50-762c-4cd7-8c7e-62033e66743f.png"
+      },
+      {
+        "page": 11,
+        "zhText": "老师说：“今天可以先用这张，也看看我们准备的叶子。”安安松了口气，坐下来认真摸了摸叶脉。",
+        "enText": "The teacher said, “You can use it today and look at the leaves we have.” Relieved, An'an sat down and gently felt a leaf's veins.",
+        "illustrationPrompt": "Classroom table close shot: An'an touches veins of one real dry maple leaf beside her paper drawing; teacher beside her, no labels.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nTeacher is a Chinese adult woman with tied-back black hair and sage-green cardigan.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Classroom table close shot: An'an touches veins of one real dry maple leaf beside her paper drawing; teacher beside her, no labels.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-d14e6fb0-fe14-4830-a5b2-d657587efa20.png"
+      },
+      {
+        "page": 12,
+        "zhText": "放学后，妈妈问：“有什么办法，能让明天的你看见今天记住的事？”安安望向书包。",
+        "enText": "After school, Mom asked, “What could help tomorrow's you see what you remember today?” An'an looked at her bag.",
+        "illustrationPrompt": "Home oak table conversation: An'an and Mom look toward teal schoolbag beside chair, thoughtful faces.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home oak table conversation: An'an and Mom look toward teal schoolbag beside chair, thoughtful faces.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-47f0c495-8e5e-4ae9-ae3a-6a4cadf76d5a.png"
+      },
+      {
+        "page": 13,
+        "zhText": "她画了水杯、纸巾和一片叶子，把小纸贴在书包旁。全是图画，一眼就能认出来。",
+        "enText": "She drew a water bottle, a tissue, and a leaf, then put the paper beside her bag. They were pictures she could recognize at a glance.",
+        "illustrationPrompt": "Overhead desk: An'an draws three simple icons of bottle, tissue and leaf on one plain paper; teal bag beside it; no letters, numbers or checkboxes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Overhead desk: An'an draws three simple icons of bottle, tissue and leaf on one plain paper; teal bag beside it; no letters, numbers or checkboxes.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-451cf112-0c59-4bf0-8155-2309a3344542.png"
+      },
+      {
+        "page": 14,
+        "zhText": "妈妈提议：“睡前我们一起看一遍？”安安点头，又给准备好的东西找了一个小篮子。",
+        "enText": "Mom suggested, “Shall we look at it together before bed?” An'an nodded and chose a small basket for things that were ready.",
+        "illustrationPrompt": "Home entry medium shot: An'an places empty shallow woven basket beside teal bag and picture reminder; Mom watches gently.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Home entry medium shot: An'an places empty shallow woven basket beside teal bag and picture reminder; Mom watches gently.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-5cb459b0-9ccb-4af5-a18d-9e1ee502a773.png"
+      },
+      {
+        "page": 15,
+        "zhText": "傍晚，他们在公园捡到一片干净的落叶。安安轻轻夹进纸夹，回家放进小篮子里。",
+        "enText": "That evening, they found a clean fallen leaf in the park. An'an put it gently in a paper folder, then in the basket at home.",
+        "illustrationPrompt": "Park path close scene: An'an picks one dry maple leaf from clean dry ground beside Mom; plain paper folder in Mom's hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Park path close scene: An'an picks one dry maple leaf from clean dry ground beside Mom; plain paper folder in Mom's hand.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-320c3688-7f3a-47ee-9d0d-5f14f9853f10.png"
+      },
+      {
+        "page": 16,
+        "zhText": "睡前，安安看看图画，再看看篮子：“叶子在，水杯也在。”她和妈妈一起完成了准备。",
+        "enText": "Before bed, An'an looked at the pictures and the basket. “The leaf is here, and so is the bottle.” She and Mom checked everything together.",
+        "illustrationPrompt": "Evening entry medium shot: An'an and Mom check basket with closed paper folder and water bottle next to teal schoolbag and three-icon reminder.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Evening entry medium shot: An'an and Mom check basket with closed paper folder and water bottle next to teal schoolbag and three-icon reminder.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-20927ee1-1c49-4fe4-9030-30cf10eee64c.png"
+      },
+      {
+        "page": 17,
+        "zhText": "第二天出门时，安安又想去看小车。门边的图画让她停了一下，先把小篮子里的东西装好。",
+        "enText": "The next morning, An'an wanted to look at her toy car again. The pictures by the door made her pause and pack the basket's things first.",
+        "illustrationPrompt": "Morning entry scene: An'an packs closed paper folder and water bottle into teal bag while looking at simple picture reminder; Mom waits.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Morning entry scene: An'an packs closed paper folder and water bottle into teal bag while looking at simple picture reminder; Mom waits.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-138bdf45-00e8-49fc-b6fe-d1fe7521d812.png"
+      },
+      {
+        "page": 18,
+        "zhText": "“昨天的我，给今天的我留了封小信。”安安笑着背起书包。那片叶子，这一次也出发了。",
+        "enText": "“Yesterday's me left today's me a little message,” An'an said, smiling as she put on her bag. This time, the leaf came along too.",
+        "illustrationPrompt": "Wide doorway ending: An'an with teal schoolbag and Mom leave home happily; picture reminder and now-empty shallow basket remain by doorway.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration; never a multi-panel sheet.\nAn'an is a six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim and white laces.\nMom is a Chinese adult with shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people explicitly present in the scene below. Keep their faces, ages, hair, clothing and proportions consistent. Do not add the rest of the family. Maintain oak furniture, pale green cabinets and warm contemporary Chinese home details where appropriate.\nTHIS PAGE'S SCENE: Wide doorway ending: An'an with teal schoolbag and Mom leave home happily; picture reminder and now-empty shallow basket remain by doorway.\nShow the exact current state of the objects described, without anticipating a later page. Alternate the requested wide, medium and close camera views. Natural hands and readable expressions.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a0fce1-7631-7aa2-ac69-c0a2db0cbdc3/exec-9b5ed352-4cc4-405a-bd29-3bed714e2387.png"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 22,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "准备习惯",
+        "记事方法"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "把忘记一件事和孩子的品格分开，用具体方法支持记忆与准备。",
+      "reminder": "不把忘记称作懒惰或不负责；提醒工具由孩子参与选择，低龄孩子仍需要成人协助。采集只选安全场所的落叶。",
+      "questions": [
+        "安安为什么前一天记得，早上却忘了？",
+        "什么提醒能让你更容易看见要做的事情？"
+      ],
+      "activity": "一起画两三个简单的物品图案，放在孩子容易看到的位置，睡前共同看一遍明天的准备。",
+      "ageTips": {
+        "age4to5": "先看表情和动作，允许孩子用指画面、点头或简单词语表达感受。",
+        "age6to8": "讨论不同角色的想法和可选择的办法，不把一种选择当成唯一正确答案。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Xiaoyu: same-age Chinese boy, short dark hair, forest-green sweatshirt, charcoal trousers. Teacher: adult Chinese woman, tied-back black hair, sage cardigan. Park attendant: middle-aged Chinese woman, plain blue polo. Bedtime An’an wears plain pale-yellow pajamas, with her star hair clip on a bedside dish.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}
