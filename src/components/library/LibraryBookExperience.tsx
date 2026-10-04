@@ -24,6 +24,9 @@ import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryPlaylist from "@/components/library/LibraryPlaylist";
 import LibraryNarrationToolbar from "@/components/library/LibraryNarrationToolbar";
 import LibraryNextBookCountdown from "@/components/library/LibraryNextBookCountdown";
+import LibraryBookFloatingActions, {
+  type LibraryBookFloatingActionsConfig,
+} from "@/components/library/LibraryBookFloatingActions";
 
 export default function LibraryBookExperience({
   title,
@@ -41,6 +44,7 @@ export default function LibraryBookExperience({
   retryingIllustrationPages = [],
   personalizeHref,
   playlist = [],
+  floatingActions,
 }: {
   chineseAudio?: BookAudio;
   title: string;
@@ -57,6 +61,7 @@ export default function LibraryBookExperience({
   retryingIllustrationPages?: readonly number[];
   personalizeHref?: string;
   playlist?: Array<{ id: string; title: string; href: string; cover?: string }>;
+  floatingActions?: LibraryBookFloatingActionsConfig;
 }) {
   const router = useRouter();
   const [continuousPlayback, setContinuousPlayback] = useState(false);
@@ -425,6 +430,16 @@ export default function LibraryBookExperience({
           <p>故事主题和结构会自动带入，只需选择家庭角色并确认形象。</p>
           <Link href={personalizeHref}>让孩子成为主角</Link>
         </section>
+      ) : null}
+
+      {!bedtimeMode && floatingActions ? (
+        <LibraryBookFloatingActions
+          {...floatingActions}
+          title={title}
+          contentId={contentId}
+          pageNumbers={pages.map((page) => page.page)}
+          currentPage={readerMode === "turn" ? pages[pageIndex]?.page : undefined}
+        />
       ) : null}
     </section>
   );

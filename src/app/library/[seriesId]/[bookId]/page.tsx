@@ -1,5 +1,6 @@
 import { getLibraryContentId } from "@/lib/library/content-id";
 import { getLibraryChineseAudio } from "@/lib/library-book-audio";
+import { getLibraryFeedbackConfig } from "@/lib/email/library-feedback";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -263,6 +264,11 @@ export default async function LibraryBookPage({
         storyKey={`library-${getLibraryContentId(book).replace("/", "-")}`}
         contentType="library"
         contentId={getLibraryContentId(book)}
+        floatingActions={{
+          feedbackEnabled: Boolean(getLibraryFeedbackConfig()),
+          supportQrCodeUrl: process.env.STORYBLOOM_SUPPORT_QR_URL?.trim(),
+          supportLabel: process.env.STORYBLOOM_SUPPORT_LABEL?.trim(),
+        }}
         personalizeHref={
           bookMetadata.personalizationEnabled ? personalizeHref : undefined
         }
