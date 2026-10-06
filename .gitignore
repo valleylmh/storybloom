@@ -69,6 +69,3 @@ miniprogram/book-audio-cache/
 
 # Local redemption-code plaintext and issuance records (never commit)
 .private/
-
-# Deployment owner's support QR, provided locally and excluded from public git.
-public/support/alipay-author.png
