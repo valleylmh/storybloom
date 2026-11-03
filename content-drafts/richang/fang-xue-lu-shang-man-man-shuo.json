@@ -1,0 +1,297 @@
+{
+  "book": {
+    "id": "fang-xue-lu-shang-man-man-shuo",
+    "seriesId": "richang",
+    "title": "放学路上，慢慢说",
+    "subtitle": "打开话匣子的小秘密",
+    "moral": {
+      "zh": "快乐可以一起分享，疲惫可以一起分担；温暖的倾听，让每天都安心收尾。",
+      "en": "Joys are meant to be shared and tiredness can be carried together; gentle listening brings our day to a peaceful close."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 50,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "四点一刻，放学铃声响彻整个校园。安安背着橙色小书包，迈着小步子走出了幼儿园的大铁门。",
+        "enText": "At four fifteen, the dismissal bell rang through the school. An'an walked out of the big gates with her orange backpack.",
+        "illustrationPrompt": "Late-afternoon school gate, opening scene immediately after duty day. An'an walks quietly out wearing teal zip hoodie blue jeans white-red sneakers and ONE orange backpack, yellow star clip same side and ONE SMALL FLAT GOLD STAR STICKER centered on FOREHEAD. She is tired and thoughtful, not crying or smiling widely. Mom in coral cardigan cream trousers cream canvas shoulder bag approaches gently from side, only these two main people. Golden school trees and warm pavement, no father greeting, no questions text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Late-afternoon school gate, opening scene immediately after duty day. An'an walks quietly out wearing teal zip hoodie blue jeans white-red sneakers and ONE orange backpack, yellow star clip same side and ONE SMALL FLAT GOLD STAR STICKER centered on FOREHEAD. She is tired and thoughtful, not crying or smiling widely. Mom in coral cardigan cream trousers cream canvas shoulder bag approaches gently from side, only these two main people. Golden school trees and warm pavement, no father greeting, no questions text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-3aab9605-c9c5-4b82-a081-1ae07ee2c262.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_220247__tsk16__bOQkVFOlSg0En9R6.png",
+            "generationPrompt": "Sunny kindergarten gate scene: children and parents greeting each other near gates; An'an walks out with slightly weary shoulders.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/fang-xue-lu-shang-man-man-shuo/iterations/1-c875a75baaf8.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 2,
+        "zhText": "一整天在大班唱歌、画画、写数字、当值日生，安安觉得小脑袋胀胀的，两条小腿像灌了铅一样没力气。",
+        "enText": "After a full day of singing, drawing, numbers, and helper duty, An'an felt worn out, her legs as heavy as lead.",
+        "illustrationPrompt": "Medium street view: An'an walking slowly on the sidewalk, head tilted slightly down, orange backpack bouncing softly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 2 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Medium side view on the broad tree-lined pavement outside kindergarten. An'an walks slowly, looking tired after the day, shoulders lowered and gaze down. She wears the orange backpack on her BACK, both arms relaxed. Mom walks nearby within the scene, attentive and calm. No food or bench yet.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-68cf8e8e-9e39-4884-9cda-4cb7a01f786e.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 3,
+        "zhText": "校门口，妈妈接过书包连珠炮似地问：“今天在学校乖不乖？老师提问你了吗？青菜吃光了吗？”安安的小脸缩得紧紧的。",
+        "enText": "At the gate, Mom took the backpack and asked in a rush: “Were you good today? Did the teacher call on you? Did you eat your greens?” An'an drew back.",
+        "illustrationPrompt": "Two-person street shot: Mom carries backpack, bending down with eager quizzing eyes; An'an looks overwhelmed and tight-lipped.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 3 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Outside the kindergarten gate, Mom has taken the orange backpack OFF An'an and carries it by its top handle at her side, with her cream canvas shoulder bag on her shoulder. Mom bends slightly to speak eagerly; An'an stands beside her, overwhelmed and tight-lipped, looking down. An'an wears NO backpack. Medium two-person shot, natural body language.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-fb11bc55-4a7e-477a-b264-af36327bdd58.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 4,
+        "zhText": "安安被问得头昏脑涨，原本想说的话一下子全缩回了肚子里。她低着头，小声哼哼：“没怎么样……不知道。”",
+        "enText": "Overwhelmed by the flood of questions, An'an's words retreated. She looked down at her toes, mumbling: “Nothing... I don't know.”",
+        "illustrationPrompt": "Close profile: An'an looking down at pavement with closed expression, shoulders drooping in fatigue; Mom pauses.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 4 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Close child-eye-level profile on the broad safe pavement. An'an looks down, quiet and fatigued, shoulders drooping, mouth closed rather than smiling. Mom pauses beside her, listening with concern, holding the orange backpack at her own side. An'an wears NO backpack. A small caring conversation, no frightening distress.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-0981d22c-ae5c-468c-ac70-f87f166a626a.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈看出了安安眉宇间的疲惫。她停下脚步，没有继续追问，而是轻轻牵住安安有些微凉的小手。",
+        "enText": "Mom noticed the fatigue in An'an's eyes. She stopped questioning at once, gently clasping An'an's cool hand in hers.",
+        "illustrationPrompt": "Warm two-person shot on tree-lined street: Mom stops walking, takes An'an's hand warmly without pulling or scolding.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 5 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Medium two-person view on the tree-lined pavement. Mom stops and gently takes An'an's hand at child height, expression soft and patient; An'an looks up tired but comforted. Mom carries the orange backpack in her other hand, cream canvas bag on shoulder. An'an wears no backpack.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-c486227f-11c4-49e0-a1a6-d96f337500f1.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 6,
+        "zhText": "“前面小公园的长椅上有阳光，我们去坐一会儿好不好？”妈妈温和地提议。安安默默点了点头。",
+        "enText": "“The park bench ahead has lovely sunshine. Let's sit for a while, shall we?” Mom suggested gently. An'an nodded in silence.",
+        "illustrationPrompt": "Street perspective: leafy sidewalk leading toward a sunlit wooden bench under golden autumn trees; mother and daughter walking softly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 6 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Wide view along a quiet pedestrian park path toward a wooden bench under trees. Mom and An'an walk hand-in-hand toward the bench, at an easy pace; An'an is still tired. Mom carries the orange backpack and wears a cream canvas shoulder bag. Leaves catch warm late-afternoon light. No food visible yet.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-f0291158-26ba-448d-a1c5-b5434a8dedd2.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 7,
+        "zhText": "两人坐在长椅上，先擦净双手。妈妈打开小保鲜盒，里面是两块小松饼。阳光暖暖的，安安也松了口气。",
+        "enText": "They sat on the bench and cleaned their hands. Mom opened a small container with two pancakes. In the warm sun, An'an relaxed a little.",
+        "illustrationPrompt": "Sunny park bench shot: Mom opens small food container, offering a warm golden pancake to An'an; green park lawn behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 7 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Mom and An'an sit on the same wooden park bench. The orange backpack rests on the bench beside Mom, her cream canvas bag beside it. Having cleaned their hands, Mom opens a small pale-green food container showing exactly TWO small plain golden pancakes, offering one to An'an. An'an looks quietly interested. No syrup, cups, or cutlery. Medium view.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-05c6b790-e7e5-4392-8269-32ef6abbf10a.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 8,
+        "zhText": "安安咬了一口甜甜的松饼，嚼得香喷喷的，肚子里暖和起来，整个人渐渐有了力气。",
+        "enText": "An'an took a bite of the sweet warm pancake. As warmth spread through her tummy, her energy began to return.",
+        "illustrationPrompt": "Close shot on bench: An'an munches happily on pancake, cheeks pinkening again in afternoon sunlight; Mom watches tenderly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 8 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Close two-person bench scene. An'an sits securely on the wooden park bench, holding and biting ONE small plain golden pancake, beginning to relax with a modest smile. Mom watches warmly. The open pale-green container with the SECOND pancake remains on Mom's lap. Orange backpack beside Mom. No additional pancakes.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-9ea730ca-5afc-4231-9a75-17607f452df2.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 9,
+        "zhText": "妈妈先说起自己的小插曲：“今天在办公室，我也遇见了一件没想到的事。”安安转过头来听。",
+        "enText": "Mom shared a little moment from her own day. “Something unexpected happened at work today.” An'an turned to listen.",
+        "illustrationPrompt": "Two-person bench conversation: Mom gestures comically with hands; An'an turns her head with growing amusement.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 9 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: A fresh medium angle on the wooden bench. Mom begins sharing her own day with a light, friendly gesture and warm smile, making room for silence. An'an turns to listen with growing curiosity, her own pancake nearly finished. The pale-green container remains on Mom's lap. Orange backpack beside Mom.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-6048dc3e-99b6-447e-ab38-1bdf4296dbbe.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 10,
+        "zhText": "“我没拿稳杯子，几滴已经凉了的咖啡洒到鞋边。擦完才发现，还留了个小点。”妈妈指给她看。",
+        "enText": "“My cup slipped, and a few drops of cool coffee landed on my shoe. After wiping it, I found one little spot left.” Mom pointed it out.",
+        "illustrationPrompt": "Medium bench view: Mom lifts shoe showing a tiny coffee mark, laughing at herself; An'an's eyes sparkle with laughter.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 10 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Medium bench view focusing on Mom's harmless small anecdote: she points to a tiny dry brown coffee spot on the edge of her cream sneaker. She smiles gently at her everyday mishap; An'an listens with a faint amused smile. No pouring or hot liquid, no slapstick fall. Orange backpack beside Mom, pale-green container on lap.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-5f5218ef-a22c-40a8-909f-bc7d237fdf79.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 11,
+        "zhText": "“噗嗤——”安安笑了：“大人也有没拿稳的时候呀。”妈妈也笑起来，母女俩慢慢轻松了。",
+        "enText": "An'an gave a little laugh. “Grown-ups drop things too!” Mom smiled, and they both began to feel at ease.",
+        "illustrationPrompt": "Close portrait: An'an giggles with hand over mouth, pancake in other hand, eyes creased with pure happiness.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Make ONE precise continuity correction: REMOVE the orange backpack completely from An'an's back and REMOVE BOTH orange shoulder straps from her teal hoodie. Her back and shoulders must be EMPTY, just the plain teal hoodie fabric. The orange backpack is already held by Mom off-frame and must NOT be worn by the girl. Preserve the exact scene, identity, face, yellow star clip, gold forehead sticker, tiny pancake, Mom, bench, camera, warm light and 3D style. Do not add people or limbs. No text or watermark.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-36af996c-dc2d-429d-a20d-26b874310279.png",
+        "generationPromptScope": "full",
+        "referenceImagePaths": [
+          "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-a0373135-6ad3-49d8-9419-5f07d9d13a45.png"
+        ]
+      },
+      {
+        "page": 12,
+        "zhText": "咽下最后一口松饼，安安自己主动拉了拉妈妈的袖子：“妈妈，我今天在学校也有一件超好笑的事想告诉你！”",
+        "enText": "Finishing her pancake, An'an tugged Mom's sleeve on her own: “Mom, something super funny happened in my class today too!”",
+        "illustrationPrompt": "Warm two-person moment: An'an turns excitedly toward Mom, gesturing animatedly with her small hands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 12 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Intimate two-person bench view. An'an has FINISHED her pancake; both small hands are empty, one gently touches Mom's coral sleeve as she begins a story on her own. Mom turns to her with full attention. No pancake in An'an's hands, no eating. Orange backpack beside Mom.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-05e46f56-46ea-468c-85e0-5504d83b9154.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 13,
+        "zhText": "安安接着讲：“乐乐画了一条长长的毛毛虫，大家却看成小火车！他给它添了车轮，真的开进故事里啦。”",
+        "enText": "An'an continued, “Lele drew a long caterpillar, but we thought it was a train! He added wheels, and it really became part of our story.”",
+        "illustrationPrompt": "Medium bench shot: An'an talks with joyful animation, describing the scene with gestures; Mom listens with chin on hand, beaming.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 13 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Medium bench shot from a new angle. An'an speaks with happy natural gestures, describing a classmate's funny drawing, smiling without laughing at someone's pain. Mom listens warmly, head slightly tilted. Child's hands remain EMPTY after finishing her pancake. No thought bubbles or imaginary scene overlay.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-99fc6a32-5014-46e8-9b7b-5f09ac812c17.png",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 14,
+        "zhText": "“还有呢，我今天第一次当了大班值日生，给绿萝喷了水！老师还给我额头贴了一颗金色大星星呢！”安安指了指额头。",
+        "enText": "“And I was duty helper today, spraying the pothos plants! The teacher put a gold star right on my forehead!” An'an pointed to her brow.",
+        "illustrationPrompt": "Close view: An'an points proudly to the shiny gold star sticker on her temple, telling the story with sparkling eyes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Make these precise continuity corrections while preserving exact people and style: REMOVE the entire orange backpack and BOTH orange straps from An'an's back/shoulders. Only plain teal hoodie on shoulders, girl is NOT wearing a bag. The hand that held a strap now rests empty on her lap. Her other raised index finger points DIRECTLY AT the SMALL GOLD STAR STICKER IN THE CENTER OF HER FOREHEAD, NOT at the yellow hair clip on the side. Preserve both distinct stars: yellow clip in hair and flat tiny gold sticker center forehead. Mom still listens on bench, coral cardigan, cream trousers, cream bag; preserve composition, warm 3D film illustration, smiling conversation, natural two arms each. No text or watermark.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-953a08f4-72e5-4ad9-ac97-8bf5a746bf9b.png",
+        "generationPromptScope": "full",
+        "referenceImagePaths": [
+          "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-b1655fbd-c08e-4a93-94f0-d98cf7486da4.png"
+        ]
+      },
+      {
+        "page": 15,
+        "zhText": "妈妈认真听着，轻轻点头：“后来呢？”她没有急着评价，也没有追问，让安安按自己的顺序说。",
+        "enText": "Mom listened and nodded gently. “What happened next?” She did not rush to judge or ask more questions, letting An'an tell it her way.",
+        "illustrationPrompt": "Two-person medium shot: Mom gazes at An'an with complete loving attention, hair glowing in sunset backlighting.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 15 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Tender medium two-person portrait on the same bench. Mom gazes at An'an with complete loving attention, relaxed hands and patient smile as the child finishes speaking. An'an has a calm, open expression. The orange backpack rests beside Mom, cream canvas bag nearby. Warm late-afternoon light, no eating.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-0535e120-090d-4a69-bfff-5f8c036d91a3.png",
+        "generationPromptScope": "full",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 16,
+        "zhText": "夕阳把影子拉长了。安安牵着妈妈的手回家，今天想说的话都有了位置。哪天想先安静一会儿，也可以慢慢来。",
+        "enText": "Their shadows grew long as they walked home hand in hand. Today's stories had room to be heard. On another day, quiet could come first too.",
+        "illustrationPrompt": "Warm closing wide shot: mother and daughter walk hand-in-hand along tree-shaded sidewalk toward home, bathed in golden dusk light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Asset: ONE individual square 1:1 full-bleed children's picture-book page, page 16 of a kindergarten everyday-life story.\nInput image 1: identity and style REFERENCE for An'an, including her small gold forehead sticker. Input image 2: identity and clothing REFERENCE for Mom. Draw a new composition and the precise scene below, not a copy of either reference.\nKeep the same six-year-old Chinese girl: round face, large brown eyes, short dark bob, YELLOW STAR HAIR CLIP on the same side, teal zip-front hoodie, blue jeans, white red-trim sneakers. Small flat GOLD STAR STICKER centered on forehead continues from her class helper day. Mom: shoulder-length dark bob, coral cardigan, cream trousers and cream sneakers, cream canvas shoulder bag. Match the existing warm polished 3D animated-film illustration, rounded natural human cartoon proportions, soft tactile materials.\nTHIS PAGE'S SCENE: Wide closing view down a leafy pedestrian path toward home. Mom and An'an walk hand-in-hand, viewed at a three-quarter angle with long soft shadows. An'an looks content and lighthearted, taking a small lively step. Mom carries the orange backpack by its top handle and wears her cream canvas shoulder bag. No food visible, gentle golden late-afternoon light.\nOne continuous realistic setting. Two characters only, Mom and An'an, each once; each has exactly two arms and natural hands. Keep specified bag owner, food quantity, sticker and clothing consistent. Subtle child feelings, no exaggerated tears. No captions, words, logos, watermark, panels, balloons, duplicate limbs, text, or photorealism.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-22b7a10d-1bfb-4e01-846b-1077787eb1cb.png",
+        "generationPromptScope": "full",
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 50,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "亲子沟通",
+        "离园过渡",
+        "情绪倾听"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "建立高质量的离园亲子沟通模式，用轻松的分享引导孩子主动敞开心扉。",
+      "reminder": "避免在孩子刚离园、能量低谷时进行盘问考核。先满足身体需求，以家长的自我袒露带动倾听。",
+      "questions": [
+        "妈妈在长椅上先跟安安分享了什么趣事？",
+        "今天放学路上，你最想跟爸爸妈妈聊哪一件开心的小事？"
+      ],
+      "activity": "开启晚餐或睡前的“今天的三件小事”时光：轮流说出一件开心的事、一件不容易的事和一件感谢的事。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

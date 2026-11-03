@@ -1,0 +1,357 @@
+{
+  "book": {
+    "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+    "seriesId": "richang",
+    "title": "摇晃的第一颗小乳牙",
+    "subtitle": "咬苹果的小秘密与长大的信号",
+    "moral": {
+      "zh": "身体的变化是在提醒我们悄悄长大；不必因为掉牙害怕或害羞。",
+      "en": "Changes in our bodies remind us that we are growing; there is no need to feel afraid or shy about losing a baby tooth."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 42,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "上午加餐时间，桌上摆着一盘切好的红苹果片。安安拿起一块，咬了一大口。",
+        "enText": "During morning snack time, a plate of fresh red apple slices sat on the table. An'an took a piece and took a big bite.",
+        "illustrationPrompt": "Bright classroom snack table: wooden dining table with a plate of crisp apple slices; An'an holds an apple slice to her mouth.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Bright classroom snack table: wooden dining table with a plate of crisp apple slices; An'an holds an apple slice to her mouth.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_4444__tsk16__7WPFfjA1YfxEWguN.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "“哎呀！”安安轻轻叫了一声，手里的半块苹果停在嘴边。她觉得下排中间的小牙齿晃了一下。",
+        "enText": "“Oh!” An'an gasped softly, pausing with the apple slice at her lips. She felt a lower front tooth wiggle slightly.",
+        "illustrationPrompt": "Close portrait: An'an pauses with apple slice near mouth, eyes wide with surprise, touching her lower lip gently.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an pauses with apple slice near mouth, eyes wide with surprise, touching her lower lip gently.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_330761__tsk16__gza_2PpTAn06oJju.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "安安把苹果放回盘子，停下来想了想。那颗小牙真的有点松，像一块快要松开的小积木。",
+        "enText": "An'an put the apple back on her plate and paused. The little tooth really did feel loose, like a block beginning to wobble.",
+        "illustrationPrompt": "Close-up: An'an's thoughtful face, tongue pressing subtly behind bottom lip, curious and cautious expression, plate nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up: An'an's thoughtful face, touching bottom tooth gently, curious and cautious expression, plate nearby.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_18688__tsk16__FIoyzKY03gveGMag.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "她轻轻托住脸颊，有点酸酸胀胀的。“牙齿怎么会摇晃呢？会不会掉下来？”安安心里怦怦直跳。",
+        "enText": "She rested her cheek in her hand. It felt a little tender. “Why is my tooth wobbly? Will it fall out?” Her heart beat faster.",
+        "illustrationPrompt": "Medium table shot: An'an sits alone at the table touching her lower jaw, slightly worried look, unfinished apple on plate.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium table shot: An'an sits alone at the table touching her lower jaw, slightly worried look, unfinished apple on plate.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_10823__tsk16__RKXhNxfSka0A5n9_.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "乐乐端着水杯走过来，看见安安捂着嘴巴，笑着说：“安安，你是不是要掉牙变成说话漏风的小老头啦？”",
+        "enText": "Lele walked over with his water cup. Seeing An'an covering her mouth, he teased playfully: “Are you losing a tooth and going to whistle when you talk?”",
+        "illustrationPrompt": "Two-person table shot: Lele in mustard sweatshirt holds a water cup smiling; An'an quickly covers mouth with both hands, defensive and shy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two-person table shot: Lele in mustard sweatshirt holds a water cup smiling; An'an quickly covers mouth with both hands, defensive and shy.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_2342__tsk16__OUjWHQoZe9yuFJMZ.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "安安赶紧把嘴巴闭得紧紧的。一整个上午，她都不敢开口说话，生怕一张嘴牙齿就掉在地上。",
+        "enText": "An'an clamped her mouth shut tight. All morning, she hardly opened her lips, afraid the loose tooth might fall right onto the floor.",
+        "illustrationPrompt": "Quiet morning kindergarten reading corner. An'an sits alone on a small chair, a closed picture book resting in her lap, lips pressed tightly shut and eyebrows worried about her loose tooth. The book cover is plain muted green with a simple leaf illustration, NO lettering. No one laughs at her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Quiet morning kindergarten reading corner. An'an sits alone on a small chair, a closed picture book resting in her lap, lips pressed tightly shut and eyebrows worried about her loose tooth. The book cover is plain muted green with a simple leaf illustration, NO lettering. No one laughs at her.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-712c1f50-4937-4a61-88e0-b98cc714cf41.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_22356__tsk16__M3KyZjwmTI892WbY.png",
+            "generationPrompt": "Classroom reading corner: An'an sits quietly hugging a picture book with pressed lips, refusing to speak; other children play nearby.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/6-3bffcbef183e.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/5.webp"
+        ]
+      },
+      {
+        "page": 7,
+        "zhText": "画画课上，老师请安安讲讲自己的小画，安安只是低着头指了指纸上的彩虹，声音小得像蚊子嗡嗡叫。",
+        "enText": "During art time, the teacher asked An'an about her drawing. An'an only pointed shyly at her painted rainbow, whispering like a tiny breeze.",
+        "illustrationPrompt": "Art table medium shot: Teacher Lin in sage-green cardigan bends to listen; An'an points timidly at rainbow drawing with mouth tightly shut.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Art table medium shot: Teacher Lin in sage-green cardigan bends to listen; An'an points timidly at rainbow drawing with mouth tightly shut.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_29891__tsk16__QSdegRmwxH2ALpxw.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "下课后，林老师轻轻拍了拍安安的肩膀：“安安，今天嘴巴里是不是藏着一个小秘密？”",
+        "enText": "After class, Teacher Lin gently touched An'an's shoulder. “An'an, is there a little secret hiding in your mouth today?”",
+        "illustrationPrompt": "Quiet classroom corner: Teacher Lin sits beside An'an on small wooden chairs, gentle inquiring gaze, no other children around.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Quiet classroom corner: Teacher Lin sits beside An'an on small wooden chairs, gentle inquiring gaze, no other children around.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_380807__tsk16__MzLLmGWeY7K1aKR6.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "安安看了看四周，才慢慢张开嘴，指了指下门牙：“老师，我的牙齿摇晃了。它是不是坏掉了？”",
+        "enText": "An'an glanced around, then slowly opened her mouth and pointed to her bottom tooth. “Teacher, it's loose. Is it broken?”",
+        "illustrationPrompt": "Close two-person shot: An'an points to her lower front tooth with genuine concern; Teacher Lin looks closely with warm understanding smile.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close two-person shot: An'an points to her lower front tooth with genuine concern; Teacher Lin looks closely with warm understanding smile.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_7203__tsk16__zXd5XUE1qZGuyctm.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 10,
+        "zhText": "林老师温和地说：“很多孩子长大时会换牙。我们一起告诉妈妈，留意这颗小牙，有不舒服再请牙医看看。”",
+        "enText": "“Many children lose baby teeth as they grow,” Teacher Lin said gently. “Let's tell Mom and watch this one. A dentist can help if it troubles you.”",
+        "illustrationPrompt": "Close portrait: Teacher Lin explains gently with warm gestures, pointing to an educational tooth model on low shelf nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: Teacher Lin explains gently with warm gestures, pointing to an educational tooth model on low shelf nearby.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_4694__tsk16__Nty1kHy-EnVSlHTM.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 11,
+        "zhText": "老师拿来图卡：“换牙时，小乳牙的牙根会慢慢被吸收，牙齿就松了。新恒牙也在牙龈下面慢慢准备着。”",
+        "enText": "The teacher showed a picture. “As a baby tooth's roots are gradually absorbed, it gets loose. A new adult tooth is getting ready beneath the gum.”",
+        "illustrationPrompt": "Teacher Lin sits beside An'an in the reading corner, holding a small illustrated dental card; An'an listens with curiosity. The card shows ONE simple non-scary side-view diagram: a small LOWER FRONT BABY INCISOR with flat narrow cutting edge and almost all root absorbed, very short rounded root remnant, just above the gum; a larger permanent incisor is still INSIDE the gum underneath, not erupted beside the baby tooth. No molar lobes, no long forked roots, no arrows or text. Small clear simple diagram, not a detailed medical chart. Kind calm explanation.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin sits beside An'an in the reading corner, holding a small illustrated dental card; An'an listens with curiosity. The card shows ONE simple non-scary side-view diagram: a small LOWER FRONT BABY INCISOR with flat narrow cutting edge and almost all root absorbed, very short rounded root remnant, just above the gum; a larger permanent incisor is still INSIDE the gum underneath, not erupted beside the baby tooth. No molar lobes, no long forked roots, no arrows or text. Small clear simple diagram, not a detailed medical chart. Kind calm explanation.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-66589d14-84bc-4235-8ef2-1a578c41452c.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_24287__tsk16__S2kR8KiZgF2329Tg.png",
+            "generationPrompt": "Tabletop diagram view: Teacher Lin shows an illustrated card of baby teeth and adult teeth; An'an leans in, listening intently with wide eyes.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/11-e5305e2aac65.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp"
+        ]
+      },
+      {
+        "page": 12,
+        "zhText": "“每个人换牙的时间都不一样，不用和别人比。”林老师拿出一个粉色小盒子，“等小牙自然掉了，可以用它收藏。”",
+        "enText": "“Everyone loses teeth at their own time,” Teacher Lin said, offering a pink box. “When yours comes out naturally, you can keep it here.”",
+        "illustrationPrompt": "Teacher Lin offers the small keepsake box to An'an at the reading corner, warm encouraging expression. One small EMPTY rectangular translucent PINK hinged keepsake box with rounded corners and pale pink fabric lining, no tooth-shaped silhouette, no novelty tooth toy. An'an looks curious, teeth have NOT fallen out yet.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin offers the small keepsake box to An'an at the reading corner, warm encouraging expression. One small EMPTY rectangular translucent PINK hinged keepsake box with rounded corners and pale pink fabric lining, no tooth-shaped silhouette, no novelty tooth toy. An'an looks curious, teeth have NOT fallen out yet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-90b47a55-66cb-498d-ae92-1d7a8ecfe2bf.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_26896__tsk16__hw1imSEwA_AAqUxG.png",
+            "generationPrompt": "Close view: Teacher Lin hands small pink keepsake box to An'an; An'an cradles it in both hands, eyes brightening with relief.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/12-8c1e9ef38f43.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp"
+        ]
+      },
+      {
+        "page": 13,
+        "zhText": "安安捧着小盒子，心里的害怕一下子被好奇代替了：“那……它掉下来的时候会疼吗？”",
+        "enText": "Holding the little box, An'an's fear gave way to curiosity. “Will it hurt when it comes out?”",
+        "illustrationPrompt": "Close portrait: An'an gently holds the OPEN small rectangular translucent pink keepsake box in both hands, looking up at Teacher Lin with a curious questioning expression. The box contains ONLY a pale pink soft pad; NO tooth yet. Teacher Lin's sage sleeve and calm face visible beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Close portrait: An'an gently holds the OPEN small rectangular translucent pink keepsake box in both hands, looking up at Teacher Lin with a curious questioning expression. The box contains ONLY a pale pink soft pad; NO tooth yet. Teacher Lin's sage sleeve and calm face visible beside her.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-229fa708-03e6-47cd-b88c-53ccd971cec9.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_19062__tsk16__l7Dkunk9oje6aX1O.png",
+            "generationPrompt": "Two-person intimate shot: An'an holds the pink keepsake box, looking up hopefully; Teacher Lin smiles reassuringly.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/13-2d9b192d7508.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp"
+        ]
+      },
+      {
+        "page": 14,
+        "zhText": "“等它准备好了，让它自然掉下来，不要用力拔。”老师说，“每天轻轻刷牙，不舒服就告诉大人。”安安点点头。",
+        "enText": "“Let it come out when it is ready. Do not pull hard,” the teacher said. “Brush gently each day and tell a grown-up if it hurts.” An'an nodded.",
+        "illustrationPrompt": "Teacher Lin kneels beside An'an with one gentle open-hand reassuring gesture, no pulling teeth and no finger inside the child's mouth. An'an nods thoughtfully, holding one CLOSED rectangular translucent pink keepsake box with pale pink pad visible inside, no tooth yet. Calm kindergarten reading corner.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin kneels beside An'an with one gentle open-hand reassuring gesture, no pulling teeth and no finger inside the child's mouth. An'an nods thoughtfully, holding one CLOSED rectangular translucent pink keepsake box with pale pink pad visible inside, no tooth yet. Calm kindergarten reading corner.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-7bd372a7-6e9b-419a-b04a-7b7c6d1e76f0.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_355394__tsk16__HZQ5K4R3uXzANQfa.png",
+            "generationPrompt": "Medium shot: Teacher Lin mimics a leaf falling with her hand; An'an giggles softly, no longer covering her mouth.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/14-4c607730554e.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp"
+        ]
+      },
+      {
+        "page": 15,
+        "zhText": "午饭时，安安用后面的大牙慢慢嚼。乐乐走过来：“刚才的话让你难过了，对不起。”安安说：“换牙不是让人笑话的事。”",
+        "enText": "At lunch, An'an chewed slowly with her back teeth. Lele came over. “I'm sorry my joke upset you.” She said, “Losing a tooth is nothing to tease about.”",
+        "illustrationPrompt": "Lunch table scene: An'an sits with lunch bowl, speaking with gentle confidence to Lele; Lele looks surprised and curious.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Lunch table scene: An'an sits with lunch bowl, speaking with gentle confidence to Lele; Lele looks surprised and curious.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_38905__tsk16__S32I42frKrItjd2F.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 16,
+        "zhText": "过了几天，妈妈陪安安轻轻刷牙。那颗已经很松的小门牙自然掉了下来，落在洗手台边的白毛巾上。",
+        "enText": "A few days later, Mom stayed with An'an as she brushed gently. The very loose little front tooth came out naturally onto the white towel by the sink.",
+        "illustrationPrompt": "Warm bathroom evening, MEDIUM WIDE scene rather than a macro shot. An'an has just finished gentle brushing, holding her child toothbrush to one side and pointing at the folded white washcloth beside the sink, eyes mildly surprised, lips gently closed. Mom stands close at her shoulder supporting her, coral cardigan and cream trousers. On the washcloth is ONE TINY flat off-white enamel fleck, smooth compact rectangle only a few millimeters across, like a little flat white seed, with a straight smooth edge and NO projections, NOT a tooth-shaped icon. It must be small relative to the faucet and girl's finger. Sink, blue-flower cup and warm golden light; wholesome, no blood.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm bathroom evening, MEDIUM WIDE scene rather than a macro shot. An'an has just finished gentle brushing, holding her child toothbrush to one side and pointing at the folded white washcloth beside the sink, eyes mildly surprised, lips gently closed. Mom stands close at her shoulder supporting her, coral cardigan and cream trousers. On the washcloth is ONE TINY flat off-white enamel fleck, smooth compact rectangle only a few millimeters across, like a little flat white seed, with a straight smooth edge and NO projections, NOT a tooth-shaped icon. It must be small relative to the faucet and girl's finger. Sink, blue-flower cup and warm golden light; wholesome, no blood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-992b35a2-6622-4bbc-a086-9c45dbe87f9a.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_28449__tsk16__2rdJ8E97CU4gQhJO.png",
+            "generationPrompt": "Bathroom mirror view: An'an holding yellow toothbrush in front of mirror, a tiny white tooth resting on a clean white washcloth below.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/16-6e522ffb66f6.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 17,
+        "zhText": "这一次，没有安安想象中那么难受。妈妈陪她照看好掉牙的地方，安安再把小乳牙轻轻放进粉色盒子。",
+        "enText": "This time, it was not as uncomfortable as An'an had imagined. Mom helped care for the gap, and An'an gently placed the tooth in her pink box.",
+        "illustrationPrompt": "Warm bathroom evening. An'an holds an OPEN small rectangular translucent pink keepsake box in BOTH hands at chest level and shows Mom what she has just put inside. Both hands support the OUTSIDE sides of box; she is NOT pinching or holding anything with fingertips. On the soft pink cotton pad INSIDE rests ONE tiny smooth OFF-WHITE FLAT FLECK, short narrow rectangle only a few millimeters wide, partly nestled in the fabric; no visible roots, no legs, no fork, no conventional tooth-emoji icon. Mom in coral cardigan and cream trousers leans alongside with warm eyes. Girl smiles with closed lips; teal hoodie and yellow star clip, no forehead sticker, no toothbrush in hand. Medium two-person scene, one small box only.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm bathroom evening. An'an holds an OPEN small rectangular translucent pink keepsake box in BOTH hands at chest level and shows Mom what she has just put inside. Both hands support the OUTSIDE sides of box; she is NOT pinching or holding anything with fingertips. On the soft pink cotton pad INSIDE rests ONE tiny smooth OFF-WHITE FLAT FLECK, short narrow rectangle only a few millimeters wide, partly nestled in the fabric; no visible roots, no legs, no fork, no conventional tooth-emoji icon. Mom in coral cardigan and cream trousers leans alongside with warm eyes. Girl smiles with closed lips; teal hoodie and yellow star clip, no forehead sticker, no toothbrush in hand. Medium two-person scene, one small box only.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-d58ae856-1bbc-4423-b177-fb150b54939c.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_14796__tsk16__nF7miT71LWBjrTkE.png",
+            "generationPrompt": "Close overhead view: child's careful fingers place tiny white tooth into open pink case on marble sink counter, warm bathroom light.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/17-7984efa92bb9.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/12.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 18,
+        "zhText": "安安跑到镜子前，咧开嘴笑了起来。虽然门牙中间多了一个小小的门洞，但安安觉得，自己今天真的长大了一点。",
+        "enText": "An'an ran back to the mirror and gave a wide grin. Even with a tiny gap between her teeth, she felt she had truly grown today.",
+        "illustrationPrompt": "Warm bathroom mirror scene. An'an stands on a safe sturdy low step, smiling toward the mirror. Clearly show ONE small missing LOWER FRONT INCISOR gap, upper teeth intact. She holds a CLOSED small rectangular translucent pink keepsake box at chest level. Mom smiles gently in doorway, coral cardigan and cream trousers. No oversized teeth and no extra reflection people, no blood.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm bathroom mirror scene. An'an stands on a safe sturdy low step, smiling toward the mirror. Clearly show ONE small missing LOWER FRONT INCISOR gap, upper teeth intact. She holds a CLOSED small rectangular translucent pink keepsake box at chest level. Mom smiles gently in doorway, coral cardigan and cream trousers. No oversized teeth and no extra reflection people, no blood.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-05a49e63-1ff5-4c78-9830-0272e9df02b4.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_21126__tsk16__o_RX-1-8LPQex6yc.png",
+            "generationPrompt": "Warm bedroom ending: An'an grins at desk mirror showing cute little gap, holding up pink tooth box proudly; Mom smiles from doorway.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/iterations/18-fd34cdc1d36b.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 42,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "换牙期",
+        "身体认知",
+        "接纳自己"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "帮助 6 岁孩子认识乳牙脱落的自然生理过程，缓解对流血、疼痛和同伴眼光的焦虑。",
+      "reminder": "换牙时间因人而异，不以是否掉牙判断孩子是否长大。不取笑缺牙或发音，不用线、工具强行拔牙。保持日常清洁；若明显疼痛、持续出血或受伤后松牙，由成人联系牙医。",
+      "questions": [
+        "安安一开始为什么不敢大声说话？",
+        "乳牙摇晃的时候，下面正在发生什么奇妙的事？"
+      ],
+      "activity": "准备一个干净的小盒子当作“乳牙纪念盒”，和孩子一起在镜子前数数自己已经长出了几颗坚固的牙齿。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

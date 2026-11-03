@@ -1,0 +1,306 @@
+{
+  "book": {
+    "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+    "seriesId": "richang",
+    "title": "拼音王国里的小弯钩",
+    "subtitle": "b 和 d 怎么又转晕啦？",
+    "moral": {
+      "zh": "刚学新符号分不清很正常；把身体当成小尺子，多试几次就能找到方向。",
+      "en": "It is normal to confuse new symbols at first; using our hands and body makes finding the way fun and clear."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 43,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "大班的阅读角新添了彩色拼音图卡。安安觉得红红绿绿的小符号，像坐上小火车的乘客，想凑近看看。",
+        "enText": "New pinyin picture cards appeared in the kindergarten reading corner. Their colorful shapes reminded An'an of little train passengers. She wanted a closer look.",
+        "illustrationPrompt": "Bright classroom wall view: colorful chart with abstract rounded pinyin shapes on cork board; wooden desks and daylight from window.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Bright classroom wall view: colorful chart with abstract rounded pinyin shapes on cork board; wooden desks and daylight from window.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_55730__tsk16__3j7PJQcVQ5s6o9P3.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "安安对两个相像的符号感兴趣。林老师陪她念：“右下半圆 b，左下半圆 d。”旁边的小朋友也来看看。",
+        "enText": "Two similar shapes caught An'an's interest. Teacher Lin joined her: “The loop is on the right in b, and on the left in d.” Other children came to look.",
+        "illustrationPrompt": "Classroom front view: Teacher Lin points to wooden pointer near chart; children sitting at desks chanting together.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Classroom front view: Teacher Lin points to wooden pointer near chart; children sitting at desks chanting together.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_15428__tsk16__8z361Rki-RrrOvTv.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "安安想照着图卡画一画。她拿起铅笔，看着四线三格纸：竖线直直的，可圆圈该画在哪一边呢？",
+        "enText": "An'an wanted to try copying the shapes. She picked up a pencil and looked at the lined paper. The stem was straight, but which side needed the loop?",
+        "illustrationPrompt": "Desk close-up: An'an holds yellow pencil above blank lined notebook, brow furrowed in deep thought; yellow star clip visible.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Desk close-up: An'an holds yellow pencil above blank lined notebook, brow furrowed in deep thought; yellow star clip visible.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_18345__tsk16__2b_rmE9ZkHN-_05V.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "安安盯着本子看了半天，小脑袋歪向左边，又歪向右边。两个字母在脑子里转来转去，像转动的小陀螺。",
+        "enText": "An'an stared at her notebook, tilting her head left and then right. The two letters seemed to spin inside her mind like little tops.",
+        "illustrationPrompt": "Medium desk view: An'an tilts head with puzzled expression, eraser in left hand, pencil poised in right, blank lines on open book.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium desk view: An'an tilts head with puzzled expression, eraser in left hand, pencil poised in right, blank lines on open book.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_19464__tsk16__L_T1T6wh7ID7-wAr.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "她一笔画下去，把圆圈画在了左边，可心里又觉得不对。拿橡皮擦掉，重新画在右边，怎么看还是觉得别扭。",
+        "enText": "She drew a circle on the left, but felt it was wrong. She erased it and drew it on the right, still feeling unsure.",
+        "illustrationPrompt": "Close overhead view: pencil marks erased leaving faint gray smudges on paper, pencil tip resting beside lines; child's hand uncertain.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close overhead view: pencil marks erased leaving faint gray smudges on paper, pencil tip resting beside lines; child's hand uncertain.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_12649__tsk16__kdMcexrq5ejC9UfM.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "旁边的小宇以前玩过这些图卡，已经画了一行。安安看看他的纸，再看看自己的，心里开始着急。",
+        "enText": "Xiaoyu had played with these cards before and had drawn a whole row. An'an looked from his paper to hers and began to worry.",
+        "illustrationPrompt": "Two-desk view: Xiaoyu in forest-green sweatshirt writes smoothly; An'an glances sideways at his notebook with a worried sigh.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two-desk view: Xiaoyu in forest-green sweatshirt writes smoothly; An'an glances sideways at his notebook with a worried sigh.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_22151__tsk16__yKDuCGYK4EDXLLdH.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 7,
+        "zhText": "安安急得吸了吸鼻子，手心开始冒出汗水。用力一擦，本子上的格子线被擦得模模糊糊，铅笔尖也“啪”的一声断掉了。",
+        "enText": "An'an grew anxious, her palms turning sweaty. She rubbed too hard, smudging the lines until her pencil lead snapped with a tiny snap.",
+        "illustrationPrompt": "Close desk view: snapped pencil lead on notebook page beside rubber shavings, tear welling in An'an's eye; eraser held tightly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close desk view: snapped pencil lead on notebook page beside rubber shavings, tear welling in An'an's eye; eraser held tightly.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_26985__tsk16__viKWMSz2xj0njGKj.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "安安吸了吸泛酸的鼻子，把头埋进手臂里，眼泪一滴滴落在了桌面上。“我怎么总分不清呢……”她小声吸泣。",
+        "enText": "An'an sniffled, burying her face in her arms as a tear slipped onto the oak desk. “Why do I always mix them up?” she sobbed softly.",
+        "illustrationPrompt": "Side view: An'an rests head on arms across desk, shoulders shaking slightly; notebook pushed aside, broken pencil nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Side view: An'an rests head on arms across desk, shoulders shaking slightly; notebook pushed aside, broken pencil nearby.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_32650__tsk16__BYCBQoeyW_utNf7Y.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "林老师走过来：“分不清让你着急了，是吗？要不要去垫子上歇一会儿？”安安点点头，和老师一起坐下。",
+        "enText": "Teacher Lin came over. “Mixing them up feels frustrating, doesn't it? Shall we rest on the mat?” An'an nodded and sat beside her.",
+        "illustrationPrompt": "Warm classroom carpet scene: Teacher Lin sits cross-legged beside tearful An'an on green foam mat, holding a soft tissue.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Warm classroom carpet scene: Teacher Lin sits cross-legged beside tearful An'an on green foam mat, holding a soft tissue.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_11511__tsk16__jZKPplPdESF0O1rP.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 10,
+        "zhText": "老师把纸巾递给安安：“刚认识的新符号，有时就是容易弄混。不用和别人比，我们可以换个办法看看。”",
+        "enText": "The teacher offered a tissue. “New shapes can be easy to mix up. You do not have to keep up with anyone. We can try looking another way.”",
+        "illustrationPrompt": "Close two-person conversation: Teacher Lin dabs An'an's cheek gently; An'an looks up, listening with reddened nose.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close two-person conversation: Teacher Lin dabs An'an's cheek gently; An'an looks up, listening with reddened nose.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_55872__tsk16__Ss7uxLBBnqi2Hada.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 11,
+        "zhText": "老师先陪安安活动小手：“握一握，再松开，让手指歇歇。”安安照着做，紧紧的肩膀也慢慢放松了。",
+        "enText": "First, they moved their hands. “Make a fist, then let go. Give your fingers a rest.” As An'an copied her, her shoulders began to relax too.",
+        "illustrationPrompt": "Two-person medium shot: Teacher Lin holds up both thumbs-up fists in front of her; An'an watches curiously.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two-person medium shot: Teacher Lin holds up both thumbs-up fists in front of her; An'an watches curiously.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_19513__tsk16__xDh3n0uBy_4rhxkg.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 12,
+        "zhText": "老师坐到安安身边，朝同一个方向，把手心转向自己，再握拳竖起拇指：“这样看，左手的圆肚子在竖线左边，像 d。”",
+        "enText": "Sitting beside An'an and facing the same way, the teacher turned her palms toward herself and raised her thumbs. “From this view, the left fist has its loop left of the stem, like d.”",
+        "illustrationPrompt": "Anatomically clear FIRST-PERSON point-of-view from An'an's own eyes looking down at her OWN TWO HANDS just above a low wooden desk. Only her two teal sleeves and hands appear, not her face or another person's hands. BOTH PALMS FACE THE CAMERA (toward her own eyes), not backs of hands. LEFT forearm enters from BOTTOM LEFT, curled four fingers make a rounded fist on the LEFT side, LEFT THUMB stands upright on the RIGHT/INNER side near center of image: left hand resembles d. RIGHT forearm enters BOTTOM RIGHT, curled fingers on RIGHT, RIGHT THUMB stands upright on LEFT/INNER side near center: right hand resembles b. The TWO THUMBS are nearest each other, both near image center, not pointing outwards. On desk above hands exactly two upright facing-viewer cards: LEFT large lowercase 'd', RIGHT large lowercase 'b'. These two educational letters ONLY allowed. Teacher is beside the child but entirely out of frame. Warm 3D illustration; precisely two hands, five fingers each. One coherent POV scene, no diagram collage.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Anatomically clear FIRST-PERSON point-of-view from An'an's own eyes looking down at her OWN TWO HANDS just above a low wooden desk. Only her two teal sleeves and hands appear, not her face or another person's hands. BOTH PALMS FACE THE CAMERA (toward her own eyes), not backs of hands. LEFT forearm enters from BOTTOM LEFT, curled four fingers make a rounded fist on the LEFT side, LEFT THUMB stands upright on the RIGHT/INNER side near center of image: left hand resembles d. RIGHT forearm enters BOTTOM RIGHT, curled fingers on RIGHT, RIGHT THUMB stands upright on LEFT/INNER side near center: right hand resembles b. The TWO THUMBS are nearest each other, both near image center, not pointing outwards. On desk above hands exactly two upright facing-viewer cards: LEFT large lowercase 'd', RIGHT large lowercase 'b'. These two educational letters ONLY allowed. Teacher is beside the child but entirely out of frame. Warm 3D illustration; precisely two hands, five fingers each. One coherent POV scene, no diagram collage.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-ac838d05-9f0b-4443-94f6-9f04a1dc4637.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_56924__tsk16__mFibNycegz2pvPuH.png",
+            "generationPrompt": "Close view of hands: Teacher Lin's left thumb-up fist mimics the letter 'd'; An'an observes the shape with widening eyes.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/iterations/12-ebe3306c330a.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/2.webp"
+        ]
+      },
+      {
+        "page": 13,
+        "zhText": "“右手的圆肚子在竖线右边，像 b！”安安也转好手心，比了比。老师提醒：“我们看自己的手，不看镜子里的反方向。”",
+        "enText": "“The right fist has its loop to the right, like b!” An'an turned her own palms to match. “Look at your own hands, not a reversed reflection,” the teacher reminded her.",
+        "illustrationPrompt": "A close FIRST-PERSON view from An'an's own eyes looking down at her RIGHT HAND at the wooden desk. The right teal sleeve enters BOTTOM RIGHT. The RIGHT PALM faces the camera (toward her own eyes), four fingers curled into a rounded fist on the RIGHT, right THUMB upright on the LEFT/INNER side near the center. It clearly resembles lowercase b, NOT d; thumb is LEFT of curled knuckles. One large plain card with lowercase BLUE 'b' stands on desk just beyond this hand. A red 'd' card is far left in soft background blur. Only educational b and d letters allowed, no additional text. Other hand is outside crop, NO extra hands. Exact same warm 3D style and desk/cards as reference. Teacher sits beside her but outside crop. Natural child hand, no glove.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished square 1:1 3D animated-film picture-book illustration. Use reference for the desk, educational card design, teal sleeves, anatomy and light; compose the new closer view, not a contact sheet. THIS PAGE'S SCENE: A close FIRST-PERSON view from An'an's own eyes looking down at her RIGHT HAND at the wooden desk. The right teal sleeve enters BOTTOM RIGHT. The RIGHT PALM faces the camera (toward her own eyes), four fingers curled into a rounded fist on the RIGHT, right THUMB upright on the LEFT/INNER side near the center. It clearly resembles lowercase b, NOT d; thumb is LEFT of curled knuckles. One large plain card with lowercase BLUE 'b' stands on desk just beyond this hand. A red 'd' card is far left in soft background blur. Only educational b and d letters allowed, no additional text. Other hand is outside crop, NO extra hands. Exact same warm 3D style and desk/cards as reference. Teacher sits beside her but outside crop. Natural child hand, no glove.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-d6aaa16b-92c6-4d22-9e95-06b2924513a0.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_51985__tsk16__CwiSrzu_NO-tiCbz.png",
+            "generationPrompt": "Close view: An'an imitates with her own small hands, raising both thumbs up, a bright realization dawning across her smiling face.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/iterations/13-39a65b20b7c0.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/12.webp"
+        ]
+      },
+      {
+        "page": 14,
+        "zhText": "“手心朝自己时，左手像 d，右手像 b。”老师说，“方向一换，样子也会变，所以还要和图卡对一对。”安安点点头。",
+        "enText": "“With palms toward you, the left hand looks like d and the right like b,” the teacher said. “Turning them changes the view, so check the cards too.” An'an nodded.",
+        "illustrationPrompt": "Medium mat view: Teacher Lin and An'an both hold up their thumbs-up fists together, laughing and matching their hands.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium mat view: Teacher Lin and An'an both hold up their thumbs-up fists together, laughing and matching their hands.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_36108__tsk16__G27iCdPzDU0d8m9V.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 15,
+        "zhText": "乐乐和小宇也来玩。大家一边对着图卡，一边轻轻比划：“右下半圆 b，左下半圆 d。”看错了，就再看一次。",
+        "enText": "Lele and Xiaoyu joined them. They checked the cards and gently moved their hands: “Loop on the right, b. Loop on the left, d.” A mix-up simply meant another look.",
+        "illustrationPrompt": "Wide cheerful rug scene: An'an, Lele, and Xiaoyu sit in a circle on green mat laughing and flashing thumbs-up signs with Teacher Lin.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Wide cheerful rug scene: An'an, Lele, and Xiaoyu sit in a circle on green mat laughing and flashing thumbs-up signs with Teacher Lin.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_32393__tsk16__pA2B6-Kn04durSuy.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 16,
+        "zhText": "回到桌边，安安把红铅笔先放在纸上。她在桌下转好手心，比一比，再抬头看看图卡。",
+        "enText": "Back at the table, An'an set the red pencil on her paper. Under the desk, she turned her palms, checked her hands, then looked at the cards.",
+        "illustrationPrompt": "An'an sits at her kindergarten low wooden desk. Clearly show EXACTLY TWO arms, BOTH elbows down and BOTH hands under the front edge of desk, fingers curled and thumbs gently upright as she quietly compares her hands. No hand writing. Her red pencil lies flat UNHELD on top of the notebook, untouched. Above desk are two plain cards b and d (only these two educational letters allowed); she looks up to check the cards. Slight diagonal side view lets viewer see both desk top and her two hands below it. No ghost arm, no third hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an sits at her kindergarten low wooden desk. Clearly show EXACTLY TWO arms, BOTH elbows down and BOTH hands under the front edge of desk, fingers curled and thumbs gently upright as she quietly compares her hands. No hand writing. Her red pencil lies flat UNHELD on top of the notebook, untouched. Above desk are two plain cards b and d (only these two educational letters allowed); she looks up to check the cards. Slight diagonal side view lets viewer see both desk top and her two hands below it. No ghost arm, no third hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-cd7beb82-835f-4c6b-95e3-eb8c03564ce6.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_22261__tsk16__2PwkRqq-t_MOV7u5.png",
+            "generationPrompt": "Low desk shot: An'an looks down under the desk where her left and right thumbs form friendly shapes, grinning secretly.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/iterations/16-fc9ab95fb5b8.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/15.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/2.webp"
+        ]
+      },
+      {
+        "page": 17,
+        "zhText": "这一次，圆圆的肚子画对了方向。安安笑起来：下次再转晕，也可以停一停，看看图卡，再试一次。",
+        "enText": "This time, the loops faced the right way. An'an smiled. If they confused her again, she could pause, check a card, and try once more.",
+        "illustrationPrompt": "Close-up of notebook: clean smooth lines form neat b and d rows; An'an's hand writes steadily with newfound confidence.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of notebook: clean smooth lines form neat b and d rows; An'an's hand writes steadily with newfound confidence.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_47179__tsk16__aiqygsBgoqoOurNh.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 18,
+        "zhText": "放学时，安安给妈妈展示写满星星印章的练习本：“妈妈，我的两只小手学会了神奇的拼音魔法啦！”",
+        "enText": "At dismissal, An'an showed Mom her notebook stamped with little stars: “Mom, my two hands learned a magical pinyin trick today!”",
+        "illustrationPrompt": "Courtyard exit closing shot: An'an proudly holds up open notebook to smiling Mom, yellow star clip gleaming under warm afternoon light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Courtyard exit closing shot: An'an proudly holds up open notebook to smiling Mom, yellow star clip gleaming under warm afternoon light.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_38788__tsk16__8-rgxebTIG99nMic.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 43,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "拼音启蒙",
+        "学习抗挫"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "将抽象的拼音符号与具象身体动作连接，化解大班幼小衔接中的认读混淆与挫败感。",
+      "reminder": "拼音是孩子感兴趣时的图卡游戏，不是大班必学、必写或入学测评要求。手势须成人与孩子同向，并明确手心朝自己；变换视角会镜像，不适合时直接看图卡。不要催写、比较速度或贴“笨、粗心”的标签。",
+      "questions": [
+        "图卡上的 b 和 d，圆圈分别在哪一边？",
+        "看自己的小手时，为什么要先说好手心朝哪边？"
+      ],
+      "activity": "成人先与孩子并排坐、朝同一方向，把手心朝自己、握拳竖拇指，再对照 b、d 图卡观察。孩子不喜欢或觉得更混淆时就停下，用图卡找相同形状即可，不要求书写或背诵。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

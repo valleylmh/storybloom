@@ -1,0 +1,340 @@
+{
+  "book": {
+    "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+    "seriesId": "richang",
+    "title": "我可以和你们一起玩吗？",
+    "subtitle": "操场上的勇敢敲门声",
+    "moral": {
+      "zh": "可以开口邀请，也可以表达等待时的失落；一起商量轮流，不必用玩具或本领换取朋友。",
+      "en": "We can ask to join and share how waiting feels. Friendship does not need to be earned with toys or skills."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 47,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "户外游戏开始了。阳光把塑胶跑道照得暖烘烘的，微风吹着大树的绿叶，孩子们走向喜欢的游戏区。",
+        "enText": "Outdoor play began. Sunshine warmed the running track, and leaves rustled in the breeze as the children went to their chosen play areas.",
+        "illustrationPrompt": "Wide sunny playground scene: kindergarten playground with blue running track, green lawn, trees, children playing in groups.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Wide sunny playground scene: kindergarten playground with blue running track, green lawn, trees, children playing in groups.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_107916__tsk16__tKyUnZReQ8qxI83E.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "安安手里拿着两辆自己心爱的小汽车：一辆红色小跑车，一辆黄色工程救援车。她快步来到大沙坑旁。",
+        "enText": "An'an held two favorite toy cars in her hands: a little red roadster and a yellow tow truck. She hurried over to the sandpit.",
+        "illustrationPrompt": "Medium outdoor view: An'an walks across playground grass holding two small toy vehicles; yellow star clip sparkling in sun.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium outdoor view: An'an walks across playground grass holding two small toy vehicles; yellow star clip sparkling in sun.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_138609__tsk16___LSPYIO-V2yqUyqW.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "大沙坑边上热闹非凡。小宇和天天正蹲在沙堆前，忙得热火朝天。",
+        "enText": "The sandpit was bustling. Xiaoyu and Tiantian knelt by a large sand mound, completely absorbed in their project.",
+        "illustrationPrompt": "Medium sandpit scene: Xiaoyu in forest green and Tiantian in sky blue build a large sand castle with moats and bridges.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium sandpit scene: Xiaoyu in forest green and Tiantian in sky blue build a large sand castle with moats and bridges.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_130510__tsk16__ZOHu7XChiRWrVE9g.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "他们用湿润的细沙堆起了一座高大的连环城堡，周围还用小树枝插出了一圈威风凛凛的城墙。",
+        "enText": "They shaped damp sand into a towering fortress, rimmed with dry twigs that looked like sturdy palace ramparts.",
+        "illustrationPrompt": "Detailed sandcastle view: elaborate sand fortress with tunnels and twig towers; boys adding wooden ramparts happily.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Detailed sandcastle view: elaborate sand fortress with tunnels and twig towers; boys adding wooden ramparts happily.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_118742__tsk16__r0d9fIjUssFG5Dwa.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "“这里需要一个大车库，可是沙子总往下塌！”天天一边挖洞一边着急地说。",
+        "enText": "“We need a garage tunnel here, but the sand keeps tumbling down!” Tiantian said anxiously as he dug.",
+        "illustrationPrompt": "Two boys at sandpit: Tiantian digging a tunnel while Xiaoyu reinforces walls with flat wooden sticks, focused expressions.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two boys at sandpit: Tiantian digging a tunnel while Xiaoyu reinforces walls with flat wooden sticks, focused expressions.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_214746__tsk16__GPTXp1a-QOqxFnN_.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "安安停在三步远的地方，看着他们那么投入，心里特别想加入他们一起玩。",
+        "enText": "An'an stopped three paces away. Watching them play with such excitement, she wished deeply to join the adventure.",
+        "illustrationPrompt": "Three-person composition: An'an stands hesitant in foreground clutching her two toy cars; two boys build sandcastle behind her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Three-person composition: An'an stands hesitant in foreground clutching her two toy cars; two boys build sandcastle behind her.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_146020__tsk16__pQ5c85fhRfMEMLz_.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 7,
+        "zhText": "可她的脚像生了根一样停在原地，手指紧紧捏着小黄车，心想：“他们玩得那么高兴，会不会嫌我麻烦？”",
+        "enText": "Her feet seemed rooted to the ground. Gripping the yellow car tightly, she thought: “Will they think I'm getting in the way?”",
+        "illustrationPrompt": "Close portrait: An'an watching shyly from distance, lips pressed together, clutching toys to chest with uncertain longing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an watching shyly from distance, lips pressed together, clutching toys to chest with uncertain longing.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_146324__tsk16__8L3IZkGqJaBuagnv.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "乐乐拍着皮球从旁边路过，看见安安在沙坑边转圈，跑过来问：“安安，你怎么站在这里发呆呀？”",
+        "enText": "Lele bounced his basketball by. Seeing An'an circling the sandpit, he ran over: “An'an, why are you just standing here?”",
+        "illustrationPrompt": "Medium shot: Lele in mustard sweatshirt holds rubber ball, looking quizzically at An'an; sandpit visible behind them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium shot: Lele in mustard sweatshirt holds rubber ball, looking quizzically at An'an; sandpit visible behind them.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_181158__tsk16__11RPnlpdKQzgRx1O.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "“我想和他们一起搭城堡，但我不敢过去说。”安安低着头小声说。",
+        "enText": "“I want to build castles with them, but I'm afraid to go over and ask,” An'an whispered, looking down at her sneakers.",
+        "illustrationPrompt": "Two-person medium shot: An'an speaks bashfully to Lele, pointing shyly toward the sandpit; Lele listens attentively.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two-person medium shot: An'an speaks bashfully to Lele, pointing shyly toward the sandpit; Lele listens attentively.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_153420__tsk16__4SEAxcv1_QJ_61FT.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 10,
+        "zhText": "乐乐说：“可以先问问他们愿不愿意一起玩。你的小汽车能加入故事，也可以只带着你自己的想法。”",
+        "enText": "“You can ask whether they would like to play together,” Lele said. “Your cars could join the story, or you could simply bring an idea.”",
+        "illustrationPrompt": "At a kindergarten sandpit edge, Lele, Chinese BOY short dark hair mustard sweatshirt and navy trousers, talks reassuringly to An'an. Girl listens while holding one RED ordinary toy car and one YELLOW tow truck, both with simple windscreens and NO faces or eyes. Both children stand with feet on the level GROUND OUTSIDE wooden sandpit rim, not balancing on edge. No blue toy vehicle and no tool that must buy entry to friendship.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: At a kindergarten sandpit edge, Lele, Chinese BOY short dark hair mustard sweatshirt and navy trousers, talks reassuringly to An'an. Girl listens while holding one RED ordinary toy car and one YELLOW tow truck, both with simple windscreens and NO faces or eyes. Both children stand with feet on the level GROUND OUTSIDE wooden sandpit rim, not balancing on edge. No blue toy vehicle and no tool that must buy entry to friendship.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-1c8c3c92-290e-438b-afd1-85895bc1bb29.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_263632__tsk16__E7fFxG4DNo5E8h8D.png",
+            "generationPrompt": "Two-person shot: Lele points encouragingly at the sandcastle and An'an's toy cars, giving her helpful tips with open friendly gestures.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/iterations/10-907a79a4ecf3.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+        ]
+      },
+      {
+        "page": 11,
+        "zhText": "安安深吸了一口气，迈开步子走到了沙坑边缘。两个小男孩正专心地修筑护城河，没有注意到她。",
+        "enText": "An'an took a steady breath and stepped up to the edge of the sandpit. The two boys were busy digging and hadn't noticed her yet.",
+        "illustrationPrompt": "An'an takes a breath and walks on level GROUND up to the outside edge of the sandpit, holding one RED toy car and one YELLOW toy tow truck, no faces. Inside sandpit two Chinese BOYS build a castle and moat: Xiaoyu short dark hair forest-green hoodie and charcoal trousers; Tiantian short dark hair sky-blue top and navy trousers. Both focused on sand. Girl is not standing atop raised wood rim. No girl ponytails replacing boys.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Remove BOTH ADULT WOMEN completely from the sandpit scene (the coral-cardigan Mom and the sage-cardigan teacher). Replace their silhouettes with normal softly blurred empty school playground scenery. Keep ONLY the THREE CHILDREN: An'an holding a red toy car and yellow tow truck, Xiaoyu in forest-green, Tiantian boy in sky-blue. Keep their identities, natural two arms each, sandcastle and toys unchanged. An'an stands safely on level grass OUTSIDE the wooden rim, not atop the wood. No adults, no fourth child, no lettering. Preserve square 3D illustration and warm light.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-cbae95d3-89a8-4b95-95c3-aa71219b4caa.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_165036__tsk16__-smi2AMZqcgcgkZ2.png",
+            "generationPrompt": "Medium ground-level shot: An'an stands at the wooden border of the sandpit looking down at the two boys working.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/iterations/11-a40a547beaaf.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2465244c-ffb9-459f-8b42-f1bb1945222c.png"
+        ]
+      },
+      {
+        "page": 12,
+        "zhText": "安安清了清嗓子，大声说：“哇！你们搭的沙子城堡真壮观，像一座真的石头王宫！”",
+        "enText": "An'an cleared her throat and spoke clearly: “Wow! Your sand castle is amazing—it looks like a real stone fortress!”",
+        "illustrationPrompt": "Medium three-person scene: An'an speaks with open, friendly smile; Xiaoyu and Tiantian look up surprised from their digging.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium three-person scene: An'an speaks with open, friendly smile; Xiaoyu and Tiantian look up surprised from their digging.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_253010__tsk16__AZlEZF8LD5i-ETdu.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 13,
+        "zhText": "两个小男孩抬起头，脸上沾着沙粒，听到称赞都笑了：“真的吗？我们已经修了好一会儿呢！”",
+        "enText": "The two boys looked up with sandy cheeks and smiled at her kind words. “Really? We have been building for quite a while!”",
+        "illustrationPrompt": "Low angle from sandpit: Xiaoyu and Tiantian wipe sandy hands on knees, smiling happily at An'an's praise.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Low angle from sandpit: Xiaoyu and Tiantian wipe sandy hands on knees, smiling happily at An'an's praise.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_210457__tsk16__0IhQ2ifCtxPuYIt3.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 14,
+        "zhText": "安安蹲下来，举起小黄车：“我可以和你们一起玩吗？我想和你们修一条路，让小救援车开进城堡。”",
+        "enText": "An'an crouched and lifted her yellow truck. “May I play with you? I would like to help make a road so the rescue truck can enter the castle.”",
+        "illustrationPrompt": "Ground-level medium view: An'an crouches beside sandpit, offering her yellow toy crane car across the sand moat.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Ground-level medium view: An'an crouches beside sandpit, offering her yellow toy crane car across the sand moat.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_176625__tsk16__S9RMT4H27Yr2wtdF.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 15,
+        "zhText": "小宇眼前一亮，高兴得直拍手：“太好了！我们刚才正愁没有结实的桥面呢！大工程师，快来这边！”",
+        "enText": "Xiaoyu's eyes widened and he clapped with glee: “Awesome! We were just wishing for a bridge! Come on over, Chief Engineer!”",
+        "illustrationPrompt": "Excited group composition: Xiaoyu beckons warmly; Tiantian clears a smooth sandy bank for An'an's truck.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Excited group composition: Xiaoyu beckons warmly; Tiantian clears a smooth sandy bank for An'an's truck.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_149358__tsk16__JxZ2PtKGB3bRylk-.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 16,
+        "zhText": "天天也把一把小铲子递给安安：“你来负责挖西边的深水渠，我们给救援车开一条平整的大道！”",
+        "enText": "Tiantian handed a mini plastic shovel to An'an: “You can dig the west canal, and we'll pave a smooth road for your truck!”",
+        "illustrationPrompt": "Low action shot: children working together in sand; An'an digs canal with shovel while Xiaoyu places toy car across twigs.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Low action shot: children working together in sand; An'an digs canal with shovel while Xiaoyu places toy car across twigs.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_170999__tsk16__vmrvgXbe4xDkNUlu.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 17,
+        "zhText": "三个人在细沙里忙碌着。小汽车停上城堡，木片搭成的小桥横过水渠，大家又给它补了补。",
+        "enText": "The three children worked in the sand. The cars rested on the castle, and a little wooden bridge crossed the channel. Together, they made it steadier.",
+        "illustrationPrompt": "Close detailed shot: completed sand castle with yellow crane truck and red car parked atop, twig bridge crossing neat sand moat.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close detailed shot: completed sand castle with yellow crane truck and red car parked atop, twig bridge crossing neat sand moat.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_309662__tsk16__gogHkIrgeyJauoJS.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 18,
+        "zhText": "过了一会儿，又有两个别班的小朋友想加入运沙子。沙坑边已经挤满了人，工具也分完了。",
+        "enText": "Later, two other children ran up wanting to carry sand. But the pit was already crowded and all tools were in use.",
+        "illustrationPrompt": "Wide playground scene: two new kids approach crowded sandpit where four children are already playing together.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Wide playground scene: two new kids approach crowded sandpit where four children are already playing together.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_279170__tsk16__NQwKg7jkaIC56GIh.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 19,
+        "zhText": "小宇说：“我们再玩一小会儿就轮换，好吗？”林老师听见了，过来和大家一起安排，让新来的朋友也有机会。",
+        "enText": "“Shall we swap turns after a little while?” Xiaoyu asked. Teacher Lin heard and helped arrange things so the newcomers would have a turn too.",
+        "illustrationPrompt": "Kindergarten sandpit play rotation. Teacher Lin in sage cardigan and charcoal trousers kneels nearby helping four original children agree on taking turns; An'an teal hoodie, Xiaoyu BOY forest-green hoodie charcoal trousers, Tiantian BOY sky-blue top navy trousers, Lele BOY mustard sweatshirt navy trousers. TWO new waiting children stand nearby with a small bucket, welcomed not excluded. Sandcastle with road and one RED ordinary car and one YELLOW tow truck without faces. Open friendly discussion, no crowd or blocking entrance.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten sandpit play rotation. Teacher Lin in sage cardigan and charcoal trousers kneels nearby helping four original children agree on taking turns; An'an teal hoodie, Xiaoyu BOY forest-green hoodie charcoal trousers, Tiantian BOY sky-blue top navy trousers, Lele BOY mustard sweatshirt navy trousers. TWO new waiting children stand nearby with a small bucket, welcomed not excluded. Sandcastle with road and one RED ordinary car and one YELLOW tow truck without faces. Open friendly discussion, no crowd or blocking entrance.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e3101fc1-fa21-4ebd-9547-bf9b62a3104a.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_189607__tsk16__flrfbQjbd_fhEtPD.png",
+            "generationPrompt": "Medium shot: Xiaoyu explains gently to approaching children; the newcomers nod cheerfully and head toward swings.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/iterations/19-a12e5168ec6d.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 20,
+        "zhText": "安安发现，想一起玩可以问出来，暂时要等也可以说说心情。和朋友商量、找老师帮忙，游戏就能慢慢接着玩。",
+        "enText": "An'an learned she could ask to join and say how waiting felt. Talking with friends and asking a teacher for help could keep the game going.",
+        "illustrationPrompt": "Warm final kindergarten sandpit scene: EXACTLY FOUR original children playing together: An'an six-year-old GIRL short bob yellow star clip teal hoodie blue jeans; Xiaoyu BOY short hair forest-green hoodie charcoal trousers; Tiantian BOY short hair sky-blue top navy trousers, NOT a girl, no ponytails or skirt; Lele BOY short hair mustard sweatshirt navy trousers. They share a sandcastle road with a RED car and a YELLOW tow truck, no faces. Girl and three boys, playful calm scene, no additional person in foreground. Teacher optional absent, no magical bridge.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm final kindergarten sandpit scene: EXACTLY FOUR original children playing together: An'an six-year-old GIRL short bob yellow star clip teal hoodie blue jeans; Xiaoyu BOY short hair forest-green hoodie charcoal trousers; Tiantian BOY short hair sky-blue top navy trousers, NOT a girl, no ponytails or skirt; Lele BOY short hair mustard sweatshirt navy trousers. They share a sandcastle road with a RED car and a YELLOW tow truck, no faces. Girl and three boys, playful calm scene, no additional person in foreground. Teacher optional absent, no magical bridge.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2bbae406-7c15-40e3-958e-8453d7d0766a.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_238227__tsk16__oXIUqhTCWKcEFeLV.png",
+            "generationPrompt": "Sunny closing shot: An'an, Xiaoyu, Tiantian, and Lele sit side by side on playground grass smiling happily around sand castle.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/iterations/20-175e9d4ebd94.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+        ]
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 47,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "同伴交往",
+        "破冰社交",
+        "接纳拒绝"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "提供实用的社交介入语言与合作策略，建立面对拒绝时的心理弹性。",
+      "reminder": "不把玩具、夸奖或帮忙当作获得友谊的交换条件。公共游戏空间由成人协助轮换，不让先到的孩子长期排斥他人；被拒绝时允许难过，持续排斥应向可信成人求助。",
+      "questions": [
+        "安安怎样把“我想一起玩”说了出来？",
+        "游戏需要轮流时，怎样让大家都有机会？"
+      ],
+      "activity": "角色扮演操场社交：孩子扮演想加入游戏的小伙伴，练习带着玩具或新玩法礼貌询问。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

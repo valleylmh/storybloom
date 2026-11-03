@@ -1,0 +1,684 @@
+{
+  "version": 1,
+  "reason": "Visual review of all existing contact sheets found concrete anatomy, teaching, prop and scene-continuity errors. Original image versions are archived by --replace.",
+  "jobs": [
+    {
+      "key": "41-10",
+      "order": 41,
+      "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+      "page": 10,
+      "reason": "Restore Mom's cream trousers and continuity.",
+      "scene": "At the kindergarten entrance in morning light, An'an gently touches a curled fist to her chest, calming herself. Mom kneels at eye level in CORAL cardigan and CREAM trousers, reassures her warmly. One orange backpack worn by An'an. No gold sticker on forehead.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: At the kindergarten entrance in morning light, An'an gently touches a curled fist to her chest, calming herself. Mom kneels at eye level in CORAL cardigan and CREAM trousers, reassures her warmly. One orange backpack worn by An'an. No gold sticker on forehead.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-f82031a2-1010-46d9-aee8-e2e9414fbb7b.png",
+      "reviewedAt": "2026-10-23T05:37:42.094Z"
+    },
+    {
+      "key": "42-6",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 6,
+      "reason": "Remove accidental cover lettering; keep worried expression.",
+      "scene": "Quiet morning kindergarten reading corner. An'an sits alone on a small chair, a closed picture book resting in her lap, lips pressed tightly shut and eyebrows worried about her loose tooth. The book cover is plain muted green with a simple leaf illustration, NO lettering. No one laughs at her.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/5.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Quiet morning kindergarten reading corner. An'an sits alone on a small chair, a closed picture book resting in her lap, lips pressed tightly shut and eyebrows worried about her loose tooth. The book cover is plain muted green with a simple leaf illustration, NO lettering. No one laughs at her.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-712c1f50-4937-4a61-88e0-b98cc714cf41.png",
+      "reviewedAt": "2026-10-23T05:37:42.362Z"
+    },
+    {
+      "key": "42-11",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 11,
+      "reason": "Correct front-incisor/root-resorption illustration.",
+      "scene": "Teacher Lin sits beside An'an in the reading corner, holding a small illustrated dental card; An'an listens with curiosity. The card shows ONE simple non-scary side-view diagram: a small LOWER FRONT BABY INCISOR with flat narrow cutting edge and almost all root absorbed, very short rounded root remnant, just above the gum; a larger permanent incisor is still INSIDE the gum underneath, not erupted beside the baby tooth. No molar lobes, no long forked roots, no arrows or text. Small clear simple diagram, not a detailed medical chart. Kind calm explanation.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin sits beside An'an in the reading corner, holding a small illustrated dental card; An'an listens with curiosity. The card shows ONE simple non-scary side-view diagram: a small LOWER FRONT BABY INCISOR with flat narrow cutting edge and almost all root absorbed, very short rounded root remnant, just above the gum; a larger permanent incisor is still INSIDE the gum underneath, not erupted beside the baby tooth. No molar lobes, no long forked roots, no arrows or text. Small clear simple diagram, not a detailed medical chart. Kind calm explanation.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-66589d14-84bc-4235-8ef2-1a578c41452c.png",
+      "reviewedAt": "2026-10-23T05:37:42.640Z"
+    },
+    {
+      "key": "42-12",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 12,
+      "reason": "Keep tooth box empty and same rectangular shape.",
+      "scene": "Teacher Lin offers the small keepsake box to An'an at the reading corner, warm encouraging expression. One small EMPTY rectangular translucent PINK hinged keepsake box with rounded corners and pale pink fabric lining, no tooth-shaped silhouette, no novelty tooth toy. An'an looks curious, teeth have NOT fallen out yet.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin offers the small keepsake box to An'an at the reading corner, warm encouraging expression. One small EMPTY rectangular translucent PINK hinged keepsake box with rounded corners and pale pink fabric lining, no tooth-shaped silhouette, no novelty tooth toy. An'an looks curious, teeth have NOT fallen out yet.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-90b47a55-66cb-498d-ae92-1d7a8ecfe2bf.png",
+      "reviewedAt": "2026-10-23T05:37:42.914Z"
+    },
+    {
+      "key": "42-13",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 13,
+      "reason": "Remove premature tooth; keep box continuity.",
+      "scene": "Close portrait: An'an gently holds the OPEN small rectangular translucent pink keepsake box in both hands, looking up at Teacher Lin with a curious questioning expression. The box contains ONLY a pale pink soft pad; NO tooth yet. Teacher Lin's sage sleeve and calm face visible beside her.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Close portrait: An'an gently holds the OPEN small rectangular translucent pink keepsake box in both hands, looking up at Teacher Lin with a curious questioning expression. The box contains ONLY a pale pink soft pad; NO tooth yet. Teacher Lin's sage sleeve and calm face visible beside her.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-229fa708-03e6-47cd-b88c-53ccd971cec9.png",
+      "reviewedAt": "2026-10-23T05:48:26.386Z"
+    },
+    {
+      "key": "42-14",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 14,
+      "reason": "Natural tooth loss, no pulling; consistent empty box.",
+      "scene": "Teacher Lin kneels beside An'an with one gentle open-hand reassuring gesture, no pulling teeth and no finger inside the child's mouth. An'an nods thoughtfully, holding one CLOSED rectangular translucent pink keepsake box with pale pink pad visible inside, no tooth yet. Calm kindergarten reading corner.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin kneels beside An'an with one gentle open-hand reassuring gesture, no pulling teeth and no finger inside the child's mouth. An'an nods thoughtfully, holding one CLOSED rectangular translucent pink keepsake box with pale pink pad visible inside, no tooth yet. Calm kindergarten reading corner.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-7bd372a7-6e9b-419a-b04a-7b7c6d1e76f0.png",
+      "reviewedAt": "2026-10-23T05:41:37.581Z"
+    },
+    {
+      "key": "42-16",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 16,
+      "reason": "Show a tiny naturally shed lower incisor, not a rooted molar.",
+      "scene": "Warm bathroom evening, MEDIUM WIDE scene rather than a macro shot. An'an has just finished gentle brushing, holding her child toothbrush to one side and pointing at the folded white washcloth beside the sink, eyes mildly surprised, lips gently closed. Mom stands close at her shoulder supporting her, coral cardigan and cream trousers. On the washcloth is ONE TINY flat off-white enamel fleck, smooth compact rectangle only a few millimeters across, like a little flat white seed, with a straight smooth edge and NO projections, NOT a tooth-shaped icon. It must be small relative to the faucet and girl's finger. Sink, blue-flower cup and warm golden light; wholesome, no blood.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm bathroom evening, MEDIUM WIDE scene rather than a macro shot. An'an has just finished gentle brushing, holding her child toothbrush to one side and pointing at the folded white washcloth beside the sink, eyes mildly surprised, lips gently closed. Mom stands close at her shoulder supporting her, coral cardigan and cream trousers. On the washcloth is ONE TINY flat off-white enamel fleck, smooth compact rectangle only a few millimeters across, like a little flat white seed, with a straight smooth edge and NO projections, NOT a tooth-shaped icon. It must be small relative to the faucet and girl's finger. Sink, blue-flower cup and warm golden light; wholesome, no blood.",
+      "status": "reviewed-imported",
+      "attempts": [
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-5a04a3ca-a4f3-4c6a-a653-1fa903c252fd.png",
+          "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Several days later, warm bathroom evening. Mom supervises An'an's gentle brushing at the sink; girl holds a child toothbrush away from her mouth and looks with mild surprise at ONE tiny white lower FRONT INCISOR crown on a clean white towel beside sink. The shed tooth is tiny flat narrow chisel-shaped front crown with almost no root, NOT a large molar, no long roots or blood. An'an has one small lower-front-tooth gap. Mom in coral and cream, close supportive pose.",
+          "result": "rejected",
+          "reason": "Shed tooth still has molar-like forked legs."
+        },
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-20a5df13-c07d-4ddb-b07d-0224a330f1ac.png",
+          "prompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Correct ONLY the tiny shed tooth lying on the white towel; the generated tooth incorrectly looks like a two-legged molar. Replace this object with ONE TINY ROOTLESS LOWER FRONT INCISOR CROWN: a simple narrow smooth WHITE ENAMEL CAP shaped like a small rounded RECTANGLE with ONE FLAT STRAIGHT cutting edge. NO roots at all, NO two legs, NO fork, NO V or U notch, NO molar lobes. It is like a tiny smooth rectangular white chip smaller than her pinky nail, NOT the conventional cartoon tooth emoji. Keep every other pixel concept unchanged: girl, two hands, Mom, expressions, star hair clip, teal hoodie, pink box if present, bathroom, lighting, composition, polished 3D illustration. No text or blood.",
+          "result": "rejected",
+          "reason": "Shed item still resembles a forked molar; switch to small partly nested enamel fleck."
+        }
+      ],
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-992b35a2-6622-4bbc-a086-9c45dbe87f9a.png",
+      "reviewedAt": "2026-10-23T05:52:06.489Z"
+    },
+    {
+      "key": "42-17",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 17,
+      "reason": "Correct retained tooth shape and missing-tooth gap.",
+      "scene": "Warm bathroom evening. An'an holds an OPEN small rectangular translucent pink keepsake box in BOTH hands at chest level and shows Mom what she has just put inside. Both hands support the OUTSIDE sides of box; she is NOT pinching or holding anything with fingertips. On the soft pink cotton pad INSIDE rests ONE tiny smooth OFF-WHITE FLAT FLECK, short narrow rectangle only a few millimeters wide, partly nestled in the fabric; no visible roots, no legs, no fork, no conventional tooth-emoji icon. Mom in coral cardigan and cream trousers leans alongside with warm eyes. Girl smiles with closed lips; teal hoodie and yellow star clip, no forehead sticker, no toothbrush in hand. Medium two-person scene, one small box only.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/12.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm bathroom evening. An'an holds an OPEN small rectangular translucent pink keepsake box in BOTH hands at chest level and shows Mom what she has just put inside. Both hands support the OUTSIDE sides of box; she is NOT pinching or holding anything with fingertips. On the soft pink cotton pad INSIDE rests ONE tiny smooth OFF-WHITE FLAT FLECK, short narrow rectangle only a few millimeters wide, partly nestled in the fabric; no visible roots, no legs, no fork, no conventional tooth-emoji icon. Mom in coral cardigan and cream trousers leans alongside with warm eyes. Girl smiles with closed lips; teal hoodie and yellow star clip, no forehead sticker, no toothbrush in hand. Medium two-person scene, one small box only.",
+      "status": "reviewed-imported",
+      "attempts": [
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-bd56aded-9110-4e65-8984-31249259ae0c.png",
+          "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Bathroom close portrait. With Mom nearby in coral cardigan, An'an carefully lowers ONE tiny white flat front INCISOR CROWN into the OPEN rectangular translucent pink keepsake box with soft pale pink lining. Tooth is no bigger than girl's pinky nail, narrow flat cutting edge, almost NO root, no forked molar legs. Girl smiles with one small gap in LOWER front teeth. No blood. Match reference box and bathroom lighting.",
+          "result": "rejected",
+          "reason": "Shed tooth still has molar-like forked legs."
+        },
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-50408e08-b6be-49ed-a4a8-300941a0fc8b.png",
+          "prompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Correct ONLY the tiny shed tooth held between the girl's fingertips; the generated tooth incorrectly looks like a two-legged molar. Replace this object with ONE TINY ROOTLESS LOWER FRONT INCISOR CROWN: a simple narrow smooth WHITE ENAMEL CAP shaped like a small rounded RECTANGLE with ONE FLAT STRAIGHT cutting edge. NO roots at all, NO two legs, NO fork, NO V or U notch, NO molar lobes. It is like a tiny smooth rectangular white chip smaller than her pinky nail, NOT the conventional cartoon tooth emoji. Keep every other pixel concept unchanged: girl, two hands, Mom, expressions, star hair clip, teal hoodie, pink box if present, bathroom, lighting, composition, polished 3D illustration. No text or blood.",
+          "result": "rejected",
+          "reason": "Shed item still resembles a forked molar; switch to small partly nested enamel fleck."
+        }
+      ],
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-d58ae856-1bbc-4423-b177-fb150b54939c.png",
+      "reviewedAt": "2026-10-23T05:52:06.754Z"
+    },
+    {
+      "key": "42-18",
+      "order": 42,
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "page": 18,
+      "reason": "Make final front-tooth gap and closed keepsake box visible.",
+      "scene": "Warm bathroom mirror scene. An'an stands on a safe sturdy low step, smiling toward the mirror. Clearly show ONE small missing LOWER FRONT INCISOR gap, upper teeth intact. She holds a CLOSED small rectangular translucent pink keepsake box at chest level. Mom smiles gently in doorway, coral cardigan and cream trousers. No oversized teeth and no extra reflection people, no blood.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm bathroom mirror scene. An'an stands on a safe sturdy low step, smiling toward the mirror. Clearly show ONE small missing LOWER FRONT INCISOR gap, upper teeth intact. She holds a CLOSED small rectangular translucent pink keepsake box at chest level. Mom smiles gently in doorway, coral cardigan and cream trousers. No oversized teeth and no extra reflection people, no blood.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-05a49e63-1ff5-4c78-9830-0272e9df02b4.png",
+      "reviewedAt": "2026-10-23T05:48:26.600Z"
+    },
+    {
+      "key": "43-12",
+      "order": 43,
+      "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+      "page": 12,
+      "reason": "Correct same-view hand mnemonic and b/d direction.",
+      "scene": "Anatomically clear FIRST-PERSON point-of-view from An'an's own eyes looking down at her OWN TWO HANDS just above a low wooden desk. Only her two teal sleeves and hands appear, not her face or another person's hands. BOTH PALMS FACE THE CAMERA (toward her own eyes), not backs of hands. LEFT forearm enters from BOTTOM LEFT, curled four fingers make a rounded fist on the LEFT side, LEFT THUMB stands upright on the RIGHT/INNER side near center of image: left hand resembles d. RIGHT forearm enters BOTTOM RIGHT, curled fingers on RIGHT, RIGHT THUMB stands upright on LEFT/INNER side near center: right hand resembles b. The TWO THUMBS are nearest each other, both near image center, not pointing outwards. On desk above hands exactly two upright facing-viewer cards: LEFT large lowercase 'd', RIGHT large lowercase 'b'. These two educational letters ONLY allowed. Teacher is beside the child but entirely out of frame. Warm 3D illustration; precisely two hands, five fingers each. One coherent POV scene, no diagram collage.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/2.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Anatomically clear FIRST-PERSON point-of-view from An'an's own eyes looking down at her OWN TWO HANDS just above a low wooden desk. Only her two teal sleeves and hands appear, not her face or another person's hands. BOTH PALMS FACE THE CAMERA (toward her own eyes), not backs of hands. LEFT forearm enters from BOTTOM LEFT, curled four fingers make a rounded fist on the LEFT side, LEFT THUMB stands upright on the RIGHT/INNER side near center of image: left hand resembles d. RIGHT forearm enters BOTTOM RIGHT, curled fingers on RIGHT, RIGHT THUMB stands upright on LEFT/INNER side near center: right hand resembles b. The TWO THUMBS are nearest each other, both near image center, not pointing outwards. On desk above hands exactly two upright facing-viewer cards: LEFT large lowercase 'd', RIGHT large lowercase 'b'. These two educational letters ONLY allowed. Teacher is beside the child but entirely out of frame. Warm 3D illustration; precisely two hands, five fingers each. One coherent POV scene, no diagram collage.",
+      "status": "reviewed-imported",
+      "attempts": [
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-47e59997-9d85-4da1-9929-f36da6b6eddd.png",
+          "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin sits immediately beside An'an, BOTH facing the SAME direction toward the desk, not facing one another. Slight over-shoulder camera from behind An'an, showing An'an's own view of her hands: palms turned TOWARD HERSELF, fingers curled into a round fist and each thumb upright. LEFT hand thumb is on the RIGHT/inward side, rounded curled fingers to its LEFT, silhouette like lowercase d. RIGHT hand thumb is on LEFT/inward side, rounded curled fingers to its RIGHT, silhouette like lowercase b. On the desk in the corresponding positions are only two large plain lowercase cards, LEFT 'd', RIGHT 'b'. Educational letters d and b ONLY are explicitly allowed. Teacher gently explains the left-hand shape, no extra hands or mirrored backwards letters.",
+          "result": "rejected",
+          "reason": "Teacher still opposite child, incorrect hand viewpoint."
+        }
+      ],
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-ac838d05-9f0b-4443-94f6-9f04a1dc4637.png",
+      "reviewedAt": "2026-10-23T05:52:07.020Z"
+    },
+    {
+      "key": "43-16",
+      "order": 43,
+      "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+      "page": 16,
+      "reason": "Remove the third arm and put pencil down before the hand cue.",
+      "scene": "An'an sits at her kindergarten low wooden desk. Clearly show EXACTLY TWO arms, BOTH elbows down and BOTH hands under the front edge of desk, fingers curled and thumbs gently upright as she quietly compares her hands. No hand writing. Her red pencil lies flat UNHELD on top of the notebook, untouched. Above desk are two plain cards b and d (only these two educational letters allowed); she looks up to check the cards. Slight diagonal side view lets viewer see both desk top and her two hands below it. No ghost arm, no third hand.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/15.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/2.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an sits at her kindergarten low wooden desk. Clearly show EXACTLY TWO arms, BOTH elbows down and BOTH hands under the front edge of desk, fingers curled and thumbs gently upright as she quietly compares her hands. No hand writing. Her red pencil lies flat UNHELD on top of the notebook, untouched. Above desk are two plain cards b and d (only these two educational letters allowed); she looks up to check the cards. Slight diagonal side view lets viewer see both desk top and her two hands below it. No ghost arm, no third hand.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-cd7beb82-835f-4c6b-95e3-eb8c03564ce6.png",
+      "reviewedAt": "2026-10-23T05:49:37.506Z"
+    },
+    {
+      "key": "44-8",
+      "order": 44,
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "page": 8,
+      "reason": "Replace inconsistent shredded notebook with one small eraser hole; preserve calm support.",
+      "scene": "An'an sits at the writing desk with a tired disappointed face, rubs her sore wrist gently with the other hand. Red pencil laid flat. One otherwise INTACT open square-grid notebook has a single small ragged eraser hole about the size of a pea, smudged grey patch nearby, a FEW eraser crumbs; no loose pages or shredded sheets. Warm study room, Mom not yet here.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an sits at the writing desk with a tired disappointed face, rubs her sore wrist gently with the other hand. Red pencil laid flat. One otherwise INTACT open square-grid notebook has a single small ragged eraser hole about the size of a pea, smudged grey patch nearby, a FEW eraser crumbs; no loose pages or shredded sheets. Warm study room, Mom not yet here.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-df08a5d8-ead4-4681-97d1-0b17c65a5841.png",
+      "reviewedAt": "2026-10-23T05:49:37.751Z"
+    },
+    {
+      "key": "44-9",
+      "order": 44,
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "page": 9,
+      "reason": "Replace inconsistent shredded notebook with one small eraser hole; preserve calm support.",
+      "scene": "An'an leans her forehead into folded arms on the wooden desk, quietly crying in frustration, not smiling. Red pencil laid flat beside ONE intact open square-grid notebook with only one pea-sized eraser hole and a smudged patch; just a few eraser crumbs. No shredded pages, paper confetti or dramatic destruction. Mom not yet here.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an leans her forehead into folded arms on the wooden desk, quietly crying in frustration, not smiling. Red pencil laid flat beside ONE intact open square-grid notebook with only one pea-sized eraser hole and a smudged patch; just a few eraser crumbs. No shredded pages, paper confetti or dramatic destruction. Mom not yet here.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e75ea976-da6d-4b30-ac4e-8b9cc643011a.png",
+      "reviewedAt": "2026-10-23T05:49:38.009Z"
+    },
+    {
+      "key": "44-10",
+      "order": 44,
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "page": 10,
+      "reason": "Replace inconsistent shredded notebook with one small eraser hole; preserve calm support.",
+      "scene": "Mom quietly sets a small plate of washed blueberries onto the wooden desk beside a tearful An'an with head in folded arms. One intact open square-grid notebook has a single pea-sized rubbed-through eraser hole and small grey smudge, a few crumbs, red pencil laid down. Mom looks concerned, not amused, no scolding. No ripped-out pages, confetti or giant holes.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Mom quietly sets a small plate of washed blueberries onto the wooden desk beside a tearful An'an with head in folded arms. One intact open square-grid notebook has a single pea-sized rubbed-through eraser hole and small grey smudge, a few crumbs, red pencil laid down. Mom looks concerned, not amused, no scolding. No ripped-out pages, confetti or giant holes.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-812b7abe-5777-4804-b2db-8b99595c557e.png",
+      "reviewedAt": "2026-10-23T05:49:38.279Z"
+    },
+    {
+      "key": "44-11",
+      "order": 44,
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "page": 11,
+      "reason": "Replace inconsistent shredded notebook with one small eraser hole; preserve calm support.",
+      "scene": "Mom in coral cardigan and cream trousers sits beside An'an and gently massages the fingers of one small hand; girl watches, eyes still a little tearful, relaxing. Desk has intact open square-grid notebook with ONE pea-sized rubbed-through spot, a red pencil lying down, a few eraser crumbs and small plate of blueberries. No shredded paper, no writing while hand massage.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Mom in coral cardigan and cream trousers sits beside An'an and gently massages the fingers of one small hand; girl watches, eyes still a little tearful, relaxing. Desk has intact open square-grid notebook with ONE pea-sized rubbed-through spot, a red pencil lying down, a few eraser crumbs and small plate of blueberries. No shredded paper, no writing while hand massage.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-c518fcc0-15fa-42c8-8502-864b5b94b309.png",
+      "reviewedAt": "2026-10-23T05:57:21.711Z"
+    },
+    {
+      "key": "44-12",
+      "order": 44,
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "page": 12,
+      "reason": "Replace inconsistent shredded notebook with one small eraser hole; preserve calm support.",
+      "scene": "Warm close two-person conversation beside the desk: Mom gently cradles An'an's relaxed small hand, fingers no longer gripping a pencil, explains with a gentle open palm. Girl listens, shoulders easing. The intact notebook in background has only a tiny eraser hole and grey smudge, red pencil resting unheld, blueberries on small plate. No pile of torn paper.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm close two-person conversation beside the desk: Mom gently cradles An'an's relaxed small hand, fingers no longer gripping a pencil, explains with a gentle open palm. Girl listens, shoulders easing. The intact notebook in background has only a tiny eraser hole and grey smudge, red pencil resting unheld, blueberries on small plate. No pile of torn paper.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-3f4179b1-f39f-424d-ab11-fd4310bcb909.png",
+      "reviewedAt": "2026-10-23T05:57:21.978Z"
+    },
+    {
+      "key": "44-18",
+      "order": 44,
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "page": 18,
+      "reason": "Close practice before shared snack; remove completion/reward mismatch.",
+      "scene": "Warm final scene at home study table. The square-grid notebook is CLOSED and put to one side, red pencil lies beside it; NO rows of perfect numbers displayed. Mom and An'an sit relaxed sharing a small plate of washed blueberries, each takes one naturally with two arms per person. Girl content and comfortable, not holding workbook; Mom is not hand-feeding a reward. Coral cardigan and cream trousers, teal hoodie and jeans, warm late afternoon light.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm final scene at home study table. The square-grid notebook is CLOSED and put to one side, red pencil lies beside it; NO rows of perfect numbers displayed. Mom and An'an sit relaxed sharing a small plate of washed blueberries, each takes one naturally with two arms per person. Girl content and comfortable, not holding workbook; Mom is not hand-feeding a reward. Coral cardigan and cream trousers, teal hoodie and jeans, warm late afternoon light.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e069aa9e-89b1-45a9-93ba-2d6043cfc1f3.png",
+      "reviewedAt": "2026-10-23T05:57:22.289Z"
+    },
+    {
+      "key": "45-13",
+      "order": 45,
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "page": 13,
+      "reason": "Restore whale book, teacher trousers, no unexplained blue backpack; safe supervised public hand-wash entry.",
+      "scene": "Kindergarten group story time. An'an sits on her small chair and raises one hand straight up, clearly asking for the bathroom with a tentative but brave expression. Teacher Lin in sage cardigan and CHARCOAL trousers holds an open WHALE picture book, a BLUE WHALE swimming in ocean, no rabbit. A few classmates sit quietly, no laughing at child. NO backpacks worn or held anywhere in foreground.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten group story time. An'an sits on her small chair and raises one hand straight up, clearly asking for the bathroom with a tentative but brave expression. Teacher Lin in sage cardigan and CHARCOAL trousers holds an open WHALE picture book, a BLUE WHALE swimming in ocean, no rabbit. A few classmates sit quietly, no laughing at child. NO backpacks worn or held anywhere in foreground.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-bb4d4a74-6cec-4ffa-93ff-be5b1246dd23.png",
+      "reviewedAt": "2026-10-23T05:57:22.593Z"
+    },
+    {
+      "key": "45-14",
+      "order": 45,
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "page": 14,
+      "reason": "Restore whale book, teacher trousers, no unexplained blue backpack; safe supervised public hand-wash entry.",
+      "scene": "Teacher Lin in sage cardigan and CHARCOAL trousers smiles reassuringly and nods to An'an, placing the large BLUE WHALE picture book down on the low classroom table, sea-blue whale spread visible, no rabbit. An'an begins to stand from chair, relieved. All children wear normal clothes and NO backpacks. No mockery or alarm.",
+      "refs": [
+        "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-124ab8db-3051-44b4-b6a1-aed577146749.png"
+      ],
+      "prompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Correct ONLY An'an's lower-body pose: she must stand safely on the FLOOR beside the chair, BOTH white-red sneakers FLAT ON THE FLOOR, knees straight and natural. No knee, leg or foot on the chair seat, no climbing, no raised foot resting on furniture. She is simply standing after being excused, beside an EMPTY chair behind her. Preserve her upper body, cheerful but calm face, yellow hair clip, teal hoodie, Mom-like Teacher Lin identity in sage cardigan and charcoal trousers, whale picture book, desk, lighting and composition. Exactly two legs per person; no text or watermark.",
+      "status": "reviewed-imported",
+      "attempts": [
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-124ab8db-3051-44b4-b6a1-aed577146749.png",
+          "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Teacher Lin in sage cardigan and CHARCOAL trousers smiles reassuringly and nods to An'an, placing the large BLUE WHALE picture book down on the low classroom table, sea-blue whale spread visible, no rabbit. An'an begins to stand from chair, relieved. All children wear normal clothes and NO backpacks. No mockery or alarm.",
+          "result": "rejected",
+          "reason": "One foot appears to rest on the chair instead of standing safely on floor."
+        }
+      ],
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-4fbc32fa-8289-4426-b7c7-b615ad0a1ee7.png",
+      "reviewedAt": "2026-10-23T06:10:03.466Z"
+    },
+    {
+      "key": "45-15",
+      "order": 45,
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "page": 15,
+      "reason": "Restore whale book, teacher trousers, no unexplained blue backpack; safe supervised public hand-wash entry.",
+      "scene": "Public kindergarten hand-washing entry, NOT a private toilet cubicle. Tiantian, six-year-old Chinese BOY short dark hair, sky-blue top and navy trousers, gently holds the OUTER hand-wash-area door as An'an walks briskly through fully dressed, EMPTY back, NO backpack. Teacher Lin in sage cardigan and charcoal trousers watches attentively from immediately adjacent short classroom corridor, close enough to supervise. A low hand-washing basin visible beyond door, no toilets or undressing. Cheerful safe normal scene.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Public kindergarten hand-washing entry, NOT a private toilet cubicle. Tiantian, six-year-old Chinese BOY short dark hair, sky-blue top and navy trousers, gently holds the OUTER hand-wash-area door as An'an walks briskly through fully dressed, EMPTY back, NO backpack. Teacher Lin in sage cardigan and charcoal trousers watches attentively from immediately adjacent short classroom corridor, close enough to supervise. A low hand-washing basin visible beyond door, no toilets or undressing. Cheerful safe normal scene.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-c4a72461-ae1d-4321-853a-b88dcf5ec48a.png",
+      "reviewedAt": "2026-10-23T06:00:56.655Z"
+    },
+    {
+      "key": "45-16",
+      "order": 45,
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "page": 16,
+      "reason": "Restore whale book, teacher trousers, no unexplained blue backpack; safe supervised public hand-wash entry.",
+      "scene": "An'an stands fully dressed at the public child-height hand-wash basin and dries her clean hands with a paper towel, relieved relaxed expression after using bathroom. Teal hoodie and blue jeans, no backpack or bag anywhere. No private toilet visible. Warm bright kindergarten interior, teacher not necessary in frame.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an stands fully dressed at the public child-height hand-wash basin and dries her clean hands with a paper towel, relieved relaxed expression after using bathroom. Teal hoodie and blue jeans, no backpack or bag anywhere. No private toilet visible. Warm bright kindergarten interior, teacher not necessary in frame.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-a1cdea0b-dff6-4e7c-8389-74b5b6dbbffd.png",
+      "reviewedAt": "2026-10-23T06:00:56.890Z"
+    },
+    {
+      "key": "45-17",
+      "order": 45,
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "page": 17,
+      "reason": "Restore whale book, teacher trousers, no unexplained blue backpack; safe supervised public hand-wash entry.",
+      "scene": "Back in classroom, An'an sits comfortably at her small chair and Teacher Lin kneels beside her, sage cardigan and CHARCOAL trousers, quietly passes a folded hand-drying paper towel into one hand with a warm reassuring smile. Girl has no backpack, no bag straps. Calm story-time corner, blue WHALE book closed on teacher's table.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Back in classroom, An'an sits comfortably at her small chair and Teacher Lin kneels beside her, sage cardigan and CHARCOAL trousers, quietly passes a folded hand-drying paper towel into one hand with a warm reassuring smile. Girl has no backpack, no bag straps. Calm story-time corner, blue WHALE book closed on teacher's table.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-75a9567a-00a0-439b-8832-2382d0af6b8c.png",
+      "reviewedAt": "2026-10-23T06:00:57.210Z"
+    },
+    {
+      "key": "45-18",
+      "order": 45,
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "page": 18,
+      "reason": "Restore whale book, teacher trousers, no unexplained blue backpack; safe supervised public hand-wash entry.",
+      "scene": "End-of-day kindergarten circle time. Teacher Lin in sage cardigan and CHARCOAL trousers talks gently with a small seated group, An'an raises her hand confidently among them. Children feel comfortable and listened to, no testing or scolding. One large blue WHALE picture book with simple whale illustration lies CLOSED on the low table. No backpacks worn by the seated children, no rabbit book, no lettering.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: End-of-day kindergarten circle time. Teacher Lin in sage cardigan and CHARCOAL trousers talks gently with a small seated group, An'an raises her hand confidently among them. Children feel comfortable and listened to, no testing or scolding. One large blue WHALE picture book with simple whale illustration lies CLOSED on the low table. No backpacks worn by the seated children, no rabbit book, no lettering.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-7188622f-269a-47d0-b29a-88a6fbe3c4dc.png",
+      "reviewedAt": "2026-10-23T06:07:50.307Z"
+    },
+    {
+      "key": "46-9",
+      "order": 46,
+      "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+      "page": 9,
+      "reason": "Keep fully dressed nap clothes and consistent quilt.",
+      "scene": "Quiet kindergarten nap room. An'an lies awake with a slightly uncomfortable warm expression on a low wooden cot, fully dressed in her teal hoodie and BLUE JEANS. Light sage-green quilt with small white daisy pattern is folded down a little at her waist, both jean-clad legs covered below knees; no bare legs. Star hair clip removed for nap and placed safely on bedside dish. One small white pillow, subdued daylight, no other child needed.",
+      "refs": [
+        "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2f33b4a1-bba9-447c-89ff-8415f76a3896.png"
+      ],
+      "prompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Correct ONLY An'an's facial expression to match this BEFORE-comfort moment: she is awake, hot and frustrated that she cannot fall asleep. Brows softly furrowed with raised inner corners, eyes tired and worried, mouth CLOSED with corners slightly DOWN, NO smile, no happy sparkle. Subtle ordinary child discomfort, not terror and not crying dramatically. Keep exact girl identity, short dark bob with hair clip removed, teal hoodie, visible BLUE JEANS, green daisy quilt and pillow, cot, shoes and star clip on dish. Preserve composition, warm but subdued afternoon light, 3D illustration. No words or watermark.",
+      "status": "reviewed-imported",
+      "attempts": [
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2f33b4a1-bba9-447c-89ff-8415f76a3896.png",
+          "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Quiet kindergarten nap room. An'an lies awake with a slightly uncomfortable warm expression on a low wooden cot, fully dressed in her teal hoodie and BLUE JEANS. Light sage-green quilt with small white daisy pattern is folded down a little at her waist, both jean-clad legs covered below knees; no bare legs. Star hair clip removed for nap and placed safely on bedside dish. One small white pillow, subdued daylight, no other child needed.",
+          "result": "rejected",
+          "reason": "Happy expression contradicts the tense, overheated pre-comfort moment."
+        }
+      ],
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-1c008085-348d-42d5-9201-25003550cbcc.png",
+      "reviewedAt": "2026-10-23T06:14:02.856Z"
+    },
+    {
+      "key": "46-10",
+      "order": 46,
+      "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+      "page": 10,
+      "reason": "Restore jeans under quilt and calm teacher support.",
+      "scene": "Quiet kindergarten nap room. Teacher Lin with low bun, sage cardigan and charcoal trousers kneels attentively beside An'an's low wooden cot. An'an lies awake fully dressed in teal hoodie and BLUE JEANS under sage-green daisy quilt, quilt comfortably covers legs; no bare legs or nightdress. Star clip on bedside dish, not on sleeping hair. Teacher's expression caring, not scolding. Soft dim daylight.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/3.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Quiet kindergarten nap room. Teacher Lin with low bun, sage cardigan and charcoal trousers kneels attentively beside An'an's low wooden cot. An'an lies awake fully dressed in teal hoodie and BLUE JEANS under sage-green daisy quilt, quilt comfortably covers legs; no bare legs or nightdress. Star clip on bedside dish, not on sleeping hair. Teacher's expression caring, not scolding. Soft dim daylight.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-3446300f-27e5-43c3-9abd-44c7e666518d.png",
+      "reviewedAt": "2026-10-23T06:07:50.552Z"
+    },
+    {
+      "key": "47-10",
+      "order": 47,
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "page": 10,
+      "reason": "Keep red car/yellow tow truck and safe ground position.",
+      "scene": "At a kindergarten sandpit edge, Lele, Chinese BOY short dark hair mustard sweatshirt and navy trousers, talks reassuringly to An'an. Girl listens while holding one RED ordinary toy car and one YELLOW tow truck, both with simple windscreens and NO faces or eyes. Both children stand with feet on the level GROUND OUTSIDE wooden sandpit rim, not balancing on edge. No blue toy vehicle and no tool that must buy entry to friendship.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: At a kindergarten sandpit edge, Lele, Chinese BOY short dark hair mustard sweatshirt and navy trousers, talks reassuringly to An'an. Girl listens while holding one RED ordinary toy car and one YELLOW tow truck, both with simple windscreens and NO faces or eyes. Both children stand with feet on the level GROUND OUTSIDE wooden sandpit rim, not balancing on edge. No blue toy vehicle and no tool that must buy entry to friendship.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-1c8c3c92-290e-438b-afd1-85895bc1bb29.png",
+      "reviewedAt": "2026-10-23T06:07:50.881Z"
+    },
+    {
+      "key": "47-11",
+      "order": 47,
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "page": 11,
+      "reason": "Restore toy colors and character identities.",
+      "scene": "An'an takes a breath and walks on level GROUND up to the outside edge of the sandpit, holding one RED toy car and one YELLOW toy tow truck, no faces. Inside sandpit two Chinese BOYS build a castle and moat: Xiaoyu short dark hair forest-green hoodie and charcoal trousers; Tiantian short dark hair sky-blue top and navy trousers. Both focused on sand. Girl is not standing atop raised wood rim. No girl ponytails replacing boys.",
+      "refs": [
+        "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2465244c-ffb9-459f-8b42-f1bb1945222c.png"
+      ],
+      "prompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Remove BOTH ADULT WOMEN completely from the sandpit scene (the coral-cardigan Mom and the sage-cardigan teacher). Replace their silhouettes with normal softly blurred empty school playground scenery. Keep ONLY the THREE CHILDREN: An'an holding a red toy car and yellow tow truck, Xiaoyu in forest-green, Tiantian boy in sky-blue. Keep their identities, natural two arms each, sandcastle and toys unchanged. An'an stands safely on level grass OUTSIDE the wooden rim, not atop the wood. No adults, no fourth child, no lettering. Preserve square 3D illustration and warm light.",
+      "status": "reviewed-imported",
+      "attempts": [
+        {
+          "source": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2465244c-ffb9-459f-8b42-f1bb1945222c.png",
+          "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an takes a breath and walks on level GROUND up to the outside edge of the sandpit, holding one RED toy car and one YELLOW toy tow truck, no faces. Inside sandpit two Chinese BOYS build a castle and moat: Xiaoyu short dark hair forest-green hoodie and charcoal trousers; Tiantian short dark hair sky-blue top and navy trousers. Both focused on sand. Girl is not standing atop raised wood rim. No girl ponytails replacing boys.",
+          "result": "rejected",
+          "reason": "Unrequested Mom and teacher appeared in the three-child approach scene."
+        }
+      ],
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-cbae95d3-89a8-4b95-95c3-aa71219b4caa.png",
+      "reviewedAt": "2026-10-23T06:18:22.039Z"
+    },
+    {
+      "key": "47-19",
+      "order": 47,
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "page": 19,
+      "reason": "Show adult-supported turn-taking for shared play space.",
+      "scene": "Kindergarten sandpit play rotation. Teacher Lin in sage cardigan and charcoal trousers kneels nearby helping four original children agree on taking turns; An'an teal hoodie, Xiaoyu BOY forest-green hoodie charcoal trousers, Tiantian BOY sky-blue top navy trousers, Lele BOY mustard sweatshirt navy trousers. TWO new waiting children stand nearby with a small bucket, welcomed not excluded. Sandcastle with road and one RED ordinary car and one YELLOW tow truck without faces. Open friendly discussion, no crowd or blocking entrance.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten sandpit play rotation. Teacher Lin in sage cardigan and charcoal trousers kneels nearby helping four original children agree on taking turns; An'an teal hoodie, Xiaoyu BOY forest-green hoodie charcoal trousers, Tiantian BOY sky-blue top navy trousers, Lele BOY mustard sweatshirt navy trousers. TWO new waiting children stand nearby with a small bucket, welcomed not excluded. Sandcastle with road and one RED ordinary car and one YELLOW tow truck without faces. Open friendly discussion, no crowd or blocking entrance.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e3101fc1-fa21-4ebd-9547-bf9b62a3104a.png",
+      "reviewedAt": "2026-10-23T06:10:03.962Z"
+    },
+    {
+      "key": "47-20",
+      "order": 47,
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "page": 20,
+      "reason": "Restore Tiantian as boy and all established cast/clothing.",
+      "scene": "Warm final kindergarten sandpit scene: EXACTLY FOUR original children playing together: An'an six-year-old GIRL short bob yellow star clip teal hoodie blue jeans; Xiaoyu BOY short hair forest-green hoodie charcoal trousers; Tiantian BOY short hair sky-blue top navy trousers, NOT a girl, no ponytails or skirt; Lele BOY short hair mustard sweatshirt navy trousers. They share a sandcastle road with a RED car and a YELLOW tow truck, no faces. Girl and three boys, playful calm scene, no additional person in foreground. Teacher optional absent, no magical bridge.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm final kindergarten sandpit scene: EXACTLY FOUR original children playing together: An'an six-year-old GIRL short bob yellow star clip teal hoodie blue jeans; Xiaoyu BOY short hair forest-green hoodie charcoal trousers; Tiantian BOY short hair sky-blue top navy trousers, NOT a girl, no ponytails or skirt; Lele BOY short hair mustard sweatshirt navy trousers. They share a sandcastle road with a RED car and a YELLOW tow truck, no faces. Girl and three boys, playful calm scene, no additional person in foreground. Teacher optional absent, no magical bridge.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2bbae406-7c15-40e3-958e-8453d7d0766a.png",
+      "reviewedAt": "2026-10-23T06:10:04.263Z"
+    },
+    {
+      "key": "48-3",
+      "order": 48,
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "page": 3,
+      "reason": "Match approved five-item icon checklist.",
+      "scene": "In evening living room Mom in coral cardigan and cream trousers gives An'an a single illustrated packing card, girl studies it with interest. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Orange backpack rests EMPTY and open on sofa, no prepacked lunch. Cozy warm home.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/4.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: In evening living room Mom in coral cardigan and cream trousers gives An'an a single illustrated packing card, girl studies it with interest. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Orange backpack rests EMPTY and open on sofa, no prepacked lunch. Cozy warm home.\nThe last reference is the EXACT five-item checklist card: preserve its five rows and icon order. Show that card, not a different checklist. No additional icons or rows.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-a53dc627-a4e4-40d4-9223-5c69e057321d.png",
+      "reviewedAt": "2026-10-23T06:18:22.332Z"
+    },
+    {
+      "key": "48-4",
+      "order": 48,
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "page": 4,
+      "reason": "Replace mismatched pencil/eraser checklist with same five packed items.",
+      "scene": "Close-up of the single cream checklist card held by two small child hands, sharp readable icons. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Warm wooden coffee-table background, no other objects obscuring icons.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Close-up of the single cream checklist card held by two small child hands, sharp readable icons. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Warm wooden coffee-table background, no other objects obscuring icons.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-58540733-14c1-4369-95ec-8c94d7f0ad7c.png",
+      "reviewedAt": "2026-10-23T06:11:58.977Z"
+    },
+    {
+      "key": "48-5",
+      "order": 48,
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "page": 5,
+      "reason": "Keep backpack empty before packing sequence.",
+      "scene": "Mom and An'an beside sofa in warm evening living room. Mom points to the compartments of ONE orange backpack, open and completely EMPTY: large main compartment and front zip pocket, two side mesh pockets. No pencil case, book, food or bottle ALREADY inside. All loose supplies wait on coffee table: blue whale book, blue metal tin, blue cloud-bear bottle, strawberry tissues, red jump rope yellow handles. No lunch box. Girl listens, Mom cream trousers.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Mom and An'an beside sofa in warm evening living room. Mom points to the compartments of ONE orange backpack, open and completely EMPTY: large main compartment and front zip pocket, two side mesh pockets. No pencil case, book, food or bottle ALREADY inside. All loose supplies wait on coffee table: blue whale book, blue metal tin, blue cloud-bear bottle, strawberry tissues, red jump rope yellow handles. No lunch box. Girl listens, Mom cream trousers.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-ad1c4530-9b2e-45c5-8204-833c7940b15e.png",
+      "reviewedAt": "2026-10-23T06:14:03.117Z"
+    },
+    {
+      "key": "48-6",
+      "order": 48,
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "page": 6,
+      "reason": "Remove prematurely packed items.",
+      "scene": "Low floor view in living room. An'an sits cross-legged on rug, opening and inspecting ONE EMPTY orange backpack with large main compartment, front zip pocket and two side mesh pockets. All pockets plainly EMPTY, unzipped. No packed pencils, food, bottle, lunch or book inside. Supplies wait on table blurred behind. Teal hoodie blue jeans, warm light.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Low floor view in living room. An'an sits cross-legged on rug, opening and inspecting ONE EMPTY orange backpack with large main compartment, front zip pocket and two side mesh pockets. All pockets plainly EMPTY, unzipped. No packed pencils, food, bottle, lunch or book inside. Supplies wait on table blurred behind. Teal hoodie blue jeans, warm light.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-f9707586-acf5-46b3-a245-09f2d2fe4623.png",
+      "reviewedAt": "2026-10-23T06:14:03.437Z"
+    },
+    {
+      "key": "48-13",
+      "order": 48,
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "page": 13,
+      "reason": "Keep five-item checklist and packed props consistent.",
+      "scene": "Warm living room. An'an sits on rug beside ONE now PACKED zipped orange backpack with cream bear patch and BLUE cloud-bear water bottle secured in side mesh pocket. She holds the cream checklist card with one hand and points at its icons with her other index finger, no extra hand. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. No different or extra symbols.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/4.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm living room. An'an sits on rug beside ONE now PACKED zipped orange backpack with cream bear patch and BLUE cloud-bear water bottle secured in side mesh pocket. She holds the cream checklist card with one hand and points at its icons with her other index finger, no extra hand. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. No different or extra symbols.\nThe last reference is the EXACT five-item checklist card: preserve its five rows and icon order. Show that card, not a different checklist. No additional icons or rows.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-14555ae3-f435-4dc1-be80-d2f064e96055.png",
+      "reviewedAt": "2026-10-23T06:18:22.725Z"
+    },
+    {
+      "key": "48-15",
+      "order": 48,
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "page": 15,
+      "reason": "Use red rope and calm preparation without comparison.",
+      "scene": "Next morning kindergarten cubbies. An'an calmly opens her ONE orange backpack with cream bear patch and prepares a RED coiled jump rope with YELLOW handles for outdoor play. Two classmates calmly prepare their own ropes nearby, no crying or chaotic losers, no winner comparison. Freshly filled BLUE cloud-bear water bottle secured in side mesh pocket. Child does not wear a second backpack. Gentle ordinary school morning.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Next morning kindergarten cubbies. An'an calmly opens her ONE orange backpack with cream bear patch and prepares a RED coiled jump rope with YELLOW handles for outdoor play. Two classmates calmly prepare their own ropes nearby, no crying or chaotic losers, no winner comparison. Freshly filled BLUE cloud-bear water bottle secured in side mesh pocket. Child does not wear a second backpack. Gentle ordinary school morning.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-5b960213-1e3a-497a-9cbe-b5ff8449fc71.png",
+      "reviewedAt": "2026-10-23T06:14:03.708Z"
+    },
+    {
+      "key": "48-17",
+      "order": 48,
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "page": 17,
+      "reason": "Remove duplicate backpacks and preserve tissue location.",
+      "scene": "Kindergarten cubby area. An'an stands beside ONE orange backpack with cream bear patch RESTING ON a low cubby bench; her back is EMPTY, no shoulder straps, no second backpack. She takes a tissue from its front pocket and offers it to Xiaoyu, a small Chinese BOY with short hair forest-green hoodie charcoal trousers, who has a runny nose. Strawberry tissue packet visible in open front pocket, blue cloud-bear bottle in side pocket. Natural two arms each.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten cubby area. An'an stands beside ONE orange backpack with cream bear patch RESTING ON a low cubby bench; her back is EMPTY, no shoulder straps, no second backpack. She takes a tissue from its front pocket and offers it to Xiaoyu, a small Chinese BOY with short hair forest-green hoodie charcoal trousers, who has a runny nose. Strawberry tissue packet visible in open front pocket, blue cloud-bear bottle in side pocket. Natural two arms each.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e411785d-2783-493f-8798-d15ef8473a34.png",
+      "reviewedAt": "2026-10-23T06:20:27.830Z"
+    },
+    {
+      "key": "49-10",
+      "order": 49,
+      "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+      "page": 10,
+      "reason": "Show floor dry after cleanup, not an unhandled puddle.",
+      "scene": "Kindergarten plant corner. An'an wears a small red duty armband on upper arm, holds mop stopped on the floor beside a neatly cared-for green plant shelf. Teacher Lin kneels beside her in sage cardigan and charcoal trousers, gently touches child's hair and thanks her. The entire floor is clearly DRY, MATTE and CLEAN, NO puddle, droplets, wet rings or glossy water reflection. Warm morning light, no gold forehead star yet.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/11.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten plant corner. An'an wears a small red duty armband on upper arm, holds mop stopped on the floor beside a neatly cared-for green plant shelf. Teacher Lin kneels beside her in sage cardigan and charcoal trousers, gently touches child's hair and thanks her. The entire floor is clearly DRY, MATTE and CLEAN, NO puddle, droplets, wet rings or glossy water reflection. Warm morning light, no gold forehead star yet.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-8f7c5533-a9d6-4ffd-b609-91fffe8c4e3c.png",
+      "reviewedAt": "2026-10-23T06:20:28.104Z"
+    },
+    {
+      "key": "49-14",
+      "order": 49,
+      "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+      "page": 14,
+      "reason": "Keep duty role at clean utensil distribution, not serving hot food.",
+      "scene": "Kindergarten lunch table. An'an, teal hoodie with a small red duty armband, has CLEAN hands and gently hands ONE clean SPOON to a younger visiting child already seated at low lunch table. Only prepared bowls/trays, no hot pot or ladle anywhere, she does NOT serve hot food or touch food. Younger child looks up gratefully. Teacher Lin in sage cardigan charcoal trousers is nearby supervising. No gold star on forehead yet, no sign text.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/12.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten lunch table. An'an, teal hoodie with a small red duty armband, has CLEAN hands and gently hands ONE clean SPOON to a younger visiting child already seated at low lunch table. Only prepared bowls/trays, no hot pot or ladle anywhere, she does NOT serve hot food or touch food. Younger child looks up gratefully. Teacher Lin in sage cardigan charcoal trousers is nearby supervising. No gold star on forehead yet, no sign text.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-5aa974f6-6dd1-47da-a2af-82f9fbafd0c0.png",
+      "reviewedAt": "2026-10-23T06:20:28.356Z"
+    },
+    {
+      "key": "50-1",
+      "order": 50,
+      "id": "fang-xue-lu-shang-man-man-shuo",
+      "page": 1,
+      "reason": "Carry end-of-day gold forehead sticker into next book.",
+      "scene": "Late-afternoon school gate, opening scene immediately after duty day. An'an walks quietly out wearing teal zip hoodie blue jeans white-red sneakers and ONE orange backpack, yellow star clip same side and ONE SMALL FLAT GOLD STAR STICKER centered on FOREHEAD. She is tired and thoughtful, not crying or smiling widely. Mom in coral cardigan cream trousers cream canvas shoulder bag approaches gently from side, only these two main people. Golden school trees and warm pavement, no father greeting, no questions text.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Late-afternoon school gate, opening scene immediately after duty day. An'an walks quietly out wearing teal zip hoodie blue jeans white-red sneakers and ONE orange backpack, yellow star clip same side and ONE SMALL FLAT GOLD STAR STICKER centered on FOREHEAD. She is tired and thoughtful, not crying or smiling widely. Mom in coral cardigan cream trousers cream canvas shoulder bag approaches gently from side, only these two main people. Golden school trees and warm pavement, no father greeting, no questions text.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-3aab9605-c9c5-4b82-a081-1ae07ee2c262.png",
+      "reviewedAt": "2026-10-23T06:20:28.635Z"
+    },
+    {
+      "key": "43-13",
+      "order": 43,
+      "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+      "page": 13,
+      "reason": "Keep the right-hand b demonstration in the child's own palm-facing viewpoint, consistent with corrected page 12.",
+      "scene": "A close FIRST-PERSON view from An'an's own eyes looking down at her RIGHT HAND at the wooden desk. The right teal sleeve enters BOTTOM RIGHT. The RIGHT PALM faces the camera (toward her own eyes), four fingers curled into a rounded fist on the RIGHT, right THUMB upright on the LEFT/INNER side near the center. It clearly resembles lowercase b, NOT d; thumb is LEFT of curled knuckles. One large plain card with lowercase BLUE 'b' stands on desk just beyond this hand. A red 'd' card is far left in soft background blur. Only educational b and d letters allowed, no additional text. Other hand is outside crop, NO extra hands. Exact same warm 3D style and desk/cards as reference. Teacher sits beside her but outside crop. Natural child hand, no glove.",
+      "refs": [
+        "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/12.webp"
+      ],
+      "prompt": "Use case: illustration-story. One premium polished square 1:1 3D animated-film picture-book illustration. Use reference for the desk, educational card design, teal sleeves, anatomy and light; compose the new closer view, not a contact sheet. THIS PAGE'S SCENE: A close FIRST-PERSON view from An'an's own eyes looking down at her RIGHT HAND at the wooden desk. The right teal sleeve enters BOTTOM RIGHT. The RIGHT PALM faces the camera (toward her own eyes), four fingers curled into a rounded fist on the RIGHT, right THUMB upright on the LEFT/INNER side near the center. It clearly resembles lowercase b, NOT d; thumb is LEFT of curled knuckles. One large plain card with lowercase BLUE 'b' stands on desk just beyond this hand. A red 'd' card is far left in soft background blur. Only educational b and d letters allowed, no additional text. Other hand is outside crop, NO extra hands. Exact same warm 3D style and desk/cards as reference. Teacher sits beside her but outside crop. Natural child hand, no glove.",
+      "status": "reviewed-imported",
+      "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-d6aaa16b-92c6-4d22-9e95-06b2924513a0.png",
+      "reviewedAt": "2026-10-23T06:02:37.884Z"
+    }
+  ]
+}

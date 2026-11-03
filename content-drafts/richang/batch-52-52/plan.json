@@ -1,0 +1,13 @@
+{
+  "approved": true,
+  "approvedAt": "2026-11-03",
+  "totalPages": 18,
+  "books": [
+    {
+      "id": "da-ban-de-san-wei-lao-shi",
+      "title": "大班里的三位老师",
+      "pages": 18,
+      "order": 52
+    }
+  ]
+}

@@ -1,0 +1,536 @@
+{
+  "checkedAt": "2026-10-23T06:48:53.985Z",
+  "passed": true,
+  "origin": "http://127.0.0.1:3000",
+  "catalog": {
+    "count": 50,
+    "newBooks": [
+      {
+        "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+        "title": "校门口的那一次挥手",
+        "href": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou"
+      },
+      {
+        "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+        "title": "摇晃的第一颗小乳牙",
+        "href": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya"
+      },
+      {
+        "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+        "title": "拼音王国里的小弯钩",
+        "href": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou"
+      },
+      {
+        "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+        "title": "跳出田字格的小数字",
+        "href": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi"
+      },
+      {
+        "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+        "title": "我想去洗手间，可以举手吗？",
+        "href": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma"
+      },
+      {
+        "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+        "title": "睡不着的午休小床",
+        "href": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang"
+      },
+      {
+        "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+        "title": "我可以和你们一起玩吗？",
+        "href": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma"
+      },
+      {
+        "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+        "title": "我的小书包，今天自己收",
+        "href": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou"
+      },
+      {
+        "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+        "title": "今天我是大班值日生",
+        "href": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng"
+      },
+      {
+        "id": "fang-xue-lu-shang-man-man-shuo",
+        "title": "放学路上，慢慢说",
+        "href": "/library/richang/fang-xue-lu-shang-man-man-shuo"
+      }
+    ]
+  },
+  "desktop": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "books": [
+      {
+        "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+        "playing": {
+          "duration": 150.636,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/zh-f5287fa5368868f3.mp3",
+          "currentTime": 0.184384
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.215736
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 150.636,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "校门口的那一次挥手",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+        "playing": {
+          "duration": 165.42,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/zh-7d658754f0772e9e.mp3",
+          "currentTime": 0.168944
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.217506
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 165.42,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "摇晃的第一颗小乳牙",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+        "playing": {
+          "duration": 180.372,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/zh-db1a696239c28d9d.mp3",
+          "currentTime": 0.168029
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.216674
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 180.372,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "拼音王国里的小弯钩",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+        "playing": {
+          "duration": 164.7,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/zh-fb4deed571eedd39.mp3",
+          "currentTime": 0.186409
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.216583
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 164.7,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "跳出田字格的小数字",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+        "playing": {
+          "duration": 160.26,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/zh-bd1ebe85c9150cdd.mp3",
+          "currentTime": 0.168198
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.210079
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 160.26,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "我想去洗手间，可以举手吗？",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+        "playing": {
+          "duration": 158.676,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/zh-d41610c461217a22.mp3",
+          "currentTime": 0.163933
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.192418
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 159.526599,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "睡不着的午休小床",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+        "playing": {
+          "duration": 169.596,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/zh-cea95ccceb358049.mp3",
+          "currentTime": 0.16541
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.212773
+        },
+        "pages": 20,
+        "ended": {
+          "currentTime": 169.596,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "我可以和你们一起玩吗？",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+        "playing": {
+          "duration": 176.46,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/zh-3c35bccf6850c93d.mp3",
+          "currentTime": 0.165933
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.201558
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 176.46,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "我的小书包，今天自己收",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+        "playing": {
+          "duration": 162.42,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/zh-c309a1bfd3663045.mp3",
+          "currentTime": 0.167061
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.206989
+        },
+        "pages": 18,
+        "ended": {
+          "currentTime": 162.42,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "今天我是大班值日生",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      },
+      {
+        "id": "fang-xue-lu-shang-man-man-shuo",
+        "playing": {
+          "duration": 146.988,
+          "readyState": 4,
+          "error": null,
+          "paused": false,
+          "src": "http://127.0.0.1:3000/library/richang/fang-xue-lu-shang-man-man-shuo/zh-ac80008679930ae0.mp3",
+          "currentTime": 0.168055
+        },
+        "paused": {
+          "paused": true,
+          "currentTime": 0.199208
+        },
+        "pages": 16,
+        "ended": {
+          "currentTime": 146.988,
+          "paused": true,
+          "error": null,
+          "ended": true
+        },
+        "automaticPageAdvanceAfterBoundarySeek": true,
+        "hydrated": true,
+        "title": "放学路上，慢慢说",
+        "resumed": true,
+        "allBilingualPageTexts": true,
+        "endedAfterEndSeek": true,
+        "firstAndLastNavigation": true
+      }
+    ]
+  },
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "books": [
+      {
+        "firstAndLastNavigation": true,
+        "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+        "title": "校门口的那一次挥手",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+        "title": "摇晃的第一颗小乳牙",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+        "title": "拼音王国里的小弯钩",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+        "title": "跳出田字格的小数字",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+        "title": "我想去洗手间，可以举手吗？",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+        "title": "睡不着的午休小床",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+        "title": "我可以和你们一起玩吗？",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+        "title": "我的小书包，今天自己收",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+        "title": "今天我是大班值日生",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      },
+      {
+        "firstAndLastNavigation": true,
+        "id": "fang-xue-lu-shang-man-man-shuo",
+        "title": "放学路上，慢慢说",
+        "first": {
+          "document": 390,
+          "textWidth": 280,
+          "enVisible": true,
+          "viewport": 390,
+          "zhVisible": true
+        },
+        "last": {
+          "viewport": 390,
+          "document": 390
+        }
+      }
+    ]
+  },
+  "cloudGenerationRequests": 0,
+  "pageErrors": [],
+  "method": "Real browser play/pause/resume. Page-boundary and ending behavior tested after seeking, not full-duration listening.",
+  "screenshots": {
+    "desktop": "desktop.png",
+    "mobile": "mobile.png"
+  },
+  "browserTaskReleased": true,
+  "outputPageRetained": true,
+  "physicalDeviceTested": false
+}

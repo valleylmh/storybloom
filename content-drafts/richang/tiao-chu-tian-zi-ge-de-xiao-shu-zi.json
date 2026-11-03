@@ -1,0 +1,333 @@
+{
+  "book": {
+    "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+    "seriesId": "richang",
+    "title": "跳出田字格的小数字",
+    "subtitle": "橡皮擦不掉的慢慢练",
+    "moral": {
+      "zh": "手指的力气是一点点长出来的；歪歪扭扭的痕迹，都是努力长大的脚印。",
+      "en": "Strength in our fingers grows day by day; wobbly marks are just the footprints of our honest practice."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 44,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "午后的阳光照进客厅。安安打开一本带绿色方格的练习本，想试着画几个她最近喜欢的小数字。",
+        "enText": "Afternoon sunlight filled the living room. An'an opened a green-grid notebook, wanting to try a few numbers that had caught her interest.",
+        "illustrationPrompt": "Sunny living room study desk: oak desk near window, green-lined practice workbook, yellow pencil in child's small hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Sunny living room study desk: oak desk near window, green-lined practice workbook, yellow pencil in child's small hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_38057__tsk16___BGOGE_7PyMqGU0G.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "安安今天想试试数字 8 和 6。她盼着一下就画好，铅笔越捏越紧，指节都用力了。",
+        "enText": "Today, An'an wanted to try 8 and 6. Hoping to get them right at once, she held the pencil tighter and tighter.",
+        "illustrationPrompt": "Close-up of hand: child's fingers pinch yellow pencil very tightly close to the tip, tense hand muscles, paper beneath.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of hand: child's fingers pinch yellow pencil very tightly close to the tip, tense hand muscles, paper beneath.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_76911__tsk16__78lcq1xVxfQJakD0.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "从上往下画圆，再绕一个圈。安安屏住呼吸，可笔尖总是不听使唤，数字 8 拧成了一个歪歪斜斜的小麻花。",
+        "enText": "Starting from the top and looping around, An'an held her breath. But the pencil tip wobbled, and the 8 twisted like a crooked pretzel.",
+        "illustrationPrompt": "Close overhead view: pencil tip leaves an uneven, lopsided figure 8 sprawling outside the green grid lines; child's tense hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close overhead view: pencil tip leaves an uneven, lopsided figure 8 sprawling outside the green grid lines; child's tense hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_85171__tsk16___b973jZVIKNpr266.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "“怎么又跳出格子外面去啦？”安安小声咕哝着，拿起大橡皮使劲地擦。",
+        "enText": "“Why did it hop outside the box again?” An'an muttered softly, grabbing a chunky eraser to rub hard.",
+        "illustrationPrompt": "Medium view: An'an rubs paper vigorously with large eraser, brow furrowed, small eraser crumbs scattering across desk.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium view: An'an rubs paper vigorously with large eraser, brow furrowed, small eraser crumbs scattering across desk.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_67048__tsk16__4zTBRIfrtCEv0gUU.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "她又试着画数字 6。这回方向没错，可个头太大，占了好几个小格子。安安盯着它，还是不满意。",
+        "enText": "She tried a 6. This time it faced the right way, but it was so large that it filled several squares. An'an still was not satisfied.",
+        "illustrationPrompt": "Close-up of paper: a reversed 6 drawn with heavy dark strokes; eraser shavings spread across the page.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of paper: a reversed 6 drawn with heavy dark strokes; eraser shavings spread across the page.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_34863__tsk16__nbehGRJuzaI0YFRr.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "“怎么总和我想的不一样呢！”安安越来越急，拿起橡皮，在同一个地方来回用力擦。",
+        "enText": "“Why doesn't it look the way I want?” An'an grew more frustrated and rubbed the same spot hard with her eraser.",
+        "illustrationPrompt": "Medium view: An'an scrubs forcefully, shoulders hunched with stress; paper wrinkling under pressure.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium view: An'an scrubs forcefully, shoulders hunched with stress; paper wrinkling under pressure.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_44467__tsk16__lK1rfJWarGObiVGD.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 7,
+        "zhText": "只听“嗤”的一声轻响，薄薄的练习纸经不住猛力，破开了一个小小的破洞。",
+        "enText": "With a soft tear, the delicate practice paper gave way, ripping open a small ragged hole.",
+        "illustrationPrompt": "Close-up of workbook: a small hole torn in the green grid, gray smudged paper torn around the edges; eraser still in hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of workbook: a small hole torn in the green grid, gray smudged paper torn around the edges; eraser still in hand.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_39022__tsk16__iHQn5WIV2cwqjAV5.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "安安停住了手。黑乎乎的铅笔屑落满桌子，本子也皱皱巴巴的。她的手腕酸酸胀胀，手指又僵又疼。",
+        "enText": "An'an froze. Dark pencil smudges covered the desk and the page was crumpled. Her wrist ached and her fingers felt stiff and sore.",
+        "illustrationPrompt": "An'an sits at the writing desk with a tired disappointed face, rubs her sore wrist gently with the other hand. Red pencil laid flat. One otherwise INTACT open square-grid notebook has a single small ragged eraser hole about the size of a pea, smudged grey patch nearby, a FEW eraser crumbs; no loose pages or shredded sheets. Warm study room, Mom not yet here.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an sits at the writing desk with a tired disappointed face, rubs her sore wrist gently with the other hand. Red pencil laid flat. One otherwise INTACT open square-grid notebook has a single small ragged eraser hole about the size of a pea, smudged grey patch nearby, a FEW eraser crumbs; no loose pages or shredded sheets. Warm study room, Mom not yet here.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-df08a5d8-ead4-4681-97d1-0b17c65a5841.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_40379__tsk16__EjqIJtyoOLgsUXpl.png",
+            "generationPrompt": "Close portrait: An'an gazes down at torn workbook with trembling lips, eyes rimmed with tears; limp hand resting on desk.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/iterations/8-df3d75199324.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 9,
+        "zhText": "“我写不好……我再也不想写了！”安安趴在桌子上，把脸埋进臂弯里，难过地抽泣起来。",
+        "enText": "“I can't write it right... I don't want to write anymore!” An'an collapsed onto the desk, burying her face in her arms in tears.",
+        "illustrationPrompt": "An'an leans her forehead into folded arms on the wooden desk, quietly crying in frustration, not smiling. Red pencil laid flat beside ONE intact open square-grid notebook with only one pea-sized eraser hole and a smudged patch; just a few eraser crumbs. No shredded pages, paper confetti or dramatic destruction. Mom not yet here.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an leans her forehead into folded arms on the wooden desk, quietly crying in frustration, not smiling. Red pencil laid flat beside ONE intact open square-grid notebook with only one pea-sized eraser hole and a smudged patch; just a few eraser crumbs. No shredded pages, paper confetti or dramatic destruction. Mom not yet here.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e75ea976-da6d-4b30-ac4e-8b9cc643011a.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_51572__tsk16__QMBkxz3FYKA95MKn.png",
+            "generationPrompt": "Wide side shot: An'an slumps over oak desk in quiet despair, green workbook and eraser beside her, sunny living room.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/iterations/9-b9d155409ebf.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 10,
+        "zhText": "妈妈端着一小盘洗好的蓝莓走进来，看到桌上的小破洞和抽泣的安安，轻轻放下了果盘。",
+        "enText": "Mom walked in carrying a bowl of fresh blueberries. Seeing the torn page and An'an sobbing, she set the bowl down gently.",
+        "illustrationPrompt": "Mom quietly sets a small plate of washed blueberries onto the wooden desk beside a tearful An'an with head in folded arms. One intact open square-grid notebook has a single pea-sized rubbed-through eraser hole and small grey smudge, a few crumbs, red pencil laid down. Mom looks concerned, not amused, no scolding. No ripped-out pages, confetti or giant holes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Mom quietly sets a small plate of washed blueberries onto the wooden desk beside a tearful An'an with head in folded arms. One intact open square-grid notebook has a single pea-sized rubbed-through eraser hole and small grey smudge, a few crumbs, red pencil laid down. Mom looks concerned, not amused, no scolding. No ripped-out pages, confetti or giant holes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-812b7abe-5777-4804-b2db-8b99595c557e.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_75673__tsk16__lJ2V6Be4fBCOCZbS.png",
+            "generationPrompt": "Two-person medium shot: Mom in coral cardigan sets blueberry bowl on side table, approaching An'an with soft compassionate face.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/iterations/10-14570a91b604.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 11,
+        "zhText": "妈妈没有问“怎么又哭了”，而是轻轻拉起安安那只写字的小手，帮她慢慢揉着发酸的手指关节点。",
+        "enText": "Mom didn't scold. Instead, she gently took An'an's writing hand, tenderly massaging each tight, tired finger joint.",
+        "illustrationPrompt": "Mom in coral cardigan and cream trousers sits beside An'an and gently massages the fingers of one small hand; girl watches, eyes still a little tearful, relaxing. Desk has intact open square-grid notebook with ONE pea-sized rubbed-through spot, a red pencil lying down, a few eraser crumbs and small plate of blueberries. No shredded paper, no writing while hand massage.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Mom in coral cardigan and cream trousers sits beside An'an and gently massages the fingers of one small hand; girl watches, eyes still a little tearful, relaxing. Desk has intact open square-grid notebook with ONE pea-sized rubbed-through spot, a red pencil lying down, a few eraser crumbs and small plate of blueberries. No shredded paper, no writing while hand massage.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-c518fcc0-15fa-42c8-8502-864b5b94b309.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_43818__tsk16__UB_s0uarNwLkU05C.png",
+            "generationPrompt": "Close shot of hands: Mom's gentle warm hands massage An'an's small tense fingers, relaxing stiff knuckles.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/iterations/11-dda95ecab6e9.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 12,
+        "zhText": "“写字是一群小手指在跳舞。如果小舞者太紧张、使劲抓着地，很快就会累得走不动啦。”妈妈轻声说。",
+        "enText": "“Writing is like tiny fingers dancing. If the little dancers grip too hard, they get tired and can't dance smoothly,” Mom said softly.",
+        "illustrationPrompt": "Warm close two-person conversation beside the desk: Mom gently cradles An'an's relaxed small hand, fingers no longer gripping a pencil, explains with a gentle open palm. Girl listens, shoulders easing. The intact notebook in background has only a tiny eraser hole and grey smudge, red pencil resting unheld, blueberries on small plate. No pile of torn paper.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm close two-person conversation beside the desk: Mom gently cradles An'an's relaxed small hand, fingers no longer gripping a pencil, explains with a gentle open palm. Girl listens, shoulders easing. The intact notebook in background has only a tiny eraser hole and grey smudge, red pencil resting unheld, blueberries on small plate. No pile of torn paper.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-3f4179b1-f39f-424d-ab11-fd4310bcb909.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_81213__tsk16__paATnOe-I5iCumpM.png",
+            "generationPrompt": "Warm two-person eye-level shot: Mom sits beside An'an speaking gently; An'an sniffles, her rigid shoulders gradually dropping.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/iterations/12-deb2a883f095.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 13,
+        "zhText": "妈妈拉着安安站起来：“我们先来给手指做做体操！两只小手变乌龟，张开——抓抓抓！变小鸟，飞呀飞！”",
+        "enText": "Mom helped An'an stand: “Let's do finger gym first! Turn hands into turtles: stretch open—claw, claw, claw! Now little birds, flap, flap!”",
+        "illustrationPrompt": "Medium wide shot: Mom and An'an stand laughing together, spreading fingers and shaking hands loosely in the air to loosen up.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium wide shot: Mom and An'an stand laughing together, spreading fingers and shaking hands loosely in the air to loosen up.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_80058__tsk16__bwnCQKFvvcx_YcWC.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 14,
+        "zhText": "手指甩轻松了，妈妈用一张彩色贴纸贴好破洞：“它变成了一颗鼓励星！”接着在桌上用红毛线盘成一个大大的 8 字。",
+        "enText": "With loose fingers, Mom covered the tear with a colorful star sticker: “An encouragement star!” Then she arranged thick red yarn into a smooth figure 8 on the table.",
+        "illustrationPrompt": "Tabletop view: star sticker over paper tear; bright red yarn shaped into a large smooth figure 8 on oak tabletop, Mom and An'an smiling.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Tabletop view: star sticker over paper tear; bright red yarn shaped into a large smooth figure 8 on oak tabletop, Mom and An'an smiling.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_92004__tsk16__Lg8bFKP9w5cpAthe.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 15,
+        "zhText": "“闭上眼睛，用指尖顺着红毛线滑一圈，感受一下滑梯是怎么滑的。”妈妈握着安安的手指在毛线上轻柔滑动。",
+        "enText": "“Close your eyes and trace the red yarn with your finger, feeling how the slide curves smoothly,” Mom guided An'an's fingertip along the yarn.",
+        "illustrationPrompt": "Close view: An'an's small finger smoothly follows the soft red yarn track on the wooden surface, a calm relaxed smile appearing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close view: An'an's small finger smoothly follows the soft red yarn track on the wooden surface, a calm relaxed smile appearing.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_60555__tsk16__tYvY2dI8fDIpUxY2.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 16,
+        "zhText": "“就像坐旋转滑梯一样，轻轻的，不用力按。”安安睁开眼，重新拿起铅笔。这一次，她的手指握得松松软软的。",
+        "enText": "“Just like riding a gentle slide—lightly, without pressing down hard.” An'an opened her eyes and picked up her pencil with a relaxed grip.",
+        "illustrationPrompt": "Close portrait: An'an holds the pencil loosely with relaxed fingers, taking a calm breath, pencil point resting softly on clean grid.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an holds the pencil loosely with relaxed fingers, taking a calm breath, pencil point resting softly on clean grid.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_110957__tsk16__ekgEiDOUGKO0cyJd.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 17,
+        "zhText": "小小的圆弧绕了回来，落在一个大方格里。这个 8 还有一点胖，安安却没有马上擦掉它。",
+        "enText": "The little curve looped back into a large square. The 8 was still a bit chubby, but An'an did not reach for her eraser.",
+        "illustrationPrompt": "Close shot of notebook: a rounded, cheerful pencil-written 8 sits neatly centered in the green square; star sticker nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close shot of notebook: a rounded, cheerful pencil-written 8 sits neatly centered in the green square; star sticker nearby.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_51081__tsk16__VTzrl0jpbF53zptE.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 18,
+        "zhText": "“我刚才没有捏那么紧。”安安说。妈妈点点头：“我看见你找到舒服一点的办法了。”她们收好本子，一起吃蓝莓。",
+        "enText": "“I did not squeeze so hard that time,” An'an said. “You found a more comfortable way,” Mom replied. They put away the notebook and shared blueberries.",
+        "illustrationPrompt": "Warm final scene at home study table. The square-grid notebook is CLOSED and put to one side, red pencil lies beside it; NO rows of perfect numbers displayed. Mom and An'an sit relaxed sharing a small plate of washed blueberries, each takes one naturally with two arms per person. Girl content and comfortable, not holding workbook; Mom is not hand-feeding a reward. Coral cardigan and cream trousers, teal hoodie and jeans, warm late afternoon light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm final scene at home study table. The square-grid notebook is CLOSED and put to one side, red pencil lies beside it; NO rows of perfect numbers displayed. Mom and An'an sit relaxed sharing a small plate of washed blueberries, each takes one naturally with two arms per person. Girl content and comfortable, not holding workbook; Mom is not hand-feeding a reward. Coral cardigan and cream trousers, teal hoodie and jeans, warm late afternoon light.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e069aa9e-89b1-45a9-93ba-2d6043cfc1f3.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_110222__tsk16__mVBE22nmJurs9xCx.png",
+            "generationPrompt": "Warm closing shot: An'an proudly shows the page with three neat numbers to smiling Mom, enjoying a sweet blueberry reward together.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/iterations/18-dcb552982c6a.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 44,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "握笔练习",
+        "写数字",
+        "允许不完美"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "引导孩子接受肌肉控制发展中的不完美，学会手部放松，放下“一定要一笔写好”的紧绷感。",
+      "reminder": "数字尝试由孩子兴趣发起，不设置大班描红作业、速度目标或整齐排名。手酸就停，不强迫坚持；较大的纸、摆线和涂画也可以探索曲线。重点是舒服地尝试，不以写进格子作为成功条件。",
+      "questions": [
+        "安安写字手酸的时候，妈妈带她做了什么小游戏？",
+        "为什么说写得不太圆的数字也是好朋友？"
+      ],
+      "activity": "玩“小乌龟抓抓抓”手指放松操，并用彩色毛线在桌面上摆出 6、8、9 的圆润轨道，用手指顺着走。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "book": {
+    "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+    "seriesId": "richang",
+    "title": "我的小书包，今天自己收",
+    "subtitle": "给铅笔和水壶找个固定的家",
+    "moral": {
+      "zh": "自己收拾的小书包最懂你；给每样东西固定一个家，找起来就不慌张。",
+      "en": "A backpack packed by ourselves knows us best; giving everything a home keeps our day calm and steady."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 48,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "吃过晚饭，客厅的大茶几上乱糟糟的。彩笔盒打开着，跳绳拖在地上，橙色小书包张着大嘴巴躺在沙发上。",
+        "enText": "After dinner, the living room coffee table was in a jumble. Markers lay open, a jump rope trailed on the floor, and the orange backpack sat wide open.",
+        "illustrationPrompt": "Messy living room scene: coffee table scattered with open pencil case, crayons, jump rope; open orange backpack on sofa.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Messy living room scene: coffee table scattered with open pencil case, crayons, jump rope; open orange backpack on sofa.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_170718__tsk16__3w1wF4Po3y_EJcZ4.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "以往每天晚上，都是妈妈一边念叨，一边把文具和水壶塞进书包里。安安只要背上就走。",
+        "enText": "In the past, Mom always packed the backpack every evening, checking each item while An'an simply picked it up in the morning.",
+        "illustrationPrompt": "Flashback domestic scene: Mom in coral cardigan kneeling by sofa packing items into bag while An'an plays with toy car on rug.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Flashback domestic scene: Mom in coral cardigan kneeling by sofa packing items into bag while An'an plays with toy car on rug.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_243795__tsk16__wa8GmbefXXmtfyL9.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "可今天，妈妈坐在沙发边，微笑着递给安安一张画满可爱小图画的硬纸卡片：“大班的小朋友，要开始有属于自己的小掌柜本领啦！”",
+        "enText": "Tonight, Mom sat by the sofa and handed An'an a colorful card with cute illustrations: “Senior class students can be the master of their own bag!”",
+        "illustrationPrompt": "In evening living room Mom in coral cardigan and cream trousers gives An'an a single illustrated packing card, girl studies it with interest. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Orange backpack rests EMPTY and open on sofa, no prepacked lunch. Cozy warm home.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: In evening living room Mom in coral cardigan and cream trousers gives An'an a single illustrated packing card, girl studies it with interest. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Orange backpack rests EMPTY and open on sofa, no prepacked lunch. Cozy warm home.\nThe last reference is the EXACT five-item checklist card: preserve its five rows and icon order. Show that card, not a different checklist. No additional icons or rows.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-a53dc627-a4e4-40d4-9223-5c69e057321d.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_208984__tsk16__L3HWwXUXuebNGB0r.png",
+            "generationPrompt": "Medium two-person shot: Mom hands an illustrated checklist card to An'an; An'an examines the drawing with curious interest.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/iterations/3-e5f65b12fb70.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/4.webp"
+        ]
+      },
+      {
+        "page": 4,
+        "zhText": "卡片画着五样东西：铅笔盒、借阅绘本、小水壶、纸巾和明天要用的跳绳。装进包里，就可以指一指。",
+        "enText": "The card showed five things: a pencil case, library book, water bottle, tissues, and tomorrow's jump rope. She could point to each picture after packing it.",
+        "illustrationPrompt": "Close-up of the single cream checklist card held by two small child hands, sharp readable icons. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Warm wooden coffee-table background, no other objects obscuring icons.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Close-up of the single cream checklist card held by two small child hands, sharp readable icons. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. Warm wooden coffee-table background, no other objects obscuring icons.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-58540733-14c1-4369-95ec-8c94d7f0ad7c.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_266631__tsk16__Uh_nG3huO9BE5GJK.png",
+            "generationPrompt": "Close view of checklist card: five illustrated compartments with icon drawings of pencil, eraser, bottle, tissue, and book.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/iterations/4-bb0c4bea2fc5.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp"
+        ]
+      },
+      {
+        "page": 5,
+        "zhText": "“这是书包检查小雷达！”妈妈说，“每一个小东西，在书包里都要有一个固定的房间，不能乱串门。”",
+        "enText": "“This is your backpack checklist radar!” Mom said. “Every item needs its own permanent room inside the bag so nothing gets lost.”",
+        "illustrationPrompt": "Mom and An'an beside sofa in warm evening living room. Mom points to the compartments of ONE orange backpack, open and completely EMPTY: large main compartment and front zip pocket, two side mesh pockets. No pencil case, book, food or bottle ALREADY inside. All loose supplies wait on coffee table: blue whale book, blue metal tin, blue cloud-bear bottle, strawberry tissues, red jump rope yellow handles. No lunch box. Girl listens, Mom cream trousers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Mom and An'an beside sofa in warm evening living room. Mom points to the compartments of ONE orange backpack, open and completely EMPTY: large main compartment and front zip pocket, two side mesh pockets. No pencil case, book, food or bottle ALREADY inside. All loose supplies wait on coffee table: blue whale book, blue metal tin, blue cloud-bear bottle, strawberry tissues, red jump rope yellow handles. No lunch box. Girl listens, Mom cream trousers.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-ad1c4530-9b2e-45c5-8204-833c7940b15e.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_203239__tsk16__ANoFKMSZ38Dus650.png",
+            "generationPrompt": "Close two-person conversation: Mom points to the different compartments of the open orange backpack; An'an listens eagerly.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/iterations/5-ba4b94ca1b09.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp"
+        ]
+      },
+      {
+        "page": 6,
+        "zhText": "安安来了兴致。她先把小书包搬到地毯上，把所有口袋的拉链全都拉开，认真数了数：“大口袋、前口袋、还有左右两个网眼袋！”",
+        "enText": "An'an felt excited. She carried the bag to the rug, unzipped every pocket, and counted: “Main pocket, front pocket, and two side mesh pockets!”",
+        "illustrationPrompt": "Low floor view in living room. An'an sits cross-legged on rug, opening and inspecting ONE EMPTY orange backpack with large main compartment, front zip pocket and two side mesh pockets. All pockets plainly EMPTY, unzipped. No packed pencils, food, bottle, lunch or book inside. Supplies wait on table blurred behind. Teal hoodie blue jeans, warm light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Low floor view in living room. An'an sits cross-legged on rug, opening and inspecting ONE EMPTY orange backpack with large main compartment, front zip pocket and two side mesh pockets. All pockets plainly EMPTY, unzipped. No packed pencils, food, bottle, lunch or book inside. Supplies wait on table blurred behind. Teal hoodie blue jeans, warm light.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-f9707586-acf5-46b3-a245-09f2d2fe4623.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_268297__tsk16__TpDx40vPFgxONOas.png",
+            "generationPrompt": "Low floor shot: An'an sits cross-legged on rug examining pockets of orange backpack; neat living room carpet.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/iterations/6-ff4faf447183.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp"
+        ]
+      },
+      {
+        "page": 7,
+        "zhText": "“第一间房，住重重的大块头。”安安把厚厚的大鲸鱼绘本平平整整地放进最贴着后背的大隔层里。",
+        "enText": "“Room one is for heavy things.” An'an slid the thick picture book flat against the back panel in the main compartment.",
+        "illustrationPrompt": "Close overhead shot: child's hands carefully slide a hardbound picture book deep into the main sleeve of the orange backpack.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close overhead shot: child's hands carefully slide a hardbound picture book deep into the main sleeve of the orange backpack.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_246823__tsk16__8zMpdmT0hYWCEnjX.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "“第二间房，住铅笔盒朋友。”安安打开铁皮笔盒，检查里面的铅笔：一支、两支……五支！笔尖都削得尖尖齐齐的。",
+        "enText": "“Room two is for the pencil box.” An'an opened the metal case to inspect her pencils: one, two... five! All sharpened neatly.",
+        "illustrationPrompt": "Tabletop view: An'an counts five sharp pencils in neat metal tin; eraser nestled snugly in its foam slot.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Tabletop view: An'an counts five sharp pencils in neat metal tin; eraser nestled snugly in its foam slot.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_456649__tsk16__8g5QqLRNhAuqqOCE.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "合上笔盒，安安把它放在绘本前面，还把红色的跳绳卷成一个圆圆的小面包圈，塞进侧面的空隙里。",
+        "enText": "Closing the box, An'an tucked it in front of the book and rolled her jump rope into a tidy donut to fit the gap.",
+        "illustrationPrompt": "Overhead packing view: neat arrangement inside main compartment: book at back, pencil tin in middle, coiled jump rope at side.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Overhead packing view: neat arrangement inside main compartment: book at back, pencil tin in middle, coiled jump rope at side.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_219352__tsk16__o8g2UtFFSp-FMQ1l.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 10,
+        "zhText": "前拉链口袋很小，安安把印着小草莓图案的便携纸巾装了进去：“擦嘴巴的时候，一拉拉链就能拿到！”",
+        "enText": "The front zipper pocket was small. An'an placed her strawberry pocket tissue inside: “Easy to grab whenever I need to wipe my face!”",
+        "illustrationPrompt": "Close view of front pocket: An'an zips small tissue packet into the front pouch, sliding the zipper shut with a smooth pull.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close view of front pocket: An'an zips small tissue packet into the front pouch, sliding the zipper shut with a smooth pull.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_372446__tsk16__CguOA4J4GVcFtNJx.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 11,
+        "zhText": "现在轮到水壶了。爸爸陪安安把它洗净、晾好，再拧上盖子：“明早出门前，我们装上新鲜的饮用水。”",
+        "enText": "Next came the bottle. Dad helped An'an wash and dry it, then close the lid. “We will fill it with fresh drinking water before leaving in the morning.”",
+        "illustrationPrompt": "Kitchen counter scene: Dad in navy sweater helps An'an tighten lid on blue water bottle; no spilling, warm lighting.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Kitchen counter scene: Dad in navy sweater helps An'an tighten lid on blue water bottle; no spilling, warm lighting.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_259399__tsk16__OVpsz91rsafnXuRl.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 12,
+        "zhText": "安安把水壶塞进书包左边的松紧网袋里，还特意拉了拉卡扣：“卡紧啦，跑步的时候它就不会跳水游泳啦！”",
+        "enText": "An'an slipped the bottle into the left mesh pocket and clicked the security strap: “Locked tight! It won't leap out when I run!”",
+        "illustrationPrompt": "Close-up of side pocket: An'an fastens small plastic buckle over top of water bottle; bottle rests securely upright.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of side pocket: An'an fastens small plastic buckle over top of water bottle; bottle rests securely upright.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_278810__tsk16__G6qJRCPrfK_GvvME.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 13,
+        "zhText": "东西都装好了，安安拿起妈妈做的小雷达卡片，伸出右手食指，一项一项在上面打勾检查。",
+        "enText": "With everything packed, An'an took Mom's radar card and used her finger to check off each item one by one.",
+        "illustrationPrompt": "Warm living room. An'an sits on rug beside ONE now PACKED zipped orange backpack with cream bear patch and BLUE cloud-bear water bottle secured in side mesh pocket. She holds the cream checklist card with one hand and points at its icons with her other index finger, no extra hand. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. No different or extra symbols.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Warm living room. An'an sits on rug beside ONE now PACKED zipped orange backpack with cream bear patch and BLUE cloud-bear water bottle secured in side mesh pocket. She holds the cream checklist card with one hand and points at its icons with her other index finger, no extra hand. Checklist is a cream vertical card with exactly FIVE rows and five small empty checkboxes: 1 blue metal pencil CASE (not separate pencil/eraser), 2 hardback BLUE WHALE picture book, 3 BLUE water bottle with WHITE CLOUDS and small BEAR motif, 4 small STRAWBERRY tissue packet, 5 coil of RED jump rope with YELLOW handles. Use recognizable tiny object drawings, NO words, NO numbers, NO letters. These same five icons only. No different or extra symbols.\nThe last reference is the EXACT five-item checklist card: preserve its five rows and icon order. Show that card, not a different checklist. No additional icons or rows.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-14555ae3-f435-4dc1-be80-d2f064e96055.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_399824__tsk16__OToSqVUnMadKkKWj.png",
+            "generationPrompt": "Medium shot: An'an sits on floor holding checklist card, pointing finger at each item: “Pencils—checked! Water bottle—checked!”",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/iterations/13-7d8585a6b9b1.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/4.webp"
+        ]
+      },
+      {
+        "page": 14,
+        "zhText": "“绘本有了，铅笔有了，水壶有了，纸巾有了，跳绳也在！”安安拉上大书包的拉链，得意地拍了拍鼓鼓的书包肚子。",
+        "enText": "“Book—check! Pencils—check! Water—check! Tissues and rope—check!” An'an zipped the main pocket, patting its tidy tummy.",
+        "illustrationPrompt": "Bright portrait: An'an stands up, proudly patting the neatly zipped orange backpack; Mom smiles with thumbs-up from sofa.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Bright portrait: An'an stands up, proudly patting the neatly zipped orange backpack; Mom smiles with thumbs-up from sofa.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_261631__tsk16__yi5WHU8ekZgWzZh3.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 15,
+        "zhText": "第二天早上，水装好了。到幼儿园后，大家开始准备户外游戏要用的跳绳，安安走到自己的书包前。",
+        "enText": "In the morning, they filled the bottle. At kindergarten, the children got ready for outdoor rope games, and An'an went to her backpack.",
+        "illustrationPrompt": "Next morning kindergarten cubbies. An'an calmly opens her ONE orange backpack with cream bear patch and prepares a RED coiled jump rope with YELLOW handles for outdoor play. Two classmates calmly prepare their own ropes nearby, no crying or chaotic losers, no winner comparison. Freshly filled BLUE cloud-bear water bottle secured in side mesh pocket. Child does not wear a second backpack. Gentle ordinary school morning.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Next morning kindergarten cubbies. An'an calmly opens her ONE orange backpack with cream bear patch and prepares a RED coiled jump rope with YELLOW handles for outdoor play. Two classmates calmly prepare their own ropes nearby, no crying or chaotic losers, no winner comparison. Freshly filled BLUE cloud-bear water bottle secured in side mesh pocket. Child does not wear a second backpack. Gentle ordinary school morning.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-5b960213-1e3a-497a-9cbe-b5ff8449fc71.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_263550__tsk16__GZhsm1zaBlCs28V5.png",
+            "generationPrompt": "Classroom locker scene: other children rummaging through messy bags; An'an walks up calmly to her cubby.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/iterations/15-b599f90f5abf.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+        ]
+      },
+      {
+        "page": 16,
+        "zhText": "安安拉开拉链，一下就摸到了卷好的跳绳。她把书包放回柜子，拿着跳绳，走进等候的队伍。",
+        "enText": "An'an unzipped her bag and quickly found the coiled rope. She put the bag back in her cubby and joined the waiting line.",
+        "illustrationPrompt": "Corridor line-up shot: An'an stands at head of line holding her neat red jump rope, smiling with genuine confidence.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Corridor line-up shot: An'an stands at head of line holding her neat red jump rope, smiling with genuine confidence.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_287597__tsk16__srWQ0FbLfO-5IBqn.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 17,
+        "zhText": "课间小宇流鼻涕急着找纸巾，安安一秒钟就从前口袋抽出一张递过去：“给！我的小书包可神奇啦，什么都住在固定的家！”",
+        "enText": "At recess when Xiaoyu had a runny nose, An'an pulled a tissue from her front pouch in an instant: “Here! Everything in my bag has a home!”",
+        "illustrationPrompt": "Kindergarten cubby area. An'an stands beside ONE orange backpack with cream bear patch RESTING ON a low cubby bench; her back is EMPTY, no shoulder straps, no second backpack. She takes a tissue from its front pocket and offers it to Xiaoyu, a small Chinese BOY with short hair forest-green hoodie charcoal trousers, who has a runny nose. Strawberry tissue packet visible in open front pocket, blue cloud-bear bottle in side pocket. Natural two arms each.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten cubby area. An'an stands beside ONE orange backpack with cream bear patch RESTING ON a low cubby bench; her back is EMPTY, no shoulder straps, no second backpack. She takes a tissue from its front pocket and offers it to Xiaoyu, a small Chinese BOY with short hair forest-green hoodie charcoal trousers, who has a runny nose. Strawberry tissue packet visible in open front pocket, blue cloud-bear bottle in side pocket. Natural two arms each.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-e411785d-2783-493f-8798-d15ef8473a34.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_248289__tsk16__PUrd4qjRHXF_46Dr.png",
+            "generationPrompt": "Classroom hallway view: An'an hands tissue to Xiaoyu in forest green; Xiaoyu smiles gratefully.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/iterations/17-5ce97ca61335.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp"
+        ]
+      },
+      {
+        "page": 18,
+        "zhText": "放学回到家，安安把书包挂在门边的专用木挂钩上，认真地对妈妈说：“自己的书包自己管，这种感觉真神气！”",
+        "enText": "Back home, An'an hung her bag on the wooden entryway hook, declaring proudly: “Taking care of my own bag feels truly wonderful!”",
+        "illustrationPrompt": "Entryway ending shot: An'an hangs orange backpack on low wooden wall peg beside front door; Mom hugs her shoulders warmly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Entryway ending shot: An'an hangs orange backpack on low wooden wall peg beside front door; Mom hugs her shoulders warmly.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_244905__tsk16__hT7NSr0alqTiybrN.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 48,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "自主整理",
+        "物品自理"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "建立自主分类、核对与归位的自理习惯，培养对个人学具的掌控感与责任心。",
+      "reminder": "物品清单按实际园所活动调整，不把铅笔数量等写成大班统一要求。初次整理允许遗漏，用图卡协助而不包办、责骂或与同伴比速度。饮用水出门前再准备；书包轻重由成人检查。",
+      "questions": [
+        "安安是用什么小帮手把书包里的东西检查整齐的？",
+        "你的水壶和铅笔盒，最喜欢住在书包的哪个小格子里？"
+      ],
+      "activity": "和孩子一起绘制一张专属的“每日书包检查图卡”，放学后练习自己按图装包。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "book": {
+    "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+    "seriesId": "richang",
+    "title": "校门口的那一次挥手",
+    "subtitle": "把妈妈的爱装进口袋里",
+    "moral": {
+      "zh": "分开时的不舍很自然；装满安全感的小约定，能陪我们勇敢走进大班。",
+      "en": "It is natural to feel reluctant when parting; a warm promise filled with love helps us step bravely into our day."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 41,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "清晨，阳光洒在幼儿园大门前的台阶上。红色的欢迎拱门高高立着，许多小朋友正背着书包走进去。",
+        "enText": "Morning sunlight poured over the kindergarten steps. A welcoming archway stood tall as children walked in with their backpacks.",
+        "illustrationPrompt": "Wide sunny kindergarten entrance: colorful archway near stone steps, morning trees, An'an wearing orange backpack and Mom holding her hand; welcoming courtyard.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration... Wide sunny kindergarten entrance...",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_348752__tsk16__q8e1PSSm5Fw_QSZe.png",
+        "generationPromptScope": "partial-legacy",
+        "provenanceNote": "Earlier import retained an abbreviated prompt with ellipses. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "安安站在校门口的大树旁，脚步停住了。她拉着妈妈的手，手指抓得紧紧的。",
+        "enText": "An'an paused beside the big tree near the gate. She held Mom's hand, her small fingers gripping tightly.",
+        "illustrationPrompt": "Medium outdoor gate view: An'an stops near tree trunk holding Mom's hand tightly, hesitant watery eyes, orange backpack; Mom looks down with warm patient face.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium outdoor gate view: An'an stops near tree trunk holding Mom's hand tightly, hesitant watery eyes, orange backpack; Mom looks down with warm patient face.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_384438__tsk16__PqWfHPXWpf-_kDQ4.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "“我已经上大班了。”安安小声说，可她还是把头靠在妈妈胳膊上。长大了一点，也还是会舍不得。",
+        "enText": "“I am in the oldest kindergarten class now,” An'an whispered, leaning against Mom's arm. Growing bigger did not mean she never missed Mom.",
+        "illustrationPrompt": "Medium portrait: An'an leans head against Mom's coral cardigan, reluctant expression, orange backpack straps visible; Mom stands gently beside her.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium portrait: An'an leans head against Mom's coral cardigan, reluctant expression, orange backpack straps visible; Mom stands gently beside her.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_503958__tsk16__oxaeJ2To8ZrzYgzm.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "大班的教室在二楼，走廊比以前更长。安安看着那些高高的窗户，觉得幼儿园好像一下子变大了好多。",
+        "enText": "The senior classroom was on the second floor with longer hallways. Looking up at the tall windows, An'an felt the school had suddenly grown much bigger.",
+        "illustrationPrompt": "Low upward perspective: tall windows and kindergarten building above leafy trees; small An'an in teal hoodie looks up with uncertainty.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Low upward perspective: tall windows and kindergarten building above leafy trees; small An'an in teal hoodie looks up with uncertainty.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_324117__tsk16__QwRAtpg24jswEW9P.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "妈妈蹲下身来，把安安脸颊边的一缕碎发理到耳后，目光平平地看着她的眼睛。",
+        "enText": "Mom knelt down, gently brushed a loose strand of hair behind An'an's ear, and met her eyes at eye level.",
+        "illustrationPrompt": "Warm two-person eye-level medium shot: Mom kneels on clean pavement, tucking hair behind An'an's ear; yellow star hair clip gleams.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Warm two-person eye-level medium shot: Mom kneels on clean pavement, tucking hair behind An'an's ear; yellow star hair clip gleams.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_611163__tsk16__BAzMT68FSOmqQE9G.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "“安安是不是觉得，大班的事情又新又多，心里有点没准备好？”妈妈轻声问。",
+        "enText": "“Does the senior class feel big and new, making you feel a little unready inside?” Mom asked softly.",
+        "illustrationPrompt": "Close two-person conversation: Mom speaks with calm empathy at child height; An'an listens with moist eyes, nodding slightly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close two-person conversation: Mom speaks with calm empathy at child height; An'an listens with moist eyes, nodding slightly.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_391487__tsk16__nP8zdFpSHDhyL7b7.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 7,
+        "zhText": "安安点点头，声音小小的：“我想和你在一起。如果我想你了，怎么办呢？”",
+        "enText": "An'an nodded, her voice very quiet. “I want to stay with you. What if I miss you during the day?”",
+        "illustrationPrompt": "Close portrait: An'an looks at Mom with sincere emotion, lips pressed softly; Mom's listening hands rest gently on An'an's arms.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an looks at Mom with sincere emotion, lips pressed softly; Mom's listening hands rest gently on An'an's arms.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_378122__tsk16__0TpS5W-NqNPfCTKu.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "妈妈握住安安的小手，轻轻展开她的手掌。妈妈伸出食指，在安安的手心里画了一个小小的圆圈。",
+        "enText": "Mom took An'an's hand and gently opened her palm. With her forefinger, Mom drew a small circle in the center.",
+        "illustrationPrompt": "Close-up of hands: Mom's gentle finger traces an invisible circle in An'an's small open palm, warm morning light on skin.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of hands: Mom's gentle finger traces an invisible circle in An'an's small open palm, warm morning light on skin.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_519488__tsk16__692RHLgo-jHpBZGG.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "“这是一颗隐形的小爱心。”妈妈微笑着按了按那块手心，“当你想妈妈时，就合上小手，把它按进心窝里。”",
+        "enText": "“This is a little invisible heart,” Mom smiled, pressing gently on her palm. “Whenever you miss me, close your hand and press it to your chest.”",
+        "illustrationPrompt": "Close two-person view: Mom presses An'an's palm softly; An'an looks down at her palm with curious wonder.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close two-person view: Mom presses An'an's palm softly; An'an looks down at her palm with curious wonder.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_412639__tsk16__gDE-izA5km3ZzunZ.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 10,
+        "zhText": "安安慢慢合拢手指，紧紧攥住手心里的温热，就像真的抓到了一颗红亮亮的小糖果。",
+        "enText": "An'an slowly curled her fingers into a fist, holding tight to the warmth in her palm as if gripping a shiny little sweet.",
+        "illustrationPrompt": "At the kindergarten entrance in morning light, An'an gently touches a curled fist to her chest, calming herself. Mom kneels at eye level in CORAL cardigan and CREAM trousers, reassures her warmly. One orange backpack worn by An'an. No gold sticker on forehead.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: At the kindergarten entrance in morning light, An'an gently touches a curled fist to her chest, calming herself. Mom kneels at eye level in CORAL cardigan and CREAM trousers, reassures her warmly. One orange backpack worn by An'an. No gold sticker on forehead.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-f82031a2-1010-46d9-aee8-e2e9414fbb7b.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_391488__tsk16__JIgev_Qve4cWMsr1.png",
+            "generationPrompt": "Medium shot: An'an brings her curled fist gently against her teal hoodie chest, feeling the warmth; Mom smiles reassuringly.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/xiao-men-kou-de-na-yi-ci-hui-shou/iterations/10-9ff36ca3c0d6.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp"
+        ]
+      },
+      {
+        "page": 11,
+        "zhText": "“下午离园时，我会在这棵树下等你。”妈妈指了指大树，“如果接送安排有变化，我会提前告诉老师。”",
+        "enText": "“I will wait under this tree at pick-up time,” Mom said. “If our plans change, I will let your teacher know beforehand.”",
+        "illustrationPrompt": "Medium view: Mom points toward leafy green tree near school gate, morning breeze rustling leaves; An'an listens attentively.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium view: Mom points toward leafy green tree near school gate, morning breeze rustling leaves; An'an listens attentively.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_316506__tsk16__J8dd-mCOjImtMACk.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 12,
+        "zhText": "林老师从校门里迎出来，微笑着向安安伸出手：“早上好，安安！今天植物角的小番茄又长高了一点呢。”",
+        "enText": "Teacher Lin walked out from the gate, smiling as she offered a welcoming hand. “Good morning, An'an! The cherry tomatoes in our plant corner grew taller today.”",
+        "illustrationPrompt": "Three-person entrance scene: Teacher Lin in sage-green cardigan bends slightly to greet An'an; Mom stands beside, encouraging gently.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Three-person entrance scene: Teacher Lin in sage-green cardigan bends slightly to greet An'an; Mom stands beside, encouraging gently.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_381653__tsk16__aFM_lIri8kLy-WPo.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 13,
+        "zhText": "安安转头看看妈妈，妈妈微笑着点点头，松开了手：“去吧，安安。妈妈的爱就在你的口袋里。”",
+        "enText": "An'an looked back at Mom. Mom smiled and released her hand gently. “Go ahead, An'an. My love is right in your pocket.”",
+        "illustrationPrompt": "Medium shot: An'an takes one step forward toward Teacher Lin, looking back with brave expression; Mom waves with open relaxed posture.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium shot: An'an takes one step forward toward Teacher Lin, looking back with brave expression; Mom waves with open relaxed posture.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_2442__tsk16__R_6JkhkgeXoaghcd.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 14,
+        "zhText": "安安跟着林老师走进楼里。在走廊的大窗户边，她停了一下，回过头去看。",
+        "enText": "An'an followed Teacher Lin inside. By the large corridor window, she paused and looked back.",
+        "illustrationPrompt": "Interior hallway view: An'an stands by bright corridor window looking down toward courtyard, clutching her backpack strap.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Interior hallway view: An'an stands by bright corridor window looking down toward courtyard, clutching her backpack strap.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_384488__tsk16__QvPERqgR9ZM1pyvF.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 15,
+        "zhText": "大树下，妈妈依然站在那里。妈妈抬起手，用力地、慢慢地向她挥动着手臂。",
+        "enText": "Under the big tree, Mom was still standing there, raising her arm and waving slowly and steadily toward the window.",
+        "illustrationPrompt": "Framed window view: outside in the sunny courtyard under the green tree, Mom waves with warm clear arm gesture.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Framed window view: outside in the sunny courtyard under the green tree, Mom waves with warm clear arm gesture.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_6713__tsk16__orUJsYs7iSQ7rCUo.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 16,
+        "zhText": "安安把一只手贴在胸口，摸摸那颗“小爱心”，又举起另一只手，隔着玻璃朝妈妈挥了挥。",
+        "enText": "An'an pressed one hand to her chest over the little heart. With the other, she waved back through the glass.",
+        "illustrationPrompt": "Close emotional portrait: An'an smiles through the sunny window, hand waving high, yellow star hair clip sparkling in morning sun.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close emotional portrait: An'an smiles through the sunny window, hand waving high, yellow star hair clip sparkling in morning sun.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_375936__tsk16__ENXCWrIjrd3rA0Co.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 17,
+        "zhText": "到了大班教室，阳光铺满地板。乐乐正在积木区招手：“安安，来帮我搭大吊桥！”安安走了过去。",
+        "enText": "Sunlight filled the classroom. Lele waved from the block corner. “An'an, come help me build a bridge!” She walked over.",
+        "illustrationPrompt": "Bright classroom wide shot: wooden shelves, reading rug, Lele sitting beside wooden blocks waving; An'an walks in cheerfully.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Bright classroom wide shot: wooden shelves, reading rug, Lele sitting beside wooden blocks waving; An'an walks in cheerfully.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_5442__tsk16__lmS6ozAK8ZEDcNCA.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 18,
+        "zhText": "下午四点，放学铃声响起。安安背好书包飞奔出校门，大树下，妈妈果然张开双臂，正微笑着迎向她。",
+        "enText": "At four in the afternoon, the dismissal bell chimed. An'an ran out through the gate; under the big tree, Mom was waiting with open arms.",
+        "illustrationPrompt": "Warm afternoon closing shot: golden sunset glow under big tree, An'an runs toward smiling Mom with backpack bouncing happily.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Warm afternoon closing shot: golden sunset glow under big tree, An'an runs toward smiling Mom with backpack bouncing happily.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_533052__tsk16__A1751_95N351ELn-.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 41,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "分离与适应",
+        "安全感建立"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "接纳入园分别时的依恋情绪，通过具体、可兑现的接送约定帮助孩子安心进入大班生活。",
+      "reminder": "不用“都是大班孩子了还不懂事”羞辱难过，不偷偷溜走。分别仪式要温暖而简短，由成人坚守接园时间。",
+      "questions": [
+        "妈妈在安安手心画了什么？",
+        "上学想家的时候，你有什么给自己打气的小办法？"
+      ],
+      "activity": "和孩子一起设计一个专属的“告别击掌密码”或“口袋爱心”，并在入园前练习一次温和道别。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "batch": "batch-51-51",
+  "checkedAt": "2026-10-27T12:13:37.491Z",
+  "passed": true,
+  "books": [
+    {
+      "id": "ma-ma-zai-xiao-men-kou-zhan-gang",
+      "title": "今天妈妈在校门口站岗",
+      "order": 51,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/1.webp",
+          "bytes": 189766,
+          "sha256": "40f6805e535a90c22803eeb156c3a77ed2914cb6bc13697c3cf39ccf3a03198f"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/2.webp",
+          "bytes": 208580,
+          "sha256": "f1d225235b4bf1bc12746a0f6799db1cf76fd6ee6c3a894cbfbd9d40c49e683a"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/3.webp",
+          "bytes": 163324,
+          "sha256": "0b7339e5161affea262d11eacb7b3168b2af8eb8aed426dee13f3e01c066a696"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/4.webp",
+          "bytes": 203864,
+          "sha256": "8e84b20b43b669f87aa2ae0a848b79b0b5fe2299c3f1e6b56c170153c379ba83"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/5.webp",
+          "bytes": 161890,
+          "sha256": "4645b4693e92deec62258d5b2df71cb41b7b7ebeb4e727d6bf70122f3640f090"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/6.webp",
+          "bytes": 174396,
+          "sha256": "91d313ea45cd89d83c8368f719c38c344a84456531110466f22e15c73894a01c"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/7.webp",
+          "bytes": 162688,
+          "sha256": "d7b50e7ef0243c23e209e98e20df1719027a31b85d7332b2214364175b8c35ce"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/8.webp",
+          "bytes": 195696,
+          "sha256": "54f5f544c65ff7b46bb0b70beca28e157eb6d7d46adf97e6ad04e4c6e2b35667"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/9.webp",
+          "bytes": 182886,
+          "sha256": "c99f0fcef532bd177334cc503c5f03654eeae97e56913e7d6d010616038c50cb"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/10.webp",
+          "bytes": 170450,
+          "sha256": "a4124a4018c696beea968e47ca862b48807078bdbdd1c0bc29bec5a682521791"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/11.webp",
+          "bytes": 146980,
+          "sha256": "51c0ca2021d0d0929c8e30817653da1212610da3c5e6998b58517115ffa35779"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/12.webp",
+          "bytes": 185482,
+          "sha256": "28e327df7a5eee3c1e7b337c44105a3f26935f020a8abebbd7c1c82745413f31"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/13.webp",
+          "bytes": 165274,
+          "sha256": "b70b7865c430e7d81a91c296998656c2de618850024781b23f8a5c40f56a4ad2"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/14.webp",
+          "bytes": 156968,
+          "sha256": "29e114fddbac73bf0d11c28c36c443e8be6af737d5f85e90cf9a5f51cfe84bec"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/15.webp",
+          "bytes": 142402,
+          "sha256": "17dcb74cabfd13990f68f806b17a0e95bf42b98d367fa3201ecc1733afbc8bcf"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/16.webp",
+          "bytes": 204100,
+          "sha256": "0f710b2c462587bf80ce6b8cfe05736490c9b27105f0048aab28444c27ed2294"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/17.webp",
+          "bytes": 187256,
+          "sha256": "2c847b7fd2084f3e30e30c537732759ec51fccca86ab77145fe6b70d24d912dc"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/18.webp",
+          "bytes": 220294,
+          "sha256": "9b1bac619f67cd2cd8e39018dfda2bf24885006b471551e72861be61f35c09c3"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/ma-ma-zai-xiao-men-kou-zhan-gang/zh-ae499a50be253b68.mp3",
+        "contentHash": "ae499a50be253b684ef7b4daae779c6eef002a7c14eee3a0e6711f9d60df1a4a",
+        "pageStarts": [
+          0,
+          11.556,
+          21.504,
+          30.732,
+          42.048,
+          50.004,
+          58.92,
+          66.948,
+          76.104,
+          82.452,
+          91.2,
+          100.284,
+          107.832,
+          114.516,
+          122.784,
+          131.772,
+          141.576,
+          153.06
+        ],
+        "duration": 165.276,
+        "bytes": 1322925,
+        "sha256": "7f0c88b7ab7e330a62afd77e72fd9af71ff3e9535cfe4348b59805f4cf52d1bc",
+        "decodedSeconds": 165.276,
+        "pageRms": [
+          0.069162,
+          0.067848,
+          0.062425,
+          0.06837,
+          0.061643,
+          0.07224,
+          0.06858,
+          0.069801,
+          0.064405,
+          0.067034,
+          0.074347,
+          0.062682,
+          0.065755,
+          0.068733,
+          0.065846,
+          0.071061,
+          0.06758,
+          0.070237
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "totals": {
+    "expectedBooks": 1,
+    "checkedBooks": 1,
+    "expectedPages": 18,
+    "images": 18,
+    "audioFiles": 1,
+    "narrationSeconds": 165.276
+  }
+}

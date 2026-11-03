@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-23T06:48:53.985Z",
+  "illustrations": {
+    "provider": "builtin-imagegen",
+    "pages": 180,
+    "size": "1200x1200 WebP",
+    "maxBytes": 307200,
+    "reviewedRepairs": 40
+  },
+  "narration": {
+    "provider": "Bailian Token Plan TTS",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "language": "zh",
+    "preGeneratedBooks": 10,
+    "pageTimings": 180,
+    "totalSeconds": 1635.528,
+    "textHashVerified": true,
+    "decodedAndNonSilentPages": 180,
+    "runtimeGenerationRequestsDuringBrowserTest": 0
+  },
+  "savedLocally": true,
+  "uploadedToSite": false,
+  "deployed": false,
+  "committed": false
+}

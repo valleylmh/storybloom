@@ -1,0 +1,67 @@
+{
+  "approved": true,
+  "approvedAt": "2026-10-22",
+  "totalPages": 180,
+  "books": [
+    {
+      "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+      "title": "校门口的那一次挥手",
+      "pages": 18,
+      "order": 41
+    },
+    {
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "title": "摇晃的第一颗小乳牙",
+      "pages": 18,
+      "order": 42
+    },
+    {
+      "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+      "title": "拼音王国里的小弯钩",
+      "pages": 18,
+      "order": 43
+    },
+    {
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "title": "跳出田字格的小数字",
+      "pages": 18,
+      "order": 44
+    },
+    {
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "title": "我想去洗手间，可以举手吗？",
+      "pages": 18,
+      "order": 45
+    },
+    {
+      "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+      "title": "睡不着的午休小床",
+      "pages": 18,
+      "order": 46
+    },
+    {
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "title": "我可以和你们一起玩吗？",
+      "pages": 20,
+      "order": 47
+    },
+    {
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "title": "我的小书包，今天自己收",
+      "pages": 18,
+      "order": 48
+    },
+    {
+      "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+      "title": "今天我是大班值日生",
+      "pages": 18,
+      "order": 49
+    },
+    {
+      "id": "fang-xue-lu-shang-man-man-shuo",
+      "title": "放学路上，慢慢说",
+      "pages": 16,
+      "order": 50
+    }
+  ]
+}

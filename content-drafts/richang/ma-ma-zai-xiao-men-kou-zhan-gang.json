@@ -1,0 +1,262 @@
+{
+  "book": {
+    "id": "ma-ma-zai-xiao-men-kou-zhan-gang",
+    "seriesId": "richang",
+    "title": "今天妈妈在校门口站岗",
+    "subtitle": "一个值日生和一个志愿者",
+    "moral": {
+      "zh": "帮大家做事的位置有很多种；在自己的岗位上做好小事，就是在为大家站岗。",
+      "en": "There are many places where we can help; doing our own small job well is already standing guard for everyone."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-27",
+    "order": 51,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "星期三的早晨，幼儿园门口的宣传栏上多了一张新的排班表，上面写着“家长志愿者护学岗”。安安一眼就看见了妈妈的名字。",
+        "enText": "On Wednesday morning a new roster appeared on the notice board by the kindergarten gate: “Parent Volunteer Gate Duty.” An'an spotted Mom's name right away.",
+        "illustrationPrompt": "Wide sunny gate view: wooden notice board with a plain colored grid of blank slots (no letters), Mom in coral cardigan pointing at it, An'an in teal hoodie and orange backpack on tiptoe.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Wide sunny gate view: wooden notice board with a plain colored grid of blank slots (no letters), Mom in coral cardigan pointing at it, An'an in teal hoodie and orange backpack on tiptoe.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-01.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 2,
+        "zhText": "“今天下午四点，妈妈要在门口当志愿者，穿黄马甲，帮大家慢慢走、看好路口。”妈妈蹲下来，把折好的黄马甲给她看。",
+        "enText": "“This afternoon at four, I'll volunteer at the gate in a yellow vest, helping everyone walk slowly and watching the crossing,” Mom said, kneeling to show An'an the folded vest in her tote bag.",
+        "illustrationPrompt": "Eye-level two-shot on clean gate steps: Mom kneels holding a plain folded yellow vest; An'an looks at it with curious bright eyes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Eye-level two-shot on clean gate steps: Mom kneels holding a plain folded yellow vest; An'an looks at it with curious bright eyes.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-02.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 3,
+        "zhText": "安安问：“站岗是不是就像我当值日生？”妈妈笑了：“有点像，都是在自己的位置上，帮大家做点小事。”",
+        "enText": "An'an asked, “Is gate duty like being the class helper?” Mom smiled. “A little. Both mean helping everyone from your own spot.”",
+        "illustrationPrompt": "Warm close two-shot: An'an tilting her head with a thinking smile; Mom answering with a gentle nod, morning light behind them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Warm close two-shot: An'an tilting her head with a thinking smile; Mom answering with a gentle nod, morning light behind them.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-03-v2.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 4,
+        "zhText": "走进大班教室，林老师正在更新值日表：“今天是周三，轮到安安值日啦。”印着金色小星的红袖标套上了安安的左胳膊。",
+        "enText": "Inside the senior classroom, Teacher Lin was updating the duty chart: “It's Wednesday, so An'an is our helper today.” A red armband with a gold star went onto An'an's left sleeve.",
+        "illustrationPrompt": "Classroom morning view: Teacher Lin fastens red star armband onto An'an's teal hoodie sleeve; Tiantian watches happily from a low wooden shelf.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nTeacher Lin is an adult Chinese woman, hair in a neat low bun, sage-green cardigan and dark grey trousers.\nTiantian is a six-year-old Chinese boy, short black hair, sky-blue sweatshirt, navy trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Classroom morning view: Teacher Lin fastens red star armband onto An'an's teal hoodie sleeve; Tiantian watches happily from a low wooden shelf.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-04.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 5,
+        "zhText": "第一件事是整理阅读角。安安把绘本按大小一本一本排好，把翘起来的书角轻轻压平。",
+        "enText": "The first job was the reading corner. An'an lined the picture books up by size and gently smoothed the curled corners.",
+        "illustrationPrompt": "Reading corner view: An'an kneeling at a low wooden shelf, arranging blank-cover picture books by height, small hands pressing a curled corner flat.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Reading corner view: An'an kneeling at a low wooden shelf, arranging blank-cover picture books by height, small hands pressing a curled corner flat.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-05.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 6,
+        "zhText": "她发现一本书里夹着一张折成小方块的画，就把它交给林老师：“这不是书里的，可能是谁掉的。”",
+        "enText": "She found a small folded drawing tucked inside one book and brought it to Teacher Lin. “This isn't part of the book. Someone may have lost it.”",
+        "illustrationPrompt": "Close view: An'an holds a small folded paper with simple abstract shapes beside an open picture book; Teacher Lin reaches to take it.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nTeacher Lin is an adult Chinese woman, hair in a neat low bun, sage-green cardigan and dark grey trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Close view: An'an holds a small folded paper with simple abstract shapes beside an open picture book; Teacher Lin reaches to take it.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-06.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 7,
+        "zhText": "第二件事是叠午睡用的小毛巾。毛巾筐放在高架子上，安安踮起脚，还是够不到。",
+        "enText": "The second job was folding the small nap towels. The basket sat high on a shelf, and even on tiptoe An'an could not reach it.",
+        "illustrationPrompt": "Medium shot: An'an stretching on tiptoe with heels on the floor, fingertips short of a wicker basket on a high shelf; no stool nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Medium shot: An'an stretching on tiptoe with heels on the floor, fingertips short of a wicker basket on a high shelf; no stool nearby.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-07.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 8,
+        "zhText": "她没有搬凳子往上爬，而是去请林老师帮忙：“老师，这个太高了，我够不着。”老师把毛巾筐取了下来。",
+        "enText": "She did not drag a stool over to climb. Instead she asked Teacher Lin, “It's too high for me — could you help?” The teacher lifted the basket down.",
+        "illustrationPrompt": "Two-person view: An'an speaking to Teacher Lin with an open honest face; Teacher Lin reaching up to lift the wicker basket down safely.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nTeacher Lin is an adult Chinese woman, hair in a neat low bun, sage-green cardigan and dark grey trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Two-person view: An'an speaking to Teacher Lin with an open honest face; Teacher Lin reaching up to lift the wicker basket down safely.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-08.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 9,
+        "zhText": "安安把毛巾一条一条叠成小方块，边角对整齐，再轻轻放进筐里。",
+        "enText": "An'an folded the towels one by one into neat squares, matching the corners, and set them gently in the basket.",
+        "illustrationPrompt": "Tabletop close-up: small hands folding a soft towel into a tidy square, a neat stack already finished beside a wicker basket.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Tabletop close-up: small hands folding a soft towel into a tidy square, a neat stack already finished beside a wicker basket.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-09-v2.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 10,
+        "zhText": "天天凑过来小声问：“安安，你妈妈下午真的会来站岗吗？”安安点点头，心里也开始盼着四点。",
+        "enText": "Tiantian leaned in and whispered, “An'an, is your mom really coming for gate duty this afternoon?” An'an nodded, already looking forward to four o'clock.",
+        "illustrationPrompt": "Two children at the folding table: Tiantian in sky-blue sweatshirt whispering; An'an nodding with a hopeful smile, towel stack between them.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nTiantian is a six-year-old Chinese boy, short black hair, sky-blue sweatshirt, navy trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Two children at the folding table: Tiantian in sky-blue sweatshirt whispering; An'an nodding with a hopeful smile, towel stack between them.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-10.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 11,
+        "zhText": "下午户外活动结束，安安在二楼走廊的窗边往下看。大门口的路边，一个穿黄马甲的身影正站在那里。",
+        "enText": "When outdoor play ended, An'an looked down from the second-floor corridor window. By the road at the gate stood a figure in a yellow vest.",
+        "illustrationPrompt": "Interior corridor window view looking down onto the sunny gate road: a small figure in a plain yellow vest standing at the crossing; An'an's hands on the sill.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Interior corridor window view looking down onto the sunny gate road: a small figure in a plain yellow vest standing at the crossing; An'an's hands on the sill.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-11.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 12,
+        "zhText": "是妈妈。妈妈举起手，示意过往的车慢一点，又弯下腰，牵着一个小朋友走过通道。",
+        "enText": "It was Mom. She raised a hand to signal the passing cars to slow down, then bent low to lead a small child across the walkway.",
+        "illustrationPrompt": "Gate-level medium shot: Mom in plain yellow vest over coral cardigan raising one hand to traffic, other hand holding a younger child's hand on a plain crosswalk.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Gate-level medium shot: Mom in plain yellow vest over coral cardigan raising one hand to traffic, other hand holding a younger child's hand on a plain crosswalk.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-12.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 13,
+        "zhText": "安安刚想跑下楼，又停住了。她想起自己还在值日，玩具筐还没有收完。",
+        "enText": "An'an was about to run downstairs, then stopped. She remembered she was still on duty, and the toy baskets were not put away yet.",
+        "illustrationPrompt": "Corridor shot: An'an mid-step with one hand on the stair railing, glancing back toward her classroom door, caught between two choices.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Corridor shot: An'an mid-step with one hand on the stair railing, glancing back toward her classroom door, caught between two choices.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-13.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 14,
+        "zhText": "她跑去问林老师：“我可以到窗边跟妈妈挥挥手吗？”老师说：“可以，就站在窗边，不离开队伍。”",
+        "enText": "She ran to ask Teacher Lin, “May I wave to Mom from the window?” The teacher said, “Yes — stand right at the window, and stay with our group.”",
+        "illustrationPrompt": "Two-person corridor view: An'an asking with a small hopeful gesture; Teacher Lin nodding and pointing to the corridor window, children waiting in line behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nTeacher Lin is an adult Chinese woman, hair in a neat low bun, sage-green cardigan and dark grey trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Two-person corridor view: An'an asking with a small hopeful gesture; Teacher Lin nodding and pointing to the corridor window, children waiting in line behind.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-14.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 15,
+        "zhText": "安安把小手贴在玻璃上，用力挥了挥。妈妈抬起头，也回了一个小小的挥手，然后继续看着路口。",
+        "enText": "An'an pressed her hand to the glass and waved hard. Mom looked up, waved back just once, then turned her eyes to the crossing again.",
+        "illustrationPrompt": "Framed window view from inside: An'an's palm flat on the glass, waving; outside and below, Mom glances up with a brief smile and raised hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Framed window view from inside: An'an's palm flat on the glass, waving; outside and below, Mom glances up with a brief smile and raised hand.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-15.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 16,
+        "zhText": "妈妈没有走上来抱她。安安的鼻子有点酸，可看到妈妈身后的队伍排得整整齐齐，她又觉得心里暖暖的。",
+        "enText": "Mom did not come upstairs to hug her. An'an's nose tingled a little, but seeing the tidy line of children behind Mom, her heart felt warm again.",
+        "illustrationPrompt": "Close portrait of An'an at the window with slightly wistful eyes; beyond the glass, a neat queue of children and Mom small at the crossing.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Close portrait of An'an at the window with slightly wistful eyes; beyond the glass, a neat queue of children and Mom small at the crossing.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-16.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 17,
+        "zhText": "收好最后一只玩具筐，安安把红袖标交回老师手里。林老师在她手心贴了一颗金色小星星：“今天的值日生，站好了自己的岗。”",
+        "enText": "With the last toy basket stored away, An'an returned the red armband. Teacher Lin pressed a small gold star into her palm: “Today's helper stood her post well.”",
+        "illustrationPrompt": "Classroom late-afternoon view: Teacher Lin placing a gold foil star in An'an's open palm; red armband resting neatly on the desk, tidy shelves behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nTeacher Lin is an adult Chinese woman, hair in a neat low bun, sage-green cardigan and dark grey trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Classroom late-afternoon view: Teacher Lin placing a gold foil star in An'an's open palm; red armband resting neatly on the desk, tidy shelves behind.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-17.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 18,
+        "zhText": "放学时，安安排队走到门口。妈妈还站在岗位上，等最后一个小朋友被接走，才脱下黄马甲，蹲下来抱住她：“今天，我们都在自己的位置上帮了忙。”",
+        "enText": "At dismissal, An'an's line reached the gate. Mom stayed at her post until the last child was picked up, then took off the yellow vest and knelt to hug her: “Today we both helped from where we stood.”",
+        "illustrationPrompt": "Warm golden closing shot at the gate: Mom kneeling with open arms and folded yellow vest over her arm; An'an running into the hug, orange backpack bouncing, last children leaving hand in hand.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Kindergarten Big Class classroom and gate area, wooden furniture, low shelves, green plants, bright friendly atmosphere.\nTHIS PAGE'S SCENE: Warm golden closing shot at the gate: Mom kneeling with open arms and folded yellow vest over her arm; An'an running into the hug, orange backpack bouncing, last children leaving hand in hand.\nFollow current object state literally. Do not anticipate later events. All notice boards, books and signs stay blank with simple shapes, never readable text. Match the requested camera view, natural hands and subtle readable feelings. Distressed, wistful or disappointed children must not smile broadly.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/output/imagegen/richang-51/page-18.png",
+        "generationPromptScope": "full"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 51,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "值日服务",
+        "家长志愿者",
+        "岗位与规则",
+        "亲社会行为"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "理解“值日”和“志愿服务”都是为集体做事，体验在自己的位置上完成责任的成就感，同时学习在成人工作时保持安全距离。",
+      "reminder": "不把站岗说成“妈妈在看着你”，不让孩子因家长做志愿者而觉得自己特殊；也不鼓励孩子为了找妈妈离开班级队伍或跑出安全范围。",
+      "questions": [
+        "安安当值日生做了哪几件事？",
+        "安安在窗边看到妈妈站岗，为什么没有跑下楼？"
+      ],
+      "activity": "和孩子一起做一张“家庭岗位表”，每人认领一件小事（摆碗筷、浇花、收快递），一周后互相说一句“谢谢你在自己的岗位上”。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Mom's volunteer vest: plain fluorescent yellow safety vest with reflective strips, no letters, logos or badges, worn over her coral cardigan, only at the kindergarten gate crossing. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

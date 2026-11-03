@@ -1,0 +1,180 @@
+{
+  "batch": "batch-52-52",
+  "checkedAt": "2026-11-03T08:24:56.424Z",
+  "passed": true,
+  "books": [
+    {
+      "id": "da-ban-de-san-wei-lao-shi",
+      "title": "大班里的三位老师",
+      "order": 52,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/1.webp",
+          "bytes": 224734,
+          "sha256": "28dabedcf78802ecf61b85f80eb58b167692be020514feb229edaf8a5df04912"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/2.webp",
+          "bytes": 216040,
+          "sha256": "6a605f9e38903a303744d2995e1afd515133e17d4df33e77ab0b2d4e014eab7c"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/3.webp",
+          "bytes": 204678,
+          "sha256": "79742585a285331f43d55b0a672980c8b5a7b98eaeed9d4b1b27f6f356c3e875"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/4.webp",
+          "bytes": 273010,
+          "sha256": "38ac8159285213004c9ca0a2552b7f12521c7aba9883955d6921ec26b600cf20"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/5.webp",
+          "bytes": 242950,
+          "sha256": "ae3007929b0f007086645e1132659aa031c0724dad6b79ce87e1ca80bc4b8120"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/6.webp",
+          "bytes": 223998,
+          "sha256": "041f7092b5dd511b2abee68684d73b42a24600c8b06e532a3638c7b10bc606ba"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/7.webp",
+          "bytes": 253692,
+          "sha256": "a297b2536a44d3016b41cb7a01436178e0edad5e6b9351131031b56f97f0cd65"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/8.webp",
+          "bytes": 235866,
+          "sha256": "34a1d12bd97902261a629dcf90ab619d47c4eb86d35af52038dfb021e48142f4"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/9.webp",
+          "bytes": 225542,
+          "sha256": "d42a95960a74b2ed43a87ed5faa5eaa5d1c659abf231122be4a0139f2c81ccdc"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/10.webp",
+          "bytes": 233108,
+          "sha256": "6dc0c715f1a2296357e1f6bc3b4c4e44c19f172651af201843b19f3dbbaf4931"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/11.webp",
+          "bytes": 186038,
+          "sha256": "0362b192759ed67c7d88029a0f5bd157b7a977fde046c3d8ab61be3c4c61dc81"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/12.webp",
+          "bytes": 200106,
+          "sha256": "36741830d9248bcdeb46cb68eace9d740a5aa78b602c9a61156fb7378b16a27a"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/13.webp",
+          "bytes": 201328,
+          "sha256": "ee6e508d928882b60163eff0a682c78d7ddfe64b965a3f5ca5011b78aa0babb1"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/14.webp",
+          "bytes": 185528,
+          "sha256": "9dfefa78b3151a4aca09530c88c5bbc22b035be3e2b821320ea415cf95ce4e90"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/15.webp",
+          "bytes": 218258,
+          "sha256": "8bc6021d32a5e4150e6b17f9eb402b0a05edca0cd958dfefcec1e64c4e9c2636"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/16.webp",
+          "bytes": 256336,
+          "sha256": "41bbdc0cf11a66ea0ba7ed6fe0d2778e8213afae9a4e01c8ca9b92b2130e74b1"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/17.webp",
+          "bytes": 275864,
+          "sha256": "28df80df47cfce1cd2da12aa705cb8aa2e0c2d925da6d9e1f77e6a5058f199a9"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/da-ban-de-san-wei-lao-shi/18.webp",
+          "bytes": 274476,
+          "sha256": "2391e56b282602f393e01cfe84fa4ab67f229cbbf2b4f52e449376e929e3729d"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/da-ban-de-san-wei-lao-shi/zh-a8ef320719f1e36d.mp3",
+        "contentHash": "a8ef320719f1e36d65fa54000f2333c02fd69a07efb7cd5972a1d1f481136bc9",
+        "pageStarts": [
+          0,
+          13.404,
+          25.92,
+          38.436,
+          51.912,
+          63.708,
+          79.344,
+          92.268,
+          102.384,
+          118.188,
+          130.056,
+          142.812,
+          151.728,
+          166.644,
+          182.112,
+          198.156,
+          212.664,
+          225.828
+        ],
+        "duration": 240.372,
+        "bytes": 1923693,
+        "sha256": "9ae942d72c87c66300906e38d129b37528dbeb1654454a77577181574e3335c2",
+        "decodedSeconds": 240.372,
+        "pageRms": [
+          0.067422,
+          0.072677,
+          0.067457,
+          0.06622,
+          0.067837,
+          0.063316,
+          0.074706,
+          0.071002,
+          0.070747,
+          0.068334,
+          0.067337,
+          0.07647,
+          0.067858,
+          0.071908,
+          0.065285,
+          0.070386,
+          0.073301,
+          0.074653
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "totals": {
+    "expectedBooks": 1,
+    "checkedBooks": 1,
+    "expectedPages": 18,
+    "images": 18,
+    "audioFiles": 1,
+    "narrationSeconds": 240.372
+  }
+}

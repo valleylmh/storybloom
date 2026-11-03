@@ -1,0 +1,47 @@
+{
+  "manuscripts": "complete",
+  "totalPages": 18,
+  "imagesComplete": 18,
+  "narration": "complete-local",
+  "books": [
+    {
+      "id": "ma-ma-zai-xiao-men-kou-zhan-gang",
+      "title": "今天妈妈在校门口站岗",
+      "pages": 18,
+      "order": 51,
+      "completeImages": 18,
+      "narration": "complete-local",
+      "locallyReadable": true
+    }
+  ],
+  "uploaded": false,
+  "deployed": false,
+  "status": "complete-local",
+  "createdOn": "2026-10-27",
+  "production": {
+    "illustrations": {
+      "provider": "magpie imagegen",
+      "model": "codex/gpt-image-2",
+      "pages": 18,
+      "size": "1200x1200 WebP",
+      "maxBytes": 307200,
+      "repairedPages": [
+        3,
+        9
+      ]
+    },
+    "narration": {
+      "provider": "Bailian Token Plan TTS",
+      "model": "qwen-audio-3.0-tts-plus",
+      "voice": "longanlingxin",
+      "language": "zh",
+      "pageTimings": 18,
+      "totalSeconds": 165.276,
+      "textHashVerified": true
+    },
+    "savedLocally": true,
+    "uploadedToSite": false,
+    "deployed": false,
+    "committed": false
+  }
+}

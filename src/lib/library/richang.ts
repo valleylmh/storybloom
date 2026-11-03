@@ -39,6 +39,18 @@ import angryHands from "../../../content-drafts/richang/sheng-qi-de-xiao-shou-fa
 import nextEpisode from "../../../content-drafts/richang/zhe-yi-ji-wo-hai-xiang-kan.json";
 import misunderstood from "../../../content-drafts/richang/zhe-ci-zhen-de-bu-shi-wo.json";
 import shyHello from "../../../content-drafts/richang/na-sheng-ni-hao-cang-zai-bei-hou.json";
+import schoolGoodbye from "../../../content-drafts/richang/xiao-men-kou-de-na-yi-ci-hui-shou.json";
+import looseTooth from "../../../content-drafts/richang/yao-huang-de-di-yi-ke-xiao-ru-ya.json";
+import pinyinCurves from "../../../content-drafts/richang/pin-yin-wang-guo-li-de-xiao-wan-gou.json";
+import wanderingNumbers from "../../../content-drafts/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi.json";
+import bathroomRequest from "../../../content-drafts/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma.json";
+import quietNap from "../../../content-drafts/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang.json";
+import joiningPlay from "../../../content-drafts/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma.json";
+import packingBag from "../../../content-drafts/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou.json";
+import classroomHelper from "../../../content-drafts/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng.json";
+import afterSchool from "../../../content-drafts/richang/fang-xue-lu-shang-man-man-shuo.json";
+import gateVolunteer from "../../../content-drafts/richang/ma-ma-zai-xiao-men-kou-zhan-gang.json";
+import threeTeachers from "../../../content-drafts/richang/da-ban-de-san-wei-lao-shi.json";
 
 type EverydayDraft = {
   book: Omit<LibraryBook, "pages"> & {
@@ -54,6 +66,9 @@ export const RICHANG_BOOKS: LibraryBook[] = [
   caregiverAgreement, nightLight, cloudViews,
   loudVoice, tearsFirst, stuckWords, favoriteFlavor, sharedSnack, wantToyNow,
   angryHands, nextEpisode, misunderstood, shyHello,
+  schoolGoodbye, looseTooth, pinyinCurves, wanderingNumbers, bathroomRequest,
+  quietNap, joiningPlay, packingBag, classroomHelper, afterSchool, gateVolunteer,
+  threeTeachers,
 ].filter((source) => !source.book.comingSoon).map((source) => {
   const draft = source as EverydayDraft;
   return {
@@ -74,7 +89,7 @@ export const RICHANG_SERIES: LibrarySeries = {
   id: "richang",
   title: "日常系列",
   subtitle: "小日子里的大发现",
-  description: "跟着安安和家人、朋友，走进餐桌、玩具角、小区和公园。从一篮苹果到生活中的选择、关系与感受，在熟悉的小事里感受分享、约定、边界与陪伴。每本 12–20 页中英双语故事，配有中文旁白和亲子共读提示。",
+  description: "跟着安安和家人、朋友，走进餐桌、玩具角、小区、公园和幼儿园。从生活中的选择与感受，到大班里的换牙、自理、交朋友、当值日生、三位老师的默契分工和家长志愿服务，在熟悉的小事里感受分享、约定、边界与陪伴。每本 12–20 页中英双语故事，配有中文旁白和亲子共读提示。",
   coverImage: "/library/richang/lan-ping-guo/1.webp",
   accent: "#cc7a45",
   ageRange: "4–8 岁",

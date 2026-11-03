@@ -1,0 +1,21 @@
+{
+  "manuscripts": "complete",
+  "totalPages": 18,
+  "imagesComplete": 18,
+  "narration": "complete",
+  "books": [
+    {
+      "id": "da-ban-de-san-wei-lao-shi",
+      "title": "大班里的三位老师",
+      "pages": 18,
+      "order": 52,
+      "completeImages": 18,
+      "narration": "complete",
+      "locallyReadable": true
+    }
+  ],
+  "uploaded": false,
+  "deployed": false,
+  "status": "production-complete",
+  "createdOn": "2026-11-03"
+}

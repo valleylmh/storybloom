@@ -1,0 +1,121 @@
+{
+  "completedAt": "2026-10-23T06:48:53.985Z",
+  "status": "complete-local",
+  "scope": "Approved everyday books 41-50 for six-year-old senior-kindergarten life and gentle school readiness.",
+  "books": [
+    {
+      "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+      "title": "校门口的那一次挥手",
+      "order": 41,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou"
+    },
+    {
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "title": "摇晃的第一颗小乳牙",
+      "order": 42,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya"
+    },
+    {
+      "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+      "title": "拼音王国里的小弯钩",
+      "order": 43,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou"
+    },
+    {
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "title": "跳出田字格的小数字",
+      "order": 44,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi"
+    },
+    {
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "title": "我想去洗手间，可以举手吗？",
+      "order": 45,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma"
+    },
+    {
+      "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+      "title": "睡不着的午休小床",
+      "order": 46,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang"
+    },
+    {
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "title": "我可以和你们一起玩吗？",
+      "order": 47,
+      "pages": 20,
+      "url": "http://127.0.0.1:3000/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma"
+    },
+    {
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "title": "我的小书包，今天自己收",
+      "order": 48,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou"
+    },
+    {
+      "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+      "title": "今天我是大班值日生",
+      "order": 49,
+      "pages": 18,
+      "url": "http://127.0.0.1:3000/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng"
+    },
+    {
+      "id": "fang-xue-lu-shang-man-man-shuo",
+      "title": "放学路上，慢慢说",
+      "order": 50,
+      "pages": 16,
+      "url": "http://127.0.0.1:3000/library/richang/fang-xue-lu-shang-man-man-shuo"
+    }
+  ],
+  "totals": {
+    "books": 10,
+    "pages": 180,
+    "illustrations": 180,
+    "narrationBooks": 10,
+    "narrationSeconds": 1635.528,
+    "seriesBookCount": 50
+  },
+  "validation": {
+    "editorialEntriesReviewed": 77,
+    "imageRepairsReviewed": 40,
+    "imagesAndAudioAudit": true,
+    "normalHttpAssets": 190,
+    "audioRange206": 10,
+    "desktopPlaybackBooks": 10,
+    "mobileViewportBooks": 10,
+    "cloudGenerationRequestsDuringPlayback": 0,
+    "passedTests": 32,
+    "typecheck": true,
+    "diffCheck": true
+  },
+  "saved": true,
+  "uploadedToSite": false,
+  "deployed": false,
+  "committed": false,
+  "productionBuildRun": false,
+  "humanSpecialistReview": false,
+  "physicalDeviceTested": false,
+  "childPlaytest": false,
+  "evidence": [
+    "manuscript.md",
+    "editorial-corrections.json",
+    "image-production-manifest.json",
+    "image-repairs.json",
+    "asset-audit.json",
+    "http-acceptance.json",
+    "browser-acceptance.json",
+    "visual-review.json",
+    "test-results.json",
+    "code-validation.json",
+    "desktop.png",
+    "mobile.png"
+  ],
+  "localPreview": "http://127.0.0.1:3000/library/richang"
+}

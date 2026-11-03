@@ -1,0 +1,298 @@
+{
+  "book": {
+    "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+    "seriesId": "richang",
+    "title": "睡不着的午休小床",
+    "subtitle": "安静地躺一会儿，身体也在充电",
+    "moral": {
+      "zh": "睡不着也没关系；闭上眼睛轻轻呼吸，身体就会慢慢积蓄起下午的活力。",
+      "en": "It is okay if sleep does not come right away; resting quietly with closed eyes still recharges our body with energy."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 46,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "午饭后，大班的教室拉上了厚厚的鹅黄色遮光窗帘，屋子里一下子变成了柔和温暖的黄昏模样。",
+        "enText": "After lunch, the senior classroom drew its thick honey-yellow curtains, turning the room into a cozy twilight space.",
+        "illustrationPrompt": "Dim cozy classroom: yellow curtains drawn, soft filtered daylight, neat rows of small wooden cots laid out across the floor.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Dim cozy classroom: yellow curtains drawn, soft filtered daylight, neat rows of small wooden cots laid out across the floor.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_106287__tsk16__h8XaXFT0A29XMptw.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "一排排小木床整整齐齐地排在地毯上。小朋友们脱掉小鞋子，钻进了各自的小被窝里。",
+        "enText": "Neat rows of low wooden cots lined the carpet. Children took off their shoes and tucked into their little blankets.",
+        "illustrationPrompt": "Medium wide cot scene: children climbing into beds with small colorful quilts; unworn shoes placed neatly beside beds.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium wide cot scene: children climbing into beds with small colorful quilts; unworn shoes placed neatly beside beds.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_123304__tsk16__o-AYTgGM1R6U256D.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "安安盖着自己的淡绿色小花被子，脱掉的红白运动鞋整齐地摆在床头边的小地垫上。",
+        "enText": "An'an lay under her pale-green floral quilt, her white-red sneakers placed neatly on a small mat beside her pillow.",
+        "illustrationPrompt": "Low view: An'an lies on her cot with quilt pulled up to shoulders, yellow star clip placed on little bedside dish.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Low view: An'an lies on her cot with quilt pulled up to shoulders, yellow star clip placed on little bedside dish.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_115753__tsk16__Iz9JrnnjABCDuuxg.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "周围渐渐安静下来。旁边的小朋友翻了个身，很快睡着了；有人抱着小熊，呼吸轻轻的。",
+        "enText": "The room grew quiet. A nearby child turned over and soon fell asleep. Another hugged a teddy bear, breathing softly.",
+        "illustrationPrompt": "Medium bedroom scene: neighboring children sleeping peacefully with soft breathing; dim peaceful room.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium bedroom scene: neighboring children sleeping peacefully with soft breathing; dim peaceful room.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_155689__tsk16__LPWRBHdN7dEXh7l9.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "可是，安安睁着大大的眼睛，盯着天花板上的吊扇发呆。她一点儿睡意也没有，脑子里特别清醒。",
+        "enText": "Yet An'an's eyes were wide open, gazing up at the ceiling fan. She didn't feel sleepy at all; her mind felt completely wide awake.",
+        "illustrationPrompt": "Close portrait: An'an lies on back, round face gazing up into the gentle dimness, clearly awake, arms inside green quilt.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an lies on back, round face gazing up into the gentle dimness, clearly awake, arms inside green quilt.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_113847__tsk16__OJGbZDOuD4HZRbwh.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "安安侧过身，床板“吱呀”轻轻响了一声。这微小的声音在安静的教室里显得格外刺耳，吓得她赶紧僵住不敢动。",
+        "enText": "An'an rolled to her side, and the wooden cot creaked softly. In the quiet room, the noise felt huge, making her freeze in place.",
+        "illustrationPrompt": "Low bed view: An'an freezes on her side with eyes alert, worried that the sound might disturb others; dim room.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Low bed view: An'an freezes on her side with eyes alert, worried that the sound might disturb others; dim room.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_176224__tsk16__7q436fqXxZEUsiLg.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 7,
+        "zhText": "“大家都睡着了，只有我不睡觉，老师会不会觉得我是个不听话的坏孩子？”安安心里像揣了一只小兔子般不安。",
+        "enText": "“Everyone is asleep except me. Will the teacher think I'm being naughty?” An'an worried, her heart fluttering nervously.",
+        "illustrationPrompt": "Close-up of face: An'an presses cheek into cotton pillow, brows knit with anxiety, staring into empty dim air.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of face: An'an presses cheek into cotton pillow, brows knit with anxiety, staring into empty dim air.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_120767__tsk16__q0xYtahTgsVj7YrC.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "为了快点睡着，安安紧紧闭上眼睛，在心里默念数羊：“一只羊、两只羊、三只羊……”可数到了一百只，还是醒着的。",
+        "enText": "To fall asleep faster, An'an squeezed her eyes shut and counted sheep: “One sheep, two sheep, three sheep...” But at one hundred, she was still awake.",
+        "illustrationPrompt": "Close-up: An'an squeezes eyelids tight, facial muscles tense with the effort of forcing sleep; quilt tucked to chin.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up: An'an squeezes eyelids tight, facial muscles tense with the effort of forcing sleep; quilt tucked to chin.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_120530__tsk16__-pQ76aLJ4sKNDMEk.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "她越是逼着自己睡觉，太阳穴就越是跳得欢，甚至觉得小枕头有点硬邦邦的，被窝里也有点热烘烘的。",
+        "enText": "The harder she forced herself, the more her temples throbbed; the pillow felt stiff and the blanket uncomfortably warm.",
+        "illustrationPrompt": "Quiet kindergarten nap room. An'an lies awake with a slightly uncomfortable warm expression on a low wooden cot, fully dressed in her teal hoodie and BLUE JEANS. Light sage-green quilt with small white daisy pattern is folded down a little at her waist, both jean-clad legs covered below knees; no bare legs. Star hair clip removed for nap and placed safely on bedside dish. One small white pillow, subdued daylight, no other child needed.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Correct ONLY An'an's facial expression to match this BEFORE-comfort moment: she is awake, hot and frustrated that she cannot fall asleep. Brows softly furrowed with raised inner corners, eyes tired and worried, mouth CLOSED with corners slightly DOWN, NO smile, no happy sparkle. Subtle ordinary child discomfort, not terror and not crying dramatically. Keep exact girl identity, short dark bob with hair clip removed, teal hoodie, visible BLUE JEANS, green daisy quilt and pillow, cot, shoes and star clip on dish. Preserve composition, warm but subdued afternoon light, 3D illustration. No words or watermark.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-1c008085-348d-42d5-9201-25003550cbcc.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_180793__tsk16__oOXgxqnAdHPZC6gE.png",
+            "generationPrompt": "Medium overhead view: An'an tossing restlessly on cot, small feet kicking slightly at the blanket hem, looking miserable.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/iterations/9-339d2988ee74.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-2f33b4a1-bba9-447c-89ff-8415f76a3896.png"
+        ]
+      },
+      {
+        "page": 10,
+        "zhText": "轻轻的脚步声在地毯上停下，巡视午休的林老师悄悄走了过来，在安安的小床边半蹲下来。",
+        "enText": "Gentle footsteps stopped by the carpet. Teacher Lin, patrolling the quiet room, knelt softly beside An'an's cot.",
+        "illustrationPrompt": "Quiet kindergarten nap room. Teacher Lin with low bun, sage cardigan and charcoal trousers kneels attentively beside An'an's low wooden cot. An'an lies awake fully dressed in teal hoodie and BLUE JEANS under sage-green daisy quilt, quilt comfortably covers legs; no bare legs or nightdress. Star clip on bedside dish, not on sleeping hair. Teacher's expression caring, not scolding. Soft dim daylight.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Quiet kindergarten nap room. Teacher Lin with low bun, sage cardigan and charcoal trousers kneels attentively beside An'an's low wooden cot. An'an lies awake fully dressed in teal hoodie and BLUE JEANS under sage-green daisy quilt, quilt comfortably covers legs; no bare legs or nightdress. Star clip on bedside dish, not on sleeping hair. Teacher's expression caring, not scolding. Soft dim daylight.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-3446300f-27e5-43c3-9abd-44c7e666518d.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_108604__tsk16__giNMlh39KYyOu_18.png",
+            "generationPrompt": "Dim intimate two-person shot: Teacher Lin in sage cardigan squats beside low bed, looking down with warm gentle eyes.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/iterations/10-f5016a2e4a56.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/3.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 11,
+        "zhText": "安安吓得赶紧把眼睛闭得死死的，假装已经睡熟了。但她微微颤抖的长睫毛把秘密全都透露了。",
+        "enText": "An'an quickly clamped her eyes shut, pretending to be fast asleep. But her fluttering eyelashes gave her secret away.",
+        "illustrationPrompt": "Close portrait: An'an feigning sleep with twitching eyelashes and tightly shut mouth; Teacher Lin's hand rests gently nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an feigning sleep with twitching eyelashes and tightly shut mouth; Teacher Lin's hand rests gently nearby.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_126458__tsk16__QDKTQgw9yNsAzPWQ.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 12,
+        "zhText": "林老师没有叫醒她责备，而是伸出温暖干燥的手，轻轻抚了抚安安有些汗湿的额头。",
+        "enText": "Instead of waking her with a scold, Teacher Lin reached out and gently smoothed An'an's warm, sweaty forehead.",
+        "illustrationPrompt": "Close shot: Teacher Lin's calm hand brushes hair from An'an's temple, soothing the furrow in her brow with tender touch.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close shot: Teacher Lin's calm hand brushes hair from An'an's temple, soothing the furrow in her brow with tender touch.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_123172__tsk16__EswFbFKfZGcXzIfp.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 13,
+        "zhText": "安安慢慢睁开眼睛，难过地小声说：“老师……我努力数了一百只羊，可我还是睡不着。”",
+        "enText": "An'an opened her eyes slowly, whispering with shame: “Teacher... I counted a hundred sheep, but I just can't sleep.”",
+        "illustrationPrompt": "Close two-person whisper: An'an looks up tearfully from pillow; Teacher Lin bends close, smiling with serene kindness.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close two-person whisper: An'an looks up tearfully from pillow; Teacher Lin bends close, smiling with serene kindness.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_110140__tsk16__2QeuyasU8B6EK9kj.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 14,
+        "zhText": "“现在还没睡着，也没有关系。”林老师在床边坐下，轻轻地说，“你不需要假装。”",
+        "enText": "“It is all right that you are still awake,” Teacher Lin whispered, sitting beside the bed. “You do not need to pretend.”",
+        "illustrationPrompt": "Two-person whisper view: Teacher Lin speaks close to An'an's ear; An'an listens with wide relieved eyes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two-person whisper view: Teacher Lin speaks close to An'an's ear; An'an listens with wide relieved eyes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_126042__tsk16__oH7p9tMYnHBiCk5T.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 15,
+        "zhText": "“小身体有时候像一块充满电的小电池，不一定每次都需要关机睡着。”老师帮她把被角塞得平平整整。",
+        "enText": "“Sometimes our body is like a fully charged battery; it doesn't need to shut down every afternoon,” the teacher smoothed the quilt.",
+        "illustrationPrompt": "Close hands: Teacher Lin's hands tuck the pale-green quilt comfortably around An'an's shoulders without pressure.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close hands: Teacher Lin's hands tuck the pale-green quilt comfortably around An'an's shoulders without pressure.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_116635__tsk16__k3zd3WXb_H90Lr81.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 16,
+        "zhText": "“只要安静地闭上眼睛躺着，给小腿和小眼睛放个假，听听窗外树叶的沙沙声，身体就在默默充电呢。”老师说。",
+        "enText": "“Just resting with eyes closed gives little legs and eyes a holiday. Listening to leaves rustling still recharges you,” she said.",
+        "illustrationPrompt": "Medium peaceful scene: Teacher Lin points softly toward the window; An'an's tense shoulders completely melt into relaxation.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium peaceful scene: Teacher Lin points softly toward the window; An'an's tense shoulders completely melt into relaxation.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_119039__tsk16__5qFYpLtZ_QmIsKlH.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 17,
+        "zhText": "安安心里那块沉甸甸的石头放下了。她不再使劲闭眼，只是舒服地躺着，听窗外很轻的声音。",
+        "enText": "The weight in An'an's heart lifted. She stopped squeezing her eyes shut and rested comfortably, listening to the soft sounds outside.",
+        "illustrationPrompt": "Close serene portrait: An'an closes eyes naturally with a peaceful faint smile, relaxed breathing, hand resting on quilt.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close serene portrait: An'an closes eyes naturally with a peaceful faint smile, relaxed breathing, hand resting on quilt.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_148832__tsk16__SwmHFsJ7wv6eBJ-4.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 18,
+        "zhText": "这一次，安安后来睡着了。也许另一天，她只安静地休息。无论哪一种，老师都愿意陪她找到舒服的办法。",
+        "enText": "This time, An'an fell asleep later. Another day, she might simply rest quietly. Either way, her teacher would help her feel comfortable.",
+        "illustrationPrompt": "Peaceful wide closing shot: An'an sleeping peacefully among neat cots; soft sunlight through yellow curtains, alarm clock nearby.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Peaceful wide closing shot: An'an sleeping peacefully among neat cots; soft sunlight through yellow curtains, alarm clock nearby.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_147589__tsk16__m0egvSos9WGxkVGr.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 46,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "大班午休",
+        "睡眠放松",
+        "集体适应"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "卸除大班孩子在集体午休中“非睡不可”的焦虑，学会不打扰他人的安静独处与身体放松。",
+      "reminder": "承认大班儿童睡眠需求存在个体差异，不以“必须入睡”作为乖巧标准，允许静卧休息。",
+      "questions": [
+        "安安睡不着的时候，心里在担心什么？",
+        "就算没有睡着，闭上眼睛躺着有什么好处？"
+      ],
+      "activity": "和孩子一起体验 3 分钟“静音听风”呼吸游戏：闭上眼睛，数出房间里能听到的三种细微声音。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

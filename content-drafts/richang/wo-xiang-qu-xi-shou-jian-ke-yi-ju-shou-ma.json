@@ -1,0 +1,333 @@
+{
+  "book": {
+    "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+    "seriesId": "richang",
+    "title": "我想去洗手间，可以举手吗？",
+    "subtitle": "身体的小信号最重要",
+    "moral": {
+      "zh": "规则是为了照顾大家，而身体的健康永远排在第一位；有需要就勇敢举手。",
+      "en": "Rules help care for everyone, and our body's health always comes first; raise your hand bravely when you need to."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 45,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "大班的故事时间到了。林老师坐在大家面前，打开一本关于大鲸鱼的绘本，开始讲起来。",
+        "enText": "It was story time in the oldest kindergarten class. Teacher Lin sat with the children and opened a picture book about a great whale.",
+        "illustrationPrompt": "Classroom wide view: Teacher Lin holds up large illustrated picture book; children sitting on wooden chairs listening attentively.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Classroom wide view: Teacher Lin holds up large illustrated picture book; children sitting on wooden chairs listening attentively.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_63965__tsk16__P0LAP853P0ExBMqD.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "教室里安安静静的，大家都在聚精会神地听着。窗外小树叶在风里轻轻摇晃。",
+        "enText": "The room was peaceful and quiet as everyone listened intently. Outside, young leaves rustled gently in the morning breeze.",
+        "illustrationPrompt": "Classroom middle shot: neat rows of low desks, quiet atmosphere, sunlight streaming through large classroom windows.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Classroom middle shot: neat rows of low desks, quiet atmosphere, sunlight streaming through large classroom windows.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_56602__tsk16__fBYDCpkcPjYAiI4S.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "安安坐在第三排，两只手规规矩矩地放在膝盖上。突然，她觉得肚子里“咕噜”响了一声，小肚子变得鼓鼓胀胀的。",
+        "enText": "An'an sat in the third row with hands folded on her knees. Suddenly, her tummy gave a soft rumble and felt uncomfortably full.",
+        "illustrationPrompt": "Medium desk shot: An'an sits upright, but her eyebrows knit together and hands move instinctively toward her lower tummy.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium desk shot: An'an sits upright, but her eyebrows knit together and hands move instinctively toward her lower tummy.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_49514__tsk16__f-Jksypk_ZVxs4yX.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "“我想去洗手间了……”安安望向门口。故事讲到一半，她却不知道该不该现在开口。",
+        "enText": "“I need the bathroom,” An'an thought, looking toward the door. The story was halfway through, and she was unsure whether to speak up.",
+        "illustrationPrompt": "Close portrait: An'an looks worried, shifting slightly in her wooden chair, eyes darting toward the classroom door.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an looks worried, shifting slightly in her wooden chair, eyes darting toward the classroom door.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_85956__tsk16__i_tF_yFAuZAG4L2Z.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "她想起开学第一天老师说的纪律：“上课时要保持安静，不随意走动。”安安把两只脚并得紧紧的，不敢乱动一下。",
+        "enText": "She remembered the first-day rule: “Stay quiet during class and do not wander.” An'an clamped her feet tight, afraid to move.",
+        "illustrationPrompt": "Low shot: An'an's legs pressed firmly together, white-red sneakers planted side by side, knees trembling with strain.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Low shot: An'an's legs pressed firmly together, white-red sneakers planted side by side, knees trembling with strain.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_94536__tsk16__c7hTkrUcLD_tqUVE.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "林老师翻开下一页，讲到了大鲸鱼喷出高高的水花。全班同学都笑了起来，可安安却一点儿也笑不出声来。",
+        "enText": "Teacher Lin turned the page to a whale spouting water. The class laughed in delight, but An'an could not even smile.",
+        "illustrationPrompt": "Medium classroom shot: other kids smiling at the book; An'an sits stiffly with pale cheeks and tense clenched fists.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium classroom shot: other kids smiling at the book; An'an sits stiffly with pale cheeks and tense clenched fists.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_63284__tsk16__z3t-uLe6NGb0UEFw.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 7,
+        "zhText": "随着时间的过去，肚子胀得越来越厉害，像装了一个快要吹爆的小气球。安安的额头甚至渗出了一颗颗亮晶晶的小汗珠。",
+        "enText": "As minutes ticked by, her tummy felt like a balloon stretched to bursting. Tiny beads of sweat appeared on her forehead.",
+        "illustrationPrompt": "Close portrait: An'an bites her lower lip, sweating softly at temple, eyes brimming with held-back tears of discomfort.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an bites her lower lip, sweating softly at temple, eyes brimming with held-back tears of discomfort.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_58104__tsk16__tyGVKfV1GwH6iuvL.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "“现在举手，老师会不会当着全班同学批评我下课没去厕所？”安安心里像打鼓一样七上八下，手缩在桌子下面直打颤。",
+        "enText": "“If I raise my hand now, will the teacher scold me in front of everyone?” Her heart drummed in panic; her hands shook under the desk.",
+        "illustrationPrompt": "Desk view: An'an's hands clutched tightly under oak table, head bowed, feeling cornered by embarrassment.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Desk view: An'an's hands clutched tightly under oak table, head bowed, feeling cornered by embarrassment.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_97556__tsk16__TqfDvlaUmOXyz2IJ.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "同桌乐乐注意到了安安的不自在。乐乐侧过身，悄悄拉了拉安安的衣角：“安安，你怎么啦？脸都白了。”",
+        "enText": "Desk partner Lele noticed her discomfort. He leaned in and tugged her sleeve softly: “An'an, what's wrong? You look pale.”",
+        "illustrationPrompt": "Two-person desk view: Lele in mustard sweatshirt whispers with concern; An'an whispers back with tight lips.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two-person desk view: Lele in mustard sweatshirt whispers with concern; An'an whispers back with tight lips.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_140413__tsk16__C20WtPrVumyXiVbF.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 10,
+        "zhText": "“我想去洗手间……但我不敢举手。”安安带着哭腔小声说。",
+        "enText": "“I need the bathroom... but I'm scared to raise my hand,” An'an whispered with a catch in her throat.",
+        "illustrationPrompt": "Close two-person view: An'an whispers to Lele with watery eyes; Lele listens with an earnest, supportive nod.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close two-person view: An'an whispers to Lele with watery eyes; Lele listens with an earnest, supportive nod.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_132281__tsk16__BAFxLlmoV8P1aUsi.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 11,
+        "zhText": "“可以告诉老师你需要帮助。”乐乐轻声鼓励她，“不用一直忍着，我陪你举一下手。”",
+        "enText": "“You can tell the teacher you need help,” Lele encouraged softly. “You do not have to hold it. I can raise a hand with you.”",
+        "illustrationPrompt": "Close view: Lele pats An'an's arm encouragingly, nodding toward the front; An'an looks toward the teacher.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close view: Lele pats An'an's arm encouragingly, nodding toward the front; An'an looks toward the teacher.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_67274__tsk16___yKIfUDUiRYu4Xa_.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 12,
+        "zhText": "安安深吸了一口气。她想起了妈妈说过的话：“身体不舒服时，一定要第一时间告诉大人。”",
+        "enText": "An'an took a deep breath. She remembered Mom's words: “Whenever your body feels uncomfortable, tell a grown-up right away.”",
+        "illustrationPrompt": "Medium shot: An'an straightens her back, taking courage, tears still lingering on lashes.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium shot: An'an straightens her back, taking courage, tears still lingering on lashes.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_65152__tsk16__pAu8teJ11bPL3sOg.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 13,
+        "zhText": "安安举起了右手。小手臂直直地伸向空中：“林老师……我想去洗手间。”声音不大，但清楚明白。",
+        "enText": "An'an raised her right arm straight up into the air. “Teacher Lin... may I go to the bathroom?” Her voice was soft, but clear.",
+        "illustrationPrompt": "Kindergarten group story time. An'an sits on her small chair and raises one hand straight up, clearly asking for the bathroom with a tentative but brave expression. Teacher Lin in sage cardigan and CHARCOAL trousers holds an open WHALE picture book, a BLUE WHALE swimming in ocean, no rabbit. A few classmates sit quietly, no laughing at child. NO backpacks worn or held anywhere in foreground.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten group story time. An'an sits on her small chair and raises one hand straight up, clearly asking for the bathroom with a tentative but brave expression. Teacher Lin in sage cardigan and CHARCOAL trousers holds an open WHALE picture book, a BLUE WHALE swimming in ocean, no rabbit. A few classmates sit quietly, no laughing at child. NO backpacks worn or held anywhere in foreground.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-bb4d4a74-6cec-4ffa-93ff-be5b1246dd23.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_81102__tsk16__b_6TWwyMDQnwGg2F.png",
+            "generationPrompt": "Front classroom view: An'an raises hand high from her desk; Teacher Lin pauses storybook and looks toward her warmly.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/iterations/13-502f2c55e65c.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 14,
+        "zhText": "教室里没有哄堂大笑，也没有严厉的责怪。林老师立刻放下了手里的绘本，微笑着对安安点头：“快去吧，安安！”",
+        "enText": "There was no laughter and no scolding. Teacher Lin lowered the book at once and smiled warmly: “Go right ahead, An'an!”",
+        "illustrationPrompt": "Teacher Lin in sage cardigan and CHARCOAL trousers smiles reassuringly and nods to An'an, placing the large BLUE WHALE picture book down on the low classroom table, sea-blue whale spread visible, no rabbit. An'an begins to stand from chair, relieved. All children wear normal clothes and NO backpacks. No mockery or alarm.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Image 1 is the EDIT TARGET. Correct ONLY An'an's lower-body pose: she must stand safely on the FLOOR beside the chair, BOTH white-red sneakers FLAT ON THE FLOOR, knees straight and natural. No knee, leg or foot on the chair seat, no climbing, no raised foot resting on furniture. She is simply standing after being excused, beside an EMPTY chair behind her. Preserve her upper body, cheerful but calm face, yellow hair clip, teal hoodie, Mom-like Teacher Lin identity in sage cardigan and charcoal trousers, whale picture book, desk, lighting and composition. Exactly two legs per person; no text or watermark.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-4fbc32fa-8289-4426-b7c7-b615ad0a1ee7.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_103859__tsk16__uBrqhgiAPGMg-8ms.png",
+            "generationPrompt": "Medium shot: Teacher Lin gestures gently toward the door with an open, welcoming smile; class remains quiet and respectful.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/iterations/14-48d2f275677e.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-124ab8db-3051-44b4-b6a1-aed577146749.png"
+        ]
+      },
+      {
+        "page": 15,
+        "zhText": "门边的天天帮忙扶住通往洗手区的门。林老师留意着旁边的短走廊，安安快步走了过去。",
+        "enText": "Tiantian held the door to the handwashing area. Teacher Lin watched the short corridor nearby as An'an walked briskly over.",
+        "illustrationPrompt": "Public kindergarten hand-washing entry, NOT a private toilet cubicle. Tiantian, six-year-old Chinese BOY short dark hair, sky-blue top and navy trousers, gently holds the OUTER hand-wash-area door as An'an walks briskly through fully dressed, EMPTY back, NO backpack. Teacher Lin in sage cardigan and charcoal trousers watches attentively from immediately adjacent short classroom corridor, close enough to supervise. A low hand-washing basin visible beyond door, no toilets or undressing. Cheerful safe normal scene.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Public kindergarten hand-washing entry, NOT a private toilet cubicle. Tiantian, six-year-old Chinese BOY short dark hair, sky-blue top and navy trousers, gently holds the OUTER hand-wash-area door as An'an walks briskly through fully dressed, EMPTY back, NO backpack. Teacher Lin in sage cardigan and charcoal trousers watches attentively from immediately adjacent short classroom corridor, close enough to supervise. A low hand-washing basin visible beyond door, no toilets or undressing. Cheerful safe normal scene.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-c4a72461-ae1d-4321-853a-b88dcf5ec48a.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_111269__tsk16__u7HBtvpnMIxMcglG.png",
+            "generationPrompt": "Corridor view: Tiantian in sky-blue sweatshirt holds open the door; An'an steps quickly into clean, bright washroom area.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/iterations/15-b58ad9c00d63.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 16,
+        "zhText": "从洗手间洗好手出来，肚子的胀痛全都消失了，整个人像卸下了一块大石头一样轻松自在。",
+        "enText": "Coming out after washing her hands, the painful pressure was gone. An'an felt as light as if a heavy stone had rolled away.",
+        "illustrationPrompt": "An'an stands fully dressed at the public child-height hand-wash basin and dries her clean hands with a paper towel, relieved relaxed expression after using bathroom. Teal hoodie and blue jeans, no backpack or bag anywhere. No private toilet visible. Warm bright kindergarten interior, teacher not necessary in frame.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: An'an stands fully dressed at the public child-height hand-wash basin and dries her clean hands with a paper towel, relieved relaxed expression after using bathroom. Teal hoodie and blue jeans, no backpack or bag anywhere. No private toilet visible. Warm bright kindergarten interior, teacher not necessary in frame.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-a1cdea0b-dff6-4e7c-8389-74b5b6dbbffd.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_93346__tsk16__WAAa5HA28UWRC2w8.png",
+            "generationPrompt": "Bright hallway scene: An'an dries clean hands on a paper towel, a relaxed, peaceful smile returning to her round face.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/iterations/16-63485abefb39.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 17,
+        "zhText": "回到教室坐好，林老师走过来，悄悄把一张擦手纸递到她手心，还对她眨了眨眼睛。",
+        "enText": "Back in her seat, Teacher Lin walked over, slipped a clean dry tissue into her hand, and gave her an affectionate wink.",
+        "illustrationPrompt": "Back in classroom, An'an sits comfortably at her small chair and Teacher Lin kneels beside her, sage cardigan and CHARCOAL trousers, quietly passes a folded hand-drying paper towel into one hand with a warm reassuring smile. Girl has no backpack, no bag straps. Calm story-time corner, blue WHALE book closed on teacher's table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Back in classroom, An'an sits comfortably at her small chair and Teacher Lin kneels beside her, sage cardigan and CHARCOAL trousers, quietly passes a folded hand-drying paper towel into one hand with a warm reassuring smile. Girl has no backpack, no bag straps. Calm story-time corner, blue WHALE book closed on teacher's table.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-75a9567a-00a0-439b-8832-2382d0af6b8c.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_87955__tsk16__e4O8BC2pICyQbUno.png",
+            "generationPrompt": "Two-person desk moment: Teacher Lin gently passes tissue to smiling An'an; Lele gives An'an a happy thumbs-up.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/iterations/17-820abc3945e0.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 18,
+        "zhText": "放学前，林老师对全班小朋友说：“规则很重要，但大家身体发出的红色信号最重要！任何时候想去洗手间，都可以勇敢举手！”",
+        "enText": "Before dismissal, Teacher Lin announced: “Rules are important, but body signals are most important! Raise hands anytime you need the bathroom!”",
+        "illustrationPrompt": "End-of-day kindergarten circle time. Teacher Lin in sage cardigan and CHARCOAL trousers talks gently with a small seated group, An'an raises her hand confidently among them. Children feel comfortable and listened to, no testing or scolding. One large blue WHALE picture book with simple whale illustration lies CLOSED on the low table. No backpacks worn by the seated children, no rabbit book, no lettering.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: End-of-day kindergarten circle time. Teacher Lin in sage cardigan and CHARCOAL trousers talks gently with a small seated group, An'an raises her hand confidently among them. Children feel comfortable and listened to, no testing or scolding. One large blue WHALE picture book with simple whale illustration lies CLOSED on the low table. No backpacks worn by the seated children, no rabbit book, no lettering.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-7188622f-269a-47d0-b29a-88a6fbe3c4dc.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_169960__tsk16__QYhdnF8gFgS8MXiI.png",
+            "generationPrompt": "Wide classroom closing shot: Teacher Lin speaks warmly from blackboard; An'an and classmates raise hands smiling together.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/iterations/18-2e9d864e16e1.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 45,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "生理需求",
+        "课堂举手",
+        "自我照顾"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "破除孩子对课堂纪律的绝对恐惧，赋予在集体生活中坦荡表达生理需求的勇气。",
+      "reminder": "如厕、口渴或身体不适可以随时告知成人，不要求孩子憋到活动结束。成人主动说明求助方法；着急时可以直接开口，不必等举手获准。按园所实际动线提供成人照看，并保护如厕隐私。",
+      "questions": [
+        "安安想去洗手间时，为什么一开始不敢举手？",
+        "老师是怎么告诉全班小朋友的？"
+      ],
+      "activity": "在家和孩子进行一次“小课堂模拟”，练习挺直后背举手、声音清晰地说出“老师我想喝水/去洗手间”。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

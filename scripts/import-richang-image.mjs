@@ -24,5 +24,7 @@ page.imageStatus = "complete";
 page.generatedWith = "builtin-imagegen";
 page.generationPrompt = prompt;
 page.generatedSource = source;
+page.generationPromptScope = "full";
+delete page.provenanceNote;
 await writeFile(file, JSON.stringify(draft, null, 2) + "\n");
 console.log(JSON.stringify({ id, page: Number(number), target }));

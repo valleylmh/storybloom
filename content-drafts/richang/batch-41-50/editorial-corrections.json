@@ -1,0 +1,899 @@
+{
+  "reviewedOn": "2026-10-23",
+  "scope": "Approved titles and 180-page structure retained; correct educational facts, age context and continuity before local integration.",
+  "sources": [
+    {
+      "title": "When Do Children Start Losing Their Baby Teeth? - AAP",
+      "url": "https://www.healthychildren.org/English/healthy-living/oral-health/pages/When-Children-Begin-to-Lose-their-Baby-Teeth.aspx",
+      "usedFor": "Root absorption and variation in timing; no promise of painless same-day loss."
+    },
+    {
+      "title": "Tips for Kids - Ontario Dental Association",
+      "url": "https://www.oda.ca/oral-health-basics/care-disease-prevention/tips-for-kids/",
+      "usedFor": "Do not force a loose tooth out; first permanent molars do not replace baby teeth."
+    },
+    {
+      "title": "家长如何帮助孩子做好入学准备 - 教育部",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/jyzt_2016nztzl/2016_zt08/16zt08_kpjt/201605/t20160518_245118.html",
+      "usedFor": "School readiness goes beyond advance academic instruction."
+    }
+  ],
+  "changes": [
+    {
+      "order": 41,
+      "page": 3,
+      "before": {
+        "zhText": "“安安已经是大班的哥哥姐姐啦。”一位叔叔走过时笑着说。可安安却把头靠在妈妈胳膊上，没有出声。",
+        "enText": "“An'an is in the senior class now, a big kid!” a neighbor smiled while walking past. But An'an rested her head against Mom's arm in quiet hesitation."
+      },
+      "after": {
+        "zhText": "“我已经上大班了。”安安小声说，可她还是把头靠在妈妈胳膊上。长大了一点，也还是会舍不得。",
+        "enText": "“I am in the oldest kindergarten class now,” An'an whispered, leaning against Mom's arm. Growing bigger did not mean she never missed Mom."
+      }
+    },
+    {
+      "order": 41,
+      "page": 11,
+      "before": {
+        "zhText": "“时针转到数字4的时候，妈妈会第一个站在校门这棵树下等你。”妈妈指了指校门旁的大树。",
+        "enText": "“When the clock's hand points to four, I will be the first one waiting right under this tree,” Mom promised, pointing to the tree."
+      },
+      "after": {
+        "zhText": "“下午离园时，我会在这棵树下等你。”妈妈指了指大树，“如果接送安排有变化，我会提前告诉老师。”",
+        "enText": "“I will wait under this tree at pick-up time,” Mom said. “If our plans change, I will let your teacher know beforehand.”"
+      }
+    },
+    {
+      "order": 41,
+      "page": 14,
+      "before": {
+        "zhText": "安安迈步走过欢迎拱门。走进楼梯前，她停下脚步，在走廊的大窗户边回过头去。",
+        "enText": "An'an stepped through the archway. Before heading up the stairs, she stopped and looked back through the wide corridor window."
+      },
+      "after": {
+        "zhText": "安安跟着林老师走进楼里。在走廊的大窗户边，她停了一下，回过头去看。",
+        "enText": "An'an followed Teacher Lin inside. By the large corridor window, she paused and looked back."
+      }
+    },
+    {
+      "order": 41,
+      "page": 16,
+      "before": {
+        "zhText": "安安把右手贴在胸口摸了摸那颗“小爱心”，然后也举起小手，隔着玻璃朝妈妈大声挥了挥。",
+        "enText": "An'an pressed her right hand to her chest over the invisible heart, then raised her hand to wave back bravely through the glass."
+      },
+      "after": {
+        "zhText": "安安把一只手贴在胸口，摸摸那颗“小爱心”，又举起另一只手，隔着玻璃朝妈妈挥了挥。",
+        "enText": "An'an pressed one hand to her chest over the little heart. With the other, she waved back through the glass."
+      }
+    },
+    {
+      "order": 41,
+      "page": 17,
+      "before": {
+        "zhText": "走上二楼，阳光铺满大班的教室。乐乐正在积木区招手：“安安，快来帮我搭大吊桥！”安安快步跑了过去。",
+        "enText": "Upstairs, sunlight filled the senior classroom. Lele waved from the building block rug: “An'an, come help me with the big bridge!” An'an hurried over happily."
+      },
+      "after": {
+        "zhText": "到了大班教室，阳光铺满地板。乐乐正在积木区招手：“安安，来帮我搭大吊桥！”安安走了过去。",
+        "enText": "Sunlight filled the classroom. Lele waved from the block corner. “An'an, come help me build a bridge!” She walked over."
+      }
+    },
+    {
+      "order": 41,
+      "guide": "goal",
+      "before": "接纳离园时的依恋情绪，通过具体、可感知的约定帮助孩子建立安全依恋。",
+      "after": "接纳入园分别时的依恋情绪，通过具体、可兑现的接送约定帮助孩子安心进入大班生活。"
+    },
+    {
+      "order": 42,
+      "page": 3,
+      "before": {
+        "zhText": "安安放下苹果，伸出舌尖轻轻推了推。那颗小牙真的前后晃动了一下，像一颗松动的小积木。",
+        "enText": "An'an set the apple down and gently poked with the tip of her tongue. The tooth really moved back and forth like a loose little block."
+      },
+      "after": {
+        "zhText": "安安把苹果放回盘子，停下来想了想。那颗小牙真的有点松，像一块快要松开的小积木。",
+        "enText": "An'an put the apple back on her plate and paused. The little tooth really did feel loose, like a block beginning to wobble."
+      }
+    },
+    {
+      "order": 42,
+      "page": 4,
+      "before": {
+        "zhText": "她用手指摸了摸牙齿，有点酸酸胀胀的。“牙齿怎么会摇晃呢？会不会掉下来流好多血？”安安心里怦怦直跳。",
+        "enText": "She touched the tooth with a clean finger; it felt slightly tender. “Why is it loose? Will it fall out and bleed a lot?” Her heart beat fast."
+      },
+      "after": {
+        "zhText": "她轻轻托住脸颊，有点酸酸胀胀的。“牙齿怎么会摇晃呢？会不会掉下来？”安安心里怦怦直跳。",
+        "enText": "She rested her cheek in her hand. It felt a little tender. “Why is my tooth wobbly? Will it fall out?” Her heart beat faster."
+      }
+    },
+    {
+      "order": 42,
+      "page": 10,
+      "before": {
+        "zhText": "林老师微笑着张开嘴让安安看自己的牙齿：“老师小时候也掉过牙呢。你的小牙没有坏，它是在给你送信呢！”",
+        "enText": "Teacher Lin smiled warmly: “I lost baby teeth when I was little too. Your tooth isn't broken—it is delivering an exciting message!”"
+      },
+      "after": {
+        "zhText": "林老师温和地说：“很多孩子长大时会换牙。我们一起告诉妈妈，留意这颗小牙，有不舒服再请牙医看看。”",
+        "enText": "“Many children lose baby teeth as they grow,” Teacher Lin said gently. “Let's tell Mom and watch this one. A dentist can help if it troubles you.”"
+      }
+    },
+    {
+      "order": 42,
+      "page": 11,
+      "before": {
+        "zhText": "“每一颗小乳牙下面，都藏着一颗新恒牙。”老师拿来一张卡通牙齿图卡，“新牙齿在土里发芽长大，把小乳牙轻轻顶松啦。”",
+        "enText": "“Beneath every baby tooth, a strong adult tooth is growing,” the teacher showed a colorful diagram. “It pushes gently from below as it sprouts.”"
+      },
+      "after": {
+        "zhText": "老师拿来图卡：“换牙时，小乳牙的牙根会慢慢被吸收，牙齿就松了。新恒牙也在牙龈下面慢慢准备着。”",
+        "enText": "The teacher showed a picture. “As a baby tooth's roots are gradually absorbed, it gets loose. A new adult tooth is getting ready beneath the gum.”"
+      }
+    },
+    {
+      "order": 42,
+      "page": 12,
+      "before": {
+        "zhText": "“这是大班小朋友专属的长大勋章！”林老师从抽屉里拿出一个小巧的粉色透明小盒子递给她，“这是乳牙收集盒。”",
+        "enText": "“This is a special badge of growing up for big kids!” Teacher Lin brought out a small clear pink box. “Here is a little tooth treasure box.”"
+      },
+      "after": {
+        "zhText": "“每个人换牙的时间都不一样，不用和别人比。”林老师拿出一个粉色小盒子，“等小牙自然掉了，可以用它收藏。”",
+        "enText": "“Everyone loses teeth at their own time,” Teacher Lin said, offering a pink box. “When yours comes out naturally, you can keep it here.”"
+      }
+    },
+    {
+      "order": 42,
+      "page": 14,
+      "before": {
+        "zhText": "“就像熟透的小苹果从树上轻轻落下来一样，自然掉落时只有一点点感觉。”林老师说，“我们只要每天把它刷干净就好。”",
+        "enText": "“Just like a ripe apple falling softly from a branch, it barely pinches when it's ready,” the teacher said. “Just keep brushing gently.”"
+      },
+      "after": {
+        "zhText": "“等它准备好了，让它自然掉下来，不要用力拔。”老师说，“每天轻轻刷牙，不舒服就告诉大人。”安安点点头。",
+        "enText": "“Let it come out when it is ready. Do not pull hard,” the teacher said. “Brush gently each day and tell a grown-up if it hurts.” An'an nodded."
+      }
+    },
+    {
+      "order": 42,
+      "page": 15,
+      "before": {
+        "zhText": "午饭时，安安换成用后面的大牙轻轻嚼米饭。乐乐跑过来问：“你的牙齿还要留着吗？”安安骄傲地说：“它在为新牙齿让路呢！”",
+        "enText": "At lunch, An'an chewed softly with her back teeth. When Lele came by, she said proudly: “It's making room for my strong new tooth!”"
+      },
+      "after": {
+        "zhText": "午饭时，安安用后面的大牙慢慢嚼。乐乐走过来：“刚才的话让你难过了，对不起。”安安说：“换牙不是让人笑话的事。”",
+        "enText": "At lunch, An'an chewed slowly with her back teeth. Lele came over. “I'm sorry my joke upset you.” She said, “Losing a tooth is nothing to tease about.”"
+      }
+    },
+    {
+      "order": 42,
+      "page": 16,
+      "before": {
+        "zhText": "傍晚回到家，安安站在洗手台前刷牙。刷到门牙时，牙刷轻轻一碰，那颗小牙骨碌碌滚落到了白毛巾上。",
+        "enText": "In the evening at home, An'an brushed her teeth. As the bristles brushed her front tooth, it popped right out onto the clean white towel."
+      },
+      "after": {
+        "zhText": "过了几天，妈妈陪安安轻轻刷牙。那颗已经很松的小门牙自然掉了下来，落在洗手台边的白毛巾上。",
+        "enText": "A few days later, Mom stayed with An'an as she brushed gently. The very loose little front tooth came out naturally onto the white towel by the sink."
+      }
+    },
+    {
+      "order": 42,
+      "page": 17,
+      "before": {
+        "zhText": "一点儿也不疼，只有水池里淡淡的一小点粉红。安安漱了漱口，小心翼翼地把洁白的小乳牙装进粉色盒子里。",
+        "enText": "It didn't hurt at all, just a tiny rinse of pink water. An'an rinsed and carefully placed the white baby tooth into her pink box."
+      },
+      "after": {
+        "zhText": "这一次，没有安安想象中那么难受。妈妈陪她照看好掉牙的地方，安安再把小乳牙轻轻放进粉色盒子。",
+        "enText": "This time, it was not as uncomfortable as An'an had imagined. Mom helped care for the gap, and An'an gently placed the tooth in her pink box."
+      }
+    },
+    {
+      "order": 42,
+      "guide": "reminder",
+      "before": "不取笑孩子说话漏风或掉牙的外貌，不强行用线硬拔。关注口腔卫生，庆祝长大的里程碑。",
+      "after": "换牙时间因人而异，不以是否掉牙判断孩子是否长大。不取笑缺牙或发音，不用线、工具强行拔牙。保持日常清洁；若明显疼痛、持续出血或受伤后松牙，由成人联系牙医。"
+    },
+    {
+      "order": 43,
+      "page": 1,
+      "before": {
+        "zhText": "大班的黑板旁边，贴上了一张彩色的拼音字母表。红的、蓝的、绿的小字母，像一队队正在列车上排队的小乘客。",
+        "enText": "Beside the big blackboard hung a colorful pinyin chart. Red, blue, and green letters lined up like cheerful passengers on a train."
+      },
+      "after": {
+        "zhText": "大班的阅读角新添了彩色拼音图卡。安安觉得红红绿绿的小符号，像坐上小火车的乘客，想凑近看看。",
+        "enText": "New pinyin picture cards appeared in the kindergarten reading corner. Their colorful shapes reminded An'an of little train passengers. She wanted a closer look."
+      }
+    },
+    {
+      "order": 43,
+      "page": 2,
+      "before": {
+        "zhText": "今天，林老师领着大家认读声母：“右下半圆 b b b，左下半圆 d d d。”安安跟着大家一起大声念着。",
+        "enText": "Today, Teacher Lin led the class reading initials: “Circle on the right is b; circle on the left is d.” An'an chanted along aloud."
+      },
+      "after": {
+        "zhText": "安安对两个相像的符号感兴趣。林老师陪她念：“右下半圆 b，左下半圆 d。”旁边的小朋友也来看看。",
+        "enText": "Two similar shapes caught An'an's interest. Teacher Lin joined her: “The loop is on the right in b, and on the left in d.” Other children came to look."
+      }
+    },
+    {
+      "order": 43,
+      "page": 3,
+      "before": {
+        "zhText": "开始书写练习了。安安握着短短的铅笔，认认真真在四线三格本上写字。竖线直直的，可圆圈画到哪边呢？",
+        "enText": "It was time to practice writing. An'an held her pencil carefully, ready to write in her four-line notebook. Which side did the circle go on?"
+      },
+      "after": {
+        "zhText": "安安想照着图卡画一画。她拿起铅笔，看着四线三格纸：竖线直直的，可圆圈该画在哪一边呢？",
+        "enText": "An'an wanted to try copying the shapes. She picked up a pencil and looked at the lined paper. The stem was straight, but which side needed the loop?"
+      }
+    },
+    {
+      "order": 43,
+      "page": 6,
+      "before": {
+        "zhText": "同桌小宇已经写完了整整一行，一排排漂亮的小字母整齐地站着，像站岗的小哨兵。",
+        "enText": "Her desk partner Xiaoyu had already finished a whole row. His letters stood neat and tidy like little sentinels on parade."
+      },
+      "after": {
+        "zhText": "旁边的小宇以前玩过这些图卡，已经画了一行。安安看看他的纸，再看看自己的，心里开始着急。",
+        "enText": "Xiaoyu had played with these cards before and had drawn a whole row. An'an looked from his paper to hers and began to worry."
+      }
+    },
+    {
+      "order": 43,
+      "page": 9,
+      "before": {
+        "zhText": "轻柔的脚步声走过来，林老师没有批评她弄脏本子，而是轻轻把安安抱到教室后面的活动地垫上坐下。",
+        "enText": "With gentle steps, Teacher Lin walked over. Instead of scolding, she helped An'an up and led her to the cozy reading rug at the back."
+      },
+      "after": {
+        "zhText": "林老师走过来：“分不清让你着急了，是吗？要不要去垫子上歇一会儿？”安安点点头，和老师一起坐下。",
+        "enText": "Teacher Lin came over. “Mixing them up feels frustrating, doesn't it? Shall we rest on the mat?” An'an nodded and sat beside her."
+      }
+    },
+    {
+      "order": 43,
+      "page": 10,
+      "before": {
+        "zhText": "老师递给安安一张纸巾，擦干泪花：“安安别着急。刚去别人家做客，常常会认错双胞胎兄弟，对不对？”",
+        "enText": "Handing An'an a tissue, the teacher said: “Don't worry, An'an. When you meet twins for the first time, it's easy to mix them up, right?”"
+      },
+      "after": {
+        "zhText": "老师把纸巾递给安安：“刚认识的新符号，有时就是容易弄混。不用和别人比，我们可以换个办法看看。”",
+        "enText": "The teacher offered a tissue. “New shapes can be easy to mix up. You do not have to keep up with anyone. We can try looking another way.”"
+      }
+    },
+    {
+      "order": 43,
+      "page": 11,
+      "before": {
+        "zhText": "安安点点头。林老师伸出自己的两只手，握紧拳头，竖起大拇指：“来，我们和字母兄弟握握手！”",
+        "enText": "An'an nodded softly. Teacher Lin raised both hands, curled her fingers into fists, and stuck her thumbs straight up: “Let's shake hands with them!”"
+      },
+      "after": {
+        "zhText": "老师先陪安安活动小手：“握一握，再松开，让手指歇歇。”安安照着做，紧紧的肩膀也慢慢放松了。",
+        "enText": "First, they moved their hands. “Make a fist, then let go. Give your fingers a rest.” As An'an copied her, her shoulders began to relax too."
+      }
+    },
+    {
+      "order": 43,
+      "page": 12,
+      "before": {
+        "zhText": "“伸出左手竖大拇指，你看，拳头是圆圆的肚子，大拇指是长长的小天线，这是谁呀？”老师晃了晃左手。",
+        "enText": "“Put up your left thumb. Look, the curled fingers make a round belly, and the thumb is the tall stick. Who is this?” the teacher asked."
+      },
+      "after": {
+        "zhText": "老师坐到安安身边，朝同一个方向，把手心转向自己，再握拳竖起拇指：“这样看，左手的圆肚子在竖线左边，像 d。”",
+        "enText": "Sitting beside An'an and facing the same way, the teacher turned her palms toward herself and raised her thumbs. “From this view, the left fist has its loop left of the stem, like d.”"
+      }
+    },
+    {
+      "order": 43,
+      "page": 13,
+      "before": {
+        "zhText": "“是 d！”安安脱口而出。“那右手竖起大拇指呢？”老师晃了晃右手。“肚子跑到右边去了……是 b！”安安喊道。",
+        "enText": "“That's d!” An'an blurted out. “And with the right hand?” Teacher Lin wiggled her right thumb. “The belly is on the right—that's b!” An'an cheered."
+      },
+      "after": {
+        "zhText": "“右手的圆肚子在竖线右边，像 b！”安安也转好手心，比了比。老师提醒：“我们看自己的手，不看镜子里的反方向。”",
+        "enText": "“The right fist has its loop to the right, like b!” An'an turned her own palms to match. “Look at your own hands, not a reversed reflection,” the teacher reminded her."
+      }
+    },
+    {
+      "order": 43,
+      "page": 14,
+      "before": {
+        "zhText": "“对啦！左手比出 d，右手比出 b。你的两只小手，就是随身带着的小尺子！”林老师拍手笑起来。",
+        "enText": "“Exactly! Left hand for d, right hand for b. Your two hands are little rulers you carry everywhere!” Teacher Lin clapped and smiled."
+      },
+      "after": {
+        "zhText": "“手心朝自己时，左手像 d，右手像 b。”老师说，“方向一换，样子也会变，所以还要和图卡对一对。”安安点点头。",
+        "enText": "“With palms toward you, the left hand looks like d and the right like b,” the teacher said. “Turning them changes the view, so check the cards too.” An'an nodded."
+      }
+    },
+    {
+      "order": 43,
+      "page": 15,
+      "before": {
+        "zhText": "乐乐和小宇也跑了过来，大家一起坐在地垫上，伸出小手玩起了口令游戏：“大白鹅游水，b b b！小马奔跑，d d d！”",
+        "enText": "Lele and Xiaoyu ran over to join in. Everyone sat on the mat, flashing their hands to rhyme games: “White goose swimming, b b b! Little horse galloping, d d d!”"
+      },
+      "after": {
+        "zhText": "乐乐和小宇也来玩。大家一边对着图卡，一边轻轻比划：“右下半圆 b，左下半圆 d。”看错了，就再看一次。",
+        "enText": "Lele and Xiaoyu joined them. They checked the cards and gently moved their hands: “Loop on the right, b. Loop on the left, d.” A mix-up simply meant another look."
+      }
+    },
+    {
+      "order": 43,
+      "page": 16,
+      "before": {
+        "zhText": "安安回到座位上，拿出一支新削好的红铅笔。写字前，她先悄悄在桌子底下伸出两只小手比了比。",
+        "enText": "An'an returned to her seat with a freshly sharpened pencil. Before writing, she peeked under the desk to check her two thumbs."
+      },
+      "after": {
+        "zhText": "回到桌边，安安把红铅笔先放在纸上。她在桌下转好手心，比一比，再抬头看看图卡。",
+        "enText": "Back at the table, An'an set the red pencil on her paper. Under the desk, she turned her palms, checked her hands, then looked at the cards."
+      }
+    },
+    {
+      "order": 43,
+      "page": 17,
+      "before": {
+        "zhText": "一笔、两笔，圆圆的肚子稳稳地画在了正确的方向上。本子上的小字母站得笔直，再也没有转晕了。",
+        "enText": "Stroke by stroke, the round bellies landed on the correct sides. The little letters stood straight, spinning in confusion no longer."
+      },
+      "after": {
+        "zhText": "这一次，圆圆的肚子画对了方向。安安笑起来：下次再转晕，也可以停一停，看看图卡，再试一次。",
+        "enText": "This time, the loops faced the right way. An'an smiled. If they confused her again, she could pause, check a card, and try once more."
+      }
+    },
+    {
+      "order": 43,
+      "guide": "reminder",
+      "before": "避免在孩子混淆时严厉催促或贴上“笨、粗心”的标签。用游戏和身体律动代替枯燥的死记硬背。",
+      "after": "拼音是孩子感兴趣时的图卡游戏，不是大班必学、必写或入学测评要求。手势须成人与孩子同向，并明确手心朝自己；变换视角会镜像，不适合时直接看图卡。不要催写、比较速度或贴“笨、粗心”的标签。"
+    },
+    {
+      "order": 43,
+      "guide": "questions",
+      "before": [
+        "安安用什么办法分清了左边的 d 和右边的 b？",
+        "遇到容易转晕的新字母时，我们能怎么玩？"
+      ],
+      "after": [
+        "图卡上的 b 和 d，圆圈分别在哪一边？",
+        "看自己的小手时，为什么要先说好手心朝哪边？"
+      ]
+    },
+    {
+      "order": 43,
+      "guide": "activity",
+      "before": "两个人伸出左右手竖起大拇指，玩“b 还是 d”的捉迷藏身体反应游戏，边念儿歌边比划。",
+      "after": "成人先与孩子并排坐、朝同一方向，把手心朝自己、握拳竖拇指，再对照 b、d 图卡观察。孩子不喜欢或觉得更混淆时就停下，用图卡找相同形状即可，不要求书写或背诵。"
+    },
+    {
+      "order": 44,
+      "page": 1,
+      "before": {
+        "zhText": "午后的阳光照进客厅。书桌上摆着一本带绿色田字格的算术描红本，安安端端正正地坐着。",
+        "enText": "Afternoon sunlight streamed into the living room. On the desk lay an arithmetic practice book with green grid squares; An'an sat upright."
+      },
+      "after": {
+        "zhText": "午后的阳光照进客厅。安安打开一本带绿色方格的练习本，想试着画几个她最近喜欢的小数字。",
+        "enText": "Afternoon sunlight filled the living room. An'an opened a green-grid notebook, wanting to try a few numbers that had caught her interest."
+      }
+    },
+    {
+      "order": 44,
+      "page": 2,
+      "before": {
+        "zhText": "今天大班的作业是练习写数字 8 和 6。安安捏紧铅笔，指节用力得微微发白。",
+        "enText": "Today's practice was numbers 8 and 6. An'an gripped her pencil tightly, her small knuckles turning pale with effort."
+      },
+      "after": {
+        "zhText": "安安今天想试试数字 8 和 6。她盼着一下就画好，铅笔越捏越紧，指节都用力了。",
+        "enText": "Today, An'an wanted to try 8 and 6. Hoping to get them right at once, she held the pencil tighter and tighter."
+      }
+    },
+    {
+      "order": 44,
+      "page": 5,
+      "before": {
+        "zhText": "她又试着写数字 6。圆圆的小肚子一拐弯，竟然反向朝向了右边，像一只调皮的小鸭子转错了身。",
+        "enText": "She tried writing a 6 next. But the round belly curved backward to the right, like a duckling facing the wrong direction."
+      },
+      "after": {
+        "zhText": "她又试着画数字 6。这回方向没错，可个头太大，占了好几个小格子。安安盯着它，还是不满意。",
+        "enText": "She tried a 6. This time it faced the right way, but it was so large that it filled several squares. An'an still was not satisfied."
+      }
+    },
+    {
+      "order": 44,
+      "page": 6,
+      "before": {
+        "zhText": "“不对，又反了！”安安越来越急。她抓起橡皮在同一个地方用力来回擦蹭。",
+        "enText": "“No, it's backward again!” An'an grew more frustrated. She scrubbed back and forth on the same spot with all her might."
+      },
+      "after": {
+        "zhText": "“怎么总和我想的不一样呢！”安安越来越急，拿起橡皮，在同一个地方来回用力擦。",
+        "enText": "“Why doesn't it look the way I want?” An'an grew more frustrated and rubbed the same spot hard with her eraser."
+      }
+    },
+    {
+      "order": 44,
+      "page": 17,
+      "before": {
+        "zhText": "圆弧顺滑地滑下来，又稳稳地绕了回去。虽然数字 8 还是有一点点胖乎乎，但它乖乖地待在绿色的田字格里，没有出格。",
+        "enText": "The curve looped smoothly down and circled back up. Even if the 8 was still a little chubby, it stayed comfortably inside the green grid."
+      },
+      "after": {
+        "zhText": "小小的圆弧绕了回来，落在一个大方格里。这个 8 还有一点胖，安安却没有马上擦掉它。",
+        "enText": "The little curve looped back into a large square. The 8 was still a bit chubby, but An'an did not reach for her eraser."
+      }
+    },
+    {
+      "order": 44,
+      "page": 18,
+      "before": {
+        "zhText": "“太棒啦！它是一个健康的小雪人！”妈妈在旁边鼓起掌来。安安笑了，原来不用橡皮擦，慢慢画也能画出漂亮的弧线。",
+        "enText": "“Wonderful! It looks like a happy little snowman!” Mom clapped softly. An'an smiled; slow and steady made lovely curves without erasing."
+      },
+      "after": {
+        "zhText": "“我刚才没有捏那么紧。”安安说。妈妈点点头：“我看见你找到舒服一点的办法了。”她们收好本子，一起吃蓝莓。",
+        "enText": "“I did not squeeze so hard that time,” An'an said. “You found a more comfortable way,” Mom replied. They put away the notebook and shared blueberries."
+      }
+    },
+    {
+      "order": 44,
+      "guide": "reminder",
+      "before": "6 岁小手小肌肉正在发育，不施加长时间高强度的机械描红。擦破纸时先安抚情绪，肯定孩子的努力。",
+      "after": "数字尝试由孩子兴趣发起，不设置大班描红作业、速度目标或整齐排名。手酸就停，不强迫坚持；较大的纸、摆线和涂画也可以探索曲线。重点是舒服地尝试，不以写进格子作为成功条件。"
+    },
+    {
+      "order": 45,
+      "page": 1,
+      "before": {
+        "zhText": "大班的早读课刚结束，林老师站在黑板前，开始绘声绘色地讲一本关于大鲸鱼的奇妙故事书。",
+        "enText": "Morning reading just finished. Teacher Lin stood by the blackboard, sharing a wonderful storybook about a great whale."
+      },
+      "after": {
+        "zhText": "大班的故事时间到了。林老师坐在大家面前，打开一本关于大鲸鱼的绘本，开始讲起来。",
+        "enText": "It was story time in the oldest kindergarten class. Teacher Lin sat with the children and opened a picture book about a great whale."
+      }
+    },
+    {
+      "order": 45,
+      "page": 4,
+      "before": {
+        "zhText": "“哎呀，好想去洗手间呀……”安安心里暗暗叫了一声。早上出门前喝了满满一大杯温牛奶，现在憋得好难受。",
+        "enText": "“Oh no, I really need the bathroom...” An'an thought anxiously. She had drank a full glass of milk before leaving home."
+      },
+      "after": {
+        "zhText": "“我想去洗手间了……”安安望向门口。故事讲到一半，她却不知道该不该现在开口。",
+        "enText": "“I need the bathroom,” An'an thought, looking toward the door. The story was halfway through, and she was unsure whether to speak up."
+      }
+    },
+    {
+      "order": 45,
+      "page": 11,
+      "before": {
+        "zhText": "“快举手吧！憋着肚子会生病的！林老师特别好，绝对不会凶你的。”乐乐小声给安安打气。",
+        "enText": "“Raise it now! Holding it makes your tummy sick! Teacher Lin is kind—she won't be angry at all,” Lele encouraged warmly."
+      },
+      "after": {
+        "zhText": "“可以告诉老师你需要帮助。”乐乐轻声鼓励她，“不用一直忍着，我陪你举一下手。”",
+        "enText": "“You can tell the teacher you need help,” Lele encouraged softly. “You do not have to hold it. I can raise a hand with you.”"
+      }
+    },
+    {
+      "order": 45,
+      "page": 15,
+      "before": {
+        "zhText": "“天天，你当班长，帮安安扶一下洗手间的推拉门。”老师还体贴地安排了小帮手。安安赶紧快步走出了教室。",
+        "enText": "“Tiantian, as class helper, please hold the bathroom door for An'an,” the teacher added kindly. An'an hurried out toward the hall."
+      },
+      "after": {
+        "zhText": "门边的天天帮忙扶住通往洗手区的门。林老师留意着旁边的短走廊，安安快步走了过去。",
+        "enText": "Tiantian held the door to the handwashing area. Teacher Lin watched the short corridor nearby as An'an walked briskly over."
+      }
+    },
+    {
+      "order": 45,
+      "guide": "reminder",
+      "before": "绝不因孩子课上上厕所而训斥或当众盘问，建立老师作为安全保护者的信任形象。",
+      "after": "如厕、口渴或身体不适可以随时告知成人，不要求孩子憋到活动结束。成人主动说明求助方法；着急时可以直接开口，不必等举手获准。按园所实际动线提供成人照看，并保护如厕隐私。"
+    },
+    {
+      "order": 46,
+      "page": 4,
+      "before": {
+        "zhText": "周围渐渐安静下来。隔壁床的小宇翻了个身，很快传出了轻微匀称的呼噜声；乐乐也把小熊抱在胸口睡熟了。",
+        "enText": "Quiet settled around them. Next door, Xiaoyu rolled over and began snoring softly; Lele hugged his plush bear fast asleep."
+      },
+      "after": {
+        "zhText": "周围渐渐安静下来。旁边的小朋友翻了个身，很快睡着了；有人抱着小熊，呼吸轻轻的。",
+        "enText": "The room grew quiet. A nearby child turned over and soon fell asleep. Another hugged a teddy bear, breathing softly."
+      }
+    },
+    {
+      "order": 46,
+      "page": 14,
+      "before": {
+        "zhText": "“睡不着一点罪过都没有呀，傻孩子。”林老师在床边坐下，温和地耳语道。",
+        "enText": "“There is nothing wrong with being unable to sleep, sweet child,” Teacher Lin whispered soothingly, sitting on the carpet."
+      },
+      "after": {
+        "zhText": "“现在还没睡着，也没有关系。”林老师在床边坐下，轻轻地说，“你不需要假装。”",
+        "enText": "“It is all right that you are still awake,” Teacher Lin whispered, sitting beside the bed. “You do not need to pretend.”"
+      }
+    },
+    {
+      "order": 46,
+      "page": 17,
+      "before": {
+        "zhText": "听了老师的话，安安心里那块沉甸甸的石头放下了。她不再逼自己打呼噜，只是舒服地闭上眼睛，听着微风吹动窗帘。",
+        "enText": "Hearing this, the heavy stone in An'an's heart disappeared. She stopped forcing sleep, simply resting and listening to the breeze."
+      },
+      "after": {
+        "zhText": "安安心里那块沉甸甸的石头放下了。她不再使劲闭眼，只是舒服地躺着，听窗外很轻的声音。",
+        "enText": "The weight in An'an's heart lifted. She stopped squeezing her eyes shut and rested comfortably, listening to the soft sounds outside."
+      }
+    },
+    {
+      "order": 46,
+      "page": 18,
+      "before": {
+        "zhText": "不知不觉中，紧绷的身心松弛下来，在柔和的黄昏光影里，安安真的香甜地睡着了，还做了一个彩色的梦。",
+        "enText": "Without realizing it, her tension melted away. In the soft amber glow, An'an drifted into a sweet, restful dream."
+      },
+      "after": {
+        "zhText": "这一次，安安后来睡着了。也许另一天，她只安静地休息。无论哪一种，老师都愿意陪她找到舒服的办法。",
+        "enText": "This time, An'an fell asleep later. Another day, she might simply rest quietly. Either way, her teacher would help her feel comfortable."
+      }
+    },
+    {
+      "order": 47,
+      "page": 1,
+      "before": {
+        "zhText": "大课间铃声响起，操场上一下子沸腾起来。阳光把塑胶跑道照得暖烘烘的，微风吹着大树的绿叶。",
+        "enText": "The recess bell rang and the playground came alive. Warm sunshine bathed the running track and a breeze rustled the leafy trees."
+      },
+      "after": {
+        "zhText": "户外游戏开始了。阳光把塑胶跑道照得暖烘烘的，微风吹着大树的绿叶，孩子们走向喜欢的游戏区。",
+        "enText": "Outdoor play began. Sunshine warmed the running track, and leaves rustled in the breeze as the children went to their chosen play areas."
+      }
+    },
+    {
+      "order": 47,
+      "page": 10,
+      "before": {
+        "zhText": "乐乐笑了：“光站在旁边看，别人怎么知道你想玩呢？带上你的小汽车去敲敲门，夸夸他们的城堡，再告诉他们你能帮上什么忙！”",
+        "enText": "Lele grinned: “If you just stand watching, how will they know you want to play? Bring your cars over to knock on their door, praise their castle, and tell them how you can help!”"
+      },
+      "after": {
+        "zhText": "乐乐说：“可以先问问他们愿不愿意一起玩。你的小汽车能加入故事，也可以只带着你自己的想法。”",
+        "enText": "“You can ask whether they would like to play together,” Lele said. “Your cars could join the story, or you could simply bring an idea.”"
+      }
+    },
+    {
+      "order": 47,
+      "page": 13,
+      "before": {
+        "zhText": "两个小男孩抬起头来，脸上沾着沙粒，听到称赞，眼睛都亮了起来：“真的吗？我们修了一整个大课间呢！”",
+        "enText": "The two boys looked up with sandy smudges on their cheeks. Hearing the compliment, their eyes lit up with pride: “Really? We worked so hard!”"
+      },
+      "after": {
+        "zhText": "两个小男孩抬起头，脸上沾着沙粒，听到称赞都笑了：“真的吗？我们已经修了好一会儿呢！”",
+        "enText": "The two boys looked up with sandy cheeks and smiled at her kind words. “Really? We have been building for quite a while!”"
+      }
+    },
+    {
+      "order": 47,
+      "page": 14,
+      "before": {
+        "zhText": "安安趁机蹲下来，举起手里的小黄车：“我可以和你们一起玩吗？我带了工程救援车，可以帮你们架一座不会塌的塑料吊桥！”",
+        "enText": "An'an seized the moment, crouching down: “May I play with you? I brought my tow truck to build a bridge that won't collapse!”"
+      },
+      "after": {
+        "zhText": "安安蹲下来，举起小黄车：“我可以和你们一起玩吗？我想和你们修一条路，让小救援车开进城堡。”",
+        "enText": "An'an crouched and lifted her yellow truck. “May I play with you? I would like to help make a road so the rescue truck can enter the castle.”"
+      }
+    },
+    {
+      "order": 47,
+      "page": 17,
+      "before": {
+        "zhText": "三只小手在细沙里忙碌着，安安的小汽车稳稳地停在了城堡顶端，小树枝搭成的吊桥坚固又漂亮。",
+        "enText": "Three pairs of hands bustled in the sand. An'an's little cars perched safely on the battlements, linked by a lovely twig bridge."
+      },
+      "after": {
+        "zhText": "三个人在细沙里忙碌着。小汽车停上城堡，木片搭成的小桥横过水渠，大家又给它补了补。",
+        "enText": "The three children worked in the sand. The cars rested on the castle, and a little wooden bridge crossed the channel. Together, they made it steadier."
+      }
+    },
+    {
+      "order": 47,
+      "page": 19,
+      "before": {
+        "zhText": "小宇礼貌地对他们说：“现在沙坑有点挤，工具也不够啦。等下一节大课间，我们换班让你们当第一组，好吗？”",
+        "enText": "Xiaoyu said politely: “It's quite crowded right now and we're out of shovels. Next recess, we'll let you be group one, okay?”"
+      },
+      "after": {
+        "zhText": "小宇说：“我们再玩一小会儿就轮换，好吗？”林老师听见了，过来和大家一起安排，让新来的朋友也有机会。",
+        "enText": "“Shall we swap turns after a little while?” Xiaoyu asked. Teacher Lin heard and helped arrange things so the newcomers would have a turn too."
+      }
+    },
+    {
+      "order": 47,
+      "page": 20,
+      "before": {
+        "zhText": "安安看着他们，心里明白了一个大秘密：主动敲门不仅能找到好朋友，而且学会理解和礼貌拒绝，也是长大的本领。",
+        "enText": "Watching them, An'an learned a valuable lesson: knocking bravely opens doors to friendship, and handling turns with grace is growing up too."
+      },
+      "after": {
+        "zhText": "安安发现，想一起玩可以问出来，暂时要等也可以说说心情。和朋友商量、找老师帮忙，游戏就能慢慢接着玩。",
+        "enText": "An'an learned she could ask to join and say how waiting felt. Talking with friends and asking a teacher for help could keep the game going."
+      }
+    },
+    {
+      "order": 47,
+      "guide": "questions",
+      "before": [
+        "安安是用什么办法加入小宇和天天的搭积木游戏的？",
+        "如果别的小朋友游戏人满了，我们可以怎么说？"
+      ],
+      "after": [
+        "安安怎样把“我想一起玩”说了出来？",
+        "游戏需要轮流时，怎样让大家都有机会？"
+      ]
+    },
+    {
+      "order": 47,
+      "guide": "reminder",
+      "before": "不替孩子强行出头包办社交，也不批评孩子“胆小不合群”。教给具体的介入话术。",
+      "after": "不把玩具、夸奖或帮忙当作获得友谊的交换条件。公共游戏空间由成人协助轮换，不让先到的孩子长期排斥他人；被拒绝时允许难过，持续排斥应向可信成人求助。"
+    },
+    {
+      "order": 48,
+      "page": 4,
+      "before": {
+        "zhText": "卡片上画着五个可爱的小格子：五支削好的铅笔、一块橡皮、一个小水壶、一包小纸巾、还有一本借阅绘本。",
+        "enText": "The card showed five neat little compartments: five sharp pencils, an eraser, a water bottle, pocket tissues, and a library book."
+      },
+      "after": {
+        "zhText": "卡片画着五样东西：铅笔盒、借阅绘本、小水壶、纸巾和明天要用的跳绳。装进包里，就可以指一指。",
+        "enText": "The card showed five things: a pencil case, library book, water bottle, tissues, and tomorrow's jump rope. She could point to each picture after packing it."
+      }
+    },
+    {
+      "order": 48,
+      "page": 11,
+      "before": {
+        "zhText": "现在轮到水壶了。安安跑到厨房，在爸爸的帮助下接了半壶温开水，稳稳拧紧盖子，再擦干外壳的水珠。",
+        "enText": "Now for the water bottle. An'an went to the kitchen; with Dad's help, she filled it with warm water and tightened the cap."
+      },
+      "after": {
+        "zhText": "现在轮到水壶了。爸爸陪安安把它洗净、晾好，再拧上盖子：“明早出门前，我们装上新鲜的饮用水。”",
+        "enText": "Next came the bottle. Dad helped An'an wash and dry it, then close the lid. “We will fill it with fresh drinking water before leaving in the morning.”"
+      }
+    },
+    {
+      "order": 48,
+      "page": 15,
+      "before": {
+        "zhText": "第二天早上到学校，老师要求大家拿出跳绳做早操。别的小朋友翻箱倒柜找了半天，有的甚至忘记带了。",
+        "enText": "The next morning at school, the teacher called for jump ropes for exercise. Some kids searched in panic; some had forgotten theirs."
+      },
+      "after": {
+        "zhText": "第二天早上，水装好了。到幼儿园后，大家开始准备户外游戏要用的跳绳，安安走到自己的书包前。",
+        "enText": "In the morning, they filled the bottle. At kindergarten, the children got ready for outdoor rope games, and An'an went to her backpack."
+      }
+    },
+    {
+      "order": 48,
+      "page": 16,
+      "before": {
+        "zhText": "安安轻轻拉开书包拉链，伸手一探，一下子就摸出了卷得整整齐齐的跳绳，第一个站到了教室门口的队伍里。",
+        "enText": "An'an pulled her zipper, reached in, and instantly pulled out her coiled rope, becoming the very first in line by the door."
+      },
+      "after": {
+        "zhText": "安安拉开拉链，一下就摸到了卷好的跳绳。她把书包放回柜子，拿着跳绳，走进等候的队伍。",
+        "enText": "An'an unzipped her bag and quickly found the coiled rope. She put the bag back in her cubby and joined the waiting line."
+      }
+    },
+    {
+      "order": 48,
+      "guide": "reminder",
+      "before": "初始阶段允许丢三落四，不代劳包办也不暴躁数落。用打卡清单和固定收纳位帮助建立秩序。",
+      "after": "物品清单按实际园所活动调整，不把铅笔数量等写成大班统一要求。初次整理允许遗漏，用图卡协助而不包办、责骂或与同伴比速度。饮用水出门前再准备；书包轻重由成人检查。"
+    },
+    {
+      "order": 49,
+      "page": 2,
+      "before": {
+        "zhText": "林老师给安安的左胳膊套上印着金色小星的红袖标：“今天你是大班值日生哦！”安安把小胸脯挺得高高的，心里格外神气。",
+        "enText": "Teacher Lin pinned a red helper badge with a golden star onto An'an's arm: “Today you are our class duty helper!” An'an puffed her chest proudly."
+      },
+      "after": {
+        "zhText": "林老师给安安的胳膊套上印着金色小星的红袖标：“今天你是大班值日生哦！”安安挺起小胸脯，心里格外神气。",
+        "enText": "Teacher Lin slipped a red armband with a golden star onto An'an's sleeve. “Today you are our helper!” An'an stood tall, feeling proud."
+      }
+    },
+    {
+      "order": 49,
+      "page": 5,
+      "before": {
+        "zhText": "浇到最后一盆大薄荷时，水壶有点沉，安安小手一晃，“哗啦”一声，小半壶水洒在了光洁的木地板上，积了一小摊水洼。",
+        "enText": "On the last mint pot, the watering can was heavy. An'an's hand slipped, splashing half the water onto the floor into a puddle."
+      },
+      "after": {
+        "zhText": "喷到薄荷旁边时，喷头有点松了。安安一晃手，清水从瓶口滴下来，在木地板上积了一小滩。",
+        "enText": "Beside the mint, the spray top came a little loose. As An'an moved it, water dripped from the bottle onto the wooden floor."
+      }
+    },
+    {
+      "order": 49,
+      "page": 7,
+      "before": {
+        "zhText": "安安低下头看胳膊上的小红袖标，心里有些发慌。但她很快想起了妈妈的话：“做事情遇到意外，先想办法补救！”",
+        "enText": "An'an looked down at her red badge, heart fluttering. But she remembered Mom's advice: “When accidents happen, fix them first!”"
+      },
+      "after": {
+        "zhText": "安安有点慌，又停了停：“这里有水，先别踩。”她提醒天天，再叫林老师来，一起想办法。",
+        "enText": "An'an felt worried, then paused. “There is water here. Please do not step in it.” She warned Tiantian and called Teacher Lin to help."
+      }
+    },
+    {
+      "order": 49,
+      "page": 8,
+      "before": {
+        "zhText": "安安把喷壶稳稳放在花架上，快步跑到卫生角，拿来了一把小拖把和两块干抹布。",
+        "enText": "Setting the watering can safely on the plant stand, An'an trotted to the cleaning corner to fetch a mini mop and dry towels."
+      },
+      "after": {
+        "zhText": "老师留在一旁照看。安安把喷壶放稳，慢慢走到卫生角，取来小拖把和干抹布。",
+        "enText": "The teacher stayed nearby. An'an set the bottle down safely, then walked to fetch a small mop and dry cloths."
+      }
+    },
+    {
+      "order": 49,
+      "page": 11,
+      "before": {
+        "zhText": "到了中午分饭时间，天天负责分餐盘，安安负责给每个餐桌分发不锈钢小汤勺。",
+        "enText": "At lunchtime, Tiantian distributed lunch trays while An'an was in charge of handing out clean stainless steel soup spoons."
+      },
+      "after": {
+        "zhText": "午餐前，大家先把手洗干净，再分工准备。天天负责放餐盘，安安负责分发干净的小汤勺。",
+        "enText": "Before lunch, everyone washed their hands and shared the jobs. Tiantian set out trays, and An'an handed out clean spoons."
+      }
+    },
+    {
+      "order": 49,
+      "page": 14,
+      "before": {
+        "zhText": "“谢谢安安姐姐！”小班刚升上来的小同伴脆生生地喊道。安安甜甜地回了一句：“不客气，请慢用哦！”",
+        "enText": "“Thank you, Sister An'an!” a younger classmate chirped cheerfully. An'an replied with a beam: “You're welcome, enjoy your lunch!”"
+      },
+      "after": {
+        "zhText": "“谢谢安安姐姐！”来一起用餐的小朋友抬起头。安安笑着回答：“不客气！”原来，准备餐具也能帮上忙。",
+        "enText": "“Thank you, An'an!” a younger child joining lunch said. An'an smiled. “You're welcome!” Even setting out spoons could help."
+      }
+    },
+    {
+      "order": 49,
+      "page": 17,
+      "before": {
+        "zhText": "摘下红袖标交给老师时，林老师给安安额头上贴了一颗金色小星星：“今天的大班值日生，表现满分！”",
+        "enText": "Handing back the armband, Teacher Lin pressed a golden star sticker onto An'an's forehead: “Today's helper did a perfect job!”"
+      },
+      "after": {
+        "zhText": "交回红袖标时，老师给安安贴了一颗金色小星星：“谢谢你和天天一起照顾班级。”安安想起今天做过的小事，笑了。",
+        "enText": "Returning the armband, An'an received a gold star sticker. “Thank you for caring for our class with Tiantian,” the teacher said. An'an smiled at the little things they had done."
+      }
+    },
+    {
+      "order": 49,
+      "page": 18,
+      "before": {
+        "zhText": "安安蹦蹦跳跳走出教室，心里想：明天就算不当值日生，我也要主动把植物角照顾好！",
+        "enText": "An'an hopped cheerfully out of the room, thinking: Even when I'm not on duty tomorrow, I'll still look after our plants!"
+      },
+      "after": {
+        "zhText": "安安轻快地走出教室。她想，明天轮到别的朋友值日，自己也可以在大家需要时搭把手。",
+        "enText": "An'an left with a light step. Another friend would be on duty tomorrow, and she could still lend a hand when needed."
+      }
+    },
+    {
+      "order": 50,
+      "page": 7,
+      "before": {
+        "zhText": "两人坐在木长椅上，暖洋洋的夕阳照在身上很舒服。妈妈从帆布包里拿出一个小保鲜盒，里面是两块温热的小松饼。",
+        "enText": "They sat on the bench under the soothing golden sun. Mom brought out a small warm container with two homemade pancakes."
+      },
+      "after": {
+        "zhText": "两人坐在长椅上，先擦净双手。妈妈打开小保鲜盒，里面是两块小松饼。阳光暖暖的，安安也松了口气。",
+        "enText": "They sat on the bench and cleaned their hands. Mom opened a small container with two pancakes. In the warm sun, An'an relaxed a little."
+      }
+    },
+    {
+      "order": 50,
+      "page": 9,
+      "before": {
+        "zhText": "妈妈没有提学校的事，而是先笑嘻嘻地讲起了自己：“安安，你知道妈妈今天在办公室干了什么傻事吗？”",
+        "enText": "Instead of asking about school, Mom smiled and shared her own day: “An'an, do you know what silly thing I did at work today?”"
+      },
+      "after": {
+        "zhText": "妈妈先说起自己的小插曲：“今天在办公室，我也遇见了一件没想到的事。”安安转过头来听。",
+        "enText": "Mom shared a little moment from her own day. “Something unexpected happened at work today.” An'an turned to listen."
+      }
+    },
+    {
+      "order": 50,
+      "page": 10,
+      "before": {
+        "zhText": "“我端咖啡的时候，脚下一滑，把整杯咖啡洒在了自己的鞋面上！你看，鞋边上还有一点小咖啡斑呢！”妈妈指了指鞋。",
+        "enText": "“I slipped while carrying coffee and spilled it all over my shoe! Look, there's still a tiny coffee spot right here!” Mom pointed to her sneaker."
+      },
+      "after": {
+        "zhText": "“我没拿稳杯子，几滴已经凉了的咖啡洒到鞋边。擦完才发现，还留了个小点。”妈妈指给她看。",
+        "enText": "“My cup slipped, and a few drops of cool coffee landed on my shoe. After wiping it, I found one little spot left.” Mom pointed it out."
+      }
+    },
+    {
+      "order": 50,
+      "page": 11,
+      "before": {
+        "zhText": "“噗嗤——”安安忍不住笑出声来，“妈妈，你也是个小马虎呀！”气氛一下子变得轻松自在极了。",
+        "enText": "“Pfft—” An'an burst out laughing. “Mom, you're a clumsy goose too!” The air instantly turned light and easy."
+      },
+      "after": {
+        "zhText": "“噗嗤——”安安笑了：“大人也有没拿稳的时候呀。”妈妈也笑起来，母女俩慢慢轻松了。",
+        "enText": "An'an gave a little laugh. “Grown-ups drop things too!” Mom smiled, and they both began to feel at ease."
+      }
+    },
+    {
+      "order": 50,
+      "page": 13,
+      "before": {
+        "zhText": "话匣子一打开，像倒豆子一样停不下来：“乐乐今天做操的时候，鞋带松了踩到鞋带，摔了个大屁墩儿！”",
+        "enText": "Once open, the words tumbled out like happy beans: “Lele tripped on his shoelace during morning exercise and fell on his bottom!”"
+      },
+      "after": {
+        "zhText": "安安接着讲：“乐乐画了一条长长的毛毛虫，大家却看成小火车！他给它添了车轮，真的开进故事里啦。”",
+        "enText": "An'an continued, “Lele drew a long caterpillar, but we thought it was a train! He added wheels, and it really became part of our story.”"
+      }
+    },
+    {
+      "order": 50,
+      "page": 15,
+      "before": {
+        "zhText": "妈妈认真地听着，时不时点点头，发出“哇，太能干了”的赞叹。她没有打断，只是安静地陪着安安说完每一句话。",
+        "enText": "Mom listened intently, nodding and murmuring praises. She never interrupted, simply letting An'an finish every happy sentence."
+      },
+      "after": {
+        "zhText": "妈妈认真听着，轻轻点头：“后来呢？”她没有急着评价，也没有追问，让安安按自己的顺序说。",
+        "enText": "Mom listened and nodded gently. “What happened next?” She did not rush to judge or ask more questions, letting An'an tell it her way."
+      }
+    },
+    {
+      "order": 50,
+      "page": 16,
+      "before": {
+        "zhText": "夕阳把母女俩的影子拉得长长的。安安拉着妈妈的手，一蹦一跳地走在回家的林荫道上。今天的小故事，讲得又满又暖。",
+        "enText": "The setting sun cast their shadows long on the path. An'an skipped along holding Mom's hand; today's stories were warm and complete."
+      },
+      "after": {
+        "zhText": "夕阳把影子拉长了。安安牵着妈妈的手回家，今天想说的话都有了位置。哪天想先安静一会儿，也可以慢慢来。",
+        "enText": "Their shadows grew long as they walked home hand in hand. Today's stories had room to be heard. On another day, quiet could come first too."
+      }
+    }
+  ]
+}

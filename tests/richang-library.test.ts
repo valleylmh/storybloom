@@ -13,9 +13,12 @@ import sitemap from "@/app/sitemap";
 import batch2Plan from "../content-drafts/richang/batch-11-20/plan.json";
 import batch3Plan from "../content-drafts/richang/batch-21-30/plan.json";
 import batch4Plan from "../content-drafts/richang/batch-31-40/plan.json";
+import batch5Plan from "../content-drafts/richang/batch-41-50/plan.json";
+import batch6Plan from "../content-drafts/richang/batch-51-51/plan.json";
+import batch7Plan from "../content-drafts/richang/batch-52-52/plan.json";
 
 const FIRST_IDS = ["lan-ping-guo", "she-bu-de-chuan-de-xin-xie", "te-bie-de-ri-zi-shi-na-tian", "wan-ju-shan-li-zhao-xiao-che", "zai-wan-wu-fen-zhong", "wo-de-bing-gan-zen-me-geng-xiao", "yi-bei-da-fan-de-niu-nai", "deng-wo-xin-qing-hao-le-zai-shuo", "zen-me-zhi-you-wo-zai-shou-shi", "bu-tai-wan-mei-de-ye-can"];
-const expandedBooks = [...batch2Plan.books, ...batch3Plan.books, ...batch4Plan.books];
+const expandedBooks = [...batch2Plan.books, ...batch3Plan.books, ...batch4Plan.books, ...batch5Plan.books, ...batch6Plan.books, ...batch7Plan.books];
 const IDS = [...FIRST_IDS, ...expandedBooks.map(({ id }) => id)];
 const PAGE_COUNTS = [16, 12, 12, 12, 12, 12, 12, 12, 12, 12, ...expandedBooks.map(({ pages }) => pages)];
 
@@ -52,7 +55,21 @@ describe("Everyday human-character library", () => {
         expect(await sharp(file).metadata()).toMatchObject({ width: 1200, height: 1200, format: "webp" });
         const source = draft.book.pages[page.page - 1];
         expect(source.generatedWith).toBe("builtin-imagegen");
-        expect(source.generationPrompt).toMatch(/THIS PAGE'S SCENE|Image 1 is the EDIT TARGET/);
+        expect(source.generatedSource).toMatch(/\/[^/]+\.png$/);
+        if (["scene-only-legacy", "partial-legacy"].includes(source.generationPromptScope)) {
+          // Earlier imports did not retain the complete provider prompt.
+          expect(book.order).toBeGreaterThanOrEqual(41);
+          expect(book.order).toBeLessThanOrEqual(50);
+          expect(source.generationPrompt.trim().length).toBeGreaterThan(30);
+          expect(source.provenanceNote).toBeTruthy();
+          if (source.generationPromptScope === "partial-legacy") {
+            expect(source.generationPrompt).toContain("...");
+          } else {
+            expect(source.generationPrompt).not.toMatch(/^Use case:/);
+          }
+        } else {
+          expect(source.generationPrompt).toMatch(/THIS PAGE'S SCENE|Image 1 is the EDIT TARGET|Use the referenced image for exact character identity/);
+        }
         hashes.add(createHash("sha256").update(readFileSync(file)).digest("hex"));
       }
     }
@@ -73,9 +90,59 @@ describe("Everyday human-character library", () => {
       expect(statSync(file).size).toBeGreaterThan(1000);
       const pcm = execFileSync("ffmpeg", ["-v", "error", "-i", file, "-f", "s16le", "-ac", "1", "-ar", "24000", "pipe:1"], { maxBuffer: 64 * 1024 * 1024 });
       expect(Math.abs(pcm.length / 48000 - audio.duration)).toBeLessThan(0.05);
+      if (book.order >= 41) {
+        for (const [index, start] of audio.pageStarts.entries()) {
+          const end = audio.pageStarts[index + 1] ?? audio.duration;
+          let squared = 0, count = 0;
+          for (let offset = Math.floor(start * 24000) * 2; offset + 1 < Math.min(pcm.length, Math.floor(end * 24000) * 2); offset += 2) {
+            squared += (pcm.readInt16LE(offset) / 32768) ** 2;
+            count++;
+          }
+          expect(Math.sqrt(squared / count), `${book.id} page ${index + 1} RMS`).toBeGreaterThan(0.001);
+        }
+      }
       const modified = book.pages.map((page, i) => i === 0 ? { ...page, zhText: page.zhText + "修改" } : page);
       expect(getLibraryChineseAudio("richang", book.id, modified)).toBeUndefined();
     }
+  }, 30_000);
+
+  it("keeps batch 5 focused on optional learning and supported kindergarten routines", () => {
+    expect(batch5Plan.approved).toBe(true);
+    expect(batch5Plan.books).toHaveLength(10);
+    expect(batch5Plan.totalPages).toBe(180);
+    const books = getPublishedBooks("richang").filter((book) => book.order >= 41 && book.order <= 50);
+    expect(books.map((book) => book.id)).toEqual(batch5Plan.books.map((book) => book.id));
+    const pinyin = books.find((book) => book.order === 43)!;
+    expect(pinyin.parentGuide?.reminder).toContain("不是大班必学");
+    expect(pinyin.pages[11].zhText).toContain("朝同一个方向");
+    expect(pinyin.pages[11].zhText).toContain("手心转向自己");
+    expect(pinyin.pages[15].zhText).toContain("红铅笔先放在纸上");
+    const tooth = books.find((book) => book.order === 42)!;
+    expect(tooth.pages[10].zhText).toContain("牙根会慢慢被吸收");
+    expect(tooth.pages[11].zhText).toContain("每个人换牙的时间都不一样");
+    expect(tooth.pages[13].zhText).toContain("不要用力拔");
+    const bathroom = books.find((book) => book.order === 45)!;
+    expect(bathroom.pages[14].zhText).toContain("林老师留意着");
+    expect(books.every((book) => book.metadata?.tags?.includes("大班生活"))).toBe(true);
+  });
+
+  it("keeps book 51 on the Wednesday helper and parent volunteer gate duty", () => {
+    expect(batch6Plan.approved).toBe(true);
+    expect(batch6Plan.books).toEqual([{ id: "ma-ma-zai-xiao-men-kou-zhan-gang", title: "今天妈妈在校门口站岗", pages: 18, order: 51 }]);
+    const book = getPublishedBooks("richang").find((entry) => entry.order === 51)!;
+    expect(book.id).toBe("ma-ma-zai-xiao-men-kou-zhan-gang");
+    expect(book.pages).toHaveLength(18);
+    expect(book.metadata?.tags).toEqual(expect.arrayContaining(["大班生活", "值日服务", "家长志愿者"]));
+    expect(book.parentGuide?.reminder).toContain("不把站岗说成“妈妈在看着你”");
+    expect(book.pages[0].zhText).toContain("星期三");
+    expect(book.pages[3].zhText).toContain("值日");
+    expect(book.pages[9].zhText).toContain("站岗");
+    // The child stays with the class instead of leaving the group to reach Mom.
+    expect(book.pages[11].zhText).toContain("牵着一个小朋友走过通道");
+    expect(book.pages[12].zhText).toContain("又停住了");
+    expect(book.pages[13].zhText).toContain("不离开队伍");
+    expect(book.pages[15].zhText).toContain("没有走上来抱她");
+    expect(book.pages[17].zhText).toContain("都在自己的位置上帮了忙");
   });
 
   it("supports family-growth discovery, adjacency and public sitemap routes", () => {

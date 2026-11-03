@@ -1,0 +1,298 @@
+{
+  "book": {
+    "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+    "seriesId": "richang",
+    "title": "今天我是大班值日生",
+    "subtitle": "照顾班级植物角与分发餐具",
+    "moral": {
+      "zh": "服务大家是一件神气的事；不小心洒了水没关系，擦干净依然是最棒的值日生。",
+      "en": "Helping everyone feels wonderful; spilling water is okay, and wiping it clean makes a truly responsible helper."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-23",
+    "order": 49,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "今天一进大班教室，林老师就在黑板的值日表上插上了安安和天天的小照片。",
+        "enText": "Stepping into the senior classroom today, Teacher Lin placed photo cards of An'an and Tiantian onto the duty roster.",
+        "illustrationPrompt": "Bright classroom morning view: wooden blackboard with duty board; Teacher Lin places An'an's photo card into the top slot.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Bright classroom morning view: wooden blackboard with duty board; Teacher Lin places An'an's photo card into the top slot.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_147230__tsk16__k0RSuYYfnsOIw6yZ.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 2,
+        "zhText": "林老师给安安的胳膊套上印着金色小星的红袖标：“今天你是大班值日生哦！”安安挺起小胸脯，心里格外神气。",
+        "enText": "Teacher Lin slipped a red armband with a golden star onto An'an's sleeve. “Today you are our helper!” An'an stood tall, feeling proud.",
+        "illustrationPrompt": "Medium shot: Teacher Lin fits red badge onto An'an's teal hoodie sleeve; An'an stands tall with joyful beaming pride.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium shot: Teacher Lin fits red badge onto An'an's teal hoodie sleeve; An'an stands tall with joyful beaming pride.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_360571__tsk16__ERVfHsjBc1mzQnsq.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 3,
+        "zhText": "第一项任务是照顾走廊阳台旁的班级植物角。窗台上有几盆吊兰，还有两盆绿油油的大叶绿萝。",
+        "enText": "The first task was tending the class plant corner by the sunny veranda: hanging spider plants and lush green pothos pots.",
+        "illustrationPrompt": "Veranda plant corner view: sunlight streaming onto wooden shelves filled with potted green plants and blooming flowers.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Veranda plant corner view: sunlight streaming onto wooden shelves filled with potted green plants and blooming flowers.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_339130__tsk16__xnYxDhR_4t1BUQ0P.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 4,
+        "zhText": "安安接来一小喷壶清水，认认真真地给绿萝的叶子喷水。小水珠落在翠绿的叶面上，像一颗颗滚动的珍珠。",
+        "enText": "An'an filled a mini watering spray with clear water and sprayed the leaves. Droplets rested on green leaves like shiny pearls.",
+        "illustrationPrompt": "Close view: child's hands pump small green spray bottle, misting wide green leaves; sunlight making droplets sparkle.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close view: child's hands pump small green spray bottle, misting wide green leaves; sunlight making droplets sparkle.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_280359__tsk16__9EN43YY_epTfeo1_.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 5,
+        "zhText": "喷到薄荷旁边时，喷头有点松了。安安一晃手，清水从瓶口滴下来，在木地板上积了一小滩。",
+        "enText": "Beside the mint, the spray top came a little loose. As An'an moved it, water dripped from the bottle onto the wooden floor.",
+        "illustrationPrompt": "Floor view: small puddle of clear water on wooden floorboards; An'an stands holding watering can, eyes startled.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Floor view: small puddle of clear water on wooden floorboards; An'an stands holding watering can, eyes startled.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_323506__tsk16__Tt5BVqOGqgY0WO4p.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 6,
+        "zhText": "“哎呀！”天天在旁边喊了一声，“安安把水弄洒啦，老师会不会收走你的小红袖标呀？”",
+        "enText": "“Uh oh!” Tiantian gasped nearby. “You spilled the water, An'an! Will the teacher take away your helper badge?”",
+        "illustrationPrompt": "Two-person view: Tiantian looks concerned; An'an bites lip, clutching the green spray bottle, afraid she messed up her duty.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Two-person view: Tiantian looks concerned; An'an bites lip, clutching the green spray bottle, afraid she messed up her duty.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_346378__tsk16__1IwgaYxZrvM8efsC.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 7,
+        "zhText": "安安有点慌，又停了停：“这里有水，先别踩。”她提醒天天，再叫林老师来，一起想办法。",
+        "enText": "An'an felt worried, then paused. “There is water here. Please do not step in it.” She warned Tiantian and called Teacher Lin to help.",
+        "illustrationPrompt": "Close portrait: An'an pauses, taking a steadying breath; panic giving way to purposeful determination.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close portrait: An'an pauses, taking a steadying breath; panic giving way to purposeful determination.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_346917__tsk16__7XrbXFRMReoxLlHY.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 8,
+        "zhText": "老师留在一旁照看。安安把喷壶放稳，慢慢走到卫生角，取来小拖把和干抹布。",
+        "enText": "The teacher stayed nearby. An'an set the bottle down safely, then walked to fetch a small mop and dry cloths.",
+        "illustrationPrompt": "Classroom corner: An'an picks up small wooden mop and clean dry cleaning cloth from the neatly organized cleaning rack.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Classroom corner: An'an picks up small wooden mop and clean dry cleaning cloth from the neatly organized cleaning rack.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_275468__tsk16__9C24UgeE5NONCsU9.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 9,
+        "zhText": "她先把抹布铺在水洼最深的地方吸干水分，再用小拖把一下一下，把湿漉漉的地面拖得干干净净、光可鉴人。",
+        "enText": "She laid the towel over the puddle to soak up the water, then used the mini mop to buff the damp boards dry and shiny.",
+        "illustrationPrompt": "Low action shot: An'an kneeling smoothly wipes floor with cloth, then mops evenly; floorboards gleam clean without slip hazards.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Low action shot: An'an kneeling smoothly wipes floor with cloth, then mops evenly; floorboards gleam clean without slip hazards.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_270759__tsk16__RqsJ_zyWzlGAxdgE.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 10,
+        "zhText": "林老师走过来，看见整洁如新的植物角和干爽的地面，蹲下来摸摸安安的头：“安安，你不仅把植物照顾得好，还把意外处理得这么漂亮！”",
+        "enText": "Teacher Lin walked over. Seeing the clean plant corner and dry floor, she patted An'an's head: “You solved the mishap wonderfully!”",
+        "illustrationPrompt": "Kindergarten plant corner. An'an wears a small red duty armband on upper arm, holds mop stopped on the floor beside a neatly cared-for green plant shelf. Teacher Lin kneels beside her in sage cardigan and charcoal trousers, gently touches child's hair and thanks her. The entire floor is clearly DRY, MATTE and CLEAN, NO puddle, droplets, wet rings or glossy water reflection. Warm morning light, no gold forehead star yet.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten plant corner. An'an wears a small red duty armband on upper arm, holds mop stopped on the floor beside a neatly cared-for green plant shelf. Teacher Lin kneels beside her in sage cardigan and charcoal trousers, gently touches child's hair and thanks her. The entire floor is clearly DRY, MATTE and CLEAN, NO puddle, droplets, wet rings or glossy water reflection. Warm morning light, no gold forehead star yet.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-8f7c5533-a9d6-4ffd-b609-91fffe8c4e3c.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_322308__tsk16__gYuSBiRNEL5vuYB5.png",
+            "generationPrompt": "Two-person warm shot: Teacher Lin smiles approvingly at An'an; floorboards clean and plants glistening with fresh mist.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/iterations/10-304f83250332.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/11.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 11,
+        "zhText": "午餐前，大家先把手洗干净，再分工准备。天天负责放餐盘，安安负责分发干净的小汤勺。",
+        "enText": "Before lunch, everyone washed their hands and shared the jobs. Tiantian set out trays, and An'an handed out clean spoons.",
+        "illustrationPrompt": "Classroom dining scene: small dining tables set up; Tiantian lays trays while An'an carries basket of shiny spoons.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Classroom dining scene: small dining tables set up; Tiantian lays trays while An'an carries basket of shiny spoons.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_388657__tsk16__yUHh9mVmGMhS94Mo.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 12,
+        "zhText": "安安先用洗手液把两只手洗得干干净净，双手捧着装满勺子的小篮子，挨个走到每张桌子旁。",
+        "enText": "An'an washed her hands thoroughly with soap, held the basket of spoons in both hands, and walked carefully to each table.",
+        "illustrationPrompt": "Medium dining room shot: An'an carries clean wicker basket with both hands, apron tied around waist, stepping carefully.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Medium dining room shot: An'an carries clean wicker basket with both hands, apron tied around waist, stepping carefully.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_355011__tsk16__XkaARZb9KZNLSNRS.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 13,
+        "zhText": "她拿起勺子时，总是捏着勺柄中间，把圆圆的勺头干净地朝向小朋友面前，轻轻摆在托盘右侧。",
+        "enText": "Taking each spoon, she held it by the handle, placing the bowl cleanly facing forward beside each child's tray.",
+        "illustrationPrompt": "Close-up of dining table: An'an's hands carefully set down clean spoon beside porcelain bowl; respectful sanitary handling.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up of dining table: An'an's hands carefully set down clean spoon beside porcelain bowl; respectful sanitary handling.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_312123__tsk16__tTLUM9HUbzUC884U.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 14,
+        "zhText": "“谢谢安安姐姐！”来一起用餐的小朋友抬起头。安安笑着回答：“不客气！”原来，准备餐具也能帮上忙。",
+        "enText": "“Thank you, An'an!” a younger child joining lunch said. An'an smiled. “You're welcome!” Even setting out spoons could help.",
+        "illustrationPrompt": "Kindergarten lunch table. An'an, teal hoodie with a small red duty armband, has CLEAN hands and gently hands ONE clean SPOON to a younger visiting child already seated at low lunch table. Only prepared bowls/trays, no hot pot or ladle anywhere, she does NOT serve hot food or touch food. Younger child looks up gratefully. Teacher Lin in sage cardigan charcoal trousers is nearby supervising. No gold star on forehead yet, no sign text.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. One premium polished 3D animated-film children's picture-book illustration, soft clay-like materials, warm cinematic light, square 1:1 full-bleed composition. Use the references only for character identity, clothing, props and visual style; draw the NEW scene specified below, not a contact sheet. An'an is a six-year-old Chinese GIRL with short dark brown bob, yellow star hair clip on her left, teal zip-front hoodie, blue jeans and white sneakers with red trim. Mom is a Chinese adult woman with shoulder-length dark bob, coral cardigan over cream top, CREAM trousers and cream sneakers. Teacher Lin is a Chinese adult woman with dark hair in a LOW BUN, sage-green cardigan and CHARCOAL trousers. Include only named cast; natural two arms per person, realistic five-finger hands. No forehead sticker except book 50. No words, random letters, labels, numbers, speech bubbles, logos or watermark unless explicitly allowed for the educational card. No duplicate people, no anthropomorphic toys.\nTHIS PAGE'S SCENE: Kindergarten lunch table. An'an, teal hoodie with a small red duty armband, has CLEAN hands and gently hands ONE clean SPOON to a younger visiting child already seated at low lunch table. Only prepared bowls/trays, no hot pot or ladle anywhere, she does NOT serve hot food or touch food. Younger child looks up gratefully. Teacher Lin in sage cardigan charcoal trousers is nearby supervising. No gold star on forehead yet, no sign text.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/exec-5aa974f6-6dd1-47da-a2af-82f9fbafd0c0.png",
+        "generationPromptScope": "full",
+        "previousIllustrations": [
+          {
+            "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_369456__tsk16__8E-sFjy67Ue5_spy.png",
+            "generationPrompt": "Two-person dining moment: younger child smiles up from tray; An'an nods with warm, mature sisterly warmth.",
+            "savedImage": "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/content-drafts/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/iterations/14-5791c56915cb.webp"
+          }
+        ],
+        "referenceImagePaths": [
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/12.webp",
+          "/Users/valleylmh/Documents/vibe-coding/AI-web/storybloom/public/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp"
+        ]
+      },
+      {
+        "page": 15,
+        "zhText": "听到大家的一声声感谢，安安心里像喝了蜜糖水一样甜滋滋的。胳膊上的小红袖标，在阳光下显得更神气了。",
+        "enText": "Hearing their thank-yous, An'an's heart felt as sweet as honey. The red helper badge on her sleeve seemed to shine brighter than ever.",
+        "illustrationPrompt": "Portrait: An'an wiping sweat from forehead with the back of her wrist, looking around the orderly room with deep satisfaction.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Portrait: An'an wiping sweat from forehead with the back of her wrist, looking around the orderly room with deep satisfaction.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_552208__tsk16__5PswMtoGZzkW7FTw.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 16,
+        "zhText": "下午离园前，安安和天天一起把散落的积木整齐归类到收纳筐里，把每把小椅子推进课桌下面摆整齐。",
+        "enText": "Before leaving, An'an and Tiantian sorted stray blocks into storage bins and tucked every small wooden chair neatly under desks.",
+        "illustrationPrompt": "Classroom wide view: neat rows of tucked-in chairs, tidy block shelves; An'an and Tiantian dusting down reading tables together.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Classroom wide view: neat rows of tucked-in chairs, tidy block shelves; An'an and Tiantian dusting down reading tables together.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_367164__tsk16__C0PPTNSvSuYC5Vq1.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 17,
+        "zhText": "交回红袖标时，老师给安安贴了一颗金色小星星：“谢谢你和天天一起照顾班级。”安安想起今天做过的小事，笑了。",
+        "enText": "Returning the armband, An'an received a gold star sticker. “Thank you for caring for our class with Tiantian,” the teacher said. An'an smiled at the little things they had done.",
+        "illustrationPrompt": "Close-up moment: Teacher Lin affixes gold foil star to An'an's forehead; An'an smiles broadly, red armband resting neatly on desk.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Close-up moment: Teacher Lin affixes gold foil star to An'an's forehead; An'an smiles broadly, red armband resting neatly on desk.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_338838__tsk16__Zvu1ROAgMKcThzAX.png",
+        "generationPromptScope": "scene-only-legacy",
+        "provenanceNote": "Earlier import retained only the scene prompt. The full provider prompt was not recorded; it is not reconstructed as provenance."
+      },
+      {
+        "page": 18,
+        "zhText": "安安轻快地走出教室。她想，明天轮到别的朋友值日，自己也可以在大家需要时搭把手。",
+        "enText": "An'an left with a light step. Another friend would be on duty tomorrow, and she could still lend a hand when needed.",
+        "illustrationPrompt": "Exit hallway closing shot: An'an walks toward gate with bounce in her step, gold star on forehead, glowing with pride.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use the referenced image for exact character identity and visual style consistency: An'an (6-year-old Chinese girl, round face, ear-length dark brown bob, yellow star hair clip on left, shiny golden star sticker on center of forehead, plain teal zip-front hoodie, blue jeans, white sneakers with red trim, orange backpack). Scene: Exit hallway closing shot in the warm late afternoon golden sun. An'an hops and skips cheerfully down the kindergarten hallway toward the exit gate, a radiant proud smile on her glowing face, the shiny golden star sticker sparkling on her forehead; she thinks happily: ‘Even when I'm not on duty tomorrow, I'll still care for our plants!’ Warm golden sunset beams on the wooden floorboards, 3D animated-film picture-book illustration style, square 1:1 composition. No text, letters, speech bubbles, watermark, distorted hands.",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a14f41-55d4-7763-aef2-786bd7ee4527/call_303459__tsk16__a2xTvgA5ObeAXtiG.png",
+        "generationPromptScope": "full"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 49,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "大班生活",
+        "值日服务",
+        "集体责任",
+        "劳动意识"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "激发大班幼儿作为班级主人的责任感，体会劳动与帮助同伴带来的价值感。",
+      "reminder": "鼓励参与日常劳动，不以惩罚手段安排值日。在孩子出现失误时指导补救，保护劳动热情。",
+      "questions": [
+        "安安给绿萝浇水洒出来时，她是怎么做的？",
+        "听到大家说“谢谢安安姐姐”时，安安心里感觉怎样？"
+      ],
+      "activity": "在家里设置一日“家庭小小值日生”，由孩子负责餐前分发筷子或给阳台盆栽喷水。",
+      "ageTips": {
+        "age4to5": "允许孩子用指图、点头、手势等非语言方式表达；共读以倾听、感受安抚为主，不强求马上做到。",
+        "age6to8": "讨论大班一日生活中的真实感受与解决策略，鼓励孩子自己提出小行动，家长承担托底支持与陪伴责任。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Lin: hair in neat low bun, sage-green cardigan, dark grey trousers. Tiantian: same-age Chinese boy, sky-blue sweatshirt, navy trousers. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

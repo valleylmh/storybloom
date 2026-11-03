@@ -1,0 +1,110 @@
+{
+  "reviewedAt": "2026-10-23T06:48:53.985Z",
+  "reviewer": "Codex visual inspection; not a human professional sign-off",
+  "coverage": "Contact sheets for all ten books; new and replacement illustrations inspected individually. Key teaching, safety, anatomy, cast and prop transitions checked.",
+  "pages": 180,
+  "reviewedRepairJobs": 40,
+  "repairedPages": [
+    {
+      "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+      "pages": [
+        10
+      ]
+    },
+    {
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "pages": [
+        6,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+      "pages": [
+        12,
+        13,
+        16
+      ]
+    },
+    {
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "pages": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        18
+      ]
+    },
+    {
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "pages": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+      "pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "pages": [
+        10,
+        11,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "pages": [
+        3,
+        4,
+        5,
+        6,
+        13,
+        15,
+        17
+      ]
+    },
+    {
+      "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+      "pages": [
+        10,
+        14
+      ]
+    },
+    {
+      "id": "fang-xue-lu-shang-man-man-shuo",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "provenanceScopes": {
+    "partial-legacy": 1,
+    "scene-only-legacy": 123,
+    "full": 56
+  },
+  "notes": [
+    "Earlier scene-only or abbreviated provider prompts are explicitly marked; no full prompts were reconstructed as provenance.",
+    "Small lighting, material and styling variations can remain between AI illustrations."
+  ],
+  "teacherOrDentalSpecialistReview": false,
+  "childPlaytest": false
+}

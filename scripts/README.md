@@ -189,3 +189,35 @@ node --conditions=react-server --import tsx scripts/generate-haoqi-batch-audio.t
 ```
 
 只读取本批 18 本当前正文，写入各书本地 MP3 和 `content-drafts/haoqi/local-audio.json`，不上传、不部署。重复执行复用逐页缓存；正文变化会生成新的内容寻址文件。图片生成仍使用已有 `generate-library-draft-images.ts --from 31 --to 48`；本批优先保留逐页场景，避免供应商提示词截断丢失科学内容。
+
+### 日常系列第 41–50 本（大班生活，180 页）
+
+已确认范围在 `content-drafts/richang/batch-41-50/plan.json`；审校后的各书 JSON 是正文来源，`manuscript.md` 是其阅读副本。不要重跑初稿生成器覆盖生产稿；生成器会拒绝已有批次。`editorial-corrections.json` 记录文字修改与事实来源。
+
+插画只用内置 imagegen。`image-prompts.json` 保留初始计划，`image-repairs.json` 记录返修任务、实际提示词和检查结果；每页 `generatedSource` 指向原始生图文件。早期仅记录场景的页面标注 `scene-only-legacy`，缩略记录标注 `partial-legacy`，不补造完整提示词。默认导入拒绝覆盖，已复核的替换使用 `--replace`，旧 WebP 自动保存在该书 `iterations/` 目录。
+
+```bash
+node scripts/import-richang-image.mjs BOOK_ID PAGE /absolute/path/to/generated.png 'FULL_ACTUAL_PROMPT'
+node --conditions=react-server --import tsx scripts/generate-richang-batch-audio.ts --batch batch-41-50
+node scripts/audit-richang-batch.mjs --batch batch-41-50
+node --import tsx scripts/generate-library-contact-sheets.ts --series richang --from 41 --to 50
+npx vitest run tests/richang-library.test.ts tests/library-book-audio.test.ts
+npx tsc --noEmit
+```
+
+旁白已授权使用百炼 `qwen-audio-3.0-tts-plus` / `longanlingxin`，按最终中文和缓存增量生成。离线审计核验 180 张图片的尺寸、体积、哈希及 10 本当前旁白的正文哈希、解码、时长、逐页非静音；浏览器另验阅读、播放和移动端。`comingSoon: false` 仅表示本地目录已接入，不表示已经提交、上传或线上发布。
+
+### 日常系列第 51 本《今天妈妈在校门口站岗》（周三值日生与家长志愿者，18 页）
+
+单本批次目录为 `content-drafts/richang/batch-51-51/`（沿用 `batch-N-N` 命名，便于现有音频与审计脚本的 `--batch` 参数直接复用）。选题、文稿与分镜由 `create-richang-batch51-drafts.py` 一次写入；该生成器在文件或批次目录已存在时拒绝覆盖，后续修改请直接编辑审校后的 JSON。
+
+```bash
+python3 scripts/create-richang-batch51-drafts.py   # 仅在首次建稿时运行
+node scripts/import-richang-image.mjs ma-ma-zai-xiao-men-kou-zhan-gang 1 /absolute/path/to/generated.png 'FULL_ACTUAL_PROMPT'
+node --conditions=react-server --import tsx scripts/generate-richang-batch-audio.ts --batch batch-51-51
+node scripts/audit-richang-batch.mjs --batch batch-51-51
+npx vitest run tests/richang-library.test.ts
+npx tsc --noEmit
+```
+
+插画由 Magpie 的 imagegen 生成（本机 Magpie 的 Image generation 指向 `codex/gpt-image-2`），原始 PNG 保存在 `output/imagegen/richang-51/`，导入时统一转为 1200×1200 WebP 并写入完整提示词。第 3 页与第 9 页按连续性返修过一次，最终稿为 `page-03-v2.png`、`page-09-v2.png`。第 51 本图片为 `full` 提示词记录，不属于第 41–50 本的 `scene-only-legacy` 例外。

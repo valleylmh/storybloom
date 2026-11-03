@@ -1,0 +1,1656 @@
+{
+  "batch": "batch-41-50",
+  "checkedAt": "2026-10-23T06:21:25.705Z",
+  "passed": true,
+  "books": [
+    {
+      "id": "xiao-men-kou-de-na-yi-ci-hui-shou",
+      "title": "校门口的那一次挥手",
+      "order": 41,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/1.webp",
+          "bytes": 187448,
+          "sha256": "6a1655b1f838a2b6d5b23dbbb1a3f5333e1cf8b97b0493d02879e8a493cfabb3"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/2.webp",
+          "bytes": 238774,
+          "sha256": "91e5641e9ab4deac5a36e090f9a3e1a8abc9e3eb3dae177a9c4809889fdfab8f"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/3.webp",
+          "bytes": 211322,
+          "sha256": "66b7df12963e1584f5b7e599d03b82e6ab3df19e8e110ec2d4053d1e06f12fcf"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/4.webp",
+          "bytes": 216178,
+          "sha256": "4f46411515e7a4518b01c284966f074160329e5f333c234dce425a8a290a6d20"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/5.webp",
+          "bytes": 228534,
+          "sha256": "76a923f66bf3378258d1e6902229d3d278d66cc30055a27e9dbf55b93c9ece20"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/6.webp",
+          "bytes": 175440,
+          "sha256": "1990ff4dbaf6cbeaa5fd2d8ce42d4e84d7e94136fa8f4443fbd3e4eaf24ac248"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/7.webp",
+          "bytes": 168128,
+          "sha256": "3b3c988316d25a83368f58465332965476f6bcdc94d1835d14b82f0532a74d85"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/8.webp",
+          "bytes": 139018,
+          "sha256": "807555200b58f106ef30b57760f6365cda0e8fa7f810251422ed7d10a22afe82"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/9.webp",
+          "bytes": 141822,
+          "sha256": "df1ee418198b1612a5d8737de816ad2c124a433e80e32920c104f32a50724bfe"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/10.webp",
+          "bytes": 192502,
+          "sha256": "9e022a3848bb6c63b00104fce66f245ebdb3b6b6d7a0d3295c68760f4f20825f"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/11.webp",
+          "bytes": 209242,
+          "sha256": "c2c35bfe66a7f46b9eff10b712cb6032585fea5f4d07bbf5cc7716a07d480bd1"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/12.webp",
+          "bytes": 202596,
+          "sha256": "00bb7e6e6c89922040cdd324ff4a25642558a1a7d58523dbc3d8be8a70526f6a"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/13.webp",
+          "bytes": 192698,
+          "sha256": "fbb9aeb6f235ee3a1717afeaf60feec311c6ff257be395ccfb42b9b617037b7e"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/14.webp",
+          "bytes": 153690,
+          "sha256": "127eb7201d16dd47f41e4fd56c98984869e1b2f6916c08a5928510e7a6afe465"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/15.webp",
+          "bytes": 212302,
+          "sha256": "31e9be102dcdf7d0d02085ba276c9eb6974878529b6cb2c3810be36a1c2ddd00"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/16.webp",
+          "bytes": 147016,
+          "sha256": "9d10affa3f7837a86e2e1f3ec6fceb72f047d48940289480b284a9bb92afa592"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/17.webp",
+          "bytes": 198176,
+          "sha256": "8b3d8194ea34c91e431b14acb417457e51739a10dbafe0a9099a7e75f7159743"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/18.webp",
+          "bytes": 217222,
+          "sha256": "20cca4a047b3f6db93d945c58ca9b2e183be9747f6ab00f26ed421347c539526"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/xiao-men-kou-de-na-yi-ci-hui-shou/zh-f5287fa5368868f3.mp3",
+        "contentHash": "f5287fa5368868f31f496ce855660afef7dc55d8f7e9707129def405a28a5965",
+        "pageStarts": [
+          0,
+          9.708,
+          16.872,
+          26.58,
+          36.456,
+          44.004,
+          50.76,
+          57.828,
+          67.536,
+          76.524,
+          84.072,
+          92.508,
+          101.424,
+          109.452,
+          116.136,
+          123.852,
+          131.496,
+          140.892
+        ],
+        "duration": 150.636,
+        "bytes": 1205805,
+        "sha256": "694d7f19e1476713ea42ce7a3ff169763dcc0a37cc87eecd7f8727bedba14705",
+        "decodedSeconds": 150.636,
+        "pageRms": [
+          0.073582,
+          0.067256,
+          0.059944,
+          0.073035,
+          0.068306,
+          0.070428,
+          0.070791,
+          0.066769,
+          0.068585,
+          0.073979,
+          0.066917,
+          0.068456,
+          0.067234,
+          0.071223,
+          0.074921,
+          0.072634,
+          0.076429,
+          0.070323
+        ]
+      }
+    },
+    {
+      "id": "yao-huang-de-di-yi-ke-xiao-ru-ya",
+      "title": "摇晃的第一颗小乳牙",
+      "order": 42,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/1.webp",
+          "bytes": 137958,
+          "sha256": "67b2cc6e675b62429f5a31de5c105ec6ff92d1d3d4dac55d9ccb08f1c41d1f09"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/2.webp",
+          "bytes": 138418,
+          "sha256": "235b0488dd2fa91088ecbf3cb0b1c55800141b518f5c7cafd3a150826991a8c5"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/3.webp",
+          "bytes": 136110,
+          "sha256": "9043815133090376875fec95554131e2e4c10bb8066aae86da4e82d8572800ab"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/4.webp",
+          "bytes": 145240,
+          "sha256": "f0984c81acbf5d96e2d6573e03870933c9dd5b161d893b0c2bd8f899cac057ee"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/5.webp",
+          "bytes": 159580,
+          "sha256": "89b55d8a0df5362aed2859c1db9abcc408a9fbd15c4ec679a55968d36c570768"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/6.webp",
+          "bytes": 169120,
+          "sha256": "20a399ca143763917f5d1dc1fbbc540fd2f743c043efada4057116b80ce80ffc"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/7.webp",
+          "bytes": 211528,
+          "sha256": "e274de3fc3b7f90a1b5d030abc37730ccd1d0bfde6b15636fb142c53283cfd64"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/8.webp",
+          "bytes": 209452,
+          "sha256": "093b6895df9a1f2e691f25f25528597873d7ed3ba73f8edd389722715c54cd4b"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/9.webp",
+          "bytes": 233098,
+          "sha256": "68afbca2d8229092758b372e9f7b84670bd88f01f2df10e88bb0c8e6c9660258"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/10.webp",
+          "bytes": 200600,
+          "sha256": "7d4347646c19a3c6361a77147fdcb1d51239625e8cb34f675dd621da6ac92bef"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/11.webp",
+          "bytes": 207652,
+          "sha256": "2c02fd2fdc9f0acf228e4aeabb90ef378bc30a09a90e3e747b75c940b4cde5b8"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/12.webp",
+          "bytes": 213578,
+          "sha256": "4a90469545cc87653b2cc576491cd6326c509a57e9c940bc4546beef4b646be3"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/13.webp",
+          "bytes": 184742,
+          "sha256": "fc47790b19f3717315330d244d49e6247fe4782d0fbf357298a6f08d2a5d25af"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/14.webp",
+          "bytes": 190502,
+          "sha256": "196e2cdb143be332f70fe8ea32c9cfc1c649c4fda63959dc8ff50b92111729ca"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/15.webp",
+          "bytes": 179820,
+          "sha256": "7445e4d95cc0c21e81123559d0adbd3788fae001c2354dfad2877f9812dc8ccd"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/16.webp",
+          "bytes": 193184,
+          "sha256": "2877c36ea627bf908734d3208368dea3d71c0618b6040863e4cbc1eafd590bd1"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/17.webp",
+          "bytes": 191276,
+          "sha256": "75ec41e3565127ea8b16e42993cb84d176e480afaf575f1e223883f6936e00b1"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/18.webp",
+          "bytes": 129202,
+          "sha256": "e7fbb332270171e8e8ffb4c55a25d0d0645c05e5332b035f46cd1f57356d9ee7"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/yao-huang-de-di-yi-ke-xiao-ru-ya/zh-7d658754f0772e9e.mp3",
+        "contentHash": "7d658754f0772e9e68ba9dda39beddb70f64d2d2ae30e41f3cb6da595b1fbd4f",
+        "pageStarts": [
+          0,
+          7.716,
+          17.112,
+          25.548,
+          34.776,
+          43.932,
+          52.368,
+          62.484,
+          70.128,
+          80.172,
+          89.496,
+          98.724,
+          108.048,
+          116.412,
+          126.528,
+          137.532,
+          146.52,
+          155.916
+        ],
+        "duration": 165.42,
+        "bytes": 1324077,
+        "sha256": "9baffc82482e2ffb92470e9d6457857e362b41f7a0578830a83129bd8a4c7d55",
+        "decodedSeconds": 165.42,
+        "pageRms": [
+          0.065548,
+          0.062846,
+          0.068523,
+          0.071251,
+          0.071886,
+          0.067262,
+          0.064641,
+          0.07034,
+          0.06766,
+          0.068876,
+          0.066657,
+          0.068975,
+          0.066215,
+          0.066464,
+          0.075589,
+          0.071599,
+          0.070357,
+          0.07151
+        ]
+      }
+    },
+    {
+      "id": "pin-yin-wang-guo-li-de-xiao-wan-gou",
+      "title": "拼音王国里的小弯钩",
+      "order": 43,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/1.webp",
+          "bytes": 163636,
+          "sha256": "46bef6d73ee2785a13372d40018f3302737d5caf601d13e4c79a0331a1409863"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/2.webp",
+          "bytes": 181754,
+          "sha256": "c343700ff60ca49d186b72aeaa830ea95bfd1fd7a0dfbea4b5eee4716a550624"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/3.webp",
+          "bytes": 183488,
+          "sha256": "3294b69e506927d087e5e1cf1cf7df96c3286287e97dd6480719987313abe624"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/4.webp",
+          "bytes": 172986,
+          "sha256": "50a95b816790b1067b463d21fd6e52798226a435e6a9d7e2362cedbf5c4ebcc7"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/5.webp",
+          "bytes": 172258,
+          "sha256": "c492fb4fa35f579c0648dde6037c524a7c89a59c68fde209392d60998babfb9d"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/6.webp",
+          "bytes": 183972,
+          "sha256": "ca415ae90ab3d684bcdff28819469dbb537bee08c2257cf9bb597f7bcf507c20"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/7.webp",
+          "bytes": 186332,
+          "sha256": "7f704803ea817f9f7dc1d7f7b7fd5fbbeb241424bab9df1de41bb021b0b73176"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/8.webp",
+          "bytes": 190582,
+          "sha256": "fa66005a616395567f742f72997007d7f4437db7f9d1604584673d06d9efe039"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/9.webp",
+          "bytes": 205334,
+          "sha256": "695c9d5b94c879f0f85bb82dfc8d1b65ecc9d3c0f473747fa731d72ef4c2d039"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/10.webp",
+          "bytes": 192876,
+          "sha256": "13231af670f2b049a92abccb2b537584b2a3eeed2968d14d4435dad077aa0076"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/11.webp",
+          "bytes": 187086,
+          "sha256": "14705bd0e416d74dcbf4a4ba7ef3ff8cbe9c7dbf5a8026d6b228dd1bd47d9256"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/12.webp",
+          "bytes": 112124,
+          "sha256": "87509c7bd2e47a8e6f57c6a24c0a7b3388b28f7b205edb23cef17b6fcbdfbd7c"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/13.webp",
+          "bytes": 95578,
+          "sha256": "6cd8e2df8b4b20fc4a64b02c7d699e5fe12d4ca9eed0b6fd530ce5013a5fa589"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/14.webp",
+          "bytes": 219650,
+          "sha256": "4679051ba63380b469b75299074e76ffb99a6f3c7a5a8eb4d29bba43823044a0"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/15.webp",
+          "bytes": 218682,
+          "sha256": "03e8c10261d3bd3bf82af45167ba2d693f94f0e947d9994d221347697396d334"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/16.webp",
+          "bytes": 172410,
+          "sha256": "f42c17d5fa8d4a602c4cad987358d583659eeb52ad878afd55102391c8ece2e7"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/17.webp",
+          "bytes": 140944,
+          "sha256": "b7b4610d62682c084d62388a817515332e992f611b0b359b7f21f64978e88f58"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/18.webp",
+          "bytes": 224916,
+          "sha256": "99288b3a7197493890c8c7654440f3090e6c141fc2bda116bfcda2440a09b259"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/pin-yin-wang-guo-li-de-xiao-wan-gou/zh-db1a696239c28d9d.mp3",
+        "contentHash": "db1a696239c28d9d21479e3d4170f538b858dd58cb4987a9ac3e30aa73fa530b",
+        "pageStarts": [
+          0,
+          9.804,
+          20.64,
+          30.444,
+          40.8,
+          51.396,
+          60.24,
+          71.076,
+          81.744,
+          90.18,
+          99.096,
+          108.324,
+          119.568,
+          130.884,
+          143.088,
+          153.924,
+          162.36,
+          172.308
+        ],
+        "duration": 180.372,
+        "bytes": 1443693,
+        "sha256": "c4ce602784ae4dc6804ba99d0dd65d165559a1ca15e941cee0968b3450966e7a",
+        "decodedSeconds": 180.372,
+        "pageRms": [
+          0.065248,
+          0.066689,
+          0.064794,
+          0.069922,
+          0.060934,
+          0.061283,
+          0.066355,
+          0.065269,
+          0.069669,
+          0.067426,
+          0.071099,
+          0.063934,
+          0.062687,
+          0.062841,
+          0.067145,
+          0.064337,
+          0.063304,
+          0.076309
+        ]
+      }
+    },
+    {
+      "id": "tiao-chu-tian-zi-ge-de-xiao-shu-zi",
+      "title": "跳出田字格的小数字",
+      "order": 44,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/1.webp",
+          "bytes": 160450,
+          "sha256": "0d2178abe74dbccb7576e68979963a82bd4b27d3027ed08767d11a7bf301c3ed"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/2.webp",
+          "bytes": 181108,
+          "sha256": "3fd69940c0d8e65d51d9d78c341b9caaa880684e3ff2ddc840f5917fa1793e3b"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/3.webp",
+          "bytes": 140218,
+          "sha256": "3c1aa03ec2b9896376d6ac80d90077ec0ba6f1f1626da19da005d91c315347b4"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/4.webp",
+          "bytes": 176768,
+          "sha256": "fc12e01d20b303bc8c7a2abfc56c302704273d068139e7e418de55e8476278dd"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/5.webp",
+          "bytes": 190402,
+          "sha256": "823412cb2c50d26235ebd42a40b2501a9b32df2195362a24109409be0e8aa02a"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/6.webp",
+          "bytes": 184866,
+          "sha256": "4fc6cb0cdd14ece2092c743357e62c9492f61e516be9c1a7af2782a8329db638"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/7.webp",
+          "bytes": 160960,
+          "sha256": "6962331a7463622c8846a1853a044dd874244343a56128f17db386133e9c0795"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/8.webp",
+          "bytes": 148522,
+          "sha256": "cffbc43e76423082872d5e2d352446e38bf8909a79b9f5d99cbd563c4695f53c"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/9.webp",
+          "bytes": 174552,
+          "sha256": "d2024833e3aa90392a781d1f36e89847e822e6f4fa7a7fbf9a34c17d1c10b6e8"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/10.webp",
+          "bytes": 197456,
+          "sha256": "fd8cbb57cebe1f86aa3a65083c330159e7e4d9c42613d65d28fd28757f7caf3a"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/11.webp",
+          "bytes": 190480,
+          "sha256": "8159df8bab2b4e33afc6f3ebba405bc78ab96196a2962fa670e469a430372d9e"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/12.webp",
+          "bytes": 192416,
+          "sha256": "9807aa442dca0a28c91012fd8f740d541694b170334499b5e5354ec5afbed522"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/13.webp",
+          "bytes": 211798,
+          "sha256": "4d10a96a0caf566a2511d1d28cf9dadd4c25cd25de33a30742367fd171e866e9"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/14.webp",
+          "bytes": 210914,
+          "sha256": "843c30a7f3589c0d45e2369b9fdeb48ef33d9aaea6fc3991090cb6c67394de82"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/15.webp",
+          "bytes": 211354,
+          "sha256": "c056274910ba4b6c5227c2df669f7395afd440d9a9f86109b0f78139bba7d776"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/16.webp",
+          "bytes": 186578,
+          "sha256": "b85e75d181b8025e3ddc41c13c2129cbb3f46bca636917a409cd59b11d94063e"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/17.webp",
+          "bytes": 119232,
+          "sha256": "d33c97003de5f4039ea7feee147cccde5979226822e15d257533b2e6fb24f000"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/18.webp",
+          "bytes": 202438,
+          "sha256": "ac134d0ec732bd1cbe33d961af91456bd7a2ab100c013cb9121bf23bd07769ac"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/tiao-chu-tian-zi-ge-de-xiao-shu-zi/zh-fb4deed571eedd39.mp3",
+        "contentHash": "fb4deed571eedd3909cf227d72667ef36513ca147d4569a5de95fb856179e6c8",
+        "pageStarts": [
+          0,
+          8.916,
+          17.832,
+          29.22,
+          35.568,
+          45.756,
+          53.544,
+          60.228,
+          70.176,
+          78.852,
+          87.048,
+          95.316,
+          104.712,
+          115.38,
+          125.904,
+          135.708,
+          146.616,
+          155.052
+        ],
+        "duration": 164.7,
+        "bytes": 1318317,
+        "sha256": "42d9804f50193c688582f302e8069d5a9561637ee95e63dbb0cda2ac61332814",
+        "decodedSeconds": 164.7,
+        "pageRms": [
+          0.070998,
+          0.068483,
+          0.066217,
+          0.064175,
+          0.065784,
+          0.068473,
+          0.059851,
+          0.06658,
+          0.070594,
+          0.065978,
+          0.070148,
+          0.062929,
+          0.067389,
+          0.065599,
+          0.075741,
+          0.060711,
+          0.068095,
+          0.069416
+        ]
+      }
+    },
+    {
+      "id": "wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma",
+      "title": "我想去洗手间，可以举手吗？",
+      "order": 45,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/1.webp",
+          "bytes": 198830,
+          "sha256": "e476d7c8b34028af8e8fb1ab89e52991d4ce3b1422d6d20574c3fc010c26c5ee"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/2.webp",
+          "bytes": 188534,
+          "sha256": "75273603ec73b7e8b37b5dbd9ff602fa8b866843f30e4d74200a2d28177efd37"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/3.webp",
+          "bytes": 144946,
+          "sha256": "fc908ba9d4ca73ca0223b55edda3e54a0ce2c066553625a96bd75a01cb5f6f73"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/4.webp",
+          "bytes": 131044,
+          "sha256": "24fdedd4533e79ae3746040f3e60d739df7f1a02b97174a4109a1e5e43a2bb3c"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/5.webp",
+          "bytes": 168762,
+          "sha256": "6e3082478a69252b2b86e2ef62cc41642cd7a53c8c2a7da18f0e50b2fe9ed541"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/6.webp",
+          "bytes": 184906,
+          "sha256": "dff2edb16c8471ad4d48625d7e0750f097c6e7ec95520b144394838fefaeeb44"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/7.webp",
+          "bytes": 161608,
+          "sha256": "777be4874a225f4bcc3de06dd9fcfbe33844593bdbc10c9ef816c672928ba024"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/8.webp",
+          "bytes": 157862,
+          "sha256": "ff0d9bebae19cee9dba3fa41dc505833e0c33f74f92b642391bc94502a27ba52"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/9.webp",
+          "bytes": 184482,
+          "sha256": "d7ed3612e354b44d58297b7b888c0a01143ba35818cbfbdced175166b262eaba"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/10.webp",
+          "bytes": 172952,
+          "sha256": "fefc1366a6603652bf398b5b6c057b4b37780b1ac0ae249e719a1c16b71ec9a1"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/11.webp",
+          "bytes": 174036,
+          "sha256": "7b39ccb56ba7d7cdd04626a8d4bf6636d9437cada69497ccc25fde8ac3915a99"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/12.webp",
+          "bytes": 170404,
+          "sha256": "338d4fba7fbe81f3bbf0aa35adece40e04a6ff915ad13f8ded915d84dece2250"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/13.webp",
+          "bytes": 208926,
+          "sha256": "89d104aa8273bf2e8910161b3ad6beb207c231ab3ad7e8aff3c13c8a933d1264"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/14.webp",
+          "bytes": 206048,
+          "sha256": "32b311436d046e16a8ad89616bfe911bb97ffb9315d1fe66bcd67b34112383bd"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/15.webp",
+          "bytes": 149806,
+          "sha256": "ca56e146605fc3ab4208ee7b541b7b992ee54d0362fc9a1dec0fd71807ee2153"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/16.webp",
+          "bytes": 151570,
+          "sha256": "8b9276852282456c9cfb56786f9d9729d6fe712e75d81bc8d0bfe6d9d292eb12"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/17.webp",
+          "bytes": 208214,
+          "sha256": "52d0e4ffedd26116e56e15aef44823014b0466685d4db804412fe51637166992"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/18.webp",
+          "bytes": 211960,
+          "sha256": "fd3524925a9c64f09476181d54949b99175ace6ea7e18cd723f9a456d3d7be70"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/wo-xiang-qu-xi-shou-jian-ke-yi-ju-shou-ma/zh-bd1ebe85c9150cdd.mp3",
+        "contentHash": "bd1ebe85c9150cdd11847751ce52b9f827e19944149cdee7b585100cb003030c",
+        "pageStarts": [
+          0,
+          7.788,
+          15.336,
+          25.524,
+          32.76,
+          43.524,
+          52.848,
+          63.372,
+          74.928,
+          84.324,
+          90.672,
+          97.356,
+          105.312,
+          115.668,
+          125.616,
+          133.5,
+          141.768,
+          149.412
+        ],
+        "duration": 160.26,
+        "bytes": 1282797,
+        "sha256": "e100046efb687ec9db398882f1c7e9784e90176524f0d3af6802a13e7d3fc130",
+        "decodedSeconds": 160.26,
+        "pageRms": [
+          0.065527,
+          0.06963,
+          0.065805,
+          0.061463,
+          0.066502,
+          0.068402,
+          0.068997,
+          0.062113,
+          0.072837,
+          0.062795,
+          0.068868,
+          0.062387,
+          0.063024,
+          0.069497,
+          0.074287,
+          0.065136,
+          0.064632,
+          0.07308
+        ]
+      }
+    },
+    {
+      "id": "shui-bu-zhao-de-wu-xiu-xiao-chuang",
+      "title": "睡不着的午休小床",
+      "order": 46,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/1.webp",
+          "bytes": 139750,
+          "sha256": "3aa9f9d79398763f92b95c37128be4106a1d2f8a79360107a22264a1767c026e"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/2.webp",
+          "bytes": 140364,
+          "sha256": "bd34bd9dac8a2a044df58480662bf65ed1c2b94ad75b75aa887eb2f3923941de"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/3.webp",
+          "bytes": 137754,
+          "sha256": "e5268e60374847d38a3314b9374eaa8df7d399c5af17cf83a73e56b7699d3b5f"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/4.webp",
+          "bytes": 145984,
+          "sha256": "1069220eb69ed9b8cf408ee33ab3e2e33c121d0e742f7f68242a05a33747a4c7"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/5.webp",
+          "bytes": 184852,
+          "sha256": "3260306080c4e03a4baa42c7cfe9c80f9520a7ef88b561d3275fe76bf687e2fe"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/6.webp",
+          "bytes": 122938,
+          "sha256": "40fcc95e6f755132c75abf94f1955a011f74e00901e3953f13eb05426946dcc3"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/7.webp",
+          "bytes": 126398,
+          "sha256": "41764ca10973d90c69ba0bd39d30bc5ce78a0701651a3d6ee49866b4f60a197f"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/8.webp",
+          "bytes": 123196,
+          "sha256": "f3e165d4ed96bb7c4fd9178f74a0aa9bf92942f2457d16c8337ab81f1d9899a9"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/9.webp",
+          "bytes": 143650,
+          "sha256": "81ebc06783015c244863220726a7ca6463622b920a58a39a812eee8ed19a85fe"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/10.webp",
+          "bytes": 165470,
+          "sha256": "e49c9b649583fab28283c4fda57da40095625aa19a3e8fef2702295ce36da3ed"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/11.webp",
+          "bytes": 176348,
+          "sha256": "fa9ca217abeea2459a6ae984a80dc52d8a002ad5d6cbaf77165d24b9667690f0"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/12.webp",
+          "bytes": 181482,
+          "sha256": "72e1dacb8bbad468b52b8d0a8d8bde8439e201af555e67532f369a3ea6899a2e"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/13.webp",
+          "bytes": 180110,
+          "sha256": "c8ca538e172f2f1c1e1e3403d0cded74f6031eb5b099dac2544d34e6d4596a63"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/14.webp",
+          "bytes": 180832,
+          "sha256": "89261830dea441bc098431db97a7472c6a7e33762167692696d9956d3449bf39"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/15.webp",
+          "bytes": 194422,
+          "sha256": "afd3472e3b5f06db7bbaa1eebc5ce77f93c19c3350b5db1f8eb53315cdfb361d"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/16.webp",
+          "bytes": 212680,
+          "sha256": "5828e59b5efc0981d9fccf50922154292f295f049c1c96bf648ff20a9606000c"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/17.webp",
+          "bytes": 186622,
+          "sha256": "7d85d512566e54ba6f7b7eb27d40f63d80834a1db68c3458a190c7cb1cce72b3"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/18.webp",
+          "bytes": 178846,
+          "sha256": "6ce109f839b0d8b98a8ddf112aebe3bf045177d8a28837a15f661b209283f831"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/shui-bu-zhao-de-wu-xiu-xiao-chuang/zh-d41610c461217a22.mp3",
+        "contentHash": "d41610c461217a2230a8e1891e8d9d13e9c4372c58e64a8c91a3ce264ca7d7d5",
+        "pageStarts": [
+          0,
+          9.156,
+          16.704,
+          24.732,
+          32.928,
+          41.436,
+          52.032,
+          61.596,
+          71.88,
+          81.276,
+          89.88,
+          98.484,
+          106.272,
+          115.428,
+          122.832,
+          131.916,
+          141.624,
+          149.82
+        ],
+        "duration": 158.676,
+        "bytes": 1270125,
+        "sha256": "3395fd87096ce2ee40d71862a64577e755e718aec262b85cf6a6918a3ffec0ac",
+        "decodedSeconds": 158.676,
+        "pageRms": [
+          0.08112,
+          0.065904,
+          0.071382,
+          0.070877,
+          0.0729,
+          0.070269,
+          0.069922,
+          0.070657,
+          0.078247,
+          0.064231,
+          0.066952,
+          0.071268,
+          0.066794,
+          0.062694,
+          0.068377,
+          0.065381,
+          0.062372,
+          0.069052
+        ]
+      }
+    },
+    {
+      "id": "wo-ke-yi-he-ni-men-yi-qi-wan-ma",
+      "title": "我可以和你们一起玩吗？",
+      "order": 47,
+      "pages": 20,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/1.webp",
+          "bytes": 260724,
+          "sha256": "0e7eb38b3c630dddb75c587bcffcf5d83692131a7fe667030cca0def82a48e89"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/2.webp",
+          "bytes": 246966,
+          "sha256": "0e10e97c702661f95868ee8b2ade1015b27a733fad860a06c19c030c6b41d4de"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/3.webp",
+          "bytes": 265770,
+          "sha256": "24973960bc4bbeda291827402d8aa50d51b06c49363b17ac7ce894de0aa57e69"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/4.webp",
+          "bytes": 252558,
+          "sha256": "cba94607487d90881892f3b7c45522c3ba4e4230a2dd899e2e78f6deedb8e0d2"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/5.webp",
+          "bytes": 240692,
+          "sha256": "b7534f73840417f41596aaa823686b978c5e445b3598015be76968af42b36f50"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/6.webp",
+          "bytes": 246782,
+          "sha256": "df56650824452ca209e649ac7385fe2f42020e68ed52b4bdafa0096e87f1f6c9"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/7.webp",
+          "bytes": 201670,
+          "sha256": "c3e696cda381e8b75ee8609e0a4ecf9131f5b8e4a6493c907728cfd165fb6c3b"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/8.webp",
+          "bytes": 226296,
+          "sha256": "d67597a145b73e250881425e947ab2442b9d741ffa746e1d31aadeab7a8c38f7"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/9.webp",
+          "bytes": 213316,
+          "sha256": "14ae9a769771bd78e319c2b0beb40c8a2219a065797c6e2f615c86cbafa2e435"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/10.webp",
+          "bytes": 232424,
+          "sha256": "3ce29598a4babba28606a71f81f6460ba4bd50133649e20c7579f466b8c72c02"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/11.webp",
+          "bytes": 281198,
+          "sha256": "07738dbe2b247bc3cea28fef7735b4836252881ebf347c8629ef5e0528015971"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/12.webp",
+          "bytes": 281318,
+          "sha256": "7217300f86c8b1d109fdaad596d1ffbc9fbb503ea6fbfbe945c53eb8a160869b"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/13.webp",
+          "bytes": 291838,
+          "sha256": "2e3345e102150468df40305e79b902ea71a0d270aa466870238486336d13a295"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/14.webp",
+          "bytes": 304050,
+          "sha256": "85650e1a93e9c97878efa3892be7af90b37e48e28b7c462fd6dc9ed368c09bb8"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/15.webp",
+          "bytes": 251196,
+          "sha256": "d938eba0c0494130c9d0044daa0db53b2e46218c31c7ff96c81325e5818edf16"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/16.webp",
+          "bytes": 278360,
+          "sha256": "578068b7ae0126abcd79e1f55efd1d76732ffe762284af8c9e2646db7509c790"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/17.webp",
+          "bytes": 304234,
+          "sha256": "76634bd5ce11f4ffa2a1fdc307ce9fec1e15aae7fb9b19fe5bd6bec9575d19b7"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/18.webp",
+          "bytes": 289504,
+          "sha256": "201445e133fdecd846b5b4b6921fcc48f4ae877f37bc70c4975685661946485a"
+        },
+        {
+          "page": 19,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/19.webp",
+          "bytes": 231894,
+          "sha256": "5a2fcccbd0143916081b690434ad2ac5f0992a66a5d7af46ee6f764ce226c878"
+        },
+        {
+          "page": 20,
+          "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/20.webp",
+          "bytes": 293580,
+          "sha256": "e500dcd4853eb6c9395c7ff730a9110d3cfbd52de58ed26343b6c3e93f133f58"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/wo-ke-yi-he-ni-men-yi-qi-wan-ma/zh-cea95ccceb358049.mp3",
+        "contentHash": "cea95ccceb3580494aa5a414face27be642d0807d7a7ba1201315058521ab784",
+        "pageStarts": [
+          0,
+          9.948,
+          19.176,
+          25.524,
+          34.752,
+          41.82,
+          48.888,
+          58.692,
+          68.016,
+          74.46,
+          83.304,
+          92.388,
+          100.344,
+          108.948,
+          117.216,
+          125.652,
+          133.848,
+          143.076,
+          150.96,
+          159.708
+        ],
+        "duration": 169.596,
+        "bytes": 1357485,
+        "sha256": "f7c9fbfda256d35e8734f5088efc3245e146aeceb058f1e9d260a0092d51372b",
+        "decodedSeconds": 169.596,
+        "pageRms": [
+          0.071246,
+          0.067171,
+          0.069953,
+          0.068071,
+          0.064474,
+          0.065743,
+          0.063367,
+          0.074702,
+          0.061884,
+          0.067011,
+          0.066382,
+          0.076759,
+          0.068934,
+          0.067712,
+          0.068292,
+          0.064595,
+          0.064162,
+          0.070762,
+          0.06992,
+          0.072448
+        ]
+      }
+    },
+    {
+      "id": "wo-de-xiao-shu-bao-jin-tian-zi-ji-shou",
+      "title": "我的小书包，今天自己收",
+      "order": 48,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/1.webp",
+          "bytes": 242854,
+          "sha256": "6fa760788cc6d4f2cfcbcf293f1676c1c5b6a56dc63460c9c956b2987d61c07d"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/2.webp",
+          "bytes": 265526,
+          "sha256": "dc63cd7ee4558a5f0133011cf64f6d73983db4a8c736efeed2bec09536dcae20"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/3.webp",
+          "bytes": 266620,
+          "sha256": "a69afe47680303860b48f5e930bc06be00833470aa98aded96e6cba816ecdadd"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/4.webp",
+          "bytes": 149068,
+          "sha256": "abf6d7ce58eb1c1935a398c9f0b33ae91bda5b8fb9b06ca6d0e6d12c4cac16ac"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/5.webp",
+          "bytes": 203510,
+          "sha256": "6b6d247828e9e4f33855c0886176ed1f012fa2799dc58352c31ce46cb9fd4809"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/6.webp",
+          "bytes": 238108,
+          "sha256": "35b67dcb502e01e293230a3b2f2941eeb45e979553e452cafa805c1a990fcc23"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/7.webp",
+          "bytes": 267290,
+          "sha256": "b3a6c63ca04fbdfdf3dd5c4af31a761ddf53be289c424b94abfa7a8fd5581251"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/8.webp",
+          "bytes": 202500,
+          "sha256": "2d5167a563f9122ea366fb58c541093edfe5da3fc5aed5874e0724d78a119936"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/9.webp",
+          "bytes": 270256,
+          "sha256": "e9e2d0e9315219b62d955802edb3d630ee599dcfe5e71f451cfd20e3aa7e6eea"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/10.webp",
+          "bytes": 282988,
+          "sha256": "d8958e11829f8ebe347aaac855ca92b954358ccfd82166bb8e53195dd879ac37"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/11.webp",
+          "bytes": 182678,
+          "sha256": "0868b61b5ca99e8648d2fedd49b0bebe1556bef0f82911cf39e29b669539a328"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/12.webp",
+          "bytes": 261144,
+          "sha256": "b9a28c658d6b2c7531d3b9748b796f980866493fbf7664373bcb495663bfb689"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/13.webp",
+          "bytes": 263558,
+          "sha256": "d120fdd5be7862610413a44ed9103709a6d40ac191f89a7be7348a7df788ceef"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/14.webp",
+          "bytes": 212942,
+          "sha256": "8da06186515fb6228ead8de807645d1651331226707f95d7eb1ce0c6466fc16c"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/15.webp",
+          "bytes": 208080,
+          "sha256": "bd5c15339b9a5404530745ee2a9ad219371e401d08fe5106fcaa828792d194be"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/16.webp",
+          "bytes": 189872,
+          "sha256": "13f3420c3bea2321d90d8566886fac87247e2a4c4d4becc11988e3c80da3ba0c"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/17.webp",
+          "bytes": 221400,
+          "sha256": "f202cf9bf682d200fd257ddab79391b0dcda40891221d7f700efff2968cae3e9"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/18.webp",
+          "bytes": 194806,
+          "sha256": "a9294d3ce9d8ce319f0dd2582150580fde261edad97caef4276cc5f7e44d1267"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/wo-de-xiao-shu-bao-jin-tian-zi-ji-shou/zh-3c35bccf6850c93d.mp3",
+        "contentHash": "3c35bccf6850c93d68b0647f2be30468bc89380a1bc7facebd1be2d7261ab608",
+        "pageStarts": [
+          0,
+          10.284,
+          18,
+          29.316,
+          39.912,
+          48.348,
+          60.792,
+          69.468,
+          81.336,
+          90.9,
+          99.576,
+          109.38,
+          118.368,
+          126.876,
+          136.92,
+          146.316,
+          155.16,
+          166.404
+        ],
+        "duration": 176.46,
+        "bytes": 1412397,
+        "sha256": "06067c78cce6c6f2fcc4430b2e0d7e16e10d6a1d592180130c22574b9acb69ff",
+        "decodedSeconds": 176.46,
+        "pageRms": [
+          0.067356,
+          0.070181,
+          0.072022,
+          0.065886,
+          0.071065,
+          0.067481,
+          0.068257,
+          0.060753,
+          0.066624,
+          0.06743,
+          0.063663,
+          0.065464,
+          0.070748,
+          0.075093,
+          0.069621,
+          0.064443,
+          0.07082,
+          0.072619
+        ]
+      }
+    },
+    {
+      "id": "jin-tian-wo-shi-da-ban-zhi-ri-sheng",
+      "title": "今天我是大班值日生",
+      "order": 49,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/1.webp",
+          "bytes": 206254,
+          "sha256": "fd01757448448179a97e7ee22ea5f510eec147f039baa69731ae7b79a7eabda3"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/2.webp",
+          "bytes": 223346,
+          "sha256": "b50a212d233aaf6cf548c4acd1b1340767295712547a3f1045bbbb5648c24707"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/3.webp",
+          "bytes": 266524,
+          "sha256": "6a267dd1c927a7e60ea60e0eb665985eb0376252e5be6881522db47f009d9f9e"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/4.webp",
+          "bytes": 228498,
+          "sha256": "7e5168bbcc13a841a7b0d6cce51eb1adf1ac7b7fe82e2ee648ba695da11e3a5f"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/5.webp",
+          "bytes": 280784,
+          "sha256": "29975f96f553c44291ef5ba6ef05e5ddb3f7101ba37f7497fed5088c9c35d1d4"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/6.webp",
+          "bytes": 271892,
+          "sha256": "39fa5bc4dbda62b72678bddeec9029e2f56d35290460a099c2d01ee3a61cb38a"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/7.webp",
+          "bytes": 218340,
+          "sha256": "e384872d4c1df460b1e5f859cb681afb3c6a1d5bb68e5dd758bce7eb0d5f71b1"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/8.webp",
+          "bytes": 219712,
+          "sha256": "8a3ef25aa9c0b71391da684fc0a7adfdbdf973533c3683e83c605514182df154"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/9.webp",
+          "bytes": 233874,
+          "sha256": "c2e6ea0afa429b23c2d0591979d53c2521ef766b514e4d2054b85a0607ac9b06"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/10.webp",
+          "bytes": 249998,
+          "sha256": "d17937b5287759e5cfa6e03744c0b388dd955752f1e63ffac0204721dabde2da"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/11.webp",
+          "bytes": 204576,
+          "sha256": "5cc0ed1eca9f2759b4826c2887e637777813ca329d82d0f2555621cbbc173e0a"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/12.webp",
+          "bytes": 184162,
+          "sha256": "1b33d7a4bb08856348d9441f83579d14c0df585bfa6ac528446625322e2ce7b0"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/13.webp",
+          "bytes": 187134,
+          "sha256": "70967be4a18ce3adede1224a15a09cc7900f661fca862ebd1cd4ee86e804a867"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/14.webp",
+          "bytes": 192952,
+          "sha256": "a795e9b6ebcec5b4324d4f9c1dc5fc6e942e5719aa02c4fbda1fd731dd3c10bd"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/15.webp",
+          "bytes": 188568,
+          "sha256": "1574876478bda3809b9374d9c41db274a760b92db2ae577a2a3b5f6c55ff5f52"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/16.webp",
+          "bytes": 195828,
+          "sha256": "c768d2c83954d069586ced6ac6c5c66eb7999351361958bb4fc172cd7aed557f"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/17.webp",
+          "bytes": 200206,
+          "sha256": "173b32b4f76bee602a2936a13943a0766d254c6cb86abdafb08e97ccb74eaa63"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/18.webp",
+          "bytes": 196442,
+          "sha256": "1b03b72813ced988231fea273a5ee9b7b34914c113879156109c4bab91f24840"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/jin-tian-wo-shi-da-ban-zhi-ri-sheng/zh-c309a1bfd3663045.mp3",
+        "contentHash": "c309a1bfd366304506b92e84574959de0ba81ddd3cd3b0eb2457e23a2f6e839c",
+        "pageStarts": [
+          0,
+          6.828,
+          16.704,
+          25.308,
+          34.944,
+          43.452,
+          50.928,
+          59.052,
+          66.84,
+          77.028,
+          89.064,
+          97.668,
+          105.936,
+          114.78,
+          124.416,
+          134.364,
+          143.832,
+          155.316
+        ],
+        "duration": 162.42,
+        "bytes": 1300077,
+        "sha256": "96a646cab2df1ef25542e016cbffdffbe3453599dda75082a39777bd36afd4d8",
+        "decodedSeconds": 162.42,
+        "pageRms": [
+          0.067161,
+          0.073051,
+          0.07213,
+          0.072172,
+          0.067994,
+          0.073382,
+          0.065998,
+          0.073141,
+          0.071448,
+          0.071167,
+          0.069908,
+          0.06577,
+          0.065629,
+          0.069409,
+          0.067028,
+          0.066121,
+          0.07028,
+          0.068442
+        ]
+      }
+    },
+    {
+      "id": "fang-xue-lu-shang-man-man-shuo",
+      "title": "放学路上，慢慢说",
+      "order": 50,
+      "pages": 16,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/1.webp",
+          "bytes": 196358,
+          "sha256": "20012981bcbf933adc13f0869962ab258d62b6d86974f715fc28033e8b54f93c"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/2.webp",
+          "bytes": 211502,
+          "sha256": "e42198e9cb160c651f66aa38dbbc6cd4ad4f8811f1491ab12d5e28a07e9012d3"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/3.webp",
+          "bytes": 200508,
+          "sha256": "19a2446b43e1e931f7258f1533a3760327a8809d6d9b655f3ac195e9164043fd"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/4.webp",
+          "bytes": 190872,
+          "sha256": "aa98f2a17313e7e6db7ca499442b85832f6e9d848e78b53bc18c56d2c0141f10"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/5.webp",
+          "bytes": 229304,
+          "sha256": "074347b97d582371dfabfe2a0e3fab5d23061ef41c7563989d8dec8c9beda12b"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/6.webp",
+          "bytes": 257422,
+          "sha256": "61f285376958115d9a4096b99ae4580ce51fa4e58c5ca2ae949ca08057fe4106"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/7.webp",
+          "bytes": 248706,
+          "sha256": "a579170c3f51c189715c3f1632006be1983955ad133c865f346bfef69de90c40"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/8.webp",
+          "bytes": 209980,
+          "sha256": "bf790dd0767a00ff1438f2d93843df2552b99a4540bae065310594d260f9eec6"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/9.webp",
+          "bytes": 227144,
+          "sha256": "3e70640c5e71f126e0a3f9385cd9d87179a016bd0265a484ecd4c05d934782a9"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/10.webp",
+          "bytes": 227002,
+          "sha256": "320d38fca57c3eef286c2599a77b999d77386483d3e22e0a4a58e8165978b168"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/11.webp",
+          "bytes": 176636,
+          "sha256": "624c5b74e21ccc6c97309081c11fc1e8d70bfdf23b385f4619294f268b44280b"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/12.webp",
+          "bytes": 239250,
+          "sha256": "79477ce07d5ffa2cda29bb06288daf81e7d02c67efbeb9ffdea28887e3391bdc"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/13.webp",
+          "bytes": 207820,
+          "sha256": "1bf8c502cdeacef045ba0c205b08618ad329f2accf3b8fd5394d86f21178c9a3"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/14.webp",
+          "bytes": 201940,
+          "sha256": "c3dfd8cede98b2ad21f7aed5df0ffd9c0b4db5bc43ac3551b75f03ae5bf78628"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/15.webp",
+          "bytes": 209426,
+          "sha256": "b046e33197a02e0f0ae23e6c0bc7faff8223ed62231bdda540fd296e9fe64993"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/16.webp",
+          "bytes": 249092,
+          "sha256": "26a1386cdf058cdbe9531509b532a7edaf172fa6c46c9a10871af5f88b0e8924"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/fang-xue-lu-shang-man-man-shuo/zh-ac80008679930ae0.mp3",
+        "contentHash": "ac80008679930ae09c990ff828e6d3b0f211f28fa201ae55fbb0bff758166c04",
+        "pageStarts": [
+          0,
+          8.508,
+          18.696,
+          29.22,
+          39.264,
+          48.012,
+          55.8,
+          66.804,
+          74.352,
+          82.236,
+          90.36,
+          98.148,
+          107.376,
+          116.772,
+          127.296,
+          136.14
+        ],
+        "duration": 146.988,
+        "bytes": 1176621,
+        "sha256": "c36fd40d6639a71fa51d0a3afef3a2c8e14ce114e0105867f6775d908e1e326c",
+        "decodedSeconds": 146.988,
+        "pageRms": [
+          0.067188,
+          0.075443,
+          0.06868,
+          0.066088,
+          0.075867,
+          0.067189,
+          0.06823,
+          0.066418,
+          0.068475,
+          0.07055,
+          0.073687,
+          0.072965,
+          0.068471,
+          0.07269,
+          0.069469,
+          0.070274
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "totals": {
+    "expectedBooks": 10,
+    "checkedBooks": 10,
+    "expectedPages": 180,
+    "images": 180,
+    "audioFiles": 10,
+    "narrationSeconds": 1635.528
+  }
+}
