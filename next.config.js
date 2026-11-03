@@ -8,6 +8,8 @@ const nextConfig = {
   },
   serverExternalPackages: ["puppeteer", "ws"],
   images: {
+    // Serve source images directly so Vercel's transformation quota cannot break them.
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "**.r2.dev" },
       { protocol: "https", hostname: "**.cloudflarestorage.com" },
