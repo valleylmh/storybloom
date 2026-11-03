@@ -1,0 +1,400 @@
+{
+  "_draft": {
+    "note": "用户已于2026-10-17确认本册完整内容，并指定使用内置生图与百炼TTS继续制作。",
+    "createdAt": "2026-10-17",
+    "contentApproved": true,
+    "tentativeSeriesOrder": true,
+    "approvedAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "scope": "five-new-books-authorized",
+    "plan": "user-approved",
+    "manuscript": "approved",
+    "illustrationPrompts": "prepared",
+    "illustrations": "complete-built-in-imagegen",
+    "audio": "complete-local-bailian",
+    "libraryIntegration": "complete-local-catalog",
+    "upload": "not-performed",
+    "publication": "not-performed",
+    "validation": "passed-assets-types-tests-and-browser",
+    "commit": "not-performed"
+  },
+  "editorial": {
+    "batchTitle": "都市汽车系列第二批 城市服务车五连篇",
+    "synopsis": "把点心送到接待点后，妈妈发现停在院内车位的小汽车无法启动。安安担心赶不上公园里的故事会。妈妈联系专业救援，带她到活动中心安全等候。两人隔窗看见平板、绞盘和固定带各自发挥作用；小汽车被送去检修，她们则改乘公交继续赴约。故事把故障写成可以有序处理的意外，不制造公路险情。",
+    "knowledgePoints": [
+      "专业道路救援与车辆检修",
+      "可移动平板与缓坡",
+      "绞盘牵引和车辆固定的不同任务",
+      "被运车辆不搭载乘客",
+      "出行计划可以调整"
+    ],
+    "sources": [
+      "https://www.fordservicecontent.com/ford_content/catalog/motorcraft/2022-Wrecker-Towing-Guide-MCS-6040.pdf"
+    ]
+  },
+  "book": {
+    "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+    "seriesId": "qiche",
+    "title": "小汽车走不动，谁来帮帮它？",
+    "subtitle": "停车场里来了一位平板伙伴",
+    "question": "汽车不能自己开走时，道路救援车怎样带它去修理？",
+    "moral": {
+      "zh": "遇到车辆故障，先在安全处等专业人员处理，再选择合适的办法继续出行。",
+      "en": "When a car breaks down, wait safely for professional help and choose a suitable way to continue the journey."
+    },
+    "ageLabel": "4–8 岁",
+    "order": 50,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 50,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "汽车科普",
+        "道路救援车",
+        "平板救援车",
+        "绞盘",
+        "车辆检修",
+        "出行调整"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "把点心交给阅读节接待员后，妈妈回到院内停车场。她坐进驾驶座，准备开车去公园，小汽车却没有像平时那样启动。",
+        "enText": "After handing over the festival snacks, Mom returned to the courtyard parking area. She got into the driver's seat to head to the park, but the car did not start as usual.",
+        "illustrationPrompt": "车内侧后方中景：浅蓝左舵家用车在院内独立车位完全停妥，妈妈在左前驾驶座，安安在后排儿童座椅扣好安全带。"
+      },
+      {
+        "page": 2,
+        "zhText": "妈妈没有让小汽车反复试着“使劲”。她停下操作，看看仪表上的提示：“它需要检查，我们先不出发了。”",
+        "enText": "Mom stopped trying to start it and checked the dashboard message. “It needs to be checked. We will stay here for now.”",
+        "illustrationPrompt": "停妥车辆仪表与妈妈手部近景：界面只有抽象提示图标，妈妈的手已离开启动操作处，无可读故障代码。"
+      },
+      {
+        "page": 3,
+        "zhText": "安安摸摸小熊的耳朵：“方老师要在公园讲新故事。我们的车走不动，是不是就听不到了？”",
+        "enText": "An'an stroked Bear's ear. “Teacher Fang is telling a new story at the park. If our car cannot go, does that mean we will miss it?”",
+        "illustrationPrompt": "后排近景：安安仍在安全座椅中抱小熊，露出担心表情；橙色背包不在安全带下。"
+      },
+      {
+        "page": 4,
+        "zhText": "“先把眼前的事安排好，再想怎么过去。”妈妈联系了专业救援，把车的位置和不能启动的情况说清楚。",
+        "enText": "“First we will take care of this, then work out how to get there.” Mom called a professional recovery service and explained their location and what had happened.",
+        "illustrationPrompt": "已停稳车内中景：妈妈在停车状态使用电话，安安坐在后排，不出现行驶中打电话。"
+      },
+      {
+        "page": 5,
+        "zhText": "活动中心的工作人员带她们沿人行通道回到玻璃等候室。妈妈拿好随身物品和书签篮，牵着安安的手，一起坐下来等。",
+        "enText": "An activity-center staff member guided them along the pedestrian path to a glass-fronted waiting room. Mom took their belongings and the bookmark basket, held An'an's hand, and sat with her to wait.",
+        "illustrationPrompt": "院内安全步行通道远景：工作人员引路，妈妈提星星书签篮并牵着安安走向等候室，与停车和行车路线用护栏分隔。"
+      },
+      {
+        "page": 6,
+        "zhText": "不久，一辆橙色救援车开进院子。它背后没有高高的车厢，只有一块长长的平板。安安说：“像一张汽车小床！”",
+        "enText": "Soon, an orange recovery truck entered the courtyard. Instead of a tall cargo box, it carried a long flat deck. “Like a little bed for a car!” An'an said.",
+        "illustrationPrompt": "等候室隔窗远景：橙驾驶室深灰单车平板救援车到达，家用车还在原车位；孩子仅在玻璃后。"
+      },
+      {
+        "page": 7,
+        "zhText": "赵师傅先查看小汽车和周围场地，又和妈妈确认车辆情况。“不同的车，要选合适的装运办法。”他说。",
+        "enText": "Zhao inspected the car and the surrounding area, then confirmed its details with Mom. “Different vehicles need suitable recovery methods,” he explained.",
+        "illustrationPrompt": "作业开始前中景：赵师傅已完成车旁检查，在等候室接待口向妈妈说明；安安与妈妈同在室内。"
+      },
+      {
+        "page": 8,
+        "zhText": "安安问：“能不能拿一根绳子，把它拴在别的车后面？”赵师傅摇摇头：“不能随便拴着拖，可能伤到车，也不安全。”",
+        "enText": "“Could another car pull it with a rope?” An'an asked. Zhao shook his head. “We cannot just tie it on and drag it. That could damage the car and be unsafe.”",
+        "illustrationPrompt": "等候室人物中景：安安提问，赵师傅用平板救援车图卡解释，不展示家庭车辆用绳索拖车的具体做法。"
+      },
+      {
+        "page": 9,
+        "zhText": "“今天，我们用这辆平板救援车。”赵师傅指向窗外，“它先把小汽车接上来，再整辆运去修理厂。”",
+        "enText": "“Today we are using this flatbed recovery truck,” Zhao said, pointing outside. “It will take the whole car to the repair shop.”",
+        "illustrationPrompt": "隔窗宽景：赵师傅指向单车平板救援车与浅蓝家用车，画面明确只装运一辆汽车。"
+      },
+      {
+        "page": 10,
+        "zhText": "工作人员围好作业区域，确认没有人留在小汽车里。妈妈和安安隔着玻璃看，谁也没有走到救援车后面。",
+        "enText": "The crew secured the work area and checked that nobody remained inside the car. Mom and An'an watched through the glass, well away from the back of the truck.",
+        "illustrationPrompt": "高位全景：作业区锥桶与护栏清楚，浅蓝车内空无一人，安安和妈妈位于远离作业区的玻璃室。"
+      },
+      {
+        "page": 11,
+        "zhText": "嗡——平板缓缓向后滑，尾端慢慢降低，变成一道坡。安安比了比：“小床，先变成小坡道了。”",
+        "enText": "With a low hum, the deck slid backward and its rear lowered to form a ramp. “The little bed turns into a ramp first,” An'an said.",
+        "illustrationPrompt": "救援车纯机械侧视特写：深灰平板向后滑并倾斜接地，儿童不入镜，不画成铰接双层轿运挂车。"
+      },
+      {
+        "page": 12,
+        "zhText": "赵师傅按车辆要求连接好牵引装置，站到安全的操作位置。平板前方的绞盘开始收绳，细长的牵引绳慢慢缩短。",
+        "enText": "Zhao connected the recovery equipment as required for the car and moved to a safe operating position. The winch at the front of the deck began drawing in its cable.",
+        "illustrationPrompt": "机械中近景：绞盘在平板前端收绳，牵引连接仅作总体表现不示范挂点，操作员在侧面安全位置，不在绳索受力直线上。"
+      },
+      {
+        "page": 13,
+        "zhText": "浅蓝色小汽车的轮子缓缓转动，一点一点上了坡。没有人在后面推，也没有孩子坐在里面。",
+        "enText": "The light-blue car's wheels turned slowly as it moved up the ramp. Nobody pushed from behind, and no child rode inside.",
+        "illustrationPrompt": "侧面动作中景：空载浅蓝小汽车被缓慢牵引到平板上，车内清楚为空，不有人推车或站在坡道下。"
+      },
+      {
+        "page": 14,
+        "zhText": "小汽车到位后，平板慢慢回到平平的位置。四个轮子都离开地面，稳稳地落在救援车背上。",
+        "enText": "Once the car was in position, the deck returned to level. All four wheels were off the ground, resting on the recovery truck.",
+        "illustrationPrompt": "标准侧视：单车平板完全回位水平，浅蓝车四轮完整承载，平板锁定结构可辨认，玻璃等候室在远处。"
+      },
+      {
+        "page": 15,
+        "zhText": "“已经上去了，怎么还没走？”安安问。窗外，赵师傅正把固定带一一扣好。妈妈说：“上车和固定，是两件事。”",
+        "enText": "“It is on the truck. Why are we not leaving yet?” An'an asked. Outside, Zhao was securing the wheel straps. “Loading and securing are two different jobs,” Mom explained.",
+        "illustrationPrompt": "轮胎与平板局部特写：成人手套检查黄色轮胎固定带和平台锚点，不把绳子绑在保险杠或车窗上。"
+      },
+      {
+        "page": 16,
+        "zhText": "赵师傅检查平板和固定装置，再和妈妈确认送往哪家修理厂。妈妈收好交接信息，才松了一口气。",
+        "enText": "Zhao checked the deck and restraints, then confirmed the repair shop with Mom. She kept the handover details and let out a relieved breath.",
+        "illustrationPrompt": "作业完成后接待口中景：赵师傅与妈妈核对无字记录卡，窗外车已固定，安安在妈妈身旁抱熊。"
+      },
+      {
+        "page": 17,
+        "zhText": "安安看了看空空的后排座椅：“那我们也坐在小汽车里，一起上路吗？”妈妈说：“不，汽车被运走时，里面不坐乘客。”",
+        "enText": "An'an looked at the empty rear seat. “Do we ride inside our car while it is carried?” “No,” Mom said. “Passengers do not stay in the car being transported.”",
+        "illustrationPrompt": "隔窗中景：已固定的浅蓝车后排儿童座椅空着，妈妈在室内向安安解释，不画人物上被运车辆。"
+      },
+      {
+        "page": 18,
+        "zhText": "橙色救援车带着小汽车去检修了。安安挥挥手：“小汽车，检查好了，我们再一起出门。”",
+        "enText": "The orange recovery truck took their car away to be checked. An'an waved. “We will go out together again after you are ready.”",
+        "illustrationPrompt": "活动中心室内向外远景：平板救援车低速离开院内出口，乘员只在救援车驾驶室，浅蓝车内无人。"
+      },
+      {
+        "page": 19,
+        "zhText": "妈妈查好公交路线：“我们还可以坐公交去公园。”安安把小熊举起来：“它也有自己的座位吗？”妈妈笑了。",
+        "enText": "Mom checked the bus route. “We can still take the bus to the park.” An'an held up Bear. “Will Bear get a seat of his own?” Mom smiled.",
+        "illustrationPrompt": "等候室座位中景：妈妈在静止等候状态查看手机抽象公交路线，安安举小熊，表情放松。"
+      },
+      {
+        "page": 20,
+        "zhText": "她们沿人行道走向公交站。安安回头看了一眼空车位，又向前看看：“小汽车去检查，我们继续去听故事。”",
+        "enText": "They walked along the pavement to the bus stop. An'an glanced back at the empty parking space, then looked ahead. “Our car is going for a check. We are going for a story.”",
+        "illustrationPrompt": "收束远景：妈妈牵安安沿清楚分隔的人行道去公交站，空车位在身后，前方公交站有正常等候乘客。"
+      }
+    ],
+    "parentGuide": {
+      "goal": "认识平板救援车怎样装运不能自行开走的汽车，分清牵引、承载、固定的任务，并理解临时改变出行方案。",
+      "reminder": "故事发生在院内停车位，不是高速或行车道故障处置教程。真实故障由成人按现场情况和专业指引处理；儿童不触碰牵引绳、绞盘、固定带，不在作业区围观，不留在被运车辆内。具体装运方法随车型和设备而异。",
+      "questions": [
+        "为什么妈妈没有让安安一起推真正的小汽车？",
+        "斜下来的平板、慢慢收回的牵引绳、最后扣好的固定带，分别在做什么？",
+        "小汽车不能开走以后，她们还可以怎样去听故事？"
+      ],
+      "activity": "在桌面用宽纸板搭一个低矮平台，让一辆轻玩具车从平缓坡面上去，再把平台放平。由成人用一条宽纸带把玩具车固定在平台上，轻轻移动平台比较前后差别。不使用真实绳索、弹力带、绞盘或高处斜坡。",
+      "ageTips": {
+        "age4to5": "用“上去、托住、固定”描述三个动作，再给玩偶选一种继续出门的方式。",
+        "age6to8": "比较单车故障救援与第38本多车参展运输的任务差别，讨论为什么乘客和汽车要分开继续旅行。"
+      }
+    },
+    "publishedAt": "2026-10-18"
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 premium polished 3D clay-like animated-film children's picture-book illustration. Warm early-autumn city daylight, rounded tactile materials, physically plausible vehicles, clear action and varied wide, medium and close compositions. Friday afternoon for book 48, sunny Saturday morning through afternoon for books 49–52, with evening only where explicitly requested. One continuous scene per page. Follow the page-specific camera and location. 教学模型、图卡和真实作业区必须通过材质、尺度和环境清楚区分。",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl: round face, ear-length black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. Bear: small brown plush with blue scarf and yellow crescent behind one ear. The family car is the established left-hand-drive light-blue five-door hatchback with beige interior; Mom drives from the left front seat, An'an rides buckled in the rear dark-blue age-appropriate child restraint. Backpack is separately stowed away from restraint straps. Only include people, the bear and props required by the page; do not force them into mechanical close-ups. The star bookmarks are large flat yellow paper stars from book 48 and reappear in book 52. Recovery truck: generic orange cab, dark-gray single-car sliding tilting flatbed, amber work beacon, front-mounted winch on the deck, yellow wheel straps; never a crane or a multi-car carrier. Operator Zhao: short black hair, navy coveralls, orange reflective vest and safety boots. Scene is a flat off-street activity-center parking courtyard with a separated pedestrian route and a glass waiting room. During operations no child is outdoors in the work zone, nobody is inside the transported hatchback, and nobody stands in the line of the winch cable.",
+    "negative": "No readable text, letters, numbers, captions, speech bubbles, real addresses, phone numbers, usable personal data, real barcodes, logos, brand marks, readable plates or watermarks. No anthropomorphic car faces, duplicate main characters, warped anatomy or impossible vehicle structures. No child in loading or recovery work zones, climbing shelves, entering freight boxes, touching winch cables or refrigeration equipment. No child pushing a real vehicle, passenger in a car transported on a flatbed, driver phone use while moving, unrestrained child in the family car, backpack under restraint straps, icy yogurt cargo, instant food-freshening magic, bus ramp deployed while moving, crowded ramp, unsolicited wheelchair pushing, or pity framing of wheelchair users."
+  },
+  "audioGeneration": {
+    "provider": "bailian",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "pageCount": 20,
+    "contentHash": "47eb56d1c9c41238311f8a08f622a9ab14175dec2e4d0db1f3778a61adc062fc",
+    "duration": 180.288,
+    "decodeValidation": "passed",
+    "nonSilentPages": "passed"
+  },
+  "illustrationGeneration": {
+    "provider": "built-in-imagegen",
+    "pageCount": 20,
+    "format": "webp",
+    "width": 1200,
+    "height": 1200,
+    "maxBytes": 307200,
+    "contactSheet": "content-drafts/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/contact-sheet.jpg",
+    "visualReview": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_ccwB9MlCGU1Eyrv9JPjkz6Sq.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/1.webp",
+        "sha256": "9a6c1448d93e0f0a7ade134eea63fb9c95b6f8ff68ec694202ac80e212e2d498",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 2,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_PiQbBazuJqdDrgtvWKC8jmOB.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/2.webp",
+        "sha256": "2a64cd9770accf3581f57b6ba222c4b4776669e874031dcebbe373d6cc2c8c58",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 3,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_d5MHZbhnQ5zScQhc2HbmXyyD.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/3.webp",
+        "sha256": "fc2d212277d8f0deb4b83b460e704dfb9c70cd4923af7add433086a1653fd8b2",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 4,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_AJNa8IFEANdCqe2tdroDJECE.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/4.webp",
+        "sha256": "764e0bfa29eb418f08d7fb7a563312027976c776eb9a94ceeb9575864f51e8c7",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 5,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_dVWxW8GqILmov0AL1v2nVcVk.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/5.webp",
+        "sha256": "cfa6fbbb263a6bc3c124eea283de51b3220ba81af1b245fc9c1d2bb2c91e8fcb",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 6,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_HVQ3nVTNT69ktLfWPq7q6tcX.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/6.webp",
+        "sha256": "edb1f2f5fd66dfe6214faa3487aba3b44bdfeda20a247609d71940e4c23bf831",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 7,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_muV5ZnE3Zj6rPhqqIdn7OHjB.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/7.webp",
+        "sha256": "584c9742a6695c82a4c1dc53126f79947072d44bf41d7518ae5a08be53443163",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 8,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_JTKF7zBLxGRsgqPdUMo89sWd.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/8.webp",
+        "sha256": "1dc0456c865f4deba8a08c138e358c0f3269093c3c88621cb3d04148cc1167e1",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 9,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_76UiqayejulrGefMJdlt3ena.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/9.webp",
+        "sha256": "15543901dbe95a725bebc14611c02c93d8cf68f90793f2135eb5a1ee153a55af",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 10,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_26huUvsrlt9uuuPXESgdM5jK.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/10.webp",
+        "sha256": "c4c86b19ff9c103522e5d3dd34b46b2e3bfc6ad91879f25b547028b58bfad415",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 11,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bccFW2bnOJBW1gavKc1JSZrn.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/11.webp",
+        "sha256": "587dfec41d4fcd9cfa3b53b93a83004869de8b793386504e695724ef12c1beaf",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 12,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_UGr2oz4QhxI48PkfEIYYkPPg.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/12.webp",
+        "sha256": "9f75e2b40fca9d6abbff3ebc1cf8f2d4dec0a5397faca4fef54560f70402904d",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 13,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_D9ZlYxhqTeL9MYl6nEdHz1jV.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/13.webp",
+        "sha256": "752e13fc38628527c36a89969b9993e634f171c85a482efa182036adc46a48e5",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 14,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_4ZSVXihbwylvC1tDKXVtCSjO.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/14.webp",
+        "sha256": "7a2a6f5ac57ff6114e46a8867d6c2460c32df29540ccc3e2eaae85739bd3ea1e",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 15,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_pXPqSGaYMsAbF2dFQi2n5t87.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/15.webp",
+        "sha256": "fdebb2e623f7e104127f42f10815377c4b99f2c879fe6b8956ad95fb5cbaced4",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 16,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_SGvfsWzuyEaXm9QvkgX4axxE.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/16.webp",
+        "sha256": "188277802e7e6f7c241d39e9ad25743a8f10d9654946b5d7ec8938b9946d5a17",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 17,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_iMR7frmMZuyPOeaEruJwMyUe.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/17.webp",
+        "sha256": "a01656e52a3b299d91051c0d4f28a9287e3b6923c400c6f8805d7749bf90fce6",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 18,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_d0ZglVzyI6ha7iFu3nLTLQVt.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/18.webp",
+        "sha256": "30b0990a33613bc9259bbf0d9c04bf859356bfc17e00f4f3d4dcf52ec574795d",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 19,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_7nPzrTEFMep5RLOqo2glRltk.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/19.webp",
+        "sha256": "3ee5f938ca0b375b0b38fb00735d6a501dd5c49777eac089d9869c77f312c587",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 20,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_fgQFkdtFWsZEaeJ938w9EkMu.png",
+        "output": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/20.webp",
+        "sha256": "37f781a7909fd9b5bdbb26cd73bf3e0790812c55f2e1393e60108860a86a5062",
+        "visualReview": "passed-page-and-contact-sheet"
+      }
+    ]
+  }
+}

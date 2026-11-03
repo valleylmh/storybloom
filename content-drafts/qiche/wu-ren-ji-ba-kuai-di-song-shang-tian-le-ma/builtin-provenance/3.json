@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 43,
+  "page": 3,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_6BmByae08C9XepX9mg6sdqPK.png",
+  "target": "public/library/qiche/wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma/3.webp",
+  "sha256": "731c13ed4793aff1852d9cafe6cbba03e0440fbf057f597813929ad0d4d3c2ce",
+  "reviewCorrection": "Exactly four rotors; remove extra arm; retain attached parcel",
+  "importedAt": "2026-10-17T13:51:58.830Z",
+  "id": "wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma",
+  "bytes": 111496
+}

@@ -1,0 +1,343 @@
+{
+  "_draft": {
+    "note": "用户已于2026-10-17确认本册完整内容，并指定使用内置生图与百炼TTS继续制作。",
+    "createdAt": "2026-10-17",
+    "contentApproved": true,
+    "tentativeSeriesOrder": true,
+    "approvedAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "scope": "five-new-books-authorized",
+    "plan": "user-approved",
+    "manuscript": "approved",
+    "illustrationPrompts": "prepared",
+    "illustrations": "complete-built-in-imagegen",
+    "audio": "complete-local-bailian",
+    "libraryIntegration": "complete-local-catalog",
+    "upload": "not-performed",
+    "publication": "not-performed",
+    "validation": "passed-assets-types-tests-and-browser",
+    "commit": "not-performed"
+  },
+  "editorial": {
+    "batchTitle": "都市汽车系列第二批 城市服务车五连篇",
+    "synopsis": "阅读节当天，安安在社区小店等妈妈取点心，看见一辆带制冷机的白色货车送来酸奶。她以为厚车厢里藏着冰雪。唐阿姨用展示材料和示意图解释隔热与制冷的分工；小店工作人员检查到货情况后及时放入冷柜。安安发现，凉意要靠沿途的人和设备接力，不能靠车厢一次变魔术。",
+    "knowledgePoints": [
+      "隔热车厢与制冷设备",
+      "货物按需要保持合适温度",
+      "装载时保留空气流通空间",
+      "冷藏运输和接货储存的接力"
+    ],
+    "sources": [
+      "https://www.carrier.com/truck-trailer/en/uk/cool-by-carrier/"
+    ]
+  },
+  "book": {
+    "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+    "seriesId": "qiche",
+    "title": "冷藏车，肚子里藏着冬天吗？",
+    "subtitle": "一箱酸奶没有断开的凉凉旅程",
+    "question": "同样是送货的汽车，为什么这辆车多了一台嗡嗡响的机器？",
+    "moral": {
+      "zh": "冷藏车沿途照顾货物需要的温度，接货后也要继续妥善保存。",
+      "en": "A refrigerated truck maintains the conditions its cargo needs, and careful storage continues after delivery."
+    },
+    "ageLabel": "4–8 岁",
+    "order": 49,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 10,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 49,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "汽车科普",
+        "冷藏车",
+        "保温隔热",
+        "制冷设备",
+        "冷链运输",
+        "社区服务"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "星期六早上，安安和妈妈开车来到社区小店。妈妈去取阅读节点心，安安忽然听见门外一阵低低的嗡嗡声。",
+        "enText": "On Saturday morning, An'an and Mom drove to the neighborhood shop to collect snacks for the reading festival. By the door, An'an heard a low humming sound.",
+        "illustrationPrompt": "小店室内中景：妈妈与安安在顾客区等候，门外可见停妥的蓝驾驶室白货厢冷藏车。"
+      },
+      {
+        "page": 2,
+        "zhText": "一辆白色货车停在卸货区。驾驶室上方，多了一台带格栅的机器。安安问：“它背着一台大空调吗？”",
+        "enText": "A white delivery truck was parked in the unloading area. Above its cab sat a machine with a grille. “Is it carrying a big air conditioner?” An'an asked.",
+        "illustrationPrompt": "低角度车辆特写：蓝色驾驶室上方的浅蓝制冷机和格栅清晰，白色密闭货厢不透明。"
+      },
+      {
+        "page": 3,
+        "zhText": "唐阿姨听见了，笑着说：“它是冷藏车，今天送来的是需要冷藏的酸奶。上面的机器，是它的制冷机。”",
+        "enText": "Tang, the driver, smiled. “It is a refrigerated truck. Today it is delivering yogurt that needs to stay chilled. The machine up there is its refrigeration unit.”",
+        "illustrationPrompt": "隔着小店玻璃门的中景：唐阿姨站在已停妥车旁介绍，妈妈和安安在顾客区，不靠近卸货路线。"
+      },
+      {
+        "page": 4,
+        "zhText": "车门只打开一会儿，工作人员就把酸奶搬进店里。安安隔着玻璃望进去：“车厢里面，会不会下雪呀？”",
+        "enText": "The doors opened briefly while workers moved the yogurt into the shop. Looking through the glass, An'an wondered, “Does it snow inside the truck?”",
+        "illustrationPrompt": "室内向卸货区看：成人推运封好的酸奶箱，车厢干净无冰雪，安安隔着玻璃观察。"
+      },
+      {
+        "page": 5,
+        "zhText": "“不会呀。凉到什么程度，要看运的东西。”唐阿姨说，“这批酸奶要保持冷藏，不是把它们全都冻成冰块。”",
+        "enText": "“No. How cool it needs to be depends on the cargo,” Tang explained. “This yogurt needs chilled storage. We are not freezing it into blocks of ice.”",
+        "illustrationPrompt": "接待桌中景：唐阿姨指向一箱封好的酸奶与冷藏示意图，图中没有结冰食物或雪景。"
+      },
+      {
+        "page": 6,
+        "zhText": "唐阿姨拿出一小块车厢隔热材料样品。安安摸摸厚厚的边缘：“像给小屋穿了一件厚外套！”",
+        "enText": "Tang showed them a small sample of the body's insulation. An'an felt its thick edge. “Like putting a thick coat around a tiny house!”",
+        "illustrationPrompt": "手部特写：成人托住边缘圆滑的隔热展示样品，安安轻触表面；不画孩子触摸真实车厢夹层。"
+      },
+      {
+        "page": 7,
+        "zhText": "“这件外套能减慢外面的热跑进来。”唐阿姨把样品放回盒子，“不过，只靠它，可不能一直凉下去。”",
+        "enText": "“That coat slows heat coming in from outside,” Tang said, putting the sample away. “But insulation alone cannot keep everything cool forever.”",
+        "illustrationPrompt": "桌面教学近景：隔热样品旁有无字冷暖色示意卡，外侧暖色箭头被减弱而非完全阻断。"
+      },
+      {
+        "page": 8,
+        "zhText": "她翻开示意图。制冷机把车厢里的热量搬到外面，再让凉空气在里面流动。安安说：“原来不是往里面装冬天！”",
+        "enText": "She opened a diagram. The refrigeration unit moved heat out of the box while cool air circulated inside. “So it is not packing winter into the truck!” An'an said.",
+        "illustrationPrompt": "单一教学示意场景：白色车厢剖面模型、闭合循环风向和向外排热的暖色箭头，无文字，不出现孩子站在货厢。"
+      },
+      {
+        "page": 9,
+        "zhText": "图里的纸箱没有顶到车厢天花板，旁边也留着通道。“这些空地方，是不是忘记装满了？”安安问。",
+        "enText": "The boxes in the diagram did not reach the ceiling, and there were spaces for airflow. “Did someone forget to fill those gaps?” An'an asked.",
+        "illustrationPrompt": "车厢教学模型近景：纸箱码放稳定，顶部与回风通道留有清楚空隙，空气路线不被货物挡住。"
+      },
+      {
+        "page": 10,
+        "zhText": "“这些地方要留给空气走，不能堵住。”唐阿姨说，“货物装车前，也要先处在合适的温度里，不能指望路上才慢慢变凉。”",
+        "enText": "“The air needs clear paths,” Tang said. “The cargo must already be at the right temperature before loading. We cannot count on the journey to cool warm goods down.”",
+        "illustrationPrompt": "俯视桌面图卡：冷库里的封装酸奶箱与冷藏车相接，箱体不堵出风口，不显示具体温度数字。"
+      },
+      {
+        "page": 11,
+        "zhText": "店员看过送货记录，检查这批酸奶的到货情况，马上把它们放进冷柜。安安透过玻璃门，看见里面整整齐齐的酸奶。",
+        "enText": "The shopkeeper checked the delivery record and the yogurt on arrival, then promptly put it into a refrigerated cabinet. Through the glass, An'an saw the neatly arranged cartons.",
+        "illustrationPrompt": "顾客区视角：绿围裙店员检查记录和到货箱后放入玻璃冷柜，安安留在柜外，不触碰温控设备。"
+      },
+      {
+        "page": 12,
+        "zhText": "“到店里，还要继续凉着呀？”妈妈点点头：“冷库、冷藏车、冷柜，一站接一站，把这段凉凉的旅程接下去。”",
+        "enText": "“It still needs to stay cool after arriving?” Mom nodded. “Cold store, refrigerated truck, shop cabinet—each place carries on the cool journey.”",
+        "illustrationPrompt": "桌面三件模型由左至右排列：冷库、冷藏车、店内冷柜，用蓝色连续路径连接，非分格漫画。"
+      },
+      {
+        "page": 13,
+        "zhText": "妈妈把取好的冷藏点心放进准备好的保温箱。她们没有再绕去别处，而是按计划开往社区阅读节的接待点。",
+        "enText": "Mom placed the chilled snacks in the insulated carrier she had brought. They followed their plan straight to the festival's receiving point without making extra stops.",
+        "illustrationPrompt": "停妥家用车的行李厢处：妈妈固定闭合保温箱；安安已在后排深蓝儿童座椅系好安全带，背包单独收好。"
+      },
+      {
+        "page": 14,
+        "zhText": "接待点的工作人员接过点心，及时放入冷藏设备。安安看着冷柜门关好，说：“下一站，也接住啦！”",
+        "enText": "Staff received the snacks at the festival and promptly placed them in refrigerated storage. Watching the cabinet door close, An'an said, “The next stop has taken over!”",
+        "illustrationPrompt": "社区活动中心室内：专业工作人员将点心放入冷藏柜，安安与妈妈站在接待桌一侧，运输箱已经取空。"
+      },
+      {
+        "page": 15,
+        "zhText": "等妈妈收好空保温箱，安安在小本子上画了三站：冷库、冷藏车，还有接待点的冷柜。她在中间连起一条蓝蓝的路。",
+        "enText": "While Mom packed away the empty insulated carrier, An'an drew three stops in her notebook: a cold store, a refrigerated truck, and the receiving point's cabinet. She joined them with a blue path.",
+        "illustrationPrompt": "活动中心休息桌俯视：安安画三种不同冷藏设备和蓝色连接线，妈妈整理已空运输箱，图中无文字或具体温度。"
+      },
+      {
+        "page": 16,
+        "zhText": "“不是一车冬天，是一站一站接住凉。”安安合上本子，抱起星星书签篮，“点心安顿好了，我们去公园听故事吧！”",
+        "enText": "“Not a truck full of winter—each stop keeps the cool journey going.” An'an closed her notebook and picked up the star-bookmark basket. “The snacks are settled. Let's go hear stories at the park!”",
+        "illustrationPrompt": "故事收束中景：安安在活动中心休息桌边合上本子，拿起黄色星星书签篮，妈妈提空保温箱，准备离开接待区。"
+      }
+    ],
+    "parentGuide": {
+      "goal": "分清厚车厢减慢热量进入、制冷机帮助维持温度的不同作用，理解冷藏运输之后仍要继续按要求储存。",
+      "reminder": "冷藏不等于把所有食物冻硬，也不是坏食物重新变新鲜。真实食品按包装标示和专业要求运输、储存；文中不提供统一温度或常温可放多久的判断法。孩子不进入货厢，不操作制冷设备。",
+      "questions": [
+        "厚车厢和嗡嗡响的机器，分别帮了什么忙？",
+        "为什么纸箱不能把出风口和通道堵满？",
+        "酸奶到了小店以后，凉凉旅程为什么还没有结束？"
+      ],
+      "activity": "由成人准备两个相同的小碟，各放一块较大的冰块，其中一个碟子外围包上干毛巾，另一个不包，放在同一处托盘上。过一会儿观察融化差别，讨论包裹只能减慢变化，不能不停制造凉意。冰块不入口，结束后倒水擦干。",
+      "ageTips": {
+        "age4to5": "用“挡住一些热”和“机器继续帮忙”两句短话理解，不讲制冷剂循环。",
+        "age6to8": "画出冷库、冷藏车、店内冷柜三站，讨论其中一站长时间失去合适条件会有什么问题。"
+      }
+    },
+    "publishedAt": "2026-10-18"
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 premium polished 3D clay-like animated-film children's picture-book illustration. Warm early-autumn city daylight, rounded tactile materials, physically plausible vehicles, clear action and varied wide, medium and close compositions. Friday afternoon for book 48, sunny Saturday morning through afternoon for books 49–52, with evening only where explicitly requested. One continuous scene per page. Follow the page-specific camera and location. 教学模型、图卡和真实作业区必须通过材质、尺度和环境清楚区分。",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl: round face, ear-length black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. Bear: small brown plush with blue scarf and yellow crescent behind one ear. The family car is the established left-hand-drive light-blue five-door hatchback with beige interior; Mom drives from the left front seat, An'an rides buckled in the rear dark-blue age-appropriate child restraint. Backpack is separately stowed away from restraint straps. Only include people, the bear and props required by the page; do not force them into mechanical close-ups. The star bookmarks are large flat yellow paper stars from book 48 and reappear in book 52. Refrigerated truck: generic compact blue cab, white insulated rectangular box body, pale-blue roof-front refrigeration unit with visible grille; no snow inside, no frost-covered food and no lettering. Driver Tang: Chinese woman with a short black bob, blue work jacket, gray trousers, dark work shoes. Shopkeeper: Chinese adult in a green apron. Delivery cargo is sealed yogurt cartons, always handled by adults. An'an and Mom observe from inside the shop behind a glass door or from a separated customer counter.",
+    "negative": "No readable text, letters, numbers, captions, speech bubbles, real addresses, phone numbers, usable personal data, real barcodes, logos, brand marks, readable plates or watermarks. No anthropomorphic car faces, duplicate main characters, warped anatomy or impossible vehicle structures. No child in loading or recovery work zones, climbing shelves, entering freight boxes, touching winch cables or refrigeration equipment. No child pushing a real vehicle, passenger in a car transported on a flatbed, driver phone use while moving, unrestrained child in the family car, backpack under restraint straps, icy yogurt cargo, instant food-freshening magic, bus ramp deployed while moving, crowded ramp, unsolicited wheelchair pushing, or pity framing of wheelchair users."
+  },
+  "audioGeneration": {
+    "provider": "bailian",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "pageCount": 16,
+    "contentHash": "94fecad31ad17d7f95e4ff97791f723307a41ee485165398279a925f4d7155f4",
+    "duration": 146.856,
+    "decodeValidation": "passed",
+    "nonSilentPages": "passed"
+  },
+  "illustrationGeneration": {
+    "provider": "built-in-imagegen",
+    "pageCount": 16,
+    "format": "webp",
+    "width": 1200,
+    "height": 1200,
+    "maxBytes": 307200,
+    "contactSheet": "content-drafts/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/contact-sheet.jpg",
+    "visualReview": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_W3RhH3rr4nhoi8o7riJGTEwT.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/1.webp",
+        "sha256": "dd97454350157bb39a50093bc54c842f5373e5c91dfc6e588842a25b442326aa",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 2,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_GB0Htip0qVpyWAHamVIJ8tMN.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/2.webp",
+        "sha256": "b692105dc8c8ff6772f01c178e64764d95969a7ad371308190a0f904c5a3b6b6",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 3,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_yrpKaWTCw9yEIX4sEOuvu43P.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/3.webp",
+        "sha256": "a81ec0697da3a36773fa8e035c9880a6b317845bfa730951e051a323d3c97433",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 4,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_dJvKIGiEJvM4YxdTZxfUjpui.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/4.webp",
+        "sha256": "1e577425e807b521a690df369540e292dbcd34ebe53cda6a3e4c403bf8f34bac",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 5,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_sLgJlF2ZAYPCKheCpWWfjl0H.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/5.webp",
+        "sha256": "f792a28bc54cb838f91b305dd17124bd87792eb10507b6f9332c3199411f848a",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 6,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_xtIbKyCKqNVS3YHUTcS5msOy.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/6.webp",
+        "sha256": "f5d45f7bbe6585c39deec16a5506242d9b1f8e4cc54417b149607fdb2100d955",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 7,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_aqA5hwVSXoKfc6CmCAB9Qf1F.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/7.webp",
+        "sha256": "8fc214e1b9af932dd3a510a2079dddaadfc78fec4ad9600ade4b6472a688f3a7",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 8,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_OV5FDCEsx4ik8XBKEIXUpuG0.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/8.webp",
+        "sha256": "1d7a750e5e7d5dc37d1030416fd1dfa2cbfcc44e54eb00990e9b2341682cfde5",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 9,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WqylRFAS32fJ7MW0AznvgdwC.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/9.webp",
+        "sha256": "24013c7b62bd6d7a9dfaf3a1ee85427b490bb94819d2572862e8a19373a04a54",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 10,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_Vpx6j8Ja9IKNWtXIHT2tejAx.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/10.webp",
+        "sha256": "20621483fadacdb39e76d7738825c50f392b2d6d9a6fd25b9808ef62aa70dfa1",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 11,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_doiOlhHTWDurQNDDjk5GlvI5.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/11.webp",
+        "sha256": "c81b58f71c6c2020391152b952d303c70bc3fddab9dad9f22c9e33725930344a",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 12,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_ji472IuHTSOspaOkBDhitTvy.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/12.webp",
+        "sha256": "f6ea01d86d5ce61e872f7a3dad13fc267f5544c3fa09b584f32c3eeef9113d3a",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 13,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bYQ2TGdBgZAFjYxtm9yONE1J.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/13.webp",
+        "sha256": "d85b57f140aae116a9ae7ef2b73bd038f25e3d788db325b14da35cd5d7016645",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 14,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_8LoiVw5pAcZgvZxONHM73rEX.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/14.webp",
+        "sha256": "a892c5ea8a66fc4d1b4f7b691f33a77104b6ac3dd2390c4885ae4a50c4b6480a",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 15,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_vbe59cTtknypr6553Z4ZuJ2s.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/15.webp",
+        "sha256": "877a09c848a1f43223dde97bc35883b3f21952d80dbe1018cfd52b464fa6c6fe",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 16,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_k4K0shAybiUXkoravV61uehl.png",
+        "output": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/16.webp",
+        "sha256": "de933e11a139cb60ffb834332dbcf902d59e3c97671e130a79d60aa6cb56d12c",
+        "visualReview": "passed-page-and-contact-sheet"
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 46,
+  "page": 13,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_YmIvwlPqyjzev8eXKpD0leVS.png",
+  "target": "public/library/qiche/tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu/13.webp",
+  "sha256": "9bc4f8a6aed6f1142fe95eb448084811c7b84a2f16ef0a4cdf452cf8f8ccac9a",
+  "reviewCorrection": "Tiangong simplified three-module T shape, not ISS truss",
+  "importedAt": "2026-10-17T15:14:46.286Z",
+  "id": "tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu",
+  "bytes": 152600
+}

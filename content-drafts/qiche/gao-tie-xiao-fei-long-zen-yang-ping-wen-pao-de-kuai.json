@@ -1,0 +1,194 @@
+{
+  "_draft": {
+    "note": "用户已确认的第43-47本制作稿；中英正文、亲子指南、内置生图插画与百炼中文音频已完成，本地书库已接入。未执行本批次上传、Git提交或线上部署。",
+    "createdAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "plan": "user-approved",
+    "manuscript": "complete",
+    "illustrations": "complete",
+    "audio": "complete",
+    "libraryIntegration": "complete-local"
+  },
+  "book": {
+    "id": "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai",
+    "seriesId": "qiche",
+    "title": "高铁小飞龙，怎样平稳跑得快？",
+    "subtitle": "现代综合枢纽与流线型平稳科技",
+    "question": "尖尖的车头、受电弓和长钢轨，怎样一起帮助高铁运行？",
+    "moral": {
+      "zh": "流线车头帮助减小空气阻力，供电设备带来动力，平顺轨道、减振与养护共同帮助列车平稳运行。",
+      "en": "A streamlined nose reduces drag, electrical equipment supplies power, and smooth tracks, suspension, and maintenance help steady the ride."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-17",
+    "order": 44,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 44,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "综合交通枢纽",
+        "高铁动车组",
+        "流线型车头",
+        "受电弓",
+        "无缝钢轨"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "阳光明媚的上午，妈妈开着浅蓝色小汽车，带安安前往城市东侧新建的综合交通客运枢纽。安安系着儿童安全带，望着车窗外飞速后退的高大绿树。",
+        "enText": "On a sunny morning, Mom drove their light-blue car, taking An'an toward the city's newly built integrated passenger transport hub on the eastern side. Buckled in her safety seat, An'an watched tall green trees glide past the window.",
+        "illustrationPrompt": "Bright sunny morning road: Mom drives their left-hand-drive light-blue five-door hatchback along a wide city boulevard lined with green trees. An'an sits buckled in her rear dark-blue child seat holding Bear, gazing excitedly through the window. Wide car interior shot."
+      },
+      {
+        "page": 2,
+        "zhText": "小汽车平稳地驶入枢纽的地下停车场。安安拉着妈妈的手乘直梯来到明亮的换乘大厅。头顶的巨大电子屏上，滚动的列车信息像瀑布一样清晰。",
+        "enText": "The car rolled smoothly into the hub's underground parking garage. Holding Mom's hand, An'an took the elevator up into the bright transfer concourse. On the massive overhead screen, train information scrolled clearly like a waterfall.",
+        "illustrationPrompt": "Spacious modern underground parking garage beneath the grand transport hub: Mom parks their light-blue car neatly. An'an holds Mom's hand walking toward the glass elevator entrance under bright warm ceiling lights."
+      },
+      {
+        "page": 3,
+        "zhText": "“妈妈，这里真热闹呀！”安安看着换乘示意图，“地下有地铁，外面有公交，高铁站台在另一层。跟着指引，就能去换乘啦！”",
+        "enText": "“Mom, this place is so busy!” An'an studied the transfer map. “The subway is below, buses are outside, and high-speed trains are on another level. The signs help us find the way between them!”",
+        "illustrationPrompt": "Grand three-story atrium of the modern integrated transport hub: massive curved glass skylight, digital timetable displays, subways visible below glass balustrades, buses outside, and bullet train gates above. An'an looks around in awe holding Mom's hand."
+      },
+      {
+        "page": 4,
+        "zhText": "今天是车站的铁路科普开放日。工作人员核验预约后，带安安和妈妈来到指定参观位置。妈妈牵好她的手：“不同交通工具在这里相连，换乘就方便多啦。”",
+        "enText": "It was the station's railway science open day. After checking their reservation, a staff member led An'an and Mom to the designated viewing area. Mom held her hand. “Connecting different kinds of transport makes changing between them easier.”",
+        "illustrationPrompt": "Clean, wide high-speed rail platform with sunlight streaming through the arched station canopy: An'an and Mom step through the platform gate hand in hand. A gleaming white high-speed train rests quietly on the rails."
+      },
+      {
+        "page": 5,
+        "zhText": "站台旁，一列洁白修长的高铁动车组静静地停在轨道上。银白色的车身在天顶洒下的阳光里闪烁着柔和的光芒，车身侧面绘着优雅的深蓝色流线饰条。",
+        "enText": "Beside the platform, a sleek, long white bullet train rested quietly on the tracks. Its silver-white body gleamed gently beneath the skylight, decorated with elegant deep-blue streamlined stripes along the sides.",
+        "illustrationPrompt": "Profile medium shot of the silver-white bullet train resting on the platform tracks: sleek long train cars with deep blue racing stripes, sparkling under bright natural daylight."
+      },
+      {
+        "page": 6,
+        "zhText": "安安睁大了好奇的眼睛：“妈妈，你看它的车头尖尖的、长长的，圆润又光滑，真像一条准备展翅飞翔的银色小龙！为什么它的脑袋不是方方的呢？”",
+        "enText": "An'an widened her curious eyes. “Mom, look at the nose—pointed, long, rounded, and smooth, just like a little silver dragon ready to take flight! Why isn't its head square like an ordinary bus?”",
+        "illustrationPrompt": "Close-up of the train's sharp, rounded aerodynamic nose: An'an stands in awe behind the white platform line with Bear, admiring the futuristic dragon-like bullet nose."
+      },
+      {
+        "page": 7,
+        "zhText": "站台上佩戴对讲机、身穿藏青色制服的列车长方阿姨微笑着走过来：“小朋友问得真好！当高铁以每小时三百多公里的超快速度飞奔时，前面的空气会像一堵厚厚的墙一样挡住它。”",
+        "enText": "Wearing a dark-navy uniform and carrying a walkie-talkie, Conductor Fang walked over with a smile. “What a great question, little one! When the bullet train rushes ahead at over three hundred kilometers per hour, the air ahead pushes back like a thick wall.”",
+        "illustrationPrompt": "Conductor Fang in her crisp dark-navy uniform walks over smiling warmly with a walkie-talkie, greeting An'an and Mom on the clean platform."
+      },
+      {
+        "page": 8,
+        "zhText": "方阿姨从口袋里拿出一枚小书签给安安比划：“如果是方头大车，空气就会迎面撞击；而超长流线型的尖车头，能像锋利又柔和的小船划开水面一样，把迎面而来的空气推向两侧，大大减少空气阻力。”",
+        "enText": "Conductor Fang took a bookmark from her pocket to demonstrate. “A blunt front would crash straight into the air; but a long streamlined nose glides through the air like a sleek boat parting water, pushing airflow smoothly aside and cutting air resistance way down.”",
+        "illustrationPrompt": "Conductor Fang shows a sleek paper bookmark to An'an, demonstrating how a sharp, streamlined front cuts smoothly through air like a knife cutting water, while a flat front pushes against air resistance. An'an listens with wide eyes."
+      },
+      {
+        "page": 9,
+        "zhText": "安安仰起头，看到高铁车顶上有一根银色折叠的金属“手臂”，顶端紧紧贴在上方的高压电线上：“那根银色的小手臂，是在和电线牵手吗？”",
+        "enText": "An'an tilted her head up and spotted a silver folding metal arm on the train roof, pressing firmly against the overhead wire. “Is that little silver arm holding hands with the wire?”",
+        "illustrationPrompt": "Low-angle view looking up at the bullet train roof: a silver folding diamond-shaped pantograph arm reaches up, pressing firmly against the high-voltage overhead catenary wire."
+      },
+      {
+        "page": 10,
+        "zhText": "“那叫受电弓。”方阿姨说，“它把接触网的电引进列车，经过车上的设备，再送到牵引电机，让车轮转起来。上面的电线不能靠近，更不能碰。”",
+        "enText": "“That is the pantograph,” Conductor Fang said. “It collects electricity from the overhead contact wire. Equipment on the train supplies the traction motors, which turn the wheels. We must stay well away from those wires.”",
+        "illustrationPrompt": "Conductor Fang points up to the pantograph, explaining how it draws electricity from overhead wires down to powerful motors under the train floor, keeping the ride clean and silent."
+      },
+      {
+        "page": 11,
+        "zhText": "“这列高铁用电运行，车上不用像蒸汽火车那样烧煤。”方阿姨接着说，“电也要节约。它从哪里来、怎样发出来，同样关系到环境。”",
+        "enText": "“This train runs on electricity instead of burning coal on board like a steam train,” Conductor Fang continued. “We still need to save energy. How electricity is produced matters to the environment too.”",
+        "illustrationPrompt": "Side view of the train underside and tracks: clean aerodynamic skirts and bogies with electric motors, no smoke, no exhaust pipes, completely green and efficient."
+      },
+      {
+        "page": 12,
+        "zhText": "安安站在参观区，望着向远处延伸的铁轨：“老火车故事里总有‘咣当、咣当’的声音。高铁的轨道，也是一小段一小段拼起来的吗？”",
+        "enText": "From the viewing area, An'an looked at the rails stretching into the distance. “Old train stories always go clackety-clack. Are high-speed railway tracks made from lots of short pieces too?”",
+        "illustrationPrompt": "Standing in station visitor area, female Fang in navy trouser suit and hair bun explains two rail models on waist-high exhibit table."
+      },
+      {
+        "page": 13,
+        "zhText": "方阿姨指着展示模型：“许多钢轨会焊成很长的一段，接头还要细细打磨。这样的长钢轨，能减少车轮经过接头时的冲击。”",
+        "enText": "Conductor Fang pointed to a display model. “Many rails are welded into long lengths, and the joints are carefully ground smooth. This reduces the bumps as wheels pass over the joints.”",
+        "illustrationPrompt": "Close-up shot of the continuous welded rail: two smooth steel rail segments flawlessly joined together with no gaps, polished like a mirror under sunlight."
+      },
+      {
+        "page": 14,
+        "zhText": "“不过，高铁也不是一点声音和晃动都没有。”方阿姨说，“平顺的轨道、车底的减振装置和认真养护，一起帮助列车跑得更稳。”",
+        "enText": "“High-speed trains still make sounds and can move or sway,” Conductor Fang said. “Smooth tracks, suspension under the cars, and careful maintenance all help make the ride steadier.”",
+        "illustrationPrompt": "Object-only technical illustration of steel wheel tread in physical contact with rail head, normal inboard flange and suspension, no glowing force effects."
+      },
+      {
+        "page": 15,
+        "zhText": "站台安全防线提示音响起。方阿姨温和地提醒安安和妈妈：“列车马上要关门发车了，请站在白色安全线后方，注意列车启动时的空气气流哦。”",
+        "enText": "The platform chime sounded. Conductor Fang gently reminded An'an and Mom, “The train doors are about to close. Please stand behind the white safety line to stay safe from the moving air currents as the train departs.”",
+        "illustrationPrompt": "Female Fang without hat gestures as Mom and Anan stand well back from white platform line, train doors closed in background."
+      },
+      {
+        "page": 16,
+        "zhText": "关门提示音响起，列车合上车门。银色小飞龙缓缓启动，带着轻轻的运行声滑出站台，沿着高架轨道驶向远方。",
+        "enText": "The door chime sounded, and the doors closed. The silver dragon started gently and rolled out of the station with a soft running sound, following the elevated railway toward the distance.",
+        "illustrationPrompt": "Wide scenic shot: the silver-white bullet train accelerates gracefully away from the station onto a high curved concrete viaduct across the modern city skyline, gliding like an elegant white dragon."
+      },
+      {
+        "page": 17,
+        "zhText": "展示屏播放了一段平稳运行时的视频：车厢里，窗台上的一枚硬币暂时立住了！安安睁大眼睛。方阿姨提醒：“这是一次演示，硬币并不是任何时候都不会倒哦。”",
+        "enText": "A display showed a video taken during a smooth part of a journey: a coin briefly balanced on its edge on a carriage windowsill. An'an's eyes widened. “This is one demonstration; a coin will not stay upright all the time,” Conductor Fang reminded her.",
+        "illustrationPrompt": "Inside a bright high-speed train carriage: on a smooth windowsill beside the window, a single silver coin stands upright on its edge, perfectly still while the landscape rushes by at high speed outside."
+      },
+      {
+        "page": 18,
+        "zhText": "安安点点头：“尖车头帮助它减少风阻，轨道和减振装置帮助它跑得稳！”方阿姨笑了：“还有驾驶员、调度人员和检修人员一起合作呢。”",
+        "enText": "An'an nodded. “The streamlined nose helps reduce air resistance, and the tracks and suspension help it run steadily!” Conductor Fang smiled. “Drivers, controllers, and maintenance teams work together too.”",
+        "illustrationPrompt": "Female Fang and Mom with Anan in science exhibit corner watch screen showing plain silver coin on train windowsill; no text on screen."
+      },
+      {
+        "page": 19,
+        "zhText": "安安牵着妈妈，留在安全线内侧的参观区向远去的高铁挥手。银色小飞龙沿着轨道越走越远，载着旅客驶向另一座城市。",
+        "enText": "Holding Mom's hand, An'an stayed in the visitor area on the safe side of the line and waved goodbye. The silver dragon followed the tracks into the distance, carrying travelers toward another city.",
+        "illustrationPrompt": "Mom rests hand on Anan shoulder while girl holds Bear with one arm and waves with other, broad clear platform to safety line and receding red tail lights."
+      },
+      {
+        "page": 20,
+        "zhText": "走出车站，安安抱着小熊，开心地对妈妈说：“下次放小长假，我们一定要坐上这列平稳的银色小飞龙，去外婆家的大草原看风景！”",
+        "enText": "Leaving the station, An'an hugged Bear and said cheerfully to Mom, “On our next holiday, let's ride this smooth silver dragon all the way to Grandma's house to see the wide grasslands!”",
+        "illustrationPrompt": "Walking out through the grand station concourse: An'an hugs Bear tightly, looking up at Mom with a beaming smile, dreaming of taking the bullet train to Grandma's house."
+      }
+    ],
+    "parentGuide": {
+      "goal": "认识综合交通枢纽、流线外形、受电弓和长钢轨的作用，区分减小风阻、提供动力与改善平稳性。",
+      "reminder": "真实站台需按车站规则进入，本书是有预约和工作人员引导的科普开放日。始终牵手站在安全线内侧，不蹲靠站台边，不触碰轨道和接触网。硬币是视频中的短暂演示，不代表列车永不晃动。",
+      "questions": [
+        "尖尖的车头怎样帮助空气从列车旁边流过？",
+        "受电弓收来的电，最后交给什么部件？",
+        "除了轨道，还有谁和哪些设备帮助列车平稳运行？"
+      ],
+      "activity": "成人准备两段硬纸板，一段平整，一段有轻微接缝。孩子在桌面慢慢推动玩具车，感受接缝带来的变化。说明这只演示路面平顺性的一个因素，真实列车还需要悬挂减振和养护。",
+      "ageTips": {
+        "age4to5": "找一找尖车头、受电弓和安全线，听一听列车的运行声音。",
+        "age6to8": "区分空气阻力、动力、轨道平顺性与悬挂减振，不把一次硬币演示当成所有乘车情况。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 warm premium 3D clay-like animated children's picture-book illustration, tactile rounded materials, sunny morning light transitioning to grand bright indoor transit hub and modern outdoor high-speed rail viaduct, varied wide, medium and close compositions. No comic panels, speech bubbles or readable writing.",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl on every page: round face, ear-length straight black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, small orange backpack, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. The brown plush bear wears a blue scarf and has a small yellow crescent behind one ear. Conductor Fang is an adult Chinese female train manager with a dark-navy railway uniform, white shirt collar, neat hair bun, and walkie-talkie. Include only the cast required by each page.",
+    "negative": "No text, letters, numbers, captions, logos, brand marks, readable license plates or watermarks. No anthropomorphic train faces or smiling locomotive eyes. No children alone near railway tracks, no crossing safety lines, no stepping onto tracks, duplicate characters or distorted anatomy."
+  }
+}

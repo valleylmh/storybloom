@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 45,
+  "page": 11,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_WVarXxyIh6f1ACKuHuzesm4H.png",
+  "target": "public/library/qiche/da-fei-ji-zai-pao-dao-shang-pai-dui-ma/11.webp",
+  "sha256": "f55d9e3008d3a209ca0f070659be6c6a0b5a6c89a7bb5dd8de1ee119bc795271",
+  "reviewCorrection": "Consistent airliner with one two-wheel nose gear and two main gear legs",
+  "importedAt": "2026-10-17T15:00:39.553Z",
+  "id": "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
+  "bytes": 84950
+}

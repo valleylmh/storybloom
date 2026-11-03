@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 44,
+  "page": 19,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_FFRJh4lhZ5z5LXBnyeoWZP2b.png",
+  "target": "public/library/qiche/gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai/19.webp",
+  "sha256": "56956f7b298148a962c1c76114ff7801403038905a14c54f8ea741192f2b67cf",
+  "reviewCorrection": "Safe distance from platform edge and corrected two-arm anatomy",
+  "importedAt": "2026-10-17T14:47:38.792Z",
+  "id": "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai",
+  "bytes": 130590
+}

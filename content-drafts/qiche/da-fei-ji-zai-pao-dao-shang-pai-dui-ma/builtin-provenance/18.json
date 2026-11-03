@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 45,
+  "page": 18,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_PMFTjHXke2vwzyAuAkvpaHNp.png",
+  "target": "public/library/qiche/da-fei-ji-zai-pao-dao-shang-pai-dui-ma/18.webp",
+  "sha256": "eb4cb84280033c6c775427b4c0a6fa3a09e0b95ced7f7acf34618c78ae5dff56",
+  "reviewCorrection": "Single frame gear retraction with one two-wheel nose gear",
+  "importedAt": "2026-10-17T14:47:38.943Z",
+  "id": "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
+  "bytes": 82666
+}

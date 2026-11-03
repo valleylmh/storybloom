@@ -1,0 +1,170 @@
+{
+  "_draft": {
+    "note": "用户已确认的第43-47本制作稿；中英正文、亲子指南、内置生图插画与百炼中文音频已完成，本地书库已接入。未执行本批次上传、Git提交或线上部署。",
+    "createdAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "plan": "user-approved",
+    "manuscript": "complete",
+    "illustrations": "complete",
+    "audio": "complete",
+    "libraryIntegration": "complete-local"
+  },
+  "book": {
+    "id": "tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu",
+    "seriesId": "qiche",
+    "title": "天上的卫星，怎么给汽车引路？",
+    "subtitle": "航天发射与指引千家万户的太空北斗",
+    "question": "太空中高高运转的卫星，是怎样给地面上的小汽车引路的？",
+    "moral": {
+      "zh": "卫星提供定位信号，接收设备计算位置，地图软件规划路线；科技能帮忙认路，实际出行仍需观察道路与标志。",
+      "en": "Satellites provide signals, receivers calculate position, and map software plans routes. Technology helps with directions while travelers still observe real roads and signs."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-17",
+    "order": 46,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 10,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 46,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "航天科技",
+        "运载火箭",
+        "北斗卫星导航",
+        "车载芯片",
+        "空间站"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "下午，妈妈带安安来到航天科技馆。刚迈进高大的序厅，一座白色运载火箭模型就映入眼帘。安安仰起头：“这么大的火箭，能带什么去太空？”",
+        "enText": "That afternoon, Mom took An'an to the aerospace museum. A tall white model of a launch vehicle filled the entrance hall. An'an looked up. “What can such a big rocket carry into space?”",
+        "illustrationPrompt": "Entering the grand atrium of the aerospace science museum: An'an holds Mom's hand, looking up in awe at an enormous full-scale model of a white Long March carrier rocket pointing toward the domed starry ceiling."
+      },
+      {
+        "page": 2,
+        "zhText": "火箭高高耸立，笔直指向天花板上的璀璨星空图景。安安仰起小脑瓜，紧紧抓着妈妈的衣角：“妈妈，火箭长得好高好壮呀！它要飞到天上去找谁呢？”",
+        "enText": "The rocket stood tall, pointing straight toward a sparkling starry sky painted across the ceiling. An'an tilted her little head up and held Mom's cardigan tightly. “Mom, the rocket is so tall and strong! Who is it flying up to find?”",
+        "illustrationPrompt": "Low-angle view of the towering white rocket: multiple aerodynamic boosters at the base with detailed bronze engine nozzles, crisp white cylindrical stages gleaming under museum spot lighting."
+      },
+      {
+        "page": 3,
+        "zhText": "身穿淡蓝色科技馆讲解服的梁阿姨微笑着走过来：“小朋友，运载火箭就像宇宙里的‘超级货车’。它的本领就是克服地球引力，把各种卫星、飞船和探测器稳稳送入太空轨道。”",
+        "enText": "Wearing her light-blue museum blazer, docent Auntie Liang walked over with a smile. “Hello little explorer! A carrier rocket is like a cosmic cargo truck. Its mission is to overcome Earth's gravity, delivering satellites, spacecraft, and probes safely into space orbits.”",
+        "illustrationPrompt": "Docent Auntie Liang in her light-blue blazer smiles warmly and greets An'an, explaining that rockets act as mighty space cargo trucks delivering satellites into orbit."
+      },
+      {
+        "page": 4,
+        "zhText": "梁阿姨打开展示屏：“火箭能把导航卫星送上预定轨道。北斗就是一套卫星导航系统，许多卫星在不同轨道上工作，为地面提供定位信号。”",
+        "enText": "Auntie Liang opened a display. “Rockets can put navigation satellites into planned orbits. BeiDou is a satellite navigation system with spacecraft in different orbits, providing positioning signals to Earth.”",
+        "illustrationPrompt": "Large curved digital museum projection screen: a beautiful glowing blue Earth suspended in deep starry space, surrounded by orbital paths of glowing satellites."
+      },
+      {
+        "page": 5,
+        "zhText": "安安看着屏幕上闪烁的小光点，歪了歪头：“导航卫星在那么高、那么远的太空里，它又是怎样和我们地面的小汽车交朋友的呢？”",
+        "enText": "Looking at the twinkling dots of light on screen, An'an tilted her head. “Navigation satellites are so high and far away in space—how do they make friends with the cars down on our streets?”",
+        "illustrationPrompt": "Close-up of a golden-and-silver Beidou navigation satellite in orbit: deployable blue solar panels spread wide, beaming soft concentric radio waves downward toward Earth."
+      },
+      {
+        "page": 6,
+        "zhText": "梁阿姨指着透明汽车模型：“这件展品把导航天线和接收设备的位置展示出来了。天线像‘耳朵’，接收设备和电脑一起处理信号。真实汽车的安装位置可能不同。”",
+        "enText": "Auntie Liang pointed to the transparent car model. “This exhibit shows its navigation antenna and receiver. The antenna is like an ear, while the receiver and computer process the signals. Their positions can differ in real cars.”",
+        "illustrationPrompt": "Interactive transparent cutaway display of a family car: Auntie Liang points to a small matchbox-sized microchip antenna tucked invisibly inside the light-blue car roof."
+      },
+      {
+        "page": 7,
+        "zhText": "“太空中有多颗导航卫星时刻向地球发射看不见的无线电电波。这些电波就像带着时间戳的小信使，以光一样的速度飞向地面。”",
+        "enText": "“Multiple navigation satellites in space broadcast invisible radio waves down to Earth every second. These waves travel at the speed of light like little messengers carrying precise timestamps.”",
+        "illustrationPrompt": "Conceptual visualization: multiple satellites in space beam soft golden radio light rays down toward the small antenna on the car roof, connecting sky and road."
+      },
+      {
+        "page": 8,
+        "zhText": "“通常，接收设备需要至少四颗卫星的有效信号，才能一起计算自己的位置和时钟误差。地图软件再把这个位置放到地图上，帮我们规划路线。”",
+        "enText": "“Usually a receiver needs usable signals from at least four satellites to calculate its position and clock error together. Map software then places that position on a map and helps plan a route.”",
+        "illustrationPrompt": "Close-up of the car dashboard navigation display: four satellite signals connect, and the digital map instantly pinpoints the car's exact position at a green-light intersection."
+      },
+      {
+        "page": 9,
+        "zhText": "安安开心地拍起手：“我懂啦！卫星送来定位信号，导航设备和地图软件一起算路，才有屏幕上的蓝箭头。卫星并不是直接在天上喊‘右转’呀！”",
+        "enText": "An'an clapped happily. “I get it! Satellites send positioning signals, and the receiver and map software work out the route for the blue arrow. The satellites aren't calling down ‘turn right’ from space!”",
+        "illustrationPrompt": "An'an hops joyfully, clapping her hands: realizing that the blue navigation arrow Mom uses on daily drives is guided by satellites in space."
+      },
+      {
+        "page": 10,
+        "zhText": "梁阿姨点点头：“汽车、轮船和许多飞行器会用卫星导航辅助定位。高铁也有相关应用，不过列车控制和安全运行，还需要轨道信号等许多设备共同配合。”",
+        "enText": "Auntie Liang nodded. “Cars, ships, and many aircraft use satellite navigation to help locate themselves. Railways use it in some applications too, while train control and safety also rely on trackside signaling and other equipment.”",
+        "illustrationPrompt": "Split-screen style or panoramic visual: high-speed bullet train, flying airliner, community delivery drone, and cargo ship at sea, all connected to space satellites."
+      },
+      {
+        "page": 11,
+        "zhText": "在互动沙盘上，安安把城市切换成黑夜，又选了雨天。导航还能工作。再把车开进模型隧道，定位提示变了。梁阿姨说：“建筑和隧道可能挡住信号，定位也会有误差。”",
+        "enText": "At the interactive model, An'an chose night and then rain, and navigation still worked. When she moved the car into a model tunnel, its positioning indicator changed. “Buildings and tunnels can block signals, and positions can have errors,” Auntie Liang explained.",
+        "illustrationPrompt": "Interactive museum touchscreen sand table: An'an touches the screen with her finger, switching the virtual city weather to stormy rain and dark fog while the car continues to navigate smoothly."
+      },
+      {
+        "page": 12,
+        "zhText": "“导航只是帮助认路，不能替驾驶员看路。”梁阿姨说，“遇到雨雾、信号不好或地图与现场不一致时，要观察真实道路和标志，按情况减速、停车或调整路线。”",
+        "enText": "“Navigation helps with directions; it cannot see the road for the driver,” Auntie Liang said. “In rain or fog, with poor signals, or when a map differs from the road, drivers must observe the real road and signs and respond to conditions.”",
+        "illustrationPrompt": "Museum tabletop rainy-road diorama, rear view of small light-blue car with opaque windows, real road bend signs and separate navigation display."
+      },
+      {
+        "page": 13,
+        "zhText": "接着，他们参观天宫空间站模型。梁阿姨说：“空间站让航天员生活和做实验，导航卫星负责播发定位信号。它们都在太空，却有不同的任务。”",
+        "enText": "Next they visited a model of the Tiangong space station. “The station is a place for astronauts to live and work. Navigation satellites broadcast positioning signals,” Auntie Liang said. “Both are in space, but they have different jobs.”",
+        "illustrationPrompt": "Museum model of Tiangong simplified to three main cylinders in T arrangement with dark-blue solar wings; Liang light-blue blazer, Mom cream trousers and Anan observe."
+      },
+      {
+        "page": 14,
+        "zhText": "安安抱着小熊，学着航天员的样子敬了个礼：“谢谢你们，把这么多问题变成新发现！”她又想看看，太空的本领还能怎样帮助城市生活。",
+        "enText": "Holding Bear, An'an gave an astronaut-style salute. “Thank you for turning so many questions into discoveries!” She wondered what else space technology could help people do on Earth.",
+        "illustrationPrompt": "Anan holds Bear in one arm and salutes with other in front of same T-shaped station model; Mom wears coral cardigan and cream trousers."
+      },
+      {
+        "page": 15,
+        "zhText": "参观结束时，梁阿姨给安安的参观手册上盖了一枚金色的“小小航天探索者”印章。安安宝贝地收好手册，紧紧牵着妈妈的手走出了科技馆。",
+        "enText": "At the end of the visit, Auntie Liang stamped An'an's booklet with a golden badge: “Little Space Explorer.” An'an carefully put the booklet away and held Mom's hand tightly as they walked out of the museum.",
+        "illustrationPrompt": "Auntie Liang stamps An'an's colorful museum visitor passport with a golden rocket explorer badge, congratulating her. An'an beams with pride."
+      },
+      {
+        "page": 16,
+        "zhText": "坐回后排儿童座椅，系好安全带，安安望向关好的玻璃天窗。妈妈停稳车、设好下一站的路线：“我们再去未来出行体验馆看看。”安安笑着点点头。",
+        "enText": "Buckled into her rear child seat, An'an looked up through the closed glass sunroof. With the car parked, Mom set their next route. “Let's visit the future mobility pavilion next.” An'an smiled and nodded.",
+        "illustrationPrompt": "Parked light-blue car rear cabin only, Anan buckled in dark-blue child seat hugging Bear, closed sunroof and amber-blue afternoon sky without visible satellites."
+      }
+    ],
+    "parentGuide": {
+      "goal": "区分火箭运送、导航卫星广播、接收设备定位、地图软件规划路线与空间站实验等不同任务，知道卫星定位也有遮挡和误差。",
+      "reminder": "卫星定位不是从太空拍到汽车，也不是卫星直接发送转弯口令。至少四颗卫星的有效信号用于通常的三维位置与接收机时钟求解；建筑、隧道等会影响接收。车辆导航不能保证恶劣天气下安全，始终观察现场。",
+      "questions": [
+        "火箭、空间站和导航卫星分别做什么？",
+        "蓝箭头的路线是谁在地图上计算的？",
+        "隧道里信号不好时，为什么还要看真实路牌？"
+      ],
+      "activity": "在桌面方格纸上画道路。成人给出玩具车所在的格子，孩子先把位置标在地图上，再自己选一条去公园的路。用一个纸盒盖住车辆表示信号受遮挡，讨论为什么不知道位置时不能乱猜。说明这个游戏只区分“定位”和“选路线”，不模拟卫星测距。",
+      "ageTips": {
+        "age4to5": "找出火箭、空间站、卫星和地图箭头，说说它们各自的工作。",
+        "age6to8": "区分定位和路线规划，用模型理解遮挡会使信号变差，实际行驶必须看路。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 warm premium 3D clay-like animated children's picture-book illustration, tactile rounded materials, afternoon light inside grand aerospace museum with starry sky ceiling displays transitioning to cozy family car ride, varied wide, medium and close compositions. No comic panels, speech bubbles or readable writing.",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl on every page: round face, ear-length straight black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, small orange backpack, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. The brown plush bear wears a blue scarf and has a small yellow crescent behind one ear. Auntie Liang is an adult Chinese female science museum guide wearing a stylish light-blue museum blazer, white blouse, and black slacks. Include only the cast required by each page.",
+    "negative": "No text, letters, numbers, captions, logos, brand marks, readable military marks or watermarks. No anthropomorphic rocket faces or smiling satellites. No dangerous child behavior, duplicate characters or distorted anatomy."
+  }
+}

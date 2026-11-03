@@ -1,0 +1,194 @@
+{
+  "_draft": {
+    "note": "用户已确认的第43-47本制作稿；中英正文、亲子指南、内置生图插画与百炼中文音频已完成，本地书库已接入。未执行本批次上传、Git提交或线上部署。",
+    "createdAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "plan": "user-approved",
+    "manuscript": "complete",
+    "illustrations": "complete",
+    "audio": "complete",
+    "libraryIntegration": "complete-local"
+  },
+  "book": {
+    "id": "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
+    "seriesId": "qiche",
+    "title": "大飞机，在跑道上排队吗？",
+    "subtitle": "智慧空港地面协同与机翼升力起飞",
+    "question": "大客机那么沉重，是怎样飞上蓝天并在跑道上有序排队的？",
+    "moral": {
+      "zh": "地面保障、管制和机组各有分工；空气流过机翼产生升力，大家合作完成一次有序出发。",
+      "en": "Ground crews, controllers, and flight crews each have a role. Airflow over the wings creates lift as everyone works toward an orderly departure."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-17",
+    "order": 45,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 45,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "智慧机场",
+        "民航客机",
+        "飞机牵引车",
+        "空中管制塔台",
+        "机翼升力"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "穿过综合客运枢纽宽敞明亮的空中玻璃连廊，安安和妈妈来到了空港新城的机场观景科普大厅。这里的整面墙都是巨大透明的隔音玻璃窗。",
+        "enText": "Crossing the spacious glass skywalk from the integrated transport hub, An'an and Mom arrived at the airport observatory hall in the airport new town. The entire wall here was made of huge, crystal-clear soundproof windows.",
+        "illustrationPrompt": "Walking across a high glass skywalk bridge: An'an holds Mom's hand walking eagerly toward the wide open observatory hall. Outside the floor-to-ceiling glass windows, the vast airport opens up under bright sunlight."
+      },
+      {
+        "page": 2,
+        "zhText": "午后的阳光照在辽阔平坦的水泥停机坪上。远处，几架雪白修长的大客机整齐地停靠在登机桥边。安安快步跑到观景窗前，惊叹地睁大了眼睛：“妈妈，大飞机近看比绘本里还要巨大呢！”",
+        "enText": "Afternoon sunshine bathed the vast, flat concrete apron. In the distance, several sleek white airliners rested neatly beside passenger boarding bridges. An'an ran to the window and marveled with wide eyes. “Mom, up close, big airplanes look even more gigantic than in picture books!”",
+        "illustrationPrompt": "An'an runs up to the giant panoramic glass window of the airport observatory, resting her hands on the railing in wonder: on the tarmac below, huge white commercial jet airliners rest beside passenger boarding jet bridges."
+      },
+      {
+        "page": 3,
+        "zhText": "安安仔细打量着其中一架客机，发现飞机身边围着好多形状奇特的小汽车，工人们正在忙碌地穿梭操作。",
+        "enText": "An'an looked closely at one of the airliners and noticed many oddly shaped utility vehicles bustling around it while ground crew worked busily.",
+        "illustrationPrompt": "High-angle view through the window looking down at a parked white airliner: ground crew in high-visibility vests work around the plane alongside several specialized ground support vehicles."
+      },
+      {
+        "page": 4,
+        "zhText": "一辆车身扁扁的、四个轮子特别粗壮的黄色矮卡车，正缓缓倒车来到飞机的机头下方，用坚固的特制连接杆稳稳夹住了飞机的前起落架。",
+        "enText": "A low yellow truck with a flat body and extra-thick tires slowly backed underneath the plane's nose, firmly latching onto the front landing gear with a heavy-duty tow bar.",
+        "illustrationPrompt": "Close-medium shot of a low, heavy yellow aircraft pushback tug with wide thick tires: its sturdy tow mechanism gently latches onto the airliner's dual front nose wheels beneath the cockpit nose."
+      },
+      {
+        "page": 5,
+        "zhText": "杜叔叔走到观景窗旁：“那是飞机牵引车。客机不能像小汽车一样挂倒挡，在这种靠着登机桥的机位，通常请牵引车帮忙向后推出。”",
+        "enText": "Uncle Du came to the viewing window. “That is an aircraft tug. An airliner cannot select a reverse gear like a car. At gates like this, a tug usually helps push it backward away from the boarding bridge.”",
+        "illustrationPrompt": "Airport docent Uncle Du in his safety vest smiles warmly, greeting An'an and Mom by the observation window, explaining how the pushback tug acts as a mighty helper."
+      },
+      {
+        "page": 6,
+        "zhText": "登机桥和保障车辆都退开后，工作人员按程序指挥牵引车，把客机慢慢向后推出机位。安安发现：原来出发前，每个伙伴都要先做好自己的事。",
+        "enText": "After the boarding bridge and service vehicles had moved clear, the ground crew directed the tug to push the airliner slowly backward from its stand. An'an noticed how each helper had a job to finish before departure.",
+        "illustrationPrompt": "Through the glass window: the yellow tug slowly pushes the giant white airliner backward away from the gate into the taxiway, demonstrating aircraft pushback."
+      },
+      {
+        "page": 7,
+        "zhText": "旁边另一架客机还在做出发准备：倾斜的行李传送带把箱子送进货舱，机翼下的加油车按程序输送燃油。杜叔叔说：“这些工作要在推出前完成。”",
+        "enText": "Another aircraft nearby was still preparing: a belt loader carried bags into its cargo hold, and a truck supplied fuel beneath its wing. “Those jobs must be completed before pushback,” Uncle Du explained.",
+        "illustrationPrompt": "Detail view of ground servicing: a mobile belt loader vehicle carries suitcases into the plane's belly cargo door, while an aviation fuel truck pumps fuel safely through wing pipes."
+      },
+      {
+        "page": 8,
+        "zhText": "安安望向跑道旁边，看到一座高高的塔楼，顶部是一圈大窗户：“杜叔叔，那座塔像一支火炬，里面是谁在工作呀？”",
+        "enText": "An'an looked beside the runway and saw a tall tower topped with broad windows. “Uncle Du, that tower looks like a torch. Who works inside?”",
+        "illustrationPrompt": "Looking up across the airport field: a tall futuristic air traffic control tower rises high like a slender torch, topped with a 360-degree glass circular control cab."
+      },
+      {
+        "page": 9,
+        "zhText": "“那是空中交通管制塔台。”杜叔叔说，“管制员用眼睛、屏幕和无线电，指挥机场附近的起降和地面滑行；更远的飞行，还有其他管制员接力。”",
+        "enText": "“That is the air traffic control tower,” Uncle Du said. “Controllers use their view, screens, and radio to manage takeoffs, landings, and taxiing near the airport. Other controllers take over farther along the flight.”",
+        "illustrationPrompt": "Inside the observation hall: Uncle Du points toward the control tower, explaining how air traffic controllers act as sky traffic police, managing radar screens and radio headsets."
+      },
+      {
+        "page": 10,
+        "zhText": "“驾驶员要听从管制指令，沿指定的滑行路线前进。到了跑道外的等待位置，还要等到允许进入，才能继续。飞机也不能抢着走哦。”",
+        "enText": "“Pilots follow clearances along their assigned taxi routes. At the holding position outside a runway, they must wait for permission before entering. Airplanes must take turns too.”",
+        "illustrationPrompt": "High-angle wide shot of the taxiway: several white airliners taxi in an orderly, single-file line along the bright yellow taxiway line, waiting for runway clearance."
+      },
+      {
+        "page": 11,
+        "zhText": "牵引车松开脱离后，那架白色客机缓缓启动，顺着滑行道平稳滑向主跑道。它长长的机翼在阳光下微微伸展，两端向上翘起优雅的翼尖小翼。",
+        "enText": "Once the tug disconnected, the white airliner rolled smoothly along the taxiway toward the main runway. Its long wings stretched gently under the sun, tilting upward with graceful wingtips.",
+        "illustrationPrompt": "Same white twin-engine narrowbody airliner taxis slowly, single two-tire nose gear and two two-tire main legs, one continuous frame."
+      },
+      {
+        "page": 12,
+        "zhText": "安安托着小下巴，认真地问：“杜叔叔，大飞机肚子里装着几百位乘客和那么多沉重的行李，它到底是怎么被托上天空的呢？”",
+        "enText": "Resting her chin in her hands, An'an asked thoughtfully, “Uncle Du, with hundreds of passengers and heavy luggage inside, how does such a heavy plane get lifted into the sky?”",
+        "illustrationPrompt": "An'an rests her chin in her hands by the glass window, looking thoughtfully at the huge heavy airliner and asking Uncle Du how it lifts into the sky."
+      },
+      {
+        "page": 13,
+        "zhText": "杜叔叔拿出机翼截面模型：“这是机翼切开后的一种样子。机翼的形状和迎着气流的角度，会一起影响空气怎样从它旁边流过。”",
+        "enText": "Uncle Du brought out a wing cross-section model. “This is one shape a wing can have. Its shape and angle to the airflow work together to change how air moves around it.”",
+        "illustrationPrompt": "Uncle Du holds up a wooden wing cross-section model: showing An'an how the top surface is curved and rounded while the bottom surface is flat."
+      },
+      {
+        "page": 14,
+        "zhText": "“飞机向前跑，空气流过机翼。机翼让气流向下偏转，周围的压力也发生变化，空气便对机翼产生向上的升力。速度、机翼形状和角度都很重要。”",
+        "enText": "“As the aircraft moves forward, air flows around the wings. The wings turn airflow downward and change the pressure around them, producing an upward lift force. Speed, wing shape, and angle all matter.”",
+        "illustrationPrompt": "Simplified airfoil at small positive angle, cyan flow lines bend downward after trailing edge and one upward orange lift arrow, no labels."
+      },
+      {
+        "page": 15,
+        "zhText": "准备起飞的客机已经检查好襟翼，等待在跑道外。得到管制许可后，它沿规定路线进入跑道，对准中线。杜叔叔轻声说：“轮到它啦。”",
+        "enText": "The airliner had checked its flaps and waited outside the runway. After receiving clearance, it entered along its assigned route and lined up on the centerline. “Now it is this aircraft's turn,” Uncle Du said softly.",
+        "illustrationPrompt": "The white airliner aligns perfectly with the center line of the main runway: wing flaps along the trailing edge extend downward smoothly to maximize takeoff lift."
+      },
+      {
+        "page": 16,
+        "zhText": "两台巨大的涡轮风扇发动机爆发出低沉而磅礴的轰鸣声，飞机在笔直的跑道上如离弦之箭般飞速冲刺，速度越来越快！",
+        "enText": "Two giant turbofan engines roared with deep, mighty power. The airplane dashed along the straight runway like an arrow, gathering speed faster and faster!",
+        "illustrationPrompt": "Same airliner accelerates level with all three gear legs on runway, soft ground motion blur and takeoff flaps."
+      },
+      {
+        "page": 17,
+        "zhText": "“快看！抬轮啦！”杜叔叔指着远方。只见机头轻轻昂起，前轮离开地面，紧接着主起落架轻盈脱离跑道，整架大客机宛如一只展翅的天鹅，平稳跃入碧蓝的天空！",
+        "enText": "“Look! Rotation!” Uncle Du pointed into the distance. The nose lifted gently, the nose gear left the ground, and moments later the main landing gear floated free as the airliner soared into the blue sky like a graceful swan!",
+        "illustrationPrompt": "Same airliner gently nose-up just airborne above runway, three extended gear assemblies, two tires per assembly."
+      },
+      {
+        "page": 18,
+        "zhText": "安安目不转睛地看着。当飞机升到半空中时，机腹底下的几个起落架轮子缓缓折叠收起，两扇舱门严密合拢，机身瞬间变得光滑流线。",
+        "enText": "An'an watched without blinking. As the plane climbed higher, its landing gear folded neatly into the belly, and the bay doors sealed shut, leaving the fuselage completely sleek and smooth.",
+        "illustrationPrompt": "Single coherent view of same airliner with three gear legs partly retracting into wheel wells, no triptych or duplicated aircraft."
+      },
+      {
+        "page": 19,
+        "zhText": "杜叔叔说：“起落架收起来，能减少这部分空气阻力。机翼、发动机和飞行员的操作，还要继续配合，帮助飞机向上爬升。”",
+        "enText": "Uncle Du said, “Retracting the landing gear reduces the drag it creates. The wings, engines, and pilots continue working together as the aircraft climbs.”",
+        "illustrationPrompt": "Uncle Du smiles warmly and gives a thumbs-up to An'an, explaining that tucking away the wheels makes the plane sleek and fast in the sky."
+      },
+      {
+        "page": 20,
+        "zhText": "白色大飞机越飞越远，变成蓝天里一个小小的亮点。安安抱紧小熊：“这么多地面和空中的伙伴一起合作，大飞机才能出发呀！”",
+        "enText": "The white airliner grew smaller until it was a tiny bright speck in the blue sky. An'an hugged Bear. “So many helpers on the ground and in the air work together to send it on its way!”",
+        "illustrationPrompt": "Wide scenic shot: the white airliner soars gracefully into the deep blue sky, leaving a soft white fluffy contrail next to soft clouds. An'an hugs Bear happily by the window."
+      }
+    ],
+    "parentGuide": {
+      "goal": "认识机场地面保障车辆、滑行道与跑道的区别，了解塔台与其他管制岗位的接力配合，以及机翼形状、迎角、气流和压力共同产生升力。",
+      "reminder": "引导孩子理解机场停机坪属于高危作业隔离区，必须在指定候机楼或观景台隔音玻璃后观看。乘机时引导孩子遵守航空安全规定：全程系好安全带、滑行起降时收起小桌板并调直座椅靠背、不随意触碰机上应急设备。",
+      "questions": [
+        "客机靠着登机桥停放时，谁帮助它向后推出？",
+        "飞机到跑道外为什么还要等许可？",
+        "机翼怎样改变周围的气流？"
+      ],
+      "activity": "在家里用纸飞机轻轻滑翔，观察不同折法和轻微调整翼面后的变化。说明纸飞机与真实客机的结构、动力和尺度不同；飞机升力不能只用“上弯下平”或吹纸条实验解释。",
+      "ageTips": {
+        "age4to5": "寻找停机坪上的黄色牵引车、高高像火炬的塔台和大飞机两端的翘起小翼，模仿飞机平稳爬升与收起轮子的动作。",
+        "age6to8": "讨论机场地面各种特种保障车辆的分工配合，思考为什么空中航道也需要像马路一样严格听从塔台指挥以防相撞。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 warm premium 3D clay-like animated children's picture-book illustration, tactile rounded materials, bright sunny afternoon light in a modern airport observatory hall looking onto vast concrete runways and tarmac apron, varied wide, medium and close compositions. No comic panels, speech bubbles or readable writing.",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl on every page: round face, ear-length straight black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, small orange backpack, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. The brown plush bear wears a blue scarf and has a small yellow crescent behind one ear. Uncle Du is an adult Chinese male airport docent wearing a fluorescent yellow safety vest over a neat gray airport jacket. Include only the cast required by each page.",
+    "negative": "No text, letters, numbers, captions, logos, brand marks, airline logos, readable aircraft tail numbers or watermarks. No anthropomorphic airplane faces or smiling windshields. No children on active tarmac, no walking near jet engines, duplicate characters or distorted anatomy."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-10-17T21:06:55.385735+00:00",
+  "tool": "tabbit-cli",
+  "origin": "http://localhost:3000",
+  "desktopViewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobileViewport": {
+    "width": 390,
+    "height": 844
+  },
+  "books": [
+    {
+      "order": 43,
+      "id": "wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma",
+      "httpStatus": 200,
+      "pageTabs": 16,
+      "lastPageSelection": "passed",
+      "localMp3Playback": "passed",
+      "audioUrl": "/library/qiche/wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma/zh-9813ee6ff81db88d.mp3",
+      "duration": 207.384,
+      "mobileViewportWidth": 390,
+      "mobileDocumentWidth": 390,
+      "brokenImages": []
+    },
+    {
+      "order": 44,
+      "id": "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai",
+      "httpStatus": 200,
+      "pageTabs": 20,
+      "lastPageSelection": "passed",
+      "localMp3Playback": "passed",
+      "audioUrl": "/library/qiche/gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai/zh-dc2465a9fa8f9435.mp3",
+      "duration": 250.776,
+      "mobileViewportWidth": 390,
+      "mobileDocumentWidth": 390,
+      "brokenImages": []
+    },
+    {
+      "order": 45,
+      "id": "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
+      "httpStatus": 200,
+      "pageTabs": 20,
+      "lastPageSelection": "passed",
+      "localMp3Playback": "passed",
+      "audioUrl": "/library/qiche/da-fei-ji-zai-pao-dao-shang-pai-dui-ma/zh-92fa5a07555f4058.mp3",
+      "duration": 245.184,
+      "mobileViewportWidth": 390,
+      "mobileDocumentWidth": 390,
+      "brokenImages": []
+    },
+    {
+      "order": 46,
+      "id": "tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu",
+      "httpStatus": 200,
+      "pageTabs": 16,
+      "lastPageSelection": "passed",
+      "localMp3Playback": "passed",
+      "audioUrl": "/library/qiche/tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu/zh-f26e1c0ad6f825f9.mp3",
+      "duration": 209.256,
+      "mobileViewportWidth": 390,
+      "mobileDocumentWidth": 390,
+      "brokenImages": []
+    },
+    {
+      "order": 47,
+      "id": "kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma",
+      "httpStatus": 200,
+      "pageTabs": 16,
+      "lastPageSelection": "passed",
+      "localMp3Playback": "passed",
+      "audioUrl": "/library/qiche/kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma/zh-3af0a734e56e5185.mp3",
+      "duration": 217.176,
+      "mobileViewportWidth": 390,
+      "mobileDocumentWidth": 390,
+      "brokenImages": []
+    }
+  ],
+  "onDemandNarrationRequests": 0,
+  "scope": "Page load, first/last page selection, muted HTML audio playback and rendered viewport checks; does not claim full human listening of every page.",
+  "initialAttempt": "Play control was invoked before hydration completed; final verification waited for network idle and functioning reader controls.",
+  "screenshots": {
+    "mobile": "content-drafts/qiche/qiche-43-47-mobile.png",
+    "desktop": "content-drafts/qiche/qiche-43-47-desktop.png"
+  }
+}

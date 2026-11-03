@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 46,
+  "page": 12,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_Qm1hnShZfxgUiSVtJKyLETaz.png",
+  "target": "public/library/qiche/tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu/12.webp",
+  "sha256": "83cb423c93190990496e90b10b09e1d61aa70c3c4da3c2fecaac45536a0c699c",
+  "reviewCorrection": "Navigation road observation is a museum diorama, remove wrong family and driving layout",
+  "importedAt": "2026-10-17T15:14:46.086Z",
+  "id": "tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu",
+  "bytes": 210416
+}

@@ -1,0 +1,170 @@
+{
+  "_draft": {
+    "note": "用户已确认的第43-47本制作稿；中英正文、亲子指南、内置生图插画与百炼中文音频已完成，本地书库已接入。未执行本批次上传、Git提交或线上部署。",
+    "createdAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "plan": "user-approved",
+    "manuscript": "complete",
+    "illustrations": "complete",
+    "audio": "complete",
+    "libraryIntegration": "complete-local"
+  },
+  "book": {
+    "id": "wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma",
+    "seriesId": "qiche",
+    "title": "无人机，把快递送上天啦？",
+    "subtitle": "社区低空智慧物流与空中走廊",
+    "question": "无人机停在天上为什么不会掉下来，它是怎么在城市里送快递的？",
+    "moral": {
+      "zh": "依靠旋转旋翼产生向上的升力，配合智能雷达避开障碍，无人机沿着规划好的空中航道，把快递又快又稳地送进千家万户。",
+      "en": "Using spinning rotors to generate lift and smart sensors to dodge obstacles, delivery drones follow organized sky corridors to deliver parcels safely and swiftly."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-17",
+    "order": 43,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 10,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 43,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "低空经济",
+        "物流无人机",
+        "旋翼升力",
+        "智能避障",
+        "智慧社区"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "星期六的早晨，阳光洒在绿意盎然的未来社区广场上。安安背着橙色小背包，手里抱着小熊，和妈妈一起散步去社区的智慧物流驿站取包裹。",
+        "enText": "On Saturday morning, sunshine fell across the green plaza of their futuristic neighborhood. An'an carried her orange backpack, held Bear in her arms, and walked with Mom to the smart delivery hub to pick up a parcel.",
+        "illustrationPrompt": "Sunny Saturday morning on a lush green modern community plaza: An'an wearing her teal-green hooded jacket and orange backpack holds Bear in her arms, walking happily beside Mom in her coral cardigan toward a sleek white smart logistics kiosk in the distance. Wide establishing shot."
+      },
+      {
+        "page": 2,
+        "zhText": "刚走到驿站开阔的草坪前，安安就听见头顶传来一阵轻柔平稳的“嗡嗡”声。她抬起头，惊喜地指着半空：“妈妈，快看！天上有一只长着四个螺旋桨的‘大蜻蜓’！”",
+        "enText": "Just as they reached the open lawn before the hub, An'an heard a soft, steady hum above. She looked up and pointed into the air with delight. “Mom, look! There's a giant dragonfly with four propellers in the sky!”",
+        "illustrationPrompt": "Morning community, Mom coral cardigan and Anan teal hoodie watch a four-rotor white-orange parcel drone beyond visitor barrier."
+      },
+      {
+        "page": 3,
+        "zhText": "那是一架白橙相间的四旋翼物流无人机。它既没有像小鸟一样拍打翅膀，也没有像普通飞机那样快速向前滑行，而是稳稳当当地停在半空中。",
+        "enText": "It was a white-and-orange quadcopter delivery drone. It neither flapped wings like a bird nor zoomed forward like a regular airplane; instead, it hovered steadily in midair.",
+        "illustrationPrompt": "Object-only view of exactly four rotor hubs and arms, two camera lenses and parcel secured beneath white-orange quadcopter."
+      },
+      {
+        "page": 4,
+        "zhText": "身穿深蓝色工作马甲的物流工程师林阿姨走过来，微笑着向安安招手。安安好奇地问：“林阿姨，无人机停在天上，为什么不会掉下来呢？”",
+        "enText": "Wearing her dark-blue work vest, logistics engineer Lin walked over and waved to An'an with a smile. An'an asked curiously, “Auntie Lin, why doesn't the drone fall down when it stays still in the sky?”",
+        "illustrationPrompt": "Friendly female engineer Auntie Lin in a navy work vest and gray trousers smiles warmly and waves to An'an and Mom standing on the paved plaza walkway beside the green lawn. Medium two-shot."
+      },
+      {
+        "page": 5,
+        "zhText": "林阿姨蹲下身，指着头顶旋转的旋翼：“你看，四个旋翼都在飞快地旋转，把空气用力往下推。空气就会产生向上的反推力，正好稳稳地把无人机托在空中。”",
+        "enText": "Auntie Lin knelt down and pointed to the spinning rotors above. “Look, all four rotors spin rapidly, pushing air firmly downward. The air pushes back with an upward lift, holding the drone steadily aloft.”",
+        "illustrationPrompt": "Lin navy vest light-blue polo points across observation rail at four-rotor parcel drone; subtle downward airflow strokes illustrate thrust."
+      },
+      {
+        "page": 6,
+        "zhText": "安安看着小旋翼若有所思：“那如果它想往前飞，或者拐个弯去另一条街，该怎么做呀？”",
+        "enText": "An'an looked thoughtfully at the small rotors. “Then what does it do if it wants to fly forward or turn around toward another street?”",
+        "illustrationPrompt": "Close curious Anan with blue-scarf Bear and coral-cardigan Mom, parcel drone in distance beyond rail."
+      },
+      {
+        "page": 7,
+        "zhText": "林阿姨拿出一个不会转动的教学模型：“电脑会调节各个旋翼的转速，让机身朝需要的方向微微倾斜，就能向前或向旁边飞。转弯时，还要配合调整旋翼的转动。”",
+        "enText": "Auntie Lin brought out a model with motionless blades. “The computer adjusts the rotor speeds to tilt the drone in the direction it needs to travel. Coordinated changes to the rotors also help it turn.”",
+        "illustrationPrompt": "Lin in navy vest light-blue polo shows a motionless four-propeller teaching model at outdoor table; Mom and Anan watch."
+      },
+      {
+        "page": 8,
+        "zhText": "安安仰头望向周围的高楼和大树，有些担心地说：“城市里有那么多高楼、路灯和大树，无人机飞在天上，会不会撞到电线呀？”",
+        "enText": "An'an looked up at the nearby tall buildings and trees, feeling a bit worried. “There are so many towers, streetlights, and trees in our city. Won't the drone bump into wires while flying?”",
+        "illustrationPrompt": "Looking up past modern glass apartment towers and lush street trees toward the open sky: An'an and Mom look up thoughtfully, wondering how drones navigate between buildings without hitting wires or branches."
+      },
+      {
+        "page": 9,
+        "zhText": "“这架无人机装着帮助观察的‘眼睛’。”林阿姨指着展示模型上的镜头，“相机和激光雷达会收集周围的信息，再交给电脑判断。不同的无人机，设备也可能不一样。”",
+        "enText": "“This drone has sensors that help it look around.” Auntie Lin pointed to the lenses on the display model. “Cameras and lidar gather information for its computer. Other drones may use different equipment.”",
+        "illustrationPrompt": "Close-up detail shot of the drone's sleek nose: circular black lidar sensors and dual optical stereo camera lenses gleaming in the sunlight, with soft digital sensing rays illustrated subtly around it."
+      },
+      {
+        "page": 10,
+        "zhText": "“发现障碍物时，系统会尝试减速、停住或改变路线。不过，细电线和突然出现的小鸟也可能很难发现，所以工作人员还要提前检查路线，持续看护飞行。”",
+        "enText": "“When it detects an obstacle, the system may slow down, stop, or change course. Thin wires and birds that appear suddenly can still be hard to detect, so staff check the route beforehand and monitor the flight.”",
+        "illustrationPrompt": "High-angle view of the drone flying gracefully in the open sky: a distant cartoon bird glides past safely as the drone smoothly banks aside, demonstrating autonomous obstacle avoidance along its path."
+      },
+      {
+        "page": 11,
+        "zhText": "林阿姨指着驿站的路线示意图：“这条配送线路提前规划好了，要绕开不适合飞行的地方。图里的绿色线只是帮我们看懂路线，真实天空里可没有发光的道路哦。”",
+        "enText": "Auntie Lin pointed to the hub's route display. “This delivery route is planned in advance to avoid unsuitable places. The green lines help us understand the map; real roads in the sky do not glow.”",
+        "illustrationPrompt": "Wide scenic shot of the futuristic skyline under a bright morning sun: multiple small delivery drones glide peacefully along an invisible orderly low-altitude air corridor, keeping clear of rooftops and pedestrian areas."
+      },
+      {
+        "page": 12,
+        "zhText": "这时，远处起降区的无人机接到降落指令，平稳地垂直下降。安安和妈妈留在护栏与黄色安全线外，林阿姨提醒：“我们就在参观区静静看，不能靠近旋翼。”",
+        "enText": "The drone in the separate landing area began descending vertically. An'an and Mom stayed behind the barrier and yellow safety line. “Let's watch from the visitor area and keep clear of the rotors,” Auntie Lin reminded them.",
+        "illustrationPrompt": "Anan and Mom remain outside continuous visitor barrier and yellow line while parcel drone descends to separated circular landing pad."
+      },
+      {
+        "page": 13,
+        "zhText": "无人机的四个起落架稳稳落在一个圆形的起降平台上，旋翼慢慢停止了旋转。紧接着，起降台下方的投递口自动打开，包裹被平稳地送进了智能快递柜。",
+        "enText": "The drone's four landing gears settled firmly onto a circular landing pad, and its rotors slowly came to a halt. Right after, a hatch beneath the pad opened automatically, lowering the parcel into a smart locker.",
+        "illustrationPrompt": "Close-medium shot of the quadcopter drone touching down gently on a circular ground landing pad: four landing legs rest firmly on the pad, propellers slowing to a stop as an automated hatch below unlocks."
+      },
+      {
+        "page": 14,
+        "zhText": "叮咚！妈妈的手机收到了包裹已到柜的通知。她在柜机前出示取件码，一个小柜门弹开了，里面是装着新科学画册的包裹。",
+        "enText": "Ding-dong! Mom's phone announced that the parcel was ready. She showed her pickup code at the locker, and a small door opened. Inside was the parcel containing An'an's new science picture book.",
+        "illustrationPrompt": "At the smart pickup locker wall: Mom scans a pickup QR code on her phone, and a clean locker compartment pops open with a soft chime, revealing a colorful children's science picture book inside. An'an smiles eagerly."
+      },
+      {
+        "page": 15,
+        "zhText": "安安抱着新画册，开心地向林阿姨挥手道谢。林阿姨笑着说：“出发前还要检查电量和天气。遇到不适合飞行的大风或雷雨，配送就要暂停，不能勉强起飞。”",
+        "enText": "Holding her new book, An'an waved goodbye to Auntie Lin. “Before a flight, we check the battery and weather too. Strong winds or thunderstorms can mean pausing deliveries instead of taking off,” Auntie Lin said.",
+        "illustrationPrompt": "An'an hugs the newly delivered science book with Bear, waving goodbye and thanking Auntie Lin. In the background behind glass walls, several resting drones sit in neat charging docks under cover."
+      },
+      {
+        "page": 16,
+        "zhText": "回到家，安安找出一只小纸风车，鼓起腮帮子用力一吹，风车呼啦啦飞转起来。她把小熊放在积木拼成的小停机坪旁，自豪地说：“等我长大了，也要设计一架聪明的送货小飞侠！”",
+        "enText": "Back home, An'an took out a small paper pinwheel and puffed her cheeks to blow on it, making the blades whirl around. She placed Bear beside a toy landing pad built with blocks and said proudly, “When I grow up, I will design a smart flying helper too!”",
+        "illustrationPrompt": "Morning bedroom, Anan blows paper pinwheel beside Bear and wooden block toy landing pad with plain orange circle and science book."
+      }
+    ],
+    "parentGuide": {
+      "goal": "认识多旋翼通过推动空气获得升力，了解传感器、预先规划的配送路线和工作人员监控各自的作用；知道避障能力有局限。",
+      "reminder": "本书的自动收件平台是故事中的示范设施，不代表每个社区都有。儿童由成人陪同在护栏外参观；纸风车只能帮助观察气流与转动，不能证明风车能载重起飞。",
+      "questions": [
+        "无人机悬停时，四个旋翼在做什么？",
+        "有了传感器，为什么还需要检查路线和天气？",
+        "什么情况下地面配送更合适，什么情况下可以尝试无人机配送？"
+      ],
+      "activity": "在成人陪同下转动现成的纸风车，观察空气与叶片的互动；用积木、纸盒搭一个静止的配送驿站，讲述包裹从平台到柜子的路线。不连接电机，不接近真实飞行器。",
+      "ageTips": {
+        "age4to5": "寻找画面里的四个小旋翼、黄色安全线与智能快递柜，模仿无人机起飞与平稳降落的声音。",
+        "age6to8": "探讨城市“低空航道”为什么需要规划路线，对比地面快递货车与空中物流无人机各自的优点和天气局限。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 warm premium 3D clay-like animated children's picture-book illustration, tactile rounded materials, sunny morning light in a lush modern eco-friendly futuristic neighborhood plaza, varied wide, medium and close compositions. No comic panels, speech bubbles or readable writing.",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl on every page: round face, ear-length straight black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, small orange backpack, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. The brown plush bear wears a blue scarf and has a small yellow crescent behind one ear. Auntie Lin is an adult Chinese female logistics engineer with ponytail hair, navy work vest over a light-blue polo shirt, and gray trousers. Include only the cast required by each page.",
+    "negative": "No text, letters, numbers, captions, logos, brand marks, readable license plates or watermarks. No anthropomorphic drone faces or smiling vehicle eyes. No children alone near active spinning rotors, no reaching hands into propeller blades, no touching electrical parts, duplicate characters or distorted anatomy."
+  }
+}

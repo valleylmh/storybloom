@@ -1,0 +1,343 @@
+{
+  "_draft": {
+    "note": "用户已于2026-10-17确认本册完整内容，并指定使用内置生图与百炼TTS继续制作。",
+    "createdAt": "2026-10-17",
+    "contentApproved": true,
+    "tentativeSeriesOrder": true,
+    "approvedAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "scope": "five-new-books-authorized",
+    "plan": "user-approved",
+    "manuscript": "approved",
+    "illustrationPrompts": "prepared",
+    "illustrations": "complete-built-in-imagegen",
+    "audio": "complete-local-bailian",
+    "libraryIntegration": "complete-local-catalog",
+    "upload": "not-performed",
+    "publication": "not-performed",
+    "validation": "passed-assets-types-tests-and-browser",
+    "commit": "not-performed"
+  },
+  "editorial": {
+    "batchTitle": "都市汽车系列第二批 城市服务车五连篇",
+    "synopsis": "社区阅读节前一天，安安等着一盒星星书签。快递车里有两个几乎一样的纸箱，她以为画着星星的就是自己的。朱师傅带她发现，图案和大小不能代替收件信息；包裹经过分拣、扫码、按路线配送，最后还要核对交接。星星书签到了，安安也给玩具城设计了一条送达路线。",
+    "knowledgePoints": [
+      "包裹标签与收件信息",
+      "扫码识别和分拣",
+      "按区域与路线配送",
+      "核对收件人与妥善交接"
+    ],
+    "sources": [
+      "https://www.dhl.com/np-en/home/press/press-archive/2021/dhl-express-deploys-ai-powered-sorting-robot.html"
+    ]
+  },
+  "book": {
+    "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+    "seriesId": "qiche",
+    "title": "快递车，怎么找到我的包裹？",
+    "subtitle": "一盒星星书签的城市旅行",
+    "question": "车里装着那么多相像的纸箱，快递员怎么把它们送到不同的人手里？",
+    "moral": {
+      "zh": "把包裹送对地方，要靠清楚的信息、仔细核对和一次次可靠的交接。",
+      "en": "Getting a parcel to the right place takes clear information, careful checking, and reliable handovers."
+    },
+    "ageLabel": "4–8 岁",
+    "order": 48,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 10,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 48,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "汽车科普",
+        "快递车",
+        "包裹分拣",
+        "配送路线",
+        "信息核对",
+        "社区服务"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "星期五下午，安安和妈妈来到社区图书馆。明天这里要办阅读节，她们订的一盒星星书签，还没有送到。",
+        "enText": "On Friday afternoon, An'an and Mom visited the community library. A reading festival was planned for tomorrow, but the box of star-shaped bookmarks they had ordered had not arrived yet.",
+        "illustrationPrompt": "中景：安安和妈妈站在图书馆室内准备桌旁，桌上有空书签篮和待布置的绘本。"
+      },
+      {
+        "page": 2,
+        "zhText": "窗外，一辆薄荷绿快递车停进装卸车位。朱师傅关好驾驶室的门，推来一辆小推车，上面放着好几个纸箱。",
+        "enText": "Outside, a mint-green delivery van parked in a loading bay. Zhu closed the cab door and brought over a handcart carrying several cardboard boxes.",
+        "illustrationPrompt": "隔窗远景：薄荷绿厢式快递车停妥，朱师傅沿与车道分开的步行路线推车，孩子留在室内。"
+      },
+      {
+        "page": 3,
+        "zhText": "两个纸箱一样大，其中一个角上还贴着小星星。安安指着它说：“一定是这个！我们的书签也是星星呀。”",
+        "enText": "Two boxes were the same size, and one had a little star sticker on a corner. “It must be that one!” An'an said. “Our bookmarks are stars too.”",
+        "illustrationPrompt": "近景：推车上的两个同尺寸牛皮纸箱，一个角有星形装饰贴；安安隔着接待桌指一指，不触碰包裹。"
+      },
+      {
+        "page": 4,
+        "zhText": "朱师傅没有急着递箱子。他看了看面单：“这个是送给花店的。纸箱长得像，住的地方可不一定一样。”",
+        "enText": "Zhu did not hand it over yet. He checked its shipping label. “This one is for the flower shop. Boxes can look alike and still be going to different places.”",
+        "illustrationPrompt": "人物中景：朱师傅核对带抽象不可读面单的星贴纸箱，安安惊讶，妈妈在身旁。"
+      },
+      {
+        "page": 5,
+        "zhText": "安安凑近一点看，面单上有一条条深浅不一的线。“这些像小栅栏的东西，也知道箱子要去哪儿吗？”",
+        "enText": "An'an looked more closely. The label had rows of dark and light lines. “Do those little fence-like marks know where the box is going too?”",
+        "illustrationPrompt": "面单局部特写：抽象化深浅条纹位于标签区，不生成真实条码、地址、电话号码或可读文字。"
+      },
+      {
+        "page": 6,
+        "zhText": "“它叫条码，是给机器认的记号。”朱师傅举起扫描器，嘀——机器认出了这个包裹，调出对应的配送信息。",
+        "enText": "“It is a barcode—a mark a machine can read.” Zhu lifted his scanner. Beep! It identified the parcel and brought up its delivery information.",
+        "illustrationPrompt": "手部近景：朱师傅用扫描器读取包裹标签，屏幕仅显示抽象图标；安安站在桌子另一侧。"
+      },
+      {
+        "page": 7,
+        "zhText": "朱师傅又拿起另一个箱子，和妈妈核对收件信息。“这盒才是你们的。”安安笑了：“原来不能只看星星！”",
+        "enText": "Zhu picked up the other box and checked the recipient details with Mom. “This is yours.” An'an smiled. “So a star sticker is not enough!”",
+        "illustrationPrompt": "中景：妈妈在接待桌前与朱师傅核对，另一个无星贴纸箱放在桌面，安安恍然大悟。"
+      },
+      {
+        "page": 8,
+        "zhText": "“它上车以前，也排过队吗？”安安问。朱师傅指着图书馆准备的物流图卡：“我们从前面那一站看起。”",
+        "enText": "“Did it wait in a line before getting into your van?” An'an asked. Zhu pointed to the library's picture cards about deliveries. “Let's start one stop earlier.”",
+        "illustrationPrompt": "俯视桌面：朱师傅摆出数张无字物流图卡，安安与妈妈在图书馆桌边观看，明确为教学图卡。"
+      },
+      {
+        "page": 9,
+        "zhText": "图卡上的分拣中心里，许多包裹沿传送带向前走。工作人员和机器认出标签，把去不同地区的包裹分开。",
+        "enText": "On one card, parcels traveled along a conveyor at a sorting center. Workers and machines read their labels and separated parcels for different areas.",
+        "illustrationPrompt": "单幅图卡内容的场景化近景：分拣中心有成人工作人员和传送带，不出现安安置身作业区。"
+      },
+      {
+        "page": 10,
+        "zhText": "到了附近的配送站，同一片街区的包裹再被放到一起。朱师傅说：“我这趟要去图书馆、花店，还有前面的居民楼。”",
+        "enText": "At the local delivery station, parcels for nearby streets were grouped together. “Today my route includes the library, the flower shop, and the apartment building ahead,” Zhu said.",
+        "illustrationPrompt": "俯视教学模型：三座不同外形的建筑和分组纸盒对应，薄荷绿玩具厢式车停在路线起点。"
+      },
+      {
+        "page": 11,
+        "zhText": "“那就一口气冲过去！”安安让手指小车跑得飞快。朱师傅笑着指了指图上的路口：“还得看路线，守交通规则，停在能装卸的地方。”",
+        "enText": "“Then zoom straight there!” An'an raced her finger along the card. Zhu smiled and pointed to a junction. “We still need a route, traffic rules, and places where we can safely unload.”",
+        "illustrationPrompt": "桌面俯视：安安用手指比画小车，朱师傅指向纸路路口和独立装卸格，不画真实车辆高速行驶。"
+      },
+      {
+        "page": 12,
+        "zhText": "妈妈核对好包裹，完成了签收。朱师傅把另外的箱子推回车边，安安站在窗里，朝他挥了挥手。",
+        "enText": "Mom checked the parcel and completed the handover. Zhu wheeled the other boxes back to the van. An'an stayed by the window and waved goodbye.",
+        "illustrationPrompt": "图书馆内向外看：安安隔窗挥手，朱师傅在停妥的快递车旁整理货物，门外没有孩子。"
+      },
+      {
+        "page": 13,
+        "zhText": "许姐姐拆开纸箱，取出一叠黄灿灿的星星书签。安安把它们放进小篮子：“明天，大家可以带一颗星星回家。”",
+        "enText": "Librarian Xu opened the box and lifted out a stack of golden star bookmarks. An'an put them in a basket. “Tomorrow, everyone can take a little star home.”",
+        "illustrationPrompt": "桌边近景：许姐姐已安全拆开纸箱，安安把大号星星纸书签放入篮子，妈妈整理包装。"
+      },
+      {
+        "page": 14,
+        "zhText": "回到家，安安用积木搭了花店、图书馆和小熊家。她给三个空纸盒贴上不同图形，装进玩具快递车。",
+        "enText": "At home, An'an built a flower shop, a library, and Bear's house from blocks. She put a different shape on each empty toy parcel and loaded her delivery van.",
+        "illustrationPrompt": "家中俯视：三座积木小建筑、大号圆形三角形星形图卡和三个轻空盒，玩具车与真实快递车明显区分。"
+      },
+      {
+        "page": 15,
+        "zhText": "小熊家的盒子和花店的盒子一样大。安安这次先看图卡，再送到门口：“差一点，又要认错啦！”",
+        "enText": "Bear's parcel and the flower shop's parcel were the same size. This time, An'an checked the picture cards before making a delivery. “I almost mixed them up again!”",
+        "illustrationPrompt": "手部近景：安安比对同尺寸纸盒上的图形和积木门牌，小熊坐在玩具屋旁。"
+      },
+      {
+        "page": 16,
+        "zhText": "最后一盒送到了。安安把玩具车停好，给小熊夹上一颗星星书签：“你的包裹，平平安安到家啦。”",
+        "enText": "The last parcel arrived. An'an parked her toy van and tucked a star bookmark into Bear's book. “Your parcel is safely home.”",
+        "illustrationPrompt": "温暖收束：安安和小熊在地毯上读书，星星书签夹在书页间，玩具快递车停在积木车位。"
+      }
+    ],
+    "parentGuide": {
+      "goal": "跟随一个包裹的送达过程，认识标签、扫码、路线和核对各自解决什么问题。",
+      "reminder": "不以“送得越快越好”评价快递工作。真实快递由成人核对和领取；不用家庭住址、电话或真实面单做游戏，也不让孩子追车、钻进货厢或搬重物。",
+      "questions": [
+        "为什么安安第一次猜错了箱子？",
+        "扫描器认出包裹以后，朱师傅为什么还要核对收件信息？",
+        "如果玩具城有三户人家，你准备怎样安排送达顺序？"
+      ],
+      "activity": "用三个空纸盒作玩具包裹，分别贴大号圆形、三角形和星形图卡，另画三个相同图形的玩具门牌。孩子先分组，再用玩具车沿纸路配送，交接前比对图卡。只在桌面使用虚构信息，不计时。",
+      "ageTips": {
+        "age4to5": "先玩两种图形的配对，边放边说“这是送给谁的”。",
+        "age6to8": "加入同样大小、不同图卡的两个盒子，讨论外观为什么不够，以及怎样安排少绕路的路线。"
+      }
+    },
+    "publishedAt": "2026-10-18"
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 premium polished 3D clay-like animated-film children's picture-book illustration. Warm early-autumn city daylight, rounded tactile materials, physically plausible vehicles, clear action and varied wide, medium and close compositions. Friday afternoon for book 48, sunny Saturday morning through afternoon for books 49–52, with evening only where explicitly requested. One continuous scene per page. Follow the page-specific camera and location. 教学模型、图卡和真实作业区必须通过材质、尺度和环境清楚区分。",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl: round face, ear-length black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. Bear: small brown plush with blue scarf and yellow crescent behind one ear. The family car is the established left-hand-drive light-blue five-door hatchback with beige interior; Mom drives from the left front seat, An'an rides buckled in the rear dark-blue age-appropriate child restraint. Backpack is separately stowed away from restraint straps. Only include people, the bear and props required by the page; do not force them into mechanical close-ups. The star bookmarks are large flat yellow paper stars from book 48 and reappear in book 52. Parcel van: generic mint-green enclosed delivery van with a cream cab roof, blank plate, no logo, no refrigeration unit. Courier Zhu: short black hair, teal work jacket, navy trousers and dark work shoes. Librarian Xu: black low ponytail, mustard cardigan, navy trousers. Parcels: plain tan boxes with non-readable abstract label blocks; the star stickers in the home game are toy identifiers, not a substitute for real shipping information.",
+    "negative": "No readable text, letters, numbers, captions, speech bubbles, real addresses, phone numbers, usable personal data, real barcodes, logos, brand marks, readable plates or watermarks. No anthropomorphic car faces, duplicate main characters, warped anatomy or impossible vehicle structures. No child in loading or recovery work zones, climbing shelves, entering freight boxes, touching winch cables or refrigeration equipment. No child pushing a real vehicle, passenger in a car transported on a flatbed, driver phone use while moving, unrestrained child in the family car, backpack under restraint straps, icy yogurt cargo, instant food-freshening magic, bus ramp deployed while moving, crowded ramp, unsolicited wheelchair pushing, or pity framing of wheelchair users."
+  },
+  "audioGeneration": {
+    "provider": "bailian",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "pageCount": 16,
+    "contentHash": "d03ecd7ebfc7cd88420582ee4b67b8aaf5821fc7c90f21ec5e404f12aa28efbb",
+    "duration": 148.68,
+    "decodeValidation": "passed",
+    "nonSilentPages": "passed"
+  },
+  "illustrationGeneration": {
+    "provider": "built-in-imagegen",
+    "pageCount": 16,
+    "format": "webp",
+    "width": 1200,
+    "height": 1200,
+    "maxBytes": 307200,
+    "contactSheet": "content-drafts/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/contact-sheet.jpg",
+    "visualReview": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_EiLsMRpSHNph0zrP0Axg3No5.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/1.webp",
+        "sha256": "0d46d7b623f18ac5a60c68e39a61bc41f1237a22cfaf5ef57028d76263ac1801",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 2,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_afF3reMQRkiLT6izy9ogmLjp.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/2.webp",
+        "sha256": "12635d6ca854af5bff8f5e9baa7e7c21c2c8356e88c0d89eef3a7b58e296aa24",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 3,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_aop1vrJb0OSdLV7t3wGLJ0BF.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/3.webp",
+        "sha256": "02c96779628dd67d0a4e4e6b593ed809e296a142911372bd3c1c6beb0cafd573",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 4,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_XqgBeU5cNBRP7jCFP0FTC9ol.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/4.webp",
+        "sha256": "85cf63e629348901bead990ed59e3e4a392c68209a1ab46cae1d1cecf70272cb",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 5,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_zCDzjvgPGvEm0cXlMYRdK29s.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/5.webp",
+        "sha256": "33438d4f91a6957288d3532425ebea1156e8d27fda3a66b8f1699950548c47ac",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 6,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_NlBkrrdUrpqBhNyl2cMjUijV.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/6.webp",
+        "sha256": "6c4ce048dc0ebaa2cb7627271e7bb04e4ea81d27e7edd1a63a97993be8eb67f8",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 7,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bkrr6F71DMpdJe4Gkdb3oxcT.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/7.webp",
+        "sha256": "91f714ef17645dedf7c2856ffc3e68f634ab9c348e9c7b6c390fafdf117a4067",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 8,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_9LC1Q7QGlAmXDMAnh4Pn3QMe.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/8.webp",
+        "sha256": "dcb677da9a8b8d6b7ba1913cadb4330e366336012f7ccc309f9cfd05b4ed81e8",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 9,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_y4JG0D4O3Xg8OfPy6mXNrylN.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/9.webp",
+        "sha256": "cc0d9b269d9eb1579640a8b66ba4fa43dfbd024e12084a026b35ae3e64b880c6",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 10,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_zjfwCWHOdZqUGLMUY5BLdMU3.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/10.webp",
+        "sha256": "b2d7c499cc5004418d4b48e4220188a2ce1a0e3298c85501a410fe6ce312b4e4",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 11,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_sytsZlkdsAjIfXzomPi1C8KB.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/11.webp",
+        "sha256": "6f39a89a42c71d679000a725f5f1cd3a109f791d76153b63f5dc9f11ee205a14",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 12,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WwnGifOQr7gsL5xYAlQjh3sl.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/12.webp",
+        "sha256": "ee1f7d0e32aaef0019dac08f5a0f9b66b900fbf2c8af831e18a4dc59a0b70bf0",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 13,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_YAtbdMHupQRuo2Tm9c07WOmQ.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/13.webp",
+        "sha256": "30195072bcae166029d74404dc617a3b6393b2c64988b2110840ea672230e4a9",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 14,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_Ma57UZ0lLwMjuanV5KmB7QMh.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/14.webp",
+        "sha256": "535b65c3bc3d4c9a36212cc97d13adb5d21d4e748e15bbe4862b93812c89567e",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 15,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_wHcgH6RHQeXSvNkJr0pK470e.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/15.webp",
+        "sha256": "1ecda89d714057d7931362d17e999cef5385565b2b2818eae8a46709d2cb0805",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 16,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_L6HferYtBM6ulJHzBVx7fhGT.png",
+        "output": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/16.webp",
+        "sha256": "ef7262204f229dd1bdf799910cd9ac6232a12cf0c906589862da736dee583df6",
+        "visualReview": "passed-page-and-contact-sheet"
+      }
+    ]
+  }
+}

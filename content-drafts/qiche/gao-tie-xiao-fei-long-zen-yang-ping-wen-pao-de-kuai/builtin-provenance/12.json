@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 44,
+  "page": 12,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_79rX4Bzsfvs9zazedURT7mfm.png",
+  "target": "public/library/qiche/gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai/12.webp",
+  "sha256": "cacd87b82bdc4a8575e592c8d640c3a2c7690a665d66718bfc6d00f8c5674baf",
+  "reviewCorrection": "Remove extra child arm from rail model scene",
+  "importedAt": "2026-10-17T14:47:38.598Z",
+  "id": "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai",
+  "bytes": 137976
+}

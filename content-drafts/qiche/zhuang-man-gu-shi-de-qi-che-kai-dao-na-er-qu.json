@@ -1,0 +1,400 @@
+{
+  "_draft": {
+    "note": "用户已于2026-10-17确认本册完整内容，并指定使用内置生图与百炼TTS继续制作。",
+    "createdAt": "2026-10-17",
+    "contentApproved": true,
+    "tentativeSeriesOrder": true,
+    "approvedAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "scope": "five-new-books-authorized",
+    "plan": "user-approved",
+    "manuscript": "approved",
+    "illustrationPrompts": "prepared",
+    "illustrations": "complete-built-in-imagegen",
+    "audio": "complete-local-bailian",
+    "libraryIntegration": "complete-local-catalog",
+    "upload": "not-performed",
+    "publication": "not-performed",
+    "validation": "passed-assets-types-tests-and-browser",
+    "commit": "not-performed"
+  },
+  "editorial": {
+    "batchTitle": "都市汽车系列第二批 城市服务车五连篇",
+    "synopsis": "安安到达公园，发现许姐姐也来了，还带来一辆流动图书车。车厢里装着分类摆放、行车时固定好的图书，可以把借还服务送到社区。安安想借的鲸鱼绘本暂时不在，许姐姐先记录需求，再陪她找到一本汽车书。故事会后，安安借书、记下归还安排，看图书车收妥设备驶向下一站，晚上把前一天收到的星星书签夹进新借的书。",
+    "knowledgePoints": [
+      "流动图书车的社区服务",
+      "车内书架与行车固定",
+      "图书分类、查询和借还登记",
+      "按站点计划开展服务",
+      "货物、乘客与服务的不同运输任务"
+    ],
+    "sources": [
+      "https://www.cqlib.cn/web/column/col5003520.html"
+    ]
+  },
+  "book": {
+    "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+    "seriesId": "qiche",
+    "title": "装满故事的汽车，开到哪儿去？",
+    "subtitle": "阅读节最后一站开来了小图书馆",
+    "question": "这辆汽车不送快递，也不卖东西，为什么一停车就有人来借书？",
+    "moral": {
+      "zh": "汽车可以把物品和人送到目的地，也可以把一项服务带到更多人身边。",
+      "en": "Vehicles can carry goods and people, and they can also bring a service closer to the people who use it."
+    },
+    "ageLabel": "4–8 岁",
+    "order": 52,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 12,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 52,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "汽车科普",
+        "流动图书车",
+        "社区阅读",
+        "图书借还",
+        "车辆用途",
+        "城市服务"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "公园里的阅读节开始了。安安和妈妈跟着方老师来到树荫下，远处一辆奶油白和蓝绿色相间的汽车，正停进服务车位。",
+        "enText": "The reading festival was beginning in the park. An'an and Mom followed Fang toward the shade while a cream-and-teal vehicle parked in a designated service bay nearby.",
+        "illustrationPrompt": "公园宽景：平坦阅读区与专用服务车位分开，奶油白上半蓝绿下半图书车正在停妥，安安妈妈方老师远处等候。"
+      },
+      {
+        "page": 2,
+        "zhText": "车停稳了，驾驶员刘叔叔检查好周围，再请许姐姐打开服务窗口。安安认出了她：“你把图书馆也带来了吗？”",
+        "enText": "Once the vehicle was safely parked, driver Liu checked the area before Xu opened its service hatch. An'an recognized her. “Did you bring the library with you?”",
+        "illustrationPrompt": "车辆停妥后中景：刘叔叔检查周边，许姐姐刚打开侧面借阅窗口，安安与妈妈在开放区等待。"
+      },
+      {
+        "page": 3,
+        "zhText": "许姐姐把低低的借阅台展开。车厢里面，一排排书脊露了出来。动物、植物、机器，还有好多安安没见过的故事。",
+        "enText": "Xu unfolded the low lending counter. Rows of books appeared inside: animals, plants, machines, and many stories An'an had never seen before.",
+        "illustrationPrompt": "侧面窗口近景：低借阅台和固定书架清晰，书封只有无字动物植物机器图案，车内无游走乘客。"
+      },
+      {
+        "page": 4,
+        "zhText": "“这是流动图书车。”许姐姐说，“有人离图书馆远，我们就按计划来到这些站点，让大家就近借书、还书。”",
+        "enText": "“It is a mobile library,” Xu said. “Some people live far from a library. We visit planned stops so they can borrow and return books closer to home.”",
+        "illustrationPrompt": "借阅台人物中景：许姐姐平视向安安解释，妈妈在旁；背景有社区、公园等无字站点图卡。"
+      },
+      {
+        "page": 5,
+        "zhText": "安安看见书架前有一道道挡杆，旁边还收着能关拢的面板。“汽车转弯的时候，书怎么不往下跳呀？”",
+        "enText": "An'an noticed retaining rails in front of the shelves and panels that could close over them. “How do the books stay put when the vehicle turns?”",
+        "illustrationPrompt": "车内书架局部特写：牢固书档、挡杆和可锁闭运输面板明确，图书直立不悬空，柜体固定在车身。"
+      },
+      {
+        "page": 6,
+        "zhText": "“出发前，我们会收好书、关好面板。”许姐姐说，“到站停稳、检查好，再打开服务。书架旁不是让读者坐着搭车的地方。”",
+        "enText": "“Before driving, we put the books away and secure the panels,” Xu explained. “We open for service after parking and checking. The shelving area is not a place for readers to ride.”",
+        "illustrationPrompt": "借阅台边模型近景：许姐姐演示一扇已锁好的书架面板，实际车辆固定书架与驾驶区分隔，不展示架旁搭车。"
+      },
+      {
+        "page": 7,
+        "zhText": "安安惦记着上次看见的鲸鱼绘本。她在借阅台前比画：“封面上有一条这么——大的鲸鱼，我想接着看。”",
+        "enText": "An'an remembered a whale picture book she had seen before. At the counter she spread her arms. “It has a whale this big on the cover. I want to keep reading it.”",
+        "illustrationPrompt": "人物近景：安安站在车外低借阅台前张开双臂比鲸鱼，许姐姐听她描述，妈妈拿布书袋。"
+      },
+      {
+        "page": 8,
+        "zhText": "许姐姐查了查：“那本现在借给另一位读者了，今天不在车上。”安安的两只手，慢慢放了下来。",
+        "enText": "Xu checked the catalog. “Someone else has borrowed that one. It is not on the vehicle today.” An'an slowly lowered her arms.",
+        "illustrationPrompt": "借阅台中景：许姐姐查看仅有抽象色块的目录屏幕，安安轻微失落，架上仍有丰富其他图书。"
+      },
+      {
+        "page": 9,
+        "zhText": "“你愿意让我记下想看的书吗？”许姐姐问，“我帮你查查后面的借阅安排。”安安点点头，妈妈也把这件事记好了。",
+        "enText": "“Would you like me to note the book you want?” Xu asked. “I can check what borrowing options are available.” An'an nodded, and Mom made a note too.",
+        "illustrationPrompt": "桌面手部近景：许姐姐在无字示意登记卡记录鲸鱼图形，妈妈妥善记下安排，不展示个人姓名电话。"
+      },
+      {
+        "page": 10,
+        "zhText": "旁边，方老师正给小朋友们看一张小鸟卡片。她向安安招招手：“大象的故事快开始啦，你可以先选一本陪你回家的书。”",
+        "enText": "Nearby, Fang showed the children a bird story card and waved to An'an. “The elephant story starts soon. You can choose a book to take home first.”",
+        "illustrationPrompt": "平坦阅读区中景：方老师以讲述者身份准备故事，儿童围坐；安安与妈妈在近处借阅台，不堵通道。"
+      },
+      {
+        "page": 11,
+        "zhText": "许姐姐蹲低一点问：“除了鲸鱼，你今天还想找什么？”安安望向车轮：“有没有讲汽车怎么帮忙的书？”",
+        "enText": "Xu lowered herself to An'an's eye level. “What else would you like to find today?” An'an looked toward the wheels. “A book about how vehicles help?”",
+        "illustrationPrompt": "低借阅台人物中景：许姐姐与安安平视交谈，安安指向可见车轮，人物没有钻入车底。"
+      },
+      {
+        "page": 12,
+        "zhText": "许姐姐从车辆那一格取出一本厚厚的绘本。翻开第一页，一辆大卡车正背着小汽车。安安笑了：“这个，我今天见过！”",
+        "enText": "Xu selected a substantial picture book from the vehicle shelf. On its first page, a truck was carrying a car. An'an smiled. “I saw that today!”",
+        "illustrationPrompt": "翻开绘本的手部近景：无字图画中是橙色单车平板车承载浅蓝家用车，与第50本对应，书页不出现可读文字。"
+      },
+      {
+        "page": 13,
+        "zhText": "再翻一页，有送包裹的快递车，还有带制冷机的冷藏车。安安伸出手指：“它们带的东西不一样，帮的忙也不一样。”",
+        "enText": "Another spread showed a parcel van and a refrigerated truck. An'an pointed. “They carry different things and help in different ways.”",
+        "illustrationPrompt": "书本近景：同一幅无字城市图中有薄荷绿厢式车和蓝驾驶室白厢制冷车，外形与本批一致，不用分格漫画。"
+      },
+      {
+        "page": 14,
+        "zhText": "妈妈和安安按这个图书服务点的办法办好借阅。许姐姐登记好图书，又告诉她们在哪里、什么时候归还。",
+        "enText": "Mom and An'an followed this library stop's borrowing procedure. Xu recorded the loan and explained where and when to return the book.",
+        "illustrationPrompt": "借阅台近景：妈妈递无个人信息图卡，许姐姐完成无字抽象借阅记录，绘本装入布书袋。"
+      },
+      {
+        "page": 15,
+        "zhText": "安安抱着书坐回树荫下。方老师压低声音：“那只小鸟说，我知道一条路……”安安和小熊，一起竖起了耳朵。",
+        "enText": "An'an carried the book back to the shade. Fang lowered her voice. “The little bird said, I know a way…” An'an and Bear listened closely.",
+        "illustrationPrompt": "阅读区温暖中景：方老师自然生动讲故事，安安抱新借绘本与小熊坐在妈妈身旁，宽通道畅通。"
+      },
+      {
+        "page": 16,
+        "zhText": "故事讲完，安安把昨天收到的星星书签送给来听故事的小朋友。有人夹在新借的书里，有人举起来，朝阳光照一照。",
+        "enText": "After the story, An'an shared the star bookmarks that had arrived yesterday. Some children tucked them into borrowed books; others held them up to the sunlight.",
+        "illustrationPrompt": "树荫下中景：安安从第48本相同小篮子分发大号黄色纸星星书签，成人陪伴，不出现食品与图书混放。"
+      },
+      {
+        "page": 17,
+        "zhText": "该收起这一站的借阅台了。许姐姐整理归还的书，关好书架面板。刘叔叔检查窗口、车门和周围，等大家都离开车边。",
+        "enText": "It was time to pack away this stop. Xu sorted the returned books and secured the shelf panels. Liu checked the hatch, doors, and surroundings, waiting until everyone was clear of the vehicle.",
+        "illustrationPrompt": "作业收妥中景：许姐姐锁闭书架面板，低借阅台完全收起，刘叔叔检查车辆；安安与妈妈在远处人行区。"
+      },
+      {
+        "page": 18,
+        "zhText": "图书车要去下一个服务点了。安安站在人行区挥挥手：“原来，你能把书带到这么多地方！”",
+        "enText": "The mobile library was ready for its next stop. An'an waved from the pedestrian area. “You are bringing books to more places!”",
+        "illustrationPrompt": "宽景：奶油白蓝绿图书车缓慢驶离专用车位，读者均在划分清楚的人行活动区，车内仅必要工作人员。"
+      },
+      {
+        "page": 19,
+        "zhText": "小汽车还在检修，妈妈和安安坐公交回家。安安抱着书袋想，今天的路换了一种走法，故事还是带回来了。",
+        "enText": "Their car was still being checked, so Mom and An'an took the bus home. Holding the book bag, An'an thought about their different route. The story had come home with them all the same.",
+        "illustrationPrompt": "傍晚平稳公交车内中景：安安与妈妈坐稳，书袋妥善放在膝上，小熊在安安怀里，不显示家用车已经修好。"
+      },
+      {
+        "page": 20,
+        "zhText": "晚上，安安把留给自己的星星夹进汽车绘本。“下次见，图书车。”她合上书，“我会带着这本书，再来找你。”",
+        "enText": "That evening, An'an placed her own star bookmark in the vehicle book. “See you next time, mobile library,” she said, closing it. “I will bring this book back to you.”",
+        "illustrationPrompt": "家中收束近景：安安在妈妈陪伴下给借来的汽车书夹黄色星星书签，书袋挂妥，小熊坐在身边，灯光温暖。"
+      }
+    ],
+    "parentGuide": {
+      "goal": "认识流动图书车怎样把借还与阅读服务送到社区，并借全套故事比较车辆承载的不同任务。",
+      "reminder": "本故事的流动图书车为虚构车型，服务站点、办证、预约和归还安排以当地实际规则为准。阅读和借还都在车辆停妥、工作人员开放服务后进行；孩子不上驾驶室、攀爬书架或在货架区搭车。",
+      "questions": [
+        "图书车和普通送货车，都装着书时，有什么不同？",
+        "想看的书正在别人手里，安安和许姐姐想了什么办法？",
+        "这两天的五种车，各自把什么带到了需要它的地方？"
+      ],
+      "activity": "用大纸盒搭一个桌面流动图书站，把几本家中绘本分成动物、车辆、生活等类别，用无个人信息的图卡模拟借还。请孩子安排两个玩具社区的停靠顺序，出发前收好图书和纸板台面，到站后再开放服务。",
+      "ageTips": {
+        "age4to5": "先练习选一本、借一本、还一本，给玩具书车安排一个清楚的停车位置。",
+        "age6to8": "比较“把一本书送到指定收件人”与“把可供多人借阅的服务带到社区”，再一起查找身边实际的图书服务。"
+      }
+    },
+    "publishedAt": "2026-10-18"
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 premium polished 3D clay-like animated-film children's picture-book illustration. Warm early-autumn city daylight, rounded tactile materials, physically plausible vehicles, clear action and varied wide, medium and close compositions. Friday afternoon for book 48, sunny Saturday morning through afternoon for books 49–52, with evening only where explicitly requested. One continuous scene per page. Follow the page-specific camera and location. 教学模型、图卡和真实作业区必须通过材质、尺度和环境清楚区分。",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl: round face, ear-length black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. Bear: small brown plush with blue scarf and yellow crescent behind one ear. The family car is the established left-hand-drive light-blue five-door hatchback with beige interior; Mom drives from the left front seat, An'an rides buckled in the rear dark-blue age-appropriate child restraint. Backpack is separately stowed away from restraint straps. Only include people, the bear and props required by the page; do not force them into mechanical close-ups. The star bookmarks are large flat yellow paper stars from book 48 and reappear in book 52. Mobile library: generic cream upper body and teal lower body, rounded medium bus-sized service vehicle, blank book-shaped graphic without letters, a side service hatch with a low folding counter, fixed interior shelving with lockable travel panels and shelf retaining rails. Lending takes place at an outdoor side counter on level ground; readers do not ride in the shelving area. Librarian Xu remains the woman with black low ponytail, mustard cardigan and navy trousers from book 48. Driver Liu: adult Chinese man with short black hair, dark-gray work shirt and navy trousers. Park reading area has broad accessible level paths and an uncluttered entrance. Fang keeps the same wheelchair and clothing as book 51.",
+    "negative": "No readable text, letters, numbers, captions, speech bubbles, real addresses, phone numbers, usable personal data, real barcodes, logos, brand marks, readable plates or watermarks. No anthropomorphic car faces, duplicate main characters, warped anatomy or impossible vehicle structures. No child in loading or recovery work zones, climbing shelves, entering freight boxes, touching winch cables or refrigeration equipment. No child pushing a real vehicle, passenger in a car transported on a flatbed, driver phone use while moving, unrestrained child in the family car, backpack under restraint straps, icy yogurt cargo, instant food-freshening magic, bus ramp deployed while moving, crowded ramp, unsolicited wheelchair pushing, or pity framing of wheelchair users."
+  },
+  "audioGeneration": {
+    "provider": "bailian",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "pageCount": 20,
+    "contentHash": "f66321bd728a1902aba957da3411fd0a562cc9aa4fd8e50c5140ef81f0e179d2",
+    "duration": 190.752,
+    "decodeValidation": "passed",
+    "nonSilentPages": "passed"
+  },
+  "illustrationGeneration": {
+    "provider": "built-in-imagegen",
+    "pageCount": 20,
+    "format": "webp",
+    "width": 1200,
+    "height": 1200,
+    "maxBytes": 307200,
+    "contactSheet": "content-drafts/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/contact-sheet.jpg",
+    "visualReview": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bLZntWWYAyHL597AqUXAba7L.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/1.webp",
+        "sha256": "4d8c34f368e18f3c84f0431da8206ea67dece62c96baaecc5de1807534825a8e",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 2,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_MNqRclScr6buuvFDb4sIkH9n.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/2.webp",
+        "sha256": "7a6de43060c53351432487bf0200b28970f7fbea6c457c92b6e86b0e4ce5e0b2",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 3,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_UNMhau7ZwhY0G6ob3mnWWSBw.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/3.webp",
+        "sha256": "99d40ac4ba978a6d1b8e888470d914167d8203c90377a19bc6fa52111a09a324",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 4,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_MQYIou76Bmo3sqk9YiqDFlP7.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/4.webp",
+        "sha256": "7284cfc632cd36a15478becbd57418fbda34bc697108bf8c2711bf12f34a1aea",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 5,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_vmT6ZYMANzjTsZ2T00aLoYQA.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/5.webp",
+        "sha256": "fe1067d1377c5bc44992d5d8379ae4b94ff1d2df2e977277c5146a2f831c885e",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 6,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_BeGzPWF5VhhZuZpiLQiZ5cSB.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/6.webp",
+        "sha256": "30619d58a2c27f50b97defe3128ab72e52fbb16197e4aa08dde76e95107d9e9c",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 7,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_l4DifNi12LmBzLNh9vgJ62CU.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/7.webp",
+        "sha256": "64dd22b59687b2016d9227f7e5dbbce632eeb70f01dab42b0afddc0495e9b6f1",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 8,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_uat7XpQ3aTIYYqi84ccI0LeE.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/8.webp",
+        "sha256": "b37657a21cd93fe0504e183ac248273dc0c603eb6c60a3dbe954fd2ee10305e8",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 9,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_8jdpqQHgAkUDWequBA9FMQmA.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/9.webp",
+        "sha256": "d70dc6af851c99ed860f3dc769b44047b3ba70818f3bae41438c6b0af6e23f06",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 10,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_V2kTNBOCmY3xTdOS5f8xpnWS.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/10.webp",
+        "sha256": "b46d489635093ba8b1846f761ad1859b7718796fd50df21ebc360ea4bda9450e",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 11,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_9j0maMesqZFBHym94O99gflY.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/11.webp",
+        "sha256": "cd386d1685a809010290481554590553e6bc1b27405c7f0fcd252d8356205434",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 12,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bziLCo084CbsRbZ8gyj1WQOH.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/12.webp",
+        "sha256": "afaf20e0a928461f893a7eb9654d7c213992a44aff1819f5b20b6e3012091e32",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 13,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_kt34DAKuLr7G0D1Apf9iE1CC.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/13.webp",
+        "sha256": "8ab863c661d7a8a866f385b61fe9240abfc13411eb81ae9160ac376978a4585f",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 14,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_5Sk6SXNblusJJrGha1v11lMh.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/14.webp",
+        "sha256": "8a0ddcb2bf410b2025eab670f18442325b48a7b0c1a6fcc0ad4be7d564aa2087",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 15,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_7HHtVdldIG9qxv1v5oTXrRMG.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/15.webp",
+        "sha256": "37cb82ba1c14726ed197e84c66185cdc510e98d9f9df067597bfc3b9ee642440",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 16,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_Eu4uaHTfPQCgIhE0kxRxULOE.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/16.webp",
+        "sha256": "2d65746d50d46af0c01a51c94d426d9acc698664f0a076c6788bdf14f9763da1",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 17,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_J12ACsr92wNJHywo3OhuUpfr.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/17.webp",
+        "sha256": "9fe1575e8b542638b225d76ad990c599209d6715343b33be9f7046e0789daa7a",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 18,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_JzsIV5m4x0iaeDwBMIOWrEir.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/18.webp",
+        "sha256": "f7d50d747d4ae3cffd3a73af0245c006e991ebb70748c0561a56a10a8a2618e9",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 19,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_lxwUujx45tpsed31MyFAazM1.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/19.webp",
+        "sha256": "cbae0f66516ab9ca4d51d6354dcc82e849e93f79d8bb99f98830d374b8cb9a92",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 20,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_4iEidoxKvBGtahsTl7dGZWuL.png",
+        "output": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/20.webp",
+        "sha256": "0667fe710b8f75c6d1ae175f8781aff7c08366c461c48d38c3aa5c5062eaacc3",
+        "visualReview": "passed-page-and-contact-sheet"
+      }
+    ]
+  }
+}

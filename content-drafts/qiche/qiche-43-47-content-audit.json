@@ -1,0 +1,254 @@
+{
+  "reviewedAt": "2026-10-17T21:06:55.385735+00:00",
+  "seriesId": "qiche",
+  "scope": "Finish only approved books 43-47; preserve all other batches.",
+  "bookCount": 5,
+  "pageCount": 88,
+  "books": [
+    {
+      "order": 43,
+      "id": "wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma",
+      "title": "无人机，把快递送上天啦？",
+      "pages": 16,
+      "draftPath": "content-drafts/qiche/wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma.json",
+      "sha256": "174e8714920466b929957e0da26eb70bd75de75c2b5fb91e24b6b2ac608578e2",
+      "audio": {
+        "url": "/library/qiche/wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma/zh-9813ee6ff81db88d.mp3",
+        "contentHash": "9813ee6ff81db88dd8fcc9158ccb611bbef0d9464b8f6886026336a718b4a75b",
+        "pageStarts": [
+          0,
+          13.248,
+          26.976,
+          39.6,
+          51.576,
+          65.232,
+          73.2,
+          87.408,
+          99.072,
+          112.248,
+          125.352,
+          137.976,
+          152.04,
+          166.104,
+          177.36,
+          190.608
+        ],
+        "duration": 207.384
+      }
+    },
+    {
+      "order": 44,
+      "id": "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai",
+      "title": "高铁小飞龙，怎样平稳跑得快？",
+      "pages": 20,
+      "draftPath": "content-drafts/qiche/gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai.json",
+      "sha256": "c10e9bb7b412dbdbf284fd554fd455b5b0c09872482e4c696bbf794d6155a15f",
+      "audio": {
+        "url": "/library/qiche/gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai/zh-dc2465a9fa8f9435.mp3",
+        "contentHash": "dc2465a9fa8f94357c65acdd765515190329e387c0cb3e9fc01a11e286500bb5",
+        "pageStarts": [
+          0,
+          13.488,
+          26.352,
+          36.72,
+          49.968,
+          64.656,
+          77.76,
+          92.928,
+          110.016,
+          122.4,
+          135.168,
+          146.424,
+          157.368,
+          168.624,
+          178.752,
+          191.448,
+          201.984,
+          216.528,
+          228.984,
+          239.592
+        ],
+        "duration": 250.776
+      }
+    },
+    {
+      "order": 45,
+      "id": "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
+      "title": "大飞机，在跑道上排队吗？",
+      "pages": 20,
+      "draftPath": "content-drafts/qiche/da-fei-ji-zai-pao-dao-shang-pai-dui-ma.json",
+      "sha256": "add6eee104df96e51a9eab2691505d029888e71bafc31dd0ed72c05fe52a8110",
+      "audio": {
+        "url": "/library/qiche/da-fei-ji-zai-pao-dao-shang-pai-dui-ma/zh-92fa5a07555f4058.mp3",
+        "contentHash": "92fa5a07555f4058051b4e16281432af4634e2898fe364fb918668946670374e",
+        "pageStarts": [
+          0,
+          12.048,
+          29.544,
+          39.288,
+          51.576,
+          63.312,
+          76.656,
+          90.072,
+          100.776,
+          113.232,
+          123.6,
+          137.328,
+          148.176,
+          159.36,
+          172.944,
+          184.44,
+          194.496,
+          209.424,
+          222.912,
+          233.688
+        ],
+        "duration": 245.184
+      }
+    },
+    {
+      "order": 46,
+      "id": "tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu",
+      "title": "天上的卫星，怎么给汽车引路？",
+      "pages": 16,
+      "draftPath": "content-drafts/qiche/tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu.json",
+      "sha256": "da82c2f7cb5173129785ad248b6ee0e237f520877552a3da6655bf51f810a04a",
+      "audio": {
+        "url": "/library/qiche/tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu/zh-f26e1c0ad6f825f9.mp3",
+        "contentHash": "f26e1c0ad6f825f9d2e55c34df55055ee42c9fff9744f864872687a312b5eea2",
+        "pageStarts": [
+          0,
+          13.248,
+          27.624,
+          43.608,
+          55.584,
+          66.288,
+          80.592,
+          91.776,
+          103.824,
+          115.968,
+          129.792,
+          144.816,
+          158.952,
+          172.608,
+          183.624,
+          196.488
+        ],
+        "duration": 209.256
+      }
+    },
+    {
+      "order": 47,
+      "id": "kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma",
+      "title": "空中出租车，真的能飞起来吗？",
+      "pages": 16,
+      "draftPath": "content-drafts/qiche/kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma.json",
+      "sha256": "65e08da114da80ad8c6855622a8088b057b673be07e5537a1309bf874bfc4856",
+      "audio": {
+        "url": "/library/qiche/kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma/zh-3af0a734e56e5185.mp3",
+        "contentHash": "3af0a734e56e51854aa8a63ce473ca5724e7baab9d01b49cd5a7af560a8b9fdb",
+        "pageStarts": [
+          0,
+          10.608,
+          23.712,
+          35.76,
+          51.408,
+          60.816,
+          74.232,
+          89.256,
+          102.024,
+          115.68,
+          129.888,
+          141.456,
+          152.472,
+          167.088,
+          180.744,
+          194.712
+        ],
+        "duration": 217.176
+      }
+    }
+  ],
+  "validation": {
+    "jsonAndFields": "passed",
+    "pagination": "passed",
+    "bilingualPages": 88,
+    "uniquePageTextAndPrompts": "passed",
+    "parentGuides": "reviewed",
+    "readableManuscript": "synchronized",
+    "imageFiles": "88 square 1200x1200 WebP files, each <=300 KiB",
+    "builtInImageProvenance": "88 source-to-output hashes matched",
+    "audioContentHashes": "passed",
+    "audioDecodedDurations": "passed",
+    "tests": {
+      "status": "passed",
+      "files": [
+        "tests/qiche-library.test.ts",
+        "tests/qiche-new-audio.test.ts",
+        "tests/library-book-audio.test.ts"
+      ],
+      "totalTests": 43,
+      "typeScript": "npx tsc --noEmit passed",
+      "diffCheck": "git diff --check passed"
+    },
+    "browser": "5 local book pages HTTP 200; first/last page navigation and local MP3 playback passed; 390px layout without horizontal overflow; zero on-demand narration requests"
+  },
+  "productionStatus": {
+    "illustrations": "complete",
+    "audio": "complete-bailian-qwen-audio-3.0-tts-plus-longanlingxin",
+    "libraryIntegration": "complete-local",
+    "upload": "not-performed",
+    "commit": "not-performed",
+    "deployment": "not-performed"
+  },
+  "editorialReview": {
+    "method": "Agent review of all five contact sheets, targeted full-size image inspection and factual text corrections. No professional educator or engineering certification is claimed.",
+    "revisedNarrationPages": 49,
+    "imageReplacementPages": 25,
+    "checks": [
+      "Drone sensors have limits; delivery route and automatic parcel hatch are story demonstration facilities.",
+      "High-speed rail uses energy; smooth rails, suspension and maintenance all matter; coin is a temporary demonstration.",
+      "Aircraft ground service precedes pushback; taxiway/runway clearance distinction and wing angle/pressure/downwash are explained.",
+      "Satellite broadcasts, receiver positioning and map route planning are distinct; obstruction and errors remain possible.",
+      "Tiangong is a simplified three-module T-shaped museum model; space station and navigation satellite have different jobs.",
+      "eVTOL is presented as concept display/simulation with noise, energy, site and operational limits."
+    ],
+    "illustrationLimits": [
+      "Science graphics and model scenes are simplified and not drawn to engineering scale.",
+      "Soft materials, small accessories, some clothing details and background architecture vary slightly between pages; pixel-level identity is not claimed."
+    ],
+    "sourceReferences": [
+      {
+        "title": "NASA: Lift",
+        "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/lift/"
+      },
+      {
+        "title": "GPS.gov: GPS Accuracy",
+        "url": "https://www.gps.gov/gps-accuracy-0"
+      },
+      {
+        "title": "EASA: Environmental protection standards for eVTOL",
+        "url": "https://www.easa.europa.eu/en/newsroom-and-events/press-releases/easa-publishes-worlds-first-proposal-assessment-and-limitation"
+      },
+      {
+        "title": "中国载人航天：天宫空间站基本构型为三舱T字构型",
+        "url": "https://statistics.cmse.gov.cn/hdjl/bszjhd/bjzl/202301/t20230117_52275.html"
+      }
+    ]
+  },
+  "audioStatus": {
+    "provider": "bailian",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "all5BooksGenerated": true,
+    "totalAudioSeconds": 1129.776,
+    "storage": "bundled local files; content-drafts/qiche/local-audio.json; scoped batch manifest",
+    "remoteManifest": "local paths are not written into HTTPS-only miniprogram manifest"
+  },
+  "illustrationStatus": {
+    "count": 88,
+    "provider": "built-in image_gen",
+    "contactSheets": 5,
+    "provenanceReport": "content-drafts/qiche/qiche-43-47-assets-report.json"
+  }
+}

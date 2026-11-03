@@ -1,0 +1,259 @@
+{
+  "date": "2026-10-17",
+  "seriesId": "qiche",
+  "batchTitle": "都市汽车系列第二批 城市服务车五连篇",
+  "status": "complete-local",
+  "scope": "User approved five new books numbered 48–52. Approved bilingual manuscripts, built-in illustrations and pre-generated Bailian narration are complete and integrated into the local library.",
+  "bookCount": 5,
+  "pageCount": 88,
+  "scopeApproved": true,
+  "contentApproved": true,
+  "books": [
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "title": "快递车，怎么找到我的包裹？",
+      "pages": 16,
+      "draftPath": "content-drafts/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo.json",
+      "sha256": "a1941ef9011eaad2b54dbc976c0d9147d73aebd295f99da4665fd7db3b66c09e",
+      "chineseCharacters": 754,
+      "englishWords": 430
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "title": "冷藏车，肚子里藏着冬天吗？",
+      "pages": 16,
+      "draftPath": "content-drafts/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma.json",
+      "sha256": "bdf696d4d0c227465800a24a9bacfda661c5950a304b56eb82e4a20a592059d0",
+      "chineseCharacters": 765,
+      "englishWords": 433
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "title": "小汽车走不动，谁来帮帮它？",
+      "pages": 20,
+      "draftPath": "content-drafts/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta.json",
+      "sha256": "cbee80d50f961d6363bfaa8e69171dbb20dabca3efb03c4d174b75e3467db050",
+      "chineseCharacters": 936,
+      "englishWords": 539
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "title": "公交车，怎么放下一座小桥？",
+      "pages": 16,
+      "draftPath": "content-drafts/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao.json",
+      "sha256": "c421e0cb19c1e7993122d3f906f683bf59327e59e89904cf171c0e90eb4a9f91",
+      "chineseCharacters": 745,
+      "englishWords": 437
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "title": "装满故事的汽车，开到哪儿去？",
+      "pages": 20,
+      "draftPath": "content-drafts/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu.json",
+      "sha256": "539f8206372de645b20d213d0157dcf81b41f7726fd7cf36201305f7114ad594",
+      "chineseCharacters": 985,
+      "englishWords": 536
+    }
+  ],
+  "sources": [
+    {
+      "books": [
+        48
+      ],
+      "title": "DHL 包裹识别与按配送路线分拣说明",
+      "url": "https://www.dhl.com/np-en/home/press/press-archive/2021/dhl-express-deploys-ai-powered-sorting-robot.html",
+      "supports": "条码扫描把包裹与配送信息联系起来，分拣按目的地或配送路线进行。故事未把扫描器写成自动驾驶导航，也未承诺一种条码直接包含所有个人信息。"
+    },
+    {
+      "books": [
+        49
+      ],
+      "title": "Carrier 冷藏运输装载与温度管理说明",
+      "url": "https://www.carrier.com/truck-trailer/en/uk/cool-by-carrier/",
+      "supports": "货物应在合适温度下装车，车厢预冷、隔热与空气流通各有作用，运输按货物需要设置条件。故事不引用该页旧版温度表，不把运输过程写成给温热食品临时降温或让变质食品复原。"
+    },
+    {
+      "books": [
+        50
+      ],
+      "title": "Ford 平板装运及车型差异说明",
+      "url": "https://www.fordservicecontent.com/ford_content/catalog/motorcraft/2022-Wrecker-Towing-Guide-MCS-6040.pdf",
+      "supports": "平板装运包含专业牵引与独立固定步骤，具体要求取决于车型及救援设备。仅用作机械概念依据，未照搬品牌车型、速度限制或成人作业教程。"
+    },
+    {
+      "books": [
+        51
+      ],
+      "title": "北京市无障碍公交车辆设施说明",
+      "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202605/t20260518_4654955.html",
+      "supports": "低地板、低入口、无障碍导板及轮椅固定装置已有实际公交应用。故事锁定一辆具备侧倾降低功能的虚构车型，没有把同一套设备和操作方式推广到所有公交车。"
+    },
+    {
+      "books": [
+        51
+      ],
+      "title": "宇通低地板公交侧倾降低与无障碍坡板实例",
+      "url": "https://www.yutong.com.cn/news/new/1672788843201433600.shtml",
+      "supports": "车辆制造商说明：部分低地板车型可借助空气悬挂侧倾降低车门侧高度，并配可翻转坡板。此处据搜索检索结果核对该功能实例；页面正文抓取超时，不把具体操作步骤写作通用要求。"
+    },
+    {
+      "books": [
+        52
+      ],
+      "title": "重庆图书馆流动图书车服务介绍",
+      "url": "https://www.cqlib.cn/web/column/col5003520.html",
+      "supports": "流动图书车按服务点提供图书借还与咨询等服务，使远离场馆的读者可以就近使用图书馆。故事中的车型、阅读节和借阅安排为原创虚构。"
+    }
+  ],
+  "validation": {
+    "jsonAndFields": "passed",
+    "consecutivePagination": "passed",
+    "bilingualPages": 88,
+    "uniquePageTextAndScenes": "passed",
+    "parentGuides": "passed-five",
+    "manuscriptMatchesDrafts": "passed",
+    "existingIdsTitlesOrdersConflictCheck": "passed",
+    "editorialContinuity": "reviewed",
+    "bilingualMeaning": "reviewed",
+    "vehicleAndServiceFacts": "reviewed-against-listed-sources",
+    "humanContentApproval": "user-confirmed-2026-10-17",
+    "bookmarkPropContinuity": "reviewed-and-carried-through-books-49-to-51",
+    "chineseWordingAndEnglishAlignment": "reviewed-after-revisions",
+    "audioDecodeAndNonSilentPages": "passed-88",
+    "illustrationVisualReview": "passed",
+    "imageFilesAndHashes": "passed-88",
+    "existingBookContentsPreserved": true,
+    "catalogOrderedThrough": 52,
+    "typeScript": "passed-npx-tsc-noEmit",
+    "targetedTests": "passed-38-in-2-files",
+    "browserImageAndBilingualPages": "passed-88",
+    "browserFirstAndLastPageNarration": "passed-5-books",
+    "browserPauseResume": "passed-5-books",
+    "browserAutoAdvance": "passed-book-48",
+    "realTimeTtsRequests": 0,
+    "mobileLayoutSample": "passed-390x844-book-52",
+    "diffWhitespace": "passed"
+  },
+  "editorialNotes": [
+    "第48本外观不能代替面单核对，条码用于识别和关联信息，不是快递车自动认路。",
+    "第49本冷藏与冷冻分开，货物预先处于合适温度，车厢隔热与制冷作用分开，接货后继续冷藏；不写统一温度或凭气味判断安全。",
+    "第50本故障发生在院内停车位，真实操作从玻璃等候区观察；平板承载、绞盘牵引和固定带各有用途，被运家用车中不留乘客。",
+    "第51本以一辆具体无障碍公交为例，导板仅在停稳时展开；轮椅固定与乘员约束分别说明，先询问本人需要，不做同情或励志框架。",
+    "第52本图书车停靠后开放借还服务，出发前锁好书架和台面，借阅安排仅限虚构服务点；想看的书暂借出，不保证下一站或固定时间必定归还。",
+    "主线时间为周五下午至周六晚，家用车周六停在接待点后发生故障，随后乘公交去公园并乘公交回家；未擅自安排当天完成检修。",
+    "星星书签从第48本接收到第52本发放并留一枚夹进借来的汽车书，许姐姐和方老师跨书外观保持一致。"
+  ],
+  "productionStatus": {
+    "manuscript": "approved",
+    "illustrationPrompts": "saved",
+    "illustrations": "complete-built-in-imagegen-88-webp-and-5-contact-sheets",
+    "audio": "complete-local-bailian",
+    "libraryIntegration": "complete-local-catalog",
+    "upload": "not-performed",
+    "publication": "not-performed",
+    "commit": "not-performed",
+    "validation": "passed-assets-types-tests-and-browser"
+  },
+  "manuscriptPath": "content-drafts/qiche/qiche-48-52-manuscript.md",
+  "manuscriptSha256": "60d8a6fd134f208b7d7d63bddda882f342639af89b2f8bd287ecd1d71b376b1d",
+  "writeScope": {
+    "newDraftFilesOnly": false,
+    "existingBookFilesEdited": false,
+    "runtimeCatalogEdited": true,
+    "existingAudioManifestsEdited": true,
+    "existingVisualNotesEdited": true,
+    "existingAudioEntriesPreserved": true,
+    "miniprogramPublicAudioManifestEdited": false
+  },
+  "approvedAt": "2026-10-17",
+  "audioStatus": {
+    "provider": "bailian",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "all5BooksGenerated": true,
+    "totalPages": 88,
+    "totalAudioSeconds": 811.92,
+    "localManifestUpdated": true,
+    "upload": "not-performed",
+    "books": [
+      {
+        "order": 48,
+        "pages": 16,
+        "duration": 148.68,
+        "bytes": 892605,
+        "minimumPageRms": 1956.22,
+        "contentHash": "d03ecd7ebfc7cd88420582ee4b67b8aaf5821fc7c90f21ec5e404f12aa28efbb",
+        "url": "/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/zh-d03ecd7ebfc7cd88.mp3",
+        "sha256": "e01162c51981e4b0c28aa3161ffb1f5883dfc613d142b0aff7b712408e9c3534"
+      },
+      {
+        "order": 49,
+        "pages": 16,
+        "duration": 146.856,
+        "bytes": 881661,
+        "minimumPageRms": 2147.97,
+        "contentHash": "94fecad31ad17d7f95e4ff97791f723307a41ee485165398279a925f4d7155f4",
+        "url": "/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/zh-94fecad31ad17d7f.mp3",
+        "sha256": "af682ac3703c655d75bb2476e9e9626b373b14219105424e5407c3e38722b6d7"
+      },
+      {
+        "order": 50,
+        "pages": 20,
+        "duration": 180.288,
+        "bytes": 1082253,
+        "minimumPageRms": 1974.96,
+        "contentHash": "47eb56d1c9c41238311f8a08f622a9ab14175dec2e4d0db1f3778a61adc062fc",
+        "url": "/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/zh-47eb56d1c9c41238.mp3",
+        "sha256": "6519fc110b3bfb452456a2ce1437c4323a04d85a62806d49461e833e7c684540"
+      },
+      {
+        "order": 51,
+        "pages": 16,
+        "duration": 145.344,
+        "bytes": 872589,
+        "minimumPageRms": 2090.96,
+        "contentHash": "92376e4e3832198e57e272ee584fcc285e4d8c8a33d143d67457e3c228e7237c",
+        "url": "/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/zh-92376e4e3832198e.mp3",
+        "sha256": "7bff3a46e7e0ea1d31075a359f539bae688c2e02b8c1cd5dc8f07b3318879bac"
+      },
+      {
+        "order": 52,
+        "pages": 20,
+        "duration": 190.752,
+        "bytes": 1145037,
+        "minimumPageRms": 2167.21,
+        "contentHash": "f66321bd728a1902aba957da3411fd0a562cc9aa4fd8e50c5140ef81f0e179d2",
+        "url": "/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/zh-f66321bd728a1902.mp3",
+        "sha256": "2f24e3f7890dd64cae54e56680c8a5247a2b096973ca6f0ced0459abe61bfb58"
+      }
+    ]
+  },
+  "illustrationStatus": {
+    "provider": "built-in-imagegen",
+    "completeBooks": 5,
+    "completePages": 88,
+    "contactSheets": 5,
+    "dimensions": "1200x1200",
+    "maxBytes": 307200,
+    "visualReview": "passed-all-five-contact-sheets",
+    "corrections": [
+      "冷藏制冷机移至驾驶室上方的车厢前部。",
+      "救援车颜色保持橙色，修正车内背景服装与轮胎固定带落点。",
+      "公交导板、车身降低、轮椅固定与乘员约束分别表现。",
+      "清除可见书封伪文字，消除重复主角，未借到的鲸鱼书不出现在书架。"
+    ]
+  },
+  "completedDate": "2026-10-18",
+  "completedAt": "2026-10-17T20:37:44.905Z",
+  "validationReports": {
+    "assets": "content-drafts/qiche/qiche-48-52-assets-report.json",
+    "browser": "content-drafts/qiche/qiche-48-52-browser-report.json",
+    "audio": "content-drafts/qiche/qiche-48-52-audio.json",
+    "mobilePreview": "content-drafts/qiche/qiche-48-52-mobile-preview.png"
+  }
+}

@@ -12,6 +12,16 @@ import carLightsDraft from "../../../content-drafts/qiche/xiao-qi-che-de-deng-hu
 import mountainTunnelDraft from "../../../content-drafts/qiche/xiao-qi-che-zuan-jin-shan-li-le-ma.json";
 import tireTreadDraft from "../../../content-drafts/qiche/lun-tai-shang-de-hua-wen-cang-zhe-shen-me-mi-mi.json";
 import carWashDraft from "../../../content-drafts/qiche/xiao-qi-che-xi-zao-la.json";
+import deliveryDroneDraft from "../../../content-drafts/qiche/wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma.json";
+import bulletTrainDraft from "../../../content-drafts/qiche/gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai.json";
+import airportAirplaneDraft from "../../../content-drafts/qiche/da-fei-ji-zai-pao-dao-shang-pai-dui-ma.json";
+import satelliteNavigationDraft from "../../../content-drafts/qiche/tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu.json";
+import airTaxiDraft from "../../../content-drafts/qiche/kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma.json";
+import parcelDeliveryDraft from "../../../content-drafts/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo.json";
+import refrigeratedTruckDraft from "../../../content-drafts/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma.json";
+import roadsideRecoveryDraft from "../../../content-drafts/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta.json";
+import accessibleBusDraft from "../../../content-drafts/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao.json";
+import mobileLibraryDraft from "../../../content-drafts/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu.json";
 import piKaShuMiaoDraft from "../../../content-drafts/qiche/da-zhong-pi-ka-song-xiao-shu-miao.json";
 import piKaMuOuDraft from "../../../content-drafts/qiche/da-zhong-pi-ka-he-mu-ou-xi-de-da-ban-jia.json";
 import anQuanDaiDraft from "../../../content-drafts/qiche/an-quan-dai-bao-hu-shui.json";
@@ -140,6 +150,16 @@ export const QICHE_BOOKS: LibraryBook[] = [
   mountainTunnelDraft,
   tireTreadDraft,
   carWashDraft,
+  deliveryDroneDraft,
+  bulletTrainDraft,
+  airportAirplaneDraft,
+  satelliteNavigationDraft,
+  airTaxiDraft,
+  parcelDeliveryDraft,
+  refrigeratedTruckDraft,
+  roadsideRecoveryDraft,
+  accessibleBusDraft,
+  mobileLibraryDraft,
 ].map((draft) => draftToLibraryBook(draft as QicheDraft));
 
 export const QICHE_SERIES: LibrarySeries = {
@@ -147,7 +167,7 @@ export const QICHE_SERIES: LibrarySeries = {
   title: "城市汽车小队",
   subtitle: "跟着交通工具伙伴，探索城市与远方",
   description:
-    "安安带孩子走过街区、车站和机场，再到安全参观区看工程车建公园。从公交车、出租车、高铁动车和飞机，到挖掘机、装载机、推土机、自卸车、搅拌车、泵车、起重机、压路机和摊铺机，在有任务、有困难、有合作的故事里发现它们的本领。每本都是完整的中英双语科普绘本，工程车篇每本 16–20 页，配有找一找、动作配音与亲子共读提示。",
+    "跟着安安探索城市与远方：从公交车、出租车、高铁和飞机，到工程车建设、汽车养护，再到配送无人机、卫星导航和未来出行体验馆。和快递车、冷藏车、救援车、无障碍公交及流动图书车一起，发现城市服务怎样送到身边。在观察、提问和合作的故事里，认识交通工具的本领与局限，区分现实运行、教学模型和未来想象。每本配有中英双语正文、插画与亲子共读提示。",
   accent: "#2f7180",
   ageRange: "4–8 岁",
   bookCount: QICHE_BOOKS.length,

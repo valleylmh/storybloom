@@ -1,0 +1,12 @@
+{
+  "provider": "built-in image_gen",
+  "order": 45,
+  "page": 16,
+  "source": "/Users/valleylmh/.codex/generated_images/01a14896-73b1-7ea3-a2a2-96b096a88f03/call_KthwCXW7YOUyPV5x2cBaTu1D.png",
+  "target": "public/library/qiche/da-fei-ji-zai-pao-dao-shang-pai-dui-ma/16.webp",
+  "sha256": "fda597ba19ba151a2ee58acc925acfb6c7efe1f41ab92a72e0e46faae2714735",
+  "reviewCorrection": "Same airliner during takeoff roll with all wheels on runway",
+  "importedAt": "2026-10-17T15:00:39.708Z",
+  "id": "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
+  "bytes": 73706
+}

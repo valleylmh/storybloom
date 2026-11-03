@@ -1,0 +1,1736 @@
+{
+  "checkedAt": "2026-10-17T20:33:00.624Z",
+  "seriesId": "qiche",
+  "range": [
+    48,
+    52
+  ],
+  "bookCount": 5,
+  "pageCount": 88,
+  "previousAudioEntriesPreserved": 11,
+  "imageProvider": "built-in-imagegen",
+  "audioProvider": "bailian",
+  "audioModel": "qwen-audio-3.0-tts-plus",
+  "books": [
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "title": "快递车，怎么找到我的包裹？",
+      "pageCount": 16,
+      "approvedTextHash": "1902f505918c2afd5e4a3cc8d8a5589268f8890d488fbde3bfc12d68608a8c86",
+      "draftSha256": "a1941ef9011eaad2b54dbc976c0d9147d73aebd295f99da4665fd7db3b66c09e",
+      "contactSheet": "content-drafts/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/contact-sheet.jpg",
+      "audio": {
+        "url": "/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/zh-d03ecd7ebfc7cd88.mp3",
+        "bytes": 892605,
+        "sha256": "e01162c51981e4b0c28aa3161ffb1f5883dfc613d142b0aff7b712408e9c3534",
+        "contentHash": "d03ecd7ebfc7cd88420582ee4b67b8aaf5821fc7c90f21ec5e404f12aa28efbb",
+        "duration": 148.68,
+        "decodedSeconds": 148.68,
+        "minimumPageRms": 1956.22,
+        "pageMetrics": [
+          {
+            "page": 1,
+            "start": 0,
+            "end": 8.616,
+            "rms": 2401.13
+          },
+          {
+            "page": 2,
+            "start": 8.616,
+            "end": 18.504,
+            "rms": 2315.88
+          },
+          {
+            "page": 3,
+            "start": 18.504,
+            "end": 28.488,
+            "rms": 2174.54
+          },
+          {
+            "page": 4,
+            "start": 28.488,
+            "end": 36.792,
+            "rms": 2140.22
+          },
+          {
+            "page": 5,
+            "start": 36.792,
+            "end": 45.648,
+            "rms": 2235.23
+          },
+          {
+            "page": 6,
+            "start": 45.648,
+            "end": 55.464,
+            "rms": 1956.22
+          },
+          {
+            "page": 7,
+            "start": 55.464,
+            "end": 64.728,
+            "rms": 2153.61
+          },
+          {
+            "page": 8,
+            "start": 64.728,
+            "end": 73.344,
+            "rms": 2203.87
+          },
+          {
+            "page": 9,
+            "start": 73.344,
+            "end": 82.752,
+            "rms": 2362.96
+          },
+          {
+            "page": 10,
+            "start": 82.752,
+            "end": 91.848,
+            "rms": 2201.58
+          },
+          {
+            "page": 11,
+            "start": 91.848,
+            "end": 103.512,
+            "rms": 2121.97
+          },
+          {
+            "page": 12,
+            "start": 103.512,
+            "end": 111.888,
+            "rms": 2307.14
+          },
+          {
+            "page": 13,
+            "start": 111.888,
+            "end": 122.112,
+            "rms": 2060.79
+          },
+          {
+            "page": 14,
+            "start": 122.112,
+            "end": 131.208,
+            "rms": 2320.2
+          },
+          {
+            "page": 15,
+            "start": 131.208,
+            "end": 139.752,
+            "rms": 2114.9
+          },
+          {
+            "page": 16,
+            "start": 139.752,
+            "end": 148.68,
+            "rms": 2383.78
+          }
+        ]
+      }
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "title": "冷藏车，肚子里藏着冬天吗？",
+      "pageCount": 16,
+      "approvedTextHash": "433d8eeee5268eeaa0404e9fbaa701a5f3b4805e623d58ee14845256f8307b61",
+      "draftSha256": "bdf696d4d0c227465800a24a9bacfda661c5950a304b56eb82e4a20a592059d0",
+      "contactSheet": "content-drafts/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/contact-sheet.jpg",
+      "audio": {
+        "url": "/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/zh-94fecad31ad17d7f.mp3",
+        "bytes": 881661,
+        "sha256": "af682ac3703c655d75bb2476e9e9626b373b14219105424e5407c3e38722b6d7",
+        "contentHash": "94fecad31ad17d7f95e4ff97791f723307a41ee485165398279a925f4d7155f4",
+        "duration": 146.856,
+        "decodedSeconds": 146.856,
+        "minimumPageRms": 2147.97,
+        "pageMetrics": [
+          {
+            "page": 1,
+            "start": 0,
+            "end": 9.744,
+            "rms": 2423.33
+          },
+          {
+            "page": 2,
+            "start": 9.744,
+            "end": 18.6,
+            "rms": 2309.46
+          },
+          {
+            "page": 3,
+            "start": 18.6,
+            "end": 27.288,
+            "rms": 2155.59
+          },
+          {
+            "page": 4,
+            "start": 27.288,
+            "end": 36.384,
+            "rms": 2156.46
+          },
+          {
+            "page": 5,
+            "start": 36.384,
+            "end": 45.072,
+            "rms": 2159.38
+          },
+          {
+            "page": 6,
+            "start": 45.072,
+            "end": 53.28,
+            "rms": 2149.08
+          },
+          {
+            "page": 7,
+            "start": 53.28,
+            "end": 60.768,
+            "rms": 2342.55
+          },
+          {
+            "page": 8,
+            "start": 60.768,
+            "end": 70.824,
+            "rms": 2561.69
+          },
+          {
+            "page": 9,
+            "start": 70.824,
+            "end": 79.032,
+            "rms": 2258.3
+          },
+          {
+            "page": 10,
+            "start": 79.032,
+            "end": 88.848,
+            "rms": 2385.96
+          },
+          {
+            "page": 11,
+            "start": 88.848,
+            "end": 98.664,
+            "rms": 2402.73
+          },
+          {
+            "page": 12,
+            "start": 98.664,
+            "end": 108.888,
+            "rms": 2147.97
+          },
+          {
+            "page": 13,
+            "start": 108.888,
+            "end": 117.912,
+            "rms": 2304.74
+          },
+          {
+            "page": 14,
+            "start": 117.912,
+            "end": 126.36,
+            "rms": 2358.68
+          },
+          {
+            "page": 15,
+            "start": 126.36,
+            "end": 136.968,
+            "rms": 2413.37
+          },
+          {
+            "page": 16,
+            "start": 136.968,
+            "end": 146.856,
+            "rms": 2246.51
+          }
+        ]
+      }
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "title": "小汽车走不动，谁来帮帮它？",
+      "pageCount": 20,
+      "approvedTextHash": "ebede3f09943a2950a32a11bf5eb1b1b94cbb15b99890843b36f45cffc043430",
+      "draftSha256": "cbee80d50f961d6363bfaa8e69171dbb20dabca3efb03c4d174b75e3467db050",
+      "contactSheet": "content-drafts/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/contact-sheet.jpg",
+      "audio": {
+        "url": "/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/zh-47eb56d1c9c41238.mp3",
+        "bytes": 1082253,
+        "sha256": "6519fc110b3bfb452456a2ce1437c4323a04d85a62806d49461e833e7c684540",
+        "contentHash": "47eb56d1c9c41238311f8a08f622a9ab14175dec2e4d0db1f3778a61adc062fc",
+        "duration": 180.288,
+        "decodedSeconds": 180.288,
+        "minimumPageRms": 1974.96,
+        "pageMetrics": [
+          {
+            "page": 1,
+            "start": 0,
+            "end": 10.056,
+            "rms": 2605.19
+          },
+          {
+            "page": 2,
+            "start": 10.056,
+            "end": 18.84,
+            "rms": 1974.96
+          },
+          {
+            "page": 3,
+            "start": 18.84,
+            "end": 26.496,
+            "rms": 2422.77
+          },
+          {
+            "page": 4,
+            "start": 26.496,
+            "end": 34.464,
+            "rms": 2351.69
+          },
+          {
+            "page": 5,
+            "start": 34.464,
+            "end": 44.112,
+            "rms": 2294.43
+          },
+          {
+            "page": 6,
+            "start": 44.112,
+            "end": 54.24,
+            "rms": 2434.6
+          },
+          {
+            "page": 7,
+            "start": 54.24,
+            "end": 63.168,
+            "rms": 2351.05
+          },
+          {
+            "page": 8,
+            "start": 63.168,
+            "end": 72.336,
+            "rms": 2218.02
+          },
+          {
+            "page": 9,
+            "start": 72.336,
+            "end": 80.88,
+            "rms": 2238.39
+          },
+          {
+            "page": 10,
+            "start": 80.88,
+            "end": 89.976,
+            "rms": 2450.66
+          },
+          {
+            "page": 11,
+            "start": 89.976,
+            "end": 98.76,
+            "rms": 2345.23
+          },
+          {
+            "page": 12,
+            "start": 98.76,
+            "end": 108.888,
+            "rms": 2471.19
+          },
+          {
+            "page": 13,
+            "start": 108.888,
+            "end": 116.856,
+            "rms": 2072.62
+          },
+          {
+            "page": 14,
+            "start": 116.856,
+            "end": 124.824,
+            "rms": 2318.18
+          },
+          {
+            "page": 15,
+            "start": 124.824,
+            "end": 135.288,
+            "rms": 2107.46
+          },
+          {
+            "page": 16,
+            "start": 135.288,
+            "end": 143.736,
+            "rms": 2396.85
+          },
+          {
+            "page": 17,
+            "start": 143.736,
+            "end": 153.96,
+            "rms": 2418.59
+          },
+          {
+            "page": 18,
+            "start": 153.96,
+            "end": 161.376,
+            "rms": 2232.86
+          },
+          {
+            "page": 19,
+            "start": 161.376,
+            "end": 170.952,
+            "rms": 2100.2
+          },
+          {
+            "page": 20,
+            "start": 170.952,
+            "end": 180.288,
+            "rms": 2165.69
+          }
+        ]
+      }
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "title": "公交车，怎么放下一座小桥？",
+      "pageCount": 16,
+      "approvedTextHash": "58663800e22cb6392499ad459787afd608f45be83a85ac71e96b604b1e062484",
+      "draftSha256": "c421e0cb19c1e7993122d3f906f683bf59327e59e89904cf171c0e90eb4a9f91",
+      "contactSheet": "content-drafts/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/contact-sheet.jpg",
+      "audio": {
+        "url": "/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/zh-92376e4e3832198e.mp3",
+        "bytes": 872589,
+        "sha256": "7bff3a46e7e0ea1d31075a359f539bae688c2e02b8c1cd5dc8f07b3318879bac",
+        "contentHash": "92376e4e3832198e57e272ee584fcc285e4d8c8a33d143d67457e3c228e7237c",
+        "duration": 145.344,
+        "decodedSeconds": 145.344,
+        "minimumPageRms": 2090.96,
+        "pageMetrics": [
+          {
+            "page": 1,
+            "start": 0,
+            "end": 10.536,
+            "rms": 2396.79
+          },
+          {
+            "page": 2,
+            "start": 10.536,
+            "end": 18.672,
+            "rms": 2322.02
+          },
+          {
+            "page": 3,
+            "start": 18.672,
+            "end": 27.696,
+            "rms": 2221.01
+          },
+          {
+            "page": 4,
+            "start": 27.696,
+            "end": 37.2,
+            "rms": 2252.71
+          },
+          {
+            "page": 5,
+            "start": 37.2,
+            "end": 47.664,
+            "rms": 2253.13
+          },
+          {
+            "page": 6,
+            "start": 47.664,
+            "end": 55.008,
+            "rms": 2228.42
+          },
+          {
+            "page": 7,
+            "start": 55.008,
+            "end": 63.552,
+            "rms": 2375.45
+          },
+          {
+            "page": 8,
+            "start": 63.552,
+            "end": 71.616,
+            "rms": 2160.74
+          },
+          {
+            "page": 9,
+            "start": 71.616,
+            "end": 80.232,
+            "rms": 2402.42
+          },
+          {
+            "page": 10,
+            "start": 80.232,
+            "end": 90.528,
+            "rms": 2090.96
+          },
+          {
+            "page": 11,
+            "start": 90.528,
+            "end": 99.384,
+            "rms": 2259.57
+          },
+          {
+            "page": 12,
+            "start": 99.384,
+            "end": 106.872,
+            "rms": 2174.92
+          },
+          {
+            "page": 13,
+            "start": 106.872,
+            "end": 117.648,
+            "rms": 2158.8
+          },
+          {
+            "page": 14,
+            "start": 117.648,
+            "end": 126.912,
+            "rms": 2201.57
+          },
+          {
+            "page": 15,
+            "start": 126.912,
+            "end": 136.728,
+            "rms": 2295.56
+          },
+          {
+            "page": 16,
+            "start": 136.728,
+            "end": 145.344,
+            "rms": 2267.03
+          }
+        ]
+      }
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "title": "装满故事的汽车，开到哪儿去？",
+      "pageCount": 20,
+      "approvedTextHash": "da9c9dc6cb10f1617d1138ec69e2217e1a3813bc454aee636d251197e65243fe",
+      "draftSha256": "539f8206372de645b20d213d0157dcf81b41f7726fd7cf36201305f7114ad594",
+      "contactSheet": "content-drafts/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/contact-sheet.jpg",
+      "audio": {
+        "url": "/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/zh-f66321bd728a1902.mp3",
+        "bytes": 1145037,
+        "sha256": "2f24e3f7890dd64cae54e56680c8a5247a2b096973ca6f0ced0459abe61bfb58",
+        "contentHash": "f66321bd728a1902aba957da3411fd0a562cc9aa4fd8e50c5140ef81f0e179d2",
+        "duration": 190.752,
+        "decodedSeconds": 190.752,
+        "minimumPageRms": 2167.21,
+        "pageMetrics": [
+          {
+            "page": 1,
+            "start": 0,
+            "end": 10.536,
+            "rms": 2501.23
+          },
+          {
+            "page": 2,
+            "start": 10.536,
+            "end": 19.56,
+            "rms": 2419.87
+          },
+          {
+            "page": 3,
+            "start": 19.56,
+            "end": 29.688,
+            "rms": 2242.87
+          },
+          {
+            "page": 4,
+            "start": 29.688,
+            "end": 38.376,
+            "rms": 2252.53
+          },
+          {
+            "page": 5,
+            "start": 38.376,
+            "end": 47.232,
+            "rms": 2324.95
+          },
+          {
+            "page": 6,
+            "start": 47.232,
+            "end": 57.6,
+            "rms": 2222.04
+          },
+          {
+            "page": 7,
+            "start": 57.6,
+            "end": 66.216,
+            "rms": 2277.74
+          },
+          {
+            "page": 8,
+            "start": 66.216,
+            "end": 74.352,
+            "rms": 2236.59
+          },
+          {
+            "page": 9,
+            "start": 74.352,
+            "end": 84.096,
+            "rms": 2441.39
+          },
+          {
+            "page": 10,
+            "start": 84.096,
+            "end": 94.464,
+            "rms": 2237.57
+          },
+          {
+            "page": 11,
+            "start": 94.464,
+            "end": 103.32,
+            "rms": 2402.96
+          },
+          {
+            "page": 12,
+            "start": 103.32,
+            "end": 113.928,
+            "rms": 2259.29
+          },
+          {
+            "page": 13,
+            "start": 113.928,
+            "end": 123.672,
+            "rms": 2341.98
+          },
+          {
+            "page": 14,
+            "start": 123.672,
+            "end": 132.6,
+            "rms": 2335.32
+          },
+          {
+            "page": 15,
+            "start": 132.6,
+            "end": 141.864,
+            "rms": 2184.95
+          },
+          {
+            "page": 16,
+            "start": 141.864,
+            "end": 151.992,
+            "rms": 2317.66
+          },
+          {
+            "page": 17,
+            "start": 151.992,
+            "end": 162.36,
+            "rms": 2272.25
+          },
+          {
+            "page": 18,
+            "start": 162.36,
+            "end": 170.328,
+            "rms": 2349.32
+          },
+          {
+            "page": 19,
+            "start": 170.328,
+            "end": 180.696,
+            "rms": 2354.96
+          },
+          {
+            "page": 20,
+            "start": 180.696,
+            "end": 190.752,
+            "rms": 2167.21
+          }
+        ]
+      }
+    }
+  ],
+  "pages": [
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 1,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/1.webp",
+      "bytes": 200794,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "0d46d7b623f18ac5a60c68e39a61bc41f1237a22cfaf5ef57028d76263ac1801",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_EiLsMRpSHNph0zrP0Axg3No5.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 2,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/2.webp",
+      "bytes": 196852,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "12635d6ca854af5bff8f5e9baa7e7c21c2c8356e88c0d89eef3a7b58e296aa24",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_afF3reMQRkiLT6izy9ogmLjp.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 3,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/3.webp",
+      "bytes": 160362,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "02c96779628dd67d0a4e4e6b593ed809e296a142911372bd3c1c6beb0cafd573",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_aop1vrJb0OSdLV7t3wGLJ0BF.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 4,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/4.webp",
+      "bytes": 173928,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "85cf63e629348901bead990ed59e3e4a392c68209a1ab46cae1d1cecf70272cb",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_XqgBeU5cNBRP7jCFP0FTC9ol.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 5,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/5.webp",
+      "bytes": 120528,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "33438d4f91a6957288d3532425ebea1156e8d27fda3a66b8f1699950548c47ac",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_zCDzjvgPGvEm0cXlMYRdK29s.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 6,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/6.webp",
+      "bytes": 189178,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "6c4ce048dc0ebaa2cb7627271e7bb04e4ea81d27e7edd1a63a97993be8eb67f8",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_NlBkrrdUrpqBhNyl2cMjUijV.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 7,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/7.webp",
+      "bytes": 175386,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "91f714ef17645dedf7c2856ffc3e68f634ab9c348e9c7b6c390fafdf117a4067",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bkrr6F71DMpdJe4Gkdb3oxcT.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 8,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/8.webp",
+      "bytes": 240196,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "dcb677da9a8b8d6b7ba1913cadb4330e366336012f7ccc309f9cfd05b4ed81e8",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_9LC1Q7QGlAmXDMAnh4Pn3QMe.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 9,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/9.webp",
+      "bytes": 214638,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "cc0d9b269d9eb1579640a8b66ba4fa43dfbd024e12084a026b35ae3e64b880c6",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_y4JG0D4O3Xg8OfPy6mXNrylN.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 10,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/10.webp",
+      "bytes": 193600,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "b2d7c499cc5004418d4b48e4220188a2ce1a0e3298c85501a410fe6ce312b4e4",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_zjfwCWHOdZqUGLMUY5BLdMU3.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 11,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/11.webp",
+      "bytes": 217102,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "6f39a89a42c71d679000a725f5f1cd3a109f791d76153b63f5dc9f11ee205a14",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_sytsZlkdsAjIfXzomPi1C8KB.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 12,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/12.webp",
+      "bytes": 183066,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "ee1f7d0e32aaef0019dac08f5a0f9b66b900fbf2c8af831e18a4dc59a0b70bf0",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WwnGifOQr7gsL5xYAlQjh3sl.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 13,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/13.webp",
+      "bytes": 224062,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "30195072bcae166029d74404dc617a3b6393b2c64988b2110840ea672230e4a9",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_YAtbdMHupQRuo2Tm9c07WOmQ.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 14,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/14.webp",
+      "bytes": 230404,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "535b65c3bc3d4c9a36212cc97d13adb5d21d4e748e15bbe4862b93812c89567e",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_Ma57UZ0lLwMjuanV5KmB7QMh.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 15,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/15.webp",
+      "bytes": 190348,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "1ecda89d714057d7931362d17e999cef5385565b2b2818eae8a46709d2cb0805",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_wHcgH6RHQeXSvNkJr0pK470e.png"
+    },
+    {
+      "order": 48,
+      "id": "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+      "page": 16,
+      "path": "public/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/16.webp",
+      "bytes": 239784,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "ef7262204f229dd1bdf799910cd9ac6232a12cf0c906589862da736dee583df6",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_L6HferYtBM6ulJHzBVx7fhGT.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 1,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/1.webp",
+      "bytes": 214920,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "dd97454350157bb39a50093bc54c842f5373e5c91dfc6e588842a25b442326aa",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_W3RhH3rr4nhoi8o7riJGTEwT.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 2,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/2.webp",
+      "bytes": 189976,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "b692105dc8c8ff6772f01c178e64764d95969a7ad371308190a0f904c5a3b6b6",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_GB0Htip0qVpyWAHamVIJ8tMN.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 3,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/3.webp",
+      "bytes": 222896,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "a81ec0697da3a36773fa8e035c9880a6b317845bfa730951e051a323d3c97433",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_yrpKaWTCw9yEIX4sEOuvu43P.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 4,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/4.webp",
+      "bytes": 223518,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "1e577425e807b521a690df369540e292dbcd34ebe53cda6a3e4c403bf8f34bac",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_dJvKIGiEJvM4YxdTZxfUjpui.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 5,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/5.webp",
+      "bytes": 185712,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "f792a28bc54cb838f91b305dd17124bd87792eb10507b6f9332c3199411f848a",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_sLgJlF2ZAYPCKheCpWWfjl0H.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 6,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/6.webp",
+      "bytes": 191184,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "f5d45f7bbe6585c39deec16a5506242d9b1f8e4cc54417b149607fdb2100d955",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_xtIbKyCKqNVS3YHUTcS5msOy.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 7,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/7.webp",
+      "bytes": 191286,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "8fc214e1b9af932dd3a510a2079dddaadfc78fec4ad9600ade4b6472a688f3a7",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_aqA5hwVSXoKfc6CmCAB9Qf1F.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 8,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/8.webp",
+      "bytes": 185202,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "1d7a750e5e7d5dc37d1030416fd1dfa2cbfcc44e54eb00990e9b2341682cfde5",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_OV5FDCEsx4ik8XBKEIXUpuG0.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 9,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/9.webp",
+      "bytes": 185852,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "24013c7b62bd6d7a9dfaf3a1ee85427b490bb94819d2572862e8a19373a04a54",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WqylRFAS32fJ7MW0AznvgdwC.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 10,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/10.webp",
+      "bytes": 194364,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "20621483fadacdb39e76d7738825c50f392b2d6d9a6fd25b9808ef62aa70dfa1",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_Vpx6j8Ja9IKNWtXIHT2tejAx.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 11,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/11.webp",
+      "bytes": 207786,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "c81b58f71c6c2020391152b952d303c70bc3fddab9dad9f22c9e33725930344a",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_doiOlhHTWDurQNDDjk5GlvI5.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 12,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/12.webp",
+      "bytes": 207980,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "f6ea01d86d5ce61e872f7a3dad13fc267f5544c3fa09b584f32c3eeef9113d3a",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_ji472IuHTSOspaOkBDhitTvy.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 13,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/13.webp",
+      "bytes": 243284,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "d85b57f140aae116a9ae7ef2b73bd038f25e3d788db325b14da35cd5d7016645",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bYQ2TGdBgZAFjYxtm9yONE1J.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 14,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/14.webp",
+      "bytes": 187986,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "a892c5ea8a66fc4d1b4f7b691f33a77104b6ac3dd2390c4885ae4a50c4b6480a",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_8LoiVw5pAcZgvZxONHM73rEX.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 15,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/15.webp",
+      "bytes": 224116,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "877a09c848a1f43223dde97bc35883b3f21952d80dbe1018cfd52b464fa6c6fe",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_vbe59cTtknypr6553Z4ZuJ2s.png"
+    },
+    {
+      "order": 49,
+      "id": "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+      "page": 16,
+      "path": "public/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/16.webp",
+      "bytes": 182676,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "de933e11a139cb60ffb834332dbcf902d59e3c97671e130a79d60aa6cb56d12c",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_k4K0shAybiUXkoravV61uehl.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 1,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/1.webp",
+      "bytes": 296326,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "9a6c1448d93e0f0a7ade134eea63fb9c95b6f8ff68ec694202ac80e212e2d498",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_ccwB9MlCGU1Eyrv9JPjkz6Sq.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 2,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/2.webp",
+      "bytes": 191556,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "2a64cd9770accf3581f57b6ba222c4b4776669e874031dcebbe373d6cc2c8c58",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_PiQbBazuJqdDrgtvWKC8jmOB.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 3,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/3.webp",
+      "bytes": 215906,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "fc2d212277d8f0deb4b83b460e704dfb9c70cd4923af7add433086a1653fd8b2",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_d5MHZbhnQ5zScQhc2HbmXyyD.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 4,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/4.webp",
+      "bytes": 177892,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "764e0bfa29eb418f08d7fb7a563312027976c776eb9a94ceeb9575864f51e8c7",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_AJNa8IFEANdCqe2tdroDJECE.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 5,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/5.webp",
+      "bytes": 233400,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "cfa6fbbb263a6bc3c124eea283de51b3220ba81af1b245fc9c1d2bb2c91e8fcb",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_dVWxW8GqILmov0AL1v2nVcVk.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 6,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/6.webp",
+      "bytes": 258022,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "edb1f2f5fd66dfe6214faa3487aba3b44bdfeda20a247609d71940e4c23bf831",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_HVQ3nVTNT69ktLfWPq7q6tcX.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 7,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/7.webp",
+      "bytes": 211202,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "584c9742a6695c82a4c1dc53126f79947072d44bf41d7518ae5a08be53443163",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_muV5ZnE3Zj6rPhqqIdn7OHjB.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 8,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/8.webp",
+      "bytes": 198042,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "1dc0456c865f4deba8a08c138e358c0f3269093c3c88621cb3d04148cc1167e1",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_JTKF7zBLxGRsgqPdUMo89sWd.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 9,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/9.webp",
+      "bytes": 255976,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "15543901dbe95a725bebc14611c02c93d8cf68f90793f2135eb5a1ee153a55af",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_76UiqayejulrGefMJdlt3ena.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 10,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/10.webp",
+      "bytes": 242466,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "c4c86b19ff9c103522e5d3dd34b46b2e3bfc6ad91879f25b547028b58bfad415",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_26huUvsrlt9uuuPXESgdM5jK.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 11,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/11.webp",
+      "bytes": 273134,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "587dfec41d4fcd9cfa3b53b93a83004869de8b793386504e695724ef12c1beaf",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bccFW2bnOJBW1gavKc1JSZrn.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 12,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/12.webp",
+      "bytes": 297078,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "9f75e2b40fca9d6abbff3ebc1cf8f2d4dec0a5397faca4fef54560f70402904d",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_UGr2oz4QhxI48PkfEIYYkPPg.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 13,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/13.webp",
+      "bytes": 265360,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "752e13fc38628527c36a89969b9993e634f171c85a482efa182036adc46a48e5",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_D9ZlYxhqTeL9MYl6nEdHz1jV.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 14,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/14.webp",
+      "bytes": 269474,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "7a2a6f5ac57ff6114e46a8867d6c2460c32df29540ccc3e2eaae85739bd3ea1e",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_4ZSVXihbwylvC1tDKXVtCSjO.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 15,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/15.webp",
+      "bytes": 222052,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "fdebb2e623f7e104127f42f10815377c4b99f2c879fe6b8956ad95fb5cbaced4",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_pXPqSGaYMsAbF2dFQi2n5t87.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 16,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/16.webp",
+      "bytes": 226290,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "188277802e7e6f7c241d39e9ad25743a8f10d9654946b5d7ec8938b9946d5a17",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_SGvfsWzuyEaXm9QvkgX4axxE.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 17,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/17.webp",
+      "bytes": 262824,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "a01656e52a3b299d91051c0d4f28a9287e3b6923c400c6f8805d7749bf90fce6",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_iMR7frmMZuyPOeaEruJwMyUe.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 18,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/18.webp",
+      "bytes": 263016,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "30b0990a33613bc9259bbf0d9c04bf859356bfc17e00f4f3d4dcf52ec574795d",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_d0ZglVzyI6ha7iFu3nLTLQVt.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 19,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/19.webp",
+      "bytes": 212796,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "3ee5f938ca0b375b0b38fb00735d6a501dd5c49777eac089d9869c77f312c587",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_7nPzrTEFMep5RLOqo2glRltk.png"
+    },
+    {
+      "order": 50,
+      "id": "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+      "page": 20,
+      "path": "public/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/20.webp",
+      "bytes": 256384,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "37f781a7909fd9b5bdbb26cd73bf3e0790812c55f2e1393e60108860a86a5062",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_fgQFkdtFWsZEaeJ938w9EkMu.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 1,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/1.webp",
+      "bytes": 269524,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "7e3cd917bfe254eae72243fb3e3b2675860baa74034d2049cecf3ad7be6c15a0",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_eCsQ802Ml82Hm14qYq01yaJg.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 2,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/2.webp",
+      "bytes": 251586,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "36b40d7a0f4a60c7d4e5be8ddc3e9378469a1cb278c2bc02d68c32b719064802",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_UjDeSe1EanJWA1bsahW9MEY1.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 3,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/3.webp",
+      "bytes": 171528,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "1690627d8e57e3454e9a3709e9889f8bb2a29c1dc907ef0d7d4e8412d09bc2bf",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_uOGyJCHHbg8cB2eBvz25mbqH.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 4,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/4.webp",
+      "bytes": 275870,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "8727f0c42725c2c07334866021b89e08e5bf7c8a6f73138d4160d7ab67aa9bde",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_tfLQuaxicG2sOesywUjOtgu7.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 5,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/5.webp",
+      "bytes": 222760,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "f40d0ddbe7ef761add92c29232fb9fc64e5227c6d68d6aaa3f915f16b5e128f2",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_jro1neN8EmUPBsTz4ZRiOYEF.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 6,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/6.webp",
+      "bytes": 237264,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "bb0354beb7300f2476509d5e6ed271353108826a97f4194ff2b31f0a5aede74a",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_cvMaGS30fpoZjRiOY0XL2T9N.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 7,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/7.webp",
+      "bytes": 283702,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "007903caafd0f558d35518f0c6e6c11695a45bd5ba6f079717275ea22faac26b",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_ZUpPXeHAsGdZhbJZj16Q0FUC.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 8,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/8.webp",
+      "bytes": 256206,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "bbacc966146a3b0ab474ba450606023898fd12c92a523a29961c3ce4f56f60a2",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_cdYra6B52I1ggNa18da9OXVV.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 9,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/9.webp",
+      "bytes": 223744,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "2115e4c2b9b1cfa5fcb8ad0d054595f02b427717057a9c06f8f0d8efd86a3b30",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WH36vaHhMwdQnL9zdUFGxfV2.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 10,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/10.webp",
+      "bytes": 260826,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "6243b2ae872f8420df910a02f7bfce2e89db54c328df90d53a6bbc0eec85cf17",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_43r7RzXFskRtbfBMKRO62aUw.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 11,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/11.webp",
+      "bytes": 244804,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "15e361f1fdda5e2968649ea4348733bd3540d4bfdd8ddc8f5138b86aa9f7e7e1",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_td8R8JfDkmkA7wJiKiCaNHoB.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 12,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/12.webp",
+      "bytes": 282028,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "76556b3ac5418b279e011e7e4a8a4d4bdb0ff9003e54dc8b7e79b2bd36c49405",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_fDINJONYrthXX7UioL5N3Zjr.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 13,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/13.webp",
+      "bytes": 285142,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "5ef9326c50399f45094f8a8ee5f466a31cbcec1a5892e51333f17963a80e4e65",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WJ99thI3Plfg98KdEW3MOIW1.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 14,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/14.webp",
+      "bytes": 214940,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "f4efa7887547765c534a033fbb9cd41f745aac67b06776b7b90b741ef00ab6c4",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_B1foJ4l82JEKY4KkwYLo5a7s.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 15,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/15.webp",
+      "bytes": 293028,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "526d1808a0267b2d696b407d8230ee14a8e897760f514f4cff8c4d3412e7f580",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_9Buxdj4aeNh1DnvtrLhmn5CQ.png"
+    },
+    {
+      "order": 51,
+      "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+      "page": 16,
+      "path": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/16.webp",
+      "bytes": 250162,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "a7505000cb47fc1f5a59ef4640aec5999bde53ef6b2cb4a2f84dddbf482bd481",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_hymzg1Qf5BPtXsVBjlohiSXJ.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 1,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/1.webp",
+      "bytes": 258446,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "4d8c34f368e18f3c84f0431da8206ea67dece62c96baaecc5de1807534825a8e",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bLZntWWYAyHL597AqUXAba7L.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 2,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/2.webp",
+      "bytes": 213494,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "7a6de43060c53351432487bf0200b28970f7fbea6c457c92b6e86b0e4ce5e0b2",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_MNqRclScr6buuvFDb4sIkH9n.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 3,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/3.webp",
+      "bytes": 242574,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "99d40ac4ba978a6d1b8e888470d914167d8203c90377a19bc6fa52111a09a324",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_UNMhau7ZwhY0G6ob3mnWWSBw.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 4,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/4.webp",
+      "bytes": 221726,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "7284cfc632cd36a15478becbd57418fbda34bc697108bf8c2711bf12f34a1aea",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_MQYIou76Bmo3sqk9YiqDFlP7.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 5,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/5.webp",
+      "bytes": 170624,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "fe1067d1377c5bc44992d5d8379ae4b94ff1d2df2e977277c5146a2f831c885e",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_vmT6ZYMANzjTsZ2T00aLoYQA.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 6,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/6.webp",
+      "bytes": 207758,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "30619d58a2c27f50b97defe3128ab72e52fbb16197e4aa08dde76e95107d9e9c",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_BeGzPWF5VhhZuZpiLQiZ5cSB.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 7,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/7.webp",
+      "bytes": 221870,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "64dd22b59687b2016d9227f7e5dbbce632eeb70f01dab42b0afddc0495e9b6f1",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_l4DifNi12LmBzLNh9vgJ62CU.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 8,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/8.webp",
+      "bytes": 199836,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "b37657a21cd93fe0504e183ac248273dc0c603eb6c60a3dbe954fd2ee10305e8",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_uat7XpQ3aTIYYqi84ccI0LeE.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 9,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/9.webp",
+      "bytes": 200382,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "d70dc6af851c99ed860f3dc769b44047b3ba70818f3bae41438c6b0af6e23f06",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_8jdpqQHgAkUDWequBA9FMQmA.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 10,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/10.webp",
+      "bytes": 303890,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "b46d489635093ba8b1846f761ad1859b7718796fd50df21ebc360ea4bda9450e",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_V2kTNBOCmY3xTdOS5f8xpnWS.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 11,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/11.webp",
+      "bytes": 240984,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "cd386d1685a809010290481554590553e6bc1b27405c7f0fcd252d8356205434",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_9j0maMesqZFBHym94O99gflY.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 12,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/12.webp",
+      "bytes": 223590,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "afaf20e0a928461f893a7eb9654d7c213992a44aff1819f5b20b6e3012091e32",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_bziLCo084CbsRbZ8gyj1WQOH.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 13,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/13.webp",
+      "bytes": 248480,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "8ab863c661d7a8a866f385b61fe9240abfc13411eb81ae9160ac376978a4585f",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_kt34DAKuLr7G0D1Apf9iE1CC.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 14,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/14.webp",
+      "bytes": 224948,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "8a0ddcb2bf410b2025eab670f18442325b48a7b0c1a6fcc0ad4be7d564aa2087",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_5Sk6SXNblusJJrGha1v11lMh.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 15,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/15.webp",
+      "bytes": 270092,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "37cb82ba1c14726ed197e84c66185cdc510e98d9f9df067597bfc3b9ee642440",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_7HHtVdldIG9qxv1v5oTXrRMG.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 16,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/16.webp",
+      "bytes": 290324,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "2d65746d50d46af0c01a51c94d426d9acc698664f0a076c6788bdf14f9763da1",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_Eu4uaHTfPQCgIhE0kxRxULOE.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 17,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/17.webp",
+      "bytes": 212628,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "9fe1575e8b542638b225d76ad990c599209d6715343b33be9f7046e0789daa7a",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_J12ACsr92wNJHywo3OhuUpfr.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 18,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/18.webp",
+      "bytes": 304282,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "f7d50d747d4ae3cffd3a73af0245c006e991ebb70748c0561a56a10a8a2618e9",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_JzsIV5m4x0iaeDwBMIOWrEir.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 19,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/19.webp",
+      "bytes": 249374,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "cbae0f66516ab9ca4d51d6354dcc82e849e93f79d8bb99f98830d374b8cb9a92",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_lxwUujx45tpsed31MyFAazM1.png"
+    },
+    {
+      "order": 52,
+      "id": "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+      "page": 20,
+      "path": "public/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/20.webp",
+      "bytes": 242388,
+      "width": 1200,
+      "height": 1200,
+      "sha256": "0667fe710b8f75c6d1ae175f8781aff7c08366c461c48d38c3aa5c5062eaacc3",
+      "provider": "built-in-imagegen",
+      "source": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_4iEidoxKvBGtahsTl7dGZWuL.png"
+    }
+  ],
+  "browser": {
+    "status": "passed",
+    "report": "content-drafts/qiche/qiche-48-52-browser-report.json",
+    "bookCount": 5,
+    "imagePages": 88,
+    "firstAndLastPageNarration": "passed-5-books",
+    "pauseResume": "passed-5-books",
+    "automaticAdvance": "passed-book-48",
+    "realTimeTtsRequests": 0,
+    "pageErrors": 0,
+    "mobileLayoutSample": "passed-390x844-book-52"
+  },
+  "upload": "not-performed",
+  "publication": "not-performed",
+  "commit": "not-performed",
+  "totalAudioSeconds": 811.92,
+  "imageBytes": 19988966,
+  "minImageBytes": 120528,
+  "maxImageBytes": 304282,
+  "validation": {
+    "imageDecode": "passed-88",
+    "imageHashes": "passed-88",
+    "sourceProvenance": "present-88",
+    "bilingualManuscript": "matched-88",
+    "audioDecode": "passed-5",
+    "audioContentHashes": "matched-5",
+    "pageTiming": "passed-88",
+    "nonSilentAudio": "passed-88",
+    "visualContactSheets": "reviewed-5",
+    "typeScript": "passed-npx-tsc-noEmit",
+    "targetedTests": "passed-38-in-2-files",
+    "diffWhitespace": "passed"
+  },
+  "localLibraryIntegration": "complete"
+}

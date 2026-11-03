@@ -55,6 +55,16 @@ const EXPECTED_BOOKS = [
   { id: "xiao-qi-che-zuan-jin-shan-li-le-ma", pages: 20 },
   { id: "lun-tai-shang-de-hua-wen-cang-zhe-shen-me-mi-mi", pages: 16 },
   { id: "xiao-qi-che-xi-zao-la", pages: 16 },
+  { id: "wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma", pages: 16 },
+  { id: "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai", pages: 20 },
+  { id: "da-fei-ji-zai-pao-dao-shang-pai-dui-ma", pages: 20 },
+  { id: "tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu", pages: 16 },
+  { id: "kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma", pages: 16 },
+  { id: "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo", pages: 16 },
+  { id: "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma", pages: 16 },
+  { id: "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta", pages: 20 },
+  { id: "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao", pages: 16 },
+  { id: "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu", pages: 20 },
 ] as const;
 
 describe("Qiche city vehicle library", () => {
@@ -99,13 +109,13 @@ describe("Qiche city vehicle library", () => {
     expect(books.every((book) => book.metadata?.seriesOrder === book.order)).toBe(true);
   });
 
-  it("publishes forty-two ordered variable-length bilingual books", () => {
+  it("publishes fifty-two ordered variable-length bilingual books", () => {
     const series = getSeries("qiche");
     const books = getPublishedBooks("qiche");
 
     expect(series).toMatchObject({
       title: "城市汽车小队",
-      bookCount: 42,
+      bookCount: 52,
       ageRange: "4–8 岁",
     });
     expect(books.map(({ id, pages }) => ({ id, pages: pages.length }))).toEqual(
@@ -155,12 +165,14 @@ describe("Qiche city vehicle library", () => {
     ]);
     expect(filterLibraryBooks(summaries, { query: "高铁 空气阻力" }).map((book) => book.id)).toEqual([
       "gao-tie-wei-shen-me-pao-de-kuai",
+      "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai",
     ]);
     expect(filterLibraryBooks(summaries, { query: "动车组 车厢连接" }).map((book) => book.id)).toEqual([
       "dong-che-zu-zen-yang-yi-qi-pao",
     ]);
     expect(filterLibraryBooks(summaries, { query: "飞机 升力" }).map((book) => book.id)).toEqual([
       "fei-ji-wei-shen-me-neng-fei",
+      "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
     ]);
     expect(filterLibraryBooks(summaries, { query: "飞机 起飞 降落" }).map((book) => book.id)).toEqual([
       "fei-ji-zen-yang-an-quan-qi-fei-he-jiang-luo",
@@ -271,7 +283,7 @@ describe("Qiche city vehicle library", () => {
     }
   });
 
-  it("includes the series and all forty-two books in the sitemap", () => {
+  it("includes the series and all fifty-two books in the sitemap", () => {
     const urls = sitemap().filter((entry) => !new URL(entry.url).pathname.startsWith("/en/")).map((entry) => entry.url);
     expect(urls.some((url) => url.endsWith("/library/qiche"))).toBe(true);
     for (const { id } of EXPECTED_BOOKS) {

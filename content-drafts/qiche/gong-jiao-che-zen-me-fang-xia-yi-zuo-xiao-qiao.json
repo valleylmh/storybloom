@@ -1,0 +1,344 @@
+{
+  "_draft": {
+    "note": "用户已于2026-10-17确认本册完整内容，并指定使用内置生图与百炼TTS继续制作。",
+    "createdAt": "2026-10-17",
+    "contentApproved": true,
+    "tentativeSeriesOrder": true,
+    "approvedAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "scope": "five-new-books-authorized",
+    "plan": "user-approved",
+    "manuscript": "approved",
+    "illustrationPrompts": "prepared",
+    "illustrations": "complete-built-in-imagegen",
+    "audio": "complete-local-bailian",
+    "libraryIntegration": "complete-local-catalog",
+    "upload": "not-performed",
+    "publication": "not-performed",
+    "validation": "passed-assets-types-tests-and-browser",
+    "commit": "not-performed"
+  },
+  "editorial": {
+    "batchTitle": "都市汽车系列第二批 城市服务车五连篇",
+    "synopsis": "安安和妈妈在公交站遇见要去讲故事的方老师。低地板公交车停稳、侧倾降低车身，再展开导板，把站台与车厢连起来。司机先问需要怎样的协助，乘客留出通道，方老师进入轮椅区并按设备要求完成固定。安安学会先问再帮，也发现让路和耐心等候就是可以做的事。",
+    "knowledgePoints": [
+      "低地板与车身侧倾降低功能",
+      "无障碍导板连接站台和车门",
+      "轮椅区与配套固定装置",
+      "询问本人需要再提供协助"
+    ],
+    "sources": [
+      "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202605/t20260518_4654955.html",
+      "https://www.yutong.com.cn/news/new/1672788843201433600.shtml"
+    ]
+  },
+  "book": {
+    "id": "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+    "seriesId": "qiche",
+    "title": "公交车，怎么放下一座小桥？",
+    "subtitle": "和方老师一起去听故事",
+    "question": "车门和站台之间有高度差，坐轮椅的乘客怎样上这辆公交车？",
+    "moral": {
+      "zh": "合适的车辆设施和彼此留出的空间，能让更多人按自己的需要出行。",
+      "en": "Suitable vehicle features and shared space help more people travel in ways that meet their needs."
+    },
+    "ageLabel": "4–8 岁",
+    "order": 51,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 10,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 51,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "汽车科普",
+        "无障碍公交",
+        "低地板公交",
+        "轮椅导板",
+        "尊重需要",
+        "公共出行"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "小汽车送去检修后，安安和妈妈来到公交站。站台上，使用轮椅的方老师正收好故事卡片：“我也去公园，我们同路啦。”",
+        "enText": "After their car left for the repair shop, An'an and Mom reached the bus stop. Teacher Fang, who used a wheelchair, was putting away her story cards. “I am going to the park too. We are traveling together.”",
+        "illustrationPrompt": "公交站中景：方老师坐紫框手动轮椅收无字故事卡，安安与提着星星书签篮的妈妈站在候车区，三人平等交谈。"
+      },
+      {
+        "page": 2,
+        "zhText": "安安记得方老师会学大象打喷嚏。她刚想问今天讲什么，蓝绿色公交车就慢慢靠了过来。",
+        "enText": "An'an remembered Fang's wonderful elephant sneeze. She was about to ask about today's story when a teal-blue bus pulled in slowly.",
+        "illustrationPrompt": "站台远景：公交车缓慢进站，等候者均在安全区域，方老师与安安微笑，不画人物挡车。"
+      },
+      {
+        "page": 3,
+        "zhText": "车门和站台之间，还隔着一点高度。安安看看轮椅前面的小轮子：“这里没有台阶，可还是差了一截呀。”",
+        "enText": "There was still a height difference between the bus doorway and the platform. An'an looked at the wheelchair's small front wheels. “There are no steps here, but the two sides still do not meet.”",
+        "illustrationPrompt": "车门与站台局部特写：停稳前未展开导板，清楚表现有限高度差；轮椅留在安全候车位置不试跨缝。"
+      },
+      {
+        "page": 4,
+        "zhText": "司机把车停稳，和方老师确认下车站点：“我来打开导板。您需要什么协助？”方老师说：“请帮我看一下导板的位置。”",
+        "enText": "The driver stopped and confirmed Fang's destination. “I will open the ramp. What help would you like?” Fang replied, “Please check the ramp position for me.”",
+        "illustrationPrompt": "公交车完全停稳中景：女司机在门边与方老师平视沟通，车身尚未移动，安安妈妈在侧后方等待。"
+      },
+      {
+        "page": 5,
+        "zhText": "靠站台这一边的车身，轻轻低了一点。安安眨眨眼：“它把自己放矮了！”妈妈说：“这辆车有降低车身的本领。”",
+        "enText": "The side of the bus nearest the platform lowered a little. “It made itself shorter!” An'an said. “This bus can lower its body to help people board,” Mom explained.",
+        "illustrationPrompt": "停稳公交侧面低视角：车身靠站台侧略微降低，轮胎仍正常接地，不夸张跪倒，不出现移动车辆放导板。"
+      },
+      {
+        "page": 6,
+        "zhText": "司机确认周围安全，把导板展开，搭在站台和车门之间。一座宽宽的小桥，稳稳出现了。",
+        "enText": "After checking the area, the driver unfolded the ramp between the platform and the doorway. A broad little bridge was ready.",
+        "illustrationPrompt": "无障碍门近景：宽防滑导板平稳连接路缘与低地板门口，司机在旁确认位置，导板四周没有人挤靠。"
+      },
+      {
+        "page": 7,
+        "zhText": "大家等在旁边，没有抢着踏上导板。方老师按司机的提示来到桥前，看看两侧：“这个宽度正合适。”",
+        "enText": "Everyone waited to one side without crowding the ramp. Following the driver's guidance, Fang approached and checked the edges. “There is room here.”",
+        "illustrationPrompt": "站台斜侧视：方老师在宽导板前观察，司机在安全侧指引，安安与妈妈退在旁边留出通道。"
+      },
+      {
+        "page": 8,
+        "zhText": "方老师通过导板上了车，司机在旁照看。安安牵着妈妈，等她通过以后，再从乘客入口上车。",
+        "enText": "Fang boarded using the ramp, with the driver ready to assist. An'an held Mom's hand and waited, then used the passenger entrance after Fang was aboard.",
+        "illustrationPrompt": "车内视角：方老师已顺利进入宽门，司机在旁协助，安安妈妈仍在站台等候，不混挤导板。"
+      },
+      {
+        "page": 9,
+        "zhText": "轮椅区旁，一位乘客把购物袋抱到腿上，通道宽了。方老师转好位置：“谢谢，这样我就方便过去了。”",
+        "enText": "Beside the wheelchair area, a passenger lifted a shopping bag onto their lap, clearing the aisle. Fang moved into position. “Thank you. That gives me room to get through.”",
+        "illustrationPrompt": "车内中景：一位成人将购物袋收至腿上，平整宽通道露出，方老师自行调整进入专用区。"
+      },
+      {
+        "page": 10,
+        "zhText": "安安小声问：“方老师，我能帮你推吗？”“谢谢，先不用。”方老师笑着说，“把脚边的路留出来，就帮上忙了。”",
+        "enText": "“May I help push?” An'an asked softly. “Thank you, but I do not need that now,” Fang said with a smile. “Leaving the path clear is helpful.”",
+        "illustrationPrompt": "车厢停稳时人物中景：安安站在妈妈身旁询问，双手未接触轮椅；方老师自然作答，保持平视交流。"
+      },
+      {
+        "page": 11,
+        "zhText": "方老师停好轮椅。司机按这辆车的要求，使用配套装置固定轮椅，并协助系好乘员安全带，再逐一检查。",
+        "enText": "Fang positioned her wheelchair. The driver used this bus's equipment to secure the wheelchair, helped fasten the passenger restraint, and checked everything before departure.",
+        "illustrationPrompt": "停稳车厢轮椅区近景：专门轮椅固定装置与乘员安全带分开可辨，司机按本车设备检查，避免用单根松带代替整套装置。"
+      },
+      {
+        "page": 12,
+        "zhText": "司机收好导板，回到驾驶座。安安和妈妈也坐稳了，公交车才平平稳稳地离开站台。",
+        "enText": "The driver stowed the ramp and returned to the cab. Once An'an and Mom were seated too, the bus pulled smoothly away from the stop.",
+        "illustrationPrompt": "车内宽景：导板已完全收好、车门关闭，方老师固定妥当，安安妈妈坐稳，妈妈膝上妥善放好星星书签篮，司机在驾驶座专注前方。"
+      },
+      {
+        "page": 13,
+        "zhText": "“今天的故事里，大象找到桥了吗？”安安问。方老师举起一张小卡片：“找到了，不过，它先听见了一只很小很小的鸟。”",
+        "enText": "“Does the elephant find a bridge in today's story?” An'an asked. Fang held up a story card. “Yes—but first it hears a very, very small bird.”",
+        "illustrationPrompt": "平稳行驶车厢中景：方老师坐在固定妥当轮椅上举无字鸟图卡，与座位上的安安说故事，不起身或松带。"
+      },
+      {
+        "page": 14,
+        "zhText": "快到公园了，方老师按下身边的提示按钮，告诉司机准备下车。安安抱好小熊，等车停稳，没有提前跑到门边。",
+        "enText": "Near the park, Fang used the request button beside her to let the driver know she was getting off. An'an held Bear and waited for the bus to stop, without rushing to the door.",
+        "illustrationPrompt": "轮椅区请求按钮近景：方老师在座位可及处按无字图标按钮；背景安安仍坐稳，门未打开。"
+      },
+      {
+        "page": 15,
+        "zhText": "公交车停稳后，司机按步骤解开配套装置，再展开导板。那座小桥又搭好了，方老师在协助下平稳下车。",
+        "enText": "After the bus stopped, the driver released the restraints and set up the ramp again. The little bridge was back, and Fang left the bus with assistance.",
+        "illustrationPrompt": "公园站台侧视：车辆停稳、导板展开、宽通道清空，司机按方老师需要协助下车，安安妈妈在安全位置等待。"
+      },
+      {
+        "page": 16,
+        "zhText": "她们沿着平坦的小路来到树荫下。安安把小熊放在膝上：“方老师，现在，可以听听那只小鸟啦。”",
+        "enText": "They followed a level path into the shade. An'an settled Bear on her lap. “Teacher Fang, now we are ready to hear about that little bird.”",
+        "illustrationPrompt": "公园收束：方老师在平坦可达的树荫活动区准备讲故事，安安妈妈及其他听众围坐，公交车不再占据主体。"
+      }
+    ],
+    "parentGuide": {
+      "goal": "认识本故事公交车的无障碍设施，学会留出通道、耐心等候，先询问再提供对方需要的协助。",
+      "reminder": "以乘客本人为交流对象，不把轮椅当玩具或未经同意推扶。不同车辆的导板、升降与固定方式可能不同，由受训工作人员按设备要求操作。方老师是来讲故事的普通乘客，不用她的身体状况制造可怜、励志或感恩情节。",
+      "questions": [
+        "小桥出现以前，司机先做了什么？",
+        "为什么轮椅刹住以后，还要使用车上的配套装置？",
+        "如果想帮忙，为什么要先问“你需要我做什么”？"
+      ],
+      "activity": "用积木搭一辆玩具公交车和一个略高的站台，用宽纸板连接两边。分别试试把玩具行李堆在通道上与移到一边的差别。邀请玩偶“乘客”先说需要什么帮助，孩子再布置路线；不推拉真人轮椅，不做蒙眼或捆腿模拟。",
+      "ageTips": {
+        "age4to5": "练习“先等车停稳”“把路让出来”“先问一问”三个具体动作。",
+        "age6to8": "比较台阶、导板、宽门和轮椅区各自解决的障碍，讨论环境怎样改变，才能让人更自主地行动。"
+      }
+    },
+    "publishedAt": "2026-10-18"
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 premium polished 3D clay-like animated-film children's picture-book illustration. Warm early-autumn city daylight, rounded tactile materials, physically plausible vehicles, clear action and varied wide, medium and close compositions. Friday afternoon for book 48, sunny Saturday morning through afternoon for books 49–52, with evening only where explicitly requested. One continuous scene per page. Follow the page-specific camera and location. 教学模型、图卡和真实作业区必须通过材质、尺度和环境清楚区分。",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl: round face, ear-length black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, orange backpack, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. Bear: small brown plush with blue scarf and yellow crescent behind one ear. The family car is the established left-hand-drive light-blue five-door hatchback with beige interior; Mom drives from the left front seat, An'an rides buckled in the rear dark-blue age-appropriate child restraint. Backpack is separately stowed away from restraint straps. Only include people, the bear and props required by the page; do not force them into mechanical close-ups. The star bookmarks are large flat yellow paper stars from book 48 and reappear in book 52. Accessible bus: same generic teal-blue city bus as the existing series, here specified as a low-floor right-door bus with a kneeling function, broad fold-out non-slip ramp at the accessible door, a clear wheelchair area and purpose-designed restraints. Teacher Fang: adult Chinese woman with short wavy black hair, orange blouse, dark-green trousers, using a purple-framed manual wheelchair with black cushion, footrests and small front casters; she is a confident storyteller, never a helpless prop. Bus driver: adult Chinese woman with short black hair, light-blue uniform shirt and navy trousers. Ramp is deployed only while the bus is stationary; show only this fictional bus's equipment, not universal instructions for all buses.",
+    "negative": "No readable text, letters, numbers, captions, speech bubbles, real addresses, phone numbers, usable personal data, real barcodes, logos, brand marks, readable plates or watermarks. No anthropomorphic car faces, duplicate main characters, warped anatomy or impossible vehicle structures. No child in loading or recovery work zones, climbing shelves, entering freight boxes, touching winch cables or refrigeration equipment. No child pushing a real vehicle, passenger in a car transported on a flatbed, driver phone use while moving, unrestrained child in the family car, backpack under restraint straps, icy yogurt cargo, instant food-freshening magic, bus ramp deployed while moving, crowded ramp, unsolicited wheelchair pushing, or pity framing of wheelchair users."
+  },
+  "audioGeneration": {
+    "provider": "bailian",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin",
+    "pageCount": 16,
+    "contentHash": "92376e4e3832198e57e272ee584fcc285e4d8c8a33d143d67457e3c228e7237c",
+    "duration": 145.344,
+    "decodeValidation": "passed",
+    "nonSilentPages": "passed"
+  },
+  "illustrationGeneration": {
+    "provider": "built-in-imagegen",
+    "pageCount": 16,
+    "format": "webp",
+    "width": 1200,
+    "height": 1200,
+    "maxBytes": 307200,
+    "contactSheet": "content-drafts/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/contact-sheet.jpg",
+    "visualReview": "passed",
+    "pages": [
+      {
+        "page": 1,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_eCsQ802Ml82Hm14qYq01yaJg.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/1.webp",
+        "sha256": "7e3cd917bfe254eae72243fb3e3b2675860baa74034d2049cecf3ad7be6c15a0",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 2,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_UjDeSe1EanJWA1bsahW9MEY1.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/2.webp",
+        "sha256": "36b40d7a0f4a60c7d4e5be8ddc3e9378469a1cb278c2bc02d68c32b719064802",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 3,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_uOGyJCHHbg8cB2eBvz25mbqH.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/3.webp",
+        "sha256": "1690627d8e57e3454e9a3709e9889f8bb2a29c1dc907ef0d7d4e8412d09bc2bf",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 4,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_tfLQuaxicG2sOesywUjOtgu7.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/4.webp",
+        "sha256": "8727f0c42725c2c07334866021b89e08e5bf7c8a6f73138d4160d7ab67aa9bde",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 5,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_jro1neN8EmUPBsTz4ZRiOYEF.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/5.webp",
+        "sha256": "f40d0ddbe7ef761add92c29232fb9fc64e5227c6d68d6aaa3f915f16b5e128f2",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 6,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_cvMaGS30fpoZjRiOY0XL2T9N.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/6.webp",
+        "sha256": "bb0354beb7300f2476509d5e6ed271353108826a97f4194ff2b31f0a5aede74a",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 7,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_ZUpPXeHAsGdZhbJZj16Q0FUC.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/7.webp",
+        "sha256": "007903caafd0f558d35518f0c6e6c11695a45bd5ba6f079717275ea22faac26b",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 8,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_cdYra6B52I1ggNa18da9OXVV.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/8.webp",
+        "sha256": "bbacc966146a3b0ab474ba450606023898fd12c92a523a29961c3ce4f56f60a2",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 9,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WH36vaHhMwdQnL9zdUFGxfV2.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/9.webp",
+        "sha256": "2115e4c2b9b1cfa5fcb8ad0d054595f02b427717057a9c06f8f0d8efd86a3b30",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 10,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_43r7RzXFskRtbfBMKRO62aUw.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/10.webp",
+        "sha256": "6243b2ae872f8420df910a02f7bfce2e89db54c328df90d53a6bbc0eec85cf17",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 11,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_td8R8JfDkmkA7wJiKiCaNHoB.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/11.webp",
+        "sha256": "15e361f1fdda5e2968649ea4348733bd3540d4bfdd8ddc8f5138b86aa9f7e7e1",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 12,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_fDINJONYrthXX7UioL5N3Zjr.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/12.webp",
+        "sha256": "76556b3ac5418b279e011e7e4a8a4d4bdb0ff9003e54dc8b7e79b2bd36c49405",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 13,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_WJ99thI3Plfg98KdEW3MOIW1.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/13.webp",
+        "sha256": "5ef9326c50399f45094f8a8ee5f466a31cbcec1a5892e51333f17963a80e4e65",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 14,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_B1foJ4l82JEKY4KkwYLo5a7s.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/14.webp",
+        "sha256": "f4efa7887547765c534a033fbb9cd41f745aac67b06776b7b90b741ef00ab6c4",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 15,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_9Buxdj4aeNh1DnvtrLhmn5CQ.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/15.webp",
+        "sha256": "526d1808a0267b2d696b407d8230ee14a8e897760f514f4cff8c4d3412e7f580",
+        "visualReview": "passed-page-and-contact-sheet"
+      },
+      {
+        "page": 16,
+        "provider": "built-in-imagegen",
+        "generatedSource": "/Users/valleylmh/.codex/generated_images/01a149d9-07f9-7a91-97b3-3846a1e39091/call_hymzg1Qf5BPtXsVBjlohiSXJ.png",
+        "output": "public/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/16.webp",
+        "sha256": "a7505000cb47fc1f5a59ef4640aec5999bde53ef6b2cb4a2f84dddbf482bd481",
+        "visualReview": "passed-page-and-contact-sheet"
+      }
+    ]
+  }
+}

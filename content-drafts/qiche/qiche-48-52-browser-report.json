@@ -1,0 +1,169 @@
+{
+  "realTimeTtsRequests": 0,
+  "physicalDeviceReview": "not-performed",
+  "baseUrl": "http://localhost:3000",
+  "imagePages": 88,
+  "tool": "tabbit",
+  "automaticAdvance": {
+    "audio": {
+      "paused": false,
+      "time": 29.363943,
+      "src": "http://localhost:3000/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/zh-d03ecd7ebfc7cd88.mp3"
+    },
+    "selectedPage": "跳到第 4 页，第 4 页插图已完成"
+  },
+  "mediaRequests": [
+    {
+      "url": "http://localhost:3000/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/zh-d03ecd7ebfc7cd88.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/zh-94fecad31ad17d7f.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/zh-47eb56d1c9c41238.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/zh-92376e4e3832198e.mp3",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:3000/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/zh-f66321bd728a1902.mp3",
+      "method": "GET"
+    }
+  ],
+  "books": [
+    {
+      "pages": 16,
+      "order": 48,
+      "firstAudio": {
+        "time": 0.363659,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/zh-d03ecd7ebfc7cd88.mp3",
+        "duration": 148.68
+      },
+      "title": "快递车，怎么找到我的包裹？",
+      "lastAudio": {
+        "duration": 148.68,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo/zh-d03ecd7ebfc7cd88.mp3",
+        "time": 139.752
+      },
+      "pauseResume": "passed",
+      "allPagesBilingual": true,
+      "allImagesDecoded": true,
+      "url": "http://localhost:3000/library/qiche/kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo"
+    },
+    {
+      "pages": 16,
+      "order": 49,
+      "firstAudio": {
+        "time": 0.360665,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/zh-94fecad31ad17d7f.mp3",
+        "duration": 146.856
+      },
+      "title": "冷藏车，肚子里藏着冬天吗？",
+      "lastAudio": {
+        "duration": 146.856,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma/zh-94fecad31ad17d7f.mp3",
+        "time": 136.972611
+      },
+      "pauseResume": "passed",
+      "allPagesBilingual": true,
+      "allImagesDecoded": true,
+      "url": "http://localhost:3000/library/qiche/leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma"
+    },
+    {
+      "pages": 20,
+      "order": 50,
+      "firstAudio": {
+        "time": 0.366241,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/zh-47eb56d1c9c41238.mp3",
+        "duration": 180.288
+      },
+      "title": "小汽车走不动，谁来帮帮它？",
+      "lastAudio": {
+        "duration": 180.288,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta/zh-47eb56d1c9c41238.mp3",
+        "time": 170.952
+      },
+      "pauseResume": "passed",
+      "allPagesBilingual": true,
+      "allImagesDecoded": true,
+      "url": "http://localhost:3000/library/qiche/xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta"
+    },
+    {
+      "pages": 16,
+      "order": 51,
+      "firstAudio": {
+        "time": 0.366932,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/zh-92376e4e3832198e.mp3",
+        "duration": 145.344
+      },
+      "title": "公交车，怎么放下一座小桥？",
+      "lastAudio": {
+        "duration": 145.344,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao/zh-92376e4e3832198e.mp3",
+        "time": 136.728
+      },
+      "pauseResume": "passed",
+      "allPagesBilingual": true,
+      "allImagesDecoded": true,
+      "url": "http://localhost:3000/library/qiche/gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao"
+    },
+    {
+      "pages": 20,
+      "order": 52,
+      "firstAudio": {
+        "time": 0.366695,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/zh-f66321bd728a1902.mp3",
+        "duration": 190.752
+      },
+      "title": "装满故事的汽车，开到哪儿去？",
+      "lastAudio": {
+        "duration": 190.752,
+        "error": null,
+        "src": "http://localhost:3000/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu/zh-f66321bd728a1902.mp3",
+        "time": 180.696
+      },
+      "pauseResume": "passed",
+      "allPagesBilingual": true,
+      "allImagesDecoded": true,
+      "url": "http://localhost:3000/library/qiche/zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu"
+    }
+  ],
+  "mobileSample": {
+    "screenshot": "content-drafts/qiche/qiche-48-52-mobile-preview.png",
+    "bookOrder": 52,
+    "review": "checked-at-390x844-no-horizontal-overflow",
+    "layout": {
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "readerWidth": 362,
+      "width": 390,
+      "height": 844,
+      "image": {
+        "width": 1200,
+        "height": 1200
+      }
+    }
+  },
+  "initialNavigationNote": "A thumbnail click before the cold page finished loading did not change selection. Rechecked after load completion; all 88 pages passed.",
+  "pageErrors": [],
+  "checkedAt": "2026-10-17T20:36:40.320Z",
+  "range": [
+    48,
+    52
+  ],
+  "bookCount": 5,
+  "catalogBookCount": 52
+}

@@ -1,0 +1,170 @@
+{
+  "_draft": {
+    "note": "用户已确认的第43-47本制作稿；中英正文、亲子指南、内置生图插画与百炼中文音频已完成，本地书库已接入。未执行本批次上传、Git提交或线上部署。",
+    "createdAt": "2026-10-17"
+  },
+  "productionStatus": {
+    "plan": "user-approved",
+    "manuscript": "complete",
+    "illustrations": "complete",
+    "audio": "complete",
+    "libraryIntegration": "complete-local"
+  },
+  "book": {
+    "id": "kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma",
+    "seriesId": "qiche",
+    "title": "空中出租车，真的能飞起来吗？",
+    "subtitle": "低空垂直起降与未来立体交通网",
+    "question": "空中出租车为什么不需要长长的跑道，它会怎样改变未来的城市出行？",
+    "moral": {
+      "zh": "不同交通工具各有用途；未来飞行也需要适合的场地、能源、噪声控制、人员合作与安全管理。",
+      "en": "Different vehicles serve different needs. Future flight also requires suitable sites, energy, noise control, teamwork, and safe management."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-10-17",
+    "order": 47,
+    "comingSoon": false,
+    "metadata": {
+      "category": "science",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 10,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "qiche",
+      "seriesOrder": 47,
+      "personalizationEnabled": false,
+      "tags": [
+        "城市交通",
+        "未来科技",
+        "eVTOL",
+        "空中出租车",
+        "垂直起降",
+        "立体交通"
+      ],
+      "featured": false,
+      "bedtimeSuitable": false
+    },
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "夕阳照亮了科技园的玻璃展馆。安安和妈妈把浅蓝色小汽车停好，步行来到今天的最后一站——未来低空出行体验馆。",
+        "enText": "The setting sun lit the glass pavilion in the science park. After parking their light-blue car, An'an and Mom walked to their final stop: the future low-altitude mobility pavilion.",
+        "illustrationPrompt": "Family walk from parked light-blue hatchback to glass mobility pavilion at sunset, correct clothes and static concept aircraft visible indoors."
+      },
+      {
+        "page": 2,
+        "zhText": "展台上停着一架未来概念飞行器：白色水滴形座舱配着蓝绿色饰边，上方机翼两侧排着多组旋翼。它不会在展厅里起飞，大家可以安静地观察。",
+        "enText": "A future concept aircraft rested on the display: a white teardrop cabin with teal trim and rows of rotors on its upper wings. It would not fly inside the hall, so visitors could study it while it stood still.",
+        "illustrationPrompt": "Center of the circular exhibition hall: on an elevated white platform rests a sleek futuristic white eVTOL air taxi with aerodynamic teardrop cabin, slender wings, and distributed multi-rotors."
+      },
+      {
+        "page": 3,
+        "zhText": "安安睁大双眼，绕着展台好奇地打量：“妈妈，快看！它长得像一辆装了翅膀的小汽车，又像一架小号的客机。它到底是汽车还是飞机呀？”",
+        "enText": "An'an widened her eyes, circling the stage with curiosity. “Mom, look! It looks like a car with wings, yet also like a mini airliner. Is it a car or an airplane?”",
+        "illustrationPrompt": "An'an walks excitedly around the display stage holding Bear, looking up at the wings and cabin with curiosity, wondering whether it is a car or a plane."
+      },
+      {
+        "page": 4,
+        "zhText": "赵叔叔介绍：“这件概念展品属于电动垂直起降航空器，也叫 eVTOL。有些这类航空器计划用于短途载客，所以常被称作‘空中出租车’。它不是能直接开上马路的汽车。”",
+        "enText": "Uncle Zhao explained, “This concept is an electric vertical takeoff and landing aircraft, or eVTOL. Some aircraft of this kind are intended for short passenger trips, so people call them air taxis. It is not a car that can drive straight onto a road.”",
+        "illustrationPrompt": "Lead engineer Uncle Zhao in his clean white lab jacket steps down smiling, greeting An'an and Mom warmly beside the futuristic aircraft."
+      },
+      {
+        "page": 5,
+        "zhText": "安安好奇地凑上前：“叔叔，为什么叫‘垂直起降’呢？它飞起来的时候，也需要像大飞机那样在长长的跑道上冲刺吗？”",
+        "enText": "An'an leaned in curiously. “Uncle Zhao, why is it called ‘vertical takeoff and landing’? Does it need to dash down a long runway like big airplanes when it takes off?”",
+        "illustrationPrompt": "An'an leans forward curiously with Bear in hand, asking Uncle Zhao why it is called vertical takeoff and landing."
+      },
+      {
+        "page": 6,
+        "zhText": "赵叔叔指着旋翼：“它不需要像大客机那样长距离滑跑，能在合适的起降场垂直升降。不过，起降场仍要留出足够空间，还要检查天气、电量和飞行条件。”",
+        "enText": "Uncle Zhao pointed to the rotors. “It can rise and descend vertically at a suitable landing site without an airliner's long takeoff roll. It still needs enough clear space, along with checks of weather, battery charge, and flight conditions.”",
+        "illustrationPrompt": "Same white-teal teardrop concept exhibit with upper wings open unshrouded rotors and skids; Zhao white jacket navy shirt without glasses points behind rail."
+      },
+      {
+        "page": 7,
+        "zhText": "“不同设计，向前飞的方法也不同。”赵叔叔打开概念动画，“有的会让旋翼倾转，让推力朝前；飞快一些后，机翼也能提供升力。具体怎样飞，要按这架航空器的设计来。”",
+        "enText": "“Different designs move forward in different ways,” Uncle Zhao said, opening a concept animation. “Some tilt their rotors to direct thrust forward. As they gain speed, wings can provide lift too. The method depends on the aircraft's design.”",
+        "illustrationPrompt": "Conceptual visualization: the sleek white air taxi rises vertically like an elevator from a rooftop vertiport, then tilts forward into horizontal cruise flight above city avenues."
+      },
+      {
+        "page": 8,
+        "zhText": "安安看着窗外密集的居民楼，有些担心地问：“如果它在城市大楼上方飞来飞去，发动机会不会吵得大家睡不着觉？会不会喷出浓浓的尾气呀？”",
+        "enText": "Looking at the dense apartment buildings outside, An'an asked worriedly, “If it flies above city buildings, won't the engines keep everyone awake? Will it blow out smelly exhaust smoke?”",
+        "illustrationPrompt": "Anan thinks about neighborhood noise by pavilion window; Zhao without glasses in navy shirt and Mom coral cardigan; no real aircraft flying outside."
+      },
+      {
+        "page": 9,
+        "zhText": "“它用电池带动电机，飞行时不燃烧汽油，但旋翼还是会发出声音。”赵叔叔说，“工程师要测量和降低噪声；发电、造电池和回收电池，也都需要考虑环境。”",
+        "enText": "“Batteries power its motors, so it does not burn gasoline in flight, but its rotors still make sound,” Uncle Zhao said. “Engineers measure and reduce noise. Electricity production, battery manufacturing, and recycling matter to the environment too.”",
+        "illustrationPrompt": "Uncle Zhao taps the smooth blue-trimmed battery compartment beneath the cabin, explaining it runs 100% on electric battery power with zero emissions and ultra-quiet rotors."
+      },
+      {
+        "page": 10,
+        "zhText": "赵叔叔指着未来城市模型：“设计者希望用它连接合适的起降场，帮助一些跨江、跨海湾的短途出行。哪些地方能飞、能带多少人、能飞多远，都需要检验和管理。”",
+        "enText": "Uncle Zhao pointed to a future city model. “Designers hope to connect suitable landing sites for some short journeys across rivers or bays. Where it can fly, how many people it can carry, and how far it can go all need testing and oversight.”",
+        "illustrationPrompt": "Rooftop vertiport of the future: a sleek air taxi safely lands on a skyscraper helipad garden, ready to whisk medical or passenger trips across bays in minutes."
+      },
+      {
+        "page": 11,
+        "zhText": "赵叔叔拉开车门，邀请安安和妈妈坐进静态体验舱：“来，坐进来体验一下未来的驾驶舱吧！”安安乖巧地坐上座椅，系好了四点式安全带。",
+        "enText": "Uncle Zhao opened the door, inviting An'an and Mom into the static mock-up cabin. “Come step inside to experience a cockpit of the future!” An'an seated herself properly, buckling the four-point safety harness.",
+        "illustrationPrompt": "Stationary museum simulator, child and Mom correctly buckled, Zhao without glasses holds open gullwing door, exact navy shirt and white jacket."
+      },
+      {
+        "page": 12,
+        "zhText": "舱内没有密密麻麻的复杂机械仪表，只有一块超大的一体化弧面智能液晶屏。大屏幕缓缓点亮，模拟出未来城市的立体航道景观。",
+        "enText": "Inside there were no cluttered mechanical dials, only a massive curved smart display. The screen lit up gently, simulating the 3D skyways of a futuristic city.",
+        "illustrationPrompt": "Inside the futuristic flight cabin: clean minimalist cockpit with a curved panoramic smart display screen illuminating gently."
+      },
+      {
+        "page": 13,
+        "zhText": "戴上轻便的沉浸式眼镜，安安仿佛真的乘着小飞车腾空而起！脚下是一座充满生机的立体未来之城：地下是飞速穿梭的地铁，地面是平稳奔驰的高铁与电动车。",
+        "enText": "Putting on lightweight immersive goggles, An'an felt as if she were soaring into the clouds! Below spread a vibrant future metropolis: subways darting underground, bullet trains and electric cars gliding smoothly on the surface.",
+        "illustrationPrompt": "Putting on lightweight AR glasses, An'an experiences a simulated flight: soaring above the glittering modern city, seeing subways below, bullet trains on viaducts, and rivers flowing."
+      },
+      {
+        "page": 14,
+        "zhText": "模拟画面里，彩色线条帮助安安看懂不同航线。赵叔叔说：“这些是示意线。真实飞行还需要安排路线、保持间隔、处理天气变化，不能只看一条发光的线。”",
+        "enText": "Colored lines in the simulation helped An'an understand the routes. “These are illustrations,” Uncle Zhao explained. “Real flights need planned routes, safe separation, and responses to changing weather, not just a glowing line.”",
+        "illustrationPrompt": "In the virtual sky: layered translucent green and gold aerial corridors mapped neatly by the city AI brain, keeping air taxis and delivery drones at safe separate flight levels."
+      },
+      {
+        "page": 15,
+        "zhText": "体验结束，赵叔叔带他们看立体交通模型：“不同工具各有适合的任务，还需要车站、起降场和许多工作人员合作。”安安点点头：“未来城市，也要大家一起照顾！”",
+        "enText": "After the simulation, Uncle Zhao showed them a model of layered transport. “Different vehicles suit different jobs. Stations, landing sites, and many workers must cooperate.” An'an nodded. “A future city needs everyone to care for it too!”",
+        "illustrationPrompt": "Uncle Zhao speaks through the cabin audio with a warm smile, celebrating the miracle of 3D urban mobility uniting underground, ground, and sky."
+      },
+      {
+        "page": 16,
+        "zhText": "夜幕降临，城市亮起了万家灯火。安安坐在家里的浅蓝色汽车后排，怀抱小熊平安回家。在书桌前，她拿起彩笔，认真画下了今天见过的无人机、高铁小飞龙、大客机、航天卫星与空中出租车。她知道，这就是我们正在奔向的明天。",
+        "enText": "As night fell, thousands of city lights sparkled across the skyline. Sitting in the back seat of their light-blue car, An'an hugged Bear as they arrived home safely. At her desk, she picked up colored pencils, lovingly drawing the drone, bullet train, airliner, satellite, and air taxi she had seen today. She knew this was the bright tomorrow we are building together.",
+        "illustrationPrompt": "Cozy evening children's bedroom: warm lamp light shines on An'an's desk as she finishes a colorful drawing showing drones, bullet trains, airplanes, rockets, and flying taxis. Bear rests nearby, and An'an smiles with sweet dreams."
+      }
+    ],
+    "parentGuide": {
+      "goal": "认识电动垂直起降概念，区分固定翼、旋翼与不同推进构型；了解无需长距离滑跑仍需要合适起降场，并能区分概念动画和真实城市运行。",
+      "reminder": "展品、城市模型和模拟舱用于未来出行科普，并不表示任何楼顶都能起降、所有城市都已普及。旋翼仍有噪声，电池电力并非全生命周期零排放；实际运行受机型、场地、天气和批准条件约束。孩子只体验静止座舱，按工作人员要求系好安全带。",
+      "questions": [
+        "不需要长跑道，为什么仍要有合适的起降场？",
+        "纯电飞行为什么仍要关心声音和电池？",
+        "地铁、汽车、高铁和航空器，各适合什么出行任务？"
+      ],
+      "activity": "准备一张大开画纸，和孩子一起用蓝色、绿色与银色彩笔绘制一张“未来立体都市交通图”：画出地底的隧道线、地面的高铁与马路、天空中的彩虹空中航道，并在不同位置贴上自己折叠的纸飞机与小积木车，讲述属于自己的立体出行故事。",
+      "ageTips": {
+        "age4to5": "找出静止旋翼、座舱和安全带，分清展厅体验与真实飞行。",
+        "age6to8": "比较不同交通工具的用途与局限，为未来城市画出换乘点、起降场与合理间隔。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Square 1:1 warm premium 3D clay-like animated children's picture-book illustration, tactile rounded materials, glowing golden sunset light inside a modern tech pavilion transitioning to evening room desk, varied wide, medium and close compositions. No comic panels, speech bubbles or readable writing.",
+    "characterConsistency": "An'an is the same six-year-old Chinese girl on every page: round face, ear-length straight black bob, yellow star hair clip on her left side, teal-green hooded jacket, blue jeans, small orange backpack, white sneakers with red trim. Mom has shoulder-length black hair, coral cardigan, cream trousers and brown shoulder bag. The brown plush bear wears a blue scarf and has a small yellow crescent behind one ear. Uncle Zhao is an adult Chinese male aerospace engineer wearing a white high-tech lab jacket and navy slacks. Include only the cast required by each page.",
+    "negative": "No text, letters, numbers, captions, logos, brand marks, readable license plates or watermarks. No anthropomorphic flying car faces or cartoon eyes. No children standing on wings or near moving blades, duplicate characters or distorted anatomy."
+  }
+}

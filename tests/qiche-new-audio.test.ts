@@ -29,6 +29,46 @@ it.each(ids)("serves every prepared Chinese page for %s", id => {
   expect(getLibraryChineseAudio("qiche", id, book.pages)).toEqual(audio);
 });
 
+const scienceIds = [
+  "wu-ren-ji-ba-kuai-di-song-shang-tian-le-ma",
+  "gao-tie-xiao-fei-long-zen-yang-ping-wen-pao-de-kuai",
+  "da-fei-ji-zai-pao-dao-shang-pai-dui-ma",
+  "tian-shang-de-wei-xing-zen-me-gei-qi-che-yin-lu",
+  "kong-zhong-chu-zu-che-zhen-de-neng-fei-qi-lai-ma",
+];
+
+const cityServiceIds = [
+  "kuai-di-che-zen-me-zhao-dao-wo-de-bao-guo",
+  "leng-cang-che-du-zi-li-cang-zhe-dong-tian-ma",
+  "xiao-qi-che-zou-bu-dong-shui-lai-bang-bang-ta",
+  "gong-jiao-che-zen-me-fang-xia-yi-zuo-xiao-qiao",
+  "zhuang-man-gu-shi-de-qi-che-kai-dao-na-er-qu",
+];
+const localAudioCases = [
+  ...scienceIds.map(id => ({ id, manifest: "qiche-43-47-audio.json" })),
+  ...cityServiceIds.map(id => ({ id, manifest: "qiche-48-52-audio.json" })),
+];
+
+it.each(localAudioCases)("plays matching local Bailian narration and page timing for $id", async ({ id, manifest }) => {
+  const { book } = JSON.parse(readFileSync(`content-drafts/qiche/${id}.json`, "utf8"));
+  const local = JSON.parse(readFileSync("content-drafts/qiche/local-audio.json", "utf8"));
+  const batch = JSON.parse(readFileSync(`content-drafts/qiche/${manifest}`, "utf8"));
+  const audio = local[`qiche/${id}`];
+  const hash = createHash("sha256").update(JSON.stringify({
+    version: 1,
+    texts: book.pages.map((page: { zhText: string }) => page.zhText.trim()),
+  })).digest("hex");
+
+  expect(audio.contentHash).toBe(hash);
+  expect(audio.url).toBe(`/library/qiche/${id}/zh-${hash.slice(0, 16)}.mp3`);
+  expect(validBookAudio({ ...audio, url: `https://local.invalid${audio.url}` }, book.pages.length)).toBe(true);
+  expect(batch[`qiche/${id}`]).toEqual(audio);
+  expect(getLibraryChineseAudio("qiche", id, book.pages)).toEqual(audio);
+  const { format } = await parseBuffer(readFileSync(`public${audio.url}`));
+  expect(format.codec).toBe("MPEG 2 Layer 3");
+  expect(Math.abs(format.duration! - audio.duration)).toBeLessThan(0.1);
+});
+
 it("prefers the public traffic-light MP3 and retains the matching bundled backup", async () => {
   const id = "hong-lu-deng-wei-shen-me-hui-bian-se";
   const { book } = JSON.parse(readFileSync(`content-drafts/qiche/${id}.json`, "utf8"));
