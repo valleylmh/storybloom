@@ -861,7 +861,7 @@ describe("image-to-image provider routing", () => {
       expect.stringContaining("CHARACTER child (童童) — REAL PHOTO"),
       expect.stringContaining("CHARACTER mother (妈妈) — REAL PHOTO"),
       expect.stringContaining("CHARACTER child (童童) — CANONICAL CARTOON BODY"),
-      expect.stringContaining("CHARACTER mother (妈妈) — CANONICAL CARTOON BODY"),
+      expect.stringContaining("CHARACTER mother (妈妈) — CANONICAL CARTOON STYLE"),
     ]);
     expect(referenceContent.filter((item) => item.type === "image_url").map((item) => item.image_url?.url)).toEqual([
       "data:image/webp;base64,cmVmZXJlbmNl",

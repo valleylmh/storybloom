@@ -38,6 +38,21 @@ function createInput(overrides: Partial<StoryInput> = {}): StoryInput {
 }
 
 describe("story visual bible", () => {
+  it("locks an adult protagonist's age and proportions even with a childlike legacy description", () => {
+    const bible = buildStoryVisualBible(createInput({
+      childName: "童童爸", customTheme: "今天很开心",
+      familyCharacters: [{
+        id: "dad", name: "童童爸", relation: "爸爸", isProtagonist: true,
+        appearance: "童童爸，爸爸，4-5 岁年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装",
+        sourceReferenceAssetPath: "user/dad/source.png", canonicalReferenceAssetPath: "user/dad/canonical.png",
+      }],
+    }));
+    expect(bible.characters[0].identityLock).toContain("ADULT IDENTITY LOCK");
+    expect(bible.characters[0].identityLock).not.toContain("4-5 岁");
+    expect(bible.characters[0].referenceGuidance).toContain("adult age, height, build, and body proportions");
+    expect(bible.characters[0].referenceGuidance).toContain("rendering style only");
+  });
+
   it("locks one exact bedtime outfit and separates face from cartoon reference roles", () => {
     const bible = buildStoryVisualBible(createInput());
     const child = bible.characters[0];

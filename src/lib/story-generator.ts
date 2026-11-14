@@ -13,6 +13,12 @@ import {
   type GenerationErrorClass,
 } from "@/lib/generation-error";
 import { getLibraryStorySpecByContentId } from "@/lib/library/personalization";
+import {
+  getFamilyCharacterAgeGuidance,
+  getFamilyCharacterLifeStage,
+  getStoryProtagonist,
+  normalizeFamilyCharacterAppearance,
+} from "@/lib/family-character-identity";
 
 export const STYLE_SPINES: Record<string, string> = {
   watercolor:
@@ -49,8 +55,8 @@ const THEME_DESCRIPTIONS: Record<Exclude<StoryTheme, "custom">, string> = {
 
 const STORY_BEATS = [
   "Page 1 opening: begin the requested event immediately with a concrete place, action, and feeling; do not repeat the title or premise as a cover page",
-  "Page 2 settling in: show the child preparing, noticing sensory details, or taking the first small action",
-  "Page 3 engagement: let the child actively explore or enjoy the exact requested activity",
+  "Page 2 settling in: show the main character preparing, noticing sensory details, or taking the first small action",
+  "Page 3 engagement: let the main character actively explore or enjoy the exact requested activity",
   "Page 4 development: add a new specific action, interaction, or delightful discovery within the same scene",
   "Page 5 variation: deepen the activity with a gentle surprise, playful challenge, or change of pace",
   "Page 6 high point: show the happiest, most meaningful, or most active moment of the requested experience",
@@ -70,18 +76,18 @@ const DOCUMENTARY_STORY_BEATS = [
 ];
 
 const SHOT_PLAN = [
-  "cover composition, three-quarter body, the child is part of a clear storybook scene rather than a portrait",
-  "wide establishing shot, show the room or playground corner first, the child's body language shows the feeling",
-  "medium-wide discovery shot, include the magical object and the child's reaction in the same frame",
-  "dynamic action shot, show the child moving through the scene with visible goal and direction",
+  "cover composition, three-quarter body, the main character is part of a clear storybook scene rather than a portrait",
+  "wide establishing shot, show the room or playground corner first, the main character's body language shows the feeling",
+  "medium-wide discovery shot, include the magical object and the main character's reaction in the same frame",
+  "dynamic action shot, show the main character moving through the scene with visible goal and direction",
   "environmental obstacle shot, show wind, distance, objects, or other story elements creating gentle tension",
-  "climax scene, show the child solving the problem through an action, not posing for the camera",
-  "warm group scene, show other characters or environment responding to what the child did",
+  "climax scene, show the main character solving the problem through an action, not posing for the camera",
+  "warm group scene, show other characters or environment responding to what the main character did",
   "quiet ending scene, wider calm composition with atmosphere and story resolution",
 ];
 
 const STORYBOOK_COMPOSITION_RULES =
-  "Story-first composition: illustrate the exact page event with setting, props, action, and emotion. The child should usually occupy 25-45% of the frame, with full body or three-quarter body visible when possible. Vary camera distance, pose, gesture, and facial expression from page to page. Do not make a repeated front-facing portrait, passport photo, selfie, bust shot, or giant head close-up.";
+  "Story-first composition: illustrate the exact page event with setting, props, action, and emotion. The main character should usually occupy 25-45% of the frame, with full body or three-quarter body visible when possible. Vary camera distance, pose, gesture, and facial expression from page to page. Do not make a repeated front-facing portrait, passport photo, selfie, bust shot, or giant head close-up.";
 
 const DEFAULT_CPA_STORY_MODEL = "gemini-3-flash";
 const DEFAULT_AGNES_STORY_MODEL = "agnes-2.5-flash";
@@ -243,8 +249,12 @@ function getThemeLabel(input: StoryInput) {
   return THEME_LABELS[input.theme];
 }
 
-function getEnglishCharacterName(name: string) {
-  return /^[\x00-\x7F]+$/.test(name) ? name : "the child";
+function getEnglishCharacterName(name: string, input?: StoryInput) {
+  if (/^[\x00-\x7F]+$/.test(name)) return name;
+  const protagonist = input ? getStoryProtagonist(input) : undefined;
+  return protagonist && getFamilyCharacterLifeStage(protagonist.relation) === "adult"
+    ? "the grown-up"
+    : "the child";
 }
 
 function usesFirstPerson(input: StoryInput) {
@@ -252,7 +262,7 @@ function usesFirstPerson(input: StoryInput) {
 }
 
 function getNarrativeSubjects(input: StoryInput, childName = input.childName) {
-  const englishName = getEnglishCharacterName(childName);
+  const englishName = getEnglishCharacterName(childName, input);
   if (usesFirstPerson(input)) {
     return {
       zhSubject: "我",
@@ -265,7 +275,7 @@ function getNarrativeSubjects(input: StoryInput, childName = input.childName) {
 
   return {
     zhSubject: childName,
-    englishSubject: englishName === "the child" ? "The child" : englishName,
+    englishSubject: englishName.startsWith("the ") ? `The ${englishName.slice(4)}` : englishName,
     englishMidSentenceSubject: englishName,
     englishObject: englishName,
     englishPossessive:
@@ -290,7 +300,30 @@ function applyLanguageMode(input: StoryInput, zh: string, en: string) {
 }
 
 function getFamilyCharacters(input: StoryInput) {
-  return input.familyCharacters ?? [];
+  return (input.familyCharacters ?? []).map((character) => ({
+    ...character,
+    appearance: normalizeFamilyCharacterAppearance(character),
+  }));
+}
+
+function getMainCharacterDescription(input: StoryInput) {
+  const protagonist = getStoryProtagonist(input);
+  if (protagonist) {
+    return [
+      `Main character: ${protagonist.name}, relationship=${protagonist.relation}; confirmed appearance: ${normalizeFamilyCharacterAppearance(protagonist)}.`,
+      getFamilyCharacterAgeGuidance(protagonist),
+      input.characterDescription?.trim(),
+    ].filter(Boolean).join(" ");
+  }
+  return input.characterDescription?.trim()
+    ? `Main character appearance lock: ${input.characterDescription.trim()}`
+    : `Main character: a child named ${input.childName}`;
+}
+
+function getAdultNarratorGuidance(input: StoryInput) {
+  const protagonist = getStoryProtagonist(input);
+  if (!usesFirstPerson(input) || !protagonist || getFamilyCharacterLifeStage(protagonist.relation) !== "adult") return null;
+  return `NARRATOR IDENTITY: I/我 is ${protagonist.name}, the selected ADULT ${protagonist.relation}. The family role describes this adult's relationship to the child audience. Tell this adult's own actions, feelings, and decisions; never substitute the reading child's voice. Do not invent a separate Dad/Mom companion merely because the selected protagonist is a dad/mom. Unless the user's premise explicitly involves the adult's own parents, do not write child-voice narration such as 我牵着爸爸的大手, 爸爸牵我的手, I hold Dad's big hand, or Dad helps me tie my little shoes.`;
 }
 
 function getMockCastIds(input: StoryInput, pageIndex: number) {
@@ -532,8 +565,8 @@ function createCustomFallbackPages(
   theme: string,
 ) {
   const characterDescription = input.characterDescription?.trim()
-    ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same child identity across every page, but vary pose, expression, camera angle, and scene action.`
-    : `${input.childName} is the main child hero.`;
+    ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same character identity across every page, but vary pose, expression, camera angle, and scene action.`
+    : getMainCharacterDescription(input);
   const primaryCastId = getFamilyCharacters(input)[0]?.id;
   const weatherNameGuard = isSevereWeatherHomeTheme(theme)
     ? "The storm name in the premise is a weather name, not a literal animal; do not depict a dolphin or another creature unless the premise explicitly asks for one."
@@ -1090,7 +1123,7 @@ function createRandomizedMockStory(input: StoryInput): {
     englishSubject,
     englishObject,
   } = getNarrativeSubjects(input, childName);
-  const englishName = getEnglishCharacterName(childName);
+  const englishName = getEnglishCharacterName(childName, input);
   const themeLabel = getThemeLabel(input);
   const isOneSentenceStory = input.theme === "custom" && Boolean(input.customTheme?.trim());
   const titleTheme = themeLabel.startsWith(childName)
@@ -1099,8 +1132,8 @@ function createRandomizedMockStory(input: StoryInput): {
   const shortTheme = Array.from(titleTheme || "一句话绘本").slice(0, 16).join("");
   const direction = pickRandom(RANDOM_STORY_DIRECTIONS);
   const characterDescription = input.characterDescription?.trim()
-    ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same child identity across every page, but vary pose, expression, camera angle, and scene action.`
-    : `${childName} is the main child hero.`;
+    ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same character identity across every page, but vary pose, expression, camera angle, and scene action.`
+    : getMainCharacterDescription(input);
 
   const storyMoments = [
     {
@@ -1193,12 +1226,10 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
   const styleSpine = STYLE_SPINES[input.style];
   const familyCharacters = getFamilyCharacters(input);
   const familyCharacterIds = new Set(familyCharacters.map((character) => character.id));
-  const protagonistCharacterId = familyCharacters.find(
-    (character) => character.isProtagonist,
-  )?.id;
+  const protagonistCharacterId = getStoryProtagonist(input)?.id;
   const characterDescription = input.characterDescription?.trim()
-    ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same child identity across all 8 illustrations: gender presentation, haircut, hair color, face shape, eye style, outfit colors, body proportions, and rendering style. This is an identity constraint only; vary pose, expression, camera distance, and action to fit each story scene.`
-    : `Consistent main character: ${input.childName}, a warm and expressive child hero.`;
+    ? `Character identity lock: ${input.characterDescription.trim()}. Keep the same character identity across all 8 illustrations: gender presentation, haircut, hair color, face shape, eye style, outfit colors, body proportions, and rendering style. This is an identity constraint only; vary pose, expression, camera distance, and action to fit each story scene.`
+    : getMainCharacterDescription(input);
 
   return pages.map((page, index) => {
     const castIds = familyCharacters.length > 0 && Array.isArray(page.castIds)
@@ -1250,6 +1281,29 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
   });
 }
 
+function isProtagonistIdentityAligned(input: StoryInput, pages: StoryPage[]) {
+  const protagonist = getStoryProtagonist(input);
+  if (!protagonist || getFamilyCharacterLifeStage(protagonist.relation) !== "adult") return true;
+  const name = protagonist.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const childNamedAsProtagonist = new RegExp(`\\b(?:boy|girl|child|toddler|baby)\\s+(?:named|called)\\s*["“]?${name}`, "i");
+  const protagonistCalledChild = new RegExp(`${name}\\s*(?:\\([^)]*\\)\\s*)?(?:is|as|:|,)\\s*(?:an?\\s+)?(?:(?:little|young)\\s+)?(?:boy|girl|child|toddler|baby)\\b`, "i");
+  const chineseChildName = new RegExp(`(?:小男孩|小女孩|幼儿|儿童)(?:名叫|叫|名字是)?[“"]?${name}`);
+  const mentionsOwnParents = /爸爸|妈妈|父亲|母亲|爷爷|奶奶|外公|外婆|\b(?:dad|mom|mum|father|mother|grandpa|grandma|parents)\b/i.test(
+    `${input.customTheme || ""} ${input.parentFacts || ""}`,
+  );
+  return pages.every((page) => {
+    const prompt = page.illustrationPrompt;
+    if (childNamedAsProtagonist.test(prompt) || protagonistCalledChild.test(prompt) || chineseChildName.test(prompt)) return false;
+    if (!usesFirstPerson(input)) return true;
+    if (/\b(?:I am|I'm)\s+(?:a\s+)?(?:child|little boy|little girl|toddler)\b/i.test(page.enText)) return false;
+    if (mentionsOwnParents) return true;
+    const zh = page.zhText.replace(/[“「][^”」]*[”」]/g, "");
+    const en = page.enText.replace(/[“"][^”"]*[”"]/g, "");
+    return !/(?:我(?:牵|拉|握)(?:着)?(?:爸爸|妈妈)的(?:大)?手|(?:爸爸|妈妈)(?:牵|拉|抱|领|教|帮)(?:着)?我|(?:爸爸|妈妈)笑着看我)/.test(zh)
+      && !/\b(?:I (?:hold|take) (?:Dad|Mom|Mum)'s (?:big )?hand|(?:Dad|Mom|Mum) (?:holds my hand|smiles at me|helps me tie|takes my hand))\b/i.test(en.replace(/[’]/g, "'"));
+  });
+}
+
 function isNarrativePerspectiveAligned(input: StoryInput, pages: StoryPage[]) {
   if (!usesFirstPerson(input)) return true;
 
@@ -1291,6 +1345,7 @@ function isNarrativePerspectiveAligned(input: StoryInput, pages: StoryPage[]) {
 type StoryTextContractFailure =
   | "json_contract"
   | "premise_alignment"
+  | "protagonist_identity"
   | "narrative_perspective";
 
 function getStoryTextRepairInstruction(
@@ -1302,6 +1357,8 @@ function getStoryTextRepairInstruction(
       ? "The previous response was not a complete valid JSON object matching the required schema."
       : failure === "premise_alignment"
         ? "The previous story drifted away from the exact binding premise."
+        : failure === "protagonist_identity"
+          ? "The previous story incorrectly turned the confirmed adult protagonist into a child or borrowed a child's narrative voice. Preserve the selected person's adult age, family role, face, height, and body proportions in every illustration. First-person I/我 refers to that selected adult. Do not invent a second Dad/Mom as the narrator's caregiver. The reading audience's age never changes the protagonist's age."
         : usesFirstPerson(input)
           ? `The previous narration broke the required first-person perspective. Every Chinese page must narrate with “我/我的” and every English page with “I/me/my”. Do not call the protagonist ${JSON.stringify(input.childName)}, “孩子”, “故事里的孩子”, or “the child” in page narration.`
           : "The previous narration did not follow the required perspective.";
@@ -1612,14 +1669,18 @@ export async function generateStoryText(
         ? input.customTheme?.trim() || "a magical personalized adventure"
         : THEME_DESCRIPTIONS[input.theme]);
 
-    const characterDescription = input.characterDescription?.trim()
-      ? `Main character appearance lock: ${input.characterDescription.trim()}`
-      : `Main character: a child named ${input.childName}`;
+    const characterDescription = getMainCharacterDescription(input);
     const familyCharacters = getFamilyCharacters(input);
     const visualBible = getStoryVisualBible(input);
-    const protagonistCharacterId = familyCharacters.find(
-      (character) => character.isProtagonist,
-    )?.id;
+    const protagonistCharacterId = getStoryProtagonist(input)?.id;
+    const personalizationAnchor = input.personalizationAnchor ? {
+      ...input.personalizationAnchor,
+      appearance: normalizeFamilyCharacterAppearance({
+        name: input.personalizationAnchor.displayName,
+        relation: input.personalizationAnchor.relationship,
+        appearance: input.personalizationAnchor.appearance,
+      }),
+    } : undefined;
     const familyCharacterBible = familyCharacters.length
       ? familyCharacters
           .map(
@@ -1661,14 +1722,15 @@ export async function generateStoryText(
 Create a vivid, emotionally warm, commercial-quality 8-page children's picture book.
 
 Rules:
-- Age group: ${input.ageGroup}
+- Reading audience age group: ${input.ageGroup}. This controls vocabulary and sentence length only; it never sets the protagonist’s age.
 - ${AGE_GUIDELINES[input.ageGroup]}
 - Theme: ${themeDescription}
 - Character: ${input.childName}
 - ${characterDescription}
+${getAdultNarratorGuidance(input) || ""}
 - Selected family character bible:\n${familyCharacterBible}
 - Fixed story visual bible:\n${formatStoryVisualBible(visualBible)}
-${input.personalizationAnchor ? `- Parent-confirmed character Anchor: name=${input.personalizationAnchor.displayName}; relationship=${input.personalizationAnchor.relationship}; appearance=${input.personalizationAnchor.appearance}; reference=${input.personalizationAnchor.referenceType}. Treat it as binding.` : ""}
+${personalizationAnchor ? `- Parent-confirmed character Anchor: name=${personalizationAnchor.displayName}; relationship=${personalizationAnchor.relationship}; appearance=${personalizationAnchor.appearance}; reference=${personalizationAnchor.referenceType}. Treat it as binding.` : ""}
 ${personalizationRules}
 ${growthStoryRules || ""}
 - Creative seed for this request: ${creativeSeed}
@@ -1679,8 +1741,8 @@ ${storyDirectionRules}
 - Keep one coherent illustration style across the full book: same brush texture, palette, lighting softness, line quality, and level of detail.
 - Respect language mode: ${input.language}
 - Narrative perspective: ${usesFirstPerson(input) ? "FIRST PERSON" : "third person"}.
-${usesFirstPerson(input) ? `- Write every story sentence from the child protagonist's own point of view. In Chinese narration use “我/我的”; in English narration use “I/me/my”. Do not call the protagonist by name, “孩子”, “故事里的孩子”, or “the child” in page text. The separate coverTitle should ${input.childName === "我" || input.childName === "I" ? "use 我的/My" : `include the confirmed name ${input.childName}`} and must still name a concrete action, place, or key prop. Illustration prompts may still identify the selected child by name or character reference.` : "- Keep the existing third-person narration style."}
-${usesFirstPerson(input) ? '- Keep the first-person pronouns even when the selected child has a Chinese name.' : '- If the child\'s name is not English, do not force it into English grammar. Use "the child" or a natural transliteration in English text.'}
+${usesFirstPerson(input) ? `- Write every story sentence from the selected protagonist's own point of view. In Chinese narration use “我/我的”; in English narration use “I/me/my”. Do not call the protagonist by name, “孩子”, “故事里的孩子”, or “the child” in page text. The separate coverTitle should ${input.childName === "我" || input.childName === "I" ? "use 我的/My" : `include the confirmed name ${input.childName}`} and must still name a concrete action, place, or key prop. Illustration prompts must identify the selected protagonist by name, family role, and actual age stage.` : "- Keep the existing third-person narration style."}
+${usesFirstPerson(input) ? '- Keep the first-person pronouns even when the selected protagonist has a Chinese name.' : '- If the protagonist\'s name is not English, do not force it into English grammar. Use a natural transliteration or the confirmed family role in English text; keep the selected person’s actual age.'}
 - Use concrete sensory detail on every page: visible action, setting, emotion, and one memorable image.
 - Keep the story safe for ages 3-8: no violence, horror, humiliation, weapons, medical distress, or adult themes.
 - Chinese text should be rhythmic and easy for parents to read aloud.
@@ -1694,7 +1756,7 @@ ${familyCharacters.length > 0
   : "- No saved family characters are selected. Every page must return castIds: []. You may depict people required by the story premise, but do not invent saved-family character ids for them."}
 ${protagonistCharacterId ? `- The confirmed protagonist id=${protagonistCharacterId} must appear in castIds on every page.` : ""}
 - Every illustrationPrompt must include: setting, props, visible action, emotion, camera distance, composition, style, and "no text in image".
-- Character consistency is important, but the child must change pose, gesture, facial expression, and placement to match the story moment. Do not repeat a front-facing bust portrait. The child should usually take only 25-45% of the image so the scene can tell the story.
+- Character consistency is important, but the main character must change pose, gesture, facial expression, and placement to match the story moment. Do not repeat a front-facing bust portrait. The main character should usually take only 25-45% of the image so the scene can tell the story.
 - Before returning JSON, audit all 8 pages together: the same person must keep the same face, apparent age, hairstyle, exact outfit, footwear, and recurring key props; no toy, bag, book, blanket, food container, or other carried object may change design or disappear without a story reason.
 
 Return only valid JSON:
@@ -1714,7 +1776,7 @@ Return only valid JSON:
     const user = [
       `Create the storybook for ${input.childName}.`,
       usesFirstPerson(input)
-        ? "Tell the page narration as the child speaking in first person: 我/我的 and I/me/my."
+        ? "Tell the page narration as the selected protagonist speaking in first person: 我/我的 and I/me/my."
         : null,
       `Illustration style: ${input.style}.`,
       `Use creative seed ${creativeSeed}.`,
@@ -1724,10 +1786,11 @@ Return only valid JSON:
           : `The exact binding story premise is: ${themeDescription}. Do not change it into another story.`
         : `Use this fresh direction as inspiration, not as a rigid template: ${randomDirection?.titleEn}, ${randomDirection?.placeEn}, ${randomDirection?.objectEn}, ${randomDirection?.helperEn}.`,
       personalizationDetails.length > 0
-        ? `Use these optional child facts selectively when relevant: ${personalizationDetails
+        ? `Use these optional protagonist facts selectively when relevant: ${personalizationDetails
             .map((detail) => `${detail.label}=${JSON.stringify(detail.value)}`)
             .join("; ")}.`
         : null,
+      getAdultNarratorGuidance(input),
       "Return only the JSON object. Do not add markdown fences or commentary.",
     ]
       .filter(Boolean)
@@ -1809,6 +1872,8 @@ Return only valid JSON:
 
       if (!isCustomStoryAligned(input, pages)) {
         contractFailure = "premise_alignment";
+      } else if (!isProtagonistIdentityAligned(input, pages)) {
+        contractFailure = "protagonist_identity";
       } else if (!isNarrativePerspectiveAligned(input, pages)) {
         contractFailure = "narrative_perspective";
       } else {

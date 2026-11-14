@@ -5,6 +5,7 @@ import type {
   StoryInput,
   StoryVisualBible,
 } from "@/types";
+import { getFamilyCharacterAgeGuidance, getFamilyCharacterLifeStage, normalizeFamilyCharacterAppearance } from "@/lib/family-character-identity";
 
 const STYLE_LOCKS: Record<IllustrationStyle, string> = {
   watercolor:
@@ -62,6 +63,10 @@ function getReferenceGuidance(character: FamilyCharacterInput) {
   const source = hasSourceReference(character);
   const canonical = hasCanonicalReference(character);
 
+  if (getFamilyCharacterLifeStage(character.relation) === "adult" && (source || canonical)) {
+    return "The original real-photo reference or confirmed adult description is authoritative for face identity, actual adult age, height, build, and body proportions. Use the canonical cartoon reference for hairstyle, clothing, and rendering style only. Never copy childlike age or body proportions from a cartoon reference. The written outfit lock controls clothing.";
+  }
+
   if (source && canonical) {
     return "The labeled real-photo reference is authoritative for face identity, apparent age, skin tone, and distinctive facial features. The labeled canonical cartoon reference is authoritative for hairstyle silhouette, body proportions, and storybook rendering design. The written outfit lock overrides clothing visible in either reference.";
   }
@@ -103,7 +108,10 @@ function createCharacterLock(
   return {
     id: character.id,
     name: character.name,
-    identityLock: `Always depict the same ${character.relation} named ${character.name}: ${character.appearance}. Preserve the same recognizable face, apparent age, face shape, facial proportions, hairstyle, hair color, skin tone, body proportions, glasses, and distinctive visible features.`,
+    identityLock: [
+      `Always depict the same ${character.relation} named ${character.name}: ${normalizeFamilyCharacterAppearance(character)}. Preserve the same recognizable face, apparent age, face shape, facial proportions, hairstyle, hair color, skin tone, body proportions, glasses, and distinctive visible features.`,
+      getFamilyCharacterAgeGuidance(character),
+    ].filter(Boolean).join(" "),
     outfitLock: getOutfitLock(input, character, index),
     referenceGuidance: getReferenceGuidance(character),
   };

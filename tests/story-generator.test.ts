@@ -244,6 +244,96 @@ describe("one-sentence story input", () => {
 });
 
 describe("custom story generation", () => {
+  it("keeps a selected father adult while using the 4–5 reading level and first-person narration", async () => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    const pages = createFirstPersonModelPages().map((page) => ({
+      ...page, castIds: ["dad"],
+      illustrationPrompt: "An adult father named 童童爸 wearing glasses, holding a red balloon in a park, adult height and body proportions, no text in image.",
+    }));
+    const fetchMock = mockCpaStory("童童爸的红气球", pages);
+    const story = await generateStoryText({
+      ...soloSleepInput, childName: "童童爸", customTheme: "今天很开心", narrativePerspective: "first-person",
+      protagonistFamilyCharacterId: "dad",
+      familyCharacters: [{ id: "child", name: "童童", relation: "孩子", appearance: "五岁孩子", isProtagonist: true },
+        { id: "dad", name: "童童爸", relation: "爸爸", isProtagonist: false,
+        appearance: "童童爸，爸爸，4-5 岁年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装" }],
+      personalizationAnchor: {
+        version: 1, displayName: "童童爸", relationship: "爸爸", referenceType: "text",
+        appearance: "童童爸，爸爸，4-5 岁年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装",
+        confirmedAt: "2026-11-14T00:00:00.000Z",
+      },
+    });
+    const body = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+    const prompt = body.messages.map((message: { content: string }) => message.content).join("\n");
+    expect(prompt).toContain("Reading audience age group: 4-5");
+    expect(prompt).toContain("ADULT IDENTITY LOCK");
+    expect(prompt).toContain("from the selected protagonist's own point of view");
+    expect(prompt).toContain("confirmed protagonist id=dad");
+    expect(prompt).not.toContain("4-5 岁年龄感");
+    expect(prompt).not.toContain("Main character: a child named 童童爸");
+    expect(story.pages).toHaveLength(8);
+    expect(story.pages[0].illustrationPrompt).toContain("adult height");
+    expect(story.pages[0].illustrationPrompt).not.toContain("child hero");
+    expect(story.pages[0].illustrationPrompt).not.toContain("The child should");
+  });
+
+  it.each(["child illustration", "child narration"])("repairs an adult protagonist response with %s", async (failure) => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    const validPages = createFirstPersonModelPages().map((page) => ({
+      ...page, castIds: ["dad"], illustrationPrompt: "An adult father named 童童爸 in a park, adult proportions, no text in image.",
+    }));
+    const invalidPages = validPages.map((page) => ({
+      ...page,
+      ...(failure === "child illustration"
+        ? { illustrationPrompt: "A 4-5 year old boy named 童童爸 stands in a doorway with a red balloon." }
+        : { zhText: "我牵着爸爸的大手，今天很开心。", enText: "I hold Dad’s big hand. I feel happy." }),
+    }));
+    const fetchMock = vi.fn();
+    for (const pages of [invalidPages, validPages]) {
+      fetchMock.mockResolvedValueOnce(new Response(JSON.stringify({
+        choices: [{ message: { content: JSON.stringify({ coverTitle: "童童爸的气球", pages }) } }],
+      }), { status: 200, headers: { "Content-Type": "application/json" } }));
+    }
+    vi.stubGlobal("fetch", fetchMock);
+    const story = await generateStoryText({
+      ...soloSleepInput, childName: "童童爸", customTheme: "今天很开心", narrativePerspective: "first-person",
+      protagonistFamilyCharacterId: "dad",
+      familyCharacters: [{ id: "dad", name: "童童爸", relation: "爸爸", appearance: "戴眼镜的成年人", isProtagonist: true }],
+    });
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    const repair = JSON.parse(String(fetchMock.mock.calls[1][1].body)).messages.at(-1).content;
+    expect(repair).toContain("incorrectly turned the confirmed adult protagonist into a child");
+    expect(story.pages[0].illustrationPrompt).toContain("An adult father named 童童爸");
+  });
+
+  it.each(["own parents", "child dialogue"])("allows an adult narrator with %s without unnecessary repair", async (context) => {
+    process.env.STORY_TEXT_PROVIDER = "cpa";
+    process.env.CPA_API_KEY = "test-key";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    const pages = createFirstPersonModelPages().map((page) => ({
+      ...page, castIds: ["dad"],
+      illustrationPrompt: "An adult father named 阿明 in a park, adult proportions, no text in image.",
+    }));
+    pages[0] = {
+      ...pages[0],
+      zhText: context === "own parents" ? "我牵着爸爸的大手，陪他慢慢散步。" : "我听见孩子说：“爸爸牵我的手。”我笑着点头。",
+      enText: context === "own parents" ? "I hold Dad's big hand and walk slowly with him." : 'I hear my child say, “Dad holds my hand.” I smile.',
+    };
+    const fetchMock = mockCpaStory("阿明的公园散步", pages);
+    const story = await generateStoryText({
+      ...soloSleepInput, childName: "阿明", narrativePerspective: "first-person",
+      customTheme: context === "own parents" ? "阿明陪自己的爸爸去公园散步" : "阿明带孩子去公园散步",
+      protagonistFamilyCharacterId: "dad",
+      familyCharacters: [{ id: "dad", name: "阿明", relation: "爸爸", appearance: "戴眼镜的成年人", isProtagonist: true }],
+    });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(story.pages[0].zhText).toBe(pages[0].zhText);
+  });
+
   it("writes minimal-mode fallback narration in first person", async () => {
     process.env.STORY_TEXT_PROVIDER = "mock";
     delete process.env.TEXT_MODEL_PROVIDER;

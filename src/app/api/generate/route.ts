@@ -16,6 +16,7 @@ import {
   rateLimiter,
 } from "@/lib/storage";
 import { normalizeCharacterName } from "@/lib/story-input";
+import { normalizeFamilyCharacterAppearance } from "@/lib/family-character-identity";
 import {
   getStoryTextModelLabel,
   getStoryTextProvider,
@@ -223,7 +224,11 @@ async function getSelectedFamilyCharacters(
       id: row.id,
       name: row.display_name,
       relation: row.relationship,
-      appearance: row.description?.trim() || `${row.relationship} ${row.display_name}`,
+      appearance: normalizeFamilyCharacterAppearance({
+        name: row.display_name,
+        relation: row.relationship,
+        appearance: row.description?.trim() || `${row.relationship} ${row.display_name}`,
+      }),
       referenceAssetPath: referenceAssetPath || undefined,
       sourceReferenceAssetPath: row.source_photo_path || undefined,
       canonicalReferenceAssetPath:
@@ -774,6 +779,14 @@ export async function POST(req: NextRequest) {
   }
   const storyInput: StoryInput = {
     ...baseInput,
+    personalizationAnchor: baseInput.personalizationAnchor ? {
+      ...baseInput.personalizationAnchor,
+      appearance: normalizeFamilyCharacterAppearance({
+        name: baseInput.personalizationAnchor.displayName,
+        relation: baseInput.personalizationAnchor.relationship,
+        appearance: baseInput.personalizationAnchor.appearance,
+      }),
+    } : undefined,
     ...(sourceStorySpec
       ? {
           ageGroup: sourceStorySpec.ageGroup,

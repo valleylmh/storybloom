@@ -9,6 +9,7 @@ import { getLibraryStorySpecByContentId } from "@/lib/library/personalization";
 import { buildStoryVisualBible } from "@/lib/story-visual-bible";
 import { createStoryCharacterAnchorToken } from "@/lib/story-character-anchor";
 import { getCachedCharacterReferenceDataUri } from "@/lib/storage";
+import { normalizeFamilyCharacterAppearance } from "@/lib/family-character-identity";
 import type { FamilyCharacterInput, StoryInput } from "@/types";
 
 export const runtime = "nodejs";
@@ -93,7 +94,11 @@ export async function POST(request: NextRequest) {
       id: data.id,
       name: data.display_name,
       relation: data.relationship,
-      appearance: parsed.data.appearance,
+      appearance: normalizeFamilyCharacterAppearance({
+        name: data.display_name,
+        relation: data.relationship,
+        appearance: parsed.data.appearance,
+      }),
       referenceAssetPath,
       sourceReferenceAssetPath: data.source_photo_path || undefined,
       canonicalReferenceAssetPath:

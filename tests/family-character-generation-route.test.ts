@@ -87,12 +87,16 @@ describe("family character generation route limits", () => {
     expect(mocks.generateReferenceImage).not.toHaveBeenCalled();
   });
 
-  it("claims one server-side attempt before generating the cartoon image", async () => {
+  it.each(["孩子", "爸爸"])("claims one attempt and preserves the age of the selected %s", async (relationship) => {
     const lookup: Record<string, ReturnType<typeof vi.fn>> = {};
     lookup.select = vi.fn(() => lookup);
     lookup.eq = vi.fn(() => lookup);
     lookup.maybeSingle = vi.fn(async () => ({
-      data: createCharacter({ canonical_generation_count: 0 }),
+      data: createCharacter({ canonical_generation_count: 0, relationship,
+        display_name: relationship === "爸爸" ? "童童爸" : "童童",
+        description: relationship === "爸爸"
+          ? "童童爸，爸爸，4-5 岁年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装" : "五岁孩子",
+      }),
       error: null,
     }));
 
@@ -148,6 +152,11 @@ describe("family character generation route limits", () => {
       expect.objectContaining({ canonical_generation_count: 1 }),
     );
     expect(mocks.generateReferenceImage).toHaveBeenCalledOnce();
+    if (relationship === "爸爸") {
+      const prompt = mocks.generateReferenceImage.mock.calls[0][0].prompt;
+      expect(prompt).toContain("ADULT IDENTITY LOCK");
+      expect(prompt).not.toContain("4-5 岁年龄感");
+    }
     expect(finish.update).toHaveBeenCalledWith(
       expect.objectContaining({
         canonical_crop: { x: 50, y: 50, zoom: 1 },

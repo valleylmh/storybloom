@@ -12,6 +12,7 @@ import {
   normalizeFamilyCharacterGenerationCount,
 } from "@/lib/family-character-generation";
 import { DEFAULT_FAMILY_IMAGE_CROP } from "@/lib/family-image-crop";
+import { getFamilyCharacterAgeGuidance, normalizeFamilyCharacterAppearance } from "@/lib/family-character-identity";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -46,7 +47,10 @@ async function generateCanonicalCharacter(input: {
   const prompt = [
     `Transform the person or pet in the reference image into one premium children's storybook character design for ${subject}.`,
     "Preserve recognizable face shape, hairstyle, hair color, visual age, skin tone, glasses, and distinctive features from the reference.",
-    input.description ? `Additional character notes: ${input.description}.` : null,
+    input.description ? `Additional character notes: ${normalizeFamilyCharacterAppearance({
+      name: input.displayName, relation: input.relationship, appearance: input.description,
+    })}.` : null,
+    getFamilyCharacterAgeGuidance({ name: input.displayName, relation: input.relationship }),
     "Show a friendly full-body three-quarter pose on a simple warm neutral studio background.",
     "Premium soft 3D cartoon illustration, rounded clay-like materials, gentle natural expression, polished children's publishing quality.",
     "One subject only. No text, captions, logos, watermark, extra people, duplicate body parts, or photorealistic rendering.",

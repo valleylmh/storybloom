@@ -77,6 +77,10 @@ import {
   updatePersonalizationDraft,
 } from "@/lib/personalization-drafts";
 import { getStoryContinuationDraft } from "@/lib/story-continuation-drafts";
+import {
+  getDefaultFamilyCharacterAppearance as getDefaultAnchorAppearance,
+  normalizeFamilyCharacterAppearance,
+} from "@/lib/family-character-identity";
 
 type AppLocale = "zh" | "en";
 
@@ -197,16 +201,6 @@ function isPetRelationship(relationship: string) {
   return relationship === "宠物" || relationship === "Pet";
 }
 
-function getDefaultAnchorAppearance(
-  name: string,
-  relationship: string,
-  ageGroup: AgeGroup = "4-5",
-) {
-  const ageLabel =
-    ageGroup === "2-3" ? "2-3 岁" : ageGroup === "6-8" ? "6-8 岁" : "4-5 岁";
-  return `${name || "孩子"}，${relationship || "孩子"}，${ageLabel}年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装`;
-}
-
 function getFamilyChoicePhotoPath(choice: FamilyChoice) {
   return choice.cartoonize === false
     ? choice.source_photo_path || choice.canonical_photo_path
@@ -219,7 +213,12 @@ async function fetchFamilyChoices(
 ) {
   const choices = dedupeFamilyCharacters(
     await listFamilyCharacters<FamilyChoice>(client, { userId }),
-  );
+  ).map((choice) => ({
+    ...choice,
+    description: choice.description ? normalizeFamilyCharacterAppearance({
+      name: choice.display_name, relation: choice.relationship, appearance: choice.description,
+    }) : choice.description,
+  }));
   const paths = choices
     .map(getFamilyChoicePhotoPath)
     .filter(Boolean) as string[];

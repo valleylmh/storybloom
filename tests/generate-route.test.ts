@@ -307,6 +307,28 @@ describe("generate route reliable task contract", () => {
     ).toBeUndefined();
   });
 
+  it("repairs a saved parent's old reading-age appearance before generating the story", async () => {
+    const protagonistId = "11111111-1111-4111-8111-111111111111";
+    mocks.listFamilyCharacters.mockResolvedValueOnce({
+      data: [{ id: protagonistId, display_name: "童童爸", relationship: "爸爸",
+        description: "童童爸，爸爸，4-5 岁年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装",
+        canonical_photo_path: null, source_photo_path: null, cartoonize: true }], error: null,
+    });
+    const response = await POST(createRequest({
+      childName: "童童爸", protagonistFamilyCharacterId: protagonistId, familyCharacterIds: [protagonistId],
+      personalizationAnchor: {
+        version: 1, displayName: "童童爸", relationship: "爸爸", characterId: protagonistId, referenceType: "text",
+        appearance: "童童爸，爸爸，4-5 岁年龄感，保持日常发型、脸型和显著特征，穿舒适简洁的绘本服装",
+        confirmedAt: "2026-11-14T00:00:00.000Z",
+      },
+    }));
+    expect(response.status).toBe(200);
+    const appearance = mocks.generateStoryText.mock.calls[0][0].familyCharacters[0].appearance;
+    expect(appearance).toContain("成年人");
+    expect(appearance).not.toContain("4-5 岁");
+    expect(mocks.generateStoryText.mock.calls[0][0].personalizationAnchor.appearance).toBe(appearance);
+  });
+
   it("still rejects a personalized Anchor bound to a different protagonist", async () => {
     const protagonistId = "11111111-1111-4111-8111-111111111111";
     const anchorCharacterId = "22222222-2222-4222-8222-222222222222";

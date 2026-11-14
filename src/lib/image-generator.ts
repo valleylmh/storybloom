@@ -14,6 +14,7 @@ import { getSupabaseAdmin } from "@/lib/email/supabase-admin";
 import { getCachedCharacterReferenceDataUri } from "@/lib/storage";
 import { formatStoryVisualBible } from "@/lib/story-visual-bible";
 import { hasFamilyCharacterReference } from "@/lib/family-story-characters";
+import { getFamilyCharacterLifeStage, getFamilyCharacterAgeGuidance } from "@/lib/family-character-identity";
 import { logGenerationEvent } from "@/lib/generation-observability";
 import {
   GenerationProviderError,
@@ -508,6 +509,7 @@ async function getPrivateFamilyReferenceImages(options?: IllustrationOptions) {
   const secondaryReferences: Array<{ assetPath: string; label: string }> = [];
 
   for (const character of characters) {
+    const adult = getFamilyCharacterLifeStage(character.relation) === "adult";
     const sourcePath = character.sourceReferenceAssetPath
       ? validatePrivateAssetPath(character.sourceReferenceAssetPath)
       : null;
@@ -524,8 +526,8 @@ async function getPrivateFamilyReferenceImages(options?: IllustrationOptions) {
       primaryReferences.push({
         assetPath: primaryPath,
         label: sourcePath === primaryPath
-          ? `CHARACTER ${character.id} (${character.name}) — REAL PHOTO IDENTITY REFERENCE. Use this image for the exact face, apparent age, skin tone, and distinctive facial features. Do not copy its clothing when the story outfit lock specifies another outfit.`
-          : `CHARACTER ${character.id} (${character.name}) — CANONICAL CARTOON REFERENCE. Use this image for the exact illustrated identity, hairstyle silhouette, body proportions, and rendering design. Obey the story outfit lock for clothing.`,
+          ? `CHARACTER ${character.id} (${character.name}) — REAL PHOTO IDENTITY REFERENCE. Use this image for the exact face, apparent age, skin tone, and distinctive facial features.${adult ? " Preserve the adult height, build, and body proportions; this overrides any childlike cartoon reference." : ""} Do not copy its clothing when the story outfit lock specifies another outfit.`
+          : `CHARACTER ${character.id} (${character.name}) — CANONICAL CARTOON REFERENCE. Use this image for the exact illustrated identity, hairstyle silhouette, ${adult ? "clothing and rendering style; preserve the confirmed adult age and proportions" : "body proportions, and rendering design"}. Obey the story outfit lock for clothing.`,
       });
     }
 
@@ -533,7 +535,9 @@ async function getPrivateFamilyReferenceImages(options?: IllustrationOptions) {
       seenPaths.add(canonicalPath);
       secondaryReferences.push({
         assetPath: canonicalPath,
-        label: `CHARACTER ${character.id} (${character.name}) — CANONICAL CARTOON BODY AND STYLE REFERENCE. Match this character's hairstyle silhouette, body proportions, facial design translation, and storybook material style. The written story outfit lock is authoritative for clothing.`,
+        label: adult
+          ? `CHARACTER ${character.id} (${character.name}) — CANONICAL CARTOON STYLE REFERENCE. Match hairstyle, facial identity, and material style. ${getFamilyCharacterAgeGuidance(character)} The written story outfit lock is authoritative for clothing.`
+          : `CHARACTER ${character.id} (${character.name}) — CANONICAL CARTOON BODY AND STYLE REFERENCE. Match this character's hairstyle silhouette, body proportions, facial design translation, and storybook material style. The written story outfit lock is authoritative for clothing.`,
       });
     }
   }
@@ -694,7 +698,9 @@ async function getImageToImageReferenceImages(options?: IllustrationOptions) {
                 }
                 return {
                   dataUri,
-                  label: `CHARACTER ${character.id} (${character.name}) — FIXED STORY OUTFIT ANCHOR. This is the highest-priority full-body reference for this entire book. Preserve its exact illustrated face translation, hairstyle silhouette, body proportions, garment types, garment colors, piping, patterns, accessories, and footwear on every page.`,
+                  label: getFamilyCharacterLifeStage(character.relation) === "adult"
+                    ? `CHARACTER ${character.id} (${character.name}) — FIXED STORY OUTFIT ANCHOR. Preserve the same garment types, colors, piping, patterns, accessories, and footwear. ${getFamilyCharacterAgeGuidance(character)}`
+                    : `CHARACTER ${character.id} (${character.name}) — FIXED STORY OUTFIT ANCHOR. This is the highest-priority full-body reference for this entire book. Preserve its exact illustrated face translation, hairstyle silhouette, body proportions, garment types, garment colors, piping, patterns, accessories, and footwear on every page.`,
                 };
               },
             ),
@@ -1122,12 +1128,12 @@ async function generateDashScopeIllustration(
   const referenceImage = await getCharacterReferenceImage(options?.characterReferenceId);
   const promptText = truncateForDashScope(
     [
-      "Highest priority: create a story scene, not a character portrait. The image must show the page event through environment, props, action, and emotion. Use varied camera distance and varied pose. The child should not fill the whole frame; usually show full body or three-quarter body and keep the child around 25-45% of the image. Avoid repeated front-facing smile, bust shot, selfie, or giant head close-up.",
+      "Highest priority: create a story scene, not a character portrait. The image must show the page event through environment, props, action, and emotion. Use varied camera distance and varied pose. The main character should not fill the whole frame; usually show full body or three-quarter body and keep the main character around 25-45% of the image. Avoid repeated front-facing smile, bust shot, selfie, or giant head close-up.",
       prompt,
       referenceImage
-        ? "Use the attached reference portrait only as the fixed main child identity, not as a pose, crop, or composition reference. Preserve face shape, hairstyle, hair color, eye style, outfit colors, visual age, and premium 3D cartoon material style. Change pose, expression, camera angle, and scene to match this page."
+        ? "Use the attached reference portrait only as the fixed main-character identity, not as a pose, crop, or composition reference. Preserve face shape, hairstyle, hair color, eye style, outfit colors, visual age, and premium 3D cartoon material style. Change pose, expression, camera angle, and scene to match this page."
         : null,
-      "Hard consistency rules: same child character identity across every page, same haircut, hair color, face shape, outfit colors, age, body proportions, premium 3D cartoon style, rounded clay-like materials, palette, lighting softness, and render quality. Do not switch between boy and girl. Do not redesign the child. Do not reuse the same pose or crop. No text in image.",
+      "Hard consistency rules: same main-character identity across every page, same haircut, hair color, face shape, outfit colors, age, body proportions, premium 3D cartoon style, rounded clay-like materials, palette, lighting softness, and render quality. Keep the same gender presentation. Do not redesign the main character. Do not reuse the same pose or crop. No text in image.",
     ]
       .filter(Boolean)
       .join(" ")
@@ -1203,12 +1209,12 @@ async function generateHuggingFaceIllustration(
   const promptText = truncateForImagePrompt(
     [
       "Create one square children's storybook illustration, polished anime-inspired storybook art.",
-      "Highest priority: show a complete story scene, not a character portrait. Include environment, props, action, and emotion. Keep the child around 25-45% of the frame, usually full body or three-quarter body. Vary pose, expression, camera angle, and crop.",
+      "Highest priority: show a complete story scene, not a character portrait. Include environment, props, action, and emotion. Keep the main character around 25-45% of the frame, usually full body or three-quarter body. Vary pose, expression, camera angle, and crop.",
       prompt,
       options?.characterReferenceId
-        ? "Keep the same child identity described in the prompt: hairstyle, outfit colors, age, body proportions, and premium 3D cartoon style."
+        ? "Keep the same character identity described in the prompt: hairstyle, outfit colors, age, body proportions, and premium 3D cartoon style."
         : null,
-      "No text, captions, letters, logos, watermark, scary imagery, violence, distorted hands, extra limbs, or photorealistic adult styling.",
+      "No text, captions, letters, logos, watermark, scary imagery, violence, distorted hands, extra limbs, or photorealistic rendering.",
     ]
       .filter(Boolean)
       .join(" ")
@@ -1742,14 +1748,14 @@ async function generateAgnesIllustration(
   const promptText = truncateForImagePrompt(
     [
       "Create one polished children's storybook illustration.",
-      "Highest priority: show a complete story scene, not a character portrait. Include environment, props, action, and emotion. Keep the child around 25-45% of the frame, usually full body or three-quarter body. Vary pose, expression, camera angle, and crop.",
+      "Highest priority: show a complete story scene, not a character portrait. Include environment, props, action, and emotion. Keep the main character around 25-45% of the frame, usually full body or three-quarter body. Vary pose, expression, camera angle, and crop.",
       prompt,
       options?.customCharacterReferenceToken
         ? "Use the attached reference image as the authoritative main-character identity. Preserve recognizable face shape, facial proportions, apparent age, hairstyle, hair color, skin tone, glasses, and distinctive features while changing pose and scene."
         : options?.characterReferenceId
-          ? "Keep the same child identity described in the prompt: hairstyle, outfit colors, age, body proportions, and premium 3D cartoon style."
+          ? "Keep the same character identity described in the prompt: hairstyle, outfit colors, age, body proportions, and premium 3D cartoon style."
         : null,
-      "No text, captions, letters, logos, watermark, scary imagery, violence, distorted hands, extra limbs, or photorealistic adult styling.",
+      "No text, captions, letters, logos, watermark, scary imagery, violence, distorted hands, extra limbs, or photorealistic rendering.",
     ]
       .filter(Boolean)
       .join(" ")
