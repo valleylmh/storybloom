@@ -1,13 +1,18 @@
-# StoryBloom — 会说话的家庭故事书创作工具
+# StoryBloom — AI 儿童绘本生成器 + 中英双语绘本馆
 
 > **让每个家庭都有一本会说话的专属故事书。**
 >
-> 输入名字、家庭片段或故事主题，生成完整 8 页中英双语绘本，并支持朗读、保存、分享与视频输出。
+> StoryBloom 是一个开源的中英双语儿童绘本平台，由两部分组成：
+>
+> - **绘本生成器**：输入孩子的名字、一件家庭小事或一个故事主题，AI 生成完整 8 页中英双语绘本，逐页配图，支持朗读、保存、分享与视频输出。
+> - **绘本馆**：成语、谚语、唐诗、西游记、科普、城市汽车、亲子成长与日常生活 8 个系列、共 386 本中英双语绘本，免费、免登录，可听可读。
 
 <p align="center">
-  <a href="https://storybloom.valleylmh.vip"><strong>在线体验</strong></a>
+  <a href="https://storybloom.valleylmh.vip"><strong>生成专属绘本</strong></a>
   ·
   <a href="https://storybloom.valleylmh.vip/library"><strong>浏览绘本馆</strong></a>
+  ·
+  <a href="https://storybloom.valleylmh.vip/en"><strong>English</strong></a>
   ·
   <a href="docs/assets/readme/story-video-demo.mp4"><strong>观看视频示例</strong></a>
   ·
@@ -16,8 +21,8 @@
 
 ## 文档导航
 
-- [快速启动](#快速启动) · [当前能力](#当前能力) · [使用入口与实现边界](#使用入口与实现边界)
-- [模型调用说明](#模型调用说明) · [生产部署检查](#production-readiness-v1)
+- [绘本生成器](#一绘本生成器) · [绘本馆](#二绘本馆) · [更多能力](#更多能力) · [快速启动](#快速启动)
+- [使用入口与实现边界](#使用入口与实现边界) · [模型调用说明](#模型调用说明) · [生产部署检查](#production-readiness-v1)
 - [贡献指南](CONTRIBUTING.md) · [安全报告](SECURITY.md) · [路线图](ROADMAP.md)
 - [手机 Web App](docs/webapp.md) · [微信小程序](miniprogram/README.md) · [账号同步](docs/account-sync.md)
 
@@ -31,7 +36,7 @@ StoryBloom 正从“一句话生成一本绘本”，逐步走向一个由孩子
 
 ### 完整 8 页中英双语绘本
 
-StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双语正文和故事寓意。点击下面的图片可以进入正式阅读页。
+StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双语正文和故事寓意。下面三本都来自绘本馆，点击图片可以进入正式阅读页。
 
 <p align="center">
   <a href="https://storybloom.valleylmh.vip/library/xiyouji/shi-hou-chu-shi">
@@ -78,15 +83,66 @@ StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双
   <a href="https://storybloom.valleylmh.vip/library/xiyouji/shi-hou-chu-shi">在线生成绘本视频</a>
 </p>
 
-## 当前能力
+## 一、绘本生成器
 
-- 从一句话生成完整 8 页中英双语故事，并按年龄段控制句式、冲突和情绪节奏。
-- 使用角色描述、Character Bible、逐页出场角色和参考图约束跨页一致性。
-- 异步逐页生成插图，支持多 Provider 配置、限流、自动回退、失败页重试和本地演示兜底。
-- 支持网页阅读、中文／英文／双语系统朗读、PNG 长图、图片 ZIP 和公开阅读链接。
-- 在浏览器本地生成带字幕和可选旁白的竖屏绘本视频。
-- 提供家庭角色库、最近作品、公开绘本馆和每日绘本灵感。
-- 绘本馆支持收藏、阅读进度、续读与同系列连续播放。
+> 入口：[`/`](https://storybloom.valleylmh.vip)（首页即生成器）
+
+把一句想法变成一本以孩子为主角的专属绘本。第一次独自骑车、和朋友分享玩具、睡前冒出的一个“为什么”，都可以成为故事的开头。
+
+**怎么用**
+
+1. 写下一件小事或一个故事想法，选择主角、年龄段、插画风格和语言。
+2. 生成 8 页故事文字；需要时先审阅大纲，确认后插画逐页生成。
+3. 亲子共读、朗读，保存在本机，或导出长图、图片 ZIP、公开阅读链接和竖屏视频。
+
+**能力一览**
+
+| 能力 | 说明 |
+|------|------|
+| 年龄分级 | 2–3 / 4–5 / 6–8 岁三档，分别控制句式长度、冲突强度和情绪节奏 |
+| 故事结构 | 固定 8 页 story beat 与镜头规划，每页推进情节并对应具体可视动作，而不是自由续写 |
+| 插画风格 | 水彩柔和、卡通活泼、童话梦境三种风格；逐页异步生成，单页失败可独立重试 |
+| 语言 | 中文为主 + 英文辅助、英文为主 + 中文辅助、纯中文、纯英文 |
+| 角色一致性 | Character Bible + 逐页出场角色 + 参考图，锁定脸型、发型、年龄、服装主色与画风 |
+| 家庭角色 | 上传家人照片生成统一绘本形象，在 `/family` 中复用；照片进入私有存储并移除 EXIF |
+| 成长时刻 | 记录家长确认的真实小事，可选“温暖纪实 / 温暖想象 / 童话延展”三种处理方式，同一时刻可生成多个版本 |
+| 改编馆藏 | 开放改编的绘本馆书目在阅读页提供“让孩子成为主角”入口，保留原故事主题与结构 |
+| 输出 | 网页阅读、中英文朗读、PNG 长图、图片 ZIP、公开分享链接、浏览器本地合成竖屏 MP4 |
+| 无 Key 兜底 | 不配置任何模型也能跑通：本地 fallback 故事、SVG 演示插图与系统朗读 |
+
+## 二、绘本馆
+
+> 入口：[`/library`](https://storybloom.valleylmh.vip/library) · 英文版 [`/en/library`](https://storybloom.valleylmh.vip/en/library)
+
+不用创作，也能读到完整的睡前故事。绘本馆收录经过审校的系列化中英双语绘本，匿名打开即可阅读，多数适合 4–8 岁亲子共读。
+
+| 系列 | 册数 | 内容 |
+|------|-----:|------|
+| 成语故事 | 84 | 经典成语与八字成语，温和改编典故，附成语释义与寓意 |
+| 谚语故事 | 16 | 生活谚语藏在小动物的日常故事里 |
+| 西游记 | 64 | 从石猴出世到五圣成真，60 回按故事顺序连续阅读 |
+| 好奇为什么 | 48 | 回答孩子的“为什么”：自然科学、传统节日与乡村生活 |
+| 唐诗入画 | 44 | 先完整读诗，再逐句看画，附诗意赏析 |
+| 亲子成长 | 26 | 三字经、亲子相处与学会新本领，附共读锦囊 |
+| 城市汽车小队 | 52 | 公交、高铁、飞机、工程车、城市服务车与未来出行 |
+| 日常系列 | 52 | 餐桌、玩具角、公园与幼儿园里的分享、约定、边界与陪伴 |
+| **合计** | **386** | |
+
+册数按仓库当前代码统计（截至 2026 年 11 月），只计已上线书目；线上以 `/library` 页面显示为准。
+
+**阅读体验**
+
+- 按系列与子系列分组浏览，每本标注适读年龄。
+- 点击即听的逐页云端朗读：翻页模式高亮当前文字，读完自动翻页并预取下一页音频。
+- 收藏、阅读进度与续读（`/library/reading`），同系列连续播放并带倒计时。
+- 图片齐全的书目可直接生成带字幕和旁白的竖屏视频。
+- 中英文双路由与结构化数据，便于搜索引擎收录；配套每日绘本灵感归档（`/inspiration`）。
+
+馆藏内容以 JSON 草稿形式放在 `content-drafts/`，插图位于 `public/library/`，由 `src/lib/library/` 统一组装成系列。新增或修订书目前，请先阅读 [贡献指南](CONTRIBUTING.md)。
+
+## 更多能力
+
+- 提供家庭角色库、最近作品和每日绘本灵感邮件订阅。
 - 提供本机成长时刻与绘本版本管理，以及登录后的账号记录同步；含现场照片的记录需当前账号的监护人授权。
 - 提供手机 Web App 安装入口、原生微信小程序工程，以及精品绘本与立体翻页体验样板。
 
@@ -96,8 +152,11 @@ StoryBloom 会从一个主题生成连续故事、统一风格插图、中英双
 
 | 入口 | 用途与边界 |
 |------|------------|
-| `/` | 创建绘本；支持异步文本任务恢复，以及按创作流程审阅大纲后生成插图 |
-| `/library` | 公开绘本馆、系列阅读、收藏、续读与朗读 |
+| `/` | 绘本生成器；支持异步文本任务恢复，以及按创作流程审阅大纲后生成插图 |
+| `/library` | 公开绘本馆、系列阅读、连续播放与朗读 |
+| `/library/reading` | 本机阅读记录、续读与收藏 |
+| `/inspiration` | 每日绘本灵感归档 |
+| `/en`、`/en/library`、`/en/inspiration` | 英文版首页、绘本馆与灵感页 |
 | `/family` | 登录后的家庭角色库；需要 Supabase，真人声音默认关闭 |
 | `/me/books`、`/me/growth` | 账号绘本与成长记录；同步条件及多版本限制见 [账号同步](docs/account-sync.md) |
 | `/gifts` | 精品绘本展示与阅读入口 |
@@ -129,8 +188,17 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 当前代码主要有三类生成模型调用：
 
 - 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；默认读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。将 `STORY_TEXT_PROVIDER` 设为 `agnes` 时，故事文本、每日灵感邮件和角色识别三个文本调用方统一改用 Agnes 官方端点 `https://apihub.agnes-ai.com/v1`；设为 `bailian` 时改用 Token Plan 百炼兼容端点 `https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`，密钥取 `BAILIAN_TOKEN_KEY`，可用 `BAILIAN_TEXT_BASE_URL` 覆盖，默认模型为 `qwen3.6-flash`。Agnes 密钥取 `AGNES_API_KEY` 的第一把，模型仍由 `STORY_TEXT_MODEL`（或各调用方的专用变量如 `CHARACTER_VISION_MODEL`）指定，未设置时默认 `agnes-2.5-flash`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
-- 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、DashScope、Cloudflare、Pollinations、Hugging Face，或配置为 GPT Image 时使用 CPA；极简模式中确认并保存的照片角色会先通过 CPA 生成统一设定稿，随后所有实际出现该角色的页面都固定使用 CPA，不回退到其他提供商。CPA 的 Gemini 图片模型继续使用 `chat/completions`；`gpt-image-*` 带参考图时自动使用支持多图的 `images/edits`，无参考图时使用 `images/generations`。可通过 `CPA_IMAGE_SIZE` 设置 GPT Image 输出尺寸，默认 `1024x1024`。临时自定义参考图仍按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 工作。`AGNES_API_KEY` 可配置多个逗号分隔的 key：绘本页面按页号稳定轮转到各 key（第 1 页用第 1 把、第 2 页用第 2 把），且每把 key 独立限流，从而并行提速并让同一页重试保持同一条生成路径。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
+- 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、OpenAI 官方（`openai`）、Orbitix 中转（`orbitix`）、DashScope、Hugging Face，或配置为 GPT Image 时使用 CPA；Pollinations 和 Cloudflare 已退出提供商分配与回退。极简模式中确认并保存的照片角色会先通过 CPA 生成统一设定稿，随后所有实际出现该角色的页面都固定使用 CPA，不回退到其他提供商。CPA 的 Gemini 图片模型继续使用 `chat/completions`；`gpt-image-*` 带参考图时自动使用支持多图的 `images/edits`，无参考图时使用 `images/generations`。可通过 `CPA_IMAGE_SIZE` 设置 GPT Image 输出尺寸，默认 `1024x1024`。临时自定义参考图仍按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 工作，可选择 `agnes`、`cpa`、`openai`、`orbitix`。`AGNES_API_KEY` 可配置多个逗号分隔的 key：绘本页面按页号稳定轮转到各 key（第 1 页用第 1 把、第 2 页用第 2 把），且每把 key 独立限流，从而并行提速并让同一页重试保持同一条生成路径。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
 - 音频：普通生成预览使用浏览器内置 `SpeechSynthesis`；绘本馆在用户点击朗读后调用 `src/app/api/audio/route.ts`，配置 `BAILIAN_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，失败后直接回退 Edge；未配置 Token Plan 时保留 Gemini 2.5 → Gemini 3.1 → Edge 路由。带旁白视频复用同一音频接口。家庭真人声音默认关闭；显式启用后固定使用百炼 `qwen-audio-3.0-tts-plus`，不会静默替换成其他音色。
+
+`openai` 与 `orbitix` 使用独立配置，不共用 CPA 密钥；未配置密钥时自动跳过：
+
+| 提供商 | API Key | Base URL（可用同前缀的 `BASE_URL` 覆盖） |
+|--------|---------|-------------------------------------|
+| OpenAI 官方（`openai`） | `OPENAI_API_KEY` | `https://api.openai.com/v1` |
+| Orbitix 中转（`orbitix`） | `ORBITIX_API_KEY` | `https://new.orbitix.site/v1` |
+
+两者默认 `*_IMAGE_MODEL=gpt-image-2.5-flare`、`*_IMAGE_SIZE=1024x1024`，支持独立的 `*_IMAGE_REQUEST_DELAY_MS`、`*_IMAGE_RETRY_DELAY_MS`、`*_IMAGE_MAX_ATTEMPTS`、`*_IMAGE_TIMEOUT_MS`。无参考图时使用 `images/generations`，带参考图时使用 `images/edits`（官方使用 JSON `images`，中转使用多图表单 `image[]`）。完整示例见 [`.env.example`](.env.example)。
 
 ## 技术栈
 
@@ -152,7 +220,9 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 storybloom/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx                         # 首页：极简/完整表单、最近作品、生成入口
+│   │   ├── page.tsx                         # 首页：绘本生成器（极简/完整表单、最近作品）
+│   │   ├── en/                              # 英文版首页、绘本馆与灵感页
+│   │   ├── inspiration/                     # 每日绘本灵感归档
 │   │   ├── me/                              # 账号绘本、成长记录与设置
 │   │   ├── gifts/                           # 精品绘本
 │   │   ├── install/page.tsx                 # 手机 Web App 安装指引
@@ -162,7 +232,7 @@ storybloom/
 │   │   └── api/
 │   │       ├── generate/route.ts            # 文本生成、配额与故事缓存
 │   │       ├── illustration/route.ts        # 逐页插图任务与轮询
-│   │       ├── audio/route.ts               # 视频旁白 MP3
+│   │       ├── audio/route.ts               # 绘本馆朗读与视频旁白音频
 │   │       ├── share/route.ts               # 分享快照创建/删除
 │   │       └── character-recognition/route.ts
 │   ├── components/
@@ -175,12 +245,13 @@ storybloom/
 │   │   ├── image-generator.ts               # 多 Provider 插图与参考图生成
 │   │   ├── storage.ts                       # 故事缓存、临时参考图与生成配额
 │   │   ├── client-history.ts                # 浏览器最近作品
-│   │   ├── narration-audio-server.ts        # Gemini/Edge TTS 路由与私有音频缓存
+│   │   ├── narration-audio-server.ts        # 百炼/Gemini/Edge TTS 路由与私有音频缓存
 │   │   ├── render-story-video.tsx           # 浏览器视频渲染与编码回退
 │   │   ├── share-store.ts                   # 分享图片与快照持久化
 │   │   └── library/                         # 馆藏系列与书籍数据
 │   └── types/index.ts
 ├── miniprogram/                              # 微信小程序，独立准备与验收
+├── content-drafts/                           # 绘本馆书目 JSON 草稿、审校记录与音频清单
 ├── docs/                                     # 部署、同步、Web App 与内容说明
 ├── public/library/                           # 已审核馆藏插图
 ├── public/sample-books/                      # 首页公开样例与静态音频

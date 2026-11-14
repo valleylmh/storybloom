@@ -1,0 +1,264 @@
+{
+  "book": {
+    "id": "jin-tian-bu-shi-sheng-ri-ya",
+    "seriesId": "richang",
+    "title": "今天不是生日呀",
+    "subtitle": "一个普通下午的藏宝图",
+    "moral": {
+      "zh": "惊喜不是表现完美的奖励，而是妈妈一直把你放在心上的悄悄告白；普通的日子，也可以因为爱而闪闪发光。",
+      "en": "A surprise is not a reward for being perfect; it is Mom’s quiet way of saying she sees your effort and loves you every single day."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-11-04",
+    "order": 53,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "日历上没有红色的圈圈，今天不是六一儿童节，也不是安安的生日。放学回到家，安安坐在地毯上搭小桥，妈妈在厨房切着多汁的甜橙。",
+        "enText": "There was no red circle on the calendar; today was neither Children's Day nor An'an's birthday. Home after school, An'an built a block bridge on the rug while Mom sliced juicy sweet oranges in the kitchen.",
+        "illustrationPrompt": "Bright afternoon living room view: sunlight spills over clean oak floor and colorful rug; An'an in teal hoodie builds block bridge; Mom in coral cardigan slices oranges at pastel-green kitchen counter.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Bright afternoon living room view: sunlight spills over clean oak floor and colorful rug; An'an in teal hoodie builds block bridge; Mom in coral cardigan slices oranges at pastel-green kitchen counter.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-01.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 2,
+        "zhText": "安安跑去擦手，忽然发现茶几正中央放着一只小巧的黄色折纸船。船帆的一侧，用彩色笔画着一个指向右边的小箭头。",
+        "enText": "Drying her hands, An'an noticed a small yellow origami boat resting right in the middle of the coffee table. On one side of the paper sail, a bright little arrow pointed to the right.",
+        "illustrationPrompt": "Living room eye-level medium close-up: a neat yellow origami boat sits on the smooth wooden coffee table; clean bold arrow on the sail points toward the hallway.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Living room eye-level medium close-up: a neat yellow origami boat sits on the smooth wooden coffee table; clean bold arrow on the sail points toward the hallway.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-02.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 3,
+        "zhText": "“妈妈，这是谁折的小船呀？”安安好奇地拿起来。妈妈端着橙子走过来，眨了眨眼睛：“家里藏着一个秘密宝藏，只有细心的小侦探才能找到第一把钥匙。”",
+        "enText": "“Mom, who made this little boat?” An'an asked, picking it up curiously. Mom walked over with the fruit plate and winked. “A secret treasure is hidden in our home, and only a sharp detective can find the first key.”",
+        "illustrationPrompt": "Warm two-shot: Mom bends near the coffee table with a small smile; An'an holds the yellow paper boat in her palms, her eyes wide with eager wonder.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Warm two-shot: Mom bends near the coffee table with a small smile; An'an holds the yellow paper boat in her palms, her eyes wide with eager wonder.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-03.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 4,
+        "zhText": "安安轻轻展开小船，里面果然藏着一张小卡片。卡片上画着一个白色的小圆碟，碟子里放着一颗黄色的星星发夹。",
+        "enText": "An'an gently unfolded the paper boat, and out slipped a little card. On it was a drawing of a small white saucer holding a bright yellow star hair clip.",
+        "illustrationPrompt": "Close-up of small hands unfolding yellow paper: an illustrated white card shows a simple saucer and yellow star hair clip; An'an's joyful realization.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Close-up of small hands unfolding yellow paper: an illustrated white card shows a simple saucer and yellow star hair clip; An'an's joyful realization.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-04.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 5,
+        "zhText": "“这是我每天睡前放发夹的地方！”安安蹬蹬蹬跑进卧室。在小床头柜的白碟子底下，果然压着一只淡粉色的小信封。",
+        "enText": "“That's where I keep my hair clip every night!” An'an trotted into her bedroom. Sure enough, tucked beneath the white saucer on her low nightstand was a soft pink envelope.",
+        "illustrationPrompt": "Bedroom afternoon view: gentle sunlight on wooden cot and daisy blanket; An'an lifts the small white saucer, revealing a flat pastel-pink envelope beneath it.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Bedroom afternoon view: gentle sunlight on wooden cot and daisy blanket; An'an lifts the small white saucer, revealing a flat pastel-pink envelope beneath it.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-05.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 6,
+        "zhText": "打开信封，第二张卡片上画着绿油油的叶子和几颗圆滚滚的小红果。“是阳台上我们一起种的小番茄！”安安一跃而起。",
+        "enText": "Opening the envelope, she saw the second card: lush green leaves and plump little red fruits. “It's the cherry tomato plant on our balcony!” An'an hopped up excitedly.",
+        "illustrationPrompt": "Bedroom doorway medium shot: An'an holding the green leaf-and-berry card in one hand, eagerly turning toward the sunny balcony sliding doors.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Bedroom doorway medium shot: An'an holding the green leaf-and-berry card in one hand, eagerly turning toward the sunny balcony sliding doors.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-06.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 7,
+        "zhText": "跑进阳台，番茄花盆旁边端端正正放着小喷壶。花盆边贴着一张小纸条：“给番茄苗喝足水，下一把钥匙才会出现。”安安像在大班当值日生一样，耐心轻巧地喷洒着水珠。",
+        "enText": "Out on the balcony, a little spray mister sat neatly beside the tomato pot. A note was taped to the rim: “Give the plant a good drink, and the next key will appear.” Like a proud helper, An'an misted the leaves patiently.",
+        "illustrationPrompt": "Sunny balcony view: leafy potted tomato plant with small red cherry tomatoes; An'an holds small mist spray bottle steadily, misty droplets catching sunlight on glossy green leaves.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Sunny balcony view: leafy potted tomato plant with small red cherry tomatoes; An'an holds small mist spray bottle steadily, misty droplets catching sunlight on glossy green leaves.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-07.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 8,
+        "zhText": "水雾在阳光下闪闪发亮。安安一眼看见喷水壶的手柄底下系着一根细细的蓝色缎带，一直悄悄延伸到客厅低矮的书架深处。",
+        "enText": "The water mist sparkled in the sun. An'an instantly spotted a slender blue ribbon tied beneath the spray mister's handle, trailing quietly toward the low bookshelf in the living room.",
+        "illustrationPrompt": "Balcony floor detail: An'an notices the thin sky-blue satin ribbon tied around the bottle handle, guiding the eye into the living room corner.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Balcony floor detail: An'an notices the thin sky-blue satin ribbon tied around the bottle handle, guiding the eye into the living room corner.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-08.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 9,
+        "zhText": "顺着丝带摸到书架最底层，安安从绘本后面抱出了一个沉甸甸的包裹。牛皮纸包得整整齐齐，上面扎着一个漂亮的小蝴蝶结。",
+        "enText": "Following the ribbon to the bottom shelf, An'an pulled out a substantial package hidden behind the picture books. It was wrapped neatly in brown craft paper with a lovely little bow.",
+        "illustrationPrompt": "Floor-level shot: An'an kneeling by the low wooden bookshelf, pulling out a neat rectangular parcel tied with yellow twine from behind colorful books.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Floor-level shot: An'an kneeling by the low wooden bookshelf, pulling out a neat rectangular parcel tied with yellow twine from behind colorful books.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-09.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 10,
+        "zhText": "安安捧着盒子跑到妈妈面前，小脸有些发红：“妈妈，今天既不是节日，也不是我的生日，我真的可以打开它吗？”",
+        "enText": "Holding the box, An'an hurried to Mom, her cheeks flushed. “Mom, today isn't a holiday and it's not my birthday. May I really open it?”",
+        "illustrationPrompt": "Living room two-shot: An'an hugs the brown paper package to her chest, looking up with shy longing; Mom kneels warmly before her with open arms.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Living room two-shot: An'an hugs the brown paper package to her chest, looking up with shy longing; Mom kneels warmly before her with open arms.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-10.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 11,
+        "zhText": "妈妈张开手臂把安安揽在怀里：“谁说只有生日才能有礼物？妈妈看到你上了大班以后，能自己把书包收得整整齐齐，还能耐心照顾小植物。妈妈想在这个普通的星期二，抱抱我的大姑娘。”",
+        "enText": "Mom wrapped her arms around An'an. “Who says presents are only for birthdays? I saw how neatly you pack your schoolbag in big class, and how patiently you care for the plants. I simply wanted to give my big girl an extra hug this Tuesday.”",
+        "illustrationPrompt": "Tender embrace: Mom in coral cardigan hugs An'an tightly against her shoulder; both smile with calm sweetness; parcel rests safely on the coffee table.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Tender embrace: Mom in coral cardigan hugs An'an tightly against her shoulder; both smile with calm sweetness; parcel rests safely on the coffee table.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-11.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 12,
+        "zhText": "安安拉开蝴蝶结，剥开软软的棉纸。盒子里静静躺着一只妈妈亲手用粗毛线钩织的柔软小黄星挂坠，还有一个刻着可爱纹路的原木色双层小木盒。",
+        "enText": "An'an untied the ribbon and peeled back the soft tissue paper. Inside lay a plump yellow star charm hand-crocheted from cozy yarn, alongside a double-tiered natural wood treasure box with carved patterns.",
+        "illustrationPrompt": "Top-down close-up: tissue paper peeled open; a plush crocheted yellow yarn star charm and a smooth two-tiered wooden box rest side by side in the parcel.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Top-down close-up: tissue paper peeled open; a plush crocheted yellow yarn star charm and a smooth two-tiered wooden box rest side by side in the parcel.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-12.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 13,
+        "zhText": "打开小木盒，上层刚好能放下她的乳牙小粉盒和黄色发夹；下层放着一本手缝的空白小手账，第一页贴着安安背着大班书包在门口大笑的照片。",
+        "enText": "Opening the wooden box, the top tray fit her pink tooth box and yellow star clip perfectly; the bottom held a hand-stitched blank journal, its first page showing a photo of An'an smiling proudly in her big-class backpack.",
+        "illustrationPrompt": "Detailed view: An'an lifts the top wooden tray; pink tooth keepsake box and yellow clip sit snugly inside; small blank journal with photo visible underneath.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Detailed view: An'an lifts the top wooden tray; pink tooth keepsake box and yellow clip sit snugly inside; small blank journal with photo visible underneath.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-13.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 14,
+        "zhText": "安安立刻把毛线小黄星挂在了橙色书包的拉链上。挂坠随着拉链轻轻摇晃，就像妈妈暖和的大手一直牵着她一样。",
+        "enText": "An'an immediately fastened the soft yarn star onto the zipper of her orange backpack. The star swayed gently, feeling just like Mom's warm hand holding hers wherever she went.",
+        "illustrationPrompt": "Entryway view: An'an clips the plump yellow yarn star to the orange backpack zipper; the backpack hangs on the low coat peg, star swaying softly.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Entryway view: An'an clips the plump yellow yarn star to the orange backpack zipper; the backpack hangs on the low coat peg, star swaying softly.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-14.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 15,
+        "zhText": "安安靠在妈妈怀里轻声说：“妈妈，我还以为我收书包、擦桌子的小事，谁都不会注意呢。”妈妈笑了：“妈妈的眼睛是一台神奇摄像机，你长大的每一小步，我都悄悄记下了。”",
+        "enText": "Nestling into Mom's side, An'an whispered, “Mom, I thought nobody noticed when I packed my bag or wiped the table.” Mom laughed softly. “My eyes are like a magic camera. Every little step of your growing up is quietly saved in my heart.”",
+        "illustrationPrompt": "Couch side view: An'an rests her head against Mom's arm on the sofa, looking up gratefully; Mom gently taps An'an's nose with an affectionate smile.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Couch side view: An'an rests her head against Mom's arm on the sofa, looking up gratefully; Mom gently taps An'an's nose with an affectionate smile.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-15.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 16,
+        "zhText": "安安忽然坐直身子，抓起桌上的彩色铅笔，在手账本的第二页上画了一个大大的爱心，中间画着两个人紧紧牵手：“妈妈，这个本子是我们的悄悄话本，我也送你一朵永远不凋谢的红花！”",
+        "enText": "An'an suddenly sat straight, grabbed colored pencils from the table, and drew a big red heart on the journal's second page with two stick figures holding hands. “Mom, this is our whisper book. Here is an eternal flower for you, too!”",
+        "illustrationPrompt": "Desk view: An'an leans over the little blank journal drawing a vibrant red crayon flower and heart; Mom watches closely beside her, touched and beaming.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Desk view: An'an leans over the little blank journal drawing a vibrant red crayon flower and heart; Mom watches closely beside her, touched and beaming.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-16.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 17,
+        "zhText": "黄昏的金色日光悄悄爬上了餐桌。母女俩一起剥着甜甜的橙子，果香在客厅里弥漫开来，窗外是亮起温暖路灯的街道。",
+        "enText": "Golden twilight crept across the dinner table. Mother and daughter shared sweet orange slices together, the citrus aroma filling the room while soft streetlamps blinked on outside.",
+        "illustrationPrompt": "Warm evening dining room view: Mom and An'an sharing juicy orange wedges at the oak table; the wooden treasure box sits proudly beside the fruit bowl; evening streetlamps glow through the window.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nMom is an adult Chinese woman, shoulder-length black hair, coral cardigan and cream trousers.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Warm evening dining room view: Mom and An'an sharing juicy orange wedges at the oak table; the wooden treasure box sits proudly beside the fruit bowl; evening streetlamps glow through the window.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-17.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 18,
+        "zhText": "睡前，安安在墙上的大日历里，给今天的“星期二”旁边认真画了一颗金黄色的小太阳。原来，不用等大大的节日，只要用心相爱，每一个普通的日子都能拆出闪闪发光的惊喜。",
+        "enText": "At bedtime, An'an drew a bright golden sun beside today's Tuesday on the wall calendar. It turns out you never have to wait for a big holiday; whenever love is shared, any ordinary day can unwrap a shining surprise.",
+        "illustrationPrompt": "Cozy bedtime bedroom: warm soft nightlight glow; An'an in pale yellow pajamas stands by the calendar adding a little golden sun beside Tuesday; peaceful happy smile.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.\nAsset type: one individual full-bleed square picture-book illustration, one coherent scene, never a multi-panel sheet.\nAn'an is a six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Preserve her female identity.\nDraw ONLY the people named in this page scene. Keep identities, faces, hair and clothing consistent. No additional family members or bystanders. Cozy urban home living room, balcony and bedroom, oak furniture, pastel-green kitchen, sunny friendly atmosphere.\nTHIS PAGE'S SCENE: Cozy bedtime bedroom: warm soft nightlight glow; An'an in pale yellow pajamas stands by the calendar adding a little golden sun beside Tuesday; peaceful happy smile.\nFollow current object state literally. Do not anticipate later events. All notice boards, calendars, books and drawings stay blank with simple shapes, never readable text or letters. Match the requested camera view, natural hands and subtle readable feelings.\nAvoid: No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food.",
+        "generatedSource": "output/imagegen/richang-53/page-18.png",
+        "generationPromptScope": "full"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 53,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "生活智慧",
+        "亲子共读",
+        "幼小衔接",
+        "家庭温情",
+        "惊喜礼物",
+        "亲子情感",
+        "生活仪式感",
+        "肯定与看见",
+        "双向的爱",
+        "家庭温暖"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "引导孩子理解“被关注与被爱”不取决于分数或特定节日仪式；体会家人之间细致入微的观察与陪伴，培养孩子表达感恩与爱的双向情感能力。",
+      "reminder": "送孩子惊喜时，不妨强调“我看到了你某件具体的努力”而非空洞的表扬，让礼物成为成长的温情见证；接纳孩子用图画、小拥抱等方式给予家人的爱心回馈。",
+      "questions": [
+        "安安找到礼物的三个线索，分别藏在哪里？",
+        "妈妈送安安的礼物是什么？为什么安安觉得比买来的大玩具还宝贝？"
+      ],
+      "activity": "在家里设置一个“家庭悄悄话信箱”，放一个闲置的小盒子在客厅，家庭成员可以在任何平凡的一天塞进画或纸条，给彼此创造小惊喜。",
+      "ageTips": {
+        "age4to5": "引导孩子观察图画中的寻宝线索，体会收到礼物的惊喜与开心；鼓励孩子用拥抱或画画回应妈妈的爱。",
+        "age6to8": "讨论为什么普通日子也会有礼物，引导孩子认识到自己的成长与自理一直被父母看在眼里；建立双向感恩与表达爱的习惯。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Mom: adult Chinese woman, shoulder-length black hair, coral cardigan, cream trousers. An'an: six-year-old Chinese GIRL, round face, ear-length straight black bob, yellow star hair clip on her left, plain teal zip-front hoodie, blue jeans, white sneakers with red trim. Bedtime: pale yellow pajamas. Only page-specific cast appears.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

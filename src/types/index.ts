@@ -28,11 +28,14 @@ export type StoryStatus =
 export type ImageStatus = "pending" | "complete" | "demo" | "failed";
 export type ImageProvider =
   | "dashscope"
+  // Retained for stored stories and static sample provenance; generation skips these providers.
   | "cloudflare"
   | "pollinations"
   | "huggingface"
   | "agnes"
-  | "cpa";
+  | "cpa"
+  | "openai"
+  | "orbitix";
 export type ImageAttemptStatus = "success" | "failed";
 export type SampleImageModel = "gpt-image-2" | "nano-banana";
 

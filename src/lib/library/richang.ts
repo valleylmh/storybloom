@@ -51,6 +51,7 @@ import classroomHelper from "../../../content-drafts/richang/jin-tian-wo-shi-da-
 import afterSchool from "../../../content-drafts/richang/fang-xue-lu-shang-man-man-shuo.json";
 import gateVolunteer from "../../../content-drafts/richang/ma-ma-zai-xiao-men-kou-zhan-gang.json";
 import threeTeachers from "../../../content-drafts/richang/da-ban-de-san-wei-lao-shi.json";
+import surpriseGift from "../../../content-drafts/richang/jin-tian-bu-shi-sheng-ri-ya.json";
 
 type EverydayDraft = {
   book: Omit<LibraryBook, "pages"> & {
@@ -68,7 +69,7 @@ export const RICHANG_BOOKS: LibraryBook[] = [
   angryHands, nextEpisode, misunderstood, shyHello,
   schoolGoodbye, looseTooth, pinyinCurves, wanderingNumbers, bathroomRequest,
   quietNap, joiningPlay, packingBag, classroomHelper, afterSchool, gateVolunteer,
-  threeTeachers,
+  threeTeachers, surpriseGift,
 ].filter((source) => !source.book.comingSoon).map((source) => {
   const draft = source as EverydayDraft;
   return {
@@ -89,7 +90,7 @@ export const RICHANG_SERIES: LibrarySeries = {
   id: "richang",
   title: "日常系列",
   subtitle: "小日子里的大发现",
-  description: "跟着安安和家人、朋友，走进餐桌、玩具角、小区、公园和幼儿园。从生活中的选择与感受，到大班里的换牙、自理、交朋友、当值日生、三位老师的默契分工和家长志愿服务，在熟悉的小事里感受分享、约定、边界与陪伴。每本 12–20 页中英双语故事，配有中文旁白和亲子共读提示。",
+  description: "跟着安安和家人、朋友，走进餐桌、玩具角、小区、公园和幼儿园。从生活中的选择与感受，到大班里的换牙、自理、交朋友、当值日生、三位老师的默契分工、普通日子里的惊喜礼物和家长志愿服务，在熟悉的小事里感受分享、约定、边界与陪伴。每本 12–20 页中英双语故事，配有中文旁白和亲子共读提示。",
   coverImage: "/library/richang/lan-ping-guo/1.webp",
   accent: "#cc7a45",
   ageRange: "4–8 岁",

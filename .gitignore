@@ -8,9 +8,7 @@ node_modules/
 public/gift-books/**/*.zip
 
 # raw generation working files kept outside git
-content-drafts/chengyu/third-batch-generated/
-content-drafts/chengyu/third-batch-pending-imports/
-content-drafts/chengyu/character-references/*.png
+content-drafts
 
 # next
 .next/

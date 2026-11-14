@@ -40,6 +40,7 @@ import {
 const envKeys = [
   "IMAGE_TO_IMAGE_PROVIDER_ORDER",
   "IMAGE_PROVIDER_ORDER",
+  "IMAGE_PROVIDER",
   "AGNES_API_KEY",
   "AGNES_IMAGE_REQUEST_DELAY_MS",
   "AGNES_IMAGE_MAX_ATTEMPTS",
@@ -49,6 +50,30 @@ const envKeys = [
   "CPA_IMAGE_REQUEST_DELAY_MS",
   "CPA_IMAGE_MAX_ATTEMPTS",
   "CPA_IMAGE_TIMEOUT_MS",
+  "OPENAI_API_KEY",
+  "OPENAI_BASE_URL",
+  "OPENAI_IMAGE_MODEL",
+  "OPENAI_IMAGE_SIZE",
+  "OPENAI_IMAGE_REQUEST_DELAY_MS",
+  "OPENAI_IMAGE_RETRY_DELAY_MS",
+  "OPENAI_IMAGE_MAX_ATTEMPTS",
+  "OPENAI_IMAGE_TIMEOUT_MS",
+  "ORBITIX_API_KEY",
+  "ORBITIX_BASE_URL",
+  "ORBITIX_IMAGE_MODEL",
+  "ORBITIX_IMAGE_SIZE",
+  "ORBITIX_IMAGE_REQUEST_DELAY_MS",
+  "ORBITIX_IMAGE_RETRY_DELAY_MS",
+  "ORBITIX_IMAGE_MAX_ATTEMPTS",
+  "ORBITIX_IMAGE_TIMEOUT_MS",
+  "DASHSCOPE_API_KEY",
+  "HUGGINGFACE_API_TOKEN",
+  "HUGGINGFACE_TOKEN",
+  "HF_TOKEN",
+  "CLOUDFLARE_ACCOUNT_ID",
+  "CLOUDFLARE_API_TOKEN",
+  "CF_ACCOUNT_ID",
+  "CF_API_TOKEN",
   "FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS",
   "FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS",
 ] as const;
@@ -72,6 +97,16 @@ beforeEach(() => {
   process.env.CPA_IMAGE_TIMEOUT_MS = "5000";
   process.env.FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS = "3";
   process.env.FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS = "1";
+  for (const prefix of ["OPENAI", "ORBITIX"]) {
+    delete process.env[`${prefix}_API_KEY`];
+    delete process.env[`${prefix}_BASE_URL`];
+    delete process.env[`${prefix}_IMAGE_MODEL`];
+    delete process.env[`${prefix}_IMAGE_SIZE`];
+    process.env[`${prefix}_IMAGE_REQUEST_DELAY_MS`] = "0";
+    process.env[`${prefix}_IMAGE_RETRY_DELAY_MS`] = "0";
+    process.env[`${prefix}_IMAGE_MAX_ATTEMPTS`] = "1";
+    process.env[`${prefix}_IMAGE_TIMEOUT_MS`] = "5000";
+  }
 });
 
 afterEach(() => {
@@ -222,12 +257,231 @@ describe("image-to-image provider routing", () => {
 
   it("keeps configured ordinary providers distributed across book pages", () => {
     process.env.AGNES_API_KEY = "agnes-test";
-    process.env.IMAGE_PROVIDER_ORDER = "agnes:1,pollinations:1";
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.IMAGE_PROVIDER_ORDER = "agnes:1,openai:1";
 
     expect(getProviderForPage(1)).toBe("agnes");
-    expect(getProviderForPage(2)).toBe("pollinations");
+    expect(getProviderForPage(2)).toBe("openai");
     expect(getProviderForPage(3)).toBe("agnes");
-    expect(getProviderForPage(8)).toBe("pollinations");
+    expect(getProviderForPage(8)).toBe("openai");
+  });
+
+  it("distributes weighted pages across OpenAI and Orbitix and skips missing keys", () => {
+    process.env.AGNES_API_KEY = "agnes-test";
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    process.env.IMAGE_PROVIDER_ORDER = "agnes:2,openai:1,orbitix:2";
+    expect(Array.from({ length: 8 }, (_, index) => getProviderForPage(index + 1))).toEqual([
+      "agnes", "agnes", "openai", "orbitix", "orbitix", "agnes", "agnes", "openai",
+    ]);
+    delete process.env.OPENAI_API_KEY;
+    expect(Array.from({ length: 4 }, (_, index) => getProviderForPage(index + 1))).toEqual([
+      "agnes", "agnes", "orbitix", "orbitix",
+    ]);
+  });
+
+  it("includes both new providers in the default order", () => {
+    delete process.env.IMAGE_PROVIDER_ORDER;
+    delete process.env.IMAGE_PROVIDER;
+    delete process.env.AGNES_API_KEY;
+    delete process.env.DASHSCOPE_API_KEY;
+    delete process.env.HUGGINGFACE_API_TOKEN;
+    delete process.env.HUGGINGFACE_TOKEN;
+    delete process.env.HF_TOKEN;
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    expect(Array.from({ length: 4 }, (_, index) => getProviderForPage(index + 1))).toEqual([
+      "openai", "openai", "orbitix", "orbitix",
+    ]);
+  });
+
+  it("does not borrow credentials from CPA or the other new provider", () => {
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://relay.example/v1";
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "  ";
+    process.env.IMAGE_PROVIDER_ORDER = "orbitix:1";
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = "orbitix:1";
+    expect(getProviderForPage(1)).toBeUndefined();
+    expect(getImageToImageProviderForPage(1)).toBeUndefined();
+    delete process.env.OPENAI_API_KEY;
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    process.env.IMAGE_PROVIDER_ORDER = "openai:1";
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = "openai:1";
+    expect(getProviderForPage(1)).toBeUndefined();
+    expect(getImageToImageProviderForPage(1)).toBeUndefined();
+  });
+
+  it.each(["pollinations", "cloudflare"] as const)(
+    "skips removed provider %s in weights, preferred providers, and explicit fallbacks",
+    async (retired) => {
+      process.env.OPENAI_API_KEY = "openai-test";
+      process.env.CLOUDFLARE_ACCOUNT_ID = "old-account";
+      process.env.CLOUDFLARE_API_TOKEN = "old-token";
+      process.env.IMAGE_PROVIDER_ORDER = `${retired}:6,openai:1`;
+      const fetchMock = vi.fn().mockResolvedValue(
+        new Response(JSON.stringify({ data: [{ b64_json: "bmV3" }] }), {
+          status: 200, headers: { "Content-Type": "application/json" },
+        }),
+      );
+      vi.stubGlobal("fetch", fetchMock);
+      expect(getProviderForPage(1)).toBe("openai");
+      expect(getProviderForPage(8)).toBe("openai");
+      const result = await generateIllustration("A child reads", 1, {
+        preferredProvider: retired,
+        fallbackProviders: [retired, "openai"],
+      });
+      expect(result.provider).toBe("openai");
+      expect(fetchMock).toHaveBeenCalledOnce();
+      expect(fetchMock.mock.calls[0][0]).toBe("https://api.openai.com/v1/images/generations");
+    },
+  );
+
+  it.each([
+    ["openai", "https://api.openai.com/v1"],
+    ["orbitix", "https://new.orbitix.site/v1"],
+  ] as const)("generates images through %s with independent configuration", async (provider, baseUrl) => {
+    const prefix = provider.toUpperCase();
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    process.env[`${prefix}_IMAGE_MODEL`] = "gpt-image-2";
+    process.env[`${prefix}_IMAGE_SIZE`] = "1536x1024";
+    process.env.IMAGE_PROVIDER_ORDER = `${provider}:1`;
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(JSON.stringify({ data: [{ b64_json: "Z2VuZXJhdGVk" }] }), {
+        status: 200, headers: { "Content-Type": "application/json" },
+      }),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+    const result = await generateIllustration("A small red paper boat", 7);
+    expect(result.imageUrl).toBe("data:image/png;base64,Z2VuZXJhdGVk");
+    expect(result.provider).toBe(provider);
+    expect(result.attempts[0]).toMatchObject({ provider, model: "gpt-image-2", status: "success" });
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe(`${baseUrl}/images/generations`);
+    expect(init.headers).toMatchObject({
+      Authorization: `Bearer ${provider}-test`, "Content-Type": "application/json",
+    });
+    const body = JSON.parse(String(init.body));
+    expect(body).toMatchObject({
+      model: "gpt-image-2", size: "1536x1024", n: 1, output_format: "png",
+      prompt: expect.stringContaining("A small red paper boat"),
+    });
+    expect(body).not.toHaveProperty("response_format");
+    expect(body).not.toHaveProperty("images");
+  });
+
+  it.each(["openai", "orbitix"] as const)(
+    "sends uploaded references to %s edits and normalizes its base URL",
+    async (provider) => {
+      const prefix = provider.toUpperCase();
+      process.env[`${prefix}_API_KEY`] = `${provider}-test`;
+      process.env[`${prefix}_BASE_URL`] = ` https://${provider}.example/v1/// `;
+      process.env[`${prefix}_IMAGE_SIZE`] = "1024x1536";
+      process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = `${provider}:2`;
+      expect(getImageToImageProviderForPage(1)).toBe(provider);
+      const fetchMock = vi.fn().mockResolvedValue(
+        new Response(JSON.stringify({ data: [{ b64_json: "ZWRpdGVk" }] }), {
+          status: 200, headers: { "Content-Type": "application/json" },
+        }),
+      );
+      vi.stubGlobal("fetch", fetchMock);
+      const result = await generateIllustration("A child reads under a tree", 2, {
+        customCharacterReferenceToken: "b".repeat(43),
+      });
+      expect(result.provider).toBe(provider);
+      const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+      expect(url).toBe(`https://${provider}.example/v1/images/edits`);
+      expect(init.headers).toMatchObject({ Authorization: `Bearer ${provider}-test` });
+      if (provider === "openai") {
+        const body = JSON.parse(String(init.body));
+        expect(init.headers).toMatchObject({ "Content-Type": "application/json" });
+        expect(body).toMatchObject({
+          model: "gpt-image-2.5-flare", size: "1024x1536", output_format: "png",
+          images: [{ image_url: "data:image/webp;base64,cmVmZXJlbmNl" }],
+          prompt: expect.stringContaining("Image 1: MAIN CHARACTER"),
+        });
+        expect(body).not.toHaveProperty("response_format");
+      } else {
+        expect(init.headers).not.toHaveProperty("Content-Type");
+        expect(init.body).toBeInstanceOf(FormData);
+        const form = init.body as FormData;
+        expect(form.get("model")).toBe("gpt-image-2.5-flare");
+        expect(form.get("size")).toBe("1024x1536");
+        expect(form.get("output_format")).toBe("png");
+        expect(form.has("response_format")).toBe(false);
+        expect(form.getAll("image[]")).toHaveLength(1);
+        expect((form.get("image[]") as Blob).type).toBe("image/webp");
+        expect(await (form.get("image[]") as Blob).text()).toBe("reference");
+        expect(String(form.get("prompt"))).toContain("Image 1: MAIN CHARACTER");
+      }
+    },
+  );
+
+  it("falls back from OpenAI to Orbitix without leaking upstream errors or keys", async () => {
+    process.env.OPENAI_API_KEY = "openai-secret";
+    process.env.ORBITIX_API_KEY = "orbitix-secret";
+    process.env.IMAGE_PROVIDER_ORDER = "openai:1,orbitix:1";
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response(JSON.stringify({ error: { message: "Bearer openai-secret private prompt" } }), {
+        status: 401, headers: { "Content-Type": "application/json" },
+      }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ data: [{ b64_json: "b3JiaXRpeA==" }] }), {
+        status: 200, headers: { "Content-Type": "application/json" },
+      }));
+    vi.stubGlobal("fetch", fetchMock);
+    const result = await generateIllustration("A child reads", 1);
+    expect(result.provider).toBe("orbitix");
+    expect(result.attempts).toHaveLength(2);
+    expect(result.attempts[0]).toMatchObject({ provider: "openai", errorClass: "authentication" });
+    expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
+      "https://api.openai.com/v1/images/generations",
+      "https://new.orbitix.site/v1/images/generations",
+    ]);
+    expect(JSON.stringify(result.attempts)).not.toContain("openai-secret");
+    expect(JSON.stringify(result.attempts)).not.toContain("private prompt");
+  });
+
+  it("retries Orbitix rate limits and downloads URL responses without forwarding credentials", async () => {
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    process.env.ORBITIX_IMAGE_MAX_ATTEMPTS = "2";
+    process.env.IMAGE_PROVIDER_ORDER = "orbitix:1";
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response("{}", { status: 429, headers: { "Retry-After": "0" } }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ data: [{ url: "https://images.example/result.png" }] }), {
+        status: 200, headers: { "Content-Type": "application/json" },
+      }))
+      .mockResolvedValueOnce(new Response(new Uint8Array([1, 2, 3]), {
+        status: 200, headers: { "Content-Type": "image/png" },
+      }));
+    vi.stubGlobal("fetch", fetchMock);
+    const result = await generateIllustration("A red boat", 1);
+    expect(result.provider).toBe("orbitix");
+    expect(result.imageUrl).toBe("data:image/png;base64,AQID");
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(fetchMock.mock.calls[2][0]).toBe("https://images.example/result.png");
+    expect(fetchMock.mock.calls[2][1]).not.toHaveProperty("headers");
+  });
+
+  it("does not queue Orbitix behind a pending official request", async () => {
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    let releaseOfficial: ((response: Response) => void) | undefined;
+    const fetchMock = vi.fn().mockImplementation(async (url: string) => {
+      if (url.includes("api.openai.com")) return new Promise<Response>((resolve) => { releaseOfficial = resolve; });
+      return new Response(JSON.stringify({ data: [{ b64_json: "b3JiaXRpeA==" }] }), { status: 200 });
+    });
+    vi.stubGlobal("fetch", fetchMock);
+    const official = generateIllustration("Official page", 1, { fallbackProviders: ["openai"] });
+    await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
+    try {
+      const relay = generateIllustration("Relay page", 2, { fallbackProviders: ["orbitix"] });
+      await vi.waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+      expect((await relay).provider).toBe("orbitix");
+    } finally {
+      releaseOfficial?.(new Response(JSON.stringify({ data: [{ b64_json: "b3BlbmFp" }] }), { status: 200 }));
+      await official;
+    }
   });
 
   it("allows gpt-image models to participate in ordinary CPA page routing", () => {
@@ -705,11 +959,12 @@ describe("image-to-image provider routing", () => {
   });
 
   it("does not use CPA for a saved name without a canonical photo", async () => {
-    process.env.IMAGE_PROVIDER_ORDER = "pollinations:1";
+    process.env.IMAGE_PROVIDER_ORDER = "agnes:1";
+    process.env.AGNES_API_KEY = "agnes-test";
     const fetchMock = vi.fn().mockResolvedValue(
-      new Response(new Uint8Array([1, 2, 3]), {
+      new Response(JSON.stringify({ data: [{ b64_json: "YWduZXM=" }] }), {
         status: 200,
-        headers: { "Content-Type": "image/png" },
+        headers: { "Content-Type": "application/json" },
       }),
     );
     vi.stubGlobal("fetch", fetchMock);
@@ -729,8 +984,8 @@ describe("image-to-image provider routing", () => {
       ],
     });
 
-    expect(result.provider).toBe("pollinations");
-    expect(String(fetchMock.mock.calls[0][0])).toContain("image.pollinations.ai");
+    expect(result.provider).toBe("agnes");
+    expect(String(fetchMock.mock.calls[0][0])).toContain("apihub.agnes-ai.com");
   });
 
   it("keeps photo-backed family generation on CPA when CPA fails", async () => {

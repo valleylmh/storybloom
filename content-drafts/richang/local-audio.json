@@ -1242,5 +1242,30 @@
       225.828
     ],
     "duration": 240.372
+  },
+  "richang/jin-tian-bu-shi-sheng-ri-ya": {
+    "url": "/library/richang/jin-tian-bu-shi-sheng-ri-ya/zh-a6f9a8ebd0dc715b.mp3",
+    "contentHash": "a6f9a8ebd0dc715b07214dd3b7e18fc93824af6b58e7806d32c0c0ff3738e2cf",
+    "pageStarts": [
+      0,
+      12.756,
+      24.384,
+      38.82,
+      50.208,
+      61.044,
+      72.192,
+      88.38,
+      101.136,
+      112.692,
+      122.328,
+      138.684,
+      152.472,
+      166.428,
+      177.264,
+      192.9,
+      208.848,
+      220.716
+    ],
+    "duration": 236.7
   }
 }

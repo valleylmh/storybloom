@@ -38,10 +38,14 @@ describe("production readiness profile", () => {
     expect(PRODUCTION_READINESS_PROFILE.optional).toEqual(
       expect.arrayContaining([
         "AGNES_IMAGE_TIMEOUT_MS",
-        "CLOUDFLARE_IMAGE_TIMEOUT_MS",
+        "OPENAI_IMAGE_TIMEOUT_MS",
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL",
+        "ORBITIX_IMAGE_TIMEOUT_MS",
+        "ORBITIX_API_KEY",
+        "ORBITIX_BASE_URL",
         "DASHSCOPE_IMAGE_TIMEOUT_MS",
         "HUGGINGFACE_IMAGE_TIMEOUT_MS",
-        "POLLINATIONS_IMAGE_TIMEOUT_MS",
         "IMAGE_DOWNLOAD_TIMEOUT_MS",
       ]),
     );

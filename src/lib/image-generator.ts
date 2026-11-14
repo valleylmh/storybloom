@@ -29,14 +29,8 @@ const MAX_IMAGE_ATTEMPTS = 3;
 const DEMO_IMAGE_MARKER = "StoryBloom%20Demo";
 const DASHSCOPE_ENDPOINT =
   "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation";
-const POLLINATIONS_IMAGE_ENDPOINT =
-  process.env.POLLINATIONS_IMAGE_ENDPOINT || "https://image.pollinations.ai/prompt";
 const DEFAULT_DASHSCOPE_IMAGE_MODEL = "qwen-image-2.0-pro";
 const DEFAULT_DASHSCOPE_IMAGE_SIZE = "512*512";
-const DEFAULT_CLOUDFLARE_IMAGE_MODEL = "@cf/stabilityai/stable-diffusion-xl-base-1.0";
-const DEFAULT_CLOUDFLARE_IMAGE_REQUEST_DELAY_MS = 2_000;
-const DEFAULT_CLOUDFLARE_IMAGE_RETRY_DELAY_MS = 5_000;
-const DEFAULT_CLOUDFLARE_IMAGE_MAX_ATTEMPTS = 2;
 const DEFAULT_HUGGINGFACE_IMAGE_MODEL = "black-forest-labs/FLUX.1-schnell";
 const HUGGINGFACE_IMAGE_ENDPOINT =
   process.env.HUGGINGFACE_IMAGE_ENDPOINT || "https://router.huggingface.co/hf-inference/models";
@@ -56,6 +50,9 @@ const DEFAULT_CPA_IMAGE_REQUEST_DELAY_MS = 1_500;
 const DEFAULT_CPA_IMAGE_RETRY_DELAY_MS = 8_000;
 const DEFAULT_CPA_IMAGE_MAX_ATTEMPTS = 2;
 const DEFAULT_CPA_IMAGE_TIMEOUT_MS = 120_000;
+const DEFAULT_GPT_IMAGE_MODEL = "gpt-image-2.5-flare";
+const DEFAULT_IMAGE_PROVIDER_ORDER =
+  "agnes:2,openai:2,orbitix:2,dashscope:2,huggingface:2";
 const DEFAULT_IMAGE_PROVIDER_TIMEOUT_MS = 120_000;
 const MAX_IMAGE_PROVIDER_TIMEOUT_MS = 5 * 60 * 1000;
 const DEFAULT_IMAGE_DOWNLOAD_TIMEOUT_MS = 30_000;
@@ -65,10 +62,6 @@ const DEFAULT_FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS = 3;
 const DEFAULT_FAMILY_REFERENCE_DOWNLOAD_RETRY_DELAY_MS = 500;
 const FAMILY_REFERENCE_CACHE_TTL_MS = 10 * 60 * 1000;
 const MAX_FAMILY_REFERENCE_CACHE_ENTRIES = 64;
-const DEFAULT_POLLINATIONS_IMAGE_SIZE = 512;
-const DEFAULT_POLLINATIONS_IMAGE_REQUEST_DELAY_MS = 8_000;
-const DEFAULT_POLLINATIONS_IMAGE_RETRY_DELAY_MS = 15_000;
-const DEFAULT_POLLINATIONS_IMAGE_MAX_ATTEMPTS = 4;
 const DEFAULT_IMAGE_REQUEST_DELAY_MS = 22_000;
 const DEFAULT_RATE_LIMIT_RETRY_MS = 70_000;
 const DEFAULT_NEGATIVE_PROMPT =
@@ -129,16 +122,15 @@ function getImageProviderModel(provider: ImageProvider) {
   switch (provider) {
     case "dashscope":
       return process.env.DASHSCOPE_IMAGE_MODEL || DEFAULT_DASHSCOPE_IMAGE_MODEL;
-    case "cloudflare":
-      return process.env.CLOUDFLARE_IMAGE_MODEL || DEFAULT_CLOUDFLARE_IMAGE_MODEL;
-    case "pollinations":
-      return process.env.POLLINATIONS_IMAGE_MODEL || "default";
     case "huggingface":
       return process.env.HUGGINGFACE_IMAGE_MODEL || DEFAULT_HUGGINGFACE_IMAGE_MODEL;
     case "agnes":
       return process.env.AGNES_IMAGE_MODEL || DEFAULT_AGNES_IMAGE_MODEL;
     case "cpa":
       return process.env.CPA_IMAGE_MODEL || DEFAULT_CPA_IMAGE_MODEL;
+    case "openai":
+    case "orbitix":
+      return getGptImageConfig(provider).model;
   }
 }
 
@@ -149,16 +141,15 @@ type CpaReferenceImage = {
 
 let dashScopeImageQueue: Promise<unknown> = Promise.resolve();
 let nextDashScopeImageRequestAt = 0;
-let cloudflareImageQueue: Promise<unknown> = Promise.resolve();
-let nextCloudflareImageRequestAt = 0;
-let pollinationsImageQueue: Promise<unknown> = Promise.resolve();
-let nextPollinationsImageRequestAt = 0;
 let huggingFaceImageQueue: Promise<unknown> = Promise.resolve();
 let nextHuggingFaceImageRequestAt = 0;
 const agnesImageQueues = new Map<number, Promise<unknown>>();
 const nextAgnesImageRequestAt = new Map<number, number>();
 let cpaImageQueue: Promise<unknown> = Promise.resolve();
 let nextCpaImageRequestAt = 0;
+type GptImageProvider = "cpa" | "openai" | "orbitix";
+const gptImageQueues = new Map<GptImageProvider, Promise<unknown>>();
+const nextGptImageRequestAt = new Map<GptImageProvider, number>();
 const familyReferenceCache = new Map<
   string,
   { dataUri: string; expiresAt: number }
@@ -202,13 +193,6 @@ interface DashScopeGenerationResponse {
 
 function getDashScopeKey() {
   return process.env.DASHSCOPE_API_KEY || null;
-}
-
-function getCloudflareConfig() {
-  return {
-    accountId: process.env.CLOUDFLARE_ACCOUNT_ID || process.env.CF_ACCOUNT_ID || null,
-    apiToken: process.env.CLOUDFLARE_API_TOKEN || process.env.CF_API_TOKEN || null,
-  };
 }
 
 function getHuggingFaceKey() {
@@ -262,20 +246,36 @@ function getCpaImageConfig() {
   };
 }
 
+function getGptImageConfig(provider: "openai" | "orbitix") {
+  const prefix = provider.toUpperCase();
+  const defaultBaseUrl =
+    provider === "openai"
+      ? "https://api.openai.com/v1"
+      : "https://new.orbitix.site/v1";
+  return {
+    baseUrl: (process.env[`${prefix}_BASE_URL`]?.trim() || defaultBaseUrl).replace(
+      /\/+$/, "",
+    ),
+    apiKey: process.env[`${prefix}_API_KEY`]?.trim() || null,
+    model: process.env[`${prefix}_IMAGE_MODEL`]?.trim() || DEFAULT_GPT_IMAGE_MODEL,
+    size: process.env[`${prefix}_IMAGE_SIZE`]?.trim() || "1024x1024",
+  };
+}
+
 function isImageProvider(value: string): value is ImageProvider {
   return (
     value === "dashscope" ||
-    value === "cloudflare" ||
-    value === "pollinations" ||
     value === "huggingface" ||
     value === "agnes" ||
-    value === "cpa"
+    value === "cpa" ||
+    value === "openai" ||
+    value === "orbitix"
   );
 }
 
 function hasProviderKey(provider: ImageProvider) {
-  if (provider === "pollinations") {
-    return true;
+  if (provider === "openai" || provider === "orbitix") {
+    return Boolean(getGptImageConfig(provider).apiKey);
   }
 
   if (provider === "dashscope") {
@@ -295,8 +295,7 @@ function hasProviderKey(provider: ImageProvider) {
     return Boolean(config.apiKey && config.baseUrl);
   }
 
-  const cloudflareConfig = getCloudflareConfig();
-  return Boolean(cloudflareConfig.accountId && cloudflareConfig.apiToken);
+  return false;
 }
 
 function parseImageProviderConfig(configured: string) {
@@ -322,7 +321,7 @@ function getImageProviderOrderConfig() {
   return (
     process.env.IMAGE_PROVIDER_ORDER ||
     process.env.IMAGE_PROVIDER ||
-    "agnes:2,pollinations:2,cloudflare:2,dashscope:2,huggingface:2"
+    DEFAULT_IMAGE_PROVIDER_ORDER
   );
 }
 
@@ -339,7 +338,7 @@ function getImageProviderOrder() {
   const providers =
     configuredProviders.length > 0
       ? configuredProviders
-      : ["agnes", "pollinations", "cloudflare", "dashscope", "huggingface"];
+      : parseImageProviderConfig(DEFAULT_IMAGE_PROVIDER_ORDER).map((item) => item.provider);
   const seen = new Set<ImageProvider>();
   const validProviders: ImageProvider[] = [];
 
@@ -358,7 +357,10 @@ function getWeightedImageToImageProviders() {
   for (const { provider, weight } of parseImageProviderConfig(
     getImageToImageProviderOrderConfig()
   )) {
-    if ((provider !== "agnes" && provider !== "cpa") || !hasProviderKey(provider)) {
+    if (
+      !["agnes", "cpa", "openai", "orbitix"].includes(provider) ||
+      !hasProviderKey(provider)
+    ) {
       continue;
     }
     providers.push(...Array.from({ length: weight }, () => provider));
@@ -797,12 +799,6 @@ function isRateLimitError(error: unknown) {
   return classifyGenerationError(error) === "rate_limit";
 }
 
-function encodePollinationsPathSegment(value: string) {
-  return encodeURIComponent(value).replace(/[!'()*]/g, (character) =>
-    `%${character.charCodeAt(0).toString(16).toUpperCase()}`
-  );
-}
-
 function getRetryAfterMs(response: Response) {
   const retryAfter = response.headers.get("retry-after");
   if (!retryAfter) {
@@ -838,52 +834,6 @@ async function withDashScopeImageThrottle<T>(task: () => Promise<T>): Promise<T>
   });
 
   dashScopeImageQueue = run.catch(() => undefined);
-  return run;
-}
-
-async function withPollinationsImageThrottle<T>(task: () => Promise<T>): Promise<T> {
-  const requestDelay = getPositiveIntegerEnv(
-    "POLLINATIONS_IMAGE_REQUEST_DELAY_MS",
-    DEFAULT_POLLINATIONS_IMAGE_REQUEST_DELAY_MS
-  );
-
-  const run = pollinationsImageQueue.then(async () => {
-    const waitMs = Math.max(0, nextPollinationsImageRequestAt - Date.now());
-    if (waitMs > 0) {
-      await sleep(waitMs);
-    }
-
-    try {
-      return await task();
-    } finally {
-      nextPollinationsImageRequestAt = Date.now() + requestDelay;
-    }
-  });
-
-  pollinationsImageQueue = run.catch(() => undefined);
-  return run;
-}
-
-async function withCloudflareImageThrottle<T>(task: () => Promise<T>): Promise<T> {
-  const requestDelay = getPositiveIntegerEnv(
-    "CLOUDFLARE_IMAGE_REQUEST_DELAY_MS",
-    DEFAULT_CLOUDFLARE_IMAGE_REQUEST_DELAY_MS
-  );
-
-  const run = cloudflareImageQueue.then(async () => {
-    const waitMs = Math.max(0, nextCloudflareImageRequestAt - Date.now());
-    if (waitMs > 0) {
-      await sleep(waitMs);
-    }
-
-    try {
-      return await task();
-    } finally {
-      nextCloudflareImageRequestAt = Date.now() + requestDelay;
-    }
-  });
-
-  cloudflareImageQueue = run.catch(() => undefined);
   return run;
 }
 
@@ -960,6 +910,28 @@ async function withCpaImageThrottle<T>(task: () => Promise<T>): Promise<T> {
   });
 
   cpaImageQueue = run.catch(() => undefined);
+  return run;
+}
+
+async function withGptImageThrottle<T>(
+  provider: GptImageProvider,
+  task: () => Promise<T>,
+): Promise<T> {
+  if (provider === "cpa") return withCpaImageThrottle(task);
+  const requestDelay = getPositiveIntegerEnv(
+    `${provider.toUpperCase()}_IMAGE_REQUEST_DELAY_MS`,
+    DEFAULT_CPA_IMAGE_REQUEST_DELAY_MS,
+  );
+  const run = (gptImageQueues.get(provider) || Promise.resolve()).then(async () => {
+    const waitMs = Math.max(0, (nextGptImageRequestAt.get(provider) || 0) - Date.now());
+    if (waitMs > 0) await sleep(waitMs);
+    try {
+      return await task();
+    } finally {
+      nextGptImageRequestAt.set(provider, Date.now() + requestDelay);
+    }
+  });
+  gptImageQueues.set(provider, run.catch(() => undefined));
   return run;
 }
 
@@ -1061,17 +1033,6 @@ async function downloadImageAsDataUrl(imageUrl: string) {
 
 function extractImageUrl(data: DashScopeGenerationResponse) {
   return data.output?.choices?.[0]?.message?.content?.find((item) => item.image)?.image;
-}
-
-interface CloudflareErrorResponse {
-  success?: boolean;
-  errors?: Array<{
-    message?: string;
-    code?: number;
-  }>;
-  error?: {
-    message?: string;
-  };
 }
 
 interface AgnesImageGenerationResponse {
@@ -1218,174 +1179,6 @@ async function generateDashScopeIllustration(
   return downloadImageAsDataUrl(imageUrl);
 }
 
-async function generateCloudflareIllustration(
-  prompt: string,
-  _seed?: number,
-  options?: {
-    pageNumber?: number;
-    style?: IllustrationStyle;
-    characterReferenceId?: string;
-  }
-): Promise<string> {
-  const cloudflareConfig = getCloudflareConfig();
-  if (!cloudflareConfig.accountId || !cloudflareConfig.apiToken) {
-    throw new GenerationProviderError("configuration");
-  }
-
-  const promptText = truncateForImagePrompt(
-    [
-      "Create one square children's storybook illustration in English prompt terms.",
-      "Highest priority: create a story scene, not a character portrait. Show setting, props, action, emotion, and a clear story moment. The child should usually occupy 25-45% of the frame. Vary pose, expression, camera angle, and crop. Avoid repeated front-facing portrait, selfie, bust shot, giant head close-up, or empty background.",
-      prompt,
-      options?.characterReferenceId
-        ? "A fixed child identity has already been described in the prompt. Preserve that identity, hairstyle, outfit colors, age, body proportions, and premium 3D cartoon style across pages."
-        : null,
-      "No text, captions, letters, logos, watermarks, scary imagery, violence, distorted hands, extra limbs, or photorealistic adult styling.",
-    ]
-      .filter(Boolean)
-      .join(" ")
-  );
-  const model = process.env.CLOUDFLARE_IMAGE_MODEL || DEFAULT_CLOUDFLARE_IMAGE_MODEL;
-  const modelPath = model.startsWith("@cf/") ? model : `@cf/${model}`;
-  const endpoint = `https://api.cloudflare.com/client/v4/accounts/${cloudflareConfig.accountId}/ai/run/${modelPath}`;
-  const maxAttempts = Math.max(
-    1,
-    getPositiveIntegerEnv("CLOUDFLARE_IMAGE_MAX_ATTEMPTS", DEFAULT_CLOUDFLARE_IMAGE_MAX_ATTEMPTS)
-  );
-  const retryDelay = getPositiveIntegerEnv(
-    "CLOUDFLARE_IMAGE_RETRY_DELAY_MS",
-    DEFAULT_CLOUDFLARE_IMAGE_RETRY_DELAY_MS
-  );
-  let lastErrorClass: GenerationErrorClass = "unknown";
-
-  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    const response = await withCloudflareImageThrottle(() =>
-      fetch(endpoint, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${cloudflareConfig.apiToken}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt: promptText }),
-        signal: AbortSignal.timeout(
-          getBoundedImageTimeoutMs("CLOUDFLARE_IMAGE_TIMEOUT_MS"),
-        ),
-      })
-    );
-
-    if (response.ok) {
-      const contentType = (response.headers.get("content-type") || "").toLowerCase();
- if (contentType.includes("application/json")) {
-        const payload = (await response.json()) as { result?: { image?: string } };
- const imageBase64 = payload?.result?.image;
-        if (imageBase64) {
- return `data:image/jpeg;base64,${imageBase64}`;
-        }
- }
-      const bytes = Buffer.from(await response.arrayBuffer());
-      const fallbackType = contentType.startsWith("image/") ? contentType : "image/png";
- return `data:${fallbackType};base64,${bytes.toString("base64")}`;
-    }
-
-    await response.json().catch(() => null) as CloudflareErrorResponse | null;
-    lastErrorClass = classifyHttpStatus(response.status);
-
-    if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
-      await sleep(getRetryAfterMs(response) ?? retryDelay);
-      continue;
-    }
-
-    break;
-  }
-
-  throw new GenerationProviderError(lastErrorClass);
-}
-
-async function generatePollinationsIllustration(
-  prompt: string,
-  seed?: number,
-  options?: {
-    pageNumber?: number;
-    style?: IllustrationStyle;
-    characterReferenceId?: string;
-  }
-): Promise<string> {
-  const promptText = truncateForImagePrompt(
-    [
-      "Childrens storybook illustration, square composition.",
-      "Highest priority: show a complete story scene, not a character portrait. Include environment, props, action, and emotion. Keep the child around 25-45% of the frame, usually full body or three-quarter body. Vary pose, expression, and camera angle.",
-      prompt,
-      options?.characterReferenceId
-        ? "Keep the same child identity described in the prompt: hairstyle, outfit colors, age, body proportions, and premium 3D cartoon style."
-        : null,
-      "No text, captions, letters, logos, watermark, scary imagery, violence, distorted hands, extra limbs, or photorealistic adult styling.",
-    ]
-      .filter(Boolean)
-      .join(" ")
-  );
-  const imageSize = getOptionalPositiveIntegerEnv("POLLINATIONS_IMAGE_SIZE") || DEFAULT_POLLINATIONS_IMAGE_SIZE;
-  const width = getOptionalPositiveIntegerEnv("POLLINATIONS_IMAGE_WIDTH") || imageSize;
-  const height = getOptionalPositiveIntegerEnv("POLLINATIONS_IMAGE_HEIGHT") || imageSize;
-  const upstreamUrl = new URL(
-    `${POLLINATIONS_IMAGE_ENDPOINT}/${encodePollinationsPathSegment(promptText)}`
-  );
-
-  upstreamUrl.searchParams.set("width", String(width));
-  upstreamUrl.searchParams.set("height", String(height));
-  upstreamUrl.searchParams.set("nologo", "true");
-
-  if (seed !== undefined) {
-    upstreamUrl.searchParams.set("seed", String(Math.abs(Math.trunc(seed))));
-  }
-
-  if (process.env.POLLINATIONS_IMAGE_MODEL) {
-    upstreamUrl.searchParams.set("model", process.env.POLLINATIONS_IMAGE_MODEL);
-  }
-
-  const maxAttempts = Math.max(
-    1,
-    getPositiveIntegerEnv("POLLINATIONS_IMAGE_MAX_ATTEMPTS", DEFAULT_POLLINATIONS_IMAGE_MAX_ATTEMPTS)
-  );
-  const retryDelay = getPositiveIntegerEnv(
-    "POLLINATIONS_IMAGE_RETRY_DELAY_MS",
-    DEFAULT_POLLINATIONS_IMAGE_RETRY_DELAY_MS
-  );
-  let lastStatus: number | null = null;
-
-  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
-    const response = await withPollinationsImageThrottle(() =>
-      fetch(upstreamUrl, {
-        headers: {
-          Accept: "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
-          "User-Agent": `StoryBloom/1.0 (+${process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"})`,
-        },
-        signal: AbortSignal.timeout(
-          getBoundedImageTimeoutMs("POLLINATIONS_IMAGE_TIMEOUT_MS"),
-        ),
-      })
-    );
-
-    if (response.ok) {
-      const contentType = response.headers.get("content-type") || "image/jpeg";
-      const bytes = Buffer.from(await response.arrayBuffer());
-      return `data:${contentType};base64,${bytes.toString("base64")}`;
-    }
-
-    lastStatus = response.status;
-
-    if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
-      await sleep(getRetryAfterMs(response) ?? retryDelay);
-      continue;
-    }
-
-    break;
-  }
-
-  throw new GenerationProviderError(
-    lastStatus === null ? "unknown" : classifyHttpStatus(lastStatus),
-  );
-}
-
 async function generateHuggingFaceIllustration(
   prompt: string,
   _seed?: number,
@@ -1522,17 +1315,20 @@ function createCpaImageFile(dataUri: string, index: number) {
   };
 }
 
-function createCpaGptImageEditBody(
+function createGptImageEditBody(
   model: string,
   promptText: string,
   references: CpaReferenceImage[],
+  size: string,
+  legacyResponseFormat: boolean,
 ) {
   const form = new FormData();
   form.append("model", model);
   form.append("prompt", promptText);
-  form.append("size", process.env.CPA_IMAGE_SIZE || "1024x1024");
+  form.append("size", size);
   form.append("n", "1");
-  form.append("response_format", "b64_json");
+  if (legacyResponseFormat) form.append("response_format", "b64_json");
+  else form.append("output_format", "png");
   references.forEach((reference, index) => {
     const image = createCpaImageFile(reference.dataUri, index);
     form.append("image[]", image.blob, image.filename);
@@ -1540,20 +1336,12 @@ function createCpaGptImageEditBody(
   return form;
 }
 
-function createCpaGptImageGenerationBody(model: string, promptText: string) {
-  return JSON.stringify({
-    model,
-    prompt: promptText,
-    size: process.env.CPA_IMAGE_SIZE || "1024x1024",
-    n: 1,
-    response_format: "b64_json",
-  });
-}
-
-async function requestCpaGptImage(input: {
+async function requestGptImage(input: {
+  provider: GptImageProvider;
   baseUrl: string;
   apiKey: string;
   model: string;
+  size: string;
   promptText: string;
   references: CpaReferenceImage[];
   maxAttempts: number;
@@ -1575,29 +1363,45 @@ async function requestCpaGptImage(input: {
     ].join(" "),
   );
   const isEdit = input.references.length > 0;
+  const useJson = !isEdit || input.provider === "openai";
+  const legacyResponseFormat = input.provider === "cpa";
 
   for (let attempt = 1; attempt <= input.maxAttempts; attempt += 1) {
     let response: Response;
     try {
-      response = await withCpaImageThrottle(() =>
+      response = await withGptImageThrottle(input.provider, () =>
         fetch(`${input.baseUrl}/images/${isEdit ? "edits" : "generations"}`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${input.apiKey}`,
-            ...(isEdit ? {} : { "Content-Type": "application/json" }),
+            ...(useJson ? { "Content-Type": "application/json" } : {}),
             "HTTP-Referer":
               process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
             "X-Title": "StoryBloom GPT Image",
           },
-          body: isEdit
-            ? createCpaGptImageEditBody(
+          body: useJson
+            ? JSON.stringify({
+                model: input.model,
+                prompt: promptWithReferenceOrder,
+                size: input.size,
+                n: 1,
+                ...(legacyResponseFormat
+                  ? { response_format: "b64_json" }
+                  : { output_format: "png" }),
+                ...(isEdit
+                  ? {
+                      images: input.references.map((reference) => ({
+                        image_url: reference.dataUri,
+                      })),
+                    }
+                  : {}),
+              })
+            : createGptImageEditBody(
                 input.model,
                 promptWithReferenceOrder,
                 input.references,
-              )
-            : createCpaGptImageGenerationBody(
-                input.model,
-                promptWithReferenceOrder,
+                input.size,
+                legacyResponseFormat,
               ),
           signal: AbortSignal.timeout(input.timeoutMs),
         }),
@@ -1635,13 +1439,14 @@ async function requestCpaGptImage(input: {
   throw new GenerationProviderError(lastErrorClass);
 }
 
-async function generateCpaIllustration(
+async function generateCompatibleIllustration(
+  provider: GptImageProvider,
   prompt: string,
-  _seed?: number,
-  options?: IllustrationOptions
+  options?: IllustrationOptions,
 ): Promise<string> {
   const referenceImages = await getImageToImageReferenceImages(options);
   if (
+    provider === "cpa" &&
     referenceImages.length === 0 &&
     !isCpaGptImageModel(getCpaImageConfig().model)
   ) {
@@ -1666,7 +1471,26 @@ async function generateCpaIllustration(
       .filter(Boolean)
       .join(" ")
   );
-  return requestCpaImage(promptText, referenceImages);
+  if (provider === "cpa") return requestCpaImage(promptText, referenceImages);
+  const config = getGptImageConfig(provider);
+  if (!config.apiKey) throw new GenerationProviderError("configuration");
+  const prefix = provider.toUpperCase();
+  return requestGptImage({
+    provider,
+    ...config,
+    apiKey: config.apiKey,
+    promptText,
+    references: referenceImages.slice(0, MAX_CPA_REFERENCE_IMAGES),
+    maxAttempts: Math.max(
+      1,
+      getPositiveIntegerEnv(`${prefix}_IMAGE_MAX_ATTEMPTS`, DEFAULT_CPA_IMAGE_MAX_ATTEMPTS),
+    ),
+    retryDelay: getPositiveIntegerEnv(
+      `${prefix}_IMAGE_RETRY_DELAY_MS`,
+      DEFAULT_CPA_IMAGE_RETRY_DELAY_MS,
+    ),
+    timeoutMs: getBoundedImageTimeoutMs(`${prefix}_IMAGE_TIMEOUT_MS`),
+  });
 }
 
 async function requestCpaImage(
@@ -1703,10 +1527,12 @@ async function requestCpaImage(
     DEFAULT_CPA_IMAGE_TIMEOUT_MS
   );
   if (isCpaGptImageModel(model)) {
-    return requestCpaGptImage({
+    return requestGptImage({
+      provider: "cpa",
       baseUrl,
       apiKey,
       model,
+      size: process.env.CPA_IMAGE_SIZE || "1024x1024",
       promptText,
       references: normalizedReferences,
       maxAttempts,
@@ -1912,16 +1738,16 @@ async function generateWithProvider(
   switch (provider) {
     case "dashscope":
       return generateDashScopeIllustration(prompt, seed, options);
-    case "cloudflare":
-      return generateCloudflareIllustration(prompt, seed, options);
-    case "pollinations":
-      return generatePollinationsIllustration(prompt, seed, options);
     case "huggingface":
       return generateHuggingFaceIllustration(prompt, seed, options);
     case "agnes":
       return generateAgnesIllustration(prompt, seed, options);
     case "cpa":
-      return generateCpaIllustration(prompt, seed, options);
+    case "openai":
+    case "orbitix":
+      return generateCompatibleIllustration(provider, prompt, options);
+    default:
+      throw new GenerationProviderError("configuration");
   }
 }
 

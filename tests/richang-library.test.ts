@@ -16,9 +16,10 @@ import batch4Plan from "../content-drafts/richang/batch-31-40/plan.json";
 import batch5Plan from "../content-drafts/richang/batch-41-50/plan.json";
 import batch6Plan from "../content-drafts/richang/batch-51-51/plan.json";
 import batch7Plan from "../content-drafts/richang/batch-52-52/plan.json";
+import batch8Plan from "../content-drafts/richang/batch-53-53/plan.json";
 
 const FIRST_IDS = ["lan-ping-guo", "she-bu-de-chuan-de-xin-xie", "te-bie-de-ri-zi-shi-na-tian", "wan-ju-shan-li-zhao-xiao-che", "zai-wan-wu-fen-zhong", "wo-de-bing-gan-zen-me-geng-xiao", "yi-bei-da-fan-de-niu-nai", "deng-wo-xin-qing-hao-le-zai-shuo", "zen-me-zhi-you-wo-zai-shou-shi", "bu-tai-wan-mei-de-ye-can"];
-const expandedBooks = [...batch2Plan.books, ...batch3Plan.books, ...batch4Plan.books, ...batch5Plan.books, ...batch6Plan.books, ...batch7Plan.books];
+const expandedBooks = [...batch2Plan.books, ...batch3Plan.books, ...batch4Plan.books, ...batch5Plan.books, ...batch6Plan.books, ...batch7Plan.books, ...batch8Plan.books];
 const IDS = [...FIRST_IDS, ...expandedBooks.map(({ id }) => id)];
 const PAGE_COUNTS = [16, 12, 12, 12, 12, 12, 12, 12, 12, 12, ...expandedBooks.map(({ pages }) => pages)];
 
