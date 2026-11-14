@@ -1,4 +1,4 @@
-import { generateCpaStoryCharacterAnchor } from "@/lib/image-generator";
+import { generateStoryCharacterAnchor } from "@/lib/image-generator";
 import { cacheCharacterReference } from "@/lib/storage";
 import type { FamilyCharacterInput, StoryVisualBible } from "@/types";
 
@@ -7,7 +7,7 @@ function decodeImageDataUri(imageDataUri: string) {
     /^data:(image\/(?:jpeg|png|webp));base64,([A-Za-z0-9+/=]+)$/i,
   );
   if (!match) {
-    throw new Error("CPA Nano Banana did not return a cacheable story anchor image.");
+    throw new Error("The image provider did not return a cacheable story anchor image.");
   }
 
   return {
@@ -21,7 +21,7 @@ export async function createStoryCharacterAnchorToken(input: {
   visualBible: StoryVisualBible;
   referenceCacheKey?: string;
 }) {
-  const imageDataUri = await generateCpaStoryCharacterAnchor(input);
+  const imageDataUri = await generateStoryCharacterAnchor(input);
   const image = decodeImageDataUri(imageDataUri);
   return cacheCharacterReference(image);
 }

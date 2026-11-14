@@ -1,12 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({
-  generateCpaStoryCharacterAnchor: vi.fn(),
+  generateStoryCharacterAnchor: vi.fn(),
   cacheCharacterReference: vi.fn(),
 }));
 
 vi.mock("@/lib/image-generator", () => ({
-  generateCpaStoryCharacterAnchor: mocks.generateCpaStoryCharacterAnchor,
+  generateStoryCharacterAnchor: mocks.generateStoryCharacterAnchor,
 }));
 
 vi.mock("@/lib/storage", () => ({
@@ -47,7 +47,7 @@ describe("story character anchor cache", () => {
   });
 
   it("stores the generated protagonist anchor in the private temporary cache", async () => {
-    mocks.generateCpaStoryCharacterAnchor.mockResolvedValue(
+    mocks.generateStoryCharacterAnchor.mockResolvedValue(
       "data:image/png;base64,YW5jaG9y",
     );
     mocks.cacheCharacterReference.mockResolvedValue("anchor-token");
@@ -58,7 +58,7 @@ describe("story character anchor cache", () => {
     });
 
     expect(token).toBe("anchor-token");
-    expect(mocks.generateCpaStoryCharacterAnchor).toHaveBeenCalledWith({
+    expect(mocks.generateStoryCharacterAnchor).toHaveBeenCalledWith({
       character,
       visualBible,
     });
@@ -69,7 +69,7 @@ describe("story character anchor cache", () => {
   });
 
   it("rejects non-image provider output instead of caching it", async () => {
-    mocks.generateCpaStoryCharacterAnchor.mockResolvedValue("not-an-image");
+    mocks.generateStoryCharacterAnchor.mockResolvedValue("not-an-image");
 
     await expect(
       createStoryCharacterAnchorToken({ character, visualBible }),

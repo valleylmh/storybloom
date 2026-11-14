@@ -48,7 +48,8 @@ vi.mock("@/lib/storage", () => ({
   rateLimiter: { reserve: mocks.reserve },
 }));
 
-vi.mock("@/lib/story-generator", () => ({
+vi.mock("@/lib/story-generator", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/story-generator")>()),
   generateStoryText: mocks.generateStoryText,
 }));
 

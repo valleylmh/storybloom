@@ -56,6 +56,7 @@ const DEFAULT_IMAGE_PROVIDER_ORDER =
 const DEFAULT_IMAGE_PROVIDER_TIMEOUT_MS = 120_000;
 const MAX_IMAGE_PROVIDER_TIMEOUT_MS = 5 * 60 * 1000;
 const DEFAULT_IMAGE_DOWNLOAD_TIMEOUT_MS = 30_000;
+const MAX_IMAGE_RETRY_WAIT_MS = 30_000;
 const MAX_CPA_REFERENCE_IMAGES = 10;
 const DEFAULT_FAMILY_ASSETS_BUCKET = "family-photos";
 const DEFAULT_FAMILY_REFERENCE_DOWNLOAD_MAX_ATTEMPTS = 3;
@@ -684,8 +685,6 @@ async function getImageToImageReferenceImages(options?: IllustrationOptions) {
                       operation: "illustration.reference",
                       story: options?.storyId,
                       page: options?.pageNumber,
-                      provider: "cpa",
-                      model: getImageProviderModel("cpa"),
                       status: "expired",
                       errorClass: "not_found",
                     },
@@ -812,6 +811,14 @@ function getRetryAfterMs(response: Response) {
 
   const dateMs = Date.parse(retryAfter);
   return Number.isFinite(dateMs) ? Math.max(0, dateMs - Date.now()) : null;
+}
+
+async function waitForImageProviderRetry(delayMs: number, timeoutMs: number) {
+  // Long upstream cooldowns must return control before the Vercel function expires.
+  // Do not shorten Retry-After and send a request while the provider is still cooling down.
+  if (delayMs > Math.min(timeoutMs, MAX_IMAGE_RETRY_WAIT_MS)) return false;
+  await sleep(delayMs);
+  return true;
 }
 
 async function withDashScopeImageThrottle<T>(task: () => Promise<T>): Promise<T> {
@@ -1408,8 +1415,10 @@ async function requestGptImage(input: {
       );
     } catch (error) {
       lastErrorClass = classifyGenerationError(error);
-      if (attempt < input.maxAttempts) {
-        await sleep(input.retryDelay);
+      if (
+        attempt < input.maxAttempts &&
+        await waitForImageProviderRetry(input.retryDelay, input.timeoutMs)
+      ) {
         continue;
       }
       throw new GenerationProviderError(lastErrorClass);
@@ -1430,8 +1439,10 @@ async function requestGptImage(input: {
       attempt < input.maxAttempts &&
       (response.status === 429 || response.status >= 500)
     ) {
-      await sleep(getRetryAfterMs(response) ?? input.retryDelay);
-      continue;
+      if (await waitForImageProviderRetry(
+        getRetryAfterMs(response) ?? input.retryDelay,
+        input.timeoutMs,
+      )) continue;
     }
     break;
   }
@@ -1472,6 +1483,14 @@ async function generateCompatibleIllustration(
       .join(" ")
   );
   if (provider === "cpa") return requestCpaImage(promptText, referenceImages);
+  return requestConfiguredGptImage(provider, promptText, referenceImages);
+}
+
+async function requestConfiguredGptImage(
+  provider: "openai" | "orbitix",
+  promptText: string,
+  referenceImages: CpaReferenceImage[],
+) {
   const config = getGptImageConfig(provider);
   if (!config.apiKey) throw new GenerationProviderError("configuration");
   const prefix = provider.toUpperCase();
@@ -1522,7 +1541,7 @@ async function requestCpaImage(
     "CPA_IMAGE_RETRY_DELAY_MS",
     DEFAULT_CPA_IMAGE_RETRY_DELAY_MS
   );
-  const timeoutMs = getPositiveIntegerEnv(
+  const timeoutMs = getBoundedImageTimeoutMs(
     "CPA_IMAGE_TIMEOUT_MS",
     DEFAULT_CPA_IMAGE_TIMEOUT_MS
   );
@@ -1578,8 +1597,10 @@ async function requestCpaImage(
       );
     } catch (error) {
       lastErrorClass = classifyGenerationError(error);
-      if (attempt < maxAttempts) {
-        await sleep(retryDelay);
+      if (
+        attempt < maxAttempts &&
+        await waitForImageProviderRetry(retryDelay, timeoutMs)
+      ) {
         continue;
       }
       throw new GenerationProviderError(lastErrorClass);
@@ -1597,8 +1618,10 @@ async function requestCpaImage(
     }
 
     if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
-      await sleep(getRetryAfterMs(response) ?? retryDelay);
-      continue;
+      if (await waitForImageProviderRetry(
+        getRetryAfterMs(response) ?? retryDelay,
+        timeoutMs,
+      )) continue;
     }
     break;
   }
@@ -1613,11 +1636,70 @@ export async function generateCpaReferenceImage(input: {
   return requestCpaImage(truncateForCpaPrompt(input.prompt), input.referenceImages);
 }
 
-export async function generateCpaStoryCharacterAnchor(input: {
+async function requestConfiguredReferenceImage(
+  prompt: string,
+  references: CpaReferenceImage[],
+) {
+  const providers = getConfiguredImageToImageProviders();
+  if (providers.length === 0) throw new GenerationProviderError("configuration");
+  let lastErrorClass: GenerationErrorClass = "unknown";
+  for (const provider of providers) {
+    const startedAt = Date.now();
+    try {
+      let image: string;
+      if (provider === "cpa") {
+        image = await requestCpaImage(prompt, references);
+      } else if (provider === "agnes") {
+        image = await requestAgnesImage(prompt, references);
+      } else if (provider === "openai" || provider === "orbitix") {
+        image = await requestConfiguredGptImage(provider, prompt, references);
+      } else continue;
+      logGenerationEvent({
+        operation: "illustration.reference_attempt",
+        provider,
+        model: getImageProviderModel(provider),
+        status: "success",
+        duration: Date.now() - startedAt,
+      });
+      return image;
+    } catch (error) {
+      lastErrorClass = classifyGenerationError(error);
+      logGenerationEvent(
+        {
+          operation: "illustration.reference_attempt",
+          provider,
+          model: getImageProviderModel(provider),
+          status: "failed",
+          duration: Date.now() - startedAt,
+          errorClass: lastErrorClass,
+        },
+        "warn",
+      );
+    }
+  }
+  throw new GenerationProviderError(lastErrorClass);
+}
+
+export async function generateReferenceImage(input: {
+  prompt: string;
+  referenceImages: string[];
+}) {
+  return requestConfiguredReferenceImage(
+    truncateForCpaPrompt(input.prompt),
+    input.referenceImages.slice(0, MAX_CPA_REFERENCE_IMAGES).map((dataUri, index) => ({
+      dataUri,
+      label: `REFERENCE IMAGE ${index + 1}. Follow the prompt for how this reference should be used.`,
+    })),
+  );
+}
+
+type StoryCharacterAnchorInput = {
   character: FamilyCharacterInput;
   visualBible: StoryVisualBible;
   referenceCacheKey?: string;
-}) {
+};
+
+async function createStoryCharacterAnchorRequest(input: StoryCharacterAnchorInput) {
   const references = await getPrivateFamilyReferenceImages({
     familyCharacters: [input.character],
     castIds: [input.character.id],
@@ -1639,7 +1721,17 @@ export async function generateCpaStoryCharacterAnchor(input: {
       .filter(Boolean)
       .join(" "),
   );
+  return { prompt, references };
+}
+
+export async function generateCpaStoryCharacterAnchor(input: StoryCharacterAnchorInput) {
+  const { prompt, references } = await createStoryCharacterAnchorRequest(input);
   return requestCpaImage(prompt, references);
+}
+
+export async function generateStoryCharacterAnchor(input: StoryCharacterAnchorInput) {
+  const { prompt, references } = await createStoryCharacterAnchorRequest(input);
+  return requestConfiguredReferenceImage(prompt, references);
 }
 
 async function generateAgnesIllustration(
@@ -1647,11 +1739,6 @@ async function generateAgnesIllustration(
   _seed?: number,
   options?: IllustrationOptions
 ): Promise<string> {
-  const agnesKey = getAgnesKey(options?.pageNumber);
-  if (!agnesKey) {
-    throw new GenerationProviderError("configuration");
-  }
-
   const promptText = truncateForImagePrompt(
     [
       "Create one polished children's storybook illustration.",
@@ -1668,6 +1755,16 @@ async function generateAgnesIllustration(
       .join(" ")
   );
   const referenceImages = await getImageToImageReferenceImages(options);
+  return requestAgnesImage(promptText, referenceImages, options?.pageNumber);
+}
+
+async function requestAgnesImage(
+  promptText: string,
+  referenceImages: CpaReferenceImage[],
+  pageNumber?: number,
+) {
+  const agnesKey = getAgnesKey(pageNumber);
+  if (!agnesKey) throw new GenerationProviderError("configuration");
   const maxAttempts = Math.max(
     1,
     getPositiveIntegerEnv("AGNES_IMAGE_MAX_ATTEMPTS", DEFAULT_AGNES_IMAGE_MAX_ATTEMPTS)
@@ -1688,7 +1785,13 @@ async function generateAgnesIllustration(
         },
         body: JSON.stringify({
           model: process.env.AGNES_IMAGE_MODEL || DEFAULT_AGNES_IMAGE_MODEL,
-          prompt: promptText,
+          prompt: referenceImages.length > 0
+            ? truncateForCpaPrompt([
+                promptText,
+                "Reference image order:",
+                ...referenceImages.map((reference, index) => `Image ${index + 1}: ${reference.label}`),
+              ].join(" "))
+            : promptText,
           size: process.env.AGNES_IMAGE_SIZE || DEFAULT_AGNES_IMAGE_SIZE,
           ...(referenceImages.length > 0
             ? {
@@ -1719,8 +1822,10 @@ async function generateAgnesIllustration(
     }
 
     if (attempt < maxAttempts && (response.status === 429 || response.status >= 500)) {
-      await sleep(getRetryAfterMs(response) ?? retryDelay);
-      continue;
+      if (await waitForImageProviderRetry(
+        getRetryAfterMs(response) ?? retryDelay,
+        getBoundedImageTimeoutMs("AGNES_IMAGE_TIMEOUT_MS"),
+      )) continue;
     }
 
     break;
@@ -1759,15 +1864,13 @@ export async function generateIllustration(
     fallbackProviders?: ImageProvider[];
   }
 ): Promise<GeneratedIllustrationResult> {
-  if (hasPhotoFamilyCharacters(options) && !hasProviderKey("cpa")) {
-    throw new GenerationProviderError("configuration");
-  }
-  const providers = hasPhotoFamilyCharacters(options)
-    ? (["cpa"] as ImageProvider[])
-    : hasCustomCharacterReference(options)
-      ? getImageToImageFallbackOrder(options?.preferredProvider)
-      : getProviderFallbackOrder(options?.preferredProvider, options?.fallbackProviders);
-  if (hasCustomCharacterReference(options) && providers.length === 0) {
+  const usesReferences = hasPhotoFamilyCharacters(options) || hasCustomCharacterReference(options);
+  const providers = usesReferences
+    ? getImageToImageFallbackOrder(
+        options?.preferredProvider || getImageToImageProviderForPage(options?.pageNumber || 1),
+      )
+    : getProviderFallbackOrder(options?.preferredProvider, options?.fallbackProviders);
+  if (usesReferences && providers.length === 0) {
     throw new GenerationProviderError("configuration");
   }
   if (providers.length > 0) {
@@ -1898,7 +2001,7 @@ export async function generateIllustration(
 
   if (!canUseDemoImages()) {
     throw new IllustrationGenerationError(
-      "Real illustration generation is not configured: set AGNES_API_KEY, CPA_API_KEY, CLOUDFLARE_ACCOUNT_ID/CLOUDFLARE_API_TOKEN, DASHSCOPE_API_KEY, or HUGGINGFACE_API_TOKEN.",
+      "Real illustration generation is not configured: set a key for an available image provider.",
       [options?.pageNumber ?? 0],
       false
     );
@@ -1951,13 +2054,18 @@ export async function generateAllIllustrations(
       (character) =>
         castIds.has(character.id) && hasFamilyCharacterReference(character),
     );
-    if (usesFamilyPhoto) return "cpa";
-    if (customCharacterReferenceToken) {
+    if (usesFamilyPhoto || customCharacterReferenceToken) {
       return getImageToImageProviderForPage(index + 1, pages.length);
     }
     return ordinaryProviderPlan[index];
   });
   if (!providerPlan.some(Boolean)) {
+    if (
+      customCharacterReferenceToken ||
+      pages.some((page) => hasPhotoFamilyCharacters({ familyCharacters, castIds: page.castIds }))
+    ) {
+      throw new GenerationProviderError("configuration");
+    }
     if (!canUseDemoImages()) {
       throw new IllustrationGenerationError(
         "Production must configure a real illustration provider and cannot use demo placeholder images.",
@@ -2086,13 +2194,11 @@ export async function regeneratePage(
     storyId,
     requestAttempt: page.imageRequestCount,
     retry: (page.imageRetryCount || 0) > 0,
-    preferredProvider: usesFamilyPhoto
-      ? "cpa"
-      : customCharacterReferenceToken
-        ? getImageToImageProviderForPage(page.page)
-        : fallbackProviders?.length
-          ? undefined
-          : getProviderForPage(page.page),
+    preferredProvider: usesFamilyPhoto || customCharacterReferenceToken
+      ? getImageToImageProviderForPage(page.page)
+      : fallbackProviders?.length
+        ? undefined
+        : getProviderForPage(page.page),
     fallbackProviders:
       usesFamilyPhoto || customCharacterReferenceToken
         ? undefined
@@ -2102,13 +2208,10 @@ export async function regeneratePage(
     ...page,
     imageUrl: generated.imageUrl,
     imageStatus: isDemoImageUrl(generated.imageUrl) ? "demo" : "complete",
-    imagePlannedProvider:
-      page.imagePlannedProvider ||
-      (usesFamilyPhoto
-        ? "cpa"
-        : customCharacterReferenceToken
-          ? getImageToImageProviderForPage(page.page)
-          : fallbackProviders?.length
+    imagePlannedProvider: usesFamilyPhoto || customCharacterReferenceToken
+        ? getImageToImageProviderForPage(page.page)
+        : page.imagePlannedProvider ||
+          (fallbackProviders?.length
             ? undefined
             : getProviderForPage(page.page)),
     imageProvider: generated.provider,

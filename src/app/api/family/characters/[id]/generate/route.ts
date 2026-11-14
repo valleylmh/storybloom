@@ -5,7 +5,7 @@ import {
   AuthenticationError,
   requireAuthenticatedUser,
 } from "@/lib/supabase/server-auth";
-import { generateCpaReferenceImage } from "@/lib/image-generator";
+import { generateReferenceImage } from "@/lib/image-generator";
 import {
   MAX_FAMILY_CHARACTER_GENERATIONS,
   getRemainingFamilyCharacterGenerations,
@@ -54,13 +54,13 @@ async function generateCanonicalCharacter(input: {
     .filter(Boolean)
     .join(" ");
 
-  const imageDataUri = await generateCpaReferenceImage({
+  const imageDataUri = await generateReferenceImage({
     prompt,
     referenceImages: [input.imageDataUri],
   });
   const match = imageDataUri.match(/^data:(image\/[a-z0-9.+-]+);base64,(.+)$/i);
   if (!match) {
-    throw new Error("CPA Nano Banana 没有返回可保存的图片。");
+    throw new Error("图片提供商没有返回可保存的图片。");
   }
   return { bytes: Buffer.from(match[2], "base64"), contentType: match[1] };
 }

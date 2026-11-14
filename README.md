@@ -187,8 +187,8 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 
 当前代码主要有三类生成模型调用：
 
-- 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；默认读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。将 `STORY_TEXT_PROVIDER` 设为 `agnes` 时，故事文本、每日灵感邮件和角色识别三个文本调用方统一改用 Agnes 官方端点 `https://apihub.agnes-ai.com/v1`；设为 `bailian` 时改用 Token Plan 百炼兼容端点 `https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`，密钥取 `BAILIAN_TOKEN_KEY`，可用 `BAILIAN_TEXT_BASE_URL` 覆盖，默认模型为 `qwen3.6-flash`。Agnes 密钥取 `AGNES_API_KEY` 的第一把，模型仍由 `STORY_TEXT_MODEL`（或各调用方的专用变量如 `CHARACTER_VISION_MODEL`）指定，未设置时默认 `agnes-2.5-flash`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
-- 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、OpenAI 官方（`openai`）、Orbitix 中转（`orbitix`）、DashScope、Hugging Face，或配置为 GPT Image 时使用 CPA；Pollinations 和 Cloudflare 已退出提供商分配与回退。极简模式中确认并保存的照片角色会先通过 CPA 生成统一设定稿，随后所有实际出现该角色的页面都固定使用 CPA，不回退到其他提供商。CPA 的 Gemini 图片模型继续使用 `chat/completions`；`gpt-image-*` 带参考图时自动使用支持多图的 `images/edits`，无参考图时使用 `images/generations`。可通过 `CPA_IMAGE_SIZE` 设置 GPT Image 输出尺寸，默认 `1024x1024`。临时自定义参考图仍按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 工作，可选择 `agnes`、`cpa`、`openai`、`orbitix`。`AGNES_API_KEY` 可配置多个逗号分隔的 key：绘本页面按页号稳定轮转到各 key（第 1 页用第 1 把、第 2 页用第 2 把），且每把 key 独立限流，从而并行提速并让同一页重试保持同一条生成路径。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
+- 文本模型：`src/lib/story-generator.ts`。通过部署者配置的 OpenAI 兼容端点调用文本模型；默认读取 `CPA_BASE_URL`、`CPA_API_KEY` 和 `STORY_TEXT_MODEL`。将 `STORY_TEXT_PROVIDER` 设为 `agnes` 时，故事文本、每日灵感邮件和角色识别三个文本调用方统一改用 Agnes 官方端点 `https://apihub.agnes-ai.com/v1`；设为 `bailian` 时改用 Token Plan 百炼兼容端点 `https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1`，密钥优先取 `BAILIAN_TOKEN_KEY`，也兼容已有的 `DASHSCOPE_TOKEN_KEY`，可用 `BAILIAN_TEXT_BASE_URL` 覆盖，默认模型为 `qwen3.6-flash`。Agnes 密钥取 `AGNES_API_KEY` 的第一把，模型仍由 `STORY_TEXT_MODEL`（或各调用方的专用变量如 `CHARACTER_VISION_MODEL`）指定，未设置时默认 `agnes-2.5-flash`。未配置或服务不可用时使用与用户主题一致的本地兜底故事。
+- 图片模型：`src/lib/image-generator.ts`。普通角色按 `IMAGE_PROVIDER_ORDER` 使用 AGNES、OpenAI 官方（`openai`）、Orbitix 中转（`orbitix`）、DashScope、Hugging Face，或配置为 GPT Image 时使用 CPA；Pollinations 和 Cloudflare 已退出提供商分配与回退。上传参考图、家庭角色卡通形象、故事统一设定稿及包含照片角色的正文页面均使用 `IMAGE_TO_IMAGE_PROVIDER_ORDER`。设定稿按配置顺序尝试可用提供商；正文页面按权重分配，失败时仅在配置的参考图提供商之间回退，不再固定走 CPA。CPA 的 Gemini 图片模型继续使用 `chat/completions`；`gpt-image-*` 带参考图时自动使用支持多图的 `images/edits`，无参考图时使用 `images/generations`。可通过 `CPA_IMAGE_SIZE` 设置 GPT Image 输出尺寸，默认 `1024x1024`。参考图提供商可选择 `agnes`、`cpa`、`openai`、`orbitix`。`AGNES_API_KEY` 可配置多个逗号分隔的 key：绘本页面按页号稳定轮转到各 key（第 1 页用第 1 把、第 2 页用第 2 把），且每把 key 独立限流，从而并行提速并让同一页重试保持同一条生成路径。图片请求按 provider 做限流等待，未配置且允许 demo 时使用本地 SVG 演示图。
 - 音频：普通生成预览使用浏览器内置 `SpeechSynthesis`；绘本馆在用户点击朗读后调用 `src/app/api/audio/route.ts`，配置 `BAILIAN_TOKEN_KEY` 时优先使用 Token Plan 百炼 TTS，失败后直接回退 Edge；未配置 Token Plan 时保留 Gemini 2.5 → Gemini 3.1 → Edge 路由。带旁白视频复用同一音频接口。家庭真人声音默认关闭；显式启用后固定使用百炼 `qwen-audio-3.0-tts-plus`，不会静默替换成其他音色。
 
 `openai` 与 `orbitix` 使用独立配置，不共用 CPA 密钥；未配置密钥时自动跳过：
@@ -198,7 +198,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 | OpenAI 官方（`openai`） | `OPENAI_API_KEY` | `https://api.openai.com/v1` |
 | Orbitix 中转（`orbitix`） | `ORBITIX_API_KEY` | `https://new.orbitix.site/v1` |
 
-两者默认 `*_IMAGE_MODEL=gpt-image-2.5-flare`、`*_IMAGE_SIZE=1024x1024`，支持独立的 `*_IMAGE_REQUEST_DELAY_MS`、`*_IMAGE_RETRY_DELAY_MS`、`*_IMAGE_MAX_ATTEMPTS`、`*_IMAGE_TIMEOUT_MS`。无参考图时使用 `images/generations`，带参考图时使用 `images/edits`（官方使用 JSON `images`，中转使用多图表单 `image[]`）。完整示例见 [`.env.example`](.env.example)。
+两者默认 `*_IMAGE_MODEL=gpt-image-2.5-flare`、`*_IMAGE_SIZE=1024x1024`，支持独立的 `*_IMAGE_REQUEST_DELAY_MS`、`*_IMAGE_RETRY_DELAY_MS`、`*_IMAGE_MAX_ATTEMPTS`、`*_IMAGE_TIMEOUT_MS`。无参考图时使用 `images/generations`，带参考图时使用 `images/edits`（官方使用 JSON `images`，中转使用多图表单 `image[]`）。完整示例见 [`.env.example`](.env.example)。 上游冷却要求超过 30 秒时会结束当前提供商尝试并按配置回退，避免等待几十分钟直到 Vercel 函数超时。
 
 ## 技术栈
 
@@ -206,7 +206,7 @@ StoryBloom 以 MIT 许可证开放应用代码。仓库只保留公开的 AI 生
 |------|------|
 | 框架 | Next.js 15 App Router + TypeScript |
 | 故事生成 | 部署者配置的 OpenAI 兼容端点，未配置或失败时使用本地 fallback |
-| 插图生成 | AGNES、DashScope、Cloudflare、Pollinations、Hugging Face；家庭照片角色固定使用 CPA Nano Banana |
+| 插图生成 | AGNES、OpenAI、Orbitix、DashScope、Hugging Face、CPA；照片角色及设定稿按 `IMAGE_TO_IMAGE_PROVIDER_ORDER` 配置 |
 | 网页朗读 | 绘本馆优先 Token Plan 百炼 TTS；普通生成预览使用浏览器本机 SpeechSynthesis |
 | 视频旁白音频 | Token Plan 百炼 TTS（失败直达 Edge）；未配置时 Gemini 2.5 → Gemini 3.1 → Edge；家庭真人声音默认关闭，启用后固定百炼 |
 | 导出与分享 | Browser Canvas 长图、图片 ZIP、Supabase 分享快照 |

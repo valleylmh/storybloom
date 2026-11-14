@@ -30,11 +30,14 @@ vi.mock("@/lib/illustration-quality", () => ({
 import {
   generateCpaReferenceImage,
   generateCpaStoryCharacterAnchor,
+  generateStoryCharacterAnchor,
+  generateReferenceImage,
   generateIllustration,
   getAgnesKeyIndexForPage,
   getImageToImageProviderForPage,
   getProviderForPage,
   parseAgnesApiKeys,
+  regeneratePage,
 } from "@/lib/image-generator";
 
 const envKeys = [
@@ -49,6 +52,7 @@ const envKeys = [
   "CPA_IMAGE_MODEL",
   "CPA_IMAGE_REQUEST_DELAY_MS",
   "CPA_IMAGE_MAX_ATTEMPTS",
+  "CPA_IMAGE_RETRY_DELAY_MS",
   "CPA_IMAGE_TIMEOUT_MS",
   "OPENAI_API_KEY",
   "OPENAI_BASE_URL",
@@ -110,6 +114,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
+  vi.useRealTimers();
   vi.unstubAllGlobals();
   vi.clearAllMocks();
   for (const key of envKeys) {
@@ -483,6 +488,102 @@ describe("image-to-image provider routing", () => {
       await official;
     }
   });
+
+  it.each([
+    ["cpa", "gemini-3.1-flash-image"],
+    ["cpa", "gpt-image-2.5-flare"],
+    ["openai", "gpt-image-2.5-flare"],
+    ["orbitix", "gpt-image-2.5-flare"],
+  ] as const)(
+    "returns promptly instead of sleeping through a long cooldown for %s / %s",
+    async (provider, model) => {
+      vi.useFakeTimers();
+      const startedAt = Date.now();
+      const prefix = provider.toUpperCase();
+      process.env[`${prefix}_API_KEY`] = `${provider}-test`;
+      process.env[`${prefix}_IMAGE_MODEL`] = model;
+      process.env[`${prefix}_IMAGE_MAX_ATTEMPTS`] = "2";
+      process.env.CPA_BASE_URL = "https://relay.example/v1";
+      process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = `${provider}:1`;
+      const fetchMock = vi.fn().mockImplementation(async () =>
+        new Response(JSON.stringify({ error: { message: "auth_unavailable" } }), {
+          status: 503,
+          headers: { "Content-Type": "application/json", "Retry-After": "1787" },
+        }),
+      );
+      vi.stubGlobal("fetch", fetchMock);
+      const rejected = expect(generateIllustration("A teddy bear reads", 1, {
+        customCharacterReferenceToken: "b".repeat(43),
+      })).rejects.toMatchObject({ errorClass: "upstream_5xx" });
+
+      await vi.runAllTimersAsync();
+      await rejected;
+
+      expect(fetchMock).toHaveBeenCalledOnce();
+      expect(Date.now() - startedAt).toBeLessThan(30_000);
+    },
+  );
+
+  it("falls back without retrying before an upstream HTTP-date cooldown expires", async () => {
+    vi.useFakeTimers();
+    const startedAt = Date.now();
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    process.env.OPENAI_IMAGE_MAX_ATTEMPTS = "2";
+    process.env.IMAGE_PROVIDER_ORDER = "openai:1,orbitix:1";
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response("{}", {
+        status: 429,
+        headers: { "Retry-After": new Date(Date.now() + 1_800_000).toUTCString() },
+      }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ data: [{ b64_json: "c2FmZQ==" }] }), {
+        status: 200, headers: { "Content-Type": "application/json" },
+      }));
+    vi.stubGlobal("fetch", fetchMock);
+    const generation = generateIllustration("A teddy bear reads", 1);
+
+    await vi.runAllTimersAsync();
+    const result = await generation;
+
+    expect(result.provider).toBe("orbitix");
+    expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
+      "https://api.openai.com/v1/images/generations",
+      "https://new.orbitix.site/v1/images/generations",
+    ]);
+    expect(result.attempts[0]).toMatchObject({ provider: "openai", errorClass: "rate_limit" });
+    expect(Date.now() - startedAt).toBeLessThan(30_000);
+  });
+
+  it.each(["gemini-3.1-flash-image", "gpt-image-2.5-flare"])(
+    "still honors short CPA retry waits for %s",
+    async (model) => {
+      vi.useFakeTimers();
+      process.env.CPA_API_KEY = "cpa-test";
+      process.env.CPA_BASE_URL = "https://relay.example/v1";
+      process.env.CPA_IMAGE_MODEL = model;
+      process.env.CPA_IMAGE_MAX_ATTEMPTS = "2";
+      const requestTimes: number[] = [];
+      const fetchMock = vi.fn().mockImplementation(async () => {
+        requestTimes.push(Date.now());
+        return requestTimes.length === 1
+          ? new Response("{}", { status: 503, headers: { "Retry-After": "1" } })
+          : new Response(JSON.stringify({ data: [{ b64_json: "c2FmZQ==" }] }), {
+              status: 200, headers: { "Content-Type": "application/json" },
+            });
+      });
+      vi.stubGlobal("fetch", fetchMock);
+      const generation = generateCpaReferenceImage({
+        prompt: "A teddy bear reads",
+        referenceImages: ["data:image/png;base64,c2FmZQ=="],
+      });
+
+      await vi.runAllTimersAsync();
+
+      expect(await generation).toBe("data:image/png;base64,c2FmZQ==");
+      expect(fetchMock).toHaveBeenCalledTimes(2);
+      expect(requestTimes[1] - requestTimes[0]).toBe(1000);
+    },
+  );
 
   it("allows gpt-image models to participate in ordinary CPA page routing", () => {
     process.env.CPA_API_KEY = "cpa-test";
@@ -988,7 +1089,123 @@ describe("image-to-image provider routing", () => {
     expect(String(fetchMock.mock.calls[0][0])).toContain("apihub.agnes-ai.com");
   });
 
-  it("keeps photo-backed family generation on CPA when CPA fails", async () => {
+  it("replans saved family-photo pages across OpenAI and Orbitix instead of a stale CPA plan", async () => {
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = "openai:4,orbitix:4";
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://unused-cpa.example/v1";
+    const download = vi.fn().mockResolvedValue({
+      data: new Blob(["family-photo"], { type: "image/png" }), error: null,
+    });
+    getSupabaseAdminMock.mockReturnValue({ storage: { from: () => ({ download }) } });
+    const fetchMock = vi.fn().mockImplementation(async () => new Response(
+      JSON.stringify({ data: [{ b64_json: "ZmFtaWx5" }] }),
+      { status: 200, headers: { "Content-Type": "application/json" } },
+    ));
+    vi.stubGlobal("fetch", fetchMock);
+    const family = [{
+      id: "configured-child", name: "童童", relation: "孩子", appearance: "短发孩子",
+      sourceReferenceAssetPath: "user/configured-child/source.png",
+      canonicalReferenceAssetPath: "user/configured-child/canonical.png",
+      storyReferenceToken: "fixed-story-anchor-token", isProtagonist: true,
+    }];
+    const results = [];
+    for (const page of [1, 5]) {
+      results.push(await regeneratePage({
+        page, zhText: "童童读书", enText: "Tongtong reads", illustrationPrompt: "A child reads",
+        castIds: ["configured-child"], imagePlannedProvider: "cpa", imageStatus: "failed",
+      }, 1, "fairytale", undefined, ["cpa"], family));
+    }
+    expect(results.map((result) => result.imageProvider)).toEqual(["openai", "orbitix"]);
+    expect(results.map((result) => result.imagePlannedProvider)).toEqual(["openai", "orbitix"]);
+    expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
+      "https://api.openai.com/v1/images/edits", "https://new.orbitix.site/v1/images/edits",
+    ]);
+    const official = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+    expect(official.images).toHaveLength(3);
+    expect(official.images[0].image_url).toBe("data:image/webp;base64,cmVmZXJlbmNl");
+    expect(official.prompt).toContain("FIXED STORY OUTFIT ANCHOR");
+    const relay = fetchMock.mock.calls[1][1].body as FormData;
+    expect(relay.getAll("image[]")).toHaveLength(3);
+    expect(String(relay.get("prompt"))).toContain("CANONICAL CARTOON BODY");
+  });
+
+  it.each(["openai", "orbitix", "agnes"] as const)(
+    "creates family story anchors through configured %s without CPA credentials",
+    async (provider) => {
+      delete process.env.CPA_API_KEY;
+      delete process.env.CPA_BASE_URL;
+      process.env[`${provider.toUpperCase()}_API_KEY`] = `${provider}-test`;
+      process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = `${provider}:1`;
+      const download = vi.fn().mockResolvedValue({
+        data: new Blob(["family-photo"], { type: "image/png" }), error: null,
+      });
+      getSupabaseAdminMock.mockReturnValue({ storage: { from: () => ({ download }) } });
+      const fetchMock = vi.fn().mockResolvedValue(new Response(
+        JSON.stringify({ data: [{ b64_json: "YW5jaG9y" }] }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      ));
+      vi.stubGlobal("fetch", fetchMock);
+      const image = await generateStoryCharacterAnchor({
+        character: {
+          id: "anchor-child", name: "童童", relation: "孩子", appearance: "短发孩子",
+          sourceReferenceAssetPath: "user/anchor-child/source.png",
+        },
+        visualBible: {
+          version: 1, seriesStyleLock: "clay", paletteLock: "warm", continuityPolicy: "fixed identity",
+          characters: [{ id: "anchor-child", name: "童童", identityLock: "same face",
+            outfitLock: "powder-blue pajamas", referenceGuidance: "real photo controls the face" }],
+        },
+      });
+      expect(image).toBe("data:image/png;base64,YW5jaG9y");
+      expect(fetchMock).toHaveBeenCalledOnce();
+      const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+      expect(url).toBe(provider === "agnes"
+        ? "https://apihub.agnes-ai.com/v1/images/generations"
+        : `https://${provider === "openai" ? "api.openai.com" : "new.orbitix.site"}/v1/images/edits`);
+      const prompt = init.body instanceof FormData
+        ? String(init.body.get("prompt")) : JSON.parse(String(init.body)).prompt;
+      expect(prompt).toContain("powder-blue pajamas");
+      expect(prompt).toContain("REAL PHOTO");
+    },
+  );
+
+  it("uses configured reference providers for canonical portraits and excludes CPA from fallbacks", async () => {
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = "openai:4,orbitix:4";
+    process.env.OPENAI_API_KEY = "openai-test";
+    process.env.ORBITIX_API_KEY = "orbitix-test";
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://unused-cpa.example/v1";
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(new Response("{}", { status: 401 }))
+      .mockResolvedValueOnce(new Response(JSON.stringify({ data: [{ b64_json: "c2FmZQ==" }] }), {
+        status: 200, headers: { "Content-Type": "application/json" },
+      }));
+    vi.stubGlobal("fetch", fetchMock);
+    expect(await generateReferenceImage({
+      prompt: "Create one fixed character", referenceImages: ["data:image/png;base64,c2FmZQ=="],
+    })).toBe("data:image/png;base64,c2FmZQ==");
+    expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
+      "https://api.openai.com/v1/images/edits", "https://new.orbitix.site/v1/images/edits",
+    ]);
+  });
+
+  it("does not send family photos to CPA when the configured providers have no key", async () => {
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = "openai:4,orbitix:4";
+    process.env.CPA_API_KEY = "cpa-test";
+    process.env.CPA_BASE_URL = "https://unused-cpa.example/v1";
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    await expect(generateIllustration("A child reads", 1, {
+      familyCharacters: [{ id: "child", name: "童童", relation: "孩子", appearance: "短发",
+        sourceReferenceAssetPath: "user/child/source.png" }], castIds: ["child"],
+    })).rejects.toMatchObject({ errorClass: "configuration" });
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("keeps family-photo fallbacks within the configured reference providers", async () => {
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = "cpa:1";
     process.env.CPA_API_KEY = "cpa-test";
     process.env.CPA_BASE_URL = "https://relay.example/v1";
     process.env.AGNES_API_KEY = "agnes-test";

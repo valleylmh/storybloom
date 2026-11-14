@@ -4,7 +4,11 @@ import {
   inferChildNameFromStoryIdea,
   matchStoryProtagonist,
 } from "@/lib/story-input";
-import { generateStoryText } from "@/lib/story-generator";
+import {
+  generateStoryText,
+  getStoryTextEndpoint,
+  getStoryTextModelLabel,
+} from "@/lib/story-generator";
 import type { StoryInput, StoryPage } from "@/types";
 
 const envKeys = [
@@ -18,6 +22,7 @@ const envKeys = [
   "CPA_BASE_URL",
   "AGNES_API_KEY",
   "BAILIAN_TOKEN_KEY",
+  "DASHSCOPE_TOKEN_KEY",
   "BAILIAN_TEXT_BASE_URL",
 ] as const;
 const originalEnv = Object.fromEntries(
@@ -363,6 +368,28 @@ describe("custom story generation", () => {
     expect(story.pages[7].zhText).toContain("愿意记住的一天");
   });
 
+  it.each(["cpa", "agnes", "bailian"] as const)(
+    "reports the configured text model accurately for %s",
+    (provider) => {
+      process.env.STORY_TEXT_MODEL = " custom-text-model ";
+      expect(getStoryTextModelLabel(provider)).toBe("custom-text-model");
+    },
+  );
+
+  it.each([
+    ["cpa", "gemini-3-flash"],
+    ["agnes", "agnes-2.5-flash"],
+    ["bailian", "qwen3.6-flash"],
+  ] as const)("reports the default text model for %s", (provider, model) => {
+    process.env.STORY_TEXT_MODEL = " ";
+    expect(getStoryTextModelLabel(provider)).toBe(model);
+  });
+
+  it("keeps mock model labels independent of configured live models", () => {
+    process.env.STORY_TEXT_MODEL = "custom-text-model";
+    expect(getStoryTextModelLabel("mock")).toBe("mock");
+  });
+
   it("uses the CPA gemini relay without injecting a random adventure", async () => {
     process.env.STORY_TEXT_PROVIDER = "cpa";
     process.env.CPA_API_KEY = "test-key";
@@ -424,29 +451,99 @@ describe("custom story generation", () => {
     expect(body.model).toBe("agnes-2.5-flash");
   });
 
-  it("routes story text to Bailian with the configured Qwen model", async () => {
+  it.each(["BAILIAN_TOKEN_KEY", "DASHSCOPE_TOKEN_KEY"] as const)(
+    "routes story text to Bailian with the configured Qwen model using %s",
+    async (keyName) => {
+      process.env.STORY_TEXT_PROVIDER = "bailian";
+      delete process.env.BAILIAN_TOKEN_KEY;
+      delete process.env.DASHSCOPE_TOKEN_KEY;
+      process.env[keyName] = "bailian-key";
+      process.env.STORY_TEXT_MODEL = "qwen3.6-flash";
+      process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+      const fetchMock = mockCpaStory(
+        "童童的安稳小夜晚",
+        createModelPages("aligned"),
+      );
+
+      const story = await generateStoryText(soloSleepInput);
+
+      expect(story.coverTitle).toBe("童童的安稳小夜晚");
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+      const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+      expect(url).toBe(
+        "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+      );
+      expect((init.headers as Record<string, string>).Authorization).toBe(
+        "Bearer bailian-key",
+      );
+      const body = JSON.parse(String(init.body));
+      expect(body.model).toBe("qwen3.6-flash");
+      expect(body.enable_thinking).toBe(false);
+      expect(body.response_format).toEqual({ type: "json_object" });
+      expect(getStoryTextEndpoint()).toMatchObject({
+        provider: "bailian",
+        apiKey: "bailian-key",
+      });
+    },
+  );
+
+  it("clears model-invented cast ids when no family characters were selected", async () => {
     process.env.STORY_TEXT_PROVIDER = "bailian";
     process.env.BAILIAN_TOKEN_KEY = "bailian-key";
     process.env.STORY_TEXT_MODEL = "qwen3.6-flash";
-    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
     const fetchMock = mockCpaStory(
       "童童的安稳小夜晚",
-      createModelPages("aligned"),
+      createModelPages("aligned").map((page) => ({ ...page, castIds: ["child", "parent"] })),
     );
 
     const story = await generateStoryText(soloSleepInput);
 
-    expect(story.coverTitle).toBe("童童的安稳小夜晚");
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
-    expect(url).toBe(
-      "https://token-plan.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+    expect(fetchMock).toHaveBeenCalledOnce();
+    expect(story.pages).toHaveLength(8);
+    expect(story.pages.every((page) => page.castIds?.length === 0)).toBe(true);
+    const body = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+    expect(body.messages[0].content).toContain("Every page must return castIds: []");
+  });
+
+  it("still rejects invented cast ids when saved family characters are selected", async () => {
+    process.env.STORY_TEXT_PROVIDER = "bailian";
+    process.env.BAILIAN_TOKEN_KEY = "bailian-key";
+    process.env.STORY_TEXT_MODEL = "qwen3.6-flash";
+    process.env.STORY_TEXT_MAX_ATTEMPTS = "1";
+    mockCpaStory(
+      "童童的安稳小夜晚",
+      createModelPages("aligned").map((page) => ({ ...page, castIds: ["child", "unknown-parent"] })),
     );
-    expect((init.headers as Record<string, string>).Authorization).toBe(
-      "Bearer bailian-key",
-    );
-    const body = JSON.parse(String(init.body)) as { model: string };
-    expect(body.model).toBe("qwen3.6-flash");
+
+    await expect(generateStoryText({
+      ...soloSleepInput,
+      familyCharacters: [{
+        id: "child", name: "童童", relation: "孩子", appearance: "短发孩子", isProtagonist: true,
+      }],
+    })).rejects.toMatchObject({ errorClass: "invalid_response" });
+  });
+
+  it("keeps unsupported JSON/thinking controls out of other Bailian model requests", async () => {
+    process.env.STORY_TEXT_PROVIDER = "bailian";
+    process.env.BAILIAN_TOKEN_KEY = "bailian-key";
+    process.env.STORY_TEXT_MODEL = "other-text-model";
+    const fetchMock = mockCpaStory("童童的安稳小夜晚", createModelPages("aligned"));
+
+    await generateStoryText(soloSleepInput);
+
+    const body = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+    expect(body.model).toBe("other-text-model");
+    expect(body).not.toHaveProperty("enable_thinking");
+    expect(body).not.toHaveProperty("response_format");
+  });
+
+  it("prefers the explicit Bailian key and falls back from a blank key", () => {
+    process.env.STORY_TEXT_PROVIDER = "bailian";
+    process.env.BAILIAN_TOKEN_KEY = "explicit-bailian-key";
+    process.env.DASHSCOPE_TOKEN_KEY = "legacy-token-plan-key";
+    expect(getStoryTextEndpoint()?.apiKey).toBe("explicit-bailian-key");
+    process.env.BAILIAN_TOKEN_KEY = "  ";
+    expect(getStoryTextEndpoint()?.apiKey).toBe("legacy-token-plan-key");
   });
 
   it("does not inherit the legacy CPA timeout for Agnes text generation", async () => {
@@ -763,6 +860,7 @@ describe("custom story generation", () => {
         status: "failed",
         errorClass: "upstream_5xx",
         duration: expect.any(Number),
+        httpStatus: 503,
         attempt: 1,
         retry: false,
       }),

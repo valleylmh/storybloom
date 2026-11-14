@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 const mocks = vi.hoisted(() => ({
   requireAuthenticatedUser: vi.fn(),
   getSupabaseAdmin: vi.fn(),
-  generateCpaReferenceImage: vi.fn(),
+  generateReferenceImage: vi.fn(),
 }));
 
 vi.mock("@/lib/supabase/server-auth", () => ({
@@ -16,7 +16,7 @@ vi.mock("@/lib/email/supabase-admin", () => ({
 }));
 
 vi.mock("@/lib/image-generator", () => ({
-  generateCpaReferenceImage: mocks.generateCpaReferenceImage,
+  generateReferenceImage: mocks.generateReferenceImage,
 }));
 
 import { POST } from "@/app/api/family/characters/[id]/generate/route";
@@ -73,7 +73,7 @@ describe("family character generation route limits", () => {
 
     expect(response.status).toBe(429);
     expect(body.error).toContain("用完 5 次");
-    expect(mocks.generateCpaReferenceImage).not.toHaveBeenCalled();
+    expect(mocks.generateReferenceImage).not.toHaveBeenCalled();
   });
 
   it("does not generate when the character keeps the real photo", async () => {
@@ -84,7 +84,7 @@ describe("family character generation route limits", () => {
 
     expect(response.status).toBe(400);
     expect(body.error).toContain("开启卡通化");
-    expect(mocks.generateCpaReferenceImage).not.toHaveBeenCalled();
+    expect(mocks.generateReferenceImage).not.toHaveBeenCalled();
   });
 
   it("claims one server-side attempt before generating the cartoon image", async () => {
@@ -134,7 +134,7 @@ describe("family character generation route limits", () => {
         })),
       },
     });
-    mocks.generateCpaReferenceImage.mockResolvedValue(
+    mocks.generateReferenceImage.mockResolvedValue(
       "data:image/png;base64,aW1hZ2U=",
     );
 
@@ -147,7 +147,7 @@ describe("family character generation route limits", () => {
     expect(claim.update).toHaveBeenCalledWith(
       expect.objectContaining({ canonical_generation_count: 1 }),
     );
-    expect(mocks.generateCpaReferenceImage).toHaveBeenCalledOnce();
+    expect(mocks.generateReferenceImage).toHaveBeenCalledOnce();
     expect(finish.update).toHaveBeenCalledWith(
       expect.objectContaining({
         canonical_crop: { x: 50, y: 50, zoom: 1 },
@@ -201,7 +201,7 @@ describe("family character generation route limits", () => {
       },
     };
     mocks.getSupabaseAdmin.mockReturnValue(admin);
-    mocks.generateCpaReferenceImage.mockRejectedValue(
+    mocks.generateReferenceImage.mockRejectedValue(
       new Error("provider unavailable"),
     );
 

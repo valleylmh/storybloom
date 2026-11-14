@@ -140,6 +140,19 @@ describe("generation observability", () => {
     });
   });
 
+  it("records HTTP status numbers while rejecting invalid or sensitive runtime values", () => {
+    for (const httpStatus of [200, 403, 500, 502, 503, 504]) {
+      expect(createGenerationLogPayload({
+        operation: "text.provider_attempt", status: "failed", httpStatus,
+      }).httpStatus).toBe(httpStatus);
+    }
+    for (const httpStatus of ["503", SECRET, SIGNED_URL, -1, 0, 99, 600, 503.5, Number.NaN]) {
+      expect(createGenerationLogPayload({
+        operation: "text.provider_attempt", status: "failed", httpStatus,
+      } as unknown as GenerationEvent)).not.toHaveProperty("httpStatus");
+    }
+  });
+
   it("classifies errors without exposing their message", () => {
     expect(
       classifyGenerationError(

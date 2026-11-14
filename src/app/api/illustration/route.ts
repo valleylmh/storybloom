@@ -160,11 +160,10 @@ async function markPagePending(
       }
 
       const startedAt = new Date().toISOString();
-      const plannedProvider = pageUsesFamilyPhoto(latestStory, targetPage)
-        ? "cpa"
-        : latestStory.input.customCharacterReferenceToken
-          ? getImageToImageProviderForPage(pageNumber, latestStory.pages.length)
-          : getProviderForPage(pageNumber, latestStory.pages.length);
+      const plannedProvider = pageUsesFamilyPhoto(latestStory, targetPage) ||
+        latestStory.input.customCharacterReferenceToken
+        ? getImageToImageProviderForPage(pageNumber, latestStory.pages.length)
+        : getProviderForPage(pageNumber, latestStory.pages.length);
       const requestAttempt = (targetPage.imageRequestCount || 0) + 1;
       const retry =
         isRetry ||

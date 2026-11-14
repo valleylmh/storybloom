@@ -8,8 +8,8 @@ const mocks = vi.hoisted(() => ({
   cacheStory: vi.fn(),
   getCachedStory: vi.fn(),
   mutateCachedStory: vi.fn(),
-  getProviderForPage: vi.fn(() => "pollinations"),
-  getImageToImageProviderForPage: vi.fn(() => "pollinations"),
+  getProviderForPage: vi.fn(() => "openai"),
+  getImageToImageProviderForPage: vi.fn(() => "openai"),
   regeneratePage: vi.fn(),
   executeIllustrationGeneration: vi.fn(),
   getIllustrationAssetMode: vi.fn<() =>
@@ -215,6 +215,27 @@ describe("illustration route request control", () => {
 
   afterEach(() => {
     vi.unstubAllEnvs();
+  });
+
+  it("replans a saved family-photo retry using the configured reference provider", async () => {
+    const pages = Array.from({ length: 8 }, (_, index) => createPage({
+      page: index + 1, imageStatus: "failed", imagePlannedProvider: "cpa", castIds: ["child"],
+    }));
+    const story = createMultiPageStory(pages);
+    story.input.familyCharacters = [{
+      id: "child", name: "童童", relation: "孩子", appearance: "短发",
+      sourceReferenceAssetPath: "user/child/source.png",
+    }];
+    mocks.getCachedStory.mockResolvedValue(story);
+    mocks.getImageToImageProviderForPage.mockReturnValueOnce("orbitix");
+    mocks.after.mockImplementationOnce(() => undefined);
+
+    const response = await POST(createPageRequest(5));
+
+    expect(response.status).toBe(202);
+    expect(mocks.getImageToImageProviderForPage).toHaveBeenCalledWith(5, 8);
+    const saved = mocks.cacheStory.mock.calls[0][1] as GeneratedStory;
+    expect(saved.pages[4].imagePlannedProvider).toBe("orbitix");
   });
 
   it("reuses a recent pending job without spending rate-limit capacity", async () => {

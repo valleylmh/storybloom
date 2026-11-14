@@ -129,6 +129,14 @@ function getCpaKey() {
   return process.env.CPA_API_KEY?.trim() || null;
 }
 
+function getBailianTextApiKey() {
+  return (
+    process.env.BAILIAN_TOKEN_KEY?.trim() ||
+    process.env.DASHSCOPE_TOKEN_KEY?.trim() ||
+    null
+  );
+}
+
 export function getStoryTextProvider(): StoryTextProvider {
   const provider =
     process.env.STORY_TEXT_PROVIDER ||
@@ -173,7 +181,7 @@ export function getStoryTextEndpoint(
   }
 
   if (provider === "bailian") {
-    const apiKey = process.env.BAILIAN_TOKEN_KEY?.trim() || null;
+    const apiKey = getBailianTextApiKey();
     const baseUrl =
       process.env.BAILIAN_TEXT_BASE_URL?.trim() || BAILIAN_TEXT_BASE_URL;
     return apiKey
@@ -201,11 +209,11 @@ export function getStoryTextModelLabel(provider: StoryTextProvider = getStoryTex
   if (provider === "mock") return "mock";
   return (
     process.env.STORY_TEXT_MODEL?.trim() ||
-    provider === "agnes"
+    (provider === "agnes"
       ? DEFAULT_AGNES_STORY_MODEL
       : provider === "bailian"
         ? DEFAULT_BAILIAN_STORY_MODEL
-        : DEFAULT_CPA_STORY_MODEL
+        : DEFAULT_CPA_STORY_MODEL)
   );
 }
 
@@ -1193,7 +1201,9 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
     : `Consistent main character: ${input.childName}, a warm and expressive child hero.`;
 
   return pages.map((page, index) => {
-    const castIds = Array.isArray(page.castIds) ? page.castIds : [];
+    const castIds = familyCharacters.length > 0 && Array.isArray(page.castIds)
+      ? page.castIds
+      : [];
     const hasInvalidCastId = castIds.some((id) => !familyCharacterIds.has(id));
     if (
       hasInvalidCastId ||
@@ -1355,6 +1365,7 @@ async function requestChatCompletionStory({
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), timeoutMs);
     const startedMs = Date.now();
+    let httpStatus: number | undefined;
 
     try {
       const response = await fetch(endpoint, {
@@ -1386,6 +1397,7 @@ async function requestChatCompletionStory({
         }),
       });
 
+      httpStatus = response.status;
       const text = await response.text();
       const contentType = response.headers.get("content-type") || "";
       if (!/json/i.test(contentType)) {
@@ -1416,6 +1428,7 @@ async function requestChatCompletionStory({
         model,
         status: "success",
         duration: Date.now() - startedMs,
+        httpStatus,
         attempt,
         retry: attempt > 1,
       });
@@ -1430,6 +1443,7 @@ async function requestChatCompletionStory({
           model,
           status: "failed",
           duration: Date.now() - startedMs,
+          httpStatus,
           attempt,
           retry: attempt > 1,
           errorClass: lastErrorClass,
@@ -1523,19 +1537,19 @@ async function requestBailianStory(
   sampling: { temperature: number; topP: number },
   repair?: StoryTextRepairContext,
 ) {
-  const apiKey = process.env.BAILIAN_TOKEN_KEY?.trim();
+  const apiKey = getBailianTextApiKey();
   if (!apiKey) {
     return null;
   }
 
   const baseUrl =
     process.env.BAILIAN_TEXT_BASE_URL?.trim() || BAILIAN_TEXT_BASE_URL;
+  const model = process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_BAILIAN_STORY_MODEL;
   return requestChatCompletionStory({
     provider: "bailian",
     endpoint: `${baseUrl.replace(/\/+$/, "")}/chat/completions`,
     apiKey,
-    model:
-      process.env.STORY_TEXT_MODEL?.trim() || DEFAULT_BAILIAN_STORY_MODEL,
+    model,
     system,
     user,
     timeoutMs: getStoryTextTimeoutMs("bailian"),
@@ -1549,6 +1563,14 @@ async function requestBailianStory(
     ),
     temperature: sampling.temperature,
     topP: sampling.topP,
+    ...(/^qwen3\.6-flash(?:-|$)/i.test(model)
+      ? {
+          extraBody: {
+            enable_thinking: false,
+            response_format: { type: "json_object" },
+          },
+        }
+      : {}),
     repair,
   });
 }
@@ -1667,7 +1689,9 @@ ${usesFirstPerson(input) ? '- Keep the first-person pronouns even when the selec
 - Follow this exact 8-page story beat map:
 ${storyBeatMap.map((beat, index) => `  ${index + 1}. ${beat}`).join("\n")}
 - Every illustrationPrompt must describe a concrete storybook scene, not a character portrait.
-- Every page must include a castIds array. Use only ids from the selected family character bible. When family characters are selected, castIds must contain at least one id and must list only the people actually visible in that page's illustration. Do not mention or depict unlisted family members in illustrationPrompt.
+${familyCharacters.length > 0
+  ? "- Every page must include a castIds array. Use only ids from the selected family character bible. castIds must contain at least one id and must list only the people actually visible in that page's illustration. Do not mention or depict unlisted family members in illustrationPrompt."
+  : "- No saved family characters are selected. Every page must return castIds: []. You may depict people required by the story premise, but do not invent saved-family character ids for them."}
 ${protagonistCharacterId ? `- The confirmed protagonist id=${protagonistCharacterId} must appear in castIds on every page.` : ""}
 - Every illustrationPrompt must include: setting, props, visible action, emotion, camera distance, composition, style, and "no text in image".
 - Character consistency is important, but the child must change pose, gesture, facial expression, and placement to match the story moment. Do not repeat a front-facing bust portrait. The child should usually take only 25-45% of the image so the scene can tell the story.

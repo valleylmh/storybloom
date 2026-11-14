@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { StoryPage } from "@/types";
 
 const mocks = vi.hoisted(() => ({
@@ -10,6 +10,7 @@ const mocks = vi.hoisted(() => ({
   generateStoryText: vi.fn(),
   createAnchor: vi.fn(),
   logEvent: vi.fn(),
+  getReferenceProvider: vi.fn(),
 }));
 
 vi.mock("@/lib/storage", () => ({
@@ -19,7 +20,8 @@ vi.mock("@/lib/storage", () => ({
   mutateCachedTextGenerationTask: mocks.mutateTask,
   publishTextGenerationStory: mocks.publishStory,
 }));
-vi.mock("@/lib/story-generator", () => ({
+vi.mock("@/lib/story-generator", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@/lib/story-generator")>()),
   generateStoryText: mocks.generateStoryText,
 }));
 vi.mock("@/lib/story-character-anchor", () => ({
@@ -32,7 +34,7 @@ vi.mock("@/lib/image-generator", () => ({
       imageStatus: "demo" as const,
       imageUrl: `demo:${page.illustrationPrompt}`,
     })),
-  getImageToImageProviderForPage: () => "cpa",
+  getImageToImageProviderForPage: mocks.getReferenceProvider,
 }));
 vi.mock("@/lib/generation-observability", async (importOriginal) => {
   const original = await importOriginal<
@@ -41,7 +43,7 @@ vi.mock("@/lib/generation-observability", async (importOriginal) => {
   return { ...original, logGenerationEvent: mocks.logEvent };
 });
 
-import { executeTextGeneration } from "@/lib/text-generation-executor";
+import { computeTextGeneration, executeTextGeneration } from "@/lib/text-generation-executor";
 
 const task = {
   taskId: "task_123456789012",
@@ -61,6 +63,7 @@ const publishIdentity = {
 
 beforeEach(() => {
   vi.clearAllMocks();
+  mocks.getReferenceProvider.mockReturnValue("cpa");
   mocks.generateStoryText.mockResolvedValue({
     coverTitle: "童童的故事",
     pages: [
@@ -91,7 +94,44 @@ beforeEach(() => {
   mocks.getStory.mockResolvedValue(null);
 });
 
+afterEach(() => vi.unstubAllEnvs());
+
 describe("durable text publication fencing", () => {
+  it("creates a family anchor without CPA keys and plans all pages through the reference order", async () => {
+    vi.stubEnv("CPA_API_KEY", "");
+    vi.stubEnv("CPA_BASE_URL", "");
+    mocks.getReferenceProvider.mockImplementation((page: number) => page <= 4 ? "openai" : "orbitix");
+    mocks.createAnchor.mockResolvedValue("new-story-anchor-token");
+    mocks.generateStoryText.mockResolvedValue({
+      coverTitle: "童童的故事",
+      pages: Array.from({ length: 8 }, (_, index) => ({
+        page: index + 1, zhText: "童童读书", enText: "Tongtong reads",
+        illustrationPrompt: "A child reads", castIds: ["child"],
+      })),
+    });
+    const protagonist = {
+      id: "child", name: "童童", relation: "孩子", appearance: "短发",
+      sourceReferenceAssetPath: "user/child/source.png", isProtagonist: true,
+    };
+    const generated = await computeTextGeneration({
+      storyId: "reference-story",
+      storyInput: {
+        childName: "童童", ageGroup: "4-5", theme: "custom", customTheme: "给爸爸画画",
+        style: "fairytale", language: "zh-en", familyCharacters: [protagonist],
+        visualBible: { version: 1, seriesStyleLock: "clay", paletteLock: "warm",
+          continuityPolicy: "fixed identity", characters: [] },
+      },
+      protagonistCharacter: protagonist, familyCharacters: [protagonist],
+      dailyLimit: 3, reviewBeforeIllustrations: true,
+    });
+    expect(mocks.createAnchor).toHaveBeenCalledOnce();
+    expect(generated.story.input.familyCharacters?.[0].storyReferenceToken).toBe("new-story-anchor-token");
+    expect(generated.story.pages.map((page) => page.imagePlannedProvider)).toEqual([
+      "openai", "openai", "openai", "openai", "orbitix", "orbitix", "orbitix", "orbitix",
+    ]);
+    expect(mocks.generateStoryText).toHaveBeenCalledOnce();
+  });
+
   it("returns the remaining free-generation count captured at reservation time", async () => {
     const result = await executeTextGeneration({
       task,

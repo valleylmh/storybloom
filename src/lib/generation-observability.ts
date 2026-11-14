@@ -23,6 +23,7 @@ export interface GenerationEvent {
   model?: string;
   status: string;
   duration?: number;
+  httpStatus?: number;
   attempt?: number;
   retry?: boolean;
   width?: number;
@@ -43,6 +44,7 @@ export interface GenerationLogPayload {
   model?: string;
   status: string;
   duration?: number;
+  httpStatus?: number;
   attempt?: number;
   retry?: boolean;
   width?: number;
@@ -106,6 +108,12 @@ function safePositiveInteger(value: unknown) {
     : undefined;
 }
 
+function safeHttpStatus(value: unknown) {
+  return typeof value === "number" && Number.isInteger(value) && value >= 100 && value <= 599
+    ? value
+    : undefined;
+}
+
 function safeNonNegativeInteger(value: unknown) {
   return typeof value === "number" &&
     Number.isSafeInteger(value) &&
@@ -151,6 +159,7 @@ export function createGenerationLogPayload(
   const provider = safeLabel(event.provider);
   const model = safeLabel(event.model);
   const duration = safeDuration(event.duration);
+  const httpStatus = safeHttpStatus(event.httpStatus);
   const attempt = safePositiveInteger(event.attempt);
   const retry = safeBoolean(event.retry);
   const width = safePositiveInteger(event.width);
@@ -167,6 +176,7 @@ export function createGenerationLogPayload(
   if (provider !== undefined) payload.provider = provider;
   if (model !== undefined) payload.model = model;
   if (duration !== undefined) payload.duration = duration;
+  if (httpStatus !== undefined) payload.httpStatus = httpStatus;
   if (attempt !== undefined) payload.attempt = attempt;
   if (retry !== undefined) payload.retry = retry;
   if (width !== undefined) payload.width = width;

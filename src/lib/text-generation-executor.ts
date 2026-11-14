@@ -122,8 +122,7 @@ export async function computeTextGeneration(input: {
     input.protagonistCharacter &&
       !input.protagonistCharacter.storyReferenceToken &&
       storyInput.visualBible &&
-      process.env.CPA_API_KEY?.trim() &&
-      process.env.CPA_BASE_URL?.trim() &&
+      getImageToImageProviderForPage(1) &&
       (input.protagonistCharacter.sourceReferenceAssetPath ||
         input.protagonistCharacter.canonicalReferenceAssetPath ||
         input.protagonistCharacter.referenceAssetPath),
@@ -138,8 +137,6 @@ export async function computeTextGeneration(input: {
           {
             operation: "illustration.story_anchor",
             story: input.storyId,
-            provider: "cpa",
-            model: process.env.CPA_IMAGE_MODEL || "gemini-3.1-flash-image",
             status: "unavailable",
             errorClass: classifyGenerationError(error),
           },
@@ -160,17 +157,15 @@ export async function computeTextGeneration(input: {
     );
   }
   const previewPages = createDemoPages(pages, storyInput.style).map((page) =>
-    pageUsesFamilyPhoto(page, input.familyCharacters)
-      ? { ...page, imagePlannedProvider: "cpa" as const }
-      : storyInput.customCharacterReferenceToken
-        ? {
-            ...page,
-            imagePlannedProvider: getImageToImageProviderForPage(
-              page.page,
-              pages.length,
-            ),
-          }
-        : page,
+    pageUsesFamilyPhoto(page, input.familyCharacters) || storyInput.customCharacterReferenceToken
+      ? {
+          ...page,
+          imagePlannedProvider: getImageToImageProviderForPage(
+            page.page,
+            pages.length,
+          ),
+        }
+      : page,
   );
   const status = input.reviewBeforeIllustrations
     ? ("reviewing_outline" as const)
