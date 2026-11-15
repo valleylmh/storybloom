@@ -13,6 +13,7 @@ import {
   type GenerationErrorClass,
 } from "@/lib/generation-error";
 import { getLibraryStorySpecByContentId } from "@/lib/library/personalization";
+import { resolveStoryFamilyCast } from "@/lib/story-family-cast";
 import {
   getFamilyCharacterAgeGuidance,
   getFamilyCharacterLifeStage,
@@ -354,7 +355,7 @@ function getFamilyCastPrompt(input: StoryInput, castIds: string[]) {
       )
       .join("; ")}.`,
     visualBiblePrompt,
-    "Do not add any other family member. The character and outfit locks override conflicting clothing, hairstyle, age, or appearance details suggested by the page scene.",
+    "Do not add any other saved family member to this page. The character and outfit locks override conflicting clothing, hairstyle, age, or appearance details suggested by the page scene.",
   ].join(" ");
 }
 
@@ -1236,14 +1237,14 @@ function normalizeStoryPages(input: StoryInput, pages: StoryPage[]) {
       ? page.castIds
       : [];
     const hasInvalidCastId = castIds.some((id) => !familyCharacterIds.has(id));
+    const uniqueCastIds = resolveStoryFamilyCast(input, { ...page, castIds });
     if (
       hasInvalidCastId ||
-      (familyCharacters.length > 0 && castIds.length === 0) ||
-      (protagonistCharacterId && !castIds.includes(protagonistCharacterId))
+      (familyCharacters.length > 0 && uniqueCastIds.length === 0) ||
+      (protagonistCharacterId && !uniqueCastIds.includes(protagonistCharacterId))
     ) {
       throw new Error(`Story page ${index + 1} returned invalid castIds`);
     }
-    const uniqueCastIds = [...new Set(castIds)];
     const bilingual = applyLanguageMode(input, page.zhText ?? "", page.enText ?? "");
     const promptParts = [
       styleSpine,
@@ -1752,7 +1753,7 @@ ${usesFirstPerson(input) ? '- Keep the first-person pronouns even when the selec
 ${storyBeatMap.map((beat, index) => `  ${index + 1}. ${beat}`).join("\n")}
 - Every illustrationPrompt must describe a concrete storybook scene, not a character portrait.
 ${familyCharacters.length > 0
-  ? "- Every page must include a castIds array. Use only ids from the selected family character bible. castIds must contain at least one id and must list only the people actually visible in that page's illustration. Do not mention or depict unlisted family members in illustrationPrompt."
+  ? "- Every page must include a castIds array. The family character bible is an available roster, not a requirement for everyone to appear. Whenever a saved person appears by name or family role (including 爸爸/Dad/Father, 妈妈/Mom/Mother, and grandparents), reuse that exact saved person's id, appearance, and reference; never substitute a generic invented version of the same relative. castIds must contain at least one id and list only saved people actually visible on that page, including people shown in photos or video calls. A relative only mentioned as absent or missed is not visible. Do not add unused relatives to the plot merely because they are available. Do not invent ids for unsaved people."
   : "- No saved family characters are selected. Every page must return castIds: []. You may depict people required by the story premise, but do not invent saved-family character ids for them."}
 ${protagonistCharacterId ? `- The confirmed protagonist id=${protagonistCharacterId} must appear in castIds on every page.` : ""}
 - Every illustrationPrompt must include: setting, props, visible action, emotion, camera distance, composition, style, and "no text in image".

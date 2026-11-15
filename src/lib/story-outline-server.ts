@@ -1,4 +1,5 @@
 import type { StoryInput, StoryPage } from "@/types";
+import { resolveStoryFamilyCast } from "@/lib/story-family-cast";
 
 const CAMERA_PLAN = [
   "warm establishing shot that clearly introduces the setting",
@@ -67,9 +68,12 @@ export function rebuildStoryPagesFromOutline(
   return existingPages.map((page, index) => {
     const edit = editsByPage.get(page.page);
     if (!edit) throw new Error(`Missing outline page ${page.page}.`);
-    const castIds = page.castIds ?? [];
     const zhText = edit.zhText.trim();
     const enText = edit.enText.trim();
+    const textChanged = zhText !== page.zhText.trim() || enText !== page.enText.trim();
+    const castIds = input.familyCharacters?.length
+      ? resolveStoryFamilyCast(input, { ...page, zhText, enText }, { fromNarration: textChanged })
+      : page.castIds ?? [];
     const textPrompt = [
       zhText ? `Chinese: ${quotePromptText(zhText)}` : null,
       enText ? `English: ${quotePromptText(enText)}` : null,
@@ -81,12 +85,13 @@ export function rebuildStoryPagesFromOutline(
       ...page,
       zhText,
       enText,
+      castIds,
       illustrationPrompt: [
         `Create a ${input.style} children's picture-book illustration for page ${page.page} of 8.`,
         `Parent-confirmed page text: ${textPrompt}.`,
         "Depict this exact story moment; the confirmed text overrides any earlier scene direction.",
         `Camera and layout: ${CAMERA_PLAN[index] ?? CAMERA_PLAN.at(-1)}.`,
-        "Show a concrete setting, relevant props, visible action, and an age-appropriate emotion. Keep the child at roughly 25-45% of the image so the environment also tells the story.",
+        "Show a concrete setting, relevant props, visible action, and an age-appropriate emotion. Keep the main character at roughly 25-45% of the image so the environment also tells the story.",
         input.characterDescription?.trim()
           ? `Main character identity lock: ${input.characterDescription.trim()}.`
           : `Keep ${input.childName} visually consistent with every other page.`,

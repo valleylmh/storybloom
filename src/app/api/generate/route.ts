@@ -17,6 +17,7 @@ import {
 } from "@/lib/storage";
 import { normalizeCharacterName } from "@/lib/story-input";
 import { normalizeFamilyCharacterAppearance } from "@/lib/family-character-identity";
+import { dedupeFamilyCharacters, getFamilyCharacterIdentityKey } from "@/lib/family-character-dedupe";
 import {
   getStoryTextModelLabel,
   getStoryTextProvider,
@@ -190,13 +191,15 @@ async function getSelectedFamilyCharacters(
   }
 
   const user = await requireAuthenticatedUser(req);
-  const { data, error } = await getSupabaseAdmin()
+  let query = getSupabaseAdmin()
     .from("family_characters")
     .select(
       "id, display_name, relationship, description, canonical_photo_path, source_photo_path, cartoonize"
     )
-    .eq("user_id", user.id)
-    .in("id", uniqueIds);
+    .eq("user_id", user.id);
+  // With a confirmed family protagonist, other saved relatives are available when the story needs them.
+  if (!protagonistFamilyCharacterId) query = query.in("id", uniqueIds);
+  const { data, error } = await query.order("sort_order");
 
   if (error) {
     throw new GenerationProviderError(
@@ -207,7 +210,7 @@ async function getSelectedFamilyCharacters(
 
   const rows = (data ?? []) as FamilyCharacterRow[];
   const rowsById = new Map(rows.map((row) => [row.id, row]));
-  if (rows.length !== uniqueIds.length || uniqueIds.some((id) => !rowsById.has(id))) {
+  if (uniqueIds.some((id) => !rowsById.has(id))) {
     throw new Error("部分家庭角色不可用，请刷新页面后重新选择。");
   }
 
@@ -215,8 +218,13 @@ async function getSelectedFamilyCharacters(
     ? [protagonistFamilyCharacterId, ...uniqueIds.filter((id) => id !== protagonistFamilyCharacterId)]
     : uniqueIds;
 
-  return orderedIds.map((id) => {
-    const row = rowsById.get(id)!;
+  const selectedRows = orderedIds.map((id) => rowsById.get(id)!);
+  const selectedIdentities = new Set(selectedRows.map(getFamilyCharacterIdentityKey));
+  const availableRelatives = protagonistFamilyCharacterId
+    ? dedupeFamilyCharacters(rows.filter((row) => !selectedIdentities.has(getFamilyCharacterIdentityKey(row))))
+    : [];
+
+  return [...selectedRows, ...availableRelatives].map((row) => {
     const referenceAssetPath = row.cartoonize
       ? row.canonical_photo_path || row.source_photo_path
       : row.source_photo_path || row.canonical_photo_path;

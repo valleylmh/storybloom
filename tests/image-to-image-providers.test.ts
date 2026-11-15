@@ -1,4 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { resolveStoryFamilyCast } from "@/lib/story-family-cast";
+import type { StoryInput } from "@/types";
 
 const { getSupabaseAdminMock, inspectIllustrationQualityMock } = vi.hoisted(() => ({
   getSupabaseAdminMock: vi.fn(),
@@ -874,6 +876,61 @@ describe("image-to-image provider routing", () => {
       "powder-blue pajamas on every page",
     );
     expect(body.messages[0].content[0].text).not.toContain("same exact father face");
+  });
+
+  it.each(["openai", "orbitix"] as const)("sends automatically matched parents' actual reference bytes to %s", async (provider) => {
+    process.env[`${provider.toUpperCase()}_API_KEY`] = "test-image-key";
+    process.env.IMAGE_TO_IMAGE_PROVIDER_ORDER = `${provider}:1`;
+    const prefix = `automatic-family-${provider}`;
+    const download = vi.fn(async (assetPath: string) => ({
+      data: new Blob([assetPath], { type: "image/webp" }), error: null,
+    }));
+    getSupabaseAdminMock.mockReturnValue({ storage: { from: () => ({ download }) } });
+    const fetchMock = vi.fn().mockResolvedValue(new Response(
+      JSON.stringify({ data: [{ b64_json: "ZmFtaWx5" }] }),
+      { status: 200, headers: { "Content-Type": "application/json" } },
+    ));
+    vi.stubGlobal("fetch", fetchMock);
+    const storyInput: StoryInput = {
+      childName: "童童", protagonistFamilyCharacterId: "child", ageGroup: "4-5", theme: "family", style: "fairytale", language: "zh-en",
+      familyCharacters: [
+        { id: "child", name: "童童", relation: "孩子", appearance: "短发孩子", isProtagonist: true, sourceReferenceAssetPath: `${prefix}/child/source.webp` },
+        { id: "dad", name: "童童爸", relation: "爸爸", appearance: "戴眼镜的成年人", sourceReferenceAssetPath: `${prefix}/dad/source.webp` },
+        { id: "mom", name: "童童妈", relation: "妈妈", appearance: "长发成年妈妈", canonicalReferenceAssetPath: `${prefix}/mom/canonical.webp` },
+        { id: "grandma", name: "奶奶", relation: "奶奶", appearance: "白发奶奶", sourceReferenceAssetPath: `${prefix}/grandma/source.webp` },
+      ],
+    };
+    const page = { zhText: "我和爸妈一起做早餐。", enText: "I make breakfast with my parents.", illustrationPrompt: "童童帮爸爸准备早餐，妈妈把盘子摆在桌上。", castIds: ["child"] };
+    const castIds = resolveStoryFamilyCast(storyInput, page);
+    expect(castIds).toEqual(["child", "dad", "mom"]);
+    await generateIllustration(page.illustrationPrompt, 25, {
+      pageNumber: 1, style: "fairytale", preferredProvider: provider, fallbackProviders: [provider],
+      familyCharacters: storyInput.familyCharacters, castIds, referenceCacheKey: prefix,
+    });
+    expect(fetchMock.mock.calls[0][0]).toContain("/images/edits");
+    const request = fetchMock.mock.calls[0][1] as RequestInit;
+    let referenceContents: string[];
+    let prompt: string;
+    if (provider === "openai") {
+      const body = JSON.parse(String(request.body));
+      referenceContents = body.images.map(({ image_url }: { image_url: string }) =>
+        Buffer.from(image_url.split(",")[1], "base64").toString(),
+      );
+      prompt = body.prompt;
+    } else {
+      const form = request.body as FormData;
+      referenceContents = await Promise.all(form.getAll("image[]").map((blob) => (blob as Blob).text()));
+      prompt = String(form.get("prompt"));
+    }
+    expect(referenceContents).toEqual([
+      `${prefix}/child/source.webp`, `${prefix}/dad/source.webp`, `${prefix}/mom/canonical.webp`,
+    ]);
+    expect(download.mock.calls.map(([assetPath]) => assetPath)).toEqual([
+      `${prefix}/child/source.webp`, `${prefix}/dad/source.webp`, `${prefix}/mom/canonical.webp`,
+    ]);
+    expect(prompt).toContain("CHARACTER dad (童童爸)");
+    expect(prompt).toContain("CHARACTER mom (童童妈)");
+    expect(prompt).not.toContain("奶奶");
   });
 
   it("creates one neutral full-body story outfit anchor from face and cartoon references", async () => {

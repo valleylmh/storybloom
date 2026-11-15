@@ -23,6 +23,8 @@ const mocks = vi.hoisted(() => ({
   refundGenerationQuotaReservation: vi.fn(),
   requireAuthenticatedUser: vi.fn(),
   listFamilyCharacters: vi.fn(),
+  familyCharacterUserScope: vi.fn(),
+  familyCharacterIdFilter: vi.fn(),
   resolveStoryAssetRequestPrincipal: vi.fn(),
   attachStoryAssetSessionCookie: vi.fn((response) => response),
 }));
@@ -59,15 +61,20 @@ vi.mock("@/lib/supabase/server-auth", async (importOriginal) => ({
 }));
 
 vi.mock("@/lib/email/supabase-admin", () => ({
-  getSupabaseAdmin: () => ({
-    from: () => ({
-      select: () => ({
-        eq: () => ({
-          in: mocks.listFamilyCharacters,
-        }),
-      }),
-    }),
-  }),
+  getSupabaseAdmin: () => {
+    const query = {
+      eq: (column: string, value: string) => {
+        mocks.familyCharacterUserScope(column, value);
+        return query;
+      },
+      in: (column: string, values: string[]) => {
+        mocks.familyCharacterIdFilter(column, values);
+        return query;
+      },
+      order: mocks.listFamilyCharacters,
+    };
+    return { from: () => ({ select: () => query }) };
+  },
 }));
 
 vi.mock("@/lib/story-visual-bible", () => ({
@@ -327,6 +334,61 @@ describe("generate route reliable task contract", () => {
     expect(appearance).toContain("成年人");
     expect(appearance).not.toContain("4-5 岁");
     expect(mocks.generateStoryText.mock.calls[0][0].personalizationAnchor.appearance).toBe(appearance);
+  });
+
+  it("makes saved parents available when only the child was selected, without replacing the chosen protagonist", async () => {
+    const protagonistId = "11111111-1111-4111-8111-111111111111";
+    const dadId = "22222222-2222-4222-8222-222222222222";
+    const momId = "33333333-3333-4333-8333-333333333333";
+    const row = (id: string, display_name: string, relationship: string, photo: string | null = null) => ({
+      id, display_name, relationship, description: `${relationship}的外貌`,
+      source_photo_path: photo, canonical_photo_path: null, cartoonize: false,
+    });
+    mocks.listFamilyCharacters.mockResolvedValueOnce({ data: [
+      row(dadId, "童童爸", "爸爸", `user-1/${dadId}/source.webp`),
+      row(momId, "童童妈", "妈妈", `user-1/${momId}/source.webp`),
+      row(protagonistId, "童童", "孩子"),
+      row("44444444-4444-4444-8444-444444444444", "童童爸", "爸爸"),
+      row("55555555-5555-4555-8555-555555555555", "童童", "孩子", "user-1/duplicate/source.webp"),
+    ], error: null });
+    const response = await POST(createRequest({
+      protagonistFamilyCharacterId: protagonistId, familyCharacterIds: [protagonistId],
+      customTheme: "童童和爸爸妈妈一起做早餐",
+    }));
+    expect(response.status).toBe(200);
+    const generatedInput = mocks.generateStoryText.mock.calls[0][0];
+    expect(generatedInput.familyCharacters.map((character: { id: string }) => character.id)).toEqual([protagonistId, dadId, momId]);
+    expect(generatedInput.familyCharacters[0].isProtagonist).toBe(true);
+    expect(generatedInput.familyCharacters[1]).toMatchObject({
+      relation: "爸爸", isProtagonist: false, sourceReferenceAssetPath: `user-1/${dadId}/source.webp`,
+    });
+    expect(mocks.familyCharacterUserScope).toHaveBeenCalledWith("user_id", "user-1");
+    expect(mocks.familyCharacterIdFilter).not.toHaveBeenCalled();
+  });
+
+  it("still rejects a selected id that is not in the authenticated user's family", async () => {
+    const protagonistId = "11111111-1111-4111-8111-111111111111";
+    const foreignId = "22222222-2222-4222-8222-222222222222";
+    mocks.listFamilyCharacters.mockResolvedValueOnce({ data: [{
+      id: protagonistId, display_name: "童童", relationship: "孩子", description: "五岁孩子",
+      source_photo_path: null, canonical_photo_path: null, cartoonize: true,
+    }], error: null });
+    const response = await POST(createRequest({
+      protagonistFamilyCharacterId: protagonistId, familyCharacterIds: [protagonistId, foreignId],
+    }));
+    expect(response.status).toBe(400);
+    expect(mocks.generateStoryText).not.toHaveBeenCalled();
+  });
+
+  it("keeps legacy requests without a confirmed protagonist restricted to their selected family ids", async () => {
+    const characterId = "11111111-1111-4111-8111-111111111111";
+    mocks.listFamilyCharacters.mockResolvedValueOnce({ data: [{
+      id: characterId, display_name: "童童", relationship: "孩子", description: "五岁孩子",
+      source_photo_path: null, canonical_photo_path: null, cartoonize: true,
+    }], error: null });
+    const response = await POST(createRequest({ familyCharacterIds: [characterId] }));
+    expect(response.status).toBe(200);
+    expect(mocks.familyCharacterIdFilter).toHaveBeenCalledWith("id", [characterId]);
   });
 
   it("still rejects a personalized Anchor bound to a different protagonist", async () => {

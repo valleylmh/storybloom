@@ -613,6 +613,41 @@ describe("custom story generation", () => {
     })).rejects.toMatchObject({ errorClass: "invalid_response" });
   });
 
+  it("binds saved parents from page scenes even when the model omits their cast ids", async () => {
+    process.env.STORY_TEXT_PROVIDER = "bailian";
+    process.env.BAILIAN_TOKEN_KEY = "test-bailian-key";
+    process.env.STORY_TEXT_MODEL = "qwen3.6-flash";
+    const scenes = [
+      "A child named 童童 looks at a breakfast table alone.",
+      "童童在厨房帮爸爸做早餐。",
+      "A child named 童童 sets plates beside Mother in the kitchen.",
+      "A child named 童童 shares breakfast with his parents.",
+    ];
+    const fetchMock = mockCpaStory("童童的早餐", createFirstPersonModelPages().map((page, index) => ({
+      ...page, zhText: "我在厨房开心地准备早餐。", enText: "I happily get breakfast ready in the kitchen.",
+      illustrationPrompt: scenes[index % scenes.length], castIds: ["child"],
+    })));
+    const story = await generateStoryText({
+      ...soloSleepInput, customTheme: "今天很开心", narrativePerspective: "first-person",
+      protagonistFamilyCharacterId: "child",
+      familyCharacters: [
+        { id: "child", name: "童童", relation: "孩子", appearance: "五岁短发孩子", isProtagonist: true },
+        { id: "dad", name: "童童爸", relation: "爸爸", appearance: "戴眼镜的成年爸爸", sourceReferenceAssetPath: "user/dad/source.webp" },
+        { id: "mom", name: "童童妈", relation: "妈妈", appearance: "长发成年妈妈", canonicalReferenceAssetPath: "user/mom/canonical.png" },
+        { id: "grandma", name: "奶奶", relation: "奶奶", appearance: "白发奶奶" },
+      ],
+    });
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(story.pages.slice(0, 4).map((page) => page.castIds)).toEqual([
+      ["child"], ["child", "dad"], ["child", "mom"], ["child", "dad", "mom"],
+    ]);
+    expect(story.pages[1].illustrationPrompt).toContain("童童爸 (爸爸, id=dad)");
+    expect(story.pages[2].illustrationPrompt).toContain("童童妈 (妈妈, id=mom)");
+    expect(story.pages.every((page) => !page.illustrationPrompt.includes("奶奶"))).toBe(true);
+    const body = JSON.parse(String(fetchMock.mock.calls[0][1].body));
+    expect(body.messages[0].content).toContain("available roster");
+  });
+
   it("keeps unsupported JSON/thinking controls out of other Bailian model requests", async () => {
     process.env.STORY_TEXT_PROVIDER = "bailian";
     process.env.BAILIAN_TOKEN_KEY = "bailian-key";
