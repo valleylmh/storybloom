@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { PublicDailyInspiration } from "@/lib/inspiration/types";
+import { storyCreationHref } from "@/lib/story-creation-url";
 import styles from "./TodayInspirationCard.module.css";
 
 export interface TodayInspirationCardProps {
@@ -27,9 +27,10 @@ export default function TodayInspirationCard({
   const en = locale === "en";
   const compact = variant === "compact";
   const titleId = `daily-inspiration-${inspiration.id}`;
-  const createHref = `${en ? "/en" : "/"}?mode=minimal&idea=${encodeURIComponent(
-    en ? inspiration.storyPromptEn : inspiration.storyPromptZh,
-  )}`;
+  const createHref = storyCreationHref({
+    locale,
+    idea: en ? inspiration.storyPromptEn : inspiration.storyPromptZh,
+  });
 
   return (
     <article
@@ -83,9 +84,9 @@ export default function TodayInspirationCard({
 
       <footer className={styles.footer}>
         <p>{en ? "Make this idea your own. You choose the characters and details." : compact ? "把今天的主题写成你们自己的故事。" : "灵感已经准备好，主角和细节仍由你来决定。"}</p>
-        <Link className={styles.action} href={createHref}>
+        <a className={styles.action} href={createHref}>
           {en ? "Create a story from this idea" : "用这个灵感创作"} <span aria-hidden="true">→</span>
-        </Link>
+        </a>
       </footer>
     </article>
   );

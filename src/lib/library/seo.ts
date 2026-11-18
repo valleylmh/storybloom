@@ -1,7 +1,10 @@
 import type { LibraryBook, LibrarySeries } from "@/types/library";
 import { breadcrumbs, localizedPath, pageMetadata, type SiteLocale } from "@/lib/seo";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
+import { bookEnglishTitle } from "./english-titles";
 import { resolveLibraryBookMetadata } from "./metadata";
+import { bookReadingCopy } from "./reading-copy";
+import { getBookTopics } from "./topics";
 
 export const ENGLISH_SERIES: Record<string, { title: string; description: string }> = {
   chengyu: { title: "Chinese Idiom Stories for Kids", description: "Discover Chinese idioms through illustrated stories for kids. Read complete English stories alongside Chinese, with simple explanations for family reading." },
@@ -21,13 +24,32 @@ export function seriesCopy(series: LibrarySeries, locale: SiteLocale = "zh") {
 }
 
 export function bookDescription(book: LibraryBook, locale: SiteLocale = "zh") {
+  const readingCopy = bookReadingCopy(book, locale);
+  if (readingCopy) return readingCopy.introduction;
   if (locale === "en") {
-    return `${book.title}: ${book.idiomMeaning?.en || book.poem?.appreciation.en || book.classic?.childExplanation.en || book.pages[0]?.enText || book.moral?.en || "A bilingual picture book for kids."}`.slice(0, 280);
+    return `${bookEnglishTitle(book)}: ${book.idiomMeaning?.en || book.poem?.appreciation.en || book.classic?.childExplanation.en || book.pages[0]?.enText || book.moral?.en || "A bilingual picture book for kids."}`.slice(0, 280);
+  }
+  // Parenting stories: say what the book is about and what it practises, in the parent's terms.
+  if (isParentingStory(book)) {
+    const subtitle = /[。？！?!]$/.test(book.subtitle) ? book.subtitle : `${book.subtitle}。`;
+    return `${book.title}：${subtitle}${book.parentGuide.goal} 免费在线阅读 ${book.pages.length} 页中英双语儿童绘本，适合 ${book.ageLabel}亲子共读。`;
   }
   const summary = book.question
     ? `${book.subtitle}。${book.pages[0]?.zhText || book.moral?.zh || ""}`
     : book.idiomMeaning?.zh || book.poem?.appreciation.zh || book.classic?.childExplanation.zh || book.moral?.zh || book.subtitle;
   return `${book.question || book.title}：${summary} 免费在线阅读 ${book.pages.length} 页中英双语儿童绘本，适合 ${book.ageLabel}亲子共读。`;
+}
+
+function isParentingStory(book: LibraryBook): book is LibraryBook & { parentGuide: NonNullable<LibraryBook["parentGuide"]> } {
+  return Boolean(book.parentGuide) && !book.question && !book.poem;
+}
+
+/** Chinese title for parenting stories: the search phrase of the book's primary topic. */
+function parentingBookTitle(book: LibraryBook) {
+  if (!isParentingStory(book)) return null;
+  const topic = getBookTopics(book)[0];
+  if (topic) return `${book.title} - ${topic.searchLabel} | StoryBloom`;
+  return book.classic ? null : `${book.title}：${book.subtitle} - 亲子共读绘本 | StoryBloom`;
 }
 
 export function bookCover(book: LibraryBook) {
@@ -44,14 +66,22 @@ export function seriesMetadata(series: LibrarySeries, books: LibraryBook[], loca
   });
 }
 
+/** English title followed by the Chinese one, which is what bilingual readers search for. */
+function englishBookName(book: LibraryBook) {
+  const english = bookEnglishTitle(book);
+  return english === book.title ? english : `${english} (${book.title})`;
+}
+
 export function bookMetadata(book: LibraryBook, series: LibrarySeries, locale: SiteLocale = "zh") {
+  const readingCopy = bookReadingCopy(book, locale);
   return pageMetadata({
     path: `/library/${series.id}/${book.id}`, locale, bilingual: !book.comingSoon, type: "article",
-    title: locale === "en"
-      ? `${book.title} | ${seriesCopy(series, "en").title} - StoryBloom`
-      : book.question ? `${book.question} - 儿童科普双语绘本 | StoryBloom`
+    title: readingCopy?.title ?? (locale === "en"
+      ? `${englishBookName(book)} | ${seriesCopy(series, "en").title} - StoryBloom`
+      : parentingBookTitle(book)
+      ?? (book.question ? `${book.question} - 儿童科普双语绘本 | StoryBloom`
         : book.poem ? `${book.title} - ${book.poem.author}唐诗双语绘本 | StoryBloom`
-          : `${book.title} - 中英双语${series.title}绘本 | StoryBloom`,
+          : `${book.title} - 中英双语${series.title}绘本 | StoryBloom`)),
     description: bookDescription(book, locale), image: bookCover(book), noindex: book.comingSoon,
   });
 }
@@ -62,7 +92,7 @@ export function libraryBreadcrumbs(series?: LibrarySeries, book?: LibraryBook, l
     { name: locale === "en" ? "Home" : "首页", path: local("/") },
     { name: locale === "en" ? "Picture Book Library" : "绘本馆", path: local("/library") },
     ...(series ? [{ name: seriesCopy(series, locale).title, path: local(`/library/${series.id}`) }] : []),
-    ...(book ? [{ name: book.title, path: local(`/library/${series!.id}/${book.id}`) }] : []),
+    ...(book ? [{ name: locale === "en" ? bookEnglishTitle(book) : book.title, path: local(`/library/${series!.id}/${book.id}`) }] : []),
   ]);
 }
 
@@ -71,7 +101,7 @@ export function seriesStructuredData(series: LibrarySeries, books: LibraryBook[]
   const copy = seriesCopy(series, locale);
   const url = toAbsoluteAppUrl(localizedPath(`/library/${series.id}`, locale));
   return { "@context": "https://schema.org", "@graph": [
-    { "@type": "CollectionPage", url, name: copy.title, description: copy.description, inLanguage: locale === "en" ? "en" : "zh-CN", mainEntity: { "@type": "ItemList", numberOfItems: published.length, itemListElement: published.map((book, index) => ({ "@type": "ListItem", position: index + 1, name: book.title, url: toAbsoluteAppUrl(localizedPath(`/library/${series.id}/${book.id}`, locale)) })) } },
+    { "@type": "CollectionPage", url, name: copy.title, description: copy.description, inLanguage: locale === "en" ? "en" : "zh-CN", mainEntity: { "@type": "ItemList", numberOfItems: published.length, itemListElement: published.map((book, index) => ({ "@type": "ListItem", position: index + 1, name: locale === "en" ? bookEnglishTitle(book) : book.title, url: toAbsoluteAppUrl(localizedPath(`/library/${series.id}/${book.id}`, locale)) })) } },
     libraryBreadcrumbs(series, undefined, locale),
   ] };
 }
@@ -81,7 +111,7 @@ export function bookStructuredData(book: LibraryBook, series: LibrarySeries, loc
   const metadata = resolveLibraryBookMetadata(book);
   return { "@context": "https://schema.org", "@graph": [
     {
-      "@type": "Book", name: book.title, alternativeHeadline: book.subtitle,
+      "@type": "Book", name: locale === "en" ? bookEnglishTitle(book) : book.title, alternativeHeadline: book.subtitle,
       url: toAbsoluteAppUrl(localizedPath(`/library/${series.id}/${book.id}`, locale)),
       description: bookDescription(book, locale), inLanguage: ["zh-CN", "en"],
       numberOfPages: book.pages.length, datePublished: book.publishedAt,

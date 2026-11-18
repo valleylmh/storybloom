@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import SharedStoryReader from "@/components/book/SharedStoryReader";
 import { getSharedStory } from "@/lib/share-store";
 
 export const runtime = "nodejs";
@@ -20,18 +21,30 @@ export async function generateMetadata({
     return { robots: { index: false, follow: false } };
   }
 
-  const cover = record.story.pages[0]?.imageUrl;
+  const { story } = record;
+  const cover = story.pages[0]?.imageUrl;
+  const title = `《${story.coverTitle}》`;
+  // The link preview only repeats what the sharer already made public on this page.
+  const description = `给${story.childName}的专属绘本，共 ${story.pages.length} 页，点开就能翻页、听朗读。`;
 
   return {
-    title: `${record.story.coverTitle} | StoryBloom 绘本分享`,
-    description: "一本用 StoryBloom 生成的专属儿童绘本，点开即读。",
+    title: `${story.coverTitle} | StoryBloom 绘本分享`,
+    description,
     // 用户内容不进搜索引擎
     robots: { index: false, follow: false },
     openGraph: {
-      title: record.story.coverTitle,
-      description: "一本专属儿童绘本，点开即读。",
+      title,
+      description,
       type: "article",
-      ...(cover ? { images: [{ url: cover }] } : {}),
+      siteName: "StoryBloom",
+      url: `/s/${shareId}`,
+      ...(cover ? { images: [{ url: cover, alt: title }] } : {}),
+    },
+    twitter: {
+      card: cover ? "summary_large_image" : "summary",
+      title,
+      description,
+      ...(cover ? { images: [cover] } : {}),
     },
   };
 }
@@ -60,34 +73,16 @@ export default async function SharedStoryPage({
         </p>
       </header>
 
-      <section className="pages-grid library-pages" aria-label="绘本正文">
-        {story.pages.map((page) => (
-          <article
-            key={page.page}
-            className="page-card"
-            aria-label={`第 ${page.page} 页`}
-          >
-            <div className="page-image-frame">
-              {page.imageUrl ? (
-                <img
-                  src={page.imageUrl}
-                  alt={`${story.coverTitle} 第 ${page.page} 页插图`}
-                  className="page-image"
-                  loading={page.page > 2 ? "lazy" : undefined}
-                />
-              ) : (
-                <div className="library-page-fallback" aria-hidden="true">
-                  <span>{page.page}</span>
-                </div>
-              )}
-            </div>
-            <div className="page-copy">
-              {page.zhText ? <p className="page-zh">{page.zhText}</p> : null}
-              {page.enText ? <p className="page-en">{page.enText}</p> : null}
-            </div>
-          </article>
-        ))}
-      </section>
+      <SharedStoryReader
+        shareId={shareId}
+        title={story.coverTitle}
+        initialLanguageMode={story.language.startsWith("en") ? "en" : "zh"}
+        pages={story.pages.map((page) => ({
+          ...page,
+          illustrationPrompt: "",
+          imageStatus: page.imageUrl ? "complete" : undefined,
+        }))}
+      />
 
       <section className="library-cta" aria-label="生成专属绘本">
         <h2>我也想给孩子做一本</h2>

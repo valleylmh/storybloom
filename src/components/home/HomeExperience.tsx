@@ -2,6 +2,11 @@
 
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { HOME_TITLES, localizedPath } from "@/lib/seo";
+import {
+  readStoryCreationParameters,
+  STORY_CREATION_FRAGMENT,
+  withStoryCreationMode,
+} from "@/lib/story-creation-url";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -319,18 +324,14 @@ async function getBrowserFingerprint() {
 }
 
 function readEntryModeFromUrl(): EntryMode | null {
-  const mode = new URL(window.location.href).searchParams.get(ENTRY_MODE_QUERY_KEY);
+  const mode = readStoryCreationParameters(new URL(window.location.href)).get(ENTRY_MODE_QUERY_KEY);
   return mode === "capture" || mode === "minimal" || mode === "full"
     ? mode
     : null;
 }
 
 function getEntryModeUrl(mode: EntryMode) {
-  const url = new URL(window.location.href);
-
-  if (mode === "capture") url.searchParams.delete(ENTRY_MODE_QUERY_KEY);
-  else url.searchParams.set(ENTRY_MODE_QUERY_KEY, mode);
-
+  const url = withStoryCreationMode(new URL(window.location.href), mode);
   return `${url.pathname}${url.search}${url.hash}`;
 }
 
@@ -437,6 +438,7 @@ export default function HomeExperience({ initialLocale = "zh", children }: { ini
   const locale = initialLocale;
   const [entryMode, setEntryMode] = useState<EntryMode>("capture");
   const [personalizationEntry, setPersonalizationEntry] = useState(false);
+  const [creationEntryKey, setCreationEntryKey] = useState("");
   const [step, setStep] = useState<AppStep>("form");
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
   const [generationStartedAtMs, setGenerationStartedAtMs] = useState<number | null>(
@@ -740,14 +742,15 @@ export default function HomeExperience({ initialLocale = "zh", children }: { ini
   useEffect(() => {
     let mounted = true;
     const detectedLocale = initialLocale;
-    const urlEntryMode = readEntryModeFromUrl();
-    const initialEntryMode = urlEntryMode || "capture";
-    setEntryMode(initialEntryMode);
-    setPersonalizationEntry(
-      Boolean(
-        new URL(window.location.href).searchParams.get("personalize")?.trim(),
-      ),
-    );
+    const syncCreationEntry = () => {
+      const parameters = readStoryCreationParameters(new URL(window.location.href));
+      const mode = readEntryModeFromUrl() || "capture";
+      setEntryMode(mode);
+      setPersonalizationEntry(Boolean(parameters.get("personalize")?.trim()));
+      setCreationEntryKey(JSON.stringify([parameters.get("idea"), parameters.get("personalize")]));
+      return mode;
+    };
+    const initialEntryMode = syncCreationEntry();
     window.localStorage.setItem(ENTRY_MODE_STORAGE_KEY, initialEntryMode);
     replaceEntryModeUrl(initialEntryMode);
     const growthVersionRequested = isGrowthVersionCreationRequested(
@@ -824,8 +827,7 @@ export default function HomeExperience({ initialLocale = "zh", children }: { ini
     const handlePopState = () => {
       // A clean homepage URL is the canonical address for the growth-first entry.
       // This makes Back/Forward deterministic instead of reapplying the last saved preference.
-      const nextMode = readEntryModeFromUrl() || "capture";
-      setEntryMode(nextMode);
+      const nextMode = syncCreationEntry();
       window.localStorage.setItem(ENTRY_MODE_STORAGE_KEY, nextMode);
 
       const storyId = readStoryIdFromUrl();
@@ -902,12 +904,23 @@ export default function HomeExperience({ initialLocale = "zh", children }: { ini
       setStep("form");
     };
 
+    const handleHashChange = () => {
+      if (window.location.hash.startsWith(STORY_CREATION_FRAGMENT)) handlePopState();
+    };
     window.addEventListener("popstate", handlePopState);
+    window.addEventListener("hashchange", handleHashChange);
     return () => {
       mounted = false;
       window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, [initialLocale]);
+
+  useEffect(() => {
+    if (window.location.hash.startsWith(STORY_CREATION_FRAGMENT)) {
+      document.getElementById("story-creation")?.scrollIntoView({ block: "start" });
+    }
+  }, [creationEntryKey, entryMode]);
 
   useEffect(() => {
     if (step !== "generating_text" || !activeTaskId) return;
@@ -1411,7 +1424,7 @@ export default function HomeExperience({ initialLocale = "zh", children }: { ini
                   <section className="home-landing-grid" aria-label="StoryBloom 首页创作与阅读">
                     <div className="home-creator-pane">
                       <MinimalStoryEntry
-                        key={`${entryMode}:home`}
+                        key={`${entryMode}:home:${creationEntryKey}`}
                         locale={locale}
                         freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
                         remainingFreeGenerations={remainingFreeGenerations}
@@ -1472,7 +1485,7 @@ export default function HomeExperience({ initialLocale = "zh", children }: { ini
                   </section>
                 ) : (
                   <MinimalStoryEntry
-                    key={`${entryMode}:${growthVersionPreset?.targetMomentId || "new"}`}
+                    key={`${entryMode}:${growthVersionPreset?.targetMomentId || "new"}:${creationEntryKey}`}
                     locale={locale}
                     freeGenerationLimit={FREE_GENERATION_DAILY_LIMIT}
                     remainingFreeGenerations={remainingFreeGenerations}

@@ -4,6 +4,7 @@ import { sanitizeReturnTo } from "@/lib/auth/return-to";
 
 export const metadata: Metadata = {
   title: "登录 | StoryBloom",
+  robots: { index: false, follow: true },
 };
 
 export default async function LoginPage({

@@ -1,13 +1,14 @@
 import type { MetadataRoute } from "next";
 import { getAllSeries, getPublishedBooks } from "@/lib/library";
 import { bookCover } from "@/lib/library/seo";
+import { getAllTopics, topicPath } from "@/lib/library/topics";
 import { bilingualSitemapEntries } from "@/lib/seo-sitemap";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [
     ...["/", "/inspiration", "/library"].flatMap((path) => bilingualSitemapEntries(path)),
-    ...["/custom", "/privacy", "/child-family-data", "/gifts", "/gifts/summer-pocket", "/gifts/joy-day", "/gifts/birthday-star", "/gifts/city-motors", "/gifts/journey-to-the-west"].map((path) => ({ url: toAbsoluteAppUrl(path) })),
+    ...["/custom", "/privacy", "/child-family-data", "/gifts", "/gifts/summer-pocket", "/gifts/joy-day", "/gifts/birthday-star", "/gifts/city-motors", "/gifts/journey-to-the-west", "/library/topics", ...getAllTopics().map(topicPath)].map((path) => ({ url: toAbsoluteAppUrl(path) })),
   ];
 
   for (const series of getAllSeries()) {

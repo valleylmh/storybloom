@@ -77,6 +77,7 @@ import {
   updatePersonalizationDraft,
 } from "@/lib/personalization-drafts";
 import { getStoryContinuationDraft } from "@/lib/story-continuation-drafts";
+import { readStoryCreationParameters } from "@/lib/story-creation-url";
 import {
   getDefaultFamilyCharacterAppearance as getDefaultAnchorAppearance,
   normalizeFamilyCharacterAppearance,
@@ -657,7 +658,7 @@ export default function MinimalStoryEntry({
   ]);
 
   useEffect(() => {
-    const sharedIdea = new URL(window.location.href).searchParams
+    const sharedIdea = readStoryCreationParameters(new URL(window.location.href))
       .get(DAILY_IDEA_QUERY_KEY)
       ?.trim();
     if (sharedIdea && !initialGrowthVersion) {
@@ -667,7 +668,7 @@ export default function MinimalStoryEntry({
 
   useEffect(() => {
     if (initialGrowthVersion) return;
-    const contentId = new URL(window.location.href).searchParams
+    const contentId = readStoryCreationParameters(new URL(window.location.href))
       .get(PERSONALIZATION_QUERY_KEY)
       ?.trim();
     if (!contentId) {

@@ -4,6 +4,7 @@ import { libraryBreadcrumbs } from "@/lib/library/seo";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
 import Link from "next/link";
 import LibraryCatalogExperience from "@/components/library/LibraryCatalogExperience";
+import LibraryTopicLinks from "@/components/library/LibraryTopicLinks";
 import {
   getAllSeries,
   getPublishedBookCount,
@@ -11,6 +12,7 @@ import {
   getUpcomingSeries,
 } from "@/lib/library";
 import { createLibraryBookSummary } from "@/lib/library/catalog";
+import { getAllTopics } from "@/lib/library/topics";
 
 const PUBLISHED_BOOK_COUNT = getPublishedBookCount();
 const HAS_PUBLISHED_BOOKS = PUBLISHED_BOOK_COUNT > 0;
@@ -51,6 +53,8 @@ export default function LibraryPage() {
           精选内容、有声阅读和家庭收藏，匿名打开即可使用。
         </p>
       </header>
+
+      <LibraryTopicLinks topics={getAllTopics()} label="按育儿情境找" showAll />
 
       <LibraryCatalogExperience
         books={books}

@@ -1,0 +1,6 @@
+.topics { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 14px; margin: 0 0 28px; }
+.topics strong { color: var(--muted); font-size: 0.82rem; font-weight: 800; }
+.topics ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.topics a { display: inline-flex; align-items: center; min-height: 36px; padding: 0 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text); font-size: 0.84rem; font-weight: 700; text-decoration: none; }
+.topics a:hover { border-color: var(--accent); color: var(--accent-dark); }
+.topics a.all { border-color: transparent; background: transparent; color: var(--accent-dark); }

@@ -2549,7 +2549,7 @@ body {
   }
 
   .home-creator-pane {
-    padding: 32px 0 42px;
+    padding: 18px 0 6px;
     border-right: 0;
   }
 
@@ -2596,22 +2596,26 @@ body {
   .minimal-entry.minimal-entry-home h1 {
     width: 100%;
     margin-left: 0;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     font-size: clamp(2.55rem, 10.6vw, 3rem);
     line-height: 1.12;
   }
 
+  /* The English headline is longer: size it so each of its two lines fits a phone. */
+  .minimal-entry.minimal-entry-home:lang(en) h1 {
+    font-size: clamp(1.3rem, 6.8vw, 2.4rem);
+  }
+
+  /* Phone first screen: keep the vertical room for the book covers. */
   .minimal-home-ornament {
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 18px;
+    display: none;
   }
 
   .minimal-home-description {
     width: 100%;
     margin-left: 0;
-    margin-bottom: 26px;
-    font-size: 0.9rem;
+    margin-bottom: 14px;
+    font-size: 0.86rem;
   }
 
   .minimal-entry-home .story-search {
@@ -2626,17 +2630,25 @@ body {
   }
 
   .minimal-home-trust {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    margin-top: 12px;
+    font-size: 0.76rem;
   }
 
   .minimal-home-trust span {
+    gap: 5px;
     padding: 0;
   }
 
   .minimal-home-trust span + span {
     border-left: 0;
+  }
+
+  .minimal-home-trust svg {
+    width: 15px;
+    height: 15px;
   }
 
   .home-library-spotlight {
@@ -2736,6 +2748,32 @@ body {
 
   .minimal-identity-actions button {
     width: 100%;
+  }
+}
+
+/* Phones wide enough for one header row; narrower screens keep the wrapped two-row header above. */
+@media (min-width: 360px) and (max-width: 680px) {
+  .home-topbar-inner {
+    min-height: 56px;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .home-header-mode-toggle {
+    order: 0;
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .home-header-mode-toggle button {
+    min-height: 30px;
+    padding: 0 8px;
+  }
+
+  .home-wordmark {
+    font-size: 1.3rem;
   }
 }
 
@@ -8004,6 +8042,14 @@ a.library-book-card:hover {
   font-weight: 600;
 }
 
+.library-book-original-title {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
 .library-book-subtitle {
   margin: 0;
   font-size: 0.82rem;
@@ -9256,11 +9302,19 @@ a.library-book-card:hover {
 
 @media (max-width: 680px) {
   .home-library-spotlight {
-    padding: 40px 28px 34px;
+    padding: 14px 12px 34px;
   }
 
+  /* Covers lead on phones so a book is visible without scrolling. The height follows the
+     tallest (41%-wide, 3:4) cover so the stack never spills over the creation form above. */
   .home-library-covers {
-    height: min(56vw, 220px);
+    order: -1;
+    height: calc(min(560px, 100vw - 56px) * 0.5467 + 16px);
+    margin-bottom: 18px;
+  }
+
+  .home-library-kicker {
+    margin-bottom: 8px;
   }
 }
 
@@ -12003,9 +12057,47 @@ a.library-book-card:hover {
 
 @media (max-width: 680px) {
   .analytics-consent-banner {
+    right: 10px;
+    bottom: calc(10px + env(safe-area-inset-bottom));
+    width: calc(100% - 20px);
     align-items: stretch;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 16px;
+  }
+
+  /* Same wording as desktop, set tighter: title and settings link share the first row. */
+  .analytics-consent-banner > div:first-child {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    column-gap: 10px;
+  }
+
+  .analytics-consent-banner strong {
+    margin-bottom: 0;
+    font-size: 0.92rem;
+  }
+
+  .analytics-consent-banner a {
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: 0;
+  }
+
+  .analytics-consent-banner p {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+    font-size: 0.74rem;
+    line-height: 1.5;
+  }
+
+  /* The English link is too long to share the title row. */
+  .analytics-consent-banner:lang(en) a {
+    grid-row: auto;
+    grid-column: 1 / -1;
+    margin-top: 4px;
   }
 
   .analytics-consent-actions {
@@ -12014,6 +12106,7 @@ a.library-book-card:hover {
 
   .analytics-consent-actions button {
     flex: 1;
+    min-height: 36px;
   }
 }
 

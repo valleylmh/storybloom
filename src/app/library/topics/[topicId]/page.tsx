@@ -1,0 +1,97 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import JsonLd from "@/components/seo/JsonLd";
+import LibraryTopicLinks from "@/components/library/LibraryTopicLinks";
+import { bookCover } from "@/lib/library/seo";
+import { getAllTopics, getTopic, getTopicBooks, topicPath } from "@/lib/library/topics";
+import { breadcrumbs, pageMetadata } from "@/lib/seo";
+import { toAbsoluteAppUrl } from "@/lib/site-url";
+import { storyCreationHref } from "@/lib/story-creation-url";
+
+type Params = { topicId: string };
+
+export const dynamicParams = false;
+
+export function generateStaticParams(): Params[] {
+  return getAllTopics().map((topic) => ({ topicId: topic.id }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
+  const topic = getTopic((await params).topicId);
+  if (!topic) return {};
+  const books = getTopicBooks(topic);
+  return pageMetadata({
+    path: topicPath(topic),
+    title: `${topic.searchLabel}推荐：${books.length} 本免费在线阅读 | StoryBloom`,
+    description: topic.description,
+    image: books.map(({ book }) => bookCover(book)).find(Boolean),
+  });
+}
+
+export default async function LibraryTopicPage({ params }: { params: Promise<Params> }) {
+  const topic = getTopic((await params).topicId);
+  if (!topic) notFound();
+
+  const books = getTopicBooks(topic);
+  const url = toAbsoluteAppUrl(topicPath(topic));
+
+  return (
+    <main className="library-page">
+      <JsonLd data={{ "@context": "https://schema.org", "@graph": [
+        { "@type": "CollectionPage", url, name: topic.heading, description: topic.description, inLanguage: "zh-CN", mainEntity: { "@type": "ItemList", numberOfItems: books.length, itemListElement: books.map(({ series, book }, index) => ({ "@type": "ListItem", position: index + 1, name: book.title, url: toAbsoluteAppUrl(`/library/${series.id}/${book.id}`) })) } },
+        breadcrumbs([
+          { name: "首页", path: "/" },
+          { name: "绘本馆", path: "/library" },
+          { name: "育儿情境", path: "/library/topics" },
+          { name: topic.name, path: topicPath(topic) },
+        ]),
+      ] }} />
+
+      <nav className="library-topbar" aria-label="页面导航">
+        <Link href="/library" className="library-back">← 绘本馆</Link>
+        <Link href="/library/topics" className="library-back">全部育儿情境 →</Link>
+      </nav>
+
+      <header className="library-hero">
+        <p className="library-kicker">育儿情境 · {topic.name} · {books.length} 本</p>
+        <h1>{topic.heading}</h1>
+        <p className="library-lead">{topic.description}</p>
+      </header>
+
+      <section className="library-book-grid" aria-label={`${topic.name}绘本`}>
+        {books.map(({ series, book }) => {
+          const cover = bookCover(book);
+          return (
+            <Link key={`${series.id}/${book.id}`} href={`/library/${series.id}/${book.id}`} className="library-book-card">
+              <div className="library-book-cover" style={{ backgroundColor: `${series.accent}22` }}>
+                {cover ? (
+                  <Image src={cover} alt={`${book.title}封面`} width={320} height={320} sizes="(max-width: 580px) 44vw, 280px" />
+                ) : (
+                  <span className="library-book-cover-fallback" style={{ color: series.accent }}>{book.title.slice(0, 4)}</span>
+                )}
+              </div>
+              <h2>{book.title}</h2>
+              <p className="library-book-subtitle">{book.subtitle}</p>
+              {book.parentGuide ? <p className="library-book-meaning">这本陪孩子练：{book.parentGuide.goal}</p> : null}
+              <span className="library-book-open">打开绘本 · {book.pages.length} 页 →</span>
+            </Link>
+          );
+        })}
+      </section>
+
+      <LibraryTopicLinks
+        topics={getAllTopics().filter((item) => item.id !== topic.id)}
+        label="其他育儿情境"
+      />
+
+      <section className="library-cta" aria-label="生成专属绘本">
+        <h2>你家也有这样的时刻？写成孩子自己的绘本</h2>
+        <p>下面这句话已经替你填好，换成你家今天发生的事，几分钟生成一本以孩子为主角的中英双语绘本。</p>
+        <p>「{topic.idea}」</p>
+        <a href={storyCreationHref({ idea: topic.idea })} className="library-cta-btn">用这句话开始写</a>
+      </section>
+    </main>
+  );
+}

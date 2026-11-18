@@ -1,34 +1,40 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const LINKS = [
+  { zh: "绘本馆", en: "Library", href: "/library", enHref: "/en/library" },
+  { zh: "创作", en: "Create", href: "/#story-creation", enHref: "/en#story-creation" },
+  { zh: "每日灵感", en: "Daily ideas", href: "/inspiration", enHref: "/en/inspiration" },
+  { zh: "绘本定制工作台", en: "Custom book studio", href: "/custom" },
+  { zh: "添加到主屏幕", en: "Add to Home Screen", href: "/install" },
+  { zh: "隐私与数据", en: "Privacy & data", href: "/privacy" },
+  { zh: "分析设置", en: "Analytics settings", href: "/privacy#analytics-controls" },
+  { zh: "儿童与家庭数据", en: "Children & family data", href: "/child-family-data" },
+];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const english = pathname === "/en" || pathname.startsWith("/en/");
+
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" lang={english ? "en" : undefined}>
       <div className="footer-inner">
         <span className="footer-text">
           {new Date().getFullYear()}&copy; StoryBloom
         </span>
-        <Link href="/library" className="footer-link">
-          绘本馆
-        </Link>
-        <Link href="/#story-creation" className="footer-link">
-          创作
-        </Link>
-        <Link href="/inspiration" className="footer-link">
-          每日灵感
-        </Link>
-        <Link href="/custom" className="footer-link">
-          绘本定制工作台
-        </Link>
-        <Link href="/install" className="footer-link">添加到主屏幕</Link>
-        <Link href="/privacy" className="footer-link">
-          隐私与数据
-        </Link>
-        <Link href="/privacy#analytics-controls" className="footer-link">
-          分析设置
-        </Link>
-        <Link href="/child-family-data" className="footer-link">
-          儿童与家庭数据
-        </Link>
+        {LINKS.map((link) => (
+          <Link
+            key={link.href}
+            href={english ? link.enHref ?? link.href : link.href}
+            // Pages without an English version stay reachable and say so.
+            hrefLang={english && !link.enHref ? "zh-CN" : undefined}
+            className="footer-link"
+          >
+            {english ? link.en : link.zh}
+          </Link>
+        ))}
       </div>
     </footer>
   );

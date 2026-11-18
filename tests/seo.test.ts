@@ -2,8 +2,9 @@ import { describe, expect, it } from "vitest";
 import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import sitemap from "@/app/sitemap";
-import { getAllSeries, getPublishedBooks } from "@/lib/library";
+import { getAllSeries, getBook, getPublishedBooks, getSeries } from "@/lib/library";
 import { bookDescription, bookMetadata, bookStructuredData, seriesMetadata, seriesStructuredData, ENGLISH_SERIES } from "@/lib/library/seo";
+import { bookReadingCopy } from "@/lib/library/reading-copy";
 import { languageAlternates, pageMetadata, serializeJsonLd } from "@/lib/seo";
 
 describe("public SEO routes", () => {
@@ -56,6 +57,32 @@ describe("public SEO routes", () => {
       expect(data["@graph"][1]).toHaveProperty("@type", "BreadcrumbList");
       expect(seriesStructuredData(series, getPublishedBooks(series.id))["@graph"][0]).toHaveProperty("@type", "CollectionPage");
     }
+  });
+
+  it("matches the Min Nong search intent with the visible English introduction", () => {
+    const book = getBook("tangshi", "min-nong-qi-er")!;
+    const series = getSeries("tangshi")!;
+    const metadata = bookMetadata(book, series, "en");
+    const readingCopy = bookReadingCopy(book, "en")!;
+
+    expect(metadata.title).toContain("Min Nong");
+    expect(metadata.title).toContain("Hoeing the Fields at Noon");
+    expect(readingCopy.heading).toContain("Hoeing the Fields at Noon");
+    expect(metadata.description).toBe(readingCopy.introduction);
+    expect(metadata.description).toContain("English translation");
+    expect(metadata.alternates?.canonical).toBe("/en/library/tangshi/min-nong-qi-er");
+    expect(bookStructuredData(book, series, "en")["@graph"][0].description).toBe(readingCopy.introduction);
+  });
+
+  it("describes the actual reading content on the other zero-click book pages", () => {
+    const poem = getBook("tangshi", "jing-ye-si")!;
+    const ambulance = getBook("qiche", "jiu-hu-che-zen-yang-zheng-fen-duo-miao")!;
+
+    expect(bookMetadata(poem, getSeries("tangshi")!).title).toContain("古诗原文与英文翻译");
+    expect(bookDescription(poem)).toContain("床前明月光");
+    expect(bookDescription(ambulance)).toContain("警示灯");
+    expect(bookMetadata(ambulance, getSeries("qiche")!, "en").title).toContain("Ambulances");
+    expect(bookDescription(ambulance, "en")).toBe(bookReadingCopy(ambulance, "en")?.introduction);
   });
 
   it("ships a small real WebP cover and safely serializes script text", () => {

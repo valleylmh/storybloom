@@ -1,6 +1,7 @@
 import JsonLd from "@/components/seo/JsonLd";
 import { bookMetadata as createBookMetadata, bookStructuredData } from "@/lib/library/seo";
 import { getLibraryContentId } from "@/lib/library/content-id";
+import { bookReadingCopy } from "@/lib/library/reading-copy";
 import { getLibraryChineseAudio } from "@/lib/library-book-audio";
 import { getLibraryFeedbackConfig } from "@/lib/email/library-feedback";
 import type { Metadata } from "next";
@@ -11,6 +12,8 @@ import LibraryFavoriteButton from "@/components/library/LibraryFavoriteButton";
 import LibraryBookTools from "@/components/library/LibraryBookTools";
 import LibraryDetailBackLink from "@/components/library/LibraryDetailBackLink";
 import LibraryBookStickyTitle from "@/components/library/LibraryBookStickyTitle";
+import LibraryTopicLinks from "@/components/library/LibraryTopicLinks";
+import LibrarySubscribeCard from "@/components/library/LibrarySubscribeCard";
 import {
   getAdjacentBooks,
   getAllSeries,
@@ -23,7 +26,9 @@ import {
   getLibraryBookCategoryLabel,
   resolveLibraryBookMetadata,
 } from "@/lib/library/metadata";
+import { getBookTopics } from "@/lib/library/topics";
 import { toAbsoluteAppUrl } from "@/lib/site-url";
+import { storyCreationHref } from "@/lib/story-creation-url";
 
 type Params = { seriesId: string; bookId: string };
 
@@ -85,9 +90,8 @@ export default async function LibraryBookPage({
       (page) => Boolean(page.imageUrl) && page.imageStatus === "complete",
     );
   const bookMetadata = resolveLibraryBookMetadata(book);
-  const personalizeHref = `/?mode=minimal&personalize=${encodeURIComponent(
-    `${series.id}/${book.id}`,
-  )}#story-creation`;
+  const readingCopy = bookReadingCopy(book);
+  const personalizeHref = storyCreationHref({ personalize: `${series.id}/${book.id}` });
 
   return (
     <main className="library-page">
@@ -148,6 +152,12 @@ export default async function LibraryBookPage({
           </div>
         </div>
       </header>
+
+      {readingCopy ? (
+        <section className="library-meaning-card" aria-label="绘本导读">
+          <p className="library-meaning-zh">{readingCopy.introduction}</p>
+        </section>
+      ) : null}
 
       {book.idiomMeaning || book.origin ? (
         <section
@@ -310,6 +320,8 @@ export default async function LibraryBookPage({
         </section>
       ) : null}
 
+      <LibraryTopicLinks topics={getBookTopics(book)} label="同一情境的绘本" showAll />
+
       <nav className="library-adjacent" aria-label="继续阅读">
         {previous ? (
           <Link
@@ -346,6 +358,8 @@ export default async function LibraryBookPage({
         pages={book.pages}
         shareUrl={toAbsoluteAppUrl(`/library/${series.id}/${book.id}`)}
       />
+
+      {book.comingSoon ? null : <LibrarySubscribeCard />}
 
       {bookMetadata.personalizationEnabled ? (
         <section className="library-cta" aria-label="生成专属绘本">
