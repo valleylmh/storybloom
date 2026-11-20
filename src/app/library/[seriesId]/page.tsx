@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import LibrarySeriesExperience from "@/components/library/LibrarySeriesExperience";
 import { getAllSeries, getSeries, getSeriesBooks } from "@/lib/library";
 import { createLibraryBookSummary } from "@/lib/library/catalog";
+import { librarySeriesPath } from "@/lib/library/paths";
 
 type Params = { seriesId: string };
 
@@ -52,7 +53,7 @@ export default async function LibrarySeriesPage({
         <Link href="/library" className="library-back">
           ← 绘本馆
         </Link>
-        <Link href={`/en/library/${series.id}`} hrefLang="en" className="library-back">English →</Link>
+        <Link href={librarySeriesPath(series.id, "en")} hrefLang="en" className="library-back">English →</Link>
       </nav>
 
       <header className="library-hero">

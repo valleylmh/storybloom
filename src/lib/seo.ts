@@ -14,14 +14,14 @@ export function localizedPath(path: string, locale: SiteLocale) {
   return locale === "en" ? (path === "/" ? "/en" : `/en${path}`) : path;
 }
 
-export function languageAlternates(path: string) {
-  return { "zh-CN": path, en: localizedPath(path, "en"), "x-default": path };
+export function languageAlternates(path: string, englishPath = localizedPath(path, "en")) {
+  return { "zh-CN": path, en: englishPath, "x-default": path };
 }
 
 // Keep canonicals at the page level: Next replaces nested metadata objects.
 export function pageMetadata({
   path, title, description, image = DEFAULT_SHARE_IMAGE,
-  locale = "zh", bilingual = false, type = "website", noindex = false,
+  locale = "zh", bilingual = false, englishPath, type = "website", noindex = false,
 }: {
   path: string;
   title: string;
@@ -29,16 +29,18 @@ export function pageMetadata({
   image?: string;
   locale?: SiteLocale;
   bilingual?: boolean;
+  englishPath?: string;
   type?: "website" | "article";
   noindex?: boolean;
 }): Metadata {
-  const url = localizedPath(path, locale);
+  const languages = languageAlternates(path, englishPath);
+  const url = locale === "en" ? languages.en : languages["zh-CN"];
   return {
     title,
     description,
     alternates: {
       canonical: url,
-      ...(bilingual ? { languages: languageAlternates(path) } : {}),
+      ...(bilingual ? { languages } : {}),
     },
     ...(noindex ? { robots: { index: false, follow: true } } : {}),
     openGraph: {

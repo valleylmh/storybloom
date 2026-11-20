@@ -2,6 +2,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { bookMetadata as createBookMetadata, bookStructuredData } from "@/lib/library/seo";
 import { getLibraryContentId } from "@/lib/library/content-id";
 import { bookReadingCopy } from "@/lib/library/reading-copy";
+import { libraryBookPath } from "@/lib/library/paths";
 import { getLibraryChineseAudio } from "@/lib/library-book-audio";
 import { getLibraryFeedbackConfig } from "@/lib/email/library-feedback";
 import type { Metadata } from "next";
@@ -102,7 +103,7 @@ export default async function LibraryBookPage({
           fallbackHref={`/library/${series.id}`}
           fallbackLabel={series.title}
         />
-        {!book.comingSoon ? <Link href={`/en/library/${series.id}/${book.id}`} hrefLang="en" className="library-back">English →</Link> : null}
+        {!book.comingSoon ? <Link href={libraryBookPath(book, "en")} hrefLang="en" className="library-back">English →</Link> : null}
       </nav>
 
       <LibraryBookStickyTitle
