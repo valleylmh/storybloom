@@ -3,9 +3,11 @@ import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import sitemap from "@/app/sitemap";
 import { getAllSeries, getBook, getPublishedBooks, getSeries } from "@/lib/library";
+import { legacyEnglishLibraryPath, libraryBookPath, librarySeriesPath } from "@/lib/library/paths";
 import { bookDescription, bookMetadata, bookStructuredData, seriesMetadata, seriesStructuredData, ENGLISH_SERIES } from "@/lib/library/seo";
 import { bookReadingCopy } from "@/lib/library/reading-copy";
 import { languageAlternates, pageMetadata, serializeJsonLd } from "@/lib/seo";
+import { toAbsoluteAppUrl } from "@/lib/site-url";
 
 describe("public SEO routes", () => {
   it("keeps language versions self canonical with reciprocal language links", () => {
@@ -22,6 +24,7 @@ describe("public SEO routes", () => {
   it("includes every published book in both languages, gifts and cover images without private routes", () => {
     const entries = sitemap();
     const urls = entries.map((entry) => entry.url);
+    const entriesByPath = new Map(entries.map((entry) => [new URL(entry.url).pathname, entry]));
     expect(new Set(urls).size).toBe(urls.length);
     for (const slug of ["", "/summer-pocket", "/city-motors", "/joy-day", "/birthday-star", "/journey-to-the-west"]) {
       expect(urls.some((url) => new URL(url).pathname === `/gifts${slug}`)).toBe(true);
@@ -29,19 +32,27 @@ describe("public SEO routes", () => {
     for (const series of getAllSeries()) {
       expect(ENGLISH_SERIES[series.id]).toBeDefined();
       const books = getPublishedBooks(series.id);
-      const collection = entries.find((entry) => new URL(entry.url).pathname === `/library/${series.id}`);
+      const collection = entriesByPath.get(librarySeriesPath(series.id));
       expect(collection?.lastModified).toBeTruthy();
       expect(seriesMetadata(series, books).openGraph).toHaveProperty("images");
       for (const book of books) {
-        for (const prefix of ["", "/en"]) {
-          const entry = entries.find((item) => new URL(item.url).pathname === `${prefix}/library/${series.id}/${book.id}`);
+        const chinesePath = libraryBookPath(book);
+        const englishPath = libraryBookPath(book, "en");
+        const languages = {
+          "zh-CN": toAbsoluteAppUrl(chinesePath),
+          en: toAbsoluteAppUrl(englishPath),
+          "x-default": toAbsoluteAppUrl(chinesePath),
+        };
+        for (const locale of ["zh", "en"] as const) {
+          const entry = entriesByPath.get(libraryBookPath(book, locale));
           expect(entry, book.id).toBeDefined();
-          expect(entry?.alternates?.languages).toHaveProperty("zh-CN");
+          expect(entry?.alternates?.languages).toEqual(languages);
           expect(entry?.images?.length).toBeGreaterThan(0);
         }
       }
     }
-    expect(urls.some((url) => /\/(me|install)(\/|$)/.test(new URL(url).pathname))).toBe(false);
+    expect(urls.some((url) => /\/(me|install|family|login|s)(\/|$)|\/library\/reading$/.test(new URL(url).pathname))).toBe(false);
+    expect(urls.some((url) => legacyEnglishLibraryPath(new URL(url).pathname))).toBe(false);
   });
 
   it("gives every traffic story a distinct description and complete Book and breadcrumb data", () => {
@@ -70,7 +81,7 @@ describe("public SEO routes", () => {
     expect(readingCopy.heading).toContain("Hoeing the Fields at Noon");
     expect(metadata.description).toBe(readingCopy.introduction);
     expect(metadata.description).toContain("English translation");
-    expect(metadata.alternates?.canonical).toBe("/en/library/tangshi/min-nong-qi-er");
+    expect(metadata.alternates?.canonical).toBe("/en/library/tang-poems/hoeing-the-fields-at-noon");
     expect(bookStructuredData(book, series, "en")["@graph"][0].description).toBe(readingCopy.introduction);
   });
 

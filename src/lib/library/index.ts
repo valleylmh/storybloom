@@ -1,6 +1,7 @@
 import type { LibraryBook, LibrarySeries } from "@/types/library";
 import { CHENGYU_BOOKS, CHENGYU_SERIES } from "./chengyu";
 import { HAOQI_BOOKS, HAOQI_SERIES } from "./haoqi";
+import { englishBookSlug, englishSeriesSlug } from "./paths";
 import { isPublishedLibraryBook } from "./status";
 import { QINZI_BOOKS, QINZI_SERIES } from "./qinzi";
 import { TANGSHI_BOOKS, TANGSHI_SERIES } from "./tangshi";
@@ -55,12 +56,20 @@ export function getSeries(seriesId: string): LibrarySeries | null {
   return SERIES.find((series) => series.id === seriesId) ?? null;
 }
 
+export function getSeriesByEnglishSlug(slug: string): LibrarySeries | null {
+  return SERIES.find((series) => englishSeriesSlug(series.id) === slug) ?? null;
+}
+
 export function getSeriesBooks(seriesId: string): LibraryBook[] {
   return BOOKS_BY_SERIES[seriesId] ?? [];
 }
 
 export function getPublishedBooks(seriesId: string): LibraryBook[] {
   return getSeriesBooks(seriesId).filter(isPublishedLibraryBook);
+}
+
+export function getBookByEnglishSlug(seriesId: string, slug: string): LibraryBook | null {
+  return getPublishedBooks(seriesId).find((book) => englishBookSlug(book) === slug) ?? null;
 }
 
 export function getPublishedBookCount(seriesId?: string): number {
