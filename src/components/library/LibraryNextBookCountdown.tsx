@@ -57,15 +57,21 @@ export default function LibraryNextBookCountdown({
     if (!dialog) return;
     const previousOverflow = document.body.style.overflow;
     settledRef.current = false;
-    if (!dialog.open) {
+
+    const openWhenVisible = () => {
+      if (document.visibilityState === "hidden" || dialog.open) return;
       try {
         dialog.showModal();
+        document.body.style.overflow = "hidden";
       } catch {
         // Ignore modal errors if dialog cannot open while hidden.
       }
-    }
-    document.body.style.overflow = "hidden";
+    };
+
+    openWhenVisible();
+    document.addEventListener("visibilitychange", openWhenVisible);
     return () => {
+      document.removeEventListener("visibilitychange", openWhenVisible);
       cleanupTimers();
       if (dialog.open) dialog.close();
       document.body.style.overflow = previousOverflow;

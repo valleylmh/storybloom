@@ -35,6 +35,7 @@ export function clearAudioElementHandlers(audio: HTMLAudioElement) {
   audio.onerror = null;
   audio.ontimeupdate = null;
   audio.onloadedmetadata = null;
+  audio.oncanplay = null;
 }
 
 function resolveArtworkUrl(cover: string | undefined): string | undefined {

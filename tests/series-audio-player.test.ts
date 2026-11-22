@@ -1,11 +1,19 @@
+import { readFileSync } from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { SeriesPlaylistItem } from "@/lib/reader/continuous-playback";
+import { concatenateMp3WithPause, parseMp3Stream } from "@/lib/reader/mp3-concat";
 import {
   getReadyAnnouncementUrl,
   invalidateAnnouncementAudio,
   prefetchAnnouncementAudio,
   resetAnnouncementMemoryCache,
 } from "@/lib/reader/next-book-announcement";
+import {
+  getPreparedNextBookAudio,
+  prefetchNextBookAudioBundle,
+  resetPreparedNextBookBundles,
+  type PreparedNextBookAudio,
+} from "@/lib/reader/next-book-bundle";
 import {
   SeriesAudioPlayer,
   shouldShowMiniAudioPlayer,
@@ -129,13 +137,17 @@ describe("SeriesAudioPlayer continuous screen-off playback and voice prompts", (
   function setup(options: {
     hidden?: boolean;
     readyUrls?: Record<string, string>;
+    preparedBundles?: Record<string, PreparedNextBookAudio>;
     fetchImpl?: typeof fetch;
     announcementWatchdogMs?: number;
   } = {}) {
     let hidden = options.hidden ?? false;
     const readyUrls = new Map(Object.entries(options.readyUrls ?? {}));
+    const preparedBundles = new Map(Object.entries(options.preparedBundles ?? {}));
     const audio = createFakeAudio();
     const prefetchAnnouncement = vi.fn(async () => null);
+    const prefetchNextBookBundle = vi.fn(async () => null);
+    const markPreparedBundleActive = vi.fn();
     const invalidateAnnouncement = vi.fn((book: { title: string }) => {
       readyUrls.delete(book.title);
     });
@@ -156,6 +168,9 @@ describe("SeriesAudioPlayer continuous screen-off playback and voice prompts", (
       getReadyAnnouncementUrl: (book) => readyUrls.get(book.title) ?? null,
       prefetchAnnouncement,
       invalidateAnnouncement,
+      getPreparedNextBook: (book) => preparedBundles.get(book.id) ?? null,
+      prefetchNextBookBundle,
+      markPreparedBundleActive,
       updateMediaSession: updateMediaSession as unknown as typeof import("@/lib/reader/shared-audio-element").updateMediaSession,
       updateMediaSessionPosition,
       clearMediaSession,
@@ -173,6 +188,8 @@ describe("SeriesAudioPlayer continuous screen-off playback and voice prompts", (
       },
       readyUrls,
       prefetchAnnouncement,
+      prefetchNextBookBundle,
+      markPreparedBundleActive,
       invalidateAnnouncement,
       updateMediaSession,
       clearMediaSession,
@@ -603,5 +620,175 @@ describe("SeriesAudioPlayer continuous screen-off playback and voice prompts", (
     audio.onended?.();
     expect(book2Start).toHaveBeenCalledTimes(1);
     expect(player.getState().phase).toBe("idle");
+  });
+
+  it("plays a preloaded combined announcement+book blob MP3 with zero src swap after the prompt", async () => {
+    const combinedBook2: PreparedNextBookAudio = {
+      kind: "combined",
+      key: `${book2.id}::${book2.chineseAudio!.contentHash}`,
+      blobUrl: "blob:https://storybloom.ai/combined-book-2",
+      introDurationSec: 3.2,
+      asset: {
+        ...book2.chineseAudio!,
+        url: "blob:https://storybloom.ai/combined-book-2",
+        pageStarts: [3.2, 8.2, 13.2],
+        duration: 18.2,
+      },
+      revokeUrls: ["blob:https://storybloom.ai/combined-book-2"],
+    };
+    const combinedBook3: PreparedNextBookAudio = {
+      kind: "combined",
+      key: `${book3.id}::${book3.chineseAudio!.contentHash}`,
+      blobUrl: "blob:https://storybloom.ai/combined-book-3",
+      introDurationSec: 2.8,
+      asset: {
+        ...book3.chineseAudio!,
+        url: "blob:https://storybloom.ai/combined-book-3",
+        pageStarts: [2.8, 7.8, 12.8],
+        duration: 17.8,
+      },
+      revokeUrls: ["blob:https://storybloom.ai/combined-book-3"],
+    };
+
+    const { player, audio, prefetchNextBookBundle, updateMediaSession, saveProgress } = setup({
+      hidden: true,
+      preparedBundles: {
+        [book2.id]: combinedBook2,
+        [book3.id]: combinedBook3,
+      },
+    });
+
+    player.claimBook(book1.id);
+    player.startBook({
+      book: book1,
+      playlist,
+      seriesTitle: "成语故事",
+      pageIndex: 0,
+      resumeFromMs: 0,
+      autoAdvance: true,
+      continuousPlayback: true,
+    });
+    expect(prefetchNextBookBundle).toHaveBeenCalledWith(book2, true);
+
+    // Book 1 finishes while locked -> swaps ONCE to the combined RAM blob (no remote network wait!).
+    audio.ended = true;
+    audio.onended?.();
+    expect(audio.src).toBe("blob:https://storybloom.ai/combined-book-2");
+    expect(player.getState()).toMatchObject({
+      bookId: book1.id,
+      phase: "announcing",
+      announcementPlaying: true,
+      pendingTarget: book2,
+    });
+    // Immediately prefetches Book 3 while Book 2's combined stream plays (no reliance on ontimeupdate).
+    expect(prefetchNextBookBundle).toHaveBeenCalledWith(book3, true);
+
+    // Metadata arrives & playback moves across the intro boundary (3.2s) into Book 2 Page 1 without any src swap.
+    audio.currentTime = 1.0;
+    audio.onloadedmetadata?.();
+    audio.ontimeupdate?.();
+    expect(player.getState().phase).toBe("announcing");
+
+    audio.currentTime = 3.5;
+    audio.ontimeupdate?.();
+    expect(audio.src).toBe("blob:https://storybloom.ai/combined-book-2");
+    expect(player.getState()).toMatchObject({
+      bookId: book2.id,
+      phase: "playing",
+      pageIndex: 0,
+      pendingTarget: null,
+    });
+    expect(updateMediaSession).toHaveBeenLastCalledWith(
+      expect.objectContaining({ title: book2.title, playbackState: "playing" }),
+    );
+
+    // Even if ontimeupdate is throttled through the rest of Book 2, Book 2's onended chains straight into Book 3!
+    audio.ended = true;
+    audio.onended?.();
+    expect(audio.src).toBe("blob:https://storybloom.ai/combined-book-3");
+    expect(player.getState()).toMatchObject({
+      bookId: book2.id,
+      phase: "announcing",
+      pendingTarget: book3,
+    });
+
+    // Clicking "立即播放" during a combined intro seeks straight to Page 1 with zero reload.
+    audio.onloadedmetadata?.();
+    expect(player.playPendingTargetNow()).toBe(true);
+    expect(audio.currentTime).toBe(2.8);
+    expect(audio.src).toBe("blob:https://storybloom.ai/combined-book-3");
+    expect(player.getState()).toMatchObject({
+      bookId: book3.id,
+      phase: "playing",
+      pageIndex: 0,
+    });
+
+    await vi.waitFor(() => {
+      expect(saveProgress).toHaveBeenCalledWith(
+        expect.objectContaining({ contentId: book2.id, progressPercent: 100 }),
+      );
+    });
+  });
+});
+
+describe("MP3 concatenation and next-book local blob preloading", () => {
+  afterEach(() => {
+    resetPreparedNextBookBundles();
+    resetAnnouncementMemoryCache();
+    vi.restoreAllMocks();
+  });
+
+  it("strips ID3/Xing frames and concatenates compatible library MP3 streams with exact duration", () => {
+    const first = readFileSync(
+      "public/library/chengyu/ba-xian-guo-hai/zh-2e066046e3a4cc40.mp3",
+    );
+    const second = readFileSync(
+      "public/library/chengyu/ban-tu-er-fei/zh-8fc1cd2589e8c0c3.mp3",
+    );
+    const parsedFirst = parseMp3Stream(first);
+    const parsedSecond = parseMp3Stream(second);
+    expect(parsedFirst).not.toBeNull();
+    expect(parsedSecond).not.toBeNull();
+
+    const combined = concatenateMp3WithPause(first, second, 0.35);
+    expect(combined).not.toBeNull();
+    expect(combined!.introDurationSec).toBeCloseTo(parsedFirst!.durationSec + 0.36, 1);
+    expect(combined!.totalDurationSec).toBeCloseTo(
+      combined!.introDurationSec + parsedSecond!.durationSec,
+      3,
+    );
+    // Re-parsing the combined output confirms frame continuity from start to end.
+    const reparsed = parseMp3Stream(combined!.bytes);
+    expect(reparsed).not.toBeNull();
+    expect(reparsed!.durationSec).toBeCloseTo(combined!.totalDurationSec, 3);
+  });
+
+  it("preloads announcement + next book MP3 into a single local blob URL bundle", async () => {
+    const sampleMp3 = readFileSync(
+      "public/library/chengyu/ba-xian-guo-hai/zh-2e066046e3a4cc40.mp3",
+    );
+    const smallSlice = sampleMp3.subarray(0, 6_000);
+    const book = createBook("chengyu/ba-xian-guo-hai", "八仙过海", "/library/chengyu/ba-xian-guo-hai/zh.mp3");
+
+    const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
+      const url = String(input);
+      if (url === "/library/chengyu/ba-xian-guo-hai/zh.mp3") {
+        return new Response(sampleMp3, { status: 200, headers: { "Content-Type": "audio/mpeg" } });
+      }
+      return new Response(smallSlice, { status: 200, headers: { "Content-Type": "audio/mpeg" } });
+    });
+
+    const prepared = await prefetchNextBookAudioBundle(book, {
+      fetchImpl: fetchMock as unknown as typeof fetch,
+      prefetchAnnouncementImpl: async () => "https://cdn.example.com/announce.mp3",
+    });
+
+    expect(prepared?.kind).toBe("combined");
+    if (prepared?.kind === "combined") {
+      expect(prepared.blobUrl.startsWith("blob:")).toBe(true);
+      expect(prepared.introDurationSec).toBeGreaterThan(0.3);
+      expect(prepared.asset.pageStarts[0]).toBeCloseTo(prepared.introDurationSec, 3);
+      expect(getPreparedNextBookAudio(book)).toBe(prepared);
+    }
   });
 });

@@ -14,7 +14,7 @@ import {
   saveReadingProgress,
   type ReadingProgressRecord,
 } from "@/lib/reading-progress";
-import { BookAudioTransport } from "@/lib/reader/book-audio-transport";
+import { BookAudioTransport, type BookAudio } from "@/lib/reader/book-audio-transport";
 import {
   formatNextBookAnnouncement,
   nextSeriesBook,
@@ -26,6 +26,12 @@ import {
   invalidateAnnouncementAudio,
   prefetchAnnouncementAudio,
 } from "@/lib/reader/next-book-announcement";
+import {
+  getPreparedNextBookAudio,
+  markPreparedBundleActive,
+  prefetchNextBookAudioBundle,
+  type PreparedNextBookAudio,
+} from "@/lib/reader/next-book-bundle";
 import type { PlaybackError } from "@/lib/reader/playback-machine";
 import {
   clearAudioElementHandlers,
@@ -109,6 +115,12 @@ export type SeriesAudioPlayerDeps = {
     mode: BrowserNarrationMode,
   ) => Promise<string | null>;
   invalidateAnnouncement: typeof invalidateAnnouncementAudio;
+  getPreparedNextBook: typeof getPreparedNextBookAudio;
+  prefetchNextBookBundle: (
+    book: SeriesPlaylistItem,
+    preferCloudAnnouncement: boolean,
+  ) => Promise<PreparedNextBookAudio | null>;
+  markPreparedBundleActive: typeof markPreparedBundleActive;
   updateMediaSession: typeof updateMediaSession;
   updateMediaSessionPosition: typeof updateMediaSessionPosition;
   clearMediaSession: typeof clearMediaSession;
@@ -155,6 +167,10 @@ const DEFAULT_DEPS: SeriesAudioPlayerDeps = {
   getReadyAnnouncementUrl,
   prefetchAnnouncement: (book, mode) => prefetchAnnouncementAudio(book, mode),
   invalidateAnnouncement: invalidateAnnouncementAudio,
+  getPreparedNextBook: getPreparedNextBookAudio,
+  prefetchNextBookBundle: (book, preferCloudAnnouncement) =>
+    prefetchNextBookAudioBundle(book, { preferCloudAnnouncement }),
+  markPreparedBundleActive,
   updateMediaSession,
   updateMediaSessionPosition,
   clearMediaSession,
@@ -427,8 +443,19 @@ export class SeriesAudioPlayer {
     book: SeriesPlaylistItem,
     pageIndex: number,
     resumeFromMs: number,
+    overrideAsset?: BookAudio,
+    activeBundleKey?: string | null,
   ): boolean {
-    const asset = book.chineseAudio;
+    const preloaded = !overrideAsset ? this.deps.getPreparedNextBook(book) : null;
+    const resolvedBundleKey =
+      activeBundleKey !== undefined
+        ? activeBundleKey
+        : preloaded?.kind === "separate"
+          ? preloaded.key
+          : null;
+    const asset =
+      overrideAsset ??
+      (preloaded?.kind === "separate" ? preloaded.bookAsset : book.chineseAudio);
     const audio = this.deps.getAudio();
     if (!asset || !audio) {
       this.state = {
@@ -452,6 +479,7 @@ export class SeriesAudioPlayer {
     this.handoffTargetId = null;
     this.handoffListeners.clear();
     this.detachTransport();
+    this.deps.markPreparedBundleActive(resolvedBundleKey);
     this.currentBookItem = book;
     this.activePages = null;
     this.perPageFinishedHandler = null;
@@ -560,6 +588,24 @@ export class SeriesAudioPlayer {
 
     this.persistBookProgress(book.id, safePageIndex, totalPages, resumeFromMs, false, "zh");
     this.prefetchUpcomingAnnouncement();
+
+    audio.oncanplay = () => {
+      if (
+        this.sessionId !== currentSession ||
+        this.state.phase !== "loading" ||
+        !audio.paused
+      ) {
+        return;
+      }
+      try {
+        const retryPromise = audio.play();
+        if (retryPromise && typeof retryPromise.catch === "function") {
+          void retryPromise.catch(() => undefined);
+        }
+      } catch {
+        // Initial play handler already tracks playback errors.
+      }
+    };
 
     try {
       const playPromise = audio.play();
@@ -1028,9 +1074,25 @@ export class SeriesAudioPlayer {
     }
 
     const { text: announcementText } = formatNextBookAnnouncement(upcoming, "zh");
-    const announcementUrl = this.preferCloudTts
-      ? this.deps.getReadyAnnouncementUrl(upcoming, "zh")
-      : null;
+    const prepared = this.deps.getPreparedNextBook(upcoming);
+
+    // Best path for mobile PWAs: ONE gapless local RAM blob MP3 containing both
+    // the spoken announcement and the next book's audio — zero second src swap
+    // and zero background network fetch after the prompt finishes!
+    if (prepared?.kind === "combined") {
+      this.startCombinedUpcomingBook(book, upcoming, prepared, announcementText);
+      return;
+    }
+
+    const preloadedBookAsset =
+      prepared?.kind === "separate" ? prepared.bookAsset : undefined;
+    const preloadedBundleKey = prepared?.kind === "separate" ? prepared.key : null;
+
+    const announcementUrl =
+      (prepared?.kind === "separate" ? prepared.announcementUrl : null) ??
+      (this.preferCloudTts
+        ? this.deps.getReadyAnnouncementUrl(upcoming, "zh")
+        : null);
 
     if (announcementUrl) {
       this.playWholeBookAnnouncement(
@@ -1038,6 +1100,8 @@ export class SeriesAudioPlayer {
         upcoming,
         announcementUrl,
         announcementText,
+        preloadedBookAsset,
+        preloadedBundleKey,
       );
       return;
     }
@@ -1045,8 +1109,14 @@ export class SeriesAudioPlayer {
     // When locked OR browsing outside the book detail page (where no countdown
     // modal is mounted), chain directly into the next book without stalling.
     if (this.deps.isDocumentHidden() || this.claimedBookId !== book.id) {
-      if (upcoming.chineseAudio) {
-        this.startBookInternal(upcoming, 0, 0);
+      if (preloadedBookAsset || upcoming.chineseAudio) {
+        this.startBookInternal(
+          upcoming,
+          0,
+          0,
+          preloadedBookAsset,
+          preloadedBundleKey,
+        );
         return;
       }
     }
@@ -1068,15 +1138,279 @@ export class SeriesAudioPlayer {
     this.emit();
   }
 
+  private startCombinedUpcomingBook(
+    fromBook: SeriesPlaylistItem,
+    upcoming: SeriesPlaylistItem,
+    prepared: Extract<PreparedNextBookAudio, { kind: "combined" }>,
+    announcementText: string,
+  ) {
+    const audio = this.deps.getAudio();
+    const asset = prepared.asset;
+    if (!audio) {
+      if (upcoming.chineseAudio) this.startBookInternal(upcoming, 0, 0);
+      return;
+    }
+
+    this.sessionId += 1;
+    const currentSession = this.sessionId;
+    this.clearAnnouncementWatchdog();
+    this.resumingAnnouncement = false;
+    this.perPageAudioDirty = false;
+    this.handoffTargetId = null;
+    this.handoffListeners.clear();
+    this.detachTransport();
+    this.deps.markPreparedBundleActive(prepared.key);
+    this.activePages = null;
+    this.perPageFinishedHandler = null;
+
+    const totalPages = asset.pageStarts.length;
+    const bookDurationSec = Math.max(0.01, asset.duration - prepared.introDurationSec);
+    let promoted = false;
+
+    this.state = {
+      ...this.state,
+      bookId: fromBook.id,
+      bookTitle: fromBook.title,
+      bookHref: fromBook.href,
+      bookCover: fromBook.cover,
+      languageMode: "zh",
+      positionMs: 0,
+      durationMs: 0,
+      bookProgressRatio: 1,
+      phase: "announcing",
+      pendingTarget: upcoming,
+      announcementText,
+      announcementPlaying: true,
+      announcementMode: "zh",
+      handoffOnly: false,
+      message: announcementText,
+      error: null,
+    };
+
+    this.deps.updateMediaSession({
+      title: `即将播放：${upcoming.title}`,
+      artist: this.state.seriesTitle || "StoryBloom 绘本馆",
+      album: "StoryBloom 绘本馆",
+      cover: upcoming.cover,
+      playbackState: "playing",
+      handlers: {
+        play: () => {
+          void this.resume();
+        },
+        pause: () => this.pause(),
+        stop: () => this.stop(),
+        previoustrack: () => {
+          this.skipToAdjacentBook(-1);
+        },
+        nexttrack: () => {
+          this.playPendingTargetNow();
+        },
+      },
+    });
+    this.emit();
+
+    const promoteToUpcoming = () => {
+      if (this.sessionId !== currentSession || promoted) return;
+      promoted = true;
+      this.resumingAnnouncement = false;
+      this.currentBookItem = upcoming;
+      this.state = {
+        ...this.state,
+        bookId: upcoming.id,
+        bookTitle: upcoming.title,
+        bookHref: upcoming.href,
+        bookCover: upcoming.cover,
+        languageMode: "zh",
+        pageIndex: 0,
+        totalPages,
+        positionMs: 0,
+        durationMs: 0,
+        bookProgressRatio: 0,
+        phase: audio.paused ? "paused" : "playing",
+        pendingTarget: null,
+        announcementText: null,
+        announcementPlaying: false,
+        announcementMode: "zh",
+        handoffOnly: false,
+        message: "中文连续朗读 · 已准备好",
+        error: null,
+      };
+      this.refreshAdjacentFlags(upcoming.id);
+      this.syncBookMediaSession(upcoming, audio.paused ? "paused" : "playing");
+      this.persistBookProgress(upcoming.id, 0, totalPages, 0, false, "zh");
+      this.emit();
+    };
+
+    this.transport = new BookAudioTransport(
+      audio,
+      asset,
+      0,
+      0,
+      {
+        autoAdvance: () => this.state.autoAdvance,
+        position: (index, positionMs, durationMs) => {
+          if (this.sessionId !== currentSession) return;
+          if (!promoted) promoteToUpcoming();
+          const pageChanged = this.state.pageIndex !== index;
+          this.state.pageIndex = index;
+          this.state.positionMs = positionMs;
+          this.state.durationMs = durationMs;
+          if (Number.isFinite(audio.currentTime)) {
+            const bookElapsedSec = Math.max(
+              0,
+              audio.currentTime - prepared.introDurationSec,
+            );
+            this.state.bookProgressRatio = clampRatio(
+              bookElapsedSec / bookDurationSec,
+            );
+            this.deps.updateMediaSessionPosition(bookDurationSec, bookElapsedSec);
+          } else if (totalPages > 0) {
+            const pageFraction = durationMs > 0 ? positionMs / durationMs : 0;
+            this.state.bookProgressRatio = clampRatio(
+              (index + pageFraction) / totalPages,
+            );
+          }
+          if (pageChanged) {
+            this.persistBookProgress(upcoming.id, index, totalPages, positionMs, false, "zh");
+          }
+          this.emit();
+        },
+        playing: () => {
+          if (this.sessionId !== currentSession) return;
+          if (!promoted && this.transport?.inIntro()) {
+            this.resumingAnnouncement = false;
+            this.state.phase = "announcing";
+            this.state.announcementPlaying = true;
+            this.deps.updateMediaSession({
+              title: `即将播放：${upcoming.title}`,
+              artist: this.state.seriesTitle || "StoryBloom 绘本馆",
+              album: "StoryBloom 绘本馆",
+              cover: upcoming.cover,
+              playbackState: "playing",
+            });
+            this.emit();
+            return;
+          }
+          if (!promoted) promoteToUpcoming();
+          this.state.phase = "playing";
+          this.state.message = "中文连续朗读 · 已准备好";
+          this.state.error = null;
+          this.syncBookMediaSession(upcoming, "playing");
+          this.emit();
+        },
+        paused: (positionMs) => {
+          if (this.sessionId !== currentSession) return;
+          if (!promoted && this.transport?.inIntro()) {
+            this.resumingAnnouncement = true;
+            this.state.phase = "paused";
+            this.deps.updateMediaSession({
+              title: `即将播放：${upcoming.title}`,
+              artist: this.state.seriesTitle || "StoryBloom 绘本馆",
+              album: "StoryBloom 绘本馆",
+              cover: upcoming.cover,
+              playbackState: "paused",
+            });
+            this.emit();
+            return;
+          }
+          this.state.phase = "paused";
+          this.state.positionMs = positionMs;
+          this.syncBookMediaSession(upcoming, "paused");
+          this.emit();
+        },
+        ended: (endedPageIndex) => {
+          if (this.sessionId !== currentSession) return;
+          if (!promoted) promoteToUpcoming();
+          this.handleBookTransportEnded(currentSession, upcoming, totalPages, endedPageIndex);
+        },
+        error: () => {
+          if (this.sessionId !== currentSession) return;
+          this.detachTransport();
+          if (!promoted && upcoming.chineseAudio) {
+            this.startBookInternal(upcoming, 0, 0, upcoming.chineseAudio, null);
+            return;
+          }
+          this.state.phase = "error";
+          this.state.message = null;
+          this.state.error = {
+            code: "audio_failed",
+            message: "中文音频加载失败，请检查网络后重试。",
+            retryable: true,
+          };
+          this.deps.clearMediaSession();
+          this.emit();
+        },
+      },
+      {
+        intro: {
+          endSec: prepared.introDurationSec,
+          onFinished: promoteToUpcoming,
+        },
+      },
+    );
+
+    // Preload the book AFTER `upcoming` right away so even if iOS throttles
+    // `ontimeupdate` while locked, the next combined bundle is ready before end.
+    this.prefetchUpcomingForBook(upcoming.id);
+
+    audio.oncanplay = () => {
+      if (
+        this.sessionId !== currentSession ||
+        (this.state.phase !== "announcing" && this.state.phase !== "loading") ||
+        this.resumingAnnouncement ||
+        !audio.paused
+      ) {
+        return;
+      }
+      try {
+        const retryPromise = audio.play();
+        if (retryPromise && typeof retryPromise.catch === "function") {
+          void retryPromise.catch(() => undefined);
+        }
+      } catch {
+        // Initial play handler tracks errors.
+      }
+    };
+
+    try {
+      const playPromise = audio.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        void playPromise.catch(() => {
+          if (this.sessionId !== currentSession) return;
+          this.state.phase = "paused";
+          this.state.message = "音频已准备好，请点击继续播放。";
+          this.deps.updateMediaSession({
+            title: promoted ? upcoming.title : `即将播放：${upcoming.title}`,
+            artist: this.state.seriesTitle || "StoryBloom 绘本馆",
+            album: "StoryBloom 绘本馆",
+            cover: upcoming.cover,
+            playbackState: "paused",
+          });
+          this.emit();
+        });
+      }
+    } catch {
+      if (this.sessionId === currentSession) {
+        this.state.phase = "paused";
+        this.state.message = "音频已准备好，请点击继续播放。";
+        this.emit();
+      }
+    }
+  }
+
   private playWholeBookAnnouncement(
     expectedSession: number,
     upcoming: SeriesPlaylistItem,
     announcementUrl: string,
     announcementText: string,
+    preloadedBookAsset?: BookAudio,
+    preloadedBundleKey?: string | null,
   ) {
     const audio = this.deps.getAudio();
     if (!audio) {
-      if (upcoming.chineseAudio) this.startBookInternal(upcoming, 0, 0);
+      if (preloadedBookAsset || upcoming.chineseAudio) {
+        this.startBookInternal(upcoming, 0, 0, preloadedBookAsset, preloadedBundleKey);
+      }
       return;
     }
 
@@ -1086,6 +1420,9 @@ export class SeriesAudioPlayer {
     this.clearAnnouncementWatchdog();
     this.resumingAnnouncement = false;
     this.detachTransport();
+    if (preloadedBundleKey) {
+      this.deps.markPreparedBundleActive(preloadedBundleKey);
+    }
 
     this.state.phase = "announcing";
     this.state.positionMs = 0;
@@ -1128,8 +1465,8 @@ export class SeriesAudioPlayer {
       if (invalidate) {
         this.deps.invalidateAnnouncement(upcoming, "zh");
       }
-      if (upcoming.chineseAudio) {
-        this.startBookInternal(upcoming, 0, 0);
+      if (preloadedBookAsset || upcoming.chineseAudio) {
+        this.startBookInternal(upcoming, 0, 0, preloadedBookAsset, preloadedBundleKey);
       } else {
         this.state.phase = "ended";
         this.state.pendingTarget = upcoming;
@@ -1338,6 +1675,13 @@ export class SeriesAudioPlayer {
       for (const callback of callbacks) callback();
       return true;
     }
+    if (this.transport?.inIntro()) {
+      this.transport.skipIntro();
+      if (this.deps.getAudio()?.paused) {
+        void this.resume();
+      }
+      return true;
+    }
     if (target.chineseAudio) {
       return this.startBookInternal(target, 0, 0);
     }
@@ -1352,6 +1696,7 @@ export class SeriesAudioPlayer {
     this.handoffListeners.clear();
     const audio = this.deps.getAudio();
     this.detachTransport();
+    this.deps.markPreparedBundleActive(null);
     if (audio) audio.pause();
     const wasHandoff = this.state.handoffOnly;
     this.state = wasHandoff
@@ -1434,7 +1779,7 @@ export class SeriesAudioPlayer {
   }
 
   selectPage(pageIndex: number) {
-    if (this.state.handoffOnly) return false;
+    if (this.state.handoffOnly || this.transport?.inIntro()) return false;
     if (this.transport) {
       if (this.transport.pageIndex === pageIndex) return true;
       this.transport.selectPage(pageIndex);
@@ -1483,7 +1828,11 @@ export class SeriesAudioPlayer {
     const target = this.playlist.find((item) => item.id === bookId);
     if (!target) return false;
     if (target.id === this.state.bookId && !this.state.handoffOnly) {
-      if (this.state.phase === "paused") {
+      if (
+        this.state.phase === "paused" &&
+        !this.resumingAnnouncement &&
+        !this.transport?.inIntro()
+      ) {
         void this.resume();
         return true;
       }
@@ -1491,6 +1840,13 @@ export class SeriesAudioPlayer {
         return true;
       }
       return this.replayCurrentBook(0, 0);
+    }
+    if (this.transport?.inIntro() && this.state.pendingTarget?.id === target.id) {
+      this.transport.skipIntro();
+      if (this.deps.getAudio()?.paused) {
+        void this.resume();
+      }
+      return true;
     }
     if (target.chineseAudio) {
       return this.startBookInternal(target, 0, 0);
@@ -1517,6 +1873,7 @@ export class SeriesAudioPlayer {
     this.handoffTargetId = null;
     this.handoffListeners.clear();
     this.detachTransport();
+    this.deps.markPreparedBundleActive(null);
     this.currentBookItem = null;
     this.activePages = null;
     this.perPageFinishedHandler = null;
@@ -1534,12 +1891,22 @@ export class SeriesAudioPlayer {
   }
 
   private prefetchUpcomingAnnouncement() {
-    if (!this.state.continuousPlayback || !this.preferCloudTts || !this.state.bookId) {
+    if (!this.state.bookId) return;
+    this.prefetchUpcomingForBook(this.state.bookId);
+  }
+
+  private prefetchUpcomingForBook(bookId: string) {
+    if (!this.state.continuousPlayback) {
       return;
     }
-    const upcoming = nextSeriesBook(this.playlist, this.state.bookId);
+    const upcoming = nextSeriesBook(this.playlist, bookId);
     if (!upcoming) return;
-    void this.deps.prefetchAnnouncement(upcoming, this.state.languageMode);
+    if (this.preferCloudTts) {
+      void this.deps.prefetchAnnouncement(upcoming, this.state.languageMode);
+    }
+    if (this.state.languageMode === "zh" && upcoming.chineseAudio) {
+      void this.deps.prefetchNextBookBundle(upcoming, this.preferCloudTts);
+    }
   }
 
   private syncBookMediaSession(
