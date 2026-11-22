@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 
 const LINKS = [
   { zh: "绘本馆", en: "Library", href: "/library", enHref: "/en/library" },
+  { zh: "绘本专题", en: "Story topics", href: "/library/topics", enHref: "/en/library/topics" },
+  { zh: "礼物绘本", en: "Gift books", href: "/gifts" },
   { zh: "创作", en: "Create", href: "/#story-creation", enHref: "/en#story-creation" },
   { zh: "每日灵感", en: "Daily ideas", href: "/inspiration", enHref: "/en/inspiration" },
   { zh: "绘本定制工作台", en: "Custom book studio", href: "/custom" },

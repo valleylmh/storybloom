@@ -23,7 +23,7 @@ export default function LibraryTopicLinks({
         ))}
         {showAll ? (
           <li>
-            <Link href="/library/topics" className={styles.all}>全部情境 →</Link>
+            <Link href="/library/topics" className={styles.all}>全部专题 →</Link>
           </li>
         ) : null}
       </ul>

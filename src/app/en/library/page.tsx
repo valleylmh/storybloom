@@ -1,7 +1,9 @@
 import Link from "next/link";
 import JsonLd from "@/components/seo/JsonLd";
 import EnglishLibraryCard from "@/components/library/EnglishLibraryCard";
+import EnglishTopicLinks from "@/components/library/EnglishTopicLinks";
 import { getAllSeries, getPublishedBooks } from "@/lib/library";
+import { getAllEnglishTopics } from "@/lib/library/english-topics";
 import { librarySeriesPath } from "@/lib/library/paths";
 import { libraryBreadcrumbs, seriesCopy } from "@/lib/library/seo";
 import { pageMetadata } from "@/lib/seo";
@@ -22,6 +24,7 @@ export default function EnglishLibraryPage() {
     ] }} />
     <nav className="library-topbar" aria-label="Page navigation"><Link href="/en">← Home</Link><Link href="/library" hrefLang="zh-CN">中文</Link></nav>
     <header className="library-hero"><p className="library-kicker">STORYBLOOM PICTURE BOOK LIBRARY</p><h1>Chinese and English stories for reading together</h1><p className="library-lead">Free illustrated stories for curious kids and their families. No account needed to read.</p></header>
+    <EnglishTopicLinks topics={getAllEnglishTopics()} label="Browse by theme" showAll />
     <div className="library-catalog">
       {series.map((item) => {
         const copy = seriesCopy(item, "en");

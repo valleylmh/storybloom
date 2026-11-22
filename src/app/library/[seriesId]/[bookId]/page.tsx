@@ -321,7 +321,7 @@ export default async function LibraryBookPage({
         </section>
       ) : null}
 
-      <LibraryTopicLinks topics={getBookTopics(book)} label="同一情境的绘本" showAll />
+      <LibraryTopicLinks topics={getBookTopics(book)} label="相关绘本专题" showAll />
 
       <nav className="library-adjacent" aria-label="继续阅读">
         {previous ? (

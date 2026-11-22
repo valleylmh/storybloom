@@ -2,9 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/seo/JsonLd";
+import EnglishTopicLinks from "@/components/library/EnglishTopicLinks";
 import LibrarySubscribeCard from "@/components/library/LibrarySubscribeCard";
 import { getAdjacentBooks, getAllSeries, getBookByEnglishSlug, getPublishedBooks, getSeriesByEnglishSlug } from "@/lib/library";
 import { bookEnglishTitle } from "@/lib/library/english-titles";
+import { getEnglishBookTopics } from "@/lib/library/english-topics";
 import { englishBookSlug, englishSeriesSlug, libraryBookPath, librarySeriesPath } from "@/lib/library/paths";
 import { bookMetadata, bookStructuredData, seriesCopy } from "@/lib/library/seo";
 import { bookReadingCopy } from "@/lib/library/reading-copy";
@@ -78,6 +80,7 @@ export default async function EnglishBookPage({ params }: Props) {
       </article>)}
     </section>
     {book.moral ? <section className="library-moral" aria-label="Story takeaway"><h2>A thought to share</h2><p>{book.moral.en}</p></section> : null}
+    <EnglishTopicLinks topics={getEnglishBookTopics(book)} label="More in this collection" showAll />
     <nav className="library-adjacent" aria-label="Read another story">
       {previous ? <Link href={libraryBookPath(previous, "en")}>← {bookEnglishTitle(previous)}</Link> : <span />}
       {next ? <Link href={libraryBookPath(next, "en")}>{bookEnglishTitle(next)} →</Link> : <span />}

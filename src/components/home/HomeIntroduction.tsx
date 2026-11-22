@@ -1,4 +1,9 @@
+import { Fragment } from "react";
 import Link from "next/link";
+import {
+  FEATURED_ENGLISH_TOPIC_LINKS,
+  FEATURED_TOPIC_LINKS,
+} from "@/lib/library/topic-links";
 import { localizedPath, type SiteLocale } from "@/lib/seo";
 import styles from "./HomeIntroduction.module.css";
 
@@ -24,8 +29,32 @@ export default function HomeIntroduction({ locale = "zh" }: { locale?: SiteLocal
         <h3>{en ? "Explore free bilingual stories" : "不用创作，也能读到完整的睡前故事"}</h3>
         <p>{en ? "Visit the library for Chinese idiom stories for kids, proverbs, Tang poems, Journey to the West, science and everyday family stories. Read the English text or explore the Chinese version together." : "绘本馆提供成语故事、谚语故事、唐诗、经典名著、自然科普、城市汽车与日常生活等系列。每本都有完整的中英文正文，适合家长陪读，也能在睡前挑一本慢慢读。"}</p>
         <p>{en ? "Looking for a keepsake? Explore graduation, Children's Day and birthday picture-book gifts, or use a daily story idea to begin your next book." : "想为幼儿园毕业、六一或生日准备一份心意，可以翻阅礼物绘本样书；还没想到创作主题时，每日灵感会提供具体的故事开头和亲子提问。"}</p>
+        {en ? (
+          <p>
+            Looking for a curated starting point? Browse bilingual picture-book collections with reading tips and conversation prompts:{" "}
+            {FEATURED_ENGLISH_TOPIC_LINKS.map((topic, index) => (
+              <Fragment key={topic.id}>
+                {index > 0 ? ", " : null}
+                <Link href={`/en/library/topics/${topic.id}`}>{topic.name}</Link>
+              </Fragment>
+            ))}
+            .
+          </p>
+        ) : (
+          <p>
+            想按孩子正在经历的场景或当下兴趣找书？可以直接翻开精选绘本专题，每组都附选书顺序与共读提问：
+            {FEATURED_TOPIC_LINKS.map((topic, index) => (
+              <Fragment key={topic.id}>
+                {index > 0 ? "、" : null}
+                <Link href={`/library/topics/${topic.id}`}>{topic.name}</Link>
+              </Fragment>
+            ))}
+            。
+          </p>
+        )}
         <nav className={styles.links} aria-label={en ? "Explore StoryBloom" : "探索 StoryBloom"}>
           <Link href={localizedPath("/library", locale)}>{en ? "Read stories →" : "免费阅读双语绘本 →"}</Link>
+          <Link href={localizedPath("/library/topics", locale)}>{en ? "Browse bilingual collections →" : "按场景与主题找绘本 →"}</Link>
           <Link href="/gifts">{en ? "Picture-book gifts →" : "挑选礼物绘本 →"}</Link>
           <Link href={localizedPath("/inspiration", locale)}>{en ? "Daily story ideas →" : "寻找每日灵感 →"}</Link>
         </nav>

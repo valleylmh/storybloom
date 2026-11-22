@@ -54,7 +54,7 @@ export default function LibraryPage() {
         </p>
       </header>
 
-      <LibraryTopicLinks topics={getAllTopics()} label="按育儿情境找" showAll />
+      <LibraryTopicLinks topics={getAllTopics()} label="按场景与主题找" showAll />
 
       <LibraryCatalogExperience
         books={books}

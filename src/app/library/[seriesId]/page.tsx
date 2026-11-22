@@ -4,9 +4,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import LibrarySeriesExperience from "@/components/library/LibrarySeriesExperience";
+import LibraryTopicLinks from "@/components/library/LibraryTopicLinks";
 import { getAllSeries, getSeries, getSeriesBooks } from "@/lib/library";
 import { createLibraryBookSummary } from "@/lib/library/catalog";
 import { librarySeriesPath } from "@/lib/library/paths";
+import { getSeriesTopics } from "@/lib/library/topics";
 
 type Params = { seriesId: string };
 
@@ -45,6 +47,10 @@ export default async function LibrarySeriesPage({
   const bookSummaries = books.map((book) =>
     createLibraryBookSummary(series, book),
   );
+  const seriesTopics = getSeriesTopics(series.id);
+  const topicsLabel = seriesTopics.every((topic) => topic.group === "parenting")
+    ? "按育儿情境找"
+    : "相关绘本专题";
 
   return (
     <main className="library-page">
@@ -63,6 +69,8 @@ export default async function LibrarySeriesPage({
         <h1>{series.title}</h1>
         <p className="library-lead">{series.description}</p>
       </header>
+
+      <LibraryTopicLinks topics={seriesTopics} label={topicsLabel} showAll />
 
       {books.length > 0 ? (
         <LibrarySeriesExperience books={bookSummaries} />
