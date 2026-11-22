@@ -1,6 +1,7 @@
 import JsonLd from "@/components/seo/JsonLd";
 import { bookMetadata as createBookMetadata, bookStructuredData } from "@/lib/library/seo";
 import { getLibraryContentId } from "@/lib/library/content-id";
+import { bookEnglishTitle } from "@/lib/library/english-titles";
 import { bookReadingCopy } from "@/lib/library/reading-copy";
 import { libraryBookPath } from "@/lib/library/paths";
 import { getLibraryChineseAudio } from "@/lib/library-book-audio";
@@ -209,11 +210,14 @@ export default async function LibraryBookPage({
 
       <LibraryBookExperience
         key={`${series.id}/${book.id}`}
+        seriesTitle={series.title}
         playlist={seriesBooks.filter((item) => !item.comingSoon).map((item) => ({
           id: getLibraryContentId(item),
           title: item.title,
+          englishTitle: bookEnglishTitle(item),
           cover: item.pages[0]?.imageStatus === "complete" ? item.pages[0].imageUrl : undefined,
           href: `/library/${series.id}/${item.id}`,
+          chineseAudio: getLibraryChineseAudio(series.id, item.id, item.pages),
         }))}
         chineseAudio={getLibraryChineseAudio(series.id, book.id, book.pages)}
         title={book.title}

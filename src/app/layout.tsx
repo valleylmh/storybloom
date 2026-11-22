@@ -3,6 +3,7 @@ import AnalyticsConsentManager from "@/components/analytics/AnalyticsConsentMana
 import TawkToChat from "@/components/analytics/TawkToChat";
 import FamilyPlatformNav from "@/components/layout/FamilyPlatformNav";
 import Footer from "@/components/layout/Footer";
+import GlobalMiniAudioPlayer from "@/components/layout/GlobalMiniAudioPlayer";
 import { APP_METADATA_BASE } from "@/lib/site-url";
 import { DEFAULT_SHARE_IMAGE, HOME_TITLES } from "@/lib/seo";
 import WebAppRuntime from "@/components/pwa/WebAppRuntime";
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body data-clarity-mask="true">
         <Providers>
           {children}
+          <GlobalMiniAudioPlayer />
           <FamilyPlatformNav />
           <Footer />
         </Providers>

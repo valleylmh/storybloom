@@ -7645,6 +7645,26 @@ img {
   font-variant-numeric: tabular-nums;
 }
 
+.library-next-book-countdown .library-next-book-speaking {
+  font-size: 1.9rem;
+  animation: library-speaking-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes library-speaking-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(217, 111, 72, 0.28);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(217, 111, 72, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .library-next-book-countdown .library-next-book-speaking {
+    animation: none;
+  }
+}
+
 .library-next-book-actions {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -12192,7 +12212,17 @@ a.library-book-card:hover {
 @media (prefers-reduced-motion: reduce) { .paper-cover-opening { animation: none; } }
 
 /* Gift books have their own focused presentation and footer. */
-body:has([data-gift-module]) .family-platform-nav, body:has([data-gift-module]) .site-footer { display: none; }
+body:has([data-gift-module]) .family-platform-nav, body:has([data-gift-module]) .site-footer, body:has([data-gift-module]) .global-mini-audio-player { display: none; }
+
+/* Reserve bottom space so the expanded mini audio player bar never covers footer links. */
+body:has(.global-mini-audio-player-bar) .site-footer {
+  margin-bottom: 92px;
+}
+@media (max-width: 680px) {
+  body:has(.global-mini-audio-player-bar):has(.family-platform-nav) .site-footer {
+    margin-bottom: 164px;
+  }
+}
 
 /* Keep the gift navigation entry on desktop; mobile uses the home showcase. */
 @media (max-width: 720px) { .home-primary-nav > a.home-gifts-nav { display: none; } }

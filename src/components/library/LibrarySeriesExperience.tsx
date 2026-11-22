@@ -71,7 +71,7 @@ export default function LibrarySeriesExperience({
           <strong>
             {completedCount} / {publishedBooks.length} 本已读完
           </strong>
-          <span>每一回都由家长主动打开，不会自动播放下一本。</span>
+          <span>默认开启同系列连续播放，切换下一本前会语音提示，也可在播放设置中关闭。</span>
         </div>
         <div className="library-series-progress-track" aria-hidden="true">
           <span style={{ width: `${reachedPercent}%` }} />

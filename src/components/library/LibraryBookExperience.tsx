@@ -1,7 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { nextSeriesBook, parsePlaybackHandoff } from "@/lib/reader/continuous-playback";
+import {
+  CONTINUOUS_PLAYBACK_STORAGE_KEY,
+  formatNextBookAnnouncement,
+  nextSeriesBook,
+  parseContinuousPlaybackPreference,
+  parsePlaybackHandoff,
+  type SeriesPlaylistItem,
+} from "@/lib/reader/continuous-playback";
+import { getReadyAnnouncementUrl } from "@/lib/reader/next-book-announcement";
+import {
+  seriesAudioPlayer,
+  type SeriesPlayerPhase,
+  type SeriesPlayerState,
+} from "@/lib/reader/series-audio-player";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { MoonStars, X } from "@phosphor-icons/react";
@@ -28,8 +41,35 @@ import LibraryBookFloatingActions, {
   type LibraryBookFloatingActionsConfig,
 } from "@/components/library/LibraryBookFloatingActions";
 
+type PendingUpcomingBook = {
+  book: SeriesPlaylistItem;
+  announcementText: string | null;
+  announcementPlaying: boolean;
+  managedBySeriesPlayer: boolean;
+};
+
+function mapSeriesPhaseToStatus(phase: SeriesPlayerPhase): PlaybackState["status"] {
+  switch (phase) {
+    case "loading":
+      return "loading";
+    case "playing":
+      return "playing";
+    case "paused":
+      return "paused";
+    case "announcing":
+    case "ended":
+      return "ended";
+    case "error":
+      return "error";
+    case "idle":
+    default:
+      return "idle";
+  }
+}
+
 export default function LibraryBookExperience({
   title,
+  seriesTitle,
   chineseAudio,
   pages,
   accent,
@@ -48,6 +88,7 @@ export default function LibraryBookExperience({
 }: {
   chineseAudio?: BookAudio;
   title: string;
+  seriesTitle?: string;
   pages: StoryPage[];
   accent: string;
   storyKey: string;
@@ -60,14 +101,14 @@ export default function LibraryBookExperience({
   getIllustrationStatusDetail?: (page: StoryPage) => string | undefined;
   retryingIllustrationPages?: readonly number[];
   personalizeHref?: string;
-  playlist?: Array<{ id: string; title: string; href: string; cover?: string }>;
+  playlist?: SeriesPlaylistItem[];
   floatingActions?: LibraryBookFloatingActionsConfig;
 }) {
   const router = useRouter();
-  const [continuousPlayback, setContinuousPlayback] = useState(false);
+  const [continuousPlayback, setContinuousPlayback] = useState(true);
   const [autoStart, setAutoStart] = useState(false);
   const advancedBookRef = useRef(false);
-  const [pendingNextBook, setPendingNextBook] = useState<{ id: string; title: string; href: string } | null>(null);
+  const [pendingUpcoming, setPendingUpcoming] = useState<PendingUpcomingBook | null>(null);
   const [pageIndex, setPageIndex] = useState(0);
   const [readerMode, setReaderMode] =
     useState<ReaderMode>(initialReaderMode);
@@ -87,65 +128,198 @@ export default function LibraryBookExperience({
   const progressRef = useRef<ReadingProgressRecord | null>(null);
   const lastSavedFingerprintRef = useRef("");
   const bedtimeExitButtonRef = useRef<HTMLButtonElement>(null);
+  const navigatedBookIdRef = useRef<string | null>(null);
+  const followingPlaybackRef = useRef(false);
+  const progressReadyRef = useRef(progressReady);
+  progressReadyRef.current = progressReady;
+  const bedtimeModeRef = useRef(bedtimeMode);
+  bedtimeModeRef.current = bedtimeMode;
+  const continuousPlaybackRef = useRef(continuousPlayback);
+  continuousPlaybackRef.current = continuousPlayback;
+  const languageModeRef = useRef(languageMode);
+  languageModeRef.current = languageMode;
   const syncProgressToAccount = useReadingProgressCloudSync();
+
+  const currentPlaylistItem = playlist.find((item) => item.id === contentId);
+  const currentBookCover =
+    currentPlaylistItem?.cover ??
+    (pages[0]?.imageStatus === "complete" ? pages[0].imageUrl : undefined);
+  const currentBookHref = currentPlaylistItem?.href ?? "";
 
   useEffect(() => {
     let active = true;
     let handoff: { id: string; language: BrowserNarrationMode } | null = null;
+    seriesAudioPlayer.claimBook(contentId);
+    navigatedBookIdRef.current = null;
     try {
-      setContinuousPlayback(localStorage.getItem("storybloom.continuous-playback") === "true");
+      setContinuousPlayback(
+        parseContinuousPlaybackPreference(
+          localStorage.getItem(CONTINUOUS_PLAYBACK_STORAGE_KEY),
+        ),
+      );
       const saved = sessionStorage.getItem("storybloom.next-book");
       if (saved) {
         handoff = parsePlaybackHandoff(saved, contentId);
       }
     } catch { /* Reading remains available without browser storage. */ }
-    setAutoStart(false);
+
+    const liveSeries = seriesAudioPlayer.getActiveStateForBook(contentId);
+    followingPlaybackRef.current = Boolean(liveSeries);
     advancedBookRef.current = false;
-    setPendingNextBook(null);
-    setPageIndex(0);
-    setReaderMode(initialReaderMode);
-    setLanguageMode("zh");
-    setAutoAdvance(true);
-    setNarrationHighlight(null);
-    setInitialPositionMs(0);
-    setResumeLabel(null);
-    setProgressReady(false);
-    setPlaybackStatus("idle");
-    setPlaybackPositionMs(0);
-    setPlaybackDurationMs(0);
     setBedtimeMode(false);
     progressRef.current = null;
     lastSavedFingerprintRef.current = "";
 
-    void getReadingProgress(contentType, contentId).then((progress) => {
-      if (!active) return;
-      if (handoff) {
-        try { sessionStorage.removeItem("storybloom.next-book"); } catch { /* Optional storage. */ }
-        setLanguageMode(handoff.language);
-        setAutoAdvance(true);
-        setReaderMode("turn");
-        setAutoStart(true);
-      } else if (progress) {
-        const restoredPageIndex = progress.completedAt && progress.pageIndex === pages.length - 1 && !progress.positionMs ? 0 : Math.min(
-          Math.max(0, progress.pageIndex),
-          Math.max(0, pages.length - 1),
-        );
-        progressRef.current = { ...progress, pageIndex: restoredPageIndex };
-        setPageIndex(restoredPageIndex);
-        setLanguageMode(progress.languageMode);
-        setAutoAdvance(progress.autoAdvance);
-        setInitialPositionMs(progress.positionMs ?? 0);
-        if (restoredPageIndex > 0 || (progress.positionMs ?? 0) > 0) {
-          setResumeLabel(`继续第 ${restoredPageIndex + 1} 页`);
-        }
-      }
+    if (liveSeries) {
+      try { sessionStorage.removeItem("storybloom.next-book"); } catch { /* Optional storage. */ }
+      setAutoStart(false);
+      setPageIndex(liveSeries.pageIndex);
+      setReaderMode("turn");
+      setLanguageMode(liveSeries.languageMode);
+      setAutoAdvance(liveSeries.autoAdvance);
+      setNarrationHighlight(liveSeries.phase === "playing" ? liveSeries.languageMode : null);
+      setInitialPositionMs(liveSeries.positionMs);
+      setResumeLabel(null);
+      setPlaybackStatus(mapSeriesPhaseToStatus(liveSeries.phase));
+      setPlaybackPositionMs(liveSeries.positionMs);
+      setPlaybackDurationMs(liveSeries.durationMs);
+      setPendingUpcoming(
+        liveSeries.phase === "announcing" && liveSeries.pendingTarget
+          ? {
+              book: liveSeries.pendingTarget,
+              announcementText: liveSeries.announcementText,
+              announcementPlaying: liveSeries.announcementPlaying,
+              managedBySeriesPlayer: true,
+            }
+          : null,
+      );
       setProgressReady(true);
-    });
+      void getReadingProgress(contentType, contentId).then((progress) => {
+        if (!active || !progress) return;
+        progressRef.current = progress;
+      });
+    } else {
+      setAutoStart(false);
+      setPendingUpcoming(null);
+      setPageIndex(0);
+      setReaderMode(initialReaderMode);
+      setLanguageMode("zh");
+      setAutoAdvance(true);
+      setNarrationHighlight(null);
+      setInitialPositionMs(0);
+      setResumeLabel(null);
+      setProgressReady(false);
+      setPlaybackStatus("idle");
+      setPlaybackPositionMs(0);
+      setPlaybackDurationMs(0);
+
+      void getReadingProgress(contentType, contentId).then((progress) => {
+        if (!active) return;
+        if (handoff) {
+          try { sessionStorage.removeItem("storybloom.next-book"); } catch { /* Optional storage. */ }
+          setLanguageMode(handoff.language);
+          setAutoAdvance(true);
+          setReaderMode("turn");
+          setAutoStart(true);
+        } else if (progress) {
+          const restoredPageIndex = progress.completedAt && progress.pageIndex === pages.length - 1 && !progress.positionMs ? 0 : Math.min(
+            Math.max(0, progress.pageIndex),
+            Math.max(0, pages.length - 1),
+          );
+          progressRef.current = { ...progress, pageIndex: restoredPageIndex };
+          setPageIndex(restoredPageIndex);
+          setLanguageMode(progress.languageMode);
+          setAutoAdvance(progress.autoAdvance);
+          setInitialPositionMs(progress.positionMs ?? 0);
+          if (restoredPageIndex > 0 || (progress.positionMs ?? 0) > 0) {
+            setResumeLabel(`继续第 ${restoredPageIndex + 1} 页`);
+          }
+        }
+        setProgressReady(true);
+      });
+    }
 
     return () => {
       active = false;
+      seriesAudioPlayer.releaseBook(contentId);
     };
   }, [contentId, contentType, initialReaderMode, pages.length, storyKey]);
+
+  useEffect(() => {
+    const syncSeriesSnapshot = (snapshot: SeriesPlayerState, preferReplace = false) => {
+      if (snapshot.phase === "idle") {
+        followingPlaybackRef.current = false;
+        setPendingUpcoming((previous) =>
+          previous?.managedBySeriesPlayer ? null : previous,
+        );
+        return;
+      }
+
+      if (snapshot.bookId === contentId) {
+        followingPlaybackRef.current = true;
+      }
+
+      if (
+        !snapshot.handoffOnly &&
+        snapshot.bookId &&
+        snapshot.bookId !== contentId &&
+        snapshot.bookHref
+      ) {
+        // Only follow automatic series transitions when THIS book page was the
+        // actively playing reader. If the user is merely browsing another book
+        // while a previous book plays in the bottom mini player, never redirect.
+        if (
+          followingPlaybackRef.current &&
+          typeof document !== "undefined" &&
+          document.visibilityState === "visible" &&
+          navigatedBookIdRef.current !== snapshot.bookId
+        ) {
+          navigatedBookIdRef.current = snapshot.bookId;
+          if (preferReplace) {
+            router.replace(snapshot.bookHref);
+          } else {
+            router.push(snapshot.bookHref);
+          }
+        }
+        return;
+      }
+
+      if (
+        snapshot.bookId === contentId &&
+        snapshot.phase === "announcing" &&
+        snapshot.pendingTarget
+      ) {
+        setPendingUpcoming({
+          book: snapshot.pendingTarget,
+          announcementText: snapshot.announcementText,
+          announcementPlaying: snapshot.announcementPlaying,
+          managedBySeriesPlayer: true,
+        });
+        return;
+      }
+
+      setPendingUpcoming((previous) =>
+        previous?.managedBySeriesPlayer ? null : previous,
+      );
+    };
+
+    const unsubscribe = seriesAudioPlayer.subscribe((snapshot) => {
+      syncSeriesSnapshot(snapshot, false);
+    });
+
+    const handleVisibilityWake = () => {
+      if (document.visibilityState !== "visible") return;
+      syncSeriesSnapshot(seriesAudioPlayer.getState(), true);
+    };
+    document.addEventListener("visibilitychange", handleVisibilityWake);
+    window.addEventListener("pageshow", handleVisibilityWake);
+
+    return () => {
+      unsubscribe();
+      document.removeEventListener("visibilitychange", handleVisibilityWake);
+      window.removeEventListener("pageshow", handleVisibilityWake);
+    };
+  }, [contentId, router]);
 
   useEffect(() => {
     if (!bedtimeMode) return;
@@ -236,11 +410,10 @@ export default function LibraryBookExperience({
 
   const handlePageIndexChange = useCallback(
     (nextPageIndex: number) => {
-      setPlaybackStatus("idle");
       advancedBookRef.current = false;
-      setPendingNextBook(null);
-      setPlaybackPositionMs(0);
-      setPlaybackDurationMs(0);
+      setPendingUpcoming((previous) =>
+        previous?.managedBySeriesPlayer ? previous : null,
+      );
       setInitialPositionMs(0);
       setResumeLabel(null);
       setPageIndex(nextPageIndex);
@@ -296,31 +469,140 @@ export default function LibraryBookExperience({
     }, [persistProgress],
   );
 
+  const navigateWithHandoff = useCallback(
+    (target: SeriesPlaylistItem) => {
+      setPendingUpcoming(null);
+      try {
+        sessionStorage.setItem(
+          "storybloom.next-book",
+          JSON.stringify({
+            id: target.id,
+            language: languageModeRef.current,
+            at: Date.now(),
+          }),
+        );
+      } catch {
+        return;
+      }
+      if (navigatedBookIdRef.current === target.id) return;
+      navigatedBookIdRef.current = target.id;
+      router.push(target.href);
+    },
+    [router],
+  );
+
+  const handleBookFinished = useCallback((): boolean => {
+    if (
+      !progressReadyRef.current ||
+      bedtimeModeRef.current ||
+      !continuousPlaybackRef.current
+    ) {
+      return false;
+    }
+    if (advancedBookRef.current) return false;
+    const upcoming = nextSeriesBook(playlist, contentId);
+    if (!upcoming) return false;
+    advancedBookRef.current = true;
+
+    const mode = languageModeRef.current;
+    const { text: announcementText } = formatNextBookAnnouncement(upcoming, mode);
+    const announcementUrl = preferCloudTts
+      ? getReadyAnnouncementUrl(upcoming, mode)
+      : null;
+    const isHidden =
+      typeof document !== "undefined" && document.visibilityState === "hidden";
+
+    if (announcementUrl) {
+      if (isHidden) {
+        const started = seriesAudioPlayer.startHandoffAnnouncement({
+          fromBookId: contentId,
+          target: upcoming,
+          mode,
+          announcementUrl,
+          seriesTitle,
+        });
+        navigateWithHandoff(upcoming);
+        return started;
+      }
+      return seriesAudioPlayer.startHandoffAnnouncement({
+        fromBookId: contentId,
+        target: upcoming,
+        mode,
+        announcementUrl,
+        seriesTitle,
+        onComplete: () => navigateWithHandoff(upcoming),
+      });
+    }
+
+    if (isHidden) {
+      navigateWithHandoff(upcoming);
+      return true;
+    }
+
+    setPendingUpcoming({
+      book: upcoming,
+      announcementText,
+      announcementPlaying: false,
+      managedBySeriesPlayer: false,
+    });
+    return false;
+  }, [contentId, navigateWithHandoff, playlist, preferCloudTts, seriesTitle]);
+
   useEffect(() => {
     if (playbackStatus !== "ended") advancedBookRef.current = false;
-    if (!progressReady || bedtimeMode || !continuousPlayback || playbackStatus !== "ended" || pageIndex !== pages.length - 1) {
-      setPendingNextBook(null);
+    if (seriesAudioPlayer.ownsBook(contentId)) return;
+    if (
+      !progressReady ||
+      bedtimeMode ||
+      !continuousPlayback ||
+      playbackStatus !== "ended" ||
+      pageIndex !== pages.length - 1
+    ) {
+      setPendingUpcoming((previous) =>
+        previous?.managedBySeriesPlayer ? previous : null,
+      );
       return;
     }
     if (advancedBookRef.current) return;
     const next = nextSeriesBook(playlist, contentId);
     if (!next) return;
     advancedBookRef.current = true;
-    setPendingNextBook(next);
-  }, [bedtimeMode, contentId, continuousPlayback, pageIndex, pages.length, playbackStatus, playlist, progressReady]);
+    const { text: announcementText } = formatNextBookAnnouncement(next, languageMode);
+    setPendingUpcoming({
+      book: next,
+      announcementText,
+      announcementPlaying: false,
+      managedBySeriesPlayer: false,
+    });
+  }, [
+    bedtimeMode,
+    contentId,
+    continuousPlayback,
+    languageMode,
+    pageIndex,
+    pages.length,
+    playbackStatus,
+    playlist,
+    progressReady,
+  ]);
 
-  const playPendingNextBook = useCallback(() => {
-    if (!pendingNextBook) return;
-    setPendingNextBook(null);
-    try {
-      sessionStorage.setItem("storybloom.next-book", JSON.stringify({ id: pendingNextBook.id, language: languageMode, at: Date.now() }));
-    } catch { return; }
-    router.push(pendingNextBook.href);
-  }, [languageMode, pendingNextBook, router]);
+  const handlePlayPendingUpcoming = useCallback(() => {
+    if (!pendingUpcoming) return;
+    if (pendingUpcoming.managedBySeriesPlayer) {
+      setPendingUpcoming(null);
+      if (!seriesAudioPlayer.playPendingTargetNow()) {
+        navigateWithHandoff(pendingUpcoming.book);
+      }
+      return;
+    }
+    navigateWithHandoff(pendingUpcoming.book);
+  }, [navigateWithHandoff, pendingUpcoming]);
 
   const handleContinuousPlaybackChange = (enabled: boolean) => {
     setContinuousPlayback(enabled);
-    try { localStorage.setItem("storybloom.continuous-playback", String(enabled)); } catch { /* Session preference still works. */ }
+    try {
+      localStorage.setItem(CONTINUOUS_PLAYBACK_STORAGE_KEY, String(enabled));
+    } catch { /* Session preference still works. */ }
     if (enabled) handleAutoAdvanceChange(true);
   };
 
@@ -337,13 +619,20 @@ export default function LibraryBookExperience({
       }`}
       aria-label={bedtimeMode ? `${title}睡前阅读` : undefined}
     >
-      {pendingNextBook ? (
+      {pendingUpcoming ? (
         <LibraryNextBookCountdown
-          key={pendingNextBook.id}
-          title={pendingNextBook.title}
-          onComplete={playPendingNextBook}
+          key={pendingUpcoming.book.id}
+          title={pendingUpcoming.book.title}
+          englishTitle={pendingUpcoming.book.englishTitle}
+          languageMode={languageMode}
+          announcementText={pendingUpcoming.announcementText}
+          announcementPlaying={pendingUpcoming.announcementPlaying}
+          onComplete={handlePlayPendingUpcoming}
           onCancel={() => {
-            setPendingNextBook(null);
+            if (pendingUpcoming.managedBySeriesPlayer) {
+              seriesAudioPlayer.cancelPendingTarget();
+            }
+            setPendingUpcoming(null);
             handleContinuousPlaybackChange(false);
           }}
         />
@@ -376,10 +665,17 @@ export default function LibraryBookExperience({
             key={storyKey}
             autoStart={autoStart && progressReady}
             continuousPlayback={continuousPlayback}
+            continuousActive={continuousPlayback && !bedtimeMode && playlist.length > 1}
             onContinuousPlaybackChange={playlist.length > 1 && !bedtimeMode ? handleContinuousPlaybackChange : undefined}
             chineseAudio={chineseAudio}
             pages={pages}
             storyKey={storyKey}
+            contentId={contentId}
+            bookTitle={title}
+            bookHref={currentBookHref}
+            bookCover={currentBookCover}
+            seriesTitle={seriesTitle}
+            playlist={playlist}
             currentPageIndex={pageIndex}
             turnModeActive={readerMode === "turn"}
             compactControls={!bedtimeMode}
@@ -397,6 +693,7 @@ export default function LibraryBookExperience({
             onRequestTurnMode={() => setReaderMode("turn")}
             onReaderModeChange={setReaderMode}
             onEnterBedtimeMode={enterBedtimeMode}
+            onBookFinished={handleBookFinished}
           />
         </section>
 

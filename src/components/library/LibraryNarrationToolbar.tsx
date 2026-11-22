@@ -30,6 +30,21 @@ import {
   type PlaybackState,
 } from "@/lib/reader/playback-machine";
 import { BookAudioTransport, type BookAudio } from "@/lib/reader/book-audio-transport";
+import {
+  nextSeriesBook,
+  type SeriesPlaylistItem,
+} from "@/lib/reader/continuous-playback";
+import { prefetchAnnouncementAudio } from "@/lib/reader/next-book-announcement";
+import {
+  seriesAudioPlayer,
+  type SeriesPlayerState,
+} from "@/lib/reader/series-audio-player";
+import {
+  clearAudioElementHandlers,
+  clearMediaSession,
+  getSharedAudioElement,
+  updateMediaSession,
+} from "@/lib/reader/shared-audio-element";
 import type { StoryPage } from "@/types";
 
 const NARRATION_OPTIONS: Array<{
@@ -111,9 +126,16 @@ export default function LibraryNarrationToolbar({
   pages,
   autoStart = false,
   continuousPlayback = false,
+  continuousActive = false,
   onContinuousPlaybackChange,
   chineseAudio,
   storyKey,
+  contentId,
+  bookTitle,
+  bookHref,
+  bookCover,
+  seriesTitle,
+  playlist = [],
   currentPageIndex,
   turnModeActive,
   compactControls = false,
@@ -133,13 +155,21 @@ export default function LibraryNarrationToolbar({
   onRequestTurnMode,
   onReaderModeChange,
   onEnterBedtimeMode,
+  onBookFinished,
 }: {
   autoStart?: boolean;
   continuousPlayback?: boolean;
+  continuousActive?: boolean;
   onContinuousPlaybackChange?: (enabled: boolean) => void;
   pages: StoryPage[];
   chineseAudio?: BookAudio;
   storyKey: string;
+  contentId?: string;
+  bookTitle?: string;
+  bookHref?: string;
+  bookCover?: string;
+  seriesTitle?: string;
+  playlist?: SeriesPlaylistItem[];
   currentPageIndex: number;
   turnModeActive: boolean;
   compactControls?: boolean;
@@ -159,6 +189,7 @@ export default function LibraryNarrationToolbar({
   onRequestTurnMode: () => void;
   onReaderModeChange?: (mode: ReaderMode) => void;
   onEnterBedtimeMode?: () => void;
+  onBookFinished?: () => boolean;
 }) {
   const [state, dispatch] = useReducer(
     playbackReducer,
@@ -171,6 +202,8 @@ export default function LibraryNarrationToolbar({
   );
   const stateRef = useRef(state);
   stateRef.current = state;
+  const currentPageIndexRef = useRef(currentPageIndex);
+  currentPageIndexRef.current = currentPageIndex;
   const runRef = useRef(0);
   const autoStartedRef = useRef(false);
   const restartBookPendingRef = useRef(false);
@@ -183,11 +216,29 @@ export default function LibraryNarrationToolbar({
   const cloudAudioCacheRef = useRef(
     new Map<string, Promise<CloudNarrationResult>>(),
   );
+  const resolvedCloudAudioRef = useRef(
+    new Map<string, CloudNarrationResult>(),
+  );
   const previousPageIndexRef = useRef(currentPageIndex);
   const previousLanguageModeRef = useRef(languageMode);
   const languageRestartRef = useRef(false);
   const initialPositionConsumedRef = useRef(false);
   const lastPositionSecondRef = useRef(-1);
+  const lastSeriesPhaseRef = useRef<string | null>(null);
+  const lastSeriesPositionSecondRef = useRef(-1);
+  const lastSeriesPageRef = useRef(-1);
+  const attachedToSeriesRef = useRef(false);
+  const handoffUnsubRef = useRef<(() => void) | null>(null);
+
+  const usesSeriesPlayer = Boolean(
+    preferCloudTts &&
+      contentId &&
+      ((languageMode === "zh" && chineseAudio) || bookHref),
+  );
+
+  const getAudioElement = useCallback(() => {
+    return getSharedAudioElement() ?? audioRef.current;
+  }, []);
 
   const setHighlight = useCallback(
     (highlight: BrowserNarrationMode | null) => {
@@ -199,7 +250,7 @@ export default function LibraryNarrationToolbar({
   );
 
   const clearMedia = useCallback(
-    (removeSource = true) => {
+    (removeSource = false) => {
       bookTransportRef.current?.destroy();
       bookTransportRef.current = null;
       browserCancelRef.current?.();
@@ -208,32 +259,40 @@ export default function LibraryNarrationToolbar({
         window.speechSynthesis.cancel();
       }
 
-      const audio = audioRef.current;
+      const audio = getAudioElement();
       if (!audio) return;
-      audio.onended = null;
-      audio.onplay = null;
-      audio.onpause = null;
-      audio.onerror = null;
-      audio.ontimeupdate = null;
-      audio.onloadedmetadata = null;
+      clearAudioElementHandlers(audio);
       audio.pause();
       if (removeSource) {
         audio.removeAttribute("src");
         audio.load();
       }
     },
-    [],
+    [getAudioElement],
   );
 
-  const cancelCurrentSession = useCallback(() => {
-    runRef.current += 1;
-    sessionAbortRef.current?.abort();
-    sessionAbortRef.current = null;
-    clearMedia();
-    setHighlight(null);
-    pausedBrowserHighlightRef.current = null;
-    lastPositionSecondRef.current = -1;
-  }, [clearMedia, setHighlight]);
+  const cancelCurrentSession = useCallback(
+    (stopSeries = true) => {
+      runRef.current += 1;
+      sessionAbortRef.current?.abort();
+      sessionAbortRef.current = null;
+      handoffUnsubRef.current?.();
+      handoffUnsubRef.current = null;
+      if (stopSeries && contentId && seriesAudioPlayer.ownsBook(contentId)) {
+        seriesAudioPlayer.stop();
+        lastSeriesPhaseRef.current = null;
+        lastSeriesPositionSecondRef.current = -1;
+        lastSeriesPageRef.current = -1;
+      } else if (!seriesAudioPlayer.isActive()) {
+        clearMedia(false);
+        clearMediaSession();
+      }
+      setHighlight(null);
+      pausedBrowserHighlightRef.current = null;
+      lastPositionSecondRef.current = -1;
+    },
+    [clearMedia, contentId, setHighlight],
+  );
 
   const requestCloudAudio = useCallback(
     (pageIndex: number, mode: BrowserNarrationMode, signal: AbortSignal) => {
@@ -260,7 +319,7 @@ export default function LibraryNarrationToolbar({
         );
         const cached = await getCachedNarrationAudio(key);
         if (cached?.model === "qwen-audio-3.0-tts-plus" && cachedAudioIsUsable(cached)) {
-          return {
+          const normalizedCached = {
             audioUrl: cached.audioUrl,
             cacheKey: key,
             model: cached.model,
@@ -270,6 +329,8 @@ export default function LibraryNarrationToolbar({
             cached: true,
             signedUrlExpiresAt: cached.signedUrlExpiresAt,
           } satisfies CloudNarrationResult;
+          resolvedCloudAudioRef.current.set(memoryKey, normalizedCached);
+          return normalizedCached;
         }
 
         const requestController = new AbortController();
@@ -327,6 +388,7 @@ export default function LibraryNarrationToolbar({
             signedUrlExpiresAt: normalized.signedUrlExpiresAt,
             updatedAt: Date.now(),
           });
+          resolvedCloudAudioRef.current.set(memoryKey, normalized);
           return normalized;
         } catch (error) {
           if (timedOut) throw new AudioRequestTimeoutError();
@@ -409,15 +471,20 @@ export default function LibraryNarrationToolbar({
         return;
       }
       if (pageIndex === pages.length - 1) {
+        const handedOff = onBookFinished?.() ?? false;
+        if (!handedOff) {
+          clearMediaSession();
+        }
         dispatch({ type: "BOOK_ENDED" });
         return;
       }
+      clearMediaSession();
       dispatch({
         type: "PAGE_ENDED",
         message: "当前页已播放完毕；自动翻页已关闭。",
       });
     },
-    [onPageIndexChange, pages.length, setHighlight],
+    [onBookFinished, onPageIndexChange, pages.length, setHighlight],
   );
 
   const failPlayback = useCallback(
@@ -459,6 +526,201 @@ export default function LibraryNarrationToolbar({
     [finishPage, setHighlight, speakSegment],
   );
 
+  const playResolvedCloudPageRef = useRef<
+    (
+      runId: number,
+      targetPageIndex: number,
+      mode: BrowserNarrationMode,
+      result: CloudNarrationResult,
+      resumeFromMs: number,
+      signal: AbortSignal,
+    ) => void
+  >(() => undefined);
+
+  const playResolvedCloudPage = useCallback(
+    (
+      runId: number,
+      targetPageIndex: number,
+      mode: BrowserNarrationMode,
+      result: CloudNarrationResult,
+      resumeFromMs: number,
+      signal: AbortSignal,
+    ) => {
+      if (runRef.current !== runId) return;
+      const audio = getAudioElement();
+      if (!audio) {
+        failPlayback(new Error("浏览器音频播放器未准备好。"));
+        return;
+      }
+
+      const label = providerLabel(result.model);
+      lastPositionSecondRef.current = -1;
+      clearAudioElementHandlers(audio);
+      audio.src = result.audioUrl;
+      audio.preload = "auto";
+      audio.onloadedmetadata = () => {
+        if (runRef.current !== runId) return;
+        const durationMs = Number.isFinite(audio.duration)
+          ? audio.duration * 1000
+          : 0;
+        if (
+          resumeFromMs > 0 &&
+          Number.isFinite(audio.duration) &&
+          resumeFromMs < durationMs - 500
+        ) {
+          audio.currentTime = resumeFromMs / 1000;
+        }
+        dispatch({
+          type: "POSITION_CHANGED",
+          positionMs: audio.currentTime * 1000,
+          durationMs,
+        });
+      };
+      audio.ontimeupdate = () => {
+        if (runRef.current !== runId) return;
+        const positionSecond = Math.floor(audio.currentTime);
+        if (positionSecond === lastPositionSecondRef.current) return;
+        lastPositionSecondRef.current = positionSecond;
+        dispatch({
+          type: "POSITION_CHANGED",
+          positionMs: audio.currentTime * 1000,
+          durationMs: Number.isFinite(audio.duration)
+            ? audio.duration * 1000
+            : 0,
+        });
+      };
+      audio.onplay = () => {
+        if (runRef.current !== runId) return;
+        dispatch({
+          type: "PLAY_STARTED",
+          source: "cloud",
+          message: `第 ${targetPageIndex + 1} 页 · ${label}${
+            result.cached ? " · 已复用音频" : ""
+          }`,
+        });
+        setHighlight(mode);
+        if (bookTitle) {
+          updateMediaSession({
+            title: bookTitle,
+            artist: seriesTitle || "StoryBloom 绘本馆",
+            album: "StoryBloom 绘本馆",
+            cover: bookCover,
+            playbackState: "playing",
+            handlers: {
+              play: () => {
+                void audio.play().catch(() => undefined);
+              },
+              pause: () => audio.pause(),
+              stop: () => {
+                cancelCurrentSession();
+                dispatch({ type: "STOPPED" });
+              },
+            },
+          });
+        }
+      };
+      audio.onpause = () => {
+        if (
+          runRef.current === runId &&
+          !audio.ended &&
+          stateRef.current.status === "playing"
+        ) {
+          dispatch({
+            type: "PAUSED",
+            positionMs: audio.currentTime * 1000,
+          });
+          setHighlight(null);
+          if (bookTitle) {
+            updateMediaSession({
+              title: bookTitle,
+              artist: seriesTitle || "StoryBloom 绘本馆",
+              album: "StoryBloom 绘本馆",
+              cover: bookCover,
+              playbackState: "paused",
+            });
+          }
+        }
+      };
+      audio.onended = () => {
+        if (runRef.current !== runId) return;
+        if (stateRef.current.autoAdvance && targetPageIndex < pages.length - 1) {
+          const nextPageIndex = targetPageIndex + 1;
+          const nextResolved = resolvedCloudAudioRef.current.get(
+            `${storyKey}:${nextPageIndex}:${mode}`,
+          );
+          if (nextResolved) {
+            // Chain synchronously inside `onended` on the same unlocked <audio>
+            // element so mobile screen-off playback keeps its OS audio session.
+            previousPageIndexRef.current = nextPageIndex;
+            dispatch({ type: "PAGE_ENDED", nextPageIndex });
+            onPageIndexChange(nextPageIndex);
+            playResolvedCloudPageRef.current(
+              runId,
+              nextPageIndex,
+              mode,
+              nextResolved,
+              0,
+              signal,
+            );
+            return;
+          }
+        }
+        finishPage(runId, targetPageIndex);
+      };
+      audio.onerror = () => {
+        if (runRef.current !== runId) return;
+        audio.onerror = null;
+        audio.pause();
+        const failedKey = `${storyKey}:${targetPageIndex}:${mode}`;
+        cloudAudioCacheRef.current.delete(failedKey);
+        resolvedCloudAudioRef.current.delete(failedKey);
+        void deleteCachedNarrationAudio(result.cacheKey);
+        failPlayback(new Error("百炼音频加载失败，请重试。"));
+      };
+      audio.load();
+
+      const nextPageIndex = targetPageIndex + 1;
+      if (nextPageIndex < pages.length) {
+        void requestCloudAudio(nextPageIndex, mode, signal).catch(() => undefined);
+      }
+      if (continuousActive && contentId && playlist.length > 0 && preferCloudTts) {
+        const upcoming = nextSeriesBook(playlist, contentId);
+        if (upcoming) {
+          void prefetchAnnouncementAudio(upcoming, mode, { signal });
+        }
+      }
+
+      void audio.play().catch(() => {
+        if (runRef.current !== runId) return;
+        dispatch({
+          type: "AUTOPLAY_BLOCKED",
+          source: "cloud",
+          message: `第 ${targetPageIndex + 1} 页 · ${label} 已准备好，请再次点击继续播放。`,
+        });
+        setHighlight(null);
+      });
+    },
+    [
+      bookCover,
+      bookTitle,
+      cancelCurrentSession,
+      contentId,
+      continuousActive,
+      failPlayback,
+      finishPage,
+      getAudioElement,
+      onPageIndexChange,
+      pages.length,
+      playlist,
+      preferCloudTts,
+      requestCloudAudio,
+      seriesTitle,
+      setHighlight,
+      storyKey,
+    ],
+  );
+  playResolvedCloudPageRef.current = playResolvedCloudPage;
+
   const startPagePlayback = useCallback(
     async (resumeFromMs = 0) => {
       const pageIndex = currentPageIndex;
@@ -470,6 +732,61 @@ export default function LibraryNarrationToolbar({
         return;
       }
 
+      if (usesSeriesPlayer && contentId) {
+        runRef.current += 1;
+        sessionAbortRef.current?.abort();
+        sessionAbortRef.current = null;
+        handoffUnsubRef.current?.();
+        handoffUnsubRef.current = null;
+        browserCancelRef.current?.();
+        browserCancelRef.current = null;
+        lastSeriesPhaseRef.current = null;
+        lastSeriesPositionSecondRef.current = -1;
+        lastSeriesPageRef.current = -1;
+        const currentBook: SeriesPlaylistItem =
+          playlist.find((item) => item.id === contentId) ?? {
+            id: contentId,
+            title: bookTitle || storyKey,
+            href: bookHref || "",
+            cover: bookCover,
+            chineseAudio,
+          };
+        if (mode === "zh" && chineseAudio) {
+          const bookWithAudio = currentBook.chineseAudio
+            ? currentBook
+            : { ...currentBook, chineseAudio };
+          seriesAudioPlayer.startBook({
+            book: bookWithAudio,
+            playlist,
+            seriesTitle,
+            pageIndex,
+            resumeFromMs,
+            autoAdvance: stateRef.current.autoAdvance,
+            continuousPlayback: continuousActive,
+            preferCloudTts,
+          });
+          return;
+        }
+        seriesAudioPlayer.startPerPageBook({
+          book: currentBook,
+          pages,
+          storyKey,
+          mode,
+          playlist,
+          seriesTitle,
+          pageIndex,
+          resumeFromMs,
+          autoAdvance: stateRef.current.autoAdvance,
+          continuousPlayback: continuousActive,
+          preferCloudTts,
+          onBookFinished,
+        });
+        return;
+      }
+
+      if (seriesAudioPlayer.isActive()) {
+        seriesAudioPlayer.stop();
+      }
       cancelCurrentSession();
       const controller = new AbortController();
       sessionAbortRef.current = controller;
@@ -481,7 +798,7 @@ export default function LibraryNarrationToolbar({
       });
 
       if (preferCloudTts && mode === "zh" && chineseAudio) {
-        const audio = audioRef.current;
+        const audio = getAudioElement();
         if (!audio) { failPlayback(new Error("浏览器音频播放器未准备好。")); return; }
         bookTransportRef.current = new BookAudioTransport(audio, chineseAudio, pageIndex, resumeFromMs, {
           autoAdvance: () => stateRef.current.autoAdvance,
@@ -528,102 +845,31 @@ export default function LibraryNarrationToolbar({
         return;
       }
 
+      const memoryKey = `${storyKey}:${pageIndex}:${mode}`;
+      const preResolved = resolvedCloudAudioRef.current.get(memoryKey);
+      if (preResolved) {
+        playResolvedCloudPage(
+          runId,
+          pageIndex,
+          mode,
+          preResolved,
+          resumeFromMs,
+          controller.signal,
+        );
+        return;
+      }
+
       try {
         const result = await requestCloudAudio(pageIndex, mode, controller.signal);
         if (runRef.current !== runId) return;
-        const audio = audioRef.current;
-        if (!audio) throw new Error("浏览器音频播放器未准备好。");
-
-        const label = providerLabel(result.model);
-        audio.src = result.audioUrl;
-        audio.preload = "auto";
-        audio.onloadedmetadata = () => {
-          if (runRef.current !== runId) return;
-          const durationMs = Number.isFinite(audio.duration)
-            ? audio.duration * 1000
-            : 0;
-          if (
-            resumeFromMs > 0 &&
-            Number.isFinite(audio.duration) &&
-            resumeFromMs < durationMs - 500
-          ) {
-            audio.currentTime = resumeFromMs / 1000;
-          }
-          dispatch({
-            type: "POSITION_CHANGED",
-            positionMs: audio.currentTime * 1000,
-            durationMs,
-          });
-        };
-        audio.ontimeupdate = () => {
-          if (runRef.current !== runId) return;
-          const positionSecond = Math.floor(audio.currentTime);
-          if (positionSecond === lastPositionSecondRef.current) return;
-          lastPositionSecondRef.current = positionSecond;
-          dispatch({
-            type: "POSITION_CHANGED",
-            positionMs: audio.currentTime * 1000,
-            durationMs: Number.isFinite(audio.duration)
-              ? audio.duration * 1000
-              : 0,
-          });
-        };
-        audio.onplay = () => {
-          if (runRef.current !== runId) return;
-          dispatch({
-            type: "PLAY_STARTED",
-            source: "cloud",
-            message: `第 ${pageIndex + 1} 页 · ${label}${
-              result.cached ? " · 已复用音频" : ""
-            }`,
-          });
-          setHighlight(mode);
-        };
-        audio.onpause = () => {
-          if (
-            runRef.current === runId &&
-            !audio.ended &&
-            stateRef.current.status === "playing"
-          ) {
-            dispatch({
-              type: "PAUSED",
-              positionMs: audio.currentTime * 1000,
-            });
-            setHighlight(null);
-          }
-        };
-        audio.onended = () => finishPage(runId, pageIndex);
-        audio.onerror = () => {
-          if (runRef.current !== runId) return;
-          audio.onerror = null;
-          audio.pause();
-          audio.removeAttribute("src");
-          cloudAudioCacheRef.current.delete(`${storyKey}:${pageIndex}:${mode}`);
-          void deleteCachedNarrationAudio(result.cacheKey);
-          failPlayback(new Error("百炼音频加载失败，请重试。"));
-        };
-        audio.load();
-
-        const nextPageIndex = pageIndex + 1;
-        if (nextPageIndex < pages.length) {
-          void requestCloudAudio(
-            nextPageIndex,
-            mode,
-            controller.signal,
-          ).catch(() => undefined);
-        }
-
-        try {
-          await audio.play();
-        } catch {
-          if (runRef.current !== runId) return;
-          dispatch({
-            type: "AUTOPLAY_BLOCKED",
-            source: "cloud",
-            message: `第 ${pageIndex + 1} 页 · ${label} 已准备好，请再次点击继续播放。`,
-          });
-          setHighlight(null);
-        }
+        playResolvedCloudPage(
+          runId,
+          pageIndex,
+          mode,
+          result,
+          resumeFromMs,
+          controller.signal,
+        );
       } catch (error) {
         if (runRef.current !== runId || isAbortError(error)) return;
         const reason =
@@ -634,27 +880,42 @@ export default function LibraryNarrationToolbar({
       }
     },
     [
+      bookCover,
+      bookHref,
+      bookTitle,
       cancelCurrentSession,
       chineseAudio,
-      onPageIndexChange,
+      contentId,
+      continuousActive,
       currentPageIndex,
       failPlayback,
       finishPage,
+      getAudioElement,
       languageMode,
+      onBookFinished,
+      onPageIndexChange,
       pages,
       playBrowserFallback,
+      playResolvedCloudPage,
+      playlist,
       preferCloudTts,
       requestCloudAudio,
+      seriesTitle,
       setHighlight,
       storyKey,
+      usesSeriesPlayer,
     ],
   );
 
   const pausePlayback = useCallback(() => {
+    if (usesSeriesPlayer && contentId && seriesAudioPlayer.getActiveStateForBook(contentId)) {
+      seriesAudioPlayer.pause();
+      return;
+    }
     const current = stateRef.current;
     if (current.status !== "playing") return;
     if (current.source === "cloud") {
-      const audio = audioRef.current;
+      const audio = getAudioElement();
       if (!audio) return;
       audio.pause();
       return;
@@ -665,13 +926,17 @@ export default function LibraryNarrationToolbar({
       dispatch({ type: "PAUSED" });
       setHighlight(null);
     }
-  }, [setHighlight]);
+  }, [contentId, getAudioElement, setHighlight, usesSeriesPlayer]);
 
   const resumePlayback = useCallback(async () => {
+    if (usesSeriesPlayer && contentId && seriesAudioPlayer.getActiveStateForBook(contentId)) {
+      await seriesAudioPlayer.resume();
+      return;
+    }
     const current = stateRef.current;
     if (current.status !== "paused") return;
     if (current.source === "cloud") {
-      const audio = audioRef.current;
+      const audio = getAudioElement();
       if (!audio?.src) {
         await startPagePlayback(0);
         return;
@@ -698,7 +963,7 @@ export default function LibraryNarrationToolbar({
       return;
     }
     await startPagePlayback(0);
-  }, [languageMode, setHighlight, startPagePlayback]);
+  }, [contentId, getAudioElement, languageMode, setHighlight, startPagePlayback, usesSeriesPlayer]);
 
   const stopPlayback = useCallback(() => {
     cancelCurrentSession();
@@ -768,8 +1033,153 @@ export default function LibraryNarrationToolbar({
     }, [cancelCurrentSession, languageMode, onLanguageModeChange],
   );
 
+  const applySeriesSnapshot = useCallback(
+    (snapshot: SeriesPlayerState) => {
+      if (!contentId) return;
+      if (snapshot.phase === "idle") {
+        if (attachedToSeriesRef.current) {
+          attachedToSeriesRef.current = false;
+          lastSeriesPhaseRef.current = null;
+          lastSeriesPositionSecondRef.current = -1;
+          lastSeriesPageRef.current = -1;
+          dispatch({ type: "STOPPED" });
+          setHighlight(null);
+        }
+        return;
+      }
+      if (snapshot.bookId !== contentId || snapshot.handoffOnly) {
+        return;
+      }
+      attachedToSeriesRef.current = true;
+      if (snapshot.pageIndex !== lastSeriesPageRef.current) {
+        lastSeriesPageRef.current = snapshot.pageIndex;
+        if (snapshot.pageIndex !== currentPageIndexRef.current) {
+          previousPageIndexRef.current = snapshot.pageIndex;
+          onPageIndexChange(snapshot.pageIndex);
+        }
+      }
+      const posSecond = Math.floor(snapshot.positionMs / 1000);
+      if (
+        posSecond !== lastSeriesPositionSecondRef.current ||
+        stateRef.current.pageIndex !== snapshot.pageIndex ||
+        stateRef.current.durationMs !== snapshot.durationMs
+      ) {
+        lastSeriesPositionSecondRef.current = posSecond;
+        dispatch({
+          type: "TIMELINE_POSITION",
+          pageIndex: snapshot.pageIndex,
+          positionMs: snapshot.positionMs,
+          durationMs: snapshot.durationMs,
+        });
+      }
+      const phaseKey = `${snapshot.phase}:${snapshot.message ?? ""}:${snapshot.error?.message ?? ""}`;
+      if (phaseKey === lastSeriesPhaseRef.current) return;
+      lastSeriesPhaseRef.current = phaseKey;
+
+      switch (snapshot.phase) {
+        case "loading":
+          dispatch({
+            type: "PLAY_REQUESTED",
+            message: snapshot.message ?? `正在准备第 ${snapshot.pageIndex + 1} 页…`,
+          });
+          setHighlight(null);
+          break;
+        case "playing":
+          dispatch({
+            type: "PLAY_STARTED",
+            source: "cloud",
+            message: snapshot.message ?? "中文连续朗读 · 已准备好",
+          });
+          setHighlight(snapshot.languageMode);
+          break;
+        case "paused":
+          if (snapshot.message?.includes("请点击继续播放")) {
+            dispatch({
+              type: "AUTOPLAY_BLOCKED",
+              source: "cloud",
+              message: snapshot.message,
+            });
+          } else {
+            dispatch({
+              type: "PAUSED",
+              positionMs: snapshot.positionMs,
+            });
+          }
+          setHighlight(null);
+          break;
+        case "announcing":
+          dispatch({
+            type: "BOOK_ENDED",
+            message: snapshot.message ?? "即将播放下一本故事",
+          });
+          setHighlight(null);
+          break;
+        case "ended":
+          if (snapshot.pageIndex === pages.length - 1) {
+            dispatch({
+              type: "BOOK_ENDED",
+              message: snapshot.message ?? "整本绘本已播放完毕",
+            });
+          } else {
+            dispatch({
+              type: "PAGE_ENDED",
+              message: snapshot.message ?? "当前页已播放完毕；自动翻页已关闭。",
+            });
+          }
+          setHighlight(null);
+          break;
+        case "error":
+          dispatch({
+            type: "FAILED",
+            error: snapshot.error ?? {
+              code: "audio_failed",
+              message: "播放失败，点击重试。",
+              retryable: true,
+            },
+          });
+          setHighlight(null);
+          break;
+        default:
+          dispatch({ type: "STOPPED" });
+          setHighlight(null);
+          break;
+      }
+    },
+    [contentId, onPageIndexChange, pages.length, setHighlight],
+  );
+
   useEffect(() => {
-    const sync = () => { if (document.visibilityState === "visible") bookTransportRef.current?.sync(); };
+    if (!usesSeriesPlayer || !contentId) return;
+    const active = seriesAudioPlayer.getActiveStateForBook(contentId);
+    if (active) {
+      initialPositionConsumedRef.current = true;
+      autoStartedRef.current = true;
+      applySeriesSnapshot(active);
+    }
+    return seriesAudioPlayer.subscribe((snapshot) => {
+      applySeriesSnapshot(snapshot);
+    });
+  }, [applySeriesSnapshot, contentId, usesSeriesPlayer]);
+
+  useEffect(() => {
+    if (!contentId) return;
+    seriesAudioPlayer.syncSettings(contentId, {
+      continuousPlayback: continuousActive,
+      autoAdvance,
+      playlist,
+      seriesTitle,
+      preferCloudTts,
+      onPerPageBookFinished: onBookFinished,
+    });
+  }, [autoAdvance, contentId, continuousActive, onBookFinished, playlist, preferCloudTts, seriesTitle]);
+
+  useEffect(() => {
+    const sync = () => {
+      if (document.visibilityState === "visible") {
+        seriesAudioPlayer.syncVisibility();
+        bookTransportRef.current?.sync();
+      }
+    };
     document.addEventListener("visibilitychange", sync);
     window.addEventListener("pageshow", sync);
     return () => { document.removeEventListener("visibilitychange", sync); window.removeEventListener("pageshow", sync); };
@@ -780,8 +1190,31 @@ export default function LibraryNarrationToolbar({
   }, [onPlaybackStateChange, state]);
 
   useEffect(() => {
-    cancelCurrentSession();
+    const activeSeries =
+      contentId && usesSeriesPlayer
+        ? seriesAudioPlayer.getActiveStateForBook(contentId)
+        : null;
+    const activeHandoff = Boolean(
+      contentId && seriesAudioPlayer.isPlayingHandoffFor(contentId),
+    );
     cloudAudioCacheRef.current.clear();
+    resolvedCloudAudioRef.current.clear();
+    lastSeriesPhaseRef.current = null;
+    lastSeriesPositionSecondRef.current = -1;
+    lastSeriesPageRef.current = -1;
+
+    if (activeSeries) {
+      previousPageIndexRef.current = activeSeries.pageIndex;
+      previousLanguageModeRef.current = languageMode;
+      initialPositionConsumedRef.current = true;
+      autoStartedRef.current = true;
+      applySeriesSnapshot(activeSeries);
+      return;
+    }
+
+    if (!activeHandoff) {
+      cancelCurrentSession(false);
+    }
     previousPageIndexRef.current = currentPageIndex;
     previousLanguageModeRef.current = languageMode;
     initialPositionConsumedRef.current = false;
@@ -801,6 +1234,10 @@ export default function LibraryNarrationToolbar({
     const previousPageIndex = previousPageIndexRef.current;
     if (previousPageIndex === currentPageIndex) return;
     previousPageIndexRef.current = currentPageIndex;
+    if (usesSeriesPlayer && contentId && seriesAudioPlayer.getActiveStateForBook(contentId)) {
+      seriesAudioPlayer.selectPage(currentPageIndex);
+      return;
+    }
     if (languageMode === "zh" && bookTransportRef.current) {
       if (bookTransportRef.current.pageIndex !== currentPageIndex) bookTransportRef.current.selectPage(currentPageIndex);
       return;
@@ -818,7 +1255,7 @@ export default function LibraryNarrationToolbar({
       const timer = window.setTimeout(() => void startPagePlayback(0), 0);
       return () => window.clearTimeout(timer);
     }
-  }, [cancelCurrentSession, currentPageIndex, languageMode, startPagePlayback]);
+  }, [cancelCurrentSession, contentId, currentPageIndex, languageMode, startPagePlayback, usesSeriesPlayer]);
 
   useEffect(() => {
     const previousMode = previousLanguageModeRef.current;
@@ -847,7 +1284,12 @@ export default function LibraryNarrationToolbar({
     return () => {
       runRef.current += 1;
       sessionAbortRef.current?.abort();
-      clearMedia();
+      handoffUnsubRef.current?.();
+      handoffUnsubRef.current = null;
+      if (!seriesAudioPlayer.isActive()) {
+        clearMedia(false);
+        clearMediaSession();
+      }
       onHighlightChange(null);
     };
   }, [clearMedia, onHighlightChange]);
@@ -863,13 +1305,39 @@ export default function LibraryNarrationToolbar({
     if (!autoStart || autoStartedRef.current || currentPageIndex !== 0 || !turnModeActive) return;
     autoStartedRef.current = true;
     initialPositionConsumedRef.current = true;
+    if (contentId && seriesAudioPlayer.isPlayingHandoffFor(contentId)) {
+      if (preferCloudTts && languageMode !== "zh") {
+        const prefetchController = new AbortController();
+        sessionAbortRef.current = prefetchController;
+        void requestCloudAudio(0, languageMode, prefetchController.signal).catch(
+          () => undefined,
+        );
+      }
+      handoffUnsubRef.current = seriesAudioPlayer.whenHandoffAnnouncementEnds(
+        contentId,
+        () => {
+          handoffUnsubRef.current = null;
+          void startPagePlayback(0);
+        },
+      );
+      return;
+    }
     void startPagePlayback(0);
-  }, [autoStart, currentPageIndex, startPagePlayback, turnModeActive]);
+  }, [
+    autoStart,
+    contentId,
+    currentPageIndex,
+    languageMode,
+    preferCloudTts,
+    requestCloudAudio,
+    startPagePlayback,
+    turnModeActive,
+  ]);
 
   const continuousControl = onContinuousPlaybackChange ? (
     <label className="library-auto-advance-toggle">
       <input type="checkbox" checked={continuousPlayback} onChange={event => onContinuousPlaybackChange(event.target.checked)} />
-      <span>连续播放：听完后从第一页播放同系列下一本</span>
+      <span>连续播放：听完后语音提示并播放同系列下一本</span>
     </label>
   ) : null;
 
@@ -1031,7 +1499,7 @@ export default function LibraryNarrationToolbar({
                 </button>
               </div>
               {continuousControl}
-              <p>{continuousPlayback && onContinuousPlaybackChange ? "按播放列表顺序播放，到系列最后一本停止。" : "听完当前绘本后停止。"}</p>
+              <p>{continuousPlayback && onContinuousPlaybackChange ? "按播放列表顺序播放，切换下一本前会先语音提示，到系列最后一本停止。" : "听完当前绘本后停止。"}</p>
               {state.message ? <p aria-live="polite">{state.message}</p> : null}
             </div>
           </details>
@@ -1136,7 +1604,7 @@ export default function LibraryNarrationToolbar({
           <span>当前页播放完成后自动翻到下一页</span>
         </label>
         {continuousControl}
-              <p>{continuousPlayback && onContinuousPlaybackChange ? "按播放列表顺序播放，到系列最后一本停止。" : "听完当前绘本后停止。"}</p>
+              <p>{continuousPlayback && onContinuousPlaybackChange ? "按播放列表顺序播放，切换下一本前会先语音提示，到系列最后一本停止。" : "听完当前绘本后停止。"}</p>
       </details>
 
       <audio ref={audioRef} preload="metadata" hidden />

@@ -1,0 +1,662 @@
+.backdrop {
+  position: fixed;
+  z-index: 74;
+  inset: 0;
+  background: rgba(37, 31, 25, 0.24);
+  backdrop-filter: blur(2px);
+}
+
+.dockWrap {
+  position: fixed;
+  z-index: 75;
+  left: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  width: min(560px, calc(100vw - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sheet {
+  display: flex;
+  flex-direction: column;
+  max-height: min(58dvh, 420px);
+  overflow: hidden;
+  border: 1px solid rgba(47, 36, 29, 0.14);
+  border-radius: 22px;
+  background: rgba(255, 252, 247, 0.98);
+  color: var(--text);
+  box-shadow: 0 20px 56px rgba(47, 36, 29, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.sheetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 14px 10px 16px;
+  border-bottom: 1px solid rgba(102, 73, 54, 0.1);
+}
+
+.sheetHeading {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.sheetHeading strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.sheetHeading small {
+  flex: 0 0 auto;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.sheetHeaderActions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 6px;
+}
+
+.sheetStopBtn {
+  min-height: 32px;
+  padding: 4px 11px;
+  border: 1px solid rgba(102, 73, 54, 0.16);
+  border-radius: 999px;
+  background: #fff7ef;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.sheetCloseBtn {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.sheetToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-bottom: 1px solid rgba(102, 73, 54, 0.08);
+  background: #fff9f2;
+  color: var(--muted);
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.sheetToggle input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.sheetList {
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.sheetItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 14px;
+  transition: background-color 140ms ease;
+}
+
+.sheetItemActive {
+  background: #fbe9d9;
+}
+
+.sheetItemPlayBtn {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.sheetIndex {
+  flex: 0 0 22px;
+  text-align: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.sheetCover {
+  position: relative;
+  display: grid;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #f1e3d2;
+  color: #8b6647;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.sheetCover img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sheetCopy {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sheetTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.sheetItemActive .sheetTitle {
+  color: var(--accent-dark);
+}
+
+.sheetStatus {
+  font-size: 0.72rem;
+  color: #96623d;
+}
+
+.sheetOpenLink {
+  display: grid;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  margin-right: 4px;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--muted);
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+.dock {
+  overflow: hidden;
+  border: 1px solid rgba(47, 36, 29, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 250, 244, 0.96);
+  color: var(--text);
+  box-shadow: 0 16px 42px rgba(47, 36, 29, 0.2);
+  backdrop-filter: blur(18px);
+}
+
+.progressTrack {
+  position: relative;
+  height: 3px;
+  background: rgba(190, 85, 48, 0.14);
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 220ms linear;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 8px 8px 10px;
+}
+
+.bookLink {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 9px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 12px;
+}
+
+.bookLink:focus-visible,
+.controlBtn:focus-visible,
+.primaryBtn:focus-visible,
+.closeBtn:focus-visible,
+.bubbleBtn:focus-visible,
+.bubbleCloseBtn:focus-visible,
+.sheetStopBtn:focus-visible,
+.sheetCloseBtn:focus-visible,
+.sheetItemPlayBtn:focus-visible,
+.sheetOpenLink:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 2px;
+}
+
+.cover {
+  position: relative;
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f1e3d2;
+  color: #8b6647;
+}
+
+.cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.copy {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  font-size: 0.74rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.metaText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.equalizer {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: flex-end;
+  gap: 2px;
+  height: 11px;
+  color: var(--accent-dark);
+}
+
+.equalizer i {
+  display: block;
+  width: 2px;
+  height: 100%;
+  border-radius: 2px;
+  background: currentColor;
+  animation: mini-player-eq 0.85s ease-in-out infinite alternate;
+}
+
+.equalizer i:nth-child(2) {
+  animation-delay: -0.35s;
+}
+
+.equalizer i:nth-child(3) {
+  animation-delay: -0.6s;
+}
+
+.speakerIcon {
+  flex: 0 0 auto;
+  color: var(--accent-dark);
+}
+
+.controls {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 2px;
+}
+
+.controlBtn,
+.primaryBtn,
+.closeBtn {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.primaryBtn {
+  width: 38px;
+  height: 38px;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(190, 85, 48, 0.25);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.controlBtn {
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  color: var(--text);
+}
+
+.controlBtnActive {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.spinner {
+  animation: mini-player-spin 0.9s linear infinite;
+}
+
+/* Floating vinyl audio bubble when minimized */
+.bubbleWrap {
+  position: fixed;
+  z-index: 75;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+  width: 56px;
+  height: 56px;
+}
+
+.bubbleBtn {
+  position: relative;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 250, 244, 0.96);
+  box-shadow: 0 12px 30px rgba(47, 36, 29, 0.24);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.bubbleRing {
+  position: absolute;
+  inset: 0;
+  width: 56px;
+  height: 56px;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.bubbleRingTrack {
+  fill: none;
+  stroke: rgba(190, 85, 48, 0.18);
+  stroke-width: 3;
+}
+
+.bubbleRingFill {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 220ms linear;
+}
+
+.bubbleCover {
+  position: relative;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f1e3d2;
+  color: #8b6647;
+  animation: mini-player-disc 18s linear infinite;
+  animation-play-state: paused;
+}
+
+.bubbleCoverSpinning {
+  animation-play-state: running;
+}
+
+.bubbleCover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bubbleBadge {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border: 2px solid #fffaf4;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(47, 36, 29, 0.2);
+  pointer-events: none;
+}
+
+.bubbleBadgeMuted {
+  background: #7d6759;
+}
+
+.bubbleEqualizer {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 9px;
+}
+
+.bubbleEqualizer i {
+  display: block;
+  width: 2px;
+  height: 100%;
+  border-radius: 2px;
+  background: #fff;
+  animation: mini-player-eq 0.85s ease-in-out infinite alternate;
+}
+
+.bubbleEqualizer i:nth-child(2) {
+  animation-delay: -0.35s;
+}
+
+.bubbleEqualizer i:nth-child(3) {
+  animation-delay: -0.6s;
+}
+
+.bubbleCloseBtn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: grid;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid rgba(47, 36, 29, 0.14);
+  border-radius: 50%;
+  background: rgba(255, 250, 244, 0.98);
+  color: var(--muted);
+  box-shadow: 0 4px 10px rgba(47, 36, 29, 0.14);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+@keyframes mini-player-eq {
+  from {
+    transform: scaleY(0.3);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes mini-player-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mini-player-disc {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (hover: hover) {
+  .primaryBtn:hover:not(:disabled) {
+    background: var(--accent-dark);
+    transform: scale(1.03);
+  }
+
+  .controlBtn:hover,
+  .closeBtn:hover,
+  .sheetCloseBtn:hover,
+  .sheetOpenLink:hover {
+    background: rgba(102, 73, 54, 0.08);
+  }
+
+  .sheetStopBtn:hover {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+  }
+
+  .sheetItem:not(.sheetItemActive):hover {
+    background: #f6efe6;
+  }
+
+  .bubbleBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(47, 36, 29, 0.28);
+  }
+
+  .bubbleCloseBtn:hover {
+    background: var(--accent-soft);
+    color: var(--accent-dark);
+  }
+}
+
+@media (max-width: 680px) {
+  .dockWrap {
+    left: 12px;
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    transform: none;
+    width: auto;
+  }
+
+  :global(body:has(.family-platform-nav)) .dockWrap {
+    bottom: calc(86px + env(safe-area-inset-bottom));
+  }
+
+  .bubbleWrap {
+    right: max(14px, env(safe-area-inset-right));
+    bottom: max(18px, env(safe-area-inset-bottom));
+  }
+
+  :global(body:has(.family-platform-nav)) .bubbleWrap {
+    bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 479px) {
+  .prevBtn,
+  .desktopOnlyClose,
+  .mobileHideNextWhenIdle {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progressFill,
+  .controlBtn,
+  .primaryBtn,
+  .closeBtn,
+  .bubbleBtn,
+  .bubbleRingFill,
+  .sheetItem {
+    transition: none;
+  }
+
+  .equalizer i,
+  .bubbleEqualizer i,
+  .spinner,
+  .bubbleCover {
+    animation: none;
+  }
+}
