@@ -8,7 +8,20 @@ node_modules/
 public/gift-books/**/*.zip
 
 # raw generation working files kept outside git
-content-drafts
+/content-drafts/*
+!/content-drafts/richang/
+/content-drafts/richang/*
+!/content-drafts/richang/an-an-man-man-shuo.json
+!/content-drafts/richang/batch-53-53/
+/content-drafts/richang/batch-53-53/*
+!/content-drafts/richang/batch-53-53/plan.json
+!/content-drafts/richang/batch-54-54/
+/content-drafts/richang/batch-54-54/*
+!/content-drafts/richang/batch-54-54/asset-audit.json
+!/content-drafts/richang/batch-54-54/image-prompts.json
+!/content-drafts/richang/batch-54-54/manuscript.md
+!/content-drafts/richang/batch-54-54/plan.json
+!/content-drafts/richang/batch-54-54/progress.json
 
 # next
 .next/

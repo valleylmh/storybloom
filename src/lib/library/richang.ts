@@ -52,6 +52,7 @@ import afterSchool from "../../../content-drafts/richang/fang-xue-lu-shang-man-m
 import gateVolunteer from "../../../content-drafts/richang/ma-ma-zai-xiao-men-kou-zhan-gang.json";
 import threeTeachers from "../../../content-drafts/richang/da-ban-de-san-wei-lao-shi.json";
 import surpriseGift from "../../../content-drafts/richang/jin-tian-bu-shi-sheng-ri-ya.json";
+import speakingClass from "../../../content-drafts/richang/an-an-man-man-shuo.json";
 
 type EverydayDraft = {
   book: Omit<LibraryBook, "pages"> & {
@@ -69,7 +70,7 @@ export const RICHANG_BOOKS: LibraryBook[] = [
   angryHands, nextEpisode, misunderstood, shyHello,
   schoolGoodbye, looseTooth, pinyinCurves, wanderingNumbers, bathroomRequest,
   quietNap, joiningPlay, packingBag, classroomHelper, afterSchool, gateVolunteer,
-  threeTeachers, surpriseGift,
+  threeTeachers, surpriseGift, speakingClass,
 ].filter((source) => !source.book.comingSoon).map((source) => {
   const draft = source as EverydayDraft;
   return {

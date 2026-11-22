@@ -1267,5 +1267,30 @@
       220.716
     ],
     "duration": 236.7
+  },
+  "richang/an-an-man-man-shuo": {
+    "url": "/library/richang/an-an-man-man-shuo/zh-72c108efe5ce04df.mp3",
+    "contentHash": "72c108efe5ce04df291263d9f28c9d3264a0ee8b0e1359dc094293cfeffac321",
+    "pageStarts": [
+      0,
+      13.548,
+      26.784,
+      38.988,
+      50.952,
+      65.868,
+      78.216,
+      90.9,
+      104.856,
+      117.132,
+      129.096,
+      142.74,
+      157.248,
+      167.844,
+      180.6,
+      193.524,
+      207,
+      221.196
+    ],
+    "duration": 233.484
   }
 }

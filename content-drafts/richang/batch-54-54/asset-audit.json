@@ -1,0 +1,180 @@
+{
+  "batch": "batch-54-54",
+  "checkedAt": "2026-11-22T09:02:24.623Z",
+  "passed": true,
+  "books": [
+    {
+      "id": "an-an-man-man-shuo",
+      "title": "安安，慢慢说",
+      "order": 54,
+      "pages": 18,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/an-an-man-man-shuo/1.webp",
+          "bytes": 242120,
+          "sha256": "eeb6428cc4e4824fceb9845451960ed035304f8e3fa82d2bc9d1d0d14222ecae"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/an-an-man-man-shuo/2.webp",
+          "bytes": 180826,
+          "sha256": "6d605e592ad9d44b31c466fe85fc4a1b38f6b6fd3c6e5a3c94c445a30bf0a453"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/an-an-man-man-shuo/3.webp",
+          "bytes": 243592,
+          "sha256": "7b26ce72c9dc7803d41734688fec296e3f81f6244b4946c20d201f800fb6d891"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/an-an-man-man-shuo/4.webp",
+          "bytes": 233296,
+          "sha256": "f351186e080ec5dd83718dd4d4d69396980c4c0a30acd84b526d05f61643acb2"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/an-an-man-man-shuo/5.webp",
+          "bytes": 159354,
+          "sha256": "606f3655e5c11a2d9d75508a6661c3fbfbaba7bfdeec9ebf07528436526b8c22"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/an-an-man-man-shuo/6.webp",
+          "bytes": 176046,
+          "sha256": "3e24c97a8c40688560f5fddc3db84485f6e0e44dd9bfa98364197a0503fe3eec"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/an-an-man-man-shuo/7.webp",
+          "bytes": 264124,
+          "sha256": "702a8892925f09daf41e950b46d3131a54e2ce47a14fe534959cc4038dcdd7aa"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/an-an-man-man-shuo/8.webp",
+          "bytes": 191152,
+          "sha256": "987cc195b9eaecdfddb2b5709c7c317701e8866cc0a3df5aaabbe5ed23e8de51"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/an-an-man-man-shuo/9.webp",
+          "bytes": 215492,
+          "sha256": "dee6cc0550540b6007f23d9cdbf048447c36d4c21ab20417e6ede037f69ec07e"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/an-an-man-man-shuo/10.webp",
+          "bytes": 248016,
+          "sha256": "335aa8aefd63acd67da89e4828719e074ca75e8a8d45725fafba59995de82b76"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/an-an-man-man-shuo/11.webp",
+          "bytes": 236490,
+          "sha256": "68d5ed5291031328a9eb1f0f12bce16867b3a0c7dff6125411b2acc409555d2c"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/an-an-man-man-shuo/12.webp",
+          "bytes": 173094,
+          "sha256": "145ec574c46545769e3602fa82d3b00daedeb4bb1e683fd387a50564cf51ae59"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/an-an-man-man-shuo/13.webp",
+          "bytes": 142996,
+          "sha256": "f9e420ecdcff8c07ecf3800e8a86fcf64f8546e702d232959a543a1e6212592a"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/an-an-man-man-shuo/14.webp",
+          "bytes": 227538,
+          "sha256": "1866806887af08e784e857abdede65160ca43a196cd6e513c5e892d6731f9ae1"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/an-an-man-man-shuo/15.webp",
+          "bytes": 215606,
+          "sha256": "9aab2d8e2ab4be1541abae984df03f0a09264bb1fff902c411b3e3cac1a0bb70"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/an-an-man-man-shuo/16.webp",
+          "bytes": 282846,
+          "sha256": "1deb95dc9c65219adeee8a729fac45199b31ec4b44a7e51965add4c64023b3d6"
+        },
+        {
+          "page": 17,
+          "url": "/library/richang/an-an-man-man-shuo/17.webp",
+          "bytes": 216240,
+          "sha256": "9bbb61eed1b33ac8a6cfc9baf49ac1013b22870bc6f7af970d0847ae1cf91911"
+        },
+        {
+          "page": 18,
+          "url": "/library/richang/an-an-man-man-shuo/18.webp",
+          "bytes": 170040,
+          "sha256": "1aa7f12d0355a18323a7296df7a5297288d2c6e821036f378df6fb3723f4b903"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/an-an-man-man-shuo/zh-72c108efe5ce04df.mp3",
+        "contentHash": "72c108efe5ce04df291263d9f28c9d3264a0ee8b0e1359dc094293cfeffac321",
+        "pageStarts": [
+          0,
+          13.548,
+          26.784,
+          38.988,
+          50.952,
+          65.868,
+          78.216,
+          90.9,
+          104.856,
+          117.132,
+          129.096,
+          142.74,
+          157.248,
+          167.844,
+          180.6,
+          193.524,
+          207,
+          221.196
+        ],
+        "duration": 233.484,
+        "bytes": 1868589,
+        "sha256": "836b70a97a4a3d60bb7988df8005dfe0d24ff18fee5bc5cd4322c208b48973f1",
+        "decodedSeconds": 233.484,
+        "pageRms": [
+          0.072352,
+          0.065789,
+          0.065631,
+          0.065026,
+          0.064561,
+          0.077412,
+          0.068439,
+          0.064744,
+          0.067962,
+          0.06345,
+          0.063197,
+          0.071019,
+          0.068184,
+          0.069586,
+          0.071553,
+          0.066986,
+          0.074397,
+          0.071573
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "totals": {
+    "expectedBooks": 1,
+    "checkedBooks": 1,
+    "expectedPages": 18,
+    "images": 18,
+    "audioFiles": 1,
+    "narrationSeconds": 233.484
+  }
+}

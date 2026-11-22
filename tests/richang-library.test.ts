@@ -17,9 +17,10 @@ import batch5Plan from "../content-drafts/richang/batch-41-50/plan.json";
 import batch6Plan from "../content-drafts/richang/batch-51-51/plan.json";
 import batch7Plan from "../content-drafts/richang/batch-52-52/plan.json";
 import batch8Plan from "../content-drafts/richang/batch-53-53/plan.json";
+import batch9Plan from "../content-drafts/richang/batch-54-54/plan.json";
 
 const FIRST_IDS = ["lan-ping-guo", "she-bu-de-chuan-de-xin-xie", "te-bie-de-ri-zi-shi-na-tian", "wan-ju-shan-li-zhao-xiao-che", "zai-wan-wu-fen-zhong", "wo-de-bing-gan-zen-me-geng-xiao", "yi-bei-da-fan-de-niu-nai", "deng-wo-xin-qing-hao-le-zai-shuo", "zen-me-zhi-you-wo-zai-shou-shi", "bu-tai-wan-mei-de-ye-can"];
-const expandedBooks = [...batch2Plan.books, ...batch3Plan.books, ...batch4Plan.books, ...batch5Plan.books, ...batch6Plan.books, ...batch7Plan.books, ...batch8Plan.books];
+const expandedBooks = [...batch2Plan.books, ...batch3Plan.books, ...batch4Plan.books, ...batch5Plan.books, ...batch6Plan.books, ...batch7Plan.books, ...batch8Plan.books, ...batch9Plan.books];
 const IDS = [...FIRST_IDS, ...expandedBooks.map(({ id }) => id)];
 const PAGE_COUNTS = [16, 12, 12, 12, 12, 12, 12, 12, 12, 12, ...expandedBooks.map(({ pages }) => pages)];
 
@@ -153,6 +154,7 @@ describe("Everyday human-character library", () => {
     expect(filterLibraryBooks(summaries, { query: "烂苹果", filters: { category: "family-growth", seriesId: "richang", language: "bilingual" } }).map((book) => book.id)).toEqual([IDS[0]]);
     const urls = sitemap().filter((entry) => !new URL(entry.url).pathname.startsWith("/en/")).map((entry) => entry.url);
     expect(urls.some((url) => url.endsWith("/library/richang"))).toBe(true);
+    expect(sitemap().some(({ url }) => new URL(url).pathname === "/en/library/everyday-stories/one-small-pause-anan")).toBe(true);
     for (const [index, id] of IDS.entries()) {
       expect(urls.some((url) => url.endsWith(`/library/richang/${id}`))).toBe(true);
       expect(getAdjacentBooks("richang", id).previous?.id ?? null).toBe(IDS[index - 1] ?? null);

@@ -1,0 +1,13 @@
+{
+  "approved": true,
+  "approvedAt": "2026-11-22",
+  "totalPages": 18,
+  "books": [
+    {
+      "id": "an-an-man-man-shuo",
+      "title": "安安，慢慢说",
+      "pages": 18,
+      "order": 54
+    }
+  ]
+}

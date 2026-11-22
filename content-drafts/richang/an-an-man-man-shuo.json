@@ -1,0 +1,260 @@
+{
+  "book": {
+    "id": "an-an-man-man-shuo",
+    "seriesId": "richang",
+    "title": "安安，慢慢说",
+    "subtitle": "在之江少年宫练习《八百标兵》",
+    "moral": {
+      "zh": "说话可以有自己的节奏。分一小句，停一拍，听的人就跟得上了。",
+      "en": "You can speak at your own pace. Say one short phrase, pause for a beat, and give your listener time to follow."
+    },
+    "ageLabel": "4–8 岁",
+    "publishedAt": "2026-11-22",
+    "order": 54,
+    "comingSoon": false,
+    "pages": [
+      {
+        "page": 1,
+        "zhText": "星期六，安安背着橙色小书包，和妈妈来到之江少年宫。今天，她要上第一节口才培训课。玻璃门一开，安安就看见大厅里挂着一串圆圆的彩纸。",
+        "enText": "On Saturday, An’an and Mom arrived at the Zhijiang Children’s Palace. An’an had her orange backpack on for her first speaking class. As the glass doors opened, she saw a string of colorful paper circles in the lobby.",
+        "illustrationPrompt": "An’an and Mom walk toward open glass doors of a contemporary children’s arts center, with colorful hanging paper circles visible in the airy lobby. Child wears one orange backpack. Wide establishing view from slightly behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square 1:1 text-free picture-book illustration, warm stylized 3D animation, soft natural daylight, rounded tactile materials, expressive child-scale framing. A six-year-old Chinese girl with round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, and red-trimmed white sneakers. Mom has black shoulder-length hair, coral cardigan, and cream trousers. THIS PAGE'S SCENE: The girl and her mom walk toward open glass doors of a contemporary children’s arts center, with colorful hanging paper circles visible in the airy lobby. Child wears one orange backpack. Wide establishing view from slightly behind, the girl's smiling profile in view. Clean glass architecture, planted grasses at the entry. No lettering, logos, captions or visible signage.",
+        "generatedSource": "output/imagegen/richang-54/page-01.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 2,
+        "zhText": "“妈妈我看见一只小鸟它站在栏杆上我一走近它就飞了！”安安一口气说完。妈妈只听清了开头，蹲下来问：“小鸟刚才站在哪儿呀？”",
+        "enText": "“Mom I saw a bird it was on the railing and it flew away when I got close!” An’an said in one breath. Mom only caught the beginning. She crouched down and asked, “Where was the little bird standing?”",
+        "illustrationPrompt": "At the lobby window, Mom crouches to listen at An’an’s eye level. The girl gestures excitedly with open hands while wearing the orange backpack. Paper circles appear softly out of focus above. No bird appears.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square 1:1 text-free picture-book illustration, warm stylized 3D animation, soft natural daylight, rounded tactile materials, expressive child-scale framing. A six-year-old Chinese girl with round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, and red-trimmed white sneakers. Mom has black shoulder-length hair, coral cardigan, and cream trousers. THIS PAGE'S SCENE: At the lobby window of a modern arts center, Mom crouches to listen at the girl’s eye level. The girl gestures excitedly with open hands while wearing her one orange backpack. Hanging colorful paper circles softly out of focus above. Quiet architectural background. No bird in frame. No lettering, logos, captions or visible signage.",
+        "generatedSource": "output/imagegen/richang-54/page-02.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 3,
+        "zhText": "“栏杆上！”安安指给妈妈看。刚好，教室门开了，徐老师探出头来：“来，给你的声音找个座位。”安安笑了。声音也要坐下来吗？",
+        "enText": "“On the railing!” An’an pointed it out to Mom. Just then, the classroom door opened. Teacher Xu peeked out. “Come in and find a seat for your voice!” An’an laughed. Did voices need seats, too?",
+        "illustrationPrompt": "Teacher Xu, an adult Chinese woman with a jaw-length dark bob tucked behind one ear, round dark glasses, indigo blouse, and cream trousers, holds open a mint classroom door and smiles at An’an. Girl is seen from behind with orange backpack. Oak floor, semicircle of pale wooden stools, oval yellow rug visible within.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square 1:1 text-free picture-book illustration, warm stylized 3D animation, soft natural daylight, rounded tactile materials, expressive child-scale framing. Keep each shown character consistent. No readable text or logos. THIS PAGE'S SCENE: Teacher Xu, an adult Chinese woman with a jaw-length dark bob tucked behind one ear, round dark glasses, indigo blouse, and cream trousers, holds open a mint classroom door and smiles at An’an. Girl is seen from behind with orange backpack. Oak floor, semicircle of pale wooden stools, oval yellow rug visible within. Use reference for the child only: black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. The mother is off frame. Establish the teacher clearly, no other adults.",
+        "generatedSource": "output/imagegen/richang-54/page-03.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 4,
+        "zhText": "安安把书包放到门边，和几个小朋友围着一块黄地毯坐下来。徐老师拍拍膝盖，问：“说话说得太急的时候，句子听起来会是什么样？”",
+        "enText": "An’an set her backpack by the door and sat with a few children around a yellow rug. Teacher Xu patted her knees. “What does a sentence sound like when it comes out in a rush?”",
+        "illustrationPrompt": "Wide classroom view. Teacher Xu sits on a low stool beside an oval yellow rug, patting her knees. An’an and two children sit in a semicircle on low stools. One orange backpack rests against the mint door, away from the children.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square text-free warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Teacher: Chinese woman with jaw-length black bob tucked behind one ear, round dark glasses, indigo blouse, cream trousers. THIS PAGE'S SCENE: Wide view of a speaking classroom. The teacher sits by an oval yellow rug and pats her knees. The girl and two other children sit on pale wood stools in a semicircle, listening. The girl’s single orange backpack rests against the mint classroom door. Warm oak floor, clean geometry, gentle faces, no text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-04.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 5,
+        "zhText": "徐老师拿起一张画着两只小鼓的卡片：“今天我们练一个绕口令，叫《八百标兵》。”她先念了一小段：“八百标兵，奔北坡。”安安听见，中间有一点点空当。",
+        "enText": "Teacher Xu held up a card with two little drums on it. “Today’s tongue twister is called ‘Eight Hundred Soldiers.’” She began with one short line: “Eight hundred soldiers … hurry up the north slope.” An’an heard a tiny gap in the middle.",
+        "illustrationPrompt": "View over An’an’s shoulder as Teacher Xu holds up a small white card with two simple drum pictures and speaks gently. Yellow rug and low stools in the background. Nothing written on the card.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square text-free warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Teacher: Chinese woman with jaw-length black bob tucked behind one ear, round dark glasses, indigo blouse, cream trousers. THIS PAGE'S SCENE: View over the girl’s teal shoulder toward the seated teacher holding up a white card with two simple colored drum drawings, gently speaking in a brightly lit children’s classroom with an oval yellow rug and low oak stools. Card features pictures of drums only, no text, no logos.",
+        "generatedSource": "output/imagegen/richang-54/page-05.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 6,
+        "zhText": "“八百标兵奔北坡！”轮到安安了。她一下子冲到句尾，“标兵”和“奔”挤在一起，听上去像玩具小火车撞了车。安安捂着嘴笑了。",
+        "enText": "“Eight hundred soldiers hurry up the north slope!” An’an raced to the end. The words bumped together like toy train cars. She covered her mouth and giggled.",
+        "illustrationPrompt": "Close child-level portrait of An’an giggling into one hand after racing through the line, one yellow star clip visible. Softly blurred teachers’ stool, yellow rug and warm classroom behind. No symbolic train or speech bubble.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square text-free warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. THIS PAGE'S SCENE: Close child-level portrait in a public speaking classroom. The girl giggles into one small hand after rushing through a tongue twister, eyes crinkly, seated on a short wooden stool. A blurred oval yellow rug and oak floor ground the setting. Only the girl is visible. Gentle unembarrassed delight. No text, graphics or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-06.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 7,
+        "zhText": "徐老师从篮子里拿出两块蓝积木，摆在地毯上，中间留了一道缝。“这一块是‘八百标兵’，那一块是‘奔北坡’。说完第一小段，就在缝这儿停一拍。”",
+        "enText": "Teacher Xu set two blue blocks on the rug with a little gap between them. “This one is ‘eight hundred soldiers.’ That one is ‘hurry up the north slope.’ After the first part, pause for one beat right here in the gap.”",
+        "illustrationPrompt": "Near overhead close-up of exactly two plain blue wooden cube blocks with a clear finger-width gap on the oval yellow rug. Teacher Xu’s index finger points into the empty gap. No letters or diagrams.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square text-free warm 3D animated picture-book art, rounded tactile materials, soft daylight. THIS PAGE'S SCENE: Close, nearly overhead view of exactly two separate solid blue wooden cube blocks of equal size, aligned in a simple left-to-right row with a clear finger-width gap on a rich yellow woven rug. An adult woman’s natural index finger from an indigo blouse sleeve points down into the empty space between the blocks. Make that empty space the focus of the picture. No faces, letters, diagrams, labels or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-07.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 8,
+        "zhText": "安安指着第一块积木：“八百标兵。”她把手停在两块积木中间，轻轻吸了口气。“奔北坡。”这一次，几个字稳稳地落到了第二块积木上。",
+        "enText": "An’an pointed at the first block. “Eight hundred soldiers.” Her finger stopped between the blocks, and she took a small breath. “Hurry up the north slope.” This time, every word landed right where it belonged.",
+        "illustrationPrompt": "Side-on close-up of An’an kneeling at the yellow rug, one finger hovering in the gap between two blue cube blocks. Her face is visible in profile, lips relaxed as she takes a small breath. Classroom daylight.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square text-free warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. THIS PAGE'S SCENE: Low side-on close view of the girl kneeling on an oval yellow rug, her extended index finger pausing above the clear gap between exactly two plain blue wooden cube blocks. Her face is visible in left profile, lips relaxed as she takes a small breath, a natural quiet moment in a bright classroom. No other people or distracting props. No letters or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-08.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 9,
+        "zhText": "“我听清啦，是北坡！”旁边的小朋友说。安安把手收回来，又念了一遍。这一回，手没有指积木，膝盖上倒多了一声轻轻的“嗒”。",
+        "enText": "“I heard it! The north slope!” said the child beside her. An’an tried the line again. This time she kept her hand off the blocks and gave her knee a soft tap instead.",
+        "illustrationPrompt": "An’an and a child beside her sit on low stools by the yellow rug. The other child has short black hair and a cream sweater with charcoal stripes and smiles in recognition. An’an gently taps one knee. The two blue cubes remain on the rug.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. THIS PAGE'S SCENE: The girl and a Chinese classmate with short tousled black hair, a cream sweater with charcoal horizontal stripes, and olive pants, sit on pale oak stools beside a large oval yellow rug. The classmate smiles in recognition. The girl gently taps one of her own knees. Exactly two separate blue wooden cubes on the rug. Mint-painted classroom door and warm wood furniture. Medium two-shot at child-eye level. No text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-09-revised.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 10,
+        "zhText": "徐老师接着念：“炮兵并排，北边跑。”安安把“并排”说成了“北排”。她停下来，听徐老师又念了一次，再从“炮兵”接着往下说。",
+        "enText": "Teacher Xu went on: “The artillery crew runs side by side toward the north.” An’an mixed up two sounds in the words for “side by side.” She stopped to listen, then tried that part again from the beginning.",
+        "illustrationPrompt": "Medium two-shot in the classroom: Teacher Xu models a word gently at An’an’s level, and An’an listens with her hands resting on her knees. Unhurried expressions. The drum card rests face down beside Teacher Xu.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Teacher: Chinese woman with jaw-length black bob tucked behind one ear, round dark glasses, indigo blouse, cream trousers. THIS PAGE'S SCENE: Medium two-shot beside an oval yellow rug. Seated teacher leans down to model a tricky word gently at child's eye level, one small open hand gesture. Child on a low wooden stool listens with her hands resting on her knees. A white card rests face down on teacher’s spare stool. No text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-10.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 11,
+        "zhText": "接下来，徐老师拍一下膝盖，安安就念一小句：“炮兵怕把标兵碰。”她停了一拍，再念：“标兵怕碰炮兵炮。”两个“怕”说得清清楚楚。",
+        "enText": "Teacher Xu tapped a knee, and An’an said one short line. “The artillery crew is afraid of bumping the soldiers.” An’an paused for a beat. “The soldiers are afraid of bumping the crew’s cannons.” Both lines came out clear.",
+        "illustrationPrompt": "Classroom side view. An’an speaks from her stool with a small confident smile while Teacher Xu taps a knee softly to mark the beat. The other children are listening, seated in the same semicircle. Show the speaking class only.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Teacher: Chinese woman with jaw-length black bob tucked behind one ear, round dark glasses, indigo blouse, cream trousers. THIS PAGE'S SCENE: Classroom side view. The girl speaks from a pale oak stool with a small confident smile while teacher softly touches her own knee to mark a beat. Two classmates sit listening in the same semicircle beside an oval yellow rug with two blue cubes. Cozy positive atmosphere. No text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-11.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 12,
+        "zhText": "快下课了，徐老师问：“谁愿意把四句连起来念一遍？”安安举起手。她念完前两句，在心里数了一个“一”，才接着念后两句。念到最后，她还能听清自己的声音。",
+        "enText": "Near the end of class, Teacher Xu asked, “Who would like to put all four lines together?” An’an raised her hand. After the first two lines, she counted one quiet beat in her head, then said the last two. She could hear every word she said.",
+        "illustrationPrompt": "Over Teacher Xu’s shoulder toward An’an raising one hand willingly from her seat. The other children remain relaxed on the pale wooden stools. Low warm sunlight, yellow rug and two blue blocks in place.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Teacher: Chinese woman with jaw-length black bob tucked behind one ear, round dark glasses, indigo blouse, cream trousers. THIS PAGE'S SCENE: Over the seated teacher’s indigo shoulder toward the girl raising one hand voluntarily from her pale oak stool. Two classmates sit relaxed. Low warm sunlight on the oval yellow rug and two blue blocks. Show the girl’s quietly proud face at the center of the frame. No text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-12.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 13,
+        "zhText": "下课铃响了，妈妈在门口等安安。安安背好小书包，张嘴就想把一整节课都讲出来。话到了嘴边，她先拍了拍自己的膝盖。",
+        "enText": "When class ended, Mom was waiting in the doorway. An’an put on her backpack and opened her mouth to tell her everything at once. Just before she started, she tapped her knee.",
+        "illustrationPrompt": "At the mint classroom door, An’an stands with her single orange backpack on, pausing to lightly tap one knee. Mom stands nearby in the hallway, turned toward her, waiting warmly. Afternoon light.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Mom has black shoulder-length hair, coral cardigan, cream trousers. THIS PAGE'S SCENE: At the mint classroom door the girl has one orange backpack and is bending her knees slightly, lightly patting one knee before speaking. Mom waits warmly, turned toward the girl in an airy hallway with oak floor. Afternoon light. Only mother and daughter. No text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-13.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 14,
+        "zhText": "“我们念了《八百标兵》。”安安停一下。“我把‘并排’说错了，后来又试了一遍。”妈妈问：“你后来怎么念的？”安安仰起脸，把“并排”慢慢念给妈妈听。",
+        "enText": "“We said ‘Eight Hundred Soldiers,’” An’an began. She paused. “I mixed up ‘side by side,’ and then I tried it again.” Mom asked, “How did you say it the next time?” An’an looked up and said the words slowly for her.",
+        "illustrationPrompt": "Seated in lobby on a low oak bench, An’an looks up and speaks to Mom. Mom leans slightly toward her to listen. Orange backpack is worn by An’an. Bright paper circles are visible in the distance.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Mom has black shoulder-length hair, coral cardigan, cream trousers. THIS PAGE'S SCENE: On a low oak bench in the airy lobby of a modern children’s center, the girl looks up and speaks to Mom, who leans in with a listening expression. One orange backpack is worn by the girl. Bright hanging paper circles in the distance. Quiet, attentive body language. No text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-14.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 15,
+        "zhText": "走出少年宫，安安一抬头，又看见了那只小鸟。它跳上栏杆，歪着小脑袋。安安拉拉妈妈的袖口，压低了声音：“妈妈，小鸟回来了。”",
+        "enText": "Outside the Children’s Palace, An’an looked up and saw the little bird again. It hopped onto the railing and tilted its head. An’an tugged Mom’s sleeve and whispered, “Mom, the bird is back.”",
+        "illustrationPrompt": "Outside the contemporary arts center, An’an tugs Mom’s coral sleeve gently and looks toward one small brown sparrow perched on a low dark metal railing. Show child, mother and bird in the same frame. Orange backpack stays on the girl.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Mom has black shoulder-length hair, coral cardigan, cream trousers. THIS PAGE'S SCENE: Outside a contemporary glass arts center, the girl tugs Mom’s coral sleeve gently and whispers as they spot one small brown sparrow on a low dark metal railing. All three visible. One orange backpack on girl. Planted grasses near the entry, look through the foreground toward the bird, no text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-15.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 16,
+        "zhText": "小鸟扑扇着翅膀飞了。“它刚才跳了两下。”安安停了一拍，又指了指树梢，“然后飞到树上去了。”妈妈顺着她的手指看过去：“我也看见了！”",
+        "enText": "The bird flapped its wings and flew off. “It hopped twice.” An’an paused for a beat and pointed toward the treetop. “Then it flew up into the tree.” Mom followed her finger. “I saw it, too!”",
+        "illustrationPrompt": "Low angle near the path outside the arts center, An’an points to one small brown sparrow near the leafy tree canopy while Mom follows the gesture with her eyes. Railing stays empty. One orange backpack on An’an.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, soft daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans, red-trimmed white sneakers. Mom has black shoulder-length hair, coral cardigan, cream trousers. THIS PAGE'S SCENE: Low angle on a path near a glass arts center. The girl points up toward one small brown sparrow flying by a leafy tree canopy; Mom follows her gesture with her eyes. One orange backpack on the girl. Low dark railing stays empty. Playful open sky, no text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-16.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 17,
+        "zhText": "晚饭时，安安在桌角摆了两块蓝积木，中间也留了一道缝。轮到妈妈念，妈妈也把几个字说挤了。安安学着徐老师的样子，指指那道缝：“在这里，等一拍。”",
+        "enText": "At dinner, An’an set two blue blocks on one corner of the table and left a gap between them. When it was Mom’s turn, some of her words bumped together, too. An’an pointed to the gap, just like Teacher Xu. “Wait one beat right here.”",
+        "illustrationPrompt": "At home by the oak dining table, in a corner clear of dishes, exactly two plain blue wooden cubes stand with a small gap. An’an points into the gap while Mom tries the tongue twister, smiling mid-word. Soft warm evening light and pastel green kitchen behind.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, warm evening daylight. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans. Mom has shoulder-length black hair, coral cardigan and cream trousers. THIS PAGE'S SCENE: At home looking slightly downward onto an oak dinner table, girl points straight down into a clearly visible EMPTY gap between two solid blue wooden cube blocks. The clear empty space between the blocks is one full cube-width, both cubes in the lower-center foreground, visibly and well separated, not in contact; the girl's fingertip hovers midway in the empty space between the blue cubes. Mom smiles as she tries a tongue twister. Pastel green kitchen behind. No text, lettering or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-17-revised.png",
+        "generationPromptScope": "full"
+      },
+      {
+        "page": 18,
+        "zhText": "妈妈又念了一遍。说到积木中间，两个人谁也没出声。那一小拍里，安安听见了窗外的一声鸟叫。她笑了笑，等妈妈把后半句说完。",
+        "enText": "Mom tried again. When she reached the gap between the blocks, they both went quiet. In that one little beat, An’an heard a bird outside. She smiled and waited for Mom to finish the line.",
+        "illustrationPrompt": "Quiet closing view from the side of the oak table: An’an smiles and listens while Mom pauses, a pair of separated blue cubes visible in the foreground. Evening window and leafy shadows behind, bird heard but not shown. Intimate and still.",
+        "imageStatus": "complete",
+        "generatedWith": "builtin-imagegen",
+        "generationPrompt": "Square warm 3D animated picture-book art, rounded tactile materials, warm natural evening light. Girl: Chinese age six, round face, ear-length black bob, yellow star clip on her left, teal zip hoodie, blue jeans. Mom has black shoulder-length hair, coral cardigan, cream trousers. THIS PAGE'S SCENE: Intimate quiet closing view from the side of a home’s oak table. Girl smiles and listens while Mom pauses with a soft closed-mouth smile. Exactly two plain blue wood cubes with a small gap, visible in the lower foreground. Pastel green kitchen and dusky window with leafy shadows in the background. No bird visible. No text or logos.",
+        "generatedSource": "output/imagegen/richang-54/page-18.png",
+        "generationPromptScope": "full"
+      }
+    ],
+    "metadata": {
+      "category": "family-growth",
+      "ageRange": {
+        "min": 4,
+        "max": 8
+      },
+      "estimatedMinutes": 6,
+      "languages": [
+        "zh",
+        "en"
+      ],
+      "seriesId": "richang",
+      "seriesOrder": 54,
+      "personalizationEnabled": false,
+      "tags": [
+        "日常系列",
+        "亲子共读",
+        "之江少年宫",
+        "口才培训",
+        "八百标兵",
+        "绕口令",
+        "表达与倾听"
+      ],
+      "featured": false,
+      "bedtimeSuitable": true
+    },
+    "parentGuide": {
+      "goal": "让孩子发现，兴奋时也可以用分句和短暂停顿，把想分享的事说清楚。",
+      "reminder": "先听完孩子的话，再复述听清的部分。需要重听时，可以具体地问“你刚才说哪只鸟？”，等孩子自己接着说。",
+      "questions": [
+        "安安第一次念绕口令时，发现哪几个字容易挤在一起？",
+        "回家路上，安安在哪两句话之间停了一拍？"
+      ],
+      "activity": "玩“拍一拍，再接一句”。孩子挑一句想说的话，在两个意思之间轻拍一下膝盖，然后接着说。家长说说自己听到了什么，再交换角色。",
+      "ageTips": {
+        "age4to5": "用两块积木摆出两个短语，选一小句试试停一拍。",
+        "age6to8": "试着给自己想讲的一件事分两小句，让听的人复述听到的顺序。"
+      }
+    }
+  },
+  "imagePromptKit": {
+    "globalStyle": "Use case: illustration-story. Premium polished 3D animated-film children's picture-book illustration, matching the existing city vehicle series, rounded human cartoon characters, soft clay-like materials, warm realistic urban home environments, expressive faces, cinematic light, square 1:1 composition. One coherent scene, no collage.",
+    "characterConsistency": "安安 (An'an): six-year-old Chinese girl, round face, ear-length straight black bob, yellow star hairclip on her left, teal hoodie, blue jeans, white sneakers with red trim. Mom: shoulder-length black hair, coral cardigan, cream trousers. Dad: short black hair, navy sweater, beige trousers. Grandma: short silver bob, lavender cardigan. Friend Lele: six-year-old Chinese boy, short black hair, mustard sweatshirt, navy trousers. Keep each person's identity, hair, clothing and proportions consistent. Include only people specified in this page's scene. Teacher Xu wears round dark glasses, a jaw-length black bob tucked behind one ear, an indigo blouse, and cream trousers.",
+    "negative": "No text, letters, captions, speech bubbles, labels, numbers, logos, watermark, anthropomorphic animals, animal families, distorted hands, duplicate characters, scary imagery. Never show anyone eating rotten or moldy food."
+  }
+}

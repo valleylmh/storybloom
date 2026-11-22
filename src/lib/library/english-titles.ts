@@ -407,6 +407,7 @@ export const ENGLISH_BOOKS: Record<string, { title: string; slug: string }> = {
   "richang/ma-ma-zai-xiao-men-kou-zhan-gang": { title: "Mom Is on Duty at the School Gate Today", slug: "mom-is-on-duty-at-the-school-gate-today" },
   "richang/da-ban-de-san-wei-lao-shi": { title: "The Three Teachers in My Class", slug: "the-three-teachers-in-my-class" },
   "richang/jin-tian-bu-shi-sheng-ri-ya": { title: "But It's Not a Birthday Today", slug: "but-its-not-a-birthday-today" },
+  "richang/an-an-man-man-shuo": { title: "One Small Pause, An'an", slug: "one-small-pause-anan" },
 };
 
 export function bookEnglishTitle(book: LibraryBook): string {
