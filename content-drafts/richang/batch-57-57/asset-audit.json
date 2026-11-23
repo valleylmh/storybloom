@@ -1,0 +1,164 @@
+{
+  "batch": "batch-57-57",
+  "checkedAt": "2026-11-23T03:24:21.097Z",
+  "passed": true,
+  "books": [
+    {
+      "id": "mao-mao-chong-xiang-qian-chong",
+      "title": "毛毛虫向前冲",
+      "order": 57,
+      "pages": 16,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/1.webp",
+          "bytes": 283534,
+          "sha256": "8c4a61384811b08e21c9446e2d3746c3567855799b21ef9abeb79648eeca45a6"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/2.webp",
+          "bytes": 268718,
+          "sha256": "c327afb90b4cf4c7bfb190fdb4ca1bb59408db209e91026f4d431243dd335dcf"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/3.webp",
+          "bytes": 256838,
+          "sha256": "852849196926cd4dce1031ca62949eb3cb49525fcb3df030dd6e313315c0085a"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/4.webp",
+          "bytes": 287608,
+          "sha256": "cddde88a9aaa723c7ed9e36ef5d3405f05429373e0e89fd58d952773d82855ba"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/5.webp",
+          "bytes": 225722,
+          "sha256": "747946dce21138fd5eb0a285543d7fd51d8dc5057299e2ac573467467cf7eec1"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/6.webp",
+          "bytes": 279088,
+          "sha256": "86f5aa11df5226ba4fc3e1aacb52150e9a86e02cb16171e8b88c34c2648eb7c8"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/7.webp",
+          "bytes": 259736,
+          "sha256": "2225e06e3c43502f1ec0e75f5bae1191fcc11f28b0c0c60840b016338b372fe1"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/8.webp",
+          "bytes": 276306,
+          "sha256": "d8e81a53960faa2130a06e9dab4cf9cd5b249e0258d8f9d35cc280b8a180f2ca"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/9.webp",
+          "bytes": 267366,
+          "sha256": "ac9879343fe82a66ec5b876e35a317ecc86b2d06c75df959b94fad9854c1d705"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/10.webp",
+          "bytes": 262642,
+          "sha256": "038b69819c3da5cbd36d847f0841708dc95ccd7984311cc95da75bfcbb47629f"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/11.webp",
+          "bytes": 206508,
+          "sha256": "61d89776acb4d9697a5cf87b74097b78b1a795c0594936342da153f191f2826d"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/12.webp",
+          "bytes": 202748,
+          "sha256": "e8cf769485c935c3f904f2101bc0b43286cf9d85a9fd3065b4f2bb1d382388e8"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/13.webp",
+          "bytes": 241866,
+          "sha256": "20cabcacf95387e4c9599ca2ad097799b3d9319fa4f9c3d9355fe22632014f36"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/14.webp",
+          "bytes": 282020,
+          "sha256": "ea479b0073b616f4bb359568e9d2fbc6bfa0b7af387a9c2c276f68887a39d063"
+        },
+        {
+          "page": 15,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/15.webp",
+          "bytes": 252946,
+          "sha256": "66c16c637350a03b933af55507eae9b1117edf3d4f2997512cc12a0af643307b"
+        },
+        {
+          "page": 16,
+          "url": "/library/richang/mao-mao-chong-xiang-qian-chong/16.webp",
+          "bytes": 257214,
+          "sha256": "d174b18c0c7d1d8ed6f68dff8ed97a3b3ccae07904c56d8323dc8b54e10124cd"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/mao-mao-chong-xiang-qian-chong/zh-853d5251dd5836d4.mp3",
+        "contentHash": "853d5251dd5836d426d393e3a46f1253bef4a9066888ffb4b3214cfd2901b2de",
+        "pageStarts": [
+          0,
+          11.244,
+          23.208,
+          34.212,
+          43.92,
+          53.388,
+          62.544,
+          70.812,
+          78.36,
+          88.164,
+          99.648,
+          106.332,
+          115.488,
+          122.484,
+          130.2,
+          135.996
+        ],
+        "duration": 143.484,
+        "bytes": 1148589,
+        "sha256": "b32251f111a88a0f87b8a6c67115d340756e69d5d6827ca7ac9fab1675b96bd4",
+        "decodedSeconds": 143.484,
+        "pageRms": [
+          0.072332,
+          0.071547,
+          0.070232,
+          0.064402,
+          0.066508,
+          0.064599,
+          0.06829,
+          0.067209,
+          0.068636,
+          0.076975,
+          0.075331,
+          0.067042,
+          0.07465,
+          0.068222,
+          0.071346,
+          0.064378
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "totals": {
+    "expectedBooks": 1,
+    "checkedBooks": 1,
+    "expectedPages": 16,
+    "images": 16,
+    "audioFiles": 1,
+    "narrationSeconds": 143.484
+  }
+}

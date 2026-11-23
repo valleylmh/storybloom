@@ -1292,5 +1292,70 @@
       221.196
     ],
     "duration": 233.484
+  },
+  "richang/xiao-ma-yi-yun-qiu": {
+    "url": "/library/richang/xiao-ma-yi-yun-qiu/zh-4c4f1d609920b437.mp3",
+    "contentHash": "4c4f1d609920b437e9beaab627baed95f31a3897f1693070bb99aa54e12ee961",
+    "pageStarts": [
+      0,
+      11.724,
+      22.32,
+      33.468,
+      48.312,
+      58.356,
+      68.784,
+      77.292,
+      86.28,
+      96.228,
+      106.032,
+      116.556,
+      129.24,
+      140.388
+    ],
+    "duration": 152.196
+  },
+  "richang/xiao-xiong-yun-nan-gua": {
+    "url": "/library/richang/xiao-xiong-yun-nan-gua/zh-ead45b66293cb0fa.mp3",
+    "contentHash": "ead45b66293cb0fa4a61106f048c0180c54addb968abe2fd619ebcc0cc5067db",
+    "pageStarts": [
+      0,
+      12.516,
+      26.784,
+      38.988,
+      49.584,
+      59.7,
+      70.944,
+      82.908,
+      92.616,
+      103.044,
+      114.6,
+      125.748,
+      136.344,
+      145.428
+    ],
+    "duration": 156.516
+  },
+  "richang/mao-mao-chong-xiang-qian-chong": {
+    "url": "/library/richang/mao-mao-chong-xiang-qian-chong/zh-853d5251dd5836d4.mp3",
+    "contentHash": "853d5251dd5836d426d393e3a46f1253bef4a9066888ffb4b3214cfd2901b2de",
+    "pageStarts": [
+      0,
+      11.244,
+      23.208,
+      34.212,
+      43.92,
+      53.388,
+      62.544,
+      70.812,
+      78.36,
+      88.164,
+      99.648,
+      106.332,
+      115.488,
+      122.484,
+      130.2,
+      135.996
+    ],
+    "duration": 143.484
   }
 }

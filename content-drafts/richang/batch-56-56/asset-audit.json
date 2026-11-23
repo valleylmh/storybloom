@@ -1,0 +1,148 @@
+{
+  "batch": "batch-56-56",
+  "checkedAt": "2026-11-23T03:24:21.097Z",
+  "passed": true,
+  "books": [
+    {
+      "id": "xiao-xiong-yun-nan-gua",
+      "title": "小熊运南瓜",
+      "order": 56,
+      "pages": 14,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/1.webp",
+          "bytes": 238528,
+          "sha256": "7eed95578beb79aff5f142820b3caea8e54c9a5ec0668a1dad05abc9f669d825"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/2.webp",
+          "bytes": 240878,
+          "sha256": "8e1458623ae006ac7c13b519fa7d8873b2f9948d752f13e0f06ae2ccd962abd6"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/3.webp",
+          "bytes": 223458,
+          "sha256": "ecb0aafca130f85b6e29b316a724d9059da5d131554ce6bdc4c8522093e0c37e"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/4.webp",
+          "bytes": 278344,
+          "sha256": "930c8809f91f42eeb9d068f2e71898bbba8114e86c88eb6078a6b7545b264b8c"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/5.webp",
+          "bytes": 289598,
+          "sha256": "8d7c2bbf7068d7605b0ea696bd8c6586a06774faac5c4b19c2e7655f3849634f"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/6.webp",
+          "bytes": 294474,
+          "sha256": "4cfec38cf47b75ed0499bb05bd781d299cb1576b5c0839318f3b936cad0c6a49"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/7.webp",
+          "bytes": 269210,
+          "sha256": "fcbd83d360cb61f2e8cbf688197c80f4725ff465788f773f392aff12ee1dbf23"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/8.webp",
+          "bytes": 253256,
+          "sha256": "f074e3c15618c9569b231e907c99ad2fa43a8e6a98905e9b37f9ef077463331f"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/9.webp",
+          "bytes": 271986,
+          "sha256": "793fa41d5cf2c959b315872810c788cd0efac746fd9e40593ce24a1907d4d7ec"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/10.webp",
+          "bytes": 160406,
+          "sha256": "a2603c85bbdf679f31c883a3f3180c492ce78d981353532749207eb2fdfa42e0"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/11.webp",
+          "bytes": 245410,
+          "sha256": "ebbd9157a3fe8ac0fb2c150bd6779b27ef06560aa557abdd231ba975313e5364"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/12.webp",
+          "bytes": 232850,
+          "sha256": "ce6b7c098275f04d56c79285e38b43a0c64c5993dfd6d68c9d57912df9653f4c"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/13.webp",
+          "bytes": 300702,
+          "sha256": "3907ea4fb709423753fdf178da7a0c0afbeb6838448a06f26377343ecc288e9d"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/xiao-xiong-yun-nan-gua/14.webp",
+          "bytes": 203120,
+          "sha256": "03c173d803b688bb8ba8b87cd805592c7ede8d7d3042e95acab259c78c97b59c"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/xiao-xiong-yun-nan-gua/zh-ead45b66293cb0fa.mp3",
+        "contentHash": "ead45b66293cb0fa4a61106f048c0180c54addb968abe2fd619ebcc0cc5067db",
+        "pageStarts": [
+          0,
+          12.516,
+          26.784,
+          38.988,
+          49.584,
+          59.7,
+          70.944,
+          82.908,
+          92.616,
+          103.044,
+          114.6,
+          125.748,
+          136.344,
+          145.428
+        ],
+        "duration": 156.516,
+        "bytes": 1252845,
+        "sha256": "dd7d3a88a77251a863740db0fcf32a1a808e2e2020a9de612eb290470a003baa",
+        "decodedSeconds": 156.516,
+        "pageRms": [
+          0.068697,
+          0.070565,
+          0.065714,
+          0.063187,
+          0.069555,
+          0.069849,
+          0.07077,
+          0.066547,
+          0.074188,
+          0.069997,
+          0.070795,
+          0.07443,
+          0.071328,
+          0.068903
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "totals": {
+    "expectedBooks": 1,
+    "checkedBooks": 1,
+    "expectedPages": 14,
+    "images": 14,
+    "audioFiles": 1,
+    "narrationSeconds": 156.516
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "approved": true,
+  "approvedAt": "2026-11-22",
+  "totalPages": 14,
+  "books": [
+    {
+      "id": "xiao-xiong-yun-nan-gua",
+      "title": "小熊运南瓜",
+      "pages": 14,
+      "order": 56
+    }
+  ]
+}

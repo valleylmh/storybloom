@@ -1,0 +1,148 @@
+{
+  "batch": "batch-55-55",
+  "checkedAt": "2026-11-23T03:24:21.097Z",
+  "passed": true,
+  "books": [
+    {
+      "id": "xiao-ma-yi-yun-qiu",
+      "title": "小蚂蚁运球",
+      "order": 55,
+      "pages": 14,
+      "images": [
+        {
+          "page": 1,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/1.webp",
+          "bytes": 229590,
+          "sha256": "e583a8d0eec82b28e7bd84d184665a274d83574011f1a0a9c79de1c3f3992095"
+        },
+        {
+          "page": 2,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/2.webp",
+          "bytes": 257264,
+          "sha256": "108fcfd63856628d65f4e06492c68b02e084a3db0d1b1e510144e2a239d8e7cd"
+        },
+        {
+          "page": 3,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/3.webp",
+          "bytes": 247814,
+          "sha256": "68281d4f8d2f5d33ebf229d85bc02cffe124160a89359344eb9ece87bb6b10c8"
+        },
+        {
+          "page": 4,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/4.webp",
+          "bytes": 279250,
+          "sha256": "d56a4b6a59b0c0e53de0ca05cb134dfd3958997810107008d0db867b8be27132"
+        },
+        {
+          "page": 5,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/5.webp",
+          "bytes": 252776,
+          "sha256": "a30d35d833c29892518ae8b88255f2fa117641ffcf9fbea2b79ff9a9bf1c691f"
+        },
+        {
+          "page": 6,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/6.webp",
+          "bytes": 282476,
+          "sha256": "1d7bfdb4872e288e059fae92ed6b1d58fc55c674b27f5649080c98cc364c7f23"
+        },
+        {
+          "page": 7,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/7.webp",
+          "bytes": 273896,
+          "sha256": "75704360954dc57aa3f0c580ad74c686de4e6bd43660803debe7e15240daf273"
+        },
+        {
+          "page": 8,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/8.webp",
+          "bytes": 242532,
+          "sha256": "da4c7ff19aaae3935fa28f27364914e73a70ad7bf074b89370ad91d095a1aa68"
+        },
+        {
+          "page": 9,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/9.webp",
+          "bytes": 301608,
+          "sha256": "18b4830a89aeab9e1c6894dcebb578fe896cbb346de9ccef2a903f293d79409d"
+        },
+        {
+          "page": 10,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/10.webp",
+          "bytes": 276682,
+          "sha256": "542dd1504a5a0b697b177ce43f9943d9005d26e8e69bfa45ef473674ba17884e"
+        },
+        {
+          "page": 11,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/11.webp",
+          "bytes": 295348,
+          "sha256": "ad687a52ce230aaefabdbb6058f7b06db54b2f9df0f58343e05d9ae670af6d36"
+        },
+        {
+          "page": 12,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/12.webp",
+          "bytes": 298934,
+          "sha256": "f455d1e9bcd9aebf97180bb0b5e79125b56a6112aad903b966e77f8c50d6bd8f"
+        },
+        {
+          "page": 13,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/13.webp",
+          "bytes": 259048,
+          "sha256": "52482f604e324a891a4e5a430557f9acb4b4f624f423cb7f25a3a78f360b191e"
+        },
+        {
+          "page": 14,
+          "url": "/library/richang/xiao-ma-yi-yun-qiu/14.webp",
+          "bytes": 300786,
+          "sha256": "1421a94c88b17fe5177a5f446fe659bddf657b4ce5bd452cb3f9704ec54ceb41"
+        }
+      ],
+      "audio": {
+        "url": "/library/richang/xiao-ma-yi-yun-qiu/zh-4c4f1d609920b437.mp3",
+        "contentHash": "4c4f1d609920b437e9beaab627baed95f31a3897f1693070bb99aa54e12ee961",
+        "pageStarts": [
+          0,
+          11.724,
+          22.32,
+          33.468,
+          48.312,
+          58.356,
+          68.784,
+          77.292,
+          86.28,
+          96.228,
+          106.032,
+          116.556,
+          129.24,
+          140.388
+        ],
+        "duration": 152.196,
+        "bytes": 1218285,
+        "sha256": "53bc5dce39266887b515c5ba2c4d23b000c4c24c6dabe1259254cfc41e1da376",
+        "decodedSeconds": 152.196,
+        "pageRms": [
+          0.067195,
+          0.066634,
+          0.070878,
+          0.070951,
+          0.067402,
+          0.071105,
+          0.069916,
+          0.068787,
+          0.0732,
+          0.071268,
+          0.075513,
+          0.075566,
+          0.069149,
+          0.072802
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "totals": {
+    "expectedBooks": 1,
+    "checkedBooks": 1,
+    "expectedPages": 14,
+    "images": 14,
+    "audioFiles": 1,
+    "narrationSeconds": 152.196
+  }
+}

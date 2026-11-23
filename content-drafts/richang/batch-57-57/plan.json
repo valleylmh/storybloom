@@ -1,0 +1,13 @@
+{
+  "approved": true,
+  "approvedAt": "2026-11-22",
+  "totalPages": 16,
+  "books": [
+    {
+      "id": "mao-mao-chong-xiang-qian-chong",
+      "title": "毛毛虫向前冲",
+      "pages": 16,
+      "order": 57
+    }
+  ]
+}

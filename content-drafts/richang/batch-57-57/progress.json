@@ -1,0 +1,26 @@
+{
+  "manuscripts": "complete",
+  "totalPages": 16,
+  "imagesComplete": 16,
+  "narration": "complete",
+  "narrationSource": {
+    "provider": "bailian-token-plan",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin"
+  },
+  "books": [
+    {
+      "id": "mao-mao-chong-xiang-qian-chong",
+      "title": "毛毛虫向前冲",
+      "pages": 16,
+      "order": 57,
+      "completeImages": 16,
+      "narration": "complete",
+      "locallyReadable": true
+    }
+  ],
+  "uploaded": false,
+  "deployed": false,
+  "status": "production-complete",
+  "createdOn": "2026-11-22"
+}

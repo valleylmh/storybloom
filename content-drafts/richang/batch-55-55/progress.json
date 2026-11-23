@@ -1,0 +1,26 @@
+{
+  "manuscripts": "complete",
+  "totalPages": 14,
+  "imagesComplete": 14,
+  "narration": "complete",
+  "narrationSource": {
+    "provider": "bailian-token-plan",
+    "model": "qwen-audio-3.0-tts-plus",
+    "voice": "longanlingxin"
+  },
+  "books": [
+    {
+      "id": "xiao-ma-yi-yun-qiu",
+      "title": "小蚂蚁运球",
+      "pages": 14,
+      "order": 55,
+      "completeImages": 14,
+      "narration": "complete",
+      "locallyReadable": true
+    }
+  ],
+  "uploaded": false,
+  "deployed": false,
+  "status": "production-complete",
+  "createdOn": "2026-11-22"
+}

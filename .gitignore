@@ -22,6 +22,30 @@ public/gift-books/**/*.zip
 !/content-drafts/richang/batch-54-54/manuscript.md
 !/content-drafts/richang/batch-54-54/plan.json
 !/content-drafts/richang/batch-54-54/progress.json
+!/content-drafts/richang/xiao-ma-yi-yun-qiu.json
+!/content-drafts/richang/batch-55-55/
+/content-drafts/richang/batch-55-55/*
+!/content-drafts/richang/batch-55-55/asset-audit.json
+!/content-drafts/richang/batch-55-55/image-prompts.json
+!/content-drafts/richang/batch-55-55/manuscript.md
+!/content-drafts/richang/batch-55-55/plan.json
+!/content-drafts/richang/batch-55-55/progress.json
+!/content-drafts/richang/xiao-xiong-yun-nan-gua.json
+!/content-drafts/richang/batch-56-56/
+/content-drafts/richang/batch-56-56/*
+!/content-drafts/richang/batch-56-56/asset-audit.json
+!/content-drafts/richang/batch-56-56/image-prompts.json
+!/content-drafts/richang/batch-56-56/manuscript.md
+!/content-drafts/richang/batch-56-56/plan.json
+!/content-drafts/richang/batch-56-56/progress.json
+!/content-drafts/richang/mao-mao-chong-xiang-qian-chong.json
+!/content-drafts/richang/batch-57-57/
+/content-drafts/richang/batch-57-57/*
+!/content-drafts/richang/batch-57-57/asset-audit.json
+!/content-drafts/richang/batch-57-57/image-prompts.json
+!/content-drafts/richang/batch-57-57/manuscript.md
+!/content-drafts/richang/batch-57-57/plan.json
+!/content-drafts/richang/batch-57-57/progress.json
 
 # next
 .next/

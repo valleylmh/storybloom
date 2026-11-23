@@ -53,6 +53,9 @@ import gateVolunteer from "../../../content-drafts/richang/ma-ma-zai-xiao-men-ko
 import threeTeachers from "../../../content-drafts/richang/da-ban-de-san-wei-lao-shi.json";
 import surpriseGift from "../../../content-drafts/richang/jin-tian-bu-shi-sheng-ri-ya.json";
 import speakingClass from "../../../content-drafts/richang/an-an-man-man-shuo.json";
+import littleAntsRace from "../../../content-drafts/richang/xiao-ma-yi-yun-qiu.json";
+import littleBearsRace from "../../../content-drafts/richang/xiao-xiong-yun-nan-gua.json";
+import caterpillarRelay from "../../../content-drafts/richang/mao-mao-chong-xiang-qian-chong.json";
 
 type EverydayDraft = {
   book: Omit<LibraryBook, "pages"> & {
@@ -70,7 +73,7 @@ export const RICHANG_BOOKS: LibraryBook[] = [
   angryHands, nextEpisode, misunderstood, shyHello,
   schoolGoodbye, looseTooth, pinyinCurves, wanderingNumbers, bathroomRequest,
   quietNap, joiningPlay, packingBag, classroomHelper, afterSchool, gateVolunteer,
-  threeTeachers, surpriseGift, speakingClass,
+  threeTeachers, surpriseGift, speakingClass, littleAntsRace, littleBearsRace, caterpillarRelay,
 ].filter((source) => !source.book.comingSoon).map((source) => {
   const draft = source as EverydayDraft;
   return {

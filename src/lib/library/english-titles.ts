@@ -408,6 +408,9 @@ export const ENGLISH_BOOKS: Record<string, { title: string; slug: string }> = {
   "richang/da-ban-de-san-wei-lao-shi": { title: "The Three Teachers in My Class", slug: "the-three-teachers-in-my-class" },
   "richang/jin-tian-bu-shi-sheng-ri-ya": { title: "But It's Not a Birthday Today", slug: "but-its-not-a-birthday-today" },
   "richang/an-an-man-man-shuo": { title: "One Small Pause, An'an", slug: "one-small-pause-anan" },
+  "richang/xiao-ma-yi-yun-qiu": { title: "The Little Ants' Ball Race", slug: "little-ants-ball-race" },
+  "richang/xiao-xiong-yun-nan-gua": { title: "The Little Bears' Pumpkin Run", slug: "little-bears-pumpkin-run" },
+  "richang/mao-mao-chong-xiang-qian-chong": { title: "Go, Little Caterpillars!", slug: "go-little-caterpillars" },
 };
 
 export function bookEnglishTitle(book: LibraryBook): string {
