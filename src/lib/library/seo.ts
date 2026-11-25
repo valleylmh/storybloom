@@ -45,10 +45,11 @@ function isParentingStory(book: LibraryBook): book is LibraryBook & { parentGuid
   return Boolean(book.parentGuide) && !book.question && !book.poem;
 }
 
-/** Chinese title for parenting stories: the search phrase of the book's primary topic. */
+/** Chinese title for parenting stories: the search phrase of the book's primary parenting topic. */
 function parentingBookTitle(book: LibraryBook) {
   if (!isParentingStory(book)) return null;
-  const topic = getBookTopics(book)[0];
+  // Reading themes (bedtime, festivals…) group books across series; they don't say what a book is about.
+  const topic = getBookTopics(book).find((item) => item.group === "parenting");
   if (topic) return `${book.title} - ${topic.searchLabel} | StoryBloom`;
   return book.classic ? null : `${book.title}：${book.subtitle} - 亲子共读绘本 | StoryBloom`;
 }

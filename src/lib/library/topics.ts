@@ -28,7 +28,7 @@ export interface LibraryTopic {
   faqs: Array<{ question: string; answer: string }>;
 }
 
-// A book's first topic in this order is its primary topic: it supplies the page title.
+// A book's first parenting topic in this order is its primary topic: it supplies the page title.
 const TOPICS: LibraryTopic[] = [
   {
     id: "ru-yuan-shi-ying",
@@ -377,6 +377,7 @@ const TOPICS: LibraryTopic[] = [
       "sanzijing/na-ge-yue-ding-mei-you-zuo-dao",
       "richang/wo-ye-xiang-ba-hua-shuo-wan",
       "richang/fang-xue-lu-shang-man-man-shuo",
+      "richang/an-an-man-man-shuo",
     ],
     startWith: "richang/ma-ma-ni-shi-zai-xiong-wo-ma",
     startHere: "如果你今天刚对孩子发过脾气，先读《妈妈，你是在凶我吗》，它是给大人和孩子一起修复的；想让孩子愿意开口说学校的事，再读《放学路上，慢慢说》。",
@@ -427,6 +428,39 @@ const TOPICS: LibraryTopic[] = [
       {
         question: "这么小的孩子也需要隐私和个人边界吗？",
         answer: "需要。拍照发给亲友前先问一句、不随意替孩子转述他的小秘密、动他没搭完的纸箱前先商量，都是在示范尊重。在家里体验过边界被尊重的孩子，出门也更懂得尊重别人，也更清楚安全界限。《我的秘密谁能听》可以和孩子一起讨论。",
+      },
+    ],
+  },
+  {
+    id: "qin-zi-yun-dong-hui",
+    group: "parenting",
+    name: "亲子运动会",
+    searchLabel: "幼儿园亲子运动会绘本",
+    heading: "幼儿园要开亲子运动会了？先陪孩子读这几本",
+    description: "和妈妈一起运球、坐在小车上运“南瓜”、在气垫上接力，还有比赛没有赢的那一天。这些绘本带孩子提前看一看运动会上的规则、配合与加油，也说一说输了以后还想不想继续玩。",
+    idea: "幼儿园亲子运动会上，孩子和我一起运球，球滚出去了，我们又跑回起点重来",
+    bookIds: [
+      "richang/xiao-ma-yi-yun-qiu",
+      "richang/xiao-xiong-yun-nan-gua",
+      "richang/mao-mao-chong-xiang-qian-chong",
+      "richang/ba-ba-mei-you-ying",
+      "sanzijing/lan-qiu-dong-dong-hui-lai-le",
+      "sanzijing/sheng-zi-shua-de-yi-sheng",
+    ],
+    startWith: "richang/xiao-ma-yi-yun-qiu",
+    startHere: "运动会前几天，先读《小蚂蚁运球》，看安安和妈妈怎样分工、球落到圈外以后怎样回到起点重来；担心孩子太在意输赢，再读《爸爸没有赢》；想提前在家练一练，可以读《篮球咚咚回来了》和《绳子唰的一声》。",
+    faqs: [
+      {
+        question: "幼儿园亲子运动会前，需要提前在家练习吗？",
+        answer: "不必为了名次反复训练。提前让孩子知道当天会发生什么更有用：有哪些项目、谁和他一组、听到哨声做什么。可以一起读《小熊运南瓜》，照着书里取球、运球、放球的顺序在客厅走一遍，孩子到了现场会更安心。",
+      },
+      {
+        question: "孩子在运动会上输了比赛就哭，家长怎么回应？",
+        answer: "先接住失望，不急着讲“重在参与”：“你很想赢，没赢到有点难过。”等孩子平静下来，再聊聊刚才哪一段配合得好。《爸爸没有赢》讲的是大人输了比赛，喜欢的事情也没有结束，可以在运动会前后各读一次。",
+      },
+      {
+        question: "孩子站在一边不肯上场参加集体比赛，怎么办？",
+        answer: "先别当众催促。有的孩子需要看清规则才敢加入，可以陪他在场边看一轮，说说每个人在做什么，再问他愿意从哪一步开始。《毛毛虫向前冲》里，等在一头给出发的人加油，也是参加的一种方式。",
       },
     ],
   },
@@ -632,6 +666,122 @@ const TOPICS: LibraryTopic[] = [
       {
         question: "成语故事和谚语故事，选哪一类给孩子启蒙更好？",
         answer: "两者可以穿插着读：成语多来自历史和寓言，画面感强、利于识字与文化积累；谚语像《心急吃不了热豆腐》《有借有还，再借不难》语言更口语化，贴近生活里的等待、合作与守信。",
+      },
+    ],
+  },
+  {
+    id: "xi-you-ji-ru-men",
+    group: "theme",
+    name: "西游记入门",
+    searchLabel: "儿童版西游记绘本",
+    heading: "第一次给孩子讲西游记？从这 10 个最经典的故事读起",
+    description: "石猴出世、大闹天宫、三打白骨精、红孩儿、真假美猴王、三借芭蕉扇。从 64 本西游记绘本里挑出孩子最先该认识的 10 个故事，中英双语、改写得温和，读完可以接着读完整的取经路。",
+    idea: "孩子最近迷上了孙悟空，想听一个他和悟空一起想办法过火焰山的故事",
+    bookIds: [
+      "xiyouji/shi-hou-chu-shi",
+      "xiyouji/da-nao-tian-gong",
+      "xiyouji/shi-tu-xiang-yu",
+      "xiyouji/gao-lao-zhuang-yu-ba-jie",
+      "xiyouji/liu-sha-he-shou-sha-seng",
+      "xiyouji/san-da-bai-gu-jing",
+      "xiyouji/huo-yun-dong-shou-hong-hai-er",
+      "xiyouji/zhen-jia-mei-hou-wang",
+      "xiyouji/san-jie-ba-jiao-shan",
+      "xiyouji/chang-an-gong-de-yuan-man",
+    ],
+    startWith: "xiyouji/shi-hou-chu-shi",
+    startHere: "先读《石猴出世》和《大闹天宫》，认识还没有上路的孙悟空；再读《师徒相遇》，看取经的队伍怎样一位一位凑齐。之后不必按顺序，孩子喜欢哪个故事就先读哪个，比如《三打白骨精》或《三借芭蕉扇》。",
+    discussionPrompts: [
+      "这个故事里，悟空是靠力气，还是靠观察和想办法解决问题的？",
+      "悟空、八戒、沙僧和唐僧，你最想和谁做队友？为什么？",
+      "如果你也走在取经的路上，遇到这个难题会先做什么？",
+    ],
+    faqs: [
+      {
+        question: "西游记原著里有不少打斗，适合 4–8 岁的孩子读吗？",
+        answer: "这套绘本按幼儿的接受程度重新讲述，保留人物和经典情节，把冲突写得温和，重点放在观察线索、遵守约定和伙伴合作上。第一次读可以从《石猴出世》开始，看看孩子的反应再往下读。",
+      },
+      {
+        question: "给孩子读西游记，一定要从头按顺序读吗？",
+        answer: "不用。先读这 10 个最有名的故事，孩子就能认识主要人物，知道取经是怎么开始、怎么结束的。如果读上了瘾，每一本都能接回完整的 64 本系列，再按顺序把路上的故事补齐。",
+      },
+      {
+        question: "孩子只喜欢看孙悟空打妖怪，怎么引导他看到故事里别的东西？",
+        answer: "顺着他的兴趣问下去：悟空这次是怎么看出不对劲的？他为什么没有马上动手？《三打白骨精》和《真假美猴王》都很适合这样聊，孩子会发现厉害的不只是金箍棒，还有细心、耐心和伙伴之间的信任。",
+      },
+    ],
+  },
+  {
+    id: "chuan-tong-jie-ri",
+    group: "theme",
+    name: "传统节日",
+    searchLabel: "中国传统节日绘本",
+    heading: "春节、端午、中秋、重阳：用绘本给孩子讲讲为什么要过节",
+    description: "春节为什么要过年、端午为什么吃粽子划龙舟、中秋为什么赏月吃月饼，还有重阳登高时想念远方亲人的那首唐诗。跟着日历读，把节日的来历和家里的习俗连在一起。",
+    idea: "中秋节晚上全家在阳台看月亮，孩子问月亮上是不是真的住着小兔子",
+    bookIds: [
+      "haoqi/chun-jie-wei-shen-me-yao-guo-nian",
+      "haoqi/duan-wu-wei-shen-me-chi-zong-zi-hua-long-zhou",
+      "haoqi/zhong-qiu-wei-shen-me-shang-yue-chi-yue-bing",
+      "tangshi/gu-lang-yue-xing",
+      "tangshi/jiu-yue-jiu-ri-yi-shan-dong-xiong-di",
+    ],
+    startWith: "haoqi/chun-jie-wei-shen-me-yao-guo-nian",
+    startHere: "这组绘本最适合跟着日历读：过年前读《春节为什么要过年》，初夏包粽子时读《端午节为什么吃粽子、划龙舟》，秋天月亮圆的那几天读《中秋节为什么赏月、吃月饼》，再配一首写月亮的《古朗月行（节选）》。",
+    discussionPrompts: [
+      "这个节日里，你最喜欢的一种吃的或一件要做的事是什么？",
+      "为什么很多节日都要和家人在一起，或者想念不在身边的人？",
+      "我们家过这个节的时候，有哪件事是每年都会做的？",
+    ],
+    faqs: [
+      {
+        question: "给孩子讲传统节日，从几岁开始、怎么讲比较好？",
+        answer: "三四岁就可以从看得见、吃得到的东西讲起：春联、粽子、月饼、灯笼。四到八岁可以再讲讲节日和季节、月亮的关系。比起背诵来历，更好记的是在过节那几天读一本对应的绘本，再一起做一件书里的事。",
+      },
+      {
+        question: "孩子问“为什么要过节”，家长自己也说不清怎么办？",
+        answer: "不用讲成历史课。可以先说这个节日在一年里的位置，再说大家会一起做什么。比如《春节为什么要过年》讲的是迎接春天和新一年的开始，《中秋节为什么赏月、吃月饼》讲的是丰收后的感谢和团圆。",
+      },
+      {
+        question: "家人不在身边，怎么陪孩子过一个有意义的节日？",
+        answer: "可以和孩子一起给远方的家人打个视频电话、画一张节日卡片，说说想念的人。重阳节前后读一读《九月九日忆山东兄弟》，告诉孩子很久以前的诗人过节时也会想家，想念本身就是节日的一部分。",
+      },
+    ],
+  },
+  {
+    id: "gong-cheng-che",
+    group: "theme",
+    name: "工程车",
+    searchLabel: "儿童工程车绘本",
+    heading: "挖掘机、推土机、起重机：10 本工程车绘本，一起建好一座公园",
+    description: "挖掘机挖土、装载机装沙、搅拌车转滚筒、起重机吊桥、压路机压实路面。10 本绘本连起来是一座新公园从空地到开放的全过程，每一本讲清一种工程车的本领和它为什么这样工作。",
+    idea: "孩子每次路过工地都要停下来看挖掘机，想听一个他和挖掘机一起建游乐场的故事",
+    bookIds: [
+      "qiche/wa-jue-ji-de-da-chan-zi-you-shen-me-ben-ling",
+      "qiche/zhuang-zai-ji-ba-sha-zi-song-shang-che",
+      "qiche/tui-tu-ji-gei-tu-di-pu-bei-zi",
+      "qiche/zi-xie-che-de-che-xiang-tai-qi-lai-le",
+      "qiche/jiao-ban-che-de-du-zi-wei-shen-me-yi-zhi-zhuan",
+      "qiche/beng-che-de-chang-ge-bo-shen-dao-na-li",
+      "qiche/qi-zhong-ji-zen-yang-diao-qi-da-dong-xi",
+      "qiche/ya-lu-ji-man-man-zou-lu-mian-bian-jie-shi",
+      "qiche/tan-pu-ji-pu-chu-yi-tiao-xin-ma-lu",
+      "qiche/gong-cheng-che-xiao-dui-jian-hao-xin-gong-yuan",
+    ],
+    startWith: "qiche/wa-jue-ji-de-da-chan-zi-you-shen-me-ben-ling",
+    startHere: "孩子最熟悉的通常是挖掘机，先读《挖掘机的大铲子有什么本领》。之后可以按建公园的顺序一本一本读下去，也可以让孩子挑自己最喜欢的车；最后读《工程车小队建好新公园》，把九种车的本领串起来。",
+    faqs: [
+      {
+        question: "孩子特别痴迷工程车，是正常的吗？",
+        answer: "很常见。工程车个头大、动作看得见，每个动作都有明显的结果，很容易吸引学龄前的孩子。不用担心兴趣太单一，可以顺着它聊形状、顺序、合作和安全，一种车就能带出很多话题。",
+      },
+      {
+        question: "带孩子在工地旁边看工程车，要注意什么？",
+        answer: "一定站在围挡外面，离出入口和正在倒车的车辆远一些，牵好孩子的手。可以告诉孩子，驾驶员坐得高，看不到车旁边矮矮的小朋友。看的时候顺便找一找书里读到的动作，比如《压路机慢慢走，路面变结实》里的来回压实。",
+      },
+      {
+        question: "工程车绘本只是认车名吗，还能读出什么？",
+        answer: "除了车名，这组绘本讲的是每种车为什么这样工作，比如《搅拌车的肚子为什么一直转》。它们还连成一件完整的事：先挖、再运、再铺、再压，孩子能看到大工程是很多步骤、很多人接力完成的。",
       },
     ],
   },

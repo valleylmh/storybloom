@@ -77,6 +77,29 @@ describe("library topics", () => {
     expect(bookDescription(book)).toContain(book.parentGuide!.goal);
   });
 
+  it("does not title a parenting book after a reading theme", () => {
+    const book = getBook("richang", "yi-ge-ren-wan-de-xia-wu")!;
+    expect(getBookTopics(book).map((topic) => topic.id)).toEqual(["shui-qian-gu-shi"]);
+    expect(bookMetadata(book, getSeries("richang")!).title).toBe("一个人玩的下午：无聊里，长出一条小街 - 亲子共读绘本 | StoryBloom");
+
+    const nightlight = getBook("richang", "jin-wan-de-xiao-deng-ke-yi-liang-zhe-ma")!;
+    expect(getBookTopics(nightlight).map((topic) => topic.id)).toEqual(["pa-hei-dan-xiao", "shui-qian-gu-shi"]);
+    expect(bookMetadata(nightlight, getSeries("richang")!).title).toContain("孩子怕黑胆小绘本");
+  });
+
+  it("files the newest everyday books under a parenting topic", () => {
+    const series = getSeries("richang")!;
+    const speaking = getBook("richang", "an-an-man-man-shuo")!;
+    expect(bookMetadata(speaking, series).title).toBe("安安，慢慢说 - 亲子沟通绘本 | StoryBloom");
+    for (const bookId of ["xiao-ma-yi-yun-qiu", "xiao-xiong-yun-nan-gua", "mao-mao-chong-xiang-qian-chong"]) {
+      const book = getBook("richang", bookId)!;
+      expect(getBookTopics(book).map((topic) => topic.id), bookId).toEqual(["qin-zi-yun-dong-hui"]);
+      expect(bookMetadata(book, series).title, bookId).toBe(`${book.title} - 幼儿园亲子运动会绘本 | StoryBloom`);
+    }
+    // Books shared with the sports-day topic keep the title of their earlier topic.
+    expect(bookMetadata(getBook("richang", "ba-ba-mei-you-ying")!, series).title).toContain("孩子输不起抗挫绘本");
+  });
+
   it("leaves non-parenting series titles untouched even when included in theme topics", () => {
     const idiom = getBook("chengyu", "shou-zhu-dai-tu")!;
     expect(bookMetadata(idiom, getSeries("chengyu")!).title).toBe("守株待兔 - 中英双语成语故事绘本 | StoryBloom");
@@ -144,7 +167,7 @@ describe("library topics", () => {
     for (const seriesId of ["richang", "sanzijing", "qiche", "haoqi", "tangshi", "chengyu", "yanyu"]) {
       expect(getSeriesTopics(seriesId).length, seriesId).toBeGreaterThan(0);
     }
-    expect(getSeriesTopics("xiyouji")).toEqual([]);
+    expect(getSeriesTopics("xiyouji").map((topic) => topic.id)).toEqual(["xi-you-ji-ru-men"]);
   });
 
   it("emits CollectionPage, FAQPage, and BreadcrumbList JSON-LD for each topic", () => {
