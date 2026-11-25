@@ -56,14 +56,9 @@ describe("reliable generation homepage contract", () => {
     expect(globalStyles).toContain("white-space: nowrap");
   });
 
-  it("keeps durable illustration polling server-authoritative", () => {
-    expect(bookPreviewSource).toContain("isDurablePendingIllustration");
-    expect(bookPreviewSource).toContain(
-      "while (durablePending || Date.now() < deadlineMs)",
-    );
-    expect(bookPreviewSource).toContain(
-      "!isDurablePendingIllustration(page)",
-    );
-    expect(bookPreviewSource).toContain("fetchIllustrationApi(");
+  it("resumes pending illustrations by polling and publishes the recovered page", () => {
+    expect(bookPreviewSource).toContain("await pollIllustrationPage(input)");
+    expect(bookPreviewSource).toContain("replacePageInState(outcome.page)");
+    expect(bookPreviewSource).not.toContain("markStaleIllustrationsFailed");
   });
 });

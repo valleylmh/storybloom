@@ -8,9 +8,10 @@ import {
 import {
   DURABLE_ILLUSTRATION_RECOVERY_THRESHOLD_MS,
   getImageStartedAtMs,
+  INTERRUPTED_ILLUSTRATION_ERROR,
+  isExpiredPendingIllustration,
   isRecentPendingIllustration,
   normalizeIllustrationPageForClient,
-  SAFE_ILLUSTRATION_ERROR,
 } from "@/lib/illustration-request-policy";
 import {
   getFreeRegenerationFallbackProviders,
@@ -44,7 +45,7 @@ import {
   classifyGenerationError,
   logGenerationEvent,
 } from "@/lib/generation-observability";
-import type { GeneratedStory } from "@/types";
+import type { GeneratedStory, StoryPage } from "@/types";
 
 export const runtime = "nodejs";
 export const maxDuration = 300;
@@ -109,6 +110,10 @@ function getPagePayload(story: GeneratedStory, pageNumber: number) {
   };
 }
 
+function canReuseCompletedPage(page: StoryPage, regenerate: boolean) {
+  return !regenerate && page.imageStatus === "complete" && Boolean(page.imageUrl);
+}
+
 function pageUsesFamilyPhoto(
   story: GeneratedStory,
   page: GeneratedStory["pages"][number],
@@ -135,7 +140,7 @@ async function markPagePending(
   story: GeneratedStory,
   pageNumber: number,
   durable: boolean,
-  isRetry: boolean,
+  regenerate: boolean,
 ): Promise<PagePendingResult | null> {
   const attemptId = crypto.randomUUID();
   const outcome = await mutateCachedStory<PagePendingValue>(
@@ -146,6 +151,7 @@ async function markPagePending(
       );
       if (!targetPage) return null;
       if (
+        canReuseCompletedPage(targetPage, regenerate) ||
         isRecentPendingIllustration(
           durable
             ? targetPage
@@ -166,7 +172,7 @@ async function markPagePending(
         : getProviderForPage(pageNumber, latestStory.pages.length);
       const requestAttempt = (targetPage.imageRequestCount || 0) + 1;
       const retry =
-        isRetry ||
+        regenerate ||
         (targetPage.imageRequestCount || 0) > 0 ||
         Boolean(targetPage.imageStartedAt || targetPage.imageCompletedAt) ||
         targetPage.imageStatus === "failed" ||
@@ -254,7 +260,7 @@ async function rollbackPagePending(input: {
   });
 }
 
-type DurablePageJobState =
+type IllustrationJobState =
   | { state: "active"; story: GeneratedStory }
   | { state: "completed"; story: GeneratedStory }
   | { state: "retryable"; story: GeneratedStory }
@@ -324,30 +330,31 @@ async function attachIllustrationJobToPage(input: {
   });
 }
 
-async function markMissingDurableIllustrationFailed(input: {
-  storyId: string;
-  pageNumber: number;
-  attemptId: string;
-}) {
-  return mutateCachedStory(input.storyId, (latestStory) => {
+async function reconcileInterruptedIllustration(
+  story: GeneratedStory,
+  interruptedPage: StoryPage,
+): Promise<IllustrationJobState> {
+  const failed = await mutateCachedStory(story.id, (latestStory) => {
     const page = latestStory.pages.find(
-      (item) => item.page === input.pageNumber,
+      (item) => item.page === interruptedPage.page,
     );
     if (
       !page ||
       page.imageStatus !== "pending" ||
-      page.imageAttemptId !== input.attemptId
+      page.imageAttemptId !== interruptedPage.imageAttemptId ||
+      page.imageStartedAt !== interruptedPage.imageStartedAt ||
+      page.imageJobId !== interruptedPage.imageJobId
     ) {
       return null;
     }
     const completedAt = new Date().toISOString();
     const startedAtMs = getImageStartedAtMs(page);
     const pages = latestStory.pages.map((item) =>
-      item.page === input.pageNumber
+      item.page === page.page
         ? {
             ...item,
             imageStatus: "failed" as const,
-            imageError: SAFE_ILLUSTRATION_ERROR,
+            imageError: INTERRUPTED_ILLUSTRATION_ERROR,
             imageAttemptId: undefined,
             imageDurableJob: undefined,
             imageJobId: undefined,
@@ -373,25 +380,13 @@ async function markMissingDurableIllustrationFailed(input: {
       value: true,
     };
   });
-}
-
-async function reconcileDurableFailure(input: {
-  story: GeneratedStory;
-  pageNumber: number;
-  attemptId: string;
-}): Promise<DurablePageJobState> {
-  const failed = await markMissingDurableIllustrationFailed({
-    storyId: input.story.id,
-    pageNumber: input.pageNumber,
-    attemptId: input.attemptId,
-  });
   if (failed) return { state: "retryable", story: failed.story };
 
   // A worker may have published while the status request was reconciling.
   // Re-read instead of allowing the stale request snapshot to overwrite it.
-  const refreshed = (await getCachedStory(input.story.id)) || input.story;
+  const refreshed = (await getCachedStory(story.id)) || story;
   const refreshedPage = refreshed.pages.find(
-    (item) => item.page === input.pageNumber,
+    (item) => item.page === interruptedPage.page,
   );
   return refreshedPage?.imageStatus === "pending"
     ? { state: "unknown", story: refreshed }
@@ -401,7 +396,7 @@ async function reconcileDurableFailure(input: {
 async function reconcileDurablePageJob(
   story: GeneratedStory,
   pageNumber: number,
-): Promise<DurablePageJobState | null> {
+): Promise<IllustrationJobState | null> {
   const page = story.pages.find((item) => item.page === pageNumber);
   if (
     !areProductionGenerationJobsEnabled() ||
@@ -413,12 +408,9 @@ async function reconcileDurablePageJob(
   }
 
   if (!page.imageJobId) {
-    return {
-      state: isPastDurableRecoveryThreshold(story, pageNumber)
-        ? "retryable"
-        : "unknown",
-      story,
-    };
+    return isPastDurableRecoveryThreshold(story, pageNumber)
+      ? reconcileInterruptedIllustration(story, page)
+      : { state: "unknown", story };
   }
 
   let job: GenerationJob | null;
@@ -442,11 +434,7 @@ async function reconcileDurablePageJob(
     if (!isPastDurableRecoveryThreshold(story, pageNumber)) {
       return { state: "unknown", story };
     }
-    return reconcileDurableFailure({
-      story,
-      pageNumber,
-      attemptId: page.imageAttemptId!,
-    });
+    return reconcileInterruptedIllustration(story, page);
   }
 
   if (job!.status === "queued" || job!.status === "running") {
@@ -457,6 +445,12 @@ async function reconcileDurablePageJob(
   const latestPage = latestStory.pages.find((item) => item.page === pageNumber);
   if (latestPage?.imageStatus !== "pending") {
     return { state: "completed", story: latestStory };
+  }
+  if (
+    latestPage.imageAttemptId !== page.imageAttemptId ||
+    latestPage.imageJobId !== page.imageJobId
+  ) {
+    return { state: "unknown", story: latestStory };
   }
   if (job!.status === "succeeded") {
     // The worker may have completed the queue record immediately before the
@@ -473,11 +467,7 @@ async function reconcileDurablePageJob(
     return { state: "unknown", story: latestStory };
   }
 
-  return reconcileDurableFailure({
-    story: latestStory,
-    pageNumber,
-    attemptId: latestPage.imageAttemptId!,
-  });
+  return reconcileInterruptedIllustration(latestStory, latestPage);
 }
 
 function illustrationAssetPrincipals(
@@ -566,7 +556,13 @@ export async function GET(req: NextRequest) {
   }
 
   const durableState = await reconcileDurablePageJob(story, parsed.data.page);
-  const responseStory = durableState?.story || story;
+  const page = story.pages.find((item) => item.page === parsed.data.page);
+  const jobState =
+    durableState ??
+    (page && isExpiredPendingIllustration(page)
+      ? await reconcileInterruptedIllustration(story, page)
+      : null);
+  const responseStory = jobState?.story || story;
   const payload = getPagePayload(responseStory, parsed.data.page);
   if (!payload) {
     return responseWithAssetSession(
@@ -575,7 +571,7 @@ export async function GET(req: NextRequest) {
     );
   }
 
-  if (durableState?.state === "active" || durableState?.state === "unknown") {
+  if (jobState?.state === "active" || jobState?.state === "unknown") {
     return responseWithAssetSession(
       NextResponse.json(
         { status: "accepted", ...payload, reused: true },
@@ -693,7 +689,11 @@ export async function POST(req: NextRequest) {
       authorizationPrincipal,
     );
   }
-  if (durableState?.state === "completed") {
+  const regenerate = parsed.data.regenerationMode === "free-fallback";
+  if (
+    durableState?.state === "completed" ||
+    canReuseCompletedPage(targetPage, regenerate)
+  ) {
     const payload = getPagePayload(currentStory, parsed.data.page);
     return responseWithAssetSession(
       NextResponse.json(payload),
@@ -712,7 +712,7 @@ export async function POST(req: NextRequest) {
           },
     )
   ) {
-    const payload = getPagePayload(story, parsed.data.page);
+    const payload = getPagePayload(currentStory, parsed.data.page);
     return responseWithAssetSession(
       NextResponse.json(
         {
@@ -753,17 +753,11 @@ export async function POST(req: NextRequest) {
   }
 
   const productionJobsEnabled = areProductionGenerationJobsEnabled();
-  const isRetry =
-    parsed.data.regenerationMode === "free-fallback" ||
-    (targetPage.imageRequestCount || 0) > 0 ||
-    Boolean(targetPage.imageStartedAt || targetPage.imageCompletedAt) ||
-    targetPage.imageStatus === "failed" ||
-    targetPage.imageStatus === "complete";
   const pending = await markPagePending(
     currentStory,
     parsed.data.page,
     productionJobsEnabled,
-    isRetry,
+    regenerate,
   );
   if (!pending) {
     return responseWithAssetSession(
@@ -777,12 +771,18 @@ export async function POST(req: NextRequest) {
   let responseStory = pending.story;
 
   if (!pending.started || !pending.attemptId) {
+    const payload = getPagePayload(responseStory, parsed.data.page);
+    if (payload && canReuseCompletedPage(payload.page, regenerate)) {
+      return responseWithAssetSession(
+        NextResponse.json(payload),
+        authorizationPrincipal,
+      );
+    }
     return responseWithAssetSession(
       NextResponse.json(
         {
           status: "accepted",
-          page:
-            getPagePayload(responseStory, parsed.data.page)?.page || targetPage,
+          page: payload?.page || targetPage,
           allComplete: false,
           reused: true,
         },

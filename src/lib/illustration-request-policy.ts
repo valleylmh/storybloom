@@ -1,10 +1,26 @@
 import type { StoryPage } from "@/types";
 
-export const ILLUSTRATION_STALE_THRESHOLD_MS = 3 * 60 * 1000;
+// Allow the full 300s illustration function duration plus time for status reads.
+export const ILLUSTRATION_STALE_THRESHOLD_MS = 330_000;
 export const DURABLE_ILLUSTRATION_RECOVERY_THRESHOLD_MS = 30 * 60 * 1000;
 export const STALE_ILLUSTRATION_ERROR =
   "插图任务长时间没有更新，请手动重试本页。";
+export const INTERRUPTED_ILLUSTRATION_ERROR = "插图任务已停止，请重试本页。";
 export const SAFE_ILLUSTRATION_ERROR = "插图生成失败，请稍后重试。";
+export const ILLUSTRATION_REQUEST_TIMEOUT_ERROR = "插图请求超时，请重试。";
+
+const LEGACY_ILLUSTRATION_TIMEOUT_ERRORS = new Set([
+  ILLUSTRATION_REQUEST_TIMEOUT_ERROR,
+  STALE_ILLUSTRATION_ERROR,
+  "免费生图模型超过 3 分钟仍未完成，请重新生成本页。",
+]);
+
+function isLegacyIllustrationTimeout(page: StoryPage) {
+  return (
+    page.imageStatus === "failed" &&
+    LEGACY_ILLUSTRATION_TIMEOUT_ERRORS.has(page.imageError || "")
+  );
+}
 
 export function normalizeIllustrationPageForClient(page: StoryPage): StoryPage {
   const imageAttempts = page.imageAttempts?.map((attempt) => ({
@@ -34,8 +50,9 @@ export function normalizeIllustrationPageForClient(page: StoryPage): StoryPage {
     ...(page.imageStatus === "failed"
       ? {
           imageError:
-            page.imageError === STALE_ILLUSTRATION_ERROR
-              ? STALE_ILLUSTRATION_ERROR
+            page.imageError === STALE_ILLUSTRATION_ERROR ||
+            page.imageError === INTERRUPTED_ILLUSTRATION_ERROR
+              ? INTERRUPTED_ILLUSTRATION_ERROR
               : SAFE_ILLUSTRATION_ERROR,
         }
       : { imageError: undefined }),
@@ -43,11 +60,7 @@ export function normalizeIllustrationPageForClient(page: StoryPage): StoryPage {
   };
 }
 
-export type InitialIllustrationAction =
-  | "start"
-  | "resume"
-  | "retry"
-  | "wait";
+export type InitialIllustrationAction = "start" | "resume" | "wait";
 export type IllustrationProgressStatus =
   | "generating_images"
   | "ready"
@@ -59,7 +72,6 @@ export interface IllustrationProgressSummary {
   complete: number;
   pending: number;
   failed: number;
-  stalePending: number;
 }
 
 export function isWaitingImagePage(page: StoryPage) {
@@ -80,11 +92,10 @@ export function getImageStartedAtMs(page: StoryPage) {
   return Number.isFinite(startedAtMs) ? startedAtMs : null;
 }
 
-export function isStaleWaitingPage(page: StoryPage, nowMs: number) {
-  if (!isWaitingImagePage(page)) return false;
-  // Durable work is reconciled against the server-side job state. A browser
-  // clock must never turn a queued/running job into a local failure.
-  if (isDurablePendingIllustration(page)) return false;
+export function isExpiredPendingIllustration(page: StoryPage, nowMs = Date.now()) {
+  if (page.imageStatus !== "pending" || isDurablePendingIllustration(page)) {
+    return false;
+  }
 
   const startedAtMs = getImageStartedAtMs(page);
   if (startedAtMs === null) return false;
@@ -105,48 +116,38 @@ export function isRecentPendingIllustration(page: StoryPage, nowMs = Date.now())
 
 export function getInitialIllustrationAction(
   page: StoryPage,
-  nowMs = Date.now(),
 ): InitialIllustrationAction {
-  if (page.imageStatus === "complete" || page.imageStatus === "failed") {
-    return "wait";
+  if (page.imageStatus === "failed") {
+    return isLegacyIllustrationTimeout(page) ? "resume" : "wait";
   }
 
   if (page.imageStatus === "demo") return "start";
   if (page.imageStatus !== "pending") return "wait";
-  if (isDurablePendingIllustration(page)) return "resume";
-
-  const startedAtMs = getImageStartedAtMs(page);
-  if (startedAtMs === null) return "start";
-
-  return nowMs - startedAtMs <= ILLUSTRATION_STALE_THRESHOLD_MS
+  return getImageStartedAtMs(page) !== null ||
+    isDurablePendingIllustration(page) ||
+    page.imageAttemptId ||
+    page.imageRequestCount
     ? "resume"
-    : "retry";
+    : "start";
 }
 
-/**
- * Summarizes persisted page state without inventing a percentage or elapsed
- * generation phase. Stale pending pages are reported separately and make the
- * story partially failed until a parent explicitly retries them.
- */
 export function summarizeIllustrationProgress(
   pages: StoryPage[],
-  nowMs = Date.now(),
 ): IllustrationProgressSummary {
   const complete = pages.filter(
     (page) => page.imageStatus === "complete" && Boolean(page.imageUrl),
   ).length;
-  const stalePending = pages.filter((page) =>
-    isStaleWaitingPage(page, nowMs),
+  const failed = pages.filter(
+    (page) => page.imageStatus === "failed" && !isLegacyIllustrationTimeout(page),
   ).length;
-  const failed = pages.filter((page) => page.imageStatus === "failed").length;
   const pending = pages.filter(
-    (page) => isWaitingImagePage(page) && !isStaleWaitingPage(page, nowMs),
+    (page) => isWaitingImagePage(page) || isLegacyIllustrationTimeout(page),
   ).length;
 
   const status: IllustrationProgressStatus =
     pages.length > 0 && complete === pages.length
       ? "ready"
-      : failed > 0 || stalePending > 0
+      : failed > 0
         ? "partially_failed"
         : "generating_images";
 
@@ -156,37 +157,5 @@ export function summarizeIllustrationProgress(
     complete,
     pending,
     failed,
-    stalePending,
   };
-}
-
-/**
- * Converts timed-out pending work into an explicit local failure. This never
- * starts a replacement request; retry remains a deliberate user action.
- */
-export function markStaleIllustrationsFailed(
-  pages: StoryPage[],
-  nowMs = Date.now(),
-  skipPages?: ReadonlySet<number>,
-) {
-  let changed = false;
-  const completedAt = new Date(nowMs).toISOString();
-  const nextPages = pages.map((page) => {
-    if (skipPages?.has(page.page) || !isStaleWaitingPage(page, nowMs)) {
-      return page;
-    }
-
-    changed = true;
-    const startedAtMs = getImageStartedAtMs(page);
-    return {
-      ...page,
-      imageStatus: "failed" as const,
-      imageError: STALE_ILLUSTRATION_ERROR,
-      imageCompletedAt: completedAt,
-      imageDurationMs:
-        startedAtMs === null ? undefined : Math.max(0, nowMs - startedAtMs),
-    };
-  });
-
-  return changed ? nextPages : pages;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   DownloadSimple,
   ImagesSquare,
@@ -31,16 +31,15 @@ import {
 import {
   getImageStartedAtMs,
   getInitialIllustrationAction,
-  ILLUSTRATION_STALE_THRESHOLD_MS,
-  isDurablePendingIllustration,
-  markStaleIllustrationsFailed,
-  STALE_ILLUSTRATION_ERROR,
-  isStaleWaitingPage,
+  INTERRUPTED_ILLUSTRATION_ERROR,
   isWaitingImagePage,
   summarizeIllustrationProgress,
 } from "@/lib/illustration-request-policy";
 import { getLiveIllustrationConcurrency } from "@/lib/illustration-client-concurrency";
-import { fetchIllustrationApi } from "@/lib/illustration-client-request";
+import {
+  pollIllustrationPage,
+  requestIllustrationPage,
+} from "@/lib/illustration-client-request";
 import type {
   GenerateResponse,
   SampleImageAssets,
@@ -55,9 +54,7 @@ const SAMPLE_IMAGE_MODELS: Array<{ id: SampleImageModel; label: string }> = [
 ];
 const SAMPLE_IMAGE_MODEL_IDS = SAMPLE_IMAGE_MODELS.map((model) => model.id);
 
-const ILLUSTRATION_POLL_INTERVAL_MS = 2500;
-const ILLUSTRATION_STALE_CLOCK_INTERVAL_MS = 5000;
-const AUTOMATIC_ILLUSTRATION_RETRY_LIMIT = 1;
+const ILLUSTRATION_CLOCK_INTERVAL_MS = 5000;
 const AUTOMATIC_ILLUSTRATION_RETRY_DELAY_MS = 3000;
 const STORY_VIDEO_ENABLED =
   process.env.NEXT_PUBLIC_STORY_VIDEO_ENABLED !== "0";
@@ -111,17 +108,25 @@ function getSampleBookId(result: GenerateResponse) {
   return match?.[1] || null;
 }
 
-function getTimedOutImageError(useFreeFallback: boolean) {
-  return useFreeFallback
-    ? "免费生图模型超过 3 分钟仍未完成，请重新生成本页。"
-    : STALE_ILLUSTRATION_ERROR;
-}
-
 function formatElapsed(ms: number) {
   const seconds = Math.max(0, Math.floor(ms / 1000));
   if (seconds < 1) return "不到 1 秒";
   if (seconds < 60) return `${seconds} 秒`;
   return `${Math.floor(seconds / 60)} 分钟`;
+}
+
+function restorePendingIllustrations(pages: StoryPage[]): StoryPage[] {
+  const startedAt = new Date().toISOString();
+  return pages.map((page) =>
+    page.imageStatus === "failed" && getInitialIllustrationAction(page) === "resume"
+      ? {
+          ...page,
+          imageStatus: "pending",
+          imageError: undefined,
+          imageStartedAt: page.imageStartedAt || startedAt,
+        }
+      : page,
+  );
 }
 
 function getSingleLineText(
@@ -158,7 +163,9 @@ export default function BookPreview({
   sampleBooks = [],
   onOpenSample,
 }: Props) {
-  const [pages, setPages] = useState(result.pages);
+  const [pages, setPages] = useState(() =>
+    restorePendingIllustrations(result.pages),
+  );
   const [nowMs, setNowMs] = useState(() => Date.now());
   const [shareStatus, setShareStatus] = useState<"idle" | "rendering">("idle");
   const [shareError, setShareError] = useState<string | null>(null);
@@ -177,13 +184,10 @@ export default function BookPreview({
   >(null);
   const [activeSampleImageModel, setActiveSampleImageModel] =
     useState<SampleImageModel>("gpt-image-2");
+  const mountedRef = useRef(false);
   const activeStoryIdRef = useRef(result.storyId);
   const requestedImagePagesRef = useRef(new Set<number>());
   const activeImageRequestsRef = useRef(new Set<number>());
-  const automaticRetryAttemptsRef = useRef(new Map<number, number>());
-  const freeFallbackRequestsRef = useRef(
-    new Map<number, Promise<{ page: StoryPage; allComplete?: boolean }>>(),
-  );
   const onResultUpdateRef = useRef(onResultUpdate);
   const lastPublishedPagesKeyRef = useRef("");
   const socialShareFilesRef = useRef<File[] | null>(null);
@@ -255,7 +259,9 @@ export default function BookPreview({
   }, [onResultUpdate]);
 
   useEffect(() => {
+    mountedRef.current = true;
     return () => {
+      mountedRef.current = false;
       socialSharePreviewUrlsRef.current.forEach((url) => {
         URL.revokeObjectURL(url);
       });
@@ -269,214 +275,101 @@ export default function BookPreview({
     );
   }
 
-  function getIllustrationRequestBody(
-    pageNumber: number,
-    useFreeFallback = false,
-  ) {
-    return {
-      storyId: result.storyId,
-      page: pageNumber,
-      regenerationMode: useFreeFallback ? "free-fallback" : undefined,
-    };
-  }
+  const resolveIllustrationPage = useCallback(
+    async (page: StoryPage, action: "start" | "resume" | "retry") => {
+      const requests = activeImageRequestsRef.current;
+      if (requests.has(page.page)) return;
+      requests.add(page.page);
 
-  function canAutomaticallyRetryIllustration(error: unknown) {
-    const message = error instanceof Error ? error.message : String(error);
-    if (message.includes("Story changed before illustration finished")) {
-      return false;
-    }
-
-    return /插图生成失败|插图状态查询失败|长时间没有更新|超时|Failed to fetch|NetworkError/i.test(
-      message,
-    );
-  }
-
-  function replacePageInState(updatedPage: StoryPage) {
-    setPages((current) => {
-      return current.map((item) =>
-        item.page === updatedPage.page ? updatedPage : item,
-      );
-    });
-  }
-
-  async function wait(ms: number) {
-    await new Promise((resolve) => {
-      window.setTimeout(resolve, ms);
-    });
-  }
-
-  async function pollIllustrationPage(
-    pageNumber: number,
-    useFreeFallback: boolean,
-    requestStartedAtMs: number,
-    initialPage?: StoryPage,
-  ): Promise<{ page: StoryPage; allComplete?: boolean }> {
-    const deadlineMs = requestStartedAtMs + ILLUSTRATION_STALE_THRESHOLD_MS;
-    let durablePending = initialPage
-      ? isDurablePendingIllustration(initialPage)
-      : false;
-
-    while (durablePending || Date.now() < deadlineMs) {
-      await wait(
-        durablePending
-          ? ILLUSTRATION_POLL_INTERVAL_MS
-          : Math.min(
-              ILLUSTRATION_POLL_INTERVAL_MS,
-              Math.max(0, deadlineMs - Date.now()),
-            ),
-      );
-
-      const response = await fetchIllustrationApi(
-        `/api/illustration?storyId=${encodeURIComponent(result.storyId)}&page=${pageNumber}`,
-      );
-      const data = (await response.json().catch(() => null)) as {
-        page?: StoryPage;
-        error?: string;
-        allComplete?: boolean;
-      } | null;
-
-      if (!response.ok) {
-        throw new Error(data?.error || "插图状态查询失败。");
+      const isActive = () =>
+        mountedRef.current && activeImageRequestsRef.current === requests;
+      function replacePageInState(updatedPage: StoryPage) {
+        setPages((current) =>
+          current.map((item) =>
+            item.page === updatedPage.page ? updatedPage : item,
+          ),
+        );
       }
 
-      if (!data?.page) {
-        continue;
+      const input = {
+        storyId: result.storyId,
+        page,
+        onPending: replacePageInState,
+        isActive,
+      };
+
+      if (action !== "resume") {
+        replacePageInState({
+          ...page,
+          imageStatus: "pending",
+          imageError: undefined,
+          imageStartedAt: new Date().toISOString(),
+          imageAttemptId: undefined,
+          imageDurableJob: undefined,
+          imageJobId: undefined,
+          imageCompletedAt: undefined,
+          imageDurationMs: undefined,
+          imageQuality: undefined,
+        });
       }
 
-      replacePageInState(data.page);
-      durablePending = isDurablePendingIllustration(data.page);
+      try {
+        let outcome =
+          action === "resume"
+            ? await pollIllustrationPage(input)
+            : await requestIllustrationPage({
+                ...input,
+                useFreeFallback: action === "retry",
+              });
 
-      if (activeStoryIdRef.current !== result.storyId) {
-        throw new Error("Story changed before illustration finished.");
+        if (!isActive()) return;
+        if (
+          action === "start" &&
+          !outcome.recovered &&
+          outcome.page.imageStatus === "failed" &&
+          outcome.page.imageError !== INTERRUPTED_ILLUSTRATION_ERROR
+        ) {
+          await new Promise<void>((resolve) =>
+            setTimeout(resolve, AUTOMATIC_ILLUSTRATION_RETRY_DELAY_MS),
+          );
+          if (!isActive()) return;
+
+          outcome = await requestIllustrationPage({
+            ...input,
+            page: outcome.page,
+            useFreeFallback: true,
+          });
+        }
+        if (isActive()) replacePageInState(outcome.page);
+      } catch (error) {
+        if (!isActive()) return;
+        setPages((current) =>
+          current.map((item) =>
+            item.page === page.page
+              ? {
+                  ...item,
+                  imageStatus: "failed",
+                  imageError:
+                    error instanceof Error ? error.message : "插图生成失败。",
+                }
+              : item,
+          ),
+        );
+      } finally {
+        requests.delete(page.page);
       }
-
-      if (data.page.imageStatus === "complete") {
-        return { page: data.page, allComplete: data.allComplete };
-      }
-
-      if (data.page.imageStatus === "failed") {
-        throw new Error(data.page.imageError || data.error || "插图生成失败。");
-      }
-
-      if (
-        !durablePending &&
-        !useFreeFallback &&
-        isStaleWaitingPage(data.page, Date.now())
-      ) {
-        throw new Error(STALE_ILLUSTRATION_ERROR);
-      }
-    }
-
-    if (!useFreeFallback) {
-      throw new Error(STALE_ILLUSTRATION_ERROR);
-    }
-
-    throw new Error(getTimedOutImageError(true));
-  }
-
-  async function requestIllustrationPage(
-    pageNumber: number,
-    useFreeFallback = false,
-  ): Promise<{ page: StoryPage; allComplete?: boolean }> {
-    if (useFreeFallback) {
-      const existingRequest = freeFallbackRequestsRef.current.get(pageNumber);
-      if (existingRequest) {
-        return existingRequest;
-      }
-    }
-
-    const request = doRequestIllustrationPage(pageNumber, useFreeFallback);
-    activeImageRequestsRef.current.add(pageNumber);
-    void request.then(
-      () => {
-        activeImageRequestsRef.current.delete(pageNumber);
-      },
-      () => {
-        activeImageRequestsRef.current.delete(pageNumber);
-      },
-    );
-
-    if (useFreeFallback) {
-      freeFallbackRequestsRef.current.set(pageNumber, request);
-      void request.then(
-        () => {
-          freeFallbackRequestsRef.current.delete(pageNumber);
-        },
-        () => {
-          freeFallbackRequestsRef.current.delete(pageNumber);
-        },
-      );
-    }
-
-    return request;
-  }
-
-  async function resumeIllustrationPage(
-    page: StoryPage,
-  ): Promise<{ page: StoryPage; allComplete?: boolean }> {
-    const startedAtMs = getImageStartedAtMs(page);
-    if (startedAtMs === null) {
-      return requestIllustrationPage(page.page);
-    }
-
-    activeImageRequestsRef.current.add(page.page);
-    try {
-      return await pollIllustrationPage(page.page, false, startedAtMs, page);
-    } finally {
-      activeImageRequestsRef.current.delete(page.page);
-    }
-  }
-
-  async function doRequestIllustrationPage(
-    pageNumber: number,
-    useFreeFallback: boolean,
-  ): Promise<{ page: StoryPage; allComplete?: boolean }> {
-    const requestStartedAtMs = Date.now();
-    const response = await fetchIllustrationApi("/api/illustration", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(
-        getIllustrationRequestBody(pageNumber, useFreeFallback),
-      ),
-    });
-    const data = (await response.json()) as {
-      status?: "accepted";
-      page?: StoryPage;
-      error?: string;
-      allComplete?: boolean;
-    };
-
-    if (response.status === 202 || data.status === "accepted") {
-      if (data.page) {
-        replacePageInState(data.page);
-      }
-      return pollIllustrationPage(
-        pageNumber,
-        useFreeFallback,
-        data.page
-          ? (getImageStartedAtMs(data.page) ?? requestStartedAtMs)
-          : requestStartedAtMs,
-        data.page,
-      );
-    }
-
-    if (!response.ok || data.error || !data.page) {
-      throw new Error(data.error || "插图生成失败。");
-    }
-
-    return { page: data.page, allComplete: data.allComplete };
-  }
+    },
+    [result.storyId],
+  );
 
   useEffect(() => {
-    if (activeStoryIdRef.current !== result.storyId) {
-      activeStoryIdRef.current = result.storyId;
-      requestedImagePagesRef.current.clear();
-      activeImageRequestsRef.current.clear();
-      automaticRetryAttemptsRef.current.clear();
-      freeFallbackRequestsRef.current.clear();
-    }
+    if (activeStoryIdRef.current === result.storyId) return;
 
-    setPages(result.pages);
+    activeStoryIdRef.current = result.storyId;
+    requestedImagePagesRef.current.clear();
+    activeImageRequestsRef.current = new Set();
+    setRetryingPages([]);
+    setPages(restorePendingIllustrations(result.pages));
     setNowMs(Date.now());
     setShareError(null);
     setShareImageUrl(null);
@@ -488,10 +381,7 @@ export default function BookPreview({
 
   const shareDialogRef = useRef<HTMLDivElement>(null);
   const hasPendingImagesWithStart = pages.some(
-    (page) =>
-      isWaitingImagePage(page) &&
-      Boolean(page.imageStartedAt) &&
-      !isDurablePendingIllustration(page),
+    (page) => isWaitingImagePage(page) && Boolean(page.imageStartedAt),
   );
 
   useEffect(() => {
@@ -502,7 +392,7 @@ export default function BookPreview({
     setNowMs(Date.now());
     const interval = window.setInterval(() => {
       setNowMs(Date.now());
-    }, ILLUSTRATION_STALE_CLOCK_INTERVAL_MS);
+    }, ILLUSTRATION_CLOCK_INTERVAL_MS);
 
     return () => {
       window.clearInterval(interval);
@@ -638,110 +528,28 @@ export default function BookPreview({
     }
 
     async function generateLiveImages() {
-      const requestStartedAtMs = Date.now();
+      const requests = activeImageRequestsRef.current;
       const illustrationTasks = result.pages.flatMap((page) => {
         if (requestedImagePagesRef.current.has(page.page)) return [];
 
-        const action = getInitialIllustrationAction(page, requestStartedAtMs);
+        const action = getInitialIllustrationAction(page);
         if (action === "wait") return [];
 
         requestedImagePagesRef.current.add(page.page);
         return [{ page, action }];
       });
 
-      if (illustrationTasks.length === 0) {
-        return;
-      }
-
-      const startedAt = new Date().toISOString();
-      const pendingPageNumbers = new Set(
-        illustrationTasks
-          .filter((task) => task.action === "start")
-          .map((task) => task.page.page),
-      );
-      setPages((current) =>
-        current.map((item) =>
-          pendingPageNumbers.has(item.page)
-            ? {
-                ...item,
-                imageStatus: "pending" as const,
-                imageStartedAt: item.imageStartedAt || startedAt,
-                imageQuality: undefined,
-              }
-            : item,
-        ),
-      );
-
       let nextIndex = 0;
 
       async function worker() {
-        while (nextIndex < illustrationTasks.length) {
-          const task = illustrationTasks[nextIndex];
+        while (
+          nextIndex < illustrationTasks.length &&
+          mountedRef.current &&
+          activeImageRequestsRef.current === requests
+        ) {
+          const { page, action } = illustrationTasks[nextIndex];
           nextIndex += 1;
-          const { page } = task;
-
-          try {
-            const data =
-              task.action === "resume"
-                ? await resumeIllustrationPage(page)
-                : await requestIllustrationPage(
-                    page.page,
-                    task.action === "retry",
-                  );
-
-            if (activeStoryIdRef.current !== result.storyId) {
-              return;
-            }
-
-            replacePageInState(data.page);
-          } catch (error) {
-            if (activeStoryIdRef.current !== result.storyId) {
-              return;
-            }
-
-            const automaticRetryAttempts =
-              automaticRetryAttemptsRef.current.get(page.page) || 0;
-            if (
-              task.action !== "retry" &&
-              automaticRetryAttempts < AUTOMATIC_ILLUSTRATION_RETRY_LIMIT &&
-              canAutomaticallyRetryIllustration(error)
-            ) {
-              automaticRetryAttemptsRef.current.set(
-                page.page,
-                automaticRetryAttempts + 1,
-              );
-
-              try {
-                await wait(AUTOMATIC_ILLUSTRATION_RETRY_DELAY_MS);
-                const retryData = await requestIllustrationPage(
-                  page.page,
-                  true,
-                );
-                if (activeStoryIdRef.current !== result.storyId) {
-                  return;
-                }
-                replacePageInState(retryData.page);
-                continue;
-              } catch (retryError) {
-                error = retryError;
-              }
-            }
-
-            setPages((current) =>
-              current.map((item) =>
-                item.page === page.page
-                  ? {
-                      ...item,
-                      imageStatus: "failed" as const,
-                      imageError:
-                        error instanceof Error
-                          ? error.message
-                          : "插图生成失败。",
-                    }
-                  : item,
-              ),
-            );
-          }
+          await resolveIllustrationPage(page, action);
         }
       }
 
@@ -760,34 +568,12 @@ export default function BookPreview({
       );
     }
 
-    generateLiveImages();
-  }, [canRegenerateImages, result.storyId, result.pages]);
-
-  useEffect(() => {
-    if (!canRegenerateImages) {
-      return;
-    }
-
-    setPages((current) => {
-      const next = markStaleIllustrationsFailed(
-        current,
-        nowMs,
-        requestedImagePagesRef.current,
-      );
-      next
-        .filter(
-          (page) =>
-            page.imageStatus === "failed" &&
-            page.imageError === STALE_ILLUSTRATION_ERROR,
-        )
-        .forEach((page) => requestedImagePagesRef.current.add(page.page));
-      return next;
-    });
-  }, [canRegenerateImages, nowMs]);
+    void generateLiveImages();
+  }, [canRegenerateImages, resolveIllustrationPage, result.pages]);
 
   const illustrationProgress = useMemo(
-    () => summarizeIllustrationProgress(pages, nowMs),
-    [nowMs, pages],
+    () => summarizeIllustrationProgress(pages),
+    [pages],
   );
 
   const allImagesReady = useMemo(
@@ -803,10 +589,11 @@ export default function BookPreview({
       pages
         .filter(
           (page) =>
-            page.imageStatus === "failed" || isStaleWaitingPage(page, nowMs),
+            page.imageStatus === "failed" &&
+            getInitialIllustrationAction(page) === "wait",
         )
         .map((page) => page.page),
-    [nowMs, pages],
+    [pages],
   );
   const oldestPendingImageStartedAtMs = useMemo(() => {
     const startedAtValues = pages
@@ -890,73 +677,37 @@ export default function BookPreview({
   }, [hasPendingImages, canRegenerateImages, pages, result.storyId]);
 
   async function handleRetryPage(pageNumber: number) {
-    if (freeFallbackRequestsRef.current.has(pageNumber)) {
+    const requests = activeImageRequestsRef.current;
+    const page = pages.find((item) => item.page === pageNumber);
+    if (
+      activeStoryIdRef.current !== result.storyId ||
+      !page ||
+      requests.has(pageNumber) ||
+      (page.imageStatus !== "failed" && page.imageStatus !== "complete") ||
+      getInitialIllustrationAction(page) === "resume"
+    ) {
       return;
     }
 
     setActiveImageActionsPage(null);
-    const storyId = result.storyId;
-    const startedAt = new Date().toISOString();
-    setRetryingPages((current) =>
-      current.includes(pageNumber) ? current : [...current, pageNumber],
-    );
-    setPages((current) =>
-      current.map((page) =>
-        page.page === pageNumber
-          ? {
-              ...page,
-              imageStatus: "pending" as const,
-              imageError: undefined,
-              imageStartedAt: startedAt,
-              imageAttemptId: undefined,
-              imageDurableJob: undefined,
-              imageJobId: undefined,
-              imageCompletedAt: undefined,
-              imageDurationMs: undefined,
-              imageQuality: undefined,
-            }
-          : page,
-      ),
-    );
-
+    setRetryingPages((current) => [...current, pageNumber]);
     try {
-      const data = await requestIllustrationPage(pageNumber, true);
-
-      if (activeStoryIdRef.current !== storyId) {
-        return;
-      }
-
-      replacePageInState(data.page);
-    } catch (error) {
-      if (activeStoryIdRef.current !== storyId) {
-        return;
-      }
-
-      setPages((current) =>
-        current.map((page) =>
-          page.page === pageNumber
-            ? {
-                ...page,
-                imageStatus: "failed" as const,
-                imageError:
-                  error instanceof Error ? error.message : "插图生成失败。",
-              }
-            : page,
-        ),
-      );
+      await resolveIllustrationPage(page, "retry");
     } finally {
-      if (activeStoryIdRef.current === storyId) {
+      if (mountedRef.current && activeImageRequestsRef.current === requests) {
         setRetryingPages((current) =>
-          current.filter((page) => page !== pageNumber),
+          current.filter((number) => number !== pageNumber),
         );
       }
     }
   }
 
   async function handleRetryAllPages() {
-    if (retryablePageNumbers.length === 0) return;
-
+    const requests = activeImageRequestsRef.current;
     for (const pageNumber of retryablePageNumbers) {
+      if (!mountedRef.current || activeImageRequestsRef.current !== requests) {
+        return;
+      }
       await handleRetryPage(pageNumber);
     }
   }
@@ -1168,7 +919,7 @@ export default function BookPreview({
             <span>
               {[
                 retryablePageNumbers.length > 0
-                  ? `失败/超时 ${retryablePageNumbers.length} 页`
+                  ? `失败 ${retryablePageNumbers.length} 页`
                   : null,
                 illustrationProgress.pending > 0
                   ? `${illustrationProgress.pending} 页生成中`
@@ -1231,7 +982,7 @@ export default function BookPreview({
               void handleRetryPage(pageNumber);
             }}
             isIllustrationRetryable={(page) =>
-              page.imageStatus === "failed" || isStaleWaitingPage(page, nowMs)
+              retryablePageNumbers.includes(page.page)
             }
             getIllustrationStatusDetail={(page) => {
               if (page.imageStatus === "failed") {
@@ -1414,18 +1165,6 @@ export default function BookPreview({
                 <div className="image-error-badge">
                   {page.imageError || "插图生成失败，请重新生成本页"}
                 </div>
-              ) : null}
-              {canRegenerateImages && isStaleWaitingPage(page, nowMs) ? (
-                <button
-                  type="button"
-                  className="image-retry-btn"
-                  onClick={() => handleRetryPage(page.page)}
-                  disabled={retryingPages.includes(page.page)}
-                >
-                  {retryingPages.includes(page.page)
-                    ? "正在重试..."
-                    : "重新生成本页"}
-                </button>
               ) : null}
               {canRegenerateImages && page.imageStatus === "failed" ? (
                 <button

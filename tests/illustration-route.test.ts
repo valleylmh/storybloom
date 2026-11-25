@@ -80,6 +80,10 @@ vi.mock("@/lib/generation-jobs", () => ({
 }));
 
 import { GET, POST } from "@/app/api/illustration/route";
+import {
+  ILLUSTRATION_STALE_THRESHOLD_MS,
+  INTERRUPTED_ILLUSTRATION_ERROR,
+} from "@/lib/illustration-request-policy";
 
 function createStory(page: StoryPage): GeneratedStory {
   return {
@@ -238,12 +242,12 @@ describe("illustration route request control", () => {
     expect(saved.pages[4].imagePlannedProvider).toBe("orbitix");
   });
 
-  it("reuses a recent pending job without spending rate-limit capacity", async () => {
+  it("reuses a job within the full illustration window without spending rate-limit capacity", async () => {
     mocks.getCachedStory.mockResolvedValue(
       createStory(
         createPage({
           imageStatus: "pending",
-          imageStartedAt: new Date(Date.now() - 30_000).toISOString(),
+          imageStartedAt: new Date(Date.now() - 4 * 60_000).toISOString(),
         }),
       ),
     );
@@ -256,6 +260,28 @@ describe("illustration route request control", () => {
     expect(mocks.allowIpRequest).not.toHaveBeenCalled();
     expect(mocks.after).not.toHaveBeenCalled();
   });
+
+  it.each([false, true])(
+    "returns an existing image on an initial submission (stale read: %s)",
+    async (staleRead) => {
+      const page = createPage({
+        imageStatus: "complete",
+        imageUrl: "/generated/one.webp",
+      });
+      const store = installAtomicStoryStore(createStory(page));
+      if (staleRead) {
+        mocks.getCachedStory.mockResolvedValueOnce(createStory(createPage()));
+      }
+
+      const response = await POST(createRequest());
+
+      expect(response.status).toBe(200);
+      expect(await response.json()).toMatchObject({ page, allComplete: true });
+      expect(store.latestStory.pages[0]).toEqual(page);
+      expect(mocks.after).not.toHaveBeenCalled();
+      expect(mocks.enqueueJob).not.toHaveBeenCalled();
+    },
+  );
 
   it("reuses a durable running job even when the page is older than three minutes", async () => {
     vi.stubEnv("STORYBLOOM_PRODUCTION_JOBS_ENABLED", "1");
@@ -612,7 +638,7 @@ describe("illustration route request control", () => {
   it("restores a pending page through GET polling without submitting a job", async () => {
     const page = createPage({
       imageStatus: "pending",
-      imageStartedAt: new Date(Date.now() - 30_000).toISOString(),
+      imageStartedAt: new Date(Date.now() - 4 * 60_000).toISOString(),
     });
     mocks.getCachedStory.mockResolvedValue(createStory(page));
 
@@ -626,6 +652,51 @@ describe("illustration route request control", () => {
     expect(mocks.allowIpRequest).not.toHaveBeenCalled();
     expect(mocks.cacheStory).not.toHaveBeenCalled();
     expect(mocks.after).not.toHaveBeenCalled();
+  });
+
+  it("reports an interrupted attempt after the full runtime without starting a replacement", async () => {
+    const page = createPage({
+      imageStatus: "pending",
+      imageAttemptId: "attempt-interrupted",
+      imageStartedAt: new Date(
+        Date.now() - ILLUSTRATION_STALE_THRESHOLD_MS - 1,
+      ).toISOString(),
+    });
+    const store = installAtomicStoryStore(createStory(page));
+
+    const response = await GET(
+      new NextRequest("http://localhost/api/illustration?storyId=story-12345678&page=1"),
+    );
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toMatchObject({
+      page: { imageStatus: "failed", imageError: INTERRUPTED_ILLUSTRATION_ERROR },
+    });
+    expect(store.latestStory.pages[0].imageAttemptId).toBeUndefined();
+    expect(mocks.after).not.toHaveBeenCalled();
+    expect(mocks.enqueueJob).not.toHaveBeenCalled();
+  });
+
+  it("keeps a completed image when it was committed during stale status reconciliation", async () => {
+    const page = createPage({
+      imageStatus: "complete",
+      imageUrl: "/generated/one.webp",
+      imageStartedAt: new Date(
+        Date.now() - ILLUSTRATION_STALE_THRESHOLD_MS - 1,
+      ).toISOString(),
+    });
+    const store = installAtomicStoryStore(createStory(page));
+    mocks.getCachedStory.mockResolvedValueOnce(
+      createStory({ ...page, imageStatus: "pending", imageAttemptId: "old-attempt" }),
+    );
+
+    const response = await GET(
+      new NextRequest("http://localhost/api/illustration?storyId=story-12345678&page=1"),
+    );
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toMatchObject({ page, allComplete: true });
+    expect(store.latestStory.pages[0]).toEqual(page);
   });
 
   it("normalizes a legacy cached provider error before returning a page", async () => {
@@ -1086,7 +1157,9 @@ describe("illustration route request control", () => {
         page.page === 1
           ? {
               ...page,
-              imageStartedAt: new Date(Date.now() - 4 * 60 * 1000).toISOString(),
+              imageStartedAt: new Date(
+                Date.now() - ILLUSTRATION_STALE_THRESHOLD_MS - 1,
+              ).toISOString(),
             }
           : page,
       ),

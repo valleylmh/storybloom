@@ -2,10 +2,10 @@ import { describe, expect, it } from "vitest";
 import {
   DURABLE_ILLUSTRATION_RECOVERY_THRESHOLD_MS,
   getInitialIllustrationAction,
+  ILLUSTRATION_REQUEST_TIMEOUT_ERROR,
   ILLUSTRATION_STALE_THRESHOLD_MS,
+  isExpiredPendingIllustration,
   isRecentPendingIllustration,
-  isStaleWaitingPage,
-  markStaleIllustrationsFailed,
   STALE_ILLUSTRATION_ERROR,
   summarizeIllustrationProgress,
 } from "@/lib/illustration-request-policy";
@@ -27,10 +27,10 @@ describe("illustration request policy", () => {
 
   it("starts demo pages and pending pages that have never been submitted", () => {
     const demoPage = createPage();
-    expect(getInitialIllustrationAction(demoPage, now)).toBe("start");
-    expect(isStaleWaitingPage(demoPage, now)).toBe(false);
+    expect(getInitialIllustrationAction(demoPage)).toBe("start");
+    expect(isExpiredPendingIllustration(demoPage, now)).toBe(false);
     expect(
-      getInitialIllustrationAction(createPage({ imageStatus: "pending" }), now),
+      getInitialIllustrationAction(createPage({ imageStatus: "pending" })),
     ).toBe("start");
   });
 
@@ -40,11 +40,11 @@ describe("illustration request policy", () => {
       imageStartedAt: new Date(now - 30_000).toISOString(),
     });
 
-    expect(getInitialIllustrationAction(page, now)).toBe("resume");
+    expect(getInitialIllustrationAction(page)).toBe("resume");
     expect(isRecentPendingIllustration(page, now)).toBe(true);
   });
 
-  it("routes stale pending pages to the bounded fallback retry path", () => {
+  it("resumes old pending pages so the server can resolve their status", () => {
     const page = createPage({
       imageStatus: "pending",
       imageStartedAt: new Date(
@@ -52,8 +52,8 @@ describe("illustration request policy", () => {
       ).toISOString(),
     });
 
-    expect(getInitialIllustrationAction(page, now)).toBe("retry");
-    expect(isStaleWaitingPage(page, now)).toBe(true);
+    expect(getInitialIllustrationAction(page)).toBe("resume");
+    expect(isExpiredPendingIllustration(page, now)).toBe(true);
     expect(isRecentPendingIllustration(page, now)).toBe(false);
   });
 
@@ -68,23 +68,21 @@ describe("illustration request policy", () => {
       imageJobId: "job_durable_1234",
     });
 
-    expect(getInitialIllustrationAction(page, now)).toBe("resume");
+    expect(getInitialIllustrationAction(page)).toBe("resume");
     expect(isRecentPendingIllustration(page, now)).toBe(true);
-    expect(isStaleWaitingPage(page, now)).toBe(false);
-    expect(summarizeIllustrationProgress([page], now)).toMatchObject({
+    expect(isExpiredPendingIllustration(page, now)).toBe(false);
+    expect(summarizeIllustrationProgress([page])).toMatchObject({
       status: "generating_images",
       pending: 1,
-      stalePending: 0,
     });
-    expect(markStaleIllustrationsFailed([page], now)).toEqual([page]);
   });
 
   it("does not automatically resubmit failed or completed pages", () => {
     expect(
-      getInitialIllustrationAction(createPage({ imageStatus: "failed" }), now),
+      getInitialIllustrationAction(createPage({ imageStatus: "failed" })),
     ).toBe("wait");
     expect(
-      getInitialIllustrationAction(createPage({ imageStatus: "complete" }), now),
+      getInitialIllustrationAction(createPage({ imageStatus: "complete" })),
     ).toBe("wait");
   });
 
@@ -99,7 +97,6 @@ describe("illustration request policy", () => {
         }),
         createPage({ page: 3, imageStatus: "failed" }),
       ],
-      now,
     );
 
     expect(summary).toEqual({
@@ -108,11 +105,10 @@ describe("illustration request policy", () => {
       complete: 1,
       pending: 1,
       failed: 1,
-      stalePending: 0,
     });
   });
 
-  it("treats stale pending work as partially failed until it is retried", () => {
+  it("keeps pending pages in progress until the server confirms their outcome", () => {
     const page = createPage({
       imageStatus: "pending",
       imageStartedAt: new Date(
@@ -120,34 +116,25 @@ describe("illustration request policy", () => {
       ).toISOString(),
     });
 
-    expect(summarizeIllustrationProgress([page], now)).toMatchObject({
-      status: "partially_failed",
-      pending: 0,
+    expect(summarizeIllustrationProgress([page])).toMatchObject({
+      status: "generating_images",
+      pending: 1,
       failed: 0,
-      stalePending: 1,
     });
-
-    const nextPages = markStaleIllustrationsFailed([page], now);
-    expect(nextPages[0]).toMatchObject({
-      imageStatus: "failed",
-      imageError: STALE_ILLUSTRATION_ERROR,
-      imageCompletedAt: new Date(now).toISOString(),
-      imageDurationMs: ILLUSTRATION_STALE_THRESHOLD_MS + 1,
-    });
-    expect(getInitialIllustrationAction(nextPages[0], now)).toBe("wait");
   });
 
-  it("does not mark a page stale while a retry has already been scheduled", () => {
-    const page = createPage({
-      imageStatus: "pending",
-      imageStartedAt: new Date(
-        now - ILLUSTRATION_STALE_THRESHOLD_MS - 1,
-      ).toISOString(),
+  it.each([
+    ILLUSTRATION_REQUEST_TIMEOUT_ERROR,
+    STALE_ILLUSTRATION_ERROR,
+    "免费生图模型超过 3 分钟仍未完成，请重新生成本页。",
+  ])("checks the server when a saved page carries the old error %s", (imageError) => {
+    const page = createPage({ imageStatus: "failed", imageError });
+    expect(getInitialIllustrationAction(page)).toBe("resume");
+    expect(summarizeIllustrationProgress([page])).toMatchObject({
+      status: "generating_images",
+      pending: 1,
+      failed: 0,
     });
-
-    expect(
-      markStaleIllustrationsFailed([page], now, new Set([page.page])),
-    ).toEqual([page]);
   });
 
   it("reports ready only when every completed page has a usable image", () => {
@@ -165,14 +152,12 @@ describe("illustration request policy", () => {
             imageUrl: "/two.webp",
           }),
         ],
-        now,
       ).status,
     ).toBe("ready");
 
     expect(
       summarizeIllustrationProgress(
         [createPage({ imageStatus: "complete", imageUrl: undefined })],
-        now,
       ).status,
     ).toBe("generating_images");
   });
